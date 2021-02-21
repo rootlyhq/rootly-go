@@ -8,7 +8,6 @@ import (
 	"net/http"
 	"os"
 	"os/exec"
-	"strings"
 )
 
 const (
@@ -33,7 +32,12 @@ func getSwaggerConfig() {
 	}
 	defer resp.Body.Close()
 	if resp.StatusCode != http.StatusOK {
-		log.Fatal("Failed to get latest swagger config from ", swaggerURL, "with exit code of ", resp.Status)
+		log.Fatal(
+			"Failed to get latest swagger config from ",
+			swaggerURL,
+			"with exit code of ",
+			resp.Status,
+		)
 	}
 	log.Println("Got latest swagger data from rootly.io/api")
 
@@ -62,16 +66,15 @@ func genCode() {
 	}
 
 	// Running the command and getting the stdout
-	cmd := exec.Command(codegenPath, swaggerFile)
+	cmd := exec.Command(codegenPath, "-package", "rootly", swaggerFile)
 	cmd.Stderr = os.Stderr
 	output, err := cmd.Output()
 	if err != nil {
 		log.Fatal("Failed to run code gen", "\n\n", err)
 	}
-	output = []byte(strings.Replace(string(output), "package Swagger", "package rootly", 1))
 
 	// Writing the stdout to the schema.gen.go file
-	err = ioutil.WriteFile("../../schema.gen.go", []byte(output), 0666)
+	err = ioutil.WriteFile("../../schema.gen.go", output, 0666)
 	if err != nil {
 		log.Fatal("Failed to write data to scheme file", "\n\n", err)
 	}
