@@ -16,4 +16,13 @@ jobs:
         uses: actions/setup-go@v2
         with:
           go-version: 1.15
+      - run: go get github.com/deepmap/oapi-codegen/cmd/oapi-codegen
+      - run: export PATH="$HOME/go/bin:$PATH"
       - run: make gen
+      - name: Commit Changes
+        run: |
+          git config --global user.email "action@github.com"
+          git config --global user.name "Publishing Bot"
+          git add .
+          git commit -m "Update schema to latest version" || true
+          git push
