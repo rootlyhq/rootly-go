@@ -3244,7 +3244,10 @@ func NewDeleteIncidentActionItemRequest(server string, id string) (*http.Request
 		basePath = basePath[1:]
 	}
 
-	queryUrl = queryUrl.ResolveReference(&url.URL{Path: basePath})
+	queryUrl, err = queryUrl.Parse(basePath)
+	if err != nil {
+		return nil, err
+	}
 
 	req, err := http.NewRequest("DELETE", queryUrl.String(), nil)
 	if err != nil {
@@ -3275,7 +3278,10 @@ func NewGetIncidentActionItemsRequest(server string, id string) (*http.Request, 
 		basePath = basePath[1:]
 	}
 
-	queryUrl = queryUrl.ResolveReference(&url.URL{Path: basePath})
+	queryUrl, err = queryUrl.Parse(basePath)
+	if err != nil {
+		return nil, err
+	}
 
 	req, err := http.NewRequest("GET", queryUrl.String(), nil)
 	if err != nil {
@@ -3306,7 +3312,10 @@ func NewUpdateIncidentActionItemRequestWithBody(server string, id string, conten
 		basePath = basePath[1:]
 	}
 
-	queryUrl = queryUrl.ResolveReference(&url.URL{Path: basePath})
+	queryUrl, err = queryUrl.Parse(basePath)
+	if err != nil {
+		return nil, err
+	}
 
 	req, err := http.NewRequest("PUT", queryUrl.String(), body)
 	if err != nil {
@@ -3332,7 +3341,10 @@ func NewListCausesRequest(server string, params *ListCausesParams) (*http.Reques
 		basePath = basePath[1:]
 	}
 
-	queryUrl = queryUrl.ResolveReference(&url.URL{Path: basePath})
+	queryUrl, err = queryUrl.Parse(basePath)
+	if err != nil {
+		return nil, err
+	}
 
 	queryValues := queryUrl.Query()
 
@@ -3392,7 +3404,10 @@ func NewCreateCauseRequestWithBody(server string, contentType string, body io.Re
 		basePath = basePath[1:]
 	}
 
-	queryUrl = queryUrl.ResolveReference(&url.URL{Path: basePath})
+	queryUrl, err = queryUrl.Parse(basePath)
+	if err != nil {
+		return nil, err
+	}
 
 	req, err := http.NewRequest("POST", queryUrl.String(), body)
 	if err != nil {
@@ -3425,7 +3440,10 @@ func NewDeleteCauseRequest(server string, id string) (*http.Request, error) {
 		basePath = basePath[1:]
 	}
 
-	queryUrl = queryUrl.ResolveReference(&url.URL{Path: basePath})
+	queryUrl, err = queryUrl.Parse(basePath)
+	if err != nil {
+		return nil, err
+	}
 
 	req, err := http.NewRequest("DELETE", queryUrl.String(), nil)
 	if err != nil {
@@ -3456,7 +3474,10 @@ func NewGetCauseRequest(server string, id string) (*http.Request, error) {
 		basePath = basePath[1:]
 	}
 
-	queryUrl = queryUrl.ResolveReference(&url.URL{Path: basePath})
+	queryUrl, err = queryUrl.Parse(basePath)
+	if err != nil {
+		return nil, err
+	}
 
 	req, err := http.NewRequest("GET", queryUrl.String(), nil)
 	if err != nil {
@@ -3487,7 +3508,10 @@ func NewUpdateCauseRequestWithBody(server string, id string, contentType string,
 		basePath = basePath[1:]
 	}
 
-	queryUrl = queryUrl.ResolveReference(&url.URL{Path: basePath})
+	queryUrl, err = queryUrl.Parse(basePath)
+	if err != nil {
+		return nil, err
+	}
 
 	req, err := http.NewRequest("PUT", queryUrl.String(), body)
 	if err != nil {
@@ -3513,7 +3537,10 @@ func NewListEnvironmentsRequest(server string, params *ListEnvironmentsParams) (
 		basePath = basePath[1:]
 	}
 
-	queryUrl = queryUrl.ResolveReference(&url.URL{Path: basePath})
+	queryUrl, err = queryUrl.Parse(basePath)
+	if err != nil {
+		return nil, err
+	}
 
 	queryValues := queryUrl.Query()
 
@@ -3573,7 +3600,10 @@ func NewCreateEnvironmentRequestWithBody(server string, contentType string, body
 		basePath = basePath[1:]
 	}
 
-	queryUrl = queryUrl.ResolveReference(&url.URL{Path: basePath})
+	queryUrl, err = queryUrl.Parse(basePath)
+	if err != nil {
+		return nil, err
+	}
 
 	req, err := http.NewRequest("POST", queryUrl.String(), body)
 	if err != nil {
@@ -3606,7 +3636,10 @@ func NewDeleteEnvironmentRequest(server string, id string) (*http.Request, error
 		basePath = basePath[1:]
 	}
 
-	queryUrl = queryUrl.ResolveReference(&url.URL{Path: basePath})
+	queryUrl, err = queryUrl.Parse(basePath)
+	if err != nil {
+		return nil, err
+	}
 
 	req, err := http.NewRequest("DELETE", queryUrl.String(), nil)
 	if err != nil {
@@ -3637,7 +3670,10 @@ func NewGetEnvironmentRequest(server string, id string) (*http.Request, error) {
 		basePath = basePath[1:]
 	}
 
-	queryUrl = queryUrl.ResolveReference(&url.URL{Path: basePath})
+	queryUrl, err = queryUrl.Parse(basePath)
+	if err != nil {
+		return nil, err
+	}
 
 	req, err := http.NewRequest("GET", queryUrl.String(), nil)
 	if err != nil {
@@ -3668,7 +3704,10 @@ func NewUpdateEnvironmentRequestWithBody(server string, id string, contentType s
 		basePath = basePath[1:]
 	}
 
-	queryUrl = queryUrl.ResolveReference(&url.URL{Path: basePath})
+	queryUrl, err = queryUrl.Parse(basePath)
+	if err != nil {
+		return nil, err
+	}
 
 	req, err := http.NewRequest("PUT", queryUrl.String(), body)
 	if err != nil {
@@ -3701,7 +3740,10 @@ func NewDeleteIncidentEventRequest(server string, id string) (*http.Request, err
 		basePath = basePath[1:]
 	}
 
-	queryUrl = queryUrl.ResolveReference(&url.URL{Path: basePath})
+	queryUrl, err = queryUrl.Parse(basePath)
+	if err != nil {
+		return nil, err
+	}
 
 	req, err := http.NewRequest("DELETE", queryUrl.String(), nil)
 	if err != nil {
@@ -3732,7 +3774,10 @@ func NewGetIncidentEventsRequest(server string, id string) (*http.Request, error
 		basePath = basePath[1:]
 	}
 
-	queryUrl = queryUrl.ResolveReference(&url.URL{Path: basePath})
+	queryUrl, err = queryUrl.Parse(basePath)
+	if err != nil {
+		return nil, err
+	}
 
 	req, err := http.NewRequest("GET", queryUrl.String(), nil)
 	if err != nil {
@@ -3763,7 +3808,10 @@ func NewUpdateIncidentEventRequestWithBody(server string, id string, contentType
 		basePath = basePath[1:]
 	}
 
-	queryUrl = queryUrl.ResolveReference(&url.URL{Path: basePath})
+	queryUrl, err = queryUrl.Parse(basePath)
+	if err != nil {
+		return nil, err
+	}
 
 	req, err := http.NewRequest("PUT", queryUrl.String(), body)
 	if err != nil {
@@ -3789,7 +3837,10 @@ func NewListFunctionalitiesRequest(server string, params *ListFunctionalitiesPar
 		basePath = basePath[1:]
 	}
 
-	queryUrl = queryUrl.ResolveReference(&url.URL{Path: basePath})
+	queryUrl, err = queryUrl.Parse(basePath)
+	if err != nil {
+		return nil, err
+	}
 
 	queryValues := queryUrl.Query()
 
@@ -3849,7 +3900,10 @@ func NewCreateFunctionalityRequestWithBody(server string, contentType string, bo
 		basePath = basePath[1:]
 	}
 
-	queryUrl = queryUrl.ResolveReference(&url.URL{Path: basePath})
+	queryUrl, err = queryUrl.Parse(basePath)
+	if err != nil {
+		return nil, err
+	}
 
 	req, err := http.NewRequest("POST", queryUrl.String(), body)
 	if err != nil {
@@ -3882,7 +3936,10 @@ func NewDeleteFunctionalityRequest(server string, id string) (*http.Request, err
 		basePath = basePath[1:]
 	}
 
-	queryUrl = queryUrl.ResolveReference(&url.URL{Path: basePath})
+	queryUrl, err = queryUrl.Parse(basePath)
+	if err != nil {
+		return nil, err
+	}
 
 	req, err := http.NewRequest("DELETE", queryUrl.String(), nil)
 	if err != nil {
@@ -3913,7 +3970,10 @@ func NewGetFunctionalityRequest(server string, id string) (*http.Request, error)
 		basePath = basePath[1:]
 	}
 
-	queryUrl = queryUrl.ResolveReference(&url.URL{Path: basePath})
+	queryUrl, err = queryUrl.Parse(basePath)
+	if err != nil {
+		return nil, err
+	}
 
 	req, err := http.NewRequest("GET", queryUrl.String(), nil)
 	if err != nil {
@@ -3944,7 +4004,10 @@ func NewUpdateFunctionalityRequestWithBody(server string, id string, contentType
 		basePath = basePath[1:]
 	}
 
-	queryUrl = queryUrl.ResolveReference(&url.URL{Path: basePath})
+	queryUrl, err = queryUrl.Parse(basePath)
+	if err != nil {
+		return nil, err
+	}
 
 	req, err := http.NewRequest("PUT", queryUrl.String(), body)
 	if err != nil {
@@ -3970,7 +4033,10 @@ func NewListIncidentRolesRequest(server string, params *ListIncidentRolesParams)
 		basePath = basePath[1:]
 	}
 
-	queryUrl = queryUrl.ResolveReference(&url.URL{Path: basePath})
+	queryUrl, err = queryUrl.Parse(basePath)
+	if err != nil {
+		return nil, err
+	}
 
 	queryValues := queryUrl.Query()
 
@@ -4030,7 +4096,10 @@ func NewCreateIncidentRoleRequestWithBody(server string, contentType string, bod
 		basePath = basePath[1:]
 	}
 
-	queryUrl = queryUrl.ResolveReference(&url.URL{Path: basePath})
+	queryUrl, err = queryUrl.Parse(basePath)
+	if err != nil {
+		return nil, err
+	}
 
 	req, err := http.NewRequest("POST", queryUrl.String(), body)
 	if err != nil {
@@ -4063,7 +4132,10 @@ func NewDeleteIncidentRoleRequest(server string, id string) (*http.Request, erro
 		basePath = basePath[1:]
 	}
 
-	queryUrl = queryUrl.ResolveReference(&url.URL{Path: basePath})
+	queryUrl, err = queryUrl.Parse(basePath)
+	if err != nil {
+		return nil, err
+	}
 
 	req, err := http.NewRequest("DELETE", queryUrl.String(), nil)
 	if err != nil {
@@ -4094,7 +4166,10 @@ func NewGetIncidentRoleRequest(server string, id string) (*http.Request, error) 
 		basePath = basePath[1:]
 	}
 
-	queryUrl = queryUrl.ResolveReference(&url.URL{Path: basePath})
+	queryUrl, err = queryUrl.Parse(basePath)
+	if err != nil {
+		return nil, err
+	}
 
 	req, err := http.NewRequest("GET", queryUrl.String(), nil)
 	if err != nil {
@@ -4125,7 +4200,10 @@ func NewUpdateIncidentRoleRequestWithBody(server string, id string, contentType 
 		basePath = basePath[1:]
 	}
 
-	queryUrl = queryUrl.ResolveReference(&url.URL{Path: basePath})
+	queryUrl, err = queryUrl.Parse(basePath)
+	if err != nil {
+		return nil, err
+	}
 
 	req, err := http.NewRequest("PUT", queryUrl.String(), body)
 	if err != nil {
@@ -4158,7 +4236,10 @@ func NewDeleteIncidentTaskRequest(server string, id string) (*http.Request, erro
 		basePath = basePath[1:]
 	}
 
-	queryUrl = queryUrl.ResolveReference(&url.URL{Path: basePath})
+	queryUrl, err = queryUrl.Parse(basePath)
+	if err != nil {
+		return nil, err
+	}
 
 	req, err := http.NewRequest("DELETE", queryUrl.String(), nil)
 	if err != nil {
@@ -4189,7 +4270,10 @@ func NewGetIncidentTasksRequest(server string, id string) (*http.Request, error)
 		basePath = basePath[1:]
 	}
 
-	queryUrl = queryUrl.ResolveReference(&url.URL{Path: basePath})
+	queryUrl, err = queryUrl.Parse(basePath)
+	if err != nil {
+		return nil, err
+	}
 
 	req, err := http.NewRequest("GET", queryUrl.String(), nil)
 	if err != nil {
@@ -4220,7 +4304,10 @@ func NewUpdateIncidentTaskRequestWithBody(server string, id string, contentType 
 		basePath = basePath[1:]
 	}
 
-	queryUrl = queryUrl.ResolveReference(&url.URL{Path: basePath})
+	queryUrl, err = queryUrl.Parse(basePath)
+	if err != nil {
+		return nil, err
+	}
 
 	req, err := http.NewRequest("PUT", queryUrl.String(), body)
 	if err != nil {
@@ -4246,7 +4333,10 @@ func NewListIncidentTypesRequest(server string, params *ListIncidentTypesParams)
 		basePath = basePath[1:]
 	}
 
-	queryUrl = queryUrl.ResolveReference(&url.URL{Path: basePath})
+	queryUrl, err = queryUrl.Parse(basePath)
+	if err != nil {
+		return nil, err
+	}
 
 	queryValues := queryUrl.Query()
 
@@ -4306,7 +4396,10 @@ func NewCreateIncidentTypeRequestWithBody(server string, contentType string, bod
 		basePath = basePath[1:]
 	}
 
-	queryUrl = queryUrl.ResolveReference(&url.URL{Path: basePath})
+	queryUrl, err = queryUrl.Parse(basePath)
+	if err != nil {
+		return nil, err
+	}
 
 	req, err := http.NewRequest("POST", queryUrl.String(), body)
 	if err != nil {
@@ -4339,7 +4432,10 @@ func NewDeleteIncidentTypeRequest(server string, id string) (*http.Request, erro
 		basePath = basePath[1:]
 	}
 
-	queryUrl = queryUrl.ResolveReference(&url.URL{Path: basePath})
+	queryUrl, err = queryUrl.Parse(basePath)
+	if err != nil {
+		return nil, err
+	}
 
 	req, err := http.NewRequest("DELETE", queryUrl.String(), nil)
 	if err != nil {
@@ -4370,7 +4466,10 @@ func NewGetIncidentTypeRequest(server string, id string) (*http.Request, error) 
 		basePath = basePath[1:]
 	}
 
-	queryUrl = queryUrl.ResolveReference(&url.URL{Path: basePath})
+	queryUrl, err = queryUrl.Parse(basePath)
+	if err != nil {
+		return nil, err
+	}
 
 	req, err := http.NewRequest("GET", queryUrl.String(), nil)
 	if err != nil {
@@ -4401,7 +4500,10 @@ func NewUpdateIncidentTypeRequestWithBody(server string, id string, contentType 
 		basePath = basePath[1:]
 	}
 
-	queryUrl = queryUrl.ResolveReference(&url.URL{Path: basePath})
+	queryUrl, err = queryUrl.Parse(basePath)
+	if err != nil {
+		return nil, err
+	}
 
 	req, err := http.NewRequest("PUT", queryUrl.String(), body)
 	if err != nil {
@@ -4427,7 +4529,10 @@ func NewListIncidentsRequest(server string, params *ListIncidentsParams) (*http.
 		basePath = basePath[1:]
 	}
 
-	queryUrl = queryUrl.ResolveReference(&url.URL{Path: basePath})
+	queryUrl, err = queryUrl.Parse(basePath)
+	if err != nil {
+		return nil, err
+	}
 
 	queryValues := queryUrl.Query()
 
@@ -4487,7 +4592,10 @@ func NewCreateIncidentRequestWithBody(server string, contentType string, body io
 		basePath = basePath[1:]
 	}
 
-	queryUrl = queryUrl.ResolveReference(&url.URL{Path: basePath})
+	queryUrl, err = queryUrl.Parse(basePath)
+	if err != nil {
+		return nil, err
+	}
 
 	req, err := http.NewRequest("POST", queryUrl.String(), body)
 	if err != nil {
@@ -4520,7 +4628,10 @@ func NewDeleteIncidentRequest(server string, id string) (*http.Request, error) {
 		basePath = basePath[1:]
 	}
 
-	queryUrl = queryUrl.ResolveReference(&url.URL{Path: basePath})
+	queryUrl, err = queryUrl.Parse(basePath)
+	if err != nil {
+		return nil, err
+	}
 
 	req, err := http.NewRequest("DELETE", queryUrl.String(), nil)
 	if err != nil {
@@ -4551,7 +4662,10 @@ func NewGetIncidentRequest(server string, id string) (*http.Request, error) {
 		basePath = basePath[1:]
 	}
 
-	queryUrl = queryUrl.ResolveReference(&url.URL{Path: basePath})
+	queryUrl, err = queryUrl.Parse(basePath)
+	if err != nil {
+		return nil, err
+	}
 
 	req, err := http.NewRequest("GET", queryUrl.String(), nil)
 	if err != nil {
@@ -4582,7 +4696,10 @@ func NewUpdateIncidentRequestWithBody(server string, id string, contentType stri
 		basePath = basePath[1:]
 	}
 
-	queryUrl = queryUrl.ResolveReference(&url.URL{Path: basePath})
+	queryUrl, err = queryUrl.Parse(basePath)
+	if err != nil {
+		return nil, err
+	}
 
 	req, err := http.NewRequest("PUT", queryUrl.String(), body)
 	if err != nil {
@@ -4615,7 +4732,10 @@ func NewListIncidentActionItemsRequest(server string, incidentId string, params 
 		basePath = basePath[1:]
 	}
 
-	queryUrl = queryUrl.ResolveReference(&url.URL{Path: basePath})
+	queryUrl, err = queryUrl.Parse(basePath)
+	if err != nil {
+		return nil, err
+	}
 
 	queryValues := queryUrl.Query()
 
@@ -4682,7 +4802,10 @@ func NewCreateIncidentActionItemRequestWithBody(server string, incidentId string
 		basePath = basePath[1:]
 	}
 
-	queryUrl = queryUrl.ResolveReference(&url.URL{Path: basePath})
+	queryUrl, err = queryUrl.Parse(basePath)
+	if err != nil {
+		return nil, err
+	}
 
 	req, err := http.NewRequest("POST", queryUrl.String(), body)
 	if err != nil {
@@ -4715,7 +4838,10 @@ func NewListIncidentEventsRequest(server string, incidentId string, params *List
 		basePath = basePath[1:]
 	}
 
-	queryUrl = queryUrl.ResolveReference(&url.URL{Path: basePath})
+	queryUrl, err = queryUrl.Parse(basePath)
+	if err != nil {
+		return nil, err
+	}
 
 	queryValues := queryUrl.Query()
 
@@ -4782,7 +4908,10 @@ func NewCreateIncidentEventRequestWithBody(server string, incidentId string, con
 		basePath = basePath[1:]
 	}
 
-	queryUrl = queryUrl.ResolveReference(&url.URL{Path: basePath})
+	queryUrl, err = queryUrl.Parse(basePath)
+	if err != nil {
+		return nil, err
+	}
 
 	req, err := http.NewRequest("POST", queryUrl.String(), body)
 	if err != nil {
@@ -4815,7 +4944,10 @@ func NewListIncidentTasksRequest(server string, incidentId string, params *ListI
 		basePath = basePath[1:]
 	}
 
-	queryUrl = queryUrl.ResolveReference(&url.URL{Path: basePath})
+	queryUrl, err = queryUrl.Parse(basePath)
+	if err != nil {
+		return nil, err
+	}
 
 	queryValues := queryUrl.Query()
 
@@ -4882,7 +5014,10 @@ func NewCreateIncidentTaskRequestWithBody(server string, incidentId string, cont
 		basePath = basePath[1:]
 	}
 
-	queryUrl = queryUrl.ResolveReference(&url.URL{Path: basePath})
+	queryUrl, err = queryUrl.Parse(basePath)
+	if err != nil {
+		return nil, err
+	}
 
 	req, err := http.NewRequest("POST", queryUrl.String(), body)
 	if err != nil {
@@ -4915,7 +5050,10 @@ func NewDeletePlaybookTaskRequest(server string, id string) (*http.Request, erro
 		basePath = basePath[1:]
 	}
 
-	queryUrl = queryUrl.ResolveReference(&url.URL{Path: basePath})
+	queryUrl, err = queryUrl.Parse(basePath)
+	if err != nil {
+		return nil, err
+	}
 
 	req, err := http.NewRequest("DELETE", queryUrl.String(), nil)
 	if err != nil {
@@ -4946,7 +5084,10 @@ func NewGetPlaybookTasksRequest(server string, id string) (*http.Request, error)
 		basePath = basePath[1:]
 	}
 
-	queryUrl = queryUrl.ResolveReference(&url.URL{Path: basePath})
+	queryUrl, err = queryUrl.Parse(basePath)
+	if err != nil {
+		return nil, err
+	}
 
 	req, err := http.NewRequest("GET", queryUrl.String(), nil)
 	if err != nil {
@@ -4977,7 +5118,10 @@ func NewUpdatePlaybookTaskRequestWithBody(server string, id string, contentType 
 		basePath = basePath[1:]
 	}
 
-	queryUrl = queryUrl.ResolveReference(&url.URL{Path: basePath})
+	queryUrl, err = queryUrl.Parse(basePath)
+	if err != nil {
+		return nil, err
+	}
 
 	req, err := http.NewRequest("PUT", queryUrl.String(), body)
 	if err != nil {
@@ -5003,7 +5147,10 @@ func NewListPlaybooksRequest(server string, params *ListPlaybooksParams) (*http.
 		basePath = basePath[1:]
 	}
 
-	queryUrl = queryUrl.ResolveReference(&url.URL{Path: basePath})
+	queryUrl, err = queryUrl.Parse(basePath)
+	if err != nil {
+		return nil, err
+	}
 
 	queryValues := queryUrl.Query()
 
@@ -5063,7 +5210,10 @@ func NewCreatePlaybookRequestWithBody(server string, contentType string, body io
 		basePath = basePath[1:]
 	}
 
-	queryUrl = queryUrl.ResolveReference(&url.URL{Path: basePath})
+	queryUrl, err = queryUrl.Parse(basePath)
+	if err != nil {
+		return nil, err
+	}
 
 	req, err := http.NewRequest("POST", queryUrl.String(), body)
 	if err != nil {
@@ -5096,7 +5246,10 @@ func NewDeletePlaybookRequest(server string, id string) (*http.Request, error) {
 		basePath = basePath[1:]
 	}
 
-	queryUrl = queryUrl.ResolveReference(&url.URL{Path: basePath})
+	queryUrl, err = queryUrl.Parse(basePath)
+	if err != nil {
+		return nil, err
+	}
 
 	req, err := http.NewRequest("DELETE", queryUrl.String(), nil)
 	if err != nil {
@@ -5127,7 +5280,10 @@ func NewGetPlaybookRequest(server string, id string) (*http.Request, error) {
 		basePath = basePath[1:]
 	}
 
-	queryUrl = queryUrl.ResolveReference(&url.URL{Path: basePath})
+	queryUrl, err = queryUrl.Parse(basePath)
+	if err != nil {
+		return nil, err
+	}
 
 	req, err := http.NewRequest("GET", queryUrl.String(), nil)
 	if err != nil {
@@ -5158,7 +5314,10 @@ func NewUpdatePlaybookRequestWithBody(server string, id string, contentType stri
 		basePath = basePath[1:]
 	}
 
-	queryUrl = queryUrl.ResolveReference(&url.URL{Path: basePath})
+	queryUrl, err = queryUrl.Parse(basePath)
+	if err != nil {
+		return nil, err
+	}
 
 	req, err := http.NewRequest("PUT", queryUrl.String(), body)
 	if err != nil {
@@ -5191,7 +5350,10 @@ func NewListPlaybookTasksRequest(server string, playbookId string, params *ListP
 		basePath = basePath[1:]
 	}
 
-	queryUrl = queryUrl.ResolveReference(&url.URL{Path: basePath})
+	queryUrl, err = queryUrl.Parse(basePath)
+	if err != nil {
+		return nil, err
+	}
 
 	queryValues := queryUrl.Query()
 
@@ -5258,7 +5420,10 @@ func NewCreatePlaybookTaskRequestWithBody(server string, playbookId string, cont
 		basePath = basePath[1:]
 	}
 
-	queryUrl = queryUrl.ResolveReference(&url.URL{Path: basePath})
+	queryUrl, err = queryUrl.Parse(basePath)
+	if err != nil {
+		return nil, err
+	}
 
 	req, err := http.NewRequest("POST", queryUrl.String(), body)
 	if err != nil {
@@ -5284,7 +5449,10 @@ func NewListPostmortemTemplatesRequest(server string, params *ListPostmortemTemp
 		basePath = basePath[1:]
 	}
 
-	queryUrl = queryUrl.ResolveReference(&url.URL{Path: basePath})
+	queryUrl, err = queryUrl.Parse(basePath)
+	if err != nil {
+		return nil, err
+	}
 
 	queryValues := queryUrl.Query()
 
@@ -5344,7 +5512,10 @@ func NewCreatePostmortemTemplateRequestWithBody(server string, contentType strin
 		basePath = basePath[1:]
 	}
 
-	queryUrl = queryUrl.ResolveReference(&url.URL{Path: basePath})
+	queryUrl, err = queryUrl.Parse(basePath)
+	if err != nil {
+		return nil, err
+	}
 
 	req, err := http.NewRequest("POST", queryUrl.String(), body)
 	if err != nil {
@@ -5377,7 +5548,10 @@ func NewDeletePostmortemTemplateRequest(server string, id string) (*http.Request
 		basePath = basePath[1:]
 	}
 
-	queryUrl = queryUrl.ResolveReference(&url.URL{Path: basePath})
+	queryUrl, err = queryUrl.Parse(basePath)
+	if err != nil {
+		return nil, err
+	}
 
 	req, err := http.NewRequest("DELETE", queryUrl.String(), nil)
 	if err != nil {
@@ -5408,7 +5582,10 @@ func NewGetPostmortemTemplateRequest(server string, id string) (*http.Request, e
 		basePath = basePath[1:]
 	}
 
-	queryUrl = queryUrl.ResolveReference(&url.URL{Path: basePath})
+	queryUrl, err = queryUrl.Parse(basePath)
+	if err != nil {
+		return nil, err
+	}
 
 	req, err := http.NewRequest("GET", queryUrl.String(), nil)
 	if err != nil {
@@ -5439,7 +5616,10 @@ func NewUpdatePostmortemTemplateRequestWithBody(server string, id string, conten
 		basePath = basePath[1:]
 	}
 
-	queryUrl = queryUrl.ResolveReference(&url.URL{Path: basePath})
+	queryUrl, err = queryUrl.Parse(basePath)
+	if err != nil {
+		return nil, err
+	}
 
 	req, err := http.NewRequest("PUT", queryUrl.String(), body)
 	if err != nil {
@@ -5472,7 +5652,10 @@ func NewGetIncidentPostmortemRequest(server string, id string) (*http.Request, e
 		basePath = basePath[1:]
 	}
 
-	queryUrl = queryUrl.ResolveReference(&url.URL{Path: basePath})
+	queryUrl, err = queryUrl.Parse(basePath)
+	if err != nil {
+		return nil, err
+	}
 
 	req, err := http.NewRequest("GET", queryUrl.String(), nil)
 	if err != nil {
@@ -5503,7 +5686,10 @@ func NewUpdateIncidentPostmortemRequestWithBody(server string, id string, conten
 		basePath = basePath[1:]
 	}
 
-	queryUrl = queryUrl.ResolveReference(&url.URL{Path: basePath})
+	queryUrl, err = queryUrl.Parse(basePath)
+	if err != nil {
+		return nil, err
+	}
 
 	req, err := http.NewRequest("PUT", queryUrl.String(), body)
 	if err != nil {
@@ -5529,7 +5715,10 @@ func NewListPulsesRequest(server string, params *ListPulsesParams) (*http.Reques
 		basePath = basePath[1:]
 	}
 
-	queryUrl = queryUrl.ResolveReference(&url.URL{Path: basePath})
+	queryUrl, err = queryUrl.Parse(basePath)
+	if err != nil {
+		return nil, err
+	}
 
 	queryValues := queryUrl.Query()
 
@@ -5589,7 +5778,10 @@ func NewCreatePulseRequestWithBody(server string, contentType string, body io.Re
 		basePath = basePath[1:]
 	}
 
-	queryUrl = queryUrl.ResolveReference(&url.URL{Path: basePath})
+	queryUrl, err = queryUrl.Parse(basePath)
+	if err != nil {
+		return nil, err
+	}
 
 	req, err := http.NewRequest("POST", queryUrl.String(), body)
 	if err != nil {
@@ -5622,7 +5814,10 @@ func NewGetPulseRequest(server string, id string) (*http.Request, error) {
 		basePath = basePath[1:]
 	}
 
-	queryUrl = queryUrl.ResolveReference(&url.URL{Path: basePath})
+	queryUrl, err = queryUrl.Parse(basePath)
+	if err != nil {
+		return nil, err
+	}
 
 	req, err := http.NewRequest("GET", queryUrl.String(), nil)
 	if err != nil {
@@ -5653,7 +5848,10 @@ func NewUpdatePulseRequestWithBody(server string, id string, contentType string,
 		basePath = basePath[1:]
 	}
 
-	queryUrl = queryUrl.ResolveReference(&url.URL{Path: basePath})
+	queryUrl, err = queryUrl.Parse(basePath)
+	if err != nil {
+		return nil, err
+	}
 
 	req, err := http.NewRequest("PUT", queryUrl.String(), body)
 	if err != nil {
@@ -5679,7 +5877,10 @@ func NewListServicesRequest(server string, params *ListServicesParams) (*http.Re
 		basePath = basePath[1:]
 	}
 
-	queryUrl = queryUrl.ResolveReference(&url.URL{Path: basePath})
+	queryUrl, err = queryUrl.Parse(basePath)
+	if err != nil {
+		return nil, err
+	}
 
 	queryValues := queryUrl.Query()
 
@@ -5739,7 +5940,10 @@ func NewCreateServiceRequestWithBody(server string, contentType string, body io.
 		basePath = basePath[1:]
 	}
 
-	queryUrl = queryUrl.ResolveReference(&url.URL{Path: basePath})
+	queryUrl, err = queryUrl.Parse(basePath)
+	if err != nil {
+		return nil, err
+	}
 
 	req, err := http.NewRequest("POST", queryUrl.String(), body)
 	if err != nil {
@@ -5772,7 +5976,10 @@ func NewDeleteServiceRequest(server string, id string) (*http.Request, error) {
 		basePath = basePath[1:]
 	}
 
-	queryUrl = queryUrl.ResolveReference(&url.URL{Path: basePath})
+	queryUrl, err = queryUrl.Parse(basePath)
+	if err != nil {
+		return nil, err
+	}
 
 	req, err := http.NewRequest("DELETE", queryUrl.String(), nil)
 	if err != nil {
@@ -5803,7 +6010,10 @@ func NewGetServiceRequest(server string, id string) (*http.Request, error) {
 		basePath = basePath[1:]
 	}
 
-	queryUrl = queryUrl.ResolveReference(&url.URL{Path: basePath})
+	queryUrl, err = queryUrl.Parse(basePath)
+	if err != nil {
+		return nil, err
+	}
 
 	req, err := http.NewRequest("GET", queryUrl.String(), nil)
 	if err != nil {
@@ -5834,7 +6044,10 @@ func NewUpdateServiceRequestWithBody(server string, id string, contentType strin
 		basePath = basePath[1:]
 	}
 
-	queryUrl = queryUrl.ResolveReference(&url.URL{Path: basePath})
+	queryUrl, err = queryUrl.Parse(basePath)
+	if err != nil {
+		return nil, err
+	}
 
 	req, err := http.NewRequest("PUT", queryUrl.String(), body)
 	if err != nil {
@@ -5860,7 +6073,10 @@ func NewListSeveritiesRequest(server string, params *ListSeveritiesParams) (*htt
 		basePath = basePath[1:]
 	}
 
-	queryUrl = queryUrl.ResolveReference(&url.URL{Path: basePath})
+	queryUrl, err = queryUrl.Parse(basePath)
+	if err != nil {
+		return nil, err
+	}
 
 	queryValues := queryUrl.Query()
 
@@ -5920,7 +6136,10 @@ func NewCreateSeverityRequestWithBody(server string, contentType string, body io
 		basePath = basePath[1:]
 	}
 
-	queryUrl = queryUrl.ResolveReference(&url.URL{Path: basePath})
+	queryUrl, err = queryUrl.Parse(basePath)
+	if err != nil {
+		return nil, err
+	}
 
 	req, err := http.NewRequest("POST", queryUrl.String(), body)
 	if err != nil {
@@ -5953,7 +6172,10 @@ func NewDeleteSeverityRequest(server string, id string) (*http.Request, error) {
 		basePath = basePath[1:]
 	}
 
-	queryUrl = queryUrl.ResolveReference(&url.URL{Path: basePath})
+	queryUrl, err = queryUrl.Parse(basePath)
+	if err != nil {
+		return nil, err
+	}
 
 	req, err := http.NewRequest("DELETE", queryUrl.String(), nil)
 	if err != nil {
@@ -5984,7 +6206,10 @@ func NewGetSeverityRequest(server string, id string) (*http.Request, error) {
 		basePath = basePath[1:]
 	}
 
-	queryUrl = queryUrl.ResolveReference(&url.URL{Path: basePath})
+	queryUrl, err = queryUrl.Parse(basePath)
+	if err != nil {
+		return nil, err
+	}
 
 	req, err := http.NewRequest("GET", queryUrl.String(), nil)
 	if err != nil {
@@ -6015,7 +6240,10 @@ func NewUpdateSeverityRequestWithBody(server string, id string, contentType stri
 		basePath = basePath[1:]
 	}
 
-	queryUrl = queryUrl.ResolveReference(&url.URL{Path: basePath})
+	queryUrl, err = queryUrl.Parse(basePath)
+	if err != nil {
+		return nil, err
+	}
 
 	req, err := http.NewRequest("PUT", queryUrl.String(), body)
 	if err != nil {
@@ -6041,7 +6269,10 @@ func NewListStatusPagesRequest(server string, params *ListStatusPagesParams) (*h
 		basePath = basePath[1:]
 	}
 
-	queryUrl = queryUrl.ResolveReference(&url.URL{Path: basePath})
+	queryUrl, err = queryUrl.Parse(basePath)
+	if err != nil {
+		return nil, err
+	}
 
 	queryValues := queryUrl.Query()
 
@@ -6101,7 +6332,10 @@ func NewCreateStatusPageRequestWithBody(server string, contentType string, body 
 		basePath = basePath[1:]
 	}
 
-	queryUrl = queryUrl.ResolveReference(&url.URL{Path: basePath})
+	queryUrl, err = queryUrl.Parse(basePath)
+	if err != nil {
+		return nil, err
+	}
 
 	req, err := http.NewRequest("POST", queryUrl.String(), body)
 	if err != nil {
@@ -6134,7 +6368,10 @@ func NewDeleteStatusPageRequest(server string, id string) (*http.Request, error)
 		basePath = basePath[1:]
 	}
 
-	queryUrl = queryUrl.ResolveReference(&url.URL{Path: basePath})
+	queryUrl, err = queryUrl.Parse(basePath)
+	if err != nil {
+		return nil, err
+	}
 
 	req, err := http.NewRequest("DELETE", queryUrl.String(), nil)
 	if err != nil {
@@ -6165,7 +6402,10 @@ func NewGetStatusPageRequest(server string, id string) (*http.Request, error) {
 		basePath = basePath[1:]
 	}
 
-	queryUrl = queryUrl.ResolveReference(&url.URL{Path: basePath})
+	queryUrl, err = queryUrl.Parse(basePath)
+	if err != nil {
+		return nil, err
+	}
 
 	req, err := http.NewRequest("GET", queryUrl.String(), nil)
 	if err != nil {
@@ -6196,7 +6436,10 @@ func NewUpdateStatusPageRequestWithBody(server string, id string, contentType st
 		basePath = basePath[1:]
 	}
 
-	queryUrl = queryUrl.ResolveReference(&url.URL{Path: basePath})
+	queryUrl, err = queryUrl.Parse(basePath)
+	if err != nil {
+		return nil, err
+	}
 
 	req, err := http.NewRequest("PUT", queryUrl.String(), body)
 	if err != nil {
@@ -6222,7 +6465,10 @@ func NewListTeamsRequest(server string, params *ListTeamsParams) (*http.Request,
 		basePath = basePath[1:]
 	}
 
-	queryUrl = queryUrl.ResolveReference(&url.URL{Path: basePath})
+	queryUrl, err = queryUrl.Parse(basePath)
+	if err != nil {
+		return nil, err
+	}
 
 	queryValues := queryUrl.Query()
 
@@ -6282,7 +6528,10 @@ func NewCreateTeamRequestWithBody(server string, contentType string, body io.Rea
 		basePath = basePath[1:]
 	}
 
-	queryUrl = queryUrl.ResolveReference(&url.URL{Path: basePath})
+	queryUrl, err = queryUrl.Parse(basePath)
+	if err != nil {
+		return nil, err
+	}
 
 	req, err := http.NewRequest("POST", queryUrl.String(), body)
 	if err != nil {
@@ -6315,7 +6564,10 @@ func NewDeleteTeamRequest(server string, id string) (*http.Request, error) {
 		basePath = basePath[1:]
 	}
 
-	queryUrl = queryUrl.ResolveReference(&url.URL{Path: basePath})
+	queryUrl, err = queryUrl.Parse(basePath)
+	if err != nil {
+		return nil, err
+	}
 
 	req, err := http.NewRequest("DELETE", queryUrl.String(), nil)
 	if err != nil {
@@ -6346,7 +6598,10 @@ func NewGetTeamRequest(server string, id string) (*http.Request, error) {
 		basePath = basePath[1:]
 	}
 
-	queryUrl = queryUrl.ResolveReference(&url.URL{Path: basePath})
+	queryUrl, err = queryUrl.Parse(basePath)
+	if err != nil {
+		return nil, err
+	}
 
 	req, err := http.NewRequest("GET", queryUrl.String(), nil)
 	if err != nil {
@@ -6377,7 +6632,10 @@ func NewUpdateTeamRequestWithBody(server string, id string, contentType string, 
 		basePath = basePath[1:]
 	}
 
-	queryUrl = queryUrl.ResolveReference(&url.URL{Path: basePath})
+	queryUrl, err = queryUrl.Parse(basePath)
+	if err != nil {
+		return nil, err
+	}
 
 	req, err := http.NewRequest("PUT", queryUrl.String(), body)
 	if err != nil {
