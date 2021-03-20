@@ -9,10 +9,14 @@ github.com/deepmap/oapi-codegen v1.5.3 h1:uKuzHo8GalBk1HHxzyhx8zEwPFvNi4iWNtqGTa
 github.com/deepmap/oapi-codegen v1.5.3/go.mod h1:kByj5PFf36L/gegSgLW8fB//ZwFF0MHTVu3kw4iVr6M=
 github.com/deepmap/oapi-codegen v1.5.4 h1:dW5FRh+l44j+/RdCeDz8ZmlLvkafPBvuS9/MiBBmqfo=
 github.com/deepmap/oapi-codegen v1.5.4/go.mod h1:kByj5PFf36L/gegSgLW8fB//ZwFF0MHTVu3kw4iVr6M=
+github.com/deepmap/oapi-codegen v1.5.5 h1:H0GX573Xnj9qKSXSH6o0sKkxppNDx1WddgYylbS3NV4=
+github.com/deepmap/oapi-codegen v1.5.5/go.mod h1:UH0NYSAlwJym/7s585qDuKeuazSRwnWxzol2E6yA430=
 github.com/dgrijalva/jwt-go v3.2.0+incompatible/go.mod h1:E3ru+11k8xSBh+hMPgOLZmtrrCbhqsmaPHjLKYnJCaQ=
 github.com/getkin/kin-openapi v0.37.0/go.mod h1:ZJSfy1PxJv2QQvH9EdBj3nupRTVvV42mkW6zKUlRBwk=
 github.com/getkin/kin-openapi v0.39.0 h1:Dy0xS0Vct2bmAIXsGq/ioagVQStca9QUBD3/4XpAORA=
 github.com/getkin/kin-openapi v0.39.0/go.mod h1:ZJSfy1PxJv2QQvH9EdBj3nupRTVvV42mkW6zKUlRBwk=
+github.com/getkin/kin-openapi v0.50.0 h1:oB1zA3meOwIQxk8PixEBVfmWjK8nLK3+3k30FcRZ19I=
+github.com/getkin/kin-openapi v0.50.0/go.mod h1:2A98vcQ5YzTfxP4KRgugPL3i0U1B/IVLT+tN2zotSiQ=
 github.com/ghodss/yaml v1.0.0 h1:wQHKEahhL6wmXdzwWG11gIVCkOv05bNOh+Rxn0yngAk=
 github.com/ghodss/yaml v1.0.0/go.mod h1:4dBDuWmgqj2HViK6kFavaiC9ZROes6MMH2rRYeMEF04=
 github.com/go-chi/chi v1.5.1/go.mod h1:REp24E+25iKvxgeTfHmdUoL5x15kBiDBlnIl5bCwe2k=

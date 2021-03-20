@@ -6691,262 +6691,262 @@ func WithBaseURL(baseURL string) ClientOption {
 // ClientWithResponsesInterface is the interface specification for the client with responses above.
 type ClientWithResponsesInterface interface {
 	// DeleteIncidentActionItem request
-	DeleteIncidentActionItemWithResponse(ctx context.Context, id string) (*DeleteIncidentActionItemResponse, error)
+	DeleteIncidentActionItemWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*DeleteIncidentActionItemResponse, error)
 
 	// GetIncidentActionItems request
-	GetIncidentActionItemsWithResponse(ctx context.Context, id string) (*GetIncidentActionItemsResponse, error)
+	GetIncidentActionItemsWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*GetIncidentActionItemsResponse, error)
 
 	// UpdateIncidentActionItem request  with any body
-	UpdateIncidentActionItemWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader) (*UpdateIncidentActionItemResponse, error)
+	UpdateIncidentActionItemWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateIncidentActionItemResponse, error)
 
 	// ListCauses request
-	ListCausesWithResponse(ctx context.Context, params *ListCausesParams) (*ListCausesResponse, error)
+	ListCausesWithResponse(ctx context.Context, params *ListCausesParams, reqEditors ...RequestEditorFn) (*ListCausesResponse, error)
 
 	// CreateCause request  with any body
-	CreateCauseWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader) (*CreateCauseResponse, error)
+	CreateCauseWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateCauseResponse, error)
 
 	// DeleteCause request
-	DeleteCauseWithResponse(ctx context.Context, id string) (*DeleteCauseResponse, error)
+	DeleteCauseWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*DeleteCauseResponse, error)
 
 	// GetCause request
-	GetCauseWithResponse(ctx context.Context, id string) (*GetCauseResponse, error)
+	GetCauseWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*GetCauseResponse, error)
 
 	// UpdateCause request  with any body
-	UpdateCauseWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader) (*UpdateCauseResponse, error)
+	UpdateCauseWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateCauseResponse, error)
 
 	// ListEnvironments request
-	ListEnvironmentsWithResponse(ctx context.Context, params *ListEnvironmentsParams) (*ListEnvironmentsResponse, error)
+	ListEnvironmentsWithResponse(ctx context.Context, params *ListEnvironmentsParams, reqEditors ...RequestEditorFn) (*ListEnvironmentsResponse, error)
 
 	// CreateEnvironment request  with any body
-	CreateEnvironmentWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader) (*CreateEnvironmentResponse, error)
+	CreateEnvironmentWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateEnvironmentResponse, error)
 
 	// DeleteEnvironment request
-	DeleteEnvironmentWithResponse(ctx context.Context, id string) (*DeleteEnvironmentResponse, error)
+	DeleteEnvironmentWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*DeleteEnvironmentResponse, error)
 
 	// GetEnvironment request
-	GetEnvironmentWithResponse(ctx context.Context, id string) (*GetEnvironmentResponse, error)
+	GetEnvironmentWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*GetEnvironmentResponse, error)
 
 	// UpdateEnvironment request  with any body
-	UpdateEnvironmentWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader) (*UpdateEnvironmentResponse, error)
+	UpdateEnvironmentWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateEnvironmentResponse, error)
 
 	// DeleteIncidentEvent request
-	DeleteIncidentEventWithResponse(ctx context.Context, id string) (*DeleteIncidentEventResponse, error)
+	DeleteIncidentEventWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*DeleteIncidentEventResponse, error)
 
 	// GetIncidentEvents request
-	GetIncidentEventsWithResponse(ctx context.Context, id string) (*GetIncidentEventsResponse, error)
+	GetIncidentEventsWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*GetIncidentEventsResponse, error)
 
 	// UpdateIncidentEvent request  with any body
-	UpdateIncidentEventWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader) (*UpdateIncidentEventResponse, error)
+	UpdateIncidentEventWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateIncidentEventResponse, error)
 
 	// ListFunctionalities request
-	ListFunctionalitiesWithResponse(ctx context.Context, params *ListFunctionalitiesParams) (*ListFunctionalitiesResponse, error)
+	ListFunctionalitiesWithResponse(ctx context.Context, params *ListFunctionalitiesParams, reqEditors ...RequestEditorFn) (*ListFunctionalitiesResponse, error)
 
 	// CreateFunctionality request  with any body
-	CreateFunctionalityWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader) (*CreateFunctionalityResponse, error)
+	CreateFunctionalityWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateFunctionalityResponse, error)
 
 	// DeleteFunctionality request
-	DeleteFunctionalityWithResponse(ctx context.Context, id string) (*DeleteFunctionalityResponse, error)
+	DeleteFunctionalityWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*DeleteFunctionalityResponse, error)
 
 	// GetFunctionality request
-	GetFunctionalityWithResponse(ctx context.Context, id string) (*GetFunctionalityResponse, error)
+	GetFunctionalityWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*GetFunctionalityResponse, error)
 
 	// UpdateFunctionality request  with any body
-	UpdateFunctionalityWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader) (*UpdateFunctionalityResponse, error)
+	UpdateFunctionalityWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateFunctionalityResponse, error)
 
 	// ListIncidentRoles request
-	ListIncidentRolesWithResponse(ctx context.Context, params *ListIncidentRolesParams) (*ListIncidentRolesResponse, error)
+	ListIncidentRolesWithResponse(ctx context.Context, params *ListIncidentRolesParams, reqEditors ...RequestEditorFn) (*ListIncidentRolesResponse, error)
 
 	// CreateIncidentRole request  with any body
-	CreateIncidentRoleWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader) (*CreateIncidentRoleResponse, error)
+	CreateIncidentRoleWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateIncidentRoleResponse, error)
 
 	// DeleteIncidentRole request
-	DeleteIncidentRoleWithResponse(ctx context.Context, id string) (*DeleteIncidentRoleResponse, error)
+	DeleteIncidentRoleWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*DeleteIncidentRoleResponse, error)
 
 	// GetIncidentRole request
-	GetIncidentRoleWithResponse(ctx context.Context, id string) (*GetIncidentRoleResponse, error)
+	GetIncidentRoleWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*GetIncidentRoleResponse, error)
 
 	// UpdateIncidentRole request  with any body
-	UpdateIncidentRoleWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader) (*UpdateIncidentRoleResponse, error)
+	UpdateIncidentRoleWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateIncidentRoleResponse, error)
 
 	// DeleteIncidentTask request
-	DeleteIncidentTaskWithResponse(ctx context.Context, id string) (*DeleteIncidentTaskResponse, error)
+	DeleteIncidentTaskWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*DeleteIncidentTaskResponse, error)
 
 	// GetIncidentTasks request
-	GetIncidentTasksWithResponse(ctx context.Context, id string) (*GetIncidentTasksResponse, error)
+	GetIncidentTasksWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*GetIncidentTasksResponse, error)
 
 	// UpdateIncidentTask request  with any body
-	UpdateIncidentTaskWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader) (*UpdateIncidentTaskResponse, error)
+	UpdateIncidentTaskWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateIncidentTaskResponse, error)
 
 	// ListIncidentTypes request
-	ListIncidentTypesWithResponse(ctx context.Context, params *ListIncidentTypesParams) (*ListIncidentTypesResponse, error)
+	ListIncidentTypesWithResponse(ctx context.Context, params *ListIncidentTypesParams, reqEditors ...RequestEditorFn) (*ListIncidentTypesResponse, error)
 
 	// CreateIncidentType request  with any body
-	CreateIncidentTypeWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader) (*CreateIncidentTypeResponse, error)
+	CreateIncidentTypeWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateIncidentTypeResponse, error)
 
 	// DeleteIncidentType request
-	DeleteIncidentTypeWithResponse(ctx context.Context, id string) (*DeleteIncidentTypeResponse, error)
+	DeleteIncidentTypeWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*DeleteIncidentTypeResponse, error)
 
 	// GetIncidentType request
-	GetIncidentTypeWithResponse(ctx context.Context, id string) (*GetIncidentTypeResponse, error)
+	GetIncidentTypeWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*GetIncidentTypeResponse, error)
 
 	// UpdateIncidentType request  with any body
-	UpdateIncidentTypeWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader) (*UpdateIncidentTypeResponse, error)
+	UpdateIncidentTypeWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateIncidentTypeResponse, error)
 
 	// ListIncidents request
-	ListIncidentsWithResponse(ctx context.Context, params *ListIncidentsParams) (*ListIncidentsResponse, error)
+	ListIncidentsWithResponse(ctx context.Context, params *ListIncidentsParams, reqEditors ...RequestEditorFn) (*ListIncidentsResponse, error)
 
 	// CreateIncident request  with any body
-	CreateIncidentWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader) (*CreateIncidentResponse, error)
+	CreateIncidentWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateIncidentResponse, error)
 
 	// DeleteIncident request
-	DeleteIncidentWithResponse(ctx context.Context, id string) (*DeleteIncidentResponse, error)
+	DeleteIncidentWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*DeleteIncidentResponse, error)
 
 	// GetIncident request
-	GetIncidentWithResponse(ctx context.Context, id string) (*GetIncidentResponse, error)
+	GetIncidentWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*GetIncidentResponse, error)
 
 	// UpdateIncident request  with any body
-	UpdateIncidentWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader) (*UpdateIncidentResponse, error)
+	UpdateIncidentWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateIncidentResponse, error)
 
 	// ListIncidentActionItems request
-	ListIncidentActionItemsWithResponse(ctx context.Context, incidentId string, params *ListIncidentActionItemsParams) (*ListIncidentActionItemsResponse, error)
+	ListIncidentActionItemsWithResponse(ctx context.Context, incidentId string, params *ListIncidentActionItemsParams, reqEditors ...RequestEditorFn) (*ListIncidentActionItemsResponse, error)
 
 	// CreateIncidentActionItem request  with any body
-	CreateIncidentActionItemWithBodyWithResponse(ctx context.Context, incidentId string, contentType string, body io.Reader) (*CreateIncidentActionItemResponse, error)
+	CreateIncidentActionItemWithBodyWithResponse(ctx context.Context, incidentId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateIncidentActionItemResponse, error)
 
 	// ListIncidentEvents request
-	ListIncidentEventsWithResponse(ctx context.Context, incidentId string, params *ListIncidentEventsParams) (*ListIncidentEventsResponse, error)
+	ListIncidentEventsWithResponse(ctx context.Context, incidentId string, params *ListIncidentEventsParams, reqEditors ...RequestEditorFn) (*ListIncidentEventsResponse, error)
 
 	// CreateIncidentEvent request  with any body
-	CreateIncidentEventWithBodyWithResponse(ctx context.Context, incidentId string, contentType string, body io.Reader) (*CreateIncidentEventResponse, error)
+	CreateIncidentEventWithBodyWithResponse(ctx context.Context, incidentId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateIncidentEventResponse, error)
 
 	// ListIncidentTasks request
-	ListIncidentTasksWithResponse(ctx context.Context, incidentId string, params *ListIncidentTasksParams) (*ListIncidentTasksResponse, error)
+	ListIncidentTasksWithResponse(ctx context.Context, incidentId string, params *ListIncidentTasksParams, reqEditors ...RequestEditorFn) (*ListIncidentTasksResponse, error)
 
 	// CreateIncidentTask request  with any body
-	CreateIncidentTaskWithBodyWithResponse(ctx context.Context, incidentId string, contentType string, body io.Reader) (*CreateIncidentTaskResponse, error)
+	CreateIncidentTaskWithBodyWithResponse(ctx context.Context, incidentId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateIncidentTaskResponse, error)
 
 	// DeletePlaybookTask request
-	DeletePlaybookTaskWithResponse(ctx context.Context, id string) (*DeletePlaybookTaskResponse, error)
+	DeletePlaybookTaskWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*DeletePlaybookTaskResponse, error)
 
 	// GetPlaybookTasks request
-	GetPlaybookTasksWithResponse(ctx context.Context, id string) (*GetPlaybookTasksResponse, error)
+	GetPlaybookTasksWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*GetPlaybookTasksResponse, error)
 
 	// UpdatePlaybookTask request  with any body
-	UpdatePlaybookTaskWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader) (*UpdatePlaybookTaskResponse, error)
+	UpdatePlaybookTaskWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdatePlaybookTaskResponse, error)
 
 	// ListPlaybooks request
-	ListPlaybooksWithResponse(ctx context.Context, params *ListPlaybooksParams) (*ListPlaybooksResponse, error)
+	ListPlaybooksWithResponse(ctx context.Context, params *ListPlaybooksParams, reqEditors ...RequestEditorFn) (*ListPlaybooksResponse, error)
 
 	// CreatePlaybook request  with any body
-	CreatePlaybookWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader) (*CreatePlaybookResponse, error)
+	CreatePlaybookWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreatePlaybookResponse, error)
 
 	// DeletePlaybook request
-	DeletePlaybookWithResponse(ctx context.Context, id string) (*DeletePlaybookResponse, error)
+	DeletePlaybookWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*DeletePlaybookResponse, error)
 
 	// GetPlaybook request
-	GetPlaybookWithResponse(ctx context.Context, id string) (*GetPlaybookResponse, error)
+	GetPlaybookWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*GetPlaybookResponse, error)
 
 	// UpdatePlaybook request  with any body
-	UpdatePlaybookWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader) (*UpdatePlaybookResponse, error)
+	UpdatePlaybookWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdatePlaybookResponse, error)
 
 	// ListPlaybookTasks request
-	ListPlaybookTasksWithResponse(ctx context.Context, playbookId string, params *ListPlaybookTasksParams) (*ListPlaybookTasksResponse, error)
+	ListPlaybookTasksWithResponse(ctx context.Context, playbookId string, params *ListPlaybookTasksParams, reqEditors ...RequestEditorFn) (*ListPlaybookTasksResponse, error)
 
 	// CreatePlaybookTask request  with any body
-	CreatePlaybookTaskWithBodyWithResponse(ctx context.Context, playbookId string, contentType string, body io.Reader) (*CreatePlaybookTaskResponse, error)
+	CreatePlaybookTaskWithBodyWithResponse(ctx context.Context, playbookId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreatePlaybookTaskResponse, error)
 
 	// ListPostmortemTemplates request
-	ListPostmortemTemplatesWithResponse(ctx context.Context, params *ListPostmortemTemplatesParams) (*ListPostmortemTemplatesResponse, error)
+	ListPostmortemTemplatesWithResponse(ctx context.Context, params *ListPostmortemTemplatesParams, reqEditors ...RequestEditorFn) (*ListPostmortemTemplatesResponse, error)
 
 	// CreatePostmortemTemplate request  with any body
-	CreatePostmortemTemplateWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader) (*CreatePostmortemTemplateResponse, error)
+	CreatePostmortemTemplateWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreatePostmortemTemplateResponse, error)
 
 	// DeletePostmortemTemplate request
-	DeletePostmortemTemplateWithResponse(ctx context.Context, id string) (*DeletePostmortemTemplateResponse, error)
+	DeletePostmortemTemplateWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*DeletePostmortemTemplateResponse, error)
 
 	// GetPostmortemTemplate request
-	GetPostmortemTemplateWithResponse(ctx context.Context, id string) (*GetPostmortemTemplateResponse, error)
+	GetPostmortemTemplateWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*GetPostmortemTemplateResponse, error)
 
 	// UpdatePostmortemTemplate request  with any body
-	UpdatePostmortemTemplateWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader) (*UpdatePostmortemTemplateResponse, error)
+	UpdatePostmortemTemplateWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdatePostmortemTemplateResponse, error)
 
 	// GetIncidentPostmortem request
-	GetIncidentPostmortemWithResponse(ctx context.Context, id string) (*GetIncidentPostmortemResponse, error)
+	GetIncidentPostmortemWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*GetIncidentPostmortemResponse, error)
 
 	// UpdateIncidentPostmortem request  with any body
-	UpdateIncidentPostmortemWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader) (*UpdateIncidentPostmortemResponse, error)
+	UpdateIncidentPostmortemWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateIncidentPostmortemResponse, error)
 
 	// ListPulses request
-	ListPulsesWithResponse(ctx context.Context, params *ListPulsesParams) (*ListPulsesResponse, error)
+	ListPulsesWithResponse(ctx context.Context, params *ListPulsesParams, reqEditors ...RequestEditorFn) (*ListPulsesResponse, error)
 
 	// CreatePulse request  with any body
-	CreatePulseWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader) (*CreatePulseResponse, error)
+	CreatePulseWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreatePulseResponse, error)
 
 	// GetPulse request
-	GetPulseWithResponse(ctx context.Context, id string) (*GetPulseResponse, error)
+	GetPulseWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*GetPulseResponse, error)
 
 	// UpdatePulse request  with any body
-	UpdatePulseWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader) (*UpdatePulseResponse, error)
+	UpdatePulseWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdatePulseResponse, error)
 
 	// ListServices request
-	ListServicesWithResponse(ctx context.Context, params *ListServicesParams) (*ListServicesResponse, error)
+	ListServicesWithResponse(ctx context.Context, params *ListServicesParams, reqEditors ...RequestEditorFn) (*ListServicesResponse, error)
 
 	// CreateService request  with any body
-	CreateServiceWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader) (*CreateServiceResponse, error)
+	CreateServiceWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateServiceResponse, error)
 
 	// DeleteService request
-	DeleteServiceWithResponse(ctx context.Context, id string) (*DeleteServiceResponse, error)
+	DeleteServiceWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*DeleteServiceResponse, error)
 
 	// GetService request
-	GetServiceWithResponse(ctx context.Context, id string) (*GetServiceResponse, error)
+	GetServiceWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*GetServiceResponse, error)
 
 	// UpdateService request  with any body
-	UpdateServiceWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader) (*UpdateServiceResponse, error)
+	UpdateServiceWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateServiceResponse, error)
 
 	// ListSeverities request
-	ListSeveritiesWithResponse(ctx context.Context, params *ListSeveritiesParams) (*ListSeveritiesResponse, error)
+	ListSeveritiesWithResponse(ctx context.Context, params *ListSeveritiesParams, reqEditors ...RequestEditorFn) (*ListSeveritiesResponse, error)
 
 	// CreateSeverity request  with any body
-	CreateSeverityWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader) (*CreateSeverityResponse, error)
+	CreateSeverityWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateSeverityResponse, error)
 
 	// DeleteSeverity request
-	DeleteSeverityWithResponse(ctx context.Context, id string) (*DeleteSeverityResponse, error)
+	DeleteSeverityWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*DeleteSeverityResponse, error)
 
 	// GetSeverity request
-	GetSeverityWithResponse(ctx context.Context, id string) (*GetSeverityResponse, error)
+	GetSeverityWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*GetSeverityResponse, error)
 
 	// UpdateSeverity request  with any body
-	UpdateSeverityWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader) (*UpdateSeverityResponse, error)
+	UpdateSeverityWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateSeverityResponse, error)
 
 	// ListStatusPages request
-	ListStatusPagesWithResponse(ctx context.Context, params *ListStatusPagesParams) (*ListStatusPagesResponse, error)
+	ListStatusPagesWithResponse(ctx context.Context, params *ListStatusPagesParams, reqEditors ...RequestEditorFn) (*ListStatusPagesResponse, error)
 
 	// CreateStatusPage request  with any body
-	CreateStatusPageWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader) (*CreateStatusPageResponse, error)
+	CreateStatusPageWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateStatusPageResponse, error)
 
 	// DeleteStatusPage request
-	DeleteStatusPageWithResponse(ctx context.Context, id string) (*DeleteStatusPageResponse, error)
+	DeleteStatusPageWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*DeleteStatusPageResponse, error)
 
 	// GetStatusPage request
-	GetStatusPageWithResponse(ctx context.Context, id string) (*GetStatusPageResponse, error)
+	GetStatusPageWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*GetStatusPageResponse, error)
 
 	// UpdateStatusPage request  with any body
-	UpdateStatusPageWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader) (*UpdateStatusPageResponse, error)
+	UpdateStatusPageWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateStatusPageResponse, error)
 
 	// ListTeams request
-	ListTeamsWithResponse(ctx context.Context, params *ListTeamsParams) (*ListTeamsResponse, error)
+	ListTeamsWithResponse(ctx context.Context, params *ListTeamsParams, reqEditors ...RequestEditorFn) (*ListTeamsResponse, error)
 
 	// CreateTeam request  with any body
-	CreateTeamWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader) (*CreateTeamResponse, error)
+	CreateTeamWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateTeamResponse, error)
 
 	// DeleteTeam request
-	DeleteTeamWithResponse(ctx context.Context, id string) (*DeleteTeamResponse, error)
+	DeleteTeamWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*DeleteTeamResponse, error)
 
 	// GetTeam request
-	GetTeamWithResponse(ctx context.Context, id string) (*GetTeamResponse, error)
+	GetTeamWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*GetTeamResponse, error)
 
 	// UpdateTeam request  with any body
-	UpdateTeamWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader) (*UpdateTeamResponse, error)
+	UpdateTeamWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateTeamResponse, error)
 }
 
 type DeleteIncidentActionItemResponse struct {
@@ -8756,8 +8756,8 @@ func (r UpdateTeamResponse) StatusCode() int {
 }
 
 // DeleteIncidentActionItemWithResponse request returning *DeleteIncidentActionItemResponse
-func (c *ClientWithResponses) DeleteIncidentActionItemWithResponse(ctx context.Context, id string) (*DeleteIncidentActionItemResponse, error) {
-	rsp, err := c.DeleteIncidentActionItem(ctx, id)
+func (c *ClientWithResponses) DeleteIncidentActionItemWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*DeleteIncidentActionItemResponse, error) {
+	rsp, err := c.DeleteIncidentActionItem(ctx, id, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -8765,8 +8765,8 @@ func (c *ClientWithResponses) DeleteIncidentActionItemWithResponse(ctx context.C
 }
 
 // GetIncidentActionItemsWithResponse request returning *GetIncidentActionItemsResponse
-func (c *ClientWithResponses) GetIncidentActionItemsWithResponse(ctx context.Context, id string) (*GetIncidentActionItemsResponse, error) {
-	rsp, err := c.GetIncidentActionItems(ctx, id)
+func (c *ClientWithResponses) GetIncidentActionItemsWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*GetIncidentActionItemsResponse, error) {
+	rsp, err := c.GetIncidentActionItems(ctx, id, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -8774,8 +8774,8 @@ func (c *ClientWithResponses) GetIncidentActionItemsWithResponse(ctx context.Con
 }
 
 // UpdateIncidentActionItemWithBodyWithResponse request with arbitrary body returning *UpdateIncidentActionItemResponse
-func (c *ClientWithResponses) UpdateIncidentActionItemWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader) (*UpdateIncidentActionItemResponse, error) {
-	rsp, err := c.UpdateIncidentActionItemWithBody(ctx, id, contentType, body)
+func (c *ClientWithResponses) UpdateIncidentActionItemWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateIncidentActionItemResponse, error) {
+	rsp, err := c.UpdateIncidentActionItemWithBody(ctx, id, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -8783,8 +8783,8 @@ func (c *ClientWithResponses) UpdateIncidentActionItemWithBodyWithResponse(ctx c
 }
 
 // ListCausesWithResponse request returning *ListCausesResponse
-func (c *ClientWithResponses) ListCausesWithResponse(ctx context.Context, params *ListCausesParams) (*ListCausesResponse, error) {
-	rsp, err := c.ListCauses(ctx, params)
+func (c *ClientWithResponses) ListCausesWithResponse(ctx context.Context, params *ListCausesParams, reqEditors ...RequestEditorFn) (*ListCausesResponse, error) {
+	rsp, err := c.ListCauses(ctx, params, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -8792,8 +8792,8 @@ func (c *ClientWithResponses) ListCausesWithResponse(ctx context.Context, params
 }
 
 // CreateCauseWithBodyWithResponse request with arbitrary body returning *CreateCauseResponse
-func (c *ClientWithResponses) CreateCauseWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader) (*CreateCauseResponse, error) {
-	rsp, err := c.CreateCauseWithBody(ctx, contentType, body)
+func (c *ClientWithResponses) CreateCauseWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateCauseResponse, error) {
+	rsp, err := c.CreateCauseWithBody(ctx, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -8801,8 +8801,8 @@ func (c *ClientWithResponses) CreateCauseWithBodyWithResponse(ctx context.Contex
 }
 
 // DeleteCauseWithResponse request returning *DeleteCauseResponse
-func (c *ClientWithResponses) DeleteCauseWithResponse(ctx context.Context, id string) (*DeleteCauseResponse, error) {
-	rsp, err := c.DeleteCause(ctx, id)
+func (c *ClientWithResponses) DeleteCauseWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*DeleteCauseResponse, error) {
+	rsp, err := c.DeleteCause(ctx, id, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -8810,8 +8810,8 @@ func (c *ClientWithResponses) DeleteCauseWithResponse(ctx context.Context, id st
 }
 
 // GetCauseWithResponse request returning *GetCauseResponse
-func (c *ClientWithResponses) GetCauseWithResponse(ctx context.Context, id string) (*GetCauseResponse, error) {
-	rsp, err := c.GetCause(ctx, id)
+func (c *ClientWithResponses) GetCauseWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*GetCauseResponse, error) {
+	rsp, err := c.GetCause(ctx, id, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -8819,8 +8819,8 @@ func (c *ClientWithResponses) GetCauseWithResponse(ctx context.Context, id strin
 }
 
 // UpdateCauseWithBodyWithResponse request with arbitrary body returning *UpdateCauseResponse
-func (c *ClientWithResponses) UpdateCauseWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader) (*UpdateCauseResponse, error) {
-	rsp, err := c.UpdateCauseWithBody(ctx, id, contentType, body)
+func (c *ClientWithResponses) UpdateCauseWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateCauseResponse, error) {
+	rsp, err := c.UpdateCauseWithBody(ctx, id, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -8828,8 +8828,8 @@ func (c *ClientWithResponses) UpdateCauseWithBodyWithResponse(ctx context.Contex
 }
 
 // ListEnvironmentsWithResponse request returning *ListEnvironmentsResponse
-func (c *ClientWithResponses) ListEnvironmentsWithResponse(ctx context.Context, params *ListEnvironmentsParams) (*ListEnvironmentsResponse, error) {
-	rsp, err := c.ListEnvironments(ctx, params)
+func (c *ClientWithResponses) ListEnvironmentsWithResponse(ctx context.Context, params *ListEnvironmentsParams, reqEditors ...RequestEditorFn) (*ListEnvironmentsResponse, error) {
+	rsp, err := c.ListEnvironments(ctx, params, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -8837,8 +8837,8 @@ func (c *ClientWithResponses) ListEnvironmentsWithResponse(ctx context.Context, 
 }
 
 // CreateEnvironmentWithBodyWithResponse request with arbitrary body returning *CreateEnvironmentResponse
-func (c *ClientWithResponses) CreateEnvironmentWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader) (*CreateEnvironmentResponse, error) {
-	rsp, err := c.CreateEnvironmentWithBody(ctx, contentType, body)
+func (c *ClientWithResponses) CreateEnvironmentWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateEnvironmentResponse, error) {
+	rsp, err := c.CreateEnvironmentWithBody(ctx, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -8846,8 +8846,8 @@ func (c *ClientWithResponses) CreateEnvironmentWithBodyWithResponse(ctx context.
 }
 
 // DeleteEnvironmentWithResponse request returning *DeleteEnvironmentResponse
-func (c *ClientWithResponses) DeleteEnvironmentWithResponse(ctx context.Context, id string) (*DeleteEnvironmentResponse, error) {
-	rsp, err := c.DeleteEnvironment(ctx, id)
+func (c *ClientWithResponses) DeleteEnvironmentWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*DeleteEnvironmentResponse, error) {
+	rsp, err := c.DeleteEnvironment(ctx, id, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -8855,8 +8855,8 @@ func (c *ClientWithResponses) DeleteEnvironmentWithResponse(ctx context.Context,
 }
 
 // GetEnvironmentWithResponse request returning *GetEnvironmentResponse
-func (c *ClientWithResponses) GetEnvironmentWithResponse(ctx context.Context, id string) (*GetEnvironmentResponse, error) {
-	rsp, err := c.GetEnvironment(ctx, id)
+func (c *ClientWithResponses) GetEnvironmentWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*GetEnvironmentResponse, error) {
+	rsp, err := c.GetEnvironment(ctx, id, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -8864,8 +8864,8 @@ func (c *ClientWithResponses) GetEnvironmentWithResponse(ctx context.Context, id
 }
 
 // UpdateEnvironmentWithBodyWithResponse request with arbitrary body returning *UpdateEnvironmentResponse
-func (c *ClientWithResponses) UpdateEnvironmentWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader) (*UpdateEnvironmentResponse, error) {
-	rsp, err := c.UpdateEnvironmentWithBody(ctx, id, contentType, body)
+func (c *ClientWithResponses) UpdateEnvironmentWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateEnvironmentResponse, error) {
+	rsp, err := c.UpdateEnvironmentWithBody(ctx, id, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -8873,8 +8873,8 @@ func (c *ClientWithResponses) UpdateEnvironmentWithBodyWithResponse(ctx context.
 }
 
 // DeleteIncidentEventWithResponse request returning *DeleteIncidentEventResponse
-func (c *ClientWithResponses) DeleteIncidentEventWithResponse(ctx context.Context, id string) (*DeleteIncidentEventResponse, error) {
-	rsp, err := c.DeleteIncidentEvent(ctx, id)
+func (c *ClientWithResponses) DeleteIncidentEventWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*DeleteIncidentEventResponse, error) {
+	rsp, err := c.DeleteIncidentEvent(ctx, id, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -8882,8 +8882,8 @@ func (c *ClientWithResponses) DeleteIncidentEventWithResponse(ctx context.Contex
 }
 
 // GetIncidentEventsWithResponse request returning *GetIncidentEventsResponse
-func (c *ClientWithResponses) GetIncidentEventsWithResponse(ctx context.Context, id string) (*GetIncidentEventsResponse, error) {
-	rsp, err := c.GetIncidentEvents(ctx, id)
+func (c *ClientWithResponses) GetIncidentEventsWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*GetIncidentEventsResponse, error) {
+	rsp, err := c.GetIncidentEvents(ctx, id, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -8891,8 +8891,8 @@ func (c *ClientWithResponses) GetIncidentEventsWithResponse(ctx context.Context,
 }
 
 // UpdateIncidentEventWithBodyWithResponse request with arbitrary body returning *UpdateIncidentEventResponse
-func (c *ClientWithResponses) UpdateIncidentEventWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader) (*UpdateIncidentEventResponse, error) {
-	rsp, err := c.UpdateIncidentEventWithBody(ctx, id, contentType, body)
+func (c *ClientWithResponses) UpdateIncidentEventWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateIncidentEventResponse, error) {
+	rsp, err := c.UpdateIncidentEventWithBody(ctx, id, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -8900,8 +8900,8 @@ func (c *ClientWithResponses) UpdateIncidentEventWithBodyWithResponse(ctx contex
 }
 
 // ListFunctionalitiesWithResponse request returning *ListFunctionalitiesResponse
-func (c *ClientWithResponses) ListFunctionalitiesWithResponse(ctx context.Context, params *ListFunctionalitiesParams) (*ListFunctionalitiesResponse, error) {
-	rsp, err := c.ListFunctionalities(ctx, params)
+func (c *ClientWithResponses) ListFunctionalitiesWithResponse(ctx context.Context, params *ListFunctionalitiesParams, reqEditors ...RequestEditorFn) (*ListFunctionalitiesResponse, error) {
+	rsp, err := c.ListFunctionalities(ctx, params, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -8909,8 +8909,8 @@ func (c *ClientWithResponses) ListFunctionalitiesWithResponse(ctx context.Contex
 }
 
 // CreateFunctionalityWithBodyWithResponse request with arbitrary body returning *CreateFunctionalityResponse
-func (c *ClientWithResponses) CreateFunctionalityWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader) (*CreateFunctionalityResponse, error) {
-	rsp, err := c.CreateFunctionalityWithBody(ctx, contentType, body)
+func (c *ClientWithResponses) CreateFunctionalityWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateFunctionalityResponse, error) {
+	rsp, err := c.CreateFunctionalityWithBody(ctx, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -8918,8 +8918,8 @@ func (c *ClientWithResponses) CreateFunctionalityWithBodyWithResponse(ctx contex
 }
 
 // DeleteFunctionalityWithResponse request returning *DeleteFunctionalityResponse
-func (c *ClientWithResponses) DeleteFunctionalityWithResponse(ctx context.Context, id string) (*DeleteFunctionalityResponse, error) {
-	rsp, err := c.DeleteFunctionality(ctx, id)
+func (c *ClientWithResponses) DeleteFunctionalityWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*DeleteFunctionalityResponse, error) {
+	rsp, err := c.DeleteFunctionality(ctx, id, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -8927,8 +8927,8 @@ func (c *ClientWithResponses) DeleteFunctionalityWithResponse(ctx context.Contex
 }
 
 // GetFunctionalityWithResponse request returning *GetFunctionalityResponse
-func (c *ClientWithResponses) GetFunctionalityWithResponse(ctx context.Context, id string) (*GetFunctionalityResponse, error) {
-	rsp, err := c.GetFunctionality(ctx, id)
+func (c *ClientWithResponses) GetFunctionalityWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*GetFunctionalityResponse, error) {
+	rsp, err := c.GetFunctionality(ctx, id, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -8936,8 +8936,8 @@ func (c *ClientWithResponses) GetFunctionalityWithResponse(ctx context.Context, 
 }
 
 // UpdateFunctionalityWithBodyWithResponse request with arbitrary body returning *UpdateFunctionalityResponse
-func (c *ClientWithResponses) UpdateFunctionalityWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader) (*UpdateFunctionalityResponse, error) {
-	rsp, err := c.UpdateFunctionalityWithBody(ctx, id, contentType, body)
+func (c *ClientWithResponses) UpdateFunctionalityWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateFunctionalityResponse, error) {
+	rsp, err := c.UpdateFunctionalityWithBody(ctx, id, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -8945,8 +8945,8 @@ func (c *ClientWithResponses) UpdateFunctionalityWithBodyWithResponse(ctx contex
 }
 
 // ListIncidentRolesWithResponse request returning *ListIncidentRolesResponse
-func (c *ClientWithResponses) ListIncidentRolesWithResponse(ctx context.Context, params *ListIncidentRolesParams) (*ListIncidentRolesResponse, error) {
-	rsp, err := c.ListIncidentRoles(ctx, params)
+func (c *ClientWithResponses) ListIncidentRolesWithResponse(ctx context.Context, params *ListIncidentRolesParams, reqEditors ...RequestEditorFn) (*ListIncidentRolesResponse, error) {
+	rsp, err := c.ListIncidentRoles(ctx, params, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -8954,8 +8954,8 @@ func (c *ClientWithResponses) ListIncidentRolesWithResponse(ctx context.Context,
 }
 
 // CreateIncidentRoleWithBodyWithResponse request with arbitrary body returning *CreateIncidentRoleResponse
-func (c *ClientWithResponses) CreateIncidentRoleWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader) (*CreateIncidentRoleResponse, error) {
-	rsp, err := c.CreateIncidentRoleWithBody(ctx, contentType, body)
+func (c *ClientWithResponses) CreateIncidentRoleWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateIncidentRoleResponse, error) {
+	rsp, err := c.CreateIncidentRoleWithBody(ctx, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -8963,8 +8963,8 @@ func (c *ClientWithResponses) CreateIncidentRoleWithBodyWithResponse(ctx context
 }
 
 // DeleteIncidentRoleWithResponse request returning *DeleteIncidentRoleResponse
-func (c *ClientWithResponses) DeleteIncidentRoleWithResponse(ctx context.Context, id string) (*DeleteIncidentRoleResponse, error) {
-	rsp, err := c.DeleteIncidentRole(ctx, id)
+func (c *ClientWithResponses) DeleteIncidentRoleWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*DeleteIncidentRoleResponse, error) {
+	rsp, err := c.DeleteIncidentRole(ctx, id, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -8972,8 +8972,8 @@ func (c *ClientWithResponses) DeleteIncidentRoleWithResponse(ctx context.Context
 }
 
 // GetIncidentRoleWithResponse request returning *GetIncidentRoleResponse
-func (c *ClientWithResponses) GetIncidentRoleWithResponse(ctx context.Context, id string) (*GetIncidentRoleResponse, error) {
-	rsp, err := c.GetIncidentRole(ctx, id)
+func (c *ClientWithResponses) GetIncidentRoleWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*GetIncidentRoleResponse, error) {
+	rsp, err := c.GetIncidentRole(ctx, id, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -8981,8 +8981,8 @@ func (c *ClientWithResponses) GetIncidentRoleWithResponse(ctx context.Context, i
 }
 
 // UpdateIncidentRoleWithBodyWithResponse request with arbitrary body returning *UpdateIncidentRoleResponse
-func (c *ClientWithResponses) UpdateIncidentRoleWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader) (*UpdateIncidentRoleResponse, error) {
-	rsp, err := c.UpdateIncidentRoleWithBody(ctx, id, contentType, body)
+func (c *ClientWithResponses) UpdateIncidentRoleWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateIncidentRoleResponse, error) {
+	rsp, err := c.UpdateIncidentRoleWithBody(ctx, id, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -8990,8 +8990,8 @@ func (c *ClientWithResponses) UpdateIncidentRoleWithBodyWithResponse(ctx context
 }
 
 // DeleteIncidentTaskWithResponse request returning *DeleteIncidentTaskResponse
-func (c *ClientWithResponses) DeleteIncidentTaskWithResponse(ctx context.Context, id string) (*DeleteIncidentTaskResponse, error) {
-	rsp, err := c.DeleteIncidentTask(ctx, id)
+func (c *ClientWithResponses) DeleteIncidentTaskWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*DeleteIncidentTaskResponse, error) {
+	rsp, err := c.DeleteIncidentTask(ctx, id, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -8999,8 +8999,8 @@ func (c *ClientWithResponses) DeleteIncidentTaskWithResponse(ctx context.Context
 }
 
 // GetIncidentTasksWithResponse request returning *GetIncidentTasksResponse
-func (c *ClientWithResponses) GetIncidentTasksWithResponse(ctx context.Context, id string) (*GetIncidentTasksResponse, error) {
-	rsp, err := c.GetIncidentTasks(ctx, id)
+func (c *ClientWithResponses) GetIncidentTasksWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*GetIncidentTasksResponse, error) {
+	rsp, err := c.GetIncidentTasks(ctx, id, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -9008,8 +9008,8 @@ func (c *ClientWithResponses) GetIncidentTasksWithResponse(ctx context.Context, 
 }
 
 // UpdateIncidentTaskWithBodyWithResponse request with arbitrary body returning *UpdateIncidentTaskResponse
-func (c *ClientWithResponses) UpdateIncidentTaskWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader) (*UpdateIncidentTaskResponse, error) {
-	rsp, err := c.UpdateIncidentTaskWithBody(ctx, id, contentType, body)
+func (c *ClientWithResponses) UpdateIncidentTaskWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateIncidentTaskResponse, error) {
+	rsp, err := c.UpdateIncidentTaskWithBody(ctx, id, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -9017,8 +9017,8 @@ func (c *ClientWithResponses) UpdateIncidentTaskWithBodyWithResponse(ctx context
 }
 
 // ListIncidentTypesWithResponse request returning *ListIncidentTypesResponse
-func (c *ClientWithResponses) ListIncidentTypesWithResponse(ctx context.Context, params *ListIncidentTypesParams) (*ListIncidentTypesResponse, error) {
-	rsp, err := c.ListIncidentTypes(ctx, params)
+func (c *ClientWithResponses) ListIncidentTypesWithResponse(ctx context.Context, params *ListIncidentTypesParams, reqEditors ...RequestEditorFn) (*ListIncidentTypesResponse, error) {
+	rsp, err := c.ListIncidentTypes(ctx, params, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -9026,8 +9026,8 @@ func (c *ClientWithResponses) ListIncidentTypesWithResponse(ctx context.Context,
 }
 
 // CreateIncidentTypeWithBodyWithResponse request with arbitrary body returning *CreateIncidentTypeResponse
-func (c *ClientWithResponses) CreateIncidentTypeWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader) (*CreateIncidentTypeResponse, error) {
-	rsp, err := c.CreateIncidentTypeWithBody(ctx, contentType, body)
+func (c *ClientWithResponses) CreateIncidentTypeWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateIncidentTypeResponse, error) {
+	rsp, err := c.CreateIncidentTypeWithBody(ctx, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -9035,8 +9035,8 @@ func (c *ClientWithResponses) CreateIncidentTypeWithBodyWithResponse(ctx context
 }
 
 // DeleteIncidentTypeWithResponse request returning *DeleteIncidentTypeResponse
-func (c *ClientWithResponses) DeleteIncidentTypeWithResponse(ctx context.Context, id string) (*DeleteIncidentTypeResponse, error) {
-	rsp, err := c.DeleteIncidentType(ctx, id)
+func (c *ClientWithResponses) DeleteIncidentTypeWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*DeleteIncidentTypeResponse, error) {
+	rsp, err := c.DeleteIncidentType(ctx, id, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -9044,8 +9044,8 @@ func (c *ClientWithResponses) DeleteIncidentTypeWithResponse(ctx context.Context
 }
 
 // GetIncidentTypeWithResponse request returning *GetIncidentTypeResponse
-func (c *ClientWithResponses) GetIncidentTypeWithResponse(ctx context.Context, id string) (*GetIncidentTypeResponse, error) {
-	rsp, err := c.GetIncidentType(ctx, id)
+func (c *ClientWithResponses) GetIncidentTypeWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*GetIncidentTypeResponse, error) {
+	rsp, err := c.GetIncidentType(ctx, id, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -9053,8 +9053,8 @@ func (c *ClientWithResponses) GetIncidentTypeWithResponse(ctx context.Context, i
 }
 
 // UpdateIncidentTypeWithBodyWithResponse request with arbitrary body returning *UpdateIncidentTypeResponse
-func (c *ClientWithResponses) UpdateIncidentTypeWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader) (*UpdateIncidentTypeResponse, error) {
-	rsp, err := c.UpdateIncidentTypeWithBody(ctx, id, contentType, body)
+func (c *ClientWithResponses) UpdateIncidentTypeWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateIncidentTypeResponse, error) {
+	rsp, err := c.UpdateIncidentTypeWithBody(ctx, id, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -9062,8 +9062,8 @@ func (c *ClientWithResponses) UpdateIncidentTypeWithBodyWithResponse(ctx context
 }
 
 // ListIncidentsWithResponse request returning *ListIncidentsResponse
-func (c *ClientWithResponses) ListIncidentsWithResponse(ctx context.Context, params *ListIncidentsParams) (*ListIncidentsResponse, error) {
-	rsp, err := c.ListIncidents(ctx, params)
+func (c *ClientWithResponses) ListIncidentsWithResponse(ctx context.Context, params *ListIncidentsParams, reqEditors ...RequestEditorFn) (*ListIncidentsResponse, error) {
+	rsp, err := c.ListIncidents(ctx, params, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -9071,8 +9071,8 @@ func (c *ClientWithResponses) ListIncidentsWithResponse(ctx context.Context, par
 }
 
 // CreateIncidentWithBodyWithResponse request with arbitrary body returning *CreateIncidentResponse
-func (c *ClientWithResponses) CreateIncidentWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader) (*CreateIncidentResponse, error) {
-	rsp, err := c.CreateIncidentWithBody(ctx, contentType, body)
+func (c *ClientWithResponses) CreateIncidentWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateIncidentResponse, error) {
+	rsp, err := c.CreateIncidentWithBody(ctx, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -9080,8 +9080,8 @@ func (c *ClientWithResponses) CreateIncidentWithBodyWithResponse(ctx context.Con
 }
 
 // DeleteIncidentWithResponse request returning *DeleteIncidentResponse
-func (c *ClientWithResponses) DeleteIncidentWithResponse(ctx context.Context, id string) (*DeleteIncidentResponse, error) {
-	rsp, err := c.DeleteIncident(ctx, id)
+func (c *ClientWithResponses) DeleteIncidentWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*DeleteIncidentResponse, error) {
+	rsp, err := c.DeleteIncident(ctx, id, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -9089,8 +9089,8 @@ func (c *ClientWithResponses) DeleteIncidentWithResponse(ctx context.Context, id
 }
 
 // GetIncidentWithResponse request returning *GetIncidentResponse
-func (c *ClientWithResponses) GetIncidentWithResponse(ctx context.Context, id string) (*GetIncidentResponse, error) {
-	rsp, err := c.GetIncident(ctx, id)
+func (c *ClientWithResponses) GetIncidentWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*GetIncidentResponse, error) {
+	rsp, err := c.GetIncident(ctx, id, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -9098,8 +9098,8 @@ func (c *ClientWithResponses) GetIncidentWithResponse(ctx context.Context, id st
 }
 
 // UpdateIncidentWithBodyWithResponse request with arbitrary body returning *UpdateIncidentResponse
-func (c *ClientWithResponses) UpdateIncidentWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader) (*UpdateIncidentResponse, error) {
-	rsp, err := c.UpdateIncidentWithBody(ctx, id, contentType, body)
+func (c *ClientWithResponses) UpdateIncidentWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateIncidentResponse, error) {
+	rsp, err := c.UpdateIncidentWithBody(ctx, id, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -9107,8 +9107,8 @@ func (c *ClientWithResponses) UpdateIncidentWithBodyWithResponse(ctx context.Con
 }
 
 // ListIncidentActionItemsWithResponse request returning *ListIncidentActionItemsResponse
-func (c *ClientWithResponses) ListIncidentActionItemsWithResponse(ctx context.Context, incidentId string, params *ListIncidentActionItemsParams) (*ListIncidentActionItemsResponse, error) {
-	rsp, err := c.ListIncidentActionItems(ctx, incidentId, params)
+func (c *ClientWithResponses) ListIncidentActionItemsWithResponse(ctx context.Context, incidentId string, params *ListIncidentActionItemsParams, reqEditors ...RequestEditorFn) (*ListIncidentActionItemsResponse, error) {
+	rsp, err := c.ListIncidentActionItems(ctx, incidentId, params, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -9116,8 +9116,8 @@ func (c *ClientWithResponses) ListIncidentActionItemsWithResponse(ctx context.Co
 }
 
 // CreateIncidentActionItemWithBodyWithResponse request with arbitrary body returning *CreateIncidentActionItemResponse
-func (c *ClientWithResponses) CreateIncidentActionItemWithBodyWithResponse(ctx context.Context, incidentId string, contentType string, body io.Reader) (*CreateIncidentActionItemResponse, error) {
-	rsp, err := c.CreateIncidentActionItemWithBody(ctx, incidentId, contentType, body)
+func (c *ClientWithResponses) CreateIncidentActionItemWithBodyWithResponse(ctx context.Context, incidentId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateIncidentActionItemResponse, error) {
+	rsp, err := c.CreateIncidentActionItemWithBody(ctx, incidentId, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -9125,8 +9125,8 @@ func (c *ClientWithResponses) CreateIncidentActionItemWithBodyWithResponse(ctx c
 }
 
 // ListIncidentEventsWithResponse request returning *ListIncidentEventsResponse
-func (c *ClientWithResponses) ListIncidentEventsWithResponse(ctx context.Context, incidentId string, params *ListIncidentEventsParams) (*ListIncidentEventsResponse, error) {
-	rsp, err := c.ListIncidentEvents(ctx, incidentId, params)
+func (c *ClientWithResponses) ListIncidentEventsWithResponse(ctx context.Context, incidentId string, params *ListIncidentEventsParams, reqEditors ...RequestEditorFn) (*ListIncidentEventsResponse, error) {
+	rsp, err := c.ListIncidentEvents(ctx, incidentId, params, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -9134,8 +9134,8 @@ func (c *ClientWithResponses) ListIncidentEventsWithResponse(ctx context.Context
 }
 
 // CreateIncidentEventWithBodyWithResponse request with arbitrary body returning *CreateIncidentEventResponse
-func (c *ClientWithResponses) CreateIncidentEventWithBodyWithResponse(ctx context.Context, incidentId string, contentType string, body io.Reader) (*CreateIncidentEventResponse, error) {
-	rsp, err := c.CreateIncidentEventWithBody(ctx, incidentId, contentType, body)
+func (c *ClientWithResponses) CreateIncidentEventWithBodyWithResponse(ctx context.Context, incidentId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateIncidentEventResponse, error) {
+	rsp, err := c.CreateIncidentEventWithBody(ctx, incidentId, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -9143,8 +9143,8 @@ func (c *ClientWithResponses) CreateIncidentEventWithBodyWithResponse(ctx contex
 }
 
 // ListIncidentTasksWithResponse request returning *ListIncidentTasksResponse
-func (c *ClientWithResponses) ListIncidentTasksWithResponse(ctx context.Context, incidentId string, params *ListIncidentTasksParams) (*ListIncidentTasksResponse, error) {
-	rsp, err := c.ListIncidentTasks(ctx, incidentId, params)
+func (c *ClientWithResponses) ListIncidentTasksWithResponse(ctx context.Context, incidentId string, params *ListIncidentTasksParams, reqEditors ...RequestEditorFn) (*ListIncidentTasksResponse, error) {
+	rsp, err := c.ListIncidentTasks(ctx, incidentId, params, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -9152,8 +9152,8 @@ func (c *ClientWithResponses) ListIncidentTasksWithResponse(ctx context.Context,
 }
 
 // CreateIncidentTaskWithBodyWithResponse request with arbitrary body returning *CreateIncidentTaskResponse
-func (c *ClientWithResponses) CreateIncidentTaskWithBodyWithResponse(ctx context.Context, incidentId string, contentType string, body io.Reader) (*CreateIncidentTaskResponse, error) {
-	rsp, err := c.CreateIncidentTaskWithBody(ctx, incidentId, contentType, body)
+func (c *ClientWithResponses) CreateIncidentTaskWithBodyWithResponse(ctx context.Context, incidentId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateIncidentTaskResponse, error) {
+	rsp, err := c.CreateIncidentTaskWithBody(ctx, incidentId, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -9161,8 +9161,8 @@ func (c *ClientWithResponses) CreateIncidentTaskWithBodyWithResponse(ctx context
 }
 
 // DeletePlaybookTaskWithResponse request returning *DeletePlaybookTaskResponse
-func (c *ClientWithResponses) DeletePlaybookTaskWithResponse(ctx context.Context, id string) (*DeletePlaybookTaskResponse, error) {
-	rsp, err := c.DeletePlaybookTask(ctx, id)
+func (c *ClientWithResponses) DeletePlaybookTaskWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*DeletePlaybookTaskResponse, error) {
+	rsp, err := c.DeletePlaybookTask(ctx, id, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -9170,8 +9170,8 @@ func (c *ClientWithResponses) DeletePlaybookTaskWithResponse(ctx context.Context
 }
 
 // GetPlaybookTasksWithResponse request returning *GetPlaybookTasksResponse
-func (c *ClientWithResponses) GetPlaybookTasksWithResponse(ctx context.Context, id string) (*GetPlaybookTasksResponse, error) {
-	rsp, err := c.GetPlaybookTasks(ctx, id)
+func (c *ClientWithResponses) GetPlaybookTasksWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*GetPlaybookTasksResponse, error) {
+	rsp, err := c.GetPlaybookTasks(ctx, id, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -9179,8 +9179,8 @@ func (c *ClientWithResponses) GetPlaybookTasksWithResponse(ctx context.Context, 
 }
 
 // UpdatePlaybookTaskWithBodyWithResponse request with arbitrary body returning *UpdatePlaybookTaskResponse
-func (c *ClientWithResponses) UpdatePlaybookTaskWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader) (*UpdatePlaybookTaskResponse, error) {
-	rsp, err := c.UpdatePlaybookTaskWithBody(ctx, id, contentType, body)
+func (c *ClientWithResponses) UpdatePlaybookTaskWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdatePlaybookTaskResponse, error) {
+	rsp, err := c.UpdatePlaybookTaskWithBody(ctx, id, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -9188,8 +9188,8 @@ func (c *ClientWithResponses) UpdatePlaybookTaskWithBodyWithResponse(ctx context
 }
 
 // ListPlaybooksWithResponse request returning *ListPlaybooksResponse
-func (c *ClientWithResponses) ListPlaybooksWithResponse(ctx context.Context, params *ListPlaybooksParams) (*ListPlaybooksResponse, error) {
-	rsp, err := c.ListPlaybooks(ctx, params)
+func (c *ClientWithResponses) ListPlaybooksWithResponse(ctx context.Context, params *ListPlaybooksParams, reqEditors ...RequestEditorFn) (*ListPlaybooksResponse, error) {
+	rsp, err := c.ListPlaybooks(ctx, params, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -9197,8 +9197,8 @@ func (c *ClientWithResponses) ListPlaybooksWithResponse(ctx context.Context, par
 }
 
 // CreatePlaybookWithBodyWithResponse request with arbitrary body returning *CreatePlaybookResponse
-func (c *ClientWithResponses) CreatePlaybookWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader) (*CreatePlaybookResponse, error) {
-	rsp, err := c.CreatePlaybookWithBody(ctx, contentType, body)
+func (c *ClientWithResponses) CreatePlaybookWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreatePlaybookResponse, error) {
+	rsp, err := c.CreatePlaybookWithBody(ctx, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -9206,8 +9206,8 @@ func (c *ClientWithResponses) CreatePlaybookWithBodyWithResponse(ctx context.Con
 }
 
 // DeletePlaybookWithResponse request returning *DeletePlaybookResponse
-func (c *ClientWithResponses) DeletePlaybookWithResponse(ctx context.Context, id string) (*DeletePlaybookResponse, error) {
-	rsp, err := c.DeletePlaybook(ctx, id)
+func (c *ClientWithResponses) DeletePlaybookWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*DeletePlaybookResponse, error) {
+	rsp, err := c.DeletePlaybook(ctx, id, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -9215,8 +9215,8 @@ func (c *ClientWithResponses) DeletePlaybookWithResponse(ctx context.Context, id
 }
 
 // GetPlaybookWithResponse request returning *GetPlaybookResponse
-func (c *ClientWithResponses) GetPlaybookWithResponse(ctx context.Context, id string) (*GetPlaybookResponse, error) {
-	rsp, err := c.GetPlaybook(ctx, id)
+func (c *ClientWithResponses) GetPlaybookWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*GetPlaybookResponse, error) {
+	rsp, err := c.GetPlaybook(ctx, id, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -9224,8 +9224,8 @@ func (c *ClientWithResponses) GetPlaybookWithResponse(ctx context.Context, id st
 }
 
 // UpdatePlaybookWithBodyWithResponse request with arbitrary body returning *UpdatePlaybookResponse
-func (c *ClientWithResponses) UpdatePlaybookWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader) (*UpdatePlaybookResponse, error) {
-	rsp, err := c.UpdatePlaybookWithBody(ctx, id, contentType, body)
+func (c *ClientWithResponses) UpdatePlaybookWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdatePlaybookResponse, error) {
+	rsp, err := c.UpdatePlaybookWithBody(ctx, id, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -9233,8 +9233,8 @@ func (c *ClientWithResponses) UpdatePlaybookWithBodyWithResponse(ctx context.Con
 }
 
 // ListPlaybookTasksWithResponse request returning *ListPlaybookTasksResponse
-func (c *ClientWithResponses) ListPlaybookTasksWithResponse(ctx context.Context, playbookId string, params *ListPlaybookTasksParams) (*ListPlaybookTasksResponse, error) {
-	rsp, err := c.ListPlaybookTasks(ctx, playbookId, params)
+func (c *ClientWithResponses) ListPlaybookTasksWithResponse(ctx context.Context, playbookId string, params *ListPlaybookTasksParams, reqEditors ...RequestEditorFn) (*ListPlaybookTasksResponse, error) {
+	rsp, err := c.ListPlaybookTasks(ctx, playbookId, params, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -9242,8 +9242,8 @@ func (c *ClientWithResponses) ListPlaybookTasksWithResponse(ctx context.Context,
 }
 
 // CreatePlaybookTaskWithBodyWithResponse request with arbitrary body returning *CreatePlaybookTaskResponse
-func (c *ClientWithResponses) CreatePlaybookTaskWithBodyWithResponse(ctx context.Context, playbookId string, contentType string, body io.Reader) (*CreatePlaybookTaskResponse, error) {
-	rsp, err := c.CreatePlaybookTaskWithBody(ctx, playbookId, contentType, body)
+func (c *ClientWithResponses) CreatePlaybookTaskWithBodyWithResponse(ctx context.Context, playbookId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreatePlaybookTaskResponse, error) {
+	rsp, err := c.CreatePlaybookTaskWithBody(ctx, playbookId, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -9251,8 +9251,8 @@ func (c *ClientWithResponses) CreatePlaybookTaskWithBodyWithResponse(ctx context
 }
 
 // ListPostmortemTemplatesWithResponse request returning *ListPostmortemTemplatesResponse
-func (c *ClientWithResponses) ListPostmortemTemplatesWithResponse(ctx context.Context, params *ListPostmortemTemplatesParams) (*ListPostmortemTemplatesResponse, error) {
-	rsp, err := c.ListPostmortemTemplates(ctx, params)
+func (c *ClientWithResponses) ListPostmortemTemplatesWithResponse(ctx context.Context, params *ListPostmortemTemplatesParams, reqEditors ...RequestEditorFn) (*ListPostmortemTemplatesResponse, error) {
+	rsp, err := c.ListPostmortemTemplates(ctx, params, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -9260,8 +9260,8 @@ func (c *ClientWithResponses) ListPostmortemTemplatesWithResponse(ctx context.Co
 }
 
 // CreatePostmortemTemplateWithBodyWithResponse request with arbitrary body returning *CreatePostmortemTemplateResponse
-func (c *ClientWithResponses) CreatePostmortemTemplateWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader) (*CreatePostmortemTemplateResponse, error) {
-	rsp, err := c.CreatePostmortemTemplateWithBody(ctx, contentType, body)
+func (c *ClientWithResponses) CreatePostmortemTemplateWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreatePostmortemTemplateResponse, error) {
+	rsp, err := c.CreatePostmortemTemplateWithBody(ctx, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -9269,8 +9269,8 @@ func (c *ClientWithResponses) CreatePostmortemTemplateWithBodyWithResponse(ctx c
 }
 
 // DeletePostmortemTemplateWithResponse request returning *DeletePostmortemTemplateResponse
-func (c *ClientWithResponses) DeletePostmortemTemplateWithResponse(ctx context.Context, id string) (*DeletePostmortemTemplateResponse, error) {
-	rsp, err := c.DeletePostmortemTemplate(ctx, id)
+func (c *ClientWithResponses) DeletePostmortemTemplateWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*DeletePostmortemTemplateResponse, error) {
+	rsp, err := c.DeletePostmortemTemplate(ctx, id, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -9278,8 +9278,8 @@ func (c *ClientWithResponses) DeletePostmortemTemplateWithResponse(ctx context.C
 }
 
 // GetPostmortemTemplateWithResponse request returning *GetPostmortemTemplateResponse
-func (c *ClientWithResponses) GetPostmortemTemplateWithResponse(ctx context.Context, id string) (*GetPostmortemTemplateResponse, error) {
-	rsp, err := c.GetPostmortemTemplate(ctx, id)
+func (c *ClientWithResponses) GetPostmortemTemplateWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*GetPostmortemTemplateResponse, error) {
+	rsp, err := c.GetPostmortemTemplate(ctx, id, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -9287,8 +9287,8 @@ func (c *ClientWithResponses) GetPostmortemTemplateWithResponse(ctx context.Cont
 }
 
 // UpdatePostmortemTemplateWithBodyWithResponse request with arbitrary body returning *UpdatePostmortemTemplateResponse
-func (c *ClientWithResponses) UpdatePostmortemTemplateWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader) (*UpdatePostmortemTemplateResponse, error) {
-	rsp, err := c.UpdatePostmortemTemplateWithBody(ctx, id, contentType, body)
+func (c *ClientWithResponses) UpdatePostmortemTemplateWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdatePostmortemTemplateResponse, error) {
+	rsp, err := c.UpdatePostmortemTemplateWithBody(ctx, id, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -9296,8 +9296,8 @@ func (c *ClientWithResponses) UpdatePostmortemTemplateWithBodyWithResponse(ctx c
 }
 
 // GetIncidentPostmortemWithResponse request returning *GetIncidentPostmortemResponse
-func (c *ClientWithResponses) GetIncidentPostmortemWithResponse(ctx context.Context, id string) (*GetIncidentPostmortemResponse, error) {
-	rsp, err := c.GetIncidentPostmortem(ctx, id)
+func (c *ClientWithResponses) GetIncidentPostmortemWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*GetIncidentPostmortemResponse, error) {
+	rsp, err := c.GetIncidentPostmortem(ctx, id, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -9305,8 +9305,8 @@ func (c *ClientWithResponses) GetIncidentPostmortemWithResponse(ctx context.Cont
 }
 
 // UpdateIncidentPostmortemWithBodyWithResponse request with arbitrary body returning *UpdateIncidentPostmortemResponse
-func (c *ClientWithResponses) UpdateIncidentPostmortemWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader) (*UpdateIncidentPostmortemResponse, error) {
-	rsp, err := c.UpdateIncidentPostmortemWithBody(ctx, id, contentType, body)
+func (c *ClientWithResponses) UpdateIncidentPostmortemWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateIncidentPostmortemResponse, error) {
+	rsp, err := c.UpdateIncidentPostmortemWithBody(ctx, id, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -9314,8 +9314,8 @@ func (c *ClientWithResponses) UpdateIncidentPostmortemWithBodyWithResponse(ctx c
 }
 
 // ListPulsesWithResponse request returning *ListPulsesResponse
-func (c *ClientWithResponses) ListPulsesWithResponse(ctx context.Context, params *ListPulsesParams) (*ListPulsesResponse, error) {
-	rsp, err := c.ListPulses(ctx, params)
+func (c *ClientWithResponses) ListPulsesWithResponse(ctx context.Context, params *ListPulsesParams, reqEditors ...RequestEditorFn) (*ListPulsesResponse, error) {
+	rsp, err := c.ListPulses(ctx, params, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -9323,8 +9323,8 @@ func (c *ClientWithResponses) ListPulsesWithResponse(ctx context.Context, params
 }
 
 // CreatePulseWithBodyWithResponse request with arbitrary body returning *CreatePulseResponse
-func (c *ClientWithResponses) CreatePulseWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader) (*CreatePulseResponse, error) {
-	rsp, err := c.CreatePulseWithBody(ctx, contentType, body)
+func (c *ClientWithResponses) CreatePulseWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreatePulseResponse, error) {
+	rsp, err := c.CreatePulseWithBody(ctx, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -9332,8 +9332,8 @@ func (c *ClientWithResponses) CreatePulseWithBodyWithResponse(ctx context.Contex
 }
 
 // GetPulseWithResponse request returning *GetPulseResponse
-func (c *ClientWithResponses) GetPulseWithResponse(ctx context.Context, id string) (*GetPulseResponse, error) {
-	rsp, err := c.GetPulse(ctx, id)
+func (c *ClientWithResponses) GetPulseWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*GetPulseResponse, error) {
+	rsp, err := c.GetPulse(ctx, id, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -9341,8 +9341,8 @@ func (c *ClientWithResponses) GetPulseWithResponse(ctx context.Context, id strin
 }
 
 // UpdatePulseWithBodyWithResponse request with arbitrary body returning *UpdatePulseResponse
-func (c *ClientWithResponses) UpdatePulseWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader) (*UpdatePulseResponse, error) {
-	rsp, err := c.UpdatePulseWithBody(ctx, id, contentType, body)
+func (c *ClientWithResponses) UpdatePulseWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdatePulseResponse, error) {
+	rsp, err := c.UpdatePulseWithBody(ctx, id, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -9350,8 +9350,8 @@ func (c *ClientWithResponses) UpdatePulseWithBodyWithResponse(ctx context.Contex
 }
 
 // ListServicesWithResponse request returning *ListServicesResponse
-func (c *ClientWithResponses) ListServicesWithResponse(ctx context.Context, params *ListServicesParams) (*ListServicesResponse, error) {
-	rsp, err := c.ListServices(ctx, params)
+func (c *ClientWithResponses) ListServicesWithResponse(ctx context.Context, params *ListServicesParams, reqEditors ...RequestEditorFn) (*ListServicesResponse, error) {
+	rsp, err := c.ListServices(ctx, params, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -9359,8 +9359,8 @@ func (c *ClientWithResponses) ListServicesWithResponse(ctx context.Context, para
 }
 
 // CreateServiceWithBodyWithResponse request with arbitrary body returning *CreateServiceResponse
-func (c *ClientWithResponses) CreateServiceWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader) (*CreateServiceResponse, error) {
-	rsp, err := c.CreateServiceWithBody(ctx, contentType, body)
+func (c *ClientWithResponses) CreateServiceWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateServiceResponse, error) {
+	rsp, err := c.CreateServiceWithBody(ctx, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -9368,8 +9368,8 @@ func (c *ClientWithResponses) CreateServiceWithBodyWithResponse(ctx context.Cont
 }
 
 // DeleteServiceWithResponse request returning *DeleteServiceResponse
-func (c *ClientWithResponses) DeleteServiceWithResponse(ctx context.Context, id string) (*DeleteServiceResponse, error) {
-	rsp, err := c.DeleteService(ctx, id)
+func (c *ClientWithResponses) DeleteServiceWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*DeleteServiceResponse, error) {
+	rsp, err := c.DeleteService(ctx, id, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -9377,8 +9377,8 @@ func (c *ClientWithResponses) DeleteServiceWithResponse(ctx context.Context, id 
 }
 
 // GetServiceWithResponse request returning *GetServiceResponse
-func (c *ClientWithResponses) GetServiceWithResponse(ctx context.Context, id string) (*GetServiceResponse, error) {
-	rsp, err := c.GetService(ctx, id)
+func (c *ClientWithResponses) GetServiceWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*GetServiceResponse, error) {
+	rsp, err := c.GetService(ctx, id, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -9386,8 +9386,8 @@ func (c *ClientWithResponses) GetServiceWithResponse(ctx context.Context, id str
 }
 
 // UpdateServiceWithBodyWithResponse request with arbitrary body returning *UpdateServiceResponse
-func (c *ClientWithResponses) UpdateServiceWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader) (*UpdateServiceResponse, error) {
-	rsp, err := c.UpdateServiceWithBody(ctx, id, contentType, body)
+func (c *ClientWithResponses) UpdateServiceWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateServiceResponse, error) {
+	rsp, err := c.UpdateServiceWithBody(ctx, id, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -9395,8 +9395,8 @@ func (c *ClientWithResponses) UpdateServiceWithBodyWithResponse(ctx context.Cont
 }
 
 // ListSeveritiesWithResponse request returning *ListSeveritiesResponse
-func (c *ClientWithResponses) ListSeveritiesWithResponse(ctx context.Context, params *ListSeveritiesParams) (*ListSeveritiesResponse, error) {
-	rsp, err := c.ListSeverities(ctx, params)
+func (c *ClientWithResponses) ListSeveritiesWithResponse(ctx context.Context, params *ListSeveritiesParams, reqEditors ...RequestEditorFn) (*ListSeveritiesResponse, error) {
+	rsp, err := c.ListSeverities(ctx, params, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -9404,8 +9404,8 @@ func (c *ClientWithResponses) ListSeveritiesWithResponse(ctx context.Context, pa
 }
 
 // CreateSeverityWithBodyWithResponse request with arbitrary body returning *CreateSeverityResponse
-func (c *ClientWithResponses) CreateSeverityWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader) (*CreateSeverityResponse, error) {
-	rsp, err := c.CreateSeverityWithBody(ctx, contentType, body)
+func (c *ClientWithResponses) CreateSeverityWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateSeverityResponse, error) {
+	rsp, err := c.CreateSeverityWithBody(ctx, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -9413,8 +9413,8 @@ func (c *ClientWithResponses) CreateSeverityWithBodyWithResponse(ctx context.Con
 }
 
 // DeleteSeverityWithResponse request returning *DeleteSeverityResponse
-func (c *ClientWithResponses) DeleteSeverityWithResponse(ctx context.Context, id string) (*DeleteSeverityResponse, error) {
-	rsp, err := c.DeleteSeverity(ctx, id)
+func (c *ClientWithResponses) DeleteSeverityWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*DeleteSeverityResponse, error) {
+	rsp, err := c.DeleteSeverity(ctx, id, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -9422,8 +9422,8 @@ func (c *ClientWithResponses) DeleteSeverityWithResponse(ctx context.Context, id
 }
 
 // GetSeverityWithResponse request returning *GetSeverityResponse
-func (c *ClientWithResponses) GetSeverityWithResponse(ctx context.Context, id string) (*GetSeverityResponse, error) {
-	rsp, err := c.GetSeverity(ctx, id)
+func (c *ClientWithResponses) GetSeverityWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*GetSeverityResponse, error) {
+	rsp, err := c.GetSeverity(ctx, id, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -9431,8 +9431,8 @@ func (c *ClientWithResponses) GetSeverityWithResponse(ctx context.Context, id st
 }
 
 // UpdateSeverityWithBodyWithResponse request with arbitrary body returning *UpdateSeverityResponse
-func (c *ClientWithResponses) UpdateSeverityWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader) (*UpdateSeverityResponse, error) {
-	rsp, err := c.UpdateSeverityWithBody(ctx, id, contentType, body)
+func (c *ClientWithResponses) UpdateSeverityWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateSeverityResponse, error) {
+	rsp, err := c.UpdateSeverityWithBody(ctx, id, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -9440,8 +9440,8 @@ func (c *ClientWithResponses) UpdateSeverityWithBodyWithResponse(ctx context.Con
 }
 
 // ListStatusPagesWithResponse request returning *ListStatusPagesResponse
-func (c *ClientWithResponses) ListStatusPagesWithResponse(ctx context.Context, params *ListStatusPagesParams) (*ListStatusPagesResponse, error) {
-	rsp, err := c.ListStatusPages(ctx, params)
+func (c *ClientWithResponses) ListStatusPagesWithResponse(ctx context.Context, params *ListStatusPagesParams, reqEditors ...RequestEditorFn) (*ListStatusPagesResponse, error) {
+	rsp, err := c.ListStatusPages(ctx, params, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -9449,8 +9449,8 @@ func (c *ClientWithResponses) ListStatusPagesWithResponse(ctx context.Context, p
 }
 
 // CreateStatusPageWithBodyWithResponse request with arbitrary body returning *CreateStatusPageResponse
-func (c *ClientWithResponses) CreateStatusPageWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader) (*CreateStatusPageResponse, error) {
-	rsp, err := c.CreateStatusPageWithBody(ctx, contentType, body)
+func (c *ClientWithResponses) CreateStatusPageWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateStatusPageResponse, error) {
+	rsp, err := c.CreateStatusPageWithBody(ctx, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -9458,8 +9458,8 @@ func (c *ClientWithResponses) CreateStatusPageWithBodyWithResponse(ctx context.C
 }
 
 // DeleteStatusPageWithResponse request returning *DeleteStatusPageResponse
-func (c *ClientWithResponses) DeleteStatusPageWithResponse(ctx context.Context, id string) (*DeleteStatusPageResponse, error) {
-	rsp, err := c.DeleteStatusPage(ctx, id)
+func (c *ClientWithResponses) DeleteStatusPageWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*DeleteStatusPageResponse, error) {
+	rsp, err := c.DeleteStatusPage(ctx, id, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -9467,8 +9467,8 @@ func (c *ClientWithResponses) DeleteStatusPageWithResponse(ctx context.Context, 
 }
 
 // GetStatusPageWithResponse request returning *GetStatusPageResponse
-func (c *ClientWithResponses) GetStatusPageWithResponse(ctx context.Context, id string) (*GetStatusPageResponse, error) {
-	rsp, err := c.GetStatusPage(ctx, id)
+func (c *ClientWithResponses) GetStatusPageWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*GetStatusPageResponse, error) {
+	rsp, err := c.GetStatusPage(ctx, id, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -9476,8 +9476,8 @@ func (c *ClientWithResponses) GetStatusPageWithResponse(ctx context.Context, id 
 }
 
 // UpdateStatusPageWithBodyWithResponse request with arbitrary body returning *UpdateStatusPageResponse
-func (c *ClientWithResponses) UpdateStatusPageWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader) (*UpdateStatusPageResponse, error) {
-	rsp, err := c.UpdateStatusPageWithBody(ctx, id, contentType, body)
+func (c *ClientWithResponses) UpdateStatusPageWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateStatusPageResponse, error) {
+	rsp, err := c.UpdateStatusPageWithBody(ctx, id, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -9485,8 +9485,8 @@ func (c *ClientWithResponses) UpdateStatusPageWithBodyWithResponse(ctx context.C
 }
 
 // ListTeamsWithResponse request returning *ListTeamsResponse
-func (c *ClientWithResponses) ListTeamsWithResponse(ctx context.Context, params *ListTeamsParams) (*ListTeamsResponse, error) {
-	rsp, err := c.ListTeams(ctx, params)
+func (c *ClientWithResponses) ListTeamsWithResponse(ctx context.Context, params *ListTeamsParams, reqEditors ...RequestEditorFn) (*ListTeamsResponse, error) {
+	rsp, err := c.ListTeams(ctx, params, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -9494,8 +9494,8 @@ func (c *ClientWithResponses) ListTeamsWithResponse(ctx context.Context, params 
 }
 
 // CreateTeamWithBodyWithResponse request with arbitrary body returning *CreateTeamResponse
-func (c *ClientWithResponses) CreateTeamWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader) (*CreateTeamResponse, error) {
-	rsp, err := c.CreateTeamWithBody(ctx, contentType, body)
+func (c *ClientWithResponses) CreateTeamWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateTeamResponse, error) {
+	rsp, err := c.CreateTeamWithBody(ctx, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -9503,8 +9503,8 @@ func (c *ClientWithResponses) CreateTeamWithBodyWithResponse(ctx context.Context
 }
 
 // DeleteTeamWithResponse request returning *DeleteTeamResponse
-func (c *ClientWithResponses) DeleteTeamWithResponse(ctx context.Context, id string) (*DeleteTeamResponse, error) {
-	rsp, err := c.DeleteTeam(ctx, id)
+func (c *ClientWithResponses) DeleteTeamWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*DeleteTeamResponse, error) {
+	rsp, err := c.DeleteTeam(ctx, id, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -9512,8 +9512,8 @@ func (c *ClientWithResponses) DeleteTeamWithResponse(ctx context.Context, id str
 }
 
 // GetTeamWithResponse request returning *GetTeamResponse
-func (c *ClientWithResponses) GetTeamWithResponse(ctx context.Context, id string) (*GetTeamResponse, error) {
-	rsp, err := c.GetTeam(ctx, id)
+func (c *ClientWithResponses) GetTeamWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*GetTeamResponse, error) {
+	rsp, err := c.GetTeam(ctx, id, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -9521,8 +9521,8 @@ func (c *ClientWithResponses) GetTeamWithResponse(ctx context.Context, id string
 }
 
 // UpdateTeamWithBodyWithResponse request with arbitrary body returning *UpdateTeamResponse
-func (c *ClientWithResponses) UpdateTeamWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader) (*UpdateTeamResponse, error) {
-	rsp, err := c.UpdateTeamWithBody(ctx, id, contentType, body)
+func (c *ClientWithResponses) UpdateTeamWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateTeamResponse, error) {
+	rsp, err := c.UpdateTeamWithBody(ctx, id, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
