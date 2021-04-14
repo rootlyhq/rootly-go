@@ -42,19 +42,9 @@ const (
 	AlertListDataTypeAlerts AlertListDataType = "alerts"
 )
 
-// Defines values for AlertListDataType.
-const (
-	AlertListDataTypeAlerts AlertListDataType = "alerts"
-)
-
 // Defines values for AlertResponseDataType.
 const (
 	AlertResponseDataTypeAlerts AlertResponseDataType = "alerts"
-)
-
-// Defines values for CauseListDataType.
-const (
-	CauseListDataTypeCauses CauseListDataType = "causes"
 )
 
 // Defines values for CauseListDataType.
@@ -72,19 +62,9 @@ const (
 	EnvironmentListDataTypeEnvironments EnvironmentListDataType = "environments"
 )
 
-// Defines values for EnvironmentListDataType.
-const (
-	EnvironmentListDataTypeEnvironments EnvironmentListDataType = "environments"
-)
-
 // Defines values for EnvironmentResponseDataType.
 const (
 	EnvironmentResponseDataTypeEnvironments EnvironmentResponseDataType = "environments"
-)
-
-// Defines values for FunctionalityListDataType.
-const (
-	FunctionalityListDataTypeFunctionalities FunctionalityListDataType = "functionalities"
 )
 
 // Defines values for FunctionalityListDataType.
@@ -122,11 +102,6 @@ const (
 	IncidentActionItemListDataTypeIncidentActionItems IncidentActionItemListDataType = "incident_action_items"
 )
 
-// Defines values for IncidentActionItemListDataType.
-const (
-	IncidentActionItemListDataTypeIncidentActionItems IncidentActionItemListDataType = "incident_action_items"
-)
-
 // Defines values for IncidentActionItemResponseDataType.
 const (
 	IncidentActionItemResponseDataTypeIncidentActionItems IncidentActionItemResponseDataType = "incident_action_items"
@@ -144,19 +119,9 @@ const (
 	IncidentEventListDataTypeIncidentEvents IncidentEventListDataType = "incident_events"
 )
 
-// Defines values for IncidentEventListDataType.
-const (
-	IncidentEventListDataTypeIncidentEvents IncidentEventListDataType = "incident_events"
-)
-
 // Defines values for IncidentEventResponseDataType.
 const (
 	IncidentEventResponseDataTypeIncidentEvents IncidentEventResponseDataType = "incident_events"
-)
-
-// Defines values for IncidentListDataType.
-const (
-	IncidentListDataTypeIncidents IncidentListDataType = "incidents"
 )
 
 // Defines values for IncidentListDataType.
@@ -186,11 +151,6 @@ const (
 	IncidentRoleListDataTypeIncidentRoles IncidentRoleListDataType = "incident_roles"
 )
 
-// Defines values for IncidentRoleListDataType.
-const (
-	IncidentRoleListDataTypeIncidentRoles IncidentRoleListDataType = "incident_roles"
-)
-
 // Defines values for IncidentRoleResponseDataType.
 const (
 	IncidentRoleResponseDataTypeIncidentRoles IncidentRoleResponseDataType = "incident_roles"
@@ -201,19 +161,9 @@ const (
 	IncidentTaskListDataTypeIncidentTasks IncidentTaskListDataType = "incident_tasks"
 )
 
-// Defines values for IncidentTaskListDataType.
-const (
-	IncidentTaskListDataTypeIncidentTasks IncidentTaskListDataType = "incident_tasks"
-)
-
 // Defines values for IncidentTaskResponseDataType.
 const (
 	IncidentTaskResponseDataTypeIncidentTasks IncidentTaskResponseDataType = "incident_tasks"
-)
-
-// Defines values for IncidentTypeListDataType.
-const (
-	IncidentTypeListDataTypeIncidentTypes IncidentTypeListDataType = "incident_types"
 )
 
 // Defines values for IncidentTypeListDataType.
@@ -373,19 +323,9 @@ const (
 	PlaybookListDataTypePlaybooks PlaybookListDataType = "playbooks"
 )
 
-// Defines values for PlaybookListDataType.
-const (
-	PlaybookListDataTypePlaybooks PlaybookListDataType = "playbooks"
-)
-
 // Defines values for PlaybookResponseDataType.
 const (
 	PlaybookResponseDataTypePlaybooks PlaybookResponseDataType = "playbooks"
-)
-
-// Defines values for PlaybookTaskListDataType.
-const (
-	PlaybookTaskListDataTypePlaybookTasks PlaybookTaskListDataType = "playbook_tasks"
 )
 
 // Defines values for PlaybookTaskListDataType.
@@ -403,19 +343,9 @@ const (
 	PostMortemTemplateListDataTypePostMortemTemplates PostMortemTemplateListDataType = "post_mortem_templates"
 )
 
-// Defines values for PostMortemTemplateListDataType.
-const (
-	PostMortemTemplateListDataTypePostMortemTemplates PostMortemTemplateListDataType = "post_mortem_templates"
-)
-
 // Defines values for PostMortemTemplateResponseDataType.
 const (
 	PostMortemTemplateResponseDataTypePostMortemTemplates PostMortemTemplateResponseDataType = "post_mortem_templates"
-)
-
-// Defines values for PulseListDataType.
-const (
-	PulseListDataTypePulses PulseListDataType = "pulses"
 )
 
 // Defines values for PulseListDataType.
@@ -431,11 +361,6 @@ const (
 // Defines values for ResolveIncidentDataType.
 const (
 	ResolveIncidentDataTypeIncidents ResolveIncidentDataType = "incidents"
-)
-
-// Defines values for ServiceListDataType.
-const (
-	ServiceListDataTypeServices ServiceListDataType = "services"
 )
 
 // Defines values for ServiceListDataType.
@@ -464,11 +389,6 @@ const (
 	SeverityListDataTypeSeverities SeverityListDataType = "severities"
 )
 
-// Defines values for SeverityListDataType.
-const (
-	SeverityListDataTypeSeverities SeverityListDataType = "severities"
-)
-
 // Defines values for SeverityResponseDataType.
 const (
 	SeverityResponseDataTypeSeverities SeverityResponseDataType = "severities"
@@ -488,19 +408,9 @@ const (
 	StatusPageListDataTypeStatusPages StatusPageListDataType = "status_pages"
 )
 
-// Defines values for StatusPageListDataType.
-const (
-	StatusPageListDataTypeStatusPages StatusPageListDataType = "status_pages"
-)
-
 // Defines values for StatusPageResponseDataType.
 const (
 	StatusPageResponseDataTypeStatusPages StatusPageResponseDataType = "status_pages"
-)
-
-// Defines values for TeamListDataType.
-const (
-	TeamListDataTypeGroups TeamListDataType = "groups"
 )
 
 // Defines values for TeamListDataType.
@@ -717,9 +627,6 @@ type AlertList struct {
 // AlertListDataType defines model for AlertList.Data.Type.
 type AlertListDataType string
 
-// AlertListDataType defines model for AlertList.Data.Type.
-type AlertListDataType string
-
 // AlertResponse defines model for alert_response.
 type AlertResponse struct {
 	Data struct {
@@ -770,9 +677,6 @@ type CauseList struct {
 		Links `yaml:",inline"`
 	} `json:"links"`
 }
-
-// CauseListDataType defines model for CauseList.Data.Type.
-type CauseListDataType string
 
 // CauseListDataType defines model for CauseList.Data.Type.
 type CauseListDataType string
@@ -828,9 +732,6 @@ type EnvironmentList struct {
 		Links `yaml:",inline"`
 	} `json:"links"`
 }
-
-// EnvironmentListDataType defines model for EnvironmentList.Data.Type.
-type EnvironmentListDataType string
 
 // EnvironmentListDataType defines model for EnvironmentList.Data.Type.
 type EnvironmentListDataType string
@@ -895,9 +796,6 @@ type FunctionalityList struct {
 		Links `yaml:",inline"`
 	} `json:"links"`
 }
-
-// FunctionalityListDataType defines model for FunctionalityList.Data.Type.
-type FunctionalityListDataType string
 
 // FunctionalityListDataType defines model for FunctionalityList.Data.Type.
 type FunctionalityListDataType string
@@ -1002,9 +900,6 @@ type IncidentActionItemList struct {
 // IncidentActionItemListDataType defines model for IncidentActionItemList.Data.Type.
 type IncidentActionItemListDataType string
 
-// IncidentActionItemListDataType defines model for IncidentActionItemList.Data.Type.
-type IncidentActionItemListDataType string
-
 // IncidentActionItemResponse defines model for incident_action_item_response.
 type IncidentActionItemResponse struct {
 	Data struct {
@@ -1062,9 +957,6 @@ type IncidentEventList struct {
 // IncidentEventListDataType defines model for IncidentEventList.Data.Type.
 type IncidentEventListDataType string
 
-// IncidentEventListDataType defines model for IncidentEventList.Data.Type.
-type IncidentEventListDataType string
-
 // IncidentEventResponse defines model for incident_event_response.
 type IncidentEventResponse struct {
 	Data struct {
@@ -1099,9 +991,6 @@ type IncidentList struct {
 		Links `yaml:",inline"`
 	} `json:"links"`
 }
-
-// IncidentListDataType defines model for IncidentList.Data.Type.
-type IncidentListDataType string
 
 // IncidentListDataType defines model for IncidentList.Data.Type.
 type IncidentListDataType string
@@ -1235,9 +1124,6 @@ type IncidentRoleList struct {
 // IncidentRoleListDataType defines model for IncidentRoleList.Data.Type.
 type IncidentRoleListDataType string
 
-// IncidentRoleListDataType defines model for IncidentRoleList.Data.Type.
-type IncidentRoleListDataType string
-
 // IncidentRoleResponse defines model for incident_role_response.
 type IncidentRoleResponse struct {
 	Data struct {
@@ -1293,9 +1179,6 @@ type IncidentTaskList struct {
 // IncidentTaskListDataType defines model for IncidentTaskList.Data.Type.
 type IncidentTaskListDataType string
 
-// IncidentTaskListDataType defines model for IncidentTaskList.Data.Type.
-type IncidentTaskListDataType string
-
 // IncidentTaskResponse defines model for incident_task_response.
 type IncidentTaskResponse struct {
 	Data struct {
@@ -1347,9 +1230,6 @@ type IncidentTypeList struct {
 		Links `yaml:",inline"`
 	} `json:"links"`
 }
-
-// IncidentTypeListDataType defines model for IncidentTypeList.Data.Type.
-type IncidentTypeListDataType string
 
 // IncidentTypeListDataType defines model for IncidentTypeList.Data.Type.
 type IncidentTypeListDataType string
@@ -1909,9 +1789,6 @@ type PlaybookList struct {
 // PlaybookListDataType defines model for PlaybookList.Data.Type.
 type PlaybookListDataType string
 
-// PlaybookListDataType defines model for PlaybookList.Data.Type.
-type PlaybookListDataType string
-
 // PlaybookResponse defines model for playbook_response.
 type PlaybookResponse struct {
 	Data struct {
@@ -1966,9 +1843,6 @@ type PlaybookTaskList struct {
 // PlaybookTaskListDataType defines model for PlaybookTaskList.Data.Type.
 type PlaybookTaskListDataType string
 
-// PlaybookTaskListDataType defines model for PlaybookTaskList.Data.Type.
-type PlaybookTaskListDataType string
-
 // PlaybookTaskResponse defines model for playbook_task_response.
 type PlaybookTaskResponse struct {
 	Data struct {
@@ -2019,9 +1893,6 @@ type PostMortemTemplateList struct {
 		Links `yaml:",inline"`
 	} `json:"links"`
 }
-
-// PostMortemTemplateListDataType defines model for PostMortemTemplateList.Data.Type.
-type PostMortemTemplateListDataType string
 
 // PostMortemTemplateListDataType defines model for PostMortemTemplateList.Data.Type.
 type PostMortemTemplateListDataType string
@@ -2108,9 +1979,6 @@ type PulseList struct {
 // PulseListDataType defines model for PulseList.Data.Type.
 type PulseListDataType string
 
-// PulseListDataType defines model for PulseList.Data.Type.
-type PulseListDataType string
-
 // PulseResponse defines model for pulse_response.
 type PulseResponse struct {
 	Data struct {
@@ -2181,9 +2049,6 @@ type ServiceList struct {
 // ServiceListDataType defines model for ServiceList.Data.Type.
 type ServiceListDataType string
 
-// ServiceListDataType defines model for ServiceList.Data.Type.
-type ServiceListDataType string
-
 // ServiceResponse defines model for service_response.
 type ServiceResponse struct {
 	Data struct {
@@ -2241,9 +2106,6 @@ type SeverityList struct {
 		Links `yaml:",inline"`
 	} `json:"links"`
 }
-
-// SeverityListDataType defines model for SeverityList.Data.Type.
-type SeverityListDataType string
 
 // SeverityListDataType defines model for SeverityList.Data.Type.
 type SeverityListDataType string
@@ -2326,9 +2188,6 @@ type StatusPageList struct {
 // StatusPageListDataType defines model for StatusPageList.Data.Type.
 type StatusPageListDataType string
 
-// StatusPageListDataType defines model for StatusPageList.Data.Type.
-type StatusPageListDataType string
-
 // StatusPageResponse defines model for status_page_response.
 type StatusPageResponse struct {
 	Data struct {
@@ -2379,9 +2238,6 @@ type TeamList struct {
 		Links `yaml:",inline"`
 	} `json:"links"`
 }
-
-// TeamListDataType defines model for TeamList.Data.Type.
-type TeamListDataType string
 
 // TeamListDataType defines model for TeamList.Data.Type.
 type TeamListDataType string
@@ -3056,283 +2912,707 @@ func WithRequestEditorFn(fn RequestEditorFn) ClientOption {
 // The interface specification for the client above.
 type ClientInterface interface {
 	// DeleteIncidentActionItem request
-	DeleteIncidentActionItem(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
+	DeleteIncidentActionItem(
+		ctx context.Context,
+		id string,
+		reqEditors ...RequestEditorFn,
+	) (*http.Response, error)
 
 	// GetIncidentActionItems request
-	GetIncidentActionItems(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
+	GetIncidentActionItems(
+		ctx context.Context,
+		id string,
+		reqEditors ...RequestEditorFn,
+	) (*http.Response, error)
 
 	// UpdateIncidentActionItem request  with any body
-	UpdateIncidentActionItemWithBody(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	UpdateIncidentActionItemWithBody(
+		ctx context.Context,
+		id string,
+		contentType string,
+		body io.Reader,
+		reqEditors ...RequestEditorFn,
+	) (*http.Response, error)
 
 	// ListAlerts request
-	ListAlerts(ctx context.Context, params *ListAlertsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+	ListAlerts(
+		ctx context.Context,
+		params *ListAlertsParams,
+		reqEditors ...RequestEditorFn,
+	) (*http.Response, error)
 
 	// GetAlert request
 	GetAlert(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// ListCauses request
-	ListCauses(ctx context.Context, params *ListCausesParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+	ListCauses(
+		ctx context.Context,
+		params *ListCausesParams,
+		reqEditors ...RequestEditorFn,
+	) (*http.Response, error)
 
 	// CreateCause request  with any body
-	CreateCauseWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	CreateCauseWithBody(
+		ctx context.Context,
+		contentType string,
+		body io.Reader,
+		reqEditors ...RequestEditorFn,
+	) (*http.Response, error)
 
 	// DeleteCause request
-	DeleteCause(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
+	DeleteCause(
+		ctx context.Context,
+		id string,
+		reqEditors ...RequestEditorFn,
+	) (*http.Response, error)
 
 	// GetCause request
 	GetCause(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// UpdateCause request  with any body
-	UpdateCauseWithBody(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	UpdateCauseWithBody(
+		ctx context.Context,
+		id string,
+		contentType string,
+		body io.Reader,
+		reqEditors ...RequestEditorFn,
+	) (*http.Response, error)
 
 	// ListEnvironments request
-	ListEnvironments(ctx context.Context, params *ListEnvironmentsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+	ListEnvironments(
+		ctx context.Context,
+		params *ListEnvironmentsParams,
+		reqEditors ...RequestEditorFn,
+	) (*http.Response, error)
 
 	// CreateEnvironment request  with any body
-	CreateEnvironmentWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	CreateEnvironmentWithBody(
+		ctx context.Context,
+		contentType string,
+		body io.Reader,
+		reqEditors ...RequestEditorFn,
+	) (*http.Response, error)
 
 	// DeleteEnvironment request
-	DeleteEnvironment(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
+	DeleteEnvironment(
+		ctx context.Context,
+		id string,
+		reqEditors ...RequestEditorFn,
+	) (*http.Response, error)
 
 	// GetEnvironment request
-	GetEnvironment(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
+	GetEnvironment(
+		ctx context.Context,
+		id string,
+		reqEditors ...RequestEditorFn,
+	) (*http.Response, error)
 
 	// UpdateEnvironment request  with any body
-	UpdateEnvironmentWithBody(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	UpdateEnvironmentWithBody(
+		ctx context.Context,
+		id string,
+		contentType string,
+		body io.Reader,
+		reqEditors ...RequestEditorFn,
+	) (*http.Response, error)
 
 	// DeleteIncidentEvent request
-	DeleteIncidentEvent(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
+	DeleteIncidentEvent(
+		ctx context.Context,
+		id string,
+		reqEditors ...RequestEditorFn,
+	) (*http.Response, error)
 
 	// GetIncidentEvents request
-	GetIncidentEvents(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
+	GetIncidentEvents(
+		ctx context.Context,
+		id string,
+		reqEditors ...RequestEditorFn,
+	) (*http.Response, error)
 
 	// UpdateIncidentEvent request  with any body
-	UpdateIncidentEventWithBody(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	UpdateIncidentEventWithBody(
+		ctx context.Context,
+		id string,
+		contentType string,
+		body io.Reader,
+		reqEditors ...RequestEditorFn,
+	) (*http.Response, error)
 
 	// ListFunctionalities request
-	ListFunctionalities(ctx context.Context, params *ListFunctionalitiesParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+	ListFunctionalities(
+		ctx context.Context,
+		params *ListFunctionalitiesParams,
+		reqEditors ...RequestEditorFn,
+	) (*http.Response, error)
 
 	// CreateFunctionality request  with any body
-	CreateFunctionalityWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	CreateFunctionalityWithBody(
+		ctx context.Context,
+		contentType string,
+		body io.Reader,
+		reqEditors ...RequestEditorFn,
+	) (*http.Response, error)
 
 	// DeleteFunctionality request
-	DeleteFunctionality(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
+	DeleteFunctionality(
+		ctx context.Context,
+		id string,
+		reqEditors ...RequestEditorFn,
+	) (*http.Response, error)
 
 	// GetFunctionality request
-	GetFunctionality(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
+	GetFunctionality(
+		ctx context.Context,
+		id string,
+		reqEditors ...RequestEditorFn,
+	) (*http.Response, error)
 
 	// UpdateFunctionality request  with any body
-	UpdateFunctionalityWithBody(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	UpdateFunctionalityWithBody(
+		ctx context.Context,
+		id string,
+		contentType string,
+		body io.Reader,
+		reqEditors ...RequestEditorFn,
+	) (*http.Response, error)
 
 	// ListIncidentRoles request
-	ListIncidentRoles(ctx context.Context, params *ListIncidentRolesParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+	ListIncidentRoles(
+		ctx context.Context,
+		params *ListIncidentRolesParams,
+		reqEditors ...RequestEditorFn,
+	) (*http.Response, error)
 
 	// CreateIncidentRole request  with any body
-	CreateIncidentRoleWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	CreateIncidentRoleWithBody(
+		ctx context.Context,
+		contentType string,
+		body io.Reader,
+		reqEditors ...RequestEditorFn,
+	) (*http.Response, error)
 
 	// DeleteIncidentRole request
-	DeleteIncidentRole(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
+	DeleteIncidentRole(
+		ctx context.Context,
+		id string,
+		reqEditors ...RequestEditorFn,
+	) (*http.Response, error)
 
 	// GetIncidentRole request
-	GetIncidentRole(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
+	GetIncidentRole(
+		ctx context.Context,
+		id string,
+		reqEditors ...RequestEditorFn,
+	) (*http.Response, error)
 
 	// UpdateIncidentRole request  with any body
-	UpdateIncidentRoleWithBody(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	UpdateIncidentRoleWithBody(
+		ctx context.Context,
+		id string,
+		contentType string,
+		body io.Reader,
+		reqEditors ...RequestEditorFn,
+	) (*http.Response, error)
 
 	// DeleteIncidentTask request
-	DeleteIncidentTask(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
+	DeleteIncidentTask(
+		ctx context.Context,
+		id string,
+		reqEditors ...RequestEditorFn,
+	) (*http.Response, error)
 
 	// GetIncidentTasks request
-	GetIncidentTasks(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
+	GetIncidentTasks(
+		ctx context.Context,
+		id string,
+		reqEditors ...RequestEditorFn,
+	) (*http.Response, error)
 
 	// UpdateIncidentTask request  with any body
-	UpdateIncidentTaskWithBody(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	UpdateIncidentTaskWithBody(
+		ctx context.Context,
+		id string,
+		contentType string,
+		body io.Reader,
+		reqEditors ...RequestEditorFn,
+	) (*http.Response, error)
 
 	// ListIncidentTypes request
-	ListIncidentTypes(ctx context.Context, params *ListIncidentTypesParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+	ListIncidentTypes(
+		ctx context.Context,
+		params *ListIncidentTypesParams,
+		reqEditors ...RequestEditorFn,
+	) (*http.Response, error)
 
 	// CreateIncidentType request  with any body
-	CreateIncidentTypeWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	CreateIncidentTypeWithBody(
+		ctx context.Context,
+		contentType string,
+		body io.Reader,
+		reqEditors ...RequestEditorFn,
+	) (*http.Response, error)
 
 	// DeleteIncidentType request
-	DeleteIncidentType(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
+	DeleteIncidentType(
+		ctx context.Context,
+		id string,
+		reqEditors ...RequestEditorFn,
+	) (*http.Response, error)
 
 	// GetIncidentType request
-	GetIncidentType(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
+	GetIncidentType(
+		ctx context.Context,
+		id string,
+		reqEditors ...RequestEditorFn,
+	) (*http.Response, error)
 
 	// UpdateIncidentType request  with any body
-	UpdateIncidentTypeWithBody(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	UpdateIncidentTypeWithBody(
+		ctx context.Context,
+		id string,
+		contentType string,
+		body io.Reader,
+		reqEditors ...RequestEditorFn,
+	) (*http.Response, error)
 
 	// ListIncidents request
-	ListIncidents(ctx context.Context, params *ListIncidentsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+	ListIncidents(
+		ctx context.Context,
+		params *ListIncidentsParams,
+		reqEditors ...RequestEditorFn,
+	) (*http.Response, error)
 
 	// CreateIncident request  with any body
-	CreateIncidentWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	CreateIncidentWithBody(
+		ctx context.Context,
+		contentType string,
+		body io.Reader,
+		reqEditors ...RequestEditorFn,
+	) (*http.Response, error)
 
 	// DeleteIncident request
-	DeleteIncident(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
+	DeleteIncident(
+		ctx context.Context,
+		id string,
+		reqEditors ...RequestEditorFn,
+	) (*http.Response, error)
 
 	// GetIncident request
-	GetIncident(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
+	GetIncident(
+		ctx context.Context,
+		id string,
+		reqEditors ...RequestEditorFn,
+	) (*http.Response, error)
 
 	// UpdateIncident request  with any body
-	UpdateIncidentWithBody(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	UpdateIncidentWithBody(
+		ctx context.Context,
+		id string,
+		contentType string,
+		body io.Reader,
+		reqEditors ...RequestEditorFn,
+	) (*http.Response, error)
 
 	// MitigateIncident request  with any body
-	MitigateIncidentWithBody(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	MitigateIncidentWithBody(
+		ctx context.Context,
+		id string,
+		contentType string,
+		body io.Reader,
+		reqEditors ...RequestEditorFn,
+	) (*http.Response, error)
 
 	// ResolveIncident request  with any body
-	ResolveIncidentWithBody(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	ResolveIncidentWithBody(
+		ctx context.Context,
+		id string,
+		contentType string,
+		body io.Reader,
+		reqEditors ...RequestEditorFn,
+	) (*http.Response, error)
 
 	// ListIncidentActionItems request
-	ListIncidentActionItems(ctx context.Context, incidentId string, params *ListIncidentActionItemsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+	ListIncidentActionItems(
+		ctx context.Context,
+		incidentId string,
+		params *ListIncidentActionItemsParams,
+		reqEditors ...RequestEditorFn,
+	) (*http.Response, error)
 
 	// CreateIncidentActionItem request  with any body
-	CreateIncidentActionItemWithBody(ctx context.Context, incidentId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	CreateIncidentActionItemWithBody(
+		ctx context.Context,
+		incidentId string,
+		contentType string,
+		body io.Reader,
+		reqEditors ...RequestEditorFn,
+	) (*http.Response, error)
 
 	// ListAlert request
-	ListAlert(ctx context.Context, incidentId string, params *ListAlertParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+	ListAlert(
+		ctx context.Context,
+		incidentId string,
+		params *ListAlertParams,
+		reqEditors ...RequestEditorFn,
+	) (*http.Response, error)
 
 	// AttachAlert request  with any body
-	AttachAlertWithBody(ctx context.Context, incidentId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	AttachAlertWithBody(
+		ctx context.Context,
+		incidentId string,
+		contentType string,
+		body io.Reader,
+		reqEditors ...RequestEditorFn,
+	) (*http.Response, error)
 
 	// ListIncidentEvents request
-	ListIncidentEvents(ctx context.Context, incidentId string, params *ListIncidentEventsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+	ListIncidentEvents(
+		ctx context.Context,
+		incidentId string,
+		params *ListIncidentEventsParams,
+		reqEditors ...RequestEditorFn,
+	) (*http.Response, error)
 
 	// CreateIncidentEvent request  with any body
-	CreateIncidentEventWithBody(ctx context.Context, incidentId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	CreateIncidentEventWithBody(
+		ctx context.Context,
+		incidentId string,
+		contentType string,
+		body io.Reader,
+		reqEditors ...RequestEditorFn,
+	) (*http.Response, error)
 
 	// ListIncidentTasks request
-	ListIncidentTasks(ctx context.Context, incidentId string, params *ListIncidentTasksParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+	ListIncidentTasks(
+		ctx context.Context,
+		incidentId string,
+		params *ListIncidentTasksParams,
+		reqEditors ...RequestEditorFn,
+	) (*http.Response, error)
 
 	// CreateIncidentTask request  with any body
-	CreateIncidentTaskWithBody(ctx context.Context, incidentId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	CreateIncidentTaskWithBody(
+		ctx context.Context,
+		incidentId string,
+		contentType string,
+		body io.Reader,
+		reqEditors ...RequestEditorFn,
+	) (*http.Response, error)
 
 	// DeletePlaybookTask request
-	DeletePlaybookTask(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
+	DeletePlaybookTask(
+		ctx context.Context,
+		id string,
+		reqEditors ...RequestEditorFn,
+	) (*http.Response, error)
 
 	// GetPlaybookTasks request
-	GetPlaybookTasks(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
+	GetPlaybookTasks(
+		ctx context.Context,
+		id string,
+		reqEditors ...RequestEditorFn,
+	) (*http.Response, error)
 
 	// UpdatePlaybookTask request  with any body
-	UpdatePlaybookTaskWithBody(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	UpdatePlaybookTaskWithBody(
+		ctx context.Context,
+		id string,
+		contentType string,
+		body io.Reader,
+		reqEditors ...RequestEditorFn,
+	) (*http.Response, error)
 
 	// ListPlaybooks request
-	ListPlaybooks(ctx context.Context, params *ListPlaybooksParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+	ListPlaybooks(
+		ctx context.Context,
+		params *ListPlaybooksParams,
+		reqEditors ...RequestEditorFn,
+	) (*http.Response, error)
 
 	// CreatePlaybook request  with any body
-	CreatePlaybookWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	CreatePlaybookWithBody(
+		ctx context.Context,
+		contentType string,
+		body io.Reader,
+		reqEditors ...RequestEditorFn,
+	) (*http.Response, error)
 
 	// DeletePlaybook request
-	DeletePlaybook(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
+	DeletePlaybook(
+		ctx context.Context,
+		id string,
+		reqEditors ...RequestEditorFn,
+	) (*http.Response, error)
 
 	// GetPlaybook request
-	GetPlaybook(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
+	GetPlaybook(
+		ctx context.Context,
+		id string,
+		reqEditors ...RequestEditorFn,
+	) (*http.Response, error)
 
 	// UpdatePlaybook request  with any body
-	UpdatePlaybookWithBody(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	UpdatePlaybookWithBody(
+		ctx context.Context,
+		id string,
+		contentType string,
+		body io.Reader,
+		reqEditors ...RequestEditorFn,
+	) (*http.Response, error)
 
 	// ListPlaybookTasks request
-	ListPlaybookTasks(ctx context.Context, playbookId string, params *ListPlaybookTasksParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+	ListPlaybookTasks(
+		ctx context.Context,
+		playbookId string,
+		params *ListPlaybookTasksParams,
+		reqEditors ...RequestEditorFn,
+	) (*http.Response, error)
 
 	// CreatePlaybookTask request  with any body
-	CreatePlaybookTaskWithBody(ctx context.Context, playbookId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	CreatePlaybookTaskWithBody(
+		ctx context.Context,
+		playbookId string,
+		contentType string,
+		body io.Reader,
+		reqEditors ...RequestEditorFn,
+	) (*http.Response, error)
 
 	// ListPostmortemTemplates request
-	ListPostmortemTemplates(ctx context.Context, params *ListPostmortemTemplatesParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+	ListPostmortemTemplates(
+		ctx context.Context,
+		params *ListPostmortemTemplatesParams,
+		reqEditors ...RequestEditorFn,
+	) (*http.Response, error)
 
 	// CreatePostmortemTemplate request  with any body
-	CreatePostmortemTemplateWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	CreatePostmortemTemplateWithBody(
+		ctx context.Context,
+		contentType string,
+		body io.Reader,
+		reqEditors ...RequestEditorFn,
+	) (*http.Response, error)
 
 	// DeletePostmortemTemplate request
-	DeletePostmortemTemplate(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
+	DeletePostmortemTemplate(
+		ctx context.Context,
+		id string,
+		reqEditors ...RequestEditorFn,
+	) (*http.Response, error)
 
 	// GetPostmortemTemplate request
-	GetPostmortemTemplate(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
+	GetPostmortemTemplate(
+		ctx context.Context,
+		id string,
+		reqEditors ...RequestEditorFn,
+	) (*http.Response, error)
 
 	// UpdatePostmortemTemplate request  with any body
-	UpdatePostmortemTemplateWithBody(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	UpdatePostmortemTemplateWithBody(
+		ctx context.Context,
+		id string,
+		contentType string,
+		body io.Reader,
+		reqEditors ...RequestEditorFn,
+	) (*http.Response, error)
 
 	// GetIncidentPostmortem request
-	GetIncidentPostmortem(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
+	GetIncidentPostmortem(
+		ctx context.Context,
+		id string,
+		reqEditors ...RequestEditorFn,
+	) (*http.Response, error)
 
 	// UpdateIncidentPostmortem request  with any body
-	UpdateIncidentPostmortemWithBody(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	UpdateIncidentPostmortemWithBody(
+		ctx context.Context,
+		id string,
+		contentType string,
+		body io.Reader,
+		reqEditors ...RequestEditorFn,
+	) (*http.Response, error)
 
 	// ListPulses request
-	ListPulses(ctx context.Context, params *ListPulsesParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+	ListPulses(
+		ctx context.Context,
+		params *ListPulsesParams,
+		reqEditors ...RequestEditorFn,
+	) (*http.Response, error)
 
 	// CreatePulse request  with any body
-	CreatePulseWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	CreatePulseWithBody(
+		ctx context.Context,
+		contentType string,
+		body io.Reader,
+		reqEditors ...RequestEditorFn,
+	) (*http.Response, error)
 
 	// GetPulse request
 	GetPulse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// UpdatePulse request  with any body
-	UpdatePulseWithBody(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	UpdatePulseWithBody(
+		ctx context.Context,
+		id string,
+		contentType string,
+		body io.Reader,
+		reqEditors ...RequestEditorFn,
+	) (*http.Response, error)
 
 	// ListServices request
-	ListServices(ctx context.Context, params *ListServicesParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+	ListServices(
+		ctx context.Context,
+		params *ListServicesParams,
+		reqEditors ...RequestEditorFn,
+	) (*http.Response, error)
 
 	// CreateService request  with any body
-	CreateServiceWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	CreateServiceWithBody(
+		ctx context.Context,
+		contentType string,
+		body io.Reader,
+		reqEditors ...RequestEditorFn,
+	) (*http.Response, error)
 
 	// DeleteService request
-	DeleteService(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
+	DeleteService(
+		ctx context.Context,
+		id string,
+		reqEditors ...RequestEditorFn,
+	) (*http.Response, error)
 
 	// GetService request
-	GetService(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
+	GetService(
+		ctx context.Context,
+		id string,
+		reqEditors ...RequestEditorFn,
+	) (*http.Response, error)
 
 	// UpdateService request  with any body
-	UpdateServiceWithBody(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	UpdateServiceWithBody(
+		ctx context.Context,
+		id string,
+		contentType string,
+		body io.Reader,
+		reqEditors ...RequestEditorFn,
+	) (*http.Response, error)
 
 	// ListSeverities request
-	ListSeverities(ctx context.Context, params *ListSeveritiesParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+	ListSeverities(
+		ctx context.Context,
+		params *ListSeveritiesParams,
+		reqEditors ...RequestEditorFn,
+	) (*http.Response, error)
 
 	// CreateSeverity request  with any body
-	CreateSeverityWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	CreateSeverityWithBody(
+		ctx context.Context,
+		contentType string,
+		body io.Reader,
+		reqEditors ...RequestEditorFn,
+	) (*http.Response, error)
 
 	// DeleteSeverity request
-	DeleteSeverity(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
+	DeleteSeverity(
+		ctx context.Context,
+		id string,
+		reqEditors ...RequestEditorFn,
+	) (*http.Response, error)
 
 	// GetSeverity request
-	GetSeverity(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
+	GetSeverity(
+		ctx context.Context,
+		id string,
+		reqEditors ...RequestEditorFn,
+	) (*http.Response, error)
 
 	// UpdateSeverity request  with any body
-	UpdateSeverityWithBody(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	UpdateSeverityWithBody(
+		ctx context.Context,
+		id string,
+		contentType string,
+		body io.Reader,
+		reqEditors ...RequestEditorFn,
+	) (*http.Response, error)
 
 	// ListStatusPages request
-	ListStatusPages(ctx context.Context, params *ListStatusPagesParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+	ListStatusPages(
+		ctx context.Context,
+		params *ListStatusPagesParams,
+		reqEditors ...RequestEditorFn,
+	) (*http.Response, error)
 
 	// CreateStatusPage request  with any body
-	CreateStatusPageWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	CreateStatusPageWithBody(
+		ctx context.Context,
+		contentType string,
+		body io.Reader,
+		reqEditors ...RequestEditorFn,
+	) (*http.Response, error)
 
 	// DeleteStatusPage request
-	DeleteStatusPage(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
+	DeleteStatusPage(
+		ctx context.Context,
+		id string,
+		reqEditors ...RequestEditorFn,
+	) (*http.Response, error)
 
 	// GetStatusPage request
-	GetStatusPage(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
+	GetStatusPage(
+		ctx context.Context,
+		id string,
+		reqEditors ...RequestEditorFn,
+	) (*http.Response, error)
 
 	// UpdateStatusPage request  with any body
-	UpdateStatusPageWithBody(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	UpdateStatusPageWithBody(
+		ctx context.Context,
+		id string,
+		contentType string,
+		body io.Reader,
+		reqEditors ...RequestEditorFn,
+	) (*http.Response, error)
 
 	// ListTeams request
-	ListTeams(ctx context.Context, params *ListTeamsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+	ListTeams(
+		ctx context.Context,
+		params *ListTeamsParams,
+		reqEditors ...RequestEditorFn,
+	) (*http.Response, error)
 
 	// CreateTeam request  with any body
-	CreateTeamWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	CreateTeamWithBody(
+		ctx context.Context,
+		contentType string,
+		body io.Reader,
+		reqEditors ...RequestEditorFn,
+	) (*http.Response, error)
 
 	// DeleteTeam request
-	DeleteTeam(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
+	DeleteTeam(
+		ctx context.Context,
+		id string,
+		reqEditors ...RequestEditorFn,
+	) (*http.Response, error)
 
 	// GetTeam request
 	GetTeam(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// UpdateTeam request  with any body
-	UpdateTeamWithBody(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	UpdateTeamWithBody(
+		ctx context.Context,
+		id string,
+		contentType string,
+		body io.Reader,
+		reqEditors ...RequestEditorFn,
+	) (*http.Response, error)
 }
 
-func (c *Client) DeleteIncidentActionItem(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) DeleteIncidentActionItem(
+	ctx context.Context,
+	id string,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewDeleteIncidentActionItemRequest(c.Server, id)
 	if err != nil {
 		return nil, err
@@ -3344,7 +3624,11 @@ func (c *Client) DeleteIncidentActionItem(ctx context.Context, id string, reqEdi
 	return c.Client.Do(req)
 }
 
-func (c *Client) GetIncidentActionItems(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) GetIncidentActionItems(
+	ctx context.Context,
+	id string,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewGetIncidentActionItemsRequest(c.Server, id)
 	if err != nil {
 		return nil, err
@@ -3356,7 +3640,13 @@ func (c *Client) GetIncidentActionItems(ctx context.Context, id string, reqEdito
 	return c.Client.Do(req)
 }
 
-func (c *Client) UpdateIncidentActionItemWithBody(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) UpdateIncidentActionItemWithBody(
+	ctx context.Context,
+	id string,
+	contentType string,
+	body io.Reader,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewUpdateIncidentActionItemRequestWithBody(c.Server, id, contentType, body)
 	if err != nil {
 		return nil, err
@@ -3368,7 +3658,11 @@ func (c *Client) UpdateIncidentActionItemWithBody(ctx context.Context, id string
 	return c.Client.Do(req)
 }
 
-func (c *Client) ListAlerts(ctx context.Context, params *ListAlertsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) ListAlerts(
+	ctx context.Context,
+	params *ListAlertsParams,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewListAlertsRequest(c.Server, params)
 	if err != nil {
 		return nil, err
@@ -3380,7 +3674,11 @@ func (c *Client) ListAlerts(ctx context.Context, params *ListAlertsParams, reqEd
 	return c.Client.Do(req)
 }
 
-func (c *Client) GetAlert(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) GetAlert(
+	ctx context.Context,
+	id string,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewGetAlertRequest(c.Server, id)
 	if err != nil {
 		return nil, err
@@ -3392,7 +3690,11 @@ func (c *Client) GetAlert(ctx context.Context, id string, reqEditors ...RequestE
 	return c.Client.Do(req)
 }
 
-func (c *Client) ListCauses(ctx context.Context, params *ListCausesParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) ListCauses(
+	ctx context.Context,
+	params *ListCausesParams,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewListCausesRequest(c.Server, params)
 	if err != nil {
 		return nil, err
@@ -3404,7 +3706,12 @@ func (c *Client) ListCauses(ctx context.Context, params *ListCausesParams, reqEd
 	return c.Client.Do(req)
 }
 
-func (c *Client) CreateCauseWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) CreateCauseWithBody(
+	ctx context.Context,
+	contentType string,
+	body io.Reader,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewCreateCauseRequestWithBody(c.Server, contentType, body)
 	if err != nil {
 		return nil, err
@@ -3416,7 +3723,11 @@ func (c *Client) CreateCauseWithBody(ctx context.Context, contentType string, bo
 	return c.Client.Do(req)
 }
 
-func (c *Client) DeleteCause(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) DeleteCause(
+	ctx context.Context,
+	id string,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewDeleteCauseRequest(c.Server, id)
 	if err != nil {
 		return nil, err
@@ -3428,7 +3739,11 @@ func (c *Client) DeleteCause(ctx context.Context, id string, reqEditors ...Reque
 	return c.Client.Do(req)
 }
 
-func (c *Client) GetCause(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) GetCause(
+	ctx context.Context,
+	id string,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewGetCauseRequest(c.Server, id)
 	if err != nil {
 		return nil, err
@@ -3440,7 +3755,13 @@ func (c *Client) GetCause(ctx context.Context, id string, reqEditors ...RequestE
 	return c.Client.Do(req)
 }
 
-func (c *Client) UpdateCauseWithBody(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) UpdateCauseWithBody(
+	ctx context.Context,
+	id string,
+	contentType string,
+	body io.Reader,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewUpdateCauseRequestWithBody(c.Server, id, contentType, body)
 	if err != nil {
 		return nil, err
@@ -3452,7 +3773,11 @@ func (c *Client) UpdateCauseWithBody(ctx context.Context, id string, contentType
 	return c.Client.Do(req)
 }
 
-func (c *Client) ListEnvironments(ctx context.Context, params *ListEnvironmentsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) ListEnvironments(
+	ctx context.Context,
+	params *ListEnvironmentsParams,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewListEnvironmentsRequest(c.Server, params)
 	if err != nil {
 		return nil, err
@@ -3464,7 +3789,12 @@ func (c *Client) ListEnvironments(ctx context.Context, params *ListEnvironmentsP
 	return c.Client.Do(req)
 }
 
-func (c *Client) CreateEnvironmentWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) CreateEnvironmentWithBody(
+	ctx context.Context,
+	contentType string,
+	body io.Reader,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewCreateEnvironmentRequestWithBody(c.Server, contentType, body)
 	if err != nil {
 		return nil, err
@@ -3476,7 +3806,11 @@ func (c *Client) CreateEnvironmentWithBody(ctx context.Context, contentType stri
 	return c.Client.Do(req)
 }
 
-func (c *Client) DeleteEnvironment(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) DeleteEnvironment(
+	ctx context.Context,
+	id string,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewDeleteEnvironmentRequest(c.Server, id)
 	if err != nil {
 		return nil, err
@@ -3488,7 +3822,11 @@ func (c *Client) DeleteEnvironment(ctx context.Context, id string, reqEditors ..
 	return c.Client.Do(req)
 }
 
-func (c *Client) GetEnvironment(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) GetEnvironment(
+	ctx context.Context,
+	id string,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewGetEnvironmentRequest(c.Server, id)
 	if err != nil {
 		return nil, err
@@ -3500,7 +3838,13 @@ func (c *Client) GetEnvironment(ctx context.Context, id string, reqEditors ...Re
 	return c.Client.Do(req)
 }
 
-func (c *Client) UpdateEnvironmentWithBody(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) UpdateEnvironmentWithBody(
+	ctx context.Context,
+	id string,
+	contentType string,
+	body io.Reader,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewUpdateEnvironmentRequestWithBody(c.Server, id, contentType, body)
 	if err != nil {
 		return nil, err
@@ -3512,7 +3856,11 @@ func (c *Client) UpdateEnvironmentWithBody(ctx context.Context, id string, conte
 	return c.Client.Do(req)
 }
 
-func (c *Client) DeleteIncidentEvent(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) DeleteIncidentEvent(
+	ctx context.Context,
+	id string,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewDeleteIncidentEventRequest(c.Server, id)
 	if err != nil {
 		return nil, err
@@ -3524,7 +3872,11 @@ func (c *Client) DeleteIncidentEvent(ctx context.Context, id string, reqEditors 
 	return c.Client.Do(req)
 }
 
-func (c *Client) GetIncidentEvents(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) GetIncidentEvents(
+	ctx context.Context,
+	id string,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewGetIncidentEventsRequest(c.Server, id)
 	if err != nil {
 		return nil, err
@@ -3536,7 +3888,13 @@ func (c *Client) GetIncidentEvents(ctx context.Context, id string, reqEditors ..
 	return c.Client.Do(req)
 }
 
-func (c *Client) UpdateIncidentEventWithBody(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) UpdateIncidentEventWithBody(
+	ctx context.Context,
+	id string,
+	contentType string,
+	body io.Reader,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewUpdateIncidentEventRequestWithBody(c.Server, id, contentType, body)
 	if err != nil {
 		return nil, err
@@ -3548,7 +3906,11 @@ func (c *Client) UpdateIncidentEventWithBody(ctx context.Context, id string, con
 	return c.Client.Do(req)
 }
 
-func (c *Client) ListFunctionalities(ctx context.Context, params *ListFunctionalitiesParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) ListFunctionalities(
+	ctx context.Context,
+	params *ListFunctionalitiesParams,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewListFunctionalitiesRequest(c.Server, params)
 	if err != nil {
 		return nil, err
@@ -3560,7 +3922,12 @@ func (c *Client) ListFunctionalities(ctx context.Context, params *ListFunctional
 	return c.Client.Do(req)
 }
 
-func (c *Client) CreateFunctionalityWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) CreateFunctionalityWithBody(
+	ctx context.Context,
+	contentType string,
+	body io.Reader,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewCreateFunctionalityRequestWithBody(c.Server, contentType, body)
 	if err != nil {
 		return nil, err
@@ -3572,7 +3939,11 @@ func (c *Client) CreateFunctionalityWithBody(ctx context.Context, contentType st
 	return c.Client.Do(req)
 }
 
-func (c *Client) DeleteFunctionality(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) DeleteFunctionality(
+	ctx context.Context,
+	id string,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewDeleteFunctionalityRequest(c.Server, id)
 	if err != nil {
 		return nil, err
@@ -3584,7 +3955,11 @@ func (c *Client) DeleteFunctionality(ctx context.Context, id string, reqEditors 
 	return c.Client.Do(req)
 }
 
-func (c *Client) GetFunctionality(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) GetFunctionality(
+	ctx context.Context,
+	id string,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewGetFunctionalityRequest(c.Server, id)
 	if err != nil {
 		return nil, err
@@ -3596,7 +3971,13 @@ func (c *Client) GetFunctionality(ctx context.Context, id string, reqEditors ...
 	return c.Client.Do(req)
 }
 
-func (c *Client) UpdateFunctionalityWithBody(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) UpdateFunctionalityWithBody(
+	ctx context.Context,
+	id string,
+	contentType string,
+	body io.Reader,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewUpdateFunctionalityRequestWithBody(c.Server, id, contentType, body)
 	if err != nil {
 		return nil, err
@@ -3608,7 +3989,11 @@ func (c *Client) UpdateFunctionalityWithBody(ctx context.Context, id string, con
 	return c.Client.Do(req)
 }
 
-func (c *Client) ListIncidentRoles(ctx context.Context, params *ListIncidentRolesParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) ListIncidentRoles(
+	ctx context.Context,
+	params *ListIncidentRolesParams,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewListIncidentRolesRequest(c.Server, params)
 	if err != nil {
 		return nil, err
@@ -3620,7 +4005,12 @@ func (c *Client) ListIncidentRoles(ctx context.Context, params *ListIncidentRole
 	return c.Client.Do(req)
 }
 
-func (c *Client) CreateIncidentRoleWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) CreateIncidentRoleWithBody(
+	ctx context.Context,
+	contentType string,
+	body io.Reader,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewCreateIncidentRoleRequestWithBody(c.Server, contentType, body)
 	if err != nil {
 		return nil, err
@@ -3632,7 +4022,11 @@ func (c *Client) CreateIncidentRoleWithBody(ctx context.Context, contentType str
 	return c.Client.Do(req)
 }
 
-func (c *Client) DeleteIncidentRole(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) DeleteIncidentRole(
+	ctx context.Context,
+	id string,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewDeleteIncidentRoleRequest(c.Server, id)
 	if err != nil {
 		return nil, err
@@ -3644,7 +4038,11 @@ func (c *Client) DeleteIncidentRole(ctx context.Context, id string, reqEditors .
 	return c.Client.Do(req)
 }
 
-func (c *Client) GetIncidentRole(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) GetIncidentRole(
+	ctx context.Context,
+	id string,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewGetIncidentRoleRequest(c.Server, id)
 	if err != nil {
 		return nil, err
@@ -3656,7 +4054,13 @@ func (c *Client) GetIncidentRole(ctx context.Context, id string, reqEditors ...R
 	return c.Client.Do(req)
 }
 
-func (c *Client) UpdateIncidentRoleWithBody(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) UpdateIncidentRoleWithBody(
+	ctx context.Context,
+	id string,
+	contentType string,
+	body io.Reader,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewUpdateIncidentRoleRequestWithBody(c.Server, id, contentType, body)
 	if err != nil {
 		return nil, err
@@ -3668,7 +4072,11 @@ func (c *Client) UpdateIncidentRoleWithBody(ctx context.Context, id string, cont
 	return c.Client.Do(req)
 }
 
-func (c *Client) DeleteIncidentTask(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) DeleteIncidentTask(
+	ctx context.Context,
+	id string,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewDeleteIncidentTaskRequest(c.Server, id)
 	if err != nil {
 		return nil, err
@@ -3680,7 +4088,11 @@ func (c *Client) DeleteIncidentTask(ctx context.Context, id string, reqEditors .
 	return c.Client.Do(req)
 }
 
-func (c *Client) GetIncidentTasks(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) GetIncidentTasks(
+	ctx context.Context,
+	id string,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewGetIncidentTasksRequest(c.Server, id)
 	if err != nil {
 		return nil, err
@@ -3692,7 +4104,13 @@ func (c *Client) GetIncidentTasks(ctx context.Context, id string, reqEditors ...
 	return c.Client.Do(req)
 }
 
-func (c *Client) UpdateIncidentTaskWithBody(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) UpdateIncidentTaskWithBody(
+	ctx context.Context,
+	id string,
+	contentType string,
+	body io.Reader,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewUpdateIncidentTaskRequestWithBody(c.Server, id, contentType, body)
 	if err != nil {
 		return nil, err
@@ -3704,7 +4122,11 @@ func (c *Client) UpdateIncidentTaskWithBody(ctx context.Context, id string, cont
 	return c.Client.Do(req)
 }
 
-func (c *Client) ListIncidentTypes(ctx context.Context, params *ListIncidentTypesParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) ListIncidentTypes(
+	ctx context.Context,
+	params *ListIncidentTypesParams,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewListIncidentTypesRequest(c.Server, params)
 	if err != nil {
 		return nil, err
@@ -3716,7 +4138,12 @@ func (c *Client) ListIncidentTypes(ctx context.Context, params *ListIncidentType
 	return c.Client.Do(req)
 }
 
-func (c *Client) CreateIncidentTypeWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) CreateIncidentTypeWithBody(
+	ctx context.Context,
+	contentType string,
+	body io.Reader,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewCreateIncidentTypeRequestWithBody(c.Server, contentType, body)
 	if err != nil {
 		return nil, err
@@ -3728,7 +4155,11 @@ func (c *Client) CreateIncidentTypeWithBody(ctx context.Context, contentType str
 	return c.Client.Do(req)
 }
 
-func (c *Client) DeleteIncidentType(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) DeleteIncidentType(
+	ctx context.Context,
+	id string,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewDeleteIncidentTypeRequest(c.Server, id)
 	if err != nil {
 		return nil, err
@@ -3740,7 +4171,11 @@ func (c *Client) DeleteIncidentType(ctx context.Context, id string, reqEditors .
 	return c.Client.Do(req)
 }
 
-func (c *Client) GetIncidentType(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) GetIncidentType(
+	ctx context.Context,
+	id string,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewGetIncidentTypeRequest(c.Server, id)
 	if err != nil {
 		return nil, err
@@ -3752,7 +4187,13 @@ func (c *Client) GetIncidentType(ctx context.Context, id string, reqEditors ...R
 	return c.Client.Do(req)
 }
 
-func (c *Client) UpdateIncidentTypeWithBody(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) UpdateIncidentTypeWithBody(
+	ctx context.Context,
+	id string,
+	contentType string,
+	body io.Reader,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewUpdateIncidentTypeRequestWithBody(c.Server, id, contentType, body)
 	if err != nil {
 		return nil, err
@@ -3764,7 +4205,11 @@ func (c *Client) UpdateIncidentTypeWithBody(ctx context.Context, id string, cont
 	return c.Client.Do(req)
 }
 
-func (c *Client) ListIncidents(ctx context.Context, params *ListIncidentsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) ListIncidents(
+	ctx context.Context,
+	params *ListIncidentsParams,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewListIncidentsRequest(c.Server, params)
 	if err != nil {
 		return nil, err
@@ -3776,7 +4221,12 @@ func (c *Client) ListIncidents(ctx context.Context, params *ListIncidentsParams,
 	return c.Client.Do(req)
 }
 
-func (c *Client) CreateIncidentWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) CreateIncidentWithBody(
+	ctx context.Context,
+	contentType string,
+	body io.Reader,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewCreateIncidentRequestWithBody(c.Server, contentType, body)
 	if err != nil {
 		return nil, err
@@ -3788,7 +4238,11 @@ func (c *Client) CreateIncidentWithBody(ctx context.Context, contentType string,
 	return c.Client.Do(req)
 }
 
-func (c *Client) DeleteIncident(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) DeleteIncident(
+	ctx context.Context,
+	id string,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewDeleteIncidentRequest(c.Server, id)
 	if err != nil {
 		return nil, err
@@ -3800,7 +4254,11 @@ func (c *Client) DeleteIncident(ctx context.Context, id string, reqEditors ...Re
 	return c.Client.Do(req)
 }
 
-func (c *Client) GetIncident(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) GetIncident(
+	ctx context.Context,
+	id string,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewGetIncidentRequest(c.Server, id)
 	if err != nil {
 		return nil, err
@@ -3812,7 +4270,13 @@ func (c *Client) GetIncident(ctx context.Context, id string, reqEditors ...Reque
 	return c.Client.Do(req)
 }
 
-func (c *Client) UpdateIncidentWithBody(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) UpdateIncidentWithBody(
+	ctx context.Context,
+	id string,
+	contentType string,
+	body io.Reader,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewUpdateIncidentRequestWithBody(c.Server, id, contentType, body)
 	if err != nil {
 		return nil, err
@@ -3824,7 +4288,13 @@ func (c *Client) UpdateIncidentWithBody(ctx context.Context, id string, contentT
 	return c.Client.Do(req)
 }
 
-func (c *Client) MitigateIncidentWithBody(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) MitigateIncidentWithBody(
+	ctx context.Context,
+	id string,
+	contentType string,
+	body io.Reader,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewMitigateIncidentRequestWithBody(c.Server, id, contentType, body)
 	if err != nil {
 		return nil, err
@@ -3836,7 +4306,13 @@ func (c *Client) MitigateIncidentWithBody(ctx context.Context, id string, conten
 	return c.Client.Do(req)
 }
 
-func (c *Client) ResolveIncidentWithBody(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) ResolveIncidentWithBody(
+	ctx context.Context,
+	id string,
+	contentType string,
+	body io.Reader,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewResolveIncidentRequestWithBody(c.Server, id, contentType, body)
 	if err != nil {
 		return nil, err
@@ -3848,7 +4324,12 @@ func (c *Client) ResolveIncidentWithBody(ctx context.Context, id string, content
 	return c.Client.Do(req)
 }
 
-func (c *Client) ListIncidentActionItems(ctx context.Context, incidentId string, params *ListIncidentActionItemsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) ListIncidentActionItems(
+	ctx context.Context,
+	incidentId string,
+	params *ListIncidentActionItemsParams,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewListIncidentActionItemsRequest(c.Server, incidentId, params)
 	if err != nil {
 		return nil, err
@@ -3860,7 +4341,13 @@ func (c *Client) ListIncidentActionItems(ctx context.Context, incidentId string,
 	return c.Client.Do(req)
 }
 
-func (c *Client) CreateIncidentActionItemWithBody(ctx context.Context, incidentId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) CreateIncidentActionItemWithBody(
+	ctx context.Context,
+	incidentId string,
+	contentType string,
+	body io.Reader,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewCreateIncidentActionItemRequestWithBody(c.Server, incidentId, contentType, body)
 	if err != nil {
 		return nil, err
@@ -3872,7 +4359,12 @@ func (c *Client) CreateIncidentActionItemWithBody(ctx context.Context, incidentI
 	return c.Client.Do(req)
 }
 
-func (c *Client) ListAlert(ctx context.Context, incidentId string, params *ListAlertParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) ListAlert(
+	ctx context.Context,
+	incidentId string,
+	params *ListAlertParams,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewListAlertRequest(c.Server, incidentId, params)
 	if err != nil {
 		return nil, err
@@ -3884,7 +4376,13 @@ func (c *Client) ListAlert(ctx context.Context, incidentId string, params *ListA
 	return c.Client.Do(req)
 }
 
-func (c *Client) AttachAlertWithBody(ctx context.Context, incidentId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) AttachAlertWithBody(
+	ctx context.Context,
+	incidentId string,
+	contentType string,
+	body io.Reader,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewAttachAlertRequestWithBody(c.Server, incidentId, contentType, body)
 	if err != nil {
 		return nil, err
@@ -3896,7 +4394,12 @@ func (c *Client) AttachAlertWithBody(ctx context.Context, incidentId string, con
 	return c.Client.Do(req)
 }
 
-func (c *Client) ListIncidentEvents(ctx context.Context, incidentId string, params *ListIncidentEventsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) ListIncidentEvents(
+	ctx context.Context,
+	incidentId string,
+	params *ListIncidentEventsParams,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewListIncidentEventsRequest(c.Server, incidentId, params)
 	if err != nil {
 		return nil, err
@@ -3908,7 +4411,13 @@ func (c *Client) ListIncidentEvents(ctx context.Context, incidentId string, para
 	return c.Client.Do(req)
 }
 
-func (c *Client) CreateIncidentEventWithBody(ctx context.Context, incidentId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) CreateIncidentEventWithBody(
+	ctx context.Context,
+	incidentId string,
+	contentType string,
+	body io.Reader,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewCreateIncidentEventRequestWithBody(c.Server, incidentId, contentType, body)
 	if err != nil {
 		return nil, err
@@ -3920,7 +4429,12 @@ func (c *Client) CreateIncidentEventWithBody(ctx context.Context, incidentId str
 	return c.Client.Do(req)
 }
 
-func (c *Client) ListIncidentTasks(ctx context.Context, incidentId string, params *ListIncidentTasksParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) ListIncidentTasks(
+	ctx context.Context,
+	incidentId string,
+	params *ListIncidentTasksParams,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewListIncidentTasksRequest(c.Server, incidentId, params)
 	if err != nil {
 		return nil, err
@@ -3932,7 +4446,13 @@ func (c *Client) ListIncidentTasks(ctx context.Context, incidentId string, param
 	return c.Client.Do(req)
 }
 
-func (c *Client) CreateIncidentTaskWithBody(ctx context.Context, incidentId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) CreateIncidentTaskWithBody(
+	ctx context.Context,
+	incidentId string,
+	contentType string,
+	body io.Reader,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewCreateIncidentTaskRequestWithBody(c.Server, incidentId, contentType, body)
 	if err != nil {
 		return nil, err
@@ -3944,7 +4464,11 @@ func (c *Client) CreateIncidentTaskWithBody(ctx context.Context, incidentId stri
 	return c.Client.Do(req)
 }
 
-func (c *Client) DeletePlaybookTask(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) DeletePlaybookTask(
+	ctx context.Context,
+	id string,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewDeletePlaybookTaskRequest(c.Server, id)
 	if err != nil {
 		return nil, err
@@ -3956,7 +4480,11 @@ func (c *Client) DeletePlaybookTask(ctx context.Context, id string, reqEditors .
 	return c.Client.Do(req)
 }
 
-func (c *Client) GetPlaybookTasks(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) GetPlaybookTasks(
+	ctx context.Context,
+	id string,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewGetPlaybookTasksRequest(c.Server, id)
 	if err != nil {
 		return nil, err
@@ -3968,7 +4496,13 @@ func (c *Client) GetPlaybookTasks(ctx context.Context, id string, reqEditors ...
 	return c.Client.Do(req)
 }
 
-func (c *Client) UpdatePlaybookTaskWithBody(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) UpdatePlaybookTaskWithBody(
+	ctx context.Context,
+	id string,
+	contentType string,
+	body io.Reader,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewUpdatePlaybookTaskRequestWithBody(c.Server, id, contentType, body)
 	if err != nil {
 		return nil, err
@@ -3980,7 +4514,11 @@ func (c *Client) UpdatePlaybookTaskWithBody(ctx context.Context, id string, cont
 	return c.Client.Do(req)
 }
 
-func (c *Client) ListPlaybooks(ctx context.Context, params *ListPlaybooksParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) ListPlaybooks(
+	ctx context.Context,
+	params *ListPlaybooksParams,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewListPlaybooksRequest(c.Server, params)
 	if err != nil {
 		return nil, err
@@ -3992,7 +4530,12 @@ func (c *Client) ListPlaybooks(ctx context.Context, params *ListPlaybooksParams,
 	return c.Client.Do(req)
 }
 
-func (c *Client) CreatePlaybookWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) CreatePlaybookWithBody(
+	ctx context.Context,
+	contentType string,
+	body io.Reader,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewCreatePlaybookRequestWithBody(c.Server, contentType, body)
 	if err != nil {
 		return nil, err
@@ -4004,7 +4547,11 @@ func (c *Client) CreatePlaybookWithBody(ctx context.Context, contentType string,
 	return c.Client.Do(req)
 }
 
-func (c *Client) DeletePlaybook(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) DeletePlaybook(
+	ctx context.Context,
+	id string,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewDeletePlaybookRequest(c.Server, id)
 	if err != nil {
 		return nil, err
@@ -4016,7 +4563,11 @@ func (c *Client) DeletePlaybook(ctx context.Context, id string, reqEditors ...Re
 	return c.Client.Do(req)
 }
 
-func (c *Client) GetPlaybook(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) GetPlaybook(
+	ctx context.Context,
+	id string,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewGetPlaybookRequest(c.Server, id)
 	if err != nil {
 		return nil, err
@@ -4028,7 +4579,13 @@ func (c *Client) GetPlaybook(ctx context.Context, id string, reqEditors ...Reque
 	return c.Client.Do(req)
 }
 
-func (c *Client) UpdatePlaybookWithBody(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) UpdatePlaybookWithBody(
+	ctx context.Context,
+	id string,
+	contentType string,
+	body io.Reader,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewUpdatePlaybookRequestWithBody(c.Server, id, contentType, body)
 	if err != nil {
 		return nil, err
@@ -4040,7 +4597,12 @@ func (c *Client) UpdatePlaybookWithBody(ctx context.Context, id string, contentT
 	return c.Client.Do(req)
 }
 
-func (c *Client) ListPlaybookTasks(ctx context.Context, playbookId string, params *ListPlaybookTasksParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) ListPlaybookTasks(
+	ctx context.Context,
+	playbookId string,
+	params *ListPlaybookTasksParams,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewListPlaybookTasksRequest(c.Server, playbookId, params)
 	if err != nil {
 		return nil, err
@@ -4052,7 +4614,13 @@ func (c *Client) ListPlaybookTasks(ctx context.Context, playbookId string, param
 	return c.Client.Do(req)
 }
 
-func (c *Client) CreatePlaybookTaskWithBody(ctx context.Context, playbookId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) CreatePlaybookTaskWithBody(
+	ctx context.Context,
+	playbookId string,
+	contentType string,
+	body io.Reader,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewCreatePlaybookTaskRequestWithBody(c.Server, playbookId, contentType, body)
 	if err != nil {
 		return nil, err
@@ -4064,7 +4632,11 @@ func (c *Client) CreatePlaybookTaskWithBody(ctx context.Context, playbookId stri
 	return c.Client.Do(req)
 }
 
-func (c *Client) ListPostmortemTemplates(ctx context.Context, params *ListPostmortemTemplatesParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) ListPostmortemTemplates(
+	ctx context.Context,
+	params *ListPostmortemTemplatesParams,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewListPostmortemTemplatesRequest(c.Server, params)
 	if err != nil {
 		return nil, err
@@ -4076,7 +4648,12 @@ func (c *Client) ListPostmortemTemplates(ctx context.Context, params *ListPostmo
 	return c.Client.Do(req)
 }
 
-func (c *Client) CreatePostmortemTemplateWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) CreatePostmortemTemplateWithBody(
+	ctx context.Context,
+	contentType string,
+	body io.Reader,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewCreatePostmortemTemplateRequestWithBody(c.Server, contentType, body)
 	if err != nil {
 		return nil, err
@@ -4088,7 +4665,11 @@ func (c *Client) CreatePostmortemTemplateWithBody(ctx context.Context, contentTy
 	return c.Client.Do(req)
 }
 
-func (c *Client) DeletePostmortemTemplate(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) DeletePostmortemTemplate(
+	ctx context.Context,
+	id string,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewDeletePostmortemTemplateRequest(c.Server, id)
 	if err != nil {
 		return nil, err
@@ -4100,7 +4681,11 @@ func (c *Client) DeletePostmortemTemplate(ctx context.Context, id string, reqEdi
 	return c.Client.Do(req)
 }
 
-func (c *Client) GetPostmortemTemplate(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) GetPostmortemTemplate(
+	ctx context.Context,
+	id string,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewGetPostmortemTemplateRequest(c.Server, id)
 	if err != nil {
 		return nil, err
@@ -4112,7 +4697,13 @@ func (c *Client) GetPostmortemTemplate(ctx context.Context, id string, reqEditor
 	return c.Client.Do(req)
 }
 
-func (c *Client) UpdatePostmortemTemplateWithBody(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) UpdatePostmortemTemplateWithBody(
+	ctx context.Context,
+	id string,
+	contentType string,
+	body io.Reader,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewUpdatePostmortemTemplateRequestWithBody(c.Server, id, contentType, body)
 	if err != nil {
 		return nil, err
@@ -4124,7 +4715,11 @@ func (c *Client) UpdatePostmortemTemplateWithBody(ctx context.Context, id string
 	return c.Client.Do(req)
 }
 
-func (c *Client) GetIncidentPostmortem(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) GetIncidentPostmortem(
+	ctx context.Context,
+	id string,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewGetIncidentPostmortemRequest(c.Server, id)
 	if err != nil {
 		return nil, err
@@ -4136,7 +4731,13 @@ func (c *Client) GetIncidentPostmortem(ctx context.Context, id string, reqEditor
 	return c.Client.Do(req)
 }
 
-func (c *Client) UpdateIncidentPostmortemWithBody(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) UpdateIncidentPostmortemWithBody(
+	ctx context.Context,
+	id string,
+	contentType string,
+	body io.Reader,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewUpdateIncidentPostmortemRequestWithBody(c.Server, id, contentType, body)
 	if err != nil {
 		return nil, err
@@ -4148,7 +4749,11 @@ func (c *Client) UpdateIncidentPostmortemWithBody(ctx context.Context, id string
 	return c.Client.Do(req)
 }
 
-func (c *Client) ListPulses(ctx context.Context, params *ListPulsesParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) ListPulses(
+	ctx context.Context,
+	params *ListPulsesParams,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewListPulsesRequest(c.Server, params)
 	if err != nil {
 		return nil, err
@@ -4160,7 +4765,12 @@ func (c *Client) ListPulses(ctx context.Context, params *ListPulsesParams, reqEd
 	return c.Client.Do(req)
 }
 
-func (c *Client) CreatePulseWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) CreatePulseWithBody(
+	ctx context.Context,
+	contentType string,
+	body io.Reader,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewCreatePulseRequestWithBody(c.Server, contentType, body)
 	if err != nil {
 		return nil, err
@@ -4172,7 +4782,11 @@ func (c *Client) CreatePulseWithBody(ctx context.Context, contentType string, bo
 	return c.Client.Do(req)
 }
 
-func (c *Client) GetPulse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) GetPulse(
+	ctx context.Context,
+	id string,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewGetPulseRequest(c.Server, id)
 	if err != nil {
 		return nil, err
@@ -4184,7 +4798,13 @@ func (c *Client) GetPulse(ctx context.Context, id string, reqEditors ...RequestE
 	return c.Client.Do(req)
 }
 
-func (c *Client) UpdatePulseWithBody(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) UpdatePulseWithBody(
+	ctx context.Context,
+	id string,
+	contentType string,
+	body io.Reader,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewUpdatePulseRequestWithBody(c.Server, id, contentType, body)
 	if err != nil {
 		return nil, err
@@ -4196,7 +4816,11 @@ func (c *Client) UpdatePulseWithBody(ctx context.Context, id string, contentType
 	return c.Client.Do(req)
 }
 
-func (c *Client) ListServices(ctx context.Context, params *ListServicesParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) ListServices(
+	ctx context.Context,
+	params *ListServicesParams,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewListServicesRequest(c.Server, params)
 	if err != nil {
 		return nil, err
@@ -4208,7 +4832,12 @@ func (c *Client) ListServices(ctx context.Context, params *ListServicesParams, r
 	return c.Client.Do(req)
 }
 
-func (c *Client) CreateServiceWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) CreateServiceWithBody(
+	ctx context.Context,
+	contentType string,
+	body io.Reader,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewCreateServiceRequestWithBody(c.Server, contentType, body)
 	if err != nil {
 		return nil, err
@@ -4220,7 +4849,11 @@ func (c *Client) CreateServiceWithBody(ctx context.Context, contentType string, 
 	return c.Client.Do(req)
 }
 
-func (c *Client) DeleteService(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) DeleteService(
+	ctx context.Context,
+	id string,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewDeleteServiceRequest(c.Server, id)
 	if err != nil {
 		return nil, err
@@ -4232,7 +4865,11 @@ func (c *Client) DeleteService(ctx context.Context, id string, reqEditors ...Req
 	return c.Client.Do(req)
 }
 
-func (c *Client) GetService(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) GetService(
+	ctx context.Context,
+	id string,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewGetServiceRequest(c.Server, id)
 	if err != nil {
 		return nil, err
@@ -4244,7 +4881,13 @@ func (c *Client) GetService(ctx context.Context, id string, reqEditors ...Reques
 	return c.Client.Do(req)
 }
 
-func (c *Client) UpdateServiceWithBody(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) UpdateServiceWithBody(
+	ctx context.Context,
+	id string,
+	contentType string,
+	body io.Reader,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewUpdateServiceRequestWithBody(c.Server, id, contentType, body)
 	if err != nil {
 		return nil, err
@@ -4256,7 +4899,11 @@ func (c *Client) UpdateServiceWithBody(ctx context.Context, id string, contentTy
 	return c.Client.Do(req)
 }
 
-func (c *Client) ListSeverities(ctx context.Context, params *ListSeveritiesParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) ListSeverities(
+	ctx context.Context,
+	params *ListSeveritiesParams,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewListSeveritiesRequest(c.Server, params)
 	if err != nil {
 		return nil, err
@@ -4268,7 +4915,12 @@ func (c *Client) ListSeverities(ctx context.Context, params *ListSeveritiesParam
 	return c.Client.Do(req)
 }
 
-func (c *Client) CreateSeverityWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) CreateSeverityWithBody(
+	ctx context.Context,
+	contentType string,
+	body io.Reader,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewCreateSeverityRequestWithBody(c.Server, contentType, body)
 	if err != nil {
 		return nil, err
@@ -4280,7 +4932,11 @@ func (c *Client) CreateSeverityWithBody(ctx context.Context, contentType string,
 	return c.Client.Do(req)
 }
 
-func (c *Client) DeleteSeverity(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) DeleteSeverity(
+	ctx context.Context,
+	id string,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewDeleteSeverityRequest(c.Server, id)
 	if err != nil {
 		return nil, err
@@ -4292,7 +4948,11 @@ func (c *Client) DeleteSeverity(ctx context.Context, id string, reqEditors ...Re
 	return c.Client.Do(req)
 }
 
-func (c *Client) GetSeverity(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) GetSeverity(
+	ctx context.Context,
+	id string,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewGetSeverityRequest(c.Server, id)
 	if err != nil {
 		return nil, err
@@ -4304,7 +4964,13 @@ func (c *Client) GetSeverity(ctx context.Context, id string, reqEditors ...Reque
 	return c.Client.Do(req)
 }
 
-func (c *Client) UpdateSeverityWithBody(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) UpdateSeverityWithBody(
+	ctx context.Context,
+	id string,
+	contentType string,
+	body io.Reader,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewUpdateSeverityRequestWithBody(c.Server, id, contentType, body)
 	if err != nil {
 		return nil, err
@@ -4316,7 +4982,11 @@ func (c *Client) UpdateSeverityWithBody(ctx context.Context, id string, contentT
 	return c.Client.Do(req)
 }
 
-func (c *Client) ListStatusPages(ctx context.Context, params *ListStatusPagesParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) ListStatusPages(
+	ctx context.Context,
+	params *ListStatusPagesParams,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewListStatusPagesRequest(c.Server, params)
 	if err != nil {
 		return nil, err
@@ -4328,7 +4998,12 @@ func (c *Client) ListStatusPages(ctx context.Context, params *ListStatusPagesPar
 	return c.Client.Do(req)
 }
 
-func (c *Client) CreateStatusPageWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) CreateStatusPageWithBody(
+	ctx context.Context,
+	contentType string,
+	body io.Reader,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewCreateStatusPageRequestWithBody(c.Server, contentType, body)
 	if err != nil {
 		return nil, err
@@ -4340,7 +5015,11 @@ func (c *Client) CreateStatusPageWithBody(ctx context.Context, contentType strin
 	return c.Client.Do(req)
 }
 
-func (c *Client) DeleteStatusPage(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) DeleteStatusPage(
+	ctx context.Context,
+	id string,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewDeleteStatusPageRequest(c.Server, id)
 	if err != nil {
 		return nil, err
@@ -4352,7 +5031,11 @@ func (c *Client) DeleteStatusPage(ctx context.Context, id string, reqEditors ...
 	return c.Client.Do(req)
 }
 
-func (c *Client) GetStatusPage(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) GetStatusPage(
+	ctx context.Context,
+	id string,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewGetStatusPageRequest(c.Server, id)
 	if err != nil {
 		return nil, err
@@ -4364,7 +5047,13 @@ func (c *Client) GetStatusPage(ctx context.Context, id string, reqEditors ...Req
 	return c.Client.Do(req)
 }
 
-func (c *Client) UpdateStatusPageWithBody(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) UpdateStatusPageWithBody(
+	ctx context.Context,
+	id string,
+	contentType string,
+	body io.Reader,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewUpdateStatusPageRequestWithBody(c.Server, id, contentType, body)
 	if err != nil {
 		return nil, err
@@ -4376,7 +5065,11 @@ func (c *Client) UpdateStatusPageWithBody(ctx context.Context, id string, conten
 	return c.Client.Do(req)
 }
 
-func (c *Client) ListTeams(ctx context.Context, params *ListTeamsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) ListTeams(
+	ctx context.Context,
+	params *ListTeamsParams,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewListTeamsRequest(c.Server, params)
 	if err != nil {
 		return nil, err
@@ -4388,7 +5081,12 @@ func (c *Client) ListTeams(ctx context.Context, params *ListTeamsParams, reqEdit
 	return c.Client.Do(req)
 }
 
-func (c *Client) CreateTeamWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) CreateTeamWithBody(
+	ctx context.Context,
+	contentType string,
+	body io.Reader,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewCreateTeamRequestWithBody(c.Server, contentType, body)
 	if err != nil {
 		return nil, err
@@ -4400,7 +5098,11 @@ func (c *Client) CreateTeamWithBody(ctx context.Context, contentType string, bod
 	return c.Client.Do(req)
 }
 
-func (c *Client) DeleteTeam(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) DeleteTeam(
+	ctx context.Context,
+	id string,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewDeleteTeamRequest(c.Server, id)
 	if err != nil {
 		return nil, err
@@ -4412,7 +5114,11 @@ func (c *Client) DeleteTeam(ctx context.Context, id string, reqEditors ...Reques
 	return c.Client.Do(req)
 }
 
-func (c *Client) GetTeam(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) GetTeam(
+	ctx context.Context,
+	id string,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewGetTeamRequest(c.Server, id)
 	if err != nil {
 		return nil, err
@@ -4424,7 +5130,13 @@ func (c *Client) GetTeam(ctx context.Context, id string, reqEditors ...RequestEd
 	return c.Client.Do(req)
 }
 
-func (c *Client) UpdateTeamWithBody(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) UpdateTeamWithBody(
+	ctx context.Context,
+	id string,
+	contentType string,
+	body io.Reader,
+	reqEditors ...RequestEditorFn,
+) (*http.Response, error) {
 	req, err := NewUpdateTeamRequestWithBody(c.Server, id, contentType, body)
 	if err != nil {
 		return nil, err
@@ -4442,7 +5154,13 @@ func NewDeleteIncidentActionItemRequest(server string, id string) (*http.Request
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	pathParam0, err = runtime.StyleParamWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		id,
+	)
 	if err != nil {
 		return nil, err
 	}
@@ -4476,7 +5194,13 @@ func NewGetIncidentActionItemsRequest(server string, id string) (*http.Request, 
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	pathParam0, err = runtime.StyleParamWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		id,
+	)
 	if err != nil {
 		return nil, err
 	}
@@ -4505,12 +5229,23 @@ func NewGetIncidentActionItemsRequest(server string, id string) (*http.Request, 
 }
 
 // NewUpdateIncidentActionItemRequestWithBody generates requests for UpdateIncidentActionItem with any type of body
-func NewUpdateIncidentActionItemRequestWithBody(server string, id string, contentType string, body io.Reader) (*http.Request, error) {
+func NewUpdateIncidentActionItemRequestWithBody(
+	server string,
+	id string,
+	contentType string,
+	body io.Reader,
+) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	pathParam0, err = runtime.StyleParamWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		id,
+	)
 	if err != nil {
 		return nil, err
 	}
@@ -4609,7 +5344,13 @@ func NewGetAlertRequest(server string, id string) (*http.Request, error) {
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	pathParam0, err = runtime.StyleParamWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		id,
+	)
 	if err != nil {
 		return nil, err
 	}
@@ -4701,7 +5442,11 @@ func NewListCausesRequest(server string, params *ListCausesParams) (*http.Reques
 }
 
 // NewCreateCauseRequestWithBody generates requests for CreateCause with any type of body
-func NewCreateCauseRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+func NewCreateCauseRequestWithBody(
+	server string,
+	contentType string,
+	body io.Reader,
+) (*http.Request, error) {
 	var err error
 
 	serverURL, err := url.Parse(server)
@@ -4735,7 +5480,13 @@ func NewDeleteCauseRequest(server string, id string) (*http.Request, error) {
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	pathParam0, err = runtime.StyleParamWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		id,
+	)
 	if err != nil {
 		return nil, err
 	}
@@ -4769,7 +5520,13 @@ func NewGetCauseRequest(server string, id string) (*http.Request, error) {
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	pathParam0, err = runtime.StyleParamWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		id,
+	)
 	if err != nil {
 		return nil, err
 	}
@@ -4798,12 +5555,23 @@ func NewGetCauseRequest(server string, id string) (*http.Request, error) {
 }
 
 // NewUpdateCauseRequestWithBody generates requests for UpdateCause with any type of body
-func NewUpdateCauseRequestWithBody(server string, id string, contentType string, body io.Reader) (*http.Request, error) {
+func NewUpdateCauseRequestWithBody(
+	server string,
+	id string,
+	contentType string,
+	body io.Reader,
+) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	pathParam0, err = runtime.StyleParamWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		id,
+	)
 	if err != nil {
 		return nil, err
 	}
@@ -4834,7 +5602,10 @@ func NewUpdateCauseRequestWithBody(server string, id string, contentType string,
 }
 
 // NewListEnvironmentsRequest generates requests for ListEnvironments
-func NewListEnvironmentsRequest(server string, params *ListEnvironmentsParams) (*http.Request, error) {
+func NewListEnvironmentsRequest(
+	server string,
+	params *ListEnvironmentsParams,
+) (*http.Request, error) {
 	var err error
 
 	serverURL, err := url.Parse(server)
@@ -4897,7 +5668,11 @@ func NewListEnvironmentsRequest(server string, params *ListEnvironmentsParams) (
 }
 
 // NewCreateEnvironmentRequestWithBody generates requests for CreateEnvironment with any type of body
-func NewCreateEnvironmentRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+func NewCreateEnvironmentRequestWithBody(
+	server string,
+	contentType string,
+	body io.Reader,
+) (*http.Request, error) {
 	var err error
 
 	serverURL, err := url.Parse(server)
@@ -4931,7 +5706,13 @@ func NewDeleteEnvironmentRequest(server string, id string) (*http.Request, error
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	pathParam0, err = runtime.StyleParamWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		id,
+	)
 	if err != nil {
 		return nil, err
 	}
@@ -4965,7 +5746,13 @@ func NewGetEnvironmentRequest(server string, id string) (*http.Request, error) {
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	pathParam0, err = runtime.StyleParamWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		id,
+	)
 	if err != nil {
 		return nil, err
 	}
@@ -4994,12 +5781,23 @@ func NewGetEnvironmentRequest(server string, id string) (*http.Request, error) {
 }
 
 // NewUpdateEnvironmentRequestWithBody generates requests for UpdateEnvironment with any type of body
-func NewUpdateEnvironmentRequestWithBody(server string, id string, contentType string, body io.Reader) (*http.Request, error) {
+func NewUpdateEnvironmentRequestWithBody(
+	server string,
+	id string,
+	contentType string,
+	body io.Reader,
+) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	pathParam0, err = runtime.StyleParamWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		id,
+	)
 	if err != nil {
 		return nil, err
 	}
@@ -5035,7 +5833,13 @@ func NewDeleteIncidentEventRequest(server string, id string) (*http.Request, err
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	pathParam0, err = runtime.StyleParamWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		id,
+	)
 	if err != nil {
 		return nil, err
 	}
@@ -5069,7 +5873,13 @@ func NewGetIncidentEventsRequest(server string, id string) (*http.Request, error
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	pathParam0, err = runtime.StyleParamWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		id,
+	)
 	if err != nil {
 		return nil, err
 	}
@@ -5098,12 +5908,23 @@ func NewGetIncidentEventsRequest(server string, id string) (*http.Request, error
 }
 
 // NewUpdateIncidentEventRequestWithBody generates requests for UpdateIncidentEvent with any type of body
-func NewUpdateIncidentEventRequestWithBody(server string, id string, contentType string, body io.Reader) (*http.Request, error) {
+func NewUpdateIncidentEventRequestWithBody(
+	server string,
+	id string,
+	contentType string,
+	body io.Reader,
+) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	pathParam0, err = runtime.StyleParamWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		id,
+	)
 	if err != nil {
 		return nil, err
 	}
@@ -5134,7 +5955,10 @@ func NewUpdateIncidentEventRequestWithBody(server string, id string, contentType
 }
 
 // NewListFunctionalitiesRequest generates requests for ListFunctionalities
-func NewListFunctionalitiesRequest(server string, params *ListFunctionalitiesParams) (*http.Request, error) {
+func NewListFunctionalitiesRequest(
+	server string,
+	params *ListFunctionalitiesParams,
+) (*http.Request, error) {
 	var err error
 
 	serverURL, err := url.Parse(server)
@@ -5197,7 +6021,11 @@ func NewListFunctionalitiesRequest(server string, params *ListFunctionalitiesPar
 }
 
 // NewCreateFunctionalityRequestWithBody generates requests for CreateFunctionality with any type of body
-func NewCreateFunctionalityRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+func NewCreateFunctionalityRequestWithBody(
+	server string,
+	contentType string,
+	body io.Reader,
+) (*http.Request, error) {
 	var err error
 
 	serverURL, err := url.Parse(server)
@@ -5231,7 +6059,13 @@ func NewDeleteFunctionalityRequest(server string, id string) (*http.Request, err
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	pathParam0, err = runtime.StyleParamWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		id,
+	)
 	if err != nil {
 		return nil, err
 	}
@@ -5265,7 +6099,13 @@ func NewGetFunctionalityRequest(server string, id string) (*http.Request, error)
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	pathParam0, err = runtime.StyleParamWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		id,
+	)
 	if err != nil {
 		return nil, err
 	}
@@ -5294,12 +6134,23 @@ func NewGetFunctionalityRequest(server string, id string) (*http.Request, error)
 }
 
 // NewUpdateFunctionalityRequestWithBody generates requests for UpdateFunctionality with any type of body
-func NewUpdateFunctionalityRequestWithBody(server string, id string, contentType string, body io.Reader) (*http.Request, error) {
+func NewUpdateFunctionalityRequestWithBody(
+	server string,
+	id string,
+	contentType string,
+	body io.Reader,
+) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	pathParam0, err = runtime.StyleParamWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		id,
+	)
 	if err != nil {
 		return nil, err
 	}
@@ -5330,7 +6181,10 @@ func NewUpdateFunctionalityRequestWithBody(server string, id string, contentType
 }
 
 // NewListIncidentRolesRequest generates requests for ListIncidentRoles
-func NewListIncidentRolesRequest(server string, params *ListIncidentRolesParams) (*http.Request, error) {
+func NewListIncidentRolesRequest(
+	server string,
+	params *ListIncidentRolesParams,
+) (*http.Request, error) {
 	var err error
 
 	serverURL, err := url.Parse(server)
@@ -5393,7 +6247,11 @@ func NewListIncidentRolesRequest(server string, params *ListIncidentRolesParams)
 }
 
 // NewCreateIncidentRoleRequestWithBody generates requests for CreateIncidentRole with any type of body
-func NewCreateIncidentRoleRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+func NewCreateIncidentRoleRequestWithBody(
+	server string,
+	contentType string,
+	body io.Reader,
+) (*http.Request, error) {
 	var err error
 
 	serverURL, err := url.Parse(server)
@@ -5427,7 +6285,13 @@ func NewDeleteIncidentRoleRequest(server string, id string) (*http.Request, erro
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	pathParam0, err = runtime.StyleParamWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		id,
+	)
 	if err != nil {
 		return nil, err
 	}
@@ -5461,7 +6325,13 @@ func NewGetIncidentRoleRequest(server string, id string) (*http.Request, error) 
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	pathParam0, err = runtime.StyleParamWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		id,
+	)
 	if err != nil {
 		return nil, err
 	}
@@ -5490,12 +6360,23 @@ func NewGetIncidentRoleRequest(server string, id string) (*http.Request, error) 
 }
 
 // NewUpdateIncidentRoleRequestWithBody generates requests for UpdateIncidentRole with any type of body
-func NewUpdateIncidentRoleRequestWithBody(server string, id string, contentType string, body io.Reader) (*http.Request, error) {
+func NewUpdateIncidentRoleRequestWithBody(
+	server string,
+	id string,
+	contentType string,
+	body io.Reader,
+) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	pathParam0, err = runtime.StyleParamWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		id,
+	)
 	if err != nil {
 		return nil, err
 	}
@@ -5531,7 +6412,13 @@ func NewDeleteIncidentTaskRequest(server string, id string) (*http.Request, erro
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	pathParam0, err = runtime.StyleParamWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		id,
+	)
 	if err != nil {
 		return nil, err
 	}
@@ -5565,7 +6452,13 @@ func NewGetIncidentTasksRequest(server string, id string) (*http.Request, error)
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	pathParam0, err = runtime.StyleParamWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		id,
+	)
 	if err != nil {
 		return nil, err
 	}
@@ -5594,12 +6487,23 @@ func NewGetIncidentTasksRequest(server string, id string) (*http.Request, error)
 }
 
 // NewUpdateIncidentTaskRequestWithBody generates requests for UpdateIncidentTask with any type of body
-func NewUpdateIncidentTaskRequestWithBody(server string, id string, contentType string, body io.Reader) (*http.Request, error) {
+func NewUpdateIncidentTaskRequestWithBody(
+	server string,
+	id string,
+	contentType string,
+	body io.Reader,
+) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	pathParam0, err = runtime.StyleParamWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		id,
+	)
 	if err != nil {
 		return nil, err
 	}
@@ -5630,7 +6534,10 @@ func NewUpdateIncidentTaskRequestWithBody(server string, id string, contentType 
 }
 
 // NewListIncidentTypesRequest generates requests for ListIncidentTypes
-func NewListIncidentTypesRequest(server string, params *ListIncidentTypesParams) (*http.Request, error) {
+func NewListIncidentTypesRequest(
+	server string,
+	params *ListIncidentTypesParams,
+) (*http.Request, error) {
 	var err error
 
 	serverURL, err := url.Parse(server)
@@ -5693,7 +6600,11 @@ func NewListIncidentTypesRequest(server string, params *ListIncidentTypesParams)
 }
 
 // NewCreateIncidentTypeRequestWithBody generates requests for CreateIncidentType with any type of body
-func NewCreateIncidentTypeRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+func NewCreateIncidentTypeRequestWithBody(
+	server string,
+	contentType string,
+	body io.Reader,
+) (*http.Request, error) {
 	var err error
 
 	serverURL, err := url.Parse(server)
@@ -5727,7 +6638,13 @@ func NewDeleteIncidentTypeRequest(server string, id string) (*http.Request, erro
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	pathParam0, err = runtime.StyleParamWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		id,
+	)
 	if err != nil {
 		return nil, err
 	}
@@ -5761,7 +6678,13 @@ func NewGetIncidentTypeRequest(server string, id string) (*http.Request, error) 
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	pathParam0, err = runtime.StyleParamWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		id,
+	)
 	if err != nil {
 		return nil, err
 	}
@@ -5790,12 +6713,23 @@ func NewGetIncidentTypeRequest(server string, id string) (*http.Request, error) 
 }
 
 // NewUpdateIncidentTypeRequestWithBody generates requests for UpdateIncidentType with any type of body
-func NewUpdateIncidentTypeRequestWithBody(server string, id string, contentType string, body io.Reader) (*http.Request, error) {
+func NewUpdateIncidentTypeRequestWithBody(
+	server string,
+	id string,
+	contentType string,
+	body io.Reader,
+) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	pathParam0, err = runtime.StyleParamWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		id,
+	)
 	if err != nil {
 		return nil, err
 	}
@@ -5889,7 +6823,11 @@ func NewListIncidentsRequest(server string, params *ListIncidentsParams) (*http.
 }
 
 // NewCreateIncidentRequestWithBody generates requests for CreateIncident with any type of body
-func NewCreateIncidentRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+func NewCreateIncidentRequestWithBody(
+	server string,
+	contentType string,
+	body io.Reader,
+) (*http.Request, error) {
 	var err error
 
 	serverURL, err := url.Parse(server)
@@ -5923,7 +6861,13 @@ func NewDeleteIncidentRequest(server string, id string) (*http.Request, error) {
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	pathParam0, err = runtime.StyleParamWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		id,
+	)
 	if err != nil {
 		return nil, err
 	}
@@ -5957,7 +6901,13 @@ func NewGetIncidentRequest(server string, id string) (*http.Request, error) {
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	pathParam0, err = runtime.StyleParamWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		id,
+	)
 	if err != nil {
 		return nil, err
 	}
@@ -5986,12 +6936,23 @@ func NewGetIncidentRequest(server string, id string) (*http.Request, error) {
 }
 
 // NewUpdateIncidentRequestWithBody generates requests for UpdateIncident with any type of body
-func NewUpdateIncidentRequestWithBody(server string, id string, contentType string, body io.Reader) (*http.Request, error) {
+func NewUpdateIncidentRequestWithBody(
+	server string,
+	id string,
+	contentType string,
+	body io.Reader,
+) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	pathParam0, err = runtime.StyleParamWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		id,
+	)
 	if err != nil {
 		return nil, err
 	}
@@ -6022,12 +6983,23 @@ func NewUpdateIncidentRequestWithBody(server string, id string, contentType stri
 }
 
 // NewMitigateIncidentRequestWithBody generates requests for MitigateIncident with any type of body
-func NewMitigateIncidentRequestWithBody(server string, id string, contentType string, body io.Reader) (*http.Request, error) {
+func NewMitigateIncidentRequestWithBody(
+	server string,
+	id string,
+	contentType string,
+	body io.Reader,
+) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	pathParam0, err = runtime.StyleParamWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		id,
+	)
 	if err != nil {
 		return nil, err
 	}
@@ -6058,12 +7030,23 @@ func NewMitigateIncidentRequestWithBody(server string, id string, contentType st
 }
 
 // NewResolveIncidentRequestWithBody generates requests for ResolveIncident with any type of body
-func NewResolveIncidentRequestWithBody(server string, id string, contentType string, body io.Reader) (*http.Request, error) {
+func NewResolveIncidentRequestWithBody(
+	server string,
+	id string,
+	contentType string,
+	body io.Reader,
+) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	pathParam0, err = runtime.StyleParamWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		id,
+	)
 	if err != nil {
 		return nil, err
 	}
@@ -6094,12 +7077,22 @@ func NewResolveIncidentRequestWithBody(server string, id string, contentType str
 }
 
 // NewListIncidentActionItemsRequest generates requests for ListIncidentActionItems
-func NewListIncidentActionItemsRequest(server string, incidentId string, params *ListIncidentActionItemsParams) (*http.Request, error) {
+func NewListIncidentActionItemsRequest(
+	server string,
+	incidentId string,
+	params *ListIncidentActionItemsParams,
+) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "incident_id", runtime.ParamLocationPath, incidentId)
+	pathParam0, err = runtime.StyleParamWithLocation(
+		"simple",
+		false,
+		"incident_id",
+		runtime.ParamLocationPath,
+		incidentId,
+	)
 	if err != nil {
 		return nil, err
 	}
@@ -6164,12 +7157,23 @@ func NewListIncidentActionItemsRequest(server string, incidentId string, params 
 }
 
 // NewCreateIncidentActionItemRequestWithBody generates requests for CreateIncidentActionItem with any type of body
-func NewCreateIncidentActionItemRequestWithBody(server string, incidentId string, contentType string, body io.Reader) (*http.Request, error) {
+func NewCreateIncidentActionItemRequestWithBody(
+	server string,
+	incidentId string,
+	contentType string,
+	body io.Reader,
+) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "incident_id", runtime.ParamLocationPath, incidentId)
+	pathParam0, err = runtime.StyleParamWithLocation(
+		"simple",
+		false,
+		"incident_id",
+		runtime.ParamLocationPath,
+		incidentId,
+	)
 	if err != nil {
 		return nil, err
 	}
@@ -6200,12 +7204,22 @@ func NewCreateIncidentActionItemRequestWithBody(server string, incidentId string
 }
 
 // NewListAlertRequest generates requests for ListAlert
-func NewListAlertRequest(server string, incidentId string, params *ListAlertParams) (*http.Request, error) {
+func NewListAlertRequest(
+	server string,
+	incidentId string,
+	params *ListAlertParams,
+) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "incident_id", runtime.ParamLocationPath, incidentId)
+	pathParam0, err = runtime.StyleParamWithLocation(
+		"simple",
+		false,
+		"incident_id",
+		runtime.ParamLocationPath,
+		incidentId,
+	)
 	if err != nil {
 		return nil, err
 	}
@@ -6270,12 +7284,23 @@ func NewListAlertRequest(server string, incidentId string, params *ListAlertPara
 }
 
 // NewAttachAlertRequestWithBody generates requests for AttachAlert with any type of body
-func NewAttachAlertRequestWithBody(server string, incidentId string, contentType string, body io.Reader) (*http.Request, error) {
+func NewAttachAlertRequestWithBody(
+	server string,
+	incidentId string,
+	contentType string,
+	body io.Reader,
+) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "incident_id", runtime.ParamLocationPath, incidentId)
+	pathParam0, err = runtime.StyleParamWithLocation(
+		"simple",
+		false,
+		"incident_id",
+		runtime.ParamLocationPath,
+		incidentId,
+	)
 	if err != nil {
 		return nil, err
 	}
@@ -6306,12 +7331,22 @@ func NewAttachAlertRequestWithBody(server string, incidentId string, contentType
 }
 
 // NewListIncidentEventsRequest generates requests for ListIncidentEvents
-func NewListIncidentEventsRequest(server string, incidentId string, params *ListIncidentEventsParams) (*http.Request, error) {
+func NewListIncidentEventsRequest(
+	server string,
+	incidentId string,
+	params *ListIncidentEventsParams,
+) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "incident_id", runtime.ParamLocationPath, incidentId)
+	pathParam0, err = runtime.StyleParamWithLocation(
+		"simple",
+		false,
+		"incident_id",
+		runtime.ParamLocationPath,
+		incidentId,
+	)
 	if err != nil {
 		return nil, err
 	}
@@ -6376,12 +7411,23 @@ func NewListIncidentEventsRequest(server string, incidentId string, params *List
 }
 
 // NewCreateIncidentEventRequestWithBody generates requests for CreateIncidentEvent with any type of body
-func NewCreateIncidentEventRequestWithBody(server string, incidentId string, contentType string, body io.Reader) (*http.Request, error) {
+func NewCreateIncidentEventRequestWithBody(
+	server string,
+	incidentId string,
+	contentType string,
+	body io.Reader,
+) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "incident_id", runtime.ParamLocationPath, incidentId)
+	pathParam0, err = runtime.StyleParamWithLocation(
+		"simple",
+		false,
+		"incident_id",
+		runtime.ParamLocationPath,
+		incidentId,
+	)
 	if err != nil {
 		return nil, err
 	}
@@ -6412,12 +7458,22 @@ func NewCreateIncidentEventRequestWithBody(server string, incidentId string, con
 }
 
 // NewListIncidentTasksRequest generates requests for ListIncidentTasks
-func NewListIncidentTasksRequest(server string, incidentId string, params *ListIncidentTasksParams) (*http.Request, error) {
+func NewListIncidentTasksRequest(
+	server string,
+	incidentId string,
+	params *ListIncidentTasksParams,
+) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "incident_id", runtime.ParamLocationPath, incidentId)
+	pathParam0, err = runtime.StyleParamWithLocation(
+		"simple",
+		false,
+		"incident_id",
+		runtime.ParamLocationPath,
+		incidentId,
+	)
 	if err != nil {
 		return nil, err
 	}
@@ -6482,12 +7538,23 @@ func NewListIncidentTasksRequest(server string, incidentId string, params *ListI
 }
 
 // NewCreateIncidentTaskRequestWithBody generates requests for CreateIncidentTask with any type of body
-func NewCreateIncidentTaskRequestWithBody(server string, incidentId string, contentType string, body io.Reader) (*http.Request, error) {
+func NewCreateIncidentTaskRequestWithBody(
+	server string,
+	incidentId string,
+	contentType string,
+	body io.Reader,
+) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "incident_id", runtime.ParamLocationPath, incidentId)
+	pathParam0, err = runtime.StyleParamWithLocation(
+		"simple",
+		false,
+		"incident_id",
+		runtime.ParamLocationPath,
+		incidentId,
+	)
 	if err != nil {
 		return nil, err
 	}
@@ -6523,7 +7590,13 @@ func NewDeletePlaybookTaskRequest(server string, id string) (*http.Request, erro
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	pathParam0, err = runtime.StyleParamWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		id,
+	)
 	if err != nil {
 		return nil, err
 	}
@@ -6557,7 +7630,13 @@ func NewGetPlaybookTasksRequest(server string, id string) (*http.Request, error)
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	pathParam0, err = runtime.StyleParamWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		id,
+	)
 	if err != nil {
 		return nil, err
 	}
@@ -6586,12 +7665,23 @@ func NewGetPlaybookTasksRequest(server string, id string) (*http.Request, error)
 }
 
 // NewUpdatePlaybookTaskRequestWithBody generates requests for UpdatePlaybookTask with any type of body
-func NewUpdatePlaybookTaskRequestWithBody(server string, id string, contentType string, body io.Reader) (*http.Request, error) {
+func NewUpdatePlaybookTaskRequestWithBody(
+	server string,
+	id string,
+	contentType string,
+	body io.Reader,
+) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	pathParam0, err = runtime.StyleParamWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		id,
+	)
 	if err != nil {
 		return nil, err
 	}
@@ -6685,7 +7775,11 @@ func NewListPlaybooksRequest(server string, params *ListPlaybooksParams) (*http.
 }
 
 // NewCreatePlaybookRequestWithBody generates requests for CreatePlaybook with any type of body
-func NewCreatePlaybookRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+func NewCreatePlaybookRequestWithBody(
+	server string,
+	contentType string,
+	body io.Reader,
+) (*http.Request, error) {
 	var err error
 
 	serverURL, err := url.Parse(server)
@@ -6719,7 +7813,13 @@ func NewDeletePlaybookRequest(server string, id string) (*http.Request, error) {
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	pathParam0, err = runtime.StyleParamWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		id,
+	)
 	if err != nil {
 		return nil, err
 	}
@@ -6753,7 +7853,13 @@ func NewGetPlaybookRequest(server string, id string) (*http.Request, error) {
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	pathParam0, err = runtime.StyleParamWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		id,
+	)
 	if err != nil {
 		return nil, err
 	}
@@ -6782,12 +7888,23 @@ func NewGetPlaybookRequest(server string, id string) (*http.Request, error) {
 }
 
 // NewUpdatePlaybookRequestWithBody generates requests for UpdatePlaybook with any type of body
-func NewUpdatePlaybookRequestWithBody(server string, id string, contentType string, body io.Reader) (*http.Request, error) {
+func NewUpdatePlaybookRequestWithBody(
+	server string,
+	id string,
+	contentType string,
+	body io.Reader,
+) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	pathParam0, err = runtime.StyleParamWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		id,
+	)
 	if err != nil {
 		return nil, err
 	}
@@ -6818,12 +7935,22 @@ func NewUpdatePlaybookRequestWithBody(server string, id string, contentType stri
 }
 
 // NewListPlaybookTasksRequest generates requests for ListPlaybookTasks
-func NewListPlaybookTasksRequest(server string, playbookId string, params *ListPlaybookTasksParams) (*http.Request, error) {
+func NewListPlaybookTasksRequest(
+	server string,
+	playbookId string,
+	params *ListPlaybookTasksParams,
+) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "playbook_id", runtime.ParamLocationPath, playbookId)
+	pathParam0, err = runtime.StyleParamWithLocation(
+		"simple",
+		false,
+		"playbook_id",
+		runtime.ParamLocationPath,
+		playbookId,
+	)
 	if err != nil {
 		return nil, err
 	}
@@ -6888,12 +8015,23 @@ func NewListPlaybookTasksRequest(server string, playbookId string, params *ListP
 }
 
 // NewCreatePlaybookTaskRequestWithBody generates requests for CreatePlaybookTask with any type of body
-func NewCreatePlaybookTaskRequestWithBody(server string, playbookId string, contentType string, body io.Reader) (*http.Request, error) {
+func NewCreatePlaybookTaskRequestWithBody(
+	server string,
+	playbookId string,
+	contentType string,
+	body io.Reader,
+) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "playbook_id", runtime.ParamLocationPath, playbookId)
+	pathParam0, err = runtime.StyleParamWithLocation(
+		"simple",
+		false,
+		"playbook_id",
+		runtime.ParamLocationPath,
+		playbookId,
+	)
 	if err != nil {
 		return nil, err
 	}
@@ -6924,7 +8062,10 @@ func NewCreatePlaybookTaskRequestWithBody(server string, playbookId string, cont
 }
 
 // NewListPostmortemTemplatesRequest generates requests for ListPostmortemTemplates
-func NewListPostmortemTemplatesRequest(server string, params *ListPostmortemTemplatesParams) (*http.Request, error) {
+func NewListPostmortemTemplatesRequest(
+	server string,
+	params *ListPostmortemTemplatesParams,
+) (*http.Request, error) {
 	var err error
 
 	serverURL, err := url.Parse(server)
@@ -6987,7 +8128,11 @@ func NewListPostmortemTemplatesRequest(server string, params *ListPostmortemTemp
 }
 
 // NewCreatePostmortemTemplateRequestWithBody generates requests for CreatePostmortemTemplate with any type of body
-func NewCreatePostmortemTemplateRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+func NewCreatePostmortemTemplateRequestWithBody(
+	server string,
+	contentType string,
+	body io.Reader,
+) (*http.Request, error) {
 	var err error
 
 	serverURL, err := url.Parse(server)
@@ -7021,7 +8166,13 @@ func NewDeletePostmortemTemplateRequest(server string, id string) (*http.Request
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	pathParam0, err = runtime.StyleParamWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		id,
+	)
 	if err != nil {
 		return nil, err
 	}
@@ -7055,7 +8206,13 @@ func NewGetPostmortemTemplateRequest(server string, id string) (*http.Request, e
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	pathParam0, err = runtime.StyleParamWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		id,
+	)
 	if err != nil {
 		return nil, err
 	}
@@ -7084,12 +8241,23 @@ func NewGetPostmortemTemplateRequest(server string, id string) (*http.Request, e
 }
 
 // NewUpdatePostmortemTemplateRequestWithBody generates requests for UpdatePostmortemTemplate with any type of body
-func NewUpdatePostmortemTemplateRequestWithBody(server string, id string, contentType string, body io.Reader) (*http.Request, error) {
+func NewUpdatePostmortemTemplateRequestWithBody(
+	server string,
+	id string,
+	contentType string,
+	body io.Reader,
+) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	pathParam0, err = runtime.StyleParamWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		id,
+	)
 	if err != nil {
 		return nil, err
 	}
@@ -7125,7 +8293,13 @@ func NewGetIncidentPostmortemRequest(server string, id string) (*http.Request, e
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	pathParam0, err = runtime.StyleParamWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		id,
+	)
 	if err != nil {
 		return nil, err
 	}
@@ -7154,12 +8328,23 @@ func NewGetIncidentPostmortemRequest(server string, id string) (*http.Request, e
 }
 
 // NewUpdateIncidentPostmortemRequestWithBody generates requests for UpdateIncidentPostmortem with any type of body
-func NewUpdateIncidentPostmortemRequestWithBody(server string, id string, contentType string, body io.Reader) (*http.Request, error) {
+func NewUpdateIncidentPostmortemRequestWithBody(
+	server string,
+	id string,
+	contentType string,
+	body io.Reader,
+) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	pathParam0, err = runtime.StyleParamWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		id,
+	)
 	if err != nil {
 		return nil, err
 	}
@@ -7253,7 +8438,11 @@ func NewListPulsesRequest(server string, params *ListPulsesParams) (*http.Reques
 }
 
 // NewCreatePulseRequestWithBody generates requests for CreatePulse with any type of body
-func NewCreatePulseRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+func NewCreatePulseRequestWithBody(
+	server string,
+	contentType string,
+	body io.Reader,
+) (*http.Request, error) {
 	var err error
 
 	serverURL, err := url.Parse(server)
@@ -7287,7 +8476,13 @@ func NewGetPulseRequest(server string, id string) (*http.Request, error) {
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	pathParam0, err = runtime.StyleParamWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		id,
+	)
 	if err != nil {
 		return nil, err
 	}
@@ -7316,12 +8511,23 @@ func NewGetPulseRequest(server string, id string) (*http.Request, error) {
 }
 
 // NewUpdatePulseRequestWithBody generates requests for UpdatePulse with any type of body
-func NewUpdatePulseRequestWithBody(server string, id string, contentType string, body io.Reader) (*http.Request, error) {
+func NewUpdatePulseRequestWithBody(
+	server string,
+	id string,
+	contentType string,
+	body io.Reader,
+) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	pathParam0, err = runtime.StyleParamWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		id,
+	)
 	if err != nil {
 		return nil, err
 	}
@@ -7415,7 +8621,11 @@ func NewListServicesRequest(server string, params *ListServicesParams) (*http.Re
 }
 
 // NewCreateServiceRequestWithBody generates requests for CreateService with any type of body
-func NewCreateServiceRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+func NewCreateServiceRequestWithBody(
+	server string,
+	contentType string,
+	body io.Reader,
+) (*http.Request, error) {
 	var err error
 
 	serverURL, err := url.Parse(server)
@@ -7449,7 +8659,13 @@ func NewDeleteServiceRequest(server string, id string) (*http.Request, error) {
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	pathParam0, err = runtime.StyleParamWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		id,
+	)
 	if err != nil {
 		return nil, err
 	}
@@ -7483,7 +8699,13 @@ func NewGetServiceRequest(server string, id string) (*http.Request, error) {
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	pathParam0, err = runtime.StyleParamWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		id,
+	)
 	if err != nil {
 		return nil, err
 	}
@@ -7512,12 +8734,23 @@ func NewGetServiceRequest(server string, id string) (*http.Request, error) {
 }
 
 // NewUpdateServiceRequestWithBody generates requests for UpdateService with any type of body
-func NewUpdateServiceRequestWithBody(server string, id string, contentType string, body io.Reader) (*http.Request, error) {
+func NewUpdateServiceRequestWithBody(
+	server string,
+	id string,
+	contentType string,
+	body io.Reader,
+) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	pathParam0, err = runtime.StyleParamWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		id,
+	)
 	if err != nil {
 		return nil, err
 	}
@@ -7611,7 +8844,11 @@ func NewListSeveritiesRequest(server string, params *ListSeveritiesParams) (*htt
 }
 
 // NewCreateSeverityRequestWithBody generates requests for CreateSeverity with any type of body
-func NewCreateSeverityRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+func NewCreateSeverityRequestWithBody(
+	server string,
+	contentType string,
+	body io.Reader,
+) (*http.Request, error) {
 	var err error
 
 	serverURL, err := url.Parse(server)
@@ -7645,7 +8882,13 @@ func NewDeleteSeverityRequest(server string, id string) (*http.Request, error) {
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	pathParam0, err = runtime.StyleParamWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		id,
+	)
 	if err != nil {
 		return nil, err
 	}
@@ -7679,7 +8922,13 @@ func NewGetSeverityRequest(server string, id string) (*http.Request, error) {
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	pathParam0, err = runtime.StyleParamWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		id,
+	)
 	if err != nil {
 		return nil, err
 	}
@@ -7708,12 +8957,23 @@ func NewGetSeverityRequest(server string, id string) (*http.Request, error) {
 }
 
 // NewUpdateSeverityRequestWithBody generates requests for UpdateSeverity with any type of body
-func NewUpdateSeverityRequestWithBody(server string, id string, contentType string, body io.Reader) (*http.Request, error) {
+func NewUpdateSeverityRequestWithBody(
+	server string,
+	id string,
+	contentType string,
+	body io.Reader,
+) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	pathParam0, err = runtime.StyleParamWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		id,
+	)
 	if err != nil {
 		return nil, err
 	}
@@ -7744,7 +9004,10 @@ func NewUpdateSeverityRequestWithBody(server string, id string, contentType stri
 }
 
 // NewListStatusPagesRequest generates requests for ListStatusPages
-func NewListStatusPagesRequest(server string, params *ListStatusPagesParams) (*http.Request, error) {
+func NewListStatusPagesRequest(
+	server string,
+	params *ListStatusPagesParams,
+) (*http.Request, error) {
 	var err error
 
 	serverURL, err := url.Parse(server)
@@ -7807,7 +9070,11 @@ func NewListStatusPagesRequest(server string, params *ListStatusPagesParams) (*h
 }
 
 // NewCreateStatusPageRequestWithBody generates requests for CreateStatusPage with any type of body
-func NewCreateStatusPageRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+func NewCreateStatusPageRequestWithBody(
+	server string,
+	contentType string,
+	body io.Reader,
+) (*http.Request, error) {
 	var err error
 
 	serverURL, err := url.Parse(server)
@@ -7841,7 +9108,13 @@ func NewDeleteStatusPageRequest(server string, id string) (*http.Request, error)
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	pathParam0, err = runtime.StyleParamWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		id,
+	)
 	if err != nil {
 		return nil, err
 	}
@@ -7875,7 +9148,13 @@ func NewGetStatusPageRequest(server string, id string) (*http.Request, error) {
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	pathParam0, err = runtime.StyleParamWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		id,
+	)
 	if err != nil {
 		return nil, err
 	}
@@ -7904,12 +9183,23 @@ func NewGetStatusPageRequest(server string, id string) (*http.Request, error) {
 }
 
 // NewUpdateStatusPageRequestWithBody generates requests for UpdateStatusPage with any type of body
-func NewUpdateStatusPageRequestWithBody(server string, id string, contentType string, body io.Reader) (*http.Request, error) {
+func NewUpdateStatusPageRequestWithBody(
+	server string,
+	id string,
+	contentType string,
+	body io.Reader,
+) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	pathParam0, err = runtime.StyleParamWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		id,
+	)
 	if err != nil {
 		return nil, err
 	}
@@ -8003,7 +9293,11 @@ func NewListTeamsRequest(server string, params *ListTeamsParams) (*http.Request,
 }
 
 // NewCreateTeamRequestWithBody generates requests for CreateTeam with any type of body
-func NewCreateTeamRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+func NewCreateTeamRequestWithBody(
+	server string,
+	contentType string,
+	body io.Reader,
+) (*http.Request, error) {
 	var err error
 
 	serverURL, err := url.Parse(server)
@@ -8037,7 +9331,13 @@ func NewDeleteTeamRequest(server string, id string) (*http.Request, error) {
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	pathParam0, err = runtime.StyleParamWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		id,
+	)
 	if err != nil {
 		return nil, err
 	}
@@ -8071,7 +9371,13 @@ func NewGetTeamRequest(server string, id string) (*http.Request, error) {
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	pathParam0, err = runtime.StyleParamWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		id,
+	)
 	if err != nil {
 		return nil, err
 	}
@@ -8100,12 +9406,23 @@ func NewGetTeamRequest(server string, id string) (*http.Request, error) {
 }
 
 // NewUpdateTeamRequestWithBody generates requests for UpdateTeam with any type of body
-func NewUpdateTeamRequestWithBody(server string, id string, contentType string, body io.Reader) (*http.Request, error) {
+func NewUpdateTeamRequestWithBody(
+	server string,
+	id string,
+	contentType string,
+	body io.Reader,
+) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	pathParam0, err = runtime.StyleParamWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		id,
+	)
 	if err != nil {
 		return nil, err
 	}
@@ -8135,7 +9452,11 @@ func NewUpdateTeamRequestWithBody(server string, id string, contentType string, 
 	return req, nil
 }
 
-func (c *Client) applyEditors(ctx context.Context, req *http.Request, additionalEditors []RequestEditorFn) error {
+func (c *Client) applyEditors(
+	ctx context.Context,
+	req *http.Request,
+	additionalEditors []RequestEditorFn,
+) error {
 	for _, r := range c.RequestEditors {
 		if err := r(ctx, req); err != nil {
 			return err
@@ -8179,280 +9500,716 @@ func WithBaseURL(baseURL string) ClientOption {
 // ClientWithResponsesInterface is the interface specification for the client with responses above.
 type ClientWithResponsesInterface interface {
 	// DeleteIncidentActionItem request
-	DeleteIncidentActionItemWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*DeleteIncidentActionItemResponse, error)
+	DeleteIncidentActionItemWithResponse(
+		ctx context.Context,
+		id string,
+		reqEditors ...RequestEditorFn,
+	) (*DeleteIncidentActionItemResponse, error)
 
 	// GetIncidentActionItems request
-	GetIncidentActionItemsWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*GetIncidentActionItemsResponse, error)
+	GetIncidentActionItemsWithResponse(
+		ctx context.Context,
+		id string,
+		reqEditors ...RequestEditorFn,
+	) (*GetIncidentActionItemsResponse, error)
 
 	// UpdateIncidentActionItem request  with any body
-	UpdateIncidentActionItemWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateIncidentActionItemResponse, error)
+	UpdateIncidentActionItemWithBodyWithResponse(
+		ctx context.Context,
+		id string,
+		contentType string,
+		body io.Reader,
+		reqEditors ...RequestEditorFn,
+	) (*UpdateIncidentActionItemResponse, error)
 
 	// ListAlerts request
-	ListAlertsWithResponse(ctx context.Context, params *ListAlertsParams, reqEditors ...RequestEditorFn) (*ListAlertsResponse, error)
+	ListAlertsWithResponse(
+		ctx context.Context,
+		params *ListAlertsParams,
+		reqEditors ...RequestEditorFn,
+	) (*ListAlertsResponse, error)
 
 	// GetAlert request
-	GetAlertWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*GetAlertResponse, error)
+	GetAlertWithResponse(
+		ctx context.Context,
+		id string,
+		reqEditors ...RequestEditorFn,
+	) (*GetAlertResponse, error)
 
 	// ListCauses request
-	ListCausesWithResponse(ctx context.Context, params *ListCausesParams, reqEditors ...RequestEditorFn) (*ListCausesResponse, error)
+	ListCausesWithResponse(
+		ctx context.Context,
+		params *ListCausesParams,
+		reqEditors ...RequestEditorFn,
+	) (*ListCausesResponse, error)
 
 	// CreateCause request  with any body
-	CreateCauseWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateCauseResponse, error)
+	CreateCauseWithBodyWithResponse(
+		ctx context.Context,
+		contentType string,
+		body io.Reader,
+		reqEditors ...RequestEditorFn,
+	) (*CreateCauseResponse, error)
 
 	// DeleteCause request
-	DeleteCauseWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*DeleteCauseResponse, error)
+	DeleteCauseWithResponse(
+		ctx context.Context,
+		id string,
+		reqEditors ...RequestEditorFn,
+	) (*DeleteCauseResponse, error)
 
 	// GetCause request
-	GetCauseWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*GetCauseResponse, error)
+	GetCauseWithResponse(
+		ctx context.Context,
+		id string,
+		reqEditors ...RequestEditorFn,
+	) (*GetCauseResponse, error)
 
 	// UpdateCause request  with any body
-	UpdateCauseWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateCauseResponse, error)
+	UpdateCauseWithBodyWithResponse(
+		ctx context.Context,
+		id string,
+		contentType string,
+		body io.Reader,
+		reqEditors ...RequestEditorFn,
+	) (*UpdateCauseResponse, error)
 
 	// ListEnvironments request
-	ListEnvironmentsWithResponse(ctx context.Context, params *ListEnvironmentsParams, reqEditors ...RequestEditorFn) (*ListEnvironmentsResponse, error)
+	ListEnvironmentsWithResponse(
+		ctx context.Context,
+		params *ListEnvironmentsParams,
+		reqEditors ...RequestEditorFn,
+	) (*ListEnvironmentsResponse, error)
 
 	// CreateEnvironment request  with any body
-	CreateEnvironmentWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateEnvironmentResponse, error)
+	CreateEnvironmentWithBodyWithResponse(
+		ctx context.Context,
+		contentType string,
+		body io.Reader,
+		reqEditors ...RequestEditorFn,
+	) (*CreateEnvironmentResponse, error)
 
 	// DeleteEnvironment request
-	DeleteEnvironmentWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*DeleteEnvironmentResponse, error)
+	DeleteEnvironmentWithResponse(
+		ctx context.Context,
+		id string,
+		reqEditors ...RequestEditorFn,
+	) (*DeleteEnvironmentResponse, error)
 
 	// GetEnvironment request
-	GetEnvironmentWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*GetEnvironmentResponse, error)
+	GetEnvironmentWithResponse(
+		ctx context.Context,
+		id string,
+		reqEditors ...RequestEditorFn,
+	) (*GetEnvironmentResponse, error)
 
 	// UpdateEnvironment request  with any body
-	UpdateEnvironmentWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateEnvironmentResponse, error)
+	UpdateEnvironmentWithBodyWithResponse(
+		ctx context.Context,
+		id string,
+		contentType string,
+		body io.Reader,
+		reqEditors ...RequestEditorFn,
+	) (*UpdateEnvironmentResponse, error)
 
 	// DeleteIncidentEvent request
-	DeleteIncidentEventWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*DeleteIncidentEventResponse, error)
+	DeleteIncidentEventWithResponse(
+		ctx context.Context,
+		id string,
+		reqEditors ...RequestEditorFn,
+	) (*DeleteIncidentEventResponse, error)
 
 	// GetIncidentEvents request
-	GetIncidentEventsWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*GetIncidentEventsResponse, error)
+	GetIncidentEventsWithResponse(
+		ctx context.Context,
+		id string,
+		reqEditors ...RequestEditorFn,
+	) (*GetIncidentEventsResponse, error)
 
 	// UpdateIncidentEvent request  with any body
-	UpdateIncidentEventWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateIncidentEventResponse, error)
+	UpdateIncidentEventWithBodyWithResponse(
+		ctx context.Context,
+		id string,
+		contentType string,
+		body io.Reader,
+		reqEditors ...RequestEditorFn,
+	) (*UpdateIncidentEventResponse, error)
 
 	// ListFunctionalities request
-	ListFunctionalitiesWithResponse(ctx context.Context, params *ListFunctionalitiesParams, reqEditors ...RequestEditorFn) (*ListFunctionalitiesResponse, error)
+	ListFunctionalitiesWithResponse(
+		ctx context.Context,
+		params *ListFunctionalitiesParams,
+		reqEditors ...RequestEditorFn,
+	) (*ListFunctionalitiesResponse, error)
 
 	// CreateFunctionality request  with any body
-	CreateFunctionalityWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateFunctionalityResponse, error)
+	CreateFunctionalityWithBodyWithResponse(
+		ctx context.Context,
+		contentType string,
+		body io.Reader,
+		reqEditors ...RequestEditorFn,
+	) (*CreateFunctionalityResponse, error)
 
 	// DeleteFunctionality request
-	DeleteFunctionalityWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*DeleteFunctionalityResponse, error)
+	DeleteFunctionalityWithResponse(
+		ctx context.Context,
+		id string,
+		reqEditors ...RequestEditorFn,
+	) (*DeleteFunctionalityResponse, error)
 
 	// GetFunctionality request
-	GetFunctionalityWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*GetFunctionalityResponse, error)
+	GetFunctionalityWithResponse(
+		ctx context.Context,
+		id string,
+		reqEditors ...RequestEditorFn,
+	) (*GetFunctionalityResponse, error)
 
 	// UpdateFunctionality request  with any body
-	UpdateFunctionalityWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateFunctionalityResponse, error)
+	UpdateFunctionalityWithBodyWithResponse(
+		ctx context.Context,
+		id string,
+		contentType string,
+		body io.Reader,
+		reqEditors ...RequestEditorFn,
+	) (*UpdateFunctionalityResponse, error)
 
 	// ListIncidentRoles request
-	ListIncidentRolesWithResponse(ctx context.Context, params *ListIncidentRolesParams, reqEditors ...RequestEditorFn) (*ListIncidentRolesResponse, error)
+	ListIncidentRolesWithResponse(
+		ctx context.Context,
+		params *ListIncidentRolesParams,
+		reqEditors ...RequestEditorFn,
+	) (*ListIncidentRolesResponse, error)
 
 	// CreateIncidentRole request  with any body
-	CreateIncidentRoleWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateIncidentRoleResponse, error)
+	CreateIncidentRoleWithBodyWithResponse(
+		ctx context.Context,
+		contentType string,
+		body io.Reader,
+		reqEditors ...RequestEditorFn,
+	) (*CreateIncidentRoleResponse, error)
 
 	// DeleteIncidentRole request
-	DeleteIncidentRoleWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*DeleteIncidentRoleResponse, error)
+	DeleteIncidentRoleWithResponse(
+		ctx context.Context,
+		id string,
+		reqEditors ...RequestEditorFn,
+	) (*DeleteIncidentRoleResponse, error)
 
 	// GetIncidentRole request
-	GetIncidentRoleWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*GetIncidentRoleResponse, error)
+	GetIncidentRoleWithResponse(
+		ctx context.Context,
+		id string,
+		reqEditors ...RequestEditorFn,
+	) (*GetIncidentRoleResponse, error)
 
 	// UpdateIncidentRole request  with any body
-	UpdateIncidentRoleWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateIncidentRoleResponse, error)
+	UpdateIncidentRoleWithBodyWithResponse(
+		ctx context.Context,
+		id string,
+		contentType string,
+		body io.Reader,
+		reqEditors ...RequestEditorFn,
+	) (*UpdateIncidentRoleResponse, error)
 
 	// DeleteIncidentTask request
-	DeleteIncidentTaskWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*DeleteIncidentTaskResponse, error)
+	DeleteIncidentTaskWithResponse(
+		ctx context.Context,
+		id string,
+		reqEditors ...RequestEditorFn,
+	) (*DeleteIncidentTaskResponse, error)
 
 	// GetIncidentTasks request
-	GetIncidentTasksWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*GetIncidentTasksResponse, error)
+	GetIncidentTasksWithResponse(
+		ctx context.Context,
+		id string,
+		reqEditors ...RequestEditorFn,
+	) (*GetIncidentTasksResponse, error)
 
 	// UpdateIncidentTask request  with any body
-	UpdateIncidentTaskWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateIncidentTaskResponse, error)
+	UpdateIncidentTaskWithBodyWithResponse(
+		ctx context.Context,
+		id string,
+		contentType string,
+		body io.Reader,
+		reqEditors ...RequestEditorFn,
+	) (*UpdateIncidentTaskResponse, error)
 
 	// ListIncidentTypes request
-	ListIncidentTypesWithResponse(ctx context.Context, params *ListIncidentTypesParams, reqEditors ...RequestEditorFn) (*ListIncidentTypesResponse, error)
+	ListIncidentTypesWithResponse(
+		ctx context.Context,
+		params *ListIncidentTypesParams,
+		reqEditors ...RequestEditorFn,
+	) (*ListIncidentTypesResponse, error)
 
 	// CreateIncidentType request  with any body
-	CreateIncidentTypeWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateIncidentTypeResponse, error)
+	CreateIncidentTypeWithBodyWithResponse(
+		ctx context.Context,
+		contentType string,
+		body io.Reader,
+		reqEditors ...RequestEditorFn,
+	) (*CreateIncidentTypeResponse, error)
 
 	// DeleteIncidentType request
-	DeleteIncidentTypeWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*DeleteIncidentTypeResponse, error)
+	DeleteIncidentTypeWithResponse(
+		ctx context.Context,
+		id string,
+		reqEditors ...RequestEditorFn,
+	) (*DeleteIncidentTypeResponse, error)
 
 	// GetIncidentType request
-	GetIncidentTypeWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*GetIncidentTypeResponse, error)
+	GetIncidentTypeWithResponse(
+		ctx context.Context,
+		id string,
+		reqEditors ...RequestEditorFn,
+	) (*GetIncidentTypeResponse, error)
 
 	// UpdateIncidentType request  with any body
-	UpdateIncidentTypeWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateIncidentTypeResponse, error)
+	UpdateIncidentTypeWithBodyWithResponse(
+		ctx context.Context,
+		id string,
+		contentType string,
+		body io.Reader,
+		reqEditors ...RequestEditorFn,
+	) (*UpdateIncidentTypeResponse, error)
 
 	// ListIncidents request
-	ListIncidentsWithResponse(ctx context.Context, params *ListIncidentsParams, reqEditors ...RequestEditorFn) (*ListIncidentsResponse, error)
+	ListIncidentsWithResponse(
+		ctx context.Context,
+		params *ListIncidentsParams,
+		reqEditors ...RequestEditorFn,
+	) (*ListIncidentsResponse, error)
 
 	// CreateIncident request  with any body
-	CreateIncidentWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateIncidentResponse, error)
+	CreateIncidentWithBodyWithResponse(
+		ctx context.Context,
+		contentType string,
+		body io.Reader,
+		reqEditors ...RequestEditorFn,
+	) (*CreateIncidentResponse, error)
 
 	// DeleteIncident request
-	DeleteIncidentWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*DeleteIncidentResponse, error)
+	DeleteIncidentWithResponse(
+		ctx context.Context,
+		id string,
+		reqEditors ...RequestEditorFn,
+	) (*DeleteIncidentResponse, error)
 
 	// GetIncident request
-	GetIncidentWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*GetIncidentResponse, error)
+	GetIncidentWithResponse(
+		ctx context.Context,
+		id string,
+		reqEditors ...RequestEditorFn,
+	) (*GetIncidentResponse, error)
 
 	// UpdateIncident request  with any body
-	UpdateIncidentWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateIncidentResponse, error)
+	UpdateIncidentWithBodyWithResponse(
+		ctx context.Context,
+		id string,
+		contentType string,
+		body io.Reader,
+		reqEditors ...RequestEditorFn,
+	) (*UpdateIncidentResponse, error)
 
 	// MitigateIncident request  with any body
-	MitigateIncidentWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*MitigateIncidentResponse, error)
+	MitigateIncidentWithBodyWithResponse(
+		ctx context.Context,
+		id string,
+		contentType string,
+		body io.Reader,
+		reqEditors ...RequestEditorFn,
+	) (*MitigateIncidentResponse, error)
 
 	// ResolveIncident request  with any body
-	ResolveIncidentWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*ResolveIncidentResponse, error)
+	ResolveIncidentWithBodyWithResponse(
+		ctx context.Context,
+		id string,
+		contentType string,
+		body io.Reader,
+		reqEditors ...RequestEditorFn,
+	) (*ResolveIncidentResponse, error)
 
 	// ListIncidentActionItems request
-	ListIncidentActionItemsWithResponse(ctx context.Context, incidentId string, params *ListIncidentActionItemsParams, reqEditors ...RequestEditorFn) (*ListIncidentActionItemsResponse, error)
+	ListIncidentActionItemsWithResponse(
+		ctx context.Context,
+		incidentId string,
+		params *ListIncidentActionItemsParams,
+		reqEditors ...RequestEditorFn,
+	) (*ListIncidentActionItemsResponse, error)
 
 	// CreateIncidentActionItem request  with any body
-	CreateIncidentActionItemWithBodyWithResponse(ctx context.Context, incidentId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateIncidentActionItemResponse, error)
+	CreateIncidentActionItemWithBodyWithResponse(
+		ctx context.Context,
+		incidentId string,
+		contentType string,
+		body io.Reader,
+		reqEditors ...RequestEditorFn,
+	) (*CreateIncidentActionItemResponse, error)
 
 	// ListAlert request
-	ListAlertWithResponse(ctx context.Context, incidentId string, params *ListAlertParams, reqEditors ...RequestEditorFn) (*ListAlertResponse, error)
+	ListAlertWithResponse(
+		ctx context.Context,
+		incidentId string,
+		params *ListAlertParams,
+		reqEditors ...RequestEditorFn,
+	) (*ListAlertResponse, error)
 
 	// AttachAlert request  with any body
-	AttachAlertWithBodyWithResponse(ctx context.Context, incidentId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*AttachAlertResponse, error)
+	AttachAlertWithBodyWithResponse(
+		ctx context.Context,
+		incidentId string,
+		contentType string,
+		body io.Reader,
+		reqEditors ...RequestEditorFn,
+	) (*AttachAlertResponse, error)
 
 	// ListIncidentEvents request
-	ListIncidentEventsWithResponse(ctx context.Context, incidentId string, params *ListIncidentEventsParams, reqEditors ...RequestEditorFn) (*ListIncidentEventsResponse, error)
+	ListIncidentEventsWithResponse(
+		ctx context.Context,
+		incidentId string,
+		params *ListIncidentEventsParams,
+		reqEditors ...RequestEditorFn,
+	) (*ListIncidentEventsResponse, error)
 
 	// CreateIncidentEvent request  with any body
-	CreateIncidentEventWithBodyWithResponse(ctx context.Context, incidentId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateIncidentEventResponse, error)
+	CreateIncidentEventWithBodyWithResponse(
+		ctx context.Context,
+		incidentId string,
+		contentType string,
+		body io.Reader,
+		reqEditors ...RequestEditorFn,
+	) (*CreateIncidentEventResponse, error)
 
 	// ListIncidentTasks request
-	ListIncidentTasksWithResponse(ctx context.Context, incidentId string, params *ListIncidentTasksParams, reqEditors ...RequestEditorFn) (*ListIncidentTasksResponse, error)
+	ListIncidentTasksWithResponse(
+		ctx context.Context,
+		incidentId string,
+		params *ListIncidentTasksParams,
+		reqEditors ...RequestEditorFn,
+	) (*ListIncidentTasksResponse, error)
 
 	// CreateIncidentTask request  with any body
-	CreateIncidentTaskWithBodyWithResponse(ctx context.Context, incidentId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateIncidentTaskResponse, error)
+	CreateIncidentTaskWithBodyWithResponse(
+		ctx context.Context,
+		incidentId string,
+		contentType string,
+		body io.Reader,
+		reqEditors ...RequestEditorFn,
+	) (*CreateIncidentTaskResponse, error)
 
 	// DeletePlaybookTask request
-	DeletePlaybookTaskWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*DeletePlaybookTaskResponse, error)
+	DeletePlaybookTaskWithResponse(
+		ctx context.Context,
+		id string,
+		reqEditors ...RequestEditorFn,
+	) (*DeletePlaybookTaskResponse, error)
 
 	// GetPlaybookTasks request
-	GetPlaybookTasksWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*GetPlaybookTasksResponse, error)
+	GetPlaybookTasksWithResponse(
+		ctx context.Context,
+		id string,
+		reqEditors ...RequestEditorFn,
+	) (*GetPlaybookTasksResponse, error)
 
 	// UpdatePlaybookTask request  with any body
-	UpdatePlaybookTaskWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdatePlaybookTaskResponse, error)
+	UpdatePlaybookTaskWithBodyWithResponse(
+		ctx context.Context,
+		id string,
+		contentType string,
+		body io.Reader,
+		reqEditors ...RequestEditorFn,
+	) (*UpdatePlaybookTaskResponse, error)
 
 	// ListPlaybooks request
-	ListPlaybooksWithResponse(ctx context.Context, params *ListPlaybooksParams, reqEditors ...RequestEditorFn) (*ListPlaybooksResponse, error)
+	ListPlaybooksWithResponse(
+		ctx context.Context,
+		params *ListPlaybooksParams,
+		reqEditors ...RequestEditorFn,
+	) (*ListPlaybooksResponse, error)
 
 	// CreatePlaybook request  with any body
-	CreatePlaybookWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreatePlaybookResponse, error)
+	CreatePlaybookWithBodyWithResponse(
+		ctx context.Context,
+		contentType string,
+		body io.Reader,
+		reqEditors ...RequestEditorFn,
+	) (*CreatePlaybookResponse, error)
 
 	// DeletePlaybook request
-	DeletePlaybookWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*DeletePlaybookResponse, error)
+	DeletePlaybookWithResponse(
+		ctx context.Context,
+		id string,
+		reqEditors ...RequestEditorFn,
+	) (*DeletePlaybookResponse, error)
 
 	// GetPlaybook request
-	GetPlaybookWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*GetPlaybookResponse, error)
+	GetPlaybookWithResponse(
+		ctx context.Context,
+		id string,
+		reqEditors ...RequestEditorFn,
+	) (*GetPlaybookResponse, error)
 
 	// UpdatePlaybook request  with any body
-	UpdatePlaybookWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdatePlaybookResponse, error)
+	UpdatePlaybookWithBodyWithResponse(
+		ctx context.Context,
+		id string,
+		contentType string,
+		body io.Reader,
+		reqEditors ...RequestEditorFn,
+	) (*UpdatePlaybookResponse, error)
 
 	// ListPlaybookTasks request
-	ListPlaybookTasksWithResponse(ctx context.Context, playbookId string, params *ListPlaybookTasksParams, reqEditors ...RequestEditorFn) (*ListPlaybookTasksResponse, error)
+	ListPlaybookTasksWithResponse(
+		ctx context.Context,
+		playbookId string,
+		params *ListPlaybookTasksParams,
+		reqEditors ...RequestEditorFn,
+	) (*ListPlaybookTasksResponse, error)
 
 	// CreatePlaybookTask request  with any body
-	CreatePlaybookTaskWithBodyWithResponse(ctx context.Context, playbookId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreatePlaybookTaskResponse, error)
+	CreatePlaybookTaskWithBodyWithResponse(
+		ctx context.Context,
+		playbookId string,
+		contentType string,
+		body io.Reader,
+		reqEditors ...RequestEditorFn,
+	) (*CreatePlaybookTaskResponse, error)
 
 	// ListPostmortemTemplates request
-	ListPostmortemTemplatesWithResponse(ctx context.Context, params *ListPostmortemTemplatesParams, reqEditors ...RequestEditorFn) (*ListPostmortemTemplatesResponse, error)
+	ListPostmortemTemplatesWithResponse(
+		ctx context.Context,
+		params *ListPostmortemTemplatesParams,
+		reqEditors ...RequestEditorFn,
+	) (*ListPostmortemTemplatesResponse, error)
 
 	// CreatePostmortemTemplate request  with any body
-	CreatePostmortemTemplateWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreatePostmortemTemplateResponse, error)
+	CreatePostmortemTemplateWithBodyWithResponse(
+		ctx context.Context,
+		contentType string,
+		body io.Reader,
+		reqEditors ...RequestEditorFn,
+	) (*CreatePostmortemTemplateResponse, error)
 
 	// DeletePostmortemTemplate request
-	DeletePostmortemTemplateWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*DeletePostmortemTemplateResponse, error)
+	DeletePostmortemTemplateWithResponse(
+		ctx context.Context,
+		id string,
+		reqEditors ...RequestEditorFn,
+	) (*DeletePostmortemTemplateResponse, error)
 
 	// GetPostmortemTemplate request
-	GetPostmortemTemplateWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*GetPostmortemTemplateResponse, error)
+	GetPostmortemTemplateWithResponse(
+		ctx context.Context,
+		id string,
+		reqEditors ...RequestEditorFn,
+	) (*GetPostmortemTemplateResponse, error)
 
 	// UpdatePostmortemTemplate request  with any body
-	UpdatePostmortemTemplateWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdatePostmortemTemplateResponse, error)
+	UpdatePostmortemTemplateWithBodyWithResponse(
+		ctx context.Context,
+		id string,
+		contentType string,
+		body io.Reader,
+		reqEditors ...RequestEditorFn,
+	) (*UpdatePostmortemTemplateResponse, error)
 
 	// GetIncidentPostmortem request
-	GetIncidentPostmortemWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*GetIncidentPostmortemResponse, error)
+	GetIncidentPostmortemWithResponse(
+		ctx context.Context,
+		id string,
+		reqEditors ...RequestEditorFn,
+	) (*GetIncidentPostmortemResponse, error)
 
 	// UpdateIncidentPostmortem request  with any body
-	UpdateIncidentPostmortemWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateIncidentPostmortemResponse, error)
+	UpdateIncidentPostmortemWithBodyWithResponse(
+		ctx context.Context,
+		id string,
+		contentType string,
+		body io.Reader,
+		reqEditors ...RequestEditorFn,
+	) (*UpdateIncidentPostmortemResponse, error)
 
 	// ListPulses request
-	ListPulsesWithResponse(ctx context.Context, params *ListPulsesParams, reqEditors ...RequestEditorFn) (*ListPulsesResponse, error)
+	ListPulsesWithResponse(
+		ctx context.Context,
+		params *ListPulsesParams,
+		reqEditors ...RequestEditorFn,
+	) (*ListPulsesResponse, error)
 
 	// CreatePulse request  with any body
-	CreatePulseWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreatePulseResponse, error)
+	CreatePulseWithBodyWithResponse(
+		ctx context.Context,
+		contentType string,
+		body io.Reader,
+		reqEditors ...RequestEditorFn,
+	) (*CreatePulseResponse, error)
 
 	// GetPulse request
-	GetPulseWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*GetPulseResponse, error)
+	GetPulseWithResponse(
+		ctx context.Context,
+		id string,
+		reqEditors ...RequestEditorFn,
+	) (*GetPulseResponse, error)
 
 	// UpdatePulse request  with any body
-	UpdatePulseWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdatePulseResponse, error)
+	UpdatePulseWithBodyWithResponse(
+		ctx context.Context,
+		id string,
+		contentType string,
+		body io.Reader,
+		reqEditors ...RequestEditorFn,
+	) (*UpdatePulseResponse, error)
 
 	// ListServices request
-	ListServicesWithResponse(ctx context.Context, params *ListServicesParams, reqEditors ...RequestEditorFn) (*ListServicesResponse, error)
+	ListServicesWithResponse(
+		ctx context.Context,
+		params *ListServicesParams,
+		reqEditors ...RequestEditorFn,
+	) (*ListServicesResponse, error)
 
 	// CreateService request  with any body
-	CreateServiceWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateServiceResponse, error)
+	CreateServiceWithBodyWithResponse(
+		ctx context.Context,
+		contentType string,
+		body io.Reader,
+		reqEditors ...RequestEditorFn,
+	) (*CreateServiceResponse, error)
 
 	// DeleteService request
-	DeleteServiceWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*DeleteServiceResponse, error)
+	DeleteServiceWithResponse(
+		ctx context.Context,
+		id string,
+		reqEditors ...RequestEditorFn,
+	) (*DeleteServiceResponse, error)
 
 	// GetService request
-	GetServiceWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*GetServiceResponse, error)
+	GetServiceWithResponse(
+		ctx context.Context,
+		id string,
+		reqEditors ...RequestEditorFn,
+	) (*GetServiceResponse, error)
 
 	// UpdateService request  with any body
-	UpdateServiceWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateServiceResponse, error)
+	UpdateServiceWithBodyWithResponse(
+		ctx context.Context,
+		id string,
+		contentType string,
+		body io.Reader,
+		reqEditors ...RequestEditorFn,
+	) (*UpdateServiceResponse, error)
 
 	// ListSeverities request
-	ListSeveritiesWithResponse(ctx context.Context, params *ListSeveritiesParams, reqEditors ...RequestEditorFn) (*ListSeveritiesResponse, error)
+	ListSeveritiesWithResponse(
+		ctx context.Context,
+		params *ListSeveritiesParams,
+		reqEditors ...RequestEditorFn,
+	) (*ListSeveritiesResponse, error)
 
 	// CreateSeverity request  with any body
-	CreateSeverityWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateSeverityResponse, error)
+	CreateSeverityWithBodyWithResponse(
+		ctx context.Context,
+		contentType string,
+		body io.Reader,
+		reqEditors ...RequestEditorFn,
+	) (*CreateSeverityResponse, error)
 
 	// DeleteSeverity request
-	DeleteSeverityWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*DeleteSeverityResponse, error)
+	DeleteSeverityWithResponse(
+		ctx context.Context,
+		id string,
+		reqEditors ...RequestEditorFn,
+	) (*DeleteSeverityResponse, error)
 
 	// GetSeverity request
-	GetSeverityWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*GetSeverityResponse, error)
+	GetSeverityWithResponse(
+		ctx context.Context,
+		id string,
+		reqEditors ...RequestEditorFn,
+	) (*GetSeverityResponse, error)
 
 	// UpdateSeverity request  with any body
-	UpdateSeverityWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateSeverityResponse, error)
+	UpdateSeverityWithBodyWithResponse(
+		ctx context.Context,
+		id string,
+		contentType string,
+		body io.Reader,
+		reqEditors ...RequestEditorFn,
+	) (*UpdateSeverityResponse, error)
 
 	// ListStatusPages request
-	ListStatusPagesWithResponse(ctx context.Context, params *ListStatusPagesParams, reqEditors ...RequestEditorFn) (*ListStatusPagesResponse, error)
+	ListStatusPagesWithResponse(
+		ctx context.Context,
+		params *ListStatusPagesParams,
+		reqEditors ...RequestEditorFn,
+	) (*ListStatusPagesResponse, error)
 
 	// CreateStatusPage request  with any body
-	CreateStatusPageWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateStatusPageResponse, error)
+	CreateStatusPageWithBodyWithResponse(
+		ctx context.Context,
+		contentType string,
+		body io.Reader,
+		reqEditors ...RequestEditorFn,
+	) (*CreateStatusPageResponse, error)
 
 	// DeleteStatusPage request
-	DeleteStatusPageWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*DeleteStatusPageResponse, error)
+	DeleteStatusPageWithResponse(
+		ctx context.Context,
+		id string,
+		reqEditors ...RequestEditorFn,
+	) (*DeleteStatusPageResponse, error)
 
 	// GetStatusPage request
-	GetStatusPageWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*GetStatusPageResponse, error)
+	GetStatusPageWithResponse(
+		ctx context.Context,
+		id string,
+		reqEditors ...RequestEditorFn,
+	) (*GetStatusPageResponse, error)
 
 	// UpdateStatusPage request  with any body
-	UpdateStatusPageWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateStatusPageResponse, error)
+	UpdateStatusPageWithBodyWithResponse(
+		ctx context.Context,
+		id string,
+		contentType string,
+		body io.Reader,
+		reqEditors ...RequestEditorFn,
+	) (*UpdateStatusPageResponse, error)
 
 	// ListTeams request
-	ListTeamsWithResponse(ctx context.Context, params *ListTeamsParams, reqEditors ...RequestEditorFn) (*ListTeamsResponse, error)
+	ListTeamsWithResponse(
+		ctx context.Context,
+		params *ListTeamsParams,
+		reqEditors ...RequestEditorFn,
+	) (*ListTeamsResponse, error)
 
 	// CreateTeam request  with any body
-	CreateTeamWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateTeamResponse, error)
+	CreateTeamWithBodyWithResponse(
+		ctx context.Context,
+		contentType string,
+		body io.Reader,
+		reqEditors ...RequestEditorFn,
+	) (*CreateTeamResponse, error)
 
 	// DeleteTeam request
-	DeleteTeamWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*DeleteTeamResponse, error)
+	DeleteTeamWithResponse(
+		ctx context.Context,
+		id string,
+		reqEditors ...RequestEditorFn,
+	) (*DeleteTeamResponse, error)
 
 	// GetTeam request
-	GetTeamWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*GetTeamResponse, error)
+	GetTeamWithResponse(
+		ctx context.Context,
+		id string,
+		reqEditors ...RequestEditorFn,
+	) (*GetTeamResponse, error)
 
 	// UpdateTeam request  with any body
-	UpdateTeamWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateTeamResponse, error)
+	UpdateTeamWithBodyWithResponse(
+		ctx context.Context,
+		id string,
+		contentType string,
+		body io.Reader,
+		reqEditors ...RequestEditorFn,
+	) (*UpdateTeamResponse, error)
 }
 
 type DeleteIncidentActionItemResponse struct {
@@ -10388,7 +12145,11 @@ func (r UpdateTeamResponse) StatusCode() int {
 }
 
 // DeleteIncidentActionItemWithResponse request returning *DeleteIncidentActionItemResponse
-func (c *ClientWithResponses) DeleteIncidentActionItemWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*DeleteIncidentActionItemResponse, error) {
+func (c *ClientWithResponses) DeleteIncidentActionItemWithResponse(
+	ctx context.Context,
+	id string,
+	reqEditors ...RequestEditorFn,
+) (*DeleteIncidentActionItemResponse, error) {
 	rsp, err := c.DeleteIncidentActionItem(ctx, id, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -10397,7 +12158,11 @@ func (c *ClientWithResponses) DeleteIncidentActionItemWithResponse(ctx context.C
 }
 
 // GetIncidentActionItemsWithResponse request returning *GetIncidentActionItemsResponse
-func (c *ClientWithResponses) GetIncidentActionItemsWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*GetIncidentActionItemsResponse, error) {
+func (c *ClientWithResponses) GetIncidentActionItemsWithResponse(
+	ctx context.Context,
+	id string,
+	reqEditors ...RequestEditorFn,
+) (*GetIncidentActionItemsResponse, error) {
 	rsp, err := c.GetIncidentActionItems(ctx, id, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -10406,7 +12171,13 @@ func (c *ClientWithResponses) GetIncidentActionItemsWithResponse(ctx context.Con
 }
 
 // UpdateIncidentActionItemWithBodyWithResponse request with arbitrary body returning *UpdateIncidentActionItemResponse
-func (c *ClientWithResponses) UpdateIncidentActionItemWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateIncidentActionItemResponse, error) {
+func (c *ClientWithResponses) UpdateIncidentActionItemWithBodyWithResponse(
+	ctx context.Context,
+	id string,
+	contentType string,
+	body io.Reader,
+	reqEditors ...RequestEditorFn,
+) (*UpdateIncidentActionItemResponse, error) {
 	rsp, err := c.UpdateIncidentActionItemWithBody(ctx, id, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -10415,7 +12186,11 @@ func (c *ClientWithResponses) UpdateIncidentActionItemWithBodyWithResponse(ctx c
 }
 
 // ListAlertsWithResponse request returning *ListAlertsResponse
-func (c *ClientWithResponses) ListAlertsWithResponse(ctx context.Context, params *ListAlertsParams, reqEditors ...RequestEditorFn) (*ListAlertsResponse, error) {
+func (c *ClientWithResponses) ListAlertsWithResponse(
+	ctx context.Context,
+	params *ListAlertsParams,
+	reqEditors ...RequestEditorFn,
+) (*ListAlertsResponse, error) {
 	rsp, err := c.ListAlerts(ctx, params, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -10424,7 +12199,11 @@ func (c *ClientWithResponses) ListAlertsWithResponse(ctx context.Context, params
 }
 
 // GetAlertWithResponse request returning *GetAlertResponse
-func (c *ClientWithResponses) GetAlertWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*GetAlertResponse, error) {
+func (c *ClientWithResponses) GetAlertWithResponse(
+	ctx context.Context,
+	id string,
+	reqEditors ...RequestEditorFn,
+) (*GetAlertResponse, error) {
 	rsp, err := c.GetAlert(ctx, id, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -10433,7 +12212,11 @@ func (c *ClientWithResponses) GetAlertWithResponse(ctx context.Context, id strin
 }
 
 // ListCausesWithResponse request returning *ListCausesResponse
-func (c *ClientWithResponses) ListCausesWithResponse(ctx context.Context, params *ListCausesParams, reqEditors ...RequestEditorFn) (*ListCausesResponse, error) {
+func (c *ClientWithResponses) ListCausesWithResponse(
+	ctx context.Context,
+	params *ListCausesParams,
+	reqEditors ...RequestEditorFn,
+) (*ListCausesResponse, error) {
 	rsp, err := c.ListCauses(ctx, params, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -10442,7 +12225,12 @@ func (c *ClientWithResponses) ListCausesWithResponse(ctx context.Context, params
 }
 
 // CreateCauseWithBodyWithResponse request with arbitrary body returning *CreateCauseResponse
-func (c *ClientWithResponses) CreateCauseWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateCauseResponse, error) {
+func (c *ClientWithResponses) CreateCauseWithBodyWithResponse(
+	ctx context.Context,
+	contentType string,
+	body io.Reader,
+	reqEditors ...RequestEditorFn,
+) (*CreateCauseResponse, error) {
 	rsp, err := c.CreateCauseWithBody(ctx, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -10451,7 +12239,11 @@ func (c *ClientWithResponses) CreateCauseWithBodyWithResponse(ctx context.Contex
 }
 
 // DeleteCauseWithResponse request returning *DeleteCauseResponse
-func (c *ClientWithResponses) DeleteCauseWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*DeleteCauseResponse, error) {
+func (c *ClientWithResponses) DeleteCauseWithResponse(
+	ctx context.Context,
+	id string,
+	reqEditors ...RequestEditorFn,
+) (*DeleteCauseResponse, error) {
 	rsp, err := c.DeleteCause(ctx, id, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -10460,7 +12252,11 @@ func (c *ClientWithResponses) DeleteCauseWithResponse(ctx context.Context, id st
 }
 
 // GetCauseWithResponse request returning *GetCauseResponse
-func (c *ClientWithResponses) GetCauseWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*GetCauseResponse, error) {
+func (c *ClientWithResponses) GetCauseWithResponse(
+	ctx context.Context,
+	id string,
+	reqEditors ...RequestEditorFn,
+) (*GetCauseResponse, error) {
 	rsp, err := c.GetCause(ctx, id, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -10469,7 +12265,13 @@ func (c *ClientWithResponses) GetCauseWithResponse(ctx context.Context, id strin
 }
 
 // UpdateCauseWithBodyWithResponse request with arbitrary body returning *UpdateCauseResponse
-func (c *ClientWithResponses) UpdateCauseWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateCauseResponse, error) {
+func (c *ClientWithResponses) UpdateCauseWithBodyWithResponse(
+	ctx context.Context,
+	id string,
+	contentType string,
+	body io.Reader,
+	reqEditors ...RequestEditorFn,
+) (*UpdateCauseResponse, error) {
 	rsp, err := c.UpdateCauseWithBody(ctx, id, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -10478,7 +12280,11 @@ func (c *ClientWithResponses) UpdateCauseWithBodyWithResponse(ctx context.Contex
 }
 
 // ListEnvironmentsWithResponse request returning *ListEnvironmentsResponse
-func (c *ClientWithResponses) ListEnvironmentsWithResponse(ctx context.Context, params *ListEnvironmentsParams, reqEditors ...RequestEditorFn) (*ListEnvironmentsResponse, error) {
+func (c *ClientWithResponses) ListEnvironmentsWithResponse(
+	ctx context.Context,
+	params *ListEnvironmentsParams,
+	reqEditors ...RequestEditorFn,
+) (*ListEnvironmentsResponse, error) {
 	rsp, err := c.ListEnvironments(ctx, params, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -10487,7 +12293,12 @@ func (c *ClientWithResponses) ListEnvironmentsWithResponse(ctx context.Context, 
 }
 
 // CreateEnvironmentWithBodyWithResponse request with arbitrary body returning *CreateEnvironmentResponse
-func (c *ClientWithResponses) CreateEnvironmentWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateEnvironmentResponse, error) {
+func (c *ClientWithResponses) CreateEnvironmentWithBodyWithResponse(
+	ctx context.Context,
+	contentType string,
+	body io.Reader,
+	reqEditors ...RequestEditorFn,
+) (*CreateEnvironmentResponse, error) {
 	rsp, err := c.CreateEnvironmentWithBody(ctx, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -10496,7 +12307,11 @@ func (c *ClientWithResponses) CreateEnvironmentWithBodyWithResponse(ctx context.
 }
 
 // DeleteEnvironmentWithResponse request returning *DeleteEnvironmentResponse
-func (c *ClientWithResponses) DeleteEnvironmentWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*DeleteEnvironmentResponse, error) {
+func (c *ClientWithResponses) DeleteEnvironmentWithResponse(
+	ctx context.Context,
+	id string,
+	reqEditors ...RequestEditorFn,
+) (*DeleteEnvironmentResponse, error) {
 	rsp, err := c.DeleteEnvironment(ctx, id, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -10505,7 +12320,11 @@ func (c *ClientWithResponses) DeleteEnvironmentWithResponse(ctx context.Context,
 }
 
 // GetEnvironmentWithResponse request returning *GetEnvironmentResponse
-func (c *ClientWithResponses) GetEnvironmentWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*GetEnvironmentResponse, error) {
+func (c *ClientWithResponses) GetEnvironmentWithResponse(
+	ctx context.Context,
+	id string,
+	reqEditors ...RequestEditorFn,
+) (*GetEnvironmentResponse, error) {
 	rsp, err := c.GetEnvironment(ctx, id, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -10514,7 +12333,13 @@ func (c *ClientWithResponses) GetEnvironmentWithResponse(ctx context.Context, id
 }
 
 // UpdateEnvironmentWithBodyWithResponse request with arbitrary body returning *UpdateEnvironmentResponse
-func (c *ClientWithResponses) UpdateEnvironmentWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateEnvironmentResponse, error) {
+func (c *ClientWithResponses) UpdateEnvironmentWithBodyWithResponse(
+	ctx context.Context,
+	id string,
+	contentType string,
+	body io.Reader,
+	reqEditors ...RequestEditorFn,
+) (*UpdateEnvironmentResponse, error) {
 	rsp, err := c.UpdateEnvironmentWithBody(ctx, id, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -10523,7 +12348,11 @@ func (c *ClientWithResponses) UpdateEnvironmentWithBodyWithResponse(ctx context.
 }
 
 // DeleteIncidentEventWithResponse request returning *DeleteIncidentEventResponse
-func (c *ClientWithResponses) DeleteIncidentEventWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*DeleteIncidentEventResponse, error) {
+func (c *ClientWithResponses) DeleteIncidentEventWithResponse(
+	ctx context.Context,
+	id string,
+	reqEditors ...RequestEditorFn,
+) (*DeleteIncidentEventResponse, error) {
 	rsp, err := c.DeleteIncidentEvent(ctx, id, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -10532,7 +12361,11 @@ func (c *ClientWithResponses) DeleteIncidentEventWithResponse(ctx context.Contex
 }
 
 // GetIncidentEventsWithResponse request returning *GetIncidentEventsResponse
-func (c *ClientWithResponses) GetIncidentEventsWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*GetIncidentEventsResponse, error) {
+func (c *ClientWithResponses) GetIncidentEventsWithResponse(
+	ctx context.Context,
+	id string,
+	reqEditors ...RequestEditorFn,
+) (*GetIncidentEventsResponse, error) {
 	rsp, err := c.GetIncidentEvents(ctx, id, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -10541,7 +12374,13 @@ func (c *ClientWithResponses) GetIncidentEventsWithResponse(ctx context.Context,
 }
 
 // UpdateIncidentEventWithBodyWithResponse request with arbitrary body returning *UpdateIncidentEventResponse
-func (c *ClientWithResponses) UpdateIncidentEventWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateIncidentEventResponse, error) {
+func (c *ClientWithResponses) UpdateIncidentEventWithBodyWithResponse(
+	ctx context.Context,
+	id string,
+	contentType string,
+	body io.Reader,
+	reqEditors ...RequestEditorFn,
+) (*UpdateIncidentEventResponse, error) {
 	rsp, err := c.UpdateIncidentEventWithBody(ctx, id, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -10550,7 +12389,11 @@ func (c *ClientWithResponses) UpdateIncidentEventWithBodyWithResponse(ctx contex
 }
 
 // ListFunctionalitiesWithResponse request returning *ListFunctionalitiesResponse
-func (c *ClientWithResponses) ListFunctionalitiesWithResponse(ctx context.Context, params *ListFunctionalitiesParams, reqEditors ...RequestEditorFn) (*ListFunctionalitiesResponse, error) {
+func (c *ClientWithResponses) ListFunctionalitiesWithResponse(
+	ctx context.Context,
+	params *ListFunctionalitiesParams,
+	reqEditors ...RequestEditorFn,
+) (*ListFunctionalitiesResponse, error) {
 	rsp, err := c.ListFunctionalities(ctx, params, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -10559,7 +12402,12 @@ func (c *ClientWithResponses) ListFunctionalitiesWithResponse(ctx context.Contex
 }
 
 // CreateFunctionalityWithBodyWithResponse request with arbitrary body returning *CreateFunctionalityResponse
-func (c *ClientWithResponses) CreateFunctionalityWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateFunctionalityResponse, error) {
+func (c *ClientWithResponses) CreateFunctionalityWithBodyWithResponse(
+	ctx context.Context,
+	contentType string,
+	body io.Reader,
+	reqEditors ...RequestEditorFn,
+) (*CreateFunctionalityResponse, error) {
 	rsp, err := c.CreateFunctionalityWithBody(ctx, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -10568,7 +12416,11 @@ func (c *ClientWithResponses) CreateFunctionalityWithBodyWithResponse(ctx contex
 }
 
 // DeleteFunctionalityWithResponse request returning *DeleteFunctionalityResponse
-func (c *ClientWithResponses) DeleteFunctionalityWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*DeleteFunctionalityResponse, error) {
+func (c *ClientWithResponses) DeleteFunctionalityWithResponse(
+	ctx context.Context,
+	id string,
+	reqEditors ...RequestEditorFn,
+) (*DeleteFunctionalityResponse, error) {
 	rsp, err := c.DeleteFunctionality(ctx, id, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -10577,7 +12429,11 @@ func (c *ClientWithResponses) DeleteFunctionalityWithResponse(ctx context.Contex
 }
 
 // GetFunctionalityWithResponse request returning *GetFunctionalityResponse
-func (c *ClientWithResponses) GetFunctionalityWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*GetFunctionalityResponse, error) {
+func (c *ClientWithResponses) GetFunctionalityWithResponse(
+	ctx context.Context,
+	id string,
+	reqEditors ...RequestEditorFn,
+) (*GetFunctionalityResponse, error) {
 	rsp, err := c.GetFunctionality(ctx, id, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -10586,7 +12442,13 @@ func (c *ClientWithResponses) GetFunctionalityWithResponse(ctx context.Context, 
 }
 
 // UpdateFunctionalityWithBodyWithResponse request with arbitrary body returning *UpdateFunctionalityResponse
-func (c *ClientWithResponses) UpdateFunctionalityWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateFunctionalityResponse, error) {
+func (c *ClientWithResponses) UpdateFunctionalityWithBodyWithResponse(
+	ctx context.Context,
+	id string,
+	contentType string,
+	body io.Reader,
+	reqEditors ...RequestEditorFn,
+) (*UpdateFunctionalityResponse, error) {
 	rsp, err := c.UpdateFunctionalityWithBody(ctx, id, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -10595,7 +12457,11 @@ func (c *ClientWithResponses) UpdateFunctionalityWithBodyWithResponse(ctx contex
 }
 
 // ListIncidentRolesWithResponse request returning *ListIncidentRolesResponse
-func (c *ClientWithResponses) ListIncidentRolesWithResponse(ctx context.Context, params *ListIncidentRolesParams, reqEditors ...RequestEditorFn) (*ListIncidentRolesResponse, error) {
+func (c *ClientWithResponses) ListIncidentRolesWithResponse(
+	ctx context.Context,
+	params *ListIncidentRolesParams,
+	reqEditors ...RequestEditorFn,
+) (*ListIncidentRolesResponse, error) {
 	rsp, err := c.ListIncidentRoles(ctx, params, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -10604,7 +12470,12 @@ func (c *ClientWithResponses) ListIncidentRolesWithResponse(ctx context.Context,
 }
 
 // CreateIncidentRoleWithBodyWithResponse request with arbitrary body returning *CreateIncidentRoleResponse
-func (c *ClientWithResponses) CreateIncidentRoleWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateIncidentRoleResponse, error) {
+func (c *ClientWithResponses) CreateIncidentRoleWithBodyWithResponse(
+	ctx context.Context,
+	contentType string,
+	body io.Reader,
+	reqEditors ...RequestEditorFn,
+) (*CreateIncidentRoleResponse, error) {
 	rsp, err := c.CreateIncidentRoleWithBody(ctx, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -10613,7 +12484,11 @@ func (c *ClientWithResponses) CreateIncidentRoleWithBodyWithResponse(ctx context
 }
 
 // DeleteIncidentRoleWithResponse request returning *DeleteIncidentRoleResponse
-func (c *ClientWithResponses) DeleteIncidentRoleWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*DeleteIncidentRoleResponse, error) {
+func (c *ClientWithResponses) DeleteIncidentRoleWithResponse(
+	ctx context.Context,
+	id string,
+	reqEditors ...RequestEditorFn,
+) (*DeleteIncidentRoleResponse, error) {
 	rsp, err := c.DeleteIncidentRole(ctx, id, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -10622,7 +12497,11 @@ func (c *ClientWithResponses) DeleteIncidentRoleWithResponse(ctx context.Context
 }
 
 // GetIncidentRoleWithResponse request returning *GetIncidentRoleResponse
-func (c *ClientWithResponses) GetIncidentRoleWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*GetIncidentRoleResponse, error) {
+func (c *ClientWithResponses) GetIncidentRoleWithResponse(
+	ctx context.Context,
+	id string,
+	reqEditors ...RequestEditorFn,
+) (*GetIncidentRoleResponse, error) {
 	rsp, err := c.GetIncidentRole(ctx, id, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -10631,7 +12510,13 @@ func (c *ClientWithResponses) GetIncidentRoleWithResponse(ctx context.Context, i
 }
 
 // UpdateIncidentRoleWithBodyWithResponse request with arbitrary body returning *UpdateIncidentRoleResponse
-func (c *ClientWithResponses) UpdateIncidentRoleWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateIncidentRoleResponse, error) {
+func (c *ClientWithResponses) UpdateIncidentRoleWithBodyWithResponse(
+	ctx context.Context,
+	id string,
+	contentType string,
+	body io.Reader,
+	reqEditors ...RequestEditorFn,
+) (*UpdateIncidentRoleResponse, error) {
 	rsp, err := c.UpdateIncidentRoleWithBody(ctx, id, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -10640,7 +12525,11 @@ func (c *ClientWithResponses) UpdateIncidentRoleWithBodyWithResponse(ctx context
 }
 
 // DeleteIncidentTaskWithResponse request returning *DeleteIncidentTaskResponse
-func (c *ClientWithResponses) DeleteIncidentTaskWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*DeleteIncidentTaskResponse, error) {
+func (c *ClientWithResponses) DeleteIncidentTaskWithResponse(
+	ctx context.Context,
+	id string,
+	reqEditors ...RequestEditorFn,
+) (*DeleteIncidentTaskResponse, error) {
 	rsp, err := c.DeleteIncidentTask(ctx, id, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -10649,7 +12538,11 @@ func (c *ClientWithResponses) DeleteIncidentTaskWithResponse(ctx context.Context
 }
 
 // GetIncidentTasksWithResponse request returning *GetIncidentTasksResponse
-func (c *ClientWithResponses) GetIncidentTasksWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*GetIncidentTasksResponse, error) {
+func (c *ClientWithResponses) GetIncidentTasksWithResponse(
+	ctx context.Context,
+	id string,
+	reqEditors ...RequestEditorFn,
+) (*GetIncidentTasksResponse, error) {
 	rsp, err := c.GetIncidentTasks(ctx, id, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -10658,7 +12551,13 @@ func (c *ClientWithResponses) GetIncidentTasksWithResponse(ctx context.Context, 
 }
 
 // UpdateIncidentTaskWithBodyWithResponse request with arbitrary body returning *UpdateIncidentTaskResponse
-func (c *ClientWithResponses) UpdateIncidentTaskWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateIncidentTaskResponse, error) {
+func (c *ClientWithResponses) UpdateIncidentTaskWithBodyWithResponse(
+	ctx context.Context,
+	id string,
+	contentType string,
+	body io.Reader,
+	reqEditors ...RequestEditorFn,
+) (*UpdateIncidentTaskResponse, error) {
 	rsp, err := c.UpdateIncidentTaskWithBody(ctx, id, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -10667,7 +12566,11 @@ func (c *ClientWithResponses) UpdateIncidentTaskWithBodyWithResponse(ctx context
 }
 
 // ListIncidentTypesWithResponse request returning *ListIncidentTypesResponse
-func (c *ClientWithResponses) ListIncidentTypesWithResponse(ctx context.Context, params *ListIncidentTypesParams, reqEditors ...RequestEditorFn) (*ListIncidentTypesResponse, error) {
+func (c *ClientWithResponses) ListIncidentTypesWithResponse(
+	ctx context.Context,
+	params *ListIncidentTypesParams,
+	reqEditors ...RequestEditorFn,
+) (*ListIncidentTypesResponse, error) {
 	rsp, err := c.ListIncidentTypes(ctx, params, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -10676,7 +12579,12 @@ func (c *ClientWithResponses) ListIncidentTypesWithResponse(ctx context.Context,
 }
 
 // CreateIncidentTypeWithBodyWithResponse request with arbitrary body returning *CreateIncidentTypeResponse
-func (c *ClientWithResponses) CreateIncidentTypeWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateIncidentTypeResponse, error) {
+func (c *ClientWithResponses) CreateIncidentTypeWithBodyWithResponse(
+	ctx context.Context,
+	contentType string,
+	body io.Reader,
+	reqEditors ...RequestEditorFn,
+) (*CreateIncidentTypeResponse, error) {
 	rsp, err := c.CreateIncidentTypeWithBody(ctx, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -10685,7 +12593,11 @@ func (c *ClientWithResponses) CreateIncidentTypeWithBodyWithResponse(ctx context
 }
 
 // DeleteIncidentTypeWithResponse request returning *DeleteIncidentTypeResponse
-func (c *ClientWithResponses) DeleteIncidentTypeWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*DeleteIncidentTypeResponse, error) {
+func (c *ClientWithResponses) DeleteIncidentTypeWithResponse(
+	ctx context.Context,
+	id string,
+	reqEditors ...RequestEditorFn,
+) (*DeleteIncidentTypeResponse, error) {
 	rsp, err := c.DeleteIncidentType(ctx, id, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -10694,7 +12606,11 @@ func (c *ClientWithResponses) DeleteIncidentTypeWithResponse(ctx context.Context
 }
 
 // GetIncidentTypeWithResponse request returning *GetIncidentTypeResponse
-func (c *ClientWithResponses) GetIncidentTypeWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*GetIncidentTypeResponse, error) {
+func (c *ClientWithResponses) GetIncidentTypeWithResponse(
+	ctx context.Context,
+	id string,
+	reqEditors ...RequestEditorFn,
+) (*GetIncidentTypeResponse, error) {
 	rsp, err := c.GetIncidentType(ctx, id, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -10703,7 +12619,13 @@ func (c *ClientWithResponses) GetIncidentTypeWithResponse(ctx context.Context, i
 }
 
 // UpdateIncidentTypeWithBodyWithResponse request with arbitrary body returning *UpdateIncidentTypeResponse
-func (c *ClientWithResponses) UpdateIncidentTypeWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateIncidentTypeResponse, error) {
+func (c *ClientWithResponses) UpdateIncidentTypeWithBodyWithResponse(
+	ctx context.Context,
+	id string,
+	contentType string,
+	body io.Reader,
+	reqEditors ...RequestEditorFn,
+) (*UpdateIncidentTypeResponse, error) {
 	rsp, err := c.UpdateIncidentTypeWithBody(ctx, id, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -10712,7 +12634,11 @@ func (c *ClientWithResponses) UpdateIncidentTypeWithBodyWithResponse(ctx context
 }
 
 // ListIncidentsWithResponse request returning *ListIncidentsResponse
-func (c *ClientWithResponses) ListIncidentsWithResponse(ctx context.Context, params *ListIncidentsParams, reqEditors ...RequestEditorFn) (*ListIncidentsResponse, error) {
+func (c *ClientWithResponses) ListIncidentsWithResponse(
+	ctx context.Context,
+	params *ListIncidentsParams,
+	reqEditors ...RequestEditorFn,
+) (*ListIncidentsResponse, error) {
 	rsp, err := c.ListIncidents(ctx, params, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -10721,7 +12647,12 @@ func (c *ClientWithResponses) ListIncidentsWithResponse(ctx context.Context, par
 }
 
 // CreateIncidentWithBodyWithResponse request with arbitrary body returning *CreateIncidentResponse
-func (c *ClientWithResponses) CreateIncidentWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateIncidentResponse, error) {
+func (c *ClientWithResponses) CreateIncidentWithBodyWithResponse(
+	ctx context.Context,
+	contentType string,
+	body io.Reader,
+	reqEditors ...RequestEditorFn,
+) (*CreateIncidentResponse, error) {
 	rsp, err := c.CreateIncidentWithBody(ctx, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -10730,7 +12661,11 @@ func (c *ClientWithResponses) CreateIncidentWithBodyWithResponse(ctx context.Con
 }
 
 // DeleteIncidentWithResponse request returning *DeleteIncidentResponse
-func (c *ClientWithResponses) DeleteIncidentWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*DeleteIncidentResponse, error) {
+func (c *ClientWithResponses) DeleteIncidentWithResponse(
+	ctx context.Context,
+	id string,
+	reqEditors ...RequestEditorFn,
+) (*DeleteIncidentResponse, error) {
 	rsp, err := c.DeleteIncident(ctx, id, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -10739,7 +12674,11 @@ func (c *ClientWithResponses) DeleteIncidentWithResponse(ctx context.Context, id
 }
 
 // GetIncidentWithResponse request returning *GetIncidentResponse
-func (c *ClientWithResponses) GetIncidentWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*GetIncidentResponse, error) {
+func (c *ClientWithResponses) GetIncidentWithResponse(
+	ctx context.Context,
+	id string,
+	reqEditors ...RequestEditorFn,
+) (*GetIncidentResponse, error) {
 	rsp, err := c.GetIncident(ctx, id, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -10748,7 +12687,13 @@ func (c *ClientWithResponses) GetIncidentWithResponse(ctx context.Context, id st
 }
 
 // UpdateIncidentWithBodyWithResponse request with arbitrary body returning *UpdateIncidentResponse
-func (c *ClientWithResponses) UpdateIncidentWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateIncidentResponse, error) {
+func (c *ClientWithResponses) UpdateIncidentWithBodyWithResponse(
+	ctx context.Context,
+	id string,
+	contentType string,
+	body io.Reader,
+	reqEditors ...RequestEditorFn,
+) (*UpdateIncidentResponse, error) {
 	rsp, err := c.UpdateIncidentWithBody(ctx, id, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -10757,7 +12702,13 @@ func (c *ClientWithResponses) UpdateIncidentWithBodyWithResponse(ctx context.Con
 }
 
 // MitigateIncidentWithBodyWithResponse request with arbitrary body returning *MitigateIncidentResponse
-func (c *ClientWithResponses) MitigateIncidentWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*MitigateIncidentResponse, error) {
+func (c *ClientWithResponses) MitigateIncidentWithBodyWithResponse(
+	ctx context.Context,
+	id string,
+	contentType string,
+	body io.Reader,
+	reqEditors ...RequestEditorFn,
+) (*MitigateIncidentResponse, error) {
 	rsp, err := c.MitigateIncidentWithBody(ctx, id, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -10766,7 +12717,13 @@ func (c *ClientWithResponses) MitigateIncidentWithBodyWithResponse(ctx context.C
 }
 
 // ResolveIncidentWithBodyWithResponse request with arbitrary body returning *ResolveIncidentResponse
-func (c *ClientWithResponses) ResolveIncidentWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*ResolveIncidentResponse, error) {
+func (c *ClientWithResponses) ResolveIncidentWithBodyWithResponse(
+	ctx context.Context,
+	id string,
+	contentType string,
+	body io.Reader,
+	reqEditors ...RequestEditorFn,
+) (*ResolveIncidentResponse, error) {
 	rsp, err := c.ResolveIncidentWithBody(ctx, id, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -10775,7 +12732,12 @@ func (c *ClientWithResponses) ResolveIncidentWithBodyWithResponse(ctx context.Co
 }
 
 // ListIncidentActionItemsWithResponse request returning *ListIncidentActionItemsResponse
-func (c *ClientWithResponses) ListIncidentActionItemsWithResponse(ctx context.Context, incidentId string, params *ListIncidentActionItemsParams, reqEditors ...RequestEditorFn) (*ListIncidentActionItemsResponse, error) {
+func (c *ClientWithResponses) ListIncidentActionItemsWithResponse(
+	ctx context.Context,
+	incidentId string,
+	params *ListIncidentActionItemsParams,
+	reqEditors ...RequestEditorFn,
+) (*ListIncidentActionItemsResponse, error) {
 	rsp, err := c.ListIncidentActionItems(ctx, incidentId, params, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -10784,8 +12746,19 @@ func (c *ClientWithResponses) ListIncidentActionItemsWithResponse(ctx context.Co
 }
 
 // CreateIncidentActionItemWithBodyWithResponse request with arbitrary body returning *CreateIncidentActionItemResponse
-func (c *ClientWithResponses) CreateIncidentActionItemWithBodyWithResponse(ctx context.Context, incidentId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateIncidentActionItemResponse, error) {
-	rsp, err := c.CreateIncidentActionItemWithBody(ctx, incidentId, contentType, body, reqEditors...)
+func (c *ClientWithResponses) CreateIncidentActionItemWithBodyWithResponse(
+	ctx context.Context,
+	incidentId string,
+	contentType string,
+	body io.Reader,
+	reqEditors ...RequestEditorFn,
+) (*CreateIncidentActionItemResponse, error) {
+	rsp, err := c.CreateIncidentActionItemWithBody(
+		ctx,
+		incidentId,
+		contentType,
+		body,
+		reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -10793,7 +12766,12 @@ func (c *ClientWithResponses) CreateIncidentActionItemWithBodyWithResponse(ctx c
 }
 
 // ListAlertWithResponse request returning *ListAlertResponse
-func (c *ClientWithResponses) ListAlertWithResponse(ctx context.Context, incidentId string, params *ListAlertParams, reqEditors ...RequestEditorFn) (*ListAlertResponse, error) {
+func (c *ClientWithResponses) ListAlertWithResponse(
+	ctx context.Context,
+	incidentId string,
+	params *ListAlertParams,
+	reqEditors ...RequestEditorFn,
+) (*ListAlertResponse, error) {
 	rsp, err := c.ListAlert(ctx, incidentId, params, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -10802,7 +12780,13 @@ func (c *ClientWithResponses) ListAlertWithResponse(ctx context.Context, inciden
 }
 
 // AttachAlertWithBodyWithResponse request with arbitrary body returning *AttachAlertResponse
-func (c *ClientWithResponses) AttachAlertWithBodyWithResponse(ctx context.Context, incidentId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*AttachAlertResponse, error) {
+func (c *ClientWithResponses) AttachAlertWithBodyWithResponse(
+	ctx context.Context,
+	incidentId string,
+	contentType string,
+	body io.Reader,
+	reqEditors ...RequestEditorFn,
+) (*AttachAlertResponse, error) {
 	rsp, err := c.AttachAlertWithBody(ctx, incidentId, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -10811,7 +12795,12 @@ func (c *ClientWithResponses) AttachAlertWithBodyWithResponse(ctx context.Contex
 }
 
 // ListIncidentEventsWithResponse request returning *ListIncidentEventsResponse
-func (c *ClientWithResponses) ListIncidentEventsWithResponse(ctx context.Context, incidentId string, params *ListIncidentEventsParams, reqEditors ...RequestEditorFn) (*ListIncidentEventsResponse, error) {
+func (c *ClientWithResponses) ListIncidentEventsWithResponse(
+	ctx context.Context,
+	incidentId string,
+	params *ListIncidentEventsParams,
+	reqEditors ...RequestEditorFn,
+) (*ListIncidentEventsResponse, error) {
 	rsp, err := c.ListIncidentEvents(ctx, incidentId, params, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -10820,7 +12809,13 @@ func (c *ClientWithResponses) ListIncidentEventsWithResponse(ctx context.Context
 }
 
 // CreateIncidentEventWithBodyWithResponse request with arbitrary body returning *CreateIncidentEventResponse
-func (c *ClientWithResponses) CreateIncidentEventWithBodyWithResponse(ctx context.Context, incidentId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateIncidentEventResponse, error) {
+func (c *ClientWithResponses) CreateIncidentEventWithBodyWithResponse(
+	ctx context.Context,
+	incidentId string,
+	contentType string,
+	body io.Reader,
+	reqEditors ...RequestEditorFn,
+) (*CreateIncidentEventResponse, error) {
 	rsp, err := c.CreateIncidentEventWithBody(ctx, incidentId, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -10829,7 +12824,12 @@ func (c *ClientWithResponses) CreateIncidentEventWithBodyWithResponse(ctx contex
 }
 
 // ListIncidentTasksWithResponse request returning *ListIncidentTasksResponse
-func (c *ClientWithResponses) ListIncidentTasksWithResponse(ctx context.Context, incidentId string, params *ListIncidentTasksParams, reqEditors ...RequestEditorFn) (*ListIncidentTasksResponse, error) {
+func (c *ClientWithResponses) ListIncidentTasksWithResponse(
+	ctx context.Context,
+	incidentId string,
+	params *ListIncidentTasksParams,
+	reqEditors ...RequestEditorFn,
+) (*ListIncidentTasksResponse, error) {
 	rsp, err := c.ListIncidentTasks(ctx, incidentId, params, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -10838,7 +12838,13 @@ func (c *ClientWithResponses) ListIncidentTasksWithResponse(ctx context.Context,
 }
 
 // CreateIncidentTaskWithBodyWithResponse request with arbitrary body returning *CreateIncidentTaskResponse
-func (c *ClientWithResponses) CreateIncidentTaskWithBodyWithResponse(ctx context.Context, incidentId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateIncidentTaskResponse, error) {
+func (c *ClientWithResponses) CreateIncidentTaskWithBodyWithResponse(
+	ctx context.Context,
+	incidentId string,
+	contentType string,
+	body io.Reader,
+	reqEditors ...RequestEditorFn,
+) (*CreateIncidentTaskResponse, error) {
 	rsp, err := c.CreateIncidentTaskWithBody(ctx, incidentId, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -10847,7 +12853,11 @@ func (c *ClientWithResponses) CreateIncidentTaskWithBodyWithResponse(ctx context
 }
 
 // DeletePlaybookTaskWithResponse request returning *DeletePlaybookTaskResponse
-func (c *ClientWithResponses) DeletePlaybookTaskWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*DeletePlaybookTaskResponse, error) {
+func (c *ClientWithResponses) DeletePlaybookTaskWithResponse(
+	ctx context.Context,
+	id string,
+	reqEditors ...RequestEditorFn,
+) (*DeletePlaybookTaskResponse, error) {
 	rsp, err := c.DeletePlaybookTask(ctx, id, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -10856,7 +12866,11 @@ func (c *ClientWithResponses) DeletePlaybookTaskWithResponse(ctx context.Context
 }
 
 // GetPlaybookTasksWithResponse request returning *GetPlaybookTasksResponse
-func (c *ClientWithResponses) GetPlaybookTasksWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*GetPlaybookTasksResponse, error) {
+func (c *ClientWithResponses) GetPlaybookTasksWithResponse(
+	ctx context.Context,
+	id string,
+	reqEditors ...RequestEditorFn,
+) (*GetPlaybookTasksResponse, error) {
 	rsp, err := c.GetPlaybookTasks(ctx, id, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -10865,7 +12879,13 @@ func (c *ClientWithResponses) GetPlaybookTasksWithResponse(ctx context.Context, 
 }
 
 // UpdatePlaybookTaskWithBodyWithResponse request with arbitrary body returning *UpdatePlaybookTaskResponse
-func (c *ClientWithResponses) UpdatePlaybookTaskWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdatePlaybookTaskResponse, error) {
+func (c *ClientWithResponses) UpdatePlaybookTaskWithBodyWithResponse(
+	ctx context.Context,
+	id string,
+	contentType string,
+	body io.Reader,
+	reqEditors ...RequestEditorFn,
+) (*UpdatePlaybookTaskResponse, error) {
 	rsp, err := c.UpdatePlaybookTaskWithBody(ctx, id, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -10874,7 +12894,11 @@ func (c *ClientWithResponses) UpdatePlaybookTaskWithBodyWithResponse(ctx context
 }
 
 // ListPlaybooksWithResponse request returning *ListPlaybooksResponse
-func (c *ClientWithResponses) ListPlaybooksWithResponse(ctx context.Context, params *ListPlaybooksParams, reqEditors ...RequestEditorFn) (*ListPlaybooksResponse, error) {
+func (c *ClientWithResponses) ListPlaybooksWithResponse(
+	ctx context.Context,
+	params *ListPlaybooksParams,
+	reqEditors ...RequestEditorFn,
+) (*ListPlaybooksResponse, error) {
 	rsp, err := c.ListPlaybooks(ctx, params, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -10883,7 +12907,12 @@ func (c *ClientWithResponses) ListPlaybooksWithResponse(ctx context.Context, par
 }
 
 // CreatePlaybookWithBodyWithResponse request with arbitrary body returning *CreatePlaybookResponse
-func (c *ClientWithResponses) CreatePlaybookWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreatePlaybookResponse, error) {
+func (c *ClientWithResponses) CreatePlaybookWithBodyWithResponse(
+	ctx context.Context,
+	contentType string,
+	body io.Reader,
+	reqEditors ...RequestEditorFn,
+) (*CreatePlaybookResponse, error) {
 	rsp, err := c.CreatePlaybookWithBody(ctx, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -10892,7 +12921,11 @@ func (c *ClientWithResponses) CreatePlaybookWithBodyWithResponse(ctx context.Con
 }
 
 // DeletePlaybookWithResponse request returning *DeletePlaybookResponse
-func (c *ClientWithResponses) DeletePlaybookWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*DeletePlaybookResponse, error) {
+func (c *ClientWithResponses) DeletePlaybookWithResponse(
+	ctx context.Context,
+	id string,
+	reqEditors ...RequestEditorFn,
+) (*DeletePlaybookResponse, error) {
 	rsp, err := c.DeletePlaybook(ctx, id, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -10901,7 +12934,11 @@ func (c *ClientWithResponses) DeletePlaybookWithResponse(ctx context.Context, id
 }
 
 // GetPlaybookWithResponse request returning *GetPlaybookResponse
-func (c *ClientWithResponses) GetPlaybookWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*GetPlaybookResponse, error) {
+func (c *ClientWithResponses) GetPlaybookWithResponse(
+	ctx context.Context,
+	id string,
+	reqEditors ...RequestEditorFn,
+) (*GetPlaybookResponse, error) {
 	rsp, err := c.GetPlaybook(ctx, id, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -10910,7 +12947,13 @@ func (c *ClientWithResponses) GetPlaybookWithResponse(ctx context.Context, id st
 }
 
 // UpdatePlaybookWithBodyWithResponse request with arbitrary body returning *UpdatePlaybookResponse
-func (c *ClientWithResponses) UpdatePlaybookWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdatePlaybookResponse, error) {
+func (c *ClientWithResponses) UpdatePlaybookWithBodyWithResponse(
+	ctx context.Context,
+	id string,
+	contentType string,
+	body io.Reader,
+	reqEditors ...RequestEditorFn,
+) (*UpdatePlaybookResponse, error) {
 	rsp, err := c.UpdatePlaybookWithBody(ctx, id, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -10919,7 +12962,12 @@ func (c *ClientWithResponses) UpdatePlaybookWithBodyWithResponse(ctx context.Con
 }
 
 // ListPlaybookTasksWithResponse request returning *ListPlaybookTasksResponse
-func (c *ClientWithResponses) ListPlaybookTasksWithResponse(ctx context.Context, playbookId string, params *ListPlaybookTasksParams, reqEditors ...RequestEditorFn) (*ListPlaybookTasksResponse, error) {
+func (c *ClientWithResponses) ListPlaybookTasksWithResponse(
+	ctx context.Context,
+	playbookId string,
+	params *ListPlaybookTasksParams,
+	reqEditors ...RequestEditorFn,
+) (*ListPlaybookTasksResponse, error) {
 	rsp, err := c.ListPlaybookTasks(ctx, playbookId, params, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -10928,7 +12976,13 @@ func (c *ClientWithResponses) ListPlaybookTasksWithResponse(ctx context.Context,
 }
 
 // CreatePlaybookTaskWithBodyWithResponse request with arbitrary body returning *CreatePlaybookTaskResponse
-func (c *ClientWithResponses) CreatePlaybookTaskWithBodyWithResponse(ctx context.Context, playbookId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreatePlaybookTaskResponse, error) {
+func (c *ClientWithResponses) CreatePlaybookTaskWithBodyWithResponse(
+	ctx context.Context,
+	playbookId string,
+	contentType string,
+	body io.Reader,
+	reqEditors ...RequestEditorFn,
+) (*CreatePlaybookTaskResponse, error) {
 	rsp, err := c.CreatePlaybookTaskWithBody(ctx, playbookId, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -10937,7 +12991,11 @@ func (c *ClientWithResponses) CreatePlaybookTaskWithBodyWithResponse(ctx context
 }
 
 // ListPostmortemTemplatesWithResponse request returning *ListPostmortemTemplatesResponse
-func (c *ClientWithResponses) ListPostmortemTemplatesWithResponse(ctx context.Context, params *ListPostmortemTemplatesParams, reqEditors ...RequestEditorFn) (*ListPostmortemTemplatesResponse, error) {
+func (c *ClientWithResponses) ListPostmortemTemplatesWithResponse(
+	ctx context.Context,
+	params *ListPostmortemTemplatesParams,
+	reqEditors ...RequestEditorFn,
+) (*ListPostmortemTemplatesResponse, error) {
 	rsp, err := c.ListPostmortemTemplates(ctx, params, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -10946,7 +13004,12 @@ func (c *ClientWithResponses) ListPostmortemTemplatesWithResponse(ctx context.Co
 }
 
 // CreatePostmortemTemplateWithBodyWithResponse request with arbitrary body returning *CreatePostmortemTemplateResponse
-func (c *ClientWithResponses) CreatePostmortemTemplateWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreatePostmortemTemplateResponse, error) {
+func (c *ClientWithResponses) CreatePostmortemTemplateWithBodyWithResponse(
+	ctx context.Context,
+	contentType string,
+	body io.Reader,
+	reqEditors ...RequestEditorFn,
+) (*CreatePostmortemTemplateResponse, error) {
 	rsp, err := c.CreatePostmortemTemplateWithBody(ctx, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -10955,7 +13018,11 @@ func (c *ClientWithResponses) CreatePostmortemTemplateWithBodyWithResponse(ctx c
 }
 
 // DeletePostmortemTemplateWithResponse request returning *DeletePostmortemTemplateResponse
-func (c *ClientWithResponses) DeletePostmortemTemplateWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*DeletePostmortemTemplateResponse, error) {
+func (c *ClientWithResponses) DeletePostmortemTemplateWithResponse(
+	ctx context.Context,
+	id string,
+	reqEditors ...RequestEditorFn,
+) (*DeletePostmortemTemplateResponse, error) {
 	rsp, err := c.DeletePostmortemTemplate(ctx, id, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -10964,7 +13031,11 @@ func (c *ClientWithResponses) DeletePostmortemTemplateWithResponse(ctx context.C
 }
 
 // GetPostmortemTemplateWithResponse request returning *GetPostmortemTemplateResponse
-func (c *ClientWithResponses) GetPostmortemTemplateWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*GetPostmortemTemplateResponse, error) {
+func (c *ClientWithResponses) GetPostmortemTemplateWithResponse(
+	ctx context.Context,
+	id string,
+	reqEditors ...RequestEditorFn,
+) (*GetPostmortemTemplateResponse, error) {
 	rsp, err := c.GetPostmortemTemplate(ctx, id, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -10973,7 +13044,13 @@ func (c *ClientWithResponses) GetPostmortemTemplateWithResponse(ctx context.Cont
 }
 
 // UpdatePostmortemTemplateWithBodyWithResponse request with arbitrary body returning *UpdatePostmortemTemplateResponse
-func (c *ClientWithResponses) UpdatePostmortemTemplateWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdatePostmortemTemplateResponse, error) {
+func (c *ClientWithResponses) UpdatePostmortemTemplateWithBodyWithResponse(
+	ctx context.Context,
+	id string,
+	contentType string,
+	body io.Reader,
+	reqEditors ...RequestEditorFn,
+) (*UpdatePostmortemTemplateResponse, error) {
 	rsp, err := c.UpdatePostmortemTemplateWithBody(ctx, id, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -10982,7 +13059,11 @@ func (c *ClientWithResponses) UpdatePostmortemTemplateWithBodyWithResponse(ctx c
 }
 
 // GetIncidentPostmortemWithResponse request returning *GetIncidentPostmortemResponse
-func (c *ClientWithResponses) GetIncidentPostmortemWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*GetIncidentPostmortemResponse, error) {
+func (c *ClientWithResponses) GetIncidentPostmortemWithResponse(
+	ctx context.Context,
+	id string,
+	reqEditors ...RequestEditorFn,
+) (*GetIncidentPostmortemResponse, error) {
 	rsp, err := c.GetIncidentPostmortem(ctx, id, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -10991,7 +13072,13 @@ func (c *ClientWithResponses) GetIncidentPostmortemWithResponse(ctx context.Cont
 }
 
 // UpdateIncidentPostmortemWithBodyWithResponse request with arbitrary body returning *UpdateIncidentPostmortemResponse
-func (c *ClientWithResponses) UpdateIncidentPostmortemWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateIncidentPostmortemResponse, error) {
+func (c *ClientWithResponses) UpdateIncidentPostmortemWithBodyWithResponse(
+	ctx context.Context,
+	id string,
+	contentType string,
+	body io.Reader,
+	reqEditors ...RequestEditorFn,
+) (*UpdateIncidentPostmortemResponse, error) {
 	rsp, err := c.UpdateIncidentPostmortemWithBody(ctx, id, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -11000,7 +13087,11 @@ func (c *ClientWithResponses) UpdateIncidentPostmortemWithBodyWithResponse(ctx c
 }
 
 // ListPulsesWithResponse request returning *ListPulsesResponse
-func (c *ClientWithResponses) ListPulsesWithResponse(ctx context.Context, params *ListPulsesParams, reqEditors ...RequestEditorFn) (*ListPulsesResponse, error) {
+func (c *ClientWithResponses) ListPulsesWithResponse(
+	ctx context.Context,
+	params *ListPulsesParams,
+	reqEditors ...RequestEditorFn,
+) (*ListPulsesResponse, error) {
 	rsp, err := c.ListPulses(ctx, params, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -11009,7 +13100,12 @@ func (c *ClientWithResponses) ListPulsesWithResponse(ctx context.Context, params
 }
 
 // CreatePulseWithBodyWithResponse request with arbitrary body returning *CreatePulseResponse
-func (c *ClientWithResponses) CreatePulseWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreatePulseResponse, error) {
+func (c *ClientWithResponses) CreatePulseWithBodyWithResponse(
+	ctx context.Context,
+	contentType string,
+	body io.Reader,
+	reqEditors ...RequestEditorFn,
+) (*CreatePulseResponse, error) {
 	rsp, err := c.CreatePulseWithBody(ctx, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -11018,7 +13114,11 @@ func (c *ClientWithResponses) CreatePulseWithBodyWithResponse(ctx context.Contex
 }
 
 // GetPulseWithResponse request returning *GetPulseResponse
-func (c *ClientWithResponses) GetPulseWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*GetPulseResponse, error) {
+func (c *ClientWithResponses) GetPulseWithResponse(
+	ctx context.Context,
+	id string,
+	reqEditors ...RequestEditorFn,
+) (*GetPulseResponse, error) {
 	rsp, err := c.GetPulse(ctx, id, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -11027,7 +13127,13 @@ func (c *ClientWithResponses) GetPulseWithResponse(ctx context.Context, id strin
 }
 
 // UpdatePulseWithBodyWithResponse request with arbitrary body returning *UpdatePulseResponse
-func (c *ClientWithResponses) UpdatePulseWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdatePulseResponse, error) {
+func (c *ClientWithResponses) UpdatePulseWithBodyWithResponse(
+	ctx context.Context,
+	id string,
+	contentType string,
+	body io.Reader,
+	reqEditors ...RequestEditorFn,
+) (*UpdatePulseResponse, error) {
 	rsp, err := c.UpdatePulseWithBody(ctx, id, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -11036,7 +13142,11 @@ func (c *ClientWithResponses) UpdatePulseWithBodyWithResponse(ctx context.Contex
 }
 
 // ListServicesWithResponse request returning *ListServicesResponse
-func (c *ClientWithResponses) ListServicesWithResponse(ctx context.Context, params *ListServicesParams, reqEditors ...RequestEditorFn) (*ListServicesResponse, error) {
+func (c *ClientWithResponses) ListServicesWithResponse(
+	ctx context.Context,
+	params *ListServicesParams,
+	reqEditors ...RequestEditorFn,
+) (*ListServicesResponse, error) {
 	rsp, err := c.ListServices(ctx, params, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -11045,7 +13155,12 @@ func (c *ClientWithResponses) ListServicesWithResponse(ctx context.Context, para
 }
 
 // CreateServiceWithBodyWithResponse request with arbitrary body returning *CreateServiceResponse
-func (c *ClientWithResponses) CreateServiceWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateServiceResponse, error) {
+func (c *ClientWithResponses) CreateServiceWithBodyWithResponse(
+	ctx context.Context,
+	contentType string,
+	body io.Reader,
+	reqEditors ...RequestEditorFn,
+) (*CreateServiceResponse, error) {
 	rsp, err := c.CreateServiceWithBody(ctx, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -11054,7 +13169,11 @@ func (c *ClientWithResponses) CreateServiceWithBodyWithResponse(ctx context.Cont
 }
 
 // DeleteServiceWithResponse request returning *DeleteServiceResponse
-func (c *ClientWithResponses) DeleteServiceWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*DeleteServiceResponse, error) {
+func (c *ClientWithResponses) DeleteServiceWithResponse(
+	ctx context.Context,
+	id string,
+	reqEditors ...RequestEditorFn,
+) (*DeleteServiceResponse, error) {
 	rsp, err := c.DeleteService(ctx, id, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -11063,7 +13182,11 @@ func (c *ClientWithResponses) DeleteServiceWithResponse(ctx context.Context, id 
 }
 
 // GetServiceWithResponse request returning *GetServiceResponse
-func (c *ClientWithResponses) GetServiceWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*GetServiceResponse, error) {
+func (c *ClientWithResponses) GetServiceWithResponse(
+	ctx context.Context,
+	id string,
+	reqEditors ...RequestEditorFn,
+) (*GetServiceResponse, error) {
 	rsp, err := c.GetService(ctx, id, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -11072,7 +13195,13 @@ func (c *ClientWithResponses) GetServiceWithResponse(ctx context.Context, id str
 }
 
 // UpdateServiceWithBodyWithResponse request with arbitrary body returning *UpdateServiceResponse
-func (c *ClientWithResponses) UpdateServiceWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateServiceResponse, error) {
+func (c *ClientWithResponses) UpdateServiceWithBodyWithResponse(
+	ctx context.Context,
+	id string,
+	contentType string,
+	body io.Reader,
+	reqEditors ...RequestEditorFn,
+) (*UpdateServiceResponse, error) {
 	rsp, err := c.UpdateServiceWithBody(ctx, id, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -11081,7 +13210,11 @@ func (c *ClientWithResponses) UpdateServiceWithBodyWithResponse(ctx context.Cont
 }
 
 // ListSeveritiesWithResponse request returning *ListSeveritiesResponse
-func (c *ClientWithResponses) ListSeveritiesWithResponse(ctx context.Context, params *ListSeveritiesParams, reqEditors ...RequestEditorFn) (*ListSeveritiesResponse, error) {
+func (c *ClientWithResponses) ListSeveritiesWithResponse(
+	ctx context.Context,
+	params *ListSeveritiesParams,
+	reqEditors ...RequestEditorFn,
+) (*ListSeveritiesResponse, error) {
 	rsp, err := c.ListSeverities(ctx, params, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -11090,7 +13223,12 @@ func (c *ClientWithResponses) ListSeveritiesWithResponse(ctx context.Context, pa
 }
 
 // CreateSeverityWithBodyWithResponse request with arbitrary body returning *CreateSeverityResponse
-func (c *ClientWithResponses) CreateSeverityWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateSeverityResponse, error) {
+func (c *ClientWithResponses) CreateSeverityWithBodyWithResponse(
+	ctx context.Context,
+	contentType string,
+	body io.Reader,
+	reqEditors ...RequestEditorFn,
+) (*CreateSeverityResponse, error) {
 	rsp, err := c.CreateSeverityWithBody(ctx, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -11099,7 +13237,11 @@ func (c *ClientWithResponses) CreateSeverityWithBodyWithResponse(ctx context.Con
 }
 
 // DeleteSeverityWithResponse request returning *DeleteSeverityResponse
-func (c *ClientWithResponses) DeleteSeverityWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*DeleteSeverityResponse, error) {
+func (c *ClientWithResponses) DeleteSeverityWithResponse(
+	ctx context.Context,
+	id string,
+	reqEditors ...RequestEditorFn,
+) (*DeleteSeverityResponse, error) {
 	rsp, err := c.DeleteSeverity(ctx, id, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -11108,7 +13250,11 @@ func (c *ClientWithResponses) DeleteSeverityWithResponse(ctx context.Context, id
 }
 
 // GetSeverityWithResponse request returning *GetSeverityResponse
-func (c *ClientWithResponses) GetSeverityWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*GetSeverityResponse, error) {
+func (c *ClientWithResponses) GetSeverityWithResponse(
+	ctx context.Context,
+	id string,
+	reqEditors ...RequestEditorFn,
+) (*GetSeverityResponse, error) {
 	rsp, err := c.GetSeverity(ctx, id, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -11117,7 +13263,13 @@ func (c *ClientWithResponses) GetSeverityWithResponse(ctx context.Context, id st
 }
 
 // UpdateSeverityWithBodyWithResponse request with arbitrary body returning *UpdateSeverityResponse
-func (c *ClientWithResponses) UpdateSeverityWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateSeverityResponse, error) {
+func (c *ClientWithResponses) UpdateSeverityWithBodyWithResponse(
+	ctx context.Context,
+	id string,
+	contentType string,
+	body io.Reader,
+	reqEditors ...RequestEditorFn,
+) (*UpdateSeverityResponse, error) {
 	rsp, err := c.UpdateSeverityWithBody(ctx, id, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -11126,7 +13278,11 @@ func (c *ClientWithResponses) UpdateSeverityWithBodyWithResponse(ctx context.Con
 }
 
 // ListStatusPagesWithResponse request returning *ListStatusPagesResponse
-func (c *ClientWithResponses) ListStatusPagesWithResponse(ctx context.Context, params *ListStatusPagesParams, reqEditors ...RequestEditorFn) (*ListStatusPagesResponse, error) {
+func (c *ClientWithResponses) ListStatusPagesWithResponse(
+	ctx context.Context,
+	params *ListStatusPagesParams,
+	reqEditors ...RequestEditorFn,
+) (*ListStatusPagesResponse, error) {
 	rsp, err := c.ListStatusPages(ctx, params, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -11135,7 +13291,12 @@ func (c *ClientWithResponses) ListStatusPagesWithResponse(ctx context.Context, p
 }
 
 // CreateStatusPageWithBodyWithResponse request with arbitrary body returning *CreateStatusPageResponse
-func (c *ClientWithResponses) CreateStatusPageWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateStatusPageResponse, error) {
+func (c *ClientWithResponses) CreateStatusPageWithBodyWithResponse(
+	ctx context.Context,
+	contentType string,
+	body io.Reader,
+	reqEditors ...RequestEditorFn,
+) (*CreateStatusPageResponse, error) {
 	rsp, err := c.CreateStatusPageWithBody(ctx, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -11144,7 +13305,11 @@ func (c *ClientWithResponses) CreateStatusPageWithBodyWithResponse(ctx context.C
 }
 
 // DeleteStatusPageWithResponse request returning *DeleteStatusPageResponse
-func (c *ClientWithResponses) DeleteStatusPageWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*DeleteStatusPageResponse, error) {
+func (c *ClientWithResponses) DeleteStatusPageWithResponse(
+	ctx context.Context,
+	id string,
+	reqEditors ...RequestEditorFn,
+) (*DeleteStatusPageResponse, error) {
 	rsp, err := c.DeleteStatusPage(ctx, id, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -11153,7 +13318,11 @@ func (c *ClientWithResponses) DeleteStatusPageWithResponse(ctx context.Context, 
 }
 
 // GetStatusPageWithResponse request returning *GetStatusPageResponse
-func (c *ClientWithResponses) GetStatusPageWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*GetStatusPageResponse, error) {
+func (c *ClientWithResponses) GetStatusPageWithResponse(
+	ctx context.Context,
+	id string,
+	reqEditors ...RequestEditorFn,
+) (*GetStatusPageResponse, error) {
 	rsp, err := c.GetStatusPage(ctx, id, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -11162,7 +13331,13 @@ func (c *ClientWithResponses) GetStatusPageWithResponse(ctx context.Context, id 
 }
 
 // UpdateStatusPageWithBodyWithResponse request with arbitrary body returning *UpdateStatusPageResponse
-func (c *ClientWithResponses) UpdateStatusPageWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateStatusPageResponse, error) {
+func (c *ClientWithResponses) UpdateStatusPageWithBodyWithResponse(
+	ctx context.Context,
+	id string,
+	contentType string,
+	body io.Reader,
+	reqEditors ...RequestEditorFn,
+) (*UpdateStatusPageResponse, error) {
 	rsp, err := c.UpdateStatusPageWithBody(ctx, id, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -11171,7 +13346,11 @@ func (c *ClientWithResponses) UpdateStatusPageWithBodyWithResponse(ctx context.C
 }
 
 // ListTeamsWithResponse request returning *ListTeamsResponse
-func (c *ClientWithResponses) ListTeamsWithResponse(ctx context.Context, params *ListTeamsParams, reqEditors ...RequestEditorFn) (*ListTeamsResponse, error) {
+func (c *ClientWithResponses) ListTeamsWithResponse(
+	ctx context.Context,
+	params *ListTeamsParams,
+	reqEditors ...RequestEditorFn,
+) (*ListTeamsResponse, error) {
 	rsp, err := c.ListTeams(ctx, params, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -11180,7 +13359,12 @@ func (c *ClientWithResponses) ListTeamsWithResponse(ctx context.Context, params 
 }
 
 // CreateTeamWithBodyWithResponse request with arbitrary body returning *CreateTeamResponse
-func (c *ClientWithResponses) CreateTeamWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateTeamResponse, error) {
+func (c *ClientWithResponses) CreateTeamWithBodyWithResponse(
+	ctx context.Context,
+	contentType string,
+	body io.Reader,
+	reqEditors ...RequestEditorFn,
+) (*CreateTeamResponse, error) {
 	rsp, err := c.CreateTeamWithBody(ctx, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -11189,7 +13373,11 @@ func (c *ClientWithResponses) CreateTeamWithBodyWithResponse(ctx context.Context
 }
 
 // DeleteTeamWithResponse request returning *DeleteTeamResponse
-func (c *ClientWithResponses) DeleteTeamWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*DeleteTeamResponse, error) {
+func (c *ClientWithResponses) DeleteTeamWithResponse(
+	ctx context.Context,
+	id string,
+	reqEditors ...RequestEditorFn,
+) (*DeleteTeamResponse, error) {
 	rsp, err := c.DeleteTeam(ctx, id, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -11198,7 +13386,11 @@ func (c *ClientWithResponses) DeleteTeamWithResponse(ctx context.Context, id str
 }
 
 // GetTeamWithResponse request returning *GetTeamResponse
-func (c *ClientWithResponses) GetTeamWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*GetTeamResponse, error) {
+func (c *ClientWithResponses) GetTeamWithResponse(
+	ctx context.Context,
+	id string,
+	reqEditors ...RequestEditorFn,
+) (*GetTeamResponse, error) {
 	rsp, err := c.GetTeam(ctx, id, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -11207,7 +13399,13 @@ func (c *ClientWithResponses) GetTeamWithResponse(ctx context.Context, id string
 }
 
 // UpdateTeamWithBodyWithResponse request with arbitrary body returning *UpdateTeamResponse
-func (c *ClientWithResponses) UpdateTeamWithBodyWithResponse(ctx context.Context, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateTeamResponse, error) {
+func (c *ClientWithResponses) UpdateTeamWithBodyWithResponse(
+	ctx context.Context,
+	id string,
+	contentType string,
+	body io.Reader,
+	reqEditors ...RequestEditorFn,
+) (*UpdateTeamResponse, error) {
 	rsp, err := c.UpdateTeamWithBody(ctx, id, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -11216,7 +13414,9 @@ func (c *ClientWithResponses) UpdateTeamWithBodyWithResponse(ctx context.Context
 }
 
 // ParseDeleteIncidentActionItemResponse parses an HTTP response from a DeleteIncidentActionItemWithResponse call
-func ParseDeleteIncidentActionItemResponse(rsp *http.Response) (*DeleteIncidentActionItemResponse, error) {
+func ParseDeleteIncidentActionItemResponse(
+	rsp *http.Response,
+) (*DeleteIncidentActionItemResponse, error) {
 	bodyBytes, err := ioutil.ReadAll(rsp.Body)
 	defer rsp.Body.Close()
 	if err != nil {
@@ -11235,7 +13435,9 @@ func ParseDeleteIncidentActionItemResponse(rsp *http.Response) (*DeleteIncidentA
 }
 
 // ParseGetIncidentActionItemsResponse parses an HTTP response from a GetIncidentActionItemsWithResponse call
-func ParseGetIncidentActionItemsResponse(rsp *http.Response) (*GetIncidentActionItemsResponse, error) {
+func ParseGetIncidentActionItemsResponse(
+	rsp *http.Response,
+) (*GetIncidentActionItemsResponse, error) {
 	bodyBytes, err := ioutil.ReadAll(rsp.Body)
 	defer rsp.Body.Close()
 	if err != nil {
@@ -11254,7 +13456,9 @@ func ParseGetIncidentActionItemsResponse(rsp *http.Response) (*GetIncidentAction
 }
 
 // ParseUpdateIncidentActionItemResponse parses an HTTP response from a UpdateIncidentActionItemWithResponse call
-func ParseUpdateIncidentActionItemResponse(rsp *http.Response) (*UpdateIncidentActionItemResponse, error) {
+func ParseUpdateIncidentActionItemResponse(
+	rsp *http.Response,
+) (*UpdateIncidentActionItemResponse, error) {
 	bodyBytes, err := ioutil.ReadAll(rsp.Body)
 	defer rsp.Body.Close()
 	if err != nil {
@@ -12033,7 +14237,9 @@ func ParseResolveIncidentResponse(rsp *http.Response) (*ResolveIncidentResponse,
 }
 
 // ParseListIncidentActionItemsResponse parses an HTTP response from a ListIncidentActionItemsWithResponse call
-func ParseListIncidentActionItemsResponse(rsp *http.Response) (*ListIncidentActionItemsResponse, error) {
+func ParseListIncidentActionItemsResponse(
+	rsp *http.Response,
+) (*ListIncidentActionItemsResponse, error) {
 	bodyBytes, err := ioutil.ReadAll(rsp.Body)
 	defer rsp.Body.Close()
 	if err != nil {
@@ -12052,7 +14258,9 @@ func ParseListIncidentActionItemsResponse(rsp *http.Response) (*ListIncidentActi
 }
 
 // ParseCreateIncidentActionItemResponse parses an HTTP response from a CreateIncidentActionItemWithResponse call
-func ParseCreateIncidentActionItemResponse(rsp *http.Response) (*CreateIncidentActionItemResponse, error) {
+func ParseCreateIncidentActionItemResponse(
+	rsp *http.Response,
+) (*CreateIncidentActionItemResponse, error) {
 	bodyBytes, err := ioutil.ReadAll(rsp.Body)
 	defer rsp.Body.Close()
 	if err != nil {
@@ -12375,7 +14583,9 @@ func ParseCreatePlaybookTaskResponse(rsp *http.Response) (*CreatePlaybookTaskRes
 }
 
 // ParseListPostmortemTemplatesResponse parses an HTTP response from a ListPostmortemTemplatesWithResponse call
-func ParseListPostmortemTemplatesResponse(rsp *http.Response) (*ListPostmortemTemplatesResponse, error) {
+func ParseListPostmortemTemplatesResponse(
+	rsp *http.Response,
+) (*ListPostmortemTemplatesResponse, error) {
 	bodyBytes, err := ioutil.ReadAll(rsp.Body)
 	defer rsp.Body.Close()
 	if err != nil {
@@ -12394,7 +14604,9 @@ func ParseListPostmortemTemplatesResponse(rsp *http.Response) (*ListPostmortemTe
 }
 
 // ParseCreatePostmortemTemplateResponse parses an HTTP response from a CreatePostmortemTemplateWithResponse call
-func ParseCreatePostmortemTemplateResponse(rsp *http.Response) (*CreatePostmortemTemplateResponse, error) {
+func ParseCreatePostmortemTemplateResponse(
+	rsp *http.Response,
+) (*CreatePostmortemTemplateResponse, error) {
 	bodyBytes, err := ioutil.ReadAll(rsp.Body)
 	defer rsp.Body.Close()
 	if err != nil {
@@ -12413,7 +14625,9 @@ func ParseCreatePostmortemTemplateResponse(rsp *http.Response) (*CreatePostmorte
 }
 
 // ParseDeletePostmortemTemplateResponse parses an HTTP response from a DeletePostmortemTemplateWithResponse call
-func ParseDeletePostmortemTemplateResponse(rsp *http.Response) (*DeletePostmortemTemplateResponse, error) {
+func ParseDeletePostmortemTemplateResponse(
+	rsp *http.Response,
+) (*DeletePostmortemTemplateResponse, error) {
 	bodyBytes, err := ioutil.ReadAll(rsp.Body)
 	defer rsp.Body.Close()
 	if err != nil {
@@ -12432,7 +14646,9 @@ func ParseDeletePostmortemTemplateResponse(rsp *http.Response) (*DeletePostmorte
 }
 
 // ParseGetPostmortemTemplateResponse parses an HTTP response from a GetPostmortemTemplateWithResponse call
-func ParseGetPostmortemTemplateResponse(rsp *http.Response) (*GetPostmortemTemplateResponse, error) {
+func ParseGetPostmortemTemplateResponse(
+	rsp *http.Response,
+) (*GetPostmortemTemplateResponse, error) {
 	bodyBytes, err := ioutil.ReadAll(rsp.Body)
 	defer rsp.Body.Close()
 	if err != nil {
@@ -12451,7 +14667,9 @@ func ParseGetPostmortemTemplateResponse(rsp *http.Response) (*GetPostmortemTempl
 }
 
 // ParseUpdatePostmortemTemplateResponse parses an HTTP response from a UpdatePostmortemTemplateWithResponse call
-func ParseUpdatePostmortemTemplateResponse(rsp *http.Response) (*UpdatePostmortemTemplateResponse, error) {
+func ParseUpdatePostmortemTemplateResponse(
+	rsp *http.Response,
+) (*UpdatePostmortemTemplateResponse, error) {
 	bodyBytes, err := ioutil.ReadAll(rsp.Body)
 	defer rsp.Body.Close()
 	if err != nil {
@@ -12470,7 +14688,9 @@ func ParseUpdatePostmortemTemplateResponse(rsp *http.Response) (*UpdatePostmorte
 }
 
 // ParseGetIncidentPostmortemResponse parses an HTTP response from a GetIncidentPostmortemWithResponse call
-func ParseGetIncidentPostmortemResponse(rsp *http.Response) (*GetIncidentPostmortemResponse, error) {
+func ParseGetIncidentPostmortemResponse(
+	rsp *http.Response,
+) (*GetIncidentPostmortemResponse, error) {
 	bodyBytes, err := ioutil.ReadAll(rsp.Body)
 	defer rsp.Body.Close()
 	if err != nil {
@@ -12489,7 +14709,9 @@ func ParseGetIncidentPostmortemResponse(rsp *http.Response) (*GetIncidentPostmor
 }
 
 // ParseUpdateIncidentPostmortemResponse parses an HTTP response from a UpdateIncidentPostmortemWithResponse call
-func ParseUpdateIncidentPostmortemResponse(rsp *http.Response) (*UpdateIncidentPostmortemResponse, error) {
+func ParseUpdateIncidentPostmortemResponse(
+	rsp *http.Response,
+) (*UpdateIncidentPostmortemResponse, error) {
 	bodyBytes, err := ioutil.ReadAll(rsp.Body)
 	defer rsp.Body.Close()
 	if err != nil {
@@ -13096,7 +15318,11 @@ type ServerInterface interface {
 	ResolveIncident(ctx echo.Context, id string) error
 	// List incident action items
 	// (GET /v1/incidents/{incident_id}/action_items)
-	ListIncidentActionItems(ctx echo.Context, incidentId string, params ListIncidentActionItemsParams) error
+	ListIncidentActionItems(
+		ctx echo.Context,
+		incidentId string,
+		params ListIncidentActionItemsParams,
+	) error
 	// Creates a incident action item
 	// (POST /v1/incidents/{incident_id}/action_items)
 	CreateIncidentActionItem(ctx echo.Context, incidentId string) error
@@ -13254,9 +15480,19 @@ func (w *ServerInterfaceWrapper) DeleteIncidentActionItem(ctx echo.Context) erro
 	// ------------- Path parameter "id" -------------
 	var id string
 
-	err = runtime.BindStyledParameterWithLocation("simple", false, "id", runtime.ParamLocationPath, ctx.Param("id"), &id)
+	err = runtime.BindStyledParameterWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		ctx.Param("id"),
+		&id,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter id: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter id: %s", err),
+		)
 	}
 
 	ctx.Set(Bearer_authScopes, []string{""})
@@ -13272,9 +15508,19 @@ func (w *ServerInterfaceWrapper) GetIncidentActionItems(ctx echo.Context) error 
 	// ------------- Path parameter "id" -------------
 	var id string
 
-	err = runtime.BindStyledParameterWithLocation("simple", false, "id", runtime.ParamLocationPath, ctx.Param("id"), &id)
+	err = runtime.BindStyledParameterWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		ctx.Param("id"),
+		&id,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter id: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter id: %s", err),
+		)
 	}
 
 	ctx.Set(Bearer_authScopes, []string{""})
@@ -13290,9 +15536,19 @@ func (w *ServerInterfaceWrapper) UpdateIncidentActionItem(ctx echo.Context) erro
 	// ------------- Path parameter "id" -------------
 	var id string
 
-	err = runtime.BindStyledParameterWithLocation("simple", false, "id", runtime.ParamLocationPath, ctx.Param("id"), &id)
+	err = runtime.BindStyledParameterWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		ctx.Param("id"),
+		&id,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter id: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter id: %s", err),
+		)
 	}
 
 	ctx.Set(Bearer_authScopes, []string{""})
@@ -13312,16 +15568,36 @@ func (w *ServerInterfaceWrapper) ListAlerts(ctx echo.Context) error {
 	var params ListAlertsParams
 	// ------------- Optional query parameter "page[number]" -------------
 
-	err = runtime.BindQueryParameter("form", true, false, "page[number]", ctx.QueryParams(), &params.PageNumber)
+	err = runtime.BindQueryParameter(
+		"form",
+		true,
+		false,
+		"page[number]",
+		ctx.QueryParams(),
+		&params.PageNumber,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter page[number]: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter page[number]: %s", err),
+		)
 	}
 
 	// ------------- Optional query parameter "page[size]" -------------
 
-	err = runtime.BindQueryParameter("form", true, false, "page[size]", ctx.QueryParams(), &params.PageSize)
+	err = runtime.BindQueryParameter(
+		"form",
+		true,
+		false,
+		"page[size]",
+		ctx.QueryParams(),
+		&params.PageSize,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter page[size]: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter page[size]: %s", err),
+		)
 	}
 
 	// Invoke the callback with all the unmarshalled arguments
@@ -13335,9 +15611,19 @@ func (w *ServerInterfaceWrapper) GetAlert(ctx echo.Context) error {
 	// ------------- Path parameter "id" -------------
 	var id string
 
-	err = runtime.BindStyledParameterWithLocation("simple", false, "id", runtime.ParamLocationPath, ctx.Param("id"), &id)
+	err = runtime.BindStyledParameterWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		ctx.Param("id"),
+		&id,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter id: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter id: %s", err),
+		)
 	}
 
 	ctx.Set(Bearer_authScopes, []string{""})
@@ -13357,16 +15643,36 @@ func (w *ServerInterfaceWrapper) ListCauses(ctx echo.Context) error {
 	var params ListCausesParams
 	// ------------- Optional query parameter "page[number]" -------------
 
-	err = runtime.BindQueryParameter("form", true, false, "page[number]", ctx.QueryParams(), &params.PageNumber)
+	err = runtime.BindQueryParameter(
+		"form",
+		true,
+		false,
+		"page[number]",
+		ctx.QueryParams(),
+		&params.PageNumber,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter page[number]: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter page[number]: %s", err),
+		)
 	}
 
 	// ------------- Optional query parameter "page[size]" -------------
 
-	err = runtime.BindQueryParameter("form", true, false, "page[size]", ctx.QueryParams(), &params.PageSize)
+	err = runtime.BindQueryParameter(
+		"form",
+		true,
+		false,
+		"page[size]",
+		ctx.QueryParams(),
+		&params.PageSize,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter page[size]: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter page[size]: %s", err),
+		)
 	}
 
 	// Invoke the callback with all the unmarshalled arguments
@@ -13391,9 +15697,19 @@ func (w *ServerInterfaceWrapper) DeleteCause(ctx echo.Context) error {
 	// ------------- Path parameter "id" -------------
 	var id string
 
-	err = runtime.BindStyledParameterWithLocation("simple", false, "id", runtime.ParamLocationPath, ctx.Param("id"), &id)
+	err = runtime.BindStyledParameterWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		ctx.Param("id"),
+		&id,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter id: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter id: %s", err),
+		)
 	}
 
 	ctx.Set(Bearer_authScopes, []string{""})
@@ -13409,9 +15725,19 @@ func (w *ServerInterfaceWrapper) GetCause(ctx echo.Context) error {
 	// ------------- Path parameter "id" -------------
 	var id string
 
-	err = runtime.BindStyledParameterWithLocation("simple", false, "id", runtime.ParamLocationPath, ctx.Param("id"), &id)
+	err = runtime.BindStyledParameterWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		ctx.Param("id"),
+		&id,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter id: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter id: %s", err),
+		)
 	}
 
 	ctx.Set(Bearer_authScopes, []string{""})
@@ -13427,9 +15753,19 @@ func (w *ServerInterfaceWrapper) UpdateCause(ctx echo.Context) error {
 	// ------------- Path parameter "id" -------------
 	var id string
 
-	err = runtime.BindStyledParameterWithLocation("simple", false, "id", runtime.ParamLocationPath, ctx.Param("id"), &id)
+	err = runtime.BindStyledParameterWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		ctx.Param("id"),
+		&id,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter id: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter id: %s", err),
+		)
 	}
 
 	ctx.Set(Bearer_authScopes, []string{""})
@@ -13449,16 +15785,36 @@ func (w *ServerInterfaceWrapper) ListEnvironments(ctx echo.Context) error {
 	var params ListEnvironmentsParams
 	// ------------- Optional query parameter "page[number]" -------------
 
-	err = runtime.BindQueryParameter("form", true, false, "page[number]", ctx.QueryParams(), &params.PageNumber)
+	err = runtime.BindQueryParameter(
+		"form",
+		true,
+		false,
+		"page[number]",
+		ctx.QueryParams(),
+		&params.PageNumber,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter page[number]: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter page[number]: %s", err),
+		)
 	}
 
 	// ------------- Optional query parameter "page[size]" -------------
 
-	err = runtime.BindQueryParameter("form", true, false, "page[size]", ctx.QueryParams(), &params.PageSize)
+	err = runtime.BindQueryParameter(
+		"form",
+		true,
+		false,
+		"page[size]",
+		ctx.QueryParams(),
+		&params.PageSize,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter page[size]: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter page[size]: %s", err),
+		)
 	}
 
 	// Invoke the callback with all the unmarshalled arguments
@@ -13483,9 +15839,19 @@ func (w *ServerInterfaceWrapper) DeleteEnvironment(ctx echo.Context) error {
 	// ------------- Path parameter "id" -------------
 	var id string
 
-	err = runtime.BindStyledParameterWithLocation("simple", false, "id", runtime.ParamLocationPath, ctx.Param("id"), &id)
+	err = runtime.BindStyledParameterWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		ctx.Param("id"),
+		&id,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter id: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter id: %s", err),
+		)
 	}
 
 	ctx.Set(Bearer_authScopes, []string{""})
@@ -13501,9 +15867,19 @@ func (w *ServerInterfaceWrapper) GetEnvironment(ctx echo.Context) error {
 	// ------------- Path parameter "id" -------------
 	var id string
 
-	err = runtime.BindStyledParameterWithLocation("simple", false, "id", runtime.ParamLocationPath, ctx.Param("id"), &id)
+	err = runtime.BindStyledParameterWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		ctx.Param("id"),
+		&id,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter id: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter id: %s", err),
+		)
 	}
 
 	ctx.Set(Bearer_authScopes, []string{""})
@@ -13519,9 +15895,19 @@ func (w *ServerInterfaceWrapper) UpdateEnvironment(ctx echo.Context) error {
 	// ------------- Path parameter "id" -------------
 	var id string
 
-	err = runtime.BindStyledParameterWithLocation("simple", false, "id", runtime.ParamLocationPath, ctx.Param("id"), &id)
+	err = runtime.BindStyledParameterWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		ctx.Param("id"),
+		&id,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter id: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter id: %s", err),
+		)
 	}
 
 	ctx.Set(Bearer_authScopes, []string{""})
@@ -13537,9 +15923,19 @@ func (w *ServerInterfaceWrapper) DeleteIncidentEvent(ctx echo.Context) error {
 	// ------------- Path parameter "id" -------------
 	var id string
 
-	err = runtime.BindStyledParameterWithLocation("simple", false, "id", runtime.ParamLocationPath, ctx.Param("id"), &id)
+	err = runtime.BindStyledParameterWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		ctx.Param("id"),
+		&id,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter id: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter id: %s", err),
+		)
 	}
 
 	ctx.Set(Bearer_authScopes, []string{""})
@@ -13555,9 +15951,19 @@ func (w *ServerInterfaceWrapper) GetIncidentEvents(ctx echo.Context) error {
 	// ------------- Path parameter "id" -------------
 	var id string
 
-	err = runtime.BindStyledParameterWithLocation("simple", false, "id", runtime.ParamLocationPath, ctx.Param("id"), &id)
+	err = runtime.BindStyledParameterWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		ctx.Param("id"),
+		&id,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter id: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter id: %s", err),
+		)
 	}
 
 	ctx.Set(Bearer_authScopes, []string{""})
@@ -13573,9 +15979,19 @@ func (w *ServerInterfaceWrapper) UpdateIncidentEvent(ctx echo.Context) error {
 	// ------------- Path parameter "id" -------------
 	var id string
 
-	err = runtime.BindStyledParameterWithLocation("simple", false, "id", runtime.ParamLocationPath, ctx.Param("id"), &id)
+	err = runtime.BindStyledParameterWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		ctx.Param("id"),
+		&id,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter id: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter id: %s", err),
+		)
 	}
 
 	ctx.Set(Bearer_authScopes, []string{""})
@@ -13595,16 +16011,36 @@ func (w *ServerInterfaceWrapper) ListFunctionalities(ctx echo.Context) error {
 	var params ListFunctionalitiesParams
 	// ------------- Optional query parameter "page[number]" -------------
 
-	err = runtime.BindQueryParameter("form", true, false, "page[number]", ctx.QueryParams(), &params.PageNumber)
+	err = runtime.BindQueryParameter(
+		"form",
+		true,
+		false,
+		"page[number]",
+		ctx.QueryParams(),
+		&params.PageNumber,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter page[number]: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter page[number]: %s", err),
+		)
 	}
 
 	// ------------- Optional query parameter "page[size]" -------------
 
-	err = runtime.BindQueryParameter("form", true, false, "page[size]", ctx.QueryParams(), &params.PageSize)
+	err = runtime.BindQueryParameter(
+		"form",
+		true,
+		false,
+		"page[size]",
+		ctx.QueryParams(),
+		&params.PageSize,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter page[size]: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter page[size]: %s", err),
+		)
 	}
 
 	// Invoke the callback with all the unmarshalled arguments
@@ -13629,9 +16065,19 @@ func (w *ServerInterfaceWrapper) DeleteFunctionality(ctx echo.Context) error {
 	// ------------- Path parameter "id" -------------
 	var id string
 
-	err = runtime.BindStyledParameterWithLocation("simple", false, "id", runtime.ParamLocationPath, ctx.Param("id"), &id)
+	err = runtime.BindStyledParameterWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		ctx.Param("id"),
+		&id,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter id: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter id: %s", err),
+		)
 	}
 
 	ctx.Set(Bearer_authScopes, []string{""})
@@ -13647,9 +16093,19 @@ func (w *ServerInterfaceWrapper) GetFunctionality(ctx echo.Context) error {
 	// ------------- Path parameter "id" -------------
 	var id string
 
-	err = runtime.BindStyledParameterWithLocation("simple", false, "id", runtime.ParamLocationPath, ctx.Param("id"), &id)
+	err = runtime.BindStyledParameterWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		ctx.Param("id"),
+		&id,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter id: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter id: %s", err),
+		)
 	}
 
 	ctx.Set(Bearer_authScopes, []string{""})
@@ -13665,9 +16121,19 @@ func (w *ServerInterfaceWrapper) UpdateFunctionality(ctx echo.Context) error {
 	// ------------- Path parameter "id" -------------
 	var id string
 
-	err = runtime.BindStyledParameterWithLocation("simple", false, "id", runtime.ParamLocationPath, ctx.Param("id"), &id)
+	err = runtime.BindStyledParameterWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		ctx.Param("id"),
+		&id,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter id: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter id: %s", err),
+		)
 	}
 
 	ctx.Set(Bearer_authScopes, []string{""})
@@ -13687,16 +16153,36 @@ func (w *ServerInterfaceWrapper) ListIncidentRoles(ctx echo.Context) error {
 	var params ListIncidentRolesParams
 	// ------------- Optional query parameter "page[number]" -------------
 
-	err = runtime.BindQueryParameter("form", true, false, "page[number]", ctx.QueryParams(), &params.PageNumber)
+	err = runtime.BindQueryParameter(
+		"form",
+		true,
+		false,
+		"page[number]",
+		ctx.QueryParams(),
+		&params.PageNumber,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter page[number]: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter page[number]: %s", err),
+		)
 	}
 
 	// ------------- Optional query parameter "page[size]" -------------
 
-	err = runtime.BindQueryParameter("form", true, false, "page[size]", ctx.QueryParams(), &params.PageSize)
+	err = runtime.BindQueryParameter(
+		"form",
+		true,
+		false,
+		"page[size]",
+		ctx.QueryParams(),
+		&params.PageSize,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter page[size]: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter page[size]: %s", err),
+		)
 	}
 
 	// Invoke the callback with all the unmarshalled arguments
@@ -13721,9 +16207,19 @@ func (w *ServerInterfaceWrapper) DeleteIncidentRole(ctx echo.Context) error {
 	// ------------- Path parameter "id" -------------
 	var id string
 
-	err = runtime.BindStyledParameterWithLocation("simple", false, "id", runtime.ParamLocationPath, ctx.Param("id"), &id)
+	err = runtime.BindStyledParameterWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		ctx.Param("id"),
+		&id,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter id: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter id: %s", err),
+		)
 	}
 
 	ctx.Set(Bearer_authScopes, []string{""})
@@ -13739,9 +16235,19 @@ func (w *ServerInterfaceWrapper) GetIncidentRole(ctx echo.Context) error {
 	// ------------- Path parameter "id" -------------
 	var id string
 
-	err = runtime.BindStyledParameterWithLocation("simple", false, "id", runtime.ParamLocationPath, ctx.Param("id"), &id)
+	err = runtime.BindStyledParameterWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		ctx.Param("id"),
+		&id,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter id: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter id: %s", err),
+		)
 	}
 
 	ctx.Set(Bearer_authScopes, []string{""})
@@ -13757,9 +16263,19 @@ func (w *ServerInterfaceWrapper) UpdateIncidentRole(ctx echo.Context) error {
 	// ------------- Path parameter "id" -------------
 	var id string
 
-	err = runtime.BindStyledParameterWithLocation("simple", false, "id", runtime.ParamLocationPath, ctx.Param("id"), &id)
+	err = runtime.BindStyledParameterWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		ctx.Param("id"),
+		&id,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter id: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter id: %s", err),
+		)
 	}
 
 	ctx.Set(Bearer_authScopes, []string{""})
@@ -13775,9 +16291,19 @@ func (w *ServerInterfaceWrapper) DeleteIncidentTask(ctx echo.Context) error {
 	// ------------- Path parameter "id" -------------
 	var id string
 
-	err = runtime.BindStyledParameterWithLocation("simple", false, "id", runtime.ParamLocationPath, ctx.Param("id"), &id)
+	err = runtime.BindStyledParameterWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		ctx.Param("id"),
+		&id,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter id: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter id: %s", err),
+		)
 	}
 
 	ctx.Set(Bearer_authScopes, []string{""})
@@ -13793,9 +16319,19 @@ func (w *ServerInterfaceWrapper) GetIncidentTasks(ctx echo.Context) error {
 	// ------------- Path parameter "id" -------------
 	var id string
 
-	err = runtime.BindStyledParameterWithLocation("simple", false, "id", runtime.ParamLocationPath, ctx.Param("id"), &id)
+	err = runtime.BindStyledParameterWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		ctx.Param("id"),
+		&id,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter id: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter id: %s", err),
+		)
 	}
 
 	ctx.Set(Bearer_authScopes, []string{""})
@@ -13811,9 +16347,19 @@ func (w *ServerInterfaceWrapper) UpdateIncidentTask(ctx echo.Context) error {
 	// ------------- Path parameter "id" -------------
 	var id string
 
-	err = runtime.BindStyledParameterWithLocation("simple", false, "id", runtime.ParamLocationPath, ctx.Param("id"), &id)
+	err = runtime.BindStyledParameterWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		ctx.Param("id"),
+		&id,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter id: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter id: %s", err),
+		)
 	}
 
 	ctx.Set(Bearer_authScopes, []string{""})
@@ -13833,16 +16379,36 @@ func (w *ServerInterfaceWrapper) ListIncidentTypes(ctx echo.Context) error {
 	var params ListIncidentTypesParams
 	// ------------- Optional query parameter "page[number]" -------------
 
-	err = runtime.BindQueryParameter("form", true, false, "page[number]", ctx.QueryParams(), &params.PageNumber)
+	err = runtime.BindQueryParameter(
+		"form",
+		true,
+		false,
+		"page[number]",
+		ctx.QueryParams(),
+		&params.PageNumber,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter page[number]: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter page[number]: %s", err),
+		)
 	}
 
 	// ------------- Optional query parameter "page[size]" -------------
 
-	err = runtime.BindQueryParameter("form", true, false, "page[size]", ctx.QueryParams(), &params.PageSize)
+	err = runtime.BindQueryParameter(
+		"form",
+		true,
+		false,
+		"page[size]",
+		ctx.QueryParams(),
+		&params.PageSize,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter page[size]: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter page[size]: %s", err),
+		)
 	}
 
 	// Invoke the callback with all the unmarshalled arguments
@@ -13867,9 +16433,19 @@ func (w *ServerInterfaceWrapper) DeleteIncidentType(ctx echo.Context) error {
 	// ------------- Path parameter "id" -------------
 	var id string
 
-	err = runtime.BindStyledParameterWithLocation("simple", false, "id", runtime.ParamLocationPath, ctx.Param("id"), &id)
+	err = runtime.BindStyledParameterWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		ctx.Param("id"),
+		&id,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter id: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter id: %s", err),
+		)
 	}
 
 	ctx.Set(Bearer_authScopes, []string{""})
@@ -13885,9 +16461,19 @@ func (w *ServerInterfaceWrapper) GetIncidentType(ctx echo.Context) error {
 	// ------------- Path parameter "id" -------------
 	var id string
 
-	err = runtime.BindStyledParameterWithLocation("simple", false, "id", runtime.ParamLocationPath, ctx.Param("id"), &id)
+	err = runtime.BindStyledParameterWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		ctx.Param("id"),
+		&id,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter id: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter id: %s", err),
+		)
 	}
 
 	ctx.Set(Bearer_authScopes, []string{""})
@@ -13903,9 +16489,19 @@ func (w *ServerInterfaceWrapper) UpdateIncidentType(ctx echo.Context) error {
 	// ------------- Path parameter "id" -------------
 	var id string
 
-	err = runtime.BindStyledParameterWithLocation("simple", false, "id", runtime.ParamLocationPath, ctx.Param("id"), &id)
+	err = runtime.BindStyledParameterWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		ctx.Param("id"),
+		&id,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter id: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter id: %s", err),
+		)
 	}
 
 	ctx.Set(Bearer_authScopes, []string{""})
@@ -13925,16 +16521,36 @@ func (w *ServerInterfaceWrapper) ListIncidents(ctx echo.Context) error {
 	var params ListIncidentsParams
 	// ------------- Optional query parameter "page[number]" -------------
 
-	err = runtime.BindQueryParameter("form", true, false, "page[number]", ctx.QueryParams(), &params.PageNumber)
+	err = runtime.BindQueryParameter(
+		"form",
+		true,
+		false,
+		"page[number]",
+		ctx.QueryParams(),
+		&params.PageNumber,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter page[number]: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter page[number]: %s", err),
+		)
 	}
 
 	// ------------- Optional query parameter "page[size]" -------------
 
-	err = runtime.BindQueryParameter("form", true, false, "page[size]", ctx.QueryParams(), &params.PageSize)
+	err = runtime.BindQueryParameter(
+		"form",
+		true,
+		false,
+		"page[size]",
+		ctx.QueryParams(),
+		&params.PageSize,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter page[size]: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter page[size]: %s", err),
+		)
 	}
 
 	// Invoke the callback with all the unmarshalled arguments
@@ -13959,9 +16575,19 @@ func (w *ServerInterfaceWrapper) DeleteIncident(ctx echo.Context) error {
 	// ------------- Path parameter "id" -------------
 	var id string
 
-	err = runtime.BindStyledParameterWithLocation("simple", false, "id", runtime.ParamLocationPath, ctx.Param("id"), &id)
+	err = runtime.BindStyledParameterWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		ctx.Param("id"),
+		&id,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter id: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter id: %s", err),
+		)
 	}
 
 	ctx.Set(Bearer_authScopes, []string{""})
@@ -13977,9 +16603,19 @@ func (w *ServerInterfaceWrapper) GetIncident(ctx echo.Context) error {
 	// ------------- Path parameter "id" -------------
 	var id string
 
-	err = runtime.BindStyledParameterWithLocation("simple", false, "id", runtime.ParamLocationPath, ctx.Param("id"), &id)
+	err = runtime.BindStyledParameterWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		ctx.Param("id"),
+		&id,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter id: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter id: %s", err),
+		)
 	}
 
 	ctx.Set(Bearer_authScopes, []string{""})
@@ -13995,9 +16631,19 @@ func (w *ServerInterfaceWrapper) UpdateIncident(ctx echo.Context) error {
 	// ------------- Path parameter "id" -------------
 	var id string
 
-	err = runtime.BindStyledParameterWithLocation("simple", false, "id", runtime.ParamLocationPath, ctx.Param("id"), &id)
+	err = runtime.BindStyledParameterWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		ctx.Param("id"),
+		&id,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter id: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter id: %s", err),
+		)
 	}
 
 	ctx.Set(Bearer_authScopes, []string{""})
@@ -14013,9 +16659,19 @@ func (w *ServerInterfaceWrapper) MitigateIncident(ctx echo.Context) error {
 	// ------------- Path parameter "id" -------------
 	var id string
 
-	err = runtime.BindStyledParameterWithLocation("simple", false, "id", runtime.ParamLocationPath, ctx.Param("id"), &id)
+	err = runtime.BindStyledParameterWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		ctx.Param("id"),
+		&id,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter id: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter id: %s", err),
+		)
 	}
 
 	ctx.Set(Bearer_authScopes, []string{""})
@@ -14031,9 +16687,19 @@ func (w *ServerInterfaceWrapper) ResolveIncident(ctx echo.Context) error {
 	// ------------- Path parameter "id" -------------
 	var id string
 
-	err = runtime.BindStyledParameterWithLocation("simple", false, "id", runtime.ParamLocationPath, ctx.Param("id"), &id)
+	err = runtime.BindStyledParameterWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		ctx.Param("id"),
+		&id,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter id: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter id: %s", err),
+		)
 	}
 
 	ctx.Set(Bearer_authScopes, []string{""})
@@ -14049,9 +16715,19 @@ func (w *ServerInterfaceWrapper) ListIncidentActionItems(ctx echo.Context) error
 	// ------------- Path parameter "incident_id" -------------
 	var incidentId string
 
-	err = runtime.BindStyledParameterWithLocation("simple", false, "incident_id", runtime.ParamLocationPath, ctx.Param("incident_id"), &incidentId)
+	err = runtime.BindStyledParameterWithLocation(
+		"simple",
+		false,
+		"incident_id",
+		runtime.ParamLocationPath,
+		ctx.Param("incident_id"),
+		&incidentId,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter incident_id: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter incident_id: %s", err),
+		)
 	}
 
 	ctx.Set(Bearer_authScopes, []string{""})
@@ -14060,16 +16736,36 @@ func (w *ServerInterfaceWrapper) ListIncidentActionItems(ctx echo.Context) error
 	var params ListIncidentActionItemsParams
 	// ------------- Optional query parameter "page[number]" -------------
 
-	err = runtime.BindQueryParameter("form", true, false, "page[number]", ctx.QueryParams(), &params.PageNumber)
+	err = runtime.BindQueryParameter(
+		"form",
+		true,
+		false,
+		"page[number]",
+		ctx.QueryParams(),
+		&params.PageNumber,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter page[number]: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter page[number]: %s", err),
+		)
 	}
 
 	// ------------- Optional query parameter "page[size]" -------------
 
-	err = runtime.BindQueryParameter("form", true, false, "page[size]", ctx.QueryParams(), &params.PageSize)
+	err = runtime.BindQueryParameter(
+		"form",
+		true,
+		false,
+		"page[size]",
+		ctx.QueryParams(),
+		&params.PageSize,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter page[size]: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter page[size]: %s", err),
+		)
 	}
 
 	// Invoke the callback with all the unmarshalled arguments
@@ -14083,9 +16779,19 @@ func (w *ServerInterfaceWrapper) CreateIncidentActionItem(ctx echo.Context) erro
 	// ------------- Path parameter "incident_id" -------------
 	var incidentId string
 
-	err = runtime.BindStyledParameterWithLocation("simple", false, "incident_id", runtime.ParamLocationPath, ctx.Param("incident_id"), &incidentId)
+	err = runtime.BindStyledParameterWithLocation(
+		"simple",
+		false,
+		"incident_id",
+		runtime.ParamLocationPath,
+		ctx.Param("incident_id"),
+		&incidentId,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter incident_id: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter incident_id: %s", err),
+		)
 	}
 
 	ctx.Set(Bearer_authScopes, []string{""})
@@ -14101,9 +16807,19 @@ func (w *ServerInterfaceWrapper) ListAlert(ctx echo.Context) error {
 	// ------------- Path parameter "incident_id" -------------
 	var incidentId string
 
-	err = runtime.BindStyledParameterWithLocation("simple", false, "incident_id", runtime.ParamLocationPath, ctx.Param("incident_id"), &incidentId)
+	err = runtime.BindStyledParameterWithLocation(
+		"simple",
+		false,
+		"incident_id",
+		runtime.ParamLocationPath,
+		ctx.Param("incident_id"),
+		&incidentId,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter incident_id: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter incident_id: %s", err),
+		)
 	}
 
 	ctx.Set(Bearer_authScopes, []string{""})
@@ -14112,16 +16828,36 @@ func (w *ServerInterfaceWrapper) ListAlert(ctx echo.Context) error {
 	var params ListAlertParams
 	// ------------- Optional query parameter "page[number]" -------------
 
-	err = runtime.BindQueryParameter("form", true, false, "page[number]", ctx.QueryParams(), &params.PageNumber)
+	err = runtime.BindQueryParameter(
+		"form",
+		true,
+		false,
+		"page[number]",
+		ctx.QueryParams(),
+		&params.PageNumber,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter page[number]: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter page[number]: %s", err),
+		)
 	}
 
 	// ------------- Optional query parameter "page[size]" -------------
 
-	err = runtime.BindQueryParameter("form", true, false, "page[size]", ctx.QueryParams(), &params.PageSize)
+	err = runtime.BindQueryParameter(
+		"form",
+		true,
+		false,
+		"page[size]",
+		ctx.QueryParams(),
+		&params.PageSize,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter page[size]: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter page[size]: %s", err),
+		)
 	}
 
 	// Invoke the callback with all the unmarshalled arguments
@@ -14135,9 +16871,19 @@ func (w *ServerInterfaceWrapper) AttachAlert(ctx echo.Context) error {
 	// ------------- Path parameter "incident_id" -------------
 	var incidentId string
 
-	err = runtime.BindStyledParameterWithLocation("simple", false, "incident_id", runtime.ParamLocationPath, ctx.Param("incident_id"), &incidentId)
+	err = runtime.BindStyledParameterWithLocation(
+		"simple",
+		false,
+		"incident_id",
+		runtime.ParamLocationPath,
+		ctx.Param("incident_id"),
+		&incidentId,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter incident_id: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter incident_id: %s", err),
+		)
 	}
 
 	ctx.Set(Bearer_authScopes, []string{""})
@@ -14153,9 +16899,19 @@ func (w *ServerInterfaceWrapper) ListIncidentEvents(ctx echo.Context) error {
 	// ------------- Path parameter "incident_id" -------------
 	var incidentId string
 
-	err = runtime.BindStyledParameterWithLocation("simple", false, "incident_id", runtime.ParamLocationPath, ctx.Param("incident_id"), &incidentId)
+	err = runtime.BindStyledParameterWithLocation(
+		"simple",
+		false,
+		"incident_id",
+		runtime.ParamLocationPath,
+		ctx.Param("incident_id"),
+		&incidentId,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter incident_id: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter incident_id: %s", err),
+		)
 	}
 
 	ctx.Set(Bearer_authScopes, []string{""})
@@ -14164,16 +16920,36 @@ func (w *ServerInterfaceWrapper) ListIncidentEvents(ctx echo.Context) error {
 	var params ListIncidentEventsParams
 	// ------------- Optional query parameter "page[number]" -------------
 
-	err = runtime.BindQueryParameter("form", true, false, "page[number]", ctx.QueryParams(), &params.PageNumber)
+	err = runtime.BindQueryParameter(
+		"form",
+		true,
+		false,
+		"page[number]",
+		ctx.QueryParams(),
+		&params.PageNumber,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter page[number]: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter page[number]: %s", err),
+		)
 	}
 
 	// ------------- Optional query parameter "page[size]" -------------
 
-	err = runtime.BindQueryParameter("form", true, false, "page[size]", ctx.QueryParams(), &params.PageSize)
+	err = runtime.BindQueryParameter(
+		"form",
+		true,
+		false,
+		"page[size]",
+		ctx.QueryParams(),
+		&params.PageSize,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter page[size]: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter page[size]: %s", err),
+		)
 	}
 
 	// Invoke the callback with all the unmarshalled arguments
@@ -14187,9 +16963,19 @@ func (w *ServerInterfaceWrapper) CreateIncidentEvent(ctx echo.Context) error {
 	// ------------- Path parameter "incident_id" -------------
 	var incidentId string
 
-	err = runtime.BindStyledParameterWithLocation("simple", false, "incident_id", runtime.ParamLocationPath, ctx.Param("incident_id"), &incidentId)
+	err = runtime.BindStyledParameterWithLocation(
+		"simple",
+		false,
+		"incident_id",
+		runtime.ParamLocationPath,
+		ctx.Param("incident_id"),
+		&incidentId,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter incident_id: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter incident_id: %s", err),
+		)
 	}
 
 	ctx.Set(Bearer_authScopes, []string{""})
@@ -14205,9 +16991,19 @@ func (w *ServerInterfaceWrapper) ListIncidentTasks(ctx echo.Context) error {
 	// ------------- Path parameter "incident_id" -------------
 	var incidentId string
 
-	err = runtime.BindStyledParameterWithLocation("simple", false, "incident_id", runtime.ParamLocationPath, ctx.Param("incident_id"), &incidentId)
+	err = runtime.BindStyledParameterWithLocation(
+		"simple",
+		false,
+		"incident_id",
+		runtime.ParamLocationPath,
+		ctx.Param("incident_id"),
+		&incidentId,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter incident_id: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter incident_id: %s", err),
+		)
 	}
 
 	ctx.Set(Bearer_authScopes, []string{""})
@@ -14216,16 +17012,36 @@ func (w *ServerInterfaceWrapper) ListIncidentTasks(ctx echo.Context) error {
 	var params ListIncidentTasksParams
 	// ------------- Optional query parameter "page[number]" -------------
 
-	err = runtime.BindQueryParameter("form", true, false, "page[number]", ctx.QueryParams(), &params.PageNumber)
+	err = runtime.BindQueryParameter(
+		"form",
+		true,
+		false,
+		"page[number]",
+		ctx.QueryParams(),
+		&params.PageNumber,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter page[number]: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter page[number]: %s", err),
+		)
 	}
 
 	// ------------- Optional query parameter "page[size]" -------------
 
-	err = runtime.BindQueryParameter("form", true, false, "page[size]", ctx.QueryParams(), &params.PageSize)
+	err = runtime.BindQueryParameter(
+		"form",
+		true,
+		false,
+		"page[size]",
+		ctx.QueryParams(),
+		&params.PageSize,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter page[size]: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter page[size]: %s", err),
+		)
 	}
 
 	// Invoke the callback with all the unmarshalled arguments
@@ -14239,9 +17055,19 @@ func (w *ServerInterfaceWrapper) CreateIncidentTask(ctx echo.Context) error {
 	// ------------- Path parameter "incident_id" -------------
 	var incidentId string
 
-	err = runtime.BindStyledParameterWithLocation("simple", false, "incident_id", runtime.ParamLocationPath, ctx.Param("incident_id"), &incidentId)
+	err = runtime.BindStyledParameterWithLocation(
+		"simple",
+		false,
+		"incident_id",
+		runtime.ParamLocationPath,
+		ctx.Param("incident_id"),
+		&incidentId,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter incident_id: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter incident_id: %s", err),
+		)
 	}
 
 	ctx.Set(Bearer_authScopes, []string{""})
@@ -14257,9 +17083,19 @@ func (w *ServerInterfaceWrapper) DeletePlaybookTask(ctx echo.Context) error {
 	// ------------- Path parameter "id" -------------
 	var id string
 
-	err = runtime.BindStyledParameterWithLocation("simple", false, "id", runtime.ParamLocationPath, ctx.Param("id"), &id)
+	err = runtime.BindStyledParameterWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		ctx.Param("id"),
+		&id,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter id: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter id: %s", err),
+		)
 	}
 
 	ctx.Set(Bearer_authScopes, []string{""})
@@ -14275,9 +17111,19 @@ func (w *ServerInterfaceWrapper) GetPlaybookTasks(ctx echo.Context) error {
 	// ------------- Path parameter "id" -------------
 	var id string
 
-	err = runtime.BindStyledParameterWithLocation("simple", false, "id", runtime.ParamLocationPath, ctx.Param("id"), &id)
+	err = runtime.BindStyledParameterWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		ctx.Param("id"),
+		&id,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter id: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter id: %s", err),
+		)
 	}
 
 	ctx.Set(Bearer_authScopes, []string{""})
@@ -14293,9 +17139,19 @@ func (w *ServerInterfaceWrapper) UpdatePlaybookTask(ctx echo.Context) error {
 	// ------------- Path parameter "id" -------------
 	var id string
 
-	err = runtime.BindStyledParameterWithLocation("simple", false, "id", runtime.ParamLocationPath, ctx.Param("id"), &id)
+	err = runtime.BindStyledParameterWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		ctx.Param("id"),
+		&id,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter id: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter id: %s", err),
+		)
 	}
 
 	ctx.Set(Bearer_authScopes, []string{""})
@@ -14315,16 +17171,36 @@ func (w *ServerInterfaceWrapper) ListPlaybooks(ctx echo.Context) error {
 	var params ListPlaybooksParams
 	// ------------- Optional query parameter "page[number]" -------------
 
-	err = runtime.BindQueryParameter("form", true, false, "page[number]", ctx.QueryParams(), &params.PageNumber)
+	err = runtime.BindQueryParameter(
+		"form",
+		true,
+		false,
+		"page[number]",
+		ctx.QueryParams(),
+		&params.PageNumber,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter page[number]: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter page[number]: %s", err),
+		)
 	}
 
 	// ------------- Optional query parameter "page[size]" -------------
 
-	err = runtime.BindQueryParameter("form", true, false, "page[size]", ctx.QueryParams(), &params.PageSize)
+	err = runtime.BindQueryParameter(
+		"form",
+		true,
+		false,
+		"page[size]",
+		ctx.QueryParams(),
+		&params.PageSize,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter page[size]: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter page[size]: %s", err),
+		)
 	}
 
 	// Invoke the callback with all the unmarshalled arguments
@@ -14349,9 +17225,19 @@ func (w *ServerInterfaceWrapper) DeletePlaybook(ctx echo.Context) error {
 	// ------------- Path parameter "id" -------------
 	var id string
 
-	err = runtime.BindStyledParameterWithLocation("simple", false, "id", runtime.ParamLocationPath, ctx.Param("id"), &id)
+	err = runtime.BindStyledParameterWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		ctx.Param("id"),
+		&id,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter id: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter id: %s", err),
+		)
 	}
 
 	ctx.Set(Bearer_authScopes, []string{""})
@@ -14367,9 +17253,19 @@ func (w *ServerInterfaceWrapper) GetPlaybook(ctx echo.Context) error {
 	// ------------- Path parameter "id" -------------
 	var id string
 
-	err = runtime.BindStyledParameterWithLocation("simple", false, "id", runtime.ParamLocationPath, ctx.Param("id"), &id)
+	err = runtime.BindStyledParameterWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		ctx.Param("id"),
+		&id,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter id: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter id: %s", err),
+		)
 	}
 
 	ctx.Set(Bearer_authScopes, []string{""})
@@ -14385,9 +17281,19 @@ func (w *ServerInterfaceWrapper) UpdatePlaybook(ctx echo.Context) error {
 	// ------------- Path parameter "id" -------------
 	var id string
 
-	err = runtime.BindStyledParameterWithLocation("simple", false, "id", runtime.ParamLocationPath, ctx.Param("id"), &id)
+	err = runtime.BindStyledParameterWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		ctx.Param("id"),
+		&id,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter id: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter id: %s", err),
+		)
 	}
 
 	ctx.Set(Bearer_authScopes, []string{""})
@@ -14403,9 +17309,19 @@ func (w *ServerInterfaceWrapper) ListPlaybookTasks(ctx echo.Context) error {
 	// ------------- Path parameter "playbook_id" -------------
 	var playbookId string
 
-	err = runtime.BindStyledParameterWithLocation("simple", false, "playbook_id", runtime.ParamLocationPath, ctx.Param("playbook_id"), &playbookId)
+	err = runtime.BindStyledParameterWithLocation(
+		"simple",
+		false,
+		"playbook_id",
+		runtime.ParamLocationPath,
+		ctx.Param("playbook_id"),
+		&playbookId,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter playbook_id: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter playbook_id: %s", err),
+		)
 	}
 
 	ctx.Set(Bearer_authScopes, []string{""})
@@ -14414,16 +17330,36 @@ func (w *ServerInterfaceWrapper) ListPlaybookTasks(ctx echo.Context) error {
 	var params ListPlaybookTasksParams
 	// ------------- Optional query parameter "page[number]" -------------
 
-	err = runtime.BindQueryParameter("form", true, false, "page[number]", ctx.QueryParams(), &params.PageNumber)
+	err = runtime.BindQueryParameter(
+		"form",
+		true,
+		false,
+		"page[number]",
+		ctx.QueryParams(),
+		&params.PageNumber,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter page[number]: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter page[number]: %s", err),
+		)
 	}
 
 	// ------------- Optional query parameter "page[size]" -------------
 
-	err = runtime.BindQueryParameter("form", true, false, "page[size]", ctx.QueryParams(), &params.PageSize)
+	err = runtime.BindQueryParameter(
+		"form",
+		true,
+		false,
+		"page[size]",
+		ctx.QueryParams(),
+		&params.PageSize,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter page[size]: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter page[size]: %s", err),
+		)
 	}
 
 	// Invoke the callback with all the unmarshalled arguments
@@ -14437,9 +17373,19 @@ func (w *ServerInterfaceWrapper) CreatePlaybookTask(ctx echo.Context) error {
 	// ------------- Path parameter "playbook_id" -------------
 	var playbookId string
 
-	err = runtime.BindStyledParameterWithLocation("simple", false, "playbook_id", runtime.ParamLocationPath, ctx.Param("playbook_id"), &playbookId)
+	err = runtime.BindStyledParameterWithLocation(
+		"simple",
+		false,
+		"playbook_id",
+		runtime.ParamLocationPath,
+		ctx.Param("playbook_id"),
+		&playbookId,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter playbook_id: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter playbook_id: %s", err),
+		)
 	}
 
 	ctx.Set(Bearer_authScopes, []string{""})
@@ -14459,16 +17405,36 @@ func (w *ServerInterfaceWrapper) ListPostmortemTemplates(ctx echo.Context) error
 	var params ListPostmortemTemplatesParams
 	// ------------- Optional query parameter "page[number]" -------------
 
-	err = runtime.BindQueryParameter("form", true, false, "page[number]", ctx.QueryParams(), &params.PageNumber)
+	err = runtime.BindQueryParameter(
+		"form",
+		true,
+		false,
+		"page[number]",
+		ctx.QueryParams(),
+		&params.PageNumber,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter page[number]: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter page[number]: %s", err),
+		)
 	}
 
 	// ------------- Optional query parameter "page[size]" -------------
 
-	err = runtime.BindQueryParameter("form", true, false, "page[size]", ctx.QueryParams(), &params.PageSize)
+	err = runtime.BindQueryParameter(
+		"form",
+		true,
+		false,
+		"page[size]",
+		ctx.QueryParams(),
+		&params.PageSize,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter page[size]: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter page[size]: %s", err),
+		)
 	}
 
 	// Invoke the callback with all the unmarshalled arguments
@@ -14493,9 +17459,19 @@ func (w *ServerInterfaceWrapper) DeletePostmortemTemplate(ctx echo.Context) erro
 	// ------------- Path parameter "id" -------------
 	var id string
 
-	err = runtime.BindStyledParameterWithLocation("simple", false, "id", runtime.ParamLocationPath, ctx.Param("id"), &id)
+	err = runtime.BindStyledParameterWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		ctx.Param("id"),
+		&id,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter id: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter id: %s", err),
+		)
 	}
 
 	ctx.Set(Bearer_authScopes, []string{""})
@@ -14511,9 +17487,19 @@ func (w *ServerInterfaceWrapper) GetPostmortemTemplate(ctx echo.Context) error {
 	// ------------- Path parameter "id" -------------
 	var id string
 
-	err = runtime.BindStyledParameterWithLocation("simple", false, "id", runtime.ParamLocationPath, ctx.Param("id"), &id)
+	err = runtime.BindStyledParameterWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		ctx.Param("id"),
+		&id,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter id: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter id: %s", err),
+		)
 	}
 
 	ctx.Set(Bearer_authScopes, []string{""})
@@ -14529,9 +17515,19 @@ func (w *ServerInterfaceWrapper) UpdatePostmortemTemplate(ctx echo.Context) erro
 	// ------------- Path parameter "id" -------------
 	var id string
 
-	err = runtime.BindStyledParameterWithLocation("simple", false, "id", runtime.ParamLocationPath, ctx.Param("id"), &id)
+	err = runtime.BindStyledParameterWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		ctx.Param("id"),
+		&id,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter id: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter id: %s", err),
+		)
 	}
 
 	ctx.Set(Bearer_authScopes, []string{""})
@@ -14547,9 +17543,19 @@ func (w *ServerInterfaceWrapper) GetIncidentPostmortem(ctx echo.Context) error {
 	// ------------- Path parameter "id" -------------
 	var id string
 
-	err = runtime.BindStyledParameterWithLocation("simple", false, "id", runtime.ParamLocationPath, ctx.Param("id"), &id)
+	err = runtime.BindStyledParameterWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		ctx.Param("id"),
+		&id,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter id: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter id: %s", err),
+		)
 	}
 
 	ctx.Set(Bearer_authScopes, []string{""})
@@ -14565,9 +17571,19 @@ func (w *ServerInterfaceWrapper) UpdateIncidentPostmortem(ctx echo.Context) erro
 	// ------------- Path parameter "id" -------------
 	var id string
 
-	err = runtime.BindStyledParameterWithLocation("simple", false, "id", runtime.ParamLocationPath, ctx.Param("id"), &id)
+	err = runtime.BindStyledParameterWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		ctx.Param("id"),
+		&id,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter id: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter id: %s", err),
+		)
 	}
 
 	ctx.Set(Bearer_authScopes, []string{""})
@@ -14587,16 +17603,36 @@ func (w *ServerInterfaceWrapper) ListPulses(ctx echo.Context) error {
 	var params ListPulsesParams
 	// ------------- Optional query parameter "page[number]" -------------
 
-	err = runtime.BindQueryParameter("form", true, false, "page[number]", ctx.QueryParams(), &params.PageNumber)
+	err = runtime.BindQueryParameter(
+		"form",
+		true,
+		false,
+		"page[number]",
+		ctx.QueryParams(),
+		&params.PageNumber,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter page[number]: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter page[number]: %s", err),
+		)
 	}
 
 	// ------------- Optional query parameter "page[size]" -------------
 
-	err = runtime.BindQueryParameter("form", true, false, "page[size]", ctx.QueryParams(), &params.PageSize)
+	err = runtime.BindQueryParameter(
+		"form",
+		true,
+		false,
+		"page[size]",
+		ctx.QueryParams(),
+		&params.PageSize,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter page[size]: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter page[size]: %s", err),
+		)
 	}
 
 	// Invoke the callback with all the unmarshalled arguments
@@ -14621,9 +17657,19 @@ func (w *ServerInterfaceWrapper) GetPulse(ctx echo.Context) error {
 	// ------------- Path parameter "id" -------------
 	var id string
 
-	err = runtime.BindStyledParameterWithLocation("simple", false, "id", runtime.ParamLocationPath, ctx.Param("id"), &id)
+	err = runtime.BindStyledParameterWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		ctx.Param("id"),
+		&id,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter id: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter id: %s", err),
+		)
 	}
 
 	ctx.Set(Bearer_authScopes, []string{""})
@@ -14639,9 +17685,19 @@ func (w *ServerInterfaceWrapper) UpdatePulse(ctx echo.Context) error {
 	// ------------- Path parameter "id" -------------
 	var id string
 
-	err = runtime.BindStyledParameterWithLocation("simple", false, "id", runtime.ParamLocationPath, ctx.Param("id"), &id)
+	err = runtime.BindStyledParameterWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		ctx.Param("id"),
+		&id,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter id: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter id: %s", err),
+		)
 	}
 
 	ctx.Set(Bearer_authScopes, []string{""})
@@ -14661,16 +17717,36 @@ func (w *ServerInterfaceWrapper) ListServices(ctx echo.Context) error {
 	var params ListServicesParams
 	// ------------- Optional query parameter "page[number]" -------------
 
-	err = runtime.BindQueryParameter("form", true, false, "page[number]", ctx.QueryParams(), &params.PageNumber)
+	err = runtime.BindQueryParameter(
+		"form",
+		true,
+		false,
+		"page[number]",
+		ctx.QueryParams(),
+		&params.PageNumber,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter page[number]: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter page[number]: %s", err),
+		)
 	}
 
 	// ------------- Optional query parameter "page[size]" -------------
 
-	err = runtime.BindQueryParameter("form", true, false, "page[size]", ctx.QueryParams(), &params.PageSize)
+	err = runtime.BindQueryParameter(
+		"form",
+		true,
+		false,
+		"page[size]",
+		ctx.QueryParams(),
+		&params.PageSize,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter page[size]: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter page[size]: %s", err),
+		)
 	}
 
 	// Invoke the callback with all the unmarshalled arguments
@@ -14695,9 +17771,19 @@ func (w *ServerInterfaceWrapper) DeleteService(ctx echo.Context) error {
 	// ------------- Path parameter "id" -------------
 	var id string
 
-	err = runtime.BindStyledParameterWithLocation("simple", false, "id", runtime.ParamLocationPath, ctx.Param("id"), &id)
+	err = runtime.BindStyledParameterWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		ctx.Param("id"),
+		&id,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter id: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter id: %s", err),
+		)
 	}
 
 	ctx.Set(Bearer_authScopes, []string{""})
@@ -14713,9 +17799,19 @@ func (w *ServerInterfaceWrapper) GetService(ctx echo.Context) error {
 	// ------------- Path parameter "id" -------------
 	var id string
 
-	err = runtime.BindStyledParameterWithLocation("simple", false, "id", runtime.ParamLocationPath, ctx.Param("id"), &id)
+	err = runtime.BindStyledParameterWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		ctx.Param("id"),
+		&id,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter id: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter id: %s", err),
+		)
 	}
 
 	ctx.Set(Bearer_authScopes, []string{""})
@@ -14731,9 +17827,19 @@ func (w *ServerInterfaceWrapper) UpdateService(ctx echo.Context) error {
 	// ------------- Path parameter "id" -------------
 	var id string
 
-	err = runtime.BindStyledParameterWithLocation("simple", false, "id", runtime.ParamLocationPath, ctx.Param("id"), &id)
+	err = runtime.BindStyledParameterWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		ctx.Param("id"),
+		&id,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter id: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter id: %s", err),
+		)
 	}
 
 	ctx.Set(Bearer_authScopes, []string{""})
@@ -14753,16 +17859,36 @@ func (w *ServerInterfaceWrapper) ListSeverities(ctx echo.Context) error {
 	var params ListSeveritiesParams
 	// ------------- Optional query parameter "page[number]" -------------
 
-	err = runtime.BindQueryParameter("form", true, false, "page[number]", ctx.QueryParams(), &params.PageNumber)
+	err = runtime.BindQueryParameter(
+		"form",
+		true,
+		false,
+		"page[number]",
+		ctx.QueryParams(),
+		&params.PageNumber,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter page[number]: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter page[number]: %s", err),
+		)
 	}
 
 	// ------------- Optional query parameter "page[size]" -------------
 
-	err = runtime.BindQueryParameter("form", true, false, "page[size]", ctx.QueryParams(), &params.PageSize)
+	err = runtime.BindQueryParameter(
+		"form",
+		true,
+		false,
+		"page[size]",
+		ctx.QueryParams(),
+		&params.PageSize,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter page[size]: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter page[size]: %s", err),
+		)
 	}
 
 	// Invoke the callback with all the unmarshalled arguments
@@ -14787,9 +17913,19 @@ func (w *ServerInterfaceWrapper) DeleteSeverity(ctx echo.Context) error {
 	// ------------- Path parameter "id" -------------
 	var id string
 
-	err = runtime.BindStyledParameterWithLocation("simple", false, "id", runtime.ParamLocationPath, ctx.Param("id"), &id)
+	err = runtime.BindStyledParameterWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		ctx.Param("id"),
+		&id,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter id: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter id: %s", err),
+		)
 	}
 
 	ctx.Set(Bearer_authScopes, []string{""})
@@ -14805,9 +17941,19 @@ func (w *ServerInterfaceWrapper) GetSeverity(ctx echo.Context) error {
 	// ------------- Path parameter "id" -------------
 	var id string
 
-	err = runtime.BindStyledParameterWithLocation("simple", false, "id", runtime.ParamLocationPath, ctx.Param("id"), &id)
+	err = runtime.BindStyledParameterWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		ctx.Param("id"),
+		&id,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter id: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter id: %s", err),
+		)
 	}
 
 	ctx.Set(Bearer_authScopes, []string{""})
@@ -14823,9 +17969,19 @@ func (w *ServerInterfaceWrapper) UpdateSeverity(ctx echo.Context) error {
 	// ------------- Path parameter "id" -------------
 	var id string
 
-	err = runtime.BindStyledParameterWithLocation("simple", false, "id", runtime.ParamLocationPath, ctx.Param("id"), &id)
+	err = runtime.BindStyledParameterWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		ctx.Param("id"),
+		&id,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter id: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter id: %s", err),
+		)
 	}
 
 	ctx.Set(Bearer_authScopes, []string{""})
@@ -14845,16 +18001,36 @@ func (w *ServerInterfaceWrapper) ListStatusPages(ctx echo.Context) error {
 	var params ListStatusPagesParams
 	// ------------- Optional query parameter "page[number]" -------------
 
-	err = runtime.BindQueryParameter("form", true, false, "page[number]", ctx.QueryParams(), &params.PageNumber)
+	err = runtime.BindQueryParameter(
+		"form",
+		true,
+		false,
+		"page[number]",
+		ctx.QueryParams(),
+		&params.PageNumber,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter page[number]: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter page[number]: %s", err),
+		)
 	}
 
 	// ------------- Optional query parameter "page[size]" -------------
 
-	err = runtime.BindQueryParameter("form", true, false, "page[size]", ctx.QueryParams(), &params.PageSize)
+	err = runtime.BindQueryParameter(
+		"form",
+		true,
+		false,
+		"page[size]",
+		ctx.QueryParams(),
+		&params.PageSize,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter page[size]: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter page[size]: %s", err),
+		)
 	}
 
 	// Invoke the callback with all the unmarshalled arguments
@@ -14879,9 +18055,19 @@ func (w *ServerInterfaceWrapper) DeleteStatusPage(ctx echo.Context) error {
 	// ------------- Path parameter "id" -------------
 	var id string
 
-	err = runtime.BindStyledParameterWithLocation("simple", false, "id", runtime.ParamLocationPath, ctx.Param("id"), &id)
+	err = runtime.BindStyledParameterWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		ctx.Param("id"),
+		&id,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter id: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter id: %s", err),
+		)
 	}
 
 	ctx.Set(Bearer_authScopes, []string{""})
@@ -14897,9 +18083,19 @@ func (w *ServerInterfaceWrapper) GetStatusPage(ctx echo.Context) error {
 	// ------------- Path parameter "id" -------------
 	var id string
 
-	err = runtime.BindStyledParameterWithLocation("simple", false, "id", runtime.ParamLocationPath, ctx.Param("id"), &id)
+	err = runtime.BindStyledParameterWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		ctx.Param("id"),
+		&id,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter id: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter id: %s", err),
+		)
 	}
 
 	ctx.Set(Bearer_authScopes, []string{""})
@@ -14915,9 +18111,19 @@ func (w *ServerInterfaceWrapper) UpdateStatusPage(ctx echo.Context) error {
 	// ------------- Path parameter "id" -------------
 	var id string
 
-	err = runtime.BindStyledParameterWithLocation("simple", false, "id", runtime.ParamLocationPath, ctx.Param("id"), &id)
+	err = runtime.BindStyledParameterWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		ctx.Param("id"),
+		&id,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter id: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter id: %s", err),
+		)
 	}
 
 	ctx.Set(Bearer_authScopes, []string{""})
@@ -14937,16 +18143,36 @@ func (w *ServerInterfaceWrapper) ListTeams(ctx echo.Context) error {
 	var params ListTeamsParams
 	// ------------- Optional query parameter "page[number]" -------------
 
-	err = runtime.BindQueryParameter("form", true, false, "page[number]", ctx.QueryParams(), &params.PageNumber)
+	err = runtime.BindQueryParameter(
+		"form",
+		true,
+		false,
+		"page[number]",
+		ctx.QueryParams(),
+		&params.PageNumber,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter page[number]: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter page[number]: %s", err),
+		)
 	}
 
 	// ------------- Optional query parameter "page[size]" -------------
 
-	err = runtime.BindQueryParameter("form", true, false, "page[size]", ctx.QueryParams(), &params.PageSize)
+	err = runtime.BindQueryParameter(
+		"form",
+		true,
+		false,
+		"page[size]",
+		ctx.QueryParams(),
+		&params.PageSize,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter page[size]: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter page[size]: %s", err),
+		)
 	}
 
 	// Invoke the callback with all the unmarshalled arguments
@@ -14971,9 +18197,19 @@ func (w *ServerInterfaceWrapper) DeleteTeam(ctx echo.Context) error {
 	// ------------- Path parameter "id" -------------
 	var id string
 
-	err = runtime.BindStyledParameterWithLocation("simple", false, "id", runtime.ParamLocationPath, ctx.Param("id"), &id)
+	err = runtime.BindStyledParameterWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		ctx.Param("id"),
+		&id,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter id: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter id: %s", err),
+		)
 	}
 
 	ctx.Set(Bearer_authScopes, []string{""})
@@ -14989,9 +18225,19 @@ func (w *ServerInterfaceWrapper) GetTeam(ctx echo.Context) error {
 	// ------------- Path parameter "id" -------------
 	var id string
 
-	err = runtime.BindStyledParameterWithLocation("simple", false, "id", runtime.ParamLocationPath, ctx.Param("id"), &id)
+	err = runtime.BindStyledParameterWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		ctx.Param("id"),
+		&id,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter id: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter id: %s", err),
+		)
 	}
 
 	ctx.Set(Bearer_authScopes, []string{""})
@@ -15007,9 +18253,19 @@ func (w *ServerInterfaceWrapper) UpdateTeam(ctx echo.Context) error {
 	// ------------- Path parameter "id" -------------
 	var id string
 
-	err = runtime.BindStyledParameterWithLocation("simple", false, "id", runtime.ParamLocationPath, ctx.Param("id"), &id)
+	err = runtime.BindStyledParameterWithLocation(
+		"simple",
+		false,
+		"id",
+		runtime.ParamLocationPath,
+		ctx.Param("id"),
+		&id,
+	)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("Invalid format for parameter id: %s", err))
+		return echo.NewHTTPError(
+			http.StatusBadRequest,
+			fmt.Sprintf("Invalid format for parameter id: %s", err),
+		)
 	}
 
 	ctx.Set(Bearer_authScopes, []string{""})
@@ -15537,4 +18793,3 @@ func GetSwagger() (swagger *openapi3.Swagger, err error) {
 	}
 	return
 }
-
