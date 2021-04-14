@@ -13,6 +13,7 @@ import (
 	"io/ioutil"
 	"net/http"
 	"net/url"
+	"path"
 	"strings"
 	"time"
 
@@ -23,6 +24,637 @@ import (
 
 const (
 	Bearer_authScopes = "bearer_auth.Scopes"
+)
+
+// Defines values for AlertSource.
+const (
+	AlertSourceNobl9 AlertSource = "nobl9"
+
+	AlertSourceOpsgenie AlertSource = "opsgenie"
+
+	AlertSourcePagerduty AlertSource = "pagerduty"
+
+	AlertSourceVictorops AlertSource = "victorops"
+)
+
+// Defines values for AlertListDataType.
+const (
+	AlertListDataTypeAlerts AlertListDataType = "alerts"
+)
+
+// Defines values for AlertListDataType.
+const (
+	AlertListDataTypeAlerts AlertListDataType = "alerts"
+)
+
+// Defines values for AlertResponseDataType.
+const (
+	AlertResponseDataTypeAlerts AlertResponseDataType = "alerts"
+)
+
+// Defines values for CauseListDataType.
+const (
+	CauseListDataTypeCauses CauseListDataType = "causes"
+)
+
+// Defines values for CauseListDataType.
+const (
+	CauseListDataTypeCauses CauseListDataType = "causes"
+)
+
+// Defines values for CauseResponseDataType.
+const (
+	CauseResponseDataTypeCauses CauseResponseDataType = "causes"
+)
+
+// Defines values for EnvironmentListDataType.
+const (
+	EnvironmentListDataTypeEnvironments EnvironmentListDataType = "environments"
+)
+
+// Defines values for EnvironmentListDataType.
+const (
+	EnvironmentListDataTypeEnvironments EnvironmentListDataType = "environments"
+)
+
+// Defines values for EnvironmentResponseDataType.
+const (
+	EnvironmentResponseDataTypeEnvironments EnvironmentResponseDataType = "environments"
+)
+
+// Defines values for FunctionalityListDataType.
+const (
+	FunctionalityListDataTypeFunctionalities FunctionalityListDataType = "functionalities"
+)
+
+// Defines values for FunctionalityListDataType.
+const (
+	FunctionalityListDataTypeFunctionalities FunctionalityListDataType = "functionalities"
+)
+
+// Defines values for FunctionalityResponseDataType.
+const (
+	FunctionalityResponseDataTypeFunctionalities FunctionalityResponseDataType = "functionalities"
+)
+
+// Defines values for IncidentActionItemPriority.
+const (
+	IncidentActionItemPriorityHigh IncidentActionItemPriority = "high"
+
+	IncidentActionItemPriorityLow IncidentActionItemPriority = "low"
+
+	IncidentActionItemPriorityMedium IncidentActionItemPriority = "medium"
+)
+
+// Defines values for IncidentActionItemStatus.
+const (
+	IncidentActionItemStatusCancelled IncidentActionItemStatus = "cancelled"
+
+	IncidentActionItemStatusDone IncidentActionItemStatus = "done"
+
+	IncidentActionItemStatusInProgress IncidentActionItemStatus = "in_progress"
+
+	IncidentActionItemStatusOpen IncidentActionItemStatus = "open"
+)
+
+// Defines values for IncidentActionItemListDataType.
+const (
+	IncidentActionItemListDataTypeIncidentActionItems IncidentActionItemListDataType = "incident_action_items"
+)
+
+// Defines values for IncidentActionItemListDataType.
+const (
+	IncidentActionItemListDataTypeIncidentActionItems IncidentActionItemListDataType = "incident_action_items"
+)
+
+// Defines values for IncidentActionItemResponseDataType.
+const (
+	IncidentActionItemResponseDataTypeIncidentActionItems IncidentActionItemResponseDataType = "incident_action_items"
+)
+
+// Defines values for IncidentEventVisibility.
+const (
+	IncidentEventVisibilityExternal IncidentEventVisibility = "external"
+
+	IncidentEventVisibilityInternal IncidentEventVisibility = "internal"
+)
+
+// Defines values for IncidentEventListDataType.
+const (
+	IncidentEventListDataTypeIncidentEvents IncidentEventListDataType = "incident_events"
+)
+
+// Defines values for IncidentEventListDataType.
+const (
+	IncidentEventListDataTypeIncidentEvents IncidentEventListDataType = "incident_events"
+)
+
+// Defines values for IncidentEventResponseDataType.
+const (
+	IncidentEventResponseDataTypeIncidentEvents IncidentEventResponseDataType = "incident_events"
+)
+
+// Defines values for IncidentListDataType.
+const (
+	IncidentListDataTypeIncidents IncidentListDataType = "incidents"
+)
+
+// Defines values for IncidentListDataType.
+const (
+	IncidentListDataTypeIncidents IncidentListDataType = "incidents"
+)
+
+// Defines values for IncidentPostMortemStatus.
+const (
+	IncidentPostMortemStatusDraft IncidentPostMortemStatus = "draft"
+
+	IncidentPostMortemStatusPublished IncidentPostMortemStatus = "published"
+)
+
+// Defines values for IncidentPostMortemResponseDataType.
+const (
+	IncidentPostMortemResponseDataTypeIncidentPostMortems IncidentPostMortemResponseDataType = "incident_post_mortems"
+)
+
+// Defines values for IncidentResponseDataType.
+const (
+	IncidentResponseDataTypeIncidents IncidentResponseDataType = "incidents"
+)
+
+// Defines values for IncidentRoleListDataType.
+const (
+	IncidentRoleListDataTypeIncidentRoles IncidentRoleListDataType = "incident_roles"
+)
+
+// Defines values for IncidentRoleListDataType.
+const (
+	IncidentRoleListDataTypeIncidentRoles IncidentRoleListDataType = "incident_roles"
+)
+
+// Defines values for IncidentRoleResponseDataType.
+const (
+	IncidentRoleResponseDataTypeIncidentRoles IncidentRoleResponseDataType = "incident_roles"
+)
+
+// Defines values for IncidentTaskListDataType.
+const (
+	IncidentTaskListDataTypeIncidentTasks IncidentTaskListDataType = "incident_tasks"
+)
+
+// Defines values for IncidentTaskListDataType.
+const (
+	IncidentTaskListDataTypeIncidentTasks IncidentTaskListDataType = "incident_tasks"
+)
+
+// Defines values for IncidentTaskResponseDataType.
+const (
+	IncidentTaskResponseDataTypeIncidentTasks IncidentTaskResponseDataType = "incident_tasks"
+)
+
+// Defines values for IncidentTypeListDataType.
+const (
+	IncidentTypeListDataTypeIncidentTypes IncidentTypeListDataType = "incident_types"
+)
+
+// Defines values for IncidentTypeListDataType.
+const (
+	IncidentTypeListDataTypeIncidentTypes IncidentTypeListDataType = "incident_types"
+)
+
+// Defines values for IncidentTypeResponseDataType.
+const (
+	IncidentTypeResponseDataTypeIncidentTypes IncidentTypeResponseDataType = "incident_types"
+)
+
+// Defines values for MitigateIncidentDataType.
+const (
+	MitigateIncidentDataTypeIncidents MitigateIncidentDataType = "incidents"
+)
+
+// Defines values for NewAlertDataType.
+const (
+	NewAlertDataTypeAlerts NewAlertDataType = "alerts"
+)
+
+// Defines values for NewCauseDataType.
+const (
+	NewCauseDataTypeCauses NewCauseDataType = "causes"
+)
+
+// Defines values for NewEnvironmentDataType.
+const (
+	NewEnvironmentDataTypeEnvironments NewEnvironmentDataType = "environments"
+)
+
+// Defines values for NewFunctionalityDataType.
+const (
+	NewFunctionalityDataTypeFunctionalities NewFunctionalityDataType = "functionalities"
+)
+
+// Defines values for NewIncidentDataType.
+const (
+	NewIncidentDataTypeIncidents NewIncidentDataType = "incidents"
+)
+
+// Defines values for NewIncidentActionItemDataAttributesPriority.
+const (
+	NewIncidentActionItemDataAttributesPriorityHigh NewIncidentActionItemDataAttributesPriority = "high"
+
+	NewIncidentActionItemDataAttributesPriorityLow NewIncidentActionItemDataAttributesPriority = "low"
+
+	NewIncidentActionItemDataAttributesPriorityMedium NewIncidentActionItemDataAttributesPriority = "medium"
+)
+
+// Defines values for NewIncidentActionItemDataAttributesStatus.
+const (
+	NewIncidentActionItemDataAttributesStatusCancelled NewIncidentActionItemDataAttributesStatus = "cancelled"
+
+	NewIncidentActionItemDataAttributesStatusDone NewIncidentActionItemDataAttributesStatus = "done"
+
+	NewIncidentActionItemDataAttributesStatusInProgress NewIncidentActionItemDataAttributesStatus = "in_progress"
+
+	NewIncidentActionItemDataAttributesStatusOpen NewIncidentActionItemDataAttributesStatus = "open"
+)
+
+// Defines values for NewIncidentActionItemDataType.
+const (
+	NewIncidentActionItemDataTypeIncidentActionItems NewIncidentActionItemDataType = "incident_action_items"
+)
+
+// Defines values for NewIncidentEventDataAttributesVisibility.
+const (
+	NewIncidentEventDataAttributesVisibilityExternal NewIncidentEventDataAttributesVisibility = "external"
+
+	NewIncidentEventDataAttributesVisibilityInternal NewIncidentEventDataAttributesVisibility = "internal"
+)
+
+// Defines values for NewIncidentEventDataType.
+const (
+	NewIncidentEventDataTypeIncidentEvents NewIncidentEventDataType = "incident_events"
+)
+
+// Defines values for NewIncidentRoleDataType.
+const (
+	NewIncidentRoleDataTypeIncidentRoles NewIncidentRoleDataType = "incident_roles"
+)
+
+// Defines values for NewIncidentTaskDataType.
+const (
+	NewIncidentTaskDataTypeIncidentTasks NewIncidentTaskDataType = "incident_tasks"
+)
+
+// Defines values for NewIncidentTypeDataType.
+const (
+	NewIncidentTypeDataTypeIncidentTypes NewIncidentTypeDataType = "incident_types"
+)
+
+// Defines values for NewPlaybookDataType.
+const (
+	NewPlaybookDataTypePlaybooks NewPlaybookDataType = "playbooks"
+)
+
+// Defines values for NewPlaybookTaskDataType.
+const (
+	NewPlaybookTaskDataTypePlaybookTasks NewPlaybookTaskDataType = "playbook_tasks"
+)
+
+// Defines values for NewPostMortemTemplateDataType.
+const (
+	NewPostMortemTemplateDataTypePostMortemTemplates NewPostMortemTemplateDataType = "post_mortem_templates"
+)
+
+// Defines values for NewPulseDataType.
+const (
+	NewPulseDataTypePulses NewPulseDataType = "pulses"
+)
+
+// Defines values for NewServiceDataType.
+const (
+	NewServiceDataTypeServices NewServiceDataType = "services"
+)
+
+// Defines values for NewSeverityDataAttributesSeverity.
+const (
+	NewSeverityDataAttributesSeverityCritical NewSeverityDataAttributesSeverity = "critical"
+
+	NewSeverityDataAttributesSeverityHigh NewSeverityDataAttributesSeverity = "high"
+
+	NewSeverityDataAttributesSeverityLow NewSeverityDataAttributesSeverity = "low"
+
+	NewSeverityDataAttributesSeverityMedium NewSeverityDataAttributesSeverity = "medium"
+)
+
+// Defines values for NewSeverityDataType.
+const (
+	NewSeverityDataTypeSeverities NewSeverityDataType = "severities"
+)
+
+// Defines values for NewStatusPageDataAttributesShowUptimeLastDays.
+const (
+	NewStatusPageDataAttributesShowUptimeLastDaysN0 NewStatusPageDataAttributesShowUptimeLastDays = 30
+
+	NewStatusPageDataAttributesShowUptimeLastDaysN01 NewStatusPageDataAttributesShowUptimeLastDays = 60
+
+	NewStatusPageDataAttributesShowUptimeLastDaysN02 NewStatusPageDataAttributesShowUptimeLastDays = 90
+)
+
+// Defines values for NewStatusPageDataType.
+const (
+	NewStatusPageDataTypeStatusPages NewStatusPageDataType = "status_pages"
+)
+
+// Defines values for NewTeamDataType.
+const (
+	NewTeamDataTypeGroups NewTeamDataType = "groups"
+)
+
+// Defines values for PlaybookListDataType.
+const (
+	PlaybookListDataTypePlaybooks PlaybookListDataType = "playbooks"
+)
+
+// Defines values for PlaybookListDataType.
+const (
+	PlaybookListDataTypePlaybooks PlaybookListDataType = "playbooks"
+)
+
+// Defines values for PlaybookResponseDataType.
+const (
+	PlaybookResponseDataTypePlaybooks PlaybookResponseDataType = "playbooks"
+)
+
+// Defines values for PlaybookTaskListDataType.
+const (
+	PlaybookTaskListDataTypePlaybookTasks PlaybookTaskListDataType = "playbook_tasks"
+)
+
+// Defines values for PlaybookTaskListDataType.
+const (
+	PlaybookTaskListDataTypePlaybookTasks PlaybookTaskListDataType = "playbook_tasks"
+)
+
+// Defines values for PlaybookTaskResponseDataType.
+const (
+	PlaybookTaskResponseDataTypePlaybookTasks PlaybookTaskResponseDataType = "playbook_tasks"
+)
+
+// Defines values for PostMortemTemplateListDataType.
+const (
+	PostMortemTemplateListDataTypePostMortemTemplates PostMortemTemplateListDataType = "post_mortem_templates"
+)
+
+// Defines values for PostMortemTemplateListDataType.
+const (
+	PostMortemTemplateListDataTypePostMortemTemplates PostMortemTemplateListDataType = "post_mortem_templates"
+)
+
+// Defines values for PostMortemTemplateResponseDataType.
+const (
+	PostMortemTemplateResponseDataTypePostMortemTemplates PostMortemTemplateResponseDataType = "post_mortem_templates"
+)
+
+// Defines values for PulseListDataType.
+const (
+	PulseListDataTypePulses PulseListDataType = "pulses"
+)
+
+// Defines values for PulseListDataType.
+const (
+	PulseListDataTypePulses PulseListDataType = "pulses"
+)
+
+// Defines values for PulseResponseDataType.
+const (
+	PulseResponseDataTypePulses PulseResponseDataType = "pulses"
+)
+
+// Defines values for ResolveIncidentDataType.
+const (
+	ResolveIncidentDataTypeIncidents ResolveIncidentDataType = "incidents"
+)
+
+// Defines values for ServiceListDataType.
+const (
+	ServiceListDataTypeServices ServiceListDataType = "services"
+)
+
+// Defines values for ServiceListDataType.
+const (
+	ServiceListDataTypeServices ServiceListDataType = "services"
+)
+
+// Defines values for ServiceResponseDataType.
+const (
+	ServiceResponseDataTypeServices ServiceResponseDataType = "services"
+)
+
+// Defines values for SeveritySeverity.
+const (
+	SeveritySeverityCritical SeveritySeverity = "critical"
+
+	SeveritySeverityHigh SeveritySeverity = "high"
+
+	SeveritySeverityLow SeveritySeverity = "low"
+
+	SeveritySeverityMedium SeveritySeverity = "medium"
+)
+
+// Defines values for SeverityListDataType.
+const (
+	SeverityListDataTypeSeverities SeverityListDataType = "severities"
+)
+
+// Defines values for SeverityListDataType.
+const (
+	SeverityListDataTypeSeverities SeverityListDataType = "severities"
+)
+
+// Defines values for SeverityResponseDataType.
+const (
+	SeverityResponseDataTypeSeverities SeverityResponseDataType = "severities"
+)
+
+// Defines values for StatusPageShowUptimeLastDays.
+const (
+	StatusPageShowUptimeLastDaysN0 StatusPageShowUptimeLastDays = 30
+
+	StatusPageShowUptimeLastDaysN01 StatusPageShowUptimeLastDays = 60
+
+	StatusPageShowUptimeLastDaysN02 StatusPageShowUptimeLastDays = 90
+)
+
+// Defines values for StatusPageListDataType.
+const (
+	StatusPageListDataTypeStatusPages StatusPageListDataType = "status_pages"
+)
+
+// Defines values for StatusPageListDataType.
+const (
+	StatusPageListDataTypeStatusPages StatusPageListDataType = "status_pages"
+)
+
+// Defines values for StatusPageResponseDataType.
+const (
+	StatusPageResponseDataTypeStatusPages StatusPageResponseDataType = "status_pages"
+)
+
+// Defines values for TeamListDataType.
+const (
+	TeamListDataTypeGroups TeamListDataType = "groups"
+)
+
+// Defines values for TeamListDataType.
+const (
+	TeamListDataTypeGroups TeamListDataType = "groups"
+)
+
+// Defines values for TeamResponseDataType.
+const (
+	TeamResponseDataTypeGroups TeamResponseDataType = "groups"
+)
+
+// Defines values for UpdateCauseDataType.
+const (
+	UpdateCauseDataTypeCauses UpdateCauseDataType = "causes"
+)
+
+// Defines values for UpdateEnvironmentDataType.
+const (
+	UpdateEnvironmentDataTypeEnvironments UpdateEnvironmentDataType = "environments"
+)
+
+// Defines values for UpdateFunctionalityDataType.
+const (
+	UpdateFunctionalityDataTypeFunctionalities UpdateFunctionalityDataType = "functionalities"
+)
+
+// Defines values for UpdateIncidentDataType.
+const (
+	UpdateIncidentDataTypeIncidents UpdateIncidentDataType = "incidents"
+)
+
+// Defines values for UpdateIncidentActionItemDataAttributesPriority.
+const (
+	UpdateIncidentActionItemDataAttributesPriorityHigh UpdateIncidentActionItemDataAttributesPriority = "high"
+
+	UpdateIncidentActionItemDataAttributesPriorityLow UpdateIncidentActionItemDataAttributesPriority = "low"
+
+	UpdateIncidentActionItemDataAttributesPriorityMedium UpdateIncidentActionItemDataAttributesPriority = "medium"
+)
+
+// Defines values for UpdateIncidentActionItemDataAttributesStatus.
+const (
+	UpdateIncidentActionItemDataAttributesStatusCancelled UpdateIncidentActionItemDataAttributesStatus = "cancelled"
+
+	UpdateIncidentActionItemDataAttributesStatusDone UpdateIncidentActionItemDataAttributesStatus = "done"
+
+	UpdateIncidentActionItemDataAttributesStatusInProgress UpdateIncidentActionItemDataAttributesStatus = "in_progress"
+
+	UpdateIncidentActionItemDataAttributesStatusOpen UpdateIncidentActionItemDataAttributesStatus = "open"
+)
+
+// Defines values for UpdateIncidentActionItemDataType.
+const (
+	UpdateIncidentActionItemDataTypeIncidentActionItems UpdateIncidentActionItemDataType = "incident_action_items"
+)
+
+// Defines values for UpdateIncidentEventDataAttributesVisibility.
+const (
+	UpdateIncidentEventDataAttributesVisibilityExternal UpdateIncidentEventDataAttributesVisibility = "external"
+
+	UpdateIncidentEventDataAttributesVisibilityInternal UpdateIncidentEventDataAttributesVisibility = "internal"
+)
+
+// Defines values for UpdateIncidentEventDataType.
+const (
+	UpdateIncidentEventDataTypeIncidentEvents UpdateIncidentEventDataType = "incident_events"
+)
+
+// Defines values for UpdateIncidentPostMortemDataAttributesStatus.
+const (
+	UpdateIncidentPostMortemDataAttributesStatusDraft UpdateIncidentPostMortemDataAttributesStatus = "draft"
+
+	UpdateIncidentPostMortemDataAttributesStatusPublished UpdateIncidentPostMortemDataAttributesStatus = "published"
+)
+
+// Defines values for UpdateIncidentPostMortemDataType.
+const (
+	UpdateIncidentPostMortemDataTypeIncidentPostMortems UpdateIncidentPostMortemDataType = "incident_post_mortems"
+)
+
+// Defines values for UpdateIncidentRoleDataType.
+const (
+	UpdateIncidentRoleDataTypeIncidentRoles UpdateIncidentRoleDataType = "incident_roles"
+)
+
+// Defines values for UpdateIncidentTaskDataType.
+const (
+	UpdateIncidentTaskDataTypeIncidentTasks UpdateIncidentTaskDataType = "incident_tasks"
+)
+
+// Defines values for UpdateIncidentTypeDataType.
+const (
+	UpdateIncidentTypeDataTypeIncidentTypes UpdateIncidentTypeDataType = "incident_types"
+)
+
+// Defines values for UpdatePlaybookDataType.
+const (
+	UpdatePlaybookDataTypePlaybooks UpdatePlaybookDataType = "playbooks"
+)
+
+// Defines values for UpdatePlaybookTaskDataType.
+const (
+	UpdatePlaybookTaskDataTypePlaybookTasks UpdatePlaybookTaskDataType = "playbook_tasks"
+)
+
+// Defines values for UpdatePostMortemTemplateDataType.
+const (
+	UpdatePostMortemTemplateDataTypePostMortemTemplates UpdatePostMortemTemplateDataType = "post_mortem_templates"
+)
+
+// Defines values for UpdatePulseDataType.
+const (
+	UpdatePulseDataTypePulses UpdatePulseDataType = "pulses"
+)
+
+// Defines values for UpdateServiceDataType.
+const (
+	UpdateServiceDataTypeServices UpdateServiceDataType = "services"
+)
+
+// Defines values for UpdateSeverityDataAttributesSeverity.
+const (
+	UpdateSeverityDataAttributesSeverityCritical UpdateSeverityDataAttributesSeverity = "critical"
+
+	UpdateSeverityDataAttributesSeverityHigh UpdateSeverityDataAttributesSeverity = "high"
+
+	UpdateSeverityDataAttributesSeverityLow UpdateSeverityDataAttributesSeverity = "low"
+
+	UpdateSeverityDataAttributesSeverityMedium UpdateSeverityDataAttributesSeverity = "medium"
+)
+
+// Defines values for UpdateSeverityDataType.
+const (
+	UpdateSeverityDataTypeSeverities UpdateSeverityDataType = "severities"
+)
+
+// Defines values for UpdateStatusPageDataAttributesShowUptimeLastDays.
+const (
+	UpdateStatusPageDataAttributesShowUptimeLastDaysN0 UpdateStatusPageDataAttributesShowUptimeLastDays = 30
+
+	UpdateStatusPageDataAttributesShowUptimeLastDaysN01 UpdateStatusPageDataAttributesShowUptimeLastDays = 60
+
+	UpdateStatusPageDataAttributesShowUptimeLastDaysN02 UpdateStatusPageDataAttributesShowUptimeLastDays = 90
+)
+
+// Defines values for UpdateStatusPageDataType.
+const (
+	UpdateStatusPageDataTypeStatusPages UpdateStatusPageDataType = "status_pages"
+)
+
+// Defines values for UpdateTeamDataType.
+const (
+	UpdateTeamDataTypeGroups UpdateTeamDataType = "groups"
 )
 
 // Alert defines model for alert.
@@ -52,7 +684,7 @@ type Alert struct {
 	} `json:"services,omitempty"`
 
 	// The source of the alert
-	Source string `json:"source"`
+	Source AlertSource `json:"source"`
 
 	// The summary of the alert
 	Summary string `json:"summary"`
@@ -60,6 +692,9 @@ type Alert struct {
 	// Date of last update
 	UpdatedAt string `json:"updated_at"`
 }
+
+// The source of the alert
+type AlertSource string
 
 // AlertList defines model for alert_list.
 type AlertList struct {
@@ -70,14 +705,20 @@ type AlertList struct {
 		} `json:"attributes"`
 
 		// Unique ID of the alert
-		Id   string `json:"id"`
-		Type string `json:"type"`
+		Id   string            `json:"id"`
+		Type AlertListDataType `json:"type"`
 	} `json:"data"`
 	Links struct {
 		// Embedded struct due to allOf(#/components/schemas/links)
 		Links `yaml:",inline"`
 	} `json:"links"`
 }
+
+// AlertListDataType defines model for AlertList.Data.Type.
+type AlertListDataType string
+
+// AlertListDataType defines model for AlertList.Data.Type.
+type AlertListDataType string
 
 // AlertResponse defines model for alert_response.
 type AlertResponse struct {
@@ -88,10 +729,13 @@ type AlertResponse struct {
 		} `json:"attributes"`
 
 		// Unique ID of the alert
-		Id   string `json:"id"`
-		Type string `json:"type"`
+		Id   string                `json:"id"`
+		Type AlertResponseDataType `json:"type"`
 	} `json:"data"`
 }
+
+// AlertResponseDataType defines model for AlertResponse.Data.Type.
+type AlertResponseDataType string
 
 // Cause defines model for cause.
 type Cause struct {
@@ -118,14 +762,20 @@ type CauseList struct {
 		} `json:"attributes"`
 
 		// Unique ID of the cause
-		Id   string `json:"id"`
-		Type string `json:"type"`
+		Id   string            `json:"id"`
+		Type CauseListDataType `json:"type"`
 	} `json:"data"`
 	Links struct {
 		// Embedded struct due to allOf(#/components/schemas/links)
 		Links `yaml:",inline"`
 	} `json:"links"`
 }
+
+// CauseListDataType defines model for CauseList.Data.Type.
+type CauseListDataType string
+
+// CauseListDataType defines model for CauseList.Data.Type.
+type CauseListDataType string
 
 // CauseResponse defines model for cause_response.
 type CauseResponse struct {
@@ -136,10 +786,13 @@ type CauseResponse struct {
 		} `json:"attributes"`
 
 		// Unique ID of the cause
-		Id   string `json:"id"`
-		Type string `json:"type"`
+		Id   string                `json:"id"`
+		Type CauseResponseDataType `json:"type"`
 	} `json:"data"`
 }
+
+// CauseResponseDataType defines model for CauseResponse.Data.Type.
+type CauseResponseDataType string
 
 // Environment defines model for environment.
 type Environment struct {
@@ -167,14 +820,20 @@ type EnvironmentList struct {
 		} `json:"attributes"`
 
 		// Unique ID of the environment
-		Id   string `json:"id"`
-		Type string `json:"type"`
+		Id   string                  `json:"id"`
+		Type EnvironmentListDataType `json:"type"`
 	} `json:"data"`
 	Links struct {
 		// Embedded struct due to allOf(#/components/schemas/links)
 		Links `yaml:",inline"`
 	} `json:"links"`
 }
+
+// EnvironmentListDataType defines model for EnvironmentList.Data.Type.
+type EnvironmentListDataType string
+
+// EnvironmentListDataType defines model for EnvironmentList.Data.Type.
+type EnvironmentListDataType string
 
 // EnvironmentResponse defines model for environment_response.
 type EnvironmentResponse struct {
@@ -185,10 +844,13 @@ type EnvironmentResponse struct {
 		} `json:"attributes"`
 
 		// Unique ID of the environment
-		Id   string `json:"id"`
-		Type string `json:"type"`
+		Id   string                      `json:"id"`
+		Type EnvironmentResponseDataType `json:"type"`
 	} `json:"data"`
 }
+
+// EnvironmentResponseDataType defines model for EnvironmentResponse.Data.Type.
+type EnvironmentResponseDataType string
 
 // ErrorsList defines model for errors_list.
 type ErrorsList struct {
@@ -225,14 +887,20 @@ type FunctionalityList struct {
 		} `json:"attributes"`
 
 		// Unique ID of the functionality
-		Id   string `json:"id"`
-		Type string `json:"type"`
+		Id   string                    `json:"id"`
+		Type FunctionalityListDataType `json:"type"`
 	} `json:"data"`
 	Links struct {
 		// Embedded struct due to allOf(#/components/schemas/links)
 		Links `yaml:",inline"`
 	} `json:"links"`
 }
+
+// FunctionalityListDataType defines model for FunctionalityList.Data.Type.
+type FunctionalityListDataType string
+
+// FunctionalityListDataType defines model for FunctionalityList.Data.Type.
+type FunctionalityListDataType string
 
 // FunctionalityResponse defines model for functionality_response.
 type FunctionalityResponse struct {
@@ -243,10 +911,13 @@ type FunctionalityResponse struct {
 		} `json:"attributes"`
 
 		// Unique ID of the functionality
-		Id   string `json:"id"`
-		Type string `json:"type"`
+		Id   string                        `json:"id"`
+		Type FunctionalityResponseDataType `json:"type"`
 	} `json:"data"`
 }
+
+// FunctionalityResponseDataType defines model for FunctionalityResponse.Data.Type.
+type FunctionalityResponseDataType string
 
 // Incident defines model for incident.
 type Incident struct {
@@ -292,10 +963,10 @@ type IncidentActionItem struct {
 	Description *string `json:"description"`
 
 	// The priority of the incident action item
-	Priority *string `json:"priority,omitempty"`
+	Priority *IncidentActionItemPriority `json:"priority,omitempty"`
 
 	// The status of incident the action item
-	Status *string `json:"status,omitempty"`
+	Status *IncidentActionItemStatus `json:"status,omitempty"`
 
 	// The summary of the incident action item
 	Summary string `json:"summary"`
@@ -303,6 +974,12 @@ type IncidentActionItem struct {
 	// Date of last update
 	UpdatedAt string `json:"updated_at"`
 }
+
+// The priority of the incident action item
+type IncidentActionItemPriority string
+
+// The status of incident the action item
+type IncidentActionItemStatus string
 
 // IncidentActionItemList defines model for incident_action_item_list.
 type IncidentActionItemList struct {
@@ -313,14 +990,20 @@ type IncidentActionItemList struct {
 		} `json:"attributes"`
 
 		// Unique ID of the incident action item
-		Id   string `json:"id"`
-		Type string `json:"type"`
+		Id   string                         `json:"id"`
+		Type IncidentActionItemListDataType `json:"type"`
 	} `json:"data"`
 	Links struct {
 		// Embedded struct due to allOf(#/components/schemas/links)
 		Links `yaml:",inline"`
 	} `json:"links"`
 }
+
+// IncidentActionItemListDataType defines model for IncidentActionItemList.Data.Type.
+type IncidentActionItemListDataType string
+
+// IncidentActionItemListDataType defines model for IncidentActionItemList.Data.Type.
+type IncidentActionItemListDataType string
 
 // IncidentActionItemResponse defines model for incident_action_item_response.
 type IncidentActionItemResponse struct {
@@ -331,10 +1014,13 @@ type IncidentActionItemResponse struct {
 		} `json:"attributes"`
 
 		// Unique ID of the incident action item
-		Id   string `json:"id"`
-		Type string `json:"type"`
+		Id   string                             `json:"id"`
+		Type IncidentActionItemResponseDataType `json:"type"`
 	} `json:"data"`
 }
+
+// IncidentActionItemResponseDataType defines model for IncidentActionItemResponse.Data.Type.
+type IncidentActionItemResponseDataType string
 
 // IncidentEvent defines model for incident_event.
 type IncidentEvent struct {
@@ -349,8 +1035,11 @@ type IncidentEvent struct {
 	UpdatedAt string `json:"updated_at"`
 
 	// The visibility of the incident action item
-	Visibility *string `json:"visibility,omitempty"`
+	Visibility *IncidentEventVisibility `json:"visibility,omitempty"`
 }
+
+// The visibility of the incident action item
+type IncidentEventVisibility string
 
 // IncidentEventList defines model for incident_event_list.
 type IncidentEventList struct {
@@ -361,14 +1050,20 @@ type IncidentEventList struct {
 		} `json:"attributes"`
 
 		// Unique ID of the incident event
-		Id   string `json:"id"`
-		Type string `json:"type"`
+		Id   string                    `json:"id"`
+		Type IncidentEventListDataType `json:"type"`
 	} `json:"data"`
 	Links struct {
 		// Embedded struct due to allOf(#/components/schemas/links)
 		Links `yaml:",inline"`
 	} `json:"links"`
 }
+
+// IncidentEventListDataType defines model for IncidentEventList.Data.Type.
+type IncidentEventListDataType string
+
+// IncidentEventListDataType defines model for IncidentEventList.Data.Type.
+type IncidentEventListDataType string
 
 // IncidentEventResponse defines model for incident_event_response.
 type IncidentEventResponse struct {
@@ -379,10 +1074,13 @@ type IncidentEventResponse struct {
 		} `json:"attributes"`
 
 		// Unique ID of the incident event
-		Id   string `json:"id"`
-		Type string `json:"type"`
+		Id   string                        `json:"id"`
+		Type IncidentEventResponseDataType `json:"type"`
 	} `json:"data"`
 }
+
+// IncidentEventResponseDataType defines model for IncidentEventResponse.Data.Type.
+type IncidentEventResponseDataType string
 
 // IncidentList defines model for incident_list.
 type IncidentList struct {
@@ -393,14 +1091,20 @@ type IncidentList struct {
 		} `json:"attributes"`
 
 		// Unique ID of the incident
-		Id   string `json:"id"`
-		Type string `json:"type"`
+		Id   string               `json:"id"`
+		Type IncidentListDataType `json:"type"`
 	} `json:"data"`
 	Links struct {
 		// Embedded struct due to allOf(#/components/schemas/links)
 		Links `yaml:",inline"`
 	} `json:"links"`
 }
+
+// IncidentListDataType defines model for IncidentList.Data.Type.
+type IncidentListDataType string
+
+// IncidentListDataType defines model for IncidentList.Data.Type.
+type IncidentListDataType string
 
 // IncidentPostMortem defines model for incident_post_mortem.
 type IncidentPostMortem struct {
@@ -445,7 +1149,7 @@ type IncidentPostMortem struct {
 	StartedAt *string `json:"started_at"`
 
 	// The status of the incident postmortem
-	Status *string `json:"status,omitempty"`
+	Status *IncidentPostMortemStatus `json:"status,omitempty"`
 
 	// The title of the incident postmortem
 	Title string `json:"title"`
@@ -453,6 +1157,9 @@ type IncidentPostMortem struct {
 	// Date of last update
 	UpdatedAt string `json:"updated_at"`
 }
+
+// The status of the incident postmortem
+type IncidentPostMortemStatus string
 
 // IncidentPostMortemResponse defines model for incident_post_mortem_response.
 type IncidentPostMortemResponse struct {
@@ -463,10 +1170,13 @@ type IncidentPostMortemResponse struct {
 		} `json:"attributes"`
 
 		// Unique ID of the incident postmortem
-		Id   string `json:"id"`
-		Type string `json:"type"`
+		Id   string                             `json:"id"`
+		Type IncidentPostMortemResponseDataType `json:"type"`
 	} `json:"data"`
 }
+
+// IncidentPostMortemResponseDataType defines model for IncidentPostMortemResponse.Data.Type.
+type IncidentPostMortemResponseDataType string
 
 // IncidentResponse defines model for incident_response.
 type IncidentResponse struct {
@@ -477,10 +1187,13 @@ type IncidentResponse struct {
 		} `json:"attributes"`
 
 		// Unique ID of the incident
-		Id   string `json:"id"`
-		Type string `json:"type"`
+		Id   string                   `json:"id"`
+		Type IncidentResponseDataType `json:"type"`
 	} `json:"data"`
 }
+
+// IncidentResponseDataType defines model for IncidentResponse.Data.Type.
+type IncidentResponseDataType string
 
 // IncidentRole defines model for incident_role.
 type IncidentRole struct {
@@ -510,14 +1223,20 @@ type IncidentRoleList struct {
 		} `json:"attributes"`
 
 		// Unique ID of the incident role
-		Id   string `json:"id"`
-		Type string `json:"type"`
+		Id   string                   `json:"id"`
+		Type IncidentRoleListDataType `json:"type"`
 	} `json:"data"`
 	Links struct {
 		// Embedded struct due to allOf(#/components/schemas/links)
 		Links `yaml:",inline"`
 	} `json:"links"`
 }
+
+// IncidentRoleListDataType defines model for IncidentRoleList.Data.Type.
+type IncidentRoleListDataType string
+
+// IncidentRoleListDataType defines model for IncidentRoleList.Data.Type.
+type IncidentRoleListDataType string
 
 // IncidentRoleResponse defines model for incident_role_response.
 type IncidentRoleResponse struct {
@@ -528,10 +1247,13 @@ type IncidentRoleResponse struct {
 		} `json:"attributes"`
 
 		// Unique ID of the incident role
-		Id   string `json:"id"`
-		Type string `json:"type"`
+		Id   string                       `json:"id"`
+		Type IncidentRoleResponseDataType `json:"type"`
 	} `json:"data"`
 }
+
+// IncidentRoleResponseDataType defines model for IncidentRoleResponse.Data.Type.
+type IncidentRoleResponseDataType string
 
 // IncidentTask defines model for incident_task.
 type IncidentTask struct {
@@ -559,14 +1281,20 @@ type IncidentTaskList struct {
 		} `json:"attributes"`
 
 		// Unique ID of the incident task
-		Id   string `json:"id"`
-		Type string `json:"type"`
+		Id   string                   `json:"id"`
+		Type IncidentTaskListDataType `json:"type"`
 	} `json:"data"`
 	Links struct {
 		// Embedded struct due to allOf(#/components/schemas/links)
 		Links `yaml:",inline"`
 	} `json:"links"`
 }
+
+// IncidentTaskListDataType defines model for IncidentTaskList.Data.Type.
+type IncidentTaskListDataType string
+
+// IncidentTaskListDataType defines model for IncidentTaskList.Data.Type.
+type IncidentTaskListDataType string
 
 // IncidentTaskResponse defines model for incident_task_response.
 type IncidentTaskResponse struct {
@@ -577,10 +1305,13 @@ type IncidentTaskResponse struct {
 		} `json:"attributes"`
 
 		// Unique ID of the incident task
-		Id   string `json:"id"`
-		Type string `json:"type"`
+		Id   string                       `json:"id"`
+		Type IncidentTaskResponseDataType `json:"type"`
 	} `json:"data"`
 }
+
+// IncidentTaskResponseDataType defines model for IncidentTaskResponse.Data.Type.
+type IncidentTaskResponseDataType string
 
 // IncidentType defines model for incident_type.
 type IncidentType struct {
@@ -608,14 +1339,20 @@ type IncidentTypeList struct {
 		} `json:"attributes"`
 
 		// Unique ID of the incident type
-		Id   string `json:"id"`
-		Type string `json:"type"`
+		Id   string                   `json:"id"`
+		Type IncidentTypeListDataType `json:"type"`
 	} `json:"data"`
 	Links struct {
 		// Embedded struct due to allOf(#/components/schemas/links)
 		Links `yaml:",inline"`
 	} `json:"links"`
 }
+
+// IncidentTypeListDataType defines model for IncidentTypeList.Data.Type.
+type IncidentTypeListDataType string
+
+// IncidentTypeListDataType defines model for IncidentTypeList.Data.Type.
+type IncidentTypeListDataType string
 
 // IncidentTypeResponse defines model for incident_type_response.
 type IncidentTypeResponse struct {
@@ -626,10 +1363,13 @@ type IncidentTypeResponse struct {
 		} `json:"attributes"`
 
 		// Unique ID of the incident type
-		Id   string `json:"id"`
-		Type string `json:"type"`
+		Id   string                       `json:"id"`
+		Type IncidentTypeResponseDataType `json:"type"`
 	} `json:"data"`
 }
+
+// IncidentTypeResponseDataType defines model for IncidentTypeResponse.Data.Type.
+type IncidentTypeResponseDataType string
 
 // Links defines model for links.
 type Links struct {
@@ -648,9 +1388,12 @@ type MitigateIncident struct {
 			// How was the incident mitigated?
 			MitigationMessage *string `json:"mitigation_message"`
 		} `json:"attributes"`
-		Type string `json:"type"`
+		Type MitigateIncidentDataType `json:"type"`
 	} `json:"data"`
 }
+
+// MitigateIncidentDataType defines model for MitigateIncident.Data.Type.
+type MitigateIncidentDataType string
 
 // NewAlert defines model for new_alert.
 type NewAlert struct {
@@ -660,9 +1403,12 @@ type NewAlert struct {
 			// Alert Id to attach to the incident
 			AlertIds *[]string `json:"alert_ids"`
 		} `json:"attributes"`
-		Type string `json:"type"`
+		Type NewAlertDataType `json:"type"`
 	} `json:"data"`
 }
+
+// NewAlertDataType defines model for NewAlert.Data.Type.
+type NewAlertDataType string
 
 // NewCause defines model for new_cause.
 type NewCause struct {
@@ -675,9 +1421,12 @@ type NewCause struct {
 			// The name of the cause
 			Name string `json:"name"`
 		} `json:"attributes"`
-		Type string `json:"type"`
+		Type NewCauseDataType `json:"type"`
 	} `json:"data"`
 }
+
+// NewCauseDataType defines model for NewCause.Data.Type.
+type NewCauseDataType string
 
 // NewEnvironment defines model for new_environment.
 type NewEnvironment struct {
@@ -691,9 +1440,12 @@ type NewEnvironment struct {
 			// The name of the environment
 			Name string `json:"name"`
 		} `json:"attributes"`
-		Type string `json:"type"`
+		Type NewEnvironmentDataType `json:"type"`
 	} `json:"data"`
 }
+
+// NewEnvironmentDataType defines model for NewEnvironment.Data.Type.
+type NewEnvironmentDataType string
 
 // NewFunctionality defines model for new_functionality.
 type NewFunctionality struct {
@@ -706,9 +1458,12 @@ type NewFunctionality struct {
 			// The name of the functionality
 			Name string `json:"name"`
 		} `json:"attributes"`
-		Type string `json:"type"`
+		Type NewFunctionalityDataType `json:"type"`
 	} `json:"data"`
 }
+
+// NewFunctionalityDataType defines model for NewFunctionality.Data.Type.
+type NewFunctionalityDataType string
 
 // NewIncident defines model for new_incident.
 type NewIncident struct {
@@ -778,9 +1533,12 @@ type NewIncident struct {
 			// The title of the incident
 			Title string `json:"title"`
 		} `json:"attributes"`
-		Type string `json:"type"`
+		Type NewIncidentDataType `json:"type"`
 	} `json:"data"`
 }
+
+// NewIncidentDataType defines model for NewIncident.Data.Type.
+type NewIncidentDataType string
 
 // NewIncidentActionItem defines model for new_incident_action_item.
 type NewIncidentActionItem struct {
@@ -809,17 +1567,26 @@ type NewIncidentActionItem struct {
 			Description *string `json:"description"`
 
 			// The priority of the incident action item
-			Priority *string `json:"priority,omitempty"`
+			Priority *NewIncidentActionItemDataAttributesPriority `json:"priority,omitempty"`
 
 			// The status of incident the action item
-			Status *string `json:"status,omitempty"`
+			Status *NewIncidentActionItemDataAttributesStatus `json:"status,omitempty"`
 
 			// The summary of the incident action item
 			Summary string `json:"summary"`
 		} `json:"attributes"`
-		Type string `json:"type"`
+		Type NewIncidentActionItemDataType `json:"type"`
 	} `json:"data"`
 }
+
+// The priority of the incident action item
+type NewIncidentActionItemDataAttributesPriority string
+
+// The status of incident the action item
+type NewIncidentActionItemDataAttributesStatus string
+
+// NewIncidentActionItemDataType defines model for NewIncidentActionItem.Data.Type.
+type NewIncidentActionItemDataType string
 
 // NewIncidentEvent defines model for new_incident_event.
 type NewIncidentEvent struct {
@@ -830,11 +1597,17 @@ type NewIncidentEvent struct {
 			Event string `json:"event"`
 
 			// The visibility of the incident action item
-			Visibility *string `json:"visibility,omitempty"`
+			Visibility *NewIncidentEventDataAttributesVisibility `json:"visibility,omitempty"`
 		} `json:"attributes"`
-		Type string `json:"type"`
+		Type NewIncidentEventDataType `json:"type"`
 	} `json:"data"`
 }
+
+// The visibility of the incident action item
+type NewIncidentEventDataAttributesVisibility string
+
+// NewIncidentEventDataType defines model for NewIncidentEvent.Data.Type.
+type NewIncidentEventDataType string
 
 // NewIncidentRole defines model for new_incident_role.
 type NewIncidentRole struct {
@@ -850,9 +1623,12 @@ type NewIncidentRole struct {
 			// The summary of the incident role
 			Summary *string `json:"summary"`
 		} `json:"attributes"`
-		Type string `json:"type"`
+		Type NewIncidentRoleDataType `json:"type"`
 	} `json:"data"`
 }
+
+// NewIncidentRoleDataType defines model for NewIncidentRole.Data.Type.
+type NewIncidentRoleDataType string
 
 // NewIncidentTask defines model for new_incident_task.
 type NewIncidentTask struct {
@@ -866,9 +1642,12 @@ type NewIncidentTask struct {
 			// The task of the incident task
 			Task string `json:"task"`
 		} `json:"attributes"`
-		Type string `json:"type"`
+		Type NewIncidentTaskDataType `json:"type"`
 	} `json:"data"`
 }
+
+// NewIncidentTaskDataType defines model for NewIncidentTask.Data.Type.
+type NewIncidentTaskDataType string
 
 // NewIncidentType defines model for new_incident_type.
 type NewIncidentType struct {
@@ -882,9 +1661,12 @@ type NewIncidentType struct {
 			// The name of the incident type
 			Name string `json:"name"`
 		} `json:"attributes"`
-		Type string `json:"type"`
+		Type NewIncidentTypeDataType `json:"type"`
 	} `json:"data"`
 }
+
+// NewIncidentTypeDataType defines model for NewIncidentType.Data.Type.
+type NewIncidentTypeDataType string
 
 // NewPlaybook defines model for new_playbook.
 type NewPlaybook struct {
@@ -897,9 +1679,12 @@ type NewPlaybook struct {
 			// The title of the playbook
 			Title string `json:"title"`
 		} `json:"attributes"`
-		Type string `json:"type"`
+		Type NewPlaybookDataType `json:"type"`
 	} `json:"data"`
 }
+
+// NewPlaybookDataType defines model for NewPlaybook.Data.Type.
+type NewPlaybookDataType string
 
 // NewPlaybookTask defines model for new_playbook_task.
 type NewPlaybookTask struct {
@@ -912,9 +1697,12 @@ type NewPlaybookTask struct {
 			// The task of the incident task
 			Task string `json:"task"`
 		} `json:"attributes"`
-		Type string `json:"type"`
+		Type NewPlaybookTaskDataType `json:"type"`
 	} `json:"data"`
 }
+
+// NewPlaybookTaskDataType defines model for NewPlaybookTask.Data.Type.
+type NewPlaybookTaskDataType string
 
 // NewPostMortemTemplate defines model for new_post_mortem_template.
 type NewPostMortemTemplate struct {
@@ -927,9 +1715,12 @@ type NewPostMortemTemplate struct {
 			// The name of the postmortem template
 			Name string `json:"name"`
 		} `json:"attributes"`
-		Type string `json:"type"`
+		Type NewPostMortemTemplateDataType `json:"type"`
 	} `json:"data"`
 }
+
+// NewPostMortemTemplateDataType defines model for NewPostMortemTemplate.Data.Type.
+type NewPostMortemTemplateDataType string
 
 // NewPulse defines model for new_pulse.
 type NewPulse struct {
@@ -970,9 +1761,12 @@ type NewPulse struct {
 			// The summary of the pulse
 			Summary string `json:"summary"`
 		} `json:"attributes"`
-		Type string `json:"type"`
+		Type NewPulseDataType `json:"type"`
 	} `json:"data"`
 }
+
+// NewPulseDataType defines model for NewPulse.Data.Type.
+type NewPulseDataType string
 
 // NewService defines model for new_service.
 type NewService struct {
@@ -986,9 +1780,12 @@ type NewService struct {
 			// The name of the service
 			Name string `json:"name"`
 		} `json:"attributes"`
-		Type string `json:"type"`
+		Type NewServiceDataType `json:"type"`
 	} `json:"data"`
 }
+
+// NewServiceDataType defines model for NewService.Data.Type.
+type NewServiceDataType string
 
 // NewSeverity defines model for new_severity.
 type NewSeverity struct {
@@ -1003,11 +1800,17 @@ type NewSeverity struct {
 			Name string `json:"name"`
 
 			// The severity of the severity
-			Severity *string `json:"severity,omitempty"`
+			Severity *NewSeverityDataAttributesSeverity `json:"severity,omitempty"`
 		} `json:"attributes"`
-		Type string `json:"type"`
+		Type NewSeverityDataType `json:"type"`
 	} `json:"data"`
 }
+
+// The severity of the severity
+type NewSeverityDataAttributesSeverity string
+
+// NewSeverityDataType defines model for NewSeverity.Data.Type.
+type NewSeverityDataType string
 
 // NewStatusPage defines model for new_status_page.
 type NewStatusPage struct {
@@ -1036,14 +1839,20 @@ type NewStatusPage struct {
 			ShowUptime *bool `json:"show_uptime"`
 
 			// Show uptime over x days
-			ShowUptimeLastDays *int `json:"show_uptime_last_days"`
+			ShowUptimeLastDays *NewStatusPageDataAttributesShowUptimeLastDays `json:"show_uptime_last_days"`
 
 			// The title of the status page
 			Title string `json:"title"`
 		} `json:"attributes"`
-		Type string `json:"type"`
+		Type NewStatusPageDataType `json:"type"`
 	} `json:"data"`
 }
+
+// Show uptime over x days
+type NewStatusPageDataAttributesShowUptimeLastDays int
+
+// NewStatusPageDataType defines model for NewStatusPage.Data.Type.
+type NewStatusPageDataType string
 
 // NewTeam defines model for new_team.
 type NewTeam struct {
@@ -1056,9 +1865,12 @@ type NewTeam struct {
 			// The name of the team
 			Name string `json:"name"`
 		} `json:"attributes"`
-		Type string `json:"type"`
+		Type NewTeamDataType `json:"type"`
 	} `json:"data"`
 }
+
+// NewTeamDataType defines model for NewTeam.Data.Type.
+type NewTeamDataType string
 
 // Playbook defines model for playbook.
 type Playbook struct {
@@ -1085,14 +1897,20 @@ type PlaybookList struct {
 		} `json:"attributes"`
 
 		// Unique ID of the playbook
-		Id   string `json:"id"`
-		Type string `json:"type"`
+		Id   string               `json:"id"`
+		Type PlaybookListDataType `json:"type"`
 	} `json:"data"`
 	Links struct {
 		// Embedded struct due to allOf(#/components/schemas/links)
 		Links `yaml:",inline"`
 	} `json:"links"`
 }
+
+// PlaybookListDataType defines model for PlaybookList.Data.Type.
+type PlaybookListDataType string
+
+// PlaybookListDataType defines model for PlaybookList.Data.Type.
+type PlaybookListDataType string
 
 // PlaybookResponse defines model for playbook_response.
 type PlaybookResponse struct {
@@ -1103,10 +1921,13 @@ type PlaybookResponse struct {
 		} `json:"attributes"`
 
 		// Unique ID of the playbook
-		Id   string `json:"id"`
-		Type string `json:"type"`
+		Id   string                   `json:"id"`
+		Type PlaybookResponseDataType `json:"type"`
 	} `json:"data"`
 }
+
+// PlaybookResponseDataType defines model for PlaybookResponse.Data.Type.
+type PlaybookResponseDataType string
 
 // PlaybookTask defines model for playbook_task.
 type PlaybookTask struct {
@@ -1133,14 +1954,20 @@ type PlaybookTaskList struct {
 		} `json:"attributes"`
 
 		// Unique ID of the incident task
-		Id   string `json:"id"`
-		Type string `json:"type"`
+		Id   string                   `json:"id"`
+		Type PlaybookTaskListDataType `json:"type"`
 	} `json:"data"`
 	Links struct {
 		// Embedded struct due to allOf(#/components/schemas/links)
 		Links `yaml:",inline"`
 	} `json:"links"`
 }
+
+// PlaybookTaskListDataType defines model for PlaybookTaskList.Data.Type.
+type PlaybookTaskListDataType string
+
+// PlaybookTaskListDataType defines model for PlaybookTaskList.Data.Type.
+type PlaybookTaskListDataType string
 
 // PlaybookTaskResponse defines model for playbook_task_response.
 type PlaybookTaskResponse struct {
@@ -1151,10 +1978,13 @@ type PlaybookTaskResponse struct {
 		} `json:"attributes"`
 
 		// Unique ID of the incident task
-		Id   string `json:"id"`
-		Type string `json:"type"`
+		Id   string                       `json:"id"`
+		Type PlaybookTaskResponseDataType `json:"type"`
 	} `json:"data"`
 }
+
+// PlaybookTaskResponseDataType defines model for PlaybookTaskResponse.Data.Type.
+type PlaybookTaskResponseDataType string
 
 // PostMortemTemplate defines model for post_mortem_template.
 type PostMortemTemplate struct {
@@ -1181,14 +2011,20 @@ type PostMortemTemplateList struct {
 		} `json:"attributes"`
 
 		// Unique ID of the post_mortem_template
-		Id   string `json:"id"`
-		Type string `json:"type"`
+		Id   string                         `json:"id"`
+		Type PostMortemTemplateListDataType `json:"type"`
 	} `json:"data"`
 	Links struct {
 		// Embedded struct due to allOf(#/components/schemas/links)
 		Links `yaml:",inline"`
 	} `json:"links"`
 }
+
+// PostMortemTemplateListDataType defines model for PostMortemTemplateList.Data.Type.
+type PostMortemTemplateListDataType string
+
+// PostMortemTemplateListDataType defines model for PostMortemTemplateList.Data.Type.
+type PostMortemTemplateListDataType string
 
 // PostMortemTemplateResponse defines model for post_mortem_template_response.
 type PostMortemTemplateResponse struct {
@@ -1199,10 +2035,13 @@ type PostMortemTemplateResponse struct {
 		} `json:"attributes"`
 
 		// Unique ID of the post_mortem_template
-		Id   string `json:"id"`
-		Type string `json:"type"`
+		Id   string                             `json:"id"`
+		Type PostMortemTemplateResponseDataType `json:"type"`
 	} `json:"data"`
 }
+
+// PostMortemTemplateResponseDataType defines model for PostMortemTemplateResponse.Data.Type.
+type PostMortemTemplateResponseDataType string
 
 // Pulse defines model for pulse.
 type Pulse struct {
@@ -1257,14 +2096,20 @@ type PulseList struct {
 		} `json:"attributes"`
 
 		// Unique ID of the pulse
-		Id   string `json:"id"`
-		Type string `json:"type"`
+		Id   string            `json:"id"`
+		Type PulseListDataType `json:"type"`
 	} `json:"data"`
 	Links struct {
 		// Embedded struct due to allOf(#/components/schemas/links)
 		Links `yaml:",inline"`
 	} `json:"links"`
 }
+
+// PulseListDataType defines model for PulseList.Data.Type.
+type PulseListDataType string
+
+// PulseListDataType defines model for PulseList.Data.Type.
+type PulseListDataType string
 
 // PulseResponse defines model for pulse_response.
 type PulseResponse struct {
@@ -1275,10 +2120,13 @@ type PulseResponse struct {
 		} `json:"attributes"`
 
 		// Unique ID of the pulse
-		Id   string `json:"id"`
-		Type string `json:"type"`
+		Id   string                `json:"id"`
+		Type PulseResponseDataType `json:"type"`
 	} `json:"data"`
 }
+
+// PulseResponseDataType defines model for PulseResponse.Data.Type.
+type PulseResponseDataType string
 
 // ResolveIncident defines model for resolve_incident.
 type ResolveIncident struct {
@@ -1288,9 +2136,12 @@ type ResolveIncident struct {
 			// How was the incident resolved?
 			ResolutionMessage *string `json:"resolution_message"`
 		} `json:"attributes"`
-		Type string `json:"type"`
+		Type ResolveIncidentDataType `json:"type"`
 	} `json:"data"`
 }
+
+// ResolveIncidentDataType defines model for ResolveIncident.Data.Type.
+type ResolveIncidentDataType string
 
 // Service defines model for service.
 type Service struct {
@@ -1318,14 +2169,20 @@ type ServiceList struct {
 		} `json:"attributes"`
 
 		// Unique ID of the service
-		Id   string `json:"id"`
-		Type string `json:"type"`
+		Id   string              `json:"id"`
+		Type ServiceListDataType `json:"type"`
 	} `json:"data"`
 	Links struct {
 		// Embedded struct due to allOf(#/components/schemas/links)
 		Links `yaml:",inline"`
 	} `json:"links"`
 }
+
+// ServiceListDataType defines model for ServiceList.Data.Type.
+type ServiceListDataType string
+
+// ServiceListDataType defines model for ServiceList.Data.Type.
+type ServiceListDataType string
 
 // ServiceResponse defines model for service_response.
 type ServiceResponse struct {
@@ -1336,10 +2193,13 @@ type ServiceResponse struct {
 		} `json:"attributes"`
 
 		// Unique ID of the service
-		Id   string `json:"id"`
-		Type string `json:"type"`
+		Id   string                  `json:"id"`
+		Type ServiceResponseDataType `json:"type"`
 	} `json:"data"`
 }
+
+// ServiceResponseDataType defines model for ServiceResponse.Data.Type.
+type ServiceResponseDataType string
 
 // Severity defines model for severity.
 type Severity struct {
@@ -1355,11 +2215,14 @@ type Severity struct {
 	Name string `json:"name"`
 
 	// The severity of the severity
-	Severity *string `json:"severity,omitempty"`
+	Severity *SeveritySeverity `json:"severity,omitempty"`
 
 	// Date of last update
 	UpdatedAt string `json:"updated_at"`
 }
+
+// The severity of the severity
+type SeveritySeverity string
 
 // SeverityList defines model for severity_list.
 type SeverityList struct {
@@ -1370,14 +2233,20 @@ type SeverityList struct {
 		} `json:"attributes"`
 
 		// Unique ID of the severity
-		Id   string `json:"id"`
-		Type string `json:"type"`
+		Id   string               `json:"id"`
+		Type SeverityListDataType `json:"type"`
 	} `json:"data"`
 	Links struct {
 		// Embedded struct due to allOf(#/components/schemas/links)
 		Links `yaml:",inline"`
 	} `json:"links"`
 }
+
+// SeverityListDataType defines model for SeverityList.Data.Type.
+type SeverityListDataType string
+
+// SeverityListDataType defines model for SeverityList.Data.Type.
+type SeverityListDataType string
 
 // SeverityResponse defines model for severity_response.
 type SeverityResponse struct {
@@ -1388,10 +2257,13 @@ type SeverityResponse struct {
 		} `json:"attributes"`
 
 		// Unique ID of the severity
-		Id   string `json:"id"`
-		Type string `json:"type"`
+		Id   string                   `json:"id"`
+		Type SeverityResponseDataType `json:"type"`
 	} `json:"data"`
 }
+
+// SeverityResponseDataType defines model for SeverityResponse.Data.Type.
+type SeverityResponseDataType string
 
 // StatusPage defines model for status_page.
 type StatusPage struct {
@@ -1421,7 +2293,7 @@ type StatusPage struct {
 	ShowUptime *bool `json:"show_uptime"`
 
 	// Show uptime over x days
-	ShowUptimeLastDays *int `json:"show_uptime_last_days"`
+	ShowUptimeLastDays *StatusPageShowUptimeLastDays `json:"show_uptime_last_days"`
 
 	// The title of the status page
 	Title string `json:"title"`
@@ -1429,6 +2301,9 @@ type StatusPage struct {
 	// Date of last update
 	UpdatedAt string `json:"updated_at"`
 }
+
+// Show uptime over x days
+type StatusPageShowUptimeLastDays int
 
 // StatusPageList defines model for status_page_list.
 type StatusPageList struct {
@@ -1439,14 +2314,20 @@ type StatusPageList struct {
 		} `json:"attributes"`
 
 		// Unique ID of the status page
-		Id   string `json:"id"`
-		Type string `json:"type"`
+		Id   string                 `json:"id"`
+		Type StatusPageListDataType `json:"type"`
 	} `json:"data"`
 	Links struct {
 		// Embedded struct due to allOf(#/components/schemas/links)
 		Links `yaml:",inline"`
 	} `json:"links"`
 }
+
+// StatusPageListDataType defines model for StatusPageList.Data.Type.
+type StatusPageListDataType string
+
+// StatusPageListDataType defines model for StatusPageList.Data.Type.
+type StatusPageListDataType string
 
 // StatusPageResponse defines model for status_page_response.
 type StatusPageResponse struct {
@@ -1457,10 +2338,13 @@ type StatusPageResponse struct {
 		} `json:"attributes"`
 
 		// Unique ID of the status page
-		Id   string `json:"id"`
-		Type string `json:"type"`
+		Id   string                     `json:"id"`
+		Type StatusPageResponseDataType `json:"type"`
 	} `json:"data"`
 }
+
+// StatusPageResponseDataType defines model for StatusPageResponse.Data.Type.
+type StatusPageResponseDataType string
 
 // Team defines model for team.
 type Team struct {
@@ -1487,14 +2371,20 @@ type TeamList struct {
 		} `json:"attributes"`
 
 		// Unique ID of the team
-		Id   string `json:"id"`
-		Type string `json:"type"`
+		Id   string           `json:"id"`
+		Type TeamListDataType `json:"type"`
 	} `json:"data"`
 	Links struct {
 		// Embedded struct due to allOf(#/components/schemas/links)
 		Links `yaml:",inline"`
 	} `json:"links"`
 }
+
+// TeamListDataType defines model for TeamList.Data.Type.
+type TeamListDataType string
+
+// TeamListDataType defines model for TeamList.Data.Type.
+type TeamListDataType string
 
 // TeamResponse defines model for team_response.
 type TeamResponse struct {
@@ -1505,10 +2395,13 @@ type TeamResponse struct {
 		} `json:"attributes"`
 
 		// Unique ID of the team
-		Id   string `json:"id"`
-		Type string `json:"type"`
+		Id   string               `json:"id"`
+		Type TeamResponseDataType `json:"type"`
 	} `json:"data"`
 }
+
+// TeamResponseDataType defines model for TeamResponse.Data.Type.
+type TeamResponseDataType string
 
 // UpdateCause defines model for update_cause.
 type UpdateCause struct {
@@ -1521,9 +2414,12 @@ type UpdateCause struct {
 			// The name of the cause
 			Name *string `json:"name,omitempty"`
 		} `json:"attributes"`
-		Type string `json:"type"`
+		Type UpdateCauseDataType `json:"type"`
 	} `json:"data"`
 }
+
+// UpdateCauseDataType defines model for UpdateCause.Data.Type.
+type UpdateCauseDataType string
 
 // UpdateEnvironment defines model for update_environment.
 type UpdateEnvironment struct {
@@ -1537,9 +2433,12 @@ type UpdateEnvironment struct {
 			// The name of the environment
 			Name *string `json:"name,omitempty"`
 		} `json:"attributes"`
-		Type string `json:"type"`
+		Type UpdateEnvironmentDataType `json:"type"`
 	} `json:"data"`
 }
+
+// UpdateEnvironmentDataType defines model for UpdateEnvironment.Data.Type.
+type UpdateEnvironmentDataType string
 
 // UpdateFunctionality defines model for update_functionality.
 type UpdateFunctionality struct {
@@ -1552,9 +2451,12 @@ type UpdateFunctionality struct {
 			// The name of the functionality
 			Name *string `json:"name,omitempty"`
 		} `json:"attributes"`
-		Type string `json:"type"`
+		Type UpdateFunctionalityDataType `json:"type"`
 	} `json:"data"`
 }
+
+// UpdateFunctionalityDataType defines model for UpdateFunctionality.Data.Type.
+type UpdateFunctionalityDataType string
 
 // UpdateIncident defines model for update_incident.
 type UpdateIncident struct {
@@ -1585,9 +2487,12 @@ type UpdateIncident struct {
 			// The title of the incident
 			Title *string `json:"title,omitempty"`
 		} `json:"attributes"`
-		Type string `json:"type"`
+		Type UpdateIncidentDataType `json:"type"`
 	} `json:"data"`
 }
+
+// UpdateIncidentDataType defines model for UpdateIncident.Data.Type.
+type UpdateIncidentDataType string
 
 // UpdateIncidentActionItem defines model for update_incident_action_item.
 type UpdateIncidentActionItem struct {
@@ -1598,17 +2503,26 @@ type UpdateIncidentActionItem struct {
 			Description *string `json:"description"`
 
 			// The priority of the incident action item
-			Priority *string `json:"priority,omitempty"`
+			Priority *UpdateIncidentActionItemDataAttributesPriority `json:"priority,omitempty"`
 
 			// The status of incident the action item
-			Status *string `json:"status,omitempty"`
+			Status *UpdateIncidentActionItemDataAttributesStatus `json:"status,omitempty"`
 
 			// The summary of the incident action item
 			Summary *string `json:"summary,omitempty"`
 		} `json:"attributes"`
-		Type string `json:"type"`
+		Type UpdateIncidentActionItemDataType `json:"type"`
 	} `json:"data"`
 }
+
+// The priority of the incident action item
+type UpdateIncidentActionItemDataAttributesPriority string
+
+// The status of incident the action item
+type UpdateIncidentActionItemDataAttributesStatus string
+
+// UpdateIncidentActionItemDataType defines model for UpdateIncidentActionItem.Data.Type.
+type UpdateIncidentActionItemDataType string
 
 // UpdateIncidentEvent defines model for update_incident_event.
 type UpdateIncidentEvent struct {
@@ -1619,11 +2533,17 @@ type UpdateIncidentEvent struct {
 			Event *string `json:"event,omitempty"`
 
 			// The visibility of the incident action item
-			Visibility *string `json:"visibility,omitempty"`
+			Visibility *UpdateIncidentEventDataAttributesVisibility `json:"visibility,omitempty"`
 		} `json:"attributes"`
-		Type string `json:"type"`
+		Type UpdateIncidentEventDataType `json:"type"`
 	} `json:"data"`
 }
+
+// The visibility of the incident action item
+type UpdateIncidentEventDataAttributesVisibility string
+
+// UpdateIncidentEventDataType defines model for UpdateIncidentEvent.Data.Type.
+type UpdateIncidentEventDataType string
 
 // UpdateIncidentPostMortem defines model for update_incident_post_mortem.
 type UpdateIncidentPostMortem struct {
@@ -1670,14 +2590,20 @@ type UpdateIncidentPostMortem struct {
 			StartedAt *string `json:"started_at"`
 
 			// The status of the incident postmortem
-			Status *string `json:"status,omitempty"`
+			Status *UpdateIncidentPostMortemDataAttributesStatus `json:"status,omitempty"`
 
 			// The title of the incident postmortem
 			Title *string `json:"title,omitempty"`
 		} `json:"attributes"`
-		Type string `json:"type"`
+		Type UpdateIncidentPostMortemDataType `json:"type"`
 	} `json:"data"`
 }
+
+// The status of the incident postmortem
+type UpdateIncidentPostMortemDataAttributesStatus string
+
+// UpdateIncidentPostMortemDataType defines model for UpdateIncidentPostMortem.Data.Type.
+type UpdateIncidentPostMortemDataType string
 
 // UpdateIncidentRole defines model for update_incident_role.
 type UpdateIncidentRole struct {
@@ -1693,9 +2619,12 @@ type UpdateIncidentRole struct {
 			// The summary of the incident role
 			Summary *string `json:"summary"`
 		} `json:"attributes"`
-		Type string `json:"type"`
+		Type UpdateIncidentRoleDataType `json:"type"`
 	} `json:"data"`
 }
+
+// UpdateIncidentRoleDataType defines model for UpdateIncidentRole.Data.Type.
+type UpdateIncidentRoleDataType string
 
 // UpdateIncidentTask defines model for update_incident_task.
 type UpdateIncidentTask struct {
@@ -1709,9 +2638,12 @@ type UpdateIncidentTask struct {
 			// The task of the incident task
 			Task *string `json:"task,omitempty"`
 		} `json:"attributes"`
-		Type string `json:"type"`
+		Type UpdateIncidentTaskDataType `json:"type"`
 	} `json:"data"`
 }
+
+// UpdateIncidentTaskDataType defines model for UpdateIncidentTask.Data.Type.
+type UpdateIncidentTaskDataType string
 
 // UpdateIncidentType defines model for update_incident_type.
 type UpdateIncidentType struct {
@@ -1725,9 +2657,12 @@ type UpdateIncidentType struct {
 			// The name of the incident type
 			Name *string `json:"name,omitempty"`
 		} `json:"attributes"`
-		Type string `json:"type"`
+		Type UpdateIncidentTypeDataType `json:"type"`
 	} `json:"data"`
 }
+
+// UpdateIncidentTypeDataType defines model for UpdateIncidentType.Data.Type.
+type UpdateIncidentTypeDataType string
 
 // UpdatePlaybook defines model for update_playbook.
 type UpdatePlaybook struct {
@@ -1740,9 +2675,12 @@ type UpdatePlaybook struct {
 			// The title of the playbook
 			Title *string `json:"title,omitempty"`
 		} `json:"attributes"`
-		Type string `json:"type"`
+		Type UpdatePlaybookDataType `json:"type"`
 	} `json:"data"`
 }
+
+// UpdatePlaybookDataType defines model for UpdatePlaybook.Data.Type.
+type UpdatePlaybookDataType string
 
 // UpdatePlaybookTask defines model for update_playbook_task.
 type UpdatePlaybookTask struct {
@@ -1755,9 +2693,12 @@ type UpdatePlaybookTask struct {
 			// The task of the incident task
 			Task *string `json:"task,omitempty"`
 		} `json:"attributes"`
-		Type string `json:"type"`
+		Type UpdatePlaybookTaskDataType `json:"type"`
 	} `json:"data"`
 }
+
+// UpdatePlaybookTaskDataType defines model for UpdatePlaybookTask.Data.Type.
+type UpdatePlaybookTaskDataType string
 
 // UpdatePostMortemTemplate defines model for update_post_mortem_template.
 type UpdatePostMortemTemplate struct {
@@ -1770,9 +2711,12 @@ type UpdatePostMortemTemplate struct {
 			// The name of the postmortem template
 			Name *string `json:"name,omitempty"`
 		} `json:"attributes"`
-		Type string `json:"type"`
+		Type UpdatePostMortemTemplateDataType `json:"type"`
 	} `json:"data"`
 }
+
+// UpdatePostMortemTemplateDataType defines model for UpdatePostMortemTemplate.Data.Type.
+type UpdatePostMortemTemplateDataType string
 
 // UpdatePulse defines model for update_pulse.
 type UpdatePulse struct {
@@ -1813,9 +2757,12 @@ type UpdatePulse struct {
 			// The summary of the pulse
 			Summary *string `json:"summary,omitempty"`
 		} `json:"attributes"`
-		Type *string `json:"type,omitempty"`
+		Type *UpdatePulseDataType `json:"type,omitempty"`
 	} `json:"data"`
 }
+
+// UpdatePulseDataType defines model for UpdatePulse.Data.Type.
+type UpdatePulseDataType string
 
 // UpdateService defines model for update_service.
 type UpdateService struct {
@@ -1829,9 +2776,12 @@ type UpdateService struct {
 			// The name of the service
 			Name *string `json:"name,omitempty"`
 		} `json:"attributes"`
-		Type string `json:"type"`
+		Type UpdateServiceDataType `json:"type"`
 	} `json:"data"`
 }
+
+// UpdateServiceDataType defines model for UpdateService.Data.Type.
+type UpdateServiceDataType string
 
 // UpdateSeverity defines model for update_severity.
 type UpdateSeverity struct {
@@ -1846,11 +2796,17 @@ type UpdateSeverity struct {
 			Name *string `json:"name,omitempty"`
 
 			// The severity of the severity
-			Severity *string `json:"severity,omitempty"`
+			Severity *UpdateSeverityDataAttributesSeverity `json:"severity,omitempty"`
 		} `json:"attributes"`
-		Type string `json:"type"`
+		Type UpdateSeverityDataType `json:"type"`
 	} `json:"data"`
 }
+
+// The severity of the severity
+type UpdateSeverityDataAttributesSeverity string
+
+// UpdateSeverityDataType defines model for UpdateSeverity.Data.Type.
+type UpdateSeverityDataType string
 
 // UpdateStatusPage defines model for update_status_page.
 type UpdateStatusPage struct {
@@ -1879,14 +2835,20 @@ type UpdateStatusPage struct {
 			ShowUptime *bool `json:"show_uptime"`
 
 			// Show uptime over x days
-			ShowUptimeLastDays *int `json:"show_uptime_last_days"`
+			ShowUptimeLastDays *UpdateStatusPageDataAttributesShowUptimeLastDays `json:"show_uptime_last_days"`
 
 			// The title of the status page
 			Title *string `json:"title,omitempty"`
 		} `json:"attributes"`
-		Type string `json:"type"`
+		Type UpdateStatusPageDataType `json:"type"`
 	} `json:"data"`
 }
+
+// Show uptime over x days
+type UpdateStatusPageDataAttributesShowUptimeLastDays int
+
+// UpdateStatusPageDataType defines model for UpdateStatusPage.Data.Type.
+type UpdateStatusPageDataType string
 
 // UpdateTeam defines model for update_team.
 type UpdateTeam struct {
@@ -1899,9 +2861,12 @@ type UpdateTeam struct {
 			// The name of the team
 			Name *string `json:"name,omitempty"`
 		} `json:"attributes"`
-		Type string `json:"type"`
+		Type UpdateTeamDataType `json:"type"`
 	} `json:"data"`
 }
+
+// UpdateTeamDataType defines model for UpdateTeam.Data.Type.
+type UpdateTeamDataType string
 
 // ListAlertsParams defines parameters for ListAlerts.
 type ListAlertsParams struct {
@@ -14501,9 +15466,9 @@ var swaggerSpec = []string{
 	"gCMOrg5x0HWS4DigBzyXrhPkAdX3ovvc4iLq2G09P5Hu/y8AAP//xb5V1BZmBQA=",
 }
 
-// GetSwagger returns the Swagger specification corresponding to the generated code
-// in this file.
-func GetSwagger() (*openapi3.Swagger, error) {
+// GetSwagger returns the content of the embedded swagger specification file
+// or error if failed to decode
+func decodeSpec() ([]byte, error) {
 	zipped, err := base64.StdEncoding.DecodeString(strings.Join(swaggerSpec, ""))
 	if err != nil {
 		return nil, fmt.Errorf("error base64 decoding spec: %s", err)
@@ -14518,10 +15483,58 @@ func GetSwagger() (*openapi3.Swagger, error) {
 		return nil, fmt.Errorf("error decompressing spec: %s", err)
 	}
 
-	swagger, err := openapi3.NewSwaggerLoader().LoadSwaggerFromData(buf.Bytes())
-	if err != nil {
-		return nil, fmt.Errorf("error loading Swagger: %s", err)
+	return buf.Bytes(), nil
+}
+
+var rawSpec = decodeSpecCached()
+
+// a naive cached of a decoded swagger spec
+func decodeSpecCached() func() ([]byte, error) {
+	data, err := decodeSpec()
+	return func() ([]byte, error) {
+		return data, err
 	}
-	return swagger, nil
+}
+
+// Constructs a synthetic filesystem for resolving external references when loading openapi specifications.
+func PathToRawSpec(pathToFile string) map[string]func() ([]byte, error) {
+	var res = make(map[string]func() ([]byte, error))
+	if len(pathToFile) > 0 {
+		res[pathToFile] = rawSpec
+	}
+
+	return res
+}
+
+// GetSwagger returns the Swagger specification corresponding to the generated code
+// in this file. The external references of Swagger specification are resolved.
+// The logic of resolving external references is tightly connected to "import-mapping" feature.
+// Externally referenced files must be embedded in the corresponding golang packages.
+// Urls can be supported but this task was out of the scope.
+func GetSwagger() (swagger *openapi3.Swagger, err error) {
+	var resolvePath = PathToRawSpec("")
+
+	loader := openapi3.NewSwaggerLoader()
+	loader.IsExternalRefsAllowed = true
+	loader.ReadFromURIFunc = func(loader *openapi3.SwaggerLoader, url *url.URL) ([]byte, error) {
+		var pathToFile = url.String()
+		pathToFile = path.Clean(pathToFile)
+		getSpec, ok := resolvePath[pathToFile]
+		if !ok {
+			err1 := fmt.Errorf("path not found: %s", pathToFile)
+			return nil, err1
+		}
+		return getSpec()
+	}
+	var specData []byte
+	specData, err = rawSpec()
+	if err != nil {
+		return
+	}
+	swagger, err = loader.LoadSwaggerFromData(specData)
+	if err != nil {
+		return
+	}
+	return
 }
 
