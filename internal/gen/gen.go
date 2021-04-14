@@ -88,4 +88,7 @@ func cleanUp() {
 		log.Fatal("Failed to delete ", swaggerFile, "\n\n", err)
 	}
 	log.Println("Removed swagger.json")
+	log.Println(
+		"You might need to remove duplites in the generated file (see https://github.com/deepmap/oapi-codegen/pull/200 for more info)",
+	)
 }
