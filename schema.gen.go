@@ -3299,17 +3299,17 @@ type ClientInterface interface {
 	// AttachAlert request with any body
 	AttachAlertWithBody(ctx context.Context, incidentId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// ListIncidentEvents request
-	ListIncidentEvents(ctx context.Context, incidentId string, params *ListIncidentEventsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateIncidentEvent request with any body
-	CreateIncidentEventWithBody(ctx context.Context, incidentId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
 	// ListIncidentTasks request
 	ListIncidentTasks(ctx context.Context, incidentId string, params *ListIncidentTasksParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// CreateIncidentTask request with any body
 	CreateIncidentTaskWithBody(ctx context.Context, incidentId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// ListIncidentEvents request
+	ListIncidentEvents(ctx context.Context, incidentId string, params *ListIncidentEventsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// CreateIncidentEvent request with any body
+	CreateIncidentEventWithBody(ctx context.Context, incidentId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// DeletePlaybookTask request
 	DeletePlaybookTask(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -3972,30 +3972,6 @@ func (c *Client) AttachAlertWithBody(ctx context.Context, incidentId string, con
 	return c.Client.Do(req)
 }
 
-func (c *Client) ListIncidentEvents(ctx context.Context, incidentId string, params *ListIncidentEventsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewListIncidentEventsRequest(c.Server, incidentId, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-func (c *Client) CreateIncidentEventWithBody(ctx context.Context, incidentId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateIncidentEventRequestWithBody(c.Server, incidentId, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
 func (c *Client) ListIncidentTasks(ctx context.Context, incidentId string, params *ListIncidentTasksParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewListIncidentTasksRequest(c.Server, incidentId, params)
 	if err != nil {
@@ -4010,6 +3986,30 @@ func (c *Client) ListIncidentTasks(ctx context.Context, incidentId string, param
 
 func (c *Client) CreateIncidentTaskWithBody(ctx context.Context, incidentId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewCreateIncidentTaskRequestWithBody(c.Server, incidentId, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) ListIncidentEvents(ctx context.Context, incidentId string, params *ListIncidentEventsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewListIncidentEventsRequest(c.Server, incidentId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) CreateIncidentEventWithBody(ctx context.Context, incidentId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateIncidentEventRequestWithBody(c.Server, incidentId, contentType, body)
 	if err != nil {
 		return nil, err
 	}
@@ -8422,17 +8422,17 @@ type ClientWithResponsesInterface interface {
 	// AttachAlert request with any body
 	AttachAlertWithBodyWithResponse(ctx context.Context, incidentId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*AttachAlertResponse, error)
 
-	// ListIncidentEvents request
-	ListIncidentEventsWithResponse(ctx context.Context, incidentId string, params *ListIncidentEventsParams, reqEditors ...RequestEditorFn) (*ListIncidentEventsResponse, error)
-
-	// CreateIncidentEvent request with any body
-	CreateIncidentEventWithBodyWithResponse(ctx context.Context, incidentId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateIncidentEventResponse, error)
-
 	// ListIncidentTasks request
 	ListIncidentTasksWithResponse(ctx context.Context, incidentId string, params *ListIncidentTasksParams, reqEditors ...RequestEditorFn) (*ListIncidentTasksResponse, error)
 
 	// CreateIncidentTask request with any body
 	CreateIncidentTaskWithBodyWithResponse(ctx context.Context, incidentId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateIncidentTaskResponse, error)
+
+	// ListIncidentEvents request
+	ListIncidentEventsWithResponse(ctx context.Context, incidentId string, params *ListIncidentEventsParams, reqEditors ...RequestEditorFn) (*ListIncidentEventsResponse, error)
+
+	// CreateIncidentEvent request with any body
+	CreateIncidentEventWithBodyWithResponse(ctx context.Context, incidentId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateIncidentEventResponse, error)
 
 	// DeletePlaybookTask request
 	DeletePlaybookTaskWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*DeletePlaybookTaskResponse, error)
@@ -10895,24 +10895,6 @@ func (c *ClientWithResponses) AttachAlertWithBodyWithResponse(ctx context.Contex
 	return ParseAttachAlertResponse(rsp)
 }
 
-// ListIncidentEventsWithResponse request returning *ListIncidentEventsResponse
-func (c *ClientWithResponses) ListIncidentEventsWithResponse(ctx context.Context, incidentId string, params *ListIncidentEventsParams, reqEditors ...RequestEditorFn) (*ListIncidentEventsResponse, error) {
-	rsp, err := c.ListIncidentEvents(ctx, incidentId, params, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseListIncidentEventsResponse(rsp)
-}
-
-// CreateIncidentEventWithBodyWithResponse request with arbitrary body returning *CreateIncidentEventResponse
-func (c *ClientWithResponses) CreateIncidentEventWithBodyWithResponse(ctx context.Context, incidentId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateIncidentEventResponse, error) {
-	rsp, err := c.CreateIncidentEventWithBody(ctx, incidentId, contentType, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseCreateIncidentEventResponse(rsp)
-}
-
 // ListIncidentTasksWithResponse request returning *ListIncidentTasksResponse
 func (c *ClientWithResponses) ListIncidentTasksWithResponse(ctx context.Context, incidentId string, params *ListIncidentTasksParams, reqEditors ...RequestEditorFn) (*ListIncidentTasksResponse, error) {
 	rsp, err := c.ListIncidentTasks(ctx, incidentId, params, reqEditors...)
@@ -10929,6 +10911,24 @@ func (c *ClientWithResponses) CreateIncidentTaskWithBodyWithResponse(ctx context
 		return nil, err
 	}
 	return ParseCreateIncidentTaskResponse(rsp)
+}
+
+// ListIncidentEventsWithResponse request returning *ListIncidentEventsResponse
+func (c *ClientWithResponses) ListIncidentEventsWithResponse(ctx context.Context, incidentId string, params *ListIncidentEventsParams, reqEditors ...RequestEditorFn) (*ListIncidentEventsResponse, error) {
+	rsp, err := c.ListIncidentEvents(ctx, incidentId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseListIncidentEventsResponse(rsp)
+}
+
+// CreateIncidentEventWithBodyWithResponse request with arbitrary body returning *CreateIncidentEventResponse
+func (c *ClientWithResponses) CreateIncidentEventWithBodyWithResponse(ctx context.Context, incidentId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateIncidentEventResponse, error) {
+	rsp, err := c.CreateIncidentEventWithBody(ctx, incidentId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateIncidentEventResponse(rsp)
 }
 
 // DeletePlaybookTaskWithResponse request returning *DeletePlaybookTaskResponse
