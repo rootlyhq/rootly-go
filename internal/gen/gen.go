@@ -22,10 +22,10 @@ func main() {
 	cleanUp()
 }
 
-// Get the swagger config from rootly.io/api
+// Get the swagger config from rootly.com/api
 func getSwaggerConfig() {
 	// Making request
-	log.Println("Getting latest swagger config from rootly.io/api")
+	log.Println("Getting latest swagger config from rootly.com/api")
 	resp, err := http.Get(swaggerURL)
 	if err != nil {
 		log.Fatal("Failed to get latest swagger config from ", swaggerURL, "\n\n", err)
@@ -39,7 +39,7 @@ func getSwaggerConfig() {
 			resp.Status,
 		)
 	}
-	log.Println("Got latest swagger data from rootly.io/api")
+	log.Println("Got latest swagger data from rootly.com/api")
 
 	// Decoding the body
 	body, err := ioutil.ReadAll(resp.Body)
