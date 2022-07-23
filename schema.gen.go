@@ -760,21 +760,21 @@ const (
 
 // Defines values for DashboardPanelParamsDatasetsFilterRulesCondition.
 const (
-	DashboardPanelParamsDatasetsFilterRulesCondition DashboardPanelParamsDatasetsFilterRulesCondition = "="
+	DashboardPanelParamsDatasetsFilterRulesCondition string = "="
 
-	DashboardPanelParamsDatasetsFilterRulesCondition1 DashboardPanelParamsDatasetsFilterRulesCondition = "!="
+	DashboardPanelParamsDatasetsFilterRulesCondition1 string = "!="
 
-	DashboardPanelParamsDatasetsFilterRulesCondition2 DashboardPanelParamsDatasetsFilterRulesCondition = ">="
+	DashboardPanelParamsDatasetsFilterRulesCondition2 string = ">="
 
-	DashboardPanelParamsDatasetsFilterRulesCondition3 DashboardPanelParamsDatasetsFilterRulesCondition = "<="
+	DashboardPanelParamsDatasetsFilterRulesCondition3 string = "<="
 
-	DashboardPanelParamsDatasetsFilterRulesConditionContains DashboardPanelParamsDatasetsFilterRulesCondition = "contains"
+	DashboardPanelParamsDatasetsFilterRulesConditionContains string = "contains"
 
-	DashboardPanelParamsDatasetsFilterRulesConditionExists DashboardPanelParamsDatasetsFilterRulesCondition = "exists"
+	DashboardPanelParamsDatasetsFilterRulesConditionExists string = "exists"
 
-	DashboardPanelParamsDatasetsFilterRulesConditionNotContains DashboardPanelParamsDatasetsFilterRulesCondition = "not_contains"
+	DashboardPanelParamsDatasetsFilterRulesConditionNotContains string = "not_contains"
 
-	DashboardPanelParamsDatasetsFilterRulesConditionNotExists DashboardPanelParamsDatasetsFilterRulesCondition = "not_exists"
+	DashboardPanelParamsDatasetsFilterRulesConditionNotExists string = "not_exists"
 )
 
 // Defines values for DashboardPanelParamsDatasetsFilterRulesOperation.
@@ -1373,21 +1373,21 @@ const (
 
 // Defines values for NewDashboardPanelDataAttributesParamsDatasetsFilterRulesCondition.
 const (
-	NewDashboardPanelDataAttributesParamsDatasetsFilterRulesCondition NewDashboardPanelDataAttributesParamsDatasetsFilterRulesCondition = "="
+	NewDashboardPanelDataAttributesParamsDatasetsFilterRulesCondition string = "="
 
-	NewDashboardPanelDataAttributesParamsDatasetsFilterRulesCondition1 NewDashboardPanelDataAttributesParamsDatasetsFilterRulesCondition = "!="
+	NewDashboardPanelDataAttributesParamsDatasetsFilterRulesCondition1 string = "!="
 
-	NewDashboardPanelDataAttributesParamsDatasetsFilterRulesCondition2 NewDashboardPanelDataAttributesParamsDatasetsFilterRulesCondition = ">="
+	NewDashboardPanelDataAttributesParamsDatasetsFilterRulesCondition2 string = ">="
 
-	NewDashboardPanelDataAttributesParamsDatasetsFilterRulesCondition3 NewDashboardPanelDataAttributesParamsDatasetsFilterRulesCondition = "<="
+	NewDashboardPanelDataAttributesParamsDatasetsFilterRulesCondition3 string = "<="
 
-	NewDashboardPanelDataAttributesParamsDatasetsFilterRulesConditionContains NewDashboardPanelDataAttributesParamsDatasetsFilterRulesCondition = "contains"
+	NewDashboardPanelDataAttributesParamsDatasetsFilterRulesConditionContains string = "contains"
 
-	NewDashboardPanelDataAttributesParamsDatasetsFilterRulesConditionExists NewDashboardPanelDataAttributesParamsDatasetsFilterRulesCondition = "exists"
+	NewDashboardPanelDataAttributesParamsDatasetsFilterRulesConditionExists string = "exists"
 
-	NewDashboardPanelDataAttributesParamsDatasetsFilterRulesConditionNotContains NewDashboardPanelDataAttributesParamsDatasetsFilterRulesCondition = "not_contains"
+	NewDashboardPanelDataAttributesParamsDatasetsFilterRulesConditionNotContains string = "not_contains"
 
-	NewDashboardPanelDataAttributesParamsDatasetsFilterRulesConditionNotExists NewDashboardPanelDataAttributesParamsDatasetsFilterRulesCondition = "not_exists"
+	NewDashboardPanelDataAttributesParamsDatasetsFilterRulesConditionNotExists string = "not_exists"
 )
 
 // Defines values for NewDashboardPanelDataAttributesParamsDatasetsFilterRulesOperation.
@@ -2121,21 +2121,21 @@ const (
 
 // Defines values for UpdateDashboardPanelDataAttributesParamsDatasetsFilterRulesCondition.
 const (
-	UpdateDashboardPanelDataAttributesParamsDatasetsFilterRulesCondition UpdateDashboardPanelDataAttributesParamsDatasetsFilterRulesCondition = "="
+	UpdateDashboardPanelDataAttributesParamsDatasetsFilterRulesCondition string = "="
 
-	UpdateDashboardPanelDataAttributesParamsDatasetsFilterRulesCondition1 UpdateDashboardPanelDataAttributesParamsDatasetsFilterRulesCondition = "!="
+	UpdateDashboardPanelDataAttributesParamsDatasetsFilterRulesCondition1 string = "!="
 
-	UpdateDashboardPanelDataAttributesParamsDatasetsFilterRulesCondition2 UpdateDashboardPanelDataAttributesParamsDatasetsFilterRulesCondition = ">="
+	UpdateDashboardPanelDataAttributesParamsDatasetsFilterRulesCondition2 string = ">="
 
-	UpdateDashboardPanelDataAttributesParamsDatasetsFilterRulesCondition3 UpdateDashboardPanelDataAttributesParamsDatasetsFilterRulesCondition = "<="
+	UpdateDashboardPanelDataAttributesParamsDatasetsFilterRulesCondition3 string = "<="
 
-	UpdateDashboardPanelDataAttributesParamsDatasetsFilterRulesConditionContains UpdateDashboardPanelDataAttributesParamsDatasetsFilterRulesCondition = "contains"
+	UpdateDashboardPanelDataAttributesParamsDatasetsFilterRulesConditionContains string = "contains"
 
-	UpdateDashboardPanelDataAttributesParamsDatasetsFilterRulesConditionExists UpdateDashboardPanelDataAttributesParamsDatasetsFilterRulesCondition = "exists"
+	UpdateDashboardPanelDataAttributesParamsDatasetsFilterRulesConditionExists string = "exists"
 
-	UpdateDashboardPanelDataAttributesParamsDatasetsFilterRulesConditionNotContains UpdateDashboardPanelDataAttributesParamsDatasetsFilterRulesCondition = "not_contains"
+	UpdateDashboardPanelDataAttributesParamsDatasetsFilterRulesConditionNotContains string = "not_contains"
 
-	UpdateDashboardPanelDataAttributesParamsDatasetsFilterRulesConditionNotExists UpdateDashboardPanelDataAttributesParamsDatasetsFilterRulesCondition = "not_exists"
+	UpdateDashboardPanelDataAttributesParamsDatasetsFilterRulesConditionNotExists string = "not_exists"
 )
 
 // Defines values for UpdateDashboardPanelDataAttributesParamsDatasetsFilterRulesOperation.
@@ -3879,9 +3879,9 @@ type DashboardPanel struct {
 			Filter     *[]struct {
 				Operation *DashboardPanelParamsDatasetsFilterOperation `json:"operation,omitempty"`
 				Rules     *[]struct {
-					Condition *DashboardPanelParamsDatasetsFilterRulesCondition `json:"condition,omitempty"`
+					Condition *string `json:"condition,omitempty"`
 					Key       *string                                           `json:"key,omitempty"`
-					Operation *DashboardPanelParamsDatasetsFilterRulesOperation `json:"operation,omitempty"`
+					Operation *string `json:"operation,omitempty"`
 					Value     *string                                           `json:"value,omitempty"`
 				} `json:"rules,omitempty"`
 			} `json:"filter,omitempty"`
@@ -3906,9 +3906,6 @@ type DashboardPanelParamsDatasetsCollection string
 
 // DashboardPanelParamsDatasetsFilterOperation defines model for DashboardPanel.Params.Datasets.Filter.Operation.
 type DashboardPanelParamsDatasetsFilterOperation string
-
-// DashboardPanelParamsDatasetsFilterRulesCondition defines model for DashboardPanel.Params.Datasets.Filter.Rules.Condition.
-type DashboardPanelParamsDatasetsFilterRulesCondition string
 
 // DashboardPanelParamsDatasetsFilterRulesOperation defines model for DashboardPanel.Params.Datasets.Filter.Rules.Operation.
 type DashboardPanelParamsDatasetsFilterRulesOperation string
@@ -5133,9 +5130,9 @@ type NewDashboardPanel struct {
 					Filter     *[]struct {
 						Operation *NewDashboardPanelDataAttributesParamsDatasetsFilterOperation `json:"operation,omitempty"`
 						Rules     *[]struct {
-							Condition *NewDashboardPanelDataAttributesParamsDatasetsFilterRulesCondition `json:"condition,omitempty"`
+							Condition *string `json:"condition,omitempty"`
 							Key       *string                                                            `json:"key,omitempty"`
-							Operation *NewDashboardPanelDataAttributesParamsDatasetsFilterRulesOperation `json:"operation,omitempty"`
+							Operation *string `json:"operation,omitempty"`
 							Value     *string                                                            `json:"value,omitempty"`
 						} `json:"rules,omitempty"`
 					} `json:"filter,omitempty"`
@@ -5163,9 +5160,6 @@ type NewDashboardPanelDataAttributesParamsDatasetsCollection string
 
 // NewDashboardPanelDataAttributesParamsDatasetsFilterOperation defines model for NewDashboardPanel.Data.Attributes.Params.Datasets.Filter.Operation.
 type NewDashboardPanelDataAttributesParamsDatasetsFilterOperation string
-
-// NewDashboardPanelDataAttributesParamsDatasetsFilterRulesCondition defines model for NewDashboardPanel.Data.Attributes.Params.Datasets.Filter.Rules.Condition.
-type NewDashboardPanelDataAttributesParamsDatasetsFilterRulesCondition string
 
 // NewDashboardPanelDataAttributesParamsDatasetsFilterRulesOperation defines model for NewDashboardPanel.Data.Attributes.Params.Datasets.Filter.Rules.Operation.
 type NewDashboardPanelDataAttributesParamsDatasetsFilterRulesOperation string
@@ -6907,9 +6901,9 @@ type UpdateDashboardPanel struct {
 					Filter     *[]struct {
 						Operation *UpdateDashboardPanelDataAttributesParamsDatasetsFilterOperation `json:"operation,omitempty"`
 						Rules     *[]struct {
-							Condition *UpdateDashboardPanelDataAttributesParamsDatasetsFilterRulesCondition `json:"condition,omitempty"`
+							Condition *string `json:"condition,omitempty"`
 							Key       *string                                                               `json:"key,omitempty"`
-							Operation *UpdateDashboardPanelDataAttributesParamsDatasetsFilterRulesOperation `json:"operation,omitempty"`
+							Operation *string `json:"operation,omitempty"`
 							Value     *string                                                               `json:"value,omitempty"`
 						} `json:"rules,omitempty"`
 					} `json:"filter,omitempty"`
@@ -6937,9 +6931,6 @@ type UpdateDashboardPanelDataAttributesParamsDatasetsCollection string
 
 // UpdateDashboardPanelDataAttributesParamsDatasetsFilterOperation defines model for UpdateDashboardPanel.Data.Attributes.Params.Datasets.Filter.Operation.
 type UpdateDashboardPanelDataAttributesParamsDatasetsFilterOperation string
-
-// UpdateDashboardPanelDataAttributesParamsDatasetsFilterRulesCondition defines model for UpdateDashboardPanel.Data.Attributes.Params.Datasets.Filter.Rules.Condition.
-type UpdateDashboardPanelDataAttributesParamsDatasetsFilterRulesCondition string
 
 // UpdateDashboardPanelDataAttributesParamsDatasetsFilterRulesOperation defines model for UpdateDashboardPanel.Data.Attributes.Params.Datasets.Filter.Rules.Operation.
 type UpdateDashboardPanelDataAttributesParamsDatasetsFilterRulesOperation string
