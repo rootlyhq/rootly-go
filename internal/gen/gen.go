@@ -13,7 +13,7 @@ import (
 const (
 	binaryName  = "oapi-codegen"
 	swaggerFile = "swagger.json"
-	swaggerURL  = "https://rootly.com/swagger/v1/swagger.json"
+	swaggerURL  = "https://rootly-heroku.s3.amazonaws.com/swagger/v1/swagger.json"
 )
 
 func main() {
