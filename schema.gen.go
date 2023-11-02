@@ -10,7 +10,6 @@ import (
 	"encoding/base64"
 	"fmt"
 	"io"
-	"io/ioutil"
 	"net/http"
 	"net/url"
 	"path"
@@ -1347,21 +1346,21 @@ const (
 
 // Defines values for DashboardPanelParamsDatasetsFilterRulesCondition.
 const (
-	DashboardPanelParamsDatasetsFilterRulesCondition DashboardPanelParamsDatasetsFilterRulesCondition = "="
+	DashboardPanelParamsDatasetsFilterRulesCondition string = "="
 
-	DashboardPanelParamsDatasetsFilterRulesCondition1 DashboardPanelParamsDatasetsFilterRulesCondition = "!="
+	DashboardPanelParamsDatasetsFilterRulesCondition1 string = "!="
 
-	DashboardPanelParamsDatasetsFilterRulesCondition2 DashboardPanelParamsDatasetsFilterRulesCondition = ">="
+	DashboardPanelParamsDatasetsFilterRulesCondition2 string = ">="
 
-	DashboardPanelParamsDatasetsFilterRulesCondition3 DashboardPanelParamsDatasetsFilterRulesCondition = "<="
+	DashboardPanelParamsDatasetsFilterRulesCondition3 string = "<="
 
-	DashboardPanelParamsDatasetsFilterRulesConditionContains DashboardPanelParamsDatasetsFilterRulesCondition = "contains"
+	DashboardPanelParamsDatasetsFilterRulesConditionContains string = "contains"
 
-	DashboardPanelParamsDatasetsFilterRulesConditionExists DashboardPanelParamsDatasetsFilterRulesCondition = "exists"
+	DashboardPanelParamsDatasetsFilterRulesConditionExists string = "exists"
 
-	DashboardPanelParamsDatasetsFilterRulesConditionNotContains DashboardPanelParamsDatasetsFilterRulesCondition = "not_contains"
+	DashboardPanelParamsDatasetsFilterRulesConditionNotContains string = "not_contains"
 
-	DashboardPanelParamsDatasetsFilterRulesConditionNotExists DashboardPanelParamsDatasetsFilterRulesCondition = "not_exists"
+	DashboardPanelParamsDatasetsFilterRulesConditionNotExists string = "not_exists"
 )
 
 // Defines values for DashboardPanelParamsDatasetsFilterRulesOperation.
@@ -2282,21 +2281,21 @@ const (
 
 // Defines values for NewDashboardPanelDataAttributesParamsDatasetsFilterRulesCondition.
 const (
-	NewDashboardPanelDataAttributesParamsDatasetsFilterRulesCondition NewDashboardPanelDataAttributesParamsDatasetsFilterRulesCondition = "="
+	NewDashboardPanelDataAttributesParamsDatasetsFilterRulesCondition string = "="
 
-	NewDashboardPanelDataAttributesParamsDatasetsFilterRulesCondition1 NewDashboardPanelDataAttributesParamsDatasetsFilterRulesCondition = "!="
+	NewDashboardPanelDataAttributesParamsDatasetsFilterRulesCondition1 string = "!="
 
-	NewDashboardPanelDataAttributesParamsDatasetsFilterRulesCondition2 NewDashboardPanelDataAttributesParamsDatasetsFilterRulesCondition = ">="
+	NewDashboardPanelDataAttributesParamsDatasetsFilterRulesCondition2 string = ">="
 
-	NewDashboardPanelDataAttributesParamsDatasetsFilterRulesCondition3 NewDashboardPanelDataAttributesParamsDatasetsFilterRulesCondition = "<="
+	NewDashboardPanelDataAttributesParamsDatasetsFilterRulesCondition3 string = "<="
 
-	NewDashboardPanelDataAttributesParamsDatasetsFilterRulesConditionContains NewDashboardPanelDataAttributesParamsDatasetsFilterRulesCondition = "contains"
+	NewDashboardPanelDataAttributesParamsDatasetsFilterRulesConditionContains string = "contains"
 
-	NewDashboardPanelDataAttributesParamsDatasetsFilterRulesConditionExists NewDashboardPanelDataAttributesParamsDatasetsFilterRulesCondition = "exists"
+	NewDashboardPanelDataAttributesParamsDatasetsFilterRulesConditionExists string = "exists"
 
-	NewDashboardPanelDataAttributesParamsDatasetsFilterRulesConditionNotContains NewDashboardPanelDataAttributesParamsDatasetsFilterRulesCondition = "not_contains"
+	NewDashboardPanelDataAttributesParamsDatasetsFilterRulesConditionNotContains string = "not_contains"
 
-	NewDashboardPanelDataAttributesParamsDatasetsFilterRulesConditionNotExists NewDashboardPanelDataAttributesParamsDatasetsFilterRulesCondition = "not_exists"
+	NewDashboardPanelDataAttributesParamsDatasetsFilterRulesConditionNotExists string = "not_exists"
 )
 
 // Defines values for NewDashboardPanelDataAttributesParamsDatasetsFilterRulesOperation.
@@ -4256,21 +4255,21 @@ const (
 
 // Defines values for UpdateDashboardPanelDataAttributesParamsDatasetsFilterRulesCondition.
 const (
-	UpdateDashboardPanelDataAttributesParamsDatasetsFilterRulesCondition UpdateDashboardPanelDataAttributesParamsDatasetsFilterRulesCondition = "="
+	UpdateDashboardPanelDataAttributesParamsDatasetsFilterRulesCondition string = "="
 
-	UpdateDashboardPanelDataAttributesParamsDatasetsFilterRulesCondition1 UpdateDashboardPanelDataAttributesParamsDatasetsFilterRulesCondition = "!="
+	UpdateDashboardPanelDataAttributesParamsDatasetsFilterRulesCondition1 string = "!="
 
-	UpdateDashboardPanelDataAttributesParamsDatasetsFilterRulesCondition2 UpdateDashboardPanelDataAttributesParamsDatasetsFilterRulesCondition = ">="
+	UpdateDashboardPanelDataAttributesParamsDatasetsFilterRulesCondition2 string = ">="
 
-	UpdateDashboardPanelDataAttributesParamsDatasetsFilterRulesCondition3 UpdateDashboardPanelDataAttributesParamsDatasetsFilterRulesCondition = "<="
+	UpdateDashboardPanelDataAttributesParamsDatasetsFilterRulesCondition3 string = "<="
 
-	UpdateDashboardPanelDataAttributesParamsDatasetsFilterRulesConditionContains UpdateDashboardPanelDataAttributesParamsDatasetsFilterRulesCondition = "contains"
+	UpdateDashboardPanelDataAttributesParamsDatasetsFilterRulesConditionContains string = "contains"
 
-	UpdateDashboardPanelDataAttributesParamsDatasetsFilterRulesConditionExists UpdateDashboardPanelDataAttributesParamsDatasetsFilterRulesCondition = "exists"
+	UpdateDashboardPanelDataAttributesParamsDatasetsFilterRulesConditionExists string = "exists"
 
-	UpdateDashboardPanelDataAttributesParamsDatasetsFilterRulesConditionNotContains UpdateDashboardPanelDataAttributesParamsDatasetsFilterRulesCondition = "not_contains"
+	UpdateDashboardPanelDataAttributesParamsDatasetsFilterRulesConditionNotContains string = "not_contains"
 
-	UpdateDashboardPanelDataAttributesParamsDatasetsFilterRulesConditionNotExists UpdateDashboardPanelDataAttributesParamsDatasetsFilterRulesCondition = "not_exists"
+	UpdateDashboardPanelDataAttributesParamsDatasetsFilterRulesConditionNotExists string = "not_exists"
 )
 
 // Defines values for UpdateDashboardPanelDataAttributesParamsDatasetsFilterRulesOperation.
@@ -7431,9 +7430,9 @@ type DashboardPanel struct {
 			Filter     *[]struct {
 				Operation *DashboardPanelParamsDatasetsFilterOperation `json:"operation,omitempty"`
 				Rules     *[]struct {
-					Condition *DashboardPanelParamsDatasetsFilterRulesCondition `json:"condition,omitempty"`
+					Condition *string `json:"condition,omitempty"`
 					Key       *string                                           `json:"key,omitempty"`
-					Operation *DashboardPanelParamsDatasetsFilterRulesOperation `json:"operation,omitempty"`
+					Operation *string `json:"operation,omitempty"`
 					Value     *string                                           `json:"value,omitempty"`
 				} `json:"rules,omitempty"`
 			} `json:"filter,omitempty"`
@@ -7458,9 +7457,6 @@ type DashboardPanelParamsDatasetsCollection string
 
 // DashboardPanelParamsDatasetsFilterOperation defines model for DashboardPanel.Params.Datasets.Filter.Operation.
 type DashboardPanelParamsDatasetsFilterOperation string
-
-// DashboardPanelParamsDatasetsFilterRulesCondition defines model for DashboardPanel.Params.Datasets.Filter.Rules.Condition.
-type DashboardPanelParamsDatasetsFilterRulesCondition string
 
 // DashboardPanelParamsDatasetsFilterRulesOperation defines model for DashboardPanel.Params.Datasets.Filter.Rules.Operation.
 type DashboardPanelParamsDatasetsFilterRulesOperation string
@@ -9278,9 +9274,9 @@ type NewDashboardPanel struct {
 					Filter     *[]struct {
 						Operation *NewDashboardPanelDataAttributesParamsDatasetsFilterOperation `json:"operation,omitempty"`
 						Rules     *[]struct {
-							Condition *NewDashboardPanelDataAttributesParamsDatasetsFilterRulesCondition `json:"condition,omitempty"`
+							Condition *string `json:"condition,omitempty"`
 							Key       *string                                                            `json:"key,omitempty"`
-							Operation *NewDashboardPanelDataAttributesParamsDatasetsFilterRulesOperation `json:"operation,omitempty"`
+							Operation *string `json:"operation,omitempty"`
 							Value     *string                                                            `json:"value,omitempty"`
 						} `json:"rules,omitempty"`
 					} `json:"filter,omitempty"`
@@ -9308,9 +9304,6 @@ type NewDashboardPanelDataAttributesParamsDatasetsCollection string
 
 // NewDashboardPanelDataAttributesParamsDatasetsFilterOperation defines model for NewDashboardPanel.Data.Attributes.Params.Datasets.Filter.Operation.
 type NewDashboardPanelDataAttributesParamsDatasetsFilterOperation string
-
-// NewDashboardPanelDataAttributesParamsDatasetsFilterRulesCondition defines model for NewDashboardPanel.Data.Attributes.Params.Datasets.Filter.Rules.Condition.
-type NewDashboardPanelDataAttributesParamsDatasetsFilterRulesCondition string
 
 // NewDashboardPanelDataAttributesParamsDatasetsFilterRulesOperation defines model for NewDashboardPanel.Data.Attributes.Params.Datasets.Filter.Rules.Operation.
 type NewDashboardPanelDataAttributesParamsDatasetsFilterRulesOperation string
@@ -12190,9 +12183,9 @@ type UpdateDashboardPanel struct {
 					Filter     *[]struct {
 						Operation *UpdateDashboardPanelDataAttributesParamsDatasetsFilterOperation `json:"operation,omitempty"`
 						Rules     *[]struct {
-							Condition *UpdateDashboardPanelDataAttributesParamsDatasetsFilterRulesCondition `json:"condition,omitempty"`
+							Condition *string `json:"condition,omitempty"`
 							Key       *string                                                               `json:"key,omitempty"`
-							Operation *UpdateDashboardPanelDataAttributesParamsDatasetsFilterRulesOperation `json:"operation,omitempty"`
+							Operation *string `json:"operation,omitempty"`
 							Value     *string                                                               `json:"value,omitempty"`
 						} `json:"rules,omitempty"`
 					} `json:"filter,omitempty"`
@@ -12220,9 +12213,6 @@ type UpdateDashboardPanelDataAttributesParamsDatasetsCollection string
 
 // UpdateDashboardPanelDataAttributesParamsDatasetsFilterOperation defines model for UpdateDashboardPanel.Data.Attributes.Params.Datasets.Filter.Operation.
 type UpdateDashboardPanelDataAttributesParamsDatasetsFilterOperation string
-
-// UpdateDashboardPanelDataAttributesParamsDatasetsFilterRulesCondition defines model for UpdateDashboardPanel.Data.Attributes.Params.Datasets.Filter.Rules.Condition.
-type UpdateDashboardPanelDataAttributesParamsDatasetsFilterRulesCondition string
 
 // UpdateDashboardPanelDataAttributesParamsDatasetsFilterRulesOperation defines model for UpdateDashboardPanel.Data.Attributes.Params.Datasets.Filter.Rules.Operation.
 type UpdateDashboardPanelDataAttributesParamsDatasetsFilterRulesOperation string
@@ -40517,7 +40507,7 @@ func (c *ClientWithResponses) CreateWorkflowTaskWithBodyWithResponse(ctx context
 
 // ParseListAllIncidentActionItemsResponse parses an HTTP response from a ListAllIncidentActionItemsWithResponse call
 func ParseListAllIncidentActionItemsResponse(rsp *http.Response) (*ListAllIncidentActionItemsResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -40533,7 +40523,7 @@ func ParseListAllIncidentActionItemsResponse(rsp *http.Response) (*ListAllIncide
 
 // ParseDeleteIncidentActionItemResponse parses an HTTP response from a DeleteIncidentActionItemWithResponse call
 func ParseDeleteIncidentActionItemResponse(rsp *http.Response) (*DeleteIncidentActionItemResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -40549,7 +40539,7 @@ func ParseDeleteIncidentActionItemResponse(rsp *http.Response) (*DeleteIncidentA
 
 // ParseGetIncidentActionItemsResponse parses an HTTP response from a GetIncidentActionItemsWithResponse call
 func ParseGetIncidentActionItemsResponse(rsp *http.Response) (*GetIncidentActionItemsResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -40565,7 +40555,7 @@ func ParseGetIncidentActionItemsResponse(rsp *http.Response) (*GetIncidentAction
 
 // ParseUpdateIncidentActionItemResponse parses an HTTP response from a UpdateIncidentActionItemWithResponse call
 func ParseUpdateIncidentActionItemResponse(rsp *http.Response) (*UpdateIncidentActionItemResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -40581,7 +40571,7 @@ func ParseUpdateIncidentActionItemResponse(rsp *http.Response) (*UpdateIncidentA
 
 // ParseListAlertsResponse parses an HTTP response from a ListAlertsWithResponse call
 func ParseListAlertsResponse(rsp *http.Response) (*ListAlertsResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -40597,7 +40587,7 @@ func ParseListAlertsResponse(rsp *http.Response) (*ListAlertsResponse, error) {
 
 // ParseCreateAlertResponse parses an HTTP response from a CreateAlertWithResponse call
 func ParseCreateAlertResponse(rsp *http.Response) (*CreateAlertResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -40613,7 +40603,7 @@ func ParseCreateAlertResponse(rsp *http.Response) (*CreateAlertResponse, error) 
 
 // ParseGetAlertResponse parses an HTTP response from a GetAlertWithResponse call
 func ParseGetAlertResponse(rsp *http.Response) (*GetAlertResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -40629,7 +40619,7 @@ func ParseGetAlertResponse(rsp *http.Response) (*GetAlertResponse, error) {
 
 // ParseListAuditsResponse parses an HTTP response from a ListAuditsWithResponse call
 func ParseListAuditsResponse(rsp *http.Response) (*ListAuditsResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -40645,7 +40635,7 @@ func ParseListAuditsResponse(rsp *http.Response) (*ListAuditsResponse, error) {
 
 // ParseListCausesResponse parses an HTTP response from a ListCausesWithResponse call
 func ParseListCausesResponse(rsp *http.Response) (*ListCausesResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -40661,7 +40651,7 @@ func ParseListCausesResponse(rsp *http.Response) (*ListCausesResponse, error) {
 
 // ParseCreateCauseResponse parses an HTTP response from a CreateCauseWithResponse call
 func ParseCreateCauseResponse(rsp *http.Response) (*CreateCauseResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -40677,7 +40667,7 @@ func ParseCreateCauseResponse(rsp *http.Response) (*CreateCauseResponse, error) 
 
 // ParseDeleteCauseResponse parses an HTTP response from a DeleteCauseWithResponse call
 func ParseDeleteCauseResponse(rsp *http.Response) (*DeleteCauseResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -40693,7 +40683,7 @@ func ParseDeleteCauseResponse(rsp *http.Response) (*DeleteCauseResponse, error) 
 
 // ParseGetCauseResponse parses an HTTP response from a GetCauseWithResponse call
 func ParseGetCauseResponse(rsp *http.Response) (*GetCauseResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -40709,7 +40699,7 @@ func ParseGetCauseResponse(rsp *http.Response) (*GetCauseResponse, error) {
 
 // ParseUpdateCauseResponse parses an HTTP response from a UpdateCauseWithResponse call
 func ParseUpdateCauseResponse(rsp *http.Response) (*UpdateCauseResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -40725,7 +40715,7 @@ func ParseUpdateCauseResponse(rsp *http.Response) (*UpdateCauseResponse, error) 
 
 // ParseDeleteCustomFieldOptionResponse parses an HTTP response from a DeleteCustomFieldOptionWithResponse call
 func ParseDeleteCustomFieldOptionResponse(rsp *http.Response) (*DeleteCustomFieldOptionResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -40741,7 +40731,7 @@ func ParseDeleteCustomFieldOptionResponse(rsp *http.Response) (*DeleteCustomFiel
 
 // ParseGetCustomFieldOptionResponse parses an HTTP response from a GetCustomFieldOptionWithResponse call
 func ParseGetCustomFieldOptionResponse(rsp *http.Response) (*GetCustomFieldOptionResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -40757,7 +40747,7 @@ func ParseGetCustomFieldOptionResponse(rsp *http.Response) (*GetCustomFieldOptio
 
 // ParseUpdateCustomFieldOptionResponse parses an HTTP response from a UpdateCustomFieldOptionWithResponse call
 func ParseUpdateCustomFieldOptionResponse(rsp *http.Response) (*UpdateCustomFieldOptionResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -40773,7 +40763,7 @@ func ParseUpdateCustomFieldOptionResponse(rsp *http.Response) (*UpdateCustomFiel
 
 // ParseListCustomFieldsResponse parses an HTTP response from a ListCustomFieldsWithResponse call
 func ParseListCustomFieldsResponse(rsp *http.Response) (*ListCustomFieldsResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -40789,7 +40779,7 @@ func ParseListCustomFieldsResponse(rsp *http.Response) (*ListCustomFieldsRespons
 
 // ParseCreateCustomFieldResponse parses an HTTP response from a CreateCustomFieldWithResponse call
 func ParseCreateCustomFieldResponse(rsp *http.Response) (*CreateCustomFieldResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -40805,7 +40795,7 @@ func ParseCreateCustomFieldResponse(rsp *http.Response) (*CreateCustomFieldRespo
 
 // ParseListCustomFieldOptionsResponse parses an HTTP response from a ListCustomFieldOptionsWithResponse call
 func ParseListCustomFieldOptionsResponse(rsp *http.Response) (*ListCustomFieldOptionsResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -40821,7 +40811,7 @@ func ParseListCustomFieldOptionsResponse(rsp *http.Response) (*ListCustomFieldOp
 
 // ParseCreateCustomFieldOptionResponse parses an HTTP response from a CreateCustomFieldOptionWithResponse call
 func ParseCreateCustomFieldOptionResponse(rsp *http.Response) (*CreateCustomFieldOptionResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -40837,7 +40827,7 @@ func ParseCreateCustomFieldOptionResponse(rsp *http.Response) (*CreateCustomFiel
 
 // ParseDeleteCustomFieldResponse parses an HTTP response from a DeleteCustomFieldWithResponse call
 func ParseDeleteCustomFieldResponse(rsp *http.Response) (*DeleteCustomFieldResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -40853,7 +40843,7 @@ func ParseDeleteCustomFieldResponse(rsp *http.Response) (*DeleteCustomFieldRespo
 
 // ParseGetCustomFieldResponse parses an HTTP response from a GetCustomFieldWithResponse call
 func ParseGetCustomFieldResponse(rsp *http.Response) (*GetCustomFieldResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -40869,7 +40859,7 @@ func ParseGetCustomFieldResponse(rsp *http.Response) (*GetCustomFieldResponse, e
 
 // ParseUpdateCustomFieldResponse parses an HTTP response from a UpdateCustomFieldWithResponse call
 func ParseUpdateCustomFieldResponse(rsp *http.Response) (*UpdateCustomFieldResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -40885,7 +40875,7 @@ func ParseUpdateCustomFieldResponse(rsp *http.Response) (*UpdateCustomFieldRespo
 
 // ParseDeleteDashboardPanelResponse parses an HTTP response from a DeleteDashboardPanelWithResponse call
 func ParseDeleteDashboardPanelResponse(rsp *http.Response) (*DeleteDashboardPanelResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -40901,7 +40891,7 @@ func ParseDeleteDashboardPanelResponse(rsp *http.Response) (*DeleteDashboardPane
 
 // ParseGetDashboardPanelResponse parses an HTTP response from a GetDashboardPanelWithResponse call
 func ParseGetDashboardPanelResponse(rsp *http.Response) (*GetDashboardPanelResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -40917,7 +40907,7 @@ func ParseGetDashboardPanelResponse(rsp *http.Response) (*GetDashboardPanelRespo
 
 // ParseUpdateDashboardPanelResponse parses an HTTP response from a UpdateDashboardPanelWithResponse call
 func ParseUpdateDashboardPanelResponse(rsp *http.Response) (*UpdateDashboardPanelResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -40933,7 +40923,7 @@ func ParseUpdateDashboardPanelResponse(rsp *http.Response) (*UpdateDashboardPane
 
 // ParseDuplicateDashboardPanelResponse parses an HTTP response from a DuplicateDashboardPanelWithResponse call
 func ParseDuplicateDashboardPanelResponse(rsp *http.Response) (*DuplicateDashboardPanelResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -40949,7 +40939,7 @@ func ParseDuplicateDashboardPanelResponse(rsp *http.Response) (*DuplicateDashboa
 
 // ParseListDashboardsResponse parses an HTTP response from a ListDashboardsWithResponse call
 func ParseListDashboardsResponse(rsp *http.Response) (*ListDashboardsResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -40965,7 +40955,7 @@ func ParseListDashboardsResponse(rsp *http.Response) (*ListDashboardsResponse, e
 
 // ParseCreateDashboardResponse parses an HTTP response from a CreateDashboardWithResponse call
 func ParseCreateDashboardResponse(rsp *http.Response) (*CreateDashboardResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -40981,7 +40971,7 @@ func ParseCreateDashboardResponse(rsp *http.Response) (*CreateDashboardResponse,
 
 // ParseListDashboardPanelsResponse parses an HTTP response from a ListDashboardPanelsWithResponse call
 func ParseListDashboardPanelsResponse(rsp *http.Response) (*ListDashboardPanelsResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -40997,7 +40987,7 @@ func ParseListDashboardPanelsResponse(rsp *http.Response) (*ListDashboardPanelsR
 
 // ParseCreateDashboardPanelResponse parses an HTTP response from a CreateDashboardPanelWithResponse call
 func ParseCreateDashboardPanelResponse(rsp *http.Response) (*CreateDashboardPanelResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -41013,7 +41003,7 @@ func ParseCreateDashboardPanelResponse(rsp *http.Response) (*CreateDashboardPane
 
 // ParseDeleteDashboardResponse parses an HTTP response from a DeleteDashboardWithResponse call
 func ParseDeleteDashboardResponse(rsp *http.Response) (*DeleteDashboardResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -41029,7 +41019,7 @@ func ParseDeleteDashboardResponse(rsp *http.Response) (*DeleteDashboardResponse,
 
 // ParseGetDashboardResponse parses an HTTP response from a GetDashboardWithResponse call
 func ParseGetDashboardResponse(rsp *http.Response) (*GetDashboardResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -41045,7 +41035,7 @@ func ParseGetDashboardResponse(rsp *http.Response) (*GetDashboardResponse, error
 
 // ParseUpdateDashboardResponse parses an HTTP response from a UpdateDashboardWithResponse call
 func ParseUpdateDashboardResponse(rsp *http.Response) (*UpdateDashboardResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -41061,7 +41051,7 @@ func ParseUpdateDashboardResponse(rsp *http.Response) (*UpdateDashboardResponse,
 
 // ParseDuplicateDashboardResponse parses an HTTP response from a DuplicateDashboardWithResponse call
 func ParseDuplicateDashboardResponse(rsp *http.Response) (*DuplicateDashboardResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -41077,7 +41067,7 @@ func ParseDuplicateDashboardResponse(rsp *http.Response) (*DuplicateDashboardRes
 
 // ParseSetDefaultDashboardResponse parses an HTTP response from a SetDefaultDashboardWithResponse call
 func ParseSetDefaultDashboardResponse(rsp *http.Response) (*SetDefaultDashboardResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -41093,7 +41083,7 @@ func ParseSetDefaultDashboardResponse(rsp *http.Response) (*SetDefaultDashboardR
 
 // ParseListEnvironmentsResponse parses an HTTP response from a ListEnvironmentsWithResponse call
 func ParseListEnvironmentsResponse(rsp *http.Response) (*ListEnvironmentsResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -41109,7 +41099,7 @@ func ParseListEnvironmentsResponse(rsp *http.Response) (*ListEnvironmentsRespons
 
 // ParseCreateEnvironmentResponse parses an HTTP response from a CreateEnvironmentWithResponse call
 func ParseCreateEnvironmentResponse(rsp *http.Response) (*CreateEnvironmentResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -41125,7 +41115,7 @@ func ParseCreateEnvironmentResponse(rsp *http.Response) (*CreateEnvironmentRespo
 
 // ParseDeleteEnvironmentResponse parses an HTTP response from a DeleteEnvironmentWithResponse call
 func ParseDeleteEnvironmentResponse(rsp *http.Response) (*DeleteEnvironmentResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -41141,7 +41131,7 @@ func ParseDeleteEnvironmentResponse(rsp *http.Response) (*DeleteEnvironmentRespo
 
 // ParseGetEnvironmentResponse parses an HTTP response from a GetEnvironmentWithResponse call
 func ParseGetEnvironmentResponse(rsp *http.Response) (*GetEnvironmentResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -41157,7 +41147,7 @@ func ParseGetEnvironmentResponse(rsp *http.Response) (*GetEnvironmentResponse, e
 
 // ParseUpdateEnvironmentResponse parses an HTTP response from a UpdateEnvironmentWithResponse call
 func ParseUpdateEnvironmentResponse(rsp *http.Response) (*UpdateEnvironmentResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -41173,7 +41163,7 @@ func ParseUpdateEnvironmentResponse(rsp *http.Response) (*UpdateEnvironmentRespo
 
 // ParseDeleteIncidentEventResponse parses an HTTP response from a DeleteIncidentEventWithResponse call
 func ParseDeleteIncidentEventResponse(rsp *http.Response) (*DeleteIncidentEventResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -41189,7 +41179,7 @@ func ParseDeleteIncidentEventResponse(rsp *http.Response) (*DeleteIncidentEventR
 
 // ParseGetIncidentEventsResponse parses an HTTP response from a GetIncidentEventsWithResponse call
 func ParseGetIncidentEventsResponse(rsp *http.Response) (*GetIncidentEventsResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -41205,7 +41195,7 @@ func ParseGetIncidentEventsResponse(rsp *http.Response) (*GetIncidentEventsRespo
 
 // ParseUpdateIncidentEventResponse parses an HTTP response from a UpdateIncidentEventWithResponse call
 func ParseUpdateIncidentEventResponse(rsp *http.Response) (*UpdateIncidentEventResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -41221,7 +41211,7 @@ func ParseUpdateIncidentEventResponse(rsp *http.Response) (*UpdateIncidentEventR
 
 // ParseListIncidentEventFunctionalitiesResponse parses an HTTP response from a ListIncidentEventFunctionalitiesWithResponse call
 func ParseListIncidentEventFunctionalitiesResponse(rsp *http.Response) (*ListIncidentEventFunctionalitiesResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -41237,7 +41227,7 @@ func ParseListIncidentEventFunctionalitiesResponse(rsp *http.Response) (*ListInc
 
 // ParseCreateIncidentEventFunctionalityResponse parses an HTTP response from a CreateIncidentEventFunctionalityWithResponse call
 func ParseCreateIncidentEventFunctionalityResponse(rsp *http.Response) (*CreateIncidentEventFunctionalityResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -41253,7 +41243,7 @@ func ParseCreateIncidentEventFunctionalityResponse(rsp *http.Response) (*CreateI
 
 // ParseListIncidentEventServicesResponse parses an HTTP response from a ListIncidentEventServicesWithResponse call
 func ParseListIncidentEventServicesResponse(rsp *http.Response) (*ListIncidentEventServicesResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -41269,7 +41259,7 @@ func ParseListIncidentEventServicesResponse(rsp *http.Response) (*ListIncidentEv
 
 // ParseCreateIncidentEventServiceResponse parses an HTTP response from a CreateIncidentEventServiceWithResponse call
 func ParseCreateIncidentEventServiceResponse(rsp *http.Response) (*CreateIncidentEventServiceResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -41285,7 +41275,7 @@ func ParseCreateIncidentEventServiceResponse(rsp *http.Response) (*CreateInciden
 
 // ParseGetIncidentFeedbacksResponse parses an HTTP response from a GetIncidentFeedbacksWithResponse call
 func ParseGetIncidentFeedbacksResponse(rsp *http.Response) (*GetIncidentFeedbacksResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -41301,7 +41291,7 @@ func ParseGetIncidentFeedbacksResponse(rsp *http.Response) (*GetIncidentFeedback
 
 // ParseUpdateIncidentFeedbackResponse parses an HTTP response from a UpdateIncidentFeedbackWithResponse call
 func ParseUpdateIncidentFeedbackResponse(rsp *http.Response) (*UpdateIncidentFeedbackResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -41317,7 +41307,7 @@ func ParseUpdateIncidentFeedbackResponse(rsp *http.Response) (*UpdateIncidentFee
 
 // ParseDeleteFormFieldOptionResponse parses an HTTP response from a DeleteFormFieldOptionWithResponse call
 func ParseDeleteFormFieldOptionResponse(rsp *http.Response) (*DeleteFormFieldOptionResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -41333,7 +41323,7 @@ func ParseDeleteFormFieldOptionResponse(rsp *http.Response) (*DeleteFormFieldOpt
 
 // ParseGetFormFieldOptionResponse parses an HTTP response from a GetFormFieldOptionWithResponse call
 func ParseGetFormFieldOptionResponse(rsp *http.Response) (*GetFormFieldOptionResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -41349,7 +41339,7 @@ func ParseGetFormFieldOptionResponse(rsp *http.Response) (*GetFormFieldOptionRes
 
 // ParseUpdateFormFieldOptionResponse parses an HTTP response from a UpdateFormFieldOptionWithResponse call
 func ParseUpdateFormFieldOptionResponse(rsp *http.Response) (*UpdateFormFieldOptionResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -41365,7 +41355,7 @@ func ParseUpdateFormFieldOptionResponse(rsp *http.Response) (*UpdateFormFieldOpt
 
 // ParseDeleteFormFieldPositionResponse parses an HTTP response from a DeleteFormFieldPositionWithResponse call
 func ParseDeleteFormFieldPositionResponse(rsp *http.Response) (*DeleteFormFieldPositionResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -41381,7 +41371,7 @@ func ParseDeleteFormFieldPositionResponse(rsp *http.Response) (*DeleteFormFieldP
 
 // ParseGetFormFieldPositionResponse parses an HTTP response from a GetFormFieldPositionWithResponse call
 func ParseGetFormFieldPositionResponse(rsp *http.Response) (*GetFormFieldPositionResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -41397,7 +41387,7 @@ func ParseGetFormFieldPositionResponse(rsp *http.Response) (*GetFormFieldPositio
 
 // ParseUpdateFormFieldPositionResponse parses an HTTP response from a UpdateFormFieldPositionWithResponse call
 func ParseUpdateFormFieldPositionResponse(rsp *http.Response) (*UpdateFormFieldPositionResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -41413,7 +41403,7 @@ func ParseUpdateFormFieldPositionResponse(rsp *http.Response) (*UpdateFormFieldP
 
 // ParseListFormFieldsResponse parses an HTTP response from a ListFormFieldsWithResponse call
 func ParseListFormFieldsResponse(rsp *http.Response) (*ListFormFieldsResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -41429,7 +41419,7 @@ func ParseListFormFieldsResponse(rsp *http.Response) (*ListFormFieldsResponse, e
 
 // ParseCreateFormFieldResponse parses an HTTP response from a CreateFormFieldWithResponse call
 func ParseCreateFormFieldResponse(rsp *http.Response) (*CreateFormFieldResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -41445,7 +41435,7 @@ func ParseCreateFormFieldResponse(rsp *http.Response) (*CreateFormFieldResponse,
 
 // ParseListFormFieldOptionsResponse parses an HTTP response from a ListFormFieldOptionsWithResponse call
 func ParseListFormFieldOptionsResponse(rsp *http.Response) (*ListFormFieldOptionsResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -41461,7 +41451,7 @@ func ParseListFormFieldOptionsResponse(rsp *http.Response) (*ListFormFieldOption
 
 // ParseCreateFormFieldOptionResponse parses an HTTP response from a CreateFormFieldOptionWithResponse call
 func ParseCreateFormFieldOptionResponse(rsp *http.Response) (*CreateFormFieldOptionResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -41477,7 +41467,7 @@ func ParseCreateFormFieldOptionResponse(rsp *http.Response) (*CreateFormFieldOpt
 
 // ParseListFormFieldPositionsResponse parses an HTTP response from a ListFormFieldPositionsWithResponse call
 func ParseListFormFieldPositionsResponse(rsp *http.Response) (*ListFormFieldPositionsResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -41493,7 +41483,7 @@ func ParseListFormFieldPositionsResponse(rsp *http.Response) (*ListFormFieldPosi
 
 // ParseCreateFormFieldPositionResponse parses an HTTP response from a CreateFormFieldPositionWithResponse call
 func ParseCreateFormFieldPositionResponse(rsp *http.Response) (*CreateFormFieldPositionResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -41509,7 +41499,7 @@ func ParseCreateFormFieldPositionResponse(rsp *http.Response) (*CreateFormFieldP
 
 // ParseDeleteFormFieldResponse parses an HTTP response from a DeleteFormFieldWithResponse call
 func ParseDeleteFormFieldResponse(rsp *http.Response) (*DeleteFormFieldResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -41525,7 +41515,7 @@ func ParseDeleteFormFieldResponse(rsp *http.Response) (*DeleteFormFieldResponse,
 
 // ParseGetFormFieldResponse parses an HTTP response from a GetFormFieldWithResponse call
 func ParseGetFormFieldResponse(rsp *http.Response) (*GetFormFieldResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -41541,7 +41531,7 @@ func ParseGetFormFieldResponse(rsp *http.Response) (*GetFormFieldResponse, error
 
 // ParseUpdateFormFieldResponse parses an HTTP response from a UpdateFormFieldWithResponse call
 func ParseUpdateFormFieldResponse(rsp *http.Response) (*UpdateFormFieldResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -41557,7 +41547,7 @@ func ParseUpdateFormFieldResponse(rsp *http.Response) (*UpdateFormFieldResponse,
 
 // ParseListFunctionalitiesResponse parses an HTTP response from a ListFunctionalitiesWithResponse call
 func ParseListFunctionalitiesResponse(rsp *http.Response) (*ListFunctionalitiesResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -41573,7 +41563,7 @@ func ParseListFunctionalitiesResponse(rsp *http.Response) (*ListFunctionalitiesR
 
 // ParseCreateFunctionalityResponse parses an HTTP response from a CreateFunctionalityWithResponse call
 func ParseCreateFunctionalityResponse(rsp *http.Response) (*CreateFunctionalityResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -41589,7 +41579,7 @@ func ParseCreateFunctionalityResponse(rsp *http.Response) (*CreateFunctionalityR
 
 // ParseDeleteFunctionalityResponse parses an HTTP response from a DeleteFunctionalityWithResponse call
 func ParseDeleteFunctionalityResponse(rsp *http.Response) (*DeleteFunctionalityResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -41605,7 +41595,7 @@ func ParseDeleteFunctionalityResponse(rsp *http.Response) (*DeleteFunctionalityR
 
 // ParseGetFunctionalityResponse parses an HTTP response from a GetFunctionalityWithResponse call
 func ParseGetFunctionalityResponse(rsp *http.Response) (*GetFunctionalityResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -41621,7 +41611,7 @@ func ParseGetFunctionalityResponse(rsp *http.Response) (*GetFunctionalityRespons
 
 // ParseUpdateFunctionalityResponse parses an HTTP response from a UpdateFunctionalityWithResponse call
 func ParseUpdateFunctionalityResponse(rsp *http.Response) (*UpdateFunctionalityResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -41637,7 +41627,7 @@ func ParseUpdateFunctionalityResponse(rsp *http.Response) (*UpdateFunctionalityR
 
 // ParseGetFunctionalityIncidentsChartResponse parses an HTTP response from a GetFunctionalityIncidentsChartWithResponse call
 func ParseGetFunctionalityIncidentsChartResponse(rsp *http.Response) (*GetFunctionalityIncidentsChartResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -41653,7 +41643,7 @@ func ParseGetFunctionalityIncidentsChartResponse(rsp *http.Response) (*GetFuncti
 
 // ParseGetFunctionalityUptimeChartResponse parses an HTTP response from a GetFunctionalityUptimeChartWithResponse call
 func ParseGetFunctionalityUptimeChartResponse(rsp *http.Response) (*GetFunctionalityUptimeChartResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -41669,7 +41659,7 @@ func ParseGetFunctionalityUptimeChartResponse(rsp *http.Response) (*GetFunctiona
 
 // ParseDeleteIncidentCustomFieldSelectionResponse parses an HTTP response from a DeleteIncidentCustomFieldSelectionWithResponse call
 func ParseDeleteIncidentCustomFieldSelectionResponse(rsp *http.Response) (*DeleteIncidentCustomFieldSelectionResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -41685,7 +41675,7 @@ func ParseDeleteIncidentCustomFieldSelectionResponse(rsp *http.Response) (*Delet
 
 // ParseGetIncidentCustomFieldSelectionResponse parses an HTTP response from a GetIncidentCustomFieldSelectionWithResponse call
 func ParseGetIncidentCustomFieldSelectionResponse(rsp *http.Response) (*GetIncidentCustomFieldSelectionResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -41701,7 +41691,7 @@ func ParseGetIncidentCustomFieldSelectionResponse(rsp *http.Response) (*GetIncid
 
 // ParseUpdateIncidentCustomFieldSelectionResponse parses an HTTP response from a UpdateIncidentCustomFieldSelectionWithResponse call
 func ParseUpdateIncidentCustomFieldSelectionResponse(rsp *http.Response) (*UpdateIncidentCustomFieldSelectionResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -41717,7 +41707,7 @@ func ParseUpdateIncidentCustomFieldSelectionResponse(rsp *http.Response) (*Updat
 
 // ParseDeleteIncidentEventFunctionalityResponse parses an HTTP response from a DeleteIncidentEventFunctionalityWithResponse call
 func ParseDeleteIncidentEventFunctionalityResponse(rsp *http.Response) (*DeleteIncidentEventFunctionalityResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -41733,7 +41723,7 @@ func ParseDeleteIncidentEventFunctionalityResponse(rsp *http.Response) (*DeleteI
 
 // ParseGetIncidentEventFunctionalitiesResponse parses an HTTP response from a GetIncidentEventFunctionalitiesWithResponse call
 func ParseGetIncidentEventFunctionalitiesResponse(rsp *http.Response) (*GetIncidentEventFunctionalitiesResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -41749,7 +41739,7 @@ func ParseGetIncidentEventFunctionalitiesResponse(rsp *http.Response) (*GetIncid
 
 // ParseUpdateIncidentEventFunctionalityResponse parses an HTTP response from a UpdateIncidentEventFunctionalityWithResponse call
 func ParseUpdateIncidentEventFunctionalityResponse(rsp *http.Response) (*UpdateIncidentEventFunctionalityResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -41765,7 +41755,7 @@ func ParseUpdateIncidentEventFunctionalityResponse(rsp *http.Response) (*UpdateI
 
 // ParseDeleteIncidentEventServiceResponse parses an HTTP response from a DeleteIncidentEventServiceWithResponse call
 func ParseDeleteIncidentEventServiceResponse(rsp *http.Response) (*DeleteIncidentEventServiceResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -41781,7 +41771,7 @@ func ParseDeleteIncidentEventServiceResponse(rsp *http.Response) (*DeleteInciden
 
 // ParseGetIncidentEventServicesResponse parses an HTTP response from a GetIncidentEventServicesWithResponse call
 func ParseGetIncidentEventServicesResponse(rsp *http.Response) (*GetIncidentEventServicesResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -41797,7 +41787,7 @@ func ParseGetIncidentEventServicesResponse(rsp *http.Response) (*GetIncidentEven
 
 // ParseUpdateIncidentEventServiceResponse parses an HTTP response from a UpdateIncidentEventServiceWithResponse call
 func ParseUpdateIncidentEventServiceResponse(rsp *http.Response) (*UpdateIncidentEventServiceResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -41813,7 +41803,7 @@ func ParseUpdateIncidentEventServiceResponse(rsp *http.Response) (*UpdateInciden
 
 // ParseDeleteIncidentFormFieldSelectionResponse parses an HTTP response from a DeleteIncidentFormFieldSelectionWithResponse call
 func ParseDeleteIncidentFormFieldSelectionResponse(rsp *http.Response) (*DeleteIncidentFormFieldSelectionResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -41829,7 +41819,7 @@ func ParseDeleteIncidentFormFieldSelectionResponse(rsp *http.Response) (*DeleteI
 
 // ParseGetIncidentFormFieldSelectionResponse parses an HTTP response from a GetIncidentFormFieldSelectionWithResponse call
 func ParseGetIncidentFormFieldSelectionResponse(rsp *http.Response) (*GetIncidentFormFieldSelectionResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -41845,7 +41835,7 @@ func ParseGetIncidentFormFieldSelectionResponse(rsp *http.Response) (*GetInciden
 
 // ParseUpdateIncidentFormFieldSelectionResponse parses an HTTP response from a UpdateIncidentFormFieldSelectionWithResponse call
 func ParseUpdateIncidentFormFieldSelectionResponse(rsp *http.Response) (*UpdateIncidentFormFieldSelectionResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -41861,7 +41851,7 @@ func ParseUpdateIncidentFormFieldSelectionResponse(rsp *http.Response) (*UpdateI
 
 // ParseDeleteIncidentRoleTaskResponse parses an HTTP response from a DeleteIncidentRoleTaskWithResponse call
 func ParseDeleteIncidentRoleTaskResponse(rsp *http.Response) (*DeleteIncidentRoleTaskResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -41877,7 +41867,7 @@ func ParseDeleteIncidentRoleTaskResponse(rsp *http.Response) (*DeleteIncidentRol
 
 // ParseGetIncidentRoleTaskResponse parses an HTTP response from a GetIncidentRoleTaskWithResponse call
 func ParseGetIncidentRoleTaskResponse(rsp *http.Response) (*GetIncidentRoleTaskResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -41893,7 +41883,7 @@ func ParseGetIncidentRoleTaskResponse(rsp *http.Response) (*GetIncidentRoleTaskR
 
 // ParseUpdateIncidentRoleTaskResponse parses an HTTP response from a UpdateIncidentRoleTaskWithResponse call
 func ParseUpdateIncidentRoleTaskResponse(rsp *http.Response) (*UpdateIncidentRoleTaskResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -41909,7 +41899,7 @@ func ParseUpdateIncidentRoleTaskResponse(rsp *http.Response) (*UpdateIncidentRol
 
 // ParseListIncidentRolesResponse parses an HTTP response from a ListIncidentRolesWithResponse call
 func ParseListIncidentRolesResponse(rsp *http.Response) (*ListIncidentRolesResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -41925,7 +41915,7 @@ func ParseListIncidentRolesResponse(rsp *http.Response) (*ListIncidentRolesRespo
 
 // ParseCreateIncidentRoleResponse parses an HTTP response from a CreateIncidentRoleWithResponse call
 func ParseCreateIncidentRoleResponse(rsp *http.Response) (*CreateIncidentRoleResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -41941,7 +41931,7 @@ func ParseCreateIncidentRoleResponse(rsp *http.Response) (*CreateIncidentRoleRes
 
 // ParseDeleteIncidentRoleResponse parses an HTTP response from a DeleteIncidentRoleWithResponse call
 func ParseDeleteIncidentRoleResponse(rsp *http.Response) (*DeleteIncidentRoleResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -41957,7 +41947,7 @@ func ParseDeleteIncidentRoleResponse(rsp *http.Response) (*DeleteIncidentRoleRes
 
 // ParseGetIncidentRoleResponse parses an HTTP response from a GetIncidentRoleWithResponse call
 func ParseGetIncidentRoleResponse(rsp *http.Response) (*GetIncidentRoleResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -41973,7 +41963,7 @@ func ParseGetIncidentRoleResponse(rsp *http.Response) (*GetIncidentRoleResponse,
 
 // ParseUpdateIncidentRoleResponse parses an HTTP response from a UpdateIncidentRoleWithResponse call
 func ParseUpdateIncidentRoleResponse(rsp *http.Response) (*UpdateIncidentRoleResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -41989,7 +41979,7 @@ func ParseUpdateIncidentRoleResponse(rsp *http.Response) (*UpdateIncidentRoleRes
 
 // ParseListIncidentRoleTasksResponse parses an HTTP response from a ListIncidentRoleTasksWithResponse call
 func ParseListIncidentRoleTasksResponse(rsp *http.Response) (*ListIncidentRoleTasksResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -42005,7 +41995,7 @@ func ParseListIncidentRoleTasksResponse(rsp *http.Response) (*ListIncidentRoleTa
 
 // ParseCreateIncidentRoleTaskResponse parses an HTTP response from a CreateIncidentRoleTaskWithResponse call
 func ParseCreateIncidentRoleTaskResponse(rsp *http.Response) (*CreateIncidentRoleTaskResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -42021,7 +42011,7 @@ func ParseCreateIncidentRoleTaskResponse(rsp *http.Response) (*CreateIncidentRol
 
 // ParseListIncidentTypesResponse parses an HTTP response from a ListIncidentTypesWithResponse call
 func ParseListIncidentTypesResponse(rsp *http.Response) (*ListIncidentTypesResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -42037,7 +42027,7 @@ func ParseListIncidentTypesResponse(rsp *http.Response) (*ListIncidentTypesRespo
 
 // ParseCreateIncidentTypeResponse parses an HTTP response from a CreateIncidentTypeWithResponse call
 func ParseCreateIncidentTypeResponse(rsp *http.Response) (*CreateIncidentTypeResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -42053,7 +42043,7 @@ func ParseCreateIncidentTypeResponse(rsp *http.Response) (*CreateIncidentTypeRes
 
 // ParseDeleteIncidentTypeResponse parses an HTTP response from a DeleteIncidentTypeWithResponse call
 func ParseDeleteIncidentTypeResponse(rsp *http.Response) (*DeleteIncidentTypeResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -42069,7 +42059,7 @@ func ParseDeleteIncidentTypeResponse(rsp *http.Response) (*DeleteIncidentTypeRes
 
 // ParseGetIncidentTypeResponse parses an HTTP response from a GetIncidentTypeWithResponse call
 func ParseGetIncidentTypeResponse(rsp *http.Response) (*GetIncidentTypeResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -42085,7 +42075,7 @@ func ParseGetIncidentTypeResponse(rsp *http.Response) (*GetIncidentTypeResponse,
 
 // ParseUpdateIncidentTypeResponse parses an HTTP response from a UpdateIncidentTypeWithResponse call
 func ParseUpdateIncidentTypeResponse(rsp *http.Response) (*UpdateIncidentTypeResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -42101,7 +42091,7 @@ func ParseUpdateIncidentTypeResponse(rsp *http.Response) (*UpdateIncidentTypeRes
 
 // ParseListIncidentsResponse parses an HTTP response from a ListIncidentsWithResponse call
 func ParseListIncidentsResponse(rsp *http.Response) (*ListIncidentsResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -42117,7 +42107,7 @@ func ParseListIncidentsResponse(rsp *http.Response) (*ListIncidentsResponse, err
 
 // ParseCreateIncidentResponse parses an HTTP response from a CreateIncidentWithResponse call
 func ParseCreateIncidentResponse(rsp *http.Response) (*CreateIncidentResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -42133,7 +42123,7 @@ func ParseCreateIncidentResponse(rsp *http.Response) (*CreateIncidentResponse, e
 
 // ParseDeleteIncidentResponse parses an HTTP response from a DeleteIncidentWithResponse call
 func ParseDeleteIncidentResponse(rsp *http.Response) (*DeleteIncidentResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -42149,7 +42139,7 @@ func ParseDeleteIncidentResponse(rsp *http.Response) (*DeleteIncidentResponse, e
 
 // ParseGetIncidentResponse parses an HTTP response from a GetIncidentWithResponse call
 func ParseGetIncidentResponse(rsp *http.Response) (*GetIncidentResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -42165,7 +42155,7 @@ func ParseGetIncidentResponse(rsp *http.Response) (*GetIncidentResponse, error) 
 
 // ParseUpdateIncidentResponse parses an HTTP response from a UpdateIncidentWithResponse call
 func ParseUpdateIncidentResponse(rsp *http.Response) (*UpdateIncidentResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -42181,7 +42171,7 @@ func ParseUpdateIncidentResponse(rsp *http.Response) (*UpdateIncidentResponse, e
 
 // ParseAddSubscribersToIncidentResponse parses an HTTP response from a AddSubscribersToIncidentWithResponse call
 func ParseAddSubscribersToIncidentResponse(rsp *http.Response) (*AddSubscribersToIncidentResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -42197,7 +42187,7 @@ func ParseAddSubscribersToIncidentResponse(rsp *http.Response) (*AddSubscribersT
 
 // ParseCancelIncidentResponse parses an HTTP response from a CancelIncidentWithResponse call
 func ParseCancelIncidentResponse(rsp *http.Response) (*CancelIncidentResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -42213,7 +42203,7 @@ func ParseCancelIncidentResponse(rsp *http.Response) (*CancelIncidentResponse, e
 
 // ParseMarkAsDuplicateIncidentResponse parses an HTTP response from a MarkAsDuplicateIncidentWithResponse call
 func ParseMarkAsDuplicateIncidentResponse(rsp *http.Response) (*MarkAsDuplicateIncidentResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -42229,7 +42219,7 @@ func ParseMarkAsDuplicateIncidentResponse(rsp *http.Response) (*MarkAsDuplicateI
 
 // ParseTriageIncidentResponse parses an HTTP response from a TriageIncidentWithResponse call
 func ParseTriageIncidentResponse(rsp *http.Response) (*TriageIncidentResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -42245,7 +42235,7 @@ func ParseTriageIncidentResponse(rsp *http.Response) (*TriageIncidentResponse, e
 
 // ParseMitigateIncidentResponse parses an HTTP response from a MitigateIncidentWithResponse call
 func ParseMitigateIncidentResponse(rsp *http.Response) (*MitigateIncidentResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -42261,7 +42251,7 @@ func ParseMitigateIncidentResponse(rsp *http.Response) (*MitigateIncidentRespons
 
 // ParseRemoveSubscribersToIncidentResponse parses an HTTP response from a RemoveSubscribersToIncidentWithResponse call
 func ParseRemoveSubscribersToIncidentResponse(rsp *http.Response) (*RemoveSubscribersToIncidentResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -42277,7 +42267,7 @@ func ParseRemoveSubscribersToIncidentResponse(rsp *http.Response) (*RemoveSubscr
 
 // ParseResolveIncidentResponse parses an HTTP response from a ResolveIncidentWithResponse call
 func ParseResolveIncidentResponse(rsp *http.Response) (*ResolveIncidentResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -42293,7 +42283,7 @@ func ParseResolveIncidentResponse(rsp *http.Response) (*ResolveIncidentResponse,
 
 // ParseRestartIncidentResponse parses an HTTP response from a RestartIncidentWithResponse call
 func ParseRestartIncidentResponse(rsp *http.Response) (*RestartIncidentResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -42309,7 +42299,7 @@ func ParseRestartIncidentResponse(rsp *http.Response) (*RestartIncidentResponse,
 
 // ParseListIncidentActionItemsResponse parses an HTTP response from a ListIncidentActionItemsWithResponse call
 func ParseListIncidentActionItemsResponse(rsp *http.Response) (*ListIncidentActionItemsResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -42325,7 +42315,7 @@ func ParseListIncidentActionItemsResponse(rsp *http.Response) (*ListIncidentActi
 
 // ParseCreateIncidentActionItemResponse parses an HTTP response from a CreateIncidentActionItemWithResponse call
 func ParseCreateIncidentActionItemResponse(rsp *http.Response) (*CreateIncidentActionItemResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -42341,7 +42331,7 @@ func ParseCreateIncidentActionItemResponse(rsp *http.Response) (*CreateIncidentA
 
 // ParseListIncidentAlertsResponse parses an HTTP response from a ListIncidentAlertsWithResponse call
 func ParseListIncidentAlertsResponse(rsp *http.Response) (*ListIncidentAlertsResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -42357,7 +42347,7 @@ func ParseListIncidentAlertsResponse(rsp *http.Response) (*ListIncidentAlertsRes
 
 // ParseAttachAlertResponse parses an HTTP response from a AttachAlertWithResponse call
 func ParseAttachAlertResponse(rsp *http.Response) (*AttachAlertResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -42373,7 +42363,7 @@ func ParseAttachAlertResponse(rsp *http.Response) (*AttachAlertResponse, error) 
 
 // ParseListIncidentCustomFieldSelectionsResponse parses an HTTP response from a ListIncidentCustomFieldSelectionsWithResponse call
 func ParseListIncidentCustomFieldSelectionsResponse(rsp *http.Response) (*ListIncidentCustomFieldSelectionsResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -42389,7 +42379,7 @@ func ParseListIncidentCustomFieldSelectionsResponse(rsp *http.Response) (*ListIn
 
 // ParseCreateIncidentCustomFieldSelectionResponse parses an HTTP response from a CreateIncidentCustomFieldSelectionWithResponse call
 func ParseCreateIncidentCustomFieldSelectionResponse(rsp *http.Response) (*CreateIncidentCustomFieldSelectionResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -42405,7 +42395,7 @@ func ParseCreateIncidentCustomFieldSelectionResponse(rsp *http.Response) (*Creat
 
 // ParseListIncidentEventsResponse parses an HTTP response from a ListIncidentEventsWithResponse call
 func ParseListIncidentEventsResponse(rsp *http.Response) (*ListIncidentEventsResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -42421,7 +42411,7 @@ func ParseListIncidentEventsResponse(rsp *http.Response) (*ListIncidentEventsRes
 
 // ParseCreateIncidentEventResponse parses an HTTP response from a CreateIncidentEventWithResponse call
 func ParseCreateIncidentEventResponse(rsp *http.Response) (*CreateIncidentEventResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -42437,7 +42427,7 @@ func ParseCreateIncidentEventResponse(rsp *http.Response) (*CreateIncidentEventR
 
 // ParseListIncidentFeedbacksResponse parses an HTTP response from a ListIncidentFeedbacksWithResponse call
 func ParseListIncidentFeedbacksResponse(rsp *http.Response) (*ListIncidentFeedbacksResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -42453,7 +42443,7 @@ func ParseListIncidentFeedbacksResponse(rsp *http.Response) (*ListIncidentFeedba
 
 // ParseCreateIncidentFeedbackResponse parses an HTTP response from a CreateIncidentFeedbackWithResponse call
 func ParseCreateIncidentFeedbackResponse(rsp *http.Response) (*CreateIncidentFeedbackResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -42469,7 +42459,7 @@ func ParseCreateIncidentFeedbackResponse(rsp *http.Response) (*CreateIncidentFee
 
 // ParseListIncidentFormFieldSelectionsResponse parses an HTTP response from a ListIncidentFormFieldSelectionsWithResponse call
 func ParseListIncidentFormFieldSelectionsResponse(rsp *http.Response) (*ListIncidentFormFieldSelectionsResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -42485,7 +42475,7 @@ func ParseListIncidentFormFieldSelectionsResponse(rsp *http.Response) (*ListInci
 
 // ParseCreateIncidentFormFieldSelectionResponse parses an HTTP response from a CreateIncidentFormFieldSelectionWithResponse call
 func ParseCreateIncidentFormFieldSelectionResponse(rsp *http.Response) (*CreateIncidentFormFieldSelectionResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -42501,7 +42491,7 @@ func ParseCreateIncidentFormFieldSelectionResponse(rsp *http.Response) (*CreateI
 
 // ParseListIncidentStatusPagesResponse parses an HTTP response from a ListIncidentStatusPagesWithResponse call
 func ParseListIncidentStatusPagesResponse(rsp *http.Response) (*ListIncidentStatusPagesResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -42517,7 +42507,7 @@ func ParseListIncidentStatusPagesResponse(rsp *http.Response) (*ListIncidentStat
 
 // ParseCreateIncidentStatusPageResponse parses an HTTP response from a CreateIncidentStatusPageWithResponse call
 func ParseCreateIncidentStatusPageResponse(rsp *http.Response) (*CreateIncidentStatusPageResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -42533,7 +42523,7 @@ func ParseCreateIncidentStatusPageResponse(rsp *http.Response) (*CreateIncidentS
 
 // ParseGetIpRangesResponse parses an HTTP response from a GetIpRangesWithResponse call
 func ParseGetIpRangesResponse(rsp *http.Response) (*GetIpRangesResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -42549,7 +42539,7 @@ func ParseGetIpRangesResponse(rsp *http.Response) (*GetIpRangesResponse, error) 
 
 // ParseDeletePlaybookTaskResponse parses an HTTP response from a DeletePlaybookTaskWithResponse call
 func ParseDeletePlaybookTaskResponse(rsp *http.Response) (*DeletePlaybookTaskResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -42565,7 +42555,7 @@ func ParseDeletePlaybookTaskResponse(rsp *http.Response) (*DeletePlaybookTaskRes
 
 // ParseGetPlaybookTaskResponse parses an HTTP response from a GetPlaybookTaskWithResponse call
 func ParseGetPlaybookTaskResponse(rsp *http.Response) (*GetPlaybookTaskResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -42581,7 +42571,7 @@ func ParseGetPlaybookTaskResponse(rsp *http.Response) (*GetPlaybookTaskResponse,
 
 // ParseUpdatePlaybookTaskResponse parses an HTTP response from a UpdatePlaybookTaskWithResponse call
 func ParseUpdatePlaybookTaskResponse(rsp *http.Response) (*UpdatePlaybookTaskResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -42597,7 +42587,7 @@ func ParseUpdatePlaybookTaskResponse(rsp *http.Response) (*UpdatePlaybookTaskRes
 
 // ParseListPlaybooksResponse parses an HTTP response from a ListPlaybooksWithResponse call
 func ParseListPlaybooksResponse(rsp *http.Response) (*ListPlaybooksResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -42613,7 +42603,7 @@ func ParseListPlaybooksResponse(rsp *http.Response) (*ListPlaybooksResponse, err
 
 // ParseCreatePlaybookResponse parses an HTTP response from a CreatePlaybookWithResponse call
 func ParseCreatePlaybookResponse(rsp *http.Response) (*CreatePlaybookResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -42629,7 +42619,7 @@ func ParseCreatePlaybookResponse(rsp *http.Response) (*CreatePlaybookResponse, e
 
 // ParseDeletePlaybookResponse parses an HTTP response from a DeletePlaybookWithResponse call
 func ParseDeletePlaybookResponse(rsp *http.Response) (*DeletePlaybookResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -42645,7 +42635,7 @@ func ParseDeletePlaybookResponse(rsp *http.Response) (*DeletePlaybookResponse, e
 
 // ParseGetPlaybookResponse parses an HTTP response from a GetPlaybookWithResponse call
 func ParseGetPlaybookResponse(rsp *http.Response) (*GetPlaybookResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -42661,7 +42651,7 @@ func ParseGetPlaybookResponse(rsp *http.Response) (*GetPlaybookResponse, error) 
 
 // ParseUpdatePlaybookResponse parses an HTTP response from a UpdatePlaybookWithResponse call
 func ParseUpdatePlaybookResponse(rsp *http.Response) (*UpdatePlaybookResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -42677,7 +42667,7 @@ func ParseUpdatePlaybookResponse(rsp *http.Response) (*UpdatePlaybookResponse, e
 
 // ParseListPlaybookTasksResponse parses an HTTP response from a ListPlaybookTasksWithResponse call
 func ParseListPlaybookTasksResponse(rsp *http.Response) (*ListPlaybookTasksResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -42693,7 +42683,7 @@ func ParseListPlaybookTasksResponse(rsp *http.Response) (*ListPlaybookTasksRespo
 
 // ParseCreatePlaybookTaskResponse parses an HTTP response from a CreatePlaybookTaskWithResponse call
 func ParseCreatePlaybookTaskResponse(rsp *http.Response) (*CreatePlaybookTaskResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -42709,7 +42699,7 @@ func ParseCreatePlaybookTaskResponse(rsp *http.Response) (*CreatePlaybookTaskRes
 
 // ParseListPostmortemTemplatesResponse parses an HTTP response from a ListPostmortemTemplatesWithResponse call
 func ParseListPostmortemTemplatesResponse(rsp *http.Response) (*ListPostmortemTemplatesResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -42725,7 +42715,7 @@ func ParseListPostmortemTemplatesResponse(rsp *http.Response) (*ListPostmortemTe
 
 // ParseCreatePostmortemTemplateResponse parses an HTTP response from a CreatePostmortemTemplateWithResponse call
 func ParseCreatePostmortemTemplateResponse(rsp *http.Response) (*CreatePostmortemTemplateResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -42741,7 +42731,7 @@ func ParseCreatePostmortemTemplateResponse(rsp *http.Response) (*CreatePostmorte
 
 // ParseDeletePostmortemTemplateResponse parses an HTTP response from a DeletePostmortemTemplateWithResponse call
 func ParseDeletePostmortemTemplateResponse(rsp *http.Response) (*DeletePostmortemTemplateResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -42757,7 +42747,7 @@ func ParseDeletePostmortemTemplateResponse(rsp *http.Response) (*DeletePostmorte
 
 // ParseGetPostmortemTemplateResponse parses an HTTP response from a GetPostmortemTemplateWithResponse call
 func ParseGetPostmortemTemplateResponse(rsp *http.Response) (*GetPostmortemTemplateResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -42773,7 +42763,7 @@ func ParseGetPostmortemTemplateResponse(rsp *http.Response) (*GetPostmortemTempl
 
 // ParseUpdatePostmortemTemplateResponse parses an HTTP response from a UpdatePostmortemTemplateWithResponse call
 func ParseUpdatePostmortemTemplateResponse(rsp *http.Response) (*UpdatePostmortemTemplateResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -42789,7 +42779,7 @@ func ParseUpdatePostmortemTemplateResponse(rsp *http.Response) (*UpdatePostmorte
 
 // ParseListIncidentPostMortemsResponse parses an HTTP response from a ListIncidentPostMortemsWithResponse call
 func ParseListIncidentPostMortemsResponse(rsp *http.Response) (*ListIncidentPostMortemsResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -42805,7 +42795,7 @@ func ParseListIncidentPostMortemsResponse(rsp *http.Response) (*ListIncidentPost
 
 // ParseListIncidentPostmortemResponse parses an HTTP response from a ListIncidentPostmortemWithResponse call
 func ParseListIncidentPostmortemResponse(rsp *http.Response) (*ListIncidentPostmortemResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -42821,7 +42811,7 @@ func ParseListIncidentPostmortemResponse(rsp *http.Response) (*ListIncidentPostm
 
 // ParseUpdateIncidentPostmortemResponse parses an HTTP response from a UpdateIncidentPostmortemWithResponse call
 func ParseUpdateIncidentPostmortemResponse(rsp *http.Response) (*UpdateIncidentPostmortemResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -42837,7 +42827,7 @@ func ParseUpdateIncidentPostmortemResponse(rsp *http.Response) (*UpdateIncidentP
 
 // ParseListPulsesResponse parses an HTTP response from a ListPulsesWithResponse call
 func ParseListPulsesResponse(rsp *http.Response) (*ListPulsesResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -42853,7 +42843,7 @@ func ParseListPulsesResponse(rsp *http.Response) (*ListPulsesResponse, error) {
 
 // ParseCreatePulseResponse parses an HTTP response from a CreatePulseWithResponse call
 func ParseCreatePulseResponse(rsp *http.Response) (*CreatePulseResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -42869,7 +42859,7 @@ func ParseCreatePulseResponse(rsp *http.Response) (*CreatePulseResponse, error) 
 
 // ParseGetPulseResponse parses an HTTP response from a GetPulseWithResponse call
 func ParseGetPulseResponse(rsp *http.Response) (*GetPulseResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -42885,7 +42875,7 @@ func ParseGetPulseResponse(rsp *http.Response) (*GetPulseResponse, error) {
 
 // ParseUpdatePulseResponse parses an HTTP response from a UpdatePulseWithResponse call
 func ParseUpdatePulseResponse(rsp *http.Response) (*UpdatePulseResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -42901,7 +42891,7 @@ func ParseUpdatePulseResponse(rsp *http.Response) (*UpdatePulseResponse, error) 
 
 // ParseListRetrospectiveStepsResponse parses an HTTP response from a ListRetrospectiveStepsWithResponse call
 func ParseListRetrospectiveStepsResponse(rsp *http.Response) (*ListRetrospectiveStepsResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -42917,7 +42907,7 @@ func ParseListRetrospectiveStepsResponse(rsp *http.Response) (*ListRetrospective
 
 // ParseCreateRetrospectiveStepResponse parses an HTTP response from a CreateRetrospectiveStepWithResponse call
 func ParseCreateRetrospectiveStepResponse(rsp *http.Response) (*CreateRetrospectiveStepResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -42933,7 +42923,7 @@ func ParseCreateRetrospectiveStepResponse(rsp *http.Response) (*CreateRetrospect
 
 // ParseDeleteRetrospectiveStepResponse parses an HTTP response from a DeleteRetrospectiveStepWithResponse call
 func ParseDeleteRetrospectiveStepResponse(rsp *http.Response) (*DeleteRetrospectiveStepResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -42949,7 +42939,7 @@ func ParseDeleteRetrospectiveStepResponse(rsp *http.Response) (*DeleteRetrospect
 
 // ParseGetRetrospectiveStepResponse parses an HTTP response from a GetRetrospectiveStepWithResponse call
 func ParseGetRetrospectiveStepResponse(rsp *http.Response) (*GetRetrospectiveStepResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -42965,7 +42955,7 @@ func ParseGetRetrospectiveStepResponse(rsp *http.Response) (*GetRetrospectiveSte
 
 // ParseUpdateRetrospectiveStepResponse parses an HTTP response from a UpdateRetrospectiveStepWithResponse call
 func ParseUpdateRetrospectiveStepResponse(rsp *http.Response) (*UpdateRetrospectiveStepResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -42981,7 +42971,7 @@ func ParseUpdateRetrospectiveStepResponse(rsp *http.Response) (*UpdateRetrospect
 
 // ParseListSecretsResponse parses an HTTP response from a ListSecretsWithResponse call
 func ParseListSecretsResponse(rsp *http.Response) (*ListSecretsResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -42997,7 +42987,7 @@ func ParseListSecretsResponse(rsp *http.Response) (*ListSecretsResponse, error) 
 
 // ParseCreateSecretResponse parses an HTTP response from a CreateSecretWithResponse call
 func ParseCreateSecretResponse(rsp *http.Response) (*CreateSecretResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -43013,7 +43003,7 @@ func ParseCreateSecretResponse(rsp *http.Response) (*CreateSecretResponse, error
 
 // ParseDeleteSecretResponse parses an HTTP response from a DeleteSecretWithResponse call
 func ParseDeleteSecretResponse(rsp *http.Response) (*DeleteSecretResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -43029,7 +43019,7 @@ func ParseDeleteSecretResponse(rsp *http.Response) (*DeleteSecretResponse, error
 
 // ParseGetSecretResponse parses an HTTP response from a GetSecretWithResponse call
 func ParseGetSecretResponse(rsp *http.Response) (*GetSecretResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -43045,7 +43035,7 @@ func ParseGetSecretResponse(rsp *http.Response) (*GetSecretResponse, error) {
 
 // ParseUpdateSecretResponse parses an HTTP response from a UpdateSecretWithResponse call
 func ParseUpdateSecretResponse(rsp *http.Response) (*UpdateSecretResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -43061,7 +43051,7 @@ func ParseUpdateSecretResponse(rsp *http.Response) (*UpdateSecretResponse, error
 
 // ParseListServicesResponse parses an HTTP response from a ListServicesWithResponse call
 func ParseListServicesResponse(rsp *http.Response) (*ListServicesResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -43077,7 +43067,7 @@ func ParseListServicesResponse(rsp *http.Response) (*ListServicesResponse, error
 
 // ParseCreateServiceResponse parses an HTTP response from a CreateServiceWithResponse call
 func ParseCreateServiceResponse(rsp *http.Response) (*CreateServiceResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -43093,7 +43083,7 @@ func ParseCreateServiceResponse(rsp *http.Response) (*CreateServiceResponse, err
 
 // ParseDeleteServiceResponse parses an HTTP response from a DeleteServiceWithResponse call
 func ParseDeleteServiceResponse(rsp *http.Response) (*DeleteServiceResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -43109,7 +43099,7 @@ func ParseDeleteServiceResponse(rsp *http.Response) (*DeleteServiceResponse, err
 
 // ParseGetServiceResponse parses an HTTP response from a GetServiceWithResponse call
 func ParseGetServiceResponse(rsp *http.Response) (*GetServiceResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -43125,7 +43115,7 @@ func ParseGetServiceResponse(rsp *http.Response) (*GetServiceResponse, error) {
 
 // ParseUpdateServiceResponse parses an HTTP response from a UpdateServiceWithResponse call
 func ParseUpdateServiceResponse(rsp *http.Response) (*UpdateServiceResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -43141,7 +43131,7 @@ func ParseUpdateServiceResponse(rsp *http.Response) (*UpdateServiceResponse, err
 
 // ParseGetServiceIncidentsChartResponse parses an HTTP response from a GetServiceIncidentsChartWithResponse call
 func ParseGetServiceIncidentsChartResponse(rsp *http.Response) (*GetServiceIncidentsChartResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -43157,7 +43147,7 @@ func ParseGetServiceIncidentsChartResponse(rsp *http.Response) (*GetServiceIncid
 
 // ParseGetServiceUptimeChartResponse parses an HTTP response from a GetServiceUptimeChartWithResponse call
 func ParseGetServiceUptimeChartResponse(rsp *http.Response) (*GetServiceUptimeChartResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -43173,7 +43163,7 @@ func ParseGetServiceUptimeChartResponse(rsp *http.Response) (*GetServiceUptimeCh
 
 // ParseListSeveritiesResponse parses an HTTP response from a ListSeveritiesWithResponse call
 func ParseListSeveritiesResponse(rsp *http.Response) (*ListSeveritiesResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -43189,7 +43179,7 @@ func ParseListSeveritiesResponse(rsp *http.Response) (*ListSeveritiesResponse, e
 
 // ParseCreateSeverityResponse parses an HTTP response from a CreateSeverityWithResponse call
 func ParseCreateSeverityResponse(rsp *http.Response) (*CreateSeverityResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -43205,7 +43195,7 @@ func ParseCreateSeverityResponse(rsp *http.Response) (*CreateSeverityResponse, e
 
 // ParseDeleteSeverityResponse parses an HTTP response from a DeleteSeverityWithResponse call
 func ParseDeleteSeverityResponse(rsp *http.Response) (*DeleteSeverityResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -43221,7 +43211,7 @@ func ParseDeleteSeverityResponse(rsp *http.Response) (*DeleteSeverityResponse, e
 
 // ParseGetSeverityResponse parses an HTTP response from a GetSeverityWithResponse call
 func ParseGetSeverityResponse(rsp *http.Response) (*GetSeverityResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -43237,7 +43227,7 @@ func ParseGetSeverityResponse(rsp *http.Response) (*GetSeverityResponse, error) 
 
 // ParseUpdateSeverityResponse parses an HTTP response from a UpdateSeverityWithResponse call
 func ParseUpdateSeverityResponse(rsp *http.Response) (*UpdateSeverityResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -43253,7 +43243,7 @@ func ParseUpdateSeverityResponse(rsp *http.Response) (*UpdateSeverityResponse, e
 
 // ParseDeleteIncidentStatusPageResponse parses an HTTP response from a DeleteIncidentStatusPageWithResponse call
 func ParseDeleteIncidentStatusPageResponse(rsp *http.Response) (*DeleteIncidentStatusPageResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -43269,7 +43259,7 @@ func ParseDeleteIncidentStatusPageResponse(rsp *http.Response) (*DeleteIncidentS
 
 // ParseGetIncidentStatusPagesResponse parses an HTTP response from a GetIncidentStatusPagesWithResponse call
 func ParseGetIncidentStatusPagesResponse(rsp *http.Response) (*GetIncidentStatusPagesResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -43285,7 +43275,7 @@ func ParseGetIncidentStatusPagesResponse(rsp *http.Response) (*GetIncidentStatus
 
 // ParseUpdateIncidentStatusPageResponse parses an HTTP response from a UpdateIncidentStatusPageWithResponse call
 func ParseUpdateIncidentStatusPageResponse(rsp *http.Response) (*UpdateIncidentStatusPageResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -43301,7 +43291,7 @@ func ParseUpdateIncidentStatusPageResponse(rsp *http.Response) (*UpdateIncidentS
 
 // ParseListStatusPagesResponse parses an HTTP response from a ListStatusPagesWithResponse call
 func ParseListStatusPagesResponse(rsp *http.Response) (*ListStatusPagesResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -43317,7 +43307,7 @@ func ParseListStatusPagesResponse(rsp *http.Response) (*ListStatusPagesResponse,
 
 // ParseCreateStatusPageResponse parses an HTTP response from a CreateStatusPageWithResponse call
 func ParseCreateStatusPageResponse(rsp *http.Response) (*CreateStatusPageResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -43333,7 +43323,7 @@ func ParseCreateStatusPageResponse(rsp *http.Response) (*CreateStatusPageRespons
 
 // ParseDeleteStatusPageResponse parses an HTTP response from a DeleteStatusPageWithResponse call
 func ParseDeleteStatusPageResponse(rsp *http.Response) (*DeleteStatusPageResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -43349,7 +43339,7 @@ func ParseDeleteStatusPageResponse(rsp *http.Response) (*DeleteStatusPageRespons
 
 // ParseGetStatusPageResponse parses an HTTP response from a GetStatusPageWithResponse call
 func ParseGetStatusPageResponse(rsp *http.Response) (*GetStatusPageResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -43365,7 +43355,7 @@ func ParseGetStatusPageResponse(rsp *http.Response) (*GetStatusPageResponse, err
 
 // ParseUpdateStatusPageResponse parses an HTTP response from a UpdateStatusPageWithResponse call
 func ParseUpdateStatusPageResponse(rsp *http.Response) (*UpdateStatusPageResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -43381,7 +43371,7 @@ func ParseUpdateStatusPageResponse(rsp *http.Response) (*UpdateStatusPageRespons
 
 // ParseListStatusPageTemplatesResponse parses an HTTP response from a ListStatusPageTemplatesWithResponse call
 func ParseListStatusPageTemplatesResponse(rsp *http.Response) (*ListStatusPageTemplatesResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -43397,7 +43387,7 @@ func ParseListStatusPageTemplatesResponse(rsp *http.Response) (*ListStatusPageTe
 
 // ParseCreateStatusPageTemplateResponse parses an HTTP response from a CreateStatusPageTemplateWithResponse call
 func ParseCreateStatusPageTemplateResponse(rsp *http.Response) (*CreateStatusPageTemplateResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -43413,7 +43403,7 @@ func ParseCreateStatusPageTemplateResponse(rsp *http.Response) (*CreateStatusPag
 
 // ParseListTeamsResponse parses an HTTP response from a ListTeamsWithResponse call
 func ParseListTeamsResponse(rsp *http.Response) (*ListTeamsResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -43429,7 +43419,7 @@ func ParseListTeamsResponse(rsp *http.Response) (*ListTeamsResponse, error) {
 
 // ParseCreateTeamResponse parses an HTTP response from a CreateTeamWithResponse call
 func ParseCreateTeamResponse(rsp *http.Response) (*CreateTeamResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -43445,7 +43435,7 @@ func ParseCreateTeamResponse(rsp *http.Response) (*CreateTeamResponse, error) {
 
 // ParseDeleteTeamResponse parses an HTTP response from a DeleteTeamWithResponse call
 func ParseDeleteTeamResponse(rsp *http.Response) (*DeleteTeamResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -43461,7 +43451,7 @@ func ParseDeleteTeamResponse(rsp *http.Response) (*DeleteTeamResponse, error) {
 
 // ParseGetTeamResponse parses an HTTP response from a GetTeamWithResponse call
 func ParseGetTeamResponse(rsp *http.Response) (*GetTeamResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -43477,7 +43467,7 @@ func ParseGetTeamResponse(rsp *http.Response) (*GetTeamResponse, error) {
 
 // ParseUpdateTeamResponse parses an HTTP response from a UpdateTeamWithResponse call
 func ParseUpdateTeamResponse(rsp *http.Response) (*UpdateTeamResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -43493,7 +43483,7 @@ func ParseUpdateTeamResponse(rsp *http.Response) (*UpdateTeamResponse, error) {
 
 // ParseDeleteStatusPageTemplateResponse parses an HTTP response from a DeleteStatusPageTemplateWithResponse call
 func ParseDeleteStatusPageTemplateResponse(rsp *http.Response) (*DeleteStatusPageTemplateResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -43509,7 +43499,7 @@ func ParseDeleteStatusPageTemplateResponse(rsp *http.Response) (*DeleteStatusPag
 
 // ParseGetStatusPageTemplateResponse parses an HTTP response from a GetStatusPageTemplateWithResponse call
 func ParseGetStatusPageTemplateResponse(rsp *http.Response) (*GetStatusPageTemplateResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -43525,7 +43515,7 @@ func ParseGetStatusPageTemplateResponse(rsp *http.Response) (*GetStatusPageTempl
 
 // ParseUpdateStatusPageTemplateResponse parses an HTTP response from a UpdateStatusPageTemplateWithResponse call
 func ParseUpdateStatusPageTemplateResponse(rsp *http.Response) (*UpdateStatusPageTemplateResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -43541,7 +43531,7 @@ func ParseUpdateStatusPageTemplateResponse(rsp *http.Response) (*UpdateStatusPag
 
 // ParseListUsersResponse parses an HTTP response from a ListUsersWithResponse call
 func ParseListUsersResponse(rsp *http.Response) (*ListUsersResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -43557,7 +43547,7 @@ func ParseListUsersResponse(rsp *http.Response) (*ListUsersResponse, error) {
 
 // ParseGetCurrentUserResponse parses an HTTP response from a GetCurrentUserWithResponse call
 func ParseGetCurrentUserResponse(rsp *http.Response) (*GetCurrentUserResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -43573,7 +43563,7 @@ func ParseGetCurrentUserResponse(rsp *http.Response) (*GetCurrentUserResponse, e
 
 // ParseDeleteUserResponse parses an HTTP response from a DeleteUserWithResponse call
 func ParseDeleteUserResponse(rsp *http.Response) (*DeleteUserResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -43589,7 +43579,7 @@ func ParseDeleteUserResponse(rsp *http.Response) (*DeleteUserResponse, error) {
 
 // ParseGetUserResponse parses an HTTP response from a GetUserWithResponse call
 func ParseGetUserResponse(rsp *http.Response) (*GetUserResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -43605,7 +43595,7 @@ func ParseGetUserResponse(rsp *http.Response) (*GetUserResponse, error) {
 
 // ParseGetWebhooksDeliveryResponse parses an HTTP response from a GetWebhooksDeliveryWithResponse call
 func ParseGetWebhooksDeliveryResponse(rsp *http.Response) (*GetWebhooksDeliveryResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -43621,7 +43611,7 @@ func ParseGetWebhooksDeliveryResponse(rsp *http.Response) (*GetWebhooksDeliveryR
 
 // ParseDeliverWebhooksDeliveryResponse parses an HTTP response from a DeliverWebhooksDeliveryWithResponse call
 func ParseDeliverWebhooksDeliveryResponse(rsp *http.Response) (*DeliverWebhooksDeliveryResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -43637,7 +43627,7 @@ func ParseDeliverWebhooksDeliveryResponse(rsp *http.Response) (*DeliverWebhooksD
 
 // ParseListWebhooksEndpointsResponse parses an HTTP response from a ListWebhooksEndpointsWithResponse call
 func ParseListWebhooksEndpointsResponse(rsp *http.Response) (*ListWebhooksEndpointsResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -43653,7 +43643,7 @@ func ParseListWebhooksEndpointsResponse(rsp *http.Response) (*ListWebhooksEndpoi
 
 // ParseCreateWebhooksEndpointResponse parses an HTTP response from a CreateWebhooksEndpointWithResponse call
 func ParseCreateWebhooksEndpointResponse(rsp *http.Response) (*CreateWebhooksEndpointResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -43669,7 +43659,7 @@ func ParseCreateWebhooksEndpointResponse(rsp *http.Response) (*CreateWebhooksEnd
 
 // ParseListWebhooksDeliveriesResponse parses an HTTP response from a ListWebhooksDeliveriesWithResponse call
 func ParseListWebhooksDeliveriesResponse(rsp *http.Response) (*ListWebhooksDeliveriesResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -43685,7 +43675,7 @@ func ParseListWebhooksDeliveriesResponse(rsp *http.Response) (*ListWebhooksDeliv
 
 // ParseDeleteWebhooksEndpointResponse parses an HTTP response from a DeleteWebhooksEndpointWithResponse call
 func ParseDeleteWebhooksEndpointResponse(rsp *http.Response) (*DeleteWebhooksEndpointResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -43701,7 +43691,7 @@ func ParseDeleteWebhooksEndpointResponse(rsp *http.Response) (*DeleteWebhooksEnd
 
 // ParseGetWebhooksEndpointResponse parses an HTTP response from a GetWebhooksEndpointWithResponse call
 func ParseGetWebhooksEndpointResponse(rsp *http.Response) (*GetWebhooksEndpointResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -43717,7 +43707,7 @@ func ParseGetWebhooksEndpointResponse(rsp *http.Response) (*GetWebhooksEndpointR
 
 // ParseUpdateWebhooksEndpointResponse parses an HTTP response from a UpdateWebhooksEndpointWithResponse call
 func ParseUpdateWebhooksEndpointResponse(rsp *http.Response) (*UpdateWebhooksEndpointResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -43733,7 +43723,7 @@ func ParseUpdateWebhooksEndpointResponse(rsp *http.Response) (*UpdateWebhooksEnd
 
 // ParseDeleteWorkflowCustomFieldSelectionResponse parses an HTTP response from a DeleteWorkflowCustomFieldSelectionWithResponse call
 func ParseDeleteWorkflowCustomFieldSelectionResponse(rsp *http.Response) (*DeleteWorkflowCustomFieldSelectionResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -43749,7 +43739,7 @@ func ParseDeleteWorkflowCustomFieldSelectionResponse(rsp *http.Response) (*Delet
 
 // ParseGetWorkflowCustomFieldSelectionResponse parses an HTTP response from a GetWorkflowCustomFieldSelectionWithResponse call
 func ParseGetWorkflowCustomFieldSelectionResponse(rsp *http.Response) (*GetWorkflowCustomFieldSelectionResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -43765,7 +43755,7 @@ func ParseGetWorkflowCustomFieldSelectionResponse(rsp *http.Response) (*GetWorkf
 
 // ParseUpdateWorkflowCustomFieldSelectionResponse parses an HTTP response from a UpdateWorkflowCustomFieldSelectionWithResponse call
 func ParseUpdateWorkflowCustomFieldSelectionResponse(rsp *http.Response) (*UpdateWorkflowCustomFieldSelectionResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -43781,7 +43771,7 @@ func ParseUpdateWorkflowCustomFieldSelectionResponse(rsp *http.Response) (*Updat
 
 // ParseDeleteWorkflowFormFieldConditionResponse parses an HTTP response from a DeleteWorkflowFormFieldConditionWithResponse call
 func ParseDeleteWorkflowFormFieldConditionResponse(rsp *http.Response) (*DeleteWorkflowFormFieldConditionResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -43797,7 +43787,7 @@ func ParseDeleteWorkflowFormFieldConditionResponse(rsp *http.Response) (*DeleteW
 
 // ParseGetWorkflowFormFieldConditionResponse parses an HTTP response from a GetWorkflowFormFieldConditionWithResponse call
 func ParseGetWorkflowFormFieldConditionResponse(rsp *http.Response) (*GetWorkflowFormFieldConditionResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -43813,7 +43803,7 @@ func ParseGetWorkflowFormFieldConditionResponse(rsp *http.Response) (*GetWorkflo
 
 // ParseUpdateWorkflowFormFieldConditionResponse parses an HTTP response from a UpdateWorkflowFormFieldConditionWithResponse call
 func ParseUpdateWorkflowFormFieldConditionResponse(rsp *http.Response) (*UpdateWorkflowFormFieldConditionResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -43829,7 +43819,7 @@ func ParseUpdateWorkflowFormFieldConditionResponse(rsp *http.Response) (*UpdateW
 
 // ParseListWorkflowGroupsResponse parses an HTTP response from a ListWorkflowGroupsWithResponse call
 func ParseListWorkflowGroupsResponse(rsp *http.Response) (*ListWorkflowGroupsResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -43845,7 +43835,7 @@ func ParseListWorkflowGroupsResponse(rsp *http.Response) (*ListWorkflowGroupsRes
 
 // ParseCreateWorkflowGroupResponse parses an HTTP response from a CreateWorkflowGroupWithResponse call
 func ParseCreateWorkflowGroupResponse(rsp *http.Response) (*CreateWorkflowGroupResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -43861,7 +43851,7 @@ func ParseCreateWorkflowGroupResponse(rsp *http.Response) (*CreateWorkflowGroupR
 
 // ParseDeleteWorkflowGroupResponse parses an HTTP response from a DeleteWorkflowGroupWithResponse call
 func ParseDeleteWorkflowGroupResponse(rsp *http.Response) (*DeleteWorkflowGroupResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -43877,7 +43867,7 @@ func ParseDeleteWorkflowGroupResponse(rsp *http.Response) (*DeleteWorkflowGroupR
 
 // ParseGetWorkflowGroupResponse parses an HTTP response from a GetWorkflowGroupWithResponse call
 func ParseGetWorkflowGroupResponse(rsp *http.Response) (*GetWorkflowGroupResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -43893,7 +43883,7 @@ func ParseGetWorkflowGroupResponse(rsp *http.Response) (*GetWorkflowGroupRespons
 
 // ParseUpdateWorkflowGroupResponse parses an HTTP response from a UpdateWorkflowGroupWithResponse call
 func ParseUpdateWorkflowGroupResponse(rsp *http.Response) (*UpdateWorkflowGroupResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -43909,7 +43899,7 @@ func ParseUpdateWorkflowGroupResponse(rsp *http.Response) (*UpdateWorkflowGroupR
 
 // ParseDeleteWorkflowTaskResponse parses an HTTP response from a DeleteWorkflowTaskWithResponse call
 func ParseDeleteWorkflowTaskResponse(rsp *http.Response) (*DeleteWorkflowTaskResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -43925,7 +43915,7 @@ func ParseDeleteWorkflowTaskResponse(rsp *http.Response) (*DeleteWorkflowTaskRes
 
 // ParseGetWorkflowTaskResponse parses an HTTP response from a GetWorkflowTaskWithResponse call
 func ParseGetWorkflowTaskResponse(rsp *http.Response) (*GetWorkflowTaskResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -43941,7 +43931,7 @@ func ParseGetWorkflowTaskResponse(rsp *http.Response) (*GetWorkflowTaskResponse,
 
 // ParseUpdateWorkflowTaskResponse parses an HTTP response from a UpdateWorkflowTaskWithResponse call
 func ParseUpdateWorkflowTaskResponse(rsp *http.Response) (*UpdateWorkflowTaskResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -43957,7 +43947,7 @@ func ParseUpdateWorkflowTaskResponse(rsp *http.Response) (*UpdateWorkflowTaskRes
 
 // ParseListWorkflowsResponse parses an HTTP response from a ListWorkflowsWithResponse call
 func ParseListWorkflowsResponse(rsp *http.Response) (*ListWorkflowsResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -43973,7 +43963,7 @@ func ParseListWorkflowsResponse(rsp *http.Response) (*ListWorkflowsResponse, err
 
 // ParseCreateWorkflowResponse parses an HTTP response from a CreateWorkflowWithResponse call
 func ParseCreateWorkflowResponse(rsp *http.Response) (*CreateWorkflowResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -43989,7 +43979,7 @@ func ParseCreateWorkflowResponse(rsp *http.Response) (*CreateWorkflowResponse, e
 
 // ParseDeleteWorkflowResponse parses an HTTP response from a DeleteWorkflowWithResponse call
 func ParseDeleteWorkflowResponse(rsp *http.Response) (*DeleteWorkflowResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -44005,7 +43995,7 @@ func ParseDeleteWorkflowResponse(rsp *http.Response) (*DeleteWorkflowResponse, e
 
 // ParseGetWorkflowResponse parses an HTTP response from a GetWorkflowWithResponse call
 func ParseGetWorkflowResponse(rsp *http.Response) (*GetWorkflowResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -44021,7 +44011,7 @@ func ParseGetWorkflowResponse(rsp *http.Response) (*GetWorkflowResponse, error) 
 
 // ParseUpdateWorkflowResponse parses an HTTP response from a UpdateWorkflowWithResponse call
 func ParseUpdateWorkflowResponse(rsp *http.Response) (*UpdateWorkflowResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -44037,7 +44027,7 @@ func ParseUpdateWorkflowResponse(rsp *http.Response) (*UpdateWorkflowResponse, e
 
 // ParseListWorkflowCustomFieldSelectionsResponse parses an HTTP response from a ListWorkflowCustomFieldSelectionsWithResponse call
 func ParseListWorkflowCustomFieldSelectionsResponse(rsp *http.Response) (*ListWorkflowCustomFieldSelectionsResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -44053,7 +44043,7 @@ func ParseListWorkflowCustomFieldSelectionsResponse(rsp *http.Response) (*ListWo
 
 // ParseCreateWorkflowCustomFieldSelectionResponse parses an HTTP response from a CreateWorkflowCustomFieldSelectionWithResponse call
 func ParseCreateWorkflowCustomFieldSelectionResponse(rsp *http.Response) (*CreateWorkflowCustomFieldSelectionResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -44069,7 +44059,7 @@ func ParseCreateWorkflowCustomFieldSelectionResponse(rsp *http.Response) (*Creat
 
 // ParseListWorkflowFormFieldConditionsResponse parses an HTTP response from a ListWorkflowFormFieldConditionsWithResponse call
 func ParseListWorkflowFormFieldConditionsResponse(rsp *http.Response) (*ListWorkflowFormFieldConditionsResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -44085,7 +44075,7 @@ func ParseListWorkflowFormFieldConditionsResponse(rsp *http.Response) (*ListWork
 
 // ParseCreateWorkflowFormFieldConditionResponse parses an HTTP response from a CreateWorkflowFormFieldConditionWithResponse call
 func ParseCreateWorkflowFormFieldConditionResponse(rsp *http.Response) (*CreateWorkflowFormFieldConditionResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -44101,7 +44091,7 @@ func ParseCreateWorkflowFormFieldConditionResponse(rsp *http.Response) (*CreateW
 
 // ParseListWorkflowRunsResponse parses an HTTP response from a ListWorkflowRunsWithResponse call
 func ParseListWorkflowRunsResponse(rsp *http.Response) (*ListWorkflowRunsResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -44117,7 +44107,7 @@ func ParseListWorkflowRunsResponse(rsp *http.Response) (*ListWorkflowRunsRespons
 
 // ParseCreateWorkflowRunResponse parses an HTTP response from a CreateWorkflowRunWithResponse call
 func ParseCreateWorkflowRunResponse(rsp *http.Response) (*CreateWorkflowRunResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -44133,7 +44123,7 @@ func ParseCreateWorkflowRunResponse(rsp *http.Response) (*CreateWorkflowRunRespo
 
 // ParseListWorkflowTasksResponse parses an HTTP response from a ListWorkflowTasksWithResponse call
 func ParseListWorkflowTasksResponse(rsp *http.Response) (*ListWorkflowTasksResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
@@ -44149,7 +44139,7 @@ func ParseListWorkflowTasksResponse(rsp *http.Response) (*ListWorkflowTasksRespo
 
 // ParseCreateWorkflowTaskResponse parses an HTTP response from a CreateWorkflowTaskWithResponse call
 func ParseCreateWorkflowTaskResponse(rsp *http.Response) (*CreateWorkflowTaskResponse, error) {
-	bodyBytes, err := ioutil.ReadAll(rsp.Body)
+	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
