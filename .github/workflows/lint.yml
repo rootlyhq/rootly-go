@@ -37,3 +37,23 @@ jobs:
           go mod tidy
           git diff --exit-code go.mod
           git diff --exit-code go.sum
+      - run: |
+          cd tools
+          go mod tidy
+          git diff --exit-code go.mod
+          git diff --exit-code go.sum
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Go 1.x
+        uses: actions/setup-go@v4
+        env:
+          GO111MODULE: off
+        with:
+          go-version: 1.23
+        id: go
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+      - run: |
+          make gen
+          git diff --exit-code
