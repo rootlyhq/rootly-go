@@ -1,0 +1,49 @@
+name: lint
+
+on:
+  - push
+  - pull_request
+
+jobs:
+  golangci:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        version:
+        - "1.21"
+        - "1.22"
+        - "1.23"
+        - "1.24"
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+      - name: Set up Go 1.x
+        uses: actions/setup-go@v4
+        with:
+          go-version: ${{ matrix.version }}
+        id: go
+      - name: Run Golangci Linter
+        uses: golangci/golangci-lint-action@v3
+        with:
+          version: latest
+  gomod:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        version:
+        - "1.21"
+        - "1.22"
+        - "1.23"
+        - "1.24"
+    steps:
+      - name: Set up Go 1.x
+        uses: actions/setup-go@v4
+        with:
+          go-version: ${{ matrix.version }}
+        id: go
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+      - run: |
+          go mod tidy
+          git diff --exit-code go.mod
+          git diff --exit-code go.sum
