@@ -2,8 +2,6 @@ module github.com/rootlyhq/rootly-go
 
 go 1.24.0
 
-toolchain go1.24.4
-
 require (
 	github.com/getkin/kin-openapi v0.133.0
 	github.com/oapi-codegen/nullable v1.1.0

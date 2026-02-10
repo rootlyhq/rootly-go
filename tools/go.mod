@@ -2,8 +2,6 @@ module github.com/rootlyhq/rootly-go/tools
 
 go 1.22.5
 
-toolchain go1.24.4
-
 require github.com/oapi-codegen/oapi-codegen/v2 v2.5.1
 
 require (
