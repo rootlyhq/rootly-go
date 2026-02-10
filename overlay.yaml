@@ -1,0 +1,14 @@
+overlay: 1.0.0
+x-speakeasy-jsonpath: rfc9535
+info:
+  title: Override upstream specification for better code generation
+  version: 1.0.0
+actions:
+  - target: $.paths.*.parameters[?(@.name == "id")].schema.anyOf
+    remove: true
+
+  - target: $.paths.*..[?(@.name == "id" && @.in == "path")]
+    update:
+      schema:
+        x-go-type: ID
+        type: string
