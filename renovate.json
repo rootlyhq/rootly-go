@@ -4,6 +4,9 @@
     "config:best-practices",
     "helpers:pinGitHubActionDigestsToSemver"
   ],
+  "addLabels": [
+    "dependencies"
+  ],
   "packageRules": [
     {
       "description": "Require human review for `toolchain` directive and Mise updates",
