@@ -28,5 +28,9 @@
       "dependencyDashboardApproval": true,
       "groupName": "go-directive"
     }
+  ],
+  "postUpdateOptions": [
+    "gomodTidy",
+    "gomodUpdateImportPaths"
   ]
 }
