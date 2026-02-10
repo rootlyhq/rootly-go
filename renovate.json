@@ -3,5 +3,18 @@
   "extends": [
     "config:best-practices",
     "helpers:pinGitHubActionDigestsToSemver"
+  ],
+  "packageRules": [
+    {
+      "description": "Require human review for `go` directive updates updates",
+      "matchPackageNames": [
+        "go"
+      ],
+      "matchDepTypes": [
+        "golang"
+      ],
+      "dependencyDashboardApproval": true,
+      "groupName": "go-directive"
+    }
   ]
 }
