@@ -6,7 +6,15 @@
   ],
   "packageRules": [
     {
-      "description": "Require human review for `go` directive updates updates",
+      "description": "Require human review for `toolchain` directive and Mise updates",
+      "matchDepNames": [
+        "go"
+      ],
+      "dependencyDashboardApproval": true,
+      "groupName": "go-toolchain"
+    },
+    {
+      "description": "Require human review for `go` directive updates",
       "matchPackageNames": [
         "go"
       ],
