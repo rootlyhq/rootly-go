@@ -11,3 +11,4 @@ output-options:
   nullable-type: true
   overlay:
     path: overlay.yaml
+  prefer-skip-optional-pointer-on-container-types: true

@@ -11007,10 +11007,10 @@ type ActionItemTriggerParams struct {
 	IncidentActionItemConditionKind     *ActionItemTriggerParamsIncidentActionItemConditionKind     `json:"incident_action_item_condition_kind,omitempty"`
 	IncidentActionItemConditionPriority *ActionItemTriggerParamsIncidentActionItemConditionPriority `json:"incident_action_item_condition_priority,omitempty"`
 	IncidentActionItemConditionStatus   *ActionItemTriggerParamsIncidentActionItemConditionStatus   `json:"incident_action_item_condition_status,omitempty"`
-	IncidentActionItemGroupIds          *[]string                                                   `json:"incident_action_item_group_ids,omitempty"`
-	IncidentActionItemKinds             *[]ActionItemTriggerParamsIncidentActionItemKinds           `json:"incident_action_item_kinds,omitempty"`
-	IncidentActionItemPriorities        *[]ActionItemTriggerParamsIncidentActionItemPriorities      `json:"incident_action_item_priorities,omitempty"`
-	IncidentActionItemStatuses          *[]ActionItemTriggerParamsIncidentActionItemStatuses        `json:"incident_action_item_statuses,omitempty"`
+	IncidentActionItemGroupIds          []string                                                    `json:"incident_action_item_group_ids,omitempty"`
+	IncidentActionItemKinds             []ActionItemTriggerParamsIncidentActionItemKinds            `json:"incident_action_item_kinds,omitempty"`
+	IncidentActionItemPriorities        []ActionItemTriggerParamsIncidentActionItemPriorities       `json:"incident_action_item_priorities,omitempty"`
+	IncidentActionItemStatuses          []ActionItemTriggerParamsIncidentActionItemStatuses         `json:"incident_action_item_statuses,omitempty"`
 	IncidentCondition                   *ActionItemTriggerParamsIncidentCondition                   `json:"incident_condition,omitempty"`
 	IncidentConditionAcknowledgedAt     *ActionItemTriggerParams_IncidentConditionAcknowledgedAt    `json:"incident_condition_acknowledged_at,omitempty"`
 	IncidentConditionDetectedAt         *ActionItemTriggerParams_IncidentConditionDetectedAt        `json:"incident_condition_detected_at,omitempty"`
@@ -11031,11 +11031,11 @@ type ActionItemTriggerParams struct {
 	IncidentConditionVisibility         *ActionItemTriggerParamsIncidentConditionVisibility         `json:"incident_condition_visibility,omitempty"`
 	IncidentConditionalInactivity       *ActionItemTriggerParams_IncidentConditionalInactivity      `json:"incident_conditional_inactivity,omitempty"`
 	IncidentInactivityDuration          *ActionItemTriggerParams_IncidentInactivityDuration         `json:"incident_inactivity_duration,omitempty"`
-	IncidentKinds                       *[]ActionItemTriggerParamsIncidentKinds                     `json:"incident_kinds,omitempty"`
-	IncidentStatuses                    *[]ActionItemTriggerParamsIncidentStatuses                  `json:"incident_statuses,omitempty"`
-	IncidentVisibilities                *[]bool                                                     `json:"incident_visibilities,omitempty"`
+	IncidentKinds                       []ActionItemTriggerParamsIncidentKinds                      `json:"incident_kinds,omitempty"`
+	IncidentStatuses                    []ActionItemTriggerParamsIncidentStatuses                   `json:"incident_statuses,omitempty"`
+	IncidentVisibilities                []bool                                                      `json:"incident_visibilities,omitempty"`
 	TriggerType                         ActionItemTriggerParamsTriggerType                          `json:"trigger_type"`
-	Triggers                            *[]string                                                   `json:"triggers,omitempty"`
+	Triggers                            []string                                                    `json:"triggers,omitempty"`
 }
 
 // ActionItemTriggerParamsIncidentActionItemCondition defines model for ActionItemTriggerParams.IncidentActionItemCondition.
@@ -11221,7 +11221,7 @@ type AddActionItemTaskParams struct {
 	// Kind The action item kind
 	Kind                   *string `json:"kind,omitempty"`
 	PostToIncidentTimeline *bool   `json:"post_to_incident_timeline,omitempty"`
-	PostToSlackChannels    *[]struct {
+	PostToSlackChannels    []struct {
 		Id   *string `json:"id,omitempty"`
 		Name *string `json:"name,omitempty"`
 	} `json:"post_to_slack_channels,omitempty"`
@@ -11365,7 +11365,7 @@ type AddTeamTaskParamsTaskType string
 type AddToTimelineTaskParams struct {
 	// Event The timeline event description
 	Event               string `json:"event"`
-	PostToSlackChannels *[]struct {
+	PostToSlackChannels []struct {
 		Id   *string `json:"id,omitempty"`
 		Name *string `json:"name,omitempty"`
 	} `json:"post_to_slack_channels,omitempty"`
@@ -11381,7 +11381,7 @@ type AddToTimelineTaskParamsTaskType string
 // Alert defines model for alert.
 type Alert struct {
 	// AlertFieldValuesAttributes Custom alert field values to create with the alert
-	AlertFieldValuesAttributes *[]struct {
+	AlertFieldValuesAttributes []struct {
 		// AlertFieldId ID of the custom alert field
 		AlertFieldId string `json:"alert_field_id"`
 
@@ -11411,7 +11411,7 @@ type Alert struct {
 	EnvironmentIds nullable.Nullable[[]string] `json:"environment_ids,omitempty"`
 
 	// Environments Environments attached to the alert
-	Environments *[]Environment `json:"environments,omitempty"`
+	Environments []Environment `json:"environments,omitempty"`
 
 	// ExternalId External ID
 	ExternalId nullable.Nullable[string] `json:"external_id,omitempty"`
@@ -11426,11 +11426,11 @@ type Alert struct {
 	GroupLeaderAlertId nullable.Nullable[string] `json:"group_leader_alert_id,omitempty"`
 
 	// Groups Groups attached to the alert
-	Groups *[]Team `json:"groups,omitempty"`
+	Groups []Team `json:"groups,omitempty"`
 
 	// IsGroupLeaderAlert Whether the alert is a group leader alert
 	IsGroupLeaderAlert nullable.Nullable[bool] `json:"is_group_leader_alert,omitempty"`
-	Labels             *[]struct {
+	Labels             []struct {
 		// Key Key of the tag
 		Key string `json:"key"`
 
@@ -11445,7 +11445,7 @@ type Alert struct {
 	ServiceIds nullable.Nullable[[]string] `json:"service_ids,omitempty"`
 
 	// Services Services attached to the alert
-	Services *[]Service `json:"services,omitempty"`
+	Services []Service `json:"services,omitempty"`
 
 	// ShortId Human-readable short identifier for the alert
 	ShortId string `json:"short_id"`
@@ -11592,7 +11592,7 @@ type AlertFieldResponseDataType string
 type AlertGroup struct {
 	// Attributes This field is deprecated. Please use the `conditions` field instead, `attributes` will be removed in the future.
 	// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
-	Attributes *[]struct {
+	Attributes []struct {
 		// JsonPath The JSON path to the value to group by.
 		JsonPath *string `json:"json_path,omitempty"`
 	} `json:"attributes,omitempty"`
@@ -11601,7 +11601,7 @@ type AlertGroup struct {
 	ConditionType string `json:"condition_type"`
 
 	// Conditions The conditions for the alert group
-	Conditions *[]struct {
+	Conditions []struct {
 		// AlertUrgencyIds The Alert Urgency IDs to check in the condition. Only need to be set when the property field type is 'attribute', the property field name is 'alert_urgency' and the property field condition type is 'is_one_of' or 'is_not_one_of'
 		AlertUrgencyIds nullable.Nullable[[]string] `json:"alert_urgency_ids,omitempty"`
 
@@ -11624,8 +11624,8 @@ type AlertGroup struct {
 		PropertyFieldValue nullable.Nullable[string] `json:"property_field_value,omitempty"`
 
 		// PropertyFieldValues The values of the property field. Used if the property field condition type is 'is_one_of' or 'is_not_one_of' except for when property field name is 'alert_urgency'
-		PropertyFieldValues *[]string `json:"property_field_values,omitempty"`
-		Values              *[]struct {
+		PropertyFieldValues []string `json:"property_field_values,omitempty"`
+		Values              []struct {
 			// RecordId ID of the Alert Urgency to set.
 			RecordId string `json:"record_id"`
 
@@ -11656,7 +11656,7 @@ type AlertGroup struct {
 
 	// Slug The slug of the alert group
 	Slug    *string `json:"slug,omitempty"`
-	Targets *[]struct {
+	Targets []struct {
 		// TargetId id for the Group, Service or EscalationPolicy
 		TargetId openapi_types.UUID `json:"target_id"`
 
@@ -11761,9 +11761,9 @@ type AlertRoute struct {
 	Enabled *bool `json:"enabled,omitempty"`
 
 	// Name The name of the alert route
-	Name          string                `json:"name"`
-	OwningTeamIds *[]openapi_types.UUID `json:"owning_team_ids,omitempty"`
-	Rules         *[]struct {
+	Name          string               `json:"name"`
+	OwningTeamIds []openapi_types.UUID `json:"owning_team_ids,omitempty"`
+	Rules         []struct {
 		ConditionGroups []struct {
 			Conditions []struct {
 				// AlertUrgencyIds The Alert Urgency IDs to check in the condition
@@ -11855,9 +11855,9 @@ type AlertRoutingRule struct {
 	AlertsSourceId openapi_types.UUID `json:"alerts_source_id"`
 
 	// ConditionGroups The condition groups for the alert routing rule
-	ConditionGroups *[]struct {
+	ConditionGroups []struct {
 		// Conditions The conditions within this group
-		Conditions *[]struct {
+		Conditions []struct {
 			// ConditionableId The ID of the conditionable object
 			ConditionableId nullable.Nullable[openapi_types.UUID] `json:"conditionable_id,omitempty"`
 
@@ -11906,7 +11906,7 @@ type AlertRoutingRule struct {
 	ConditionType AlertRoutingRuleConditionType `json:"condition_type"`
 
 	// Conditions The conditions for the alert routing rule
-	Conditions *[]struct {
+	Conditions []struct {
 		// PropertyFieldConditionType The condition type of the property field
 		PropertyFieldConditionType AlertRoutingRuleConditionsPropertyFieldConditionType `json:"property_field_condition_type"`
 
@@ -11920,7 +11920,7 @@ type AlertRoutingRule struct {
 		PropertyFieldValue nullable.Nullable[string] `json:"property_field_value,omitempty"`
 
 		// PropertyFieldValues The values of the property field. Used if the property field condition type is 'is_one_of' or 'is_not_one_of' except for when property field name is 'alert_urgency'
-		PropertyFieldValues *[]string `json:"property_field_values,omitempty"`
+		PropertyFieldValues []string `json:"property_field_values,omitempty"`
 	} `json:"conditions,omitempty"`
 
 	// CreatedAt Date of creation
@@ -12008,7 +12008,7 @@ type AlertRoutingRuleConditionPropertyFieldType string
 // AlertRoutingRuleConditionGroup A group of conditions for alert routing rule
 type AlertRoutingRuleConditionGroup struct {
 	// Conditions The conditions within this group
-	Conditions *[]AlertRoutingRuleCondition `json:"conditions,omitempty"`
+	Conditions []AlertRoutingRuleCondition `json:"conditions,omitempty"`
 
 	// CreatedAt Date of creation
 	CreatedAt *string `json:"created_at,omitempty"`
@@ -12076,29 +12076,29 @@ type AlertTriggerParams struct {
 	AlertConditionSourceUseRegexp  *bool                                    `json:"alert_condition_source_use_regexp,omitempty"`
 	AlertConditionStatus           *AlertTriggerParamsAlertConditionStatus  `json:"alert_condition_status,omitempty"`
 	AlertConditionStatusUseRegexp  *bool                                    `json:"alert_condition_status_use_regexp,omitempty"`
-	AlertFieldConditions           *[]struct {
+	AlertFieldConditions           []struct {
 		AlertFieldId  string                                              `json:"alert_field_id"`
 		ConditionType AlertTriggerParamsAlertFieldConditionsConditionType `json:"condition_type"`
-		Values        *[]string                                           `json:"values,omitempty"`
+		Values        []string                                            `json:"values,omitempty"`
 	} `json:"alert_field_conditions,omitempty"`
-	AlertLabels            *[]string `json:"alert_labels,omitempty"`
-	AlertPayload           *[]string `json:"alert_payload,omitempty"`
+	AlertLabels            []string `json:"alert_labels,omitempty"`
+	AlertPayload           []string `json:"alert_payload,omitempty"`
 	AlertPayloadConditions *struct {
-		Conditions *[]struct {
+		Conditions []struct {
 			Operator  AlertTriggerParamsAlertPayloadConditionsConditionsOperator `json:"operator"`
 			Query     string                                                     `json:"query"`
 			UseRegexp *bool                                                      `json:"use_regexp,omitempty"`
-			Values    *[]string                                                  `json:"values,omitempty"`
+			Values    []string                                                   `json:"values,omitempty"`
 		} `json:"conditions,omitempty"`
 		Logic *AlertTriggerParamsAlertPayloadConditionsLogic `json:"logic,omitempty"`
 	} `json:"alert_payload_conditions,omitempty"`
 
 	// AlertQueryPayload You can use jsonpath syntax. eg: $.incident.teams[*]
 	AlertQueryPayload nullable.Nullable[string]     `json:"alert_query_payload,omitempty"`
-	AlertSources      *[]string                     `json:"alert_sources,omitempty"`
-	AlertStatuses     *[]string                     `json:"alert_statuses,omitempty"`
+	AlertSources      []string                      `json:"alert_sources,omitempty"`
+	AlertStatuses     []string                      `json:"alert_statuses,omitempty"`
 	TriggerType       AlertTriggerParamsTriggerType `json:"trigger_type"`
-	Triggers          *[]AlertTriggerParamsTriggers `json:"triggers,omitempty"`
+	Triggers          []AlertTriggerParamsTriggers  `json:"triggers,omitempty"`
 }
 
 // AlertTriggerParamsAlertCondition defines model for AlertTriggerParams.AlertCondition.
@@ -12182,7 +12182,7 @@ type AlertUrgencyResponseDataType string
 // AlertsSource defines model for alerts_source.
 type AlertsSource struct {
 	// AlertSourceFieldsAttributes List of alert fields to be added to the alert source. Note: This attribute requires the alert field feature to be enabled on your account. Contact Rootly customer support if you need assistance with this feature.
-	AlertSourceFieldsAttributes *[]struct {
+	AlertSourceFieldsAttributes []struct {
 		// AlertFieldId The ID of the alert field
 		AlertFieldId *string `json:"alert_field_id,omitempty"`
 
@@ -12191,7 +12191,7 @@ type AlertsSource struct {
 	} `json:"alert_source_fields_attributes,omitempty"`
 
 	// AlertSourceUrgencyRulesAttributes List of rules that define the conditions under which the alert urgency will be set automatically based on the alert payload
-	AlertSourceUrgencyRulesAttributes *[]struct {
+	AlertSourceUrgencyRulesAttributes []struct {
 		// AlertUrgencyId The ID of the alert urgency
 		AlertUrgencyId *string `json:"alert_urgency_id,omitempty"`
 
@@ -12249,7 +12249,7 @@ type AlertsSource struct {
 	Name string `json:"name"`
 
 	// OwnerGroupIds List of team IDs that will own the alert source
-	OwnerGroupIds *[]string `json:"owner_group_ids,omitempty"`
+	OwnerGroupIds []string `json:"owner_group_ids,omitempty"`
 
 	// ResolutionRuleAttributes Provide additional attributes for email alerts source
 	ResolutionRuleAttributes nullable.Nullable[struct {
@@ -12257,7 +12257,7 @@ type AlertsSource struct {
 		ConditionType *AlertsSourceResolutionRuleAttributesConditionType `json:"condition_type,omitempty"`
 
 		// ConditionsAttributes List of conditions to evaluate for auto resolution
-		ConditionsAttributes *[]struct {
+		ConditionsAttributes []struct {
 			// ConditionableId The ID of the conditionable. If conditionable_type is AlertField, this is the ID of the alert field.
 			ConditionableId nullable.Nullable[string] `json:"conditionable_id,omitempty"`
 
@@ -12311,7 +12311,7 @@ type AlertsSource struct {
 		AutoResolve *bool `json:"auto_resolve,omitempty"`
 
 		// FieldMappingsAttributes Specify rules to auto resolve alerts
-		FieldMappingsAttributes *[]struct {
+		FieldMappingsAttributes []struct {
 			// Field Select the field on which the condition to be evaluated
 			Field *AlertsSourceSourceableAttributesFieldMappingsAttributesField `json:"field,omitempty"`
 
@@ -12468,7 +12468,7 @@ type AttachDatadogDashboardsTaskParams struct {
 		Name *string `json:"name,omitempty"`
 	} `json:"dashboards"`
 	PostToIncidentTimeline *bool `json:"post_to_incident_timeline,omitempty"`
-	PostToSlackChannels    *[]struct {
+	PostToSlackChannels    []struct {
 		Id   *string `json:"id,omitempty"`
 		Name *string `json:"name,omitempty"`
 	} `json:"post_to_slack_channels,omitempty"`
@@ -13585,7 +13585,7 @@ type CreateGoToMeetingTaskParams struct {
 	ConferenceCallInfo     nullable.Nullable[CreateGoToMeetingTaskParamsConferenceCallInfo] `json:"conference_call_info,omitempty"`
 	PasswordRequired       nullable.Nullable[bool]                                          `json:"password_required,omitempty"`
 	PostToIncidentTimeline *bool                                                            `json:"post_to_incident_timeline,omitempty"`
-	PostToSlackChannels    *[]struct {
+	PostToSlackChannels    []struct {
 		Id   *string `json:"id,omitempty"`
 		Name *string `json:"name,omitempty"`
 	} `json:"post_to_slack_channels,omitempty"`
@@ -13604,7 +13604,7 @@ type CreateGoToMeetingTaskParamsTaskType string
 // CreateGoogleCalendarEventTaskParams defines model for create_google_calendar_event_task_params.
 type CreateGoogleCalendarEventTaskParams struct {
 	// Attendees Emails of attendees
-	Attendees               *[]string                 `json:"attendees,omitempty"`
+	Attendees               []string                  `json:"attendees,omitempty"`
 	CalendarId              nullable.Nullable[string] `json:"calendar_id,omitempty"`
 	CanGuestsInviteOthers   *bool                     `json:"can_guests_invite_others,omitempty"`
 	CanGuestsModifyEvent    *bool                     `json:"can_guests_modify_event,omitempty"`
@@ -13623,7 +13623,7 @@ type CreateGoogleCalendarEventTaskParams struct {
 	// MeetingDuration Meeting duration in format like '1 hour', '30 minutes'
 	MeetingDuration        string `json:"meeting_duration"`
 	PostToIncidentTimeline *bool  `json:"post_to_incident_timeline,omitempty"`
-	PostToSlackChannels    *[]struct {
+	PostToSlackChannels    []struct {
 		Id   *string `json:"id,omitempty"`
 		Name *string `json:"name,omitempty"`
 	} `json:"post_to_slack_channels,omitempty"`
@@ -13723,7 +13723,7 @@ type CreateGoogleMeetingTaskParams struct {
 	// Description [DEPRECATED] The meeting description
 	Description            nullable.Nullable[string] `json:"description"`
 	PostToIncidentTimeline *bool                     `json:"post_to_incident_timeline,omitempty"`
-	PostToSlackChannels    *[]struct {
+	PostToSlackChannels    []struct {
 		Id   *string `json:"id,omitempty"`
 		Name *string `json:"name,omitempty"`
 	} `json:"post_to_slack_channels,omitempty"`
@@ -13766,19 +13766,19 @@ type CreateIncidentPostmortemTaskParamsTaskType string
 type CreateIncidentTaskParams struct {
 	// CustomFieldsMapping Custom field mappings. Can contain liquid markup and need to be valid JSON. Use 'services', 'functionalities', or 'groups' keys with arrays of names/slugs for name/slug lookup
 	CustomFieldsMapping nullable.Nullable[string] `json:"custom_fields_mapping,omitempty"`
-	EnvironmentIds      *[]string                 `json:"environment_ids,omitempty"`
+	EnvironmentIds      []string                  `json:"environment_ids,omitempty"`
 
 	// FunctionalityIds Array of functionality UUIDs
-	FunctionalityIds *[]string `json:"functionality_ids,omitempty"`
+	FunctionalityIds []string `json:"functionality_ids,omitempty"`
 
 	// GroupIds Array of group/team UUIDs
-	GroupIds        *[]string `json:"group_ids,omitempty"`
-	IncidentTypeIds *[]string `json:"incident_type_ids,omitempty"`
-	Private         *bool     `json:"private,omitempty"`
+	GroupIds        []string `json:"group_ids,omitempty"`
+	IncidentTypeIds []string `json:"incident_type_ids,omitempty"`
+	Private         *bool    `json:"private,omitempty"`
 
 	// ServiceIds Array of service UUIDs
-	ServiceIds *[]string `json:"service_ids,omitempty"`
-	SeverityId *string   `json:"severity_id,omitempty"`
+	ServiceIds []string `json:"service_ids,omitempty"`
+	SeverityId *string  `json:"severity_id,omitempty"`
 
 	// Summary The incident summary
 	Summary  *string                           `json:"summary,omitempty"`
@@ -13930,7 +13930,7 @@ type CreateLinearIssueTaskParams struct {
 
 	// Description The issue description
 	Description *string `json:"description,omitempty"`
-	Labels      *[]struct {
+	Labels      []struct {
 		Id   *string `json:"id,omitempty"`
 		Name *string `json:"name,omitempty"`
 	} `json:"labels,omitempty"`
@@ -13974,7 +13974,7 @@ type CreateLinearSubtaskIssueTaskParams struct {
 
 	// Description The issue description
 	Description *string `json:"description,omitempty"`
-	Labels      *[]struct {
+	Labels      []struct {
 		Id   *string `json:"id,omitempty"`
 		Name *string `json:"name,omitempty"`
 	} `json:"labels,omitempty"`
@@ -14050,7 +14050,7 @@ type CreateMicrosoftTeamsMeetingTaskParams struct {
 	// Name The meeting name
 	Name                   string `json:"name"`
 	PostToIncidentTimeline *bool  `json:"post_to_incident_timeline,omitempty"`
-	PostToSlackChannels    *[]struct {
+	PostToSlackChannels    []struct {
 		Id   *string `json:"id,omitempty"`
 		Name *string `json:"name,omitempty"`
 	} `json:"post_to_slack_channels,omitempty"`
@@ -14103,8 +14103,8 @@ type CreateMotionTaskTaskParams struct {
 	DueDate *string `json:"due_date,omitempty"`
 
 	// Duration The duration. Eg.  "NONE", "REMINDER", or a integer greater than 0.
-	Duration *string   `json:"duration,omitempty"`
-	Labels   *[]string `json:"labels,omitempty"`
+	Duration *string  `json:"duration,omitempty"`
+	Labels   []string `json:"labels,omitempty"`
 
 	// Priority The priority id and display name
 	Priority *struct {
@@ -14204,7 +14204,7 @@ type CreateOpsgenieAlertTaskParams struct {
 
 	// Details Details payload. Can contain liquid markup and need to be valid JSON
 	Details     nullable.Nullable[string] `json:"details,omitempty"`
-	Escalations *[]struct {
+	Escalations []struct {
 		Id   *string `json:"id,omitempty"`
 		Name *string `json:"name,omitempty"`
 	} `json:"escalations,omitempty"`
@@ -14212,16 +14212,16 @@ type CreateOpsgenieAlertTaskParams struct {
 	// Message Message of the alert
 	Message   string                                 `json:"message"`
 	Priority  *CreateOpsgenieAlertTaskParamsPriority `json:"priority,omitempty"`
-	Schedules *[]struct {
+	Schedules []struct {
 		Id   *string `json:"id,omitempty"`
 		Name *string `json:"name,omitempty"`
 	} `json:"schedules,omitempty"`
 	TaskType *CreateOpsgenieAlertTaskParamsTaskType `json:"task_type,omitempty"`
-	Teams    *[]struct {
+	Teams    []struct {
 		Id   *string `json:"id,omitempty"`
 		Name *string `json:"name,omitempty"`
 	} `json:"teams,omitempty"`
-	Users *[]struct {
+	Users []struct {
 		Id   *string `json:"id,omitempty"`
 		Name *string `json:"name,omitempty"`
 	} `json:"users,omitempty"`
@@ -14236,7 +14236,7 @@ type CreateOpsgenieAlertTaskParamsTaskType string
 // CreateOutlookEventTaskParams defines model for create_outlook_event_task_params.
 type CreateOutlookEventTaskParams struct {
 	// Attendees Emails of attendees
-	Attendees *[]string `json:"attendees,omitempty"`
+	Attendees []string `json:"attendees,omitempty"`
 	Calendar  struct {
 		Id   *string `json:"id,omitempty"`
 		Name *string `json:"name,omitempty"`
@@ -14255,7 +14255,7 @@ type CreateOutlookEventTaskParams struct {
 	// MeetingDuration Meeting duration in format like '1 hour', '30 minutes'
 	MeetingDuration        string `json:"meeting_duration"`
 	PostToIncidentTimeline *bool  `json:"post_to_incident_timeline,omitempty"`
-	PostToSlackChannels    *[]struct {
+	PostToSlackChannels    []struct {
 		Id   *string `json:"id,omitempty"`
 		Name *string `json:"name,omitempty"`
 	} `json:"post_to_slack_channels,omitempty"`
@@ -14296,7 +14296,7 @@ type CreatePagertreeAlertTaskParams struct {
 	Incident *bool                                   `json:"incident,omitempty"`
 	Severity *CreatePagertreeAlertTaskParamsSeverity `json:"severity,omitempty"`
 	TaskType *CreatePagertreeAlertTaskParamsTaskType `json:"task_type,omitempty"`
-	Teams    *[]struct {
+	Teams    []struct {
 		Id   *string `json:"id,omitempty"`
 		Name *string `json:"name,omitempty"`
 	} `json:"teams,omitempty"`
@@ -14304,7 +14304,7 @@ type CreatePagertreeAlertTaskParams struct {
 	// Title Title of alert as text
 	Title   *string                                `json:"title,omitempty"`
 	Urgency *CreatePagertreeAlertTaskParamsUrgency `json:"urgency,omitempty"`
-	Users   *[]struct {
+	Users   []struct {
 		Id   *string `json:"id,omitempty"`
 		Name *string `json:"name,omitempty"`
 	} `json:"users,omitempty"`
@@ -14526,7 +14526,7 @@ type CreateTrelloCardTaskParams struct {
 
 	// DueDate The due date
 	DueDate *string `json:"due_date,omitempty"`
-	Labels  *[]struct {
+	Labels  []struct {
 		Id   *string `json:"id,omitempty"`
 		Name *string `json:"name,omitempty"`
 	} `json:"labels,omitempty"`
@@ -14570,7 +14570,7 @@ type CreateWebexMeetingTaskParams struct {
 	// Password The meeting password
 	Password               *string `json:"password,omitempty"`
 	PostToIncidentTimeline *bool   `json:"post_to_incident_timeline,omitempty"`
-	PostToSlackChannels    *[]struct {
+	PostToSlackChannels    []struct {
 		Id   *string `json:"id,omitempty"`
 		Name *string `json:"name,omitempty"`
 	} `json:"post_to_slack_channels,omitempty"`
@@ -14642,7 +14642,7 @@ type CreateZendeskTicketTaskParamsTaskType string
 
 // CreateZoomMeetingTaskParams defines model for create_zoom_meeting_task_params.
 type CreateZoomMeetingTaskParams struct {
-	AlternativeHosts *[]string                                 `json:"alternative_hosts,omitempty"`
+	AlternativeHosts []string                                  `json:"alternative_hosts,omitempty"`
 	AutoRecording    *CreateZoomMeetingTaskParamsAutoRecording `json:"auto_recording,omitempty"`
 
 	// CreateAsEmail The email to use if creating as email
@@ -14651,7 +14651,7 @@ type CreateZoomMeetingTaskParams struct {
 	// Password The meeting password
 	Password               *string `json:"password,omitempty"`
 	PostToIncidentTimeline *bool   `json:"post_to_incident_timeline,omitempty"`
-	PostToSlackChannels    *[]struct {
+	PostToSlackChannels    []struct {
 		Id   *string `json:"id,omitempty"`
 		Name *string `json:"name,omitempty"`
 	} `json:"post_to_slack_channels,omitempty"`
@@ -14907,8 +14907,8 @@ type DashboardListDataType string
 // DashboardPanel defines model for dashboard_panel.
 type DashboardPanel struct {
 	// DashboardId The panel dashboard
-	DashboardId *string                   `json:"dashboard_id,omitempty"`
-	Data        *[]map[string]interface{} `json:"data,omitempty"`
+	DashboardId *string                  `json:"dashboard_id,omitempty"`
+	Data        []map[string]interface{} `json:"data,omitempty"`
 
 	// Name The name of the dashboard_panel
 	Name   nullable.Nullable[string] `json:"name,omitempty"`
@@ -14916,16 +14916,16 @@ type DashboardPanel struct {
 		Datalabels *struct {
 			Enabled *bool `json:"enabled,omitempty"`
 		} `json:"datalabels,omitempty"`
-		Datasets *[]struct {
+		Datasets []struct {
 			Aggregate nullable.Nullable[struct {
 				Cumulative nullable.Nullable[bool]                         `json:"cumulative,omitempty"`
 				Key        nullable.Nullable[string]                       `json:"key,omitempty"`
 				Operation  *DashboardPanelParamsDatasetsAggregateOperation `json:"operation,omitempty"`
 			}] `json:"aggregate,omitempty"`
 			Collection *DashboardPanelParamsDatasetsCollection `json:"collection,omitempty"`
-			Filter     *[]struct {
+			Filter     []struct {
 				Operation *DashboardPanelParamsDatasetsFilterOperation `json:"operation,omitempty"`
-				Rules     *[]struct {
+				Rules     []struct {
 					Condition *DashboardPanelParamsDatasetsFilterRulesCondition `json:"condition,omitempty"`
 					Key       *string                                           `json:"key,omitempty"`
 					Operation *DashboardPanelParamsDatasetsFilterRulesOperation `json:"operation,omitempty"`
@@ -14940,7 +14940,7 @@ type DashboardPanel struct {
 		Legend      *struct {
 			Groups *DashboardPanelParamsLegendGroups `json:"groups,omitempty"`
 		} `json:"legend,omitempty"`
-		TableFields *[]string `json:"table_fields,omitempty"`
+		TableFields []string `json:"table_fields,omitempty"`
 	} `json:"params"`
 	Position nullable.Nullable[struct {
 		H float32 `json:"h"`
@@ -15086,7 +15086,7 @@ type EdgeConnector struct {
 			Status EdgeConnectorDataAttributesStatus `json:"status"`
 
 			// Subscriptions Array of event types to subscribe to
-			Subscriptions *[]string  `json:"subscriptions,omitempty"`
+			Subscriptions []string   `json:"subscriptions,omitempty"`
 			UpdatedAt     *time.Time `json:"updated_at,omitempty"`
 		} `json:"attributes"`
 		Id   openapi_types.UUID    `json:"id"`
@@ -15230,7 +15230,7 @@ type EnvironmentResponseDataType string
 
 // ErrorsList defines model for errors_list.
 type ErrorsList struct {
-	Errors *[]struct {
+	Errors []struct {
 		Code   nullable.Nullable[string] `json:"code,omitempty"`
 		Detail nullable.Nullable[string] `json:"detail,omitempty"`
 		Status string                    `json:"status"`
@@ -15264,7 +15264,7 @@ type EscalationPolicy struct {
 	Description nullable.Nullable[string] `json:"description,omitempty"`
 
 	// GroupIds Associated groups (alerting the group will trigger escalation policy)
-	GroupIds *[]string `json:"group_ids,omitempty"`
+	GroupIds []string `json:"group_ids,omitempty"`
 
 	// LastUpdatedByUserId User who updated the escalation policy
 	LastUpdatedByUserId *int `json:"last_updated_by_user_id,omitempty"`
@@ -15276,7 +15276,7 @@ type EscalationPolicy struct {
 	RepeatCount int `json:"repeat_count"`
 
 	// ServiceIds Associated services (alerting the service will trigger escalation policy)
-	ServiceIds *[]string `json:"service_ids,omitempty"`
+	ServiceIds []string `json:"service_ids,omitempty"`
 
 	// UpdatedAt Date of last update
 	UpdatedAt *string `json:"updated_at,omitempty"`
@@ -15410,13 +15410,13 @@ type EscalationPolicyPath struct {
 	RepeatCount nullable.Nullable[int] `json:"repeat_count"`
 
 	// Rules Escalation path rules
-	Rules *[]EscalationPolicyPath_Rules_Item `json:"rules,omitempty"`
+	Rules []EscalationPolicyPath_Rules_Item `json:"rules,omitempty"`
 
 	// TimeRestrictionTimeZone Time zone used for time restrictions.
 	TimeRestrictionTimeZone nullable.Nullable[EscalationPolicyPathTimeRestrictionTimeZone] `json:"time_restriction_time_zone,omitempty"`
 
 	// TimeRestrictions If time restrictions are set, alerts will follow this path when they arrive within the specified time ranges and meet the rules.
-	TimeRestrictions *[]struct {
+	TimeRestrictions []struct {
 		EndDay *EscalationPolicyPathTimeRestrictionsEndDay `json:"end_day,omitempty"`
 
 		// EndTime Formatted as HH:MM
@@ -16043,9 +16043,9 @@ type FunctionalityResponseDataType string
 
 // GetAlertsTaskParams defines model for get_alerts_task_params.
 type GetAlertsTaskParams struct {
-	EnvironmentIds                 *[]string `json:"environment_ids,omitempty"`
-	EnvironmentsImpactedByIncident *bool     `json:"environments_impacted_by_incident,omitempty"`
-	Labels                         *[]string `json:"labels,omitempty"`
+	EnvironmentIds                 []string `json:"environment_ids,omitempty"`
+	EnvironmentsImpactedByIncident *bool    `json:"environments_impacted_by_incident,omitempty"`
+	Labels                         []string `json:"labels,omitempty"`
 
 	// ParentMessageThreadTask A hash where [id] is the task id of the parent task that sent a message, and [name] is the name of the parent task
 	ParentMessageThreadTask *struct {
@@ -16056,13 +16056,13 @@ type GetAlertsTaskParams struct {
 	// PastDuration How far back to fetch commits (in format '1 minute', '30 days', '3 months', etc.)
 	PastDuration           string `json:"past_duration"`
 	PostToIncidentTimeline *bool  `json:"post_to_incident_timeline,omitempty"`
-	PostToSlackChannels    *[]struct {
+	PostToSlackChannels    []struct {
 		Id   *string `json:"id,omitempty"`
 		Name *string `json:"name,omitempty"`
 	} `json:"post_to_slack_channels,omitempty"`
-	ServiceIds                 *[]string                    `json:"service_ids,omitempty"`
+	ServiceIds                 []string                     `json:"service_ids,omitempty"`
 	ServicesImpactedByIncident *bool                        `json:"services_impacted_by_incident,omitempty"`
-	Sources                    *[]string                    `json:"sources,omitempty"`
+	Sources                    []string                     `json:"sources,omitempty"`
 	TaskType                   *GetAlertsTaskParamsTaskType `json:"task_type,omitempty"`
 }
 
@@ -16072,17 +16072,17 @@ type GetAlertsTaskParamsTaskType string
 // GetGithubCommitsTaskParams defines model for get_github_commits_task_params.
 type GetGithubCommitsTaskParams struct {
 	// Branch The branch
-	Branch                string    `json:"branch"`
-	GithubRepositoryNames *[]string `json:"github_repository_names,omitempty"`
+	Branch                string   `json:"branch"`
+	GithubRepositoryNames []string `json:"github_repository_names,omitempty"`
 
 	// PastDuration How far back to fetch commits (in format '1 minute', '30 days', '3 months', etc.)
 	PastDuration           string `json:"past_duration"`
 	PostToIncidentTimeline *bool  `json:"post_to_incident_timeline,omitempty"`
-	PostToSlackChannels    *[]struct {
+	PostToSlackChannels    []struct {
 		Id   *string `json:"id,omitempty"`
 		Name *string `json:"name,omitempty"`
 	} `json:"post_to_slack_channels,omitempty"`
-	ServiceIds                 *[]string                           `json:"service_ids,omitempty"`
+	ServiceIds                 []string                            `json:"service_ids,omitempty"`
 	ServicesImpactedByIncident *bool                               `json:"services_impacted_by_incident,omitempty"`
 	TaskType                   *GetGithubCommitsTaskParamsTaskType `json:"task_type,omitempty"`
 	union                      json.RawMessage
@@ -16100,17 +16100,17 @@ type GetGithubCommitsTaskParams1 = interface{}
 // GetGitlabCommitsTaskParams defines model for get_gitlab_commits_task_params.
 type GetGitlabCommitsTaskParams struct {
 	// Branch The branch
-	Branch                string    `json:"branch"`
-	GitlabRepositoryNames *[]string `json:"gitlab_repository_names,omitempty"`
+	Branch                string   `json:"branch"`
+	GitlabRepositoryNames []string `json:"gitlab_repository_names,omitempty"`
 
 	// PastDuration How far back to fetch commits (in format '1 minute', '30 days', '3 months', etc.)
 	PastDuration           string `json:"past_duration"`
 	PostToIncidentTimeline *bool  `json:"post_to_incident_timeline,omitempty"`
-	PostToSlackChannels    *[]struct {
+	PostToSlackChannels    []struct {
 		Id   *string `json:"id,omitempty"`
 		Name *string `json:"name,omitempty"`
 	} `json:"post_to_slack_channels,omitempty"`
-	ServiceIds                 *[]string                           `json:"service_ids,omitempty"`
+	ServiceIds                 []string                            `json:"service_ids,omitempty"`
 	ServicesImpactedByIncident *bool                               `json:"services_impacted_by_incident,omitempty"`
 	TaskType                   *GetGitlabCommitsTaskParamsTaskType `json:"task_type,omitempty"`
 	union                      json.RawMessage
@@ -16127,9 +16127,9 @@ type GetGitlabCommitsTaskParams1 = interface{}
 
 // GetPulsesTaskParams defines model for get_pulses_task_params.
 type GetPulsesTaskParams struct {
-	EnvironmentIds                 *[]string `json:"environment_ids,omitempty"`
-	EnvironmentsImpactedByIncident *bool     `json:"environments_impacted_by_incident,omitempty"`
-	Labels                         *[]string `json:"labels,omitempty"`
+	EnvironmentIds                 []string `json:"environment_ids,omitempty"`
+	EnvironmentsImpactedByIncident *bool    `json:"environments_impacted_by_incident,omitempty"`
+	Labels                         []string `json:"labels,omitempty"`
 
 	// ParentMessageThreadTask A hash where [id] is the task id of the parent task that sent a message, and [name] is the name of the parent task
 	ParentMessageThreadTask *struct {
@@ -16140,14 +16140,14 @@ type GetPulsesTaskParams struct {
 	// PastDuration How far back to fetch commits (in format '1 minute', '30 days', '3 months', etc.)
 	PastDuration           string `json:"past_duration"`
 	PostToIncidentTimeline *bool  `json:"post_to_incident_timeline,omitempty"`
-	PostToSlackChannels    *[]struct {
+	PostToSlackChannels    []struct {
 		Id   *string `json:"id,omitempty"`
 		Name *string `json:"name,omitempty"`
 	} `json:"post_to_slack_channels,omitempty"`
-	Refs                       *[]string                    `json:"refs,omitempty"`
-	ServiceIds                 *[]string                    `json:"service_ids,omitempty"`
+	Refs                       []string                     `json:"refs,omitempty"`
+	ServiceIds                 []string                     `json:"service_ids,omitempty"`
 	ServicesImpactedByIncident *bool                        `json:"services_impacted_by_incident,omitempty"`
-	Sources                    *[]string                    `json:"sources,omitempty"`
+	Sources                    []string                     `json:"sources,omitempty"`
 	TaskType                   *GetPulsesTaskParamsTaskType `json:"task_type,omitempty"`
 }
 
@@ -16256,7 +16256,7 @@ type HttpClientTaskParams struct {
 	// Params JSON map of HTTP query parameters
 	Params                 *string `json:"params,omitempty"`
 	PostToIncidentTimeline *bool   `json:"post_to_incident_timeline,omitempty"`
-	PostToSlackChannels    *[]struct {
+	PostToSlackChannels    []struct {
 		Id   *string `json:"id,omitempty"`
 		Name *string `json:"name,omitempty"`
 	} `json:"post_to_slack_channels,omitempty"`
@@ -16961,14 +16961,14 @@ type IncidentFeedbackResponseDataType string
 // IncidentFormFieldSelection defines model for incident_form_field_selection.
 type IncidentFormFieldSelection struct {
 	// FormFieldId The custom field for this selection
-	FormFieldId              string    `json:"form_field_id"`
-	IncidentId               string    `json:"incident_id"`
-	SelectedCatalogEntityIds *[]string `json:"selected_catalog_entity_ids,omitempty"`
-	SelectedFunctionalityIds *[]string `json:"selected_functionality_ids,omitempty"`
-	SelectedGroupIds         *[]string `json:"selected_group_ids,omitempty"`
-	SelectedOptionIds        *[]string `json:"selected_option_ids,omitempty"`
-	SelectedServiceIds       *[]string `json:"selected_service_ids,omitempty"`
-	SelectedUserIds          *[]int    `json:"selected_user_ids,omitempty"`
+	FormFieldId              string   `json:"form_field_id"`
+	IncidentId               string   `json:"incident_id"`
+	SelectedCatalogEntityIds []string `json:"selected_catalog_entity_ids,omitempty"`
+	SelectedFunctionalityIds []string `json:"selected_functionality_ids,omitempty"`
+	SelectedGroupIds         []string `json:"selected_group_ids,omitempty"`
+	SelectedOptionIds        []string `json:"selected_option_ids,omitempty"`
+	SelectedServiceIds       []string `json:"selected_service_ids,omitempty"`
+	SelectedUserIds          []int    `json:"selected_user_ids,omitempty"`
 
 	// Value The selected value for text kind custom fields
 	Value nullable.Nullable[string] `json:"value,omitempty"`
@@ -17028,9 +17028,9 @@ type IncidentPermissionSet struct {
 	Description nullable.Nullable[string] `json:"description,omitempty"`
 
 	// Name The incident permission set name.
-	Name                       string                                             `json:"name"`
-	PrivateIncidentPermissions *[]IncidentPermissionSetPrivateIncidentPermissions `json:"private_incident_permissions,omitempty"`
-	PublicIncidentPermissions  *[]IncidentPermissionSetPublicIncidentPermissions  `json:"public_incident_permissions,omitempty"`
+	Name                       string                                            `json:"name"`
+	PrivateIncidentPermissions []IncidentPermissionSetPrivateIncidentPermissions `json:"private_incident_permissions,omitempty"`
+	PublicIncidentPermissions  []IncidentPermissionSetPublicIncidentPermissions  `json:"public_incident_permissions,omitempty"`
 
 	// Slug The incident permission set slug.
 	Slug      *string `json:"slug,omitempty"`
@@ -17552,14 +17552,14 @@ type IncidentTriggerParams struct {
 	IncidentConditionVisibility     *IncidentTriggerParamsIncidentConditionVisibility      `json:"incident_condition_visibility,omitempty"`
 	IncidentConditionalInactivity   *IncidentTriggerParams_IncidentConditionalInactivity   `json:"incident_conditional_inactivity,omitempty"`
 	IncidentInactivityDuration      *IncidentTriggerParams_IncidentInactivityDuration      `json:"incident_inactivity_duration,omitempty"`
-	IncidentKinds                   *[]IncidentTriggerParamsIncidentKinds                  `json:"incident_kinds,omitempty"`
+	IncidentKinds                   []IncidentTriggerParamsIncidentKinds                   `json:"incident_kinds,omitempty"`
 
 	// IncidentPostMortemConditionCause [DEPRECATED] Use incident_condition_cause instead
 	IncidentPostMortemConditionCause *IncidentTriggerParamsIncidentPostMortemConditionCause `json:"incident_post_mortem_condition_cause,omitempty"`
-	IncidentStatuses                 *[]IncidentTriggerParamsIncidentStatuses               `json:"incident_statuses,omitempty"`
-	IncidentVisibilities             *[]bool                                                `json:"incident_visibilities,omitempty"`
+	IncidentStatuses                 []IncidentTriggerParamsIncidentStatuses                `json:"incident_statuses,omitempty"`
+	IncidentVisibilities             []bool                                                 `json:"incident_visibilities,omitempty"`
 	TriggerType                      IncidentTriggerParamsTriggerType                       `json:"trigger_type"`
-	Triggers                         *[]string                                              `json:"triggers,omitempty"`
+	Triggers                         []string                                               `json:"triggers,omitempty"`
 }
 
 // IncidentTriggerParamsIncidentCondition defines model for IncidentTriggerParams.IncidentCondition.
@@ -17886,11 +17886,11 @@ type InviteToSlackChannelTaskParams struct {
 
 	// SlackEmails Comma separated list of emails to invite to the channel
 	SlackEmails     *string `json:"slack_emails,omitempty"`
-	SlackUserGroups *[]struct {
+	SlackUserGroups []struct {
 		Id   *string `json:"id,omitempty"`
 		Name *string `json:"name,omitempty"`
 	} `json:"slack_user_groups,omitempty"`
-	SlackUsers *[]struct {
+	SlackUsers []struct {
 		Id   *string `json:"id,omitempty"`
 		Name *string `json:"name,omitempty"`
 	} `json:"slack_users,omitempty"`
@@ -18001,7 +18001,7 @@ type LiveCallRouter struct {
 	Name string `json:"name"`
 
 	// PagingTargets Paging targets that callers can select from when this live call router is configured as a phone tree.
-	PagingTargets *[]struct {
+	PagingTargets []struct {
 		// AlertUrgencyId This is used in escalation paths to determine who to page
 		AlertUrgencyId string `json:"alert_urgency_id"`
 
@@ -18113,7 +18113,7 @@ type NewAlert struct {
 	Data struct {
 		Attributes struct {
 			// AlertFieldValuesAttributes Custom alert field values to create with the alert
-			AlertFieldValuesAttributes *[]struct {
+			AlertFieldValuesAttributes []struct {
 				// AlertFieldId ID of the custom alert field
 				AlertFieldId string `json:"alert_field_id"`
 
@@ -18147,7 +18147,7 @@ type NewAlert struct {
 
 			// GroupIds The Group IDs to attach to the alert. If your organization has On-Call enabled and your notification target is a Group. This field will be automatically set for you.
 			GroupIds nullable.Nullable[[]string] `json:"group_ids,omitempty"`
-			Labels   *[]struct {
+			Labels   []struct {
 				// Key Key of the tag
 				Key string `json:"key"`
 
@@ -18253,14 +18253,14 @@ type NewAlertGroup struct {
 		Attributes struct {
 			// Attributes This field is deprecated. Please use the `conditions` field instead, `attributes` will be removed in the future.
 			// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
-			Attributes *[]struct {
+			Attributes []struct {
 				// JsonPath The JSON path to the value to group by.
 				JsonPath *string `json:"json_path,omitempty"`
 			} `json:"attributes,omitempty"`
 
 			// ConditionType Group alerts when ANY or ALL of the fields are matching.
 			ConditionType *NewAlertGroupDataAttributesConditionType `json:"condition_type,omitempty"`
-			Conditions    *[]struct {
+			Conditions    []struct {
 				// AlertUrgencyIds The Alert Urgency IDs to check in the condition. Only need to be set when the property field type is 'attribute', the property field name is 'alert_urgency' and the property field condition type is 'is_one_of' or 'is_not_one_of'
 				AlertUrgencyIds nullable.Nullable[[]string] `json:"alert_urgency_ids,omitempty"`
 
@@ -18283,7 +18283,7 @@ type NewAlertGroup struct {
 				PropertyFieldValue *string `json:"property_field_value,omitempty"`
 
 				// PropertyFieldValues The values of the property field. Need to be passed if the property field condition type is 'is_one_of' or 'is_not_one_of' except for when property field name is 'alert_urgency'
-				PropertyFieldValues *[]string `json:"property_field_values,omitempty"`
+				PropertyFieldValues []string `json:"property_field_values,omitempty"`
 			} `json:"conditions,omitempty"`
 
 			// Description The description of the alert urgency
@@ -18299,7 +18299,7 @@ type NewAlertGroup struct {
 
 			// Name The name of the alert group
 			Name    string `json:"name"`
-			Targets *[]struct {
+			Targets []struct {
 				// TargetId id for the Group, Service or EscalationPolicy
 				TargetId openapi_types.UUID `json:"target_id"`
 
@@ -18348,9 +18348,9 @@ type NewAlertRoute struct {
 			Enabled *bool `json:"enabled,omitempty"`
 
 			// Name The name of the alert route
-			Name          string                `json:"name"`
-			OwningTeamIds *[]openapi_types.UUID `json:"owning_team_ids,omitempty"`
-			Rules         *[]struct {
+			Name          string               `json:"name"`
+			OwningTeamIds []openapi_types.UUID `json:"owning_team_ids,omitempty"`
+			Rules         []struct {
 				ConditionGroups []struct {
 					Conditions []struct {
 						// AlertUrgencyIds The Alert Urgency IDs to check in the condition
@@ -18421,7 +18421,7 @@ type NewAlertRoutingRule struct {
 
 			// ConditionType The type of condition for the alert routing rule
 			ConditionType *NewAlertRoutingRuleDataAttributesConditionType `json:"condition_type,omitempty"`
-			Conditions    *[]struct {
+			Conditions    []struct {
 				// PropertyFieldConditionType The condition type of the property field
 				PropertyFieldConditionType NewAlertRoutingRuleDataAttributesConditionsPropertyFieldConditionType `json:"property_field_condition_type"`
 
@@ -18435,7 +18435,7 @@ type NewAlertRoutingRule struct {
 				PropertyFieldValue *string `json:"property_field_value,omitempty"`
 
 				// PropertyFieldValues The values of the property field. Need to be passed if the property field condition type is 'is_one_of' or 'is_not_one_of' except for when property field name is 'alert_urgency'
-				PropertyFieldValues *[]string `json:"property_field_values,omitempty"`
+				PropertyFieldValues []string `json:"property_field_values,omitempty"`
 			} `json:"conditions,omitempty"`
 			Destination struct {
 				// TargetId The ID of the target
@@ -18452,7 +18452,7 @@ type NewAlertRoutingRule struct {
 			Name string `json:"name"`
 
 			// OwningTeamIds The IDs of the teams which own the alert routing rule. If the user doesn't have Alert Routing Create Permission in On-Call Roles, then this field is required and can contain Team IDs the user is an admin of.
-			OwningTeamIds *[]openapi_types.UUID `json:"owning_team_ids,omitempty"`
+			OwningTeamIds []openapi_types.UUID `json:"owning_team_ids,omitempty"`
 
 			// Position The position of the alert routing rule for ordering evaluation
 			Position *int `json:"position,omitempty"`
@@ -18501,7 +18501,7 @@ type NewAlertsSource struct {
 	Data struct {
 		Attributes struct {
 			// AlertSourceFieldsAttributes List of alert fields to be added to the alert source. Note: This attribute requires the alert field feature to be enabled on your account. Contact Rootly customer support if you need assistance with this feature.
-			AlertSourceFieldsAttributes *[]struct {
+			AlertSourceFieldsAttributes []struct {
 				// AlertFieldId The ID of the alert field
 				AlertFieldId *string `json:"alert_field_id,omitempty"`
 
@@ -18510,7 +18510,7 @@ type NewAlertsSource struct {
 			} `json:"alert_source_fields_attributes,omitempty"`
 
 			// AlertSourceUrgencyRulesAttributes List of rules that define the conditions under which the alert urgency will be set automatically based on the alert payload
-			AlertSourceUrgencyRulesAttributes *[]struct {
+			AlertSourceUrgencyRulesAttributes []struct {
 				// AlertUrgencyId The ID of the alert urgency
 				AlertUrgencyId *string `json:"alert_urgency_id,omitempty"`
 
@@ -18562,7 +18562,7 @@ type NewAlertsSource struct {
 			Name string `json:"name"`
 
 			// OwnerGroupIds List of team IDs that will own the alert source
-			OwnerGroupIds *[]string `json:"owner_group_ids,omitempty"`
+			OwnerGroupIds []string `json:"owner_group_ids,omitempty"`
 
 			// ResolutionRuleAttributes Provide additional attributes for email alerts source
 			ResolutionRuleAttributes nullable.Nullable[struct {
@@ -18570,7 +18570,7 @@ type NewAlertsSource struct {
 				ConditionType *NewAlertsSourceDataAttributesResolutionRuleAttributesConditionType `json:"condition_type,omitempty"`
 
 				// ConditionsAttributes List of conditions to evaluate for auto resolution
-				ConditionsAttributes *[]struct {
+				ConditionsAttributes []struct {
 					// ConditionableId The ID of the conditionable. If conditionable_type is AlertField, this is the ID of the alert field.
 					ConditionableId nullable.Nullable[string] `json:"conditionable_id,omitempty"`
 
@@ -18621,7 +18621,7 @@ type NewAlertsSource struct {
 				AutoResolve *bool `json:"auto_resolve,omitempty"`
 
 				// FieldMappingsAttributes Specify rules to auto resolve alerts
-				FieldMappingsAttributes *[]struct {
+				FieldMappingsAttributes []struct {
 					// Field Select the field on which the condition to be evaluated
 					Field *NewAlertsSourceDataAttributesSourceableAttributesFieldMappingsAttributesField `json:"field,omitempty"`
 
@@ -18990,7 +18990,7 @@ type NewCustomField struct {
 			// Position The position of the custom_field
 			Position *int                                                      `json:"position,omitempty"`
 			Required nullable.Nullable[[]NewCustomFieldDataAttributesRequired] `json:"required,omitempty"`
-			Shown    *[]NewCustomFieldDataAttributesShown                      `json:"shown,omitempty"`
+			Shown    []NewCustomFieldDataAttributesShown                       `json:"shown,omitempty"`
 		} `json:"attributes"`
 		Type NewCustomFieldDataType `json:"type"`
 	} `json:"data"`
@@ -19102,16 +19102,16 @@ type NewDashboardPanel struct {
 				Datalabels *struct {
 					Enabled *bool `json:"enabled,omitempty"`
 				} `json:"datalabels,omitempty"`
-				Datasets *[]struct {
+				Datasets []struct {
 					Aggregate nullable.Nullable[struct {
 						Cumulative nullable.Nullable[bool]                                          `json:"cumulative,omitempty"`
 						Key        nullable.Nullable[string]                                        `json:"key,omitempty"`
 						Operation  *NewDashboardPanelDataAttributesParamsDatasetsAggregateOperation `json:"operation,omitempty"`
 					}] `json:"aggregate,omitempty"`
 					Collection *NewDashboardPanelDataAttributesParamsDatasetsCollection `json:"collection,omitempty"`
-					Filter     *[]struct {
+					Filter     []struct {
 						Operation *NewDashboardPanelDataAttributesParamsDatasetsFilterOperation `json:"operation,omitempty"`
-						Rules     *[]struct {
+						Rules     []struct {
 							Condition *NewDashboardPanelDataAttributesParamsDatasetsFilterRulesCondition `json:"condition,omitempty"`
 							Key       *string                                                            `json:"key,omitempty"`
 							Operation *NewDashboardPanelDataAttributesParamsDatasetsFilterRulesOperation `json:"operation,omitempty"`
@@ -19126,7 +19126,7 @@ type NewDashboardPanel struct {
 				Legend      *struct {
 					Groups *NewDashboardPanelDataAttributesParamsLegendGroups `json:"groups,omitempty"`
 				} `json:"legend,omitempty"`
-				TableFields *[]string `json:"table_fields,omitempty"`
+				TableFields []string `json:"table_fields,omitempty"`
 			} `json:"params"`
 			Position nullable.Nullable[struct {
 				H float32 `json:"h"`
@@ -19193,7 +19193,7 @@ type NewEdgeConnector struct {
 		Status *NewEdgeConnectorEdgeConnectorStatus `json:"status,omitempty"`
 
 		// Subscriptions Array of event types to subscribe to
-		Subscriptions *[]string `json:"subscriptions,omitempty"`
+		Subscriptions []string `json:"subscriptions,omitempty"`
 	} `json:"edge_connector"`
 }
 
@@ -19300,7 +19300,7 @@ type NewEscalationPolicy struct {
 			Description nullable.Nullable[string] `json:"description,omitempty"`
 
 			// GroupIds Associated groups (alerting the group will trigger escalation policy)
-			GroupIds *[]string `json:"group_ids,omitempty"`
+			GroupIds []string `json:"group_ids,omitempty"`
 
 			// Name The name of the escalation policy
 			Name string `json:"name"`
@@ -19309,7 +19309,7 @@ type NewEscalationPolicy struct {
 			RepeatCount *int `json:"repeat_count,omitempty"`
 
 			// ServiceIds Associated services (alerting the service will trigger escalation policy)
-			ServiceIds *[]string `json:"service_ids,omitempty"`
+			ServiceIds []string `json:"service_ids,omitempty"`
 		} `json:"attributes"`
 		Type NewEscalationPolicyDataType `json:"type"`
 	} `json:"data"`
@@ -19399,13 +19399,13 @@ type NewEscalationPolicyPath struct {
 			RepeatCount nullable.Nullable[int] `json:"repeat_count,omitempty"`
 
 			// Rules Escalation path conditions
-			Rules *[]NewEscalationPolicyPath_Data_Attributes_Rules_Item `json:"rules,omitempty"`
+			Rules []NewEscalationPolicyPath_Data_Attributes_Rules_Item `json:"rules,omitempty"`
 
 			// TimeRestrictionTimeZone Time zone used for time restrictions.
 			TimeRestrictionTimeZone nullable.Nullable[NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone] `json:"time_restriction_time_zone,omitempty"`
 
 			// TimeRestrictions If time restrictions are set, alerts will follow this path when they arrive within the specified time ranges and meet the rules.
-			TimeRestrictions *[]struct {
+			TimeRestrictions []struct {
 				EndDay NewEscalationPolicyPathDataAttributesTimeRestrictionsEndDay `json:"end_day"`
 
 				// EndTime Formatted as HH:MM
@@ -19492,7 +19492,7 @@ type NewEscalationPolicyPathDataType string
 type NewFormField struct {
 	Data struct {
 		Attributes struct {
-			DefaultValues *[]string `json:"default_values,omitempty"`
+			DefaultValues []string `json:"default_values,omitempty"`
 
 			// Description The description of the form field
 			Description nullable.Nullable[string] `json:"description,omitempty"`
@@ -19507,12 +19507,12 @@ type NewFormField struct {
 			Kind NewFormFieldDataAttributesKind `json:"kind"`
 
 			// Name The name of the form field
-			Name     string    `json:"name"`
-			Required *[]string `json:"required,omitempty"`
+			Name     string   `json:"name"`
+			Required []string `json:"required,omitempty"`
 
 			// ShowOnIncidentDetails Whether the form field is shown on the incident details panel
-			ShowOnIncidentDetails *bool     `json:"show_on_incident_details,omitempty"`
-			Shown                 *[]string `json:"shown,omitempty"`
+			ShowOnIncidentDetails *bool    `json:"show_on_incident_details,omitempty"`
+			Shown                 []string `json:"shown,omitempty"`
 
 			// ValueKind The value kind of the form field
 			ValueKind *NewFormFieldDataAttributesValueKind `json:"value_kind,omitempty"`
@@ -19963,7 +19963,7 @@ type NewIncidentActionItem struct {
 	Data struct {
 		Attributes struct {
 			// AssignedToGroupIds IDs of groups you wish to assign this action item
-			AssignedToGroupIds *[]string `json:"assigned_to_group_ids,omitempty"`
+			AssignedToGroupIds []string `json:"assigned_to_group_ids,omitempty"`
 
 			// AssignedToUserId ID of user you wish to assign this action item
 			AssignedToUserId nullable.Nullable[int] `json:"assigned_to_user_id,omitempty"`
@@ -20016,8 +20016,8 @@ type NewIncidentCustomFieldSelection struct {
 	Data struct {
 		Attributes struct {
 			// CustomFieldId The custom field for this selection
-			CustomFieldId     int    `json:"custom_field_id"`
-			SelectedOptionIds *[]int `json:"selected_option_ids,omitempty"`
+			CustomFieldId     int   `json:"custom_field_id"`
+			SelectedOptionIds []int `json:"selected_option_ids,omitempty"`
 
 			// Value The selected value for text kind custom fields
 			Value nullable.Nullable[string] `json:"value"`
@@ -20123,14 +20123,14 @@ type NewIncidentFormFieldSelection struct {
 	Data struct {
 		Attributes struct {
 			// FormFieldId The custom field for this selection
-			FormFieldId              string    `json:"form_field_id"`
-			IncidentId               string    `json:"incident_id"`
-			SelectedCatalogEntityIds *[]string `json:"selected_catalog_entity_ids,omitempty"`
-			SelectedFunctionalityIds *[]string `json:"selected_functionality_ids,omitempty"`
-			SelectedGroupIds         *[]string `json:"selected_group_ids,omitempty"`
-			SelectedOptionIds        *[]string `json:"selected_option_ids,omitempty"`
-			SelectedServiceIds       *[]string `json:"selected_service_ids,omitempty"`
-			SelectedUserIds          *[]int    `json:"selected_user_ids,omitempty"`
+			FormFieldId              string   `json:"form_field_id"`
+			IncidentId               string   `json:"incident_id"`
+			SelectedCatalogEntityIds []string `json:"selected_catalog_entity_ids,omitempty"`
+			SelectedFunctionalityIds []string `json:"selected_functionality_ids,omitempty"`
+			SelectedGroupIds         []string `json:"selected_group_ids,omitempty"`
+			SelectedOptionIds        []string `json:"selected_option_ids,omitempty"`
+			SelectedServiceIds       []string `json:"selected_service_ids,omitempty"`
+			SelectedUserIds          []int    `json:"selected_user_ids,omitempty"`
 
 			// Value The selected value for text kind custom fields
 			Value nullable.Nullable[string] `json:"value,omitempty"`
@@ -20150,9 +20150,9 @@ type NewIncidentPermissionSet struct {
 			Description nullable.Nullable[string] `json:"description,omitempty"`
 
 			// Name The incident permission set name.
-			Name                       string                                                              `json:"name"`
-			PrivateIncidentPermissions *[]NewIncidentPermissionSetDataAttributesPrivateIncidentPermissions `json:"private_incident_permissions,omitempty"`
-			PublicIncidentPermissions  *[]NewIncidentPermissionSetDataAttributesPublicIncidentPermissions  `json:"public_incident_permissions,omitempty"`
+			Name                       string                                                             `json:"name"`
+			PrivateIncidentPermissions []NewIncidentPermissionSetDataAttributesPrivateIncidentPermissions `json:"private_incident_permissions,omitempty"`
+			PublicIncidentPermissions  []NewIncidentPermissionSetDataAttributesPublicIncidentPermissions  `json:"public_incident_permissions,omitempty"`
 		} `json:"attributes"`
 		Type NewIncidentPermissionSetDataType `json:"type"`
 	} `json:"data"`
@@ -20470,34 +20470,34 @@ type NewLiveCallRouterDataType string
 type NewOnCallRole struct {
 	Data struct {
 		Attributes struct {
-			AlertFieldsPermissions        *[]NewOnCallRoleDataAttributesAlertFieldsPermissions        `json:"alert_fields_permissions,omitempty"`
-			AlertGroupsPermissions        *[]NewOnCallRoleDataAttributesAlertGroupsPermissions        `json:"alert_groups_permissions,omitempty"`
-			AlertRoutingRulesPermissions  *[]NewOnCallRoleDataAttributesAlertRoutingRulesPermissions  `json:"alert_routing_rules_permissions,omitempty"`
-			AlertSourcesPermissions       *[]NewOnCallRoleDataAttributesAlertSourcesPermissions       `json:"alert_sources_permissions,omitempty"`
-			AlertUrgencyPermissions       *[]NewOnCallRoleDataAttributesAlertUrgencyPermissions       `json:"alert_urgency_permissions,omitempty"`
-			AlertsPermissions             *[]NewOnCallRoleDataAttributesAlertsPermissions             `json:"alerts_permissions,omitempty"`
-			ApiKeysPermissions            *[]NewOnCallRoleDataAttributesApiKeysPermissions            `json:"api_keys_permissions,omitempty"`
-			AuditsPermissions             *[]NewOnCallRoleDataAttributesAuditsPermissions             `json:"audits_permissions,omitempty"`
-			ContactsPermissions           *[]NewOnCallRoleDataAttributesContactsPermissions           `json:"contacts_permissions,omitempty"`
-			EscalationPoliciesPermissions *[]NewOnCallRoleDataAttributesEscalationPoliciesPermissions `json:"escalation_policies_permissions,omitempty"`
-			GroupsPermissions             *[]NewOnCallRoleDataAttributesGroupsPermissions             `json:"groups_permissions,omitempty"`
-			HeartbeatsPermissions         *[]NewOnCallRoleDataAttributesHeartbeatsPermissions         `json:"heartbeats_permissions,omitempty"`
-			IntegrationsPermissions       *[]NewOnCallRoleDataAttributesIntegrationsPermissions       `json:"integrations_permissions,omitempty"`
-			InvitationsPermissions        *[]NewOnCallRoleDataAttributesInvitationsPermissions        `json:"invitations_permissions,omitempty"`
-			LiveCallRoutingPermissions    *[]NewOnCallRoleDataAttributesLiveCallRoutingPermissions    `json:"live_call_routing_permissions,omitempty"`
+			AlertFieldsPermissions        []NewOnCallRoleDataAttributesAlertFieldsPermissions        `json:"alert_fields_permissions,omitempty"`
+			AlertGroupsPermissions        []NewOnCallRoleDataAttributesAlertGroupsPermissions        `json:"alert_groups_permissions,omitempty"`
+			AlertRoutingRulesPermissions  []NewOnCallRoleDataAttributesAlertRoutingRulesPermissions  `json:"alert_routing_rules_permissions,omitempty"`
+			AlertSourcesPermissions       []NewOnCallRoleDataAttributesAlertSourcesPermissions       `json:"alert_sources_permissions,omitempty"`
+			AlertUrgencyPermissions       []NewOnCallRoleDataAttributesAlertUrgencyPermissions       `json:"alert_urgency_permissions,omitempty"`
+			AlertsPermissions             []NewOnCallRoleDataAttributesAlertsPermissions             `json:"alerts_permissions,omitempty"`
+			ApiKeysPermissions            []NewOnCallRoleDataAttributesApiKeysPermissions            `json:"api_keys_permissions,omitempty"`
+			AuditsPermissions             []NewOnCallRoleDataAttributesAuditsPermissions             `json:"audits_permissions,omitempty"`
+			ContactsPermissions           []NewOnCallRoleDataAttributesContactsPermissions           `json:"contacts_permissions,omitempty"`
+			EscalationPoliciesPermissions []NewOnCallRoleDataAttributesEscalationPoliciesPermissions `json:"escalation_policies_permissions,omitempty"`
+			GroupsPermissions             []NewOnCallRoleDataAttributesGroupsPermissions             `json:"groups_permissions,omitempty"`
+			HeartbeatsPermissions         []NewOnCallRoleDataAttributesHeartbeatsPermissions         `json:"heartbeats_permissions,omitempty"`
+			IntegrationsPermissions       []NewOnCallRoleDataAttributesIntegrationsPermissions       `json:"integrations_permissions,omitempty"`
+			InvitationsPermissions        []NewOnCallRoleDataAttributesInvitationsPermissions        `json:"invitations_permissions,omitempty"`
+			LiveCallRoutingPermissions    []NewOnCallRoleDataAttributesLiveCallRoutingPermissions    `json:"live_call_routing_permissions,omitempty"`
 
 			// Name The role name.
-			Name                             string                                                         `json:"name"`
-			OnCallReadinessReportPermissions *[]NewOnCallRoleDataAttributesOnCallReadinessReportPermissions `json:"on_call_readiness_report_permissions,omitempty"`
-			OnCallRolesPermissions           *[]NewOnCallRoleDataAttributesOnCallRolesPermissions           `json:"on_call_roles_permissions,omitempty"`
-			ScheduleOverridePermissions      *[]NewOnCallRoleDataAttributesScheduleOverridePermissions      `json:"schedule_override_permissions,omitempty"`
-			SchedulesPermissions             *[]NewOnCallRoleDataAttributesSchedulesPermissions             `json:"schedules_permissions,omitempty"`
-			ServicesPermissions              *[]NewOnCallRoleDataAttributesServicesPermissions              `json:"services_permissions,omitempty"`
+			Name                             string                                                        `json:"name"`
+			OnCallReadinessReportPermissions []NewOnCallRoleDataAttributesOnCallReadinessReportPermissions `json:"on_call_readiness_report_permissions,omitempty"`
+			OnCallRolesPermissions           []NewOnCallRoleDataAttributesOnCallRolesPermissions           `json:"on_call_roles_permissions,omitempty"`
+			ScheduleOverridePermissions      []NewOnCallRoleDataAttributesScheduleOverridePermissions      `json:"schedule_override_permissions,omitempty"`
+			SchedulesPermissions             []NewOnCallRoleDataAttributesSchedulesPermissions             `json:"schedules_permissions,omitempty"`
+			ServicesPermissions              []NewOnCallRoleDataAttributesServicesPermissions              `json:"services_permissions,omitempty"`
 
 			// SystemRole The kind of role (user and custom type roles are only editable)
-			SystemRole           *string                                            `json:"system_role,omitempty"`
-			WebhooksPermissions  *[]NewOnCallRoleDataAttributesWebhooksPermissions  `json:"webhooks_permissions,omitempty"`
-			WorkflowsPermissions *[]NewOnCallRoleDataAttributesWorkflowsPermissions `json:"workflows_permissions,omitempty"`
+			SystemRole           *string                                           `json:"system_role,omitempty"`
+			WebhooksPermissions  []NewOnCallRoleDataAttributesWebhooksPermissions  `json:"webhooks_permissions,omitempty"`
+			WorkflowsPermissions []NewOnCallRoleDataAttributesWorkflowsPermissions `json:"workflows_permissions,omitempty"`
 		} `json:"attributes"`
 		Type NewOnCallRoleDataType `json:"type"`
 	} `json:"data"`
@@ -20718,14 +20718,14 @@ type NewPulse struct {
 
 			// ExternalUrl The external url of the pulse
 			ExternalUrl nullable.Nullable[string] `json:"external_url,omitempty"`
-			Labels      *[]struct {
+			Labels      []struct {
 				// Key Key of the tag
 				Key string `json:"key"`
 
 				// Value Value of the tag
 				Value string `json:"value"`
 			} `json:"labels,omitempty"`
-			Refs *[]struct {
+			Refs []struct {
 				// Key Key of the ref
 				Key string `json:"key"`
 
@@ -20857,38 +20857,38 @@ type NewRetrospectiveStepDataType string
 type NewRole struct {
 	Data struct {
 		Attributes struct {
-			AlertsPermissions            *[]NewRoleDataAttributesAlertsPermissions            `json:"alerts_permissions,omitempty"`
-			ApiKeysPermissions           *[]NewRoleDataAttributesApiKeysPermissions           `json:"api_keys_permissions,omitempty"`
-			AuditsPermissions            *[]NewRoleDataAttributesAuditsPermissions            `json:"audits_permissions,omitempty"`
-			BillingPermissions           *[]NewRoleDataAttributesBillingPermissions           `json:"billing_permissions,omitempty"`
-			EnvironmentsPermissions      *[]NewRoleDataAttributesEnvironmentsPermissions      `json:"environments_permissions,omitempty"`
-			FormFieldsPermissions        *[]NewRoleDataAttributesFormFieldsPermissions        `json:"form_fields_permissions,omitempty"`
-			FunctionalitiesPermissions   *[]NewRoleDataAttributesFunctionalitiesPermissions   `json:"functionalities_permissions,omitempty"`
-			GroupsPermissions            *[]NewRoleDataAttributesGroupsPermissions            `json:"groups_permissions,omitempty"`
-			IncidentCausesPermissions    *[]NewRoleDataAttributesIncidentCausesPermissions    `json:"incident_causes_permissions,omitempty"`
-			IncidentFeedbacksPermissions *[]NewRoleDataAttributesIncidentFeedbacksPermissions `json:"incident_feedbacks_permissions,omitempty"`
+			AlertsPermissions            []NewRoleDataAttributesAlertsPermissions            `json:"alerts_permissions,omitempty"`
+			ApiKeysPermissions           []NewRoleDataAttributesApiKeysPermissions           `json:"api_keys_permissions,omitempty"`
+			AuditsPermissions            []NewRoleDataAttributesAuditsPermissions            `json:"audits_permissions,omitempty"`
+			BillingPermissions           []NewRoleDataAttributesBillingPermissions           `json:"billing_permissions,omitempty"`
+			EnvironmentsPermissions      []NewRoleDataAttributesEnvironmentsPermissions      `json:"environments_permissions,omitempty"`
+			FormFieldsPermissions        []NewRoleDataAttributesFormFieldsPermissions        `json:"form_fields_permissions,omitempty"`
+			FunctionalitiesPermissions   []NewRoleDataAttributesFunctionalitiesPermissions   `json:"functionalities_permissions,omitempty"`
+			GroupsPermissions            []NewRoleDataAttributesGroupsPermissions            `json:"groups_permissions,omitempty"`
+			IncidentCausesPermissions    []NewRoleDataAttributesIncidentCausesPermissions    `json:"incident_causes_permissions,omitempty"`
+			IncidentFeedbacksPermissions []NewRoleDataAttributesIncidentFeedbacksPermissions `json:"incident_feedbacks_permissions,omitempty"`
 
 			// IncidentPermissionSetId Associated incident permissions set.
-			IncidentPermissionSetId  nullable.Nullable[string]                        `json:"incident_permission_set_id,omitempty"`
-			IncidentRolesPermissions *[]NewRoleDataAttributesIncidentRolesPermissions `json:"incident_roles_permissions,omitempty"`
-			IncidentTypesPermissions *[]NewRoleDataAttributesIncidentTypesPermissions `json:"incident_types_permissions,omitempty"`
-			IncidentsPermissions     *[]NewRoleDataAttributesIncidentsPermissions     `json:"incidents_permissions,omitempty"`
-			IntegrationsPermissions  *[]NewRoleDataAttributesIntegrationsPermissions  `json:"integrations_permissions,omitempty"`
-			InvitationsPermissions   *[]NewRoleDataAttributesInvitationsPermissions   `json:"invitations_permissions,omitempty"`
+			IncidentPermissionSetId  nullable.Nullable[string]                       `json:"incident_permission_set_id,omitempty"`
+			IncidentRolesPermissions []NewRoleDataAttributesIncidentRolesPermissions `json:"incident_roles_permissions,omitempty"`
+			IncidentTypesPermissions []NewRoleDataAttributesIncidentTypesPermissions `json:"incident_types_permissions,omitempty"`
+			IncidentsPermissions     []NewRoleDataAttributesIncidentsPermissions     `json:"incidents_permissions,omitempty"`
+			IntegrationsPermissions  []NewRoleDataAttributesIntegrationsPermissions  `json:"integrations_permissions,omitempty"`
+			InvitationsPermissions   []NewRoleDataAttributesInvitationsPermissions   `json:"invitations_permissions,omitempty"`
 
 			// Name The role name.
-			Name                        string                                              `json:"name"`
-			PlaybooksPermissions        *[]NewRoleDataAttributesPlaybooksPermissions        `json:"playbooks_permissions,omitempty"`
-			PrivateIncidentsPermissions *[]NewRoleDataAttributesPrivateIncidentsPermissions `json:"private_incidents_permissions,omitempty"`
-			PulsesPermissions           *[]NewRoleDataAttributesPulsesPermissions           `json:"pulses_permissions,omitempty"`
-			RetrospectivePermissions    *[]NewRoleDataAttributesRetrospectivePermissions    `json:"retrospective_permissions,omitempty"`
-			RolesPermissions            *[]NewRoleDataAttributesRolesPermissions            `json:"roles_permissions,omitempty"`
-			SecretsPermissions          *[]NewRoleDataAttributesSecretsPermissions          `json:"secrets_permissions,omitempty"`
-			ServicesPermissions         *[]NewRoleDataAttributesServicesPermissions         `json:"services_permissions,omitempty"`
-			SeveritiesPermissions       *[]NewRoleDataAttributesSeveritiesPermissions       `json:"severities_permissions,omitempty"`
-			StatusPagesPermissions      *[]NewRoleDataAttributesStatusPagesPermissions      `json:"status_pages_permissions,omitempty"`
-			WebhooksPermissions         *[]NewRoleDataAttributesWebhooksPermissions         `json:"webhooks_permissions,omitempty"`
-			WorkflowsPermissions        *[]NewRoleDataAttributesWorkflowsPermissions        `json:"workflows_permissions,omitempty"`
+			Name                        string                                             `json:"name"`
+			PlaybooksPermissions        []NewRoleDataAttributesPlaybooksPermissions        `json:"playbooks_permissions,omitempty"`
+			PrivateIncidentsPermissions []NewRoleDataAttributesPrivateIncidentsPermissions `json:"private_incidents_permissions,omitempty"`
+			PulsesPermissions           []NewRoleDataAttributesPulsesPermissions           `json:"pulses_permissions,omitempty"`
+			RetrospectivePermissions    []NewRoleDataAttributesRetrospectivePermissions    `json:"retrospective_permissions,omitempty"`
+			RolesPermissions            []NewRoleDataAttributesRolesPermissions            `json:"roles_permissions,omitempty"`
+			SecretsPermissions          []NewRoleDataAttributesSecretsPermissions          `json:"secrets_permissions,omitempty"`
+			ServicesPermissions         []NewRoleDataAttributesServicesPermissions         `json:"services_permissions,omitempty"`
+			SeveritiesPermissions       []NewRoleDataAttributesSeveritiesPermissions       `json:"severities_permissions,omitempty"`
+			StatusPagesPermissions      []NewRoleDataAttributesStatusPagesPermissions      `json:"status_pages_permissions,omitempty"`
+			WebhooksPermissions         []NewRoleDataAttributesWebhooksPermissions         `json:"webhooks_permissions,omitempty"`
+			WorkflowsPermissions        []NewRoleDataAttributesWorkflowsPermissions        `json:"workflows_permissions,omitempty"`
 		} `json:"attributes"`
 		Type NewRoleDataType `json:"type"`
 	} `json:"data"`
@@ -20989,7 +20989,7 @@ type NewSchedule struct {
 			Name string `json:"name"`
 
 			// OwnerGroupIds Owning teams.
-			OwnerGroupIds *[]string `json:"owner_group_ids,omitempty"`
+			OwnerGroupIds []string `json:"owner_group_ids,omitempty"`
 
 			// OwnerUserId ID of the owner of the schedule
 			OwnerUserId  int `json:"owner_user_id"`
@@ -21020,11 +21020,11 @@ type NewScheduleRotation struct {
 	Data struct {
 		Attributes struct {
 			// ActiveAllWeek Schedule rotation active all week?
-			ActiveAllWeek *bool                                          `json:"active_all_week,omitempty"`
-			ActiveDays    *[]NewScheduleRotationDataAttributesActiveDays `json:"active_days,omitempty"`
+			ActiveAllWeek *bool                                         `json:"active_all_week,omitempty"`
+			ActiveDays    []NewScheduleRotationDataAttributesActiveDays `json:"active_days,omitempty"`
 
 			// ActiveTimeAttributes Schedule rotation's active times
-			ActiveTimeAttributes *[]struct {
+			ActiveTimeAttributes []struct {
 				// EndTime End time for schedule rotation active time
 				EndTime string `json:"end_time"`
 
@@ -21422,7 +21422,7 @@ type NewStatusPage struct {
 			FooterColor nullable.Nullable[string] `json:"footer_color,omitempty"`
 
 			// FunctionalityIds Functionalities attached to the status page
-			FunctionalityIds *[]string `json:"functionality_ids,omitempty"`
+			FunctionalityIds []string `json:"functionality_ids,omitempty"`
 
 			// GaTrackingId Google Analytics tracking ID
 			GaTrackingId nullable.Nullable[string] `json:"ga_tracking_id,omitempty"`
@@ -21452,7 +21452,7 @@ type NewStatusPage struct {
 			SamlNameIdentifierFormat nullable.Nullable[NewStatusPageDataAttributesSamlNameIdentifierFormat] `json:"saml_name_identifier_format,omitempty"`
 
 			// ServiceIds Services attached to the status page
-			ServiceIds *[]string `json:"service_ids,omitempty"`
+			ServiceIds []string `json:"service_ids,omitempty"`
 
 			// ShowUptime Show uptime
 			ShowUptime nullable.Nullable[bool] `json:"show_uptime,omitempty"`
@@ -21732,8 +21732,8 @@ type NewUserPhoneNumberDataType string
 type NewWebhooksEndpoint struct {
 	Data struct {
 		Attributes struct {
-			Enabled    *bool                                          `json:"enabled,omitempty"`
-			EventTypes *[]NewWebhooksEndpointDataAttributesEventTypes `json:"event_types,omitempty"`
+			Enabled    *bool                                         `json:"enabled,omitempty"`
+			EventTypes []NewWebhooksEndpointDataAttributesEventTypes `json:"event_types,omitempty"`
 
 			// Name The name of the endpoint
 			Name string `json:"name"`
@@ -21758,7 +21758,7 @@ type NewWebhooksEndpointDataType string
 type NewWorkflow struct {
 	Data struct {
 		Attributes struct {
-			CauseIds *[]string `json:"cause_ids,omitempty"`
+			CauseIds []string `json:"cause_ids,omitempty"`
 
 			// Command Workflow command
 			Command nullable.Nullable[string] `json:"command,omitempty"`
@@ -21772,11 +21772,11 @@ type NewWorkflow struct {
 			// Description The description of the workflow
 			Description      nullable.Nullable[string] `json:"description,omitempty"`
 			Enabled          *bool                     `json:"enabled,omitempty"`
-			EnvironmentIds   *[]string                 `json:"environment_ids,omitempty"`
-			FunctionalityIds *[]string                 `json:"functionality_ids,omitempty"`
-			GroupIds         *[]string                 `json:"group_ids,omitempty"`
-			IncidentRoleIds  *[]string                 `json:"incident_role_ids,omitempty"`
-			IncidentTypeIds  *[]string                 `json:"incident_type_ids,omitempty"`
+			EnvironmentIds   []string                  `json:"environment_ids,omitempty"`
+			FunctionalityIds []string                  `json:"functionality_ids,omitempty"`
+			GroupIds         []string                  `json:"group_ids,omitempty"`
+			IncidentRoleIds  []string                  `json:"incident_role_ids,omitempty"`
+			IncidentTypeIds  []string                  `json:"incident_type_ids,omitempty"`
 
 			// Locked Restricts workflow edits to admins when turned on. Only admins can set this field.
 			Locked *bool `json:"locked,omitempty"`
@@ -21798,10 +21798,10 @@ type NewWorkflow struct {
 
 			// RepeatEveryDuration Repeat workflow every duration
 			RepeatEveryDuration nullable.Nullable[string]                  `json:"repeat_every_duration,omitempty"`
-			RepeatOn            *[]NewWorkflowDataAttributesRepeatOn       `json:"repeat_on,omitempty"`
-			ServiceIds          *[]string                                  `json:"service_ids,omitempty"`
-			SeverityIds         *[]string                                  `json:"severity_ids,omitempty"`
-			SubStatusIds        *[]string                                  `json:"sub_status_ids,omitempty"`
+			RepeatOn            []NewWorkflowDataAttributesRepeatOn        `json:"repeat_on,omitempty"`
+			ServiceIds          []string                                   `json:"service_ids,omitempty"`
+			SeverityIds         []string                                   `json:"severity_ids,omitempty"`
+			SubStatusIds        []string                                   `json:"sub_status_ids,omitempty"`
 			TriggerParams       *NewWorkflow_Data_Attributes_TriggerParams `json:"trigger_params,omitempty"`
 
 			// Wait Wait this duration before executing
@@ -21837,8 +21837,8 @@ type NewWorkflowCustomFieldSelection struct {
 
 			// IncidentCondition The trigger condition
 			IncidentCondition NewWorkflowCustomFieldSelectionDataAttributesIncidentCondition `json:"incident_condition"`
-			SelectedOptionIds *[]int                                                         `json:"selected_option_ids,omitempty"`
-			Values            *[]string                                                      `json:"values,omitempty"`
+			SelectedOptionIds []int                                                          `json:"selected_option_ids,omitempty"`
+			Values            []string                                                       `json:"values,omitempty"`
 
 			// WorkflowId The workflow for this selection
 			WorkflowId *string `json:"workflow_id,omitempty"`
@@ -21862,13 +21862,13 @@ type NewWorkflowFormFieldCondition struct {
 
 			// IncidentCondition The trigger condition
 			IncidentCondition        NewWorkflowFormFieldConditionDataAttributesIncidentCondition `json:"incident_condition"`
-			SelectedCatalogEntityIds *[]string                                                    `json:"selected_catalog_entity_ids,omitempty"`
-			SelectedFunctionalityIds *[]string                                                    `json:"selected_functionality_ids,omitempty"`
-			SelectedGroupIds         *[]string                                                    `json:"selected_group_ids,omitempty"`
-			SelectedOptionIds        *[]string                                                    `json:"selected_option_ids,omitempty"`
-			SelectedServiceIds       *[]string                                                    `json:"selected_service_ids,omitempty"`
-			SelectedUserIds          *[]int                                                       `json:"selected_user_ids,omitempty"`
-			Values                   *[]string                                                    `json:"values,omitempty"`
+			SelectedCatalogEntityIds []string                                                     `json:"selected_catalog_entity_ids,omitempty"`
+			SelectedFunctionalityIds []string                                                     `json:"selected_functionality_ids,omitempty"`
+			SelectedGroupIds         []string                                                     `json:"selected_group_ids,omitempty"`
+			SelectedOptionIds        []string                                                     `json:"selected_option_ids,omitempty"`
+			SelectedServiceIds       []string                                                     `json:"selected_service_ids,omitempty"`
+			SelectedUserIds          []int                                                        `json:"selected_user_ids,omitempty"`
+			Values                   []string                                                     `json:"values,omitempty"`
 
 			// WorkflowId The workflow for this condition
 			WorkflowId *string `json:"workflow_id,omitempty"`
@@ -21927,7 +21927,7 @@ type NewWorkflowRun struct {
 type NewWorkflowRunDataAttributes0 struct {
 	// CheckConditions If true, this will check conditions. If conditions are not satisfied the run will not be created.
 	CheckConditions nullable.Nullable[bool] `json:"check_conditions,omitempty"`
-	Context         *map[string]interface{} `json:"context,omitempty"`
+	Context         map[string]interface{}  `json:"context,omitempty"`
 
 	// Immediate If false, this will respect wait time configured on the workflow.
 	Immediate nullable.Nullable[bool] `json:"immediate,omitempty"`
@@ -21937,7 +21937,7 @@ type NewWorkflowRunDataAttributes0 struct {
 type NewWorkflowRunDataAttributes1 struct {
 	// CheckConditions If true, this will check conditions. If conditions are not satisfied the run will not be created
 	CheckConditions nullable.Nullable[bool] `json:"check_conditions,omitempty"`
-	Context         *map[string]interface{} `json:"context,omitempty"`
+	Context         map[string]interface{}  `json:"context,omitempty"`
 
 	// Immediate If false, this will respect wait time configured on the workflow
 	Immediate  nullable.Nullable[bool] `json:"immediate,omitempty"`
@@ -21948,7 +21948,7 @@ type NewWorkflowRunDataAttributes1 struct {
 type NewWorkflowRunDataAttributes2 struct {
 	// CheckConditions If true, this will check conditions. If conditions are not satisfied the run will not be created
 	CheckConditions nullable.Nullable[bool] `json:"check_conditions,omitempty"`
-	Context         *map[string]interface{} `json:"context,omitempty"`
+	Context         map[string]interface{}  `json:"context,omitempty"`
 
 	// Immediate If false, this will respect wait time configured on the workflow
 	Immediate    nullable.Nullable[bool] `json:"immediate,omitempty"`
@@ -21961,7 +21961,7 @@ type NewWorkflowRunDataAttributes3 struct {
 
 	// CheckConditions If true, this will check conditions. If conditions are not satisfied the run will not be created
 	CheckConditions nullable.Nullable[bool] `json:"check_conditions,omitempty"`
-	Context         *map[string]interface{} `json:"context,omitempty"`
+	Context         map[string]interface{}  `json:"context,omitempty"`
 
 	// Immediate If false, this will respect wait time configured on the workflow
 	Immediate nullable.Nullable[bool] `json:"immediate,omitempty"`
@@ -21973,7 +21973,7 @@ type NewWorkflowRunDataAttributes4 struct {
 
 	// CheckConditions If true, this will check conditions. If conditions are not satisfied the run will not be created
 	CheckConditions nullable.Nullable[bool] `json:"check_conditions,omitempty"`
-	Context         *map[string]interface{} `json:"context,omitempty"`
+	Context         map[string]interface{}  `json:"context,omitempty"`
 
 	// Immediate If false, this will respect wait time configured on the workflow
 	Immediate nullable.Nullable[bool] `json:"immediate,omitempty"`
@@ -21983,7 +21983,7 @@ type NewWorkflowRunDataAttributes4 struct {
 type NewWorkflowRunDataAttributes5 struct {
 	// CheckConditions If true, this will check conditions. If conditions are not satisfied the run will not be created
 	CheckConditions nullable.Nullable[bool] `json:"check_conditions,omitempty"`
-	Context         *map[string]interface{} `json:"context,omitempty"`
+	Context         map[string]interface{}  `json:"context,omitempty"`
 
 	// Immediate If false, this will respect wait time configured on the workflow
 	Immediate nullable.Nullable[bool] `json:"immediate,omitempty"`
@@ -22029,39 +22029,39 @@ type NewWorkflowTaskDataType string
 
 // OnCallRole defines model for on_call_role.
 type OnCallRole struct {
-	AlertFieldsPermissions        *[]OnCallRoleAlertFieldsPermissions        `json:"alert_fields_permissions,omitempty"`
-	AlertGroupsPermissions        *[]OnCallRoleAlertGroupsPermissions        `json:"alert_groups_permissions,omitempty"`
-	AlertRoutingRulesPermissions  *[]OnCallRoleAlertRoutingRulesPermissions  `json:"alert_routing_rules_permissions,omitempty"`
-	AlertSourcesPermissions       *[]OnCallRoleAlertSourcesPermissions       `json:"alert_sources_permissions,omitempty"`
-	AlertUrgencyPermissions       *[]OnCallRoleAlertUrgencyPermissions       `json:"alert_urgency_permissions,omitempty"`
-	AlertsPermissions             *[]OnCallRoleAlertsPermissions             `json:"alerts_permissions,omitempty"`
-	ApiKeysPermissions            *[]OnCallRoleApiKeysPermissions            `json:"api_keys_permissions,omitempty"`
-	AuditsPermissions             *[]OnCallRoleAuditsPermissions             `json:"audits_permissions,omitempty"`
-	ContactsPermissions           *[]OnCallRoleContactsPermissions           `json:"contacts_permissions,omitempty"`
-	CreatedAt                     string                                     `json:"created_at"`
-	EscalationPoliciesPermissions *[]OnCallRoleEscalationPoliciesPermissions `json:"escalation_policies_permissions,omitempty"`
-	GroupsPermissions             *[]OnCallRoleGroupsPermissions             `json:"groups_permissions,omitempty"`
-	HeartbeatsPermissions         *[]OnCallRoleHeartbeatsPermissions         `json:"heartbeats_permissions,omitempty"`
-	IntegrationsPermissions       *[]OnCallRoleIntegrationsPermissions       `json:"integrations_permissions,omitempty"`
-	InvitationsPermissions        *[]OnCallRoleInvitationsPermissions        `json:"invitations_permissions,omitempty"`
-	LiveCallRoutingPermissions    *[]OnCallRoleLiveCallRoutingPermissions    `json:"live_call_routing_permissions,omitempty"`
+	AlertFieldsPermissions        []OnCallRoleAlertFieldsPermissions        `json:"alert_fields_permissions,omitempty"`
+	AlertGroupsPermissions        []OnCallRoleAlertGroupsPermissions        `json:"alert_groups_permissions,omitempty"`
+	AlertRoutingRulesPermissions  []OnCallRoleAlertRoutingRulesPermissions  `json:"alert_routing_rules_permissions,omitempty"`
+	AlertSourcesPermissions       []OnCallRoleAlertSourcesPermissions       `json:"alert_sources_permissions,omitempty"`
+	AlertUrgencyPermissions       []OnCallRoleAlertUrgencyPermissions       `json:"alert_urgency_permissions,omitempty"`
+	AlertsPermissions             []OnCallRoleAlertsPermissions             `json:"alerts_permissions,omitempty"`
+	ApiKeysPermissions            []OnCallRoleApiKeysPermissions            `json:"api_keys_permissions,omitempty"`
+	AuditsPermissions             []OnCallRoleAuditsPermissions             `json:"audits_permissions,omitempty"`
+	ContactsPermissions           []OnCallRoleContactsPermissions           `json:"contacts_permissions,omitempty"`
+	CreatedAt                     string                                    `json:"created_at"`
+	EscalationPoliciesPermissions []OnCallRoleEscalationPoliciesPermissions `json:"escalation_policies_permissions,omitempty"`
+	GroupsPermissions             []OnCallRoleGroupsPermissions             `json:"groups_permissions,omitempty"`
+	HeartbeatsPermissions         []OnCallRoleHeartbeatsPermissions         `json:"heartbeats_permissions,omitempty"`
+	IntegrationsPermissions       []OnCallRoleIntegrationsPermissions       `json:"integrations_permissions,omitempty"`
+	InvitationsPermissions        []OnCallRoleInvitationsPermissions        `json:"invitations_permissions,omitempty"`
+	LiveCallRoutingPermissions    []OnCallRoleLiveCallRoutingPermissions    `json:"live_call_routing_permissions,omitempty"`
 
 	// Name The role name.
-	Name                             string                                        `json:"name"`
-	OnCallReadinessReportPermissions *[]OnCallRoleOnCallReadinessReportPermissions `json:"on_call_readiness_report_permissions,omitempty"`
-	OnCallRolesPermissions           *[]OnCallRoleOnCallRolesPermissions           `json:"on_call_roles_permissions,omitempty"`
-	ScheduleOverridePermissions      *[]OnCallRoleScheduleOverridePermissions      `json:"schedule_override_permissions,omitempty"`
-	SchedulesPermissions             *[]OnCallRoleSchedulesPermissions             `json:"schedules_permissions,omitempty"`
-	ServicesPermissions              *[]OnCallRoleServicesPermissions              `json:"services_permissions,omitempty"`
+	Name                             string                                       `json:"name"`
+	OnCallReadinessReportPermissions []OnCallRoleOnCallReadinessReportPermissions `json:"on_call_readiness_report_permissions,omitempty"`
+	OnCallRolesPermissions           []OnCallRoleOnCallRolesPermissions           `json:"on_call_roles_permissions,omitempty"`
+	ScheduleOverridePermissions      []OnCallRoleScheduleOverridePermissions      `json:"schedule_override_permissions,omitempty"`
+	SchedulesPermissions             []OnCallRoleSchedulesPermissions             `json:"schedules_permissions,omitempty"`
+	ServicesPermissions              []OnCallRoleServicesPermissions              `json:"services_permissions,omitempty"`
 
 	// Slug The role slug.
 	Slug *string `json:"slug,omitempty"`
 
 	// SystemRole The kind of role
-	SystemRole           *string                           `json:"system_role,omitempty"`
-	UpdatedAt            string                            `json:"updated_at"`
-	WebhooksPermissions  *[]OnCallRoleWebhooksPermissions  `json:"webhooks_permissions,omitempty"`
-	WorkflowsPermissions *[]OnCallRoleWorkflowsPermissions `json:"workflows_permissions,omitempty"`
+	SystemRole           *string                          `json:"system_role,omitempty"`
+	UpdatedAt            string                           `json:"updated_at"`
+	WebhooksPermissions  []OnCallRoleWebhooksPermissions  `json:"webhooks_permissions,omitempty"`
+	WorkflowsPermissions []OnCallRoleWorkflowsPermissions `json:"workflows_permissions,omitempty"`
 }
 
 // OnCallRoleAlertFieldsPermissions defines model for OnCallRole.AlertFieldsPermissions.
@@ -22301,14 +22301,14 @@ type PageOpsgenieOnCallRespondersTaskParams struct {
 	Message  *string                                         `json:"message,omitempty"`
 	Priority *PageOpsgenieOnCallRespondersTaskParamsPriority `json:"priority,omitempty"`
 	TaskType *PageOpsgenieOnCallRespondersTaskParamsTaskType `json:"task_type,omitempty"`
-	Teams    *[]struct {
+	Teams    []struct {
 		Id   *string `json:"id,omitempty"`
 		Name *string `json:"name,omitempty"`
 	} `json:"teams,omitempty"`
 
 	// Title Incident title.
 	Title nullable.Nullable[string] `json:"title,omitempty"`
-	Users *[]struct {
+	Users []struct {
 		Id   *string `json:"id,omitempty"`
 		Name *string `json:"name,omitempty"`
 	} `json:"users,omitempty"`
@@ -22324,7 +22324,7 @@ type PageOpsgenieOnCallRespondersTaskParamsTaskType string
 type PagePagerdutyOnCallRespondersTaskParams struct {
 	// CreateNewIncidentOnConflict Rootly only supports linking to a single PagerDuty incident. If this feature is disabled Rootly will add responders from any additional pages to the existing PagerDuty incident that is linked to the Rootly incident. If enabled, Rootly will create a new PagerDuty incident that is not linked to any Rootly incidents
 	CreateNewIncidentOnConflict *bool `json:"create_new_incident_on_conflict,omitempty"`
-	EscalationPolicies          *[]struct {
+	EscalationPolicies          []struct {
 		Id   *string `json:"id,omitempty"`
 		Name *string `json:"name,omitempty"`
 	} `json:"escalation_policies,omitempty"`
@@ -22341,7 +22341,7 @@ type PagePagerdutyOnCallRespondersTaskParams struct {
 	// Title Incident title.
 	Title   nullable.Nullable[string]                       `json:"title,omitempty"`
 	Urgency *PagePagerdutyOnCallRespondersTaskParamsUrgency `json:"urgency,omitempty"`
-	Users   *[]struct {
+	Users   []struct {
 		Id   *string `json:"id,omitempty"`
 		Name *string `json:"name,omitempty"`
 	} `json:"users,omitempty"`
@@ -22388,7 +22388,7 @@ type PageRootlyOnCallRespondersTaskParamsTaskType string
 
 // PageVictorOpsOnCallRespondersTaskParams defines model for page_victor_ops_on_call_responders_task_params.
 type PageVictorOpsOnCallRespondersTaskParams struct {
-	EscalationPolicies *[]struct {
+	EscalationPolicies []struct {
 		Id   *string `json:"id,omitempty"`
 		Name *string `json:"name,omitempty"`
 	} `json:"escalation_policies,omitempty"`
@@ -22396,7 +22396,7 @@ type PageVictorOpsOnCallRespondersTaskParams struct {
 
 	// Title Alert title.
 	Title nullable.Nullable[string] `json:"title,omitempty"`
-	Users *[]struct {
+	Users []struct {
 		Id   *string `json:"id,omitempty"`
 		Name *string `json:"name,omitempty"`
 	} `json:"users,omitempty"`
@@ -22622,17 +22622,17 @@ type PostMortemTriggerParams struct {
 	IncidentConditionVisibility     *PostMortemTriggerParamsIncidentConditionVisibility      `json:"incident_condition_visibility,omitempty"`
 	IncidentConditionalInactivity   *PostMortemTriggerParams_IncidentConditionalInactivity   `json:"incident_conditional_inactivity,omitempty"`
 	IncidentInactivityDuration      *PostMortemTriggerParams_IncidentInactivityDuration      `json:"incident_inactivity_duration,omitempty"`
-	IncidentKinds                   *[]PostMortemTriggerParamsIncidentKinds                  `json:"incident_kinds,omitempty"`
+	IncidentKinds                   []PostMortemTriggerParamsIncidentKinds                   `json:"incident_kinds,omitempty"`
 	IncidentPostMortemCondition     *PostMortemTriggerParamsIncidentPostMortemCondition      `json:"incident_post_mortem_condition,omitempty"`
 
 	// IncidentPostMortemConditionCause [DEPRECATED] Use incident_condition_cause instead
 	IncidentPostMortemConditionCause  *PostMortemTriggerParamsIncidentPostMortemConditionCause  `json:"incident_post_mortem_condition_cause,omitempty"`
 	IncidentPostMortemConditionStatus *PostMortemTriggerParamsIncidentPostMortemConditionStatus `json:"incident_post_mortem_condition_status,omitempty"`
-	IncidentPostMortemStatuses        *[]PostMortemTriggerParamsIncidentPostMortemStatuses      `json:"incident_post_mortem_statuses,omitempty"`
-	IncidentStatuses                  *[]PostMortemTriggerParamsIncidentStatuses                `json:"incident_statuses,omitempty"`
-	IncidentVisibilities              *[]bool                                                   `json:"incident_visibilities,omitempty"`
+	IncidentPostMortemStatuses        []PostMortemTriggerParamsIncidentPostMortemStatuses       `json:"incident_post_mortem_statuses,omitempty"`
+	IncidentStatuses                  []PostMortemTriggerParamsIncidentStatuses                 `json:"incident_statuses,omitempty"`
+	IncidentVisibilities              []bool                                                    `json:"incident_visibilities,omitempty"`
 	TriggerType                       PostMortemTriggerParamsTriggerType                        `json:"trigger_type"`
-	Triggers                          *[]string                                                 `json:"triggers,omitempty"`
+	Triggers                          []string                                                  `json:"triggers,omitempty"`
 }
 
 // PostMortemTriggerParamsIncidentCondition defines model for PostMortemTriggerParams.IncidentCondition.
@@ -22835,18 +22835,18 @@ type Pulse struct {
 	Data nullable.Nullable[map[string]interface{}] `json:"data,omitempty"`
 
 	// Environments Environments attached to the pulse
-	Environments *[]Environment `json:"environments,omitempty"`
+	Environments []Environment `json:"environments,omitempty"`
 
 	// ExternalUrl The external url of the pulse
 	ExternalUrl nullable.Nullable[string] `json:"external_url,omitempty"`
-	Labels      *[]struct {
+	Labels      []struct {
 		// Key Key of the tag
 		Key string `json:"key"`
 
 		// Value Value of the tag
 		Value string `json:"value"`
 	} `json:"labels,omitempty"`
-	Refs *[]struct {
+	Refs []struct {
 		// Key Key of the ref
 		Key string `json:"key"`
 
@@ -22855,7 +22855,7 @@ type Pulse struct {
 	} `json:"refs,omitempty"`
 
 	// Services Services attached to the pulse
-	Services *[]Service `json:"services,omitempty"`
+	Services []Service `json:"services,omitempty"`
 
 	// Source The source of the pulse (eg: k8s)
 	Source nullable.Nullable[string] `json:"source,omitempty"`
@@ -22906,14 +22906,14 @@ type PulseTriggerParams struct {
 	PulseConditionPayloadUseRegexp *bool                                    `json:"pulse_condition_payload_use_regexp,omitempty"`
 	PulseConditionSource           *PulseTriggerParamsPulseConditionSource  `json:"pulse_condition_source,omitempty"`
 	PulseConditionSourceUseRegexp  *bool                                    `json:"pulse_condition_source_use_regexp,omitempty"`
-	PulseLabels                    *[]string                                `json:"pulse_labels,omitempty"`
-	PulsePayload                   *[]string                                `json:"pulse_payload,omitempty"`
+	PulseLabels                    []string                                 `json:"pulse_labels,omitempty"`
+	PulsePayload                   []string                                 `json:"pulse_payload,omitempty"`
 
 	// PulseQueryPayload You can use jsonpath syntax. eg: $.incident.teams[*]
 	PulseQueryPayload nullable.Nullable[string]     `json:"pulse_query_payload,omitempty"`
-	PulseSources      *[]string                     `json:"pulse_sources,omitempty"`
+	PulseSources      []string                      `json:"pulse_sources,omitempty"`
 	TriggerType       PulseTriggerParamsTriggerType `json:"trigger_type"`
-	Triggers          *[]PulseTriggerParamsTriggers `json:"triggers,omitempty"`
+	Triggers          []PulseTriggerParamsTriggers  `json:"triggers,omitempty"`
 }
 
 // PulseTriggerParamsPulseCondition defines model for PulseTriggerParams.PulseCondition.
@@ -22940,7 +22940,7 @@ type RedisClientTaskParams struct {
 	EventMessage           *string `json:"event_message,omitempty"`
 	EventUrl               *string `json:"event_url,omitempty"`
 	PostToIncidentTimeline *bool   `json:"post_to_incident_timeline,omitempty"`
-	PostToSlackChannels    *[]struct {
+	PostToSlackChannels    []struct {
 		Id   *string `json:"id,omitempty"`
 		Name *string `json:"name,omitempty"`
 	} `json:"post_to_slack_channels,omitempty"`
@@ -23048,7 +23048,7 @@ type ResolveIncidentDataType string
 // RestartIncident defines model for restart_incident.
 type RestartIncident struct {
 	Data struct {
-		Attributes *map[string]interface{} `json:"attributes,omitempty"`
+		Attributes map[string]interface{}  `json:"attributes,omitempty"`
 		Type       RestartIncidentDataType `json:"type"`
 	} `json:"data"`
 }
@@ -23317,25 +23317,25 @@ type RetrospectiveStepResponseDataType string
 
 // Role defines model for role.
 type Role struct {
-	AlertsPermissions            *[]RoleAlertsPermissions            `json:"alerts_permissions,omitempty"`
-	ApiKeysPermissions           *[]RoleApiKeysPermissions           `json:"api_keys_permissions,omitempty"`
-	AuditsPermissions            *[]RoleAuditsPermissions            `json:"audits_permissions,omitempty"`
-	BillingPermissions           *[]RoleBillingPermissions           `json:"billing_permissions,omitempty"`
-	CreatedAt                    string                              `json:"created_at"`
-	EnvironmentsPermissions      *[]RoleEnvironmentsPermissions      `json:"environments_permissions,omitempty"`
-	FormFieldsPermissions        *[]RoleFormFieldsPermissions        `json:"form_fields_permissions,omitempty"`
-	FunctionalitiesPermissions   *[]RoleFunctionalitiesPermissions   `json:"functionalities_permissions,omitempty"`
-	GroupsPermissions            *[]RoleGroupsPermissions            `json:"groups_permissions,omitempty"`
-	IncidentCausesPermissions    *[]RoleIncidentCausesPermissions    `json:"incident_causes_permissions,omitempty"`
-	IncidentFeedbacksPermissions *[]RoleIncidentFeedbacksPermissions `json:"incident_feedbacks_permissions,omitempty"`
+	AlertsPermissions            []RoleAlertsPermissions            `json:"alerts_permissions,omitempty"`
+	ApiKeysPermissions           []RoleApiKeysPermissions           `json:"api_keys_permissions,omitempty"`
+	AuditsPermissions            []RoleAuditsPermissions            `json:"audits_permissions,omitempty"`
+	BillingPermissions           []RoleBillingPermissions           `json:"billing_permissions,omitempty"`
+	CreatedAt                    string                             `json:"created_at"`
+	EnvironmentsPermissions      []RoleEnvironmentsPermissions      `json:"environments_permissions,omitempty"`
+	FormFieldsPermissions        []RoleFormFieldsPermissions        `json:"form_fields_permissions,omitempty"`
+	FunctionalitiesPermissions   []RoleFunctionalitiesPermissions   `json:"functionalities_permissions,omitempty"`
+	GroupsPermissions            []RoleGroupsPermissions            `json:"groups_permissions,omitempty"`
+	IncidentCausesPermissions    []RoleIncidentCausesPermissions    `json:"incident_causes_permissions,omitempty"`
+	IncidentFeedbacksPermissions []RoleIncidentFeedbacksPermissions `json:"incident_feedbacks_permissions,omitempty"`
 
 	// IncidentPermissionSetId Associated incident permissions set.
-	IncidentPermissionSetId  nullable.Nullable[string]       `json:"incident_permission_set_id,omitempty"`
-	IncidentRolesPermissions *[]RoleIncidentRolesPermissions `json:"incident_roles_permissions,omitempty"`
-	IncidentTypesPermissions *[]RoleIncidentTypesPermissions `json:"incident_types_permissions,omitempty"`
-	IncidentsPermissions     *[]RoleIncidentsPermissions     `json:"incidents_permissions,omitempty"`
-	IntegrationsPermissions  *[]RoleIntegrationsPermissions  `json:"integrations_permissions,omitempty"`
-	InvitationsPermissions   *[]RoleInvitationsPermissions   `json:"invitations_permissions,omitempty"`
+	IncidentPermissionSetId  nullable.Nullable[string]      `json:"incident_permission_set_id,omitempty"`
+	IncidentRolesPermissions []RoleIncidentRolesPermissions `json:"incident_roles_permissions,omitempty"`
+	IncidentTypesPermissions []RoleIncidentTypesPermissions `json:"incident_types_permissions,omitempty"`
+	IncidentsPermissions     []RoleIncidentsPermissions     `json:"incidents_permissions,omitempty"`
+	IntegrationsPermissions  []RoleIntegrationsPermissions  `json:"integrations_permissions,omitempty"`
+	InvitationsPermissions   []RoleInvitationsPermissions   `json:"invitations_permissions,omitempty"`
 
 	// IsDeletable Whether the role can be deleted.
 	IsDeletable *bool `json:"is_deletable,omitempty"`
@@ -23344,22 +23344,22 @@ type Role struct {
 	IsEditable *bool `json:"is_editable,omitempty"`
 
 	// Name The role name.
-	Name                        string                             `json:"name"`
-	PlaybooksPermissions        *[]RolePlaybooksPermissions        `json:"playbooks_permissions,omitempty"`
-	PrivateIncidentsPermissions *[]RolePrivateIncidentsPermissions `json:"private_incidents_permissions,omitempty"`
-	PulsesPermissions           *[]RolePulsesPermissions           `json:"pulses_permissions,omitempty"`
-	RetrospectivePermissions    *[]RoleRetrospectivePermissions    `json:"retrospective_permissions,omitempty"`
-	RolesPermissions            *[]RoleRolesPermissions            `json:"roles_permissions,omitempty"`
-	SecretsPermissions          *[]RoleSecretsPermissions          `json:"secrets_permissions,omitempty"`
-	ServicesPermissions         *[]RoleServicesPermissions         `json:"services_permissions,omitempty"`
-	SeveritiesPermissions       *[]RoleSeveritiesPermissions       `json:"severities_permissions,omitempty"`
+	Name                        string                            `json:"name"`
+	PlaybooksPermissions        []RolePlaybooksPermissions        `json:"playbooks_permissions,omitempty"`
+	PrivateIncidentsPermissions []RolePrivateIncidentsPermissions `json:"private_incidents_permissions,omitempty"`
+	PulsesPermissions           []RolePulsesPermissions           `json:"pulses_permissions,omitempty"`
+	RetrospectivePermissions    []RoleRetrospectivePermissions    `json:"retrospective_permissions,omitempty"`
+	RolesPermissions            []RoleRolesPermissions            `json:"roles_permissions,omitempty"`
+	SecretsPermissions          []RoleSecretsPermissions          `json:"secrets_permissions,omitempty"`
+	ServicesPermissions         []RoleServicesPermissions         `json:"services_permissions,omitempty"`
+	SeveritiesPermissions       []RoleSeveritiesPermissions       `json:"severities_permissions,omitempty"`
 
 	// Slug The role slug.
-	Slug                   *string                       `json:"slug,omitempty"`
-	StatusPagesPermissions *[]RoleStatusPagesPermissions `json:"status_pages_permissions,omitempty"`
-	UpdatedAt              string                        `json:"updated_at"`
-	WebhooksPermissions    *[]RoleWebhooksPermissions    `json:"webhooks_permissions,omitempty"`
-	WorkflowsPermissions   *[]RoleWorkflowsPermissions   `json:"workflows_permissions,omitempty"`
+	Slug                   *string                      `json:"slug,omitempty"`
+	StatusPagesPermissions []RoleStatusPagesPermissions `json:"status_pages_permissions,omitempty"`
+	UpdatedAt              string                       `json:"updated_at"`
+	WebhooksPermissions    []RoleWebhooksPermissions    `json:"webhooks_permissions,omitempty"`
+	WorkflowsPermissions   []RoleWorkflowsPermissions   `json:"workflows_permissions,omitempty"`
 }
 
 // RoleAlertsPermissions defines model for Role.AlertsPermissions.
@@ -23486,7 +23486,7 @@ type RunCommandHerokuTaskParams struct {
 	AppName                string `json:"app_name"`
 	Command                string `json:"command"`
 	PostToIncidentTimeline *bool  `json:"post_to_incident_timeline,omitempty"`
-	PostToSlackChannels    *[]struct {
+	PostToSlackChannels    []struct {
 		Id   *string `json:"id,omitempty"`
 		Name *string `json:"name,omitempty"`
 	} `json:"post_to_slack_channels,omitempty"`
@@ -23515,7 +23515,7 @@ type Schedule struct {
 	Name string `json:"name"`
 
 	// OwnerGroupIds Owning teams.
-	OwnerGroupIds *[]string `json:"owner_group_ids,omitempty"`
+	OwnerGroupIds []string `json:"owner_group_ids,omitempty"`
 
 	// OwnerUserId ID of user assigned as owner of the schedule
 	OwnerUserId int `json:"owner_user_id"`
@@ -23575,11 +23575,11 @@ type ScheduleResponseDataType string
 // ScheduleRotation defines model for schedule_rotation.
 type ScheduleRotation struct {
 	// ActiveAllWeek Schedule rotation active all week?
-	ActiveAllWeek *bool                         `json:"active_all_week,omitempty"`
-	ActiveDays    *[]ScheduleRotationActiveDays `json:"active_days,omitempty"`
+	ActiveAllWeek *bool                        `json:"active_all_week,omitempty"`
+	ActiveDays    []ScheduleRotationActiveDays `json:"active_days,omitempty"`
 
 	// ActiveTimeAttributes Schedule rotation's active times
-	ActiveTimeAttributes *[]struct {
+	ActiveTimeAttributes []struct {
 		// EndTime End time for schedule rotation active time
 		EndTime string `json:"end_time"`
 
@@ -23875,11 +23875,11 @@ type SendDashboardReportTaskParamsTaskType string
 
 // SendEmailTaskParams defines model for send_email_task_params.
 type SendEmailTaskParams struct {
-	Bcc *[]string `json:"bcc,omitempty"`
+	Bcc []string `json:"bcc,omitempty"`
 
 	// Body The email body
 	Body nullable.Nullable[string] `json:"body"`
-	Cc   *[]string                 `json:"cc,omitempty"`
+	Cc   []string                  `json:"cc,omitempty"`
 
 	// CustomLogoUrl URL to your custom email logo
 	CustomLogoUrl nullable.Nullable[string] `json:"custom_logo_url,omitempty"`
@@ -23917,7 +23917,7 @@ type SendMicrosoftTeamsBlocksTaskParams0 = interface{}
 
 // SendMicrosoftTeamsMessageTaskParams defines model for send_microsoft_teams_message_task_params.
 type SendMicrosoftTeamsMessageTaskParams struct {
-	Channels *[]struct {
+	Channels []struct {
 		Id   *string `json:"id,omitempty"`
 		Name *string `json:"name,omitempty"`
 	} `json:"channels,omitempty"`
@@ -23942,7 +23942,7 @@ type SendSlackBlocksTaskParams struct {
 	// Blocks Support liquid markup. Needs to be a valid JSON string after liquid is parsed
 	Blocks                        string `json:"blocks"`
 	BroadcastThreadReplyToChannel *bool  `json:"broadcast_thread_reply_to_channel,omitempty"`
-	Channels                      *[]struct {
+	Channels                      []struct {
 		Id   *string `json:"id,omitempty"`
 		Name *string `json:"name,omitempty"`
 	} `json:"channels,omitempty"`
@@ -23958,11 +23958,11 @@ type SendSlackBlocksTaskParams struct {
 
 	// SendOnlyAsThreadedMessage When set to true, if the parent for this threaded message cannot be found the message will be skipped.
 	SendOnlyAsThreadedMessage *bool `json:"send_only_as_threaded_message,omitempty"`
-	SlackUserGroups           *[]struct {
+	SlackUserGroups           []struct {
 		Id   *string `json:"id,omitempty"`
 		Name *string `json:"name,omitempty"`
 	} `json:"slack_user_groups,omitempty"`
-	SlackUsers *[]struct {
+	SlackUsers []struct {
 		Id   *string `json:"id,omitempty"`
 		Name *string `json:"name,omitempty"`
 	} `json:"slack_users,omitempty"`
@@ -23988,9 +23988,9 @@ type SendSlackBlocksTaskParams2 = interface{}
 
 // SendSlackMessageTaskParams defines model for send_slack_message_task_params.
 type SendSlackMessageTaskParams struct {
-	Actionables                   *[]SendSlackMessageTaskParamsActionables `json:"actionables,omitempty"`
-	BroadcastThreadReplyToChannel *bool                                    `json:"broadcast_thread_reply_to_channel,omitempty"`
-	Channels                      *[]struct {
+	Actionables                   []SendSlackMessageTaskParamsActionables `json:"actionables,omitempty"`
+	BroadcastThreadReplyToChannel *bool                                   `json:"broadcast_thread_reply_to_channel,omitempty"`
+	Channels                      []struct {
 		Id   *string `json:"id,omitempty"`
 		Name *string `json:"name,omitempty"`
 	} `json:"channels,omitempty"`
@@ -24008,11 +24008,11 @@ type SendSlackMessageTaskParams struct {
 
 	// SendOnlyAsThreadedMessage When set to true, if the parent for this threaded message cannot be found the message will be skipped.
 	SendOnlyAsThreadedMessage *bool `json:"send_only_as_threaded_message,omitempty"`
-	SlackUserGroups           *[]struct {
+	SlackUserGroups           []struct {
 		Id   *string `json:"id,omitempty"`
 		Name *string `json:"name,omitempty"`
 	} `json:"slack_user_groups,omitempty"`
-	SlackUsers *[]struct {
+	SlackUsers []struct {
 		Id   *string `json:"id,omitempty"`
 		Name *string `json:"name,omitempty"`
 	} `json:"slack_users,omitempty"`
@@ -24407,7 +24407,7 @@ type ShiftRelationshipsUserDataType string
 // SimpleTriggerParams defines model for simple_trigger_params.
 type SimpleTriggerParams struct {
 	TriggerType SimpleTriggerParamsTriggerType `json:"trigger_type"`
-	Triggers    *[]SimpleTriggerParamsTriggers `json:"triggers,omitempty"`
+	Triggers    []SimpleTriggerParamsTriggers  `json:"triggers,omitempty"`
 }
 
 // SimpleTriggerParamsTriggerType defines model for SimpleTriggerParams.TriggerType.
@@ -24418,16 +24418,16 @@ type SimpleTriggerParamsTriggers string
 
 // SnapshotDatadogGraphTaskParams defines model for snapshot_datadog_graph_task_params.
 type SnapshotDatadogGraphTaskParams struct {
-	Dashboards *[]struct {
+	Dashboards []struct {
 		Id   *string `json:"id,omitempty"`
 		Name *string `json:"name,omitempty"`
 	} `json:"dashboards,omitempty"`
-	MetricQueries *[]string `json:"metric_queries,omitempty"`
+	MetricQueries []string `json:"metric_queries,omitempty"`
 
 	// PastDuration in format '1 minute', '30 days', '3 months', etc
 	PastDuration           string `json:"past_duration"`
 	PostToIncidentTimeline *bool  `json:"post_to_incident_timeline,omitempty"`
-	PostToSlackChannels    *[]struct {
+	PostToSlackChannels    []struct {
 		Id   *string `json:"id,omitempty"`
 		Name *string `json:"name,omitempty"`
 	} `json:"post_to_slack_channels,omitempty"`
@@ -24444,7 +24444,7 @@ type SnapshotGrafanaDashboardTaskParams struct {
 		Name *string `json:"name,omitempty"`
 	} `json:"dashboards"`
 	PostToIncidentTimeline *bool `json:"post_to_incident_timeline,omitempty"`
-	PostToSlackChannels    *[]struct {
+	PostToSlackChannels    []struct {
 		Id   *string `json:"id,omitempty"`
 		Name *string `json:"name,omitempty"`
 	} `json:"post_to_slack_channels,omitempty"`
@@ -24461,7 +24461,7 @@ type SnapshotLookerLookTaskParams struct {
 		Name *string `json:"name,omitempty"`
 	} `json:"dashboards"`
 	PostToIncidentTimeline *bool `json:"post_to_incident_timeline,omitempty"`
-	PostToSlackChannels    *[]struct {
+	PostToSlackChannels    []struct {
 		Id   *string `json:"id,omitempty"`
 		Name *string `json:"name,omitempty"`
 	} `json:"post_to_slack_channels,omitempty"`
@@ -24476,7 +24476,7 @@ type SnapshotNewRelicGraphTaskParams struct {
 	MetricQuery            string                                    `json:"metric_query"`
 	MetricType             SnapshotNewRelicGraphTaskParamsMetricType `json:"metric_type"`
 	PostToIncidentTimeline *bool                                     `json:"post_to_incident_timeline,omitempty"`
-	PostToSlackChannels    *[]struct {
+	PostToSlackChannels    []struct {
 		Id   *string `json:"id,omitempty"`
 		Name *string `json:"name,omitempty"`
 	} `json:"post_to_slack_channels,omitempty"`
@@ -24541,7 +24541,7 @@ type StatusPage struct {
 	Enabled nullable.Nullable[bool] `json:"enabled,omitempty"`
 
 	// ExternalDomainNames External domain names attached to the status page
-	ExternalDomainNames *[]string `json:"external_domain_names,omitempty"`
+	ExternalDomainNames []string `json:"external_domain_names,omitempty"`
 
 	// FailureMessage Message showing when at least one component is not operational
 	FailureMessage nullable.Nullable[string] `json:"failure_message,omitempty"`
@@ -24550,7 +24550,7 @@ type StatusPage struct {
 	FooterColor nullable.Nullable[string] `json:"footer_color,omitempty"`
 
 	// FunctionalityIds Functionalities attached to the status page
-	FunctionalityIds *[]string `json:"functionality_ids,omitempty"`
+	FunctionalityIds []string `json:"functionality_ids,omitempty"`
 
 	// GaTrackingId Google Analytics tracking ID
 	GaTrackingId nullable.Nullable[string] `json:"ga_tracking_id,omitempty"`
@@ -24583,7 +24583,7 @@ type StatusPage struct {
 	SamlNameIdentifierFormat nullable.Nullable[StatusPageSamlNameIdentifierFormat] `json:"saml_name_identifier_format,omitempty"`
 
 	// ServiceIds Services attached to the status page
-	ServiceIds *[]string `json:"service_ids,omitempty"`
+	ServiceIds []string `json:"service_ids,omitempty"`
 
 	// ShowUptime Show uptime
 	ShowUptime nullable.Nullable[bool] `json:"show_uptime,omitempty"`
@@ -25064,7 +25064,7 @@ type UpdateAlert struct {
 	Data struct {
 		Attributes struct {
 			// AlertFieldValuesAttributes Custom alert field values to create with the alert
-			AlertFieldValuesAttributes *[]struct {
+			AlertFieldValuesAttributes []struct {
 				// AlertFieldId ID of the custom alert field
 				AlertFieldId string `json:"alert_field_id"`
 
@@ -25098,7 +25098,7 @@ type UpdateAlert struct {
 
 			// GroupIds The Group IDs to attach to the alert
 			GroupIds nullable.Nullable[[]string] `json:"group_ids,omitempty"`
-			Labels   *[]struct {
+			Labels   []struct {
 				// Key Key of the tag
 				Key string `json:"key"`
 
@@ -25185,14 +25185,14 @@ type UpdateAlertGroup struct {
 		Attributes struct {
 			// Attributes This field is deprecated. Please use the `conditions` field instead, `attributes` will be removed in the future.
 			// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
-			Attributes *[]struct {
+			Attributes []struct {
 				// JsonPath The JSON path to the value to group by.
 				JsonPath *string `json:"json_path,omitempty"`
 			} `json:"attributes,omitempty"`
 
 			// ConditionType Group alerts when ANY or ALL of the fields are matching.
 			ConditionType *UpdateAlertGroupDataAttributesConditionType `json:"condition_type,omitempty"`
-			Conditions    *[]struct {
+			Conditions    []struct {
 				// AlertUrgencyIds The Alert Urgency IDs to check in the condition. Only need to be set when the property field type is 'attribute', the property field name is 'alert_urgency' and the property field condition type is 'is_one_of' or 'is_not_one_of'
 				AlertUrgencyIds nullable.Nullable[[]string] `json:"alert_urgency_ids,omitempty"`
 
@@ -25215,7 +25215,7 @@ type UpdateAlertGroup struct {
 				PropertyFieldValue *string `json:"property_field_value,omitempty"`
 
 				// PropertyFieldValues The values of the property field. Need to be passed if the property field condition type is 'is_one_of' or 'is_not_one_of' except for when property field name is 'alert_urgency'
-				PropertyFieldValues *[]string `json:"property_field_values,omitempty"`
+				PropertyFieldValues []string `json:"property_field_values,omitempty"`
 			} `json:"conditions,omitempty"`
 
 			// Description The description of the alert group
@@ -25231,7 +25231,7 @@ type UpdateAlertGroup struct {
 
 			// Name The name of the alert group
 			Name    *string `json:"name,omitempty"`
-			Targets *[]struct {
+			Targets []struct {
 				// TargetId id for the Group, Service or EscalationPolicy
 				TargetId openapi_types.UUID `json:"target_id"`
 
@@ -25274,15 +25274,15 @@ type UpdateAlertGroupDataType string
 type UpdateAlertRoute struct {
 	Data struct {
 		Attributes struct {
-			AlertsSourceIds *[]openapi_types.UUID `json:"alerts_source_ids,omitempty"`
+			AlertsSourceIds []openapi_types.UUID `json:"alerts_source_ids,omitempty"`
 
 			// Enabled Whether the alert route is enabled
 			Enabled *bool `json:"enabled,omitempty"`
 
 			// Name The name of the alert route
-			Name          *string               `json:"name,omitempty"`
-			OwningTeamIds *[]openapi_types.UUID `json:"owning_team_ids,omitempty"`
-			Rules         *[]struct {
+			Name          *string              `json:"name,omitempty"`
+			OwningTeamIds []openapi_types.UUID `json:"owning_team_ids,omitempty"`
+			Rules         []struct {
 				ConditionGroups []struct {
 					Conditions []struct {
 						// AlertUrgencyIds The Alert Urgency IDs to check in the condition
@@ -25365,7 +25365,7 @@ type UpdateAlertRoutingRule struct {
 
 			// ConditionType The type of condition for the alert routing rule
 			ConditionType *UpdateAlertRoutingRuleDataAttributesConditionType `json:"condition_type,omitempty"`
-			Conditions    *[]struct {
+			Conditions    []struct {
 				// Id The ID of the alert routing rule condition
 				Id *openapi_types.UUID `json:"id,omitempty"`
 
@@ -25382,7 +25382,7 @@ type UpdateAlertRoutingRule struct {
 				PropertyFieldValue nullable.Nullable[string] `json:"property_field_value,omitempty"`
 
 				// PropertyFieldValues The values of the property field. Used if the property field condition type is 'is_one_of' or 'is_not_one_of' except for when property field name is 'alert_urgency'
-				PropertyFieldValues *[]string `json:"property_field_values,omitempty"`
+				PropertyFieldValues []string `json:"property_field_values,omitempty"`
 			} `json:"conditions,omitempty"`
 			Destination *struct {
 				// TargetId The ID of the target
@@ -25399,7 +25399,7 @@ type UpdateAlertRoutingRule struct {
 			Name *string `json:"name,omitempty"`
 
 			// OwningTeamIds The IDs of the teams that own the alert routing rule
-			OwningTeamIds *[]openapi_types.UUID `json:"owning_team_ids,omitempty"`
+			OwningTeamIds []openapi_types.UUID `json:"owning_team_ids,omitempty"`
 
 			// Position The position of the alert routing rule for ordering evaluation
 			Position *int `json:"position,omitempty"`
@@ -25448,7 +25448,7 @@ type UpdateAlertsSource struct {
 	Data struct {
 		Attributes struct {
 			// AlertSourceFieldsAttributes List of alert fields to be added to the alert source. Note: This attribute requires the alert field feature to be enabled on your account. Contact Rootly customer support if you need assistance with this feature.
-			AlertSourceFieldsAttributes *[]struct {
+			AlertSourceFieldsAttributes []struct {
 				// AlertFieldId The ID of the alert field
 				AlertFieldId *string `json:"alert_field_id,omitempty"`
 
@@ -25457,7 +25457,7 @@ type UpdateAlertsSource struct {
 			} `json:"alert_source_fields_attributes,omitempty"`
 
 			// AlertSourceUrgencyRulesAttributes List of rules that define the conditions under which the alert urgency will be set automatically based on the alert payload
-			AlertSourceUrgencyRulesAttributes *[]struct {
+			AlertSourceUrgencyRulesAttributes []struct {
 				// AlertUrgencyId The ID of the alert urgency
 				AlertUrgencyId *string `json:"alert_urgency_id,omitempty"`
 
@@ -25509,7 +25509,7 @@ type UpdateAlertsSource struct {
 			Name *string `json:"name,omitempty"`
 
 			// OwnerGroupIds List of team IDs that will own the alert source
-			OwnerGroupIds *[]string `json:"owner_group_ids,omitempty"`
+			OwnerGroupIds []string `json:"owner_group_ids,omitempty"`
 
 			// ResolutionRuleAttributes Provide additional attributes for email alerts source
 			ResolutionRuleAttributes nullable.Nullable[struct {
@@ -25517,7 +25517,7 @@ type UpdateAlertsSource struct {
 				ConditionType *UpdateAlertsSourceDataAttributesResolutionRuleAttributesConditionType `json:"condition_type,omitempty"`
 
 				// ConditionsAttributes List of conditions to evaluate for auto resolution
-				ConditionsAttributes *[]struct {
+				ConditionsAttributes []struct {
 					// ConditionableId The ID of the conditionable. If conditionable_type is AlertField, this is the ID of the alert field.
 					ConditionableId nullable.Nullable[string] `json:"conditionable_id,omitempty"`
 
@@ -25568,7 +25568,7 @@ type UpdateAlertsSource struct {
 				AutoResolve *bool `json:"auto_resolve,omitempty"`
 
 				// FieldMappingsAttributes Specify rules to auto resolve alerts
-				FieldMappingsAttributes *[]struct {
+				FieldMappingsAttributes []struct {
 					// Field Select the field on which the condition to be evaluated
 					Field *UpdateAlertsSourceDataAttributesSourceableAttributesFieldMappingsAttributesField `json:"field,omitempty"`
 
@@ -25673,7 +25673,7 @@ type UpdateAttachedAlertsTaskParamsTaskType string
 type UpdateAuthorization struct {
 	Data struct {
 		Attributes struct {
-			Permissions *[]UpdateAuthorizationDataAttributesPermissions `json:"permissions,omitempty"`
+			Permissions []UpdateAuthorizationDataAttributesPermissions `json:"permissions,omitempty"`
 		} `json:"attributes"`
 		Type UpdateAuthorizationDataType `json:"type"`
 	} `json:"data"`
@@ -26052,7 +26052,7 @@ type UpdateCustomField struct {
 			// Position The position of the custom_field
 			Position *int                                                         `json:"position,omitempty"`
 			Required nullable.Nullable[[]UpdateCustomFieldDataAttributesRequired] `json:"required,omitempty"`
-			Shown    *[]UpdateCustomFieldDataAttributesShown                      `json:"shown,omitempty"`
+			Shown    []UpdateCustomFieldDataAttributesShown                       `json:"shown,omitempty"`
 		} `json:"attributes"`
 		Type UpdateCustomFieldDataType `json:"type"`
 	} `json:"data"`
@@ -26164,16 +26164,16 @@ type UpdateDashboardPanel struct {
 				Datalabels *struct {
 					Enabled *bool `json:"enabled,omitempty"`
 				} `json:"datalabels,omitempty"`
-				Datasets *[]struct {
+				Datasets []struct {
 					Aggregate nullable.Nullable[struct {
 						Cumulative nullable.Nullable[bool]                                             `json:"cumulative,omitempty"`
 						Key        nullable.Nullable[string]                                           `json:"key,omitempty"`
 						Operation  *UpdateDashboardPanelDataAttributesParamsDatasetsAggregateOperation `json:"operation,omitempty"`
 					}] `json:"aggregate,omitempty"`
 					Collection *UpdateDashboardPanelDataAttributesParamsDatasetsCollection `json:"collection,omitempty"`
-					Filter     *[]struct {
+					Filter     []struct {
 						Operation *UpdateDashboardPanelDataAttributesParamsDatasetsFilterOperation `json:"operation,omitempty"`
-						Rules     *[]struct {
+						Rules     []struct {
 							Condition *UpdateDashboardPanelDataAttributesParamsDatasetsFilterRulesCondition `json:"condition,omitempty"`
 							Key       *string                                                               `json:"key,omitempty"`
 							Operation *UpdateDashboardPanelDataAttributesParamsDatasetsFilterRulesOperation `json:"operation,omitempty"`
@@ -26188,7 +26188,7 @@ type UpdateDashboardPanel struct {
 				Legend      *struct {
 					Groups *UpdateDashboardPanelDataAttributesParamsLegendGroups `json:"groups,omitempty"`
 				} `json:"legend,omitempty"`
-				TableFields *[]string `json:"table_fields,omitempty"`
+				TableFields []string `json:"table_fields,omitempty"`
 			} `json:"params,omitempty"`
 			Position nullable.Nullable[struct {
 				H float32 `json:"h"`
@@ -26298,7 +26298,7 @@ type UpdateEdgeConnector struct {
 		Description   *string                                 `json:"description,omitempty"`
 		Name          *string                                 `json:"name,omitempty"`
 		Status        *UpdateEdgeConnectorEdgeConnectorStatus `json:"status,omitempty"`
-		Subscriptions *[]string                               `json:"subscriptions,omitempty"`
+		Subscriptions []string                                `json:"subscriptions,omitempty"`
 	} `json:"edge_connector"`
 }
 
@@ -26309,7 +26309,7 @@ type UpdateEdgeConnectorEdgeConnectorStatus string
 type UpdateEdgeConnectorAction struct {
 	Action struct {
 		ActionType *UpdateEdgeConnectorActionActionActionType `json:"action_type,omitempty"`
-		Metadata   *map[string]interface{}                    `json:"metadata,omitempty"`
+		Metadata   map[string]interface{}                     `json:"metadata,omitempty"`
 		Name       *string                                    `json:"name,omitempty"`
 	} `json:"action"`
 }
@@ -26383,7 +26383,7 @@ type UpdateEscalationPolicy struct {
 			Description nullable.Nullable[string] `json:"description,omitempty"`
 
 			// GroupIds Associated groups (alerting the group will trigger escalation policy)
-			GroupIds *[]string `json:"group_ids,omitempty"`
+			GroupIds []string `json:"group_ids,omitempty"`
 
 			// Name The name of the escalation policy
 			Name *string `json:"name,omitempty"`
@@ -26392,7 +26392,7 @@ type UpdateEscalationPolicy struct {
 			RepeatCount *int `json:"repeat_count,omitempty"`
 
 			// ServiceIds Associated services (alerting the service will trigger escalation policy)
-			ServiceIds *[]string `json:"service_ids,omitempty"`
+			ServiceIds []string `json:"service_ids,omitempty"`
 		} `json:"attributes"`
 		Type UpdateEscalationPolicyDataType `json:"type"`
 	} `json:"data"`
@@ -26418,7 +26418,7 @@ type UpdateEscalationPolicyLevel struct {
 			EscalationPolicyPathId nullable.Nullable[string] `json:"escalation_policy_path_id,omitempty"`
 
 			// NotificationTargetParams Escalation level's notification targets
-			NotificationTargetParams *[]struct {
+			NotificationTargetParams []struct {
 				// Id The ID of notification target
 				Id string `json:"id"`
 
@@ -26482,13 +26482,13 @@ type UpdateEscalationPolicyPath struct {
 			RepeatCount nullable.Nullable[int] `json:"repeat_count,omitempty"`
 
 			// Rules Escalation path conditions
-			Rules *[]UpdateEscalationPolicyPath_Data_Attributes_Rules_Item `json:"rules,omitempty"`
+			Rules []UpdateEscalationPolicyPath_Data_Attributes_Rules_Item `json:"rules,omitempty"`
 
 			// TimeRestrictionTimeZone Time zone used for time restrictions.
 			TimeRestrictionTimeZone nullable.Nullable[UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone] `json:"time_restriction_time_zone,omitempty"`
 
 			// TimeRestrictions If time restrictions are set, alerts will follow this path when they arrive within the specified time ranges and meet the rules.
-			TimeRestrictions *[]struct {
+			TimeRestrictions []struct {
 				EndDay *UpdateEscalationPolicyPathDataAttributesTimeRestrictionsEndDay `json:"end_day,omitempty"`
 
 				// EndTime Formatted as HH:MM
@@ -26575,7 +26575,7 @@ type UpdateEscalationPolicyPathDataType string
 type UpdateFormField struct {
 	Data struct {
 		Attributes struct {
-			DefaultValues *[]string `json:"default_values,omitempty"`
+			DefaultValues []string `json:"default_values,omitempty"`
 
 			// Description The description of the form field
 			Description nullable.Nullable[string] `json:"description,omitempty"`
@@ -26590,12 +26590,12 @@ type UpdateFormField struct {
 			Kind *UpdateFormFieldDataAttributesKind `json:"kind,omitempty"`
 
 			// Name The name of the form field
-			Name     *string   `json:"name,omitempty"`
-			Required *[]string `json:"required,omitempty"`
+			Name     *string  `json:"name,omitempty"`
+			Required []string `json:"required,omitempty"`
 
 			// ShowOnIncidentDetails Whether the form field is shown on the incident details panel
-			ShowOnIncidentDetails *bool     `json:"show_on_incident_details,omitempty"`
-			Shown                 *[]string `json:"shown,omitempty"`
+			ShowOnIncidentDetails *bool    `json:"show_on_incident_details,omitempty"`
+			Shown                 []string `json:"shown,omitempty"`
 
 			// ValueKind The value kind of the form field
 			ValueKind *UpdateFormFieldDataAttributesValueKind `json:"value_kind,omitempty"`
@@ -26695,7 +26695,7 @@ type UpdateFormFieldPlacementCondition struct {
 			Position *int `json:"position,omitempty"`
 
 			// Values The values for comparison.
-			Values *[]string `json:"values,omitempty"`
+			Values []string `json:"values,omitempty"`
 		} `json:"attributes"`
 		Type UpdateFormFieldPlacementConditionDataType `json:"type"`
 	} `json:"data"`
@@ -26738,7 +26738,7 @@ type UpdateFormSet struct {
 	Data struct {
 		Attributes struct {
 			// Forms The forms included in the form set. Add custom forms using the custom form's `slug` field. Or choose a built-in form: `web_new_incident_form`, `web_update_incident_form`, `web_incident_post_mortem_form`, `web_incident_mitigation_form`, `web_incident_resolution_form`, `web_incident_cancellation_form`, `web_scheduled_incident_form`, `web_update_scheduled_incident_form`, `slack_new_incident_form`, `slack_update_incident_form`, `slack_update_incident_status_form`, `slack_incident_mitigation_form`, `slack_incident_resolution_form`, `slack_incident_cancellation_form`, `slack_scheduled_incident_form`, `slack_update_scheduled_incident_form`
-			Forms *[]string `json:"forms,omitempty"`
+			Forms []string `json:"forms,omitempty"`
 
 			// Name The name of the form set
 			Name *string `json:"name,omitempty"`
@@ -26761,7 +26761,7 @@ type UpdateFormSetCondition struct {
 			FormFieldId *string `json:"form_field_id,omitempty"`
 
 			// Values The values for comparison.
-			Values *[]string `json:"values,omitempty"`
+			Values []string `json:"values,omitempty"`
 		} `json:"attributes"`
 		Type UpdateFormSetConditionDataType `json:"type"`
 	} `json:"data"`
@@ -26912,7 +26912,7 @@ type UpdateGoogleCalendarEventTaskParams struct {
 	AdjustmentDays *int `json:"adjustment_days,omitempty"`
 
 	// Attendees Emails of attendees
-	Attendees               *[]string                 `json:"attendees,omitempty"`
+	Attendees               []string                  `json:"attendees,omitempty"`
 	CalendarId              nullable.Nullable[string] `json:"calendar_id,omitempty"`
 	CanGuestsInviteOthers   *bool                     `json:"can_guests_invite_others,omitempty"`
 	CanGuestsModifyEvent    *bool                     `json:"can_guests_modify_event,omitempty"`
@@ -26930,7 +26930,7 @@ type UpdateGoogleCalendarEventTaskParams struct {
 	// MeetingDuration Meeting duration in format like '1 hour', '30 minutes'
 	MeetingDuration        *string `json:"meeting_duration,omitempty"`
 	PostToIncidentTimeline *bool   `json:"post_to_incident_timeline,omitempty"`
-	PostToSlackChannels    *[]struct {
+	PostToSlackChannels    []struct {
 		Id   *string `json:"id,omitempty"`
 		Name *string `json:"name,omitempty"`
 	} `json:"post_to_slack_channels,omitempty"`
@@ -27208,7 +27208,7 @@ type UpdateIncidentActionItemDataType string
 type UpdateIncidentCustomFieldSelection struct {
 	Data struct {
 		Attributes struct {
-			SelectedOptionIds *[]int `json:"selected_option_ids,omitempty"`
+			SelectedOptionIds []int `json:"selected_option_ids,omitempty"`
 
 			// Value The selected value for text kind custom fields
 			Value nullable.Nullable[string] `json:"value,omitempty"`
@@ -27301,12 +27301,12 @@ type UpdateIncidentFeedbackDataType string
 type UpdateIncidentFormFieldSelection struct {
 	Data struct {
 		Attributes struct {
-			SelectedCatalogEntityIds *[]string `json:"selected_catalog_entity_ids,omitempty"`
-			SelectedFunctionalityIds *[]string `json:"selected_functionality_ids,omitempty"`
-			SelectedGroupIds         *[]string `json:"selected_group_ids,omitempty"`
-			SelectedOptionIds        *[]string `json:"selected_option_ids,omitempty"`
-			SelectedServiceIds       *[]string `json:"selected_service_ids,omitempty"`
-			SelectedUserIds          *[]int    `json:"selected_user_ids,omitempty"`
+			SelectedCatalogEntityIds []string `json:"selected_catalog_entity_ids,omitempty"`
+			SelectedFunctionalityIds []string `json:"selected_functionality_ids,omitempty"`
+			SelectedGroupIds         []string `json:"selected_group_ids,omitempty"`
+			SelectedOptionIds        []string `json:"selected_option_ids,omitempty"`
+			SelectedServiceIds       []string `json:"selected_service_ids,omitempty"`
+			SelectedUserIds          []int    `json:"selected_user_ids,omitempty"`
 
 			// Value The selected value for text kind custom fields
 			Value nullable.Nullable[string] `json:"value,omitempty"`
@@ -27326,9 +27326,9 @@ type UpdateIncidentPermissionSet struct {
 			Description nullable.Nullable[string] `json:"description,omitempty"`
 
 			// Name The incident permission set name.
-			Name                       *string                                                                `json:"name,omitempty"`
-			PrivateIncidentPermissions *[]UpdateIncidentPermissionSetDataAttributesPrivateIncidentPermissions `json:"private_incident_permissions,omitempty"`
-			PublicIncidentPermissions  *[]UpdateIncidentPermissionSetDataAttributesPublicIncidentPermissions  `json:"public_incident_permissions,omitempty"`
+			Name                       *string                                                               `json:"name,omitempty"`
+			PrivateIncidentPermissions []UpdateIncidentPermissionSetDataAttributesPrivateIncidentPermissions `json:"private_incident_permissions,omitempty"`
+			PublicIncidentPermissions  []UpdateIncidentPermissionSetDataAttributesPublicIncidentPermissions  `json:"public_incident_permissions,omitempty"`
 		} `json:"attributes"`
 		Type UpdateIncidentPermissionSetDataType `json:"type"`
 	} `json:"data"`
@@ -27769,7 +27769,7 @@ type UpdateLinearIssueTaskParams struct {
 
 	// IssueId The issue id
 	IssueId string `json:"issue_id"`
-	Labels  *[]struct {
+	Labels  []struct {
 		Id   *string `json:"id,omitempty"`
 		Name *string `json:"name,omitempty"`
 	} `json:"labels,omitempty"`
@@ -27836,7 +27836,7 @@ type UpdateLiveCallRouter struct {
 			Name *string `json:"name,omitempty"`
 
 			// PagingTargets Paging targets that callers can select from when this live call router is configured as a phone tree.
-			PagingTargets *[]struct {
+			PagingTargets []struct {
 				// AlertUrgencyId This is used in escalation paths to determine who to page
 				AlertUrgencyId string `json:"alert_urgency_id"`
 
@@ -27899,8 +27899,8 @@ type UpdateMotionTaskTaskParams struct {
 	DueDate *string `json:"due_date,omitempty"`
 
 	// Duration The duration. Eg.  "NONE", "REMINDER", or a integer greater than 0.
-	Duration *string   `json:"duration,omitempty"`
-	Labels   *[]string `json:"labels,omitempty"`
+	Duration *string  `json:"duration,omitempty"`
+	Labels   []string `json:"labels,omitempty"`
 
 	// Priority The priority id and display name
 	Priority *struct {
@@ -27944,34 +27944,34 @@ type UpdateNotionPageTaskParamsTaskType string
 type UpdateOnCallRole struct {
 	Data struct {
 		Attributes struct {
-			AlertFieldsPermissions        *[]UpdateOnCallRoleDataAttributesAlertFieldsPermissions        `json:"alert_fields_permissions,omitempty"`
-			AlertGroupsPermissions        *[]UpdateOnCallRoleDataAttributesAlertGroupsPermissions        `json:"alert_groups_permissions,omitempty"`
-			AlertRoutingRulesPermissions  *[]UpdateOnCallRoleDataAttributesAlertRoutingRulesPermissions  `json:"alert_routing_rules_permissions,omitempty"`
-			AlertSourcesPermissions       *[]UpdateOnCallRoleDataAttributesAlertSourcesPermissions       `json:"alert_sources_permissions,omitempty"`
-			AlertUrgencyPermissions       *[]UpdateOnCallRoleDataAttributesAlertUrgencyPermissions       `json:"alert_urgency_permissions,omitempty"`
-			AlertsPermissions             *[]UpdateOnCallRoleDataAttributesAlertsPermissions             `json:"alerts_permissions,omitempty"`
-			ApiKeysPermissions            *[]UpdateOnCallRoleDataAttributesApiKeysPermissions            `json:"api_keys_permissions,omitempty"`
-			AuditsPermissions             *[]UpdateOnCallRoleDataAttributesAuditsPermissions             `json:"audits_permissions,omitempty"`
-			ContactsPermissions           *[]UpdateOnCallRoleDataAttributesContactsPermissions           `json:"contacts_permissions,omitempty"`
-			EscalationPoliciesPermissions *[]UpdateOnCallRoleDataAttributesEscalationPoliciesPermissions `json:"escalation_policies_permissions,omitempty"`
-			GroupsPermissions             *[]UpdateOnCallRoleDataAttributesGroupsPermissions             `json:"groups_permissions,omitempty"`
-			HeartbeatsPermissions         *[]UpdateOnCallRoleDataAttributesHeartbeatsPermissions         `json:"heartbeats_permissions,omitempty"`
-			IntegrationsPermissions       *[]UpdateOnCallRoleDataAttributesIntegrationsPermissions       `json:"integrations_permissions,omitempty"`
-			InvitationsPermissions        *[]UpdateOnCallRoleDataAttributesInvitationsPermissions        `json:"invitations_permissions,omitempty"`
-			LiveCallRoutingPermissions    *[]UpdateOnCallRoleDataAttributesLiveCallRoutingPermissions    `json:"live_call_routing_permissions,omitempty"`
+			AlertFieldsPermissions        []UpdateOnCallRoleDataAttributesAlertFieldsPermissions        `json:"alert_fields_permissions,omitempty"`
+			AlertGroupsPermissions        []UpdateOnCallRoleDataAttributesAlertGroupsPermissions        `json:"alert_groups_permissions,omitempty"`
+			AlertRoutingRulesPermissions  []UpdateOnCallRoleDataAttributesAlertRoutingRulesPermissions  `json:"alert_routing_rules_permissions,omitempty"`
+			AlertSourcesPermissions       []UpdateOnCallRoleDataAttributesAlertSourcesPermissions       `json:"alert_sources_permissions,omitempty"`
+			AlertUrgencyPermissions       []UpdateOnCallRoleDataAttributesAlertUrgencyPermissions       `json:"alert_urgency_permissions,omitempty"`
+			AlertsPermissions             []UpdateOnCallRoleDataAttributesAlertsPermissions             `json:"alerts_permissions,omitempty"`
+			ApiKeysPermissions            []UpdateOnCallRoleDataAttributesApiKeysPermissions            `json:"api_keys_permissions,omitempty"`
+			AuditsPermissions             []UpdateOnCallRoleDataAttributesAuditsPermissions             `json:"audits_permissions,omitempty"`
+			ContactsPermissions           []UpdateOnCallRoleDataAttributesContactsPermissions           `json:"contacts_permissions,omitempty"`
+			EscalationPoliciesPermissions []UpdateOnCallRoleDataAttributesEscalationPoliciesPermissions `json:"escalation_policies_permissions,omitempty"`
+			GroupsPermissions             []UpdateOnCallRoleDataAttributesGroupsPermissions             `json:"groups_permissions,omitempty"`
+			HeartbeatsPermissions         []UpdateOnCallRoleDataAttributesHeartbeatsPermissions         `json:"heartbeats_permissions,omitempty"`
+			IntegrationsPermissions       []UpdateOnCallRoleDataAttributesIntegrationsPermissions       `json:"integrations_permissions,omitempty"`
+			InvitationsPermissions        []UpdateOnCallRoleDataAttributesInvitationsPermissions        `json:"invitations_permissions,omitempty"`
+			LiveCallRoutingPermissions    []UpdateOnCallRoleDataAttributesLiveCallRoutingPermissions    `json:"live_call_routing_permissions,omitempty"`
 
 			// Name The role name.
-			Name                             *string                                                           `json:"name,omitempty"`
-			OnCallReadinessReportPermissions *[]UpdateOnCallRoleDataAttributesOnCallReadinessReportPermissions `json:"on_call_readiness_report_permissions,omitempty"`
-			OnCallRolesPermissions           *[]UpdateOnCallRoleDataAttributesOnCallRolesPermissions           `json:"on_call_roles_permissions,omitempty"`
-			ScheduleOverridePermissions      *[]UpdateOnCallRoleDataAttributesScheduleOverridePermissions      `json:"schedule_override_permissions,omitempty"`
-			SchedulesPermissions             *[]UpdateOnCallRoleDataAttributesSchedulesPermissions             `json:"schedules_permissions,omitempty"`
-			ServicesPermissions              *[]UpdateOnCallRoleDataAttributesServicesPermissions              `json:"services_permissions,omitempty"`
+			Name                             *string                                                          `json:"name,omitempty"`
+			OnCallReadinessReportPermissions []UpdateOnCallRoleDataAttributesOnCallReadinessReportPermissions `json:"on_call_readiness_report_permissions,omitempty"`
+			OnCallRolesPermissions           []UpdateOnCallRoleDataAttributesOnCallRolesPermissions           `json:"on_call_roles_permissions,omitempty"`
+			ScheduleOverridePermissions      []UpdateOnCallRoleDataAttributesScheduleOverridePermissions      `json:"schedule_override_permissions,omitempty"`
+			SchedulesPermissions             []UpdateOnCallRoleDataAttributesSchedulesPermissions             `json:"schedules_permissions,omitempty"`
+			ServicesPermissions              []UpdateOnCallRoleDataAttributesServicesPermissions              `json:"services_permissions,omitempty"`
 
 			// SystemRole The kind of role (user and custom type roles are only editable)
-			SystemRole           *string                                               `json:"system_role,omitempty"`
-			WebhooksPermissions  *[]UpdateOnCallRoleDataAttributesWebhooksPermissions  `json:"webhooks_permissions,omitempty"`
-			WorkflowsPermissions *[]UpdateOnCallRoleDataAttributesWorkflowsPermissions `json:"workflows_permissions,omitempty"`
+			SystemRole           *string                                              `json:"system_role,omitempty"`
+			WebhooksPermissions  []UpdateOnCallRoleDataAttributesWebhooksPermissions  `json:"webhooks_permissions,omitempty"`
+			WorkflowsPermissions []UpdateOnCallRoleDataAttributesWorkflowsPermissions `json:"workflows_permissions,omitempty"`
 		} `json:"attributes"`
 		Type UpdateOnCallRoleDataType `json:"type"`
 	} `json:"data"`
@@ -28182,7 +28182,7 @@ type UpdatePagertreeAlertTaskParams struct {
 	PagertreeAlertId *string                                 `json:"pagertree_alert_id,omitempty"`
 	Severity         *UpdatePagertreeAlertTaskParamsSeverity `json:"severity,omitempty"`
 	TaskType         *UpdatePagertreeAlertTaskParamsTaskType `json:"task_type,omitempty"`
-	Teams            *[]struct {
+	Teams            []struct {
 		Id   *string `json:"id,omitempty"`
 		Name *string `json:"name,omitempty"`
 	} `json:"teams,omitempty"`
@@ -28190,7 +28190,7 @@ type UpdatePagertreeAlertTaskParams struct {
 	// Title Title of alert as text
 	Title   *string                                `json:"title,omitempty"`
 	Urgency *UpdatePagertreeAlertTaskParamsUrgency `json:"urgency,omitempty"`
-	Users   *[]struct {
+	Users   []struct {
 		Id   *string `json:"id,omitempty"`
 		Name *string `json:"name,omitempty"`
 	} `json:"users,omitempty"`
@@ -28304,14 +28304,14 @@ type UpdatePulse struct {
 
 			// ExternalUrl The external url of the pulse
 			ExternalUrl nullable.Nullable[string] `json:"external_url,omitempty"`
-			Labels      *[]struct {
+			Labels      []struct {
 				// Key Key of the tag
 				Key string `json:"key"`
 
 				// Value Value of the tag
 				Value string `json:"value"`
 			} `json:"labels,omitempty"`
-			Refs *[]struct {
+			Refs []struct {
 				// Key Key of the ref
 				Key string `json:"key"`
 
@@ -28481,23 +28481,23 @@ type UpdateRetrospectiveStepDataType string
 type UpdateRole struct {
 	Data struct {
 		Attributes struct {
-			ApiKeysPermissions           *[]UpdateRoleDataAttributesApiKeysPermissions           `json:"api_keys_permissions,omitempty"`
-			AuditsPermissions            *[]UpdateRoleDataAttributesAuditsPermissions            `json:"audits_permissions,omitempty"`
-			BillingPermissions           *[]UpdateRoleDataAttributesBillingPermissions           `json:"billing_permissions,omitempty"`
-			EnvironmentsPermissions      *[]UpdateRoleDataAttributesEnvironmentsPermissions      `json:"environments_permissions,omitempty"`
-			FormFieldsPermissions        *[]UpdateRoleDataAttributesFormFieldsPermissions        `json:"form_fields_permissions,omitempty"`
-			FunctionalitiesPermissions   *[]UpdateRoleDataAttributesFunctionalitiesPermissions   `json:"functionalities_permissions,omitempty"`
-			GroupsPermissions            *[]UpdateRoleDataAttributesGroupsPermissions            `json:"groups_permissions,omitempty"`
-			IncidentCausesPermissions    *[]UpdateRoleDataAttributesIncidentCausesPermissions    `json:"incident_causes_permissions,omitempty"`
-			IncidentFeedbacksPermissions *[]UpdateRoleDataAttributesIncidentFeedbacksPermissions `json:"incident_feedbacks_permissions,omitempty"`
+			ApiKeysPermissions           []UpdateRoleDataAttributesApiKeysPermissions           `json:"api_keys_permissions,omitempty"`
+			AuditsPermissions            []UpdateRoleDataAttributesAuditsPermissions            `json:"audits_permissions,omitempty"`
+			BillingPermissions           []UpdateRoleDataAttributesBillingPermissions           `json:"billing_permissions,omitempty"`
+			EnvironmentsPermissions      []UpdateRoleDataAttributesEnvironmentsPermissions      `json:"environments_permissions,omitempty"`
+			FormFieldsPermissions        []UpdateRoleDataAttributesFormFieldsPermissions        `json:"form_fields_permissions,omitempty"`
+			FunctionalitiesPermissions   []UpdateRoleDataAttributesFunctionalitiesPermissions   `json:"functionalities_permissions,omitempty"`
+			GroupsPermissions            []UpdateRoleDataAttributesGroupsPermissions            `json:"groups_permissions,omitempty"`
+			IncidentCausesPermissions    []UpdateRoleDataAttributesIncidentCausesPermissions    `json:"incident_causes_permissions,omitempty"`
+			IncidentFeedbacksPermissions []UpdateRoleDataAttributesIncidentFeedbacksPermissions `json:"incident_feedbacks_permissions,omitempty"`
 
 			// IncidentPermissionSetId Associated incident permissions set.
-			IncidentPermissionSetId  nullable.Nullable[string]                           `json:"incident_permission_set_id,omitempty"`
-			IncidentRolesPermissions *[]UpdateRoleDataAttributesIncidentRolesPermissions `json:"incident_roles_permissions,omitempty"`
-			IncidentTypesPermissions *[]UpdateRoleDataAttributesIncidentTypesPermissions `json:"incident_types_permissions,omitempty"`
-			IncidentsPermissions     *[]UpdateRoleDataAttributesIncidentsPermissions     `json:"incidents_permissions,omitempty"`
-			IntegrationsPermissions  *[]UpdateRoleDataAttributesIntegrationsPermissions  `json:"integrations_permissions,omitempty"`
-			InvitationsPermissions   *[]UpdateRoleDataAttributesInvitationsPermissions   `json:"invitations_permissions,omitempty"`
+			IncidentPermissionSetId  nullable.Nullable[string]                          `json:"incident_permission_set_id,omitempty"`
+			IncidentRolesPermissions []UpdateRoleDataAttributesIncidentRolesPermissions `json:"incident_roles_permissions,omitempty"`
+			IncidentTypesPermissions []UpdateRoleDataAttributesIncidentTypesPermissions `json:"incident_types_permissions,omitempty"`
+			IncidentsPermissions     []UpdateRoleDataAttributesIncidentsPermissions     `json:"incidents_permissions,omitempty"`
+			IntegrationsPermissions  []UpdateRoleDataAttributesIntegrationsPermissions  `json:"integrations_permissions,omitempty"`
+			InvitationsPermissions   []UpdateRoleDataAttributesInvitationsPermissions   `json:"invitations_permissions,omitempty"`
 
 			// IsDeletable Whether the role can be deleted.
 			IsDeletable *bool `json:"is_deletable,omitempty"`
@@ -28506,17 +28506,17 @@ type UpdateRole struct {
 			IsEditable *bool `json:"is_editable,omitempty"`
 
 			// Name The role name.
-			Name                        *string                                                `json:"name,omitempty"`
-			PlaybooksPermissions        *[]UpdateRoleDataAttributesPlaybooksPermissions        `json:"playbooks_permissions,omitempty"`
-			PrivateIncidentsPermissions *[]UpdateRoleDataAttributesPrivateIncidentsPermissions `json:"private_incidents_permissions,omitempty"`
-			RetrospectivePermissions    *[]UpdateRoleDataAttributesRetrospectivePermissions    `json:"retrospective_permissions,omitempty"`
-			RolesPermissions            *[]UpdateRoleDataAttributesRolesPermissions            `json:"roles_permissions,omitempty"`
-			SecretsPermissions          *[]UpdateRoleDataAttributesSecretsPermissions          `json:"secrets_permissions,omitempty"`
-			ServicesPermissions         *[]UpdateRoleDataAttributesServicesPermissions         `json:"services_permissions,omitempty"`
-			SeveritiesPermissions       *[]UpdateRoleDataAttributesSeveritiesPermissions       `json:"severities_permissions,omitempty"`
-			StatusPagesPermissions      *[]UpdateRoleDataAttributesStatusPagesPermissions      `json:"status_pages_permissions,omitempty"`
-			WebhooksPermissions         *[]UpdateRoleDataAttributesWebhooksPermissions         `json:"webhooks_permissions,omitempty"`
-			WorkflowsPermissions        *[]UpdateRoleDataAttributesWorkflowsPermissions        `json:"workflows_permissions,omitempty"`
+			Name                        *string                                               `json:"name,omitempty"`
+			PlaybooksPermissions        []UpdateRoleDataAttributesPlaybooksPermissions        `json:"playbooks_permissions,omitempty"`
+			PrivateIncidentsPermissions []UpdateRoleDataAttributesPrivateIncidentsPermissions `json:"private_incidents_permissions,omitempty"`
+			RetrospectivePermissions    []UpdateRoleDataAttributesRetrospectivePermissions    `json:"retrospective_permissions,omitempty"`
+			RolesPermissions            []UpdateRoleDataAttributesRolesPermissions            `json:"roles_permissions,omitempty"`
+			SecretsPermissions          []UpdateRoleDataAttributesSecretsPermissions          `json:"secrets_permissions,omitempty"`
+			ServicesPermissions         []UpdateRoleDataAttributesServicesPermissions         `json:"services_permissions,omitempty"`
+			SeveritiesPermissions       []UpdateRoleDataAttributesSeveritiesPermissions       `json:"severities_permissions,omitempty"`
+			StatusPagesPermissions      []UpdateRoleDataAttributesStatusPagesPermissions      `json:"status_pages_permissions,omitempty"`
+			WebhooksPermissions         []UpdateRoleDataAttributesWebhooksPermissions         `json:"webhooks_permissions,omitempty"`
+			WorkflowsPermissions        []UpdateRoleDataAttributesWorkflowsPermissions        `json:"workflows_permissions,omitempty"`
 		} `json:"attributes"`
 		Type UpdateRoleDataType `json:"type"`
 	} `json:"data"`
@@ -28611,7 +28611,7 @@ type UpdateSchedule struct {
 			Name *string `json:"name,omitempty"`
 
 			// OwnerGroupIds Owning teams.
-			OwnerGroupIds *[]string `json:"owner_group_ids,omitempty"`
+			OwnerGroupIds []string `json:"owner_group_ids,omitempty"`
 
 			// OwnerUserId ID of the owner of the schedule
 			OwnerUserId  nullable.Nullable[int] `json:"owner_user_id,omitempty"`
@@ -28642,11 +28642,11 @@ type UpdateScheduleRotation struct {
 	Data struct {
 		Attributes struct {
 			// ActiveAllWeek Schedule rotation active all week?
-			ActiveAllWeek *bool                                             `json:"active_all_week,omitempty"`
-			ActiveDays    *[]UpdateScheduleRotationDataAttributesActiveDays `json:"active_days,omitempty"`
+			ActiveAllWeek *bool                                            `json:"active_all_week,omitempty"`
+			ActiveDays    []UpdateScheduleRotationDataAttributesActiveDays `json:"active_days,omitempty"`
 
 			// ActiveTimeAttributes Schedule rotation's active times
-			ActiveTimeAttributes *[]struct {
+			ActiveTimeAttributes []struct {
 				// EndTime End time for schedule rotation active time
 				EndTime string `json:"end_time"`
 
@@ -28757,7 +28757,7 @@ type UpdateScheduleRotationActiveDay struct {
 	Data struct {
 		Attributes struct {
 			// ActiveTimeAttributes Schedule rotation active times per day
-			ActiveTimeAttributes *[]struct {
+			ActiveTimeAttributes []struct {
 				// EndTime End time for schedule rotation active time
 				EndTime *string `json:"end_time,omitempty"`
 
@@ -29139,7 +29139,7 @@ type UpdateStatusPage struct {
 			FooterColor nullable.Nullable[string] `json:"footer_color,omitempty"`
 
 			// FunctionalityIds Functionalities attached to the status page
-			FunctionalityIds *[]string `json:"functionality_ids,omitempty"`
+			FunctionalityIds []string `json:"functionality_ids,omitempty"`
 
 			// GaTrackingId Google Analytics tracking ID
 			GaTrackingId nullable.Nullable[string] `json:"ga_tracking_id,omitempty"`
@@ -29169,7 +29169,7 @@ type UpdateStatusPage struct {
 			SamlNameIdentifierFormat nullable.Nullable[UpdateStatusPageDataAttributesSamlNameIdentifierFormat] `json:"saml_name_identifier_format,omitempty"`
 
 			// ServiceIds Services attached to the status page
-			ServiceIds *[]string `json:"service_ids,omitempty"`
+			ServiceIds []string `json:"service_ids,omitempty"`
 
 			// ShowUptime Show uptime
 			ShowUptime nullable.Nullable[bool] `json:"show_uptime,omitempty"`
@@ -29410,7 +29410,7 @@ type UpdateTrelloCardTaskParams struct {
 
 	// DueDate The due date
 	DueDate *string `json:"due_date,omitempty"`
-	Labels  *[]struct {
+	Labels  []struct {
 		Id   *string `json:"id,omitempty"`
 		Name *string `json:"name,omitempty"`
 	} `json:"labels,omitempty"`
@@ -29474,7 +29474,7 @@ type UpdateUserNotificationRule struct {
 			Delay nullable.Nullable[int] `json:"delay,omitempty"`
 
 			// EnabledContactTypes Contact types for which notification needs to be enabled
-			EnabledContactTypes *[]UpdateUserNotificationRuleDataAttributesEnabledContactTypes `json:"enabled_contact_types,omitempty"`
+			EnabledContactTypes []UpdateUserNotificationRuleDataAttributesEnabledContactTypes `json:"enabled_contact_types,omitempty"`
 
 			// Position Position of the rule
 			Position nullable.Nullable[int] `json:"position,omitempty"`
@@ -29536,8 +29536,8 @@ type UpdateVictorOpsIncidentTaskParamsTaskType string
 type UpdateWebhooksEndpoint struct {
 	Data struct {
 		Attributes struct {
-			Enabled    *bool                                             `json:"enabled,omitempty"`
-			EventTypes *[]UpdateWebhooksEndpointDataAttributesEventTypes `json:"event_types,omitempty"`
+			Enabled    *bool                                            `json:"enabled,omitempty"`
+			EventTypes []UpdateWebhooksEndpointDataAttributesEventTypes `json:"event_types,omitempty"`
 
 			// Name The name of the endpoint
 			Name *string `json:"name,omitempty"`
@@ -29556,7 +29556,7 @@ type UpdateWebhooksEndpointDataType string
 type UpdateWorkflow struct {
 	Data struct {
 		Attributes struct {
-			CauseIds *[]string `json:"cause_ids,omitempty"`
+			CauseIds []string `json:"cause_ids,omitempty"`
 
 			// Command Workflow command
 			Command nullable.Nullable[string] `json:"command,omitempty"`
@@ -29570,11 +29570,11 @@ type UpdateWorkflow struct {
 			// Description The description of the workflow
 			Description      nullable.Nullable[string] `json:"description,omitempty"`
 			Enabled          *bool                     `json:"enabled,omitempty"`
-			EnvironmentIds   *[]string                 `json:"environment_ids,omitempty"`
-			FunctionalityIds *[]string                 `json:"functionality_ids,omitempty"`
-			GroupIds         *[]string                 `json:"group_ids,omitempty"`
-			IncidentRoleIds  *[]string                 `json:"incident_role_ids,omitempty"`
-			IncidentTypeIds  *[]string                 `json:"incident_type_ids,omitempty"`
+			EnvironmentIds   []string                  `json:"environment_ids,omitempty"`
+			FunctionalityIds []string                  `json:"functionality_ids,omitempty"`
+			GroupIds         []string                  `json:"group_ids,omitempty"`
+			IncidentRoleIds  []string                  `json:"incident_role_ids,omitempty"`
+			IncidentTypeIds  []string                  `json:"incident_type_ids,omitempty"`
 
 			// Locked Restricts workflow edits to admins when turned on. Only admins can set this field.
 			Locked *bool `json:"locked,omitempty"`
@@ -29593,9 +29593,9 @@ type UpdateWorkflow struct {
 
 			// RepeatEveryDuration Repeat workflow every duration
 			RepeatEveryDuration nullable.Nullable[string]                     `json:"repeat_every_duration,omitempty"`
-			ServiceIds          *[]string                                     `json:"service_ids,omitempty"`
-			SeverityIds         *[]string                                     `json:"severity_ids,omitempty"`
-			SubStatusIds        *[]string                                     `json:"sub_status_ids,omitempty"`
+			ServiceIds          []string                                      `json:"service_ids,omitempty"`
+			SeverityIds         []string                                      `json:"severity_ids,omitempty"`
+			SubStatusIds        []string                                      `json:"sub_status_ids,omitempty"`
 			TriggerParams       *UpdateWorkflow_Data_Attributes_TriggerParams `json:"trigger_params,omitempty"`
 
 			// Wait Wait this duration before executing
@@ -29622,8 +29622,8 @@ type UpdateWorkflowCustomFieldSelection struct {
 		Attributes struct {
 			// IncidentCondition The trigger condition
 			IncidentCondition *UpdateWorkflowCustomFieldSelectionDataAttributesIncidentCondition `json:"incident_condition,omitempty"`
-			SelectedOptionIds *[]int                                                             `json:"selected_option_ids,omitempty"`
-			Values            *[]string                                                          `json:"values,omitempty"`
+			SelectedOptionIds []int                                                              `json:"selected_option_ids,omitempty"`
+			Values            []string                                                           `json:"values,omitempty"`
 		} `json:"attributes"`
 		Type UpdateWorkflowCustomFieldSelectionDataType `json:"type"`
 	} `json:"data"`
@@ -29641,13 +29641,13 @@ type UpdateWorkflowFormFieldCondition struct {
 		Attributes struct {
 			// IncidentCondition The trigger condition
 			IncidentCondition        *UpdateWorkflowFormFieldConditionDataAttributesIncidentCondition `json:"incident_condition,omitempty"`
-			SelectedCatalogEntityIds *[]string                                                        `json:"selected_catalog_entity_ids,omitempty"`
-			SelectedFunctionalityIds *[]string                                                        `json:"selected_functionality_ids,omitempty"`
-			SelectedGroupIds         *[]string                                                        `json:"selected_group_ids,omitempty"`
-			SelectedOptionIds        *[]string                                                        `json:"selected_option_ids,omitempty"`
-			SelectedServiceIds       *[]string                                                        `json:"selected_service_ids,omitempty"`
-			SelectedUserIds          *[]int                                                           `json:"selected_user_ids,omitempty"`
-			Values                   *[]string                                                        `json:"values,omitempty"`
+			SelectedCatalogEntityIds []string                                                         `json:"selected_catalog_entity_ids,omitempty"`
+			SelectedFunctionalityIds []string                                                         `json:"selected_functionality_ids,omitempty"`
+			SelectedGroupIds         []string                                                         `json:"selected_group_ids,omitempty"`
+			SelectedOptionIds        []string                                                         `json:"selected_option_ids,omitempty"`
+			SelectedServiceIds       []string                                                         `json:"selected_service_ids,omitempty"`
+			SelectedUserIds          []int                                                            `json:"selected_user_ids,omitempty"`
+			Values                   []string                                                         `json:"values,omitempty"`
 		} `json:"attributes"`
 		Type UpdateWorkflowFormFieldConditionDataType `json:"type"`
 	} `json:"data"`
@@ -29886,7 +29886,7 @@ type UserNotificationRule struct {
 	Delay nullable.Nullable[int] `json:"delay,omitempty"`
 
 	// EnabledContactTypes Contact types for which notification needs to be enabled
-	EnabledContactTypes *[]UserNotificationRuleEnabledContactTypes `json:"enabled_contact_types,omitempty"`
+	EnabledContactTypes []UserNotificationRuleEnabledContactTypes `json:"enabled_contact_types,omitempty"`
 
 	// NotificationType Type of notification rule (audible or quiet). Audible notifications use sound/vibration to alert users, while quiet notifications are silent.
 	NotificationType *UserNotificationRuleNotificationType `json:"notification_type,omitempty"`
@@ -30126,7 +30126,7 @@ type WebhooksEndpointResponseDataType string
 
 // Workflow defines model for workflow.
 type Workflow struct {
-	CauseIds *[]string `json:"cause_ids,omitempty"`
+	CauseIds []string `json:"cause_ids,omitempty"`
 
 	// Command Workflow command
 	Command nullable.Nullable[string] `json:"command,omitempty"`
@@ -30143,11 +30143,11 @@ type Workflow struct {
 	// Description The description of the workflow
 	Description      nullable.Nullable[string] `json:"description,omitempty"`
 	Enabled          *bool                     `json:"enabled,omitempty"`
-	EnvironmentIds   *[]string                 `json:"environment_ids,omitempty"`
-	FunctionalityIds *[]string                 `json:"functionality_ids,omitempty"`
-	GroupIds         *[]string                 `json:"group_ids,omitempty"`
-	IncidentRoleIds  *[]string                 `json:"incident_role_ids,omitempty"`
-	IncidentTypeIds  *[]string                 `json:"incident_type_ids,omitempty"`
+	EnvironmentIds   []string                  `json:"environment_ids,omitempty"`
+	FunctionalityIds []string                  `json:"functionality_ids,omitempty"`
+	GroupIds         []string                  `json:"group_ids,omitempty"`
+	IncidentRoleIds  []string                  `json:"incident_role_ids,omitempty"`
+	IncidentTypeIds  []string                  `json:"incident_type_ids,omitempty"`
 
 	// Locked Restricts workflow edits to admins when turned on. Only admins can set this field.
 	Locked *bool `json:"locked,omitempty"`
@@ -30167,12 +30167,12 @@ type Workflow struct {
 	// RepeatEveryDuration Repeat workflow every duration
 	RepeatEveryDuration nullable.Nullable[string]             `json:"repeat_every_duration,omitempty"`
 	RepeatOn            nullable.Nullable[[]WorkflowRepeatOn] `json:"repeat_on,omitempty"`
-	ServiceIds          *[]string                             `json:"service_ids,omitempty"`
-	SeverityIds         *[]string                             `json:"severity_ids,omitempty"`
+	ServiceIds          []string                              `json:"service_ids,omitempty"`
+	SeverityIds         []string                              `json:"severity_ids,omitempty"`
 
 	// Slug The slug of the workflow
 	Slug          *string                 `json:"slug,omitempty"`
-	SubStatusIds  *[]string               `json:"sub_status_ids,omitempty"`
+	SubStatusIds  []string                `json:"sub_status_ids,omitempty"`
 	TriggerParams *Workflow_TriggerParams `json:"trigger_params,omitempty"`
 
 	// UpdatedAt Date of last update
@@ -30201,7 +30201,7 @@ type WorkflowCustomFieldSelection struct {
 	// IncidentCondition The trigger condition
 	IncidentCondition WorkflowCustomFieldSelectionIncidentCondition `json:"incident_condition"`
 	SelectedOptionIds []int                                         `json:"selected_option_ids"`
-	Values            *[]string                                     `json:"values,omitempty"`
+	Values            []string                                      `json:"values,omitempty"`
 
 	// WorkflowId The workflow for this selection
 	WorkflowId string `json:"workflow_id"`
@@ -30248,12 +30248,12 @@ type WorkflowFormFieldCondition struct {
 	// IncidentCondition The trigger condition
 	IncidentCondition        WorkflowFormFieldConditionIncidentCondition `json:"incident_condition"`
 	SelectedCatalogEntityIds []string                                    `json:"selected_catalog_entity_ids"`
-	SelectedFunctionalityIds *[]string                                   `json:"selected_functionality_ids,omitempty"`
-	SelectedGroupIds         *[]string                                   `json:"selected_group_ids,omitempty"`
+	SelectedFunctionalityIds []string                                    `json:"selected_functionality_ids,omitempty"`
+	SelectedGroupIds         []string                                    `json:"selected_group_ids,omitempty"`
 	SelectedOptionIds        []string                                    `json:"selected_option_ids"`
-	SelectedServiceIds       *[]string                                   `json:"selected_service_ids,omitempty"`
+	SelectedServiceIds       []string                                    `json:"selected_service_ids,omitempty"`
 	SelectedUserIds          []int                                       `json:"selected_user_ids"`
-	Values                   *[]string                                   `json:"values,omitempty"`
+	Values                   []string                                    `json:"values,omitempty"`
 
 	// WorkflowId The workflow for this condition
 	WorkflowId string `json:"workflow_id"`
@@ -30385,7 +30385,7 @@ type WorkflowRun struct {
 	AlertId       nullable.Nullable[string] `json:"alert_id,omitempty"`
 	CanceledAt    nullable.Nullable[string] `json:"canceled_at,omitempty"`
 	CompletedAt   nullable.Nullable[string] `json:"completed_at,omitempty"`
-	Context       *map[string]interface{}   `json:"context,omitempty"`
+	Context       map[string]interface{}    `json:"context,omitempty"`
 	FailedAt      nullable.Nullable[string] `json:"failed_at,omitempty"`
 	IncidentId    nullable.Nullable[string] `json:"incident_id,omitempty"`
 	PostMortemId  nullable.Nullable[string] `json:"post_mortem_id,omitempty"`
@@ -31005,7 +31005,7 @@ type PostV1EdgeConnectorsApplicationVndAPIPlusJSONBody struct {
 		Status *PostV1EdgeConnectorsApplicationVndAPIPlusJSONBodyEdgeConnectorStatus `json:"status,omitempty"`
 
 		// Subscriptions Array of event types to subscribe to
-		Subscriptions *[]string `json:"subscriptions,omitempty"`
+		Subscriptions []string `json:"subscriptions,omitempty"`
 	} `json:"edge_connector,omitempty"`
 }
 
@@ -31019,10 +31019,10 @@ type PostV1EdgeConnectorsEdgeConnectorIdActionsApplicationVndAPIPlusJSONBody str
 		ActionType PostV1EdgeConnectorsEdgeConnectorIdActionsApplicationVndAPIPlusJSONBodyActionActionType `json:"action_type"`
 		Metadata   *struct {
 			Description *string `json:"description,omitempty"`
-			Parameters  *[]struct {
+			Parameters  []struct {
 				Description *string                                                                                              `json:"description,omitempty"`
 				Name        *string                                                                                              `json:"name,omitempty"`
-				Options     *[]string                                                                                            `json:"options,omitempty"`
+				Options     []string                                                                                             `json:"options,omitempty"`
 				Required    *bool                                                                                                `json:"required,omitempty"`
 				Type        *PostV1EdgeConnectorsEdgeConnectorIdActionsApplicationVndAPIPlusJSONBodyActionMetadataParametersType `json:"type,omitempty"`
 			} `json:"parameters,omitempty"`
@@ -31044,7 +31044,7 @@ type PostV1EdgeConnectorsEdgeConnectorIdActionsApplicationVndAPIPlusJSONBodyActi
 type PatchV1EdgeConnectorsEdgeConnectorIdActionsIdApplicationVndAPIPlusJSONBody struct {
 	Action *struct {
 		ActionType *PatchV1EdgeConnectorsEdgeConnectorIdActionsIdApplicationVndAPIPlusJSONBodyActionActionType `json:"action_type,omitempty"`
-		Metadata   *map[string]interface{}                                                                     `json:"metadata,omitempty"`
+		Metadata   map[string]interface{}                                                                      `json:"metadata,omitempty"`
 		Name       *string                                                                                     `json:"name,omitempty"`
 	} `json:"action,omitempty"`
 }
@@ -31058,7 +31058,7 @@ type PatchV1EdgeConnectorsIdApplicationVndAPIPlusJSONBody struct {
 		Description   *string                                                                  `json:"description,omitempty"`
 		Name          *string                                                                  `json:"name,omitempty"`
 		Status        *PatchV1EdgeConnectorsIdApplicationVndAPIPlusJSONBodyEdgeConnectorStatus `json:"status,omitempty"`
-		Subscriptions *[]string                                                                `json:"subscriptions,omitempty"`
+		Subscriptions []string                                                                 `json:"subscriptions,omitempty"`
 	} `json:"edge_connector,omitempty"`
 }
 
@@ -32021,9 +32021,9 @@ type ListShiftsParams struct {
 	From *string `form:"from,omitempty" json:"from,omitempty"`
 
 	// To End range for shifts in ISO-8601 format (e.g., 2025-01-01T00:00:00Z or 2025-01-01T00:00:00+00:00)
-	To          *string   `form:"to,omitempty" json:"to,omitempty"`
-	UserIds     *[]int    `form:"user_ids[],omitempty" json:"user_ids[],omitempty"`
-	ScheduleIds *[]string `form:"schedule_ids[],omitempty" json:"schedule_ids[],omitempty"`
+	To          *string  `form:"to,omitempty" json:"to,omitempty"`
+	UserIds     []int    `form:"user_ids[],omitempty" json:"user_ids[],omitempty"`
+	ScheduleIds []string `form:"schedule_ids[],omitempty" json:"schedule_ids[],omitempty"`
 }
 
 // ListShiftsParamsInclude defines parameters for ListShifts.
@@ -88165,36 +88165,28 @@ func NewListShiftsRequest(server string, params *ListShiftsParams) (*http.Reques
 
 		}
 
-		if params.UserIds != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "user_ids[]", runtime.ParamLocationQuery, *params.UserIds); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
+		if queryFrag, err := runtime.StyleParamWithLocation("form", true, "user_ids[]", runtime.ParamLocationQuery, params.UserIds); err != nil {
+			return nil, err
+		} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+			return nil, err
+		} else {
+			for k, v := range parsed {
+				for _, v2 := range v {
+					queryValues.Add(k, v2)
 				}
 			}
-
 		}
 
-		if params.ScheduleIds != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "schedule_ids[]", runtime.ParamLocationQuery, *params.ScheduleIds); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
+		if queryFrag, err := runtime.StyleParamWithLocation("form", true, "schedule_ids[]", runtime.ParamLocationQuery, params.ScheduleIds); err != nil {
+			return nil, err
+		} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+			return nil, err
+		} else {
+			for k, v := range parsed {
+				for _, v2 := range v {
+					queryValues.Add(k, v2)
 				}
 			}
-
 		}
 
 		queryURL.RawQuery = queryValues.Encode()
