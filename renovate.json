@@ -36,8 +36,8 @@
   "customManagers": [
     {
       "customType": "regex",
-      "fileMatch": [
-        ".*/config.yaml$"
+      "managerFilePatterns": [
+        "/.*/config.yaml$/"
       ],
       "matchStrings": [
         "# yaml-language-server: \\$schema=https://raw.githubusercontent.com/oapi-codegen/oapi-codegen/(?<currentValue>[^/]+)/configuration-schema.json"
