@@ -31,18 +31,18 @@ func TestListShifts(t *testing.T) {
 		t.Fatalf("Expected status 200, got %d", resp.StatusCode())
 	}
 
-	if resp.ApplicationvndApiJSON200 == nil {
+	if resp.ApplicationVndAPIJSON200 == nil {
 		t.Fatal("Expected response body")
 	}
 
-	shiftList := resp.ApplicationvndApiJSON200
+	shiftList := resp.ApplicationVndAPIJSON200
 
 	if len(shiftList.Data) == 0 {
 		t.Skip("No shifts returned, skipping validation")
 	}
 
 	for _, shift := range shiftList.Data {
-		if shift.Id == "" {
+		if shift.ID == "" {
 			t.Error("Shift ID should not be empty")
 		}
 
@@ -51,12 +51,12 @@ func TestListShifts(t *testing.T) {
 		}
 
 		attrs := shift.Attributes
-		if attrs.ScheduleId == "" {
+		if attrs.ScheduleID == "" {
 			t.Error("ScheduleId should not be empty")
 		}
 
-		if attrs.UserId.IsSpecified() {
-			userId := attrs.UserId.MustGet()
+		if attrs.UserID.IsSpecified() {
+			userId := attrs.UserID.MustGet()
 			if userId <= 0 {
 				t.Errorf("user_id should be positive, got %d", userId)
 			}

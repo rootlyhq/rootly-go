@@ -17,7 +17,7 @@ func SetupClient(t *testing.T) *rootly.ClientWithResponses {
 		t.Skip("Skipping integration test: ROOTLY_API_TOKEN not set")
 	}
 
-	client, err := rootly.NewClientWithResponses(rootly.ServerUrlProduction, rootly.WithRequestEditorFn(func(ctx context.Context, req *http.Request) error {
+	client, err := rootly.NewClientWithResponses(rootly.ServerURLProduction, rootly.WithRequestEditorFn(func(ctx context.Context, req *http.Request) error {
 		req.Header.Set("Authorization", "Bearer "+apiToken)
 		return nil
 	}))
