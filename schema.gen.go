@@ -353,22 +353,22 @@ const (
 
 // Defines values for AddActionItemTaskParamsTaskType.
 const (
-	AddActionItem AddActionItemTaskParamsTaskType = "add_action_item"
+	AddActionItemTaskParamsTaskTypeAddActionItem AddActionItemTaskParamsTaskType = "add_action_item"
 )
 
 // Defines values for AddMicrosoftTeamsTabTaskParamsTaskType.
 const (
-	AddMicrosoftTeamsTab AddMicrosoftTeamsTabTaskParamsTaskType = "add_microsoft_teams_tab"
+	AddMicrosoftTeamsTabTaskParamsTaskTypeAddMicrosoftTeamsTab AddMicrosoftTeamsTabTaskParamsTaskType = "add_microsoft_teams_tab"
 )
 
 // Defines values for AddRoleTaskParamsTaskType.
 const (
-	AddRole AddRoleTaskParamsTaskType = "add_role"
+	AddRoleTaskParamsTaskTypeAddRole AddRoleTaskParamsTaskType = "add_role"
 )
 
 // Defines values for AddSlackBookmarkTaskParamsTaskType.
 const (
-	AddSlackBookmark AddSlackBookmarkTaskParamsTaskType = "add_slack_bookmark"
+	AddSlackBookmarkTaskParamsTaskTypeAddSlackBookmark AddSlackBookmarkTaskParamsTaskType = "add_slack_bookmark"
 )
 
 // Defines values for AddSubscribersDataType.
@@ -378,12 +378,12 @@ const (
 
 // Defines values for AddTeamTaskParamsTaskType.
 const (
-	AddTeam AddTeamTaskParamsTaskType = "add_team"
+	AddTeamTaskParamsTaskTypeAddTeam AddTeamTaskParamsTaskType = "add_team"
 )
 
 // Defines values for AddToTimelineTaskParamsTaskType.
 const (
-	AddToTimeline AddToTimelineTaskParamsTaskType = "add_to_timeline"
+	AddToTimelineTaskParamsTaskTypeAddToTimeline AddToTimelineTaskParamsTaskType = "add_to_timeline"
 )
 
 // Defines values for AlertNoise.
@@ -995,9 +995,9 @@ const (
 
 // Defines values for AlertsSourceStatus.
 const (
-	Connected       AlertsSourceStatus = "connected"
-	SetupComplete   AlertsSourceStatus = "setup_complete"
-	SetupIncomplete AlertsSourceStatus = "setup_incomplete"
+	AlertsSourceStatusConnected       AlertsSourceStatus = "connected"
+	AlertsSourceStatusSetupComplete   AlertsSourceStatus = "setup_complete"
+	AlertsSourceStatusSetupIncomplete AlertsSourceStatus = "setup_incomplete"
 )
 
 // Defines values for AlertsSourceListDataType.
@@ -1012,12 +1012,12 @@ const (
 
 // Defines values for ArchiveMicrosoftTeamsChannelsTaskParamsTaskType.
 const (
-	ArchiveMicrosoftTeamsChannels ArchiveMicrosoftTeamsChannelsTaskParamsTaskType = "archive_microsoft_teams_channels"
+	ArchiveMicrosoftTeamsChannelsTaskParamsTaskTypeArchiveMicrosoftTeamsChannels ArchiveMicrosoftTeamsChannelsTaskParamsTaskType = "archive_microsoft_teams_channels"
 )
 
 // Defines values for ArchiveSlackChannelsTaskParamsTaskType.
 const (
-	ArchiveSlackChannels ArchiveSlackChannelsTaskParamsTaskType = "archive_slack_channels"
+	ArchiveSlackChannelsTaskParamsTaskTypeArchiveSlackChannels ArchiveSlackChannelsTaskParamsTaskType = "archive_slack_channels"
 )
 
 // Defines values for AssignRoleToUserDataType.
@@ -1032,7 +1032,7 @@ const (
 
 // Defines values for AttachDatadogDashboardsTaskParamsTaskType.
 const (
-	AttachDatadogDashboards AttachDatadogDashboardsTaskParamsTaskType = "attach_datadog_dashboards"
+	AttachDatadogDashboardsTaskParamsTaskTypeAttachDatadogDashboards AttachDatadogDashboardsTaskParamsTaskType = "attach_datadog_dashboards"
 )
 
 // Defines values for AuditItemType.
@@ -1080,7 +1080,7 @@ const (
 
 // Defines values for AuditsListDataType.
 const (
-	Audits AuditsListDataType = "audits"
+	AuditsListDataTypeAudits AuditsListDataType = "audits"
 )
 
 // Defines values for AuthorizationAuthorizableType.
@@ -1114,27 +1114,27 @@ const (
 
 // Defines values for AutoAssignRoleOpsgenieTaskParamsTaskType.
 const (
-	AutoAssignRoleOpsgenie AutoAssignRoleOpsgenieTaskParamsTaskType = "auto_assign_role_opsgenie"
+	AutoAssignRoleOpsgenieTaskParamsTaskTypeAutoAssignRoleOpsgenie AutoAssignRoleOpsgenieTaskParamsTaskType = "auto_assign_role_opsgenie"
 )
 
 // Defines values for AutoAssignRolePagerdutyTaskParamsTaskType.
 const (
-	AutoAssignRolePagerduty AutoAssignRolePagerdutyTaskParamsTaskType = "auto_assign_role_pagerduty"
+	AutoAssignRolePagerdutyTaskParamsTaskTypeAutoAssignRolePagerduty AutoAssignRolePagerdutyTaskParamsTaskType = "auto_assign_role_pagerduty"
 )
 
 // Defines values for AutoAssignRoleRootlyTaskParamsTaskType.
 const (
-	AutoAssignRoleRootly AutoAssignRoleRootlyTaskParamsTaskType = "auto_assign_role_rootly"
+	AutoAssignRoleRootlyTaskParamsTaskTypeAutoAssignRoleRootly AutoAssignRoleRootlyTaskParamsTaskType = "auto_assign_role_rootly"
 )
 
 // Defines values for AutoAssignRoleVictorOpsTaskParamsTaskType.
 const (
-	AutoAssignRoleVictorOps AutoAssignRoleVictorOpsTaskParamsTaskType = "auto_assign_role_victor_ops"
+	AutoAssignRoleVictorOpsTaskParamsTaskTypeAutoAssignRoleVictorOps AutoAssignRoleVictorOpsTaskParamsTaskType = "auto_assign_role_victor_ops"
 )
 
 // Defines values for CallPeopleTaskParamsTaskType.
 const (
-	CallPeople CallPeopleTaskParamsTaskType = "call_people"
+	CallPeopleTaskParamsTaskTypeCallPeople CallPeopleTaskParamsTaskType = "call_people"
 )
 
 // Defines values for CancelIncidentDataType.
@@ -1218,8 +1218,8 @@ const (
 
 // Defines values for ChangeSlackChannelPrivacyTaskParamsPrivacy.
 const (
-	Private ChangeSlackChannelPrivacyTaskParamsPrivacy = "private"
-	Public  ChangeSlackChannelPrivacyTaskParamsPrivacy = "public"
+	ChangeSlackChannelPrivacyTaskParamsPrivacyPrivate ChangeSlackChannelPrivacyTaskParamsPrivacy = "private"
+	ChangeSlackChannelPrivacyTaskParamsPrivacyPublic  ChangeSlackChannelPrivacyTaskParamsPrivacy = "public"
 )
 
 // Defines values for ChangeSlackChannelPrivacyTaskParamsTaskType.
@@ -1264,7 +1264,7 @@ const (
 
 // Defines values for CommunicationsTemplateCommunicationTemplateStagesDataType.
 const (
-	CommunicationsTemplateStages CommunicationsTemplateCommunicationTemplateStagesDataType = "communications_template_stages"
+	CommunicationsTemplateCommunicationTemplateStagesDataTypeCommunicationsTemplateStages CommunicationsTemplateCommunicationTemplateStagesDataType = "communications_template_stages"
 )
 
 // Defines values for CommunicationsTemplateResponseDataType.
@@ -1289,12 +1289,12 @@ const (
 
 // Defines values for CreateAirtableTableRecordTaskParamsTaskType.
 const (
-	CreateAirtableTableRecord CreateAirtableTableRecordTaskParamsTaskType = "create_airtable_table_record"
+	CreateAirtableTableRecordTaskParamsTaskTypeCreateAirtableTableRecord CreateAirtableTableRecordTaskParamsTaskType = "create_airtable_table_record"
 )
 
 // Defines values for CreateAnthropicChatCompletionTaskParamsTaskType.
 const (
-	CreateAnthropicChatCompletionTask CreateAnthropicChatCompletionTaskParamsTaskType = "create_anthropic_chat_completion_task"
+	CreateAnthropicChatCompletionTaskParamsTaskTypeCreateAnthropicChatCompletionTask CreateAnthropicChatCompletionTaskParamsTaskType = "create_anthropic_chat_completion_task"
 )
 
 // Defines values for CreateAsanaSubtaskTaskParamsDependencyDirection.
@@ -1305,7 +1305,7 @@ const (
 
 // Defines values for CreateAsanaSubtaskTaskParamsTaskType.
 const (
-	CreateAsanaSubtask CreateAsanaSubtaskTaskParamsTaskType = "create_asana_subtask"
+	CreateAsanaSubtaskTaskParamsTaskTypeCreateAsanaSubtask CreateAsanaSubtaskTaskParamsTaskType = "create_asana_subtask"
 )
 
 // Defines values for CreateAsanaTaskTaskParamsDependencyDirection.
@@ -1316,22 +1316,22 @@ const (
 
 // Defines values for CreateAsanaTaskTaskParamsTaskType.
 const (
-	CreateAsanaTask CreateAsanaTaskTaskParamsTaskType = "create_asana_task"
+	CreateAsanaTaskTaskParamsTaskTypeCreateAsanaTask CreateAsanaTaskTaskParamsTaskType = "create_asana_task"
 )
 
 // Defines values for CreateClickupTaskTaskParamsTaskType.
 const (
-	CreateClickupTask CreateClickupTaskTaskParamsTaskType = "create_clickup_task"
+	CreateClickupTaskTaskParamsTaskTypeCreateClickupTask CreateClickupTaskTaskParamsTaskType = "create_clickup_task"
 )
 
 // Defines values for CreateCodaPageTaskParamsTaskType.
 const (
-	CreateCodaPage CreateCodaPageTaskParamsTaskType = "create_coda_page"
+	CreateCodaPageTaskParamsTaskTypeCreateCodaPage CreateCodaPageTaskParamsTaskType = "create_coda_page"
 )
 
 // Defines values for CreateConfluencePageTaskParamsTaskType.
 const (
-	CreateConfluencePage CreateConfluencePageTaskParamsTaskType = "create_confluence_page"
+	CreateConfluencePageTaskParamsTaskTypeCreateConfluencePage CreateConfluencePageTaskParamsTaskType = "create_confluence_page"
 )
 
 // Defines values for CreateDatadogNotebookTaskParamsKind.
@@ -1345,17 +1345,17 @@ const (
 
 // Defines values for CreateDatadogNotebookTaskParamsTaskType.
 const (
-	CreateDatadogNotebook CreateDatadogNotebookTaskParamsTaskType = "create_datadog_notebook"
+	CreateDatadogNotebookTaskParamsTaskTypeCreateDatadogNotebook CreateDatadogNotebookTaskParamsTaskType = "create_datadog_notebook"
 )
 
 // Defines values for CreateDropboxPaperPageTaskParamsTaskType.
 const (
-	CreateDropboxPaperPage CreateDropboxPaperPageTaskParamsTaskType = "create_dropbox_paper_page"
+	CreateDropboxPaperPageTaskParamsTaskTypeCreateDropboxPaperPage CreateDropboxPaperPageTaskParamsTaskType = "create_dropbox_paper_page"
 )
 
 // Defines values for CreateGithubIssueTaskParamsTaskType.
 const (
-	CreateGithubIssue CreateGithubIssueTaskParamsTaskType = "create_github_issue"
+	CreateGithubIssueTaskParamsTaskTypeCreateGithubIssue CreateGithubIssueTaskParamsTaskType = "create_github_issue"
 )
 
 // Defines values for CreateGitlabIssueTaskParamsIssueType.
@@ -1368,20 +1368,20 @@ const (
 
 // Defines values for CreateGitlabIssueTaskParamsTaskType.
 const (
-	CreateGitlabIssue CreateGitlabIssueTaskParamsTaskType = "create_gitlab_issue"
+	CreateGitlabIssueTaskParamsTaskTypeCreateGitlabIssue CreateGitlabIssueTaskParamsTaskType = "create_gitlab_issue"
 )
 
 // Defines values for CreateGoToMeetingTaskParamsConferenceCallInfo.
 const (
-	Free  CreateGoToMeetingTaskParamsConferenceCallInfo = "free"
-	Hyrid CreateGoToMeetingTaskParamsConferenceCallInfo = "hyrid"
-	Ptsn  CreateGoToMeetingTaskParamsConferenceCallInfo = "ptsn"
-	Voip  CreateGoToMeetingTaskParamsConferenceCallInfo = "voip"
+	CreateGoToMeetingTaskParamsConferenceCallInfoFree  CreateGoToMeetingTaskParamsConferenceCallInfo = "free"
+	CreateGoToMeetingTaskParamsConferenceCallInfoHyrid CreateGoToMeetingTaskParamsConferenceCallInfo = "hyrid"
+	CreateGoToMeetingTaskParamsConferenceCallInfoPtsn  CreateGoToMeetingTaskParamsConferenceCallInfo = "ptsn"
+	CreateGoToMeetingTaskParamsConferenceCallInfoVoip  CreateGoToMeetingTaskParamsConferenceCallInfo = "voip"
 )
 
 // Defines values for CreateGoToMeetingTaskParamsTaskType.
 const (
-	CreateGoToMeetingTask CreateGoToMeetingTaskParamsTaskType = "create_go_to_meeting_task"
+	CreateGoToMeetingTaskParamsTaskTypeCreateGoToMeetingTask CreateGoToMeetingTaskParamsTaskType = "create_go_to_meeting_task"
 )
 
 // Defines values for CreateGoogleCalendarEventTaskParamsConferenceSolutionKey.
@@ -1404,12 +1404,12 @@ const (
 
 // Defines values for CreateGoogleDocsPermissionsTaskParamsTaskType.
 const (
-	CreateGoogleDocsPermissions CreateGoogleDocsPermissionsTaskParamsTaskType = "create_google_docs_permissions"
+	CreateGoogleDocsPermissionsTaskParamsTaskTypeCreateGoogleDocsPermissions CreateGoogleDocsPermissionsTaskParamsTaskType = "create_google_docs_permissions"
 )
 
 // Defines values for CreateGoogleGeminiChatCompletionTaskParamsTaskType.
 const (
-	CreateGoogleGeminiChatCompletionTask CreateGoogleGeminiChatCompletionTaskParamsTaskType = "create_google_gemini_chat_completion_task"
+	CreateGoogleGeminiChatCompletionTaskParamsTaskTypeCreateGoogleGeminiChatCompletionTask CreateGoogleGeminiChatCompletionTaskParamsTaskType = "create_google_gemini_chat_completion_task"
 )
 
 // Defines values for CreateGoogleMeetingTaskParamsConferenceSolutionKey.
@@ -1422,42 +1422,42 @@ const (
 
 // Defines values for CreateGoogleMeetingTaskParamsTaskType.
 const (
-	CreateGoogleMeeting CreateGoogleMeetingTaskParamsTaskType = "create_google_meeting"
+	CreateGoogleMeetingTaskParamsTaskTypeCreateGoogleMeeting CreateGoogleMeetingTaskParamsTaskType = "create_google_meeting"
 )
 
 // Defines values for CreateIncidentPostmortemTaskParamsTaskType.
 const (
-	CreateIncidentPostmortem CreateIncidentPostmortemTaskParamsTaskType = "create_incident_postmortem"
+	CreateIncidentPostmortemTaskParamsTaskTypeCreateIncidentPostmortem CreateIncidentPostmortemTaskParamsTaskType = "create_incident_postmortem"
 )
 
 // Defines values for CreateIncidentTaskParamsTaskType.
 const (
-	CreateIncident CreateIncidentTaskParamsTaskType = "create_incident"
+	CreateIncidentTaskParamsTaskTypeCreateIncident CreateIncidentTaskParamsTaskType = "create_incident"
 )
 
 // Defines values for CreateJiraIssueTaskParamsTaskType.
 const (
-	CreateJiraIssue CreateJiraIssueTaskParamsTaskType = "create_jira_issue"
+	CreateJiraIssueTaskParamsTaskTypeCreateJiraIssue CreateJiraIssueTaskParamsTaskType = "create_jira_issue"
 )
 
 // Defines values for CreateJiraSubtaskTaskParamsTaskType.
 const (
-	CreateJiraSubtask CreateJiraSubtaskTaskParamsTaskType = "create_jira_subtask"
+	CreateJiraSubtaskTaskParamsTaskTypeCreateJiraSubtask CreateJiraSubtaskTaskParamsTaskType = "create_jira_subtask"
 )
 
 // Defines values for CreateLinearIssueCommentTaskParamsTaskType.
 const (
-	CreateLinearIssueComment CreateLinearIssueCommentTaskParamsTaskType = "create_linear_issue_comment"
+	CreateLinearIssueCommentTaskParamsTaskTypeCreateLinearIssueComment CreateLinearIssueCommentTaskParamsTaskType = "create_linear_issue_comment"
 )
 
 // Defines values for CreateLinearIssueTaskParamsTaskType.
 const (
-	CreateLinearIssue CreateLinearIssueTaskParamsTaskType = "create_linear_issue"
+	CreateLinearIssueTaskParamsTaskTypeCreateLinearIssue CreateLinearIssueTaskParamsTaskType = "create_linear_issue"
 )
 
 // Defines values for CreateLinearSubtaskIssueTaskParamsTaskType.
 const (
-	CreateLinearSubtaskIssue CreateLinearSubtaskIssueTaskParamsTaskType = "create_linear_subtask_issue"
+	CreateLinearSubtaskIssueTaskParamsTaskTypeCreateLinearSubtaskIssue CreateLinearSubtaskIssueTaskParamsTaskType = "create_linear_subtask_issue"
 )
 
 // Defines values for CreateMicrosoftTeamsChannelTaskParamsPrivate.
@@ -1469,7 +1469,7 @@ const (
 
 // Defines values for CreateMicrosoftTeamsChannelTaskParamsTaskType.
 const (
-	CreateMicrosoftTeamsChannel CreateMicrosoftTeamsChannelTaskParamsTaskType = "create_microsoft_teams_channel"
+	CreateMicrosoftTeamsChannelTaskParamsTaskTypeCreateMicrosoftTeamsChannel CreateMicrosoftTeamsChannelTaskParamsTaskType = "create_microsoft_teams_channel"
 )
 
 // Defines values for CreateMicrosoftTeamsChatTaskParamsChatType.
@@ -1480,27 +1480,27 @@ const (
 
 // Defines values for CreateMicrosoftTeamsChatTaskParamsTaskType.
 const (
-	CreateMicrosoftTeamsChat CreateMicrosoftTeamsChatTaskParamsTaskType = "create_microsoft_teams_chat"
+	CreateMicrosoftTeamsChatTaskParamsTaskTypeCreateMicrosoftTeamsChat CreateMicrosoftTeamsChatTaskParamsTaskType = "create_microsoft_teams_chat"
 )
 
 // Defines values for CreateMicrosoftTeamsMeetingTaskParamsTaskType.
 const (
-	CreateMicrosoftTeamsMeeting CreateMicrosoftTeamsMeetingTaskParamsTaskType = "create_microsoft_teams_meeting"
+	CreateMicrosoftTeamsMeetingTaskParamsTaskTypeCreateMicrosoftTeamsMeeting CreateMicrosoftTeamsMeetingTaskParamsTaskType = "create_microsoft_teams_meeting"
 )
 
 // Defines values for CreateMistralChatCompletionTaskParamsTaskType.
 const (
-	CreateMistralChatCompletionTask CreateMistralChatCompletionTaskParamsTaskType = "create_mistral_chat_completion_task"
+	CreateMistralChatCompletionTaskParamsTaskTypeCreateMistralChatCompletionTask CreateMistralChatCompletionTaskParamsTaskType = "create_mistral_chat_completion_task"
 )
 
 // Defines values for CreateMotionTaskTaskParamsTaskType.
 const (
-	CreateMotionTask CreateMotionTaskTaskParamsTaskType = "create_motion_task"
+	CreateMotionTaskTaskParamsTaskTypeCreateMotionTask CreateMotionTaskTaskParamsTaskType = "create_motion_task"
 )
 
 // Defines values for CreateNotionPageTaskParamsTaskType.
 const (
-	CreateNotionPage CreateNotionPageTaskParamsTaskType = "create_notion_page"
+	CreateNotionPageTaskParamsTaskTypeCreateNotionPage CreateNotionPageTaskParamsTaskType = "create_notion_page"
 )
 
 // Defines values for CreateOpenaiChatCompletionTaskParamsReasoningEffort.
@@ -1520,7 +1520,7 @@ const (
 
 // Defines values for CreateOpenaiChatCompletionTaskParamsTaskType.
 const (
-	OpenaiChatCompletion CreateOpenaiChatCompletionTaskParamsTaskType = "openai_chat_completion"
+	CreateOpenaiChatCompletionTaskParamsTaskTypeOpenaiChatCompletion CreateOpenaiChatCompletionTaskParamsTaskType = "openai_chat_completion"
 )
 
 // Defines values for CreateOpsgenieAlertTaskParamsPriority.
@@ -1535,17 +1535,17 @@ const (
 
 // Defines values for CreateOpsgenieAlertTaskParamsTaskType.
 const (
-	CreateOpsgenieAlert CreateOpsgenieAlertTaskParamsTaskType = "create_opsgenie_alert"
+	CreateOpsgenieAlertTaskParamsTaskTypeCreateOpsgenieAlert CreateOpsgenieAlertTaskParamsTaskType = "create_opsgenie_alert"
 )
 
 // Defines values for CreateOutlookEventTaskParamsTaskType.
 const (
-	CreateOutlookEvent CreateOutlookEventTaskParamsTaskType = "create_outlook_event"
+	CreateOutlookEventTaskParamsTaskTypeCreateOutlookEvent CreateOutlookEventTaskParamsTaskType = "create_outlook_event"
 )
 
 // Defines values for CreatePagerdutyStatusUpdateTaskParamsTaskType.
 const (
-	CreatePagerdutyStatusUpdate CreatePagerdutyStatusUpdateTaskParamsTaskType = "create_pagerduty_status_update"
+	CreatePagerdutyStatusUpdateTaskParamsTaskTypeCreatePagerdutyStatusUpdate CreatePagerdutyStatusUpdateTaskParamsTaskType = "create_pagerduty_status_update"
 )
 
 // Defines values for CreatePagertreeAlertTaskParamsSeverity.
@@ -1559,7 +1559,7 @@ const (
 
 // Defines values for CreatePagertreeAlertTaskParamsTaskType.
 const (
-	CreatePagertreeAlert CreatePagertreeAlertTaskParamsTaskType = "create_pagertree_alert"
+	CreatePagertreeAlertTaskParamsTaskTypeCreatePagertreeAlert CreatePagertreeAlertTaskParamsTaskType = "create_pagertree_alert"
 )
 
 // Defines values for CreatePagertreeAlertTaskParamsUrgency.
@@ -1578,29 +1578,29 @@ const (
 
 // Defines values for CreateServiceNowIncidentTaskParamsTaskType.
 const (
-	CreateServiceNowIncident CreateServiceNowIncidentTaskParamsTaskType = "create_service_now_incident"
+	CreateServiceNowIncidentTaskParamsTaskTypeCreateServiceNowIncident CreateServiceNowIncidentTaskParamsTaskType = "create_service_now_incident"
 )
 
 // Defines values for CreateSharepointPageTaskParamsTaskType.
 const (
-	CreateSharepointPage CreateSharepointPageTaskParamsTaskType = "create_sharepoint_page"
+	CreateSharepointPageTaskParamsTaskTypeCreateSharepointPage CreateSharepointPageTaskParamsTaskType = "create_sharepoint_page"
 )
 
 // Defines values for CreateShortcutStoryTaskParamsKind.
 const (
-	Bug     CreateShortcutStoryTaskParamsKind = "bug"
-	Chore   CreateShortcutStoryTaskParamsKind = "chore"
-	Feature CreateShortcutStoryTaskParamsKind = "feature"
+	CreateShortcutStoryTaskParamsKindBug     CreateShortcutStoryTaskParamsKind = "bug"
+	CreateShortcutStoryTaskParamsKindChore   CreateShortcutStoryTaskParamsKind = "chore"
+	CreateShortcutStoryTaskParamsKindFeature CreateShortcutStoryTaskParamsKind = "feature"
 )
 
 // Defines values for CreateShortcutStoryTaskParamsTaskType.
 const (
-	CreateShortcutStory CreateShortcutStoryTaskParamsTaskType = "create_shortcut_story"
+	CreateShortcutStoryTaskParamsTaskTypeCreateShortcutStory CreateShortcutStoryTaskParamsTaskType = "create_shortcut_story"
 )
 
 // Defines values for CreateShortcutTaskTaskParamsTaskType.
 const (
-	CreateShortcutTask CreateShortcutTaskTaskParamsTaskType = "create_shortcut_task"
+	CreateShortcutTaskTaskParamsTaskTypeCreateShortcutTask CreateShortcutTaskTaskParamsTaskType = "create_shortcut_task"
 )
 
 // Defines values for CreateSlackChannelTaskParamsPrivate.
@@ -1612,32 +1612,32 @@ const (
 
 // Defines values for CreateSlackChannelTaskParamsTaskType.
 const (
-	CreateSlackChannel CreateSlackChannelTaskParamsTaskType = "create_slack_channel"
+	CreateSlackChannelTaskParamsTaskTypeCreateSlackChannel CreateSlackChannelTaskParamsTaskType = "create_slack_channel"
 )
 
 // Defines values for CreateSubIncidentTaskParamsTaskType.
 const (
-	CreateSubIncident CreateSubIncidentTaskParamsTaskType = "create_sub_incident"
+	CreateSubIncidentTaskParamsTaskTypeCreateSubIncident CreateSubIncidentTaskParamsTaskType = "create_sub_incident"
 )
 
 // Defines values for CreateTrelloCardTaskParamsTaskType.
 const (
-	CreateTrelloCard CreateTrelloCardTaskParamsTaskType = "create_trello_card"
+	CreateTrelloCardTaskParamsTaskTypeCreateTrelloCard CreateTrelloCardTaskParamsTaskType = "create_trello_card"
 )
 
 // Defines values for CreateWatsonxChatCompletionTaskParamsTaskType.
 const (
-	CreateWatsonxChatCompletionTask CreateWatsonxChatCompletionTaskParamsTaskType = "create_watsonx_chat_completion_task"
+	CreateWatsonxChatCompletionTaskParamsTaskTypeCreateWatsonxChatCompletionTask CreateWatsonxChatCompletionTaskParamsTaskType = "create_watsonx_chat_completion_task"
 )
 
 // Defines values for CreateWebexMeetingTaskParamsTaskType.
 const (
-	CreateWebexMeeting CreateWebexMeetingTaskParamsTaskType = "create_webex_meeting"
+	CreateWebexMeetingTaskParamsTaskTypeCreateWebexMeeting CreateWebexMeetingTaskParamsTaskType = "create_webex_meeting"
 )
 
 // Defines values for CreateZendeskJiraLinkTaskParamsTaskType.
 const (
-	CreateZendeskJiraLink CreateZendeskJiraLinkTaskParamsTaskType = "create_zendesk_jira_link"
+	CreateZendeskJiraLinkTaskParamsTaskTypeCreateZendeskJiraLink CreateZendeskJiraLinkTaskParamsTaskType = "create_zendesk_jira_link"
 )
 
 // Defines values for CreateZendeskTicketTaskParamsKind.
@@ -1650,7 +1650,7 @@ const (
 
 // Defines values for CreateZendeskTicketTaskParamsTaskType.
 const (
-	CreateZendeskTicket CreateZendeskTicketTaskParamsTaskType = "create_zendesk_ticket"
+	CreateZendeskTicketTaskParamsTaskTypeCreateZendeskTicket CreateZendeskTicketTaskParamsTaskType = "create_zendesk_ticket"
 )
 
 // Defines values for CreateZoomMeetingTaskParamsAutoRecording.
@@ -1662,7 +1662,7 @@ const (
 
 // Defines values for CreateZoomMeetingTaskParamsTaskType.
 const (
-	CreateZoomMeeting CreateZoomMeetingTaskParamsTaskType = "create_zoom_meeting"
+	CreateZoomMeetingTaskParamsTaskTypeCreateZoomMeeting CreateZoomMeetingTaskParamsTaskType = "create_zoom_meeting"
 )
 
 // Defines values for CustomFieldRequired.
@@ -1832,7 +1832,7 @@ const (
 
 // Defines values for EdgeConnectorDataType.
 const (
-	EdgeConnectors EdgeConnectorDataType = "edge_connectors"
+	EdgeConnectorDataTypeEdgeConnectors EdgeConnectorDataType = "edge_connectors"
 )
 
 // Defines values for EdgeConnectorActionDataAttributesActionType.
@@ -1866,7 +1866,7 @@ const (
 
 // Defines values for EdgeConnectorActionDataType.
 const (
-	EdgeConnectorActions EdgeConnectorActionDataType = "edge_connector_actions"
+	EdgeConnectorActionDataTypeEdgeConnectorActions EdgeConnectorActionDataType = "edge_connector_actions"
 )
 
 // Defines values for EnvironmentListDataType.
@@ -2769,22 +2769,22 @@ const (
 
 // Defines values for GetAlertsTaskParamsTaskType.
 const (
-	GetAlerts GetAlertsTaskParamsTaskType = "get_alerts"
+	GetAlertsTaskParamsTaskTypeGetAlerts GetAlertsTaskParamsTaskType = "get_alerts"
 )
 
 // Defines values for GetGithubCommitsTaskParamsTaskType.
 const (
-	GetGithubCommits GetGithubCommitsTaskParamsTaskType = "get_github_commits"
+	GetGithubCommitsTaskParamsTaskTypeGetGithubCommits GetGithubCommitsTaskParamsTaskType = "get_github_commits"
 )
 
 // Defines values for GetGitlabCommitsTaskParamsTaskType.
 const (
-	GetGitlabCommits GetGitlabCommitsTaskParamsTaskType = "get_gitlab_commits"
+	GetGitlabCommitsTaskParamsTaskTypeGetGitlabCommits GetGitlabCommitsTaskParamsTaskType = "get_gitlab_commits"
 )
 
 // Defines values for GetPulsesTaskParamsTaskType.
 const (
-	GetPulses GetPulsesTaskParamsTaskType = "get_pulses"
+	GetPulsesTaskParamsTaskTypeGetPulses GetPulsesTaskParamsTaskType = "get_pulses"
 )
 
 // Defines values for HeartbeatIntervalUnit.
@@ -2821,17 +2821,17 @@ const (
 
 // Defines values for HttpClientTaskParamsMethod.
 const (
-	DELETE  HttpClientTaskParamsMethod = "DELETE"
-	GET     HttpClientTaskParamsMethod = "GET"
-	OPTIONS HttpClientTaskParamsMethod = "OPTIONS"
-	PATCH   HttpClientTaskParamsMethod = "PATCH"
-	POST    HttpClientTaskParamsMethod = "POST"
-	PUT     HttpClientTaskParamsMethod = "PUT"
+	HttpClientTaskParamsMethodDELETE  HttpClientTaskParamsMethod = "DELETE"
+	HttpClientTaskParamsMethodGET     HttpClientTaskParamsMethod = "GET"
+	HttpClientTaskParamsMethodOPTIONS HttpClientTaskParamsMethod = "OPTIONS"
+	HttpClientTaskParamsMethodPATCH   HttpClientTaskParamsMethod = "PATCH"
+	HttpClientTaskParamsMethodPOST    HttpClientTaskParamsMethod = "POST"
+	HttpClientTaskParamsMethodPUT     HttpClientTaskParamsMethod = "PUT"
 )
 
 // Defines values for HttpClientTaskParamsTaskType.
 const (
-	HttpClient HttpClientTaskParamsTaskType = "http_client"
+	HttpClientTaskParamsTaskTypeHttpClient HttpClientTaskParamsTaskType = "http_client"
 )
 
 // Defines values for InTriageIncidentDataType.
@@ -3044,8 +3044,8 @@ const (
 
 // Defines values for IncidentPostMortemShowTimelineOrder.
 const (
-	Asc  IncidentPostMortemShowTimelineOrder = "asc"
-	Desc IncidentPostMortemShowTimelineOrder = "desc"
+	IncidentPostMortemShowTimelineOrderAsc  IncidentPostMortemShowTimelineOrder = "asc"
+	IncidentPostMortemShowTimelineOrderDesc IncidentPostMortemShowTimelineOrder = "desc"
 )
 
 // Defines values for IncidentPostMortemStatus.
@@ -3402,32 +3402,32 @@ const (
 
 // Defines values for InviteToMicrosoftTeamsChannelTaskParamsTaskType.
 const (
-	InviteToMicrosoftTeamsChannel InviteToMicrosoftTeamsChannelTaskParamsTaskType = "invite_to_microsoft_teams_channel"
+	InviteToMicrosoftTeamsChannelTaskParamsTaskTypeInviteToMicrosoftTeamsChannel InviteToMicrosoftTeamsChannelTaskParamsTaskType = "invite_to_microsoft_teams_channel"
 )
 
 // Defines values for InviteToSlackChannelOpsgenieTaskParamsTaskType.
 const (
-	InviteToSlackChannelOpsgenie InviteToSlackChannelOpsgenieTaskParamsTaskType = "invite_to_slack_channel_opsgenie"
+	InviteToSlackChannelOpsgenieTaskParamsTaskTypeInviteToSlackChannelOpsgenie InviteToSlackChannelOpsgenieTaskParamsTaskType = "invite_to_slack_channel_opsgenie"
 )
 
 // Defines values for InviteToSlackChannelPagerdutyTaskParamsTaskType.
 const (
-	InviteToSlackChannelPagerduty InviteToSlackChannelPagerdutyTaskParamsTaskType = "invite_to_slack_channel_pagerduty"
+	InviteToSlackChannelPagerdutyTaskParamsTaskTypeInviteToSlackChannelPagerduty InviteToSlackChannelPagerdutyTaskParamsTaskType = "invite_to_slack_channel_pagerduty"
 )
 
 // Defines values for InviteToSlackChannelRootlyTaskParamsTaskType.
 const (
-	InviteToSlackChannelRootly InviteToSlackChannelRootlyTaskParamsTaskType = "invite_to_slack_channel_rootly"
+	InviteToSlackChannelRootlyTaskParamsTaskTypeInviteToSlackChannelRootly InviteToSlackChannelRootlyTaskParamsTaskType = "invite_to_slack_channel_rootly"
 )
 
 // Defines values for InviteToSlackChannelTaskParamsTaskType.
 const (
-	InviteToSlackChannel InviteToSlackChannelTaskParamsTaskType = "invite_to_slack_channel"
+	InviteToSlackChannelTaskParamsTaskTypeInviteToSlackChannel InviteToSlackChannelTaskParamsTaskType = "invite_to_slack_channel"
 )
 
 // Defines values for InviteToSlackChannelVictorOpsTaskParamsTaskType.
 const (
-	InviteToSlackChannelVictorOps InviteToSlackChannelVictorOpsTaskParamsTaskType = "invite_to_slack_channel_victor_ops"
+	InviteToSlackChannelVictorOpsTaskParamsTaskTypeInviteToSlackChannelVictorOps InviteToSlackChannelVictorOpsTaskParamsTaskType = "invite_to_slack_channel_victor_ops"
 )
 
 // Defines values for IpRangesResponseDataType.
@@ -3573,7 +3573,7 @@ const (
 
 // Defines values for NewAlertEventDataAttributesKind.
 const (
-	Note NewAlertEventDataAttributesKind = "note"
+	NewAlertEventDataAttributesKindNote NewAlertEventDataAttributesKind = "note"
 )
 
 // Defines values for NewAlertEventDataType.
@@ -5778,8 +5778,8 @@ const (
 
 // Defines values for NewSecretDataAttributesKind.
 const (
-	BuiltIn        NewSecretDataAttributesKind = "built_in"
-	HashicorpVault NewSecretDataAttributesKind = "hashicorp_vault"
+	NewSecretDataAttributesKindBuiltIn        NewSecretDataAttributesKind = "built_in"
+	NewSecretDataAttributesKindHashicorpVault NewSecretDataAttributesKind = "hashicorp_vault"
 )
 
 // Defines values for NewSecretDataType.
@@ -6244,12 +6244,12 @@ const (
 
 // Defines values for PageOpsgenieOnCallRespondersTaskParamsTaskType.
 const (
-	PageOpsgenieOnCallResponders PageOpsgenieOnCallRespondersTaskParamsTaskType = "page_opsgenie_on_call_responders"
+	PageOpsgenieOnCallRespondersTaskParamsTaskTypePageOpsgenieOnCallResponders PageOpsgenieOnCallRespondersTaskParamsTaskType = "page_opsgenie_on_call_responders"
 )
 
 // Defines values for PagePagerdutyOnCallRespondersTaskParamsTaskType.
 const (
-	PagePagerdutyOnCallResponders PagePagerdutyOnCallRespondersTaskParamsTaskType = "page_pagerduty_on_call_responders"
+	PagePagerdutyOnCallRespondersTaskParamsTaskTypePagePagerdutyOnCallResponders PagePagerdutyOnCallRespondersTaskParamsTaskType = "page_pagerduty_on_call_responders"
 )
 
 // Defines values for PagePagerdutyOnCallRespondersTaskParamsUrgency.
@@ -6261,12 +6261,12 @@ const (
 
 // Defines values for PageRootlyOnCallRespondersTaskParamsTaskType.
 const (
-	PageRootlyOnCallResponders PageRootlyOnCallRespondersTaskParamsTaskType = "page_rootly_on_call_responders"
+	PageRootlyOnCallRespondersTaskParamsTaskTypePageRootlyOnCallResponders PageRootlyOnCallRespondersTaskParamsTaskType = "page_rootly_on_call_responders"
 )
 
 // Defines values for PageVictorOpsOnCallRespondersTaskParamsTaskType.
 const (
-	PageVictorOpsOnCallResponders PageVictorOpsOnCallRespondersTaskParamsTaskType = "page_victor_ops_on_call_responders"
+	PageVictorOpsOnCallRespondersTaskParamsTaskTypePageVictorOpsOnCallResponders PageVictorOpsOnCallRespondersTaskParamsTaskType = "page_victor_ops_on_call_responders"
 )
 
 // Defines values for PlaybookListDataType.
@@ -6583,7 +6583,7 @@ const (
 
 // Defines values for PrintTaskParamsTaskType.
 const (
-	Print PrintTaskParamsTaskType = "print"
+	PrintTaskParamsTaskTypePrint PrintTaskParamsTaskType = "print"
 )
 
 // Defines values for PublishIncidentTaskParamsStatus.
@@ -6599,7 +6599,7 @@ const (
 
 // Defines values for PublishIncidentTaskParamsTaskType.
 const (
-	PublishIncident PublishIncidentTaskParamsTaskType = "publish_incident"
+	PublishIncidentTaskParamsTaskTypePublishIncident PublishIncidentTaskParamsTaskType = "publish_incident"
 )
 
 // Defines values for PulseListDataType.
@@ -6670,7 +6670,7 @@ const (
 
 // Defines values for RedisClientTaskParamsTaskType.
 const (
-	RedisClient RedisClientTaskParamsTaskType = "redis_client"
+	RedisClientTaskParamsTaskTypeRedisClient RedisClientTaskParamsTaskType = "redis_client"
 )
 
 // Defines values for RemoveGoogleDocsPermissionsTaskParamsAttributeToQueryBy.
@@ -6682,7 +6682,7 @@ const (
 
 // Defines values for RemoveGoogleDocsPermissionsTaskParamsTaskType.
 const (
-	RemoveGoogleDocsPermissions RemoveGoogleDocsPermissionsTaskParamsTaskType = "remove_google_docs_permissions"
+	RemoveGoogleDocsPermissionsTaskParamsTaskTypeRemoveGoogleDocsPermissions RemoveGoogleDocsPermissionsTaskParamsTaskType = "remove_google_docs_permissions"
 )
 
 // Defines values for RemoveSubscribersDataType.
@@ -6692,7 +6692,7 @@ const (
 
 // Defines values for RenameMicrosoftTeamsChannelTaskParamsTaskType.
 const (
-	RenameMicrosoftTeamsChannel RenameMicrosoftTeamsChannelTaskParamsTaskType = "rename_microsoft_teams_channel"
+	RenameMicrosoftTeamsChannelTaskParamsTaskTypeRenameMicrosoftTeamsChannel RenameMicrosoftTeamsChannelTaskParamsTaskType = "rename_microsoft_teams_channel"
 )
 
 // Defines values for RenameSlackChannelTaskParamsTaskType.
@@ -6717,8 +6717,8 @@ const (
 
 // Defines values for RetrospectiveConfigurationKind.
 const (
-	Mandatory RetrospectiveConfigurationKind = "mandatory"
-	Skip      RetrospectiveConfigurationKind = "skip"
+	RetrospectiveConfigurationKindMandatory RetrospectiveConfigurationKind = "mandatory"
+	RetrospectiveConfigurationKindSkip      RetrospectiveConfigurationKind = "skip"
 )
 
 // Defines values for RetrospectiveConfigurationListDataType.
@@ -6993,13 +6993,13 @@ const (
 
 // Defines values for RunCommandHerokuTaskParamsSize.
 const (
-	Standard1X RunCommandHerokuTaskParamsSize = "standard-1X"
-	Standard2X RunCommandHerokuTaskParamsSize = "standard-2X"
+	RunCommandHerokuTaskParamsSizeStandard1X RunCommandHerokuTaskParamsSize = "standard-1X"
+	RunCommandHerokuTaskParamsSizeStandard2X RunCommandHerokuTaskParamsSize = "standard-2X"
 )
 
 // Defines values for RunCommandHerokuTaskParamsTaskType.
 const (
-	RunCommandHeroku RunCommandHerokuTaskParamsTaskType = "run_command_heroku"
+	RunCommandHerokuTaskParamsTaskTypeRunCommandHeroku RunCommandHerokuTaskParamsTaskType = "run_command_heroku"
 )
 
 // Defines values for ScheduleListDataType.
@@ -7109,27 +7109,27 @@ const (
 
 // Defines values for SendDashboardReportTaskParamsTaskType.
 const (
-	SendDashboardReport SendDashboardReportTaskParamsTaskType = "send_dashboard_report"
+	SendDashboardReportTaskParamsTaskTypeSendDashboardReport SendDashboardReportTaskParamsTaskType = "send_dashboard_report"
 )
 
 // Defines values for SendEmailTaskParamsTaskType.
 const (
-	SendEmail SendEmailTaskParamsTaskType = "send_email"
+	SendEmailTaskParamsTaskTypeSendEmail SendEmailTaskParamsTaskType = "send_email"
 )
 
 // Defines values for SendMicrosoftTeamsBlocksTaskParamsTaskType.
 const (
-	SendMicrosoftTeamsBlocks SendMicrosoftTeamsBlocksTaskParamsTaskType = "send_microsoft_teams_blocks"
+	SendMicrosoftTeamsBlocksTaskParamsTaskTypeSendMicrosoftTeamsBlocks SendMicrosoftTeamsBlocksTaskParamsTaskType = "send_microsoft_teams_blocks"
 )
 
 // Defines values for SendMicrosoftTeamsMessageTaskParamsTaskType.
 const (
-	SendMicrosoftTeamsMessage SendMicrosoftTeamsMessageTaskParamsTaskType = "send_microsoft_teams_message"
+	SendMicrosoftTeamsMessageTaskParamsTaskTypeSendMicrosoftTeamsMessage SendMicrosoftTeamsMessageTaskParamsTaskType = "send_microsoft_teams_message"
 )
 
 // Defines values for SendSlackBlocksTaskParamsTaskType.
 const (
-	SendSlackBlocks SendSlackBlocksTaskParamsTaskType = "send_slack_blocks"
+	SendSlackBlocksTaskParamsTaskTypeSendSlackBlocks SendSlackBlocksTaskParamsTaskType = "send_slack_blocks"
 )
 
 // Defines values for SendSlackMessageTaskParamsActionables.
@@ -7157,17 +7157,17 @@ const (
 
 // Defines values for SendSlackMessageTaskParamsTaskType.
 const (
-	SendSlackMessage SendSlackMessageTaskParamsTaskType = "send_slack_message"
+	SendSlackMessageTaskParamsTaskTypeSendSlackMessage SendSlackMessageTaskParamsTaskType = "send_slack_message"
 )
 
 // Defines values for SendSmsTaskParamsTaskType.
 const (
-	SendSms SendSmsTaskParamsTaskType = "send_sms"
+	SendSmsTaskParamsTaskTypeSendSms SendSmsTaskParamsTaskType = "send_sms"
 )
 
 // Defines values for SendWhatsappMessageTaskParamsTaskType.
 const (
-	SendWhatsappMessage SendWhatsappMessageTaskParamsTaskType = "send_whatsapp_message"
+	SendWhatsappMessageTaskParamsTaskTypeSendWhatsappMessage SendWhatsappMessageTaskParamsTaskType = "send_whatsapp_message"
 )
 
 // Defines values for ServiceListDataType.
@@ -7210,7 +7210,7 @@ const (
 
 // Defines values for ShiftRelationshipsShiftOverrideDataType.
 const (
-	ShiftOverrides ShiftRelationshipsShiftOverrideDataType = "shift_overrides"
+	ShiftRelationshipsShiftOverrideDataTypeShiftOverrides ShiftRelationshipsShiftOverrideDataType = "shift_overrides"
 )
 
 // Defines values for ShiftRelationshipsUserDataType.
@@ -7220,52 +7220,52 @@ const (
 
 // Defines values for SimpleTriggerParamsTriggerType.
 const (
-	Simple SimpleTriggerParamsTriggerType = "simple"
+	SimpleTriggerParamsTriggerTypeSimple SimpleTriggerParamsTriggerType = "simple"
 )
 
 // Defines values for SimpleTriggerParamsTriggers.
 const (
-	SlackCommand SimpleTriggerParamsTriggers = "slack_command"
+	SimpleTriggerParamsTriggersSlackCommand SimpleTriggerParamsTriggers = "slack_command"
 )
 
 // Defines values for SnapshotDatadogGraphTaskParamsTaskType.
 const (
-	SnapshotDatadogGraph SnapshotDatadogGraphTaskParamsTaskType = "snapshot_datadog_graph"
+	SnapshotDatadogGraphTaskParamsTaskTypeSnapshotDatadogGraph SnapshotDatadogGraphTaskParamsTaskType = "snapshot_datadog_graph"
 )
 
 // Defines values for SnapshotGrafanaDashboardTaskParamsTaskType.
 const (
-	SnapshotGrafanaDashboard SnapshotGrafanaDashboardTaskParamsTaskType = "snapshot_grafana_dashboard"
+	SnapshotGrafanaDashboardTaskParamsTaskTypeSnapshotGrafanaDashboard SnapshotGrafanaDashboardTaskParamsTaskType = "snapshot_grafana_dashboard"
 )
 
 // Defines values for SnapshotLookerLookTaskParamsTaskType.
 const (
-	SnapshotLookerLook SnapshotLookerLookTaskParamsTaskType = "snapshot_looker_look"
+	SnapshotLookerLookTaskParamsTaskTypeSnapshotLookerLook SnapshotLookerLookTaskParamsTaskType = "snapshot_looker_look"
 )
 
 // Defines values for SnapshotNewRelicGraphTaskParamsMetricType.
 const (
-	APDEX                SnapshotNewRelicGraphTaskParamsMetricType = "APDEX"
-	AREA                 SnapshotNewRelicGraphTaskParamsMetricType = "AREA"
-	BAR                  SnapshotNewRelicGraphTaskParamsMetricType = "BAR"
-	BASELINE             SnapshotNewRelicGraphTaskParamsMetricType = "BASELINE"
-	BILLBOARD            SnapshotNewRelicGraphTaskParamsMetricType = "BILLBOARD"
-	BULLET               SnapshotNewRelicGraphTaskParamsMetricType = "BULLET"
-	EVENTFEED            SnapshotNewRelicGraphTaskParamsMetricType = "EVENT_FEED"
-	FUNNEL               SnapshotNewRelicGraphTaskParamsMetricType = "FUNNEL"
-	HEATMAP              SnapshotNewRelicGraphTaskParamsMetricType = "HEATMAP"
-	HISTOGRAM            SnapshotNewRelicGraphTaskParamsMetricType = "HISTOGRAM"
-	LINE                 SnapshotNewRelicGraphTaskParamsMetricType = "LINE"
-	PIE                  SnapshotNewRelicGraphTaskParamsMetricType = "PIE"
-	SCATTER              SnapshotNewRelicGraphTaskParamsMetricType = "SCATTER"
-	STACKEDHORIZONTALBAR SnapshotNewRelicGraphTaskParamsMetricType = "STACKED_HORIZONTAL_BAR"
-	TABLE                SnapshotNewRelicGraphTaskParamsMetricType = "TABLE"
-	VERTICALBAR          SnapshotNewRelicGraphTaskParamsMetricType = "VERTICAL_BAR"
+	SnapshotNewRelicGraphTaskParamsMetricTypeAPDEX                SnapshotNewRelicGraphTaskParamsMetricType = "APDEX"
+	SnapshotNewRelicGraphTaskParamsMetricTypeAREA                 SnapshotNewRelicGraphTaskParamsMetricType = "AREA"
+	SnapshotNewRelicGraphTaskParamsMetricTypeBAR                  SnapshotNewRelicGraphTaskParamsMetricType = "BAR"
+	SnapshotNewRelicGraphTaskParamsMetricTypeBASELINE             SnapshotNewRelicGraphTaskParamsMetricType = "BASELINE"
+	SnapshotNewRelicGraphTaskParamsMetricTypeBILLBOARD            SnapshotNewRelicGraphTaskParamsMetricType = "BILLBOARD"
+	SnapshotNewRelicGraphTaskParamsMetricTypeBULLET               SnapshotNewRelicGraphTaskParamsMetricType = "BULLET"
+	SnapshotNewRelicGraphTaskParamsMetricTypeEVENTFEED            SnapshotNewRelicGraphTaskParamsMetricType = "EVENT_FEED"
+	SnapshotNewRelicGraphTaskParamsMetricTypeFUNNEL               SnapshotNewRelicGraphTaskParamsMetricType = "FUNNEL"
+	SnapshotNewRelicGraphTaskParamsMetricTypeHEATMAP              SnapshotNewRelicGraphTaskParamsMetricType = "HEATMAP"
+	SnapshotNewRelicGraphTaskParamsMetricTypeHISTOGRAM            SnapshotNewRelicGraphTaskParamsMetricType = "HISTOGRAM"
+	SnapshotNewRelicGraphTaskParamsMetricTypeLINE                 SnapshotNewRelicGraphTaskParamsMetricType = "LINE"
+	SnapshotNewRelicGraphTaskParamsMetricTypePIE                  SnapshotNewRelicGraphTaskParamsMetricType = "PIE"
+	SnapshotNewRelicGraphTaskParamsMetricTypeSCATTER              SnapshotNewRelicGraphTaskParamsMetricType = "SCATTER"
+	SnapshotNewRelicGraphTaskParamsMetricTypeSTACKEDHORIZONTALBAR SnapshotNewRelicGraphTaskParamsMetricType = "STACKED_HORIZONTAL_BAR"
+	SnapshotNewRelicGraphTaskParamsMetricTypeTABLE                SnapshotNewRelicGraphTaskParamsMetricType = "TABLE"
+	SnapshotNewRelicGraphTaskParamsMetricTypeVERTICALBAR          SnapshotNewRelicGraphTaskParamsMetricType = "VERTICAL_BAR"
 )
 
 // Defines values for SnapshotNewRelicGraphTaskParamsTaskType.
 const (
-	SnapshotLookerGraph SnapshotNewRelicGraphTaskParamsTaskType = "snapshot_looker_graph"
+	SnapshotNewRelicGraphTaskParamsTaskTypeSnapshotLookerGraph SnapshotNewRelicGraphTaskParamsTaskType = "snapshot_looker_graph"
 )
 
 // Defines values for StatusListDataType.
@@ -7401,12 +7401,12 @@ const (
 
 // Defines values for TriggerWorkflowTaskParamsTaskType.
 const (
-	TriggerWorkflow TriggerWorkflowTaskParamsTaskType = "trigger_workflow"
+	TriggerWorkflowTaskParamsTaskTypeTriggerWorkflow TriggerWorkflowTaskParamsTaskType = "trigger_workflow"
 )
 
 // Defines values for TweetTwitterMessageTaskParamsTaskType.
 const (
-	TweetTwitterMessage TweetTwitterMessageTaskParamsTaskType = "tweet_twitter_message"
+	TweetTwitterMessageTaskParamsTaskTypeTweetTwitterMessage TweetTwitterMessageTaskParamsTaskType = "tweet_twitter_message"
 )
 
 // Defines values for UnassignRoleFromUserDataType.
@@ -7450,12 +7450,12 @@ const (
 
 // Defines values for UpdateActionItemTaskParamsTaskType.
 const (
-	UpdateActionItem UpdateActionItemTaskParamsTaskType = "update_action_item"
+	UpdateActionItemTaskParamsTaskTypeUpdateActionItem UpdateActionItemTaskParamsTaskType = "update_action_item"
 )
 
 // Defines values for UpdateAirtableTableRecordTaskParamsTaskType.
 const (
-	UpdateAirtableTableRecord UpdateAirtableTableRecordTaskParamsTaskType = "update_airtable_table_record"
+	UpdateAirtableTableRecordTaskParamsTaskTypeUpdateAirtableTableRecord UpdateAirtableTableRecordTaskParamsTaskType = "update_airtable_table_record"
 )
 
 // Defines values for UpdateAlertDataAttributesNoise.
@@ -7747,13 +7747,13 @@ const (
 
 // Defines values for UpdateAlertsSourceDataAttributesSourceableAttributesFieldMappingsAttributesField.
 const (
-	AlertDescription       UpdateAlertsSourceDataAttributesSourceableAttributesFieldMappingsAttributesField = "alert_description"
-	AlertExternalUrl       UpdateAlertsSourceDataAttributesSourceableAttributesFieldMappingsAttributesField = "alert_external_url"
-	AlertTitle             UpdateAlertsSourceDataAttributesSourceableAttributesFieldMappingsAttributesField = "alert_title"
-	ExternalId             UpdateAlertsSourceDataAttributesSourceableAttributesFieldMappingsAttributesField = "external_id"
-	NotificationTargetId   UpdateAlertsSourceDataAttributesSourceableAttributesFieldMappingsAttributesField = "notification_target_id"
-	NotificationTargetType UpdateAlertsSourceDataAttributesSourceableAttributesFieldMappingsAttributesField = "notification_target_type"
-	State                  UpdateAlertsSourceDataAttributesSourceableAttributesFieldMappingsAttributesField = "state"
+	UpdateAlertsSourceDataAttributesSourceableAttributesFieldMappingsAttributesFieldAlertDescription       UpdateAlertsSourceDataAttributesSourceableAttributesFieldMappingsAttributesField = "alert_description"
+	UpdateAlertsSourceDataAttributesSourceableAttributesFieldMappingsAttributesFieldAlertExternalUrl       UpdateAlertsSourceDataAttributesSourceableAttributesFieldMappingsAttributesField = "alert_external_url"
+	UpdateAlertsSourceDataAttributesSourceableAttributesFieldMappingsAttributesFieldAlertTitle             UpdateAlertsSourceDataAttributesSourceableAttributesFieldMappingsAttributesField = "alert_title"
+	UpdateAlertsSourceDataAttributesSourceableAttributesFieldMappingsAttributesFieldExternalId             UpdateAlertsSourceDataAttributesSourceableAttributesFieldMappingsAttributesField = "external_id"
+	UpdateAlertsSourceDataAttributesSourceableAttributesFieldMappingsAttributesFieldNotificationTargetId   UpdateAlertsSourceDataAttributesSourceableAttributesFieldMappingsAttributesField = "notification_target_id"
+	UpdateAlertsSourceDataAttributesSourceableAttributesFieldMappingsAttributesFieldNotificationTargetType UpdateAlertsSourceDataAttributesSourceableAttributesFieldMappingsAttributesField = "notification_target_type"
+	UpdateAlertsSourceDataAttributesSourceableAttributesFieldMappingsAttributesFieldState                  UpdateAlertsSourceDataAttributesSourceableAttributesFieldMappingsAttributesField = "state"
 )
 
 // Defines values for UpdateAlertsSourceDataType.
@@ -7763,13 +7763,13 @@ const (
 
 // Defines values for UpdateAsanaTaskTaskParamsDependencyDirection.
 const (
-	BlockedBy UpdateAsanaTaskTaskParamsDependencyDirection = "blocked_by"
-	Blocking  UpdateAsanaTaskTaskParamsDependencyDirection = "blocking"
+	UpdateAsanaTaskTaskParamsDependencyDirectionBlockedBy UpdateAsanaTaskTaskParamsDependencyDirection = "blocked_by"
+	UpdateAsanaTaskTaskParamsDependencyDirectionBlocking  UpdateAsanaTaskTaskParamsDependencyDirection = "blocking"
 )
 
 // Defines values for UpdateAsanaTaskTaskParamsTaskType.
 const (
-	UpdateAsanaTask UpdateAsanaTaskTaskParamsTaskType = "update_asana_task"
+	UpdateAsanaTaskTaskParamsTaskTypeUpdateAsanaTask UpdateAsanaTaskTaskParamsTaskType = "update_asana_task"
 )
 
 // Defines values for UpdateAttachedAlertsTaskParamsStatus.
@@ -7780,7 +7780,7 @@ const (
 
 // Defines values for UpdateAttachedAlertsTaskParamsTaskType.
 const (
-	UpdateAttachedAlerts UpdateAttachedAlertsTaskParamsTaskType = "update_attached_alerts"
+	UpdateAttachedAlertsTaskParamsTaskTypeUpdateAttachedAlerts UpdateAttachedAlertsTaskParamsTaskType = "update_attached_alerts"
 )
 
 // Defines values for UpdateAuthorizationDataAttributesPermissions.
@@ -7847,12 +7847,12 @@ const (
 
 // Defines values for UpdateClickupTaskTaskParamsTaskType.
 const (
-	UpdateClickupTask UpdateClickupTaskTaskParamsTaskType = "update_clickup_task"
+	UpdateClickupTaskTaskParamsTaskTypeUpdateClickupTask UpdateClickupTaskTaskParamsTaskType = "update_clickup_task"
 )
 
 // Defines values for UpdateCodaPageTaskParamsTaskType.
 const (
-	UpdateCodaPage UpdateCodaPageTaskParamsTaskType = "update_coda_page"
+	UpdateCodaPageTaskParamsTaskTypeUpdateCodaPage UpdateCodaPageTaskParamsTaskType = "update_coda_page"
 )
 
 // Defines values for UpdateCommunicationsGroupDataAttributesCommunicationGroupConditionsPropertyType.
@@ -7892,7 +7892,7 @@ const (
 
 // Defines values for UpdateConfluencePageTaskParamsTaskType.
 const (
-	UpdateConfluencePage UpdateConfluencePageTaskParamsTaskType = "update_confluence_page"
+	UpdateConfluencePageTaskParamsTaskTypeUpdateConfluencePage UpdateConfluencePageTaskParamsTaskType = "update_confluence_page"
 )
 
 // Defines values for UpdateCustomFieldDataAttributesRequired.
@@ -7935,11 +7935,11 @@ const (
 
 // Defines values for UpdateDashboardDataAttributesColor.
 const (
-	HashD7F5E1 UpdateDashboardDataAttributesColor = "#D7F5E1"
-	HashE9E2FF UpdateDashboardDataAttributesColor = "#E9E2FF"
-	HashFAE6E8 UpdateDashboardDataAttributesColor = "#FAE6E8"
-	HashFAEEE6 UpdateDashboardDataAttributesColor = "#FAEEE6"
-	HashFCF2CF UpdateDashboardDataAttributesColor = "#FCF2CF"
+	UpdateDashboardDataAttributesColorHashD7F5E1 UpdateDashboardDataAttributesColor = "#D7F5E1"
+	UpdateDashboardDataAttributesColorHashE9E2FF UpdateDashboardDataAttributesColor = "#E9E2FF"
+	UpdateDashboardDataAttributesColorHashFAE6E8 UpdateDashboardDataAttributesColor = "#FAE6E8"
+	UpdateDashboardDataAttributesColorHashFAEEE6 UpdateDashboardDataAttributesColor = "#FAEEE6"
+	UpdateDashboardDataAttributesColorHashFCF2CF UpdateDashboardDataAttributesColor = "#FCF2CF"
 )
 
 // Defines values for UpdateDashboardDataAttributesOwner.
@@ -7962,9 +7962,9 @@ const (
 
 // Defines values for UpdateDashboardPanelDataAttributesParamsDatasetsAggregateOperation.
 const (
-	Average UpdateDashboardPanelDataAttributesParamsDatasetsAggregateOperation = "average"
-	Count   UpdateDashboardPanelDataAttributesParamsDatasetsAggregateOperation = "count"
-	Sum     UpdateDashboardPanelDataAttributesParamsDatasetsAggregateOperation = "sum"
+	UpdateDashboardPanelDataAttributesParamsDatasetsAggregateOperationAverage UpdateDashboardPanelDataAttributesParamsDatasetsAggregateOperation = "average"
+	UpdateDashboardPanelDataAttributesParamsDatasetsAggregateOperationCount   UpdateDashboardPanelDataAttributesParamsDatasetsAggregateOperation = "count"
+	UpdateDashboardPanelDataAttributesParamsDatasetsAggregateOperationSum     UpdateDashboardPanelDataAttributesParamsDatasetsAggregateOperation = "sum"
 )
 
 // Defines values for UpdateDashboardPanelDataAttributesParamsDatasetsCollection.
@@ -8010,14 +8010,14 @@ const (
 
 // Defines values for UpdateDashboardPanelDataAttributesParamsDisplay.
 const (
-	AggregateValue     UpdateDashboardPanelDataAttributesParamsDisplay = "aggregate_value"
-	ColumnChart        UpdateDashboardPanelDataAttributesParamsDisplay = "column_chart"
-	LineChart          UpdateDashboardPanelDataAttributesParamsDisplay = "line_chart"
-	LineSteppedChart   UpdateDashboardPanelDataAttributesParamsDisplay = "line_stepped_chart"
-	MonitoringChart    UpdateDashboardPanelDataAttributesParamsDisplay = "monitoring_chart"
-	PieChart           UpdateDashboardPanelDataAttributesParamsDisplay = "pie_chart"
-	StackedColumnChart UpdateDashboardPanelDataAttributesParamsDisplay = "stacked_column_chart"
-	Table              UpdateDashboardPanelDataAttributesParamsDisplay = "table"
+	UpdateDashboardPanelDataAttributesParamsDisplayAggregateValue     UpdateDashboardPanelDataAttributesParamsDisplay = "aggregate_value"
+	UpdateDashboardPanelDataAttributesParamsDisplayColumnChart        UpdateDashboardPanelDataAttributesParamsDisplay = "column_chart"
+	UpdateDashboardPanelDataAttributesParamsDisplayLineChart          UpdateDashboardPanelDataAttributesParamsDisplay = "line_chart"
+	UpdateDashboardPanelDataAttributesParamsDisplayLineSteppedChart   UpdateDashboardPanelDataAttributesParamsDisplay = "line_stepped_chart"
+	UpdateDashboardPanelDataAttributesParamsDisplayMonitoringChart    UpdateDashboardPanelDataAttributesParamsDisplay = "monitoring_chart"
+	UpdateDashboardPanelDataAttributesParamsDisplayPieChart           UpdateDashboardPanelDataAttributesParamsDisplay = "pie_chart"
+	UpdateDashboardPanelDataAttributesParamsDisplayStackedColumnChart UpdateDashboardPanelDataAttributesParamsDisplay = "stacked_column_chart"
+	UpdateDashboardPanelDataAttributesParamsDisplayTable              UpdateDashboardPanelDataAttributesParamsDisplay = "table"
 )
 
 // Defines values for UpdateDashboardPanelDataAttributesParamsLegendGroups.
@@ -8042,12 +8042,12 @@ const (
 
 // Defines values for UpdateDatadogNotebookTaskParamsTaskType.
 const (
-	UpdateDatadogNotebook UpdateDatadogNotebookTaskParamsTaskType = "update_datadog_notebook"
+	UpdateDatadogNotebookTaskParamsTaskTypeUpdateDatadogNotebook UpdateDatadogNotebookTaskParamsTaskType = "update_datadog_notebook"
 )
 
 // Defines values for UpdateDropboxPaperPageTaskParamsTaskType.
 const (
-	UpdateDropboxPaperPage UpdateDropboxPaperPageTaskParamsTaskType = "update_dropbox_paper_page"
+	UpdateDropboxPaperPageTaskParamsTaskTypeUpdateDropboxPaperPage UpdateDropboxPaperPageTaskParamsTaskType = "update_dropbox_paper_page"
 )
 
 // Defines values for UpdateEdgeConnectorEdgeConnectorStatus.
@@ -8378,9 +8378,9 @@ const (
 
 // Defines values for UpdateEscalationPolicyLevelDataAttributesNotificationTargetParamsTeamMembers.
 const (
-	Admins   UpdateEscalationPolicyLevelDataAttributesNotificationTargetParamsTeamMembers = "admins"
-	All      UpdateEscalationPolicyLevelDataAttributesNotificationTargetParamsTeamMembers = "all"
-	Escalate UpdateEscalationPolicyLevelDataAttributesNotificationTargetParamsTeamMembers = "escalate"
+	UpdateEscalationPolicyLevelDataAttributesNotificationTargetParamsTeamMembersAdmins   UpdateEscalationPolicyLevelDataAttributesNotificationTargetParamsTeamMembers = "admins"
+	UpdateEscalationPolicyLevelDataAttributesNotificationTargetParamsTeamMembersAll      UpdateEscalationPolicyLevelDataAttributesNotificationTargetParamsTeamMembers = "all"
+	UpdateEscalationPolicyLevelDataAttributesNotificationTargetParamsTeamMembersEscalate UpdateEscalationPolicyLevelDataAttributesNotificationTargetParamsTeamMembers = "escalate"
 )
 
 // Defines values for UpdateEscalationPolicyLevelDataAttributesNotificationTargetParamsType.
@@ -8394,8 +8394,8 @@ const (
 
 // Defines values for UpdateEscalationPolicyLevelDataAttributesPagingStrategyConfigurationScheduleStrategy.
 const (
-	Everyone   UpdateEscalationPolicyLevelDataAttributesPagingStrategyConfigurationScheduleStrategy = "everyone"
-	OnCallOnly UpdateEscalationPolicyLevelDataAttributesPagingStrategyConfigurationScheduleStrategy = "on_call_only"
+	UpdateEscalationPolicyLevelDataAttributesPagingStrategyConfigurationScheduleStrategyEveryone   UpdateEscalationPolicyLevelDataAttributesPagingStrategyConfigurationScheduleStrategy = "everyone"
+	UpdateEscalationPolicyLevelDataAttributesPagingStrategyConfigurationScheduleStrategyOnCallOnly UpdateEscalationPolicyLevelDataAttributesPagingStrategyConfigurationScheduleStrategy = "on_call_only"
 )
 
 // Defines values for UpdateEscalationPolicyLevelDataAttributesPagingStrategyConfigurationStrategy.
@@ -8408,13 +8408,13 @@ const (
 
 // Defines values for UpdateEscalationPolicyLevelDataType.
 const (
-	EscalationLevels UpdateEscalationPolicyLevelDataType = "escalation_levels"
+	UpdateEscalationPolicyLevelDataTypeEscalationLevels UpdateEscalationPolicyLevelDataType = "escalation_levels"
 )
 
 // Defines values for UpdateEscalationPolicyPathDataAttributesMatchMode.
 const (
-	MatchAllRules UpdateEscalationPolicyPathDataAttributesMatchMode = "match-all-rules"
-	MatchAnyRule  UpdateEscalationPolicyPathDataAttributesMatchMode = "match-any-rule"
+	UpdateEscalationPolicyPathDataAttributesMatchModeMatchAllRules UpdateEscalationPolicyPathDataAttributesMatchMode = "match-all-rules"
+	UpdateEscalationPolicyPathDataAttributesMatchModeMatchAnyRule  UpdateEscalationPolicyPathDataAttributesMatchMode = "match-any-rule"
 )
 
 // Defines values for UpdateEscalationPolicyPathDataAttributesNotificationType.
@@ -8430,20 +8430,20 @@ const (
 
 // Defines values for UpdateEscalationPolicyPathDataAttributesRules1RuleType.
 const (
-	WorkingHour UpdateEscalationPolicyPathDataAttributesRules1RuleType = "working_hour"
+	UpdateEscalationPolicyPathDataAttributesRules1RuleTypeWorkingHour UpdateEscalationPolicyPathDataAttributesRules1RuleType = "working_hour"
 )
 
 // Defines values for UpdateEscalationPolicyPathDataAttributesRules2Operator.
 const (
-	Contains       UpdateEscalationPolicyPathDataAttributesRules2Operator = "contains"
-	DoesNotContain UpdateEscalationPolicyPathDataAttributesRules2Operator = "does_not_contain"
-	Is             UpdateEscalationPolicyPathDataAttributesRules2Operator = "is"
-	IsNot          UpdateEscalationPolicyPathDataAttributesRules2Operator = "is_not"
+	UpdateEscalationPolicyPathDataAttributesRules2OperatorContains       UpdateEscalationPolicyPathDataAttributesRules2Operator = "contains"
+	UpdateEscalationPolicyPathDataAttributesRules2OperatorDoesNotContain UpdateEscalationPolicyPathDataAttributesRules2Operator = "does_not_contain"
+	UpdateEscalationPolicyPathDataAttributesRules2OperatorIs             UpdateEscalationPolicyPathDataAttributesRules2Operator = "is"
+	UpdateEscalationPolicyPathDataAttributesRules2OperatorIsNot          UpdateEscalationPolicyPathDataAttributesRules2Operator = "is_not"
 )
 
 // Defines values for UpdateEscalationPolicyPathDataAttributesRules2RuleType.
 const (
-	JsonPath UpdateEscalationPolicyPathDataAttributesRules2RuleType = "json_path"
+	UpdateEscalationPolicyPathDataAttributesRules2RuleTypeJsonPath UpdateEscalationPolicyPathDataAttributesRules2RuleType = "json_path"
 )
 
 // Defines values for UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone.
@@ -8763,7 +8763,7 @@ const (
 
 // Defines values for UpdateEscalationPolicyPathDataType.
 const (
-	EscalationPaths UpdateEscalationPolicyPathDataType = "escalation_paths"
+	UpdateEscalationPolicyPathDataTypeEscalationPaths UpdateEscalationPolicyPathDataType = "escalation_paths"
 )
 
 // Defines values for UpdateFormFieldDataAttributesInputKind.
@@ -8861,8 +8861,8 @@ const (
 
 // Defines values for UpdateFormFieldPlacementConditionDataAttributesConditioned.
 const (
-	Placement UpdateFormFieldPlacementConditionDataAttributesConditioned = "placement"
-	Required  UpdateFormFieldPlacementConditionDataAttributesConditioned = "required"
+	UpdateFormFieldPlacementConditionDataAttributesConditionedPlacement UpdateFormFieldPlacementConditionDataAttributesConditioned = "placement"
+	UpdateFormFieldPlacementConditionDataAttributesConditionedRequired  UpdateFormFieldPlacementConditionDataAttributesConditioned = "required"
 )
 
 // Defines values for UpdateFormFieldPlacementConditionDataType.
@@ -8918,7 +8918,7 @@ const (
 
 // Defines values for UpdateGithubIssueTaskParamsTaskType.
 const (
-	UpdateGithubIssue UpdateGithubIssueTaskParamsTaskType = "update_github_issue"
+	UpdateGithubIssueTaskParamsTaskTypeUpdateGithubIssue UpdateGithubIssueTaskParamsTaskType = "update_github_issue"
 )
 
 // Defines values for UpdateGitlabIssueTaskParamsIssueType.
@@ -8931,15 +8931,15 @@ const (
 
 // Defines values for UpdateGitlabIssueTaskParamsTaskType.
 const (
-	UpdateGitlabIssue UpdateGitlabIssueTaskParamsTaskType = "update_gitlab_issue"
+	UpdateGitlabIssueTaskParamsTaskTypeUpdateGitlabIssue UpdateGitlabIssueTaskParamsTaskType = "update_gitlab_issue"
 )
 
 // Defines values for UpdateGoogleCalendarEventTaskParamsConferenceSolutionKey.
 const (
-	AddOn             UpdateGoogleCalendarEventTaskParamsConferenceSolutionKey = "addOn"
-	EventHangout      UpdateGoogleCalendarEventTaskParamsConferenceSolutionKey = "eventHangout"
-	EventNamedHangout UpdateGoogleCalendarEventTaskParamsConferenceSolutionKey = "eventNamedHangout"
-	HangoutsMeet      UpdateGoogleCalendarEventTaskParamsConferenceSolutionKey = "hangoutsMeet"
+	UpdateGoogleCalendarEventTaskParamsConferenceSolutionKeyAddOn             UpdateGoogleCalendarEventTaskParamsConferenceSolutionKey = "addOn"
+	UpdateGoogleCalendarEventTaskParamsConferenceSolutionKeyEventHangout      UpdateGoogleCalendarEventTaskParamsConferenceSolutionKey = "eventHangout"
+	UpdateGoogleCalendarEventTaskParamsConferenceSolutionKeyEventNamedHangout UpdateGoogleCalendarEventTaskParamsConferenceSolutionKey = "eventNamedHangout"
+	UpdateGoogleCalendarEventTaskParamsConferenceSolutionKeyHangoutsMeet      UpdateGoogleCalendarEventTaskParamsConferenceSolutionKey = "hangoutsMeet"
 )
 
 // Defines values for UpdateGoogleCalendarEventTaskParamsTaskType.
@@ -8949,7 +8949,7 @@ const (
 
 // Defines values for UpdateGoogleDocsPageTaskParamsTaskType.
 const (
-	UpdateGoogleDocsPage UpdateGoogleDocsPageTaskParamsTaskType = "update_google_docs_page"
+	UpdateGoogleDocsPageTaskParamsTaskTypeUpdateGoogleDocsPage UpdateGoogleDocsPageTaskParamsTaskType = "update_google_docs_page"
 )
 
 // Defines values for UpdateHeartbeatDataAttributesIntervalUnit.
@@ -9007,8 +9007,8 @@ const (
 
 // Defines values for UpdateIncidentActionItemDataAttributesKind.
 const (
-	FollowUp UpdateIncidentActionItemDataAttributesKind = "follow_up"
-	Task     UpdateIncidentActionItemDataAttributesKind = "task"
+	UpdateIncidentActionItemDataAttributesKindFollowUp UpdateIncidentActionItemDataAttributesKind = "follow_up"
+	UpdateIncidentActionItemDataAttributesKindTask     UpdateIncidentActionItemDataAttributesKind = "task"
 )
 
 // Defines values for UpdateIncidentActionItemDataAttributesPriority.
@@ -9028,7 +9028,7 @@ const (
 
 // Defines values for UpdateIncidentActionItemDataType.
 const (
-	IncidentActionItems UpdateIncidentActionItemDataType = "incident_action_items"
+	UpdateIncidentActionItemDataTypeIncidentActionItems UpdateIncidentActionItemDataType = "incident_action_items"
 )
 
 // Defines values for UpdateIncidentCustomFieldSelectionDataType.
@@ -9038,8 +9038,8 @@ const (
 
 // Defines values for UpdateIncidentEventDataAttributesVisibility.
 const (
-	External UpdateIncidentEventDataAttributesVisibility = "external"
-	Internal UpdateIncidentEventDataAttributesVisibility = "internal"
+	UpdateIncidentEventDataAttributesVisibilityExternal UpdateIncidentEventDataAttributesVisibility = "external"
+	UpdateIncidentEventDataAttributesVisibilityInternal UpdateIncidentEventDataAttributesVisibility = "internal"
 )
 
 // Defines values for UpdateIncidentEventDataType.
@@ -9073,11 +9073,11 @@ const (
 
 // Defines values for UpdateIncidentFeedbackDataAttributesRating.
 const (
-	N0 UpdateIncidentFeedbackDataAttributesRating = 0
-	N1 UpdateIncidentFeedbackDataAttributesRating = 1
-	N2 UpdateIncidentFeedbackDataAttributesRating = 2
-	N3 UpdateIncidentFeedbackDataAttributesRating = 3
-	N4 UpdateIncidentFeedbackDataAttributesRating = 4
+	UpdateIncidentFeedbackDataAttributesRatingN0 UpdateIncidentFeedbackDataAttributesRating = 0
+	UpdateIncidentFeedbackDataAttributesRatingN1 UpdateIncidentFeedbackDataAttributesRating = 1
+	UpdateIncidentFeedbackDataAttributesRatingN2 UpdateIncidentFeedbackDataAttributesRating = 2
+	UpdateIncidentFeedbackDataAttributesRatingN3 UpdateIncidentFeedbackDataAttributesRating = 3
+	UpdateIncidentFeedbackDataAttributesRatingN4 UpdateIncidentFeedbackDataAttributesRating = 4
 )
 
 // Defines values for UpdateIncidentFeedbackDataType.
@@ -9147,18 +9147,18 @@ const (
 
 // Defines values for UpdateIncidentPostMortemDataAttributesStatus.
 const (
-	Draft     UpdateIncidentPostMortemDataAttributesStatus = "draft"
-	Published UpdateIncidentPostMortemDataAttributesStatus = "published"
+	UpdateIncidentPostMortemDataAttributesStatusDraft     UpdateIncidentPostMortemDataAttributesStatus = "draft"
+	UpdateIncidentPostMortemDataAttributesStatusPublished UpdateIncidentPostMortemDataAttributesStatus = "published"
 )
 
 // Defines values for UpdateIncidentPostMortemDataType.
 const (
-	IncidentPostMortems UpdateIncidentPostMortemDataType = "incident_post_mortems"
+	UpdateIncidentPostMortemDataTypeIncidentPostMortems UpdateIncidentPostMortemDataType = "incident_post_mortems"
 )
 
 // Defines values for UpdateIncidentPostmortemTaskParamsTaskType.
 const (
-	UpdateIncidentPostmortem UpdateIncidentPostmortemTaskParamsTaskType = "update_incident_postmortem"
+	UpdateIncidentPostmortemTaskParamsTaskTypeUpdateIncidentPostmortem UpdateIncidentPostmortemTaskParamsTaskType = "update_incident_postmortem"
 )
 
 // Defines values for UpdateIncidentRetrospectiveStepDataAttributesStatus.
@@ -9253,12 +9253,12 @@ const (
 
 // Defines values for UpdateJiraIssueTaskParamsTaskType.
 const (
-	UpdateJiraIssue UpdateJiraIssueTaskParamsTaskType = "update_jira_issue"
+	UpdateJiraIssueTaskParamsTaskTypeUpdateJiraIssue UpdateJiraIssueTaskParamsTaskType = "update_jira_issue"
 )
 
 // Defines values for UpdateLinearIssueTaskParamsTaskType.
 const (
-	UpdateLinearIssue UpdateLinearIssueTaskParamsTaskType = "update_linear_issue"
+	UpdateLinearIssueTaskParamsTaskTypeUpdateLinearIssue UpdateLinearIssueTaskParamsTaskType = "update_linear_issue"
 )
 
 // Defines values for UpdateLiveCallRouterDataAttributesCountryCode.
@@ -9281,8 +9281,8 @@ const (
 
 // Defines values for UpdateLiveCallRouterDataAttributesKind.
 const (
-	Live      UpdateLiveCallRouterDataAttributesKind = "live"
-	Voicemail UpdateLiveCallRouterDataAttributesKind = "voicemail"
+	UpdateLiveCallRouterDataAttributesKindLive      UpdateLiveCallRouterDataAttributesKind = "live"
+	UpdateLiveCallRouterDataAttributesKindVoicemail UpdateLiveCallRouterDataAttributesKind = "voicemail"
 )
 
 // Defines values for UpdateLiveCallRouterDataAttributesPagingTargetsType.
@@ -9301,13 +9301,13 @@ const (
 
 // Defines values for UpdateLiveCallRouterDataAttributesWaitingMusicUrl.
 const (
-	HttpsstorageRootlyComtwiliovoicemailBusyStringsMp3                          UpdateLiveCallRouterDataAttributesWaitingMusicUrl = "https://storage.rootly.com/twilio/voicemail/BusyStrings.mp3"
-	HttpsstorageRootlyComtwiliovoicemailClockworkWaltzMp3                       UpdateLiveCallRouterDataAttributesWaitingMusicUrl = "https://storage.rootly.com/twilio/voicemail/ClockworkWaltz.mp3"
-	HttpsstorageRootlyComtwiliovoicemailMARKOVICHAMPBorghestralMp3              UpdateLiveCallRouterDataAttributesWaitingMusicUrl = "https://storage.rootly.com/twilio/voicemail/MARKOVICHAMP-Borghestral.mp3"
-	HttpsstorageRootlyComtwiliovoicemailMellotroniacFlightOfYoungHeartsFluteMp3 UpdateLiveCallRouterDataAttributesWaitingMusicUrl = "https://storage.rootly.com/twilio/voicemail/Mellotroniac_-_Flight_Of_Young_Hearts_Flute.mp3"
-	HttpsstorageRootlyComtwiliovoicemailithBrahms1164Mp3                        UpdateLiveCallRouterDataAttributesWaitingMusicUrl = "https://storage.rootly.com/twilio/voicemail/ith_brahms-116-4.mp3"
-	HttpsstorageRootlyComtwiliovoicemailithChopin152Mp3                         UpdateLiveCallRouterDataAttributesWaitingMusicUrl = "https://storage.rootly.com/twilio/voicemail/ith_chopin-15-2.mp3"
-	HttpsstorageRootlyComtwiliovoicemailoldDogEndlessGoodbye28instr29Mp3        UpdateLiveCallRouterDataAttributesWaitingMusicUrl = "https://storage.rootly.com/twilio/voicemail/oldDog_-_endless_goodbye_%28instr.%29.mp3"
+	UpdateLiveCallRouterDataAttributesWaitingMusicUrlHttpsstorageRootlyComtwiliovoicemailBusyStringsMp3                          UpdateLiveCallRouterDataAttributesWaitingMusicUrl = "https://storage.rootly.com/twilio/voicemail/BusyStrings.mp3"
+	UpdateLiveCallRouterDataAttributesWaitingMusicUrlHttpsstorageRootlyComtwiliovoicemailClockworkWaltzMp3                       UpdateLiveCallRouterDataAttributesWaitingMusicUrl = "https://storage.rootly.com/twilio/voicemail/ClockworkWaltz.mp3"
+	UpdateLiveCallRouterDataAttributesWaitingMusicUrlHttpsstorageRootlyComtwiliovoicemailMARKOVICHAMPBorghestralMp3              UpdateLiveCallRouterDataAttributesWaitingMusicUrl = "https://storage.rootly.com/twilio/voicemail/MARKOVICHAMP-Borghestral.mp3"
+	UpdateLiveCallRouterDataAttributesWaitingMusicUrlHttpsstorageRootlyComtwiliovoicemailMellotroniacFlightOfYoungHeartsFluteMp3 UpdateLiveCallRouterDataAttributesWaitingMusicUrl = "https://storage.rootly.com/twilio/voicemail/Mellotroniac_-_Flight_Of_Young_Hearts_Flute.mp3"
+	UpdateLiveCallRouterDataAttributesWaitingMusicUrlHttpsstorageRootlyComtwiliovoicemailithBrahms1164Mp3                        UpdateLiveCallRouterDataAttributesWaitingMusicUrl = "https://storage.rootly.com/twilio/voicemail/ith_brahms-116-4.mp3"
+	UpdateLiveCallRouterDataAttributesWaitingMusicUrlHttpsstorageRootlyComtwiliovoicemailithChopin152Mp3                         UpdateLiveCallRouterDataAttributesWaitingMusicUrl = "https://storage.rootly.com/twilio/voicemail/ith_chopin-15-2.mp3"
+	UpdateLiveCallRouterDataAttributesWaitingMusicUrlHttpsstorageRootlyComtwiliovoicemailoldDogEndlessGoodbye28instr29Mp3        UpdateLiveCallRouterDataAttributesWaitingMusicUrl = "https://storage.rootly.com/twilio/voicemail/oldDog_-_endless_goodbye_%28instr.%29.mp3"
 )
 
 // Defines values for UpdateLiveCallRouterDataType.
@@ -9317,12 +9317,12 @@ const (
 
 // Defines values for UpdateMotionTaskTaskParamsTaskType.
 const (
-	UpdateMotionTask UpdateMotionTaskTaskParamsTaskType = "update_motion_task"
+	UpdateMotionTaskTaskParamsTaskTypeUpdateMotionTask UpdateMotionTaskTaskParamsTaskType = "update_motion_task"
 )
 
 // Defines values for UpdateNotionPageTaskParamsTaskType.
 const (
-	UpdateNotionPage UpdateNotionPageTaskParamsTaskType = "update_notion_page"
+	UpdateNotionPageTaskParamsTaskTypeUpdateNotionPage UpdateNotionPageTaskParamsTaskType = "update_notion_page"
 )
 
 // Defines values for UpdateOnCallRoleDataAttributesAlertFieldsPermissions.
@@ -9494,7 +9494,7 @@ const (
 
 // Defines values for UpdateOnCallRoleDataType.
 const (
-	OnCallRoles UpdateOnCallRoleDataType = "on_call_roles"
+	UpdateOnCallRoleDataTypeOnCallRoles UpdateOnCallRoleDataType = "on_call_roles"
 )
 
 // Defines values for UpdateOnCallShadowDataAttributesShadowableType.
@@ -9520,7 +9520,7 @@ const (
 
 // Defines values for UpdateOpsgenieAlertTaskParamsTaskType.
 const (
-	UpdateOpsgenieAlert UpdateOpsgenieAlertTaskParamsTaskType = "update_opsgenie_alert"
+	UpdateOpsgenieAlertTaskParamsTaskTypeUpdateOpsgenieAlert UpdateOpsgenieAlertTaskParamsTaskType = "update_opsgenie_alert"
 )
 
 // Defines values for UpdateOpsgenieIncidentTaskParamsPriority.
@@ -9543,12 +9543,12 @@ const (
 
 // Defines values for UpdateOpsgenieIncidentTaskParamsTaskType.
 const (
-	UpdateOpsgenieIncident UpdateOpsgenieIncidentTaskParamsTaskType = "update_opsgenie_incident"
+	UpdateOpsgenieIncidentTaskParamsTaskTypeUpdateOpsgenieIncident UpdateOpsgenieIncidentTaskParamsTaskType = "update_opsgenie_incident"
 )
 
 // Defines values for UpdateOverrideShiftDataType.
 const (
-	Shifts UpdateOverrideShiftDataType = "shifts"
+	UpdateOverrideShiftDataTypeShifts UpdateOverrideShiftDataType = "shifts"
 )
 
 // Defines values for UpdatePagerdutyIncidentTaskParamsStatus.
@@ -9560,7 +9560,7 @@ const (
 
 // Defines values for UpdatePagerdutyIncidentTaskParamsTaskType.
 const (
-	UpdatePagerdutyIncident UpdatePagerdutyIncidentTaskParamsTaskType = "update_pagerduty_incident"
+	UpdatePagerdutyIncidentTaskParamsTaskTypeUpdatePagerdutyIncident UpdatePagerdutyIncidentTaskParamsTaskType = "update_pagerduty_incident"
 )
 
 // Defines values for UpdatePagerdutyIncidentTaskParamsUrgency.
@@ -9581,7 +9581,7 @@ const (
 
 // Defines values for UpdatePagertreeAlertTaskParamsTaskType.
 const (
-	UpdatePagertreeAlert UpdatePagertreeAlertTaskParamsTaskType = "update_pagertree_alert"
+	UpdatePagertreeAlertTaskParamsTaskTypeUpdatePagertreeAlert UpdatePagertreeAlertTaskParamsTaskType = "update_pagertree_alert"
 )
 
 // Defines values for UpdatePagertreeAlertTaskParamsUrgency.
@@ -9605,8 +9605,8 @@ const (
 
 // Defines values for UpdatePostMortemTemplateDataAttributesFormat.
 const (
-	Html     UpdatePostMortemTemplateDataAttributesFormat = "html"
-	Markdown UpdatePostMortemTemplateDataAttributesFormat = "markdown"
+	UpdatePostMortemTemplateDataAttributesFormatHtml     UpdatePostMortemTemplateDataAttributesFormat = "html"
+	UpdatePostMortemTemplateDataAttributesFormatMarkdown UpdatePostMortemTemplateDataAttributesFormat = "markdown"
 )
 
 // Defines values for UpdatePostMortemTemplateDataType.
@@ -9621,12 +9621,12 @@ const (
 
 // Defines values for UpdateQuipPageTaskParamsTaskType.
 const (
-	UpdateQuipPage UpdateQuipPageTaskParamsTaskType = "update_quip_page"
+	UpdateQuipPageTaskParamsTaskTypeUpdateQuipPage UpdateQuipPageTaskParamsTaskType = "update_quip_page"
 )
 
 // Defines values for UpdateRetrospectiveConfigurationDataType.
 const (
-	RetrospectiveConfigurations UpdateRetrospectiveConfigurationDataType = "retrospective_configurations"
+	UpdateRetrospectiveConfigurationDataTypeRetrospectiveConfigurations UpdateRetrospectiveConfigurationDataType = "retrospective_configurations"
 )
 
 // Defines values for UpdateRetrospectiveProcessDataType.
@@ -9835,15 +9835,15 @@ const (
 
 // Defines values for UpdateRoleDataAttributesWorkflowsPermissions.
 const (
-	Create UpdateRoleDataAttributesWorkflowsPermissions = "create"
-	Delete UpdateRoleDataAttributesWorkflowsPermissions = "delete"
-	Read   UpdateRoleDataAttributesWorkflowsPermissions = "read"
-	Update UpdateRoleDataAttributesWorkflowsPermissions = "update"
+	UpdateRoleDataAttributesWorkflowsPermissionsCreate UpdateRoleDataAttributesWorkflowsPermissions = "create"
+	UpdateRoleDataAttributesWorkflowsPermissionsDelete UpdateRoleDataAttributesWorkflowsPermissions = "delete"
+	UpdateRoleDataAttributesWorkflowsPermissionsRead   UpdateRoleDataAttributesWorkflowsPermissions = "read"
+	UpdateRoleDataAttributesWorkflowsPermissionsUpdate UpdateRoleDataAttributesWorkflowsPermissions = "update"
 )
 
 // Defines values for UpdateRoleDataType.
 const (
-	Roles UpdateRoleDataType = "roles"
+	UpdateRoleDataTypeRoles UpdateRoleDataType = "roles"
 )
 
 // Defines values for UpdateScheduleDataType.
@@ -9881,8 +9881,8 @@ const (
 
 // Defines values for UpdateScheduleRotationDataAttributesScheduleRotationableAttributes2HandoffDay.
 const (
-	FirstDayOfMonth UpdateScheduleRotationDataAttributesScheduleRotationableAttributes2HandoffDay = "first_day_of_month"
-	LastDayOfMonth  UpdateScheduleRotationDataAttributesScheduleRotationableAttributes2HandoffDay = "last_day_of_month"
+	UpdateScheduleRotationDataAttributesScheduleRotationableAttributes2HandoffDayFirstDayOfMonth UpdateScheduleRotationDataAttributesScheduleRotationableAttributes2HandoffDay = "first_day_of_month"
+	UpdateScheduleRotationDataAttributesScheduleRotationableAttributes2HandoffDayLastDayOfMonth  UpdateScheduleRotationDataAttributesScheduleRotationableAttributes2HandoffDay = "last_day_of_month"
 )
 
 // Defines values for UpdateScheduleRotationDataAttributesScheduleRotationableAttributes3ShiftLengthUnit.
@@ -9894,11 +9894,11 @@ const (
 
 // Defines values for UpdateScheduleRotationDataAttributesScheduleRotationableType.
 const (
-	ScheduleBiweeklyRotation UpdateScheduleRotationDataAttributesScheduleRotationableType = "ScheduleBiweeklyRotation"
-	ScheduleCustomRotation   UpdateScheduleRotationDataAttributesScheduleRotationableType = "ScheduleCustomRotation"
-	ScheduleDailyRotation    UpdateScheduleRotationDataAttributesScheduleRotationableType = "ScheduleDailyRotation"
-	ScheduleMonthlyRotation  UpdateScheduleRotationDataAttributesScheduleRotationableType = "ScheduleMonthlyRotation"
-	ScheduleWeeklyRotation   UpdateScheduleRotationDataAttributesScheduleRotationableType = "ScheduleWeeklyRotation"
+	UpdateScheduleRotationDataAttributesScheduleRotationableTypeScheduleBiweeklyRotation UpdateScheduleRotationDataAttributesScheduleRotationableType = "ScheduleBiweeklyRotation"
+	UpdateScheduleRotationDataAttributesScheduleRotationableTypeScheduleCustomRotation   UpdateScheduleRotationDataAttributesScheduleRotationableType = "ScheduleCustomRotation"
+	UpdateScheduleRotationDataAttributesScheduleRotationableTypeScheduleDailyRotation    UpdateScheduleRotationDataAttributesScheduleRotationableType = "ScheduleDailyRotation"
+	UpdateScheduleRotationDataAttributesScheduleRotationableTypeScheduleMonthlyRotation  UpdateScheduleRotationDataAttributesScheduleRotationableType = "ScheduleMonthlyRotation"
+	UpdateScheduleRotationDataAttributesScheduleRotationableTypeScheduleWeeklyRotation   UpdateScheduleRotationDataAttributesScheduleRotationableType = "ScheduleWeeklyRotation"
 )
 
 // Defines values for UpdateScheduleRotationDataType.
@@ -9939,15 +9939,15 @@ const (
 
 // Defines values for UpdateServiceNowIncidentTaskParamsTaskType.
 const (
-	UpdateServiceNowIncident UpdateServiceNowIncidentTaskParamsTaskType = "update_service_now_incident"
+	UpdateServiceNowIncidentTaskParamsTaskTypeUpdateServiceNowIncident UpdateServiceNowIncidentTaskParamsTaskType = "update_service_now_incident"
 )
 
 // Defines values for UpdateSeverityDataAttributesSeverity.
 const (
-	Critical UpdateSeverityDataAttributesSeverity = "critical"
-	High     UpdateSeverityDataAttributesSeverity = "high"
-	Low      UpdateSeverityDataAttributesSeverity = "low"
-	Medium   UpdateSeverityDataAttributesSeverity = "medium"
+	UpdateSeverityDataAttributesSeverityCritical UpdateSeverityDataAttributesSeverity = "critical"
+	UpdateSeverityDataAttributesSeverityHigh     UpdateSeverityDataAttributesSeverity = "high"
+	UpdateSeverityDataAttributesSeverityLow      UpdateSeverityDataAttributesSeverity = "low"
+	UpdateSeverityDataAttributesSeverityMedium   UpdateSeverityDataAttributesSeverity = "medium"
 )
 
 // Defines values for UpdateSeverityDataType.
@@ -9957,44 +9957,44 @@ const (
 
 // Defines values for UpdateSharepointPageTaskParamsTaskType.
 const (
-	UpdateSharepointPage UpdateSharepointPageTaskParamsTaskType = "update_sharepoint_page"
+	UpdateSharepointPageTaskParamsTaskTypeUpdateSharepointPage UpdateSharepointPageTaskParamsTaskType = "update_sharepoint_page"
 )
 
 // Defines values for UpdateShortcutStoryTaskParamsTaskType.
 const (
-	UpdateShortcutStory UpdateShortcutStoryTaskParamsTaskType = "update_shortcut_story"
+	UpdateShortcutStoryTaskParamsTaskTypeUpdateShortcutStory UpdateShortcutStoryTaskParamsTaskType = "update_shortcut_story"
 )
 
 // Defines values for UpdateShortcutTaskTaskParamsTaskType.
 const (
-	UpdateShortcutTask UpdateShortcutTaskTaskParamsTaskType = "update_shortcut_task"
+	UpdateShortcutTaskTaskParamsTaskTypeUpdateShortcutTask UpdateShortcutTaskTaskParamsTaskType = "update_shortcut_task"
 )
 
 // Defines values for UpdateSlackChannelTopicTaskParamsTaskType.
 const (
-	UpdateSlackChannelTopic UpdateSlackChannelTopicTaskParamsTaskType = "update_slack_channel_topic"
+	UpdateSlackChannelTopicTaskParamsTaskTypeUpdateSlackChannelTopic UpdateSlackChannelTopicTaskParamsTaskType = "update_slack_channel_topic"
 )
 
 // Defines values for UpdateStatusPageDataAttributesAuthenticationMethod.
 const (
-	None     UpdateStatusPageDataAttributesAuthenticationMethod = "none"
-	Password UpdateStatusPageDataAttributesAuthenticationMethod = "password"
-	Saml     UpdateStatusPageDataAttributesAuthenticationMethod = "saml"
+	UpdateStatusPageDataAttributesAuthenticationMethodNone     UpdateStatusPageDataAttributesAuthenticationMethod = "none"
+	UpdateStatusPageDataAttributesAuthenticationMethodPassword UpdateStatusPageDataAttributesAuthenticationMethod = "password"
+	UpdateStatusPageDataAttributesAuthenticationMethodSaml     UpdateStatusPageDataAttributesAuthenticationMethod = "saml"
 )
 
 // Defines values for UpdateStatusPageDataAttributesSamlNameIdentifierFormat.
 const (
-	UrnOasisNamesTcSAML11NameidFormatEmailAddress UpdateStatusPageDataAttributesSamlNameIdentifierFormat = "urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress"
-	UrnOasisNamesTcSAML11NameidFormatUnspecified  UpdateStatusPageDataAttributesSamlNameIdentifierFormat = "urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified"
-	UrnOasisNamesTcSAML20NameidFormatPersistent   UpdateStatusPageDataAttributesSamlNameIdentifierFormat = "urn:oasis:names:tc:SAML:2.0:nameid-format:persistent"
-	UrnOasisNamesTcSAML20NameidFormatTransient    UpdateStatusPageDataAttributesSamlNameIdentifierFormat = "urn:oasis:names:tc:SAML:2.0:nameid-format:transient"
+	UpdateStatusPageDataAttributesSamlNameIdentifierFormatUrnOasisNamesTcSAML11NameidFormatEmailAddress UpdateStatusPageDataAttributesSamlNameIdentifierFormat = "urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress"
+	UpdateStatusPageDataAttributesSamlNameIdentifierFormatUrnOasisNamesTcSAML11NameidFormatUnspecified  UpdateStatusPageDataAttributesSamlNameIdentifierFormat = "urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified"
+	UpdateStatusPageDataAttributesSamlNameIdentifierFormatUrnOasisNamesTcSAML20NameidFormatPersistent   UpdateStatusPageDataAttributesSamlNameIdentifierFormat = "urn:oasis:names:tc:SAML:2.0:nameid-format:persistent"
+	UpdateStatusPageDataAttributesSamlNameIdentifierFormatUrnOasisNamesTcSAML20NameidFormatTransient    UpdateStatusPageDataAttributesSamlNameIdentifierFormat = "urn:oasis:names:tc:SAML:2.0:nameid-format:transient"
 )
 
 // Defines values for UpdateStatusPageDataAttributesShowUptimeLastDays.
 const (
-	N30 UpdateStatusPageDataAttributesShowUptimeLastDays = 30
-	N60 UpdateStatusPageDataAttributesShowUptimeLastDays = 60
-	N90 UpdateStatusPageDataAttributesShowUptimeLastDays = 90
+	UpdateStatusPageDataAttributesShowUptimeLastDaysN30 UpdateStatusPageDataAttributesShowUptimeLastDays = 30
+	UpdateStatusPageDataAttributesShowUptimeLastDaysN60 UpdateStatusPageDataAttributesShowUptimeLastDays = 60
+	UpdateStatusPageDataAttributesShowUptimeLastDaysN90 UpdateStatusPageDataAttributesShowUptimeLastDays = 90
 )
 
 // Defines values for UpdateStatusPageDataType.
@@ -10051,7 +10051,7 @@ const (
 
 // Defines values for UpdateTrelloCardTaskParamsTaskType.
 const (
-	UpdateTrelloCard UpdateTrelloCardTaskParamsTaskType = "update_trello_card"
+	UpdateTrelloCardTaskParamsTaskTypeUpdateTrelloCard UpdateTrelloCardTaskParamsTaskType = "update_trello_card"
 )
 
 // Defines values for UpdateUserDataType.
@@ -10086,14 +10086,14 @@ const (
 
 // Defines values for UpdateVictorOpsIncidentTaskParamsStatus.
 const (
-	Ack     UpdateVictorOpsIncidentTaskParamsStatus = "ack"
-	Auto    UpdateVictorOpsIncidentTaskParamsStatus = "auto"
-	Resolve UpdateVictorOpsIncidentTaskParamsStatus = "resolve"
+	UpdateVictorOpsIncidentTaskParamsStatusAck     UpdateVictorOpsIncidentTaskParamsStatus = "ack"
+	UpdateVictorOpsIncidentTaskParamsStatusAuto    UpdateVictorOpsIncidentTaskParamsStatus = "auto"
+	UpdateVictorOpsIncidentTaskParamsStatusResolve UpdateVictorOpsIncidentTaskParamsStatus = "resolve"
 )
 
 // Defines values for UpdateVictorOpsIncidentTaskParamsTaskType.
 const (
-	UpdateVictorOpsIncident UpdateVictorOpsIncidentTaskParamsTaskType = "update_victor_ops_incident"
+	UpdateVictorOpsIncidentTaskParamsTaskTypeUpdateVictorOpsIncident UpdateVictorOpsIncidentTaskParamsTaskType = "update_victor_ops_incident"
 )
 
 // Defines values for UpdateWebhooksEndpointDataAttributesEventTypes.
@@ -10197,7 +10197,7 @@ const (
 
 // Defines values for UpdateZendeskTicketTaskParamsTaskType.
 const (
-	UpdateZendeskTicket UpdateZendeskTicketTaskParamsTaskType = "update_zendesk_ticket"
+	UpdateZendeskTicketTaskParamsTaskTypeUpdateZendeskTicket UpdateZendeskTicketTaskParamsTaskType = "update_zendesk_ticket"
 )
 
 // Defines values for UserEmailAddressListDataType.
@@ -10227,8 +10227,8 @@ const (
 
 // Defines values for UserNotificationRuleNotificationType.
 const (
-	Audible UserNotificationRuleNotificationType = "audible"
-	Quiet   UserNotificationRuleNotificationType = "quiet"
+	UserNotificationRuleNotificationTypeAudible UserNotificationRuleNotificationType = "audible"
+	UserNotificationRuleNotificationTypeQuiet   UserNotificationRuleNotificationType = "quiet"
 )
 
 // Defines values for UserNotificationRuleListDataType.
@@ -10268,35 +10268,35 @@ const (
 
 // Defines values for WebhooksEndpointEventTypes.
 const (
-	AlertCreated                   WebhooksEndpointEventTypes = "alert.created"
-	GeniusWorkflowRunCanceled      WebhooksEndpointEventTypes = "genius_workflow_run.canceled"
-	GeniusWorkflowRunCompleted     WebhooksEndpointEventTypes = "genius_workflow_run.completed"
-	GeniusWorkflowRunFailed        WebhooksEndpointEventTypes = "genius_workflow_run.failed"
-	GeniusWorkflowRunQueued        WebhooksEndpointEventTypes = "genius_workflow_run.queued"
-	GeniusWorkflowRunStarted       WebhooksEndpointEventTypes = "genius_workflow_run.started"
-	IncidentCancelled              WebhooksEndpointEventTypes = "incident.cancelled"
-	IncidentCreated                WebhooksEndpointEventTypes = "incident.created"
-	IncidentDeleted                WebhooksEndpointEventTypes = "incident.deleted"
-	IncidentEventCreated           WebhooksEndpointEventTypes = "incident_event.created"
-	IncidentEventDeleted           WebhooksEndpointEventTypes = "incident_event.deleted"
-	IncidentEventUpdated           WebhooksEndpointEventTypes = "incident_event.updated"
-	IncidentInTriage               WebhooksEndpointEventTypes = "incident.in_triage"
-	IncidentMitigated              WebhooksEndpointEventTypes = "incident.mitigated"
-	IncidentPostMortemCreated      WebhooksEndpointEventTypes = "incident_post_mortem.created"
-	IncidentPostMortemDeleted      WebhooksEndpointEventTypes = "incident_post_mortem.deleted"
-	IncidentPostMortemPublished    WebhooksEndpointEventTypes = "incident_post_mortem.published"
-	IncidentPostMortemUpdated      WebhooksEndpointEventTypes = "incident_post_mortem.updated"
-	IncidentResolved               WebhooksEndpointEventTypes = "incident.resolved"
-	IncidentScheduledCompleted     WebhooksEndpointEventTypes = "incident.scheduled.completed"
-	IncidentScheduledCreated       WebhooksEndpointEventTypes = "incident.scheduled.created"
-	IncidentScheduledDeleted       WebhooksEndpointEventTypes = "incident.scheduled.deleted"
-	IncidentScheduledInProgress    WebhooksEndpointEventTypes = "incident.scheduled.in_progress"
-	IncidentScheduledUpdated       WebhooksEndpointEventTypes = "incident.scheduled.updated"
-	IncidentStatusPageEventCreated WebhooksEndpointEventTypes = "incident_status_page_event.created"
-	IncidentStatusPageEventDeleted WebhooksEndpointEventTypes = "incident_status_page_event.deleted"
-	IncidentStatusPageEventUpdated WebhooksEndpointEventTypes = "incident_status_page_event.updated"
-	IncidentUpdated                WebhooksEndpointEventTypes = "incident.updated"
-	PulseCreated                   WebhooksEndpointEventTypes = "pulse.created"
+	WebhooksEndpointEventTypesAlertCreated                   WebhooksEndpointEventTypes = "alert.created"
+	WebhooksEndpointEventTypesGeniusWorkflowRunCanceled      WebhooksEndpointEventTypes = "genius_workflow_run.canceled"
+	WebhooksEndpointEventTypesGeniusWorkflowRunCompleted     WebhooksEndpointEventTypes = "genius_workflow_run.completed"
+	WebhooksEndpointEventTypesGeniusWorkflowRunFailed        WebhooksEndpointEventTypes = "genius_workflow_run.failed"
+	WebhooksEndpointEventTypesGeniusWorkflowRunQueued        WebhooksEndpointEventTypes = "genius_workflow_run.queued"
+	WebhooksEndpointEventTypesGeniusWorkflowRunStarted       WebhooksEndpointEventTypes = "genius_workflow_run.started"
+	WebhooksEndpointEventTypesIncidentCancelled              WebhooksEndpointEventTypes = "incident.cancelled"
+	WebhooksEndpointEventTypesIncidentCreated                WebhooksEndpointEventTypes = "incident.created"
+	WebhooksEndpointEventTypesIncidentDeleted                WebhooksEndpointEventTypes = "incident.deleted"
+	WebhooksEndpointEventTypesIncidentEventCreated           WebhooksEndpointEventTypes = "incident_event.created"
+	WebhooksEndpointEventTypesIncidentEventDeleted           WebhooksEndpointEventTypes = "incident_event.deleted"
+	WebhooksEndpointEventTypesIncidentEventUpdated           WebhooksEndpointEventTypes = "incident_event.updated"
+	WebhooksEndpointEventTypesIncidentInTriage               WebhooksEndpointEventTypes = "incident.in_triage"
+	WebhooksEndpointEventTypesIncidentMitigated              WebhooksEndpointEventTypes = "incident.mitigated"
+	WebhooksEndpointEventTypesIncidentPostMortemCreated      WebhooksEndpointEventTypes = "incident_post_mortem.created"
+	WebhooksEndpointEventTypesIncidentPostMortemDeleted      WebhooksEndpointEventTypes = "incident_post_mortem.deleted"
+	WebhooksEndpointEventTypesIncidentPostMortemPublished    WebhooksEndpointEventTypes = "incident_post_mortem.published"
+	WebhooksEndpointEventTypesIncidentPostMortemUpdated      WebhooksEndpointEventTypes = "incident_post_mortem.updated"
+	WebhooksEndpointEventTypesIncidentResolved               WebhooksEndpointEventTypes = "incident.resolved"
+	WebhooksEndpointEventTypesIncidentScheduledCompleted     WebhooksEndpointEventTypes = "incident.scheduled.completed"
+	WebhooksEndpointEventTypesIncidentScheduledCreated       WebhooksEndpointEventTypes = "incident.scheduled.created"
+	WebhooksEndpointEventTypesIncidentScheduledDeleted       WebhooksEndpointEventTypes = "incident.scheduled.deleted"
+	WebhooksEndpointEventTypesIncidentScheduledInProgress    WebhooksEndpointEventTypes = "incident.scheduled.in_progress"
+	WebhooksEndpointEventTypesIncidentScheduledUpdated       WebhooksEndpointEventTypes = "incident.scheduled.updated"
+	WebhooksEndpointEventTypesIncidentStatusPageEventCreated WebhooksEndpointEventTypes = "incident_status_page_event.created"
+	WebhooksEndpointEventTypesIncidentStatusPageEventDeleted WebhooksEndpointEventTypes = "incident_status_page_event.deleted"
+	WebhooksEndpointEventTypesIncidentStatusPageEventUpdated WebhooksEndpointEventTypes = "incident_status_page_event.updated"
+	WebhooksEndpointEventTypesIncidentUpdated                WebhooksEndpointEventTypes = "incident.updated"
+	WebhooksEndpointEventTypesPulseCreated                   WebhooksEndpointEventTypes = "pulse.created"
 )
 
 // Defines values for WebhooksEndpointListDataType.
@@ -10420,7 +10420,7 @@ const (
 
 // Defines values for WorkflowRunsListDataType.
 const (
-	WorkflowRuns WorkflowRunsListDataType = "workflow_runs"
+	WorkflowRunsListDataTypeWorkflowRuns WorkflowRunsListDataType = "workflow_runs"
 )
 
 // Defines values for WorkflowTaskListDataType.
@@ -10506,8 +10506,8 @@ const (
 
 // Defines values for ListCatalogsParamsInclude.
 const (
-	Entities ListCatalogsParamsInclude = "entities"
-	Fields   ListCatalogsParamsInclude = "fields"
+	ListCatalogsParamsIncludeEntities ListCatalogsParamsInclude = "entities"
+	ListCatalogsParamsIncludeFields   ListCatalogsParamsInclude = "fields"
 )
 
 // Defines values for ListCatalogsParamsSort.
@@ -10617,8 +10617,8 @@ const (
 
 // Defines values for PatchV1EdgeConnectorsEdgeConnectorIdActionsIdApplicationVndAPIPlusJSONBodyActionActionType.
 const (
-	Http   PatchV1EdgeConnectorsEdgeConnectorIdActionsIdApplicationVndAPIPlusJSONBodyActionActionType = "http"
-	Script PatchV1EdgeConnectorsEdgeConnectorIdActionsIdApplicationVndAPIPlusJSONBodyActionActionType = "script"
+	PatchV1EdgeConnectorsEdgeConnectorIdActionsIdApplicationVndAPIPlusJSONBodyActionActionTypeHttp   PatchV1EdgeConnectorsEdgeConnectorIdActionsIdApplicationVndAPIPlusJSONBodyActionActionType = "http"
+	PatchV1EdgeConnectorsEdgeConnectorIdActionsIdApplicationVndAPIPlusJSONBodyActionActionTypeScript PatchV1EdgeConnectorsEdgeConnectorIdActionsIdApplicationVndAPIPlusJSONBodyActionActionType = "script"
 )
 
 // Defines values for PatchV1EdgeConnectorsIdApplicationVndAPIPlusJSONBodyEdgeConnectorStatus.
@@ -10869,10 +10869,10 @@ const (
 
 // Defines values for GetRetrospectiveProcessParamsInclude.
 const (
-	Groups             GetRetrospectiveProcessParamsInclude = "groups"
-	IncidentTypes      GetRetrospectiveProcessParamsInclude = "incident_types"
-	RetrospectiveSteps GetRetrospectiveProcessParamsInclude = "retrospective_steps"
-	Severities         GetRetrospectiveProcessParamsInclude = "severities"
+	GetRetrospectiveProcessParamsIncludeGroups             GetRetrospectiveProcessParamsInclude = "groups"
+	GetRetrospectiveProcessParamsIncludeIncidentTypes      GetRetrospectiveProcessParamsInclude = "incident_types"
+	GetRetrospectiveProcessParamsIncludeRetrospectiveSteps GetRetrospectiveProcessParamsInclude = "retrospective_steps"
+	GetRetrospectiveProcessParamsIncludeSeverities         GetRetrospectiveProcessParamsInclude = "severities"
 )
 
 // Defines values for ListRetrospectiveProcessGroupsParamsInclude.
@@ -10934,7 +10934,7 @@ const (
 
 // Defines values for GetTeamParamsInclude.
 const (
-	Users GetTeamParamsInclude = "users"
+	GetTeamParamsIncludeUsers GetTeamParamsInclude = "users"
 )
 
 // Defines values for ListUsersParamsSort.
@@ -10997,7 +10997,7 @@ const (
 
 // Defines values for ListWorkflowRunsParamsInclude.
 const (
-	GeniusTaskRuns ListWorkflowRunsParamsInclude = "genius_task_runs"
+	ListWorkflowRunsParamsIncludeGeniusTaskRuns ListWorkflowRunsParamsInclude = "genius_task_runs"
 )
 
 // ActionItemTriggerParams defines model for action_item_trigger_params.
