@@ -4,6 +4,10 @@ info:
   title: Override upstream specification for better code generation
   version: 1.0.0
 actions:
+  - target: $.servers[0]
+    update:
+      description: Production
+
   - target: $.paths.*.parameters[?(@.name == "id")].schema.anyOf
     remove: true
 

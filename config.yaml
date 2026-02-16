@@ -5,6 +5,7 @@ generate:
   models: true
   client: true
   embedded-spec: true
+  server-urls: true
 output-options:
   # make sure that we generate /all/ types, regardless of whether they're used by our API Client or not
   skip-prune: true
