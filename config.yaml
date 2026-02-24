@@ -14,5 +14,7 @@ output-options:
     path: overlay.yaml
   prefer-skip-optional-pointer-on-container-types: true
   name-normalizer: ToCamelCaseWithInitialisms
+  additional-initialisms:
+    - IDs
 compatibility:
   always-prefix-enum-values: true
