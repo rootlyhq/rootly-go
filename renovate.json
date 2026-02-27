@@ -45,6 +45,21 @@
         ],
         "executionMode": "update"
       }
+    },
+    {
+      "description": "Run `go generate` after updating `oapi-codegen`",
+      "matchPackageNames": [
+        "github.com/oapi-codegen/oapi-codegen/v2"
+      ],
+      "postUpgradeTasks": {
+        "commands": [
+          "go generate ./..."
+        ],
+        "fileFilters": [
+          "**/*.gen.go"
+        ],
+        "executionMode": "update"
+      }
     }
   ],
   "postUpdateOptions": [
