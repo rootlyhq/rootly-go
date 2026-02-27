@@ -27,6 +27,24 @@
       ],
       "dependencyDashboardApproval": true,
       "groupName": "go-directive"
+    },
+    {
+      "description": "Run `go generate` after updating the OpenAPI spec",
+      "matchManagers": [
+        "vendir"
+      ],
+      "matchUpdateTypes": [
+        "lockFileMaintenance"
+      ],
+      "postUpgradeTasks": {
+        "commands": [
+          "go generate ./..."
+        ],
+        "fileFilters": [
+          "**/*.gen.go"
+        ],
+        "executionMode": "update"
+      }
     }
   ],
   "postUpdateOptions": [
@@ -45,5 +63,19 @@
       "depNameTemplate": "github.com/oapi-codegen/oapi-codegen/v2",
       "datasourceTemplate": "go"
     }
-  ]
+  ],
+  "vendir": {
+    "lockFileMaintenance": {
+      "enabled": true,
+      "branchTopic": "vendir-openapi-sync",
+      "commitMessageAction": "update vendored OpenAPI spec",
+      "schedule": [
+        "at any time"
+      ],
+      "prBodyDefinitions": {
+        "Update": "",
+        "Change": "Updated OpenAPI spec"
+      }
+    }
+  }
 }
