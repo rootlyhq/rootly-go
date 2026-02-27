@@ -1,0 +1,8 @@
+apiVersion: vendir.k14s.io/v1alpha1
+kind: Config
+directories:
+  - path: .vendored
+    contents:
+      - path: rootly-api
+        http:
+          url: https://rootly-heroku.s3.amazonaws.com/swagger/v1/swagger.json
