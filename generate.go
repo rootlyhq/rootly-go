@@ -1,2 +1,2 @@
-//go:generate go run -modfile=./tools/go.mod github.com/oapi-codegen/oapi-codegen/v2/cmd/oapi-codegen --config=config.yaml swagger.json
+//go:generate go run -modfile=./tools/go.mod github.com/oapi-codegen/oapi-codegen/v2/cmd/oapi-codegen --config=config.yaml .vendored/rootly-api/swagger.json
 package rootly
