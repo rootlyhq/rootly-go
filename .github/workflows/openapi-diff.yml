@@ -1,11 +1,6 @@
 name: OpenAPI Diff
 
 on:
-  push:
-    branches:
-      - master
-    paths:
-      - ".vendored/rootly-api/swagger.json"
   pull_request:
     branches:
       - master
@@ -37,8 +32,6 @@ jobs:
         run: |
           if [ "${{ github.event_name }}" = "pull_request" ]; then
             BASE_REF="$PR_BASE_SHA"
-          else
-            BASE_REF="HEAD~1"
           fi
           if git show "${BASE_REF}:.vendored/rootly-api/swagger.json" > /tmp/base-swagger.json 2>/dev/null; then
             echo "BASE_SPEC_EXISTS=true" >> "$GITHUB_ENV"
