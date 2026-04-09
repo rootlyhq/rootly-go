@@ -1,0 +1,60 @@
+name: OpenAPI Diff
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - ".vendored/rootly-api/swagger.json"
+  pull_request:
+    branches:
+      - master
+    paths:
+      - ".vendored/rootly-api/swagger.json"
+
+jobs:
+  diff:
+    name: OpenAPI Diff
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          fetch-depth: 2
+
+      - name: Install oasdiff
+        env:
+          OASDIFF_VERSION: 1.13.1 # renovate: datasource=github-releases depName=oasdiff/oasdiff
+        run: |
+          curl -fsSL -o /tmp/oasdiff.tar.gz \
+            "https://github.com/oasdiff/oasdiff/releases/download/v${OASDIFF_VERSION}/oasdiff_${OASDIFF_VERSION}_linux_amd64.tar.gz"
+          tar -xzf /tmp/oasdiff.tar.gz -C /usr/local/bin oasdiff
+
+      - name: Get base spec
+        env:
+          PR_BASE_SHA: "${{ github.event.pull_request.base.sha }}"
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            BASE_REF="$PR_BASE_SHA"
+          else
+            BASE_REF="HEAD~1"
+          fi
+          if git show "${BASE_REF}:.vendored/rootly-api/swagger.json" > /tmp/base-swagger.json 2>/dev/null; then
+            echo "BASE_SPEC_EXISTS=true" >> "$GITHUB_ENV"
+          else
+            echo "BASE_SPEC_EXISTS=false" >> "$GITHUB_ENV"
+          fi
+
+      - name: OpenAPI changelog
+        if: env.BASE_SPEC_EXISTS == 'true'
+        run: |
+          {
+            echo "## OpenAPI Changelog"
+            echo ""
+            oasdiff changelog --format markdown /tmp/base-swagger.json .vendored/rootly-api/swagger.json || true
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: OpenAPI breaking changes
+        if: env.BASE_SPEC_EXISTS == 'true'
+        run: oasdiff breaking /tmp/base-swagger.json .vendored/rootly-api/swagger.json --format githubactions
+        continue-on-error: true

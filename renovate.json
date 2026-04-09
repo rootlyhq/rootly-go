@@ -83,6 +83,16 @@
       ],
       "depNameTemplate": "github.com/oapi-codegen/oapi-codegen/v2",
       "datasourceTemplate": "go"
+    },
+    {
+      "customType": "regex",
+      "managerFilePatterns": [
+        "**/*.yml",
+        "**/*.yaml"
+      ],
+      "matchStrings": [
+        "\\S+: (?<currentValue>[^\\s#]+)\\s+# renovate: datasource=(?<datasource>[^\\s]+) depName=(?<depName>[^\\s]+)"
+      ]
     }
   ],
   "vendir": {
