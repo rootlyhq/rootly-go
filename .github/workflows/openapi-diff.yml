@@ -12,6 +12,8 @@ jobs:
   diff:
     name: OpenAPI Diff
     runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
     steps:
       - name: Checkout Repository
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
@@ -42,11 +44,48 @@ jobs:
       - name: OpenAPI changelog
         if: env.BASE_SPEC_EXISTS == 'true'
         run: |
+          CHANGELOG=$(oasdiff changelog --format markdown /tmp/base-swagger.json .vendored/rootly-api/swagger.json || true)
+          if [ -z "$CHANGELOG" ]; then
+            CHANGELOG="_No API changes detected._"
+          fi
           {
-            echo "## OpenAPI Changelog"
-            echo ""
-            oasdiff changelog --format markdown /tmp/base-swagger.json .vendored/rootly-api/swagger.json || true
+            echo "$CHANGELOG"
           } >> "$GITHUB_STEP_SUMMARY"
+          echo "$CHANGELOG" > /tmp/changelog.md
+
+      - name: Comment changelog on PR
+        if: env.BASE_SPEC_EXISTS == 'true'
+        uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea # v7.0.1
+        with:
+          script: |
+            const fs = require('fs');
+            const changelog = fs.readFileSync('/tmp/changelog.md', 'utf8').trim();
+            const marker = '<!-- openapi-changelog -->';
+            const body = `${marker}\n${changelog}`;
+
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+            });
+
+            const existing = comments.find(c => c.body.includes(marker));
+
+            if (existing) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: existing.id,
+                body,
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                body,
+              });
+            }
 
       - name: OpenAPI breaking changes
         if: env.BASE_SPEC_EXISTS == 'true'
