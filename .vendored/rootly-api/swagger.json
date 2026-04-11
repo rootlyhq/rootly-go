@@ -37380,6 +37380,7 @@
             "type": "string",
             "description": "Describes the object in which the action was taken on",
             "enum": [
+              "Alerts::Source",
               "ApiKey",
               "Catalog",
               "CatalogEntity",
@@ -42568,7 +42569,8 @@
                                       "type": "string",
                                       "enum": [
                                         "custom_field",
-                                        "incident_role"
+                                        "incident_role",
+                                        "alert_field"
                                       ]
                                     },
                                     "value": {
@@ -42800,7 +42802,8 @@
                                       "type": "string",
                                       "enum": [
                                         "custom_field",
-                                        "incident_role"
+                                        "incident_role",
+                                        "alert_field"
                                       ]
                                     },
                                     "value": {
@@ -43017,7 +43020,8 @@
                               "type": "string",
                               "enum": [
                                 "custom_field",
-                                "incident_role"
+                                "incident_role",
+                                "alert_field"
                               ]
                             },
                             "value": {
@@ -63935,6 +63939,28 @@
             "type": "array",
             "items": {
               "type": "string"
+            }
+          },
+          "alert_condition_urgency": {
+            "type": "string",
+            "enum": [
+              "IS",
+              "IS NOT",
+              "ANY",
+              "CONTAINS",
+              "CONTAINS_ALL",
+              "CONTAINS_NONE",
+              "NONE",
+              "SET",
+              "UNSET"
+            ],
+            "default": "ANY"
+          },
+          "alert_urgency_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid"
             }
           },
           "alert_condition_payload": {
