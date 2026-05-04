@@ -1,6 +1,6 @@
 module github.com/rootlyhq/rootly-go
 
-go 1.24.0
+go 1.24.3
 
 require (
 	github.com/getkin/kin-openapi v0.135.0
