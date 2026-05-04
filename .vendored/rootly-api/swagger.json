@@ -2427,6 +2427,15 @@
             }
           },
           {
+            "name": "page[after]",
+            "in": "query",
+            "required": false,
+            "description": "The cursor to fetch results using cursor pagination. A cursor is provided in meta.next_cursor in the response.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "page[number]",
             "in": "query",
             "required": false,
@@ -2687,6 +2696,161 @@
             "application/vnd.api+json": {
               "schema": {
                 "$ref": "#/components/schemas/resolve_alert"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/alerts/{id}/snooze": {
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "post": {
+        "summary": "Snoozes an alert",
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "tags": [
+          "Alerts"
+        ],
+        "description": "Snoozes a specific alert by id, extending the acknowledgment timeout",
+        "operationId": "snoozeAlert",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "alert snoozed",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/alert_response"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "resource not found",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors_list"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "invalid delay_minutes",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors_list"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "snooze service failure",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors_list"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/vnd.api+json": {
+              "schema": {
+                "$ref": "#/components/schemas/snooze_alert"
+              }
+            }
+          },
+          "required": true
+        }
+      }
+    },
+    "/v1/alerts/{id}/escalate": {
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "post": {
+        "summary": "Escalates an alert",
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "tags": [
+          "Alerts"
+        ],
+        "description": "Escalates a specific alert to the next or specified level in its escalation policy",
+        "operationId": "escalateAlert",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "alert escalated with default next level",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/alert_response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "cannot escalate resolved alert",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors_list"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "no level available from request or metadata",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors_list"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "cannot escalate grouped member alert",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors_list"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/vnd.api+json": {
+              "schema": {
+                "$ref": "#/components/schemas/escalate_alert"
               }
             }
           }
@@ -3819,16 +3983,6 @@
                 }
               }
             }
-          },
-          "404": {
-            "description": "returns 404 when feature flag is disabled",
-            "content": {
-              "application/vnd.api+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/errors_list"
-                }
-              }
-            }
           }
         }
       }
@@ -4174,6 +4328,14 @@
             }
           },
           {
+            "name": "filter[backstage_id]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "filter[created_at][gt]",
             "in": "query",
             "required": false,
@@ -4476,16 +4638,6 @@
               "application/vnd.api+json": {
                 "schema": {
                   "$ref": "#/components/schemas/catalog_entity_checklist_list"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "returns 404 when feature flag is disabled",
-            "content": {
-              "application/vnd.api+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/errors_list"
                 }
               }
             }
@@ -11645,7 +11797,7 @@
         "parameters": [],
         "responses": {
           "201": {
-            "description": "form_field created ignoring auto_set_by_catalog_property_id when flipper is disabled",
+            "description": "form_field created with auto_set_by_catalog_property_id",
             "content": {
               "application/vnd.api+json": {
                 "schema": {
@@ -13714,7 +13866,7 @@
         "parameters": [],
         "responses": {
           "201": {
-            "description": "workflow_form_field_condition created without environment ids when catalog_v1 disabled",
+            "description": "workflow_form_field_condition created with environment ids for non-environment form field",
             "content": {
               "application/vnd.api+json": {
                 "schema": {
@@ -13822,7 +13974,7 @@
         "operationId": "getWorkflowFormFieldCondition",
         "responses": {
           "200": {
-            "description": "excludes native field ids when catalog_v1 disabled",
+            "description": "includes native field ids",
             "content": {
               "application/vnd.api+json": {
                 "schema": {
@@ -14643,7 +14795,7 @@
         "parameters": [],
         "responses": {
           "200": {
-            "description": "can set and clear alert workflow status conditions",
+            "description": "preserves repeat_condition_* fields when omitted from PATCH payload",
             "content": {
               "application/vnd.api+json": {
                 "schema": {
@@ -21658,7 +21810,7 @@
         "parameters": [],
         "responses": {
           "201": {
-            "description": "live_call_router created with multiple notification targets",
+            "description": "live_call_router created with multiple targets without calling_tree_enabled (backward compat)",
             "content": {
               "application/vnd.api+json": {
                 "schema": {
@@ -21841,6 +21993,7 @@
                 "DE",
                 "NL",
                 "NZ",
+                "SE",
                 "GB",
                 "US"
               ]
@@ -22001,6 +22154,348 @@
                 }
               }
             }
+          }
+        }
+      }
+    },
+    "/v1/incidents/{incident_id}/meeting_recordings": {
+      "get": {
+        "summary": "List meeting recordings",
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "tags": [
+          "Meeting Recordings"
+        ],
+        "description": "List all meeting recording sessions for an incident. Returns recordings sorted by session number. Each recording represents one bot session with its own transcript, status, and metadata.",
+        "operationId": "listMeetingRecordings",
+        "parameters": [
+          {
+            "name": "incident_id",
+            "in": "path",
+            "description": "Incident UUID",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page[number]",
+            "in": "query",
+            "description": "Page number",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "page[size]",
+            "in": "query",
+            "description": "Number of recordings per page",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "meeting recordings listed",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/meeting_recording_list"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "incident not found"
+          }
+        }
+      },
+      "post": {
+        "summary": "Create meeting recording",
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "tags": [
+          "Meeting Recordings"
+        ],
+        "description": "Invite a recording bot to the incident's meeting. If no previous recordings exist for the platform, a new bot is invited (session 1). If previous sessions exist, a new session is created (re-invite). The bot joins the meeting, records audio/video, and generates a transcript when the session ends.",
+        "operationId": "createMeetingRecording",
+        "parameters": [
+          {
+            "name": "incident_id",
+            "in": "path",
+            "description": "Incident UUID",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "platform",
+            "in": "query",
+            "description": "Meeting platform",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "zoom",
+                "google_meet",
+                "microsoft_teams",
+                "webex"
+              ]
+            },
+            "required": false
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "recording session created"
+          },
+          "422": {
+            "description": "validation error (e.g. bot already active)"
+          }
+        }
+      }
+    },
+    "/v1/meeting_recordings/{id}": {
+      "get": {
+        "summary": "Get a meeting recording",
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "tags": [
+          "Meeting Recordings"
+        ],
+        "description": "Retrieve a single meeting recording session including its status, duration, speaker count, word count, and transcript summary.",
+        "operationId": "getMeetingRecording",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Meeting Recording UUID",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "meeting recording found"
+          },
+          "404": {
+            "description": "meeting recording not found"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete a meeting recording",
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "tags": [
+          "Meeting Recordings"
+        ],
+        "description": "Delete a meeting recording. Only completed or failed recordings can be deleted. Active recordings (pending, recording, paused) must be stopped first.",
+        "operationId": "deleteMeetingRecording",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Meeting Recording UUID",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "meeting recording deleted"
+          },
+          "422": {
+            "description": "cannot delete active recording"
+          }
+        }
+      }
+    },
+    "/v1/meeting_recordings/{id}/delete_video": {
+      "delete": {
+        "summary": "Delete video from a meeting recording",
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "tags": [
+          "Meeting Recordings"
+        ],
+        "description": "Delete only the video file from a meeting recording. The transcript, summary, and all metadata are preserved. Only non-active recordings with an attached video can have their video deleted.",
+        "operationId": "deleteMeetingRecordingVideo",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Meeting Recording UUID",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "video deleted"
+          },
+          "422": {
+            "description": "cannot delete video (active recording or no video)"
+          }
+        }
+      }
+    },
+    "/v1/meeting_recordings/{id}/pause": {
+      "post": {
+        "summary": "Pause a meeting recording",
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "tags": [
+          "Meeting Recordings"
+        ],
+        "description": "Pause an active recording session. The bot remains in the meeting but stops capturing audio/video. Use the resume endpoint to continue recording.",
+        "operationId": "pauseMeetingRecording",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Meeting Recording UUID",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "recording paused"
+          },
+          "422": {
+            "description": "recording is not active"
+          }
+        }
+      }
+    },
+    "/v1/meeting_recordings/{id}/resume": {
+      "post": {
+        "summary": "Resume a meeting recording",
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "tags": [
+          "Meeting Recordings"
+        ],
+        "description": "Resume a paused recording session. The bot continues capturing audio/video from the meeting.",
+        "operationId": "resumeMeetingRecording",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Meeting Recording UUID",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "recording resumed"
+          },
+          "422": {
+            "description": "recording is not paused"
+          }
+        }
+      }
+    },
+    "/v1/meeting_recordings/{id}/stop": {
+      "post": {
+        "summary": "Stop a meeting recording",
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "tags": [
+          "Meeting Recordings"
+        ],
+        "description": "Stop an active or paused recording. The bot finishes processing, generates a transcript, and the session status transitions to completed. This is irreversible — to record again, create a new session.",
+        "operationId": "stopMeetingRecording",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Meeting Recording UUID",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "recording stopped"
+          },
+          "422": {
+            "description": "recording cannot be stopped"
+          }
+        }
+      }
+    },
+    "/v1/meeting_recordings/{id}/leave": {
+      "post": {
+        "summary": "Leave a meeting call",
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "tags": [
+          "Meeting Recordings"
+        ],
+        "description": "Remove the recording bot from the meeting entirely. Unlike stop, this immediately disconnects the bot. The session will transition to analyzing and then completed once transcript processing finishes.",
+        "operationId": "leaveMeetingRecording",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Meeting Recording UUID",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "bot left the call"
+          },
+          "422": {
+            "description": "bot is not in a call"
           }
         }
       }
@@ -22836,15 +23331,25 @@
         "tags": [
           "OverrideShifts"
         ],
-        "description": "Delete a specific on call shadow configuration by id",
+        "description": "Delete a specific on call shadow configuration by id. Future shadows are hard-deleted. Active shadows (started in the past) have their end time truncated to preserve historical data.",
         "operationId": "deleteOnCallShadow",
         "responses": {
           "200": {
-            "description": "override shift deleted",
+            "description": "active shadow is preserved with truncated end time",
             "content": {
               "application/vnd.api+json": {
                 "schema": {
                   "$ref": "#/components/schemas/on_call_shadow_response"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "shadow period already ended",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors_list"
                 }
               }
             }
@@ -22969,6 +23474,15 @@
               "type": "string"
             },
             "description": "Comma-separated group IDs (teams)",
+            "required": false
+          },
+          {
+            "name": "filter[notification_types]",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Comma-separated notification types to include. One or both of: audible, quiet. When present, oncalls are returned from every non-deferral escalation path whose notification_type is in the filter, sorted audible-first. When absent, only the default path's oncalls are returned (existing behavior).",
             "required": false
           }
         ],
@@ -28264,7 +28778,8 @@
               "enum": [
                 "shift_override",
                 "user",
-                "assignee"
+                "assignee",
+                "shift_shadow"
               ]
             },
             "required": false
@@ -29776,7 +30291,9 @@
             "schema": {
               "type": "string",
               "enum": [
-                "users"
+                "users",
+                "schedules",
+                "escalation_policies"
               ]
             },
             "required": false
@@ -29974,7 +30491,9 @@
             "schema": {
               "type": "string",
               "enum": [
-                "users"
+                "users",
+                "schedules",
+                "escalation_policies"
               ]
             },
             "required": false
@@ -32222,9 +32741,10 @@
                       "User",
                       "Group",
                       "EscalationPolicy",
-                      "Service"
+                      "Service",
+                      "Functionality"
                     ],
-                    "description": "Only available for organizations with Rootly On-Call enabled. Can be one of Group, Service, EscalationPolicy, User.",
+                    "description": "Only available for organizations with Rootly On-Call enabled. Can be one of Group, Service, EscalationPolicy, Functionality, User. Please contact support if you encounter issues using `Functionality` as a notification target type.",
                     "nullable": true
                   },
                   "notification_target_id": {
@@ -33009,6 +33529,71 @@
                     "type": "boolean",
                     "description": "Resolve all associated incidents",
                     "nullable": true
+                  }
+                },
+                "additionalProperties": false
+              }
+            }
+          }
+        }
+      },
+      "snooze_alert": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "alerts"
+                ]
+              },
+              "attributes": {
+                "type": "object",
+                "properties": {
+                  "delay_minutes": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 999,
+                    "description": "Number of minutes to snooze the alert for"
+                  }
+                },
+                "additionalProperties": false,
+                "required": [
+                  "delay_minutes"
+                ]
+              }
+            },
+            "required": [
+              "type",
+              "attributes"
+            ]
+          }
+        },
+        "required": [
+          "data"
+        ]
+      },
+      "escalate_alert": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "alerts"
+                ]
+              },
+              "attributes": {
+                "type": "object",
+                "properties": {
+                  "escalation_policy_level": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "description": "The escalation policy level to escalate to. If omitted, defaults to the next level from alert metadata."
                   }
                 },
                 "additionalProperties": false
@@ -36415,17 +37000,18 @@
                       "properties": {
                         "target_type": {
                           "type": "string",
-                          "description": "The type of the target.",
+                          "description": "The type of the target. Please contact support if you encounter issues using `Functionality` as a target type.",
                           "enum": [
                             "Group",
                             "Service",
-                            "EscalationPolicy"
+                            "EscalationPolicy",
+                            "Functionality"
                           ]
                         },
                         "target_id": {
                           "type": "string",
                           "format": "uuid",
-                          "description": "id for the Group, Service or EscalationPolicy"
+                          "description": "id for the Group, Service, EscalationPolicy or Functionality"
                         }
                       },
                       "required": [
@@ -36596,17 +37182,18 @@
                       "properties": {
                         "target_type": {
                           "type": "string",
-                          "description": "The type of the target.",
+                          "description": "The type of the target. Please contact support if you encounter issues using `Functionality` as a target type.",
                           "enum": [
                             "Group",
                             "Service",
-                            "EscalationPolicy"
+                            "EscalationPolicy",
+                            "Functionality"
                           ]
                         },
                         "target_id": {
                           "type": "string",
                           "format": "uuid",
-                          "description": "id for the Group, Service or EscalationPolicy"
+                          "description": "id for the Group, Service, EscalationPolicy or Functionality"
                         }
                       },
                       "required": [
@@ -36780,17 +37367,18 @@
               "properties": {
                 "target_type": {
                   "type": "string",
-                  "description": "The type of the target.",
+                  "description": "The type of the target. Please contact support if you encounter issues using `Functionality` as a target type.",
                   "enum": [
                     "Group",
                     "Service",
-                    "EscalationPolicy"
+                    "EscalationPolicy",
+                    "Functionality"
                   ]
                 },
                 "target_id": {
                   "type": "string",
                   "format": "uuid",
-                  "description": "id for the Group, Service or EscalationPolicy"
+                  "description": "id for the Group, Service, EscalationPolicy or Functionality"
                 }
               },
               "required": [
@@ -38693,6 +39281,11 @@
                     "description": "Default position of the item when displayed in a list.",
                     "nullable": true
                   },
+                  "backstage_id": {
+                    "type": "string",
+                    "description": "The Backstage entity ID this catalog entity is linked to.",
+                    "nullable": true
+                  },
                   "properties": {
                     "type": "array",
                     "description": "Array of property values for this catalog entity",
@@ -38758,6 +39351,11 @@
                     "description": "Default position of the item when displayed in a list.",
                     "nullable": true
                   },
+                  "backstage_id": {
+                    "type": "string",
+                    "description": "The Backstage entity ID this catalog entity is linked to.",
+                    "nullable": true
+                  },
                   "properties": {
                     "type": "array",
                     "description": "Array of property values for this catalog entity",
@@ -38806,6 +39404,11 @@
           "position": {
             "type": "integer",
             "description": "Default position of the item when displayed in a list.",
+            "nullable": true
+          },
+          "backstage_id": {
+            "type": "string",
+            "description": "The Backstage entity ID this catalog entity is linked to.",
             "nullable": true
           },
           "created_at": {
@@ -44573,10 +45176,6 @@
                           "Atlantic/Azores",
                           "Cape Verde Is.",
                           "Atlantic/Cape_Verde",
-                          "Casablanca",
-                          "Africa/Casablanca",
-                          "Dublin",
-                          "Europe/Dublin",
                           "Edinburgh",
                           "Europe/London",
                           "Lisbon",
@@ -44601,8 +45200,12 @@
                           "Europe/Brussels",
                           "Budapest",
                           "Europe/Budapest",
+                          "Casablanca",
+                          "Africa/Casablanca",
                           "Copenhagen",
                           "Europe/Copenhagen",
+                          "Dublin",
+                          "Europe/Dublin",
                           "Ljubljana",
                           "Europe/Ljubljana",
                           "Madrid",
@@ -44643,6 +45246,8 @@
                           "Asia/Jerusalem",
                           "Kaliningrad",
                           "Europe/Kaliningrad",
+                          "Kyiv",
+                          "Europe/Kiev",
                           "Pretoria",
                           "Africa/Johannesburg",
                           "Riga",
@@ -44715,6 +45320,8 @@
                           "Asia/Dhaka",
                           "Urumqi",
                           "Asia/Urumqi",
+                          "Rangoon",
+                          "Asia/Rangoon",
                           "Bangkok",
                           "Asia/Bangkok",
                           "Hanoi",
@@ -44972,10 +45579,6 @@
                           "Atlantic/Azores",
                           "Cape Verde Is.",
                           "Atlantic/Cape_Verde",
-                          "Casablanca",
-                          "Africa/Casablanca",
-                          "Dublin",
-                          "Europe/Dublin",
                           "Edinburgh",
                           "Europe/London",
                           "Lisbon",
@@ -45000,8 +45603,12 @@
                           "Europe/Brussels",
                           "Budapest",
                           "Europe/Budapest",
+                          "Casablanca",
+                          "Africa/Casablanca",
                           "Copenhagen",
                           "Europe/Copenhagen",
+                          "Dublin",
+                          "Europe/Dublin",
                           "Ljubljana",
                           "Europe/Ljubljana",
                           "Madrid",
@@ -45042,6 +45649,8 @@
                           "Asia/Jerusalem",
                           "Kaliningrad",
                           "Europe/Kaliningrad",
+                          "Kyiv",
+                          "Europe/Kiev",
                           "Pretoria",
                           "Africa/Johannesburg",
                           "Riga",
@@ -45114,6 +45723,8 @@
                           "Asia/Dhaka",
                           "Urumqi",
                           "Asia/Urumqi",
+                          "Rangoon",
+                          "Asia/Rangoon",
                           "Bangkok",
                           "Asia/Bangkok",
                           "Hanoi",
@@ -45364,10 +45975,6 @@
                   "Atlantic/Azores",
                   "Cape Verde Is.",
                   "Atlantic/Cape_Verde",
-                  "Casablanca",
-                  "Africa/Casablanca",
-                  "Dublin",
-                  "Europe/Dublin",
                   "Edinburgh",
                   "Europe/London",
                   "Lisbon",
@@ -45392,8 +45999,12 @@
                   "Europe/Brussels",
                   "Budapest",
                   "Europe/Budapest",
+                  "Casablanca",
+                  "Africa/Casablanca",
                   "Copenhagen",
                   "Europe/Copenhagen",
+                  "Dublin",
+                  "Europe/Dublin",
                   "Ljubljana",
                   "Europe/Ljubljana",
                   "Madrid",
@@ -45434,6 +46045,8 @@
                   "Asia/Jerusalem",
                   "Kaliningrad",
                   "Europe/Kaliningrad",
+                  "Kyiv",
+                  "Europe/Kiev",
                   "Pretoria",
                   "Africa/Johannesburg",
                   "Riga",
@@ -45506,6 +46119,8 @@
                   "Asia/Dhaka",
                   "Urumqi",
                   "Asia/Urumqi",
+                  "Rangoon",
+                  "Asia/Rangoon",
                   "Bangkok",
                   "Asia/Bangkok",
                   "Hanoi",
@@ -45819,7 +46434,7 @@
                     "description": "Escalation path conditions",
                     "items": {
                       "type": "object",
-                      "anyOf": [
+                      "oneOf": [
                         {
                           "properties": {
                             "rule_type": {
@@ -45831,7 +46446,10 @@
                             },
                             "urgency_ids": {
                               "type": "array",
-                              "description": "Alert urgency ids for which this escalation path should be used"
+                              "description": "Alert urgency ids for which this escalation path should be used",
+                              "items": {
+                                "type": "string"
+                              }
                             }
                           },
                           "required": [
@@ -45880,7 +46498,9 @@
                                 "contains",
                                 "does_not_contain",
                                 "is_one_of",
-                                "is_not_one_of"
+                                "is_not_one_of",
+                                "is_set",
+                                "is_not_set"
                               ]
                             },
                             "value": {
@@ -46063,10 +46683,6 @@
                                 "Atlantic/Azores",
                                 "Cape Verde Is.",
                                 "Atlantic/Cape_Verde",
-                                "Casablanca",
-                                "Africa/Casablanca",
-                                "Dublin",
-                                "Europe/Dublin",
                                 "Edinburgh",
                                 "Europe/London",
                                 "Lisbon",
@@ -46091,8 +46707,12 @@
                                 "Europe/Brussels",
                                 "Budapest",
                                 "Europe/Budapest",
+                                "Casablanca",
+                                "Africa/Casablanca",
                                 "Copenhagen",
                                 "Europe/Copenhagen",
+                                "Dublin",
+                                "Europe/Dublin",
                                 "Ljubljana",
                                 "Europe/Ljubljana",
                                 "Madrid",
@@ -46133,6 +46753,8 @@
                                 "Asia/Jerusalem",
                                 "Kaliningrad",
                                 "Europe/Kaliningrad",
+                                "Kyiv",
+                                "Europe/Kiev",
                                 "Pretoria",
                                 "Africa/Johannesburg",
                                 "Riga",
@@ -46205,6 +46827,8 @@
                                 "Asia/Dhaka",
                                 "Urumqi",
                                 "Asia/Urumqi",
+                                "Rangoon",
+                                "Asia/Rangoon",
                                 "Bangkok",
                                 "Asia/Bangkok",
                                 "Hanoi",
@@ -46432,10 +47056,6 @@
                       "Atlantic/Azores",
                       "Cape Verde Is.",
                       "Atlantic/Cape_Verde",
-                      "Casablanca",
-                      "Africa/Casablanca",
-                      "Dublin",
-                      "Europe/Dublin",
                       "Edinburgh",
                       "Europe/London",
                       "Lisbon",
@@ -46460,8 +47080,12 @@
                       "Europe/Brussels",
                       "Budapest",
                       "Europe/Budapest",
+                      "Casablanca",
+                      "Africa/Casablanca",
                       "Copenhagen",
                       "Europe/Copenhagen",
+                      "Dublin",
+                      "Europe/Dublin",
                       "Ljubljana",
                       "Europe/Ljubljana",
                       "Madrid",
@@ -46502,6 +47126,8 @@
                       "Asia/Jerusalem",
                       "Kaliningrad",
                       "Europe/Kaliningrad",
+                      "Kyiv",
+                      "Europe/Kiev",
                       "Pretoria",
                       "Africa/Johannesburg",
                       "Riga",
@@ -46574,6 +47200,8 @@
                       "Asia/Dhaka",
                       "Urumqi",
                       "Asia/Urumqi",
+                      "Rangoon",
+                      "Asia/Rangoon",
                       "Bangkok",
                       "Asia/Bangkok",
                       "Hanoi",
@@ -46812,7 +47440,7 @@
                     "description": "Escalation path conditions",
                     "items": {
                       "type": "object",
-                      "anyOf": [
+                      "oneOf": [
                         {
                           "properties": {
                             "rule_type": {
@@ -46824,7 +47452,10 @@
                             },
                             "urgency_ids": {
                               "type": "array",
-                              "description": "Alert urgency ids for which this escalation path should be used"
+                              "description": "Alert urgency ids for which this escalation path should be used",
+                              "items": {
+                                "type": "string"
+                              }
                             }
                           },
                           "required": [
@@ -46873,7 +47504,9 @@
                                 "contains",
                                 "does_not_contain",
                                 "is_one_of",
-                                "is_not_one_of"
+                                "is_not_one_of",
+                                "is_set",
+                                "is_not_set"
                               ]
                             },
                             "value": {
@@ -47056,10 +47689,6 @@
                                 "Atlantic/Azores",
                                 "Cape Verde Is.",
                                 "Atlantic/Cape_Verde",
-                                "Casablanca",
-                                "Africa/Casablanca",
-                                "Dublin",
-                                "Europe/Dublin",
                                 "Edinburgh",
                                 "Europe/London",
                                 "Lisbon",
@@ -47084,8 +47713,12 @@
                                 "Europe/Brussels",
                                 "Budapest",
                                 "Europe/Budapest",
+                                "Casablanca",
+                                "Africa/Casablanca",
                                 "Copenhagen",
                                 "Europe/Copenhagen",
+                                "Dublin",
+                                "Europe/Dublin",
                                 "Ljubljana",
                                 "Europe/Ljubljana",
                                 "Madrid",
@@ -47126,6 +47759,8 @@
                                 "Asia/Jerusalem",
                                 "Kaliningrad",
                                 "Europe/Kaliningrad",
+                                "Kyiv",
+                                "Europe/Kiev",
                                 "Pretoria",
                                 "Africa/Johannesburg",
                                 "Riga",
@@ -47198,6 +47833,8 @@
                                 "Asia/Dhaka",
                                 "Urumqi",
                                 "Asia/Urumqi",
+                                "Rangoon",
+                                "Asia/Rangoon",
                                 "Bangkok",
                                 "Asia/Bangkok",
                                 "Hanoi",
@@ -47426,10 +48063,6 @@
                       "Atlantic/Azores",
                       "Cape Verde Is.",
                       "Atlantic/Cape_Verde",
-                      "Casablanca",
-                      "Africa/Casablanca",
-                      "Dublin",
-                      "Europe/Dublin",
                       "Edinburgh",
                       "Europe/London",
                       "Lisbon",
@@ -47454,8 +48087,12 @@
                       "Europe/Brussels",
                       "Budapest",
                       "Europe/Budapest",
+                      "Casablanca",
+                      "Africa/Casablanca",
                       "Copenhagen",
                       "Europe/Copenhagen",
+                      "Dublin",
+                      "Europe/Dublin",
                       "Ljubljana",
                       "Europe/Ljubljana",
                       "Madrid",
@@ -47496,6 +48133,8 @@
                       "Asia/Jerusalem",
                       "Kaliningrad",
                       "Europe/Kaliningrad",
+                      "Kyiv",
+                      "Europe/Kiev",
                       "Pretoria",
                       "Africa/Johannesburg",
                       "Riga",
@@ -47568,6 +48207,8 @@
                       "Asia/Dhaka",
                       "Urumqi",
                       "Asia/Urumqi",
+                      "Rangoon",
+                      "Asia/Rangoon",
                       "Bangkok",
                       "Asia/Bangkok",
                       "Hanoi",
@@ -47790,7 +48431,7 @@
             "description": "Escalation path rules",
             "items": {
               "type": "object",
-              "anyOf": [
+              "oneOf": [
                 {
                   "properties": {
                     "rule_type": {
@@ -47854,7 +48495,9 @@
                         "contains",
                         "does_not_contain",
                         "is_one_of",
-                        "is_not_one_of"
+                        "is_not_one_of",
+                        "is_set",
+                        "is_not_set"
                       ]
                     },
                     "value": {
@@ -48037,10 +48680,6 @@
                         "Atlantic/Azores",
                         "Cape Verde Is.",
                         "Atlantic/Cape_Verde",
-                        "Casablanca",
-                        "Africa/Casablanca",
-                        "Dublin",
-                        "Europe/Dublin",
                         "Edinburgh",
                         "Europe/London",
                         "Lisbon",
@@ -48065,8 +48704,12 @@
                         "Europe/Brussels",
                         "Budapest",
                         "Europe/Budapest",
+                        "Casablanca",
+                        "Africa/Casablanca",
                         "Copenhagen",
                         "Europe/Copenhagen",
+                        "Dublin",
+                        "Europe/Dublin",
                         "Ljubljana",
                         "Europe/Ljubljana",
                         "Madrid",
@@ -48107,6 +48750,8 @@
                         "Asia/Jerusalem",
                         "Kaliningrad",
                         "Europe/Kaliningrad",
+                        "Kyiv",
+                        "Europe/Kiev",
                         "Pretoria",
                         "Africa/Johannesburg",
                         "Riga",
@@ -48179,6 +48824,8 @@
                         "Asia/Dhaka",
                         "Urumqi",
                         "Asia/Urumqi",
+                        "Rangoon",
+                        "Asia/Rangoon",
                         "Bangkok",
                         "Asia/Bangkok",
                         "Hanoi",
@@ -48407,10 +49054,6 @@
               "Atlantic/Azores",
               "Cape Verde Is.",
               "Atlantic/Cape_Verde",
-              "Casablanca",
-              "Africa/Casablanca",
-              "Dublin",
-              "Europe/Dublin",
               "Edinburgh",
               "Europe/London",
               "Lisbon",
@@ -48435,8 +49078,12 @@
               "Europe/Brussels",
               "Budapest",
               "Europe/Budapest",
+              "Casablanca",
+              "Africa/Casablanca",
               "Copenhagen",
               "Europe/Copenhagen",
+              "Dublin",
+              "Europe/Dublin",
               "Ljubljana",
               "Europe/Ljubljana",
               "Madrid",
@@ -48477,6 +49124,8 @@
               "Asia/Jerusalem",
               "Kaliningrad",
               "Europe/Kaliningrad",
+              "Kyiv",
+              "Europe/Kiev",
               "Pretoria",
               "Africa/Johannesburg",
               "Riga",
@@ -48549,6 +49198,8 @@
               "Asia/Dhaka",
               "Urumqi",
               "Asia/Urumqi",
+              "Rangoon",
+              "Asia/Rangoon",
               "Bangkok",
               "Asia/Bangkok",
               "Hanoi",
@@ -51306,6 +51957,11 @@
                     },
                     "nullable": true
                   },
+                  "escalation_policy_id": {
+                    "type": "string",
+                    "description": "The escalation policy id of the functionality",
+                    "nullable": true
+                  },
                   "slack_channels": {
                     "type": "array",
                     "description": "Slack Channels associated with this functionality",
@@ -51503,6 +52159,11 @@
                     },
                     "nullable": true
                   },
+                  "escalation_policy_id": {
+                    "type": "string",
+                    "description": "The escalation policy id of the functionality",
+                    "nullable": true
+                  },
                   "slack_channels": {
                     "type": "array",
                     "description": "Slack Channels associated with this functionality",
@@ -51687,6 +52348,11 @@
             "items": {
               "type": "integer"
             },
+            "nullable": true
+          },
+          "escalation_policy_id": {
+            "type": "string",
+            "description": "The escalation policy id of the functionality",
             "nullable": true
           },
           "slack_channels": {
@@ -58237,6 +58903,15 @@
               }
             }
           },
+          "labels_mode": {
+            "type": "string",
+            "description": "How to apply labels. 'replace' (default) overwrites all existing labels. 'append' adds to existing labels without removing them.",
+            "enum": [
+              "replace",
+              "append"
+            ],
+            "default": "replace"
+          },
           "issue_type": {
             "type": "object",
             "description": "The issue type",
@@ -64683,6 +65358,7 @@
                       "DE",
                       "NL",
                       "NZ",
+                      "SE",
                       "GB",
                       "US"
                     ]
@@ -64740,6 +65416,10 @@
                   "alert_urgency_id": {
                     "type": "string",
                     "description": "This is used in escalation paths to determine who to page"
+                  },
+                  "calling_tree_enabled": {
+                    "type": "boolean",
+                    "description": "Whether the live call router is configured as a phone tree, requiring callers to press a key before being connected"
                   },
                   "calling_tree_prompt": {
                     "type": "string",
@@ -64864,6 +65544,7 @@
                       "DE",
                       "NL",
                       "NZ",
+                      "SE",
                       "GB",
                       "US"
                     ]
@@ -64917,6 +65598,10 @@
                   "alert_urgency_id": {
                     "type": "string",
                     "description": "This is used in escalation paths to determine who to page"
+                  },
+                  "calling_tree_enabled": {
+                    "type": "boolean",
+                    "description": "Whether the live call router is configured as a phone tree, requiring callers to press a key before being connected"
                   },
                   "calling_tree_prompt": {
                     "type": "string",
@@ -65020,6 +65705,7 @@
               "DE",
               "NL",
               "NZ",
+              "SE",
               "GB",
               "US"
             ]
@@ -71776,7 +72462,8 @@
             "nullable": true
           },
           "last": {
-            "type": "string"
+            "type": "string",
+            "nullable": true
           }
         },
         "required": [
@@ -71787,11 +72474,146 @@
           "last"
         ]
       },
+      "meeting_recording": {
+        "type": "object",
+        "properties": {
+          "platform": {
+            "type": "string",
+            "description": "Meeting platform",
+            "enum": [
+              "zoom",
+              "google_meet",
+              "microsoft_teams",
+              "webex"
+            ]
+          },
+          "session_number": {
+            "type": "integer",
+            "description": "Session number within the incident for this platform (starts at 1, increments on re-invite)"
+          },
+          "status": {
+            "type": "string",
+            "description": "Current recording lifecycle status",
+            "enum": [
+              "pending",
+              "recording",
+              "paused",
+              "call_ended",
+              "analyzing",
+              "completed",
+              "failed"
+            ]
+          },
+          "started_at": {
+            "type": "string",
+            "format": "date-time",
+            "description": "When the bot started recording (null if bot never joined)",
+            "nullable": true
+          },
+          "ended_at": {
+            "type": "string",
+            "format": "date-time",
+            "description": "When the recording ended",
+            "nullable": true
+          },
+          "duration_minutes": {
+            "type": "number",
+            "description": "Recording duration in minutes (null if not started)",
+            "nullable": true
+          },
+          "speaker_count": {
+            "type": "integer",
+            "description": "Number of unique speakers detected in the transcript"
+          },
+          "word_count": {
+            "type": "integer",
+            "description": "Total word count across all transcript segments"
+          },
+          "transcript_summary": {
+            "type": "string",
+            "description": "AI-generated summary of the meeting transcript (null if no transcript or not yet analyzed)",
+            "nullable": true
+          },
+          "has_video": {
+            "type": "boolean",
+            "description": "Whether a video recording file is attached"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "description": "When the recording session was created"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time",
+            "description": "When the recording session was last updated"
+          }
+        },
+        "required": [
+          "platform",
+          "session_number",
+          "status",
+          "created_at",
+          "updated_at"
+        ]
+      },
+      "meeting_recording_list": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "description": "Unique UUID of the meeting recording"
+                },
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "meeting_recordings"
+                  ]
+                },
+                "attributes": {
+                  "type": "object",
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/meeting_recording"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "id",
+                "type",
+                "attributes"
+              ]
+            }
+          },
+          "meta": {
+            "type": "object",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/meta"
+              }
+            ]
+          }
+        },
+        "required": [
+          "data"
+        ]
+      },
       "meta": {
         "type": "object",
         "properties": {
+          "next_cursor": {
+            "type": "string",
+            "nullable": true
+          },
           "current_page": {
-            "type": "integer"
+            "type": "integer",
+            "nullable": true
           },
           "next_page": {
             "type": "integer",
@@ -71986,6 +72808,23 @@
             "type": "string",
             "format": "date-time",
             "description": "When the report was last generated.",
+            "nullable": true
+          },
+          "time_zone": {
+            "type": "string",
+            "description": "The team's IANA timezone used to interpret start_date and end_date.",
+            "nullable": true
+          },
+          "csv_file_url": {
+            "type": "string",
+            "format": "uri",
+            "description": "Download URL for the generated CSV report. Null until the report is generated.",
+            "nullable": true
+          },
+          "xlsx_file_url": {
+            "type": "string",
+            "format": "uri",
+            "description": "Download URL for the generated XLSX report. Null until the report is generated.",
             "nullable": true
           },
           "created_at": {
@@ -80409,6 +81248,10 @@
             "type": "boolean",
             "description": "Denotes shift is an override shift"
           },
+          "is_shadow": {
+            "type": "boolean",
+            "description": "Denotes shift is a shadow shift"
+          },
           "user_id": {
             "type": "integer",
             "description": "ID of user on shift",
@@ -80420,7 +81263,8 @@
           "rotation_id",
           "starts_at",
           "ends_at",
-          "is_override"
+          "is_override",
+          "is_shadow"
         ]
       },
       "shift_list": {
@@ -84894,7 +85738,7 @@
                   "assignment_deadline_sub_status_id": {
                     "type": "string",
                     "format": "uuid",
-                    "description": "Optional sub-status for the assignment deadline",
+                    "description": "Sub-status for the assignment deadline. Required when custom lifecycle statuses are enabled on the team.",
                     "nullable": true
                   },
                   "assignment_skip_weekends": {
@@ -84932,7 +85776,7 @@
                   "completion_deadline_sub_status_id": {
                     "type": "string",
                     "format": "uuid",
-                    "description": "Optional sub-status for the completion deadline",
+                    "description": "Sub-status for the completion deadline. Required when custom lifecycle statuses are enabled on the team.",
                     "nullable": true
                   },
                   "completion_skip_weekends": {
@@ -85094,12 +85938,12 @@
                   "manager_role_id": {
                     "type": "string",
                     "format": "uuid",
-                    "description": "The ID of the incident role responsible for this SLA",
+                    "description": "The ID of the incident role responsible for this SLA. Exactly one of `manager_role_id` or `manager_user_id` must be provided.",
                     "nullable": true
                   },
                   "manager_user_id": {
                     "type": "integer",
-                    "description": "The ID of the user responsible for this SLA",
+                    "description": "The ID of the user responsible for this SLA. Exactly one of `manager_role_id` or `manager_user_id` must be provided.",
                     "nullable": true
                   },
                   "assignment_deadline_days": {
@@ -85133,7 +85977,7 @@
                   "assignment_deadline_sub_status_id": {
                     "type": "string",
                     "format": "uuid",
-                    "description": "Optional sub-status for the assignment deadline",
+                    "description": "Sub-status for the assignment deadline. Required when custom lifecycle statuses are enabled on the team.",
                     "nullable": true
                   },
                   "assignment_skip_weekends": {
@@ -85171,7 +86015,7 @@
                   "completion_deadline_sub_status_id": {
                     "type": "string",
                     "format": "uuid",
-                    "description": "Optional sub-status for the completion deadline",
+                    "description": "Sub-status for the completion deadline. Required when custom lifecycle statuses are enabled on the team.",
                     "nullable": true
                   },
                   "completion_skip_weekends": {
@@ -85324,12 +86168,12 @@
           "manager_role_id": {
             "type": "string",
             "format": "uuid",
-            "description": "The ID of the manager incident role",
+            "description": "The ID of the manager incident role. Exactly one of `manager_role_id` or `manager_user_id` must be provided.",
             "nullable": true
           },
           "manager_user_id": {
             "type": "integer",
-            "description": "The ID of the manager user",
+            "description": "The ID of the manager user. Exactly one of `manager_role_id` or `manager_user_id` must be provided.",
             "nullable": true
           },
           "assignment_deadline_days": {
@@ -85343,7 +86187,7 @@
           "assignment_deadline_sub_status_id": {
             "type": "string",
             "format": "uuid",
-            "description": "Optional sub-status for the assignment deadline",
+            "description": "Sub-status for the assignment deadline. Required when custom lifecycle statuses are enabled on the team.",
             "nullable": true
           },
           "assignment_skip_weekends": {
@@ -85361,7 +86205,7 @@
           "completion_deadline_sub_status_id": {
             "type": "string",
             "format": "uuid",
-            "description": "Optional sub-status for the completion deadline",
+            "description": "Sub-status for the completion deadline. Required when custom lifecycle statuses are enabled on the team.",
             "nullable": true
           },
           "completion_skip_weekends": {
