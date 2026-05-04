@@ -9,6 +9,7 @@
     "dependencies"
   ],
   "separateMinorPatch": true,
+  "minimumReleaseAge": "3 days",
   "packageRules": [
     {
       "description": "Require human review for `toolchain` directive and Mise updates",
@@ -67,6 +68,12 @@
           "golang": {}
         }
       }
+    },
+    {
+      "matchUpdateTypes": [
+        "major"
+      ],
+      "minimumReleaseAge": "7 days"
     }
   ],
   "postUpdateOptions": [
