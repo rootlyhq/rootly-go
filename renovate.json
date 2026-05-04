@@ -74,6 +74,12 @@
         "major"
       ],
       "minimumReleaseAge": "7 days"
+    },
+    {
+      "matchUpdateTypes": [
+        "lockFileMaintenance"
+      ],
+      "minimumReleaseAge": null
     }
   ],
   "postUpdateOptions": [
