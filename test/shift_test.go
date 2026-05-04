@@ -10,6 +10,10 @@ import (
 )
 
 func TestListShifts(t *testing.T) {
+	if testing.Short() {
+		t.Skip("skipping integration test in `short` mode")
+	}
+
 	client := SetupClient(t)
 
 	now := time.Now()
