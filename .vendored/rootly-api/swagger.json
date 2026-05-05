@@ -37968,6 +37968,8 @@
             "type": "string",
             "description": "Describes the object in which the action was taken on",
             "enum": [
+              "AlertRoute",
+              "AlertRoutingRule",
               "Alerts::Source",
               "ApiKey",
               "Catalog",
@@ -37991,28 +37993,50 @@
               "GeniusWorkflowGroup",
               "GeniusWorkflowRun",
               "Group",
+              "GroupUser",
               "Heartbeat",
               "Incident",
+              "LoginActivity",
               "IncidentActionItem",
               "IncidentEvent",
               "IncidentFormFieldSelection",
               "IncidentFormFieldSelectionUser",
+              "IncidentPermissionSet",
               "IncidentPostMortem",
               "IncidentRoleAssignment",
               "IncidentRoleTask",
               "IncidentStatusPageEvent",
               "IncidentTask",
               "IncidentType",
+              "Integrations::DatadogAccount",
+              "Integrations::GithubAccount",
+              "Integrations::GoogleMeetAccount",
+              "Integrations::JiraAccount",
+              "Integrations::MicrosoftTeamsAccount",
+              "Integrations::OpsgenieAccount",
+              "Integrations::PagerdutyAccount",
+              "Integrations::ServiceNowAccount",
+              "Integrations::SlackAccount",
+              "Integrations::StatusPageIoAccount",
+              "Integrations::ZendeskAccount",
+              "Integrations::ZoomAccount",
               "LiveCallRouter",
+              "Membership",
               "OnCallRole",
               "Playbook",
               "PlaybookTask",
               "Role",
               "Schedule",
+              "Secret",
               "Service",
               "Severity",
               "StatusPage"
             ],
+            "nullable": true
+          },
+          "item_type_display": {
+            "type": "string",
+            "description": "Human-friendly display name for the item type",
             "nullable": true
           },
           "object": {
@@ -55798,6 +55822,18 @@
               "update_confluence_page"
             ]
           },
+          "integration": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              }
+            },
+            "description": "Specify integration id if you have more than one Confluence instance"
+          },
           "file_id": {
             "type": "string",
             "description": "The Confluence page ID"
@@ -59160,6 +59196,18 @@
             "enum": [
               "update_jira_issue"
             ]
+          },
+          "integration": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              }
+            },
+            "description": "Specify integration id if you have more than one Jira instance"
           },
           "issue_id": {
             "type": "string",
@@ -63287,17 +63335,9 @@
             }
           },
           "incident_inactivity_duration": {
-            "anyOf": [
-              {
-                "enum": [
-                  null
-                ]
-              },
-              {
-                "type": "string",
-                "description": "ex. 10 min, 1h, 3 days, 2 weeks"
-              }
-            ]
+            "type": "string",
+            "description": "ex. 10 min, 1h, 3 days, 2 weeks",
+            "nullable": true
           },
           "incident_condition": {
             "type": "string",
@@ -63505,115 +63545,59 @@
             "description": "[DEPRECATED] Use incident_condition_cause instead"
           },
           "incident_condition_summary": {
-            "anyOf": [
-              {
-                "enum": [
-                  null
-                ]
-              },
-              {
-                "type": "string",
-                "enum": [
-                  "SET",
-                  "UNSET"
-                ]
-              }
-            ]
+            "type": "string",
+            "enum": [
+              "SET",
+              "UNSET"
+            ],
+            "nullable": true
           },
           "incident_condition_started_at": {
-            "anyOf": [
-              {
-                "enum": [
-                  null
-                ]
-              },
-              {
-                "type": "string",
-                "enum": [
-                  "SET",
-                  "UNSET"
-                ]
-              }
-            ]
+            "type": "string",
+            "enum": [
+              "SET",
+              "UNSET"
+            ],
+            "nullable": true
           },
           "incident_condition_detected_at": {
-            "anyOf": [
-              {
-                "enum": [
-                  null
-                ]
-              },
-              {
-                "type": "string",
-                "enum": [
-                  "SET",
-                  "UNSET"
-                ]
-              }
-            ]
+            "type": "string",
+            "enum": [
+              "SET",
+              "UNSET"
+            ],
+            "nullable": true
           },
           "incident_condition_acknowledged_at": {
-            "anyOf": [
-              {
-                "enum": [
-                  null
-                ]
-              },
-              {
-                "type": "string",
-                "enum": [
-                  "SET",
-                  "UNSET"
-                ]
-              }
-            ]
+            "type": "string",
+            "enum": [
+              "SET",
+              "UNSET"
+            ],
+            "nullable": true
           },
           "incident_condition_mitigated_at": {
-            "anyOf": [
-              {
-                "enum": [
-                  null
-                ]
-              },
-              {
-                "type": "string",
-                "enum": [
-                  "SET",
-                  "UNSET"
-                ]
-              }
-            ]
+            "type": "string",
+            "enum": [
+              "SET",
+              "UNSET"
+            ],
+            "nullable": true
           },
           "incident_condition_resolved_at": {
-            "anyOf": [
-              {
-                "enum": [
-                  null
-                ]
-              },
-              {
-                "type": "string",
-                "enum": [
-                  "SET",
-                  "UNSET"
-                ]
-              }
-            ]
+            "type": "string",
+            "enum": [
+              "SET",
+              "UNSET"
+            ],
+            "nullable": true
           },
           "incident_conditional_inactivity": {
-            "anyOf": [
-              {
-                "enum": [
-                  null
-                ]
-              },
-              {
-                "type": "string",
-                "enum": [
-                  "IS"
-                ]
-              }
-            ]
+            "type": "string",
+            "enum": [
+              "IS"
+            ],
+            "nullable": true
           }
         },
         "required": [
@@ -63679,17 +63663,9 @@
             }
           },
           "incident_inactivity_duration": {
-            "anyOf": [
-              {
-                "enum": [
-                  null
-                ]
-              },
-              {
-                "type": "string",
-                "description": "ex. 10 min, 1h, 3 days, 2 weeks"
-              }
-            ]
+            "type": "string",
+            "description": "ex. 10 min, 1h, 3 days, 2 weeks",
+            "nullable": true
           },
           "incident_condition": {
             "type": "string",
@@ -63897,115 +63873,59 @@
             "description": "[DEPRECATED] Use incident_condition_cause instead"
           },
           "incident_condition_summary": {
-            "anyOf": [
-              {
-                "enum": [
-                  null
-                ]
-              },
-              {
-                "type": "string",
-                "enum": [
-                  "SET",
-                  "UNSET"
-                ]
-              }
-            ]
+            "type": "string",
+            "enum": [
+              "SET",
+              "UNSET"
+            ],
+            "nullable": true
           },
           "incident_condition_started_at": {
-            "anyOf": [
-              {
-                "enum": [
-                  null
-                ]
-              },
-              {
-                "type": "string",
-                "enum": [
-                  "SET",
-                  "UNSET"
-                ]
-              }
-            ]
+            "type": "string",
+            "enum": [
+              "SET",
+              "UNSET"
+            ],
+            "nullable": true
           },
           "incident_condition_detected_at": {
-            "anyOf": [
-              {
-                "enum": [
-                  null
-                ]
-              },
-              {
-                "type": "string",
-                "enum": [
-                  "SET",
-                  "UNSET"
-                ]
-              }
-            ]
+            "type": "string",
+            "enum": [
+              "SET",
+              "UNSET"
+            ],
+            "nullable": true
           },
           "incident_condition_acknowledged_at": {
-            "anyOf": [
-              {
-                "enum": [
-                  null
-                ]
-              },
-              {
-                "type": "string",
-                "enum": [
-                  "SET",
-                  "UNSET"
-                ]
-              }
-            ]
+            "type": "string",
+            "enum": [
+              "SET",
+              "UNSET"
+            ],
+            "nullable": true
           },
           "incident_condition_mitigated_at": {
-            "anyOf": [
-              {
-                "enum": [
-                  null
-                ]
-              },
-              {
-                "type": "string",
-                "enum": [
-                  "SET",
-                  "UNSET"
-                ]
-              }
-            ]
+            "type": "string",
+            "enum": [
+              "SET",
+              "UNSET"
+            ],
+            "nullable": true
           },
           "incident_condition_resolved_at": {
-            "anyOf": [
-              {
-                "enum": [
-                  null
-                ]
-              },
-              {
-                "type": "string",
-                "enum": [
-                  "SET",
-                  "UNSET"
-                ]
-              }
-            ]
+            "type": "string",
+            "enum": [
+              "SET",
+              "UNSET"
+            ],
+            "nullable": true
           },
           "incident_conditional_inactivity": {
-            "anyOf": [
-              {
-                "enum": [
-                  null
-                ]
-              },
-              {
-                "type": "string",
-                "enum": [
-                  "IS"
-                ]
-              }
-            ]
+            "type": "string",
+            "enum": [
+              "IS"
+            ],
+            "nullable": true
           },
           "incident_post_mortem_condition": {
             "type": "string",
@@ -64104,17 +64024,9 @@
             }
           },
           "incident_inactivity_duration": {
-            "anyOf": [
-              {
-                "enum": [
-                  null
-                ]
-              },
-              {
-                "type": "string",
-                "description": "ex. 10 min, 1h, 3 days, 2 weeks"
-              }
-            ]
+            "type": "string",
+            "description": "ex. 10 min, 1h, 3 days, 2 weeks",
+            "nullable": true
           },
           "incident_condition": {
             "type": "string",
@@ -64291,115 +64203,59 @@
             "default": "ANY"
           },
           "incident_condition_summary": {
-            "anyOf": [
-              {
-                "enum": [
-                  null
-                ]
-              },
-              {
-                "type": "string",
-                "enum": [
-                  "SET",
-                  "UNSET"
-                ]
-              }
-            ]
+            "type": "string",
+            "enum": [
+              "SET",
+              "UNSET"
+            ],
+            "nullable": true
           },
           "incident_condition_started_at": {
-            "anyOf": [
-              {
-                "enum": [
-                  null
-                ]
-              },
-              {
-                "type": "string",
-                "enum": [
-                  "SET",
-                  "UNSET"
-                ]
-              }
-            ]
+            "type": "string",
+            "enum": [
+              "SET",
+              "UNSET"
+            ],
+            "nullable": true
           },
           "incident_condition_detected_at": {
-            "anyOf": [
-              {
-                "enum": [
-                  null
-                ]
-              },
-              {
-                "type": "string",
-                "enum": [
-                  "SET",
-                  "UNSET"
-                ]
-              }
-            ]
+            "type": "string",
+            "enum": [
+              "SET",
+              "UNSET"
+            ],
+            "nullable": true
           },
           "incident_condition_acknowledged_at": {
-            "anyOf": [
-              {
-                "enum": [
-                  null
-                ]
-              },
-              {
-                "type": "string",
-                "enum": [
-                  "SET",
-                  "UNSET"
-                ]
-              }
-            ]
+            "type": "string",
+            "enum": [
+              "SET",
+              "UNSET"
+            ],
+            "nullable": true
           },
           "incident_condition_mitigated_at": {
-            "anyOf": [
-              {
-                "enum": [
-                  null
-                ]
-              },
-              {
-                "type": "string",
-                "enum": [
-                  "SET",
-                  "UNSET"
-                ]
-              }
-            ]
+            "type": "string",
+            "enum": [
+              "SET",
+              "UNSET"
+            ],
+            "nullable": true
           },
           "incident_condition_resolved_at": {
-            "anyOf": [
-              {
-                "enum": [
-                  null
-                ]
-              },
-              {
-                "type": "string",
-                "enum": [
-                  "SET",
-                  "UNSET"
-                ]
-              }
-            ]
+            "type": "string",
+            "enum": [
+              "SET",
+              "UNSET"
+            ],
+            "nullable": true
           },
           "incident_conditional_inactivity": {
-            "anyOf": [
-              {
-                "enum": [
-                  null
-                ]
-              },
-              {
-                "type": "string",
-                "enum": [
-                  "IS"
-                ]
-              }
-            ]
+            "type": "string",
+            "enum": [
+              "IS"
+            ],
+            "nullable": true
           },
           "incident_action_item_condition": {
             "type": "string",
@@ -78667,14 +78523,14 @@
                   },
                   "start_time": {
                     "type": "string",
-                    "format": "date",
-                    "description": "ISO8601 date and time when rotation starts. Shifts will only be created after this time.",
+                    "format": "date-time",
+                    "description": "RFC3339 date-time when rotation starts. Shifts will only be created after this time.",
                     "nullable": true
                   },
                   "end_time": {
                     "type": "string",
-                    "format": "date",
-                    "description": "ISO8601 date and time when rotation ends. Shifts will only be created before this time.",
+                    "format": "date-time",
+                    "description": "RFC3339 date-time when rotation ends. Shifts will only be created before this time.",
                     "nullable": true
                   },
                   "schedule_rotation_members": {
@@ -78923,14 +78779,14 @@
                   },
                   "start_time": {
                     "type": "string",
-                    "format": "time",
-                    "description": "ISO8601 date and time when rotation starts. Shifts will only be created after this time.",
+                    "format": "date-time",
+                    "description": "RFC3339 date-time when rotation starts. Shifts will only be created after this time.",
                     "nullable": true
                   },
                   "end_time": {
                     "type": "string",
-                    "format": "time",
-                    "description": "ISO8601 date and time when rotation ends. Shifts will only be created before this time.",
+                    "format": "date-time",
+                    "description": "RFC3339 date-time when rotation ends. Shifts will only be created before this time.",
                     "nullable": true
                   },
                   "schedule_rotation_members": {
@@ -79169,14 +79025,14 @@
           },
           "start_time": {
             "type": "string",
-            "format": "date",
-            "description": "ISO8601 date and time when rotation starts. Shifts will only be created after this time.",
+            "format": "date-time",
+            "description": "RFC3339 date-time when rotation starts. Shifts will only be created after this time.",
             "nullable": true
           },
           "end_time": {
             "type": "string",
-            "format": "date",
-            "description": "ISO8601 date and time when rotation ends. Shifts will only be created before this time.",
+            "format": "date-time",
+            "description": "RFC3339 date-time when rotation ends. Shifts will only be created before this time.",
             "nullable": true
           }
         },
