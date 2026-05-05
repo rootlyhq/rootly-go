@@ -46947,31 +46947,31 @@
                                 "properties": {
                                   "monday": {
                                     "type": "boolean",
-                                    "nullable": true
+                                    "default": false
                                   },
                                   "tuesday": {
                                     "type": "boolean",
-                                    "nullable": true
+                                    "default": false
                                   },
                                   "wednesday": {
                                     "type": "boolean",
-                                    "nullable": true
+                                    "default": false
                                   },
                                   "thursday": {
                                     "type": "boolean",
-                                    "nullable": true
+                                    "default": false
                                   },
                                   "friday": {
                                     "type": "boolean",
-                                    "nullable": true
+                                    "default": false
                                   },
                                   "saturday": {
                                     "type": "boolean",
-                                    "nullable": true
+                                    "default": false
                                   },
                                   "sunday": {
                                     "type": "boolean",
-                                    "nullable": true
+                                    "default": false
                                   },
                                   "start_time": {
                                     "type": "string",
@@ -46983,7 +46983,7 @@
                                   },
                                   "all_day": {
                                     "type": "boolean",
-                                    "nullable": true
+                                    "default": false
                                   },
                                   "position": {
                                     "type": "integer",
@@ -47953,31 +47953,31 @@
                                 "properties": {
                                   "monday": {
                                     "type": "boolean",
-                                    "nullable": true
+                                    "default": false
                                   },
                                   "tuesday": {
                                     "type": "boolean",
-                                    "nullable": true
+                                    "default": false
                                   },
                                   "wednesday": {
                                     "type": "boolean",
-                                    "nullable": true
+                                    "default": false
                                   },
                                   "thursday": {
                                     "type": "boolean",
-                                    "nullable": true
+                                    "default": false
                                   },
                                   "friday": {
                                     "type": "boolean",
-                                    "nullable": true
+                                    "default": false
                                   },
                                   "saturday": {
                                     "type": "boolean",
-                                    "nullable": true
+                                    "default": false
                                   },
                                   "sunday": {
                                     "type": "boolean",
-                                    "nullable": true
+                                    "default": false
                                   },
                                   "start_time": {
                                     "type": "string",
@@ -47989,7 +47989,7 @@
                                   },
                                   "all_day": {
                                     "type": "boolean",
-                                    "nullable": true
+                                    "default": false
                                   },
                                   "position": {
                                     "type": "integer",
@@ -48944,31 +48944,31 @@
                         "properties": {
                           "monday": {
                             "type": "boolean",
-                            "nullable": true
+                            "default": false
                           },
                           "tuesday": {
                             "type": "boolean",
-                            "nullable": true
+                            "default": false
                           },
                           "wednesday": {
                             "type": "boolean",
-                            "nullable": true
+                            "default": false
                           },
                           "thursday": {
                             "type": "boolean",
-                            "nullable": true
+                            "default": false
                           },
                           "friday": {
                             "type": "boolean",
-                            "nullable": true
+                            "default": false
                           },
                           "saturday": {
                             "type": "boolean",
-                            "nullable": true
+                            "default": false
                           },
                           "sunday": {
                             "type": "boolean",
-                            "nullable": true
+                            "default": false
                           },
                           "start_time": {
                             "type": "string",
@@ -48980,7 +48980,7 @@
                           },
                           "all_day": {
                             "type": "boolean",
-                            "nullable": true
+                            "default": false
                           },
                           "position": {
                             "type": "integer",

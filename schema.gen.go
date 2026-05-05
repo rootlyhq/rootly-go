@@ -44213,21 +44213,21 @@ type EscalationPolicyPathRules5 struct {
 
 	// TimeBlocks Time windows during which alerts are deferred
 	TimeBlocks []struct {
-		AllDay nullable.Nullable[bool] `json:"all_day,omitempty"`
+		AllDay *bool `json:"all_day,omitempty"`
 
 		// EndTime Formatted as HH:MM
-		EndTime  *string                 `json:"end_time,omitempty"`
-		Friday   nullable.Nullable[bool] `json:"friday,omitempty"`
-		Monday   nullable.Nullable[bool] `json:"monday,omitempty"`
-		Position nullable.Nullable[int]  `json:"position,omitempty"`
-		Saturday nullable.Nullable[bool] `json:"saturday,omitempty"`
+		EndTime  *string                `json:"end_time,omitempty"`
+		Friday   *bool                  `json:"friday,omitempty"`
+		Monday   *bool                  `json:"monday,omitempty"`
+		Position nullable.Nullable[int] `json:"position,omitempty"`
+		Saturday *bool                  `json:"saturday,omitempty"`
 
 		// StartTime Formatted as HH:MM
-		StartTime *string                 `json:"start_time,omitempty"`
-		Sunday    nullable.Nullable[bool] `json:"sunday,omitempty"`
-		Thursday  nullable.Nullable[bool] `json:"thursday,omitempty"`
-		Tuesday   nullable.Nullable[bool] `json:"tuesday,omitempty"`
-		Wednesday nullable.Nullable[bool] `json:"wednesday,omitempty"`
+		StartTime *string `json:"start_time,omitempty"`
+		Sunday    *bool   `json:"sunday,omitempty"`
+		Thursday  *bool   `json:"thursday,omitempty"`
+		Tuesday   *bool   `json:"tuesday,omitempty"`
+		Wednesday *bool   `json:"wednesday,omitempty"`
 	} `json:"time_blocks"`
 
 	// TimeZone Time zone for the deferral window
@@ -48505,21 +48505,21 @@ type NewEscalationPolicyPathDataAttributesRules5 struct {
 
 	// TimeBlocks Time windows during which alerts are deferred
 	TimeBlocks []struct {
-		AllDay nullable.Nullable[bool] `json:"all_day,omitempty"`
+		AllDay *bool `json:"all_day,omitempty"`
 
 		// EndTime Formatted as HH:MM
-		EndTime  *string                 `json:"end_time,omitempty"`
-		Friday   nullable.Nullable[bool] `json:"friday,omitempty"`
-		Monday   nullable.Nullable[bool] `json:"monday,omitempty"`
-		Position nullable.Nullable[int]  `json:"position,omitempty"`
-		Saturday nullable.Nullable[bool] `json:"saturday,omitempty"`
+		EndTime  *string                `json:"end_time,omitempty"`
+		Friday   *bool                  `json:"friday,omitempty"`
+		Monday   *bool                  `json:"monday,omitempty"`
+		Position nullable.Nullable[int] `json:"position,omitempty"`
+		Saturday *bool                  `json:"saturday,omitempty"`
 
 		// StartTime Formatted as HH:MM
-		StartTime *string                 `json:"start_time,omitempty"`
-		Sunday    nullable.Nullable[bool] `json:"sunday,omitempty"`
-		Thursday  nullable.Nullable[bool] `json:"thursday,omitempty"`
-		Tuesday   nullable.Nullable[bool] `json:"tuesday,omitempty"`
-		Wednesday nullable.Nullable[bool] `json:"wednesday,omitempty"`
+		StartTime *string `json:"start_time,omitempty"`
+		Sunday    *bool   `json:"sunday,omitempty"`
+		Thursday  *bool   `json:"thursday,omitempty"`
+		Tuesday   *bool   `json:"tuesday,omitempty"`
+		Wednesday *bool   `json:"wednesday,omitempty"`
 	} `json:"time_blocks"`
 
 	// TimeZone Time zone for the deferral window
@@ -56445,21 +56445,21 @@ type UpdateEscalationPolicyPathDataAttributesRules5 struct {
 
 	// TimeBlocks Time windows during which alerts are deferred
 	TimeBlocks []struct {
-		AllDay nullable.Nullable[bool] `json:"all_day,omitempty"`
+		AllDay *bool `json:"all_day,omitempty"`
 
 		// EndTime Formatted as HH:MM
-		EndTime  *string                 `json:"end_time,omitempty"`
-		Friday   nullable.Nullable[bool] `json:"friday,omitempty"`
-		Monday   nullable.Nullable[bool] `json:"monday,omitempty"`
-		Position nullable.Nullable[int]  `json:"position,omitempty"`
-		Saturday nullable.Nullable[bool] `json:"saturday,omitempty"`
+		EndTime  *string                `json:"end_time,omitempty"`
+		Friday   *bool                  `json:"friday,omitempty"`
+		Monday   *bool                  `json:"monday,omitempty"`
+		Position nullable.Nullable[int] `json:"position,omitempty"`
+		Saturday *bool                  `json:"saturday,omitempty"`
 
 		// StartTime Formatted as HH:MM
-		StartTime *string                 `json:"start_time,omitempty"`
-		Sunday    nullable.Nullable[bool] `json:"sunday,omitempty"`
-		Thursday  nullable.Nullable[bool] `json:"thursday,omitempty"`
-		Tuesday   nullable.Nullable[bool] `json:"tuesday,omitempty"`
-		Wednesday nullable.Nullable[bool] `json:"wednesday,omitempty"`
+		StartTime *string `json:"start_time,omitempty"`
+		Sunday    *bool   `json:"sunday,omitempty"`
+		Thursday  *bool   `json:"thursday,omitempty"`
+		Tuesday   *bool   `json:"tuesday,omitempty"`
+		Wednesday *bool   `json:"wednesday,omitempty"`
 	} `json:"time_blocks"`
 
 	// TimeZone Time zone for the deferral window
