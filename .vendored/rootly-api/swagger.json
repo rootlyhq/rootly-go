@@ -133,6 +133,173 @@
         }
       }
     },
+    "/v1/alert_events": {
+      "get": {
+        "summary": "List alert events across alerts",
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "tags": [
+          "AlertEvents"
+        ],
+        "description": "Returns a flat list of alert events across all alerts the requester can access. Designed for periodic polling: use `page[after]` with the `next_cursor` returned in the previous response to stream forward.",
+        "operationId": "listAlertEventsFeed",
+        "parameters": [
+          {
+            "name": "include",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page[size]",
+            "in": "query",
+            "required": false,
+            "description": "Page size (max 50).",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "page[after]",
+            "in": "query",
+            "required": false,
+            "description": "Cursor token from the previous response's `meta.next_cursor`. Pass the same `sort` value used to obtain the cursor.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "description": "Sort by `created_at`. Defaults to `created_at` (oldest-first). Use `-created_at` for newest-first.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "created_at",
+                "-created_at"
+              ]
+            },
+            "required": false
+          },
+          {
+            "name": "filter[kind]",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "informational",
+                "notification",
+                "action",
+                "status_update",
+                "recording",
+                "alert_grouping",
+                "alert_urgency",
+                "alert_routing",
+                "note",
+                "noise",
+                "maintenance",
+                "deferral"
+              ]
+            },
+            "required": false
+          },
+          {
+            "name": "filter[action]",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "created",
+                "escalation_policy_paged",
+                "ignored_alert_request",
+                "emailed",
+                "slacked",
+                "called",
+                "texted",
+                "notified",
+                "skipped",
+                "opened",
+                "retriggered",
+                "answered",
+                "acknowledged",
+                "escalated",
+                "paged",
+                "resolved",
+                "attached",
+                "snoozed",
+                "triggered",
+                "open",
+                "updated",
+                "added",
+                "removed",
+                "marked",
+                "not_marked",
+                "muted",
+                "deferred"
+              ]
+            },
+            "required": false
+          },
+          {
+            "name": "filter[alert_id]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[created_at][gt]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[created_at][gte]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[created_at][lt]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[created_at][lte]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/alert_event_feed_list"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/v1/alert_events/{id}": {
       "parameters": [
         {
@@ -2427,6 +2594,38 @@
             }
           },
           {
+            "name": "filter[updated_at][gt]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[updated_at][gte]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[updated_at][lt]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[updated_at][lte]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "page[after]",
             "in": "query",
             "required": false,
@@ -2806,7 +3005,7 @@
         "parameters": [],
         "responses": {
           "200": {
-            "description": "alert escalated with default next level",
+            "description": "escalates to different EP defaults to level 1",
             "content": {
               "application/vnd.api+json": {
                 "schema": {
@@ -2815,18 +3014,8 @@
               }
             }
           },
-          "400": {
-            "description": "cannot escalate resolved alert",
-            "content": {
-              "application/vnd.api+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/errors_list"
-                }
-              }
-            }
-          },
           "422": {
-            "description": "no level available from request or metadata",
+            "description": "escalation_policy_level exceeds max",
             "content": {
               "application/vnd.api+json": {
                 "schema": {
@@ -2837,6 +3026,16 @@
           },
           "404": {
             "description": "cannot escalate grouped member alert",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors_list"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "malformed escalation_policy_id",
             "content": {
               "application/vnd.api+json": {
                 "schema": {
@@ -9154,6 +9353,41 @@
                               "type": "string"
                             },
                             "description": "Array of event types to subscribe to"
+                          },
+                          "filters": {
+                            "type": "object",
+                            "description": "Event filters. OR within dimension, AND across dimensions.",
+                            "properties": {
+                              "group_ids": {
+                                "type": "array",
+                                "items": {
+                                  "type": "string"
+                                },
+                                "description": "Filter by group UUIDs"
+                              },
+                              "service_ids": {
+                                "type": "array",
+                                "items": {
+                                  "type": "string"
+                                },
+                                "description": "Filter by service UUIDs"
+                              },
+                              "environment_ids": {
+                                "type": "array",
+                                "items": {
+                                  "type": "string"
+                                },
+                                "description": "Filter by environment UUIDs"
+                              },
+                              "functionality_ids": {
+                                "type": "array",
+                                "items": {
+                                  "type": "string"
+                                },
+                                "description": "Filter by functionality UUIDs"
+                              }
+                            },
+                            "additionalProperties": false
                           }
                         },
                         "required": [
@@ -9277,6 +9511,10 @@
                             "items": {
                               "type": "string"
                             }
+                          },
+                          "filters": {
+                            "type": "object",
+                            "description": "Event filters"
                           }
                         }
                       }
@@ -9920,6 +10158,15 @@
             "name": "filter[name]",
             "in": "query",
             "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[team_ids]",
+            "in": "query",
+            "required": false,
+            "description": "Filter escalation policies by associated team IDs. Comma-separate multiple values.",
             "schema": {
               "type": "string"
             }
@@ -10586,6 +10833,19 @@
               "type": "string",
               "enum": [
                 "escalation_policy_levels"
+              ]
+            },
+            "required": false
+          },
+          {
+            "name": "filter[path_type]",
+            "in": "query",
+            "description": "Filter by path_type. Returns all path types when omitted.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "escalation",
+                "deferral"
               ]
             },
             "required": false
@@ -20219,6 +20479,15 @@
         "operationId": "listIncidents",
         "parameters": [
           {
+            "name": "page[after]",
+            "in": "query",
+            "required": false,
+            "description": "The cursor to fetch results using cursor pagination. A cursor is provided in meta.next_cursor in the response.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "page[number]",
             "in": "query",
             "required": false,
@@ -20780,6 +21049,16 @@
               "application/vnd.api+json": {
                 "schema": {
                   "$ref": "#/components/schemas/incident_list"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "offset pagination exceeds limit",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors_list"
                 }
               }
             }
@@ -21994,6 +22273,7 @@
                 "NL",
                 "NZ",
                 "SE",
+                "CH",
                 "GB",
                 "US"
               ]
@@ -33555,7 +33835,7 @@
                   "delay_minutes": {
                     "type": "integer",
                     "minimum": 1,
-                    "maximum": 999,
+                    "maximum": 10080,
                     "description": "Number of minutes to snooze the alert for"
                   }
                 },
@@ -33590,10 +33870,14 @@
               "attributes": {
                 "type": "object",
                 "properties": {
+                  "escalation_policy_id": {
+                    "type": "string",
+                    "description": "The ID of the escalation policy to escalate to. If omitted, uses the alert's current escalation policy from metadata. Required for resolved alerts whose metadata may have been cleared."
+                  },
                   "escalation_policy_level": {
                     "type": "integer",
                     "minimum": 1,
-                    "description": "The escalation policy level to escalate to. If omitted, defaults to the next level from alert metadata."
+                    "description": "The escalation policy level to escalate to. If omitted, defaults to the next level (same EP) or level 1 (different EP)."
                   }
                 },
                 "additionalProperties": false
@@ -33693,6 +33977,10 @@
       "alert_event": {
         "type": "object",
         "properties": {
+          "alert_id": {
+            "type": "string",
+            "description": "ID of the alert this event belongs to."
+          },
           "kind": {
             "type": "string",
             "enum": [
@@ -33763,6 +34051,7 @@
           }
         },
         "required": [
+          "alert_id",
           "source",
           "kind",
           "action",
@@ -33860,6 +34149,96 @@
         "required": [
           "data",
           "links",
+          "meta"
+        ]
+      },
+      "alert_event_feed_meta": {
+        "type": "object",
+        "description": "Cursor-pagination meta. `total_count` and `total_pages` are nullable because the feed does not run a COUNT query.",
+        "properties": {
+          "next_cursor": {
+            "type": "string",
+            "nullable": true,
+            "description": "Pass as `page[after]` on the next request to fetch the following page."
+          },
+          "current_page": {
+            "type": "integer",
+            "nullable": true
+          },
+          "next_page": {
+            "type": "integer",
+            "nullable": true
+          },
+          "prev_page": {
+            "type": "integer",
+            "nullable": true
+          },
+          "total_count": {
+            "type": "integer",
+            "nullable": true
+          },
+          "total_pages": {
+            "type": "integer",
+            "nullable": true
+          }
+        },
+        "required": [
+          "next_cursor"
+        ]
+      },
+      "alert_event_feed_list": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "description": "Unique ID of the alert event"
+                },
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "alert_events"
+                  ]
+                },
+                "attributes": {
+                  "type": "object",
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/alert_event"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "id",
+                "type",
+                "attributes"
+              ]
+            }
+          },
+          "links": {
+            "type": "object",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/links"
+              }
+            ]
+          },
+          "meta": {
+            "type": "object",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/alert_event_feed_meta"
+              }
+            ]
+          }
+        },
+        "required": [
+          "data",
           "meta"
         ]
       },
@@ -37996,7 +38375,6 @@
               "GroupUser",
               "Heartbeat",
               "Incident",
-              "LoginActivity",
               "IncidentActionItem",
               "IncidentEvent",
               "IncidentFormFieldSelection",
@@ -38021,6 +38399,7 @@
               "Integrations::ZendeskAccount",
               "Integrations::ZoomAccount",
               "LiveCallRouter",
+              "LoginActivity",
               "Membership",
               "OnCallRole",
               "Playbook",
@@ -65215,6 +65594,7 @@
                       "NL",
                       "NZ",
                       "SE",
+                      "CH",
                       "GB",
                       "US"
                     ]
@@ -65401,6 +65781,7 @@
                       "NL",
                       "NZ",
                       "SE",
+                      "CH",
                       "GB",
                       "US"
                     ]
@@ -65562,6 +65943,7 @@
               "NL",
               "NZ",
               "SE",
+              "CH",
               "GB",
               "US"
             ]
@@ -73358,6 +73740,18 @@
                         "delete"
                       ]
                     }
+                  },
+                  "catalogs_permissions": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "enum": [
+                        "create",
+                        "read",
+                        "update",
+                        "delete"
+                      ]
+                    }
                   }
                 },
                 "additionalProperties": false,
@@ -73665,6 +74059,18 @@
                         "delete"
                       ]
                     }
+                  },
+                  "catalogs_permissions": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "enum": [
+                        "create",
+                        "read",
+                        "update",
+                        "delete"
+                      ]
+                    }
                   }
                 },
                 "additionalProperties": false
@@ -73951,6 +74357,18 @@
             }
           },
           "workflows_permissions": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "create",
+                "read",
+                "update",
+                "delete"
+              ]
+            }
+          },
+          "catalogs_permissions": {
             "type": "array",
             "items": {
               "type": "string",
@@ -79202,6 +79620,55 @@
                   "owner_user_id": {
                     "type": "integer",
                     "description": "ID of the owner of the schedule"
+                  },
+                  "sync_linear_enabled": {
+                    "type": "boolean",
+                    "description": "Whether the schedule is synced with Linear",
+                    "nullable": true
+                  },
+                  "include_shadows_in_slack_notifications": {
+                    "type": "boolean",
+                    "description": "Whether shadow users are included in Slack notifications and user group syncing",
+                    "nullable": true
+                  },
+                  "shift_start_notifications_enabled": {
+                    "type": "boolean",
+                    "description": "Whether shift-start notifications are enabled",
+                    "nullable": true
+                  },
+                  "shift_update_notifications_enabled": {
+                    "type": "boolean",
+                    "description": "Whether shift-update notifications are enabled",
+                    "nullable": true
+                  },
+                  "shift_report_enabled": {
+                    "type": "boolean",
+                    "description": "Whether the weekly shift summary report is enabled",
+                    "nullable": true
+                  },
+                  "shift_report_day_of_week": {
+                    "type": "string",
+                    "enum": [
+                      "monday",
+                      "tuesday",
+                      "wednesday",
+                      "thursday",
+                      "friday",
+                      "saturday",
+                      "sunday"
+                    ],
+                    "description": "Day of week the weekly shift summary is sent",
+                    "nullable": true
+                  },
+                  "shift_report_time_of_day": {
+                    "type": "string",
+                    "description": "Time of day the weekly shift summary is sent, in HH:MM 24-hour format",
+                    "nullable": true
+                  },
+                  "shift_report_time_zone": {
+                    "type": "string",
+                    "description": "IANA time zone used for the weekly shift summary",
+                    "nullable": true
                   }
                 },
                 "additionalProperties": false,
@@ -79288,6 +79755,55 @@
                     "type": "integer",
                     "description": "ID of the owner of the schedule",
                     "nullable": true
+                  },
+                  "sync_linear_enabled": {
+                    "type": "boolean",
+                    "description": "Whether the schedule is synced with Linear",
+                    "nullable": true
+                  },
+                  "include_shadows_in_slack_notifications": {
+                    "type": "boolean",
+                    "description": "Whether shadow users are included in Slack notifications and user group syncing",
+                    "nullable": true
+                  },
+                  "shift_start_notifications_enabled": {
+                    "type": "boolean",
+                    "description": "Whether shift-start notifications are enabled",
+                    "nullable": true
+                  },
+                  "shift_update_notifications_enabled": {
+                    "type": "boolean",
+                    "description": "Whether shift-update notifications are enabled",
+                    "nullable": true
+                  },
+                  "shift_report_enabled": {
+                    "type": "boolean",
+                    "description": "Whether the weekly shift summary report is enabled",
+                    "nullable": true
+                  },
+                  "shift_report_day_of_week": {
+                    "type": "string",
+                    "enum": [
+                      "monday",
+                      "tuesday",
+                      "wednesday",
+                      "thursday",
+                      "friday",
+                      "saturday",
+                      "sunday"
+                    ],
+                    "description": "Day of week the weekly shift summary is sent",
+                    "nullable": true
+                  },
+                  "shift_report_time_of_day": {
+                    "type": "string",
+                    "description": "Time of day the weekly shift summary is sent, in HH:MM 24-hour format",
+                    "nullable": true
+                  },
+                  "shift_report_time_zone": {
+                    "type": "string",
+                    "description": "IANA time zone used for the weekly shift summary",
+                    "nullable": true
                   }
                 },
                 "additionalProperties": false
@@ -79360,6 +79876,47 @@
           "owner_user_id": {
             "type": "integer",
             "description": "ID of user assigned as owner of the schedule"
+          },
+          "sync_linear_enabled": {
+            "type": "boolean",
+            "description": "Whether the schedule is synced with Linear"
+          },
+          "include_shadows_in_slack_notifications": {
+            "type": "boolean",
+            "description": "Whether shadow users are included in Slack notifications and user group syncing"
+          },
+          "shift_start_notifications_enabled": {
+            "type": "boolean",
+            "description": "Whether shift-start notifications are enabled"
+          },
+          "shift_update_notifications_enabled": {
+            "type": "boolean",
+            "description": "Whether shift-update notifications are enabled"
+          },
+          "shift_report_enabled": {
+            "type": "boolean",
+            "description": "Whether the weekly shift summary report is enabled"
+          },
+          "shift_report_day_of_week": {
+            "type": "string",
+            "enum": [
+              "monday",
+              "tuesday",
+              "wednesday",
+              "thursday",
+              "friday",
+              "saturday",
+              "sunday"
+            ],
+            "description": "Day of week the weekly shift summary is sent"
+          },
+          "shift_report_time_of_day": {
+            "type": "string",
+            "description": "Time of day the weekly shift summary is sent, in HH:MM 24-hour format"
+          },
+          "shift_report_time_zone": {
+            "type": "string",
+            "description": "IANA time zone used for the weekly shift summary"
           },
           "created_at": {
             "type": "string",
@@ -84319,11 +84876,13 @@
                         "incident_event.deleted",
                         "alert.created",
                         "pulse.created",
+                        "shift.started",
                         "genius_workflow_run.queued",
                         "genius_workflow_run.started",
                         "genius_workflow_run.completed",
                         "genius_workflow_run.failed",
-                        "genius_workflow_run.canceled"
+                        "genius_workflow_run.canceled",
+                        "audit_log.created"
                       ]
                     }
                   },
@@ -84396,11 +84955,13 @@
                         "incident_event.deleted",
                         "alert.created",
                         "pulse.created",
+                        "shift.started",
                         "genius_workflow_run.queued",
                         "genius_workflow_run.started",
                         "genius_workflow_run.completed",
                         "genius_workflow_run.failed",
-                        "genius_workflow_run.canceled"
+                        "genius_workflow_run.canceled",
+                        "audit_log.created"
                       ]
                     }
                   },
@@ -84465,11 +85026,13 @@
                 "incident_event.deleted",
                 "alert.created",
                 "pulse.created",
+                "shift.started",
                 "genius_workflow_run.queued",
                 "genius_workflow_run.started",
                 "genius_workflow_run.completed",
                 "genius_workflow_run.failed",
-                "genius_workflow_run.canceled"
+                "genius_workflow_run.canceled",
+                "audit_log.created"
               ]
             }
           },
@@ -85655,7 +86218,7 @@
                         },
                         "property": {
                           "type": "string",
-                          "description": "The property to evaluate (for built-in field conditions)",
+                          "description": "The property to evaluate (for built-in field conditions). When the team has custom lifecycle statuses enabled, use 'sub_status' (with sub-status IDs as values); otherwise use 'status' (with parent status names). Sending the wrong one will return a validation error.",
                           "enum": [
                             "severity",
                             "environment",
@@ -85894,7 +86457,7 @@
                         },
                         "property": {
                           "type": "string",
-                          "description": "The property to evaluate (for built-in field conditions)",
+                          "description": "The property to evaluate (for built-in field conditions). When the team has custom lifecycle statuses enabled, use 'sub_status' (with sub-status IDs as values); otherwise use 'status' (with parent status names). Sending the wrong one will return a validation error.",
                           "enum": [
                             "severity",
                             "environment",

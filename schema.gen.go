@@ -1451,6 +1451,21 @@ func (e AlertEventKind) Valid() bool {
 	}
 }
 
+// Defines values for AlertEventFeedListDataType.
+const (
+	AlertEventFeedListDataTypeAlertEvents AlertEventFeedListDataType = "alert_events"
+)
+
+// Valid indicates whether the value is a known member of the AlertEventFeedListDataType enum.
+func (e AlertEventFeedListDataType) Valid() bool {
+	switch e {
+	case AlertEventFeedListDataTypeAlertEvents:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for AlertEventListDataType.
 const (
 	AlertEventListDataTypeAlertEvents AlertEventListDataType = "alert_events"
@@ -12063,6 +12078,7 @@ func (e IPRangesResponseDataType) Valid() bool {
 const (
 	LiveCallRouterCountryCodeAU LiveCallRouterCountryCode = "AU"
 	LiveCallRouterCountryCodeCA LiveCallRouterCountryCode = "CA"
+	LiveCallRouterCountryCodeCH LiveCallRouterCountryCode = "CH"
 	LiveCallRouterCountryCodeDE LiveCallRouterCountryCode = "DE"
 	LiveCallRouterCountryCodeGB LiveCallRouterCountryCode = "GB"
 	LiveCallRouterCountryCodeNL LiveCallRouterCountryCode = "NL"
@@ -12077,6 +12093,8 @@ func (e LiveCallRouterCountryCode) Valid() bool {
 	case LiveCallRouterCountryCodeAU:
 		return true
 	case LiveCallRouterCountryCodeCA:
+		return true
+	case LiveCallRouterCountryCodeCH:
 		return true
 	case LiveCallRouterCountryCodeDE:
 		return true
@@ -18795,6 +18813,7 @@ func (e NewIncidentTypeDataType) Valid() bool {
 const (
 	NewLiveCallRouterDataAttributesCountryCodeAU NewLiveCallRouterDataAttributesCountryCode = "AU"
 	NewLiveCallRouterDataAttributesCountryCodeCA NewLiveCallRouterDataAttributesCountryCode = "CA"
+	NewLiveCallRouterDataAttributesCountryCodeCH NewLiveCallRouterDataAttributesCountryCode = "CH"
 	NewLiveCallRouterDataAttributesCountryCodeDE NewLiveCallRouterDataAttributesCountryCode = "DE"
 	NewLiveCallRouterDataAttributesCountryCodeGB NewLiveCallRouterDataAttributesCountryCode = "GB"
 	NewLiveCallRouterDataAttributesCountryCodeNL NewLiveCallRouterDataAttributesCountryCode = "NL"
@@ -18809,6 +18828,8 @@ func (e NewLiveCallRouterDataAttributesCountryCode) Valid() bool {
 	case NewLiveCallRouterDataAttributesCountryCodeAU:
 		return true
 	case NewLiveCallRouterDataAttributesCountryCodeCA:
+		return true
+	case NewLiveCallRouterDataAttributesCountryCodeCH:
 		return true
 	case NewLiveCallRouterDataAttributesCountryCodeDE:
 		return true
@@ -19163,6 +19184,30 @@ func (e NewOnCallRoleDataAttributesAuditsPermissions) Valid() bool {
 	case NewOnCallRoleDataAttributesAuditsPermissionsRead:
 		return true
 	case NewOnCallRoleDataAttributesAuditsPermissionsUpdate:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for NewOnCallRoleDataAttributesCatalogsPermissions.
+const (
+	NewOnCallRoleDataAttributesCatalogsPermissionsCreate NewOnCallRoleDataAttributesCatalogsPermissions = "create"
+	NewOnCallRoleDataAttributesCatalogsPermissionsDelete NewOnCallRoleDataAttributesCatalogsPermissions = "delete"
+	NewOnCallRoleDataAttributesCatalogsPermissionsRead   NewOnCallRoleDataAttributesCatalogsPermissions = "read"
+	NewOnCallRoleDataAttributesCatalogsPermissionsUpdate NewOnCallRoleDataAttributesCatalogsPermissions = "update"
+)
+
+// Valid indicates whether the value is a known member of the NewOnCallRoleDataAttributesCatalogsPermissions enum.
+func (e NewOnCallRoleDataAttributesCatalogsPermissions) Valid() bool {
+	switch e {
+	case NewOnCallRoleDataAttributesCatalogsPermissionsCreate:
+		return true
+	case NewOnCallRoleDataAttributesCatalogsPermissionsDelete:
+		return true
+	case NewOnCallRoleDataAttributesCatalogsPermissionsRead:
+		return true
+	case NewOnCallRoleDataAttributesCatalogsPermissionsUpdate:
 		return true
 	default:
 		return false
@@ -20483,6 +20528,39 @@ func (e NewRoleDataType) Valid() bool {
 	}
 }
 
+// Defines values for NewScheduleDataAttributesShiftReportDayOfWeek.
+const (
+	NewScheduleDataAttributesShiftReportDayOfWeekFriday    NewScheduleDataAttributesShiftReportDayOfWeek = "friday"
+	NewScheduleDataAttributesShiftReportDayOfWeekMonday    NewScheduleDataAttributesShiftReportDayOfWeek = "monday"
+	NewScheduleDataAttributesShiftReportDayOfWeekSaturday  NewScheduleDataAttributesShiftReportDayOfWeek = "saturday"
+	NewScheduleDataAttributesShiftReportDayOfWeekSunday    NewScheduleDataAttributesShiftReportDayOfWeek = "sunday"
+	NewScheduleDataAttributesShiftReportDayOfWeekThursday  NewScheduleDataAttributesShiftReportDayOfWeek = "thursday"
+	NewScheduleDataAttributesShiftReportDayOfWeekTuesday   NewScheduleDataAttributesShiftReportDayOfWeek = "tuesday"
+	NewScheduleDataAttributesShiftReportDayOfWeekWednesday NewScheduleDataAttributesShiftReportDayOfWeek = "wednesday"
+)
+
+// Valid indicates whether the value is a known member of the NewScheduleDataAttributesShiftReportDayOfWeek enum.
+func (e NewScheduleDataAttributesShiftReportDayOfWeek) Valid() bool {
+	switch e {
+	case NewScheduleDataAttributesShiftReportDayOfWeekFriday:
+		return true
+	case NewScheduleDataAttributesShiftReportDayOfWeekMonday:
+		return true
+	case NewScheduleDataAttributesShiftReportDayOfWeekSaturday:
+		return true
+	case NewScheduleDataAttributesShiftReportDayOfWeekSunday:
+		return true
+	case NewScheduleDataAttributesShiftReportDayOfWeekThursday:
+		return true
+	case NewScheduleDataAttributesShiftReportDayOfWeekTuesday:
+		return true
+	case NewScheduleDataAttributesShiftReportDayOfWeekWednesday:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for NewScheduleDataType.
 const (
 	NewScheduleDataTypeSchedules NewScheduleDataType = "schedules"
@@ -21410,6 +21488,7 @@ func (e NewUserPhoneNumberDataType) Valid() bool {
 // Defines values for NewWebhooksEndpointDataAttributesEventTypes.
 const (
 	NewWebhooksEndpointDataAttributesEventTypesAlertCreated                   NewWebhooksEndpointDataAttributesEventTypes = "alert.created"
+	NewWebhooksEndpointDataAttributesEventTypesAuditLogCreated                NewWebhooksEndpointDataAttributesEventTypes = "audit_log.created"
 	NewWebhooksEndpointDataAttributesEventTypesGeniusWorkflowRunCanceled      NewWebhooksEndpointDataAttributesEventTypes = "genius_workflow_run.canceled"
 	NewWebhooksEndpointDataAttributesEventTypesGeniusWorkflowRunCompleted     NewWebhooksEndpointDataAttributesEventTypes = "genius_workflow_run.completed"
 	NewWebhooksEndpointDataAttributesEventTypesGeniusWorkflowRunFailed        NewWebhooksEndpointDataAttributesEventTypes = "genius_workflow_run.failed"
@@ -21438,12 +21517,15 @@ const (
 	NewWebhooksEndpointDataAttributesEventTypesIncidentStatusPageEventUpdated NewWebhooksEndpointDataAttributesEventTypes = "incident_status_page_event.updated"
 	NewWebhooksEndpointDataAttributesEventTypesIncidentUpdated                NewWebhooksEndpointDataAttributesEventTypes = "incident.updated"
 	NewWebhooksEndpointDataAttributesEventTypesPulseCreated                   NewWebhooksEndpointDataAttributesEventTypes = "pulse.created"
+	NewWebhooksEndpointDataAttributesEventTypesShiftStarted                   NewWebhooksEndpointDataAttributesEventTypes = "shift.started"
 )
 
 // Valid indicates whether the value is a known member of the NewWebhooksEndpointDataAttributesEventTypes enum.
 func (e NewWebhooksEndpointDataAttributesEventTypes) Valid() bool {
 	switch e {
 	case NewWebhooksEndpointDataAttributesEventTypesAlertCreated:
+		return true
+	case NewWebhooksEndpointDataAttributesEventTypesAuditLogCreated:
 		return true
 	case NewWebhooksEndpointDataAttributesEventTypesGeniusWorkflowRunCanceled:
 		return true
@@ -21500,6 +21582,8 @@ func (e NewWebhooksEndpointDataAttributesEventTypes) Valid() bool {
 	case NewWebhooksEndpointDataAttributesEventTypesIncidentUpdated:
 		return true
 	case NewWebhooksEndpointDataAttributesEventTypesPulseCreated:
+		return true
+	case NewWebhooksEndpointDataAttributesEventTypesShiftStarted:
 		return true
 	default:
 		return false
@@ -22028,6 +22112,30 @@ func (e OnCallRoleAuditsPermissions) Valid() bool {
 	case OnCallRoleAuditsPermissionsRead:
 		return true
 	case OnCallRoleAuditsPermissionsUpdate:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for OnCallRoleCatalogsPermissions.
+const (
+	OnCallRoleCatalogsPermissionsCreate OnCallRoleCatalogsPermissions = "create"
+	OnCallRoleCatalogsPermissionsDelete OnCallRoleCatalogsPermissions = "delete"
+	OnCallRoleCatalogsPermissionsRead   OnCallRoleCatalogsPermissions = "read"
+	OnCallRoleCatalogsPermissionsUpdate OnCallRoleCatalogsPermissions = "update"
+)
+
+// Valid indicates whether the value is a known member of the OnCallRoleCatalogsPermissions enum.
+func (e OnCallRoleCatalogsPermissions) Valid() bool {
+	switch e {
+	case OnCallRoleCatalogsPermissionsCreate:
+		return true
+	case OnCallRoleCatalogsPermissionsDelete:
+		return true
+	case OnCallRoleCatalogsPermissionsRead:
+		return true
+	case OnCallRoleCatalogsPermissionsUpdate:
 		return true
 	default:
 		return false
@@ -25115,6 +25223,39 @@ const (
 func (e RunCommandHerokuTaskParamsTaskType) Valid() bool {
 	switch e {
 	case RunCommandHerokuTaskParamsTaskTypeRunCommandHeroku:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for ScheduleShiftReportDayOfWeek.
+const (
+	ScheduleShiftReportDayOfWeekFriday    ScheduleShiftReportDayOfWeek = "friday"
+	ScheduleShiftReportDayOfWeekMonday    ScheduleShiftReportDayOfWeek = "monday"
+	ScheduleShiftReportDayOfWeekSaturday  ScheduleShiftReportDayOfWeek = "saturday"
+	ScheduleShiftReportDayOfWeekSunday    ScheduleShiftReportDayOfWeek = "sunday"
+	ScheduleShiftReportDayOfWeekThursday  ScheduleShiftReportDayOfWeek = "thursday"
+	ScheduleShiftReportDayOfWeekTuesday   ScheduleShiftReportDayOfWeek = "tuesday"
+	ScheduleShiftReportDayOfWeekWednesday ScheduleShiftReportDayOfWeek = "wednesday"
+)
+
+// Valid indicates whether the value is a known member of the ScheduleShiftReportDayOfWeek enum.
+func (e ScheduleShiftReportDayOfWeek) Valid() bool {
+	switch e {
+	case ScheduleShiftReportDayOfWeekFriday:
+		return true
+	case ScheduleShiftReportDayOfWeekMonday:
+		return true
+	case ScheduleShiftReportDayOfWeekSaturday:
+		return true
+	case ScheduleShiftReportDayOfWeekSunday:
+		return true
+	case ScheduleShiftReportDayOfWeekThursday:
+		return true
+	case ScheduleShiftReportDayOfWeekTuesday:
+		return true
+	case ScheduleShiftReportDayOfWeekWednesday:
 		return true
 	default:
 		return false
@@ -33363,6 +33504,7 @@ func (e UpdateLinearIssueTaskParamsTaskType) Valid() bool {
 const (
 	UpdateLiveCallRouterDataAttributesCountryCodeAU UpdateLiveCallRouterDataAttributesCountryCode = "AU"
 	UpdateLiveCallRouterDataAttributesCountryCodeCA UpdateLiveCallRouterDataAttributesCountryCode = "CA"
+	UpdateLiveCallRouterDataAttributesCountryCodeCH UpdateLiveCallRouterDataAttributesCountryCode = "CH"
 	UpdateLiveCallRouterDataAttributesCountryCodeDE UpdateLiveCallRouterDataAttributesCountryCode = "DE"
 	UpdateLiveCallRouterDataAttributesCountryCodeGB UpdateLiveCallRouterDataAttributesCountryCode = "GB"
 	UpdateLiveCallRouterDataAttributesCountryCodeNL UpdateLiveCallRouterDataAttributesCountryCode = "NL"
@@ -33377,6 +33519,8 @@ func (e UpdateLiveCallRouterDataAttributesCountryCode) Valid() bool {
 	case UpdateLiveCallRouterDataAttributesCountryCodeAU:
 		return true
 	case UpdateLiveCallRouterDataAttributesCountryCodeCA:
+		return true
+	case UpdateLiveCallRouterDataAttributesCountryCodeCH:
 		return true
 	case UpdateLiveCallRouterDataAttributesCountryCodeDE:
 		return true
@@ -33761,6 +33905,30 @@ func (e UpdateOnCallRoleDataAttributesAuditsPermissions) Valid() bool {
 	case UpdateOnCallRoleDataAttributesAuditsPermissionsRead:
 		return true
 	case UpdateOnCallRoleDataAttributesAuditsPermissionsUpdate:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateOnCallRoleDataAttributesCatalogsPermissions.
+const (
+	UpdateOnCallRoleDataAttributesCatalogsPermissionsCreate UpdateOnCallRoleDataAttributesCatalogsPermissions = "create"
+	UpdateOnCallRoleDataAttributesCatalogsPermissionsDelete UpdateOnCallRoleDataAttributesCatalogsPermissions = "delete"
+	UpdateOnCallRoleDataAttributesCatalogsPermissionsRead   UpdateOnCallRoleDataAttributesCatalogsPermissions = "read"
+	UpdateOnCallRoleDataAttributesCatalogsPermissionsUpdate UpdateOnCallRoleDataAttributesCatalogsPermissions = "update"
+)
+
+// Valid indicates whether the value is a known member of the UpdateOnCallRoleDataAttributesCatalogsPermissions enum.
+func (e UpdateOnCallRoleDataAttributesCatalogsPermissions) Valid() bool {
+	switch e {
+	case UpdateOnCallRoleDataAttributesCatalogsPermissionsCreate:
+		return true
+	case UpdateOnCallRoleDataAttributesCatalogsPermissionsDelete:
+		return true
+	case UpdateOnCallRoleDataAttributesCatalogsPermissionsRead:
+		return true
+	case UpdateOnCallRoleDataAttributesCatalogsPermissionsUpdate:
 		return true
 	default:
 		return false
@@ -35315,6 +35483,39 @@ func (e UpdateRoleDataType) Valid() bool {
 	}
 }
 
+// Defines values for UpdateScheduleDataAttributesShiftReportDayOfWeek.
+const (
+	UpdateScheduleDataAttributesShiftReportDayOfWeekFriday    UpdateScheduleDataAttributesShiftReportDayOfWeek = "friday"
+	UpdateScheduleDataAttributesShiftReportDayOfWeekMonday    UpdateScheduleDataAttributesShiftReportDayOfWeek = "monday"
+	UpdateScheduleDataAttributesShiftReportDayOfWeekSaturday  UpdateScheduleDataAttributesShiftReportDayOfWeek = "saturday"
+	UpdateScheduleDataAttributesShiftReportDayOfWeekSunday    UpdateScheduleDataAttributesShiftReportDayOfWeek = "sunday"
+	UpdateScheduleDataAttributesShiftReportDayOfWeekThursday  UpdateScheduleDataAttributesShiftReportDayOfWeek = "thursday"
+	UpdateScheduleDataAttributesShiftReportDayOfWeekTuesday   UpdateScheduleDataAttributesShiftReportDayOfWeek = "tuesday"
+	UpdateScheduleDataAttributesShiftReportDayOfWeekWednesday UpdateScheduleDataAttributesShiftReportDayOfWeek = "wednesday"
+)
+
+// Valid indicates whether the value is a known member of the UpdateScheduleDataAttributesShiftReportDayOfWeek enum.
+func (e UpdateScheduleDataAttributesShiftReportDayOfWeek) Valid() bool {
+	switch e {
+	case UpdateScheduleDataAttributesShiftReportDayOfWeekFriday:
+		return true
+	case UpdateScheduleDataAttributesShiftReportDayOfWeekMonday:
+		return true
+	case UpdateScheduleDataAttributesShiftReportDayOfWeekSaturday:
+		return true
+	case UpdateScheduleDataAttributesShiftReportDayOfWeekSunday:
+		return true
+	case UpdateScheduleDataAttributesShiftReportDayOfWeekThursday:
+		return true
+	case UpdateScheduleDataAttributesShiftReportDayOfWeekTuesday:
+		return true
+	case UpdateScheduleDataAttributesShiftReportDayOfWeekWednesday:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for UpdateScheduleDataType.
 const (
 	UpdateScheduleDataTypeSchedules UpdateScheduleDataType = "schedules"
@@ -36371,6 +36572,7 @@ func (e UpdateVictorOpsIncidentTaskParamsTaskType) Valid() bool {
 // Defines values for UpdateWebhooksEndpointDataAttributesEventTypes.
 const (
 	UpdateWebhooksEndpointDataAttributesEventTypesAlertCreated                   UpdateWebhooksEndpointDataAttributesEventTypes = "alert.created"
+	UpdateWebhooksEndpointDataAttributesEventTypesAuditLogCreated                UpdateWebhooksEndpointDataAttributesEventTypes = "audit_log.created"
 	UpdateWebhooksEndpointDataAttributesEventTypesGeniusWorkflowRunCanceled      UpdateWebhooksEndpointDataAttributesEventTypes = "genius_workflow_run.canceled"
 	UpdateWebhooksEndpointDataAttributesEventTypesGeniusWorkflowRunCompleted     UpdateWebhooksEndpointDataAttributesEventTypes = "genius_workflow_run.completed"
 	UpdateWebhooksEndpointDataAttributesEventTypesGeniusWorkflowRunFailed        UpdateWebhooksEndpointDataAttributesEventTypes = "genius_workflow_run.failed"
@@ -36399,12 +36601,15 @@ const (
 	UpdateWebhooksEndpointDataAttributesEventTypesIncidentStatusPageEventUpdated UpdateWebhooksEndpointDataAttributesEventTypes = "incident_status_page_event.updated"
 	UpdateWebhooksEndpointDataAttributesEventTypesIncidentUpdated                UpdateWebhooksEndpointDataAttributesEventTypes = "incident.updated"
 	UpdateWebhooksEndpointDataAttributesEventTypesPulseCreated                   UpdateWebhooksEndpointDataAttributesEventTypes = "pulse.created"
+	UpdateWebhooksEndpointDataAttributesEventTypesShiftStarted                   UpdateWebhooksEndpointDataAttributesEventTypes = "shift.started"
 )
 
 // Valid indicates whether the value is a known member of the UpdateWebhooksEndpointDataAttributesEventTypes enum.
 func (e UpdateWebhooksEndpointDataAttributesEventTypes) Valid() bool {
 	switch e {
 	case UpdateWebhooksEndpointDataAttributesEventTypesAlertCreated:
+		return true
+	case UpdateWebhooksEndpointDataAttributesEventTypesAuditLogCreated:
 		return true
 	case UpdateWebhooksEndpointDataAttributesEventTypesGeniusWorkflowRunCanceled:
 		return true
@@ -36461,6 +36666,8 @@ func (e UpdateWebhooksEndpointDataAttributesEventTypes) Valid() bool {
 	case UpdateWebhooksEndpointDataAttributesEventTypesIncidentUpdated:
 		return true
 	case UpdateWebhooksEndpointDataAttributesEventTypesPulseCreated:
+		return true
+	case UpdateWebhooksEndpointDataAttributesEventTypesShiftStarted:
 		return true
 	default:
 		return false
@@ -36881,6 +37088,7 @@ func (e WebhooksDeliveryResponseDataType) Valid() bool {
 // Defines values for WebhooksEndpointEventTypes.
 const (
 	WebhooksEndpointEventTypesAlertCreated                   WebhooksEndpointEventTypes = "alert.created"
+	WebhooksEndpointEventTypesAuditLogCreated                WebhooksEndpointEventTypes = "audit_log.created"
 	WebhooksEndpointEventTypesGeniusWorkflowRunCanceled      WebhooksEndpointEventTypes = "genius_workflow_run.canceled"
 	WebhooksEndpointEventTypesGeniusWorkflowRunCompleted     WebhooksEndpointEventTypes = "genius_workflow_run.completed"
 	WebhooksEndpointEventTypesGeniusWorkflowRunFailed        WebhooksEndpointEventTypes = "genius_workflow_run.failed"
@@ -36909,12 +37117,15 @@ const (
 	WebhooksEndpointEventTypesIncidentStatusPageEventUpdated WebhooksEndpointEventTypes = "incident_status_page_event.updated"
 	WebhooksEndpointEventTypesIncidentUpdated                WebhooksEndpointEventTypes = "incident.updated"
 	WebhooksEndpointEventTypesPulseCreated                   WebhooksEndpointEventTypes = "pulse.created"
+	WebhooksEndpointEventTypesShiftStarted                   WebhooksEndpointEventTypes = "shift.started"
 )
 
 // Valid indicates whether the value is a known member of the WebhooksEndpointEventTypes enum.
 func (e WebhooksEndpointEventTypes) Valid() bool {
 	switch e {
 	case WebhooksEndpointEventTypesAlertCreated:
+		return true
+	case WebhooksEndpointEventTypesAuditLogCreated:
 		return true
 	case WebhooksEndpointEventTypesGeniusWorkflowRunCanceled:
 		return true
@@ -36971,6 +37182,8 @@ func (e WebhooksEndpointEventTypes) Valid() bool {
 	case WebhooksEndpointEventTypesIncidentUpdated:
 		return true
 	case WebhooksEndpointEventTypesPulseCreated:
+		return true
+	case WebhooksEndpointEventTypesShiftStarted:
 		return true
 	default:
 		return false
@@ -37373,6 +37586,165 @@ const (
 func (e WorkflowTaskResponseDataType) Valid() bool {
 	switch e {
 	case WorkflowTaskResponseDataTypeWorkflowTasks:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for ListAlertEventsFeedParamsSort.
+const (
+	ListAlertEventsFeedParamsSortCreatedAt      ListAlertEventsFeedParamsSort = "created_at"
+	ListAlertEventsFeedParamsSortMinusCreatedAt ListAlertEventsFeedParamsSort = "-created_at"
+)
+
+// Valid indicates whether the value is a known member of the ListAlertEventsFeedParamsSort enum.
+func (e ListAlertEventsFeedParamsSort) Valid() bool {
+	switch e {
+	case ListAlertEventsFeedParamsSortCreatedAt:
+		return true
+	case ListAlertEventsFeedParamsSortMinusCreatedAt:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for ListAlertEventsFeedParamsFilterKind.
+const (
+	ListAlertEventsFeedParamsFilterKindAction        ListAlertEventsFeedParamsFilterKind = "action"
+	ListAlertEventsFeedParamsFilterKindAlertGrouping ListAlertEventsFeedParamsFilterKind = "alert_grouping"
+	ListAlertEventsFeedParamsFilterKindAlertRouting  ListAlertEventsFeedParamsFilterKind = "alert_routing"
+	ListAlertEventsFeedParamsFilterKindAlertUrgency  ListAlertEventsFeedParamsFilterKind = "alert_urgency"
+	ListAlertEventsFeedParamsFilterKindDeferral      ListAlertEventsFeedParamsFilterKind = "deferral"
+	ListAlertEventsFeedParamsFilterKindInformational ListAlertEventsFeedParamsFilterKind = "informational"
+	ListAlertEventsFeedParamsFilterKindMaintenance   ListAlertEventsFeedParamsFilterKind = "maintenance"
+	ListAlertEventsFeedParamsFilterKindNoise         ListAlertEventsFeedParamsFilterKind = "noise"
+	ListAlertEventsFeedParamsFilterKindNote          ListAlertEventsFeedParamsFilterKind = "note"
+	ListAlertEventsFeedParamsFilterKindNotification  ListAlertEventsFeedParamsFilterKind = "notification"
+	ListAlertEventsFeedParamsFilterKindRecording     ListAlertEventsFeedParamsFilterKind = "recording"
+	ListAlertEventsFeedParamsFilterKindStatusUpdate  ListAlertEventsFeedParamsFilterKind = "status_update"
+)
+
+// Valid indicates whether the value is a known member of the ListAlertEventsFeedParamsFilterKind enum.
+func (e ListAlertEventsFeedParamsFilterKind) Valid() bool {
+	switch e {
+	case ListAlertEventsFeedParamsFilterKindAction:
+		return true
+	case ListAlertEventsFeedParamsFilterKindAlertGrouping:
+		return true
+	case ListAlertEventsFeedParamsFilterKindAlertRouting:
+		return true
+	case ListAlertEventsFeedParamsFilterKindAlertUrgency:
+		return true
+	case ListAlertEventsFeedParamsFilterKindDeferral:
+		return true
+	case ListAlertEventsFeedParamsFilterKindInformational:
+		return true
+	case ListAlertEventsFeedParamsFilterKindMaintenance:
+		return true
+	case ListAlertEventsFeedParamsFilterKindNoise:
+		return true
+	case ListAlertEventsFeedParamsFilterKindNote:
+		return true
+	case ListAlertEventsFeedParamsFilterKindNotification:
+		return true
+	case ListAlertEventsFeedParamsFilterKindRecording:
+		return true
+	case ListAlertEventsFeedParamsFilterKindStatusUpdate:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for ListAlertEventsFeedParamsFilterAction.
+const (
+	ListAlertEventsFeedParamsFilterActionAcknowledged          ListAlertEventsFeedParamsFilterAction = "acknowledged"
+	ListAlertEventsFeedParamsFilterActionAdded                 ListAlertEventsFeedParamsFilterAction = "added"
+	ListAlertEventsFeedParamsFilterActionAnswered              ListAlertEventsFeedParamsFilterAction = "answered"
+	ListAlertEventsFeedParamsFilterActionAttached              ListAlertEventsFeedParamsFilterAction = "attached"
+	ListAlertEventsFeedParamsFilterActionCalled                ListAlertEventsFeedParamsFilterAction = "called"
+	ListAlertEventsFeedParamsFilterActionCreated               ListAlertEventsFeedParamsFilterAction = "created"
+	ListAlertEventsFeedParamsFilterActionDeferred              ListAlertEventsFeedParamsFilterAction = "deferred"
+	ListAlertEventsFeedParamsFilterActionEmailed               ListAlertEventsFeedParamsFilterAction = "emailed"
+	ListAlertEventsFeedParamsFilterActionEscalated             ListAlertEventsFeedParamsFilterAction = "escalated"
+	ListAlertEventsFeedParamsFilterActionEscalationPolicyPaged ListAlertEventsFeedParamsFilterAction = "escalation_policy_paged"
+	ListAlertEventsFeedParamsFilterActionIgnoredAlertRequest   ListAlertEventsFeedParamsFilterAction = "ignored_alert_request"
+	ListAlertEventsFeedParamsFilterActionMarked                ListAlertEventsFeedParamsFilterAction = "marked"
+	ListAlertEventsFeedParamsFilterActionMuted                 ListAlertEventsFeedParamsFilterAction = "muted"
+	ListAlertEventsFeedParamsFilterActionNotMarked             ListAlertEventsFeedParamsFilterAction = "not_marked"
+	ListAlertEventsFeedParamsFilterActionNotified              ListAlertEventsFeedParamsFilterAction = "notified"
+	ListAlertEventsFeedParamsFilterActionOpen                  ListAlertEventsFeedParamsFilterAction = "open"
+	ListAlertEventsFeedParamsFilterActionOpened                ListAlertEventsFeedParamsFilterAction = "opened"
+	ListAlertEventsFeedParamsFilterActionPaged                 ListAlertEventsFeedParamsFilterAction = "paged"
+	ListAlertEventsFeedParamsFilterActionRemoved               ListAlertEventsFeedParamsFilterAction = "removed"
+	ListAlertEventsFeedParamsFilterActionResolved              ListAlertEventsFeedParamsFilterAction = "resolved"
+	ListAlertEventsFeedParamsFilterActionRetriggered           ListAlertEventsFeedParamsFilterAction = "retriggered"
+	ListAlertEventsFeedParamsFilterActionSkipped               ListAlertEventsFeedParamsFilterAction = "skipped"
+	ListAlertEventsFeedParamsFilterActionSlacked               ListAlertEventsFeedParamsFilterAction = "slacked"
+	ListAlertEventsFeedParamsFilterActionSnoozed               ListAlertEventsFeedParamsFilterAction = "snoozed"
+	ListAlertEventsFeedParamsFilterActionTexted                ListAlertEventsFeedParamsFilterAction = "texted"
+	ListAlertEventsFeedParamsFilterActionTriggered             ListAlertEventsFeedParamsFilterAction = "triggered"
+	ListAlertEventsFeedParamsFilterActionUpdated               ListAlertEventsFeedParamsFilterAction = "updated"
+)
+
+// Valid indicates whether the value is a known member of the ListAlertEventsFeedParamsFilterAction enum.
+func (e ListAlertEventsFeedParamsFilterAction) Valid() bool {
+	switch e {
+	case ListAlertEventsFeedParamsFilterActionAcknowledged:
+		return true
+	case ListAlertEventsFeedParamsFilterActionAdded:
+		return true
+	case ListAlertEventsFeedParamsFilterActionAnswered:
+		return true
+	case ListAlertEventsFeedParamsFilterActionAttached:
+		return true
+	case ListAlertEventsFeedParamsFilterActionCalled:
+		return true
+	case ListAlertEventsFeedParamsFilterActionCreated:
+		return true
+	case ListAlertEventsFeedParamsFilterActionDeferred:
+		return true
+	case ListAlertEventsFeedParamsFilterActionEmailed:
+		return true
+	case ListAlertEventsFeedParamsFilterActionEscalated:
+		return true
+	case ListAlertEventsFeedParamsFilterActionEscalationPolicyPaged:
+		return true
+	case ListAlertEventsFeedParamsFilterActionIgnoredAlertRequest:
+		return true
+	case ListAlertEventsFeedParamsFilterActionMarked:
+		return true
+	case ListAlertEventsFeedParamsFilterActionMuted:
+		return true
+	case ListAlertEventsFeedParamsFilterActionNotMarked:
+		return true
+	case ListAlertEventsFeedParamsFilterActionNotified:
+		return true
+	case ListAlertEventsFeedParamsFilterActionOpen:
+		return true
+	case ListAlertEventsFeedParamsFilterActionOpened:
+		return true
+	case ListAlertEventsFeedParamsFilterActionPaged:
+		return true
+	case ListAlertEventsFeedParamsFilterActionRemoved:
+		return true
+	case ListAlertEventsFeedParamsFilterActionResolved:
+		return true
+	case ListAlertEventsFeedParamsFilterActionRetriggered:
+		return true
+	case ListAlertEventsFeedParamsFilterActionSkipped:
+		return true
+	case ListAlertEventsFeedParamsFilterActionSlacked:
+		return true
+	case ListAlertEventsFeedParamsFilterActionSnoozed:
+		return true
+	case ListAlertEventsFeedParamsFilterActionTexted:
+		return true
+	case ListAlertEventsFeedParamsFilterActionTriggered:
+		return true
+	case ListAlertEventsFeedParamsFilterActionUpdated:
 		return true
 	default:
 		return false
@@ -38078,6 +38450,24 @@ func (e ListEscalationPathsParamsInclude) Valid() bool {
 	}
 }
 
+// Defines values for ListEscalationPathsParamsFilterPathType.
+const (
+	ListEscalationPathsParamsFilterPathTypeDeferral   ListEscalationPathsParamsFilterPathType = "deferral"
+	ListEscalationPathsParamsFilterPathTypeEscalation ListEscalationPathsParamsFilterPathType = "escalation"
+)
+
+// Valid indicates whether the value is a known member of the ListEscalationPathsParamsFilterPathType enum.
+func (e ListEscalationPathsParamsFilterPathType) Valid() bool {
+	switch e {
+	case ListEscalationPathsParamsFilterPathTypeDeferral:
+		return true
+	case ListEscalationPathsParamsFilterPathTypeEscalation:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for GetEscalationPolicyParamsInclude.
 const (
 	GetEscalationPolicyParamsIncludeEscalationPolicyLevels GetEscalationPolicyParamsInclude = "escalation_policy_levels"
@@ -38550,6 +38940,7 @@ func (e ListIncidentSubStatusesParamsSort) Valid() bool {
 const (
 	GeneratePhoneNumberLiveCallRouterParamsCountryCodeAU GeneratePhoneNumberLiveCallRouterParamsCountryCode = "AU"
 	GeneratePhoneNumberLiveCallRouterParamsCountryCodeCA GeneratePhoneNumberLiveCallRouterParamsCountryCode = "CA"
+	GeneratePhoneNumberLiveCallRouterParamsCountryCodeCH GeneratePhoneNumberLiveCallRouterParamsCountryCode = "CH"
 	GeneratePhoneNumberLiveCallRouterParamsCountryCodeDE GeneratePhoneNumberLiveCallRouterParamsCountryCode = "DE"
 	GeneratePhoneNumberLiveCallRouterParamsCountryCodeGB GeneratePhoneNumberLiveCallRouterParamsCountryCode = "GB"
 	GeneratePhoneNumberLiveCallRouterParamsCountryCodeNL GeneratePhoneNumberLiveCallRouterParamsCountryCode = "NL"
@@ -38564,6 +38955,8 @@ func (e GeneratePhoneNumberLiveCallRouterParamsCountryCode) Valid() bool {
 	case GeneratePhoneNumberLiveCallRouterParamsCountryCodeAU:
 		return true
 	case GeneratePhoneNumberLiveCallRouterParamsCountryCodeCA:
+		return true
+	case GeneratePhoneNumberLiveCallRouterParamsCountryCodeCH:
 		return true
 	case GeneratePhoneNumberLiveCallRouterParamsCountryCodeDE:
 		return true
@@ -39629,8 +40022,11 @@ type AlertStatus string
 
 // AlertEvent defines model for alert_event.
 type AlertEvent struct {
-	Action    AlertEventAction `json:"action"`
-	CreatedAt string           `json:"created_at"`
+	Action AlertEventAction `json:"action"`
+
+	// AlertID ID of the alert this event belongs to.
+	AlertID   string `json:"alert_id"`
+	CreatedAt string `json:"created_at"`
 
 	// Details Note message.
 	Details   nullable.Nullable[string] `json:"details,omitempty"`
@@ -39647,6 +40043,34 @@ type AlertEventAction string
 
 // AlertEventKind defines model for AlertEvent.Kind.
 type AlertEventKind string
+
+// AlertEventFeedList defines model for alert_event_feed_list.
+type AlertEventFeedList struct {
+	Data []struct {
+		Attributes AlertEvent `json:"attributes"`
+
+		// ID Unique ID of the alert event
+		ID   string                     `json:"id"`
+		Type AlertEventFeedListDataType `json:"type"`
+	} `json:"data"`
+	Links *Links             `json:"links,omitempty"`
+	Meta  AlertEventFeedMeta `json:"meta"`
+}
+
+// AlertEventFeedListDataType defines model for AlertEventFeedList.Data.Type.
+type AlertEventFeedListDataType string
+
+// AlertEventFeedMeta Cursor-pagination meta. `total_count` and `total_pages` are nullable because the feed does not run a COUNT query.
+type AlertEventFeedMeta struct {
+	CurrentPage nullable.Nullable[int] `json:"current_page,omitempty"`
+
+	// NextCursor Pass as `page[after]` on the next request to fetch the following page.
+	NextCursor nullable.Nullable[string] `json:"next_cursor"`
+	NextPage   nullable.Nullable[int]    `json:"next_page,omitempty"`
+	PrevPage   nullable.Nullable[int]    `json:"prev_page,omitempty"`
+	TotalCount nullable.Nullable[int]    `json:"total_count,omitempty"`
+	TotalPages nullable.Nullable[int]    `json:"total_pages,omitempty"`
+}
 
 // AlertEventList defines model for alert_event_list.
 type AlertEventList struct {
@@ -43901,7 +44325,10 @@ type ErrorsList struct {
 type EscalateAlert struct {
 	Data *struct {
 		Attributes *struct {
-			// EscalationPolicyLevel The escalation policy level to escalate to. If omitted, defaults to the next level from alert metadata.
+			// EscalationPolicyID The ID of the escalation policy to escalate to. If omitted, uses the alert's current escalation policy from metadata. Required for resolved alerts whose metadata may have been cleared.
+			EscalationPolicyID *string `json:"escalation_policy_id,omitempty"`
+
+			// EscalationPolicyLevel The escalation policy level to escalate to. If omitted, defaults to the next level (same EP) or level 1 (different EP).
 			EscalationPolicyLevel *int `json:"escalation_policy_level,omitempty"`
 		} `json:"attributes,omitempty"`
 		Type *EscalateAlertDataType `json:"type,omitempty"`
@@ -49590,6 +50017,7 @@ type NewOnCallRole struct {
 			AlertsPermissions             []NewOnCallRoleDataAttributesAlertsPermissions             `json:"alerts_permissions,omitempty"`
 			APIKeysPermissions            []NewOnCallRoleDataAttributesAPIKeysPermissions            `json:"api_keys_permissions,omitempty"`
 			AuditsPermissions             []NewOnCallRoleDataAttributesAuditsPermissions             `json:"audits_permissions,omitempty"`
+			CatalogsPermissions           []NewOnCallRoleDataAttributesCatalogsPermissions           `json:"catalogs_permissions,omitempty"`
 			ContactsPermissions           []NewOnCallRoleDataAttributesContactsPermissions           `json:"contacts_permissions,omitempty"`
 			EscalationPoliciesPermissions []NewOnCallRoleDataAttributesEscalationPoliciesPermissions `json:"escalation_policies_permissions,omitempty"`
 			GroupsPermissions             []NewOnCallRoleDataAttributesGroupsPermissions             `json:"groups_permissions,omitempty"`
@@ -49638,6 +50066,9 @@ type NewOnCallRoleDataAttributesAPIKeysPermissions string
 
 // NewOnCallRoleDataAttributesAuditsPermissions defines model for NewOnCallRole.Data.Attributes.AuditsPermissions.
 type NewOnCallRoleDataAttributesAuditsPermissions string
+
+// NewOnCallRoleDataAttributesCatalogsPermissions defines model for NewOnCallRole.Data.Attributes.CatalogsPermissions.
+type NewOnCallRoleDataAttributesCatalogsPermissions string
 
 // NewOnCallRoleDataAttributesContactsPermissions defines model for NewOnCallRole.Data.Attributes.ContactsPermissions.
 type NewOnCallRoleDataAttributesContactsPermissions string
@@ -50125,6 +50556,9 @@ type NewSchedule struct {
 			// Description The description of the schedule
 			Description nullable.Nullable[string] `json:"description,omitempty"`
 
+			// IncludeShadowsInSlackNotifications Whether shadow users are included in Slack notifications and user group syncing
+			IncludeShadowsInSlackNotifications nullable.Nullable[bool] `json:"include_shadows_in_slack_notifications,omitempty"`
+
 			// Name The name of the schedule
 			Name string `json:"name"`
 
@@ -50132,8 +50566,26 @@ type NewSchedule struct {
 			OwnerGroupIDs []string `json:"owner_group_ids,omitempty"`
 
 			// OwnerUserID ID of the owner of the schedule
-			OwnerUserID  int `json:"owner_user_id"`
-			SlackChannel nullable.Nullable[struct {
+			OwnerUserID int `json:"owner_user_id"`
+
+			// ShiftReportDayOfWeek Day of week the weekly shift summary is sent
+			ShiftReportDayOfWeek nullable.Nullable[NewScheduleDataAttributesShiftReportDayOfWeek] `json:"shift_report_day_of_week,omitempty"`
+
+			// ShiftReportEnabled Whether the weekly shift summary report is enabled
+			ShiftReportEnabled nullable.Nullable[bool] `json:"shift_report_enabled,omitempty"`
+
+			// ShiftReportTimeOfDay Time of day the weekly shift summary is sent, in HH:MM 24-hour format
+			ShiftReportTimeOfDay nullable.Nullable[string] `json:"shift_report_time_of_day,omitempty"`
+
+			// ShiftReportTimeZone IANA time zone used for the weekly shift summary
+			ShiftReportTimeZone nullable.Nullable[string] `json:"shift_report_time_zone,omitempty"`
+
+			// ShiftStartNotificationsEnabled Whether shift-start notifications are enabled
+			ShiftStartNotificationsEnabled nullable.Nullable[bool] `json:"shift_start_notifications_enabled,omitempty"`
+
+			// ShiftUpdateNotificationsEnabled Whether shift-update notifications are enabled
+			ShiftUpdateNotificationsEnabled nullable.Nullable[bool] `json:"shift_update_notifications_enabled,omitempty"`
+			SlackChannel                    nullable.Nullable[struct {
 				// ID Slack channel ID
 				ID *string `json:"id,omitempty"`
 
@@ -50147,10 +50599,16 @@ type NewSchedule struct {
 				// Name Slack user group name
 				Name *string `json:"name,omitempty"`
 			} `json:"slack_user_group,omitempty"`
+
+			// SyncLinearEnabled Whether the schedule is synced with Linear
+			SyncLinearEnabled nullable.Nullable[bool] `json:"sync_linear_enabled,omitempty"`
 		} `json:"attributes"`
 		Type NewScheduleDataType `json:"type"`
 	} `json:"data"`
 }
+
+// NewScheduleDataAttributesShiftReportDayOfWeek Day of week the weekly shift summary is sent
+type NewScheduleDataAttributesShiftReportDayOfWeek string
 
 // NewScheduleDataType defines model for NewSchedule.Data.Type.
 type NewScheduleDataType string
@@ -50586,7 +51044,7 @@ type NewSLA struct {
 				// Position The position of the condition for ordering
 				Position *int `json:"position,omitempty"`
 
-				// Property The property to evaluate (for built-in field conditions)
+				// Property The property to evaluate (for built-in field conditions). When the team has custom lifecycle statuses enabled, use 'sub_status' (with sub-status IDs as values); otherwise use 'status' (with parent status names). Sending the wrong one will return a validation error.
 				Property nullable.Nullable[NewSLADataAttributesConditionsProperty] `json:"property,omitempty"`
 
 				// Values The values to compare against
@@ -50639,7 +51097,7 @@ type NewSLADataAttributesConditionMatchType string
 // NewSLADataAttributesConditionsConditionableType The type of condition
 type NewSLADataAttributesConditionsConditionableType string
 
-// NewSLADataAttributesConditionsProperty The property to evaluate (for built-in field conditions)
+// NewSLADataAttributesConditionsProperty The property to evaluate (for built-in field conditions). When the team has custom lifecycle statuses enabled, use 'sub_status' (with sub-status IDs as values); otherwise use 'status' (with parent status names). Sending the wrong one will return a validation error.
 type NewSLADataAttributesConditionsProperty string
 
 // NewSLADataAttributesNotificationConfigurationsOffsetType When to send the notification relative to the deadline
@@ -51413,6 +51871,7 @@ type OnCallRole struct {
 	AlertsPermissions             []OnCallRoleAlertsPermissions             `json:"alerts_permissions,omitempty"`
 	APIKeysPermissions            []OnCallRoleAPIKeysPermissions            `json:"api_keys_permissions,omitempty"`
 	AuditsPermissions             []OnCallRoleAuditsPermissions             `json:"audits_permissions,omitempty"`
+	CatalogsPermissions           []OnCallRoleCatalogsPermissions           `json:"catalogs_permissions,omitempty"`
 	ContactsPermissions           []OnCallRoleContactsPermissions           `json:"contacts_permissions,omitempty"`
 	CreatedAt                     string                                    `json:"created_at"`
 	EscalationPoliciesPermissions []OnCallRoleEscalationPoliciesPermissions `json:"escalation_policies_permissions,omitempty"`
@@ -51463,6 +51922,9 @@ type OnCallRoleAPIKeysPermissions string
 
 // OnCallRoleAuditsPermissions defines model for OnCallRole.AuditsPermissions.
 type OnCallRoleAuditsPermissions string
+
+// OnCallRoleCatalogsPermissions defines model for OnCallRole.CatalogsPermissions.
+type OnCallRoleCatalogsPermissions string
 
 // OnCallRoleContactsPermissions defines model for OnCallRole.ContactsPermissions.
 type OnCallRoleContactsPermissions string
@@ -52995,6 +53457,9 @@ type Schedule struct {
 	// Description The description of the schedule
 	Description nullable.Nullable[string] `json:"description,omitempty"`
 
+	// IncludeShadowsInSlackNotifications Whether shadow users are included in Slack notifications and user group syncing
+	IncludeShadowsInSlackNotifications *bool `json:"include_shadows_in_slack_notifications,omitempty"`
+
 	// Name The name of the schedule
 	Name string `json:"name"`
 
@@ -53003,6 +53468,24 @@ type Schedule struct {
 
 	// OwnerUserID ID of user assigned as owner of the schedule
 	OwnerUserID int `json:"owner_user_id"`
+
+	// ShiftReportDayOfWeek Day of week the weekly shift summary is sent
+	ShiftReportDayOfWeek *ScheduleShiftReportDayOfWeek `json:"shift_report_day_of_week,omitempty"`
+
+	// ShiftReportEnabled Whether the weekly shift summary report is enabled
+	ShiftReportEnabled *bool `json:"shift_report_enabled,omitempty"`
+
+	// ShiftReportTimeOfDay Time of day the weekly shift summary is sent, in HH:MM 24-hour format
+	ShiftReportTimeOfDay *string `json:"shift_report_time_of_day,omitempty"`
+
+	// ShiftReportTimeZone IANA time zone used for the weekly shift summary
+	ShiftReportTimeZone *string `json:"shift_report_time_zone,omitempty"`
+
+	// ShiftStartNotificationsEnabled Whether shift-start notifications are enabled
+	ShiftStartNotificationsEnabled *bool `json:"shift_start_notifications_enabled,omitempty"`
+
+	// ShiftUpdateNotificationsEnabled Whether shift-update notifications are enabled
+	ShiftUpdateNotificationsEnabled *bool `json:"shift_update_notifications_enabled,omitempty"`
 
 	// SlackChannel Synced slack channel of the schedule
 	SlackChannel nullable.Nullable[struct {
@@ -53022,9 +53505,15 @@ type Schedule struct {
 		Name *string `json:"name,omitempty"`
 	}] `json:"slack_user_group,omitempty"`
 
+	// SyncLinearEnabled Whether the schedule is synced with Linear
+	SyncLinearEnabled *bool `json:"sync_linear_enabled,omitempty"`
+
 	// UpdatedAt Date of last update
 	UpdatedAt string `json:"updated_at"`
 }
+
+// ScheduleShiftReportDayOfWeek Day of week the weekly shift summary is sent
+type ScheduleShiftReportDayOfWeek string
 
 // ScheduleList defines model for schedule_list.
 type ScheduleList struct {
@@ -57951,6 +58440,7 @@ type UpdateOnCallRole struct {
 			AlertsPermissions             []UpdateOnCallRoleDataAttributesAlertsPermissions             `json:"alerts_permissions,omitempty"`
 			APIKeysPermissions            []UpdateOnCallRoleDataAttributesAPIKeysPermissions            `json:"api_keys_permissions,omitempty"`
 			AuditsPermissions             []UpdateOnCallRoleDataAttributesAuditsPermissions             `json:"audits_permissions,omitempty"`
+			CatalogsPermissions           []UpdateOnCallRoleDataAttributesCatalogsPermissions           `json:"catalogs_permissions,omitempty"`
 			ContactsPermissions           []UpdateOnCallRoleDataAttributesContactsPermissions           `json:"contacts_permissions,omitempty"`
 			EscalationPoliciesPermissions []UpdateOnCallRoleDataAttributesEscalationPoliciesPermissions `json:"escalation_policies_permissions,omitempty"`
 			GroupsPermissions             []UpdateOnCallRoleDataAttributesGroupsPermissions             `json:"groups_permissions,omitempty"`
@@ -57999,6 +58489,9 @@ type UpdateOnCallRoleDataAttributesAPIKeysPermissions string
 
 // UpdateOnCallRoleDataAttributesAuditsPermissions defines model for UpdateOnCallRole.Data.Attributes.AuditsPermissions.
 type UpdateOnCallRoleDataAttributesAuditsPermissions string
+
+// UpdateOnCallRoleDataAttributesCatalogsPermissions defines model for UpdateOnCallRole.Data.Attributes.CatalogsPermissions.
+type UpdateOnCallRoleDataAttributesCatalogsPermissions string
 
 // UpdateOnCallRoleDataAttributesContactsPermissions defines model for UpdateOnCallRole.Data.Attributes.ContactsPermissions.
 type UpdateOnCallRoleDataAttributesContactsPermissions string
@@ -58634,6 +59127,9 @@ type UpdateSchedule struct {
 			// Description The description of the schedule
 			Description nullable.Nullable[string] `json:"description,omitempty"`
 
+			// IncludeShadowsInSlackNotifications Whether shadow users are included in Slack notifications and user group syncing
+			IncludeShadowsInSlackNotifications nullable.Nullable[bool] `json:"include_shadows_in_slack_notifications,omitempty"`
+
 			// Name The name of the schedule
 			Name *string `json:"name,omitempty"`
 
@@ -58641,8 +59137,26 @@ type UpdateSchedule struct {
 			OwnerGroupIDs []string `json:"owner_group_ids,omitempty"`
 
 			// OwnerUserID ID of the owner of the schedule
-			OwnerUserID  nullable.Nullable[int] `json:"owner_user_id,omitempty"`
-			SlackChannel nullable.Nullable[struct {
+			OwnerUserID nullable.Nullable[int] `json:"owner_user_id,omitempty"`
+
+			// ShiftReportDayOfWeek Day of week the weekly shift summary is sent
+			ShiftReportDayOfWeek nullable.Nullable[UpdateScheduleDataAttributesShiftReportDayOfWeek] `json:"shift_report_day_of_week,omitempty"`
+
+			// ShiftReportEnabled Whether the weekly shift summary report is enabled
+			ShiftReportEnabled nullable.Nullable[bool] `json:"shift_report_enabled,omitempty"`
+
+			// ShiftReportTimeOfDay Time of day the weekly shift summary is sent, in HH:MM 24-hour format
+			ShiftReportTimeOfDay nullable.Nullable[string] `json:"shift_report_time_of_day,omitempty"`
+
+			// ShiftReportTimeZone IANA time zone used for the weekly shift summary
+			ShiftReportTimeZone nullable.Nullable[string] `json:"shift_report_time_zone,omitempty"`
+
+			// ShiftStartNotificationsEnabled Whether shift-start notifications are enabled
+			ShiftStartNotificationsEnabled nullable.Nullable[bool] `json:"shift_start_notifications_enabled,omitempty"`
+
+			// ShiftUpdateNotificationsEnabled Whether shift-update notifications are enabled
+			ShiftUpdateNotificationsEnabled nullable.Nullable[bool] `json:"shift_update_notifications_enabled,omitempty"`
+			SlackChannel                    nullable.Nullable[struct {
 				// ID Slack channel ID
 				ID *string `json:"id,omitempty"`
 
@@ -58656,10 +59170,16 @@ type UpdateSchedule struct {
 				// Name Slack user group name
 				Name *string `json:"name,omitempty"`
 			} `json:"slack_user_group,omitempty"`
+
+			// SyncLinearEnabled Whether the schedule is synced with Linear
+			SyncLinearEnabled nullable.Nullable[bool] `json:"sync_linear_enabled,omitempty"`
 		} `json:"attributes"`
 		Type UpdateScheduleDataType `json:"type"`
 	} `json:"data"`
 }
+
+// UpdateScheduleDataAttributesShiftReportDayOfWeek Day of week the weekly shift summary is sent
+type UpdateScheduleDataAttributesShiftReportDayOfWeek string
 
 // UpdateScheduleDataType defines model for UpdateSchedule.Data.Type.
 type UpdateScheduleDataType string
@@ -59177,7 +59697,7 @@ type UpdateSLA struct {
 				// Position The position of the condition for ordering
 				Position *int `json:"position,omitempty"`
 
-				// Property The property to evaluate (for built-in field conditions)
+				// Property The property to evaluate (for built-in field conditions). When the team has custom lifecycle statuses enabled, use 'sub_status' (with sub-status IDs as values); otherwise use 'status' (with parent status names). Sending the wrong one will return a validation error.
 				Property nullable.Nullable[UpdateSLADataAttributesConditionsProperty] `json:"property,omitempty"`
 
 				// Values The values to compare against
@@ -59230,7 +59750,7 @@ type UpdateSLADataAttributesConditionMatchType string
 // UpdateSLADataAttributesConditionsConditionableType The type of condition
 type UpdateSLADataAttributesConditionsConditionableType string
 
-// UpdateSLADataAttributesConditionsProperty The property to evaluate (for built-in field conditions)
+// UpdateSLADataAttributesConditionsProperty The property to evaluate (for built-in field conditions). When the team has custom lifecycle statuses enabled, use 'sub_status' (with sub-status IDs as values); otherwise use 'status' (with parent status names). Sending the wrong one will return a validation error.
 type UpdateSLADataAttributesConditionsProperty string
 
 // UpdateSLADataAttributesNotificationConfigurationsOffsetType When to send the notification relative to the deadline
@@ -60690,6 +61210,36 @@ type ListAllIncidentActionItemsParams struct {
 	Sort                       *string `form:"sort,omitempty" json:"sort,omitempty"`
 }
 
+// ListAlertEventsFeedParams defines parameters for ListAlertEventsFeed.
+type ListAlertEventsFeedParams struct {
+	Include *string `form:"include,omitempty" json:"include,omitempty"`
+
+	// PageSize Page size (max 50).
+	PageSize *int `form:"page[size],omitempty" json:"page[size],omitempty"`
+
+	// PageAfter Cursor token from the previous response's `meta.next_cursor`. Pass the same `sort` value used to obtain the cursor.
+	PageAfter *string `form:"page[after],omitempty" json:"page[after],omitempty"`
+
+	// Sort Sort by `created_at`. Defaults to `created_at` (oldest-first). Use `-created_at` for newest-first.
+	Sort               *ListAlertEventsFeedParamsSort         `form:"sort,omitempty" json:"sort,omitempty"`
+	FilterKind         *ListAlertEventsFeedParamsFilterKind   `form:"filter[kind],omitempty" json:"filter[kind],omitempty"`
+	FilterAction       *ListAlertEventsFeedParamsFilterAction `form:"filter[action],omitempty" json:"filter[action],omitempty"`
+	FilterAlertID      *string                                `form:"filter[alert_id],omitempty" json:"filter[alert_id],omitempty"`
+	FilterCreatedAtGt  *string                                `form:"filter[created_at][gt],omitempty" json:"filter[created_at][gt],omitempty"`
+	FilterCreatedAtGte *string                                `form:"filter[created_at][gte],omitempty" json:"filter[created_at][gte],omitempty"`
+	FilterCreatedAtLt  *string                                `form:"filter[created_at][lt],omitempty" json:"filter[created_at][lt],omitempty"`
+	FilterCreatedAtLte *string                                `form:"filter[created_at][lte],omitempty" json:"filter[created_at][lte],omitempty"`
+}
+
+// ListAlertEventsFeedParamsSort defines parameters for ListAlertEventsFeed.
+type ListAlertEventsFeedParamsSort string
+
+// ListAlertEventsFeedParamsFilterKind defines parameters for ListAlertEventsFeed.
+type ListAlertEventsFeedParamsFilterKind string
+
+// ListAlertEventsFeedParamsFilterAction defines parameters for ListAlertEventsFeed.
+type ListAlertEventsFeedParamsFilterAction string
+
 // ListAlertFieldsParams defines parameters for ListAlertFields.
 type ListAlertFieldsParams struct {
 	Include            *string `form:"include,omitempty" json:"include,omitempty"`
@@ -60781,6 +61331,10 @@ type ListAlertsParams struct {
 	FilterCreatedAtGte *string                  `form:"filter[created_at][gte],omitempty" json:"filter[created_at][gte],omitempty"`
 	FilterCreatedAtLt  *string                  `form:"filter[created_at][lt],omitempty" json:"filter[created_at][lt],omitempty"`
 	FilterCreatedAtLte *string                  `form:"filter[created_at][lte],omitempty" json:"filter[created_at][lte],omitempty"`
+	FilterUpdatedAtGt  *string                  `form:"filter[updated_at][gt],omitempty" json:"filter[updated_at][gt],omitempty"`
+	FilterUpdatedAtGte *string                  `form:"filter[updated_at][gte],omitempty" json:"filter[updated_at][gte],omitempty"`
+	FilterUpdatedAtLt  *string                  `form:"filter[updated_at][lt],omitempty" json:"filter[updated_at][lt],omitempty"`
+	FilterUpdatedAtLte *string                  `form:"filter[updated_at][lte],omitempty" json:"filter[updated_at][lte],omitempty"`
 
 	// PageAfter The cursor to fetch results using cursor pagination. A cursor is provided in meta.next_cursor in the response.
 	PageAfter  *string `form:"page[after],omitempty" json:"page[after],omitempty"`
@@ -61261,6 +61815,21 @@ type CreateEdgeConnectorApplicationVndAPIPlusJSONBody struct {
 			// Description Connector description
 			Description *string `json:"description,omitempty"`
 
+			// Filters Event filters. OR within dimension, AND across dimensions.
+			Filters *struct {
+				// EnvironmentIDs Filter by environment UUIDs
+				EnvironmentIDs []string `json:"environment_ids,omitempty"`
+
+				// FunctionalityIDs Filter by functionality UUIDs
+				FunctionalityIDs []string `json:"functionality_ids,omitempty"`
+
+				// GroupIDs Filter by group UUIDs
+				GroupIDs []string `json:"group_ids,omitempty"`
+
+				// ServiceIDs Filter by service UUIDs
+				ServiceIDs []string `json:"service_ids,omitempty"`
+			} `json:"filters,omitempty"`
+
 			// Name Connector name
 			Name string `json:"name"`
 
@@ -61324,7 +61893,10 @@ type UpdateEdgeConnectorActionApplicationVndAPIPlusJSONBodyActionActionType stri
 type UpdateEdgeConnectorApplicationVndAPIPlusJSONBody struct {
 	Data *struct {
 		Attributes *struct {
-			Description   *string                                                               `json:"description,omitempty"`
+			Description *string `json:"description,omitempty"`
+
+			// Filters Event filters
+			Filters       map[string]interface{}                                                `json:"filters,omitempty"`
 			Name          *string                                                               `json:"name,omitempty"`
 			Status        *UpdateEdgeConnectorApplicationVndAPIPlusJSONBodyDataAttributesStatus `json:"status,omitempty"`
 			Subscriptions []string                                                              `json:"subscriptions,omitempty"`
@@ -61404,15 +61976,18 @@ type GetEscalationPathParamsInclude string
 // ListEscalationPoliciesParams defines parameters for ListEscalationPolicies.
 type ListEscalationPoliciesParams struct {
 	// Include comma separated if needed. eg: escalation_policy_levels,escalation_policy_paths
-	Include            *ListEscalationPoliciesParamsInclude `form:"include,omitempty" json:"include,omitempty"`
-	FilterSearch       *string                              `form:"filter[search],omitempty" json:"filter[search],omitempty"`
-	FilterName         *string                              `form:"filter[name],omitempty" json:"filter[name],omitempty"`
-	FilterCreatedAtGt  *string                              `form:"filter[created_at][gt],omitempty" json:"filter[created_at][gt],omitempty"`
-	FilterCreatedAtGte *string                              `form:"filter[created_at][gte],omitempty" json:"filter[created_at][gte],omitempty"`
-	FilterCreatedAtLt  *string                              `form:"filter[created_at][lt],omitempty" json:"filter[created_at][lt],omitempty"`
-	FilterCreatedAtLte *string                              `form:"filter[created_at][lte],omitempty" json:"filter[created_at][lte],omitempty"`
-	PageNumber         *int                                 `form:"page[number],omitempty" json:"page[number],omitempty"`
-	PageSize           *int                                 `form:"page[size],omitempty" json:"page[size],omitempty"`
+	Include      *ListEscalationPoliciesParamsInclude `form:"include,omitempty" json:"include,omitempty"`
+	FilterSearch *string                              `form:"filter[search],omitempty" json:"filter[search],omitempty"`
+	FilterName   *string                              `form:"filter[name],omitempty" json:"filter[name],omitempty"`
+
+	// FilterTeamIDs Filter escalation policies by associated team IDs. Comma-separate multiple values.
+	FilterTeamIDs      *string `form:"filter[team_ids],omitempty" json:"filter[team_ids],omitempty"`
+	FilterCreatedAtGt  *string `form:"filter[created_at][gt],omitempty" json:"filter[created_at][gt],omitempty"`
+	FilterCreatedAtGte *string `form:"filter[created_at][gte],omitempty" json:"filter[created_at][gte],omitempty"`
+	FilterCreatedAtLt  *string `form:"filter[created_at][lt],omitempty" json:"filter[created_at][lt],omitempty"`
+	FilterCreatedAtLte *string `form:"filter[created_at][lte],omitempty" json:"filter[created_at][lte],omitempty"`
+	PageNumber         *int    `form:"page[number],omitempty" json:"page[number],omitempty"`
+	PageSize           *int    `form:"page[size],omitempty" json:"page[size],omitempty"`
 }
 
 // ListEscalationPoliciesParamsInclude defines parameters for ListEscalationPolicies.
@@ -61428,13 +62003,19 @@ type ListEscalationLevelsParams struct {
 // ListEscalationPathsParams defines parameters for ListEscalationPaths.
 type ListEscalationPathsParams struct {
 	// Include comma separated if needed. eg: escalation_policy_levels
-	Include    *ListEscalationPathsParamsInclude `form:"include,omitempty" json:"include,omitempty"`
-	PageNumber *int                              `form:"page[number],omitempty" json:"page[number],omitempty"`
-	PageSize   *int                              `form:"page[size],omitempty" json:"page[size],omitempty"`
+	Include *ListEscalationPathsParamsInclude `form:"include,omitempty" json:"include,omitempty"`
+
+	// FilterPathType Filter by path_type. Returns all path types when omitted.
+	FilterPathType *ListEscalationPathsParamsFilterPathType `form:"filter[path_type],omitempty" json:"filter[path_type],omitempty"`
+	PageNumber     *int                                     `form:"page[number],omitempty" json:"page[number],omitempty"`
+	PageSize       *int                                     `form:"page[size],omitempty" json:"page[size],omitempty"`
 }
 
 // ListEscalationPathsParamsInclude defines parameters for ListEscalationPaths.
 type ListEscalationPathsParamsInclude string
+
+// ListEscalationPathsParamsFilterPathType defines parameters for ListEscalationPaths.
+type ListEscalationPathsParamsFilterPathType string
 
 // GetEscalationPolicyParams defines parameters for GetEscalationPolicy.
 type GetEscalationPolicyParams struct {
@@ -61722,6 +62303,8 @@ type ListIncidentTypeCatalogPropertiesParamsSort string
 
 // ListIncidentsParams defines parameters for ListIncidents.
 type ListIncidentsParams struct {
+	// PageAfter The cursor to fetch results using cursor pagination. A cursor is provided in meta.next_cursor in the response.
+	PageAfter                          *string `form:"page[after],omitempty" json:"page[after],omitempty"`
 	PageNumber                         *int    `form:"page[number],omitempty" json:"page[number],omitempty"`
 	PageSize                           *int    `form:"page[size],omitempty" json:"page[size],omitempty"`
 	FilterSearch                       *string `form:"filter[search],omitempty" json:"filter[search],omitempty"`
@@ -78672,6 +79255,9 @@ type ClientInterface interface {
 
 	UpdateIncidentActionItemWithApplicationVndAPIPlusJSONBody(ctx context.Context, id ID, body UpdateIncidentActionItemApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
+	// ListAlertEventsFeed request
+	ListAlertEventsFeed(ctx context.Context, params *ListAlertEventsFeedParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
 	// DeleteAlertEvent request
 	DeleteAlertEvent(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error)
 
@@ -80737,6 +81323,18 @@ func (c *Client) UpdateIncidentActionItemWithBody(ctx context.Context, id ID, co
 
 func (c *Client) UpdateIncidentActionItemWithApplicationVndAPIPlusJSONBody(ctx context.Context, id ID, body UpdateIncidentActionItemApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewUpdateIncidentActionItemRequestWithApplicationVndAPIPlusJSONBody(c.Server, id, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) ListAlertEventsFeed(ctx context.Context, params *ListAlertEventsFeedParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewListAlertEventsFeedRequest(c.Server, params)
 	if err != nil {
 		return nil, err
 	}
@@ -90036,6 +90634,180 @@ func NewUpdateIncidentActionItemRequestWithBody(server string, id ID, contentTyp
 	return req, nil
 }
 
+// NewListAlertEventsFeedRequest generates requests for ListAlertEventsFeed
+func NewListAlertEventsFeedRequest(server string, params *ListAlertEventsFeedParams) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/alert_events")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.Include != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "include", *params.Include, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.PageSize != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "page[size]", *params.PageSize, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.PageAfter != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "page[after]", *params.PageAfter, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Sort != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "sort", *params.Sort, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterKind != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[kind]", *params.FilterKind, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterAction != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[action]", *params.FilterAction, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterAlertID != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[alert_id]", *params.FilterAlertID, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterCreatedAtGt != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[created_at][gt]", *params.FilterCreatedAtGt, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterCreatedAtGte != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[created_at][gte]", *params.FilterCreatedAtGte, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterCreatedAtLt != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[created_at][lt]", *params.FilterCreatedAtLt, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterCreatedAtLte != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[created_at][lte]", *params.FilterCreatedAtLte, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
 // NewDeleteAlertEventRequest generates requests for DeleteAlertEvent
 func NewDeleteAlertEventRequest(server string, id ID) (*http.Request, error) {
 	var err error
@@ -92167,6 +92939,54 @@ func NewListAlertsRequest(server string, params *ListAlertsParams) (*http.Reques
 		if params.FilterCreatedAtLte != nil {
 
 			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[created_at][lte]", *params.FilterCreatedAtLte, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterUpdatedAtGt != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[updated_at][gt]", *params.FilterUpdatedAtGt, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterUpdatedAtGte != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[updated_at][gte]", *params.FilterUpdatedAtGte, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterUpdatedAtLt != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[updated_at][lt]", *params.FilterUpdatedAtLt, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterUpdatedAtLte != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[updated_at][lte]", *params.FilterUpdatedAtLte, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
 				return nil, err
 			} else {
 				for _, qp := range strings.Split(queryFrag, "&") {
@@ -100778,6 +101598,18 @@ func NewListEscalationPoliciesRequest(server string, params *ListEscalationPolic
 
 		}
 
+		if params.FilterTeamIDs != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[team_ids]", *params.FilterTeamIDs, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
 		if params.FilterCreatedAtGt != nil {
 
 			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[created_at][gt]", *params.FilterCreatedAtGt, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
@@ -101074,6 +101906,18 @@ func NewListEscalationPathsRequest(server string, escalationPolicyID string, par
 		if params.Include != nil {
 
 			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "include", *params.Include, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterPathType != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[path_type]", *params.FilterPathType, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
 				return nil, err
 			} else {
 				for _, qp := range strings.Split(queryFrag, "&") {
@@ -107606,6 +108450,18 @@ func NewListIncidentsRequest(server string, params *ListIncidentsParams) (*http.
 		// styled parameters, preserving literal commas as delimiters
 		// per the OpenAPI spec (e.g. "color=blue,black,brown").
 		var rawQueryFragments []string
+
+		if params.PageAfter != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "page[after]", *params.PageAfter, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
 
 		if params.PageNumber != nil {
 
@@ -123497,6 +124353,9 @@ type ClientWithResponsesInterface interface {
 
 	UpdateIncidentActionItemWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, id ID, body UpdateIncidentActionItemApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateIncidentActionItemResponse, error)
 
+	// ListAlertEventsFeedWithResponse request
+	ListAlertEventsFeedWithResponse(ctx context.Context, params *ListAlertEventsFeedParams, reqEditors ...RequestEditorFn) (*ListAlertEventsFeedResponse, error)
+
 	// DeleteAlertEventWithResponse request
 	DeleteAlertEventWithResponse(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*DeleteAlertEventResponse, error)
 
@@ -125629,6 +126488,36 @@ func (r UpdateIncidentActionItemResponse) StatusCode() int {
 
 // ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
 func (r UpdateIncidentActionItemResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type ListAlertEventsFeedResponse struct {
+	Body                     []byte
+	HTTPResponse             *http.Response
+	ApplicationVndAPIJSON200 *AlertEventFeedList
+}
+
+// Status returns HTTPResponse.Status
+func (r ListAlertEventsFeedResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r ListAlertEventsFeedResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r ListAlertEventsFeedResponse) ContentType() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Header.Get("Content-Type")
 	}
@@ -134484,6 +135373,7 @@ type ListIncidentsResponse struct {
 	Body                     []byte
 	HTTPResponse             *http.Response
 	ApplicationVndAPIJSON200 *IncidentList
+	ApplicationVndAPIJSON400 *ErrorsList
 }
 
 // Status returns HTTPResponse.Status
@@ -142131,6 +143021,15 @@ func (c *ClientWithResponses) UpdateIncidentActionItemWithApplicationVndAPIPlusJ
 	return ParseUpdateIncidentActionItemResponse(rsp)
 }
 
+// ListAlertEventsFeedWithResponse request returning *ListAlertEventsFeedResponse
+func (c *ClientWithResponses) ListAlertEventsFeedWithResponse(ctx context.Context, params *ListAlertEventsFeedParams, reqEditors ...RequestEditorFn) (*ListAlertEventsFeedResponse, error) {
+	rsp, err := c.ListAlertEventsFeed(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseListAlertEventsFeedResponse(rsp)
+}
+
 // DeleteAlertEventWithResponse request returning *DeleteAlertEventResponse
 func (c *ClientWithResponses) DeleteAlertEventWithResponse(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*DeleteAlertEventResponse, error) {
 	rsp, err := c.DeleteAlertEvent(ctx, id, reqEditors...)
@@ -148710,6 +149609,32 @@ func ParseUpdateIncidentActionItemResponse(rsp *http.Response) (*UpdateIncidentA
 			return nil, err
 		}
 		response.ApplicationVndAPIJSON404 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseListAlertEventsFeedResponse parses an HTTP response from a ListAlertEventsFeedWithResponse call
+func ParseListAlertEventsFeedResponse(rsp *http.Response) (*ListAlertEventsFeedResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ListAlertEventsFeedResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest AlertEventFeedList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON200 = &dest
 
 	}
 
@@ -157934,6 +158859,13 @@ func ParseListIncidentsResponse(rsp *http.Response) (*ListIncidentsResponse, err
 			return nil, err
 		}
 		response.ApplicationVndAPIJSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorsList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON400 = &dest
 
 	}
 
