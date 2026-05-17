@@ -17,22 +17,24 @@ import (
     "context"
     "fmt"
     "net/http"
-    
+
+    "github.com/oapi-codegen/oapi-codegen/v2/pkg/securityprovider"
     "github.com/rootlyhq/rootly-go"
 )
 
 func main() {
-    // Create a new client
-    client, err := rootly.NewClient("https://api.rootly.com", rootly.WithRequestEditorFn(
-        func(ctx context.Context, req *http.Request) error {
-            req.Header.Set("Authorization", "Bearer YOUR_API_TOKEN")
-            return nil
-        },
-    ))
+    // Set up our auth provider
+    authFn, err := securityprovider.NewSecurityProviderBearerToken("YOUR_TOKEN")
     if err != nil {
         panic(err)
     }
-    
+
+    // Create a new client
+    client, err := rootly.NewClient("https://api.rootly.com", rootly.WithRequestEditorFn(authFn.Intercept))
+    if err != nil {
+        panic(err)
+    }
+
     // Use the client to make API calls
     ctx := context.Background()
     // Example: List incidents
