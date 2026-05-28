@@ -1136,6 +1136,33 @@ func (e AlertNoise) Valid() bool {
 	}
 }
 
+// Defines values for AlertNotificationTargetType.
+const (
+	AlertNotificationTargetTypeEscalationPolicy AlertNotificationTargetType = "EscalationPolicy"
+	AlertNotificationTargetTypeFunctionality    AlertNotificationTargetType = "Functionality"
+	AlertNotificationTargetTypeGroup            AlertNotificationTargetType = "Group"
+	AlertNotificationTargetTypeService          AlertNotificationTargetType = "Service"
+	AlertNotificationTargetTypeUser             AlertNotificationTargetType = "User"
+)
+
+// Valid indicates whether the value is a known member of the AlertNotificationTargetType enum.
+func (e AlertNotificationTargetType) Valid() bool {
+	switch e {
+	case AlertNotificationTargetTypeEscalationPolicy:
+		return true
+	case AlertNotificationTargetTypeFunctionality:
+		return true
+	case AlertNotificationTargetTypeGroup:
+		return true
+	case AlertNotificationTargetTypeService:
+		return true
+	case AlertNotificationTargetTypeUser:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for AlertSource.
 const (
 	AlertSourceAPI             AlertSource = "api"
@@ -8513,6 +8540,78 @@ func (e EscalationPolicyPathRules5TimeZone) Valid() bool {
 	}
 }
 
+// Defines values for EscalationPolicyPathRules6Operator.
+const (
+	EscalationPolicyPathRules6OperatorIs         EscalationPolicyPathRules6Operator = "is"
+	EscalationPolicyPathRules6OperatorIsNot      EscalationPolicyPathRules6Operator = "is_not"
+	EscalationPolicyPathRules6OperatorIsNotOneOf EscalationPolicyPathRules6Operator = "is_not_one_of"
+	EscalationPolicyPathRules6OperatorIsOneOf    EscalationPolicyPathRules6Operator = "is_one_of"
+)
+
+// Valid indicates whether the value is a known member of the EscalationPolicyPathRules6Operator enum.
+func (e EscalationPolicyPathRules6Operator) Valid() bool {
+	switch e {
+	case EscalationPolicyPathRules6OperatorIs:
+		return true
+	case EscalationPolicyPathRules6OperatorIsNot:
+		return true
+	case EscalationPolicyPathRules6OperatorIsNotOneOf:
+		return true
+	case EscalationPolicyPathRules6OperatorIsOneOf:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for EscalationPolicyPathRules6RuleType.
+const (
+	EscalationPolicyPathRules6RuleTypeSource EscalationPolicyPathRules6RuleType = "source"
+)
+
+// Valid indicates whether the value is a known member of the EscalationPolicyPathRules6RuleType enum.
+func (e EscalationPolicyPathRules6RuleType) Valid() bool {
+	switch e {
+	case EscalationPolicyPathRules6RuleTypeSource:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for EscalationPolicyPathRules7Operator.
+const (
+	EscalationPolicyPathRules7OperatorIsNotSet EscalationPolicyPathRules7Operator = "is_not_set"
+	EscalationPolicyPathRules7OperatorIsSet    EscalationPolicyPathRules7Operator = "is_set"
+)
+
+// Valid indicates whether the value is a known member of the EscalationPolicyPathRules7Operator enum.
+func (e EscalationPolicyPathRules7Operator) Valid() bool {
+	switch e {
+	case EscalationPolicyPathRules7OperatorIsNotSet:
+		return true
+	case EscalationPolicyPathRules7OperatorIsSet:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for EscalationPolicyPathRules7RuleType.
+const (
+	EscalationPolicyPathRules7RuleTypeRelatedIncidents EscalationPolicyPathRules7RuleType = "related_incidents"
+)
+
+// Valid indicates whether the value is a known member of the EscalationPolicyPathRules7RuleType enum.
+func (e EscalationPolicyPathRules7RuleType) Valid() bool {
+	switch e {
+	case EscalationPolicyPathRules7RuleTypeRelatedIncidents:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for EscalationPolicyPathTimeRestrictionTimeZone.
 const (
 	EscalationPolicyPathTimeRestrictionTimeZoneAbuDhabi                    EscalationPolicyPathTimeRestrictionTimeZone = "Abu Dhabi"
@@ -12389,153 +12488,6 @@ func (e NewAlertDataAttributesNotificationTargetType) Valid() bool {
 	case NewAlertDataAttributesNotificationTargetTypeService:
 		return true
 	case NewAlertDataAttributesNotificationTargetTypeUser:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for NewAlertDataAttributesSource.
-const (
-	NewAlertDataAttributesSourceAPI             NewAlertDataAttributesSource = "api"
-	NewAlertDataAttributesSourceAlertmanager    NewAlertDataAttributesSource = "alertmanager"
-	NewAlertDataAttributesSourceAppDynamics     NewAlertDataAttributesSource = "app_dynamics"
-	NewAlertDataAttributesSourceAppOptics       NewAlertDataAttributesSource = "app_optics"
-	NewAlertDataAttributesSourceAsana           NewAlertDataAttributesSource = "asana"
-	NewAlertDataAttributesSourceAwsSns          NewAlertDataAttributesSource = "aws_sns"
-	NewAlertDataAttributesSourceAzure           NewAlertDataAttributesSource = "azure"
-	NewAlertDataAttributesSourceBugSnag         NewAlertDataAttributesSource = "bug_snag"
-	NewAlertDataAttributesSourceCatchpoint      NewAlertDataAttributesSource = "catchpoint"
-	NewAlertDataAttributesSourceCheckly         NewAlertDataAttributesSource = "checkly"
-	NewAlertDataAttributesSourceChronosphere    NewAlertDataAttributesSource = "chronosphere"
-	NewAlertDataAttributesSourceClickup         NewAlertDataAttributesSource = "clickup"
-	NewAlertDataAttributesSourceCloudWatch      NewAlertDataAttributesSource = "cloud_watch"
-	NewAlertDataAttributesSourceDatadog         NewAlertDataAttributesSource = "datadog"
-	NewAlertDataAttributesSourceDynatrace       NewAlertDataAttributesSource = "dynatrace"
-	NewAlertDataAttributesSourceEmail           NewAlertDataAttributesSource = "email"
-	NewAlertDataAttributesSourceGenericWebhook  NewAlertDataAttributesSource = "generic_webhook"
-	NewAlertDataAttributesSourceGitlab          NewAlertDataAttributesSource = "gitlab"
-	NewAlertDataAttributesSourceGoogleCloud     NewAlertDataAttributesSource = "google_cloud"
-	NewAlertDataAttributesSourceGrafana         NewAlertDataAttributesSource = "grafana"
-	NewAlertDataAttributesSourceHeartbeat       NewAlertDataAttributesSource = "heartbeat"
-	NewAlertDataAttributesSourceHoneycomb       NewAlertDataAttributesSource = "honeycomb"
-	NewAlertDataAttributesSourceJira            NewAlertDataAttributesSource = "jira"
-	NewAlertDataAttributesSourceLinear          NewAlertDataAttributesSource = "linear"
-	NewAlertDataAttributesSourceLiveCallRouting NewAlertDataAttributesSource = "live_call_routing"
-	NewAlertDataAttributesSourceManual          NewAlertDataAttributesSource = "manual"
-	NewAlertDataAttributesSourceMobile          NewAlertDataAttributesSource = "mobile"
-	NewAlertDataAttributesSourceMonteCarlo      NewAlertDataAttributesSource = "monte_carlo"
-	NewAlertDataAttributesSourceNagios          NewAlertDataAttributesSource = "nagios"
-	NewAlertDataAttributesSourceNewRelic        NewAlertDataAttributesSource = "new_relic"
-	NewAlertDataAttributesSourceNobl9           NewAlertDataAttributesSource = "nobl9"
-	NewAlertDataAttributesSourceOpsgenie        NewAlertDataAttributesSource = "opsgenie"
-	NewAlertDataAttributesSourcePagerduty       NewAlertDataAttributesSource = "pagerduty"
-	NewAlertDataAttributesSourcePagertree       NewAlertDataAttributesSource = "pagertree"
-	NewAlertDataAttributesSourcePrtg            NewAlertDataAttributesSource = "prtg"
-	NewAlertDataAttributesSourceRollbar         NewAlertDataAttributesSource = "rollbar"
-	NewAlertDataAttributesSourceRootly          NewAlertDataAttributesSource = "rootly"
-	NewAlertDataAttributesSourceSentry          NewAlertDataAttributesSource = "sentry"
-	NewAlertDataAttributesSourceServiceNow      NewAlertDataAttributesSource = "service_now"
-	NewAlertDataAttributesSourceSlack           NewAlertDataAttributesSource = "slack"
-	NewAlertDataAttributesSourceSplunk          NewAlertDataAttributesSource = "splunk"
-	NewAlertDataAttributesSourceVictorops       NewAlertDataAttributesSource = "victorops"
-	NewAlertDataAttributesSourceWeb             NewAlertDataAttributesSource = "web"
-	NewAlertDataAttributesSourceWorkflow        NewAlertDataAttributesSource = "workflow"
-	NewAlertDataAttributesSourceZendesk         NewAlertDataAttributesSource = "zendesk"
-)
-
-// Valid indicates whether the value is a known member of the NewAlertDataAttributesSource enum.
-func (e NewAlertDataAttributesSource) Valid() bool {
-	switch e {
-	case NewAlertDataAttributesSourceAPI:
-		return true
-	case NewAlertDataAttributesSourceAlertmanager:
-		return true
-	case NewAlertDataAttributesSourceAppDynamics:
-		return true
-	case NewAlertDataAttributesSourceAppOptics:
-		return true
-	case NewAlertDataAttributesSourceAsana:
-		return true
-	case NewAlertDataAttributesSourceAwsSns:
-		return true
-	case NewAlertDataAttributesSourceAzure:
-		return true
-	case NewAlertDataAttributesSourceBugSnag:
-		return true
-	case NewAlertDataAttributesSourceCatchpoint:
-		return true
-	case NewAlertDataAttributesSourceCheckly:
-		return true
-	case NewAlertDataAttributesSourceChronosphere:
-		return true
-	case NewAlertDataAttributesSourceClickup:
-		return true
-	case NewAlertDataAttributesSourceCloudWatch:
-		return true
-	case NewAlertDataAttributesSourceDatadog:
-		return true
-	case NewAlertDataAttributesSourceDynatrace:
-		return true
-	case NewAlertDataAttributesSourceEmail:
-		return true
-	case NewAlertDataAttributesSourceGenericWebhook:
-		return true
-	case NewAlertDataAttributesSourceGitlab:
-		return true
-	case NewAlertDataAttributesSourceGoogleCloud:
-		return true
-	case NewAlertDataAttributesSourceGrafana:
-		return true
-	case NewAlertDataAttributesSourceHeartbeat:
-		return true
-	case NewAlertDataAttributesSourceHoneycomb:
-		return true
-	case NewAlertDataAttributesSourceJira:
-		return true
-	case NewAlertDataAttributesSourceLinear:
-		return true
-	case NewAlertDataAttributesSourceLiveCallRouting:
-		return true
-	case NewAlertDataAttributesSourceManual:
-		return true
-	case NewAlertDataAttributesSourceMobile:
-		return true
-	case NewAlertDataAttributesSourceMonteCarlo:
-		return true
-	case NewAlertDataAttributesSourceNagios:
-		return true
-	case NewAlertDataAttributesSourceNewRelic:
-		return true
-	case NewAlertDataAttributesSourceNobl9:
-		return true
-	case NewAlertDataAttributesSourceOpsgenie:
-		return true
-	case NewAlertDataAttributesSourcePagerduty:
-		return true
-	case NewAlertDataAttributesSourcePagertree:
-		return true
-	case NewAlertDataAttributesSourcePrtg:
-		return true
-	case NewAlertDataAttributesSourceRollbar:
-		return true
-	case NewAlertDataAttributesSourceRootly:
-		return true
-	case NewAlertDataAttributesSourceSentry:
-		return true
-	case NewAlertDataAttributesSourceServiceNow:
-		return true
-	case NewAlertDataAttributesSourceSlack:
-		return true
-	case NewAlertDataAttributesSourceSplunk:
-		return true
-	case NewAlertDataAttributesSourceVictorops:
-		return true
-	case NewAlertDataAttributesSourceWeb:
-		return true
-	case NewAlertDataAttributesSourceWorkflow:
-		return true
-	case NewAlertDataAttributesSourceZendesk:
 		return true
 	default:
 		return false
@@ -16652,6 +16604,78 @@ func (e NewEscalationPolicyPathDataAttributesRules5TimeZone) Valid() bool {
 	case NewEscalationPolicyPathDataAttributesRules5TimeZoneZagreb:
 		return true
 	case NewEscalationPolicyPathDataAttributesRules5TimeZoneZurich:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for NewEscalationPolicyPathDataAttributesRules6Operator.
+const (
+	NewEscalationPolicyPathDataAttributesRules6OperatorIs         NewEscalationPolicyPathDataAttributesRules6Operator = "is"
+	NewEscalationPolicyPathDataAttributesRules6OperatorIsNot      NewEscalationPolicyPathDataAttributesRules6Operator = "is_not"
+	NewEscalationPolicyPathDataAttributesRules6OperatorIsNotOneOf NewEscalationPolicyPathDataAttributesRules6Operator = "is_not_one_of"
+	NewEscalationPolicyPathDataAttributesRules6OperatorIsOneOf    NewEscalationPolicyPathDataAttributesRules6Operator = "is_one_of"
+)
+
+// Valid indicates whether the value is a known member of the NewEscalationPolicyPathDataAttributesRules6Operator enum.
+func (e NewEscalationPolicyPathDataAttributesRules6Operator) Valid() bool {
+	switch e {
+	case NewEscalationPolicyPathDataAttributesRules6OperatorIs:
+		return true
+	case NewEscalationPolicyPathDataAttributesRules6OperatorIsNot:
+		return true
+	case NewEscalationPolicyPathDataAttributesRules6OperatorIsNotOneOf:
+		return true
+	case NewEscalationPolicyPathDataAttributesRules6OperatorIsOneOf:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for NewEscalationPolicyPathDataAttributesRules6RuleType.
+const (
+	NewEscalationPolicyPathDataAttributesRules6RuleTypeSource NewEscalationPolicyPathDataAttributesRules6RuleType = "source"
+)
+
+// Valid indicates whether the value is a known member of the NewEscalationPolicyPathDataAttributesRules6RuleType enum.
+func (e NewEscalationPolicyPathDataAttributesRules6RuleType) Valid() bool {
+	switch e {
+	case NewEscalationPolicyPathDataAttributesRules6RuleTypeSource:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for NewEscalationPolicyPathDataAttributesRules7Operator.
+const (
+	NewEscalationPolicyPathDataAttributesRules7OperatorIsNotSet NewEscalationPolicyPathDataAttributesRules7Operator = "is_not_set"
+	NewEscalationPolicyPathDataAttributesRules7OperatorIsSet    NewEscalationPolicyPathDataAttributesRules7Operator = "is_set"
+)
+
+// Valid indicates whether the value is a known member of the NewEscalationPolicyPathDataAttributesRules7Operator enum.
+func (e NewEscalationPolicyPathDataAttributesRules7Operator) Valid() bool {
+	switch e {
+	case NewEscalationPolicyPathDataAttributesRules7OperatorIsNotSet:
+		return true
+	case NewEscalationPolicyPathDataAttributesRules7OperatorIsSet:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for NewEscalationPolicyPathDataAttributesRules7RuleType.
+const (
+	NewEscalationPolicyPathDataAttributesRules7RuleTypeRelatedIncidents NewEscalationPolicyPathDataAttributesRules7RuleType = "related_incidents"
+)
+
+// Valid indicates whether the value is a known member of the NewEscalationPolicyPathDataAttributesRules7RuleType enum.
+func (e NewEscalationPolicyPathDataAttributesRules7RuleType) Valid() bool {
+	switch e {
+	case NewEscalationPolicyPathDataAttributesRules7RuleTypeRelatedIncidents:
 		return true
 	default:
 		return false
@@ -26801,153 +26825,6 @@ func (e UpdateAlertDataAttributesNoise) Valid() bool {
 	}
 }
 
-// Defines values for UpdateAlertDataAttributesSource.
-const (
-	UpdateAlertDataAttributesSourceAPI             UpdateAlertDataAttributesSource = "api"
-	UpdateAlertDataAttributesSourceAlertmanager    UpdateAlertDataAttributesSource = "alertmanager"
-	UpdateAlertDataAttributesSourceAppDynamics     UpdateAlertDataAttributesSource = "app_dynamics"
-	UpdateAlertDataAttributesSourceAppOptics       UpdateAlertDataAttributesSource = "app_optics"
-	UpdateAlertDataAttributesSourceAsana           UpdateAlertDataAttributesSource = "asana"
-	UpdateAlertDataAttributesSourceAwsSns          UpdateAlertDataAttributesSource = "aws_sns"
-	UpdateAlertDataAttributesSourceAzure           UpdateAlertDataAttributesSource = "azure"
-	UpdateAlertDataAttributesSourceBugSnag         UpdateAlertDataAttributesSource = "bug_snag"
-	UpdateAlertDataAttributesSourceCatchpoint      UpdateAlertDataAttributesSource = "catchpoint"
-	UpdateAlertDataAttributesSourceCheckly         UpdateAlertDataAttributesSource = "checkly"
-	UpdateAlertDataAttributesSourceChronosphere    UpdateAlertDataAttributesSource = "chronosphere"
-	UpdateAlertDataAttributesSourceClickup         UpdateAlertDataAttributesSource = "clickup"
-	UpdateAlertDataAttributesSourceCloudWatch      UpdateAlertDataAttributesSource = "cloud_watch"
-	UpdateAlertDataAttributesSourceDatadog         UpdateAlertDataAttributesSource = "datadog"
-	UpdateAlertDataAttributesSourceDynatrace       UpdateAlertDataAttributesSource = "dynatrace"
-	UpdateAlertDataAttributesSourceEmail           UpdateAlertDataAttributesSource = "email"
-	UpdateAlertDataAttributesSourceGenericWebhook  UpdateAlertDataAttributesSource = "generic_webhook"
-	UpdateAlertDataAttributesSourceGitlab          UpdateAlertDataAttributesSource = "gitlab"
-	UpdateAlertDataAttributesSourceGoogleCloud     UpdateAlertDataAttributesSource = "google_cloud"
-	UpdateAlertDataAttributesSourceGrafana         UpdateAlertDataAttributesSource = "grafana"
-	UpdateAlertDataAttributesSourceHeartbeat       UpdateAlertDataAttributesSource = "heartbeat"
-	UpdateAlertDataAttributesSourceHoneycomb       UpdateAlertDataAttributesSource = "honeycomb"
-	UpdateAlertDataAttributesSourceJira            UpdateAlertDataAttributesSource = "jira"
-	UpdateAlertDataAttributesSourceLinear          UpdateAlertDataAttributesSource = "linear"
-	UpdateAlertDataAttributesSourceLiveCallRouting UpdateAlertDataAttributesSource = "live_call_routing"
-	UpdateAlertDataAttributesSourceManual          UpdateAlertDataAttributesSource = "manual"
-	UpdateAlertDataAttributesSourceMobile          UpdateAlertDataAttributesSource = "mobile"
-	UpdateAlertDataAttributesSourceMonteCarlo      UpdateAlertDataAttributesSource = "monte_carlo"
-	UpdateAlertDataAttributesSourceNagios          UpdateAlertDataAttributesSource = "nagios"
-	UpdateAlertDataAttributesSourceNewRelic        UpdateAlertDataAttributesSource = "new_relic"
-	UpdateAlertDataAttributesSourceNobl9           UpdateAlertDataAttributesSource = "nobl9"
-	UpdateAlertDataAttributesSourceOpsgenie        UpdateAlertDataAttributesSource = "opsgenie"
-	UpdateAlertDataAttributesSourcePagerduty       UpdateAlertDataAttributesSource = "pagerduty"
-	UpdateAlertDataAttributesSourcePagertree       UpdateAlertDataAttributesSource = "pagertree"
-	UpdateAlertDataAttributesSourcePrtg            UpdateAlertDataAttributesSource = "prtg"
-	UpdateAlertDataAttributesSourceRollbar         UpdateAlertDataAttributesSource = "rollbar"
-	UpdateAlertDataAttributesSourceRootly          UpdateAlertDataAttributesSource = "rootly"
-	UpdateAlertDataAttributesSourceSentry          UpdateAlertDataAttributesSource = "sentry"
-	UpdateAlertDataAttributesSourceServiceNow      UpdateAlertDataAttributesSource = "service_now"
-	UpdateAlertDataAttributesSourceSlack           UpdateAlertDataAttributesSource = "slack"
-	UpdateAlertDataAttributesSourceSplunk          UpdateAlertDataAttributesSource = "splunk"
-	UpdateAlertDataAttributesSourceVictorops       UpdateAlertDataAttributesSource = "victorops"
-	UpdateAlertDataAttributesSourceWeb             UpdateAlertDataAttributesSource = "web"
-	UpdateAlertDataAttributesSourceWorkflow        UpdateAlertDataAttributesSource = "workflow"
-	UpdateAlertDataAttributesSourceZendesk         UpdateAlertDataAttributesSource = "zendesk"
-)
-
-// Valid indicates whether the value is a known member of the UpdateAlertDataAttributesSource enum.
-func (e UpdateAlertDataAttributesSource) Valid() bool {
-	switch e {
-	case UpdateAlertDataAttributesSourceAPI:
-		return true
-	case UpdateAlertDataAttributesSourceAlertmanager:
-		return true
-	case UpdateAlertDataAttributesSourceAppDynamics:
-		return true
-	case UpdateAlertDataAttributesSourceAppOptics:
-		return true
-	case UpdateAlertDataAttributesSourceAsana:
-		return true
-	case UpdateAlertDataAttributesSourceAwsSns:
-		return true
-	case UpdateAlertDataAttributesSourceAzure:
-		return true
-	case UpdateAlertDataAttributesSourceBugSnag:
-		return true
-	case UpdateAlertDataAttributesSourceCatchpoint:
-		return true
-	case UpdateAlertDataAttributesSourceCheckly:
-		return true
-	case UpdateAlertDataAttributesSourceChronosphere:
-		return true
-	case UpdateAlertDataAttributesSourceClickup:
-		return true
-	case UpdateAlertDataAttributesSourceCloudWatch:
-		return true
-	case UpdateAlertDataAttributesSourceDatadog:
-		return true
-	case UpdateAlertDataAttributesSourceDynatrace:
-		return true
-	case UpdateAlertDataAttributesSourceEmail:
-		return true
-	case UpdateAlertDataAttributesSourceGenericWebhook:
-		return true
-	case UpdateAlertDataAttributesSourceGitlab:
-		return true
-	case UpdateAlertDataAttributesSourceGoogleCloud:
-		return true
-	case UpdateAlertDataAttributesSourceGrafana:
-		return true
-	case UpdateAlertDataAttributesSourceHeartbeat:
-		return true
-	case UpdateAlertDataAttributesSourceHoneycomb:
-		return true
-	case UpdateAlertDataAttributesSourceJira:
-		return true
-	case UpdateAlertDataAttributesSourceLinear:
-		return true
-	case UpdateAlertDataAttributesSourceLiveCallRouting:
-		return true
-	case UpdateAlertDataAttributesSourceManual:
-		return true
-	case UpdateAlertDataAttributesSourceMobile:
-		return true
-	case UpdateAlertDataAttributesSourceMonteCarlo:
-		return true
-	case UpdateAlertDataAttributesSourceNagios:
-		return true
-	case UpdateAlertDataAttributesSourceNewRelic:
-		return true
-	case UpdateAlertDataAttributesSourceNobl9:
-		return true
-	case UpdateAlertDataAttributesSourceOpsgenie:
-		return true
-	case UpdateAlertDataAttributesSourcePagerduty:
-		return true
-	case UpdateAlertDataAttributesSourcePagertree:
-		return true
-	case UpdateAlertDataAttributesSourcePrtg:
-		return true
-	case UpdateAlertDataAttributesSourceRollbar:
-		return true
-	case UpdateAlertDataAttributesSourceRootly:
-		return true
-	case UpdateAlertDataAttributesSourceSentry:
-		return true
-	case UpdateAlertDataAttributesSourceServiceNow:
-		return true
-	case UpdateAlertDataAttributesSourceSlack:
-		return true
-	case UpdateAlertDataAttributesSourceSplunk:
-		return true
-	case UpdateAlertDataAttributesSourceVictorops:
-		return true
-	case UpdateAlertDataAttributesSourceWeb:
-		return true
-	case UpdateAlertDataAttributesSourceWorkflow:
-		return true
-	case UpdateAlertDataAttributesSourceZendesk:
-		return true
-	default:
-		return false
-	}
-}
-
 // Defines values for UpdateAlertDataType.
 const (
 	UpdateAlertDataTypeAlerts UpdateAlertDataType = "alerts"
@@ -31019,6 +30896,78 @@ func (e UpdateEscalationPolicyPathDataAttributesRules5TimeZone) Valid() bool {
 	case UpdateEscalationPolicyPathDataAttributesRules5TimeZoneZagreb:
 		return true
 	case UpdateEscalationPolicyPathDataAttributesRules5TimeZoneZurich:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateEscalationPolicyPathDataAttributesRules6Operator.
+const (
+	UpdateEscalationPolicyPathDataAttributesRules6OperatorIs         UpdateEscalationPolicyPathDataAttributesRules6Operator = "is"
+	UpdateEscalationPolicyPathDataAttributesRules6OperatorIsNot      UpdateEscalationPolicyPathDataAttributesRules6Operator = "is_not"
+	UpdateEscalationPolicyPathDataAttributesRules6OperatorIsNotOneOf UpdateEscalationPolicyPathDataAttributesRules6Operator = "is_not_one_of"
+	UpdateEscalationPolicyPathDataAttributesRules6OperatorIsOneOf    UpdateEscalationPolicyPathDataAttributesRules6Operator = "is_one_of"
+)
+
+// Valid indicates whether the value is a known member of the UpdateEscalationPolicyPathDataAttributesRules6Operator enum.
+func (e UpdateEscalationPolicyPathDataAttributesRules6Operator) Valid() bool {
+	switch e {
+	case UpdateEscalationPolicyPathDataAttributesRules6OperatorIs:
+		return true
+	case UpdateEscalationPolicyPathDataAttributesRules6OperatorIsNot:
+		return true
+	case UpdateEscalationPolicyPathDataAttributesRules6OperatorIsNotOneOf:
+		return true
+	case UpdateEscalationPolicyPathDataAttributesRules6OperatorIsOneOf:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateEscalationPolicyPathDataAttributesRules6RuleType.
+const (
+	UpdateEscalationPolicyPathDataAttributesRules6RuleTypeSource UpdateEscalationPolicyPathDataAttributesRules6RuleType = "source"
+)
+
+// Valid indicates whether the value is a known member of the UpdateEscalationPolicyPathDataAttributesRules6RuleType enum.
+func (e UpdateEscalationPolicyPathDataAttributesRules6RuleType) Valid() bool {
+	switch e {
+	case UpdateEscalationPolicyPathDataAttributesRules6RuleTypeSource:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateEscalationPolicyPathDataAttributesRules7Operator.
+const (
+	UpdateEscalationPolicyPathDataAttributesRules7OperatorIsNotSet UpdateEscalationPolicyPathDataAttributesRules7Operator = "is_not_set"
+	UpdateEscalationPolicyPathDataAttributesRules7OperatorIsSet    UpdateEscalationPolicyPathDataAttributesRules7Operator = "is_set"
+)
+
+// Valid indicates whether the value is a known member of the UpdateEscalationPolicyPathDataAttributesRules7Operator enum.
+func (e UpdateEscalationPolicyPathDataAttributesRules7Operator) Valid() bool {
+	switch e {
+	case UpdateEscalationPolicyPathDataAttributesRules7OperatorIsNotSet:
+		return true
+	case UpdateEscalationPolicyPathDataAttributesRules7OperatorIsSet:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateEscalationPolicyPathDataAttributesRules7RuleType.
+const (
+	UpdateEscalationPolicyPathDataAttributesRules7RuleTypeRelatedIncidents UpdateEscalationPolicyPathDataAttributesRules7RuleType = "related_incidents"
+)
+
+// Valid indicates whether the value is a known member of the UpdateEscalationPolicyPathDataAttributesRules7RuleType enum.
+func (e UpdateEscalationPolicyPathDataAttributesRules7RuleType) Valid() bool {
+	switch e {
+	case UpdateEscalationPolicyPathDataAttributesRules7RuleTypeRelatedIncidents:
 		return true
 	default:
 		return false
@@ -39972,6 +39921,12 @@ type Alert struct {
 	// Noise Whether the alert is marked as noise
 	Noise nullable.Nullable[AlertNoise] `json:"noise,omitempty"`
 
+	// NotificationTargetID Only available for organizations with Rootly On-Call enabled. The identifier of the notification target object.
+	NotificationTargetID nullable.Nullable[string] `json:"notification_target_id,omitempty"`
+
+	// NotificationTargetType Only available for organizations with Rootly On-Call enabled. Can be one of Group, Service, EscalationPolicy, Functionality, User.
+	NotificationTargetType nullable.Nullable[AlertNotificationTargetType] `json:"notification_target_type,omitempty"`
+
 	// ServiceIDs The Service IDs to attach to the alert. If your organization has On-Call enabled and your notification target is a Service. This field will be automatically set for you.
 	ServiceIDs nullable.Nullable[[]string] `json:"service_ids,omitempty"`
 
@@ -40013,6 +39968,9 @@ type Alert_Labels_Value struct {
 
 // AlertNoise Whether the alert is marked as noise
 type AlertNoise string
+
+// AlertNotificationTargetType Only available for organizations with Rootly On-Call enabled. Can be one of Group, Service, EscalationPolicy, Functionality, User.
+type AlertNotificationTargetType string
 
 // AlertSource The source of the alert
 type AlertSource string
@@ -44667,6 +44625,39 @@ type EscalationPolicyPathRules5RuleType string
 // EscalationPolicyPathRules5TimeZone Time zone for the deferral window
 type EscalationPolicyPathRules5TimeZone string
 
+// EscalationPolicyPathRules6 defines model for .
+type EscalationPolicyPathRules6 struct {
+	// Operator How the alert source should be matched
+	Operator EscalationPolicyPathRules6Operator `json:"operator"`
+
+	// RuleType The type of the escalation path rule
+	RuleType EscalationPolicyPathRules6RuleType `json:"rule_type"`
+
+	// Values Alert source values to match against (e.g., manual, datadog)
+	Values []string `json:"values"`
+}
+
+// EscalationPolicyPathRules6Operator How the alert source should be matched
+type EscalationPolicyPathRules6Operator string
+
+// EscalationPolicyPathRules6RuleType The type of the escalation path rule
+type EscalationPolicyPathRules6RuleType string
+
+// EscalationPolicyPathRules7 defines model for .
+type EscalationPolicyPathRules7 struct {
+	// Operator Whether the alert must (or must not) have related incidents
+	Operator EscalationPolicyPathRules7Operator `json:"operator"`
+
+	// RuleType The type of the escalation path rule
+	RuleType EscalationPolicyPathRules7RuleType `json:"rule_type"`
+}
+
+// EscalationPolicyPathRules7Operator Whether the alert must (or must not) have related incidents
+type EscalationPolicyPathRules7Operator string
+
+// EscalationPolicyPathRules7RuleType The type of the escalation path rule
+type EscalationPolicyPathRules7RuleType string
+
 // EscalationPolicyPath_Rules_Item defines model for escalation_policy_path.rules.Item.
 type EscalationPolicyPath_Rules_Item struct {
 	union json.RawMessage
@@ -45465,6 +45456,12 @@ type HTTPClientTaskParams struct {
 		ID   *string `json:"id,omitempty"`
 		Name *string `json:"name,omitempty"`
 	} `json:"post_to_slack_channels,omitempty"`
+
+	// RetryCount Number of times to retry on HTTP 429 responses (0-4). 0 disables retry.
+	RetryCount *int `json:"retry_count,omitempty"`
+
+	// RetryWaitTime Seconds to wait before each retry (1-15). Retry-After header is honored when present and <= 90s, taking the larger of retry_wait_time and the header value.
+	RetryWaitTime *int `json:"retry_wait_time,omitempty"`
 
 	// SucceedOnStatus HTTP status code expected. Can be a regular expression. Eg: 200, 200|203, 20[0-3]
 	SucceedOnStatus string                        `json:"succeed_on_status"`
@@ -47386,8 +47383,9 @@ type NewAlert struct {
 			// ServiceIDs The Service IDs to attach to the alert. If your organization has On-Call enabled and your notification target is a Service. This field will be automatically set for you.
 			ServiceIDs nullable.Nullable[[]string] `json:"service_ids,omitempty"`
 
-			// Source The source of the alert
-			Source NewAlertDataAttributesSource `json:"source"`
+			// Source Deprecated. Accepted for backwards compatibility; new clients should omit. Defaults to `api`.
+			// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+			Source *string `json:"source,omitempty"`
 
 			// StartedAt Alert start datetime
 			StartedAt nullable.Nullable[time.Time] `json:"started_at,omitempty"`
@@ -47421,9 +47419,6 @@ type NewAlertDataAttributesNoise string
 
 // NewAlertDataAttributesNotificationTargetType Only available for organizations with Rootly On-Call enabled. Can be one of Group, Service, EscalationPolicy, Functionality, User. Please contact support if you encounter issues using `Functionality` as a notification target type.
 type NewAlertDataAttributesNotificationTargetType string
-
-// NewAlertDataAttributesSource The source of the alert
-type NewAlertDataAttributesSource string
 
 // NewAlertDataAttributesStatus Only available for organizations with Rootly On-Call enabled. Can be one of open, triggered.
 type NewAlertDataAttributesStatus string
@@ -48959,6 +48954,39 @@ type NewEscalationPolicyPathDataAttributesRules5RuleType string
 // NewEscalationPolicyPathDataAttributesRules5TimeZone Time zone for the deferral window
 type NewEscalationPolicyPathDataAttributesRules5TimeZone string
 
+// NewEscalationPolicyPathDataAttributesRules6 defines model for .
+type NewEscalationPolicyPathDataAttributesRules6 struct {
+	// Operator How the alert source should be matched
+	Operator NewEscalationPolicyPathDataAttributesRules6Operator `json:"operator"`
+
+	// RuleType The type of the escalation path rule
+	RuleType NewEscalationPolicyPathDataAttributesRules6RuleType `json:"rule_type"`
+
+	// Values Alert source values to match against (e.g., manual, datadog)
+	Values []string `json:"values"`
+}
+
+// NewEscalationPolicyPathDataAttributesRules6Operator How the alert source should be matched
+type NewEscalationPolicyPathDataAttributesRules6Operator string
+
+// NewEscalationPolicyPathDataAttributesRules6RuleType The type of the escalation path rule
+type NewEscalationPolicyPathDataAttributesRules6RuleType string
+
+// NewEscalationPolicyPathDataAttributesRules7 defines model for .
+type NewEscalationPolicyPathDataAttributesRules7 struct {
+	// Operator Whether the alert must (or must not) have related incidents
+	Operator NewEscalationPolicyPathDataAttributesRules7Operator `json:"operator"`
+
+	// RuleType The type of the escalation path rule
+	RuleType NewEscalationPolicyPathDataAttributesRules7RuleType `json:"rule_type"`
+}
+
+// NewEscalationPolicyPathDataAttributesRules7Operator Whether the alert must (or must not) have related incidents
+type NewEscalationPolicyPathDataAttributesRules7Operator string
+
+// NewEscalationPolicyPathDataAttributesRules7RuleType The type of the escalation path rule
+type NewEscalationPolicyPathDataAttributesRules7RuleType string
+
 // NewEscalationPolicyPath_Data_Attributes_Rules_Item defines model for NewEscalationPolicyPath.Data.Attributes.rules.Item.
 type NewEscalationPolicyPath_Data_Attributes_Rules_Item struct {
 	union json.RawMessage
@@ -49803,6 +49831,9 @@ type NewIncidentStatusPageEvent struct {
 			// ShouldTweet For Statuspage.io integrated pages auto publishes a tweet for your update
 			ShouldTweet nullable.Nullable[bool] `json:"should_tweet,omitempty"`
 
+			// StartedAt When the event started. Defaults to the time of creation.
+			StartedAt nullable.Nullable[time.Time] `json:"started_at,omitempty"`
+
 			// Status The status of the incident event
 			Status *NewIncidentStatusPageEventDataAttributesStatus `json:"status,omitempty"`
 
@@ -49997,6 +50028,12 @@ type NewOnCallPayReport struct {
 
 			// StartDate The start date for the report period.
 			StartDate openapi_types.Date `json:"start_date"`
+
+			// TimeZone IANA timezone used to compute day and weekend boundaries. Defaults to the team's timezone.
+			TimeZone *string `json:"time_zone,omitempty"`
+
+			// UseRespondersTimeZone When true, day and weekend boundaries are computed in each responder's personal timezone instead of the report-wide timezone.
+			UseRespondersTimeZone *bool `json:"use_responders_time_zone,omitempty"`
 		} `json:"attributes"`
 		Type NewOnCallPayReportDataType `json:"type"`
 	} `json:"data"`
@@ -51808,7 +51845,7 @@ type OnCallPayReport struct {
 	// Status The current status of the report.
 	Status OnCallPayReportStatus `json:"status"`
 
-	// TimeZone The team's IANA timezone used to interpret start_date and end_date.
+	// TimeZone The IANA timezone used to compute day and weekend boundaries for this report. Defaults to the team's timezone.
 	TimeZone nullable.Nullable[string] `json:"time_zone,omitempty"`
 
 	// TotalDuration Total on-call duration in seconds.
@@ -51817,6 +51854,9 @@ type OnCallPayReport struct {
 	// TotalPayCents Total pay amount in cents.
 	TotalPayCents *int      `json:"total_pay_cents,omitempty"`
 	UpdatedAt     time.Time `json:"updated_at"`
+
+	// UseRespondersTimeZone When true, each responder's personal timezone is used for their pay calculation; otherwise the report-wide time_zone is used.
+	UseRespondersTimeZone *bool `json:"use_responders_time_zone,omitempty"`
 
 	// UsersCount Number of users included in the report.
 	UsersCount *int `json:"users_count,omitempty"`
@@ -55289,8 +55329,9 @@ type UpdateAlert struct {
 			// ServiceIDs The Service IDs to attach to the alert
 			ServiceIDs nullable.Nullable[[]string] `json:"service_ids,omitempty"`
 
-			// Source The source of the alert
-			Source *UpdateAlertDataAttributesSource `json:"source,omitempty"`
+			// Source Deprecated. Accepted for backwards compatibility; new clients should omit. Defaults to `api`.
+			// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+			Source *string `json:"source,omitempty"`
 
 			// StartedAt Alert start datetime
 			StartedAt nullable.Nullable[time.Time] `json:"started_at,omitempty"`
@@ -55318,9 +55359,6 @@ type UpdateAlert_Data_Attributes_Labels_Value struct {
 
 // UpdateAlertDataAttributesNoise Whether the alert is marked as noise
 type UpdateAlertDataAttributesNoise string
-
-// UpdateAlertDataAttributesSource The source of the alert
-type UpdateAlertDataAttributesSource string
 
 // UpdateAlertDataType defines model for UpdateAlert.Data.Type.
 type UpdateAlertDataType string
@@ -56961,6 +56999,39 @@ type UpdateEscalationPolicyPathDataAttributesRules5RuleType string
 // UpdateEscalationPolicyPathDataAttributesRules5TimeZone Time zone for the deferral window
 type UpdateEscalationPolicyPathDataAttributesRules5TimeZone string
 
+// UpdateEscalationPolicyPathDataAttributesRules6 defines model for .
+type UpdateEscalationPolicyPathDataAttributesRules6 struct {
+	// Operator How the alert source should be matched
+	Operator UpdateEscalationPolicyPathDataAttributesRules6Operator `json:"operator"`
+
+	// RuleType The type of the escalation path rule
+	RuleType UpdateEscalationPolicyPathDataAttributesRules6RuleType `json:"rule_type"`
+
+	// Values Alert source values to match against (e.g., manual, datadog)
+	Values []string `json:"values"`
+}
+
+// UpdateEscalationPolicyPathDataAttributesRules6Operator How the alert source should be matched
+type UpdateEscalationPolicyPathDataAttributesRules6Operator string
+
+// UpdateEscalationPolicyPathDataAttributesRules6RuleType The type of the escalation path rule
+type UpdateEscalationPolicyPathDataAttributesRules6RuleType string
+
+// UpdateEscalationPolicyPathDataAttributesRules7 defines model for .
+type UpdateEscalationPolicyPathDataAttributesRules7 struct {
+	// Operator Whether the alert must (or must not) have related incidents
+	Operator UpdateEscalationPolicyPathDataAttributesRules7Operator `json:"operator"`
+
+	// RuleType The type of the escalation path rule
+	RuleType UpdateEscalationPolicyPathDataAttributesRules7RuleType `json:"rule_type"`
+}
+
+// UpdateEscalationPolicyPathDataAttributesRules7Operator Whether the alert must (or must not) have related incidents
+type UpdateEscalationPolicyPathDataAttributesRules7Operator string
+
+// UpdateEscalationPolicyPathDataAttributesRules7RuleType The type of the escalation path rule
+type UpdateEscalationPolicyPathDataAttributesRules7RuleType string
+
 // UpdateEscalationPolicyPath_Data_Attributes_Rules_Item defines model for UpdateEscalationPolicyPath.Data.Attributes.rules.Item.
 type UpdateEscalationPolicyPath_Data_Attributes_Rules_Item struct {
 	union json.RawMessage
@@ -58027,6 +58098,9 @@ type UpdateIncidentStatusPageEvent struct {
 			// ShouldTweet For Statuspage.io integrated pages auto publishes a tweet for your update
 			ShouldTweet nullable.Nullable[bool] `json:"should_tweet,omitempty"`
 
+			// StartedAt When the event started.
+			StartedAt nullable.Nullable[time.Time] `json:"started_at,omitempty"`
+
 			// Status The status of the incident event
 			Status *UpdateIncidentStatusPageEventDataAttributesStatus `json:"status,omitempty"`
 
@@ -58420,6 +58494,12 @@ type UpdateOnCallPayReport struct {
 
 			// StartDate The start date for the report period.
 			StartDate *openapi_types.Date `json:"start_date,omitempty"`
+
+			// TimeZone IANA timezone used to compute day and weekend boundaries.
+			TimeZone *string `json:"time_zone,omitempty"`
+
+			// UseRespondersTimeZone When true, day and weekend boundaries are computed in each responder's personal timezone instead of the report-wide timezone.
+			UseRespondersTimeZone *bool `json:"use_responders_time_zone,omitempty"`
 		} `json:"attributes"`
 		Type UpdateOnCallPayReportDataType `json:"type"`
 	} `json:"data"`
@@ -62552,7 +62632,7 @@ type ListOncallsParams struct {
 	// Until End of time range in ISO-8601 format (e.g., 2025-01-01T00:00:00Z). Defaults to 'since' time.
 	Until *string `form:"until,omitempty" json:"until,omitempty"`
 
-	// Earliest When true, returns only the first on-call user per escalation policy level
+	// Earliest When true, returns only the first on-call entry per escalation policy path and level
 	Earliest *bool `form:"earliest,omitempty" json:"earliest,omitempty"`
 
 	// TimeZone Timezone for response times (e.g., America/New_York). Defaults to UTC.
@@ -62573,7 +62653,7 @@ type ListOncallsParams struct {
 	// FilterGroupIDs Comma-separated group IDs (teams)
 	FilterGroupIDs *string `form:"filter[group_ids],omitempty" json:"filter[group_ids],omitempty"`
 
-	// FilterNotificationTypes Comma-separated notification types to include. One or both of: audible, quiet. When present, oncalls are returned from every non-deferral escalation path whose notification_type is in the filter, sorted audible-first. When absent, only the default path's oncalls are returned (existing behavior).
+	// FilterNotificationTypes Comma-separated notification types to include. One or both of: audible, quiet. When omitted, returns oncalls from all non-deferral escalation paths. When provided, limits results to matching notification types and sorts audible-first.
 	FilterNotificationTypes *string `form:"filter[notification_types],omitempty" json:"filter[notification_types],omitempty"`
 }
 
@@ -64865,6 +64945,58 @@ func (t *EscalationPolicyPath_Rules_Item) MergeEscalationPolicyPathRules5(v Esca
 	return err
 }
 
+// AsEscalationPolicyPathRules6 returns the union data inside the EscalationPolicyPath_Rules_Item as a EscalationPolicyPathRules6
+func (t EscalationPolicyPath_Rules_Item) AsEscalationPolicyPathRules6() (EscalationPolicyPathRules6, error) {
+	var body EscalationPolicyPathRules6
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromEscalationPolicyPathRules6 overwrites any union data inside the EscalationPolicyPath_Rules_Item as the provided EscalationPolicyPathRules6
+func (t *EscalationPolicyPath_Rules_Item) FromEscalationPolicyPathRules6(v EscalationPolicyPathRules6) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeEscalationPolicyPathRules6 performs a merge with any union data inside the EscalationPolicyPath_Rules_Item, using the provided EscalationPolicyPathRules6
+func (t *EscalationPolicyPath_Rules_Item) MergeEscalationPolicyPathRules6(v EscalationPolicyPathRules6) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsEscalationPolicyPathRules7 returns the union data inside the EscalationPolicyPath_Rules_Item as a EscalationPolicyPathRules7
+func (t EscalationPolicyPath_Rules_Item) AsEscalationPolicyPathRules7() (EscalationPolicyPathRules7, error) {
+	var body EscalationPolicyPathRules7
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromEscalationPolicyPathRules7 overwrites any union data inside the EscalationPolicyPath_Rules_Item as the provided EscalationPolicyPathRules7
+func (t *EscalationPolicyPath_Rules_Item) FromEscalationPolicyPathRules7(v EscalationPolicyPathRules7) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeEscalationPolicyPathRules7 performs a merge with any union data inside the EscalationPolicyPath_Rules_Item, using the provided EscalationPolicyPathRules7
+func (t *EscalationPolicyPath_Rules_Item) MergeEscalationPolicyPathRules7(v EscalationPolicyPathRules7) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
 func (t EscalationPolicyPath_Rules_Item) MarshalJSON() ([]byte, error) {
 	b, err := t.union.MarshalJSON()
 	return b, err
@@ -65941,6 +66073,58 @@ func (t *NewEscalationPolicyPath_Data_Attributes_Rules_Item) FromNewEscalationPo
 
 // MergeNewEscalationPolicyPathDataAttributesRules5 performs a merge with any union data inside the NewEscalationPolicyPath_Data_Attributes_Rules_Item, using the provided NewEscalationPolicyPathDataAttributesRules5
 func (t *NewEscalationPolicyPath_Data_Attributes_Rules_Item) MergeNewEscalationPolicyPathDataAttributesRules5(v NewEscalationPolicyPathDataAttributesRules5) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsNewEscalationPolicyPathDataAttributesRules6 returns the union data inside the NewEscalationPolicyPath_Data_Attributes_Rules_Item as a NewEscalationPolicyPathDataAttributesRules6
+func (t NewEscalationPolicyPath_Data_Attributes_Rules_Item) AsNewEscalationPolicyPathDataAttributesRules6() (NewEscalationPolicyPathDataAttributesRules6, error) {
+	var body NewEscalationPolicyPathDataAttributesRules6
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromNewEscalationPolicyPathDataAttributesRules6 overwrites any union data inside the NewEscalationPolicyPath_Data_Attributes_Rules_Item as the provided NewEscalationPolicyPathDataAttributesRules6
+func (t *NewEscalationPolicyPath_Data_Attributes_Rules_Item) FromNewEscalationPolicyPathDataAttributesRules6(v NewEscalationPolicyPathDataAttributesRules6) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeNewEscalationPolicyPathDataAttributesRules6 performs a merge with any union data inside the NewEscalationPolicyPath_Data_Attributes_Rules_Item, using the provided NewEscalationPolicyPathDataAttributesRules6
+func (t *NewEscalationPolicyPath_Data_Attributes_Rules_Item) MergeNewEscalationPolicyPathDataAttributesRules6(v NewEscalationPolicyPathDataAttributesRules6) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsNewEscalationPolicyPathDataAttributesRules7 returns the union data inside the NewEscalationPolicyPath_Data_Attributes_Rules_Item as a NewEscalationPolicyPathDataAttributesRules7
+func (t NewEscalationPolicyPath_Data_Attributes_Rules_Item) AsNewEscalationPolicyPathDataAttributesRules7() (NewEscalationPolicyPathDataAttributesRules7, error) {
+	var body NewEscalationPolicyPathDataAttributesRules7
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromNewEscalationPolicyPathDataAttributesRules7 overwrites any union data inside the NewEscalationPolicyPath_Data_Attributes_Rules_Item as the provided NewEscalationPolicyPathDataAttributesRules7
+func (t *NewEscalationPolicyPath_Data_Attributes_Rules_Item) FromNewEscalationPolicyPathDataAttributesRules7(v NewEscalationPolicyPathDataAttributesRules7) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeNewEscalationPolicyPathDataAttributesRules7 performs a merge with any union data inside the NewEscalationPolicyPath_Data_Attributes_Rules_Item, using the provided NewEscalationPolicyPathDataAttributesRules7
+func (t *NewEscalationPolicyPath_Data_Attributes_Rules_Item) MergeNewEscalationPolicyPathDataAttributesRules7(v NewEscalationPolicyPathDataAttributesRules7) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -71522,6 +71706,58 @@ func (t *UpdateEscalationPolicyPath_Data_Attributes_Rules_Item) FromUpdateEscala
 
 // MergeUpdateEscalationPolicyPathDataAttributesRules5 performs a merge with any union data inside the UpdateEscalationPolicyPath_Data_Attributes_Rules_Item, using the provided UpdateEscalationPolicyPathDataAttributesRules5
 func (t *UpdateEscalationPolicyPath_Data_Attributes_Rules_Item) MergeUpdateEscalationPolicyPathDataAttributesRules5(v UpdateEscalationPolicyPathDataAttributesRules5) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateEscalationPolicyPathDataAttributesRules6 returns the union data inside the UpdateEscalationPolicyPath_Data_Attributes_Rules_Item as a UpdateEscalationPolicyPathDataAttributesRules6
+func (t UpdateEscalationPolicyPath_Data_Attributes_Rules_Item) AsUpdateEscalationPolicyPathDataAttributesRules6() (UpdateEscalationPolicyPathDataAttributesRules6, error) {
+	var body UpdateEscalationPolicyPathDataAttributesRules6
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateEscalationPolicyPathDataAttributesRules6 overwrites any union data inside the UpdateEscalationPolicyPath_Data_Attributes_Rules_Item as the provided UpdateEscalationPolicyPathDataAttributesRules6
+func (t *UpdateEscalationPolicyPath_Data_Attributes_Rules_Item) FromUpdateEscalationPolicyPathDataAttributesRules6(v UpdateEscalationPolicyPathDataAttributesRules6) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateEscalationPolicyPathDataAttributesRules6 performs a merge with any union data inside the UpdateEscalationPolicyPath_Data_Attributes_Rules_Item, using the provided UpdateEscalationPolicyPathDataAttributesRules6
+func (t *UpdateEscalationPolicyPath_Data_Attributes_Rules_Item) MergeUpdateEscalationPolicyPathDataAttributesRules6(v UpdateEscalationPolicyPathDataAttributesRules6) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateEscalationPolicyPathDataAttributesRules7 returns the union data inside the UpdateEscalationPolicyPath_Data_Attributes_Rules_Item as a UpdateEscalationPolicyPathDataAttributesRules7
+func (t UpdateEscalationPolicyPath_Data_Attributes_Rules_Item) AsUpdateEscalationPolicyPathDataAttributesRules7() (UpdateEscalationPolicyPathDataAttributesRules7, error) {
+	var body UpdateEscalationPolicyPathDataAttributesRules7
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateEscalationPolicyPathDataAttributesRules7 overwrites any union data inside the UpdateEscalationPolicyPath_Data_Attributes_Rules_Item as the provided UpdateEscalationPolicyPathDataAttributesRules7
+func (t *UpdateEscalationPolicyPath_Data_Attributes_Rules_Item) FromUpdateEscalationPolicyPathDataAttributesRules7(v UpdateEscalationPolicyPathDataAttributesRules7) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateEscalationPolicyPathDataAttributesRules7 performs a merge with any union data inside the UpdateEscalationPolicyPath_Data_Attributes_Rules_Item, using the provided UpdateEscalationPolicyPathDataAttributesRules7
+func (t *UpdateEscalationPolicyPath_Data_Attributes_Rules_Item) MergeUpdateEscalationPolicyPathDataAttributesRules7(v UpdateEscalationPolicyPathDataAttributesRules7) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err

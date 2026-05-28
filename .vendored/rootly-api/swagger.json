@@ -19395,7 +19395,7 @@
         "parameters": [],
         "responses": {
           "201": {
-            "description": "incident_status_page_event created",
+            "description": "incident_status_page_event created with started_at",
             "content": {
               "application/vnd.api+json": {
                 "schema": {
@@ -19549,7 +19549,7 @@
         "parameters": [],
         "responses": {
           "200": {
-            "description": "incident_status_page_event updated",
+            "description": "incident_status_page_event started_at updated",
             "content": {
               "application/vnd.api+json": {
                 "schema": {
@@ -23696,7 +23696,7 @@
           {
             "name": "earliest",
             "in": "query",
-            "description": "When true, returns only the first on-call user per escalation policy level",
+            "description": "When true, returns only the first on-call entry per escalation policy path and level",
             "required": false,
             "schema": {
               "type": "boolean"
@@ -23762,7 +23762,7 @@
             "schema": {
               "type": "string"
             },
-            "description": "Comma-separated notification types to include. One or both of: audible, quiet. When present, oncalls are returned from every non-deferral escalation path whose notification_type is in the filter, sorted audible-first. When absent, only the default path's oncalls are returned (existing behavior).",
+            "description": "Comma-separated notification types to include. One or both of: audible, quiet. When omitted, returns oncalls from all non-deferral escalation paths. When provided, limits results to matching notification types and sorts audible-first.",
             "required": false
           }
         ],
@@ -32898,54 +32898,8 @@
                   },
                   "source": {
                     "type": "string",
-                    "description": "The source of the alert",
-                    "enum": [
-                      "rootly",
-                      "manual",
-                      "api",
-                      "heartbeat",
-                      "web",
-                      "slack",
-                      "email",
-                      "workflow",
-                      "live_call_routing",
-                      "mobile",
-                      "pagerduty",
-                      "opsgenie",
-                      "victorops",
-                      "pagertree",
-                      "datadog",
-                      "dynatrace",
-                      "nobl9",
-                      "zendesk",
-                      "asana",
-                      "clickup",
-                      "sentry",
-                      "rollbar",
-                      "jira",
-                      "honeycomb",
-                      "service_now",
-                      "linear",
-                      "grafana",
-                      "alertmanager",
-                      "google_cloud",
-                      "generic_webhook",
-                      "cloud_watch",
-                      "aws_sns",
-                      "azure",
-                      "splunk",
-                      "chronosphere",
-                      "app_optics",
-                      "bug_snag",
-                      "monte_carlo",
-                      "nagios",
-                      "prtg",
-                      "catchpoint",
-                      "app_dynamics",
-                      "checkly",
-                      "new_relic",
-                      "gitlab"
-                    ]
+                    "description": "Deprecated. Accepted for backwards compatibility; new clients should omit. Defaults to `api`.",
+                    "deprecated": true
                   },
                   "status": {
                     "type": "string",
@@ -33098,7 +33052,6 @@
                 },
                 "additionalProperties": false,
                 "required": [
-                  "source",
                   "summary"
                 ]
               }
@@ -33139,54 +33092,8 @@
                   },
                   "source": {
                     "type": "string",
-                    "description": "The source of the alert",
-                    "enum": [
-                      "rootly",
-                      "manual",
-                      "api",
-                      "heartbeat",
-                      "web",
-                      "slack",
-                      "email",
-                      "workflow",
-                      "live_call_routing",
-                      "mobile",
-                      "pagerduty",
-                      "opsgenie",
-                      "victorops",
-                      "pagertree",
-                      "datadog",
-                      "dynatrace",
-                      "nobl9",
-                      "zendesk",
-                      "asana",
-                      "clickup",
-                      "sentry",
-                      "rollbar",
-                      "jira",
-                      "honeycomb",
-                      "service_now",
-                      "linear",
-                      "grafana",
-                      "alertmanager",
-                      "google_cloud",
-                      "generic_webhook",
-                      "cloud_watch",
-                      "aws_sns",
-                      "azure",
-                      "splunk",
-                      "chronosphere",
-                      "app_optics",
-                      "bug_snag",
-                      "monte_carlo",
-                      "nagios",
-                      "prtg",
-                      "catchpoint",
-                      "app_dynamics",
-                      "checkly",
-                      "new_relic",
-                      "gitlab"
-                    ]
+                    "description": "Deprecated. Accepted for backwards compatibility; new clients should omit. Defaults to `api`.",
+                    "deprecated": true
                   },
                   "summary": {
                     "type": "string",
@@ -33316,7 +33223,6 @@
               }
             },
             "required": [
-              "source",
               "summary",
               "attributes"
             ]
@@ -33532,6 +33438,23 @@
           "data": {
             "type": "object",
             "description": "Additional data",
+            "nullable": true
+          },
+          "notification_target_type": {
+            "type": "string",
+            "enum": [
+              "User",
+              "Group",
+              "EscalationPolicy",
+              "Service",
+              "Functionality"
+            ],
+            "description": "Only available for organizations with Rootly On-Call enabled. Can be one of Group, Service, EscalationPolicy, Functionality, User.",
+            "nullable": true
+          },
+          "notification_target_id": {
+            "type": "string",
+            "description": "Only available for organizations with Rootly On-Call enabled. The identifier of the notification target object.",
             "nullable": true
           },
           "deduplication_key": {
@@ -47377,6 +47300,62 @@
                             "time_zone",
                             "time_blocks"
                           ]
+                        },
+                        {
+                          "properties": {
+                            "rule_type": {
+                              "type": "string",
+                              "description": "The type of the escalation path rule",
+                              "enum": [
+                                "source"
+                              ]
+                            },
+                            "operator": {
+                              "type": "string",
+                              "description": "How the alert source should be matched",
+                              "enum": [
+                                "is",
+                                "is_not",
+                                "is_one_of",
+                                "is_not_one_of"
+                              ]
+                            },
+                            "values": {
+                              "type": "array",
+                              "description": "Alert source values to match against (e.g., manual, datadog)",
+                              "items": {
+                                "type": "string"
+                              }
+                            }
+                          },
+                          "required": [
+                            "rule_type",
+                            "operator",
+                            "values"
+                          ]
+                        },
+                        {
+                          "properties": {
+                            "rule_type": {
+                              "type": "string",
+                              "description": "The type of the escalation path rule",
+                              "enum": [
+                                "related_incidents"
+                              ]
+                            },
+                            "operator": {
+                              "type": "string",
+                              "description": "Whether the alert must (or must not) have related incidents",
+                              "enum": [
+                                "is_set",
+                                "is_not_set"
+                              ]
+                            }
+                          },
+                          "required": [
+                            "rule_type",
+                            "operator"
+                          ]
                         }
                       ]
                     }
@@ -48383,6 +48362,62 @@
                             "time_zone",
                             "time_blocks"
                           ]
+                        },
+                        {
+                          "properties": {
+                            "rule_type": {
+                              "type": "string",
+                              "description": "The type of the escalation path rule",
+                              "enum": [
+                                "source"
+                              ]
+                            },
+                            "operator": {
+                              "type": "string",
+                              "description": "How the alert source should be matched",
+                              "enum": [
+                                "is",
+                                "is_not",
+                                "is_one_of",
+                                "is_not_one_of"
+                              ]
+                            },
+                            "values": {
+                              "type": "array",
+                              "description": "Alert source values to match against (e.g., manual, datadog)",
+                              "items": {
+                                "type": "string"
+                              }
+                            }
+                          },
+                          "required": [
+                            "rule_type",
+                            "operator",
+                            "values"
+                          ]
+                        },
+                        {
+                          "properties": {
+                            "rule_type": {
+                              "type": "string",
+                              "description": "The type of the escalation path rule",
+                              "enum": [
+                                "related_incidents"
+                              ]
+                            },
+                            "operator": {
+                              "type": "string",
+                              "description": "Whether the alert must (or must not) have related incidents",
+                              "enum": [
+                                "is_set",
+                                "is_not_set"
+                              ]
+                            }
+                          },
+                          "required": [
+                            "rule_type",
+                            "operator"
+                          ]
                         }
                       ],
                       "nullable": true
@@ -49373,6 +49408,62 @@
                     "rule_type",
                     "time_zone",
                     "time_blocks"
+                  ]
+                },
+                {
+                  "properties": {
+                    "rule_type": {
+                      "type": "string",
+                      "description": "The type of the escalation path rule",
+                      "enum": [
+                        "source"
+                      ]
+                    },
+                    "operator": {
+                      "type": "string",
+                      "description": "How the alert source should be matched",
+                      "enum": [
+                        "is",
+                        "is_not",
+                        "is_one_of",
+                        "is_not_one_of"
+                      ]
+                    },
+                    "values": {
+                      "type": "array",
+                      "description": "Alert source values to match against (e.g., manual, datadog)",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "required": [
+                    "rule_type",
+                    "operator",
+                    "values"
+                  ]
+                },
+                {
+                  "properties": {
+                    "rule_type": {
+                      "type": "string",
+                      "description": "The type of the escalation path rule",
+                      "enum": [
+                        "related_incidents"
+                      ]
+                    },
+                    "operator": {
+                      "type": "string",
+                      "description": "Whether the alert must (or must not) have related incidents",
+                      "enum": [
+                        "is_set",
+                        "is_not_set"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "rule_type",
+                    "operator"
                   ]
                 }
               ],
@@ -57354,6 +57445,18 @@
                 }
               }
             }
+          },
+          "retry_count": {
+            "type": "integer",
+            "description": "Number of times to retry on HTTP 429 responses (0-4). 0 disables retry.",
+            "default": 0,
+            "example": 3
+          },
+          "retry_wait_time": {
+            "type": "integer",
+            "description": "Seconds to wait before each retry (1-15). Retry-After header is honored when present and <= 90s, taking the larger of retry_wait_time and the header value.",
+            "default": 1,
+            "example": 2
           }
         },
         "required": [
@@ -70251,6 +70354,12 @@
                     "description": "For Statuspage.io integrated pages auto publishes a tweet for your update",
                     "default": false,
                     "nullable": true
+                  },
+                  "started_at": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "When the event started. Defaults to the time of creation.",
+                    "nullable": true
                   }
                 },
                 "additionalProperties": false,
@@ -70315,6 +70424,12 @@
                     "type": "boolean",
                     "description": "For Statuspage.io integrated pages auto publishes a tweet for your update",
                     "default": false,
+                    "nullable": true
+                  },
+                  "started_at": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "When the event started.",
                     "nullable": true
                   }
                 },
@@ -72907,6 +73022,14 @@
                       "type": "string"
                     },
                     "description": "List of schedule UUIDs to scope the report."
+                  },
+                  "time_zone": {
+                    "type": "string",
+                    "description": "IANA timezone used to compute day and weekend boundaries. Defaults to the team's timezone."
+                  },
+                  "use_responders_time_zone": {
+                    "type": "boolean",
+                    "description": "When true, day and weekend boundaries are computed in each responder's personal timezone instead of the report-wide timezone."
                   }
                 },
                 "additionalProperties": false,
@@ -72957,6 +73080,14 @@
                       "type": "string"
                     },
                     "description": "List of schedule UUIDs to scope the report."
+                  },
+                  "time_zone": {
+                    "type": "string",
+                    "description": "IANA timezone used to compute day and weekend boundaries."
+                  },
+                  "use_responders_time_zone": {
+                    "type": "boolean",
+                    "description": "When true, day and weekend boundaries are computed in each responder's personal timezone instead of the report-wide timezone."
                   }
                 },
                 "additionalProperties": false
@@ -73050,8 +73181,12 @@
           },
           "time_zone": {
             "type": "string",
-            "description": "The team's IANA timezone used to interpret start_date and end_date.",
+            "description": "The IANA timezone used to compute day and weekend boundaries for this report. Defaults to the team's timezone.",
             "nullable": true
+          },
+          "use_responders_time_zone": {
+            "type": "boolean",
+            "description": "When true, each responder's personal timezone is used for their pay calculation; otherwise the report-wide time_zone is used."
           },
           "csv_file_url": {
             "type": "string",
