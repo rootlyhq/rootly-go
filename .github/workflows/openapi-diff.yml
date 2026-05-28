@@ -7,10 +7,11 @@ on:
     paths:
       - ".vendored/rootly-api/swagger.json"
       - ".github/workflows/openapi-diff.yml"
+      - "overlay.yaml"
 
 jobs:
-  diff:
-    name: OpenAPI Diff
+  diff-upstream:
+    name: Diff upstream spec
     runs-on: ubuntu-latest
     permissions:
       pull-requests: write
@@ -61,7 +62,7 @@ jobs:
             const fs = require('fs');
             const changelog = fs.readFileSync('/tmp/changelog.md', 'utf8').trim();
             const marker = '<!-- openapi-changelog -->';
-            const body = `${marker}\n${changelog}`;
+            const body = `${marker}\n<details><summary>Upstream OpenAPI spec</summary>\n\n${changelog}\n\n</summary>`;
 
             const { data: comments } = await github.rest.issues.listComments({
               owner: context.repo.owner,
@@ -90,4 +91,99 @@ jobs:
       - name: OpenAPI breaking changes
         if: env.BASE_SPEC_EXISTS == 'true'
         run: oasdiff breaking /tmp/base-swagger.json .vendored/rootly-api/swagger.json --format githubactions
+        continue-on-error: true
+
+  diff-overlay:
+    name: Diff overlay-applied spec
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          fetch-depth: 0
+
+      - name: Get base spec and overlay
+        env:
+          PR_BASE_SHA: "${{ github.event.pull_request.base.sha }}"
+        run: |
+          if git show "${PR_BASE_SHA}:.vendored/rootly-api/swagger.json" > /tmp/base-swagger.json 2>/dev/null; then
+            echo "BASE_SPEC_EXISTS=true" >> "$GITHUB_ENV"
+          else
+            echo "BASE_SPEC_EXISTS=false" >> "$GITHUB_ENV"
+          fi
+          git show "${PR_BASE_SHA}:overlay.yaml" > /tmp/base-overlay.yaml 2>/dev/null || cp overlay.yaml /tmp/base-overlay.yaml
+
+      - name: Install oasdiff
+        env:
+          OASDIFF_VERSION: 1.16.0 # renovate: datasource=github-releases depName=oasdiff/oasdiff
+        run: |
+          curl -fsSL -o /tmp/oasdiff.tar.gz \
+            "https://github.com/oasdiff/oasdiff/releases/download/v${OASDIFF_VERSION}/oasdiff_${OASDIFF_VERSION}_linux_amd64.tar.gz"
+          tar -xzf /tmp/oasdiff.tar.gz -C /usr/local/bin oasdiff
+
+      - name: Install openapi CLI
+        env:
+          SPEAKEASY_OPENAPI_VERSION: v1.23.0 # renovate: datasource=github-releases depName=speakeasy-api/openapi
+        run: |
+          curl -fsSL -o /tmp/openapi.tar.gz \
+            "https://github.com/speakeasy-api/openapi/releases/download/${SPEAKEASY_OPENAPI_VERSION}/openapi_Linux_x86_64.tar.gz"
+          tar -xzf /tmp/openapi.tar.gz -C /usr/local/bin openapi
+
+      - name: Apply overlay to specs
+        if: env.BASE_SPEC_EXISTS == 'true'
+        run: |
+          openapi overlay apply /tmp/base-overlay.yaml /tmp/base-swagger.json > /tmp/base-overlay-applied.json
+          openapi overlay apply overlay.yaml .vendored/rootly-api/swagger.json > /tmp/pr-overlay-applied.json
+
+      - name: OpenAPI overlay changelog
+        if: env.BASE_SPEC_EXISTS == 'true'
+        run: |
+          CHANGELOG=$(oasdiff changelog --format markdown /tmp/base-overlay-applied.json /tmp/pr-overlay-applied.json || true)
+          if [ -z "$CHANGELOG" ]; then
+            CHANGELOG="_No API changes detected after overlay._"
+          fi
+          {
+            echo "$CHANGELOG"
+          } >> "$GITHUB_STEP_SUMMARY"
+          echo "$CHANGELOG" > /tmp/overlay-changelog.md
+
+      - name: Comment overlay changelog on PR
+        if: env.BASE_SPEC_EXISTS == 'true'
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
+        with:
+          script: |
+            const fs = require('fs');
+            const changelog = fs.readFileSync('/tmp/overlay-changelog.md', 'utf8').trim();
+            const marker = '<!-- openapi-overlay-changelog -->';
+            const body = `${marker}\nThe OpenAPI spec, once \`overlay.yaml\` is applied to it, has the following changes.\nWhere possible, rootly-go maintainers should review this and reduce breaking changes where possible.\n${changelog}`;
+
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+            });
+
+            const existing = comments.find(c => c.body.includes(marker));
+
+            if (existing) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: existing.id,
+                body,
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                body,
+              });
+            }
+
+      - name: OpenAPI overlay breaking changes
+        if: env.BASE_SPEC_EXISTS == 'true'
+        run: oasdiff breaking /tmp/base-overlay-applied.json /tmp/pr-overlay-applied.json --format githubactions
         continue-on-error: true
