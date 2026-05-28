@@ -32318,7 +32318,7 @@
         ],
         "responses": {
           "200": {
-            "description": "schedules include only returns schedules from the current team",
+            "description": "teams include only returns teams from the current team",
             "content": {
               "application/vnd.api+json": {
                 "schema": {
