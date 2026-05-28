@@ -12494,6 +12494,153 @@ func (e NewAlertDataAttributesNotificationTargetType) Valid() bool {
 	}
 }
 
+// Defines values for NewAlertDataAttributesSource.
+const (
+	NewAlertDataAttributesSourceAPI             NewAlertDataAttributesSource = "api"
+	NewAlertDataAttributesSourceAlertmanager    NewAlertDataAttributesSource = "alertmanager"
+	NewAlertDataAttributesSourceAppDynamics     NewAlertDataAttributesSource = "app_dynamics"
+	NewAlertDataAttributesSourceAppOptics       NewAlertDataAttributesSource = "app_optics"
+	NewAlertDataAttributesSourceAsana           NewAlertDataAttributesSource = "asana"
+	NewAlertDataAttributesSourceAwsSns          NewAlertDataAttributesSource = "aws_sns"
+	NewAlertDataAttributesSourceAzure           NewAlertDataAttributesSource = "azure"
+	NewAlertDataAttributesSourceBugSnag         NewAlertDataAttributesSource = "bug_snag"
+	NewAlertDataAttributesSourceCatchpoint      NewAlertDataAttributesSource = "catchpoint"
+	NewAlertDataAttributesSourceCheckly         NewAlertDataAttributesSource = "checkly"
+	NewAlertDataAttributesSourceChronosphere    NewAlertDataAttributesSource = "chronosphere"
+	NewAlertDataAttributesSourceClickup         NewAlertDataAttributesSource = "clickup"
+	NewAlertDataAttributesSourceCloudWatch      NewAlertDataAttributesSource = "cloud_watch"
+	NewAlertDataAttributesSourceDatadog         NewAlertDataAttributesSource = "datadog"
+	NewAlertDataAttributesSourceDynatrace       NewAlertDataAttributesSource = "dynatrace"
+	NewAlertDataAttributesSourceEmail           NewAlertDataAttributesSource = "email"
+	NewAlertDataAttributesSourceGenericWebhook  NewAlertDataAttributesSource = "generic_webhook"
+	NewAlertDataAttributesSourceGitlab          NewAlertDataAttributesSource = "gitlab"
+	NewAlertDataAttributesSourceGoogleCloud     NewAlertDataAttributesSource = "google_cloud"
+	NewAlertDataAttributesSourceGrafana         NewAlertDataAttributesSource = "grafana"
+	NewAlertDataAttributesSourceHeartbeat       NewAlertDataAttributesSource = "heartbeat"
+	NewAlertDataAttributesSourceHoneycomb       NewAlertDataAttributesSource = "honeycomb"
+	NewAlertDataAttributesSourceJira            NewAlertDataAttributesSource = "jira"
+	NewAlertDataAttributesSourceLinear          NewAlertDataAttributesSource = "linear"
+	NewAlertDataAttributesSourceLiveCallRouting NewAlertDataAttributesSource = "live_call_routing"
+	NewAlertDataAttributesSourceManual          NewAlertDataAttributesSource = "manual"
+	NewAlertDataAttributesSourceMobile          NewAlertDataAttributesSource = "mobile"
+	NewAlertDataAttributesSourceMonteCarlo      NewAlertDataAttributesSource = "monte_carlo"
+	NewAlertDataAttributesSourceNagios          NewAlertDataAttributesSource = "nagios"
+	NewAlertDataAttributesSourceNewRelic        NewAlertDataAttributesSource = "new_relic"
+	NewAlertDataAttributesSourceNobl9           NewAlertDataAttributesSource = "nobl9"
+	NewAlertDataAttributesSourceOpsgenie        NewAlertDataAttributesSource = "opsgenie"
+	NewAlertDataAttributesSourcePagerduty       NewAlertDataAttributesSource = "pagerduty"
+	NewAlertDataAttributesSourcePagertree       NewAlertDataAttributesSource = "pagertree"
+	NewAlertDataAttributesSourcePrtg            NewAlertDataAttributesSource = "prtg"
+	NewAlertDataAttributesSourceRollbar         NewAlertDataAttributesSource = "rollbar"
+	NewAlertDataAttributesSourceRootly          NewAlertDataAttributesSource = "rootly"
+	NewAlertDataAttributesSourceSentry          NewAlertDataAttributesSource = "sentry"
+	NewAlertDataAttributesSourceServiceNow      NewAlertDataAttributesSource = "service_now"
+	NewAlertDataAttributesSourceSlack           NewAlertDataAttributesSource = "slack"
+	NewAlertDataAttributesSourceSplunk          NewAlertDataAttributesSource = "splunk"
+	NewAlertDataAttributesSourceVictorops       NewAlertDataAttributesSource = "victorops"
+	NewAlertDataAttributesSourceWeb             NewAlertDataAttributesSource = "web"
+	NewAlertDataAttributesSourceWorkflow        NewAlertDataAttributesSource = "workflow"
+	NewAlertDataAttributesSourceZendesk         NewAlertDataAttributesSource = "zendesk"
+)
+
+// Valid indicates whether the value is a known member of the NewAlertDataAttributesSource enum.
+func (e NewAlertDataAttributesSource) Valid() bool {
+	switch e {
+	case NewAlertDataAttributesSourceAPI:
+		return true
+	case NewAlertDataAttributesSourceAlertmanager:
+		return true
+	case NewAlertDataAttributesSourceAppDynamics:
+		return true
+	case NewAlertDataAttributesSourceAppOptics:
+		return true
+	case NewAlertDataAttributesSourceAsana:
+		return true
+	case NewAlertDataAttributesSourceAwsSns:
+		return true
+	case NewAlertDataAttributesSourceAzure:
+		return true
+	case NewAlertDataAttributesSourceBugSnag:
+		return true
+	case NewAlertDataAttributesSourceCatchpoint:
+		return true
+	case NewAlertDataAttributesSourceCheckly:
+		return true
+	case NewAlertDataAttributesSourceChronosphere:
+		return true
+	case NewAlertDataAttributesSourceClickup:
+		return true
+	case NewAlertDataAttributesSourceCloudWatch:
+		return true
+	case NewAlertDataAttributesSourceDatadog:
+		return true
+	case NewAlertDataAttributesSourceDynatrace:
+		return true
+	case NewAlertDataAttributesSourceEmail:
+		return true
+	case NewAlertDataAttributesSourceGenericWebhook:
+		return true
+	case NewAlertDataAttributesSourceGitlab:
+		return true
+	case NewAlertDataAttributesSourceGoogleCloud:
+		return true
+	case NewAlertDataAttributesSourceGrafana:
+		return true
+	case NewAlertDataAttributesSourceHeartbeat:
+		return true
+	case NewAlertDataAttributesSourceHoneycomb:
+		return true
+	case NewAlertDataAttributesSourceJira:
+		return true
+	case NewAlertDataAttributesSourceLinear:
+		return true
+	case NewAlertDataAttributesSourceLiveCallRouting:
+		return true
+	case NewAlertDataAttributesSourceManual:
+		return true
+	case NewAlertDataAttributesSourceMobile:
+		return true
+	case NewAlertDataAttributesSourceMonteCarlo:
+		return true
+	case NewAlertDataAttributesSourceNagios:
+		return true
+	case NewAlertDataAttributesSourceNewRelic:
+		return true
+	case NewAlertDataAttributesSourceNobl9:
+		return true
+	case NewAlertDataAttributesSourceOpsgenie:
+		return true
+	case NewAlertDataAttributesSourcePagerduty:
+		return true
+	case NewAlertDataAttributesSourcePagertree:
+		return true
+	case NewAlertDataAttributesSourcePrtg:
+		return true
+	case NewAlertDataAttributesSourceRollbar:
+		return true
+	case NewAlertDataAttributesSourceRootly:
+		return true
+	case NewAlertDataAttributesSourceSentry:
+		return true
+	case NewAlertDataAttributesSourceServiceNow:
+		return true
+	case NewAlertDataAttributesSourceSlack:
+		return true
+	case NewAlertDataAttributesSourceSplunk:
+		return true
+	case NewAlertDataAttributesSourceVictorops:
+		return true
+	case NewAlertDataAttributesSourceWeb:
+		return true
+	case NewAlertDataAttributesSourceWorkflow:
+		return true
+	case NewAlertDataAttributesSourceZendesk:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for NewAlertDataAttributesStatus.
 const (
 	NewAlertDataAttributesStatusOpen      NewAlertDataAttributesStatus = "open"
@@ -26819,6 +26966,153 @@ func (e UpdateAlertDataAttributesNoise) Valid() bool {
 	case UpdateAlertDataAttributesNoiseNoise:
 		return true
 	case UpdateAlertDataAttributesNoiseNotNoise:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateAlertDataAttributesSource.
+const (
+	UpdateAlertDataAttributesSourceAPI             UpdateAlertDataAttributesSource = "api"
+	UpdateAlertDataAttributesSourceAlertmanager    UpdateAlertDataAttributesSource = "alertmanager"
+	UpdateAlertDataAttributesSourceAppDynamics     UpdateAlertDataAttributesSource = "app_dynamics"
+	UpdateAlertDataAttributesSourceAppOptics       UpdateAlertDataAttributesSource = "app_optics"
+	UpdateAlertDataAttributesSourceAsana           UpdateAlertDataAttributesSource = "asana"
+	UpdateAlertDataAttributesSourceAwsSns          UpdateAlertDataAttributesSource = "aws_sns"
+	UpdateAlertDataAttributesSourceAzure           UpdateAlertDataAttributesSource = "azure"
+	UpdateAlertDataAttributesSourceBugSnag         UpdateAlertDataAttributesSource = "bug_snag"
+	UpdateAlertDataAttributesSourceCatchpoint      UpdateAlertDataAttributesSource = "catchpoint"
+	UpdateAlertDataAttributesSourceCheckly         UpdateAlertDataAttributesSource = "checkly"
+	UpdateAlertDataAttributesSourceChronosphere    UpdateAlertDataAttributesSource = "chronosphere"
+	UpdateAlertDataAttributesSourceClickup         UpdateAlertDataAttributesSource = "clickup"
+	UpdateAlertDataAttributesSourceCloudWatch      UpdateAlertDataAttributesSource = "cloud_watch"
+	UpdateAlertDataAttributesSourceDatadog         UpdateAlertDataAttributesSource = "datadog"
+	UpdateAlertDataAttributesSourceDynatrace       UpdateAlertDataAttributesSource = "dynatrace"
+	UpdateAlertDataAttributesSourceEmail           UpdateAlertDataAttributesSource = "email"
+	UpdateAlertDataAttributesSourceGenericWebhook  UpdateAlertDataAttributesSource = "generic_webhook"
+	UpdateAlertDataAttributesSourceGitlab          UpdateAlertDataAttributesSource = "gitlab"
+	UpdateAlertDataAttributesSourceGoogleCloud     UpdateAlertDataAttributesSource = "google_cloud"
+	UpdateAlertDataAttributesSourceGrafana         UpdateAlertDataAttributesSource = "grafana"
+	UpdateAlertDataAttributesSourceHeartbeat       UpdateAlertDataAttributesSource = "heartbeat"
+	UpdateAlertDataAttributesSourceHoneycomb       UpdateAlertDataAttributesSource = "honeycomb"
+	UpdateAlertDataAttributesSourceJira            UpdateAlertDataAttributesSource = "jira"
+	UpdateAlertDataAttributesSourceLinear          UpdateAlertDataAttributesSource = "linear"
+	UpdateAlertDataAttributesSourceLiveCallRouting UpdateAlertDataAttributesSource = "live_call_routing"
+	UpdateAlertDataAttributesSourceManual          UpdateAlertDataAttributesSource = "manual"
+	UpdateAlertDataAttributesSourceMobile          UpdateAlertDataAttributesSource = "mobile"
+	UpdateAlertDataAttributesSourceMonteCarlo      UpdateAlertDataAttributesSource = "monte_carlo"
+	UpdateAlertDataAttributesSourceNagios          UpdateAlertDataAttributesSource = "nagios"
+	UpdateAlertDataAttributesSourceNewRelic        UpdateAlertDataAttributesSource = "new_relic"
+	UpdateAlertDataAttributesSourceNobl9           UpdateAlertDataAttributesSource = "nobl9"
+	UpdateAlertDataAttributesSourceOpsgenie        UpdateAlertDataAttributesSource = "opsgenie"
+	UpdateAlertDataAttributesSourcePagerduty       UpdateAlertDataAttributesSource = "pagerduty"
+	UpdateAlertDataAttributesSourcePagertree       UpdateAlertDataAttributesSource = "pagertree"
+	UpdateAlertDataAttributesSourcePrtg            UpdateAlertDataAttributesSource = "prtg"
+	UpdateAlertDataAttributesSourceRollbar         UpdateAlertDataAttributesSource = "rollbar"
+	UpdateAlertDataAttributesSourceRootly          UpdateAlertDataAttributesSource = "rootly"
+	UpdateAlertDataAttributesSourceSentry          UpdateAlertDataAttributesSource = "sentry"
+	UpdateAlertDataAttributesSourceServiceNow      UpdateAlertDataAttributesSource = "service_now"
+	UpdateAlertDataAttributesSourceSlack           UpdateAlertDataAttributesSource = "slack"
+	UpdateAlertDataAttributesSourceSplunk          UpdateAlertDataAttributesSource = "splunk"
+	UpdateAlertDataAttributesSourceVictorops       UpdateAlertDataAttributesSource = "victorops"
+	UpdateAlertDataAttributesSourceWeb             UpdateAlertDataAttributesSource = "web"
+	UpdateAlertDataAttributesSourceWorkflow        UpdateAlertDataAttributesSource = "workflow"
+	UpdateAlertDataAttributesSourceZendesk         UpdateAlertDataAttributesSource = "zendesk"
+)
+
+// Valid indicates whether the value is a known member of the UpdateAlertDataAttributesSource enum.
+func (e UpdateAlertDataAttributesSource) Valid() bool {
+	switch e {
+	case UpdateAlertDataAttributesSourceAPI:
+		return true
+	case UpdateAlertDataAttributesSourceAlertmanager:
+		return true
+	case UpdateAlertDataAttributesSourceAppDynamics:
+		return true
+	case UpdateAlertDataAttributesSourceAppOptics:
+		return true
+	case UpdateAlertDataAttributesSourceAsana:
+		return true
+	case UpdateAlertDataAttributesSourceAwsSns:
+		return true
+	case UpdateAlertDataAttributesSourceAzure:
+		return true
+	case UpdateAlertDataAttributesSourceBugSnag:
+		return true
+	case UpdateAlertDataAttributesSourceCatchpoint:
+		return true
+	case UpdateAlertDataAttributesSourceCheckly:
+		return true
+	case UpdateAlertDataAttributesSourceChronosphere:
+		return true
+	case UpdateAlertDataAttributesSourceClickup:
+		return true
+	case UpdateAlertDataAttributesSourceCloudWatch:
+		return true
+	case UpdateAlertDataAttributesSourceDatadog:
+		return true
+	case UpdateAlertDataAttributesSourceDynatrace:
+		return true
+	case UpdateAlertDataAttributesSourceEmail:
+		return true
+	case UpdateAlertDataAttributesSourceGenericWebhook:
+		return true
+	case UpdateAlertDataAttributesSourceGitlab:
+		return true
+	case UpdateAlertDataAttributesSourceGoogleCloud:
+		return true
+	case UpdateAlertDataAttributesSourceGrafana:
+		return true
+	case UpdateAlertDataAttributesSourceHeartbeat:
+		return true
+	case UpdateAlertDataAttributesSourceHoneycomb:
+		return true
+	case UpdateAlertDataAttributesSourceJira:
+		return true
+	case UpdateAlertDataAttributesSourceLinear:
+		return true
+	case UpdateAlertDataAttributesSourceLiveCallRouting:
+		return true
+	case UpdateAlertDataAttributesSourceManual:
+		return true
+	case UpdateAlertDataAttributesSourceMobile:
+		return true
+	case UpdateAlertDataAttributesSourceMonteCarlo:
+		return true
+	case UpdateAlertDataAttributesSourceNagios:
+		return true
+	case UpdateAlertDataAttributesSourceNewRelic:
+		return true
+	case UpdateAlertDataAttributesSourceNobl9:
+		return true
+	case UpdateAlertDataAttributesSourceOpsgenie:
+		return true
+	case UpdateAlertDataAttributesSourcePagerduty:
+		return true
+	case UpdateAlertDataAttributesSourcePagertree:
+		return true
+	case UpdateAlertDataAttributesSourcePrtg:
+		return true
+	case UpdateAlertDataAttributesSourceRollbar:
+		return true
+	case UpdateAlertDataAttributesSourceRootly:
+		return true
+	case UpdateAlertDataAttributesSourceSentry:
+		return true
+	case UpdateAlertDataAttributesSourceServiceNow:
+		return true
+	case UpdateAlertDataAttributesSourceSlack:
+		return true
+	case UpdateAlertDataAttributesSourceSplunk:
+		return true
+	case UpdateAlertDataAttributesSourceVictorops:
+		return true
+	case UpdateAlertDataAttributesSourceWeb:
+		return true
+	case UpdateAlertDataAttributesSourceWorkflow:
+		return true
+	case UpdateAlertDataAttributesSourceZendesk:
 		return true
 	default:
 		return false
@@ -47383,9 +47677,9 @@ type NewAlert struct {
 			// ServiceIDs The Service IDs to attach to the alert. If your organization has On-Call enabled and your notification target is a Service. This field will be automatically set for you.
 			ServiceIDs nullable.Nullable[[]string] `json:"service_ids,omitempty"`
 
-			// Source Deprecated. Accepted for backwards compatibility; new clients should omit. Defaults to `api`.
-			// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
-			Source *string `json:"source,omitempty"`
+			// Source The source of the alert
+			// Deprecated: Accepted for backwards compatibility; new clients should omit. Defaults to `api`.
+			Source *NewAlertDataAttributesSource `json:"source,omitempty"`
 
 			// StartedAt Alert start datetime
 			StartedAt nullable.Nullable[time.Time] `json:"started_at,omitempty"`
@@ -47419,6 +47713,9 @@ type NewAlertDataAttributesNoise string
 
 // NewAlertDataAttributesNotificationTargetType Only available for organizations with Rootly On-Call enabled. Can be one of Group, Service, EscalationPolicy, Functionality, User. Please contact support if you encounter issues using `Functionality` as a notification target type.
 type NewAlertDataAttributesNotificationTargetType string
+
+// NewAlertDataAttributesSource The source of the alert
+type NewAlertDataAttributesSource string
 
 // NewAlertDataAttributesStatus Only available for organizations with Rootly On-Call enabled. Can be one of open, triggered.
 type NewAlertDataAttributesStatus string
@@ -55329,9 +55626,9 @@ type UpdateAlert struct {
 			// ServiceIDs The Service IDs to attach to the alert
 			ServiceIDs nullable.Nullable[[]string] `json:"service_ids,omitempty"`
 
-			// Source Deprecated. Accepted for backwards compatibility; new clients should omit. Defaults to `api`.
-			// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
-			Source *string `json:"source,omitempty"`
+			// Source The source of the alert
+			// Deprecated: Accepted for backwards compatibility; new clients should omit. Defaults to `api`.
+			Source *UpdateAlertDataAttributesSource `json:"source,omitempty"`
 
 			// StartedAt Alert start datetime
 			StartedAt nullable.Nullable[time.Time] `json:"started_at,omitempty"`
@@ -55359,6 +55656,9 @@ type UpdateAlert_Data_Attributes_Labels_Value struct {
 
 // UpdateAlertDataAttributesNoise Whether the alert is marked as noise
 type UpdateAlertDataAttributesNoise string
+
+// UpdateAlertDataAttributesSource The source of the alert
+type UpdateAlertDataAttributesSource string
 
 // UpdateAlertDataType defines model for UpdateAlert.Data.Type.
 type UpdateAlertDataType string

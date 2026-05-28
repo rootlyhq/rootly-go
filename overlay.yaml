@@ -16,3 +16,106 @@ actions:
       schema:
         x-go-type: ID
         type: string
+
+  # don't introduce a breaking change when deprecating `source`
+  - target: $.components.schemas.new_alert.properties.data.properties.attributes.properties.source
+    update:
+      description: The source of the alert
+      x-deprecated-reason: Accepted for backwards compatibility; new clients should omit. Defaults to `api`.
+      enum:
+        - rootly
+        - manual
+        - api
+        - heartbeat
+        - web
+        - slack
+        - email
+        - workflow
+        - live_call_routing
+        - mobile
+        - pagerduty
+        - opsgenie
+        - victorops
+        - pagertree
+        - datadog
+        - dynatrace
+        - nobl9
+        - zendesk
+        - asana
+        - clickup
+        - sentry
+        - rollbar
+        - jira
+        - honeycomb
+        - service_now
+        - linear
+        - grafana
+        - alertmanager
+        - google_cloud
+        - generic_webhook
+        - cloud_watch
+        - aws_sns
+        - azure
+        - splunk
+        - chronosphere
+        - app_optics
+        - bug_snag
+        - monte_carlo
+        - nagios
+        - prtg
+        - catchpoint
+        - app_dynamics
+        - checkly
+        - new_relic
+        - gitlab
+
+  - target: $.components.schemas.update_alert.properties.data.properties.attributes.properties.source
+    update:
+      description: The source of the alert
+      x-deprecated-reason: Accepted for backwards compatibility; new clients should omit. Defaults to `api`.
+      enum:
+        - rootly
+        - manual
+        - api
+        - heartbeat
+        - web
+        - slack
+        - email
+        - workflow
+        - live_call_routing
+        - mobile
+        - pagerduty
+        - opsgenie
+        - victorops
+        - pagertree
+        - datadog
+        - dynatrace
+        - nobl9
+        - zendesk
+        - asana
+        - clickup
+        - sentry
+        - rollbar
+        - jira
+        - honeycomb
+        - service_now
+        - linear
+        - grafana
+        - alertmanager
+        - google_cloud
+        - generic_webhook
+        - cloud_watch
+        - aws_sns
+        - azure
+        - splunk
+        - chronosphere
+        - app_optics
+        - bug_snag
+        - monte_carlo
+        - nagios
+        - prtg
+        - catchpoint
+        - app_dynamics
+        - checkly
+        - new_relic
+        - gitlab
