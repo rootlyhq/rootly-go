@@ -2318,6 +2318,7 @@
                 "environments",
                 "services",
                 "groups",
+                "functionalities",
                 "responders",
                 "incidents",
                 "events",
@@ -2431,6 +2432,7 @@
                 "environments",
                 "services",
                 "groups",
+                "functionalities",
                 "responders",
                 "incidents",
                 "events",
@@ -2699,6 +2701,7 @@
                 "environments",
                 "services",
                 "groups",
+                "functionalities",
                 "responders",
                 "incidents",
                 "events",
@@ -32934,6 +32937,14 @@
                     },
                     "nullable": true
                   },
+                  "functionality_ids": {
+                    "type": "array",
+                    "description": "The Functionality IDs to attach to the alert",
+                    "items": {
+                      "type": "string"
+                    },
+                    "nullable": true
+                  },
                   "environment_ids": {
                     "type": "array",
                     "description": "The Environment IDs to attach to the alert",
@@ -33115,6 +33126,14 @@
                   "group_ids": {
                     "type": "array",
                     "description": "The Group IDs to attach to the alert",
+                    "items": {
+                      "type": "string"
+                    },
+                    "nullable": true
+                  },
+                  "functionality_ids": {
+                    "type": "array",
+                    "description": "The Functionality IDs to attach to the alert",
                     "items": {
                       "type": "string"
                     },
@@ -33343,6 +33362,18 @@
               ]
             }
           },
+          "functionalities": {
+            "type": "array",
+            "description": "Functionalities attached to the alert",
+            "items": {
+              "type": "object",
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/functionality"
+                }
+              ]
+            }
+          },
           "environments": {
             "type": "array",
             "description": "Environments attached to the alert",
@@ -33366,6 +33397,14 @@
           "group_ids": {
             "type": "array",
             "description": "The Group IDs to attach to the alert. If your organization has On-Call enabled and your notification target is a Group. This field will be automatically set for you.",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "functionality_ids": {
+            "type": "array",
+            "description": "The Functionality IDs to attach to the alert",
             "items": {
               "type": "string"
             },
@@ -34191,6 +34230,7 @@
                       "email",
                       "app_dynamics",
                       "catchpoint",
+                      "cloudflare",
                       "datadog",
                       "dynatrace",
                       "alertmanager",
@@ -34527,6 +34567,7 @@
                       "email",
                       "app_dynamics",
                       "catchpoint",
+                      "cloudflare",
                       "datadog",
                       "dynatrace",
                       "alertmanager",
@@ -34848,6 +34889,7 @@
               "email",
               "app_dynamics",
               "catchpoint",
+              "cloudflare",
               "datadog",
               "dynatrace",
               "alertmanager",
@@ -79763,22 +79805,22 @@
                   },
                   "include_shadows_in_slack_notifications": {
                     "type": "boolean",
-                    "description": "Whether shadow users are included in Slack notifications and user group syncing",
+                    "description": "Whether shadow users are included in Slack notifications and user group syncing. Requires `slack_channel` to be set; otherwise this value is forced to false on save.",
                     "nullable": true
                   },
                   "shift_start_notifications_enabled": {
                     "type": "boolean",
-                    "description": "Whether shift-start notifications are enabled",
+                    "description": "Whether shift-start notifications are enabled. Requires `slack_channel` to be set; otherwise this value is forced to false on save.",
                     "nullable": true
                   },
                   "shift_update_notifications_enabled": {
                     "type": "boolean",
-                    "description": "Whether shift-update notifications are enabled",
+                    "description": "Whether shift-update notifications are enabled. Requires `slack_channel` to be set; otherwise this value is forced to false on save.",
                     "nullable": true
                   },
                   "shift_report_enabled": {
                     "type": "boolean",
-                    "description": "Whether the weekly shift summary report is enabled",
+                    "description": "Whether the weekly shift summary report is enabled. Requires `slack_channel` to be set; otherwise this value is forced to false on save.",
                     "nullable": true
                   },
                   "shift_report_day_of_week": {
@@ -79898,22 +79940,22 @@
                   },
                   "include_shadows_in_slack_notifications": {
                     "type": "boolean",
-                    "description": "Whether shadow users are included in Slack notifications and user group syncing",
+                    "description": "Whether shadow users are included in Slack notifications and user group syncing. Requires `slack_channel` to be set; otherwise this value is forced to false on save.",
                     "nullable": true
                   },
                   "shift_start_notifications_enabled": {
                     "type": "boolean",
-                    "description": "Whether shift-start notifications are enabled",
+                    "description": "Whether shift-start notifications are enabled. Requires `slack_channel` to be set; otherwise this value is forced to false on save.",
                     "nullable": true
                   },
                   "shift_update_notifications_enabled": {
                     "type": "boolean",
-                    "description": "Whether shift-update notifications are enabled",
+                    "description": "Whether shift-update notifications are enabled. Requires `slack_channel` to be set; otherwise this value is forced to false on save.",
                     "nullable": true
                   },
                   "shift_report_enabled": {
                     "type": "boolean",
-                    "description": "Whether the weekly shift summary report is enabled",
+                    "description": "Whether the weekly shift summary report is enabled. Requires `slack_channel` to be set; otherwise this value is forced to false on save.",
                     "nullable": true
                   },
                   "shift_report_day_of_week": {
@@ -80018,19 +80060,19 @@
           },
           "include_shadows_in_slack_notifications": {
             "type": "boolean",
-            "description": "Whether shadow users are included in Slack notifications and user group syncing"
+            "description": "Whether shadow users are included in Slack notifications and user group syncing. Requires `slack_channel` to be set; otherwise this value is forced to false on save."
           },
           "shift_start_notifications_enabled": {
             "type": "boolean",
-            "description": "Whether shift-start notifications are enabled"
+            "description": "Whether shift-start notifications are enabled. Requires `slack_channel` to be set; otherwise this value is forced to false on save."
           },
           "shift_update_notifications_enabled": {
             "type": "boolean",
-            "description": "Whether shift-update notifications are enabled"
+            "description": "Whether shift-update notifications are enabled. Requires `slack_channel` to be set; otherwise this value is forced to false on save."
           },
           "shift_report_enabled": {
             "type": "boolean",
-            "description": "Whether the weekly shift summary report is enabled"
+            "description": "Whether the weekly shift summary report is enabled. Requires `slack_channel` to be set; otherwise this value is forced to false on save."
           },
           "shift_report_day_of_week": {
             "type": "string",

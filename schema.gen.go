@@ -2966,6 +2966,7 @@ const (
 	AlertsSourceSourceTypeCheckly        AlertsSourceSourceType = "checkly"
 	AlertsSourceSourceTypeChronosphere   AlertsSourceSourceType = "chronosphere"
 	AlertsSourceSourceTypeCloudWatch     AlertsSourceSourceType = "cloud_watch"
+	AlertsSourceSourceTypeCloudflare     AlertsSourceSourceType = "cloudflare"
 	AlertsSourceSourceTypeDatadog        AlertsSourceSourceType = "datadog"
 	AlertsSourceSourceTypeDynatrace      AlertsSourceSourceType = "dynatrace"
 	AlertsSourceSourceTypeEmail          AlertsSourceSourceType = "email"
@@ -3003,6 +3004,8 @@ func (e AlertsSourceSourceType) Valid() bool {
 	case AlertsSourceSourceTypeChronosphere:
 		return true
 	case AlertsSourceSourceTypeCloudWatch:
+		return true
+	case AlertsSourceSourceTypeCloudflare:
 		return true
 	case AlertsSourceSourceTypeDatadog:
 		return true
@@ -13322,6 +13325,7 @@ const (
 	NewAlertsSourceDataAttributesSourceTypeCheckly        NewAlertsSourceDataAttributesSourceType = "checkly"
 	NewAlertsSourceDataAttributesSourceTypeChronosphere   NewAlertsSourceDataAttributesSourceType = "chronosphere"
 	NewAlertsSourceDataAttributesSourceTypeCloudWatch     NewAlertsSourceDataAttributesSourceType = "cloud_watch"
+	NewAlertsSourceDataAttributesSourceTypeCloudflare     NewAlertsSourceDataAttributesSourceType = "cloudflare"
 	NewAlertsSourceDataAttributesSourceTypeDatadog        NewAlertsSourceDataAttributesSourceType = "datadog"
 	NewAlertsSourceDataAttributesSourceTypeDynatrace      NewAlertsSourceDataAttributesSourceType = "dynatrace"
 	NewAlertsSourceDataAttributesSourceTypeEmail          NewAlertsSourceDataAttributesSourceType = "email"
@@ -13359,6 +13363,8 @@ func (e NewAlertsSourceDataAttributesSourceType) Valid() bool {
 	case NewAlertsSourceDataAttributesSourceTypeChronosphere:
 		return true
 	case NewAlertsSourceDataAttributesSourceTypeCloudWatch:
+		return true
+	case NewAlertsSourceDataAttributesSourceTypeCloudflare:
 		return true
 	case NewAlertsSourceDataAttributesSourceTypeDatadog:
 		return true
@@ -27767,6 +27773,7 @@ const (
 	UpdateAlertsSourceDataAttributesSourceTypeCheckly        UpdateAlertsSourceDataAttributesSourceType = "checkly"
 	UpdateAlertsSourceDataAttributesSourceTypeChronosphere   UpdateAlertsSourceDataAttributesSourceType = "chronosphere"
 	UpdateAlertsSourceDataAttributesSourceTypeCloudWatch     UpdateAlertsSourceDataAttributesSourceType = "cloud_watch"
+	UpdateAlertsSourceDataAttributesSourceTypeCloudflare     UpdateAlertsSourceDataAttributesSourceType = "cloudflare"
 	UpdateAlertsSourceDataAttributesSourceTypeDatadog        UpdateAlertsSourceDataAttributesSourceType = "datadog"
 	UpdateAlertsSourceDataAttributesSourceTypeDynatrace      UpdateAlertsSourceDataAttributesSourceType = "dynatrace"
 	UpdateAlertsSourceDataAttributesSourceTypeEmail          UpdateAlertsSourceDataAttributesSourceType = "email"
@@ -27804,6 +27811,8 @@ func (e UpdateAlertsSourceDataAttributesSourceType) Valid() bool {
 	case UpdateAlertsSourceDataAttributesSourceTypeChronosphere:
 		return true
 	case UpdateAlertsSourceDataAttributesSourceTypeCloudWatch:
+		return true
+	case UpdateAlertsSourceDataAttributesSourceTypeCloudflare:
 		return true
 	case UpdateAlertsSourceDataAttributesSourceTypeDatadog:
 		return true
@@ -38004,6 +38013,7 @@ const (
 	ListAlertsParamsIncludeEnvironments       ListAlertsParamsInclude = "environments"
 	ListAlertsParamsIncludeEscalationPolicies ListAlertsParamsInclude = "escalation_policies"
 	ListAlertsParamsIncludeEvents             ListAlertsParamsInclude = "events"
+	ListAlertsParamsIncludeFunctionalities    ListAlertsParamsInclude = "functionalities"
 	ListAlertsParamsIncludeGroupLeaderAlert   ListAlertsParamsInclude = "group_leader_alert"
 	ListAlertsParamsIncludeGroupMemberAlerts  ListAlertsParamsInclude = "group_member_alerts"
 	ListAlertsParamsIncludeGroups             ListAlertsParamsInclude = "groups"
@@ -38032,6 +38042,8 @@ func (e ListAlertsParamsInclude) Valid() bool {
 	case ListAlertsParamsIncludeEscalationPolicies:
 		return true
 	case ListAlertsParamsIncludeEvents:
+		return true
+	case ListAlertsParamsIncludeFunctionalities:
 		return true
 	case ListAlertsParamsIncludeGroupLeaderAlert:
 		return true
@@ -38064,6 +38076,7 @@ const (
 	GetAlertParamsIncludeEnvironments       GetAlertParamsInclude = "environments"
 	GetAlertParamsIncludeEscalationPolicies GetAlertParamsInclude = "escalation_policies"
 	GetAlertParamsIncludeEvents             GetAlertParamsInclude = "events"
+	GetAlertParamsIncludeFunctionalities    GetAlertParamsInclude = "functionalities"
 	GetAlertParamsIncludeGroupLeaderAlert   GetAlertParamsInclude = "group_leader_alert"
 	GetAlertParamsIncludeGroupMemberAlerts  GetAlertParamsInclude = "group_member_alerts"
 	GetAlertParamsIncludeGroups             GetAlertParamsInclude = "groups"
@@ -38092,6 +38105,8 @@ func (e GetAlertParamsInclude) Valid() bool {
 	case GetAlertParamsIncludeEscalationPolicies:
 		return true
 	case GetAlertParamsIncludeEvents:
+		return true
+	case GetAlertParamsIncludeFunctionalities:
 		return true
 	case GetAlertParamsIncludeGroupLeaderAlert:
 		return true
@@ -39057,6 +39072,7 @@ const (
 	ListIncidentAlertsParamsIncludeEnvironments       ListIncidentAlertsParamsInclude = "environments"
 	ListIncidentAlertsParamsIncludeEscalationPolicies ListIncidentAlertsParamsInclude = "escalation_policies"
 	ListIncidentAlertsParamsIncludeEvents             ListIncidentAlertsParamsInclude = "events"
+	ListIncidentAlertsParamsIncludeFunctionalities    ListIncidentAlertsParamsInclude = "functionalities"
 	ListIncidentAlertsParamsIncludeGroupLeaderAlert   ListIncidentAlertsParamsInclude = "group_leader_alert"
 	ListIncidentAlertsParamsIncludeGroupMemberAlerts  ListIncidentAlertsParamsInclude = "group_member_alerts"
 	ListIncidentAlertsParamsIncludeGroups             ListIncidentAlertsParamsInclude = "groups"
@@ -39085,6 +39101,8 @@ func (e ListIncidentAlertsParamsInclude) Valid() bool {
 	case ListIncidentAlertsParamsIncludeEscalationPolicies:
 		return true
 	case ListIncidentAlertsParamsIncludeEvents:
+		return true
+	case ListIncidentAlertsParamsIncludeFunctionalities:
 		return true
 	case ListIncidentAlertsParamsIncludeGroupLeaderAlert:
 		return true
@@ -40192,6 +40210,12 @@ type Alert struct {
 
 	// ExternalURL External Url
 	ExternalURL nullable.Nullable[string] `json:"external_url,omitempty"`
+
+	// Functionalities Functionalities attached to the alert
+	Functionalities []Functionality `json:"functionalities,omitempty"`
+
+	// FunctionalityIDs The Functionality IDs to attach to the alert
+	FunctionalityIDs nullable.Nullable[[]string] `json:"functionality_ids,omitempty"`
 
 	// GroupIDs The Group IDs to attach to the alert. If your organization has On-Call enabled and your notification target is a Group. This field will be automatically set for you.
 	GroupIDs nullable.Nullable[[]string] `json:"group_ids,omitempty"`
@@ -47655,6 +47679,9 @@ type NewAlert struct {
 			// ExternalURL External Url
 			ExternalURL nullable.Nullable[string] `json:"external_url,omitempty"`
 
+			// FunctionalityIDs The Functionality IDs to attach to the alert
+			FunctionalityIDs nullable.Nullable[[]string] `json:"functionality_ids,omitempty"`
+
 			// GroupIDs The Group IDs to attach to the alert. If your organization has On-Call enabled and your notification target is a Group. This field will be automatically set for you.
 			GroupIDs nullable.Nullable[[]string] `json:"group_ids,omitempty"`
 			Labels   []nullable.Nullable[struct {
@@ -50890,7 +50917,7 @@ type NewSchedule struct {
 			// Description The description of the schedule
 			Description nullable.Nullable[string] `json:"description,omitempty"`
 
-			// IncludeShadowsInSlackNotifications Whether shadow users are included in Slack notifications and user group syncing
+			// IncludeShadowsInSlackNotifications Whether shadow users are included in Slack notifications and user group syncing. Requires `slack_channel` to be set; otherwise this value is forced to false on save.
 			IncludeShadowsInSlackNotifications nullable.Nullable[bool] `json:"include_shadows_in_slack_notifications,omitempty"`
 
 			// Name The name of the schedule
@@ -50905,7 +50932,7 @@ type NewSchedule struct {
 			// ShiftReportDayOfWeek Day of week the weekly shift summary is sent
 			ShiftReportDayOfWeek nullable.Nullable[NewScheduleDataAttributesShiftReportDayOfWeek] `json:"shift_report_day_of_week,omitempty"`
 
-			// ShiftReportEnabled Whether the weekly shift summary report is enabled
+			// ShiftReportEnabled Whether the weekly shift summary report is enabled. Requires `slack_channel` to be set; otherwise this value is forced to false on save.
 			ShiftReportEnabled nullable.Nullable[bool] `json:"shift_report_enabled,omitempty"`
 
 			// ShiftReportTimeOfDay Time of day the weekly shift summary is sent, in HH:MM 24-hour format
@@ -50914,10 +50941,10 @@ type NewSchedule struct {
 			// ShiftReportTimeZone IANA time zone used for the weekly shift summary
 			ShiftReportTimeZone nullable.Nullable[string] `json:"shift_report_time_zone,omitempty"`
 
-			// ShiftStartNotificationsEnabled Whether shift-start notifications are enabled
+			// ShiftStartNotificationsEnabled Whether shift-start notifications are enabled. Requires `slack_channel` to be set; otherwise this value is forced to false on save.
 			ShiftStartNotificationsEnabled nullable.Nullable[bool] `json:"shift_start_notifications_enabled,omitempty"`
 
-			// ShiftUpdateNotificationsEnabled Whether shift-update notifications are enabled
+			// ShiftUpdateNotificationsEnabled Whether shift-update notifications are enabled. Requires `slack_channel` to be set; otherwise this value is forced to false on save.
 			ShiftUpdateNotificationsEnabled nullable.Nullable[bool] `json:"shift_update_notifications_enabled,omitempty"`
 			SlackChannel                    nullable.Nullable[struct {
 				// ID Slack channel ID
@@ -53794,7 +53821,7 @@ type Schedule struct {
 	// Description The description of the schedule
 	Description nullable.Nullable[string] `json:"description,omitempty"`
 
-	// IncludeShadowsInSlackNotifications Whether shadow users are included in Slack notifications and user group syncing
+	// IncludeShadowsInSlackNotifications Whether shadow users are included in Slack notifications and user group syncing. Requires `slack_channel` to be set; otherwise this value is forced to false on save.
 	IncludeShadowsInSlackNotifications *bool `json:"include_shadows_in_slack_notifications,omitempty"`
 
 	// Name The name of the schedule
@@ -53809,7 +53836,7 @@ type Schedule struct {
 	// ShiftReportDayOfWeek Day of week the weekly shift summary is sent
 	ShiftReportDayOfWeek *ScheduleShiftReportDayOfWeek `json:"shift_report_day_of_week,omitempty"`
 
-	// ShiftReportEnabled Whether the weekly shift summary report is enabled
+	// ShiftReportEnabled Whether the weekly shift summary report is enabled. Requires `slack_channel` to be set; otherwise this value is forced to false on save.
 	ShiftReportEnabled *bool `json:"shift_report_enabled,omitempty"`
 
 	// ShiftReportTimeOfDay Time of day the weekly shift summary is sent, in HH:MM 24-hour format
@@ -53818,10 +53845,10 @@ type Schedule struct {
 	// ShiftReportTimeZone IANA time zone used for the weekly shift summary
 	ShiftReportTimeZone *string `json:"shift_report_time_zone,omitempty"`
 
-	// ShiftStartNotificationsEnabled Whether shift-start notifications are enabled
+	// ShiftStartNotificationsEnabled Whether shift-start notifications are enabled. Requires `slack_channel` to be set; otherwise this value is forced to false on save.
 	ShiftStartNotificationsEnabled *bool `json:"shift_start_notifications_enabled,omitempty"`
 
-	// ShiftUpdateNotificationsEnabled Whether shift-update notifications are enabled
+	// ShiftUpdateNotificationsEnabled Whether shift-update notifications are enabled. Requires `slack_channel` to be set; otherwise this value is forced to false on save.
 	ShiftUpdateNotificationsEnabled *bool `json:"shift_update_notifications_enabled,omitempty"`
 
 	// SlackChannel Synced slack channel of the schedule
@@ -55609,6 +55636,9 @@ type UpdateAlert struct {
 
 			// ExternalURL External Url
 			ExternalURL nullable.Nullable[string] `json:"external_url,omitempty"`
+
+			// FunctionalityIDs The Functionality IDs to attach to the alert
+			FunctionalityIDs nullable.Nullable[[]string] `json:"functionality_ids,omitempty"`
 
 			// GroupIDs The Group IDs to attach to the alert
 			GroupIDs nullable.Nullable[[]string] `json:"group_ids,omitempty"`
@@ -59507,7 +59537,7 @@ type UpdateSchedule struct {
 			// Description The description of the schedule
 			Description nullable.Nullable[string] `json:"description,omitempty"`
 
-			// IncludeShadowsInSlackNotifications Whether shadow users are included in Slack notifications and user group syncing
+			// IncludeShadowsInSlackNotifications Whether shadow users are included in Slack notifications and user group syncing. Requires `slack_channel` to be set; otherwise this value is forced to false on save.
 			IncludeShadowsInSlackNotifications nullable.Nullable[bool] `json:"include_shadows_in_slack_notifications,omitempty"`
 
 			// Name The name of the schedule
@@ -59522,7 +59552,7 @@ type UpdateSchedule struct {
 			// ShiftReportDayOfWeek Day of week the weekly shift summary is sent
 			ShiftReportDayOfWeek nullable.Nullable[UpdateScheduleDataAttributesShiftReportDayOfWeek] `json:"shift_report_day_of_week,omitempty"`
 
-			// ShiftReportEnabled Whether the weekly shift summary report is enabled
+			// ShiftReportEnabled Whether the weekly shift summary report is enabled. Requires `slack_channel` to be set; otherwise this value is forced to false on save.
 			ShiftReportEnabled nullable.Nullable[bool] `json:"shift_report_enabled,omitempty"`
 
 			// ShiftReportTimeOfDay Time of day the weekly shift summary is sent, in HH:MM 24-hour format
@@ -59531,10 +59561,10 @@ type UpdateSchedule struct {
 			// ShiftReportTimeZone IANA time zone used for the weekly shift summary
 			ShiftReportTimeZone nullable.Nullable[string] `json:"shift_report_time_zone,omitempty"`
 
-			// ShiftStartNotificationsEnabled Whether shift-start notifications are enabled
+			// ShiftStartNotificationsEnabled Whether shift-start notifications are enabled. Requires `slack_channel` to be set; otherwise this value is forced to false on save.
 			ShiftStartNotificationsEnabled nullable.Nullable[bool] `json:"shift_start_notifications_enabled,omitempty"`
 
-			// ShiftUpdateNotificationsEnabled Whether shift-update notifications are enabled
+			// ShiftUpdateNotificationsEnabled Whether shift-update notifications are enabled. Requires `slack_channel` to be set; otherwise this value is forced to false on save.
 			ShiftUpdateNotificationsEnabled nullable.Nullable[bool] `json:"shift_update_notifications_enabled,omitempty"`
 			SlackChannel                    nullable.Nullable[struct {
 				// ID Slack channel ID
