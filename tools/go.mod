@@ -2,7 +2,7 @@ module github.com/rootlyhq/rootly-go/tools
 
 go 1.24.3
 
-require github.com/oapi-codegen/oapi-codegen/v2 v2.7.0
+require github.com/oapi-codegen/oapi-codegen/v2 v2.7.1
 
 require (
 	github.com/dprotaso/go-yit v0.0.0-20220510233725-9ba8df137936 // indirect
