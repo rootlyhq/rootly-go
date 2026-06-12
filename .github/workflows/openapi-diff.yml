@@ -220,7 +220,7 @@ jobs:
 
       - name: Install openapi CLI
         env:
-          SPEAKEASY_OPENAPI_VERSION: v1.23.0 # renovate: datasource=github-releases depName=speakeasy-api/openapi
+          SPEAKEASY_OPENAPI_VERSION: v1.23.1 # renovate: datasource=github-releases depName=speakeasy-api/openapi
         run: |
           curl -fsSL -o /tmp/openapi.tar.gz \
             "https://github.com/speakeasy-api/openapi/releases/download/${SPEAKEASY_OPENAPI_VERSION}/openapi_Linux_x86_64.tar.gz"
