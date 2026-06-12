@@ -219,6 +219,8 @@
                 "ignored_alert_request",
                 "emailed",
                 "slacked",
+                "ms_teams_messaged",
+                "google_chat_messaged",
                 "called",
                 "texted",
                 "notified",
@@ -2171,7 +2173,7 @@
         "parameters": [],
         "responses": {
           "200": {
-            "description": "alert source updated",
+            "description": "preserves existing alert source field ids",
             "content": {
               "application/vnd.api+json": {
                 "schema": {
@@ -2331,8 +2333,7 @@
                 "alert_field_values",
                 "alerting_targets",
                 "escalation_policies",
-                "alert_call_recording",
-                "alert_urgency"
+                "alert_call_recording"
               ]
             },
             "required": false
@@ -2445,8 +2446,7 @@
                 "alert_field_values",
                 "alerting_targets",
                 "escalation_policies",
-                "alert_call_recording",
-                "alert_urgency"
+                "alert_call_recording"
               ]
             },
             "required": false
@@ -2714,8 +2714,7 @@
                 "alert_field_values",
                 "alerting_targets",
                 "escalation_policies",
-                "alert_call_recording",
-                "alert_urgency"
+                "alert_call_recording"
               ]
             },
             "required": false
@@ -22547,6 +22546,49 @@
         }
       }
     },
+    "/v1/incidents/{incident_id}/meeting_recordings/import": {
+      "post": {
+        "summary": "Import a meeting recording",
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "tags": [
+          "Meeting Recordings"
+        ],
+        "description": "Import an externally captured meeting recording and attach it to an incident. Video and transcript are fetched asynchronously. The existing POST /v1/incidents/{incident_id}/meeting_recordings endpoint invites a bot — this endpoint handles recordings that were captured outside of the bot flow.",
+        "operationId": "importMeetingRecording",
+        "parameters": [
+          {
+            "name": "incident_id",
+            "in": "path",
+            "description": "Incident UUID",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "recording imported"
+          },
+          "422": {
+            "description": "validation error (e.g. unsupported source, duplicate recording)"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/vnd.api+json": {
+              "schema": {
+                "$ref": "#/components/schemas/import_meeting_recording"
+              }
+            }
+          }
+        }
+      }
+    },
     "/v1/meeting_recordings/{id}": {
       "get": {
         "summary": "Get a meeting recording",
@@ -23771,7 +23813,14 @@
         ],
         "responses": {
           "200": {
-            "description": "success"
+            "description": "success",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/oncall_list"
+                }
+              }
+            }
           },
           "404": {
             "description": "resource not found when alerting is disabled",
@@ -33242,7 +33291,7 @@
               }
             },
             "required": [
-              "summary",
+              "type",
               "attributes"
             ]
           }
@@ -33281,6 +33330,7 @@
               "workflow",
               "live_call_routing",
               "mobile",
+              "google_chat",
               "pagerduty",
               "opsgenie",
               "victorops",
@@ -33576,6 +33626,7 @@
                   "workflow",
                   "live_call_routing",
                   "mobile",
+                  "google_chat",
                   "pagerduty",
                   "opsgenie",
                   "victorops",
@@ -33633,6 +33684,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -33665,6 +33722,7 @@
                     "workflow",
                     "live_call_routing",
                     "mobile",
+                    "google_chat",
                     "pagerduty",
                     "opsgenie",
                     "victorops",
@@ -33739,6 +33797,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -33968,6 +34032,8 @@
               "ignored_alert_request",
               "emailed",
               "slacked",
+              "ms_teams_messaged",
+              "google_chat_messaged",
               "called",
               "texted",
               "notified",
@@ -34051,6 +34117,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -34106,6 +34178,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -34197,6 +34275,12 @@
                 "$ref": "#/components/schemas/alert_event_feed_meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -34397,7 +34481,7 @@
                             },
                             "json_path": {
                               "type": "string",
-                              "description": "JSON path expression to extract a specific value from the alert's payload for evaluation"
+                              "description": "JSON path expression to extract a specific value from the alert's payload for evaluation. For `notification_target_id` only: if your account has opted in to Dynamic Notification Targets, this may also be a Liquid template that resolves to a notification target id at routing time."
                             }
                           }
                         }
@@ -34734,7 +34818,7 @@
                             },
                             "json_path": {
                               "type": "string",
-                              "description": "JSON path expression to extract a specific value from the alert's payload for evaluation"
+                              "description": "JSON path expression to extract a specific value from the alert's payload for evaluation. For `notification_target_id` only: if your account has opted in to Dynamic Notification Targets, this may also be a Liquid template that resolves to a notification target id at routing time."
                             }
                           }
                         }
@@ -35056,7 +35140,7 @@
                     },
                     "json_path": {
                       "type": "string",
-                      "description": "JSON path expression to extract a specific value from the alert's payload for evaluation"
+                      "description": "JSON path expression to extract a specific value from the alert's payload for evaluation. For `notification_target_id` only: if your account has opted in to Dynamic Notification Targets, this may also be a Liquid template that resolves to a notification target id at routing time."
                     }
                   }
                 }
@@ -35253,6 +35337,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -35308,6 +35398,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -36708,6 +36804,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -36763,6 +36865,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -37033,6 +37141,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -37088,6 +37202,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -37246,6 +37366,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -37301,6 +37427,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -37895,6 +38027,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -37933,6 +38071,12 @@
                 "type",
                 "attributes"
               ]
+            }
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
             }
           }
         },
@@ -38190,6 +38334,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -38238,6 +38388,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -38293,6 +38449,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -38467,6 +38629,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -38672,6 +38840,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -38727,6 +38901,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -38919,6 +39099,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -38974,6 +39160,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -39007,7 +39199,6 @@
                       "text",
                       "reference",
                       "boolean",
-                      "reference",
                       "service",
                       "functionality",
                       "environment",
@@ -39090,7 +39281,6 @@
                       "text",
                       "reference",
                       "boolean",
-                      "reference",
                       "service",
                       "functionality",
                       "environment",
@@ -39239,6 +39429,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -39294,6 +39490,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -39327,7 +39529,6 @@
                       "text",
                       "reference",
                       "boolean",
-                      "reference",
                       "service",
                       "functionality",
                       "environment",
@@ -39410,7 +39611,6 @@
                       "text",
                       "reference",
                       "boolean",
-                      "reference",
                       "service",
                       "functionality",
                       "environment",
@@ -39559,6 +39759,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -39614,6 +39820,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -39844,6 +40056,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -39899,6 +40117,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -40073,6 +40297,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -40130,6 +40360,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -40538,6 +40774,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -40593,6 +40835,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -40812,6 +41060,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -40867,6 +41121,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -41094,6 +41354,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -41149,12 +41415,40 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
           "data",
           "links",
           "meta"
+        ]
+      },
+      "incidents_chart_response": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "data"
+        ]
+      },
+      "uptime_chart_response": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "data"
         ]
       },
       "new_communications_stage": {
@@ -41313,6 +41607,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -41368,6 +41668,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -41546,6 +41852,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -41601,6 +41913,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -41942,6 +42260,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -41997,6 +42321,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -42540,6 +42870,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -42595,6 +42931,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -42761,6 +43103,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -42816,6 +43164,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -43104,6 +43458,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -43159,6 +43519,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -43328,6 +43694,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -43383,6 +43755,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -44099,6 +44477,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -44154,6 +44538,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -44440,6 +44830,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -44495,6 +44891,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -45327,6 +45729,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -45382,6 +45790,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -45499,7 +45913,6 @@
                           "Guadalajara",
                           "America/Mexico_City",
                           "Mexico City",
-                          "America/Mexico_City",
                           "Monterrey",
                           "America/Monterrey",
                           "Saskatchewan",
@@ -45513,7 +45926,6 @@
                           "Lima",
                           "America/Lima",
                           "Quito",
-                          "America/Lima",
                           "Atlantic Time (Canada)",
                           "America/Halifax",
                           "Caracas",
@@ -45549,7 +45961,6 @@
                           "Lisbon",
                           "Europe/Lisbon",
                           "London",
-                          "Europe/London",
                           "Monrovia",
                           "Africa/Monrovia",
                           "UTC",
@@ -45599,7 +46010,6 @@
                           "Zagreb",
                           "Europe/Zagreb",
                           "Zurich",
-                          "Europe/Zurich",
                           "Athens",
                           "Europe/Athens",
                           "Bucharest",
@@ -45641,7 +46051,6 @@
                           "Riyadh",
                           "Asia/Riyadh",
                           "St. Petersburg",
-                          "Europe/Moscow",
                           "Volgograd",
                           "Europe/Volgograd",
                           "Tehran",
@@ -45651,7 +46060,6 @@
                           "Baku",
                           "Asia/Baku",
                           "Muscat",
-                          "Asia/Muscat",
                           "Samara",
                           "Europe/Samara",
                           "Tbilisi",
@@ -45663,23 +46071,18 @@
                           "Almaty",
                           "Asia/Almaty",
                           "Astana",
-                          "Asia/Almaty",
                           "Ekaterinburg",
                           "Asia/Yekaterinburg",
                           "Islamabad",
                           "Asia/Karachi",
                           "Karachi",
-                          "Asia/Karachi",
                           "Tashkent",
                           "Asia/Tashkent",
                           "Chennai",
                           "Asia/Kolkata",
                           "Kolkata",
-                          "Asia/Kolkata",
                           "Mumbai",
-                          "Asia/Kolkata",
                           "New Delhi",
-                          "Asia/Kolkata",
                           "Sri Jayawardenepura",
                           "Asia/Colombo",
                           "Kathmandu",
@@ -45693,7 +46096,6 @@
                           "Bangkok",
                           "Asia/Bangkok",
                           "Hanoi",
-                          "Asia/Bangkok",
                           "Jakarta",
                           "Asia/Jakarta",
                           "Krasnoyarsk",
@@ -45721,11 +46123,9 @@
                           "Osaka",
                           "Asia/Tokyo",
                           "Sapporo",
-                          "Asia/Tokyo",
                           "Seoul",
                           "Asia/Seoul",
                           "Tokyo",
-                          "Asia/Tokyo",
                           "Yakutsk",
                           "Asia/Yakutsk",
                           "Adelaide",
@@ -45765,7 +46165,6 @@
                           "Marshall Is.",
                           "Pacific/Majuro",
                           "Wellington",
-                          "Pacific/Auckland",
                           "Chatham Is.",
                           "Pacific/Chatham",
                           "Nuku'alofa",
@@ -45902,7 +46301,6 @@
                           "Guadalajara",
                           "America/Mexico_City",
                           "Mexico City",
-                          "America/Mexico_City",
                           "Monterrey",
                           "America/Monterrey",
                           "Saskatchewan",
@@ -45916,7 +46314,6 @@
                           "Lima",
                           "America/Lima",
                           "Quito",
-                          "America/Lima",
                           "Atlantic Time (Canada)",
                           "America/Halifax",
                           "Caracas",
@@ -45952,7 +46349,6 @@
                           "Lisbon",
                           "Europe/Lisbon",
                           "London",
-                          "Europe/London",
                           "Monrovia",
                           "Africa/Monrovia",
                           "UTC",
@@ -46002,7 +46398,6 @@
                           "Zagreb",
                           "Europe/Zagreb",
                           "Zurich",
-                          "Europe/Zurich",
                           "Athens",
                           "Europe/Athens",
                           "Bucharest",
@@ -46044,7 +46439,6 @@
                           "Riyadh",
                           "Asia/Riyadh",
                           "St. Petersburg",
-                          "Europe/Moscow",
                           "Volgograd",
                           "Europe/Volgograd",
                           "Tehran",
@@ -46054,7 +46448,6 @@
                           "Baku",
                           "Asia/Baku",
                           "Muscat",
-                          "Asia/Muscat",
                           "Samara",
                           "Europe/Samara",
                           "Tbilisi",
@@ -46066,23 +46459,18 @@
                           "Almaty",
                           "Asia/Almaty",
                           "Astana",
-                          "Asia/Almaty",
                           "Ekaterinburg",
                           "Asia/Yekaterinburg",
                           "Islamabad",
                           "Asia/Karachi",
                           "Karachi",
-                          "Asia/Karachi",
                           "Tashkent",
                           "Asia/Tashkent",
                           "Chennai",
                           "Asia/Kolkata",
                           "Kolkata",
-                          "Asia/Kolkata",
                           "Mumbai",
-                          "Asia/Kolkata",
                           "New Delhi",
-                          "Asia/Kolkata",
                           "Sri Jayawardenepura",
                           "Asia/Colombo",
                           "Kathmandu",
@@ -46096,7 +46484,6 @@
                           "Bangkok",
                           "Asia/Bangkok",
                           "Hanoi",
-                          "Asia/Bangkok",
                           "Jakarta",
                           "Asia/Jakarta",
                           "Krasnoyarsk",
@@ -46124,11 +46511,9 @@
                           "Osaka",
                           "Asia/Tokyo",
                           "Sapporo",
-                          "Asia/Tokyo",
                           "Seoul",
                           "Asia/Seoul",
                           "Tokyo",
-                          "Asia/Tokyo",
                           "Yakutsk",
                           "Asia/Yakutsk",
                           "Adelaide",
@@ -46168,7 +46553,6 @@
                           "Marshall Is.",
                           "Pacific/Majuro",
                           "Wellington",
-                          "Pacific/Auckland",
                           "Chatham Is.",
                           "Pacific/Chatham",
                           "Nuku'alofa",
@@ -46298,7 +46682,6 @@
                   "Guadalajara",
                   "America/Mexico_City",
                   "Mexico City",
-                  "America/Mexico_City",
                   "Monterrey",
                   "America/Monterrey",
                   "Saskatchewan",
@@ -46312,7 +46695,6 @@
                   "Lima",
                   "America/Lima",
                   "Quito",
-                  "America/Lima",
                   "Atlantic Time (Canada)",
                   "America/Halifax",
                   "Caracas",
@@ -46348,7 +46730,6 @@
                   "Lisbon",
                   "Europe/Lisbon",
                   "London",
-                  "Europe/London",
                   "Monrovia",
                   "Africa/Monrovia",
                   "UTC",
@@ -46398,7 +46779,6 @@
                   "Zagreb",
                   "Europe/Zagreb",
                   "Zurich",
-                  "Europe/Zurich",
                   "Athens",
                   "Europe/Athens",
                   "Bucharest",
@@ -46440,7 +46820,6 @@
                   "Riyadh",
                   "Asia/Riyadh",
                   "St. Petersburg",
-                  "Europe/Moscow",
                   "Volgograd",
                   "Europe/Volgograd",
                   "Tehran",
@@ -46450,7 +46829,6 @@
                   "Baku",
                   "Asia/Baku",
                   "Muscat",
-                  "Asia/Muscat",
                   "Samara",
                   "Europe/Samara",
                   "Tbilisi",
@@ -46462,23 +46840,18 @@
                   "Almaty",
                   "Asia/Almaty",
                   "Astana",
-                  "Asia/Almaty",
                   "Ekaterinburg",
                   "Asia/Yekaterinburg",
                   "Islamabad",
                   "Asia/Karachi",
                   "Karachi",
-                  "Asia/Karachi",
                   "Tashkent",
                   "Asia/Tashkent",
                   "Chennai",
                   "Asia/Kolkata",
                   "Kolkata",
-                  "Asia/Kolkata",
                   "Mumbai",
-                  "Asia/Kolkata",
                   "New Delhi",
-                  "Asia/Kolkata",
                   "Sri Jayawardenepura",
                   "Asia/Colombo",
                   "Kathmandu",
@@ -46492,7 +46865,6 @@
                   "Bangkok",
                   "Asia/Bangkok",
                   "Hanoi",
-                  "Asia/Bangkok",
                   "Jakarta",
                   "Asia/Jakarta",
                   "Krasnoyarsk",
@@ -46520,11 +46892,9 @@
                   "Osaka",
                   "Asia/Tokyo",
                   "Sapporo",
-                  "Asia/Tokyo",
                   "Seoul",
                   "Asia/Seoul",
                   "Tokyo",
-                  "Asia/Tokyo",
                   "Yakutsk",
                   "Asia/Yakutsk",
                   "Adelaide",
@@ -46564,7 +46934,6 @@
                   "Marshall Is.",
                   "Pacific/Majuro",
                   "Wellington",
-                  "Pacific/Auckland",
                   "Chatham Is.",
                   "Pacific/Chatham",
                   "Nuku'alofa",
@@ -46651,6 +47020,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -46706,6 +47081,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -47006,7 +47387,6 @@
                                 "Guadalajara",
                                 "America/Mexico_City",
                                 "Mexico City",
-                                "America/Mexico_City",
                                 "Monterrey",
                                 "America/Monterrey",
                                 "Saskatchewan",
@@ -47020,7 +47400,6 @@
                                 "Lima",
                                 "America/Lima",
                                 "Quito",
-                                "America/Lima",
                                 "Atlantic Time (Canada)",
                                 "America/Halifax",
                                 "Caracas",
@@ -47056,7 +47435,6 @@
                                 "Lisbon",
                                 "Europe/Lisbon",
                                 "London",
-                                "Europe/London",
                                 "Monrovia",
                                 "Africa/Monrovia",
                                 "UTC",
@@ -47106,7 +47484,6 @@
                                 "Zagreb",
                                 "Europe/Zagreb",
                                 "Zurich",
-                                "Europe/Zurich",
                                 "Athens",
                                 "Europe/Athens",
                                 "Bucharest",
@@ -47148,7 +47525,6 @@
                                 "Riyadh",
                                 "Asia/Riyadh",
                                 "St. Petersburg",
-                                "Europe/Moscow",
                                 "Volgograd",
                                 "Europe/Volgograd",
                                 "Tehran",
@@ -47158,7 +47534,6 @@
                                 "Baku",
                                 "Asia/Baku",
                                 "Muscat",
-                                "Asia/Muscat",
                                 "Samara",
                                 "Europe/Samara",
                                 "Tbilisi",
@@ -47170,23 +47545,18 @@
                                 "Almaty",
                                 "Asia/Almaty",
                                 "Astana",
-                                "Asia/Almaty",
                                 "Ekaterinburg",
                                 "Asia/Yekaterinburg",
                                 "Islamabad",
                                 "Asia/Karachi",
                                 "Karachi",
-                                "Asia/Karachi",
                                 "Tashkent",
                                 "Asia/Tashkent",
                                 "Chennai",
                                 "Asia/Kolkata",
                                 "Kolkata",
-                                "Asia/Kolkata",
                                 "Mumbai",
-                                "Asia/Kolkata",
                                 "New Delhi",
-                                "Asia/Kolkata",
                                 "Sri Jayawardenepura",
                                 "Asia/Colombo",
                                 "Kathmandu",
@@ -47200,7 +47570,6 @@
                                 "Bangkok",
                                 "Asia/Bangkok",
                                 "Hanoi",
-                                "Asia/Bangkok",
                                 "Jakarta",
                                 "Asia/Jakarta",
                                 "Krasnoyarsk",
@@ -47228,11 +47597,9 @@
                                 "Osaka",
                                 "Asia/Tokyo",
                                 "Sapporo",
-                                "Asia/Tokyo",
                                 "Seoul",
                                 "Asia/Seoul",
                                 "Tokyo",
-                                "Asia/Tokyo",
                                 "Yakutsk",
                                 "Asia/Yakutsk",
                                 "Adelaide",
@@ -47272,7 +47639,6 @@
                                 "Marshall Is.",
                                 "Pacific/Majuro",
                                 "Wellington",
-                                "Pacific/Auckland",
                                 "Chatham Is.",
                                 "Pacific/Chatham",
                                 "Nuku'alofa",
@@ -47435,7 +47801,6 @@
                       "Guadalajara",
                       "America/Mexico_City",
                       "Mexico City",
-                      "America/Mexico_City",
                       "Monterrey",
                       "America/Monterrey",
                       "Saskatchewan",
@@ -47449,7 +47814,6 @@
                       "Lima",
                       "America/Lima",
                       "Quito",
-                      "America/Lima",
                       "Atlantic Time (Canada)",
                       "America/Halifax",
                       "Caracas",
@@ -47485,7 +47849,6 @@
                       "Lisbon",
                       "Europe/Lisbon",
                       "London",
-                      "Europe/London",
                       "Monrovia",
                       "Africa/Monrovia",
                       "UTC",
@@ -47535,7 +47898,6 @@
                       "Zagreb",
                       "Europe/Zagreb",
                       "Zurich",
-                      "Europe/Zurich",
                       "Athens",
                       "Europe/Athens",
                       "Bucharest",
@@ -47577,7 +47939,6 @@
                       "Riyadh",
                       "Asia/Riyadh",
                       "St. Petersburg",
-                      "Europe/Moscow",
                       "Volgograd",
                       "Europe/Volgograd",
                       "Tehran",
@@ -47587,7 +47948,6 @@
                       "Baku",
                       "Asia/Baku",
                       "Muscat",
-                      "Asia/Muscat",
                       "Samara",
                       "Europe/Samara",
                       "Tbilisi",
@@ -47599,23 +47959,18 @@
                       "Almaty",
                       "Asia/Almaty",
                       "Astana",
-                      "Asia/Almaty",
                       "Ekaterinburg",
                       "Asia/Yekaterinburg",
                       "Islamabad",
                       "Asia/Karachi",
                       "Karachi",
-                      "Asia/Karachi",
                       "Tashkent",
                       "Asia/Tashkent",
                       "Chennai",
                       "Asia/Kolkata",
                       "Kolkata",
-                      "Asia/Kolkata",
                       "Mumbai",
-                      "Asia/Kolkata",
                       "New Delhi",
-                      "Asia/Kolkata",
                       "Sri Jayawardenepura",
                       "Asia/Colombo",
                       "Kathmandu",
@@ -47629,7 +47984,6 @@
                       "Bangkok",
                       "Asia/Bangkok",
                       "Hanoi",
-                      "Asia/Bangkok",
                       "Jakarta",
                       "Asia/Jakarta",
                       "Krasnoyarsk",
@@ -47657,11 +48011,9 @@
                       "Osaka",
                       "Asia/Tokyo",
                       "Sapporo",
-                      "Asia/Tokyo",
                       "Seoul",
                       "Asia/Seoul",
                       "Tokyo",
-                      "Asia/Tokyo",
                       "Yakutsk",
                       "Asia/Yakutsk",
                       "Adelaide",
@@ -47701,7 +48053,6 @@
                       "Marshall Is.",
                       "Pacific/Majuro",
                       "Wellington",
-                      "Pacific/Auckland",
                       "Chatham Is.",
                       "Pacific/Chatham",
                       "Nuku'alofa",
@@ -48068,7 +48419,6 @@
                                 "Guadalajara",
                                 "America/Mexico_City",
                                 "Mexico City",
-                                "America/Mexico_City",
                                 "Monterrey",
                                 "America/Monterrey",
                                 "Saskatchewan",
@@ -48082,7 +48432,6 @@
                                 "Lima",
                                 "America/Lima",
                                 "Quito",
-                                "America/Lima",
                                 "Atlantic Time (Canada)",
                                 "America/Halifax",
                                 "Caracas",
@@ -48118,7 +48467,6 @@
                                 "Lisbon",
                                 "Europe/Lisbon",
                                 "London",
-                                "Europe/London",
                                 "Monrovia",
                                 "Africa/Monrovia",
                                 "UTC",
@@ -48168,7 +48516,6 @@
                                 "Zagreb",
                                 "Europe/Zagreb",
                                 "Zurich",
-                                "Europe/Zurich",
                                 "Athens",
                                 "Europe/Athens",
                                 "Bucharest",
@@ -48210,7 +48557,6 @@
                                 "Riyadh",
                                 "Asia/Riyadh",
                                 "St. Petersburg",
-                                "Europe/Moscow",
                                 "Volgograd",
                                 "Europe/Volgograd",
                                 "Tehran",
@@ -48220,7 +48566,6 @@
                                 "Baku",
                                 "Asia/Baku",
                                 "Muscat",
-                                "Asia/Muscat",
                                 "Samara",
                                 "Europe/Samara",
                                 "Tbilisi",
@@ -48232,23 +48577,18 @@
                                 "Almaty",
                                 "Asia/Almaty",
                                 "Astana",
-                                "Asia/Almaty",
                                 "Ekaterinburg",
                                 "Asia/Yekaterinburg",
                                 "Islamabad",
                                 "Asia/Karachi",
                                 "Karachi",
-                                "Asia/Karachi",
                                 "Tashkent",
                                 "Asia/Tashkent",
                                 "Chennai",
                                 "Asia/Kolkata",
                                 "Kolkata",
-                                "Asia/Kolkata",
                                 "Mumbai",
-                                "Asia/Kolkata",
                                 "New Delhi",
-                                "Asia/Kolkata",
                                 "Sri Jayawardenepura",
                                 "Asia/Colombo",
                                 "Kathmandu",
@@ -48262,7 +48602,6 @@
                                 "Bangkok",
                                 "Asia/Bangkok",
                                 "Hanoi",
-                                "Asia/Bangkok",
                                 "Jakarta",
                                 "Asia/Jakarta",
                                 "Krasnoyarsk",
@@ -48290,11 +48629,9 @@
                                 "Osaka",
                                 "Asia/Tokyo",
                                 "Sapporo",
-                                "Asia/Tokyo",
                                 "Seoul",
                                 "Asia/Seoul",
                                 "Tokyo",
-                                "Asia/Tokyo",
                                 "Yakutsk",
                                 "Asia/Yakutsk",
                                 "Adelaide",
@@ -48334,7 +48671,6 @@
                                 "Marshall Is.",
                                 "Pacific/Majuro",
                                 "Wellington",
-                                "Pacific/Auckland",
                                 "Chatham Is.",
                                 "Pacific/Chatham",
                                 "Nuku'alofa",
@@ -48498,7 +48834,6 @@
                       "Guadalajara",
                       "America/Mexico_City",
                       "Mexico City",
-                      "America/Mexico_City",
                       "Monterrey",
                       "America/Monterrey",
                       "Saskatchewan",
@@ -48512,7 +48847,6 @@
                       "Lima",
                       "America/Lima",
                       "Quito",
-                      "America/Lima",
                       "Atlantic Time (Canada)",
                       "America/Halifax",
                       "Caracas",
@@ -48548,7 +48882,6 @@
                       "Lisbon",
                       "Europe/Lisbon",
                       "London",
-                      "Europe/London",
                       "Monrovia",
                       "Africa/Monrovia",
                       "UTC",
@@ -48598,7 +48931,6 @@
                       "Zagreb",
                       "Europe/Zagreb",
                       "Zurich",
-                      "Europe/Zurich",
                       "Athens",
                       "Europe/Athens",
                       "Bucharest",
@@ -48640,7 +48972,6 @@
                       "Riyadh",
                       "Asia/Riyadh",
                       "St. Petersburg",
-                      "Europe/Moscow",
                       "Volgograd",
                       "Europe/Volgograd",
                       "Tehran",
@@ -48650,7 +48981,6 @@
                       "Baku",
                       "Asia/Baku",
                       "Muscat",
-                      "Asia/Muscat",
                       "Samara",
                       "Europe/Samara",
                       "Tbilisi",
@@ -48662,23 +48992,18 @@
                       "Almaty",
                       "Asia/Almaty",
                       "Astana",
-                      "Asia/Almaty",
                       "Ekaterinburg",
                       "Asia/Yekaterinburg",
                       "Islamabad",
                       "Asia/Karachi",
                       "Karachi",
-                      "Asia/Karachi",
                       "Tashkent",
                       "Asia/Tashkent",
                       "Chennai",
                       "Asia/Kolkata",
                       "Kolkata",
-                      "Asia/Kolkata",
                       "Mumbai",
-                      "Asia/Kolkata",
                       "New Delhi",
-                      "Asia/Kolkata",
                       "Sri Jayawardenepura",
                       "Asia/Colombo",
                       "Kathmandu",
@@ -48692,7 +49017,6 @@
                       "Bangkok",
                       "Asia/Bangkok",
                       "Hanoi",
-                      "Asia/Bangkok",
                       "Jakarta",
                       "Asia/Jakarta",
                       "Krasnoyarsk",
@@ -48720,11 +49044,9 @@
                       "Osaka",
                       "Asia/Tokyo",
                       "Sapporo",
-                      "Asia/Tokyo",
                       "Seoul",
                       "Asia/Seoul",
                       "Tokyo",
-                      "Asia/Tokyo",
                       "Yakutsk",
                       "Asia/Yakutsk",
                       "Adelaide",
@@ -48764,7 +49086,6 @@
                       "Marshall Is.",
                       "Pacific/Majuro",
                       "Wellington",
-                      "Pacific/Auckland",
                       "Chatham Is.",
                       "Pacific/Chatham",
                       "Nuku'alofa",
@@ -49115,7 +49436,6 @@
                         "Guadalajara",
                         "America/Mexico_City",
                         "Mexico City",
-                        "America/Mexico_City",
                         "Monterrey",
                         "America/Monterrey",
                         "Saskatchewan",
@@ -49129,7 +49449,6 @@
                         "Lima",
                         "America/Lima",
                         "Quito",
-                        "America/Lima",
                         "Atlantic Time (Canada)",
                         "America/Halifax",
                         "Caracas",
@@ -49165,7 +49484,6 @@
                         "Lisbon",
                         "Europe/Lisbon",
                         "London",
-                        "Europe/London",
                         "Monrovia",
                         "Africa/Monrovia",
                         "UTC",
@@ -49215,7 +49533,6 @@
                         "Zagreb",
                         "Europe/Zagreb",
                         "Zurich",
-                        "Europe/Zurich",
                         "Athens",
                         "Europe/Athens",
                         "Bucharest",
@@ -49257,7 +49574,6 @@
                         "Riyadh",
                         "Asia/Riyadh",
                         "St. Petersburg",
-                        "Europe/Moscow",
                         "Volgograd",
                         "Europe/Volgograd",
                         "Tehran",
@@ -49267,7 +49583,6 @@
                         "Baku",
                         "Asia/Baku",
                         "Muscat",
-                        "Asia/Muscat",
                         "Samara",
                         "Europe/Samara",
                         "Tbilisi",
@@ -49279,23 +49594,18 @@
                         "Almaty",
                         "Asia/Almaty",
                         "Astana",
-                        "Asia/Almaty",
                         "Ekaterinburg",
                         "Asia/Yekaterinburg",
                         "Islamabad",
                         "Asia/Karachi",
                         "Karachi",
-                        "Asia/Karachi",
                         "Tashkent",
                         "Asia/Tashkent",
                         "Chennai",
                         "Asia/Kolkata",
                         "Kolkata",
-                        "Asia/Kolkata",
                         "Mumbai",
-                        "Asia/Kolkata",
                         "New Delhi",
-                        "Asia/Kolkata",
                         "Sri Jayawardenepura",
                         "Asia/Colombo",
                         "Kathmandu",
@@ -49309,7 +49619,6 @@
                         "Bangkok",
                         "Asia/Bangkok",
                         "Hanoi",
-                        "Asia/Bangkok",
                         "Jakarta",
                         "Asia/Jakarta",
                         "Krasnoyarsk",
@@ -49337,11 +49646,9 @@
                         "Osaka",
                         "Asia/Tokyo",
                         "Sapporo",
-                        "Asia/Tokyo",
                         "Seoul",
                         "Asia/Seoul",
                         "Tokyo",
-                        "Asia/Tokyo",
                         "Yakutsk",
                         "Asia/Yakutsk",
                         "Adelaide",
@@ -49381,7 +49688,6 @@
                         "Marshall Is.",
                         "Pacific/Majuro",
                         "Wellington",
-                        "Pacific/Auckland",
                         "Chatham Is.",
                         "Pacific/Chatham",
                         "Nuku'alofa",
@@ -49545,7 +49851,6 @@
               "Guadalajara",
               "America/Mexico_City",
               "Mexico City",
-              "America/Mexico_City",
               "Monterrey",
               "America/Monterrey",
               "Saskatchewan",
@@ -49559,7 +49864,6 @@
               "Lima",
               "America/Lima",
               "Quito",
-              "America/Lima",
               "Atlantic Time (Canada)",
               "America/Halifax",
               "Caracas",
@@ -49595,7 +49899,6 @@
               "Lisbon",
               "Europe/Lisbon",
               "London",
-              "Europe/London",
               "Monrovia",
               "Africa/Monrovia",
               "UTC",
@@ -49645,7 +49948,6 @@
               "Zagreb",
               "Europe/Zagreb",
               "Zurich",
-              "Europe/Zurich",
               "Athens",
               "Europe/Athens",
               "Bucharest",
@@ -49687,7 +49989,6 @@
               "Riyadh",
               "Asia/Riyadh",
               "St. Petersburg",
-              "Europe/Moscow",
               "Volgograd",
               "Europe/Volgograd",
               "Tehran",
@@ -49697,7 +49998,6 @@
               "Baku",
               "Asia/Baku",
               "Muscat",
-              "Asia/Muscat",
               "Samara",
               "Europe/Samara",
               "Tbilisi",
@@ -49709,23 +50009,18 @@
               "Almaty",
               "Asia/Almaty",
               "Astana",
-              "Asia/Almaty",
               "Ekaterinburg",
               "Asia/Yekaterinburg",
               "Islamabad",
               "Asia/Karachi",
               "Karachi",
-              "Asia/Karachi",
               "Tashkent",
               "Asia/Tashkent",
               "Chennai",
               "Asia/Kolkata",
               "Kolkata",
-              "Asia/Kolkata",
               "Mumbai",
-              "Asia/Kolkata",
               "New Delhi",
-              "Asia/Kolkata",
               "Sri Jayawardenepura",
               "Asia/Colombo",
               "Kathmandu",
@@ -49739,7 +50034,6 @@
               "Bangkok",
               "Asia/Bangkok",
               "Hanoi",
-              "Asia/Bangkok",
               "Jakarta",
               "Asia/Jakarta",
               "Krasnoyarsk",
@@ -49767,11 +50061,9 @@
               "Osaka",
               "Asia/Tokyo",
               "Sapporo",
-              "Asia/Tokyo",
               "Seoul",
               "Asia/Seoul",
               "Tokyo",
-              "Asia/Tokyo",
               "Yakutsk",
               "Asia/Yakutsk",
               "Adelaide",
@@ -49811,7 +50103,6 @@
               "Marshall Is.",
               "Pacific/Majuro",
               "Wellington",
-              "Pacific/Auckland",
               "Chatham Is.",
               "Pacific/Chatham",
               "Nuku'alofa",
@@ -49903,6 +50194,12 @@
               "id",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -49951,6 +50248,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -50289,6 +50592,12 @@
               "id",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -50337,6 +50646,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -50514,6 +50829,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -50569,6 +50890,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -50789,6 +51116,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -50844,6 +51177,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -51067,6 +51406,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -51122,6 +51467,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -51326,6 +51677,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -51381,6 +51738,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -51854,6 +52217,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -51909,6 +52278,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -52081,6 +52456,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -52136,6 +52517,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -52165,10 +52552,10 @@
                   },
                   "forms": {
                     "type": "array",
-                    "description": "The forms included in the form set. Add custom forms using the custom form's `slug` field. Or choose a built-in form: `web_new_incident_form`, `web_update_incident_form`, `web_incident_post_mortem_form`, `web_incident_mitigation_form`, `web_incident_resolution_form`, `web_incident_cancellation_form`, `web_scheduled_incident_form`, `web_update_scheduled_incident_form`, `slack_new_incident_form`, `slack_update_incident_form`, `slack_update_incident_status_form`, `slack_incident_mitigation_form`, `slack_incident_resolution_form`, `slack_incident_cancellation_form`, `slack_scheduled_incident_form`, `slack_update_scheduled_incident_form`",
+                    "description": "The forms included in the form set. Add custom forms using the custom form's `slug` field. Or choose a built-in form: `web_new_incident_form`, `web_update_incident_form`, `web_incident_post_mortem_form`, `web_incident_mitigation_form`, `web_incident_resolution_form`, `web_incident_cancellation_form`, `web_scheduled_incident_form`, `web_update_scheduled_incident_form`, `slack_new_incident_form`, `slack_update_incident_form`, `slack_update_incident_status_form`, `slack_incident_mitigation_form`, `slack_incident_resolution_form`, `slack_incident_cancellation_form`, `slack_scheduled_incident_form`, `slack_update_scheduled_incident_form`, `google_chat_new_incident_form`, `google_chat_update_incident_form`",
                     "items": {
                       "type": "string",
-                      "description": "The form included in the form set. Add custom forms using the custom form's `slug` field. Or choose a built-in form: `web_new_incident_form`, `web_update_incident_form`, `web_incident_post_mortem_form`, `web_incident_mitigation_form`, `web_incident_resolution_form`, `web_incident_cancellation_form`, `web_scheduled_incident_form`, `web_update_scheduled_incident_form`, `slack_new_incident_form`, `slack_update_incident_form`, `slack_update_incident_status_form`, `slack_incident_mitigation_form`, `slack_incident_resolution_form`, `slack_incident_cancellation_form`, `slack_scheduled_incident_form`, `slack_update_scheduled_incident_form`"
+                      "description": "The form included in the form set. Add custom forms using the custom form's `slug` field. Or choose a built-in form: `web_new_incident_form`, `web_update_incident_form`, `web_incident_post_mortem_form`, `web_incident_mitigation_form`, `web_incident_resolution_form`, `web_incident_cancellation_form`, `web_scheduled_incident_form`, `web_update_scheduled_incident_form`, `slack_new_incident_form`, `slack_update_incident_form`, `slack_update_incident_status_form`, `slack_incident_mitigation_form`, `slack_incident_resolution_form`, `slack_incident_cancellation_form`, `slack_scheduled_incident_form`, `slack_update_scheduled_incident_form`, `google_chat_new_incident_form`, `google_chat_update_incident_form`"
                     }
                   }
                 },
@@ -52210,10 +52597,10 @@
                   },
                   "forms": {
                     "type": "array",
-                    "description": "The forms included in the form set. Add custom forms using the custom form's `slug` field. Or choose a built-in form: `web_new_incident_form`, `web_update_incident_form`, `web_incident_post_mortem_form`, `web_incident_mitigation_form`, `web_incident_resolution_form`, `web_incident_cancellation_form`, `web_scheduled_incident_form`, `web_update_scheduled_incident_form`, `slack_new_incident_form`, `slack_update_incident_form`, `slack_update_incident_status_form`, `slack_incident_mitigation_form`, `slack_incident_resolution_form`, `slack_incident_cancellation_form`, `slack_scheduled_incident_form`, `slack_update_scheduled_incident_form`",
+                    "description": "The forms included in the form set. Add custom forms using the custom form's `slug` field. Or choose a built-in form: `web_new_incident_form`, `web_update_incident_form`, `web_incident_post_mortem_form`, `web_incident_mitigation_form`, `web_incident_resolution_form`, `web_incident_cancellation_form`, `web_scheduled_incident_form`, `web_update_scheduled_incident_form`, `slack_new_incident_form`, `slack_update_incident_form`, `slack_update_incident_status_form`, `slack_incident_mitigation_form`, `slack_incident_resolution_form`, `slack_incident_cancellation_form`, `slack_scheduled_incident_form`, `slack_update_scheduled_incident_form`, `google_chat_new_incident_form`, `google_chat_update_incident_form`",
                     "items": {
                       "type": "string",
-                      "description": "The form included in the form set. Add custom forms using the custom form's `slug` field. Or choose a built-in form: `web_new_incident_form`, `web_update_incident_form`, `web_incident_post_mortem_form`, `web_incident_mitigation_form`, `web_incident_resolution_form`, `web_incident_cancellation_form`, `web_scheduled_incident_form`, `web_update_scheduled_incident_form`, `slack_new_incident_form`, `slack_update_incident_form`, `slack_update_incident_status_form`, `slack_incident_mitigation_form`, `slack_incident_resolution_form`, `slack_incident_cancellation_form`, `slack_scheduled_incident_form`, `slack_update_scheduled_incident_form`"
+                      "description": "The form included in the form set. Add custom forms using the custom form's `slug` field. Or choose a built-in form: `web_new_incident_form`, `web_update_incident_form`, `web_incident_post_mortem_form`, `web_incident_mitigation_form`, `web_incident_resolution_form`, `web_incident_cancellation_form`, `web_scheduled_incident_form`, `web_update_scheduled_incident_form`, `slack_new_incident_form`, `slack_update_incident_form`, `slack_update_incident_status_form`, `slack_incident_mitigation_form`, `slack_incident_resolution_form`, `slack_incident_cancellation_form`, `slack_scheduled_incident_form`, `slack_update_scheduled_incident_form`, `google_chat_new_incident_form`, `google_chat_update_incident_form`"
                     }
                   }
                 },
@@ -52247,10 +52634,10 @@
           },
           "forms": {
             "type": "array",
-            "description": "The forms included in the form set. Add custom forms using the custom form's `slug` field. Or choose a built-in form: `web_new_incident_form`, `web_update_incident_form`, `web_incident_post_mortem_form`, `web_incident_mitigation_form`, `web_incident_resolution_form`, `web_incident_cancellation_form`, `web_scheduled_incident_form`, `web_update_scheduled_incident_form`, `slack_new_incident_form`, `slack_update_incident_form`, `slack_update_incident_status_form`, `slack_incident_mitigation_form`, `slack_incident_resolution_form`, `slack_incident_cancellation_form`, `slack_scheduled_incident_form`, `slack_update_scheduled_incident_form`",
+            "description": "The forms included in the form set. Add custom forms using the custom form's `slug` field. Or choose a built-in form: `web_new_incident_form`, `web_update_incident_form`, `web_incident_post_mortem_form`, `web_incident_mitigation_form`, `web_incident_resolution_form`, `web_incident_cancellation_form`, `web_scheduled_incident_form`, `web_update_scheduled_incident_form`, `slack_new_incident_form`, `slack_update_incident_form`, `slack_update_incident_status_form`, `slack_incident_mitigation_form`, `slack_incident_resolution_form`, `slack_incident_cancellation_form`, `slack_scheduled_incident_form`, `slack_update_scheduled_incident_form`, `google_chat_new_incident_form`, `google_chat_update_incident_form`",
             "items": {
               "type": "string",
-              "description": "The form included in the form set. Add custom forms using the custom form's `slug` field. Or choose a built-in form: `web_new_incident_form`, `web_update_incident_form`, `web_incident_post_mortem_form`, `web_incident_mitigation_form`, `web_incident_resolution_form`, `web_incident_cancellation_form`, `web_scheduled_incident_form`, `web_update_scheduled_incident_form`, `slack_new_incident_form`, `slack_update_incident_form`, `slack_update_incident_status_form`, `slack_incident_mitigation_form`, `slack_incident_resolution_form`, `slack_incident_cancellation_form`, `slack_scheduled_incident_form`, `slack_update_scheduled_incident_form`"
+              "description": "The form included in the form set. Add custom forms using the custom form's `slug` field. Or choose a built-in form: `web_new_incident_form`, `web_update_incident_form`, `web_incident_post_mortem_form`, `web_incident_mitigation_form`, `web_incident_resolution_form`, `web_incident_cancellation_form`, `web_scheduled_incident_form`, `web_update_scheduled_incident_form`, `slack_new_incident_form`, `slack_update_incident_form`, `slack_update_incident_status_form`, `slack_incident_mitigation_form`, `slack_incident_resolution_form`, `slack_incident_cancellation_form`, `slack_scheduled_incident_form`, `slack_update_scheduled_incident_form`, `google_chat_new_incident_form`, `google_chat_update_incident_form`"
             }
           },
           "created_at": {
@@ -52300,6 +52687,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -52355,6 +52748,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -52973,18 +53372,6 @@
           "updated_at"
         ]
       },
-      "incidents_chart_response": {
-        "type": "object",
-        "required": [
-          "data"
-        ]
-      },
-      "uptime_chart_response": {
-        "type": "object",
-        "required": [
-          "data"
-        ]
-      },
       "functionality_response": {
         "type": "object",
         "properties": {
@@ -53015,6 +53402,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -53070,6 +53463,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -53360,12 +53759,25 @@
             "required": [
               "title",
               "link"
-            ]
+            ],
+            "properties": {
+              "title": {
+                "type": "string"
+              },
+              "link": {
+                "type": "string"
+              }
+            }
           },
           {
             "required": [
               "playbook_id"
-            ]
+            ],
+            "properties": {
+              "playbook_id": {
+                "type": "string"
+              }
+            }
           }
         ]
       },
@@ -53653,12 +54065,38 @@
           {
             "required": [
               "schedule"
-            ]
+            ],
+            "properties": {
+              "schedule": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
           },
           {
             "required": [
               "escalation_policy"
-            ]
+            ],
+            "properties": {
+              "escalation_policy": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
           }
         ]
       },
@@ -55841,7 +56279,7 @@
           }
         },
         "required": [
-          "workspace",
+          "team",
           "title"
         ]
       },
@@ -55943,12 +56381,25 @@
             "required": [
               "title",
               "link"
-            ]
+            ],
+            "properties": {
+              "title": {
+                "type": "string"
+              },
+              "link": {
+                "type": "string"
+              }
+            }
           },
           {
             "required": [
               "playbook_id"
-            ]
+            ],
+            "properties": {
+              "playbook_id": {
+                "type": "string"
+              }
+            }
           }
         ]
       },
@@ -55985,6 +56436,246 @@
           "chat",
           "title",
           "link"
+        ]
+      },
+      "create_google_chat_space_task_params": {
+        "type": "object",
+        "properties": {
+          "task_type": {
+            "type": "string",
+            "enum": [
+              "create_google_chat_space"
+            ]
+          },
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "audience": {
+            "type": "string",
+            "description": "Target audience resource name (e.g. audiences/default). Leave blank for private space."
+          }
+        },
+        "required": [
+          "title"
+        ]
+      },
+      "send_google_chat_message_task_params": {
+        "type": "object",
+        "properties": {
+          "task_type": {
+            "type": "string",
+            "enum": [
+              "send_google_chat_message"
+            ]
+          },
+          "spaces": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "text": {
+            "type": "string"
+          },
+          "thread_key": {
+            "type": "string",
+            "description": "Thread key to reply within a thread. Messages with the same thread key are grouped together",
+            "nullable": true
+          }
+        },
+        "required": [
+          "spaces",
+          "text"
+        ]
+      },
+      "send_google_chat_attachments_task_params": {
+        "type": "object",
+        "properties": {
+          "task_type": {
+            "type": "string",
+            "enum": [
+              "send_google_chat_attachments"
+            ]
+          },
+          "spaces": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "attachments": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "spaces",
+          "attachments"
+        ]
+      },
+      "invite_to_google_chat_space_task_params": {
+        "type": "object",
+        "properties": {
+          "task_type": {
+            "type": "string",
+            "enum": [
+              "invite_to_google_chat_space"
+            ]
+          },
+          "space": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              }
+            }
+          },
+          "emails": {
+            "type": "string",
+            "description": "Comma separated list of emails to invite"
+          }
+        },
+        "required": [
+          "space",
+          "emails"
+        ]
+      },
+      "archive_google_chat_spaces_task_params": {
+        "type": "object",
+        "properties": {
+          "task_type": {
+            "type": "string",
+            "enum": [
+              "archive_google_chat_spaces"
+            ]
+          },
+          "spaces": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "required": [
+          "spaces"
+        ]
+      },
+      "rename_google_chat_space_task_params": {
+        "type": "object",
+        "properties": {
+          "task_type": {
+            "type": "string",
+            "enum": [
+              "rename_google_chat_space"
+            ]
+          },
+          "space": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              }
+            }
+          },
+          "title": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "space",
+          "title"
+        ]
+      },
+      "update_google_chat_space_description_task_params": {
+        "type": "object",
+        "properties": {
+          "task_type": {
+            "type": "string",
+            "enum": [
+              "update_google_chat_space_description"
+            ]
+          },
+          "space": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              }
+            }
+          },
+          "description": {
+            "type": "string",
+            "description": "The space description. Supports liquid markup"
+          }
+        },
+        "required": [
+          "space",
+          "description"
+        ]
+      },
+      "change_google_chat_space_privacy_task_params": {
+        "type": "object",
+        "properties": {
+          "task_type": {
+            "type": "string",
+            "enum": [
+              "change_google_chat_space_privacy"
+            ]
+          },
+          "space": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              }
+            }
+          },
+          "audience": {
+            "type": "string",
+            "description": "Target audience resource name (e.g. audiences/default). Leave blank to make private.",
+            "nullable": true
+          }
+        },
+        "required": [
+          "space"
         ]
       },
       "archive_microsoft_teams_channels_task_params": {
@@ -56193,7 +56884,23 @@
           {
             "required": [
               "channels"
-            ]
+            ],
+            "properties": {
+              "channels": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
           }
         ]
       },
@@ -56239,6 +56946,20 @@
               "send_microsoft_teams_blocks"
             ]
           },
+          "channels": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                }
+              }
+            }
+          },
           "attachments": {
             "type": "string",
             "description": "Support liquid markup. Needs to be a valid JSON string after liquid is parsed"
@@ -56251,7 +56972,23 @@
           {
             "required": [
               "channels"
-            ]
+            ],
+            "properties": {
+              "channels": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
           }
         ]
       },
@@ -56634,12 +57371,38 @@
           {
             "required": [
               "project"
-            ]
+            ],
+            "properties": {
+              "project": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
           },
           {
             "required": [
               "workflow_state"
-            ]
+            ],
+            "properties": {
+              "workflow_state": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
           }
         ]
       },
@@ -57095,6 +57858,10 @@
             "description": "The video layout for the bot's recording (e.g. speaker_view, gallery_view, gallery_view_v2, audio_only)",
             "nullable": true
           },
+          "enable_zoom_bot_auto_join": {
+            "type": "boolean",
+            "description": "Allow the Rootly bot to start recording without waiting for host approval"
+          },
           "post_to_incident_timeline": {
             "type": "boolean"
           },
@@ -57177,12 +57944,28 @@
           {
             "required": [
               "service_ids"
-            ]
+            ],
+            "properties": {
+              "service_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
           },
           {
             "required": [
               "github_repository_names"
-            ]
+            ],
+            "properties": {
+              "github_repository_names": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
           }
         ]
       },
@@ -57246,12 +58029,28 @@
           {
             "required": [
               "service_ids"
-            ]
+            ],
+            "properties": {
+              "service_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
           },
           {
             "required": [
               "gitlab_repository_names"
-            ]
+            ],
+            "properties": {
+              "gitlab_repository_names": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
           }
         ]
       },
@@ -57693,12 +58492,38 @@
           {
             "required": [
               "escalation_policy"
-            ]
+            ],
+            "properties": {
+              "escalation_policy": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
           },
           {
             "required": [
               "schedule"
-            ]
+            ],
+            "properties": {
+              "schedule": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
           }
         ]
       },
@@ -57762,17 +58587,54 @@
           {
             "required": [
               "slack_users"
-            ]
+            ],
+            "properties": {
+              "slack_users": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
           },
           {
             "required": [
               "slack_user_groups"
-            ]
+            ],
+            "properties": {
+              "slack_user_groups": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
           },
           {
             "required": [
               "slack_emails"
-            ]
+            ],
+            "properties": {
+              "slack_emails": {
+                "type": "string"
+              }
+            }
           }
         ]
       },
@@ -58055,7 +58917,6 @@
               "P3",
               "P1",
               "P2",
-              "P3",
               "P4",
               "P5",
               "auto"
@@ -58128,7 +58989,6 @@
               "P3",
               "P1",
               "P2",
-              "P3",
               "P4",
               "P5",
               "auto"
@@ -58446,12 +59306,44 @@
           {
             "required": [
               "users"
-            ]
+            ],
+            "properties": {
+              "users": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
           },
           {
             "required": [
               "escalation_policies"
-            ]
+            ],
+            "properties": {
+              "escalation_policies": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
           }
         ]
       },
@@ -58661,7 +59553,7 @@
           "task_type": {
             "type": "string",
             "enum": [
-              "rename_slack_channel"
+              "change_slack_channel_privacy"
             ]
           },
           "channel": {
@@ -58684,7 +59576,7 @@
           }
         },
         "required": [
-          "title",
+          "channel",
           "privacy"
         ]
       },
@@ -59015,17 +59907,65 @@
           {
             "required": [
               "channels"
-            ]
+            ],
+            "properties": {
+              "channels": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
           },
           {
             "required": [
               "slack_users"
-            ]
+            ],
+            "properties": {
+              "slack_users": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
           },
           {
             "required": [
               "slack_user_groups"
-            ]
+            ],
+            "properties": {
+              "slack_user_groups": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
           }
         ]
       },
@@ -60561,17 +61501,65 @@
           {
             "required": [
               "channels"
-            ]
+            ],
+            "properties": {
+              "channels": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
           },
           {
             "required": [
               "slack_users"
-            ]
+            ],
+            "properties": {
+              "slack_users": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
           },
           {
             "required": [
               "slack_user_groups"
-            ]
+            ],
+            "properties": {
+              "slack_user_groups": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
           }
         ]
       },
@@ -60993,6 +61981,30 @@
                       },
                       {
                         "$ref": "#/components/schemas/add_microsoft_teams_chat_tab_task_params"
+                      },
+                      {
+                        "$ref": "#/components/schemas/create_google_chat_space_task_params"
+                      },
+                      {
+                        "$ref": "#/components/schemas/send_google_chat_message_task_params"
+                      },
+                      {
+                        "$ref": "#/components/schemas/send_google_chat_attachments_task_params"
+                      },
+                      {
+                        "$ref": "#/components/schemas/invite_to_google_chat_space_task_params"
+                      },
+                      {
+                        "$ref": "#/components/schemas/archive_google_chat_spaces_task_params"
+                      },
+                      {
+                        "$ref": "#/components/schemas/rename_google_chat_space_task_params"
+                      },
+                      {
+                        "$ref": "#/components/schemas/update_google_chat_space_description_task_params"
+                      },
+                      {
+                        "$ref": "#/components/schemas/change_google_chat_space_privacy_task_params"
                       },
                       {
                         "$ref": "#/components/schemas/archive_microsoft_teams_channels_task_params"
@@ -61459,6 +62471,30 @@
                         "$ref": "#/components/schemas/add_microsoft_teams_chat_tab_task_params"
                       },
                       {
+                        "$ref": "#/components/schemas/create_google_chat_space_task_params"
+                      },
+                      {
+                        "$ref": "#/components/schemas/send_google_chat_message_task_params"
+                      },
+                      {
+                        "$ref": "#/components/schemas/send_google_chat_attachments_task_params"
+                      },
+                      {
+                        "$ref": "#/components/schemas/invite_to_google_chat_space_task_params"
+                      },
+                      {
+                        "$ref": "#/components/schemas/archive_google_chat_spaces_task_params"
+                      },
+                      {
+                        "$ref": "#/components/schemas/rename_google_chat_space_task_params"
+                      },
+                      {
+                        "$ref": "#/components/schemas/update_google_chat_space_description_task_params"
+                      },
+                      {
+                        "$ref": "#/components/schemas/change_google_chat_space_privacy_task_params"
+                      },
+                      {
                         "$ref": "#/components/schemas/archive_microsoft_teams_channels_task_params"
                       },
                       {
@@ -61895,6 +62931,30 @@
                 "$ref": "#/components/schemas/add_microsoft_teams_chat_tab_task_params"
               },
               {
+                "$ref": "#/components/schemas/create_google_chat_space_task_params"
+              },
+              {
+                "$ref": "#/components/schemas/send_google_chat_message_task_params"
+              },
+              {
+                "$ref": "#/components/schemas/send_google_chat_attachments_task_params"
+              },
+              {
+                "$ref": "#/components/schemas/invite_to_google_chat_space_task_params"
+              },
+              {
+                "$ref": "#/components/schemas/archive_google_chat_spaces_task_params"
+              },
+              {
+                "$ref": "#/components/schemas/rename_google_chat_space_task_params"
+              },
+              {
+                "$ref": "#/components/schemas/update_google_chat_space_description_task_params"
+              },
+              {
+                "$ref": "#/components/schemas/change_google_chat_space_privacy_task_params"
+              },
+              {
                 "$ref": "#/components/schemas/archive_microsoft_teams_channels_task_params"
               },
               {
@@ -62220,6 +63280,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -62275,6 +63341,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -62492,6 +63564,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -62547,6 +63625,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -62934,6 +64018,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -62989,6 +64079,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -63201,6 +64297,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -63256,6 +64358,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -63548,6 +64656,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -63603,6 +64717,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -63813,7 +64933,7 @@
             "type": "array",
             "items": {
               "type": "string",
-              "description": "Actions that trigger the workflow. One of custom_fields.<slug>.updated, incident_in_triage, incident_created, incident_started, incident_updated, title_updated, summary_updated, status_updated, severity_updated, environments_added, environments_removed, environments_updated, incident_types_added, incident_types_removed, incident_types_updated, services_added, services_removed, services_updated, visibility_updated, functionalities_added, functionalities_removed, functionalities_updated, teams_added, teams_removed, teams_updated, causes_added, causes_removed, causes_updated, timeline_updated, status_page_timeline_updated, role_assignments_updated, role_assignments_added, role_assignments_removed, slack_command, slack_channel_created, slack_channel_converted, microsoft_teams_channel_created, microsoft_teams_chat_created, subscribers_updated, subscribers_added, subscribers_removed, user_joined_slack_channel, user_left_slack_channel"
+              "description": "Actions that trigger the workflow. One of custom_fields.<slug>.updated, incident_in_triage, incident_created, incident_started, incident_updated, title_updated, summary_updated, status_updated, severity_updated, environments_added, environments_removed, environments_updated, incident_types_added, incident_types_removed, incident_types_updated, services_added, services_removed, services_updated, visibility_updated, functionalities_added, functionalities_removed, functionalities_updated, teams_added, teams_removed, teams_updated, causes_added, causes_removed, causes_updated, timeline_updated, status_page_timeline_updated, role_assignments_updated, role_assignments_added, role_assignments_removed, slack_command, slack_channel_created, slack_channel_converted, microsoft_teams_channel_created, microsoft_teams_chat_created, google_chat_space_created, subscribers_updated, subscribers_added, subscribers_removed, user_joined_slack_channel, user_left_slack_channel, meeting_summary_created"
             }
           },
           "incident_visibilities": {
@@ -65635,6 +66755,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -65690,6 +66816,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -66252,6 +67384,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -66307,6 +67445,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -66625,6 +67769,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -66680,6 +67830,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -67008,6 +68164,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -67063,6 +68225,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -67218,6 +68386,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -67273,6 +68447,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -67431,6 +68611,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -67486,6 +68672,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -67644,6 +68836,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -67699,6 +68897,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -67857,6 +69061,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -67912,6 +69122,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -68089,6 +69305,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -68144,6 +69366,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -68471,6 +69699,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -68526,6 +69760,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -68773,6 +70013,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -68828,6 +70074,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -69061,6 +70313,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -69116,6 +70374,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -69334,6 +70598,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -69389,6 +70659,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -69630,6 +70906,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -69685,6 +70967,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -69851,6 +71139,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -70026,6 +71320,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -70081,6 +71381,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -70286,6 +71592,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -70341,6 +71653,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -70570,6 +71888,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -70625,6 +71949,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -71025,6 +72355,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -71080,6 +72416,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -72272,6 +73614,61 @@
             "description": "Google meeting URL",
             "nullable": true
           },
+          "microsoft_teams_meeting_id": {
+            "type": "string",
+            "description": "Microsoft Teams meeting ID",
+            "nullable": true
+          },
+          "microsoft_teams_meeting_url": {
+            "type": "string",
+            "description": "Microsoft Teams meeting URL",
+            "nullable": true
+          },
+          "microsoft_teams_channel_id": {
+            "type": "string",
+            "description": "Microsoft Teams channel ID",
+            "nullable": true
+          },
+          "microsoft_teams_channel_name": {
+            "type": "string",
+            "description": "Microsoft Teams channel name",
+            "nullable": true
+          },
+          "microsoft_teams_channel_url": {
+            "type": "string",
+            "description": "Microsoft Teams channel URL",
+            "nullable": true
+          },
+          "microsoft_teams_channel_short_url": {
+            "type": "string",
+            "description": "Microsoft Teams channel short URL",
+            "nullable": true
+          },
+          "microsoft_teams_chat_id": {
+            "type": "string",
+            "description": "Microsoft Teams chat ID",
+            "nullable": true
+          },
+          "microsoft_teams_chat_url": {
+            "type": "string",
+            "description": "Microsoft Teams chat URL",
+            "nullable": true
+          },
+          "microsoft_teams_team_id": {
+            "type": "string",
+            "description": "Microsoft Teams team ID",
+            "nullable": true
+          },
+          "webex_meeting_id": {
+            "type": "string",
+            "description": "Webex meeting ID",
+            "nullable": true
+          },
+          "webex_meeting_url": {
+            "type": "string",
+            "description": "Webex meeting URL",
+            "nullable": true
+          },
           "jira_issue_key": {
             "type": "string",
             "description": "Jira issue key",
@@ -72701,6 +74098,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -72756,6 +74159,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -72867,6 +74276,55 @@
           "prev",
           "next",
           "last"
+        ]
+      },
+      "import_meeting_recording": {
+        "type": "object",
+        "properties": {
+          "source": {
+            "type": "string",
+            "description": "Import source (currently only \"recall_desktop_sdk\")",
+            "enum": [
+              "recall_desktop_sdk"
+            ]
+          },
+          "recall_recording_id": {
+            "type": "string",
+            "format": "uuid",
+            "description": "External recording UUID (required when source is recall_desktop_sdk)"
+          },
+          "platform": {
+            "type": "string",
+            "description": "Meeting platform",
+            "enum": [
+              "zoom",
+              "google_meet",
+              "microsoft_teams",
+              "webex"
+            ]
+          },
+          "started_at": {
+            "type": "string",
+            "format": "date-time",
+            "description": "When the recording started",
+            "nullable": true
+          },
+          "ended_at": {
+            "type": "string",
+            "format": "date-time",
+            "description": "When the recording ended",
+            "nullable": true
+          },
+          "meeting_url": {
+            "type": "string",
+            "description": "Original meeting URL",
+            "nullable": true
+          }
+        },
+        "required": [
+          "source",
+          "recall_recording_id",
+          "platform"
         ]
       },
       "meeting_recording": {
@@ -72993,6 +74451,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -73032,6 +74496,191 @@
           "total_count",
           "total_pages"
         ]
+      },
+      "oncall": {
+        "type": "object",
+        "properties": {
+          "escalation_policy_id": {
+            "type": "string",
+            "description": "ID of the escalation policy"
+          },
+          "escalation_policy_name": {
+            "type": "string",
+            "description": "Name of the escalation policy"
+          },
+          "escalation_policy_path_id": {
+            "type": "string",
+            "nullable": true,
+            "description": "ID of the escalation policy path"
+          },
+          "escalation_policy_path_name": {
+            "type": "string",
+            "nullable": true,
+            "description": "Name of the escalation policy path"
+          },
+          "notification_type": {
+            "type": "string",
+            "enum": [
+              "audible",
+              "quiet"
+            ],
+            "nullable": true,
+            "description": "Notification type of the escalation path (audible or quiet)"
+          },
+          "is_default_path": {
+            "type": "boolean",
+            "nullable": true,
+            "description": "Whether this is the default escalation path"
+          },
+          "escalation_level": {
+            "type": "integer",
+            "description": "Level within the escalation policy"
+          },
+          "schedule_id": {
+            "type": "string",
+            "description": "ID of the schedule",
+            "nullable": true
+          },
+          "schedule_name": {
+            "type": "string",
+            "description": "Name of the schedule",
+            "nullable": true
+          },
+          "user_id": {
+            "type": "integer",
+            "description": "ID of the on-call user"
+          },
+          "starts_at": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Start datetime of the on-call shift"
+          },
+          "ends_at": {
+            "type": "string",
+            "format": "date-time",
+            "description": "End datetime of the on-call shift"
+          }
+        },
+        "required": [
+          "escalation_policy_id",
+          "escalation_policy_name",
+          "user_id",
+          "starts_at",
+          "ends_at"
+        ]
+      },
+      "oncall_list": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "description": "Unique ID of the on-call entry"
+                },
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "on_call_resources"
+                  ]
+                },
+                "attributes": {
+                  "type": "object",
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/oncall"
+                    }
+                  ]
+                },
+                "relationships": {
+                  "$ref": "#/components/schemas/oncall_relationships"
+                }
+              },
+              "required": [
+                "id",
+                "type",
+                "attributes"
+              ]
+            }
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
+          }
+        },
+        "required": [
+          "data"
+        ]
+      },
+      "oncall_relationships": {
+        "type": "object",
+        "properties": {
+          "user": {
+            "type": "object",
+            "properties": {
+              "data": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "type": {
+                    "type": "string",
+                    "enum": [
+                      "users"
+                    ]
+                  }
+                },
+                "nullable": true
+              }
+            }
+          },
+          "schedule": {
+            "type": "object",
+            "properties": {
+              "data": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "type": {
+                    "type": "string",
+                    "enum": [
+                      "schedules"
+                    ]
+                  }
+                },
+                "nullable": true
+              }
+            }
+          },
+          "escalation_policy": {
+            "type": "object",
+            "properties": {
+              "data": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "type": {
+                    "type": "string",
+                    "enum": [
+                      "escalation_policies"
+                    ]
+                  }
+                },
+                "nullable": true
+              }
+            }
+          }
+        }
       },
       "new_on_call_pay_report": {
         "type": "object",
@@ -73289,6 +74938,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -73344,6 +74999,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -73565,6 +75226,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -73620,6 +75287,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -74600,6 +76273,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -74655,6 +76334,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -74850,6 +76535,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -74905,6 +76596,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -74970,6 +76667,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -75130,6 +76833,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -75185,6 +76894,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -75488,6 +77203,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -75543,6 +77264,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -75785,6 +77512,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -75840,6 +77573,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -76078,7 +77817,7 @@
               }
             },
             "required": [
-              "summary",
+              "type",
               "attributes"
             ]
           }
@@ -76220,6 +77959,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -76275,6 +78020,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -76411,6 +78162,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -76449,6 +78206,12 @@
                 "type",
                 "attributes"
               ]
+            }
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
             }
           }
         },
@@ -76756,6 +78519,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -76811,6 +78580,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -77021,6 +78796,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -77076,6 +78857,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -78399,6 +80186,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -78454,6 +80247,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -78667,6 +80466,12 @@
                 ]
               }
             }
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         }
       },
@@ -78719,6 +80524,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -78877,6 +80688,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -78915,6 +80732,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -79668,6 +81491,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -79723,6 +81552,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -80141,6 +81976,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -80196,6 +82037,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -81329,6 +83176,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -81384,6 +83237,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -81748,6 +83607,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -81803,6 +83668,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -81901,6 +83772,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -82233,6 +84110,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -82288,6 +84171,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -82964,6 +84853,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -83019,6 +84914,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -83238,6 +85139,17 @@
                   "auto_add_members_when_attached": {
                     "type": "boolean",
                     "description": "Auto add members to incident channel when team is attached",
+                    "nullable": true
+                  },
+                  "auto_add_members_scope": {
+                    "type": "string",
+                    "enum": [
+                      "off",
+                      "public_only",
+                      "public_and_test",
+                      "all"
+                    ],
+                    "description": "Visibility-scoped auto-add behavior. Only present when the `enable_scoped_incident_channel_auto_add` feature flag is on for the organization. When set, it overrides `auto_add_members_when_attached`.",
                     "nullable": true
                   },
                   "properties": {
@@ -83487,6 +85399,17 @@
                     "description": "Auto add members to incident channel when team is attached",
                     "nullable": true
                   },
+                  "auto_add_members_scope": {
+                    "type": "string",
+                    "enum": [
+                      "off",
+                      "public_only",
+                      "public_and_test",
+                      "all"
+                    ],
+                    "description": "Visibility-scoped auto-add behavior. Only present when the `enable_scoped_incident_channel_auto_add` feature flag is on for the organization. When set, it overrides `auto_add_members_when_attached`.",
+                    "nullable": true
+                  },
                   "properties": {
                     "type": "array",
                     "items": {
@@ -83721,6 +85644,17 @@
             "description": "Auto add members to incident channel when team is attached",
             "nullable": true
           },
+          "auto_add_members_scope": {
+            "type": "string",
+            "enum": [
+              "off",
+              "public_only",
+              "public_and_test",
+              "all"
+            ],
+            "description": "Visibility-scoped auto-add behavior. Only present when the `enable_scoped_incident_channel_auto_add` feature flag is on for the organization. When set, it overrides `auto_add_members_when_attached`.",
+            "nullable": true
+          },
           "properties": {
             "type": "array",
             "items": {
@@ -83789,6 +85723,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -83844,6 +85784,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -83908,7 +85854,8 @@
                         "call",
                         "device",
                         "non_critical_device",
-                        "slack"
+                        "slack",
+                        "google_chat"
                       ]
                     },
                     "nullable": false
@@ -83986,7 +85933,8 @@
                         "call",
                         "device",
                         "non_critical_device",
-                        "slack"
+                        "slack",
+                        "google_chat"
                       ]
                     },
                     "nullable": false
@@ -84052,7 +86000,8 @@
                 "call",
                 "device",
                 "non_critical_device",
-                "slack"
+                "slack",
+                "google_chat"
               ]
             },
             "nullable": false
@@ -84106,6 +86055,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -84161,6 +86116,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -84302,6 +86263,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -84357,6 +86324,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -84514,6 +86487,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -84569,6 +86548,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -84810,6 +86795,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -84868,6 +86859,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -84936,6 +86933,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -84991,6 +86994,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -85269,6 +87278,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -85324,6 +87339,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -85394,6 +87415,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -85449,6 +87476,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -85624,6 +87657,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -85679,6 +87718,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -85825,6 +87870,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -85880,6 +87931,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -86010,6 +88067,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -86065,6 +88128,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -86192,6 +88261,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -86247,6 +88322,12 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -86942,6 +89023,12 @@
               "type",
               "attributes"
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
@@ -86997,12 +89084,41 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
           }
         },
         "required": [
           "data",
           "links",
           "meta"
+        ]
+      },
+      "jsonapi_included_resource": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "attributes": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "relationships": {
+            "type": "object",
+            "additionalProperties": true
+          }
+        },
+        "required": [
+          "id",
+          "type"
         ]
       }
     }

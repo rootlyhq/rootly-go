@@ -1183,6 +1183,7 @@ const (
 	AlertSourceEmail           AlertSource = "email"
 	AlertSourceGenericWebhook  AlertSource = "generic_webhook"
 	AlertSourceGitlab          AlertSource = "gitlab"
+	AlertSourceGoogleChat      AlertSource = "google_chat"
 	AlertSourceGoogleCloud     AlertSource = "google_cloud"
 	AlertSourceGrafana         AlertSource = "grafana"
 	AlertSourceHeartbeat       AlertSource = "heartbeat"
@@ -1250,6 +1251,8 @@ func (e AlertSource) Valid() bool {
 	case AlertSourceGenericWebhook:
 		return true
 	case AlertSourceGitlab:
+		return true
+	case AlertSourceGoogleChat:
 		return true
 	case AlertSourceGoogleCloud:
 		return true
@@ -1349,8 +1352,10 @@ const (
 	AlertEventActionEmailed               AlertEventAction = "emailed"
 	AlertEventActionEscalated             AlertEventAction = "escalated"
 	AlertEventActionEscalationPolicyPaged AlertEventAction = "escalation_policy_paged"
+	AlertEventActionGoogleChatMessaged    AlertEventAction = "google_chat_messaged"
 	AlertEventActionIgnoredAlertRequest   AlertEventAction = "ignored_alert_request"
 	AlertEventActionMarked                AlertEventAction = "marked"
+	AlertEventActionMsTeamsMessaged       AlertEventAction = "ms_teams_messaged"
 	AlertEventActionMuted                 AlertEventAction = "muted"
 	AlertEventActionNotMarked             AlertEventAction = "not_marked"
 	AlertEventActionNotified              AlertEventAction = "notified"
@@ -1391,9 +1396,13 @@ func (e AlertEventAction) Valid() bool {
 		return true
 	case AlertEventActionEscalationPolicyPaged:
 		return true
+	case AlertEventActionGoogleChatMessaged:
+		return true
 	case AlertEventActionIgnoredAlertRequest:
 		return true
 	case AlertEventActionMarked:
+		return true
+	case AlertEventActionMsTeamsMessaged:
 		return true
 	case AlertEventActionMuted:
 		return true
@@ -1702,6 +1711,7 @@ const (
 	AlertListDataSourceEmail           AlertListDataSource = "email"
 	AlertListDataSourceGenericWebhook  AlertListDataSource = "generic_webhook"
 	AlertListDataSourceGitlab          AlertListDataSource = "gitlab"
+	AlertListDataSourceGoogleChat      AlertListDataSource = "google_chat"
 	AlertListDataSourceGoogleCloud     AlertListDataSource = "google_cloud"
 	AlertListDataSourceGrafana         AlertListDataSource = "grafana"
 	AlertListDataSourceHeartbeat       AlertListDataSource = "heartbeat"
@@ -1769,6 +1779,8 @@ func (e AlertListDataSource) Valid() bool {
 	case AlertListDataSourceGenericWebhook:
 		return true
 	case AlertListDataSourceGitlab:
+		return true
+	case AlertListDataSourceGoogleChat:
 		return true
 	case AlertListDataSourceGoogleCloud:
 		return true
@@ -1864,6 +1876,7 @@ const (
 	AlertResponseDataSourceEmail           AlertResponseDataSource = "email"
 	AlertResponseDataSourceGenericWebhook  AlertResponseDataSource = "generic_webhook"
 	AlertResponseDataSourceGitlab          AlertResponseDataSource = "gitlab"
+	AlertResponseDataSourceGoogleChat      AlertResponseDataSource = "google_chat"
 	AlertResponseDataSourceGoogleCloud     AlertResponseDataSource = "google_cloud"
 	AlertResponseDataSourceGrafana         AlertResponseDataSource = "grafana"
 	AlertResponseDataSourceHeartbeat       AlertResponseDataSource = "heartbeat"
@@ -1931,6 +1944,8 @@ func (e AlertResponseDataSource) Valid() bool {
 	case AlertResponseDataSourceGenericWebhook:
 		return true
 	case AlertResponseDataSourceGitlab:
+		return true
+	case AlertResponseDataSourceGoogleChat:
 		return true
 	case AlertResponseDataSourceGoogleCloud:
 		return true
@@ -3209,6 +3224,21 @@ func (e APIKeyWithTokenResponseDataType) Valid() bool {
 	}
 }
 
+// Defines values for ArchiveGoogleChatSpacesTaskParamsTaskType.
+const (
+	ArchiveGoogleChatSpacesTaskParamsTaskTypeArchiveGoogleChatSpaces ArchiveGoogleChatSpacesTaskParamsTaskType = "archive_google_chat_spaces"
+)
+
+// Valid indicates whether the value is a known member of the ArchiveGoogleChatSpacesTaskParamsTaskType enum.
+func (e ArchiveGoogleChatSpacesTaskParamsTaskType) Valid() bool {
+	switch e {
+	case ArchiveGoogleChatSpacesTaskParamsTaskTypeArchiveGoogleChatSpaces:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for ArchiveMicrosoftTeamsChannelsTaskParamsTaskType.
 const (
 	ArchiveMicrosoftTeamsChannelsTaskParamsTaskTypeArchiveMicrosoftTeamsChannels ArchiveMicrosoftTeamsChannelsTaskParamsTaskType = "archive_microsoft_teams_channels"
@@ -4250,6 +4280,21 @@ func (e CauseResponseDataType) Valid() bool {
 	}
 }
 
+// Defines values for ChangeGoogleChatSpacePrivacyTaskParamsTaskType.
+const (
+	ChangeGoogleChatSpacePrivacyTaskParamsTaskTypeChangeGoogleChatSpacePrivacy ChangeGoogleChatSpacePrivacyTaskParamsTaskType = "change_google_chat_space_privacy"
+)
+
+// Valid indicates whether the value is a known member of the ChangeGoogleChatSpacePrivacyTaskParamsTaskType enum.
+func (e ChangeGoogleChatSpacePrivacyTaskParamsTaskType) Valid() bool {
+	switch e {
+	case ChangeGoogleChatSpacePrivacyTaskParamsTaskTypeChangeGoogleChatSpacePrivacy:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for ChangeSlackChannelPrivacyTaskParamsPrivacy.
 const (
 	ChangeSlackChannelPrivacyTaskParamsPrivacyPrivate ChangeSlackChannelPrivacyTaskParamsPrivacy = "private"
@@ -4270,13 +4315,13 @@ func (e ChangeSlackChannelPrivacyTaskParamsPrivacy) Valid() bool {
 
 // Defines values for ChangeSlackChannelPrivacyTaskParamsTaskType.
 const (
-	ChangeSlackChannelPrivacyTaskParamsTaskTypeRenameSlackChannel ChangeSlackChannelPrivacyTaskParamsTaskType = "rename_slack_channel"
+	ChangeSlackChannelPrivacyTaskParamsTaskTypeChangeSlackChannelPrivacy ChangeSlackChannelPrivacyTaskParamsTaskType = "change_slack_channel_privacy"
 )
 
 // Valid indicates whether the value is a known member of the ChangeSlackChannelPrivacyTaskParamsTaskType enum.
 func (e ChangeSlackChannelPrivacyTaskParamsTaskType) Valid() bool {
 	switch e {
-	case ChangeSlackChannelPrivacyTaskParamsTaskTypeRenameSlackChannel:
+	case ChangeSlackChannelPrivacyTaskParamsTaskTypeChangeSlackChannelPrivacy:
 		return true
 	default:
 		return false
@@ -4787,6 +4832,21 @@ const (
 func (e CreateGoogleCalendarEventTaskParamsTaskType) Valid() bool {
 	switch e {
 	case CreateGoogleCalendarEventTaskParamsTaskTypeCreateGoogleCalendarEvent:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for CreateGoogleChatSpaceTaskParamsTaskType.
+const (
+	CreateGoogleChatSpaceTaskParamsTaskTypeCreateGoogleChatSpace CreateGoogleChatSpaceTaskParamsTaskType = "create_google_chat_space"
+)
+
+// Valid indicates whether the value is a known member of the CreateGoogleChatSpaceTaskParamsTaskType enum.
+func (e CreateGoogleChatSpaceTaskParamsTaskType) Valid() bool {
+	switch e {
+	case CreateGoogleChatSpaceTaskParamsTaskTypeCreateGoogleChatSpace:
 		return true
 	default:
 		return false
@@ -10373,6 +10433,45 @@ func (e HTTPClientTaskParamsTaskType) Valid() bool {
 	}
 }
 
+// Defines values for ImportMeetingRecordingPlatform.
+const (
+	ImportMeetingRecordingPlatformGoogleMeet     ImportMeetingRecordingPlatform = "google_meet"
+	ImportMeetingRecordingPlatformMicrosoftTeams ImportMeetingRecordingPlatform = "microsoft_teams"
+	ImportMeetingRecordingPlatformWebex          ImportMeetingRecordingPlatform = "webex"
+	ImportMeetingRecordingPlatformZoom           ImportMeetingRecordingPlatform = "zoom"
+)
+
+// Valid indicates whether the value is a known member of the ImportMeetingRecordingPlatform enum.
+func (e ImportMeetingRecordingPlatform) Valid() bool {
+	switch e {
+	case ImportMeetingRecordingPlatformGoogleMeet:
+		return true
+	case ImportMeetingRecordingPlatformMicrosoftTeams:
+		return true
+	case ImportMeetingRecordingPlatformWebex:
+		return true
+	case ImportMeetingRecordingPlatformZoom:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for ImportMeetingRecordingSource.
+const (
+	ImportMeetingRecordingSourceRecallDesktopSdk ImportMeetingRecordingSource = "recall_desktop_sdk"
+)
+
+// Valid indicates whether the value is a known member of the ImportMeetingRecordingSource enum.
+func (e ImportMeetingRecordingSource) Valid() bool {
+	switch e {
+	case ImportMeetingRecordingSourceRecallDesktopSdk:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for InTriageIncidentDataType.
 const (
 	InTriageIncidentDataTypeIncidents InTriageIncidentDataType = "incidents"
@@ -12065,6 +12164,21 @@ const (
 func (e IncidentTypeResponseDataType) Valid() bool {
 	switch e {
 	case IncidentTypeResponseDataTypeIncidentTypes:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for InviteToGoogleChatSpaceTaskParamsTaskType.
+const (
+	InviteToGoogleChatSpaceTaskParamsTaskTypeInviteToGoogleChatSpace InviteToGoogleChatSpaceTaskParamsTaskType = "invite_to_google_chat_space"
+)
+
+// Valid indicates whether the value is a known member of the InviteToGoogleChatSpaceTaskParamsTaskType enum.
+func (e InviteToGoogleChatSpaceTaskParamsTaskType) Valid() bool {
+	switch e {
+	case InviteToGoogleChatSpaceTaskParamsTaskTypeInviteToGoogleChatSpace:
 		return true
 	default:
 		return false
@@ -21572,6 +21686,30 @@ func (e NewSubStatusDataType) Valid() bool {
 	}
 }
 
+// Defines values for NewTeamDataAttributesAutoAddMembersScope.
+const (
+	NewTeamDataAttributesAutoAddMembersScopeAll           NewTeamDataAttributesAutoAddMembersScope = "all"
+	NewTeamDataAttributesAutoAddMembersScopeOff           NewTeamDataAttributesAutoAddMembersScope = "off"
+	NewTeamDataAttributesAutoAddMembersScopePublicAndTest NewTeamDataAttributesAutoAddMembersScope = "public_and_test"
+	NewTeamDataAttributesAutoAddMembersScopePublicOnly    NewTeamDataAttributesAutoAddMembersScope = "public_only"
+)
+
+// Valid indicates whether the value is a known member of the NewTeamDataAttributesAutoAddMembersScope enum.
+func (e NewTeamDataAttributesAutoAddMembersScope) Valid() bool {
+	switch e {
+	case NewTeamDataAttributesAutoAddMembersScopeAll:
+		return true
+	case NewTeamDataAttributesAutoAddMembersScopeOff:
+		return true
+	case NewTeamDataAttributesAutoAddMembersScopePublicAndTest:
+		return true
+	case NewTeamDataAttributesAutoAddMembersScopePublicOnly:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for NewTeamDataType.
 const (
 	NewTeamDataTypeGroups NewTeamDataType = "groups"
@@ -21607,6 +21745,7 @@ const (
 	NewUserNotificationRuleDataAttributesEnabledContactTypesCall              NewUserNotificationRuleDataAttributesEnabledContactTypes = "call"
 	NewUserNotificationRuleDataAttributesEnabledContactTypesDevice            NewUserNotificationRuleDataAttributesEnabledContactTypes = "device"
 	NewUserNotificationRuleDataAttributesEnabledContactTypesEmail             NewUserNotificationRuleDataAttributesEnabledContactTypes = "email"
+	NewUserNotificationRuleDataAttributesEnabledContactTypesGoogleChat        NewUserNotificationRuleDataAttributesEnabledContactTypes = "google_chat"
 	NewUserNotificationRuleDataAttributesEnabledContactTypesNonCriticalDevice NewUserNotificationRuleDataAttributesEnabledContactTypes = "non_critical_device"
 	NewUserNotificationRuleDataAttributesEnabledContactTypesSlack             NewUserNotificationRuleDataAttributesEnabledContactTypes = "slack"
 	NewUserNotificationRuleDataAttributesEnabledContactTypesSms               NewUserNotificationRuleDataAttributesEnabledContactTypes = "sms"
@@ -21620,6 +21759,8 @@ func (e NewUserNotificationRuleDataAttributesEnabledContactTypes) Valid() bool {
 	case NewUserNotificationRuleDataAttributesEnabledContactTypesDevice:
 		return true
 	case NewUserNotificationRuleDataAttributesEnabledContactTypesEmail:
+		return true
+	case NewUserNotificationRuleDataAttributesEnabledContactTypesGoogleChat:
 		return true
 	case NewUserNotificationRuleDataAttributesEnabledContactTypesNonCriticalDevice:
 		return true
@@ -22718,6 +22859,84 @@ const (
 func (e OnCallShadowsListDataType) Valid() bool {
 	switch e {
 	case OnCallShadowsListDataTypeOnCallShadows:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for OncallNotificationType.
+const (
+	OncallNotificationTypeAudible OncallNotificationType = "audible"
+	OncallNotificationTypeQuiet   OncallNotificationType = "quiet"
+)
+
+// Valid indicates whether the value is a known member of the OncallNotificationType enum.
+func (e OncallNotificationType) Valid() bool {
+	switch e {
+	case OncallNotificationTypeAudible:
+		return true
+	case OncallNotificationTypeQuiet:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for OncallListDataType.
+const (
+	OncallListDataTypeOnCallResources OncallListDataType = "on_call_resources"
+)
+
+// Valid indicates whether the value is a known member of the OncallListDataType enum.
+func (e OncallListDataType) Valid() bool {
+	switch e {
+	case OncallListDataTypeOnCallResources:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for OncallRelationshipsEscalationPolicyDataType.
+const (
+	OncallRelationshipsEscalationPolicyDataTypeEscalationPolicies OncallRelationshipsEscalationPolicyDataType = "escalation_policies"
+)
+
+// Valid indicates whether the value is a known member of the OncallRelationshipsEscalationPolicyDataType enum.
+func (e OncallRelationshipsEscalationPolicyDataType) Valid() bool {
+	switch e {
+	case OncallRelationshipsEscalationPolicyDataTypeEscalationPolicies:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for OncallRelationshipsScheduleDataType.
+const (
+	OncallRelationshipsScheduleDataTypeSchedules OncallRelationshipsScheduleDataType = "schedules"
+)
+
+// Valid indicates whether the value is a known member of the OncallRelationshipsScheduleDataType enum.
+func (e OncallRelationshipsScheduleDataType) Valid() bool {
+	switch e {
+	case OncallRelationshipsScheduleDataTypeSchedules:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for OncallRelationshipsUserDataType.
+const (
+	OncallRelationshipsUserDataTypeUsers OncallRelationshipsUserDataType = "users"
+)
+
+// Valid indicates whether the value is a known member of the OncallRelationshipsUserDataType enum.
+func (e OncallRelationshipsUserDataType) Valid() bool {
+	switch e {
+	case OncallRelationshipsUserDataTypeUsers:
 		return true
 	default:
 		return false
@@ -24284,6 +24503,21 @@ func (e RemoveSubscribersDataType) Valid() bool {
 	}
 }
 
+// Defines values for RenameGoogleChatSpaceTaskParamsTaskType.
+const (
+	RenameGoogleChatSpaceTaskParamsTaskTypeRenameGoogleChatSpace RenameGoogleChatSpaceTaskParamsTaskType = "rename_google_chat_space"
+)
+
+// Valid indicates whether the value is a known member of the RenameGoogleChatSpaceTaskParamsTaskType enum.
+func (e RenameGoogleChatSpaceTaskParamsTaskType) Valid() bool {
+	switch e {
+	case RenameGoogleChatSpaceTaskParamsTaskTypeRenameGoogleChatSpace:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for RenameMicrosoftTeamsChannelTaskParamsTaskType.
 const (
 	RenameMicrosoftTeamsChannelTaskParamsTaskTypeRenameMicrosoftTeamsChannel RenameMicrosoftTeamsChannelTaskParamsTaskType = "rename_microsoft_teams_channel"
@@ -25784,6 +26018,36 @@ func (e SendEmailTaskParamsTaskType) Valid() bool {
 	}
 }
 
+// Defines values for SendGoogleChatAttachmentsTaskParamsTaskType.
+const (
+	SendGoogleChatAttachmentsTaskParamsTaskTypeSendGoogleChatAttachments SendGoogleChatAttachmentsTaskParamsTaskType = "send_google_chat_attachments"
+)
+
+// Valid indicates whether the value is a known member of the SendGoogleChatAttachmentsTaskParamsTaskType enum.
+func (e SendGoogleChatAttachmentsTaskParamsTaskType) Valid() bool {
+	switch e {
+	case SendGoogleChatAttachmentsTaskParamsTaskTypeSendGoogleChatAttachments:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for SendGoogleChatMessageTaskParamsTaskType.
+const (
+	SendGoogleChatMessageTaskParamsTaskTypeSendGoogleChatMessage SendGoogleChatMessageTaskParamsTaskType = "send_google_chat_message"
+)
+
+// Valid indicates whether the value is a known member of the SendGoogleChatMessageTaskParamsTaskType enum.
+func (e SendGoogleChatMessageTaskParamsTaskType) Valid() bool {
+	switch e {
+	case SendGoogleChatMessageTaskParamsTaskTypeSendGoogleChatMessage:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for SendMicrosoftTeamsBlocksTaskParamsTaskType.
 const (
 	SendMicrosoftTeamsBlocksTaskParamsTaskTypeSendMicrosoftTeamsBlocks SendMicrosoftTeamsBlocksTaskParamsTaskType = "send_microsoft_teams_blocks"
@@ -26630,6 +26894,30 @@ const (
 func (e SubStatusResponseDataType) Valid() bool {
 	switch e {
 	case SubStatusResponseDataTypeSubStatuses:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for TeamAutoAddMembersScope.
+const (
+	TeamAutoAddMembersScopeAll           TeamAutoAddMembersScope = "all"
+	TeamAutoAddMembersScopeOff           TeamAutoAddMembersScope = "off"
+	TeamAutoAddMembersScopePublicAndTest TeamAutoAddMembersScope = "public_and_test"
+	TeamAutoAddMembersScopePublicOnly    TeamAutoAddMembersScope = "public_only"
+)
+
+// Valid indicates whether the value is a known member of the TeamAutoAddMembersScope enum.
+func (e TeamAutoAddMembersScope) Valid() bool {
+	switch e {
+	case TeamAutoAddMembersScopeAll:
+		return true
+	case TeamAutoAddMembersScopeOff:
+		return true
+	case TeamAutoAddMembersScopePublicAndTest:
+		return true
+	case TeamAutoAddMembersScopePublicOnly:
 		return true
 	default:
 		return false
@@ -32807,6 +33095,21 @@ func (e UpdateGoogleCalendarEventTaskParamsTaskType) Valid() bool {
 	}
 }
 
+// Defines values for UpdateGoogleChatSpaceDescriptionTaskParamsTaskType.
+const (
+	UpdateGoogleChatSpaceDescriptionTaskParamsTaskTypeUpdateGoogleChatSpaceDescription UpdateGoogleChatSpaceDescriptionTaskParamsTaskType = "update_google_chat_space_description"
+)
+
+// Valid indicates whether the value is a known member of the UpdateGoogleChatSpaceDescriptionTaskParamsTaskType enum.
+func (e UpdateGoogleChatSpaceDescriptionTaskParamsTaskType) Valid() bool {
+	switch e {
+	case UpdateGoogleChatSpaceDescriptionTaskParamsTaskTypeUpdateGoogleChatSpaceDescription:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for UpdateGoogleDocsPageTaskParamsTaskType.
 const (
 	UpdateGoogleDocsPageTaskParamsTaskTypeUpdateGoogleDocsPage UpdateGoogleDocsPageTaskParamsTaskType = "update_google_docs_page"
@@ -36665,6 +36968,30 @@ func (e UpdateSubStatusDataType) Valid() bool {
 	}
 }
 
+// Defines values for UpdateTeamDataAttributesAutoAddMembersScope.
+const (
+	UpdateTeamDataAttributesAutoAddMembersScopeAll           UpdateTeamDataAttributesAutoAddMembersScope = "all"
+	UpdateTeamDataAttributesAutoAddMembersScopeOff           UpdateTeamDataAttributesAutoAddMembersScope = "off"
+	UpdateTeamDataAttributesAutoAddMembersScopePublicAndTest UpdateTeamDataAttributesAutoAddMembersScope = "public_and_test"
+	UpdateTeamDataAttributesAutoAddMembersScopePublicOnly    UpdateTeamDataAttributesAutoAddMembersScope = "public_only"
+)
+
+// Valid indicates whether the value is a known member of the UpdateTeamDataAttributesAutoAddMembersScope enum.
+func (e UpdateTeamDataAttributesAutoAddMembersScope) Valid() bool {
+	switch e {
+	case UpdateTeamDataAttributesAutoAddMembersScopeAll:
+		return true
+	case UpdateTeamDataAttributesAutoAddMembersScopeOff:
+		return true
+	case UpdateTeamDataAttributesAutoAddMembersScopePublicAndTest:
+		return true
+	case UpdateTeamDataAttributesAutoAddMembersScopePublicOnly:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for UpdateTeamDataType.
 const (
 	UpdateTeamDataTypeGroups UpdateTeamDataType = "groups"
@@ -36730,6 +37057,7 @@ const (
 	UpdateUserNotificationRuleDataAttributesEnabledContactTypesCall              UpdateUserNotificationRuleDataAttributesEnabledContactTypes = "call"
 	UpdateUserNotificationRuleDataAttributesEnabledContactTypesDevice            UpdateUserNotificationRuleDataAttributesEnabledContactTypes = "device"
 	UpdateUserNotificationRuleDataAttributesEnabledContactTypesEmail             UpdateUserNotificationRuleDataAttributesEnabledContactTypes = "email"
+	UpdateUserNotificationRuleDataAttributesEnabledContactTypesGoogleChat        UpdateUserNotificationRuleDataAttributesEnabledContactTypes = "google_chat"
 	UpdateUserNotificationRuleDataAttributesEnabledContactTypesNonCriticalDevice UpdateUserNotificationRuleDataAttributesEnabledContactTypes = "non_critical_device"
 	UpdateUserNotificationRuleDataAttributesEnabledContactTypesSlack             UpdateUserNotificationRuleDataAttributesEnabledContactTypes = "slack"
 	UpdateUserNotificationRuleDataAttributesEnabledContactTypesSms               UpdateUserNotificationRuleDataAttributesEnabledContactTypes = "sms"
@@ -36743,6 +37071,8 @@ func (e UpdateUserNotificationRuleDataAttributesEnabledContactTypes) Valid() boo
 	case UpdateUserNotificationRuleDataAttributesEnabledContactTypesDevice:
 		return true
 	case UpdateUserNotificationRuleDataAttributesEnabledContactTypesEmail:
+		return true
+	case UpdateUserNotificationRuleDataAttributesEnabledContactTypesGoogleChat:
 		return true
 	case UpdateUserNotificationRuleDataAttributesEnabledContactTypesNonCriticalDevice:
 		return true
@@ -37189,6 +37519,7 @@ const (
 	UserNotificationRuleEnabledContactTypesCall              UserNotificationRuleEnabledContactTypes = "call"
 	UserNotificationRuleEnabledContactTypesDevice            UserNotificationRuleEnabledContactTypes = "device"
 	UserNotificationRuleEnabledContactTypesEmail             UserNotificationRuleEnabledContactTypes = "email"
+	UserNotificationRuleEnabledContactTypesGoogleChat        UserNotificationRuleEnabledContactTypes = "google_chat"
 	UserNotificationRuleEnabledContactTypesNonCriticalDevice UserNotificationRuleEnabledContactTypes = "non_critical_device"
 	UserNotificationRuleEnabledContactTypesSlack             UserNotificationRuleEnabledContactTypes = "slack"
 	UserNotificationRuleEnabledContactTypesSms               UserNotificationRuleEnabledContactTypes = "sms"
@@ -37202,6 +37533,8 @@ func (e UserNotificationRuleEnabledContactTypes) Valid() bool {
 	case UserNotificationRuleEnabledContactTypesDevice:
 		return true
 	case UserNotificationRuleEnabledContactTypesEmail:
+		return true
+	case UserNotificationRuleEnabledContactTypesGoogleChat:
 		return true
 	case UserNotificationRuleEnabledContactTypesNonCriticalDevice:
 		return true
@@ -37922,8 +38255,10 @@ const (
 	ListAlertEventsFeedParamsFilterActionEmailed               ListAlertEventsFeedParamsFilterAction = "emailed"
 	ListAlertEventsFeedParamsFilterActionEscalated             ListAlertEventsFeedParamsFilterAction = "escalated"
 	ListAlertEventsFeedParamsFilterActionEscalationPolicyPaged ListAlertEventsFeedParamsFilterAction = "escalation_policy_paged"
+	ListAlertEventsFeedParamsFilterActionGoogleChatMessaged    ListAlertEventsFeedParamsFilterAction = "google_chat_messaged"
 	ListAlertEventsFeedParamsFilterActionIgnoredAlertRequest   ListAlertEventsFeedParamsFilterAction = "ignored_alert_request"
 	ListAlertEventsFeedParamsFilterActionMarked                ListAlertEventsFeedParamsFilterAction = "marked"
+	ListAlertEventsFeedParamsFilterActionMsTeamsMessaged       ListAlertEventsFeedParamsFilterAction = "ms_teams_messaged"
 	ListAlertEventsFeedParamsFilterActionMuted                 ListAlertEventsFeedParamsFilterAction = "muted"
 	ListAlertEventsFeedParamsFilterActionNotMarked             ListAlertEventsFeedParamsFilterAction = "not_marked"
 	ListAlertEventsFeedParamsFilterActionNotified              ListAlertEventsFeedParamsFilterAction = "notified"
@@ -37964,9 +38299,13 @@ func (e ListAlertEventsFeedParamsFilterAction) Valid() bool {
 		return true
 	case ListAlertEventsFeedParamsFilterActionEscalationPolicyPaged:
 		return true
+	case ListAlertEventsFeedParamsFilterActionGoogleChatMessaged:
+		return true
 	case ListAlertEventsFeedParamsFilterActionIgnoredAlertRequest:
 		return true
 	case ListAlertEventsFeedParamsFilterActionMarked:
+		return true
+	case ListAlertEventsFeedParamsFilterActionMsTeamsMessaged:
 		return true
 	case ListAlertEventsFeedParamsFilterActionMuted:
 		return true
@@ -40071,10 +40410,15 @@ type AddMicrosoftTeamsTabTaskParams struct {
 type AddMicrosoftTeamsTabTaskParamsTaskType string
 
 // AddMicrosoftTeamsTabTaskParams0 defines model for .
-type AddMicrosoftTeamsTabTaskParams0 = interface{}
+type AddMicrosoftTeamsTabTaskParams0 struct {
+	Link  string `json:"link"`
+	Title string `json:"title"`
+}
 
 // AddMicrosoftTeamsTabTaskParams1 defines model for .
-type AddMicrosoftTeamsTabTaskParams1 = interface{}
+type AddMicrosoftTeamsTabTaskParams1 struct {
+	PlaybookID string `json:"playbook_id"`
+}
 
 // AddRoleTaskParams defines model for add_role_task_params.
 type AddRoleTaskParams struct {
@@ -40121,10 +40465,15 @@ type AddSlackBookmarkTaskParams struct {
 type AddSlackBookmarkTaskParamsTaskType string
 
 // AddSlackBookmarkTaskParams0 defines model for .
-type AddSlackBookmarkTaskParams0 = interface{}
+type AddSlackBookmarkTaskParams0 struct {
+	Link  string `json:"link"`
+	Title string `json:"title"`
+}
 
 // AddSlackBookmarkTaskParams1 defines model for .
-type AddSlackBookmarkTaskParams1 = interface{}
+type AddSlackBookmarkTaskParams1 struct {
+	PlaybookID string `json:"playbook_id"`
+}
 
 // AddSubscribers defines model for add_subscribers.
 type AddSubscribers struct {
@@ -40329,8 +40678,9 @@ type AlertEventFeedList struct {
 		ID   string                     `json:"id"`
 		Type AlertEventFeedListDataType `json:"type"`
 	} `json:"data"`
-	Links *Links             `json:"links,omitempty"`
-	Meta  AlertEventFeedMeta `json:"meta"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    *Links                    `json:"links,omitempty"`
+	Meta     AlertEventFeedMeta        `json:"meta"`
 }
 
 // AlertEventFeedListDataType defines model for AlertEventFeedList.Data.Type.
@@ -40357,8 +40707,9 @@ type AlertEventList struct {
 		ID   string                 `json:"id"`
 		Type AlertEventListDataType `json:"type"`
 	} `json:"data"`
-	Links Links `json:"links"`
-	Meta  Meta  `json:"meta"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
 }
 
 // AlertEventListDataType defines model for AlertEventList.Data.Type.
@@ -40373,6 +40724,7 @@ type AlertEventResponse struct {
 		ID   string                     `json:"id"`
 		Type AlertEventResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // AlertEventResponseDataType defines model for AlertEventResponse.Data.Type.
@@ -40405,8 +40757,9 @@ type AlertFieldList struct {
 		ID   string                 `json:"id"`
 		Type AlertFieldListDataType `json:"type"`
 	} `json:"data"`
-	Links Links `json:"links"`
-	Meta  Meta  `json:"meta"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
 }
 
 // AlertFieldListDataType defines model for AlertFieldList.Data.Type.
@@ -40421,6 +40774,7 @@ type AlertFieldResponse struct {
 		ID   *string                    `json:"id,omitempty"`
 		Type AlertFieldResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // AlertFieldResponseDataType defines model for AlertFieldResponse.Data.Type.
@@ -40530,6 +40884,7 @@ type AlertGroupList struct {
 		ID   string                 `json:"id"`
 		Type AlertGroupListDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // AlertGroupListDataType defines model for AlertGroupList.Data.Type.
@@ -40544,6 +40899,7 @@ type AlertGroupResponse struct {
 		ID   string                     `json:"id"`
 		Type AlertGroupResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // AlertGroupResponseDataType defines model for AlertGroupResponse.Data.Type.
@@ -40561,8 +40917,9 @@ type AlertList struct {
 		Source *AlertListDataSource `json:"source,omitempty"`
 		Type   AlertListDataType    `json:"type"`
 	} `json:"data"`
-	Links Links `json:"links"`
-	Meta  Meta  `json:"meta"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
 }
 
 // AlertListDataSource The source of the alert
@@ -40583,6 +40940,7 @@ type AlertResponse struct {
 		Source *AlertResponseDataSource `json:"source,omitempty"`
 		Type   AlertResponseDataType    `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // AlertResponseDataSource The source of the alert
@@ -40870,8 +41228,9 @@ type AlertRoutingRuleList struct {
 		ID   string                       `json:"id"`
 		Type AlertRoutingRuleListDataType `json:"type"`
 	} `json:"data"`
-	Links Links `json:"links"`
-	Meta  Meta  `json:"meta"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
 }
 
 // AlertRoutingRuleListDataType defines model for AlertRoutingRuleList.Data.Type.
@@ -40886,6 +41245,7 @@ type AlertRoutingRuleResponse struct {
 		ID   string                           `json:"id"`
 		Type AlertRoutingRuleResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // AlertRoutingRuleResponseDataType defines model for AlertRoutingRuleResponse.Data.Type.
@@ -41001,8 +41361,9 @@ type AlertUrgencyList struct {
 		ID   string                   `json:"id"`
 		Type AlertUrgencyListDataType `json:"type"`
 	} `json:"data"`
-	Links Links `json:"links"`
-	Meta  Meta  `json:"meta"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
 }
 
 // AlertUrgencyListDataType defines model for AlertUrgencyList.Data.Type.
@@ -41017,6 +41378,7 @@ type AlertUrgencyResponse struct {
 		ID   string                       `json:"id"`
 		Type AlertUrgencyResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // AlertUrgencyResponseDataType defines model for AlertUrgencyResponse.Data.Type.
@@ -41158,7 +41520,7 @@ type AlertsSource struct {
 			// Field Select the field on which the condition to be evaluated
 			Field *AlertsSourceSourceableAttributesFieldMappingsAttributesField `json:"field,omitempty"`
 
-			// JSONPath JSON path expression to extract a specific value from the alert's payload for evaluation
+			// JSONPath JSON path expression to extract a specific value from the alert's payload for evaluation. For `notification_target_id` only: if your account has opted in to Dynamic Notification Targets, this may also be a Liquid template that resolves to a notification target id at routing time.
 			JSONPath *string `json:"json_path,omitempty"`
 		} `json:"field_mappings_attributes,omitempty"`
 
@@ -41224,8 +41586,9 @@ type AlertsSourceList struct {
 		ID   string                   `json:"id"`
 		Type AlertsSourceListDataType `json:"type"`
 	} `json:"data"`
-	Links Links `json:"links"`
-	Meta  Meta  `json:"meta"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
 }
 
 // AlertsSourceListDataType defines model for AlertsSourceList.Data.Type.
@@ -41240,6 +41603,7 @@ type AlertsSourceResponse struct {
 		ID   string                       `json:"id"`
 		Type AlertsSourceResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // AlertsSourceResponseDataType defines model for AlertsSourceResponse.Data.Type.
@@ -41290,8 +41654,9 @@ type APIKeyList struct {
 		ID   string             `json:"id"`
 		Type APIKeyListDataType `json:"type"`
 	} `json:"data"`
-	Links Links `json:"links"`
-	Meta  Meta  `json:"meta"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
 }
 
 // APIKeyListDataType defines model for APIKeyList.Data.Type.
@@ -41306,6 +41671,7 @@ type APIKeyResponse struct {
 		ID   string                 `json:"id"`
 		Type APIKeyResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // APIKeyResponseDataType defines model for APIKeyResponse.Data.Type.
@@ -41353,6 +41719,7 @@ type APIKeyWithTokenResponse struct {
 		ID   string                          `json:"id"`
 		Type APIKeyWithTokenResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // APIKeyWithTokenResponseDataAttributesKind The kind of the API key
@@ -41360,6 +41727,18 @@ type APIKeyWithTokenResponseDataAttributesKind string
 
 // APIKeyWithTokenResponseDataType defines model for APIKeyWithTokenResponse.Data.Type.
 type APIKeyWithTokenResponseDataType string
+
+// ArchiveGoogleChatSpacesTaskParams defines model for archive_google_chat_spaces_task_params.
+type ArchiveGoogleChatSpacesTaskParams struct {
+	Spaces []struct {
+		ID   *string `json:"id,omitempty"`
+		Name *string `json:"name,omitempty"`
+	} `json:"spaces"`
+	TaskType *ArchiveGoogleChatSpacesTaskParamsTaskType `json:"task_type,omitempty"`
+}
+
+// ArchiveGoogleChatSpacesTaskParamsTaskType defines model for ArchiveGoogleChatSpacesTaskParams.TaskType.
+type ArchiveGoogleChatSpacesTaskParamsTaskType string
 
 // ArchiveMicrosoftTeamsChannelsTaskParams defines model for archive_microsoft_teams_channels_task_params.
 type ArchiveMicrosoftTeamsChannelsTaskParams struct {
@@ -41479,8 +41858,9 @@ type AuditsList struct {
 		ID   string             `json:"id"`
 		Type AuditsListDataType `json:"type"`
 	} `json:"data"`
-	Links Links `json:"links"`
-	Meta  Meta  `json:"meta"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
 }
 
 // AuditsListDataType defines model for AuditsList.Data.Type.
@@ -41522,8 +41902,9 @@ type AuthorizationList struct {
 		ID   string                    `json:"id"`
 		Type AuthorizationListDataType `json:"type"`
 	} `json:"data"`
-	Links Links `json:"links"`
-	Meta  Meta  `json:"meta"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
 }
 
 // AuthorizationListDataType defines model for AuthorizationList.Data.Type.
@@ -41538,6 +41919,7 @@ type AuthorizationResponse struct {
 		ID   string                        `json:"id"`
 		Type AuthorizationResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // AuthorizationResponseDataType defines model for AuthorizationResponse.Data.Type.
@@ -41582,10 +41964,20 @@ type AutoAssignRolePagerdutyTaskParams struct {
 type AutoAssignRolePagerdutyTaskParamsTaskType string
 
 // AutoAssignRolePagerdutyTaskParams0 defines model for .
-type AutoAssignRolePagerdutyTaskParams0 = interface{}
+type AutoAssignRolePagerdutyTaskParams0 struct {
+	Schedule struct {
+		ID   *string `json:"id,omitempty"`
+		Name *string `json:"name,omitempty"`
+	} `json:"schedule"`
+}
 
 // AutoAssignRolePagerdutyTaskParams1 defines model for .
-type AutoAssignRolePagerdutyTaskParams1 = interface{}
+type AutoAssignRolePagerdutyTaskParams1 struct {
+	EscalationPolicy struct {
+		ID   *string `json:"id,omitempty"`
+		Name *string `json:"name,omitempty"`
+	} `json:"escalation_policy"`
+}
 
 // AutoAssignRoleRootlyTaskParams defines model for auto_assign_role_rootly_task_params.
 type AutoAssignRoleRootlyTaskParams struct {
@@ -41744,8 +42136,9 @@ type CatalogChecklistTemplateList struct {
 		ID   string                               `json:"id"`
 		Type CatalogChecklistTemplateListDataType `json:"type"`
 	} `json:"data"`
-	Links *Links `json:"links,omitempty"`
-	Meta  *Meta  `json:"meta,omitempty"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    *Links                    `json:"links,omitempty"`
+	Meta     *Meta                     `json:"meta,omitempty"`
 }
 
 // CatalogChecklistTemplateListDataType defines model for CatalogChecklistTemplateList.Data.Type.
@@ -41760,6 +42153,7 @@ type CatalogChecklistTemplateResponse struct {
 		ID   string                                   `json:"id"`
 		Type CatalogChecklistTemplateResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // CatalogChecklistTemplateResponseDataType defines model for CatalogChecklistTemplateResponse.Data.Type.
@@ -41899,8 +42293,9 @@ type CatalogEntityChecklistList struct {
 		ID   string                             `json:"id"`
 		Type CatalogEntityChecklistListDataType `json:"type"`
 	} `json:"data"`
-	Links *Links `json:"links,omitempty"`
-	Meta  *Meta  `json:"meta,omitempty"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    *Links                    `json:"links,omitempty"`
+	Meta     *Meta                     `json:"meta,omitempty"`
 }
 
 // CatalogEntityChecklistListDataType defines model for CatalogEntityChecklistList.Data.Type.
@@ -41915,6 +42310,7 @@ type CatalogEntityChecklistResponse struct {
 		ID   string                                 `json:"id"`
 		Type CatalogEntityChecklistResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // CatalogEntityChecklistResponseDataType defines model for CatalogEntityChecklistResponse.Data.Type.
@@ -41929,8 +42325,9 @@ type CatalogEntityList struct {
 		ID   string                    `json:"id"`
 		Type CatalogEntityListDataType `json:"type"`
 	} `json:"data"`
-	Links Links `json:"links"`
-	Meta  Meta  `json:"meta"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
 }
 
 // CatalogEntityListDataType defines model for CatalogEntityList.Data.Type.
@@ -41958,8 +42355,9 @@ type CatalogEntityPropertyList struct {
 		ID   string                            `json:"id"`
 		Type CatalogEntityPropertyListDataType `json:"type"`
 	} `json:"data"`
-	Links Links `json:"links"`
-	Meta  Meta  `json:"meta"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
 }
 
 // CatalogEntityPropertyListDataType defines model for CatalogEntityPropertyList.Data.Type.
@@ -41974,6 +42372,7 @@ type CatalogEntityPropertyResponse struct {
 		ID   string                                `json:"id"`
 		Type CatalogEntityPropertyResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // CatalogEntityPropertyResponseDataType defines model for CatalogEntityPropertyResponse.Data.Type.
@@ -41988,6 +42387,7 @@ type CatalogEntityResponse struct {
 		ID   string                        `json:"id"`
 		Type CatalogEntityResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // CatalogEntityResponseDataType defines model for CatalogEntityResponse.Data.Type.
@@ -42033,8 +42433,9 @@ type CatalogFieldList struct {
 		ID   string                   `json:"id"`
 		Type CatalogFieldListDataType `json:"type"`
 	} `json:"data"`
-	Links Links `json:"links"`
-	Meta  Meta  `json:"meta"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
 }
 
 // CatalogFieldListDataType defines model for CatalogFieldList.Data.Type.
@@ -42049,6 +42450,7 @@ type CatalogFieldResponse struct {
 		ID   string                       `json:"id"`
 		Type CatalogFieldResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // CatalogFieldResponseDataType defines model for CatalogFieldResponse.Data.Type.
@@ -42063,8 +42465,9 @@ type CatalogList struct {
 		ID   string              `json:"id"`
 		Type CatalogListDataType `json:"type"`
 	} `json:"data"`
-	Links Links `json:"links"`
-	Meta  Meta  `json:"meta"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
 }
 
 // CatalogListDataType defines model for CatalogList.Data.Type.
@@ -42110,8 +42513,9 @@ type CatalogPropertyList struct {
 		ID   string                      `json:"id"`
 		Type CatalogPropertyListDataType `json:"type"`
 	} `json:"data"`
-	Links Links `json:"links"`
-	Meta  Meta  `json:"meta"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
 }
 
 // CatalogPropertyListDataType defines model for CatalogPropertyList.Data.Type.
@@ -42126,6 +42530,7 @@ type CatalogPropertyResponse struct {
 		ID   string                          `json:"id"`
 		Type CatalogPropertyResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // CatalogPropertyResponseDataType defines model for CatalogPropertyResponse.Data.Type.
@@ -42140,6 +42545,7 @@ type CatalogResponse struct {
 		ID   string                  `json:"id"`
 		Type CatalogResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // CatalogResponseDataType defines model for CatalogResponse.Data.Type.
@@ -42184,8 +42590,9 @@ type CauseList struct {
 		ID   string            `json:"id"`
 		Type CauseListDataType `json:"type"`
 	} `json:"data"`
-	Links Links `json:"links"`
-	Meta  Meta  `json:"meta"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
 }
 
 // CauseListDataType defines model for CauseList.Data.Type.
@@ -42200,17 +42607,32 @@ type CauseResponse struct {
 		ID   string                `json:"id"`
 		Type CauseResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // CauseResponseDataType defines model for CauseResponse.Data.Type.
 type CauseResponseDataType string
 
-// ChangeSlackChannelPrivacyTaskParams defines model for change_slack_channel_privacy_task_params.
-type ChangeSlackChannelPrivacyTaskParams struct {
-	Channel *struct {
+// ChangeGoogleChatSpacePrivacyTaskParams defines model for change_google_chat_space_privacy_task_params.
+type ChangeGoogleChatSpacePrivacyTaskParams struct {
+	// Audience Target audience resource name (e.g. audiences/default). Leave blank to make private.
+	Audience nullable.Nullable[string] `json:"audience,omitempty"`
+	Space    struct {
 		ID   *string `json:"id,omitempty"`
 		Name *string `json:"name,omitempty"`
-	} `json:"channel,omitempty"`
+	} `json:"space"`
+	TaskType *ChangeGoogleChatSpacePrivacyTaskParamsTaskType `json:"task_type,omitempty"`
+}
+
+// ChangeGoogleChatSpacePrivacyTaskParamsTaskType defines model for ChangeGoogleChatSpacePrivacyTaskParams.TaskType.
+type ChangeGoogleChatSpacePrivacyTaskParamsTaskType string
+
+// ChangeSlackChannelPrivacyTaskParams defines model for change_slack_channel_privacy_task_params.
+type ChangeSlackChannelPrivacyTaskParams struct {
+	Channel struct {
+		ID   *string `json:"id,omitempty"`
+		Name *string `json:"name,omitempty"`
+	} `json:"channel"`
 	Privacy  ChangeSlackChannelPrivacyTaskParamsPrivacy   `json:"privacy"`
 	TaskType *ChangeSlackChannelPrivacyTaskParamsTaskType `json:"task_type,omitempty"`
 }
@@ -42311,6 +42733,7 @@ type CommunicationsGroupResponse struct {
 		ID   string                              `json:"id"`
 		Type CommunicationsGroupResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // CommunicationsGroupResponseDataType defines model for CommunicationsGroupResponse.Data.Type.
@@ -42325,8 +42748,9 @@ type CommunicationsGroupsResponse struct {
 		ID   string                               `json:"id"`
 		Type CommunicationsGroupsResponseDataType `json:"type"`
 	} `json:"data"`
-	Links *Links `json:"links,omitempty"`
-	Meta  *Meta  `json:"meta,omitempty"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    *Links                    `json:"links,omitempty"`
+	Meta     *Meta                     `json:"meta,omitempty"`
 }
 
 // CommunicationsGroupsResponseDataType defines model for CommunicationsGroupsResponse.Data.Type.
@@ -42362,6 +42786,7 @@ type CommunicationsStageResponse struct {
 		ID   string                              `json:"id"`
 		Type CommunicationsStageResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // CommunicationsStageResponseDataType defines model for CommunicationsStageResponse.Data.Type.
@@ -42376,8 +42801,9 @@ type CommunicationsStagesResponse struct {
 		ID   string                               `json:"id"`
 		Type CommunicationsStagesResponseDataType `json:"type"`
 	} `json:"data"`
-	Links *Links `json:"links,omitempty"`
-	Meta  *Meta  `json:"meta,omitempty"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    *Links                    `json:"links,omitempty"`
+	Meta     *Meta                     `json:"meta,omitempty"`
 }
 
 // CommunicationsStagesResponseDataType defines model for CommunicationsStagesResponse.Data.Type.
@@ -42470,6 +42896,7 @@ type CommunicationsTemplateResponse struct {
 		ID   string                                 `json:"id"`
 		Type CommunicationsTemplateResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // CommunicationsTemplateResponseDataType defines model for CommunicationsTemplateResponse.Data.Type.
@@ -42484,8 +42911,9 @@ type CommunicationsTemplatesResponse struct {
 		ID   string                                  `json:"id"`
 		Type CommunicationsTemplatesResponseDataType `json:"type"`
 	} `json:"data"`
-	Links *Links `json:"links,omitempty"`
-	Meta  *Meta  `json:"meta,omitempty"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    *Links                    `json:"links,omitempty"`
+	Meta     *Meta                     `json:"meta,omitempty"`
 }
 
 // CommunicationsTemplatesResponseDataType defines model for CommunicationsTemplatesResponse.Data.Type.
@@ -42524,6 +42952,7 @@ type CommunicationsTypeResponse struct {
 		ID   string                             `json:"id"`
 		Type CommunicationsTypeResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // CommunicationsTypeResponseDataType defines model for CommunicationsTypeResponse.Data.Type.
@@ -42538,8 +42967,9 @@ type CommunicationsTypesResponse struct {
 		ID   string                              `json:"id"`
 		Type CommunicationsTypesResponseDataType `json:"type"`
 	} `json:"data"`
-	Links *Links `json:"links,omitempty"`
-	Meta  *Meta  `json:"meta,omitempty"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    *Links                    `json:"links,omitempty"`
+	Meta     *Meta                     `json:"meta,omitempty"`
 }
 
 // CommunicationsTypesResponseDataType defines model for CommunicationsTypesResponse.Data.Type.
@@ -42937,6 +43367,18 @@ type CreateGoogleCalendarEventTaskParamsConferenceSolutionKey string
 
 // CreateGoogleCalendarEventTaskParamsTaskType defines model for CreateGoogleCalendarEventTaskParams.TaskType.
 type CreateGoogleCalendarEventTaskParamsTaskType string
+
+// CreateGoogleChatSpaceTaskParams defines model for create_google_chat_space_task_params.
+type CreateGoogleChatSpaceTaskParams struct {
+	// Audience Target audience resource name (e.g. audiences/default). Leave blank for private space.
+	Audience    *string                                  `json:"audience,omitempty"`
+	Description *string                                  `json:"description,omitempty"`
+	TaskType    *CreateGoogleChatSpaceTaskParamsTaskType `json:"task_type,omitempty"`
+	Title       string                                   `json:"title"`
+}
+
+// CreateGoogleChatSpaceTaskParamsTaskType defines model for CreateGoogleChatSpaceTaskParams.TaskType.
+type CreateGoogleChatSpaceTaskParamsTaskType string
 
 // CreateGoogleDocsPageTaskParams defines model for create_google_docs_page_task_params.
 type CreateGoogleDocsPageTaskParams struct {
@@ -43340,10 +43782,10 @@ type CreateMicrosoftTeamsChannelTaskParams struct {
 	Description *string                                        `json:"description,omitempty"`
 	Private     *CreateMicrosoftTeamsChannelTaskParamsPrivate  `json:"private,omitempty"`
 	TaskType    *CreateMicrosoftTeamsChannelTaskParamsTaskType `json:"task_type,omitempty"`
-	Team        *struct {
+	Team        struct {
 		ID   *string `json:"id,omitempty"`
 		Name *string `json:"name,omitempty"`
-	} `json:"team,omitempty"`
+	} `json:"team"`
 
 	// Title Microsoft Team channel title
 	Title string `json:"title"`
@@ -43789,10 +44231,20 @@ type CreateShortcutStoryTaskParamsKind string
 type CreateShortcutStoryTaskParamsTaskType string
 
 // CreateShortcutStoryTaskParams0 defines model for .
-type CreateShortcutStoryTaskParams0 = interface{}
+type CreateShortcutStoryTaskParams0 struct {
+	Project struct {
+		ID   *string `json:"id,omitempty"`
+		Name *string `json:"name,omitempty"`
+	} `json:"project"`
+}
 
 // CreateShortcutStoryTaskParams1 defines model for .
-type CreateShortcutStoryTaskParams1 = interface{}
+type CreateShortcutStoryTaskParams1 struct {
+	WorkflowState struct {
+		ID   *string `json:"id,omitempty"`
+		Name *string `json:"name,omitempty"`
+	} `json:"workflow_state"`
+}
 
 // CreateShortcutTaskTaskParams defines model for create_shortcut_task_task_params.
 type CreateShortcutTaskTaskParams struct {
@@ -43992,6 +44444,9 @@ type CreateZoomMeetingTaskParams struct {
 	// CreateAsEmail The email to use if creating as email
 	CreateAsEmail *string `json:"create_as_email,omitempty"`
 
+	// EnableZoomBotAutoJoin Allow the Rootly bot to start recording without waiting for host approval
+	EnableZoomBotAutoJoin *bool `json:"enable_zoom_bot_auto_join,omitempty"`
+
 	// Password The meeting password
 	Password               *string `json:"password,omitempty"`
 	PostToIncidentTimeline *bool   `json:"post_to_incident_timeline,omitempty"`
@@ -44067,8 +44522,9 @@ type CustomFieldList struct {
 		ID   string                  `json:"id"`
 		Type CustomFieldListDataType `json:"type"`
 	} `json:"data"`
-	Links Links `json:"links"`
-	Meta  Meta  `json:"meta"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
 }
 
 // CustomFieldListDataType defines model for CustomFieldList.Data.Type.
@@ -44105,8 +44561,9 @@ type CustomFieldOptionList struct {
 		ID   string                        `json:"id"`
 		Type CustomFieldOptionListDataType `json:"type"`
 	} `json:"data"`
-	Links Links `json:"links"`
-	Meta  Meta  `json:"meta"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
 }
 
 // CustomFieldOptionListDataType defines model for CustomFieldOptionList.Data.Type.
@@ -44121,6 +44578,7 @@ type CustomFieldOptionResponse struct {
 		ID   string                            `json:"id"`
 		Type CustomFieldOptionResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // CustomFieldOptionResponseDataType defines model for CustomFieldOptionResponse.Data.Type.
@@ -44135,6 +44593,7 @@ type CustomFieldResponse struct {
 		ID   string                      `json:"id"`
 		Type CustomFieldResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // CustomFieldResponseDataType defines model for CustomFieldResponse.Data.Type.
@@ -44169,8 +44628,9 @@ type CustomFormList struct {
 		ID   string                 `json:"id"`
 		Type CustomFormListDataType `json:"type"`
 	} `json:"data"`
-	Links Links `json:"links"`
-	Meta  Meta  `json:"meta"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
 }
 
 // CustomFormListDataType defines model for CustomFormList.Data.Type.
@@ -44185,6 +44645,7 @@ type CustomFormResponse struct {
 		ID   string                     `json:"id"`
 		Type CustomFormResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // CustomFormResponseDataType defines model for CustomFormResponse.Data.Type.
@@ -44247,8 +44708,9 @@ type DashboardList struct {
 		ID   string                `json:"id"`
 		Type DashboardListDataType `json:"type"`
 	} `json:"data"`
-	Links Links `json:"links"`
-	Meta  Meta  `json:"meta"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
 }
 
 // DashboardListDataType defines model for DashboardList.Data.Type.
@@ -44347,8 +44809,9 @@ type DashboardPanelList struct {
 		ID   string                     `json:"id"`
 		Type DashboardPanelListDataType `json:"type"`
 	} `json:"data"`
-	Links Links `json:"links"`
-	Meta  Meta  `json:"meta"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
 }
 
 // DashboardPanelListDataType defines model for DashboardPanelList.Data.Type.
@@ -44363,6 +44826,7 @@ type DashboardPanelResponse struct {
 		ID   string                         `json:"id"`
 		Type DashboardPanelResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // DashboardPanelResponseDataType defines model for DashboardPanelResponse.Data.Type.
@@ -44377,6 +44841,7 @@ type DashboardResponse struct {
 		ID   string                    `json:"id"`
 		Type DashboardResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // DashboardResponseDataType defines model for DashboardResponse.Data.Type.
@@ -44566,8 +45031,9 @@ type EnvironmentList struct {
 		ID   string                  `json:"id"`
 		Type EnvironmentListDataType `json:"type"`
 	} `json:"data"`
-	Links Links `json:"links"`
-	Meta  Meta  `json:"meta"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
 }
 
 // EnvironmentListDataType defines model for EnvironmentList.Data.Type.
@@ -44582,6 +45048,7 @@ type EnvironmentResponse struct {
 		ID   string                      `json:"id"`
 		Type EnvironmentResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // EnvironmentResponseDataType defines model for EnvironmentResponse.Data.Type.
@@ -44719,8 +45186,9 @@ type EscalationPolicyLevelList struct {
 		// ID Unique ID of the escalation policy level
 		ID string `json:"id"`
 	} `json:"data"`
-	Links Links `json:"links"`
-	Meta  Meta  `json:"meta"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
 }
 
 // EscalationPolicyLevelResponse defines model for escalation_policy_level_response.
@@ -44732,6 +45200,7 @@ type EscalationPolicyLevelResponse struct {
 		ID   string                                 `json:"id"`
 		Type *EscalationPolicyLevelResponseDataType `json:"type,omitempty"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // EscalationPolicyLevelResponseDataType defines model for EscalationPolicyLevelResponse.Data.Type.
@@ -44746,8 +45215,9 @@ type EscalationPolicyList struct {
 		ID   string                       `json:"id"`
 		Type EscalationPolicyListDataType `json:"type"`
 	} `json:"data"`
-	Links Links `json:"links"`
-	Meta  Meta  `json:"meta"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
 }
 
 // EscalationPolicyListDataType defines model for EscalationPolicyList.Data.Type.
@@ -44998,8 +45468,9 @@ type EscalationPolicyPathList struct {
 		// ID Unique ID of the escalation policy path
 		ID string `json:"id"`
 	} `json:"data"`
-	Links Links `json:"links"`
-	Meta  Meta  `json:"meta"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
 }
 
 // EscalationPolicyPathResponse defines model for escalation_policy_path_response.
@@ -45011,6 +45482,7 @@ type EscalationPolicyPathResponse struct {
 		ID   string                                `json:"id"`
 		Type *EscalationPolicyPathResponseDataType `json:"type,omitempty"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // EscalationPolicyPathResponseDataType defines model for EscalationPolicyPathResponse.Data.Type.
@@ -45025,6 +45497,7 @@ type EscalationPolicyResponse struct {
 		ID   string                           `json:"id"`
 		Type EscalationPolicyResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // EscalationPolicyResponseDataType defines model for EscalationPolicyResponse.Data.Type.
@@ -45090,8 +45563,9 @@ type FormFieldList struct {
 		ID   string                `json:"id"`
 		Type FormFieldListDataType `json:"type"`
 	} `json:"data"`
-	Links Links `json:"links"`
-	Meta  Meta  `json:"meta"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
 }
 
 // FormFieldListDataType defines model for FormFieldList.Data.Type.
@@ -45131,8 +45605,9 @@ type FormFieldOptionList struct {
 		ID   string                      `json:"id"`
 		Type FormFieldOptionListDataType `json:"type"`
 	} `json:"data"`
-	Links Links `json:"links"`
-	Meta  Meta  `json:"meta"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
 }
 
 // FormFieldOptionListDataType defines model for FormFieldOptionList.Data.Type.
@@ -45147,6 +45622,7 @@ type FormFieldOptionResponse struct {
 		ID   string                          `json:"id"`
 		Type FormFieldOptionResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // FormFieldOptionResponseDataType defines model for FormFieldOptionResponse.Data.Type.
@@ -45221,8 +45697,9 @@ type FormFieldPlacementConditionList struct {
 		ID   string                                  `json:"id"`
 		Type FormFieldPlacementConditionListDataType `json:"type"`
 	} `json:"data"`
-	Links Links `json:"links"`
-	Meta  Meta  `json:"meta"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
 }
 
 // FormFieldPlacementConditionListDataType defines model for FormFieldPlacementConditionList.Data.Type.
@@ -45237,6 +45714,7 @@ type FormFieldPlacementConditionResponse struct {
 		ID   string                                      `json:"id"`
 		Type FormFieldPlacementConditionResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // FormFieldPlacementConditionResponseDataType defines model for FormFieldPlacementConditionResponse.Data.Type.
@@ -45251,8 +45729,9 @@ type FormFieldPlacementList struct {
 		ID   string                         `json:"id"`
 		Type FormFieldPlacementListDataType `json:"type"`
 	} `json:"data"`
-	Links Links `json:"links"`
-	Meta  Meta  `json:"meta"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
 }
 
 // FormFieldPlacementListDataType defines model for FormFieldPlacementList.Data.Type.
@@ -45267,6 +45746,7 @@ type FormFieldPlacementResponse struct {
 		ID   string                             `json:"id"`
 		Type FormFieldPlacementResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // FormFieldPlacementResponseDataType defines model for FormFieldPlacementResponse.Data.Type.
@@ -45296,8 +45776,9 @@ type FormFieldPositionList struct {
 		ID   string                        `json:"id"`
 		Type FormFieldPositionListDataType `json:"type"`
 	} `json:"data"`
-	Links Links `json:"links"`
-	Meta  Meta  `json:"meta"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
 }
 
 // FormFieldPositionListDataType defines model for FormFieldPositionList.Data.Type.
@@ -45312,6 +45793,7 @@ type FormFieldPositionResponse struct {
 		ID   string                            `json:"id"`
 		Type FormFieldPositionResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // FormFieldPositionResponseDataType defines model for FormFieldPositionResponse.Data.Type.
@@ -45326,6 +45808,7 @@ type FormFieldResponse struct {
 		ID   string                    `json:"id"`
 		Type FormFieldResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // FormFieldResponseDataType defines model for FormFieldResponse.Data.Type.
@@ -45336,7 +45819,7 @@ type FormSet struct {
 	// CreatedAt Date of creation
 	CreatedAt string `json:"created_at"`
 
-	// Forms The forms included in the form set. Add custom forms using the custom form's `slug` field. Or choose a built-in form: `web_new_incident_form`, `web_update_incident_form`, `web_incident_post_mortem_form`, `web_incident_mitigation_form`, `web_incident_resolution_form`, `web_incident_cancellation_form`, `web_scheduled_incident_form`, `web_update_scheduled_incident_form`, `slack_new_incident_form`, `slack_update_incident_form`, `slack_update_incident_status_form`, `slack_incident_mitigation_form`, `slack_incident_resolution_form`, `slack_incident_cancellation_form`, `slack_scheduled_incident_form`, `slack_update_scheduled_incident_form`
+	// Forms The forms included in the form set. Add custom forms using the custom form's `slug` field. Or choose a built-in form: `web_new_incident_form`, `web_update_incident_form`, `web_incident_post_mortem_form`, `web_incident_mitigation_form`, `web_incident_resolution_form`, `web_incident_cancellation_form`, `web_scheduled_incident_form`, `web_update_scheduled_incident_form`, `slack_new_incident_form`, `slack_update_incident_form`, `slack_update_incident_status_form`, `slack_incident_mitigation_form`, `slack_incident_resolution_form`, `slack_incident_cancellation_form`, `slack_scheduled_incident_form`, `slack_update_scheduled_incident_form`, `google_chat_new_incident_form`, `google_chat_update_incident_form`
 	Forms []string `json:"forms"`
 
 	// IsDefault Whether the form set is default
@@ -45379,8 +45862,9 @@ type FormSetConditionList struct {
 		ID   string                       `json:"id"`
 		Type FormSetConditionListDataType `json:"type"`
 	} `json:"data"`
-	Links Links `json:"links"`
-	Meta  Meta  `json:"meta"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
 }
 
 // FormSetConditionListDataType defines model for FormSetConditionList.Data.Type.
@@ -45395,6 +45879,7 @@ type FormSetConditionResponse struct {
 		ID   string                           `json:"id"`
 		Type FormSetConditionResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // FormSetConditionResponseDataType defines model for FormSetConditionResponse.Data.Type.
@@ -45409,8 +45894,9 @@ type FormSetList struct {
 		ID   string              `json:"id"`
 		Type FormSetListDataType `json:"type"`
 	} `json:"data"`
-	Links Links `json:"links"`
-	Meta  Meta  `json:"meta"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
 }
 
 // FormSetListDataType defines model for FormSetList.Data.Type.
@@ -45425,6 +45911,7 @@ type FormSetResponse struct {
 		ID   string                  `json:"id"`
 		Type FormSetResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // FormSetResponseDataType defines model for FormSetResponse.Data.Type.
@@ -45532,8 +46019,9 @@ type FunctionalityList struct {
 		ID   string                    `json:"id"`
 		Type FunctionalityListDataType `json:"type"`
 	} `json:"data"`
-	Links Links `json:"links"`
-	Meta  Meta  `json:"meta"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
 }
 
 // FunctionalityListDataType defines model for FunctionalityList.Data.Type.
@@ -45548,6 +46036,7 @@ type FunctionalityResponse struct {
 		ID   string                        `json:"id"`
 		Type FunctionalityResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // FunctionalityResponseDataType defines model for FunctionalityResponse.Data.Type.
@@ -45604,10 +46093,14 @@ type GetGithubCommitsTaskParams struct {
 type GetGithubCommitsTaskParamsTaskType string
 
 // GetGithubCommitsTaskParams0 defines model for .
-type GetGithubCommitsTaskParams0 = interface{}
+type GetGithubCommitsTaskParams0 struct {
+	ServiceIDs []string `json:"service_ids"`
+}
 
 // GetGithubCommitsTaskParams1 defines model for .
-type GetGithubCommitsTaskParams1 = interface{}
+type GetGithubCommitsTaskParams1 struct {
+	GithubRepositoryNames []string `json:"github_repository_names"`
+}
 
 // GetGitlabCommitsTaskParams defines model for get_gitlab_commits_task_params.
 type GetGitlabCommitsTaskParams struct {
@@ -45632,10 +46125,14 @@ type GetGitlabCommitsTaskParams struct {
 type GetGitlabCommitsTaskParamsTaskType string
 
 // GetGitlabCommitsTaskParams0 defines model for .
-type GetGitlabCommitsTaskParams0 = interface{}
+type GetGitlabCommitsTaskParams0 struct {
+	ServiceIDs []string `json:"service_ids"`
+}
 
 // GetGitlabCommitsTaskParams1 defines model for .
-type GetGitlabCommitsTaskParams1 = interface{}
+type GetGitlabCommitsTaskParams1 struct {
+	GitlabRepositoryNames []string `json:"gitlab_repository_names"`
+}
 
 // GetPulsesTaskParams defines model for get_pulses_task_params.
 type GetPulsesTaskParams struct {
@@ -45733,8 +46230,9 @@ type HeartbeatList struct {
 		ID   string                `json:"id"`
 		Type HeartbeatListDataType `json:"type"`
 	} `json:"data"`
-	Links Links `json:"links"`
-	Meta  Meta  `json:"meta"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
 }
 
 // HeartbeatListDataType defines model for HeartbeatList.Data.Type.
@@ -45749,6 +46247,7 @@ type HeartbeatResponse struct {
 		ID   string                    `json:"id"`
 		Type HeartbeatResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // HeartbeatResponseDataType defines model for HeartbeatResponse.Data.Type.
@@ -45794,6 +46293,33 @@ type HTTPClientTaskParamsMethod string
 
 // HTTPClientTaskParamsTaskType defines model for HTTPClientTaskParams.TaskType.
 type HTTPClientTaskParamsTaskType string
+
+// ImportMeetingRecording defines model for import_meeting_recording.
+type ImportMeetingRecording struct {
+	// EndedAt When the recording ended
+	EndedAt nullable.Nullable[time.Time] `json:"ended_at,omitempty"`
+
+	// MeetingURL Original meeting URL
+	MeetingURL nullable.Nullable[string] `json:"meeting_url,omitempty"`
+
+	// Platform Meeting platform
+	Platform ImportMeetingRecordingPlatform `json:"platform"`
+
+	// RecallRecordingID External recording UUID (required when source is recall_desktop_sdk)
+	RecallRecordingID openapi_types.UUID `json:"recall_recording_id"`
+
+	// Source Import source (currently only "recall_desktop_sdk")
+	Source ImportMeetingRecordingSource `json:"source"`
+
+	// StartedAt When the recording started
+	StartedAt nullable.Nullable[time.Time] `json:"started_at,omitempty"`
+}
+
+// ImportMeetingRecordingPlatform Meeting platform
+type ImportMeetingRecordingPlatform string
+
+// ImportMeetingRecordingSource Import source (currently only "recall_desktop_sdk")
+type ImportMeetingRecordingSource string
 
 // InTriageIncident defines model for in_triage_incident.
 type InTriageIncident struct {
@@ -45959,6 +46485,33 @@ type Incident struct {
 
 	// MattermostChannelURL Mattermost channel URL
 	MattermostChannelURL nullable.Nullable[string] `json:"mattermost_channel_url,omitempty"`
+
+	// MicrosoftTeamsChannelID Microsoft Teams channel ID
+	MicrosoftTeamsChannelID nullable.Nullable[string] `json:"microsoft_teams_channel_id,omitempty"`
+
+	// MicrosoftTeamsChannelName Microsoft Teams channel name
+	MicrosoftTeamsChannelName nullable.Nullable[string] `json:"microsoft_teams_channel_name,omitempty"`
+
+	// MicrosoftTeamsChannelShortURL Microsoft Teams channel short URL
+	MicrosoftTeamsChannelShortURL nullable.Nullable[string] `json:"microsoft_teams_channel_short_url,omitempty"`
+
+	// MicrosoftTeamsChannelURL Microsoft Teams channel URL
+	MicrosoftTeamsChannelURL nullable.Nullable[string] `json:"microsoft_teams_channel_url,omitempty"`
+
+	// MicrosoftTeamsChatID Microsoft Teams chat ID
+	MicrosoftTeamsChatID nullable.Nullable[string] `json:"microsoft_teams_chat_id,omitempty"`
+
+	// MicrosoftTeamsChatURL Microsoft Teams chat URL
+	MicrosoftTeamsChatURL nullable.Nullable[string] `json:"microsoft_teams_chat_url,omitempty"`
+
+	// MicrosoftTeamsMeetingID Microsoft Teams meeting ID
+	MicrosoftTeamsMeetingID nullable.Nullable[string] `json:"microsoft_teams_meeting_id,omitempty"`
+
+	// MicrosoftTeamsMeetingURL Microsoft Teams meeting URL
+	MicrosoftTeamsMeetingURL nullable.Nullable[string] `json:"microsoft_teams_meeting_url,omitempty"`
+
+	// MicrosoftTeamsTeamID Microsoft Teams team ID
+	MicrosoftTeamsTeamID nullable.Nullable[string] `json:"microsoft_teams_team_id,omitempty"`
 
 	// MitigatedAt Date of mitigation
 	MitigatedAt nullable.Nullable[string] `json:"mitigated_at,omitempty"`
@@ -46134,6 +46687,12 @@ type Incident struct {
 	// VictorOpsIncidentURL VictorOps incident URL
 	VictorOpsIncidentURL nullable.Nullable[string] `json:"victor_ops_incident_url,omitempty"`
 
+	// WebexMeetingID Webex meeting ID
+	WebexMeetingID nullable.Nullable[string] `json:"webex_meeting_id,omitempty"`
+
+	// WebexMeetingURL Webex meeting URL
+	WebexMeetingURL nullable.Nullable[string] `json:"webex_meeting_url,omitempty"`
+
 	// ZendeskTicketID Zendesk ticket ID
 	ZendeskTicketID nullable.Nullable[string] `json:"zendesk_ticket_id,omitempty"`
 
@@ -46231,8 +46790,9 @@ type IncidentActionItemList struct {
 		ID   string                         `json:"id"`
 		Type IncidentActionItemListDataType `json:"type"`
 	} `json:"data"`
-	Links Links `json:"links"`
-	Meta  Meta  `json:"meta"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
 }
 
 // IncidentActionItemListDataType defines model for IncidentActionItemList.Data.Type.
@@ -46247,6 +46807,7 @@ type IncidentActionItemResponse struct {
 		ID   string                             `json:"id"`
 		Type IncidentActionItemResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // IncidentActionItemResponseDataType defines model for IncidentActionItemResponse.Data.Type.
@@ -46271,8 +46832,9 @@ type IncidentCustomFieldSelectionList struct {
 		ID   string                                   `json:"id"`
 		Type IncidentCustomFieldSelectionListDataType `json:"type"`
 	} `json:"data"`
-	Links Links `json:"links"`
-	Meta  Meta  `json:"meta"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
 }
 
 // IncidentCustomFieldSelectionListDataType defines model for IncidentCustomFieldSelectionList.Data.Type.
@@ -46287,6 +46849,7 @@ type IncidentCustomFieldSelectionResponse struct {
 		ID   string                                       `json:"id"`
 		Type IncidentCustomFieldSelectionResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // IncidentCustomFieldSelectionResponseDataType defines model for IncidentCustomFieldSelectionResponse.Data.Type.
@@ -46337,8 +46900,9 @@ type IncidentEventFunctionalityList struct {
 		ID   string                                 `json:"id"`
 		Type IncidentEventFunctionalityListDataType `json:"type"`
 	} `json:"data"`
-	Links Links `json:"links"`
-	Meta  Meta  `json:"meta"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
 }
 
 // IncidentEventFunctionalityListDataType defines model for IncidentEventFunctionalityList.Data.Type.
@@ -46353,6 +46917,7 @@ type IncidentEventFunctionalityResponse struct {
 		ID   string                                     `json:"id"`
 		Type IncidentEventFunctionalityResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // IncidentEventFunctionalityResponseDataType defines model for IncidentEventFunctionalityResponse.Data.Type.
@@ -46367,8 +46932,9 @@ type IncidentEventList struct {
 		ID   string                    `json:"id"`
 		Type IncidentEventListDataType `json:"type"`
 	} `json:"data"`
-	Links Links `json:"links"`
-	Meta  Meta  `json:"meta"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
 }
 
 // IncidentEventListDataType defines model for IncidentEventList.Data.Type.
@@ -46383,6 +46949,7 @@ type IncidentEventResponse struct {
 		ID   string                        `json:"id"`
 		Type IncidentEventResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // IncidentEventResponseDataType defines model for IncidentEventResponse.Data.Type.
@@ -46412,8 +46979,9 @@ type IncidentEventServiceList struct {
 		ID   string                           `json:"id"`
 		Type IncidentEventServiceListDataType `json:"type"`
 	} `json:"data"`
-	Links Links `json:"links"`
-	Meta  Meta  `json:"meta"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
 }
 
 // IncidentEventServiceListDataType defines model for IncidentEventServiceList.Data.Type.
@@ -46428,6 +46996,7 @@ type IncidentEventServiceResponse struct {
 		ID   string                               `json:"id"`
 		Type IncidentEventServiceResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // IncidentEventServiceResponseDataType defines model for IncidentEventServiceResponse.Data.Type.
@@ -46463,8 +47032,9 @@ type IncidentFeedbackList struct {
 		ID   string                       `json:"id"`
 		Type IncidentFeedbackListDataType `json:"type"`
 	} `json:"data"`
-	Links Links `json:"links"`
-	Meta  Meta  `json:"meta"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
 }
 
 // IncidentFeedbackListDataType defines model for IncidentFeedbackList.Data.Type.
@@ -46479,6 +47049,7 @@ type IncidentFeedbackResponse struct {
 		ID   string                           `json:"id"`
 		Type IncidentFeedbackResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // IncidentFeedbackResponseDataType defines model for IncidentFeedbackResponse.Data.Type.
@@ -46512,8 +47083,9 @@ type IncidentFormFieldSelectionList struct {
 		ID   string                                 `json:"id"`
 		Type IncidentFormFieldSelectionListDataType `json:"type"`
 	} `json:"data"`
-	Links Links `json:"links"`
-	Meta  Meta  `json:"meta"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
 }
 
 // IncidentFormFieldSelectionListDataType defines model for IncidentFormFieldSelectionList.Data.Type.
@@ -46528,6 +47100,7 @@ type IncidentFormFieldSelectionResponse struct {
 		ID   string                                     `json:"id"`
 		Type IncidentFormFieldSelectionResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // IncidentFormFieldSelectionResponseDataType defines model for IncidentFormFieldSelectionResponse.Data.Type.
@@ -46542,8 +47115,9 @@ type IncidentList struct {
 		ID   string               `json:"id"`
 		Type IncidentListDataType `json:"type"`
 	} `json:"data"`
-	Links Links `json:"links"`
-	Meta  Meta  `json:"meta"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
 }
 
 // IncidentListDataType defines model for IncidentList.Data.Type.
@@ -46594,8 +47168,9 @@ type IncidentPermissionSetBooleanList struct {
 		ID   string                                   `json:"id"`
 		Type IncidentPermissionSetBooleanListDataType `json:"type"`
 	} `json:"data"`
-	Links Links `json:"links"`
-	Meta  Meta  `json:"meta"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
 }
 
 // IncidentPermissionSetBooleanListDataType defines model for IncidentPermissionSetBooleanList.Data.Type.
@@ -46610,6 +47185,7 @@ type IncidentPermissionSetBooleanResponse struct {
 		ID   string                                       `json:"id"`
 		Type IncidentPermissionSetBooleanResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // IncidentPermissionSetBooleanResponseDataType defines model for IncidentPermissionSetBooleanResponse.Data.Type.
@@ -46624,8 +47200,9 @@ type IncidentPermissionSetList struct {
 		ID   string                            `json:"id"`
 		Type IncidentPermissionSetListDataType `json:"type"`
 	} `json:"data"`
-	Links Links `json:"links"`
-	Meta  Meta  `json:"meta"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
 }
 
 // IncidentPermissionSetListDataType defines model for IncidentPermissionSetList.Data.Type.
@@ -46654,8 +47231,9 @@ type IncidentPermissionSetResourceList struct {
 		ID   string                                    `json:"id"`
 		Type IncidentPermissionSetResourceListDataType `json:"type"`
 	} `json:"data"`
-	Links Links `json:"links"`
-	Meta  Meta  `json:"meta"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
 }
 
 // IncidentPermissionSetResourceListDataType defines model for IncidentPermissionSetResourceList.Data.Type.
@@ -46670,6 +47248,7 @@ type IncidentPermissionSetResourceResponse struct {
 		ID   string                                        `json:"id"`
 		Type IncidentPermissionSetResourceResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // IncidentPermissionSetResourceResponseDataType defines model for IncidentPermissionSetResourceResponse.Data.Type.
@@ -46684,6 +47263,7 @@ type IncidentPermissionSetResponse struct {
 		ID   string                                `json:"id"`
 		Type IncidentPermissionSetResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // IncidentPermissionSetResponseDataType defines model for IncidentPermissionSetResponse.Data.Type.
@@ -46764,8 +47344,9 @@ type IncidentPostMortemList struct {
 		ID   string                         `json:"id"`
 		Type IncidentPostMortemListDataType `json:"type"`
 	} `json:"data"`
-	Links Links `json:"links"`
-	Meta  Meta  `json:"meta"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
 }
 
 // IncidentPostMortemListDataType defines model for IncidentPostMortemList.Data.Type.
@@ -46780,6 +47361,7 @@ type IncidentPostMortemResponse struct {
 		ID   string                             `json:"id"`
 		Type IncidentPostMortemResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // IncidentPostMortemResponseDataType defines model for IncidentPostMortemResponse.Data.Type.
@@ -46794,6 +47376,7 @@ type IncidentResponse struct {
 		ID   string                   `json:"id"`
 		Type IncidentResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // IncidentResponseDataType defines model for IncidentResponse.Data.Type.
@@ -46843,6 +47426,7 @@ type IncidentRetrospectiveStepResponse struct {
 		ID   string                                    `json:"id"`
 		Type IncidentRetrospectiveStepResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // IncidentRetrospectiveStepResponseDataType defines model for IncidentRetrospectiveStepResponse.Data.Type.
@@ -46885,8 +47469,9 @@ type IncidentRoleList struct {
 		ID   string                   `json:"id"`
 		Type IncidentRoleListDataType `json:"type"`
 	} `json:"data"`
-	Links Links `json:"links"`
-	Meta  Meta  `json:"meta"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
 }
 
 // IncidentRoleListDataType defines model for IncidentRoleList.Data.Type.
@@ -46901,6 +47486,7 @@ type IncidentRoleResponse struct {
 		ID   string                       `json:"id"`
 		Type IncidentRoleResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // IncidentRoleResponseDataType defines model for IncidentRoleResponse.Data.Type.
@@ -46937,8 +47523,9 @@ type IncidentRoleTaskList struct {
 		ID   string                       `json:"id"`
 		Type IncidentRoleTaskListDataType `json:"type"`
 	} `json:"data"`
-	Links Links `json:"links"`
-	Meta  Meta  `json:"meta"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
 }
 
 // IncidentRoleTaskListDataType defines model for IncidentRoleTaskList.Data.Type.
@@ -46953,6 +47540,7 @@ type IncidentRoleTaskResponse struct {
 		ID   string                           `json:"id"`
 		Type IncidentRoleTaskResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // IncidentRoleTaskResponseDataType defines model for IncidentRoleTaskResponse.Data.Type.
@@ -46997,8 +47585,9 @@ type IncidentStatusPageEventList struct {
 		ID   string                              `json:"id"`
 		Type IncidentStatusPageEventListDataType `json:"type"`
 	} `json:"data"`
-	Links Links `json:"links"`
-	Meta  Meta  `json:"meta"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
 }
 
 // IncidentStatusPageEventListDataType defines model for IncidentStatusPageEventList.Data.Type.
@@ -47013,6 +47602,7 @@ type IncidentStatusPageEventResponse struct {
 		ID   string                                  `json:"id"`
 		Type IncidentStatusPageEventResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // IncidentStatusPageEventResponseDataType defines model for IncidentStatusPageEventResponse.Data.Type.
@@ -47037,8 +47627,9 @@ type IncidentSubStatusList struct {
 		ID   string                        `json:"id"`
 		Type IncidentSubStatusListDataType `json:"type"`
 	} `json:"data"`
-	Links Links `json:"links"`
-	Meta  Meta  `json:"meta"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
 }
 
 // IncidentSubStatusListDataType defines model for IncidentSubStatusList.Data.Type.
@@ -47053,6 +47644,7 @@ type IncidentSubStatusResponse struct {
 		ID   string                            `json:"id"`
 		Type IncidentSubStatusResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // IncidentSubStatusResponseDataType defines model for IncidentSubStatusResponse.Data.Type.
@@ -47228,8 +47820,9 @@ type IncidentTypeList struct {
 		ID   string                   `json:"id"`
 		Type IncidentTypeListDataType `json:"type"`
 	} `json:"data"`
-	Links Links `json:"links"`
-	Meta  Meta  `json:"meta"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
 }
 
 // IncidentTypeListDataType defines model for IncidentTypeList.Data.Type.
@@ -47244,13 +47837,30 @@ type IncidentTypeResponse struct {
 		ID   string                       `json:"id"`
 		Type IncidentTypeResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // IncidentTypeResponseDataType defines model for IncidentTypeResponse.Data.Type.
 type IncidentTypeResponseDataType string
 
 // IncidentsChartResponse defines model for incidents_chart_response.
-type IncidentsChartResponse = map[string]interface{}
+type IncidentsChartResponse struct {
+	Data map[string]interface{} `json:"data"`
+}
+
+// InviteToGoogleChatSpaceTaskParams defines model for invite_to_google_chat_space_task_params.
+type InviteToGoogleChatSpaceTaskParams struct {
+	// Emails Comma separated list of emails to invite
+	Emails string `json:"emails"`
+	Space  struct {
+		ID   *string `json:"id,omitempty"`
+		Name *string `json:"name,omitempty"`
+	} `json:"space"`
+	TaskType *InviteToGoogleChatSpaceTaskParamsTaskType `json:"task_type,omitempty"`
+}
+
+// InviteToGoogleChatSpaceTaskParamsTaskType defines model for InviteToGoogleChatSpaceTaskParams.TaskType.
+type InviteToGoogleChatSpaceTaskParamsTaskType string
 
 // InviteToMicrosoftTeamsChannelTaskParams defines model for invite_to_microsoft_teams_channel_task_params.
 type InviteToMicrosoftTeamsChannelTaskParams struct {
@@ -47313,10 +47923,20 @@ type InviteToSlackChannelPagerdutyTaskParams struct {
 type InviteToSlackChannelPagerdutyTaskParamsTaskType string
 
 // InviteToSlackChannelPagerdutyTaskParams0 defines model for .
-type InviteToSlackChannelPagerdutyTaskParams0 = interface{}
+type InviteToSlackChannelPagerdutyTaskParams0 struct {
+	EscalationPolicy struct {
+		ID   *string `json:"id,omitempty"`
+		Name *string `json:"name,omitempty"`
+	} `json:"escalation_policy"`
+}
 
 // InviteToSlackChannelPagerdutyTaskParams1 defines model for .
-type InviteToSlackChannelPagerdutyTaskParams1 = interface{}
+type InviteToSlackChannelPagerdutyTaskParams1 struct {
+	Schedule struct {
+		ID   *string `json:"id,omitempty"`
+		Name *string `json:"name,omitempty"`
+	} `json:"schedule"`
+}
 
 // InviteToSlackChannelRootlyTaskParams defines model for invite_to_slack_channel_rootly_task_params.
 type InviteToSlackChannelRootlyTaskParams struct {
@@ -47375,13 +47995,25 @@ type InviteToSlackChannelTaskParams struct {
 type InviteToSlackChannelTaskParamsTaskType string
 
 // InviteToSlackChannelTaskParams0 defines model for .
-type InviteToSlackChannelTaskParams0 = interface{}
+type InviteToSlackChannelTaskParams0 struct {
+	SlackUsers []struct {
+		ID   *string `json:"id,omitempty"`
+		Name *string `json:"name,omitempty"`
+	} `json:"slack_users"`
+}
 
 // InviteToSlackChannelTaskParams1 defines model for .
-type InviteToSlackChannelTaskParams1 = interface{}
+type InviteToSlackChannelTaskParams1 struct {
+	SlackUserGroups []struct {
+		ID   *string `json:"id,omitempty"`
+		Name *string `json:"name,omitempty"`
+	} `json:"slack_user_groups"`
+}
 
 // InviteToSlackChannelTaskParams2 defines model for .
-type InviteToSlackChannelTaskParams2 = interface{}
+type InviteToSlackChannelTaskParams2 struct {
+	SlackEmails string `json:"slack_emails"`
+}
 
 // InviteToSlackChannelVictorOpsTaskParams defines model for invite_to_slack_channel_victor_ops_task_params.
 type InviteToSlackChannelVictorOpsTaskParams struct {
@@ -47427,6 +48059,14 @@ type IPRangesResponse struct {
 
 // IPRangesResponseDataType defines model for IPRangesResponse.Data.Type.
 type IPRangesResponseDataType string
+
+// JsonapiIncludedResource defines model for jsonapi_included_resource.
+type JsonapiIncludedResource struct {
+	Attributes    map[string]interface{} `json:"attributes,omitempty"`
+	ID            string                 `json:"id"`
+	Relationships map[string]interface{} `json:"relationships,omitempty"`
+	Type          string                 `json:"type"`
+}
 
 // Links defines model for links.
 type Links struct {
@@ -47537,8 +48177,9 @@ type LiveCallRouterList struct {
 		ID   string                     `json:"id"`
 		Type LiveCallRouterListDataType `json:"type"`
 	} `json:"data"`
-	Links Links `json:"links"`
-	Meta  Meta  `json:"meta"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
 }
 
 // LiveCallRouterListDataType defines model for LiveCallRouterList.Data.Type.
@@ -47553,6 +48194,7 @@ type LiveCallRouterResponse struct {
 		ID   string                         `json:"id"`
 		Type LiveCallRouterResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // LiveCallRouterResponseDataType defines model for LiveCallRouterResponse.Data.Type.
@@ -47612,7 +48254,8 @@ type MeetingRecordingList struct {
 		ID   string                       `json:"id"`
 		Type MeetingRecordingListDataType `json:"type"`
 	} `json:"data"`
-	Meta *Meta `json:"meta,omitempty"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Meta     *Meta                     `json:"meta,omitempty"`
 }
 
 // MeetingRecordingListDataType defines model for MeetingRecordingList.Data.Type.
@@ -48163,7 +48806,7 @@ type NewAlertsSource struct {
 					// Field Select the field on which the condition to be evaluated
 					Field *NewAlertsSourceDataAttributesSourceableAttributesFieldMappingsAttributesField `json:"field,omitempty"`
 
-					// JSONPath JSON path expression to extract a specific value from the alert's payload for evaluation
+					// JSONPath JSON path expression to extract a specific value from the alert's payload for evaluation. For `notification_target_id` only: if your account has opted in to Dynamic Notification Targets, this may also be a Liquid template that resolves to a notification target id at routing time.
 					JSONPath *string `json:"json_path,omitempty"`
 				} `json:"field_mappings_attributes,omitempty"`
 
@@ -49499,7 +50142,7 @@ type NewFormFieldPositionDataType string
 type NewFormSet struct {
 	Data struct {
 		Attributes struct {
-			// Forms The forms included in the form set. Add custom forms using the custom form's `slug` field. Or choose a built-in form: `web_new_incident_form`, `web_update_incident_form`, `web_incident_post_mortem_form`, `web_incident_mitigation_form`, `web_incident_resolution_form`, `web_incident_cancellation_form`, `web_scheduled_incident_form`, `web_update_scheduled_incident_form`, `slack_new_incident_form`, `slack_update_incident_form`, `slack_update_incident_status_form`, `slack_incident_mitigation_form`, `slack_incident_resolution_form`, `slack_incident_cancellation_form`, `slack_scheduled_incident_form`, `slack_update_scheduled_incident_form`
+			// Forms The forms included in the form set. Add custom forms using the custom form's `slug` field. Or choose a built-in form: `web_new_incident_form`, `web_update_incident_form`, `web_incident_post_mortem_form`, `web_incident_mitigation_form`, `web_incident_resolution_form`, `web_incident_cancellation_form`, `web_scheduled_incident_form`, `web_update_scheduled_incident_form`, `slack_new_incident_form`, `slack_update_incident_form`, `slack_update_incident_status_form`, `slack_incident_mitigation_form`, `slack_incident_resolution_form`, `slack_incident_cancellation_form`, `slack_scheduled_incident_form`, `slack_update_scheduled_incident_form`, `google_chat_new_incident_form`, `google_chat_update_incident_form`
 			Forms []string `json:"forms"`
 
 			// Name The name of the form set
@@ -51664,6 +52307,9 @@ type NewTeam struct {
 			// AlertsEmailEnabled Enable alerts through email
 			AlertsEmailEnabled nullable.Nullable[bool] `json:"alerts_email_enabled,omitempty"`
 
+			// AutoAddMembersScope Visibility-scoped auto-add behavior. Only present when the `enable_scoped_incident_channel_auto_add` feature flag is on for the organization. When set, it overrides `auto_add_members_when_attached`.
+			AutoAddMembersScope nullable.Nullable[NewTeamDataAttributesAutoAddMembersScope] `json:"auto_add_members_scope,omitempty"`
+
 			// AutoAddMembersWhenAttached Auto add members to incident channel when team is attached
 			AutoAddMembersWhenAttached nullable.Nullable[bool] `json:"auto_add_members_when_attached,omitempty"`
 
@@ -51757,6 +52403,9 @@ type NewTeam struct {
 		Type NewTeamDataType `json:"type"`
 	} `json:"data"`
 }
+
+// NewTeamDataAttributesAutoAddMembersScope Visibility-scoped auto-add behavior. Only present when the `enable_scoped_incident_channel_auto_add` feature flag is on for the organization. When set, it overrides `auto_add_members_when_attached`.
+type NewTeamDataAttributesAutoAddMembersScope string
 
 // NewTeamDataType defines model for NewTeam.Data.Type.
 type NewTeamDataType string
@@ -52204,8 +52853,9 @@ type OnCallPayReportList struct {
 		ID   string                      `json:"id"`
 		Type OnCallPayReportListDataType `json:"type"`
 	} `json:"data"`
-	Links Links `json:"links"`
-	Meta  Meta  `json:"meta"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
 }
 
 // OnCallPayReportListDataType defines model for OnCallPayReportList.Data.Type.
@@ -52220,6 +52870,7 @@ type OnCallPayReportResponse struct {
 		ID   string                          `json:"id"`
 		Type OnCallPayReportResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // OnCallPayReportResponseDataType defines model for OnCallPayReportResponse.Data.Type.
@@ -52341,8 +52992,9 @@ type OnCallRoleList struct {
 		ID   string                 `json:"id"`
 		Type OnCallRoleListDataType `json:"type"`
 	} `json:"data"`
-	Links Links `json:"links"`
-	Meta  Meta  `json:"meta"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
 }
 
 // OnCallRoleListDataType defines model for OnCallRoleList.Data.Type.
@@ -52368,6 +53020,7 @@ type OnCallRoleResponse struct {
 		ID   string                     `json:"id"`
 		Type OnCallRoleResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // OnCallRoleResponseDataType defines model for OnCallRoleResponse.Data.Type.
@@ -52410,6 +53063,7 @@ type OnCallShadowResponse struct {
 		ID   string                       `json:"id"`
 		Type OnCallShadowResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // OnCallShadowResponseDataType defines model for OnCallShadowResponse.Data.Type.
@@ -52424,12 +53078,102 @@ type OnCallShadowsList struct {
 		ID   string                    `json:"id"`
 		Type OnCallShadowsListDataType `json:"type"`
 	} `json:"data"`
-	Links Links `json:"links"`
-	Meta  Meta  `json:"meta"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
 }
 
 // OnCallShadowsListDataType defines model for OnCallShadowsList.Data.Type.
 type OnCallShadowsListDataType string
+
+// Oncall defines model for oncall.
+type Oncall struct {
+	// EndsAt End datetime of the on-call shift
+	EndsAt time.Time `json:"ends_at"`
+
+	// EscalationLevel Level within the escalation policy
+	EscalationLevel *int `json:"escalation_level,omitempty"`
+
+	// EscalationPolicyID ID of the escalation policy
+	EscalationPolicyID string `json:"escalation_policy_id"`
+
+	// EscalationPolicyName Name of the escalation policy
+	EscalationPolicyName string `json:"escalation_policy_name"`
+
+	// EscalationPolicyPathID ID of the escalation policy path
+	EscalationPolicyPathID nullable.Nullable[string] `json:"escalation_policy_path_id,omitempty"`
+
+	// EscalationPolicyPathName Name of the escalation policy path
+	EscalationPolicyPathName nullable.Nullable[string] `json:"escalation_policy_path_name,omitempty"`
+
+	// IsDefaultPath Whether this is the default escalation path
+	IsDefaultPath nullable.Nullable[bool] `json:"is_default_path,omitempty"`
+
+	// NotificationType Notification type of the escalation path (audible or quiet)
+	NotificationType nullable.Nullable[OncallNotificationType] `json:"notification_type,omitempty"`
+
+	// ScheduleID ID of the schedule
+	ScheduleID nullable.Nullable[string] `json:"schedule_id,omitempty"`
+
+	// ScheduleName Name of the schedule
+	ScheduleName nullable.Nullable[string] `json:"schedule_name,omitempty"`
+
+	// StartsAt Start datetime of the on-call shift
+	StartsAt time.Time `json:"starts_at"`
+
+	// UserID ID of the on-call user
+	UserID int `json:"user_id"`
+}
+
+// OncallNotificationType Notification type of the escalation path (audible or quiet)
+type OncallNotificationType string
+
+// OncallList defines model for oncall_list.
+type OncallList struct {
+	Data []struct {
+		Attributes Oncall `json:"attributes"`
+
+		// ID Unique ID of the on-call entry
+		ID            string               `json:"id"`
+		Relationships *OncallRelationships `json:"relationships,omitempty"`
+		Type          OncallListDataType   `json:"type"`
+	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+}
+
+// OncallListDataType defines model for OncallList.Data.Type.
+type OncallListDataType string
+
+// OncallRelationships defines model for oncall_relationships.
+type OncallRelationships struct {
+	EscalationPolicy *struct {
+		Data nullable.Nullable[struct {
+			ID   *string                                      `json:"id,omitempty"`
+			Type *OncallRelationshipsEscalationPolicyDataType `json:"type,omitempty"`
+		}] `json:"data,omitempty"`
+	} `json:"escalation_policy,omitempty"`
+	Schedule *struct {
+		Data nullable.Nullable[struct {
+			ID   *string                              `json:"id,omitempty"`
+			Type *OncallRelationshipsScheduleDataType `json:"type,omitempty"`
+		}] `json:"data,omitempty"`
+	} `json:"schedule,omitempty"`
+	User *struct {
+		Data nullable.Nullable[struct {
+			ID   *string                          `json:"id,omitempty"`
+			Type *OncallRelationshipsUserDataType `json:"type,omitempty"`
+		}] `json:"data,omitempty"`
+	} `json:"user,omitempty"`
+}
+
+// OncallRelationshipsEscalationPolicyDataType defines model for OncallRelationships.EscalationPolicy.Data.Type.
+type OncallRelationshipsEscalationPolicyDataType string
+
+// OncallRelationshipsScheduleDataType defines model for OncallRelationships.Schedule.Data.Type.
+type OncallRelationshipsScheduleDataType string
+
+// OncallRelationshipsUserDataType defines model for OncallRelationships.User.Data.Type.
+type OncallRelationshipsUserDataType string
 
 // OverrideShift defines model for override_shift.
 type OverrideShift struct {
@@ -52473,8 +53217,9 @@ type OverrideShiftList struct {
 		ID   string                    `json:"id"`
 		Type OverrideShiftListDataType `json:"type"`
 	} `json:"data"`
-	Links Links `json:"links"`
-	Meta  Meta  `json:"meta"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
 }
 
 // OverrideShiftListDataType defines model for OverrideShiftList.Data.Type.
@@ -52489,6 +53234,7 @@ type OverrideShiftResponse struct {
 		ID   string                        `json:"id"`
 		Type OverrideShiftResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // OverrideShiftResponseDataType defines model for OverrideShiftResponse.Data.Type.
@@ -52641,10 +53387,20 @@ type PageVictorOpsOnCallRespondersTaskParams struct {
 type PageVictorOpsOnCallRespondersTaskParamsTaskType string
 
 // PageVictorOpsOnCallRespondersTaskParams0 defines model for .
-type PageVictorOpsOnCallRespondersTaskParams0 = interface{}
+type PageVictorOpsOnCallRespondersTaskParams0 struct {
+	Users []struct {
+		ID   *string `json:"id,omitempty"`
+		Name *string `json:"name,omitempty"`
+	} `json:"users"`
+}
 
 // PageVictorOpsOnCallRespondersTaskParams1 defines model for .
-type PageVictorOpsOnCallRespondersTaskParams1 = interface{}
+type PageVictorOpsOnCallRespondersTaskParams1 struct {
+	EscalationPolicies []struct {
+		ID   *string `json:"id,omitempty"`
+		Name *string `json:"name,omitempty"`
+	} `json:"escalation_policies"`
+}
 
 // PatchAlertRoute defines model for patch_alert_route.
 type PatchAlertRoute struct {
@@ -52796,8 +53552,9 @@ type PlaybookList struct {
 		ID   string               `json:"id"`
 		Type PlaybookListDataType `json:"type"`
 	} `json:"data"`
-	Links Links `json:"links"`
-	Meta  Meta  `json:"meta"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
 }
 
 // PlaybookListDataType defines model for PlaybookList.Data.Type.
@@ -52812,6 +53569,7 @@ type PlaybookResponse struct {
 		ID   string                   `json:"id"`
 		Type PlaybookResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // PlaybookResponseDataType defines model for PlaybookResponse.Data.Type.
@@ -52845,8 +53603,9 @@ type PlaybookTaskList struct {
 		ID   string                   `json:"id"`
 		Type PlaybookTaskListDataType `json:"type"`
 	} `json:"data"`
-	Links Links `json:"links"`
-	Meta  Meta  `json:"meta"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
 }
 
 // PlaybookTaskListDataType defines model for PlaybookTaskList.Data.Type.
@@ -52861,6 +53620,7 @@ type PlaybookTaskResponse struct {
 		ID   string                       `json:"id"`
 		Type PlaybookTaskResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // PlaybookTaskResponseDataType defines model for PlaybookTaskResponse.Data.Type.
@@ -52908,8 +53668,9 @@ type PostMortemTemplateList struct {
 		ID   string                         `json:"id"`
 		Type PostMortemTemplateListDataType `json:"type"`
 	} `json:"data"`
-	Links Links `json:"links"`
-	Meta  Meta  `json:"meta"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
 }
 
 // PostMortemTemplateListDataType defines model for PostMortemTemplateList.Data.Type.
@@ -52924,6 +53685,7 @@ type PostMortemTemplateResponse struct {
 		ID   string                             `json:"id"`
 		Type PostMortemTemplateResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // PostMortemTemplateResponseDataType defines model for PostMortemTemplateResponse.Data.Type.
@@ -53141,8 +53903,9 @@ type PulseList struct {
 		ID   string            `json:"id"`
 		Type PulseListDataType `json:"type"`
 	} `json:"data"`
-	Links Links `json:"links"`
-	Meta  Meta  `json:"meta"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
 }
 
 // PulseListDataType defines model for PulseList.Data.Type.
@@ -53157,6 +53920,7 @@ type PulseResponse struct {
 		ID   string                `json:"id"`
 		Type PulseResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // PulseResponseDataType defines model for PulseResponse.Data.Type.
@@ -53248,6 +54012,19 @@ type RemoveSubscribers struct {
 
 // RemoveSubscribersDataType defines model for RemoveSubscribers.Data.Type.
 type RemoveSubscribersDataType string
+
+// RenameGoogleChatSpaceTaskParams defines model for rename_google_chat_space_task_params.
+type RenameGoogleChatSpaceTaskParams struct {
+	Space struct {
+		ID   *string `json:"id,omitempty"`
+		Name *string `json:"name,omitempty"`
+	} `json:"space"`
+	TaskType *RenameGoogleChatSpaceTaskParamsTaskType `json:"task_type,omitempty"`
+	Title    string                                   `json:"title"`
+}
+
+// RenameGoogleChatSpaceTaskParamsTaskType defines model for RenameGoogleChatSpaceTaskParams.TaskType.
+type RenameGoogleChatSpaceTaskParamsTaskType string
 
 // RenameMicrosoftTeamsChannelTaskParams defines model for rename_microsoft_teams_channel_task_params.
 type RenameMicrosoftTeamsChannelTaskParams struct {
@@ -53354,6 +54131,7 @@ type RetrospectiveConfigurationList struct {
 		ID   string                                 `json:"id"`
 		Type RetrospectiveConfigurationListDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // RetrospectiveConfigurationListDataType defines model for RetrospectiveConfigurationList.Data.Type.
@@ -53368,6 +54146,7 @@ type RetrospectiveConfigurationResponse struct {
 		ID   string                                     `json:"id"`
 		Type RetrospectiveConfigurationResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // RetrospectiveConfigurationResponseDataType defines model for RetrospectiveConfigurationResponse.Data.Type.
@@ -53431,8 +54210,9 @@ type RetrospectiveProcessGroupList struct {
 		ID   string                                `json:"id"`
 		Type RetrospectiveProcessGroupListDataType `json:"type"`
 	} `json:"data"`
-	Links Links `json:"links"`
-	Meta  Meta  `json:"meta"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
 }
 
 // RetrospectiveProcessGroupListDataType defines model for RetrospectiveProcessGroupList.Data.Type.
@@ -53447,6 +54227,7 @@ type RetrospectiveProcessGroupResponse struct {
 		ID   string                                    `json:"id"`
 		Type RetrospectiveProcessGroupResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // RetrospectiveProcessGroupResponseDataType defines model for RetrospectiveProcessGroupResponse.Data.Type.
@@ -53468,8 +54249,9 @@ type RetrospectiveProcessGroupStepList struct {
 		ID   string                                    `json:"id"`
 		Type RetrospectiveProcessGroupStepListDataType `json:"type"`
 	} `json:"data"`
-	Links Links `json:"links"`
-	Meta  Meta  `json:"meta"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
 }
 
 // RetrospectiveProcessGroupStepListDataType defines model for RetrospectiveProcessGroupStepList.Data.Type.
@@ -53484,6 +54266,7 @@ type RetrospectiveProcessGroupStepResponse struct {
 		ID   string                                        `json:"id"`
 		Type RetrospectiveProcessGroupStepResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // RetrospectiveProcessGroupStepResponseDataType defines model for RetrospectiveProcessGroupStepResponse.Data.Type.
@@ -53498,8 +54281,9 @@ type RetrospectiveProcessList struct {
 		ID   string                           `json:"id"`
 		Type RetrospectiveProcessListDataType `json:"type"`
 	} `json:"data"`
-	Links Links `json:"links"`
-	Meta  Meta  `json:"meta"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
 }
 
 // RetrospectiveProcessListDataType defines model for RetrospectiveProcessList.Data.Type.
@@ -53514,6 +54298,7 @@ type RetrospectiveProcessResponse struct {
 		ID   string                               `json:"id"`
 		Type RetrospectiveProcessResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // RetrospectiveProcessResponseDataType defines model for RetrospectiveProcessResponse.Data.Type.
@@ -53559,8 +54344,9 @@ type RetrospectiveStepList struct {
 		ID   string                        `json:"id"`
 		Type RetrospectiveStepListDataType `json:"type"`
 	} `json:"data"`
-	Links Links `json:"links"`
-	Meta  Meta  `json:"meta"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
 }
 
 // RetrospectiveStepListDataType defines model for RetrospectiveStepList.Data.Type.
@@ -53575,6 +54361,7 @@ type RetrospectiveStepResponse struct {
 		ID   string                            `json:"id"`
 		Type RetrospectiveStepResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // RetrospectiveStepResponseDataType defines model for RetrospectiveStepResponse.Data.Type.
@@ -53742,8 +54529,9 @@ type RoleList struct {
 		ID   string           `json:"id"`
 		Type RoleListDataType `json:"type"`
 	} `json:"data"`
-	Links Links `json:"links"`
-	Meta  Meta  `json:"meta"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
 }
 
 // RoleListDataType defines model for RoleList.Data.Type.
@@ -53769,6 +54557,7 @@ type RoleResponse struct {
 		ID   string               `json:"id"`
 		Type RoleResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // RoleResponseDataType defines model for RoleResponse.Data.Type.
@@ -53888,8 +54677,9 @@ type ScheduleList struct {
 		ID   string               `json:"id"`
 		Type ScheduleListDataType `json:"type"`
 	} `json:"data"`
-	Links Links `json:"links"`
-	Meta  Meta  `json:"meta"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
 }
 
 // ScheduleListDataType defines model for ScheduleList.Data.Type.
@@ -53904,6 +54694,7 @@ type ScheduleResponse struct {
 		ID   string                   `json:"id"`
 		Type ScheduleResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // ScheduleResponseDataType defines model for ScheduleResponse.Data.Type.
@@ -54038,8 +54829,9 @@ type ScheduleRotationActiveDayList struct {
 		ID   string                                `json:"id"`
 		Type ScheduleRotationActiveDayListDataType `json:"type"`
 	} `json:"data"`
-	Links Links `json:"links"`
-	Meta  Meta  `json:"meta"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
 }
 
 // ScheduleRotationActiveDayListDataType defines model for ScheduleRotationActiveDayList.Data.Type.
@@ -54054,6 +54846,7 @@ type ScheduleRotationActiveDayResponse struct {
 		ID   *string                                    `json:"id,omitempty"`
 		Type *ScheduleRotationActiveDayResponseDataType `json:"type,omitempty"`
 	} `json:"data,omitempty"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // ScheduleRotationActiveDayResponseDataType defines model for ScheduleRotationActiveDayResponse.Data.Type.
@@ -54068,8 +54861,9 @@ type ScheduleRotationList struct {
 		ID   string                       `json:"id"`
 		Type ScheduleRotationListDataType `json:"type"`
 	} `json:"data"`
-	Links Links `json:"links"`
-	Meta  Meta  `json:"meta"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
 }
 
 // ScheduleRotationListDataType defines model for ScheduleRotationList.Data.Type.
@@ -54084,6 +54878,7 @@ type ScheduleRotationResponse struct {
 		ID   string                           `json:"id"`
 		Type ScheduleRotationResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // ScheduleRotationResponseDataType defines model for ScheduleRotationResponse.Data.Type.
@@ -54114,8 +54909,9 @@ type ScheduleRotationUserList struct {
 		ID   string                           `json:"id"`
 		Type ScheduleRotationUserListDataType `json:"type"`
 	} `json:"data"`
-	Links Links `json:"links"`
-	Meta  Meta  `json:"meta"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
 }
 
 // ScheduleRotationUserListDataType defines model for ScheduleRotationUserList.Data.Type.
@@ -54130,6 +54926,7 @@ type ScheduleRotationUserResponse struct {
 		ID   string                               `json:"id"`
 		Type ScheduleRotationUserResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // ScheduleRotationUserResponseDataType defines model for ScheduleRotationUserResponse.Data.Type.
@@ -54238,19 +55035,57 @@ type SendEmailTaskParams struct {
 // SendEmailTaskParamsTaskType defines model for SendEmailTaskParams.TaskType.
 type SendEmailTaskParamsTaskType string
 
+// SendGoogleChatAttachmentsTaskParams defines model for send_google_chat_attachments_task_params.
+type SendGoogleChatAttachmentsTaskParams struct {
+	Attachments string `json:"attachments"`
+	Spaces      []struct {
+		ID   *string `json:"id,omitempty"`
+		Name *string `json:"name,omitempty"`
+	} `json:"spaces"`
+	TaskType *SendGoogleChatAttachmentsTaskParamsTaskType `json:"task_type,omitempty"`
+}
+
+// SendGoogleChatAttachmentsTaskParamsTaskType defines model for SendGoogleChatAttachmentsTaskParams.TaskType.
+type SendGoogleChatAttachmentsTaskParamsTaskType string
+
+// SendGoogleChatMessageTaskParams defines model for send_google_chat_message_task_params.
+type SendGoogleChatMessageTaskParams struct {
+	Spaces []struct {
+		ID   *string `json:"id,omitempty"`
+		Name *string `json:"name,omitempty"`
+	} `json:"spaces"`
+	TaskType *SendGoogleChatMessageTaskParamsTaskType `json:"task_type,omitempty"`
+	Text     string                                   `json:"text"`
+
+	// ThreadKey Thread key to reply within a thread. Messages with the same thread key are grouped together
+	ThreadKey nullable.Nullable[string] `json:"thread_key,omitempty"`
+}
+
+// SendGoogleChatMessageTaskParamsTaskType defines model for SendGoogleChatMessageTaskParams.TaskType.
+type SendGoogleChatMessageTaskParamsTaskType string
+
 // SendMicrosoftTeamsBlocksTaskParams defines model for send_microsoft_teams_blocks_task_params.
 type SendMicrosoftTeamsBlocksTaskParams struct {
 	// Attachments Support liquid markup. Needs to be a valid JSON string after liquid is parsed
-	Attachments string                                      `json:"attachments"`
-	TaskType    *SendMicrosoftTeamsBlocksTaskParamsTaskType `json:"task_type,omitempty"`
-	union       json.RawMessage
+	Attachments string `json:"attachments"`
+	Channels    []struct {
+		ID   *string `json:"id,omitempty"`
+		Name *string `json:"name,omitempty"`
+	} `json:"channels,omitempty"`
+	TaskType *SendMicrosoftTeamsBlocksTaskParamsTaskType `json:"task_type,omitempty"`
+	union    json.RawMessage
 }
 
 // SendMicrosoftTeamsBlocksTaskParamsTaskType defines model for SendMicrosoftTeamsBlocksTaskParams.TaskType.
 type SendMicrosoftTeamsBlocksTaskParamsTaskType string
 
 // SendMicrosoftTeamsBlocksTaskParams0 defines model for .
-type SendMicrosoftTeamsBlocksTaskParams0 = interface{}
+type SendMicrosoftTeamsBlocksTaskParams0 struct {
+	Channels []struct {
+		ID   *string `json:"id,omitempty"`
+		Name *string `json:"name,omitempty"`
+	} `json:"channels"`
+}
 
 // SendMicrosoftTeamsChatMessageTaskParams defines model for send_microsoft_teams_chat_message_task_params.
 type SendMicrosoftTeamsChatMessageTaskParams struct {
@@ -54284,7 +55119,12 @@ type SendMicrosoftTeamsMessageTaskParams struct {
 type SendMicrosoftTeamsMessageTaskParamsTaskType string
 
 // SendMicrosoftTeamsMessageTaskParams0 defines model for .
-type SendMicrosoftTeamsMessageTaskParams0 = interface{}
+type SendMicrosoftTeamsMessageTaskParams0 struct {
+	Channels []struct {
+		ID   *string `json:"id,omitempty"`
+		Name *string `json:"name,omitempty"`
+	} `json:"channels"`
+}
 
 // SendSlackBlocksTaskParams defines model for send_slack_blocks_task_params.
 type SendSlackBlocksTaskParams struct {
@@ -54330,13 +55170,28 @@ type SendSlackBlocksTaskParams struct {
 type SendSlackBlocksTaskParamsTaskType string
 
 // SendSlackBlocksTaskParams0 defines model for .
-type SendSlackBlocksTaskParams0 = interface{}
+type SendSlackBlocksTaskParams0 struct {
+	Channels []struct {
+		ID   *string `json:"id,omitempty"`
+		Name *string `json:"name,omitempty"`
+	} `json:"channels"`
+}
 
 // SendSlackBlocksTaskParams1 defines model for .
-type SendSlackBlocksTaskParams1 = interface{}
+type SendSlackBlocksTaskParams1 struct {
+	SlackUsers []struct {
+		ID   *string `json:"id,omitempty"`
+		Name *string `json:"name,omitempty"`
+	} `json:"slack_users"`
+}
 
 // SendSlackBlocksTaskParams2 defines model for .
-type SendSlackBlocksTaskParams2 = interface{}
+type SendSlackBlocksTaskParams2 struct {
+	SlackUserGroups []struct {
+		ID   *string `json:"id,omitempty"`
+		Name *string `json:"name,omitempty"`
+	} `json:"slack_user_groups"`
+}
 
 // SendSlackMessageTaskParams defines model for send_slack_message_task_params.
 type SendSlackMessageTaskParams struct {
@@ -54386,13 +55241,28 @@ type SendSlackMessageTaskParamsActionables string
 type SendSlackMessageTaskParamsTaskType string
 
 // SendSlackMessageTaskParams0 defines model for .
-type SendSlackMessageTaskParams0 = interface{}
+type SendSlackMessageTaskParams0 struct {
+	Channels []struct {
+		ID   *string `json:"id,omitempty"`
+		Name *string `json:"name,omitempty"`
+	} `json:"channels"`
+}
 
 // SendSlackMessageTaskParams1 defines model for .
-type SendSlackMessageTaskParams1 = interface{}
+type SendSlackMessageTaskParams1 struct {
+	SlackUsers []struct {
+		ID   *string `json:"id,omitempty"`
+		Name *string `json:"name,omitempty"`
+	} `json:"slack_users"`
+}
 
 // SendSlackMessageTaskParams2 defines model for .
-type SendSlackMessageTaskParams2 = interface{}
+type SendSlackMessageTaskParams2 struct {
+	SlackUserGroups []struct {
+		ID   *string `json:"id,omitempty"`
+		Name *string `json:"name,omitempty"`
+	} `json:"slack_user_groups"`
+}
 
 // SendSmsTaskParams defines model for send_sms_task_params.
 type SendSmsTaskParams struct {
@@ -54569,8 +55439,9 @@ type ServiceList struct {
 		ID   string              `json:"id"`
 		Type ServiceListDataType `json:"type"`
 	} `json:"data"`
-	Links Links `json:"links"`
-	Meta  Meta  `json:"meta"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
 }
 
 // ServiceListDataType defines model for ServiceList.Data.Type.
@@ -54585,6 +55456,7 @@ type ServiceResponse struct {
 		ID   string                  `json:"id"`
 		Type ServiceResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // ServiceResponseDataType defines model for ServiceResponse.Data.Type.
@@ -54650,8 +55522,9 @@ type SeverityList struct {
 		ID   string               `json:"id"`
 		Type SeverityListDataType `json:"type"`
 	} `json:"data"`
-	Links Links `json:"links"`
-	Meta  Meta  `json:"meta"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
 }
 
 // SeverityListDataType defines model for SeverityList.Data.Type.
@@ -54666,6 +55539,7 @@ type SeverityResponse struct {
 		ID   string                   `json:"id"`
 		Type SeverityResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // SeverityResponseDataType defines model for SeverityResponse.Data.Type.
@@ -54705,7 +55579,8 @@ type ShiftList struct {
 		Relationships *ShiftRelationships `json:"relationships,omitempty"`
 		Type          ShiftListDataType   `json:"type"`
 	} `json:"data"`
-	Meta *Meta `json:"meta,omitempty"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Meta     *Meta                     `json:"meta,omitempty"`
 }
 
 // ShiftListDataType defines model for ShiftList.Data.Type.
@@ -54735,6 +55610,7 @@ type ShiftOverrideResponse struct {
 		ID   string                        `json:"id"`
 		Type ShiftOverrideResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // ShiftOverrideResponseDataType defines model for ShiftOverrideResponse.Data.Type.
@@ -54901,8 +55777,9 @@ type SLAList struct {
 		ID   string          `json:"id"`
 		Type SLAListDataType `json:"type"`
 	} `json:"data"`
-	Links Links `json:"links"`
-	Meta  Meta  `json:"meta"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
 }
 
 // SLAListDataType defines model for SLAList.Data.Type.
@@ -54917,6 +55794,7 @@ type SLAResponse struct {
 		ID   string              `json:"id"`
 		Type SLAResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // SLAResponseDataType defines model for SLAResponse.Data.Type.
@@ -55029,8 +55907,9 @@ type StatusList struct {
 		ID   string             `json:"id"`
 		Type StatusListDataType `json:"type"`
 	} `json:"data"`
-	Links Links `json:"links"`
-	Meta  Meta  `json:"meta"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
 }
 
 // StatusListDataType defines model for StatusList.Data.Type.
@@ -55163,8 +56042,9 @@ type StatusPageList struct {
 		ID   string                 `json:"id"`
 		Type StatusPageListDataType `json:"type"`
 	} `json:"data"`
-	Links Links `json:"links"`
-	Meta  Meta  `json:"meta"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
 }
 
 // StatusPageListDataType defines model for StatusPageList.Data.Type.
@@ -55179,6 +56059,7 @@ type StatusPageResponse struct {
 		ID   string                     `json:"id"`
 		Type StatusPageResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // StatusPageResponseDataType defines model for StatusPageResponse.Data.Type.
@@ -55230,8 +56111,9 @@ type StatusPageTemplateList struct {
 		ID   string                         `json:"id"`
 		Type StatusPageTemplateListDataType `json:"type"`
 	} `json:"data"`
-	Links Links `json:"links"`
-	Meta  Meta  `json:"meta"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
 }
 
 // StatusPageTemplateListDataType defines model for StatusPageTemplateList.Data.Type.
@@ -55246,6 +56128,7 @@ type StatusPageTemplateResponse struct {
 		ID   string                             `json:"id"`
 		Type StatusPageTemplateResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // StatusPageTemplateResponseDataType defines model for StatusPageTemplateResponse.Data.Type.
@@ -55260,6 +56143,7 @@ type StatusResponse struct {
 		ID   string                 `json:"id"`
 		Type StatusResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // StatusResponseDataType defines model for StatusResponse.Data.Type.
@@ -55288,8 +56172,9 @@ type SubStatusList struct {
 		ID   string                `json:"id"`
 		Type SubStatusListDataType `json:"type"`
 	} `json:"data"`
-	Links Links `json:"links"`
-	Meta  Meta  `json:"meta"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
 }
 
 // SubStatusListDataType defines model for SubStatusList.Data.Type.
@@ -55304,6 +56189,7 @@ type SubStatusResponse struct {
 		ID   string                    `json:"id"`
 		Type SubStatusResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // SubStatusResponseDataType defines model for SubStatusResponse.Data.Type.
@@ -55334,6 +56220,9 @@ type Team struct {
 
 	// AlertsEmailEnabled Enable alerts through email
 	AlertsEmailEnabled nullable.Nullable[bool] `json:"alerts_email_enabled,omitempty"`
+
+	// AutoAddMembersScope Visibility-scoped auto-add behavior. Only present when the `enable_scoped_incident_channel_auto_add` feature flag is on for the organization. When set, it overrides `auto_add_members_when_attached`.
+	AutoAddMembersScope nullable.Nullable[TeamAutoAddMembersScope] `json:"auto_add_members_scope,omitempty"`
 
 	// AutoAddMembersWhenAttached Auto add members to incident channel when team is attached
 	AutoAddMembersWhenAttached nullable.Nullable[bool] `json:"auto_add_members_when_attached,omitempty"`
@@ -55430,6 +56319,9 @@ type Team struct {
 	VictorOpsID nullable.Nullable[string] `json:"victor_ops_id,omitempty"`
 }
 
+// TeamAutoAddMembersScope Visibility-scoped auto-add behavior. Only present when the `enable_scoped_incident_channel_auto_add` feature flag is on for the organization. When set, it overrides `auto_add_members_when_attached`.
+type TeamAutoAddMembersScope string
+
 // TeamList defines model for team_list.
 type TeamList struct {
 	Data []struct {
@@ -55439,8 +56331,9 @@ type TeamList struct {
 		ID   string           `json:"id"`
 		Type TeamListDataType `json:"type"`
 	} `json:"data"`
-	Links Links `json:"links"`
-	Meta  Meta  `json:"meta"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
 }
 
 // TeamListDataType defines model for TeamList.Data.Type.
@@ -55455,6 +56348,7 @@ type TeamResponse struct {
 		ID   string               `json:"id"`
 		Type TeamResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // TeamResponseDataType defines model for TeamResponse.Data.Type.
@@ -55666,7 +56560,7 @@ type UpdateAlert struct {
 			// Summary The summary of the alert
 			Summary *string `json:"summary,omitempty"`
 		} `json:"attributes"`
-		Type *UpdateAlertDataType `json:"type,omitempty"`
+		Type UpdateAlertDataType `json:"type"`
 	} `json:"data"`
 }
 
@@ -56105,7 +56999,7 @@ type UpdateAlertsSource struct {
 					// Field Select the field on which the condition to be evaluated
 					Field *UpdateAlertsSourceDataAttributesSourceableAttributesFieldMappingsAttributesField `json:"field,omitempty"`
 
-					// JSONPath JSON path expression to extract a specific value from the alert's payload for evaluation
+					// JSONPath JSON path expression to extract a specific value from the alert's payload for evaluation. For `notification_target_id` only: if your account has opted in to Dynamic Notification Targets, this may also be a Liquid template that resolves to a notification target id at routing time.
 					JSONPath *string `json:"json_path,omitempty"`
 				} `json:"field_mappings_attributes,omitempty"`
 
@@ -57547,7 +58441,7 @@ type UpdateFormFieldPositionDataType string
 type UpdateFormSet struct {
 	Data struct {
 		Attributes struct {
-			// Forms The forms included in the form set. Add custom forms using the custom form's `slug` field. Or choose a built-in form: `web_new_incident_form`, `web_update_incident_form`, `web_incident_post_mortem_form`, `web_incident_mitigation_form`, `web_incident_resolution_form`, `web_incident_cancellation_form`, `web_scheduled_incident_form`, `web_update_scheduled_incident_form`, `slack_new_incident_form`, `slack_update_incident_form`, `slack_update_incident_status_form`, `slack_incident_mitigation_form`, `slack_incident_resolution_form`, `slack_incident_cancellation_form`, `slack_scheduled_incident_form`, `slack_update_scheduled_incident_form`
+			// Forms The forms included in the form set. Add custom forms using the custom form's `slug` field. Or choose a built-in form: `web_new_incident_form`, `web_update_incident_form`, `web_incident_post_mortem_form`, `web_incident_mitigation_form`, `web_incident_resolution_form`, `web_incident_cancellation_form`, `web_scheduled_incident_form`, `web_update_scheduled_incident_form`, `slack_new_incident_form`, `slack_update_incident_form`, `slack_update_incident_status_form`, `slack_incident_mitigation_form`, `slack_incident_resolution_form`, `slack_incident_cancellation_form`, `slack_scheduled_incident_form`, `slack_update_scheduled_incident_form`, `google_chat_new_incident_form`, `google_chat_update_incident_form`
 			Forms []string `json:"forms,omitempty"`
 
 			// Name The name of the form set
@@ -57798,6 +58692,20 @@ type UpdateGoogleCalendarEventTaskParamsConferenceSolutionKey string
 
 // UpdateGoogleCalendarEventTaskParamsTaskType defines model for UpdateGoogleCalendarEventTaskParams.TaskType.
 type UpdateGoogleCalendarEventTaskParamsTaskType string
+
+// UpdateGoogleChatSpaceDescriptionTaskParams defines model for update_google_chat_space_description_task_params.
+type UpdateGoogleChatSpaceDescriptionTaskParams struct {
+	// Description The space description. Supports liquid markup
+	Description string `json:"description"`
+	Space       struct {
+		ID   *string `json:"id,omitempty"`
+		Name *string `json:"name,omitempty"`
+	} `json:"space"`
+	TaskType *UpdateGoogleChatSpaceDescriptionTaskParamsTaskType `json:"task_type,omitempty"`
+}
+
+// UpdateGoogleChatSpaceDescriptionTaskParamsTaskType defines model for UpdateGoogleChatSpaceDescriptionTaskParams.TaskType.
+type UpdateGoogleChatSpaceDescriptionTaskParamsTaskType string
 
 // UpdateGoogleDocsPageTaskParams defines model for update_google_docs_page_task_params.
 type UpdateGoogleDocsPageTaskParams struct {
@@ -59233,7 +60141,7 @@ type UpdatePulse struct {
 			// Summary The summary of the pulse
 			Summary *string `json:"summary,omitempty"`
 		} `json:"attributes"`
-		Type *UpdatePulseDataType `json:"type,omitempty"`
+		Type UpdatePulseDataType `json:"type"`
 	} `json:"data"`
 }
 
@@ -60388,6 +61296,9 @@ type UpdateTeam struct {
 			// AlertsEmailEnabled Enable alerts through email
 			AlertsEmailEnabled nullable.Nullable[bool] `json:"alerts_email_enabled,omitempty"`
 
+			// AutoAddMembersScope Visibility-scoped auto-add behavior. Only present when the `enable_scoped_incident_channel_auto_add` feature flag is on for the organization. When set, it overrides `auto_add_members_when_attached`.
+			AutoAddMembersScope nullable.Nullable[UpdateTeamDataAttributesAutoAddMembersScope] `json:"auto_add_members_scope,omitempty"`
+
 			// AutoAddMembersWhenAttached Auto add members to incident channel when team is attached
 			AutoAddMembersWhenAttached nullable.Nullable[bool] `json:"auto_add_members_when_attached,omitempty"`
 
@@ -60478,6 +61389,9 @@ type UpdateTeam struct {
 		Type UpdateTeamDataType `json:"type"`
 	} `json:"data"`
 }
+
+// UpdateTeamDataAttributesAutoAddMembersScope Visibility-scoped auto-add behavior. Only present when the `enable_scoped_incident_channel_auto_add` feature flag is on for the organization. When set, it overrides `auto_add_members_when_attached`.
+type UpdateTeamDataAttributesAutoAddMembersScope string
 
 // UpdateTeamDataType defines model for UpdateTeam.Data.Type.
 type UpdateTeamDataType string
@@ -60852,7 +61766,9 @@ type UpdateZendeskTicketTaskParams struct {
 type UpdateZendeskTicketTaskParamsTaskType string
 
 // UptimeChartResponse defines model for uptime_chart_response.
-type UptimeChartResponse = map[string]interface{}
+type UptimeChartResponse struct {
+	Data map[string]interface{} `json:"data"`
+}
 
 // User defines model for user.
 type User struct {
@@ -60906,8 +61822,9 @@ type UserEmailAddressList struct {
 		ID   string                       `json:"id"`
 		Type UserEmailAddressListDataType `json:"type"`
 	} `json:"data"`
-	Links Links `json:"links"`
-	Meta  Meta  `json:"meta"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
 }
 
 // UserEmailAddressListDataType defines model for UserEmailAddressList.Data.Type.
@@ -60922,6 +61839,7 @@ type UserEmailAddressResponse struct {
 		ID   string                           `json:"id"`
 		Type UserEmailAddressResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // UserEmailAddressResponseDataType defines model for UserEmailAddressResponse.Data.Type.
@@ -60967,8 +61885,9 @@ type UserList struct {
 		Relationships *UserRelationships `json:"relationships,omitempty"`
 		Type          UserListDataType   `json:"type"`
 	} `json:"data"`
-	Links Links `json:"links"`
-	Meta  Meta  `json:"meta"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
 }
 
 // UserListDataType defines model for UserList.Data.Type.
@@ -61023,8 +61942,9 @@ type UserNotificationRuleList struct {
 		ID   string                           `json:"id"`
 		Type UserNotificationRuleListDataType `json:"type"`
 	} `json:"data"`
-	Links Links `json:"links"`
-	Meta  Meta  `json:"meta"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
 }
 
 // UserNotificationRuleListDataType defines model for UserNotificationRuleList.Data.Type.
@@ -61039,6 +61959,7 @@ type UserNotificationRuleResponse struct {
 		ID   string                               `json:"id"`
 		Type UserNotificationRuleResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // UserNotificationRuleResponseDataType defines model for UserNotificationRuleResponse.Data.Type.
@@ -61075,8 +61996,9 @@ type UserPhoneNumberList struct {
 		ID   string                      `json:"id"`
 		Type UserPhoneNumberListDataType `json:"type"`
 	} `json:"data"`
-	Links Links `json:"links"`
-	Meta  Meta  `json:"meta"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
 }
 
 // UserPhoneNumberListDataType defines model for UserPhoneNumberList.Data.Type.
@@ -61091,6 +62013,7 @@ type UserPhoneNumberResponse struct {
 		ID   string                          `json:"id"`
 		Type UserPhoneNumberResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // UserPhoneNumberResponseDataType defines model for UserPhoneNumberResponse.Data.Type.
@@ -61112,6 +62035,7 @@ type UserResponse struct {
 		Relationships *UserRelationships   `json:"relationships,omitempty"`
 		Type          UserResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // UserResponseDataType defines model for UserResponse.Data.Type.
@@ -61144,8 +62068,9 @@ type WebhooksDeliveryList struct {
 		ID   string                       `json:"id"`
 		Type WebhooksDeliveryListDataType `json:"type"`
 	} `json:"data"`
-	Links *Links `json:"links,omitempty"`
-	Meta  *Meta  `json:"meta,omitempty"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    *Links                    `json:"links,omitempty"`
+	Meta     *Meta                     `json:"meta,omitempty"`
 }
 
 // WebhooksDeliveryListDataType defines model for WebhooksDeliveryList.Data.Type.
@@ -61160,6 +62085,7 @@ type WebhooksDeliveryResponse struct {
 		ID   string                           `json:"id"`
 		Type WebhooksDeliveryResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // WebhooksDeliveryResponseDataType defines model for WebhooksDeliveryResponse.Data.Type.
@@ -61200,8 +62126,9 @@ type WebhooksEndpointList struct {
 		ID   string                       `json:"id"`
 		Type WebhooksEndpointListDataType `json:"type"`
 	} `json:"data"`
-	Links *Links `json:"links,omitempty"`
-	Meta  *Meta  `json:"meta,omitempty"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    *Links                    `json:"links,omitempty"`
+	Meta     *Meta                     `json:"meta,omitempty"`
 }
 
 // WebhooksEndpointListDataType defines model for WebhooksEndpointList.Data.Type.
@@ -61216,6 +62143,7 @@ type WebhooksEndpointResponse struct {
 		ID   string                           `json:"id"`
 		Type WebhooksEndpointResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // WebhooksEndpointResponseDataType defines model for WebhooksEndpointResponse.Data.Type.
@@ -61316,8 +62244,9 @@ type WorkflowCustomFieldSelectionList struct {
 		ID   string                                   `json:"id"`
 		Type WorkflowCustomFieldSelectionListDataType `json:"type"`
 	} `json:"data"`
-	Links Links `json:"links"`
-	Meta  Meta  `json:"meta"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
 }
 
 // WorkflowCustomFieldSelectionListDataType defines model for WorkflowCustomFieldSelectionList.Data.Type.
@@ -61332,6 +62261,7 @@ type WorkflowCustomFieldSelectionResponse struct {
 		ID   string                                       `json:"id"`
 		Type WorkflowCustomFieldSelectionResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // WorkflowCustomFieldSelectionResponseDataType defines model for WorkflowCustomFieldSelectionResponse.Data.Type.
@@ -61371,8 +62301,9 @@ type WorkflowFormFieldConditionList struct {
 		ID   string                                 `json:"id"`
 		Type WorkflowFormFieldConditionListDataType `json:"type"`
 	} `json:"data"`
-	Links Links `json:"links"`
-	Meta  Meta  `json:"meta"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
 }
 
 // WorkflowFormFieldConditionListDataType defines model for WorkflowFormFieldConditionList.Data.Type.
@@ -61387,6 +62318,7 @@ type WorkflowFormFieldConditionResponse struct {
 		ID   string                                     `json:"id"`
 		Type WorkflowFormFieldConditionResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // WorkflowFormFieldConditionResponseDataType defines model for WorkflowFormFieldConditionResponse.Data.Type.
@@ -61428,8 +62360,9 @@ type WorkflowGroupList struct {
 		ID   string                    `json:"id"`
 		Type WorkflowGroupListDataType `json:"type"`
 	} `json:"data"`
-	Links Links `json:"links"`
-	Meta  Meta  `json:"meta"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
 }
 
 // WorkflowGroupListDataType defines model for WorkflowGroupList.Data.Type.
@@ -61444,6 +62377,7 @@ type WorkflowGroupResponse struct {
 		ID   string                        `json:"id"`
 		Type WorkflowGroupResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // WorkflowGroupResponseDataType defines model for WorkflowGroupResponse.Data.Type.
@@ -61458,8 +62392,9 @@ type WorkflowList struct {
 		ID   string               `json:"id"`
 		Type WorkflowListDataType `json:"type"`
 	} `json:"data"`
-	Links Links `json:"links"`
-	Meta  Meta  `json:"meta"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
 }
 
 // WorkflowListDataType defines model for WorkflowList.Data.Type.
@@ -61474,6 +62409,7 @@ type WorkflowResponse struct {
 		ID   string                   `json:"id"`
 		Type WorkflowResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // WorkflowResponseDataType defines model for WorkflowResponse.Data.Type.
@@ -61512,6 +62448,7 @@ type WorkflowRunResponse struct {
 		ID   string                      `json:"id"`
 		Type WorkflowRunResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // WorkflowRunResponseDataType defines model for WorkflowRunResponse.Data.Type.
@@ -61526,8 +62463,9 @@ type WorkflowRunsList struct {
 		ID   string                   `json:"id"`
 		Type WorkflowRunsListDataType `json:"type"`
 	} `json:"data"`
-	Links Links `json:"links"`
-	Meta  Meta  `json:"meta"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
 }
 
 // WorkflowRunsListDataType defines model for WorkflowRunsList.Data.Type.
@@ -61572,8 +62510,9 @@ type WorkflowTaskList struct {
 		ID   string                   `json:"id"`
 		Type WorkflowTaskListDataType `json:"type"`
 	} `json:"data"`
-	Links Links `json:"links"`
-	Meta  Meta  `json:"meta"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
 }
 
 // WorkflowTaskListDataType defines model for WorkflowTaskList.Data.Type.
@@ -61588,6 +62527,7 @@ type WorkflowTaskResponse struct {
 		ID   string                       `json:"id"`
 		Type WorkflowTaskResponseDataType `json:"type"`
 	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // WorkflowTaskResponseDataType defines model for WorkflowTaskResponse.Data.Type.
@@ -64042,6 +64982,9 @@ type CreateIncidentFeedbackApplicationVndAPIPlusJSONRequestBody = NewIncidentFee
 
 // CreateIncidentFormFieldSelectionApplicationVndAPIPlusJSONRequestBody defines body for CreateIncidentFormFieldSelection for application/vnd.api+json ContentType.
 type CreateIncidentFormFieldSelectionApplicationVndAPIPlusJSONRequestBody = NewIncidentFormFieldSelection
+
+// ImportMeetingRecordingApplicationVndAPIPlusJSONRequestBody defines body for ImportMeetingRecording for application/vnd.api+json ContentType.
+type ImportMeetingRecordingApplicationVndAPIPlusJSONRequestBody = ImportMeetingRecording
 
 // CreateIncidentStatusPageApplicationVndAPIPlusJSONRequestBody defines body for CreateIncidentStatusPage for application/vnd.api+json ContentType.
 type CreateIncidentStatusPageApplicationVndAPIPlusJSONRequestBody = NewIncidentStatusPageEvent
@@ -68309,6 +69252,214 @@ func (t *NewWorkflowTask_Data_Attributes_TaskParams) MergeAddMicrosoftTeamsChatT
 	return err
 }
 
+// AsCreateGoogleChatSpaceTaskParams returns the union data inside the NewWorkflowTask_Data_Attributes_TaskParams as a CreateGoogleChatSpaceTaskParams
+func (t NewWorkflowTask_Data_Attributes_TaskParams) AsCreateGoogleChatSpaceTaskParams() (CreateGoogleChatSpaceTaskParams, error) {
+	var body CreateGoogleChatSpaceTaskParams
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromCreateGoogleChatSpaceTaskParams overwrites any union data inside the NewWorkflowTask_Data_Attributes_TaskParams as the provided CreateGoogleChatSpaceTaskParams
+func (t *NewWorkflowTask_Data_Attributes_TaskParams) FromCreateGoogleChatSpaceTaskParams(v CreateGoogleChatSpaceTaskParams) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeCreateGoogleChatSpaceTaskParams performs a merge with any union data inside the NewWorkflowTask_Data_Attributes_TaskParams, using the provided CreateGoogleChatSpaceTaskParams
+func (t *NewWorkflowTask_Data_Attributes_TaskParams) MergeCreateGoogleChatSpaceTaskParams(v CreateGoogleChatSpaceTaskParams) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsSendGoogleChatMessageTaskParams returns the union data inside the NewWorkflowTask_Data_Attributes_TaskParams as a SendGoogleChatMessageTaskParams
+func (t NewWorkflowTask_Data_Attributes_TaskParams) AsSendGoogleChatMessageTaskParams() (SendGoogleChatMessageTaskParams, error) {
+	var body SendGoogleChatMessageTaskParams
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromSendGoogleChatMessageTaskParams overwrites any union data inside the NewWorkflowTask_Data_Attributes_TaskParams as the provided SendGoogleChatMessageTaskParams
+func (t *NewWorkflowTask_Data_Attributes_TaskParams) FromSendGoogleChatMessageTaskParams(v SendGoogleChatMessageTaskParams) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeSendGoogleChatMessageTaskParams performs a merge with any union data inside the NewWorkflowTask_Data_Attributes_TaskParams, using the provided SendGoogleChatMessageTaskParams
+func (t *NewWorkflowTask_Data_Attributes_TaskParams) MergeSendGoogleChatMessageTaskParams(v SendGoogleChatMessageTaskParams) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsSendGoogleChatAttachmentsTaskParams returns the union data inside the NewWorkflowTask_Data_Attributes_TaskParams as a SendGoogleChatAttachmentsTaskParams
+func (t NewWorkflowTask_Data_Attributes_TaskParams) AsSendGoogleChatAttachmentsTaskParams() (SendGoogleChatAttachmentsTaskParams, error) {
+	var body SendGoogleChatAttachmentsTaskParams
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromSendGoogleChatAttachmentsTaskParams overwrites any union data inside the NewWorkflowTask_Data_Attributes_TaskParams as the provided SendGoogleChatAttachmentsTaskParams
+func (t *NewWorkflowTask_Data_Attributes_TaskParams) FromSendGoogleChatAttachmentsTaskParams(v SendGoogleChatAttachmentsTaskParams) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeSendGoogleChatAttachmentsTaskParams performs a merge with any union data inside the NewWorkflowTask_Data_Attributes_TaskParams, using the provided SendGoogleChatAttachmentsTaskParams
+func (t *NewWorkflowTask_Data_Attributes_TaskParams) MergeSendGoogleChatAttachmentsTaskParams(v SendGoogleChatAttachmentsTaskParams) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsInviteToGoogleChatSpaceTaskParams returns the union data inside the NewWorkflowTask_Data_Attributes_TaskParams as a InviteToGoogleChatSpaceTaskParams
+func (t NewWorkflowTask_Data_Attributes_TaskParams) AsInviteToGoogleChatSpaceTaskParams() (InviteToGoogleChatSpaceTaskParams, error) {
+	var body InviteToGoogleChatSpaceTaskParams
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromInviteToGoogleChatSpaceTaskParams overwrites any union data inside the NewWorkflowTask_Data_Attributes_TaskParams as the provided InviteToGoogleChatSpaceTaskParams
+func (t *NewWorkflowTask_Data_Attributes_TaskParams) FromInviteToGoogleChatSpaceTaskParams(v InviteToGoogleChatSpaceTaskParams) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeInviteToGoogleChatSpaceTaskParams performs a merge with any union data inside the NewWorkflowTask_Data_Attributes_TaskParams, using the provided InviteToGoogleChatSpaceTaskParams
+func (t *NewWorkflowTask_Data_Attributes_TaskParams) MergeInviteToGoogleChatSpaceTaskParams(v InviteToGoogleChatSpaceTaskParams) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsArchiveGoogleChatSpacesTaskParams returns the union data inside the NewWorkflowTask_Data_Attributes_TaskParams as a ArchiveGoogleChatSpacesTaskParams
+func (t NewWorkflowTask_Data_Attributes_TaskParams) AsArchiveGoogleChatSpacesTaskParams() (ArchiveGoogleChatSpacesTaskParams, error) {
+	var body ArchiveGoogleChatSpacesTaskParams
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromArchiveGoogleChatSpacesTaskParams overwrites any union data inside the NewWorkflowTask_Data_Attributes_TaskParams as the provided ArchiveGoogleChatSpacesTaskParams
+func (t *NewWorkflowTask_Data_Attributes_TaskParams) FromArchiveGoogleChatSpacesTaskParams(v ArchiveGoogleChatSpacesTaskParams) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeArchiveGoogleChatSpacesTaskParams performs a merge with any union data inside the NewWorkflowTask_Data_Attributes_TaskParams, using the provided ArchiveGoogleChatSpacesTaskParams
+func (t *NewWorkflowTask_Data_Attributes_TaskParams) MergeArchiveGoogleChatSpacesTaskParams(v ArchiveGoogleChatSpacesTaskParams) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsRenameGoogleChatSpaceTaskParams returns the union data inside the NewWorkflowTask_Data_Attributes_TaskParams as a RenameGoogleChatSpaceTaskParams
+func (t NewWorkflowTask_Data_Attributes_TaskParams) AsRenameGoogleChatSpaceTaskParams() (RenameGoogleChatSpaceTaskParams, error) {
+	var body RenameGoogleChatSpaceTaskParams
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromRenameGoogleChatSpaceTaskParams overwrites any union data inside the NewWorkflowTask_Data_Attributes_TaskParams as the provided RenameGoogleChatSpaceTaskParams
+func (t *NewWorkflowTask_Data_Attributes_TaskParams) FromRenameGoogleChatSpaceTaskParams(v RenameGoogleChatSpaceTaskParams) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeRenameGoogleChatSpaceTaskParams performs a merge with any union data inside the NewWorkflowTask_Data_Attributes_TaskParams, using the provided RenameGoogleChatSpaceTaskParams
+func (t *NewWorkflowTask_Data_Attributes_TaskParams) MergeRenameGoogleChatSpaceTaskParams(v RenameGoogleChatSpaceTaskParams) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateGoogleChatSpaceDescriptionTaskParams returns the union data inside the NewWorkflowTask_Data_Attributes_TaskParams as a UpdateGoogleChatSpaceDescriptionTaskParams
+func (t NewWorkflowTask_Data_Attributes_TaskParams) AsUpdateGoogleChatSpaceDescriptionTaskParams() (UpdateGoogleChatSpaceDescriptionTaskParams, error) {
+	var body UpdateGoogleChatSpaceDescriptionTaskParams
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateGoogleChatSpaceDescriptionTaskParams overwrites any union data inside the NewWorkflowTask_Data_Attributes_TaskParams as the provided UpdateGoogleChatSpaceDescriptionTaskParams
+func (t *NewWorkflowTask_Data_Attributes_TaskParams) FromUpdateGoogleChatSpaceDescriptionTaskParams(v UpdateGoogleChatSpaceDescriptionTaskParams) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateGoogleChatSpaceDescriptionTaskParams performs a merge with any union data inside the NewWorkflowTask_Data_Attributes_TaskParams, using the provided UpdateGoogleChatSpaceDescriptionTaskParams
+func (t *NewWorkflowTask_Data_Attributes_TaskParams) MergeUpdateGoogleChatSpaceDescriptionTaskParams(v UpdateGoogleChatSpaceDescriptionTaskParams) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsChangeGoogleChatSpacePrivacyTaskParams returns the union data inside the NewWorkflowTask_Data_Attributes_TaskParams as a ChangeGoogleChatSpacePrivacyTaskParams
+func (t NewWorkflowTask_Data_Attributes_TaskParams) AsChangeGoogleChatSpacePrivacyTaskParams() (ChangeGoogleChatSpacePrivacyTaskParams, error) {
+	var body ChangeGoogleChatSpacePrivacyTaskParams
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromChangeGoogleChatSpacePrivacyTaskParams overwrites any union data inside the NewWorkflowTask_Data_Attributes_TaskParams as the provided ChangeGoogleChatSpacePrivacyTaskParams
+func (t *NewWorkflowTask_Data_Attributes_TaskParams) FromChangeGoogleChatSpacePrivacyTaskParams(v ChangeGoogleChatSpacePrivacyTaskParams) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeChangeGoogleChatSpacePrivacyTaskParams performs a merge with any union data inside the NewWorkflowTask_Data_Attributes_TaskParams, using the provided ChangeGoogleChatSpacePrivacyTaskParams
+func (t *NewWorkflowTask_Data_Attributes_TaskParams) MergeChangeGoogleChatSpacePrivacyTaskParams(v ChangeGoogleChatSpacePrivacyTaskParams) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
 // AsArchiveMicrosoftTeamsChannelsTaskParams returns the union data inside the NewWorkflowTask_Data_Attributes_TaskParams as a ArchiveMicrosoftTeamsChannelsTaskParams
 func (t NewWorkflowTask_Data_Attributes_TaskParams) AsArchiveMicrosoftTeamsChannelsTaskParams() (ArchiveMicrosoftTeamsChannelsTaskParams, error) {
 	var body ArchiveMicrosoftTeamsChannelsTaskParams
@@ -70939,6 +72090,13 @@ func (t SendMicrosoftTeamsBlocksTaskParams) MarshalJSON() ([]byte, error) {
 		return nil, fmt.Errorf("error marshaling 'attachments': %w", err)
 	}
 
+	if t.Channels != nil {
+		object["channels"], err = json.Marshal(t.Channels)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'channels': %w", err)
+		}
+	}
+
 	if t.TaskType != nil {
 		object["task_type"], err = json.Marshal(t.TaskType)
 		if err != nil {
@@ -70964,6 +72122,13 @@ func (t *SendMicrosoftTeamsBlocksTaskParams) UnmarshalJSON(b []byte) error {
 		err = json.Unmarshal(raw, &t.Attachments)
 		if err != nil {
 			return fmt.Errorf("error reading 'attachments': %w", err)
+		}
+	}
+
+	if raw, found := object["channels"]; found {
+		err = json.Unmarshal(raw, &t.Channels)
+		if err != nil {
+			return fmt.Errorf("error reading 'channels': %w", err)
 		}
 	}
 
@@ -73766,6 +74931,214 @@ func (t *UpdateWorkflowTask_Data_Attributes_TaskParams) FromAddMicrosoftTeamsCha
 
 // MergeAddMicrosoftTeamsChatTabTaskParams performs a merge with any union data inside the UpdateWorkflowTask_Data_Attributes_TaskParams, using the provided AddMicrosoftTeamsChatTabTaskParams
 func (t *UpdateWorkflowTask_Data_Attributes_TaskParams) MergeAddMicrosoftTeamsChatTabTaskParams(v AddMicrosoftTeamsChatTabTaskParams) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsCreateGoogleChatSpaceTaskParams returns the union data inside the UpdateWorkflowTask_Data_Attributes_TaskParams as a CreateGoogleChatSpaceTaskParams
+func (t UpdateWorkflowTask_Data_Attributes_TaskParams) AsCreateGoogleChatSpaceTaskParams() (CreateGoogleChatSpaceTaskParams, error) {
+	var body CreateGoogleChatSpaceTaskParams
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromCreateGoogleChatSpaceTaskParams overwrites any union data inside the UpdateWorkflowTask_Data_Attributes_TaskParams as the provided CreateGoogleChatSpaceTaskParams
+func (t *UpdateWorkflowTask_Data_Attributes_TaskParams) FromCreateGoogleChatSpaceTaskParams(v CreateGoogleChatSpaceTaskParams) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeCreateGoogleChatSpaceTaskParams performs a merge with any union data inside the UpdateWorkflowTask_Data_Attributes_TaskParams, using the provided CreateGoogleChatSpaceTaskParams
+func (t *UpdateWorkflowTask_Data_Attributes_TaskParams) MergeCreateGoogleChatSpaceTaskParams(v CreateGoogleChatSpaceTaskParams) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsSendGoogleChatMessageTaskParams returns the union data inside the UpdateWorkflowTask_Data_Attributes_TaskParams as a SendGoogleChatMessageTaskParams
+func (t UpdateWorkflowTask_Data_Attributes_TaskParams) AsSendGoogleChatMessageTaskParams() (SendGoogleChatMessageTaskParams, error) {
+	var body SendGoogleChatMessageTaskParams
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromSendGoogleChatMessageTaskParams overwrites any union data inside the UpdateWorkflowTask_Data_Attributes_TaskParams as the provided SendGoogleChatMessageTaskParams
+func (t *UpdateWorkflowTask_Data_Attributes_TaskParams) FromSendGoogleChatMessageTaskParams(v SendGoogleChatMessageTaskParams) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeSendGoogleChatMessageTaskParams performs a merge with any union data inside the UpdateWorkflowTask_Data_Attributes_TaskParams, using the provided SendGoogleChatMessageTaskParams
+func (t *UpdateWorkflowTask_Data_Attributes_TaskParams) MergeSendGoogleChatMessageTaskParams(v SendGoogleChatMessageTaskParams) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsSendGoogleChatAttachmentsTaskParams returns the union data inside the UpdateWorkflowTask_Data_Attributes_TaskParams as a SendGoogleChatAttachmentsTaskParams
+func (t UpdateWorkflowTask_Data_Attributes_TaskParams) AsSendGoogleChatAttachmentsTaskParams() (SendGoogleChatAttachmentsTaskParams, error) {
+	var body SendGoogleChatAttachmentsTaskParams
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromSendGoogleChatAttachmentsTaskParams overwrites any union data inside the UpdateWorkflowTask_Data_Attributes_TaskParams as the provided SendGoogleChatAttachmentsTaskParams
+func (t *UpdateWorkflowTask_Data_Attributes_TaskParams) FromSendGoogleChatAttachmentsTaskParams(v SendGoogleChatAttachmentsTaskParams) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeSendGoogleChatAttachmentsTaskParams performs a merge with any union data inside the UpdateWorkflowTask_Data_Attributes_TaskParams, using the provided SendGoogleChatAttachmentsTaskParams
+func (t *UpdateWorkflowTask_Data_Attributes_TaskParams) MergeSendGoogleChatAttachmentsTaskParams(v SendGoogleChatAttachmentsTaskParams) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsInviteToGoogleChatSpaceTaskParams returns the union data inside the UpdateWorkflowTask_Data_Attributes_TaskParams as a InviteToGoogleChatSpaceTaskParams
+func (t UpdateWorkflowTask_Data_Attributes_TaskParams) AsInviteToGoogleChatSpaceTaskParams() (InviteToGoogleChatSpaceTaskParams, error) {
+	var body InviteToGoogleChatSpaceTaskParams
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromInviteToGoogleChatSpaceTaskParams overwrites any union data inside the UpdateWorkflowTask_Data_Attributes_TaskParams as the provided InviteToGoogleChatSpaceTaskParams
+func (t *UpdateWorkflowTask_Data_Attributes_TaskParams) FromInviteToGoogleChatSpaceTaskParams(v InviteToGoogleChatSpaceTaskParams) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeInviteToGoogleChatSpaceTaskParams performs a merge with any union data inside the UpdateWorkflowTask_Data_Attributes_TaskParams, using the provided InviteToGoogleChatSpaceTaskParams
+func (t *UpdateWorkflowTask_Data_Attributes_TaskParams) MergeInviteToGoogleChatSpaceTaskParams(v InviteToGoogleChatSpaceTaskParams) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsArchiveGoogleChatSpacesTaskParams returns the union data inside the UpdateWorkflowTask_Data_Attributes_TaskParams as a ArchiveGoogleChatSpacesTaskParams
+func (t UpdateWorkflowTask_Data_Attributes_TaskParams) AsArchiveGoogleChatSpacesTaskParams() (ArchiveGoogleChatSpacesTaskParams, error) {
+	var body ArchiveGoogleChatSpacesTaskParams
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromArchiveGoogleChatSpacesTaskParams overwrites any union data inside the UpdateWorkflowTask_Data_Attributes_TaskParams as the provided ArchiveGoogleChatSpacesTaskParams
+func (t *UpdateWorkflowTask_Data_Attributes_TaskParams) FromArchiveGoogleChatSpacesTaskParams(v ArchiveGoogleChatSpacesTaskParams) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeArchiveGoogleChatSpacesTaskParams performs a merge with any union data inside the UpdateWorkflowTask_Data_Attributes_TaskParams, using the provided ArchiveGoogleChatSpacesTaskParams
+func (t *UpdateWorkflowTask_Data_Attributes_TaskParams) MergeArchiveGoogleChatSpacesTaskParams(v ArchiveGoogleChatSpacesTaskParams) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsRenameGoogleChatSpaceTaskParams returns the union data inside the UpdateWorkflowTask_Data_Attributes_TaskParams as a RenameGoogleChatSpaceTaskParams
+func (t UpdateWorkflowTask_Data_Attributes_TaskParams) AsRenameGoogleChatSpaceTaskParams() (RenameGoogleChatSpaceTaskParams, error) {
+	var body RenameGoogleChatSpaceTaskParams
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromRenameGoogleChatSpaceTaskParams overwrites any union data inside the UpdateWorkflowTask_Data_Attributes_TaskParams as the provided RenameGoogleChatSpaceTaskParams
+func (t *UpdateWorkflowTask_Data_Attributes_TaskParams) FromRenameGoogleChatSpaceTaskParams(v RenameGoogleChatSpaceTaskParams) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeRenameGoogleChatSpaceTaskParams performs a merge with any union data inside the UpdateWorkflowTask_Data_Attributes_TaskParams, using the provided RenameGoogleChatSpaceTaskParams
+func (t *UpdateWorkflowTask_Data_Attributes_TaskParams) MergeRenameGoogleChatSpaceTaskParams(v RenameGoogleChatSpaceTaskParams) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateGoogleChatSpaceDescriptionTaskParams returns the union data inside the UpdateWorkflowTask_Data_Attributes_TaskParams as a UpdateGoogleChatSpaceDescriptionTaskParams
+func (t UpdateWorkflowTask_Data_Attributes_TaskParams) AsUpdateGoogleChatSpaceDescriptionTaskParams() (UpdateGoogleChatSpaceDescriptionTaskParams, error) {
+	var body UpdateGoogleChatSpaceDescriptionTaskParams
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateGoogleChatSpaceDescriptionTaskParams overwrites any union data inside the UpdateWorkflowTask_Data_Attributes_TaskParams as the provided UpdateGoogleChatSpaceDescriptionTaskParams
+func (t *UpdateWorkflowTask_Data_Attributes_TaskParams) FromUpdateGoogleChatSpaceDescriptionTaskParams(v UpdateGoogleChatSpaceDescriptionTaskParams) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateGoogleChatSpaceDescriptionTaskParams performs a merge with any union data inside the UpdateWorkflowTask_Data_Attributes_TaskParams, using the provided UpdateGoogleChatSpaceDescriptionTaskParams
+func (t *UpdateWorkflowTask_Data_Attributes_TaskParams) MergeUpdateGoogleChatSpaceDescriptionTaskParams(v UpdateGoogleChatSpaceDescriptionTaskParams) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsChangeGoogleChatSpacePrivacyTaskParams returns the union data inside the UpdateWorkflowTask_Data_Attributes_TaskParams as a ChangeGoogleChatSpacePrivacyTaskParams
+func (t UpdateWorkflowTask_Data_Attributes_TaskParams) AsChangeGoogleChatSpacePrivacyTaskParams() (ChangeGoogleChatSpacePrivacyTaskParams, error) {
+	var body ChangeGoogleChatSpacePrivacyTaskParams
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromChangeGoogleChatSpacePrivacyTaskParams overwrites any union data inside the UpdateWorkflowTask_Data_Attributes_TaskParams as the provided ChangeGoogleChatSpacePrivacyTaskParams
+func (t *UpdateWorkflowTask_Data_Attributes_TaskParams) FromChangeGoogleChatSpacePrivacyTaskParams(v ChangeGoogleChatSpacePrivacyTaskParams) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeChangeGoogleChatSpacePrivacyTaskParams performs a merge with any union data inside the UpdateWorkflowTask_Data_Attributes_TaskParams, using the provided ChangeGoogleChatSpacePrivacyTaskParams
+func (t *UpdateWorkflowTask_Data_Attributes_TaskParams) MergeChangeGoogleChatSpacePrivacyTaskParams(v ChangeGoogleChatSpacePrivacyTaskParams) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -77488,6 +78861,214 @@ func (t *WorkflowTask_TaskParams) MergeAddMicrosoftTeamsChatTabTaskParams(v AddM
 	return err
 }
 
+// AsCreateGoogleChatSpaceTaskParams returns the union data inside the WorkflowTask_TaskParams as a CreateGoogleChatSpaceTaskParams
+func (t WorkflowTask_TaskParams) AsCreateGoogleChatSpaceTaskParams() (CreateGoogleChatSpaceTaskParams, error) {
+	var body CreateGoogleChatSpaceTaskParams
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromCreateGoogleChatSpaceTaskParams overwrites any union data inside the WorkflowTask_TaskParams as the provided CreateGoogleChatSpaceTaskParams
+func (t *WorkflowTask_TaskParams) FromCreateGoogleChatSpaceTaskParams(v CreateGoogleChatSpaceTaskParams) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeCreateGoogleChatSpaceTaskParams performs a merge with any union data inside the WorkflowTask_TaskParams, using the provided CreateGoogleChatSpaceTaskParams
+func (t *WorkflowTask_TaskParams) MergeCreateGoogleChatSpaceTaskParams(v CreateGoogleChatSpaceTaskParams) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsSendGoogleChatMessageTaskParams returns the union data inside the WorkflowTask_TaskParams as a SendGoogleChatMessageTaskParams
+func (t WorkflowTask_TaskParams) AsSendGoogleChatMessageTaskParams() (SendGoogleChatMessageTaskParams, error) {
+	var body SendGoogleChatMessageTaskParams
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromSendGoogleChatMessageTaskParams overwrites any union data inside the WorkflowTask_TaskParams as the provided SendGoogleChatMessageTaskParams
+func (t *WorkflowTask_TaskParams) FromSendGoogleChatMessageTaskParams(v SendGoogleChatMessageTaskParams) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeSendGoogleChatMessageTaskParams performs a merge with any union data inside the WorkflowTask_TaskParams, using the provided SendGoogleChatMessageTaskParams
+func (t *WorkflowTask_TaskParams) MergeSendGoogleChatMessageTaskParams(v SendGoogleChatMessageTaskParams) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsSendGoogleChatAttachmentsTaskParams returns the union data inside the WorkflowTask_TaskParams as a SendGoogleChatAttachmentsTaskParams
+func (t WorkflowTask_TaskParams) AsSendGoogleChatAttachmentsTaskParams() (SendGoogleChatAttachmentsTaskParams, error) {
+	var body SendGoogleChatAttachmentsTaskParams
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromSendGoogleChatAttachmentsTaskParams overwrites any union data inside the WorkflowTask_TaskParams as the provided SendGoogleChatAttachmentsTaskParams
+func (t *WorkflowTask_TaskParams) FromSendGoogleChatAttachmentsTaskParams(v SendGoogleChatAttachmentsTaskParams) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeSendGoogleChatAttachmentsTaskParams performs a merge with any union data inside the WorkflowTask_TaskParams, using the provided SendGoogleChatAttachmentsTaskParams
+func (t *WorkflowTask_TaskParams) MergeSendGoogleChatAttachmentsTaskParams(v SendGoogleChatAttachmentsTaskParams) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsInviteToGoogleChatSpaceTaskParams returns the union data inside the WorkflowTask_TaskParams as a InviteToGoogleChatSpaceTaskParams
+func (t WorkflowTask_TaskParams) AsInviteToGoogleChatSpaceTaskParams() (InviteToGoogleChatSpaceTaskParams, error) {
+	var body InviteToGoogleChatSpaceTaskParams
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromInviteToGoogleChatSpaceTaskParams overwrites any union data inside the WorkflowTask_TaskParams as the provided InviteToGoogleChatSpaceTaskParams
+func (t *WorkflowTask_TaskParams) FromInviteToGoogleChatSpaceTaskParams(v InviteToGoogleChatSpaceTaskParams) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeInviteToGoogleChatSpaceTaskParams performs a merge with any union data inside the WorkflowTask_TaskParams, using the provided InviteToGoogleChatSpaceTaskParams
+func (t *WorkflowTask_TaskParams) MergeInviteToGoogleChatSpaceTaskParams(v InviteToGoogleChatSpaceTaskParams) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsArchiveGoogleChatSpacesTaskParams returns the union data inside the WorkflowTask_TaskParams as a ArchiveGoogleChatSpacesTaskParams
+func (t WorkflowTask_TaskParams) AsArchiveGoogleChatSpacesTaskParams() (ArchiveGoogleChatSpacesTaskParams, error) {
+	var body ArchiveGoogleChatSpacesTaskParams
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromArchiveGoogleChatSpacesTaskParams overwrites any union data inside the WorkflowTask_TaskParams as the provided ArchiveGoogleChatSpacesTaskParams
+func (t *WorkflowTask_TaskParams) FromArchiveGoogleChatSpacesTaskParams(v ArchiveGoogleChatSpacesTaskParams) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeArchiveGoogleChatSpacesTaskParams performs a merge with any union data inside the WorkflowTask_TaskParams, using the provided ArchiveGoogleChatSpacesTaskParams
+func (t *WorkflowTask_TaskParams) MergeArchiveGoogleChatSpacesTaskParams(v ArchiveGoogleChatSpacesTaskParams) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsRenameGoogleChatSpaceTaskParams returns the union data inside the WorkflowTask_TaskParams as a RenameGoogleChatSpaceTaskParams
+func (t WorkflowTask_TaskParams) AsRenameGoogleChatSpaceTaskParams() (RenameGoogleChatSpaceTaskParams, error) {
+	var body RenameGoogleChatSpaceTaskParams
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromRenameGoogleChatSpaceTaskParams overwrites any union data inside the WorkflowTask_TaskParams as the provided RenameGoogleChatSpaceTaskParams
+func (t *WorkflowTask_TaskParams) FromRenameGoogleChatSpaceTaskParams(v RenameGoogleChatSpaceTaskParams) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeRenameGoogleChatSpaceTaskParams performs a merge with any union data inside the WorkflowTask_TaskParams, using the provided RenameGoogleChatSpaceTaskParams
+func (t *WorkflowTask_TaskParams) MergeRenameGoogleChatSpaceTaskParams(v RenameGoogleChatSpaceTaskParams) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateGoogleChatSpaceDescriptionTaskParams returns the union data inside the WorkflowTask_TaskParams as a UpdateGoogleChatSpaceDescriptionTaskParams
+func (t WorkflowTask_TaskParams) AsUpdateGoogleChatSpaceDescriptionTaskParams() (UpdateGoogleChatSpaceDescriptionTaskParams, error) {
+	var body UpdateGoogleChatSpaceDescriptionTaskParams
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateGoogleChatSpaceDescriptionTaskParams overwrites any union data inside the WorkflowTask_TaskParams as the provided UpdateGoogleChatSpaceDescriptionTaskParams
+func (t *WorkflowTask_TaskParams) FromUpdateGoogleChatSpaceDescriptionTaskParams(v UpdateGoogleChatSpaceDescriptionTaskParams) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateGoogleChatSpaceDescriptionTaskParams performs a merge with any union data inside the WorkflowTask_TaskParams, using the provided UpdateGoogleChatSpaceDescriptionTaskParams
+func (t *WorkflowTask_TaskParams) MergeUpdateGoogleChatSpaceDescriptionTaskParams(v UpdateGoogleChatSpaceDescriptionTaskParams) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsChangeGoogleChatSpacePrivacyTaskParams returns the union data inside the WorkflowTask_TaskParams as a ChangeGoogleChatSpacePrivacyTaskParams
+func (t WorkflowTask_TaskParams) AsChangeGoogleChatSpacePrivacyTaskParams() (ChangeGoogleChatSpacePrivacyTaskParams, error) {
+	var body ChangeGoogleChatSpacePrivacyTaskParams
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromChangeGoogleChatSpacePrivacyTaskParams overwrites any union data inside the WorkflowTask_TaskParams as the provided ChangeGoogleChatSpacePrivacyTaskParams
+func (t *WorkflowTask_TaskParams) FromChangeGoogleChatSpacePrivacyTaskParams(v ChangeGoogleChatSpacePrivacyTaskParams) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeChangeGoogleChatSpacePrivacyTaskParams performs a merge with any union data inside the WorkflowTask_TaskParams, using the provided ChangeGoogleChatSpacePrivacyTaskParams
+func (t *WorkflowTask_TaskParams) MergeChangeGoogleChatSpacePrivacyTaskParams(v ChangeGoogleChatSpacePrivacyTaskParams) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
 // AsArchiveMicrosoftTeamsChannelsTaskParams returns the union data inside the WorkflowTask_TaskParams as a ArchiveMicrosoftTeamsChannelsTaskParams
 func (t WorkflowTask_TaskParams) AsArchiveMicrosoftTeamsChannelsTaskParams() (ArchiveMicrosoftTeamsChannelsTaskParams, error) {
 	var body ArchiveMicrosoftTeamsChannelsTaskParams
@@ -81036,6 +82617,11 @@ type ClientInterface interface {
 
 	// CreateMeetingRecording request
 	CreateMeetingRecording(ctx context.Context, incidentID string, params *CreateMeetingRecordingParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// ImportMeetingRecordingWithBody request with any body
+	ImportMeetingRecordingWithBody(ctx context.Context, incidentID string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	ImportMeetingRecordingWithApplicationVndAPIPlusJSONBody(ctx context.Context, incidentID string, body ImportMeetingRecordingApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// ListIncidentStatusPages request
 	ListIncidentStatusPages(ctx context.Context, incidentID string, params *ListIncidentStatusPagesParams, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -87277,6 +88863,30 @@ func (c *Client) ListMeetingRecordings(ctx context.Context, incidentID string, p
 
 func (c *Client) CreateMeetingRecording(ctx context.Context, incidentID string, params *CreateMeetingRecordingParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewCreateMeetingRecordingRequest(c.Server, incidentID, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) ImportMeetingRecordingWithBody(ctx context.Context, incidentID string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewImportMeetingRecordingRequestWithBody(c.Server, incidentID, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) ImportMeetingRecordingWithApplicationVndAPIPlusJSONBody(ctx context.Context, incidentID string, body ImportMeetingRecordingApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewImportMeetingRecordingRequestWithApplicationVndAPIPlusJSONBody(c.Server, incidentID, body)
 	if err != nil {
 		return nil, err
 	}
@@ -111445,6 +113055,53 @@ func NewCreateMeetingRecordingRequest(server string, incidentID string, params *
 	return req, nil
 }
 
+// NewImportMeetingRecordingRequestWithApplicationVndAPIPlusJSONBody calls the generic ImportMeetingRecording builder with application/vnd.api+json body
+func NewImportMeetingRecordingRequestWithApplicationVndAPIPlusJSONBody(server string, incidentID string, body ImportMeetingRecordingApplicationVndAPIPlusJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewImportMeetingRecordingRequestWithBody(server, incidentID, "application/vnd.api+json", bodyReader)
+}
+
+// NewImportMeetingRecordingRequestWithBody generates requests for ImportMeetingRecording with any type of body
+func NewImportMeetingRecordingRequestWithBody(server string, incidentID string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "incident_id", incidentID, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/incidents/%s/meeting_recordings/import", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
 // NewListIncidentStatusPagesRequest generates requests for ListIncidentStatusPages
 func NewListIncidentStatusPagesRequest(server string, incidentID string, params *ListIncidentStatusPagesParams) (*http.Request, error) {
 	var err error
@@ -126135,6 +127792,11 @@ type ClientWithResponsesInterface interface {
 	// CreateMeetingRecordingWithResponse request
 	CreateMeetingRecordingWithResponse(ctx context.Context, incidentID string, params *CreateMeetingRecordingParams, reqEditors ...RequestEditorFn) (*CreateMeetingRecordingResponse, error)
 
+	// ImportMeetingRecordingWithBodyWithResponse request with any body
+	ImportMeetingRecordingWithBodyWithResponse(ctx context.Context, incidentID string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*ImportMeetingRecordingResponse, error)
+
+	ImportMeetingRecordingWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, incidentID string, body ImportMeetingRecordingApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*ImportMeetingRecordingResponse, error)
+
 	// ListIncidentStatusPagesWithResponse request
 	ListIncidentStatusPagesWithResponse(ctx context.Context, incidentID string, params *ListIncidentStatusPagesParams, reqEditors ...RequestEditorFn) (*ListIncidentStatusPagesResponse, error)
 
@@ -136893,6 +138555,35 @@ func (r CreateMeetingRecordingResponse) ContentType() string {
 	return ""
 }
 
+type ImportMeetingRecordingResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// Status returns HTTPResponse.Status
+func (r ImportMeetingRecordingResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r ImportMeetingRecordingResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r ImportMeetingRecordingResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
 type ListIncidentStatusPagesResponse struct {
 	Body                     []byte
 	HTTPResponse             *http.Response
@@ -137935,6 +139626,7 @@ func (r UpdateOnCallShadowResponse) ContentType() string {
 type ListOncallsResponse struct {
 	Body                     []byte
 	HTTPResponse             *http.Response
+	ApplicationVndAPIJSON200 *OncallList
 	ApplicationVndAPIJSON401 *ErrorsList
 	ApplicationVndAPIJSON404 *ErrorsList
 }
@@ -147495,6 +149187,23 @@ func (c *ClientWithResponses) CreateMeetingRecordingWithResponse(ctx context.Con
 		return nil, err
 	}
 	return ParseCreateMeetingRecordingResponse(rsp)
+}
+
+// ImportMeetingRecordingWithBodyWithResponse request with arbitrary body returning *ImportMeetingRecordingResponse
+func (c *ClientWithResponses) ImportMeetingRecordingWithBodyWithResponse(ctx context.Context, incidentID string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*ImportMeetingRecordingResponse, error) {
+	rsp, err := c.ImportMeetingRecordingWithBody(ctx, incidentID, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseImportMeetingRecordingResponse(rsp)
+}
+
+func (c *ClientWithResponses) ImportMeetingRecordingWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, incidentID string, body ImportMeetingRecordingApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*ImportMeetingRecordingResponse, error) {
+	rsp, err := c.ImportMeetingRecordingWithApplicationVndAPIPlusJSONBody(ctx, incidentID, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseImportMeetingRecordingResponse(rsp)
 }
 
 // ListIncidentStatusPagesWithResponse request returning *ListIncidentStatusPagesResponse
@@ -160404,6 +162113,22 @@ func ParseCreateMeetingRecordingResponse(rsp *http.Response) (*CreateMeetingReco
 	return response, nil
 }
 
+// ParseImportMeetingRecordingResponse parses an HTTP response from a ImportMeetingRecordingWithResponse call
+func ParseImportMeetingRecordingResponse(rsp *http.Response) (*ImportMeetingRecordingResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ImportMeetingRecordingResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
 // ParseListIncidentStatusPagesResponse parses an HTTP response from a ListIncidentStatusPagesWithResponse call
 func ParseListIncidentStatusPagesResponse(rsp *http.Response) (*ListIncidentStatusPagesResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
@@ -161414,6 +163139,13 @@ func ParseListOncallsResponse(rsp *http.Response) (*ListOncallsResponse, error) 
 	}
 
 	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest OncallList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON200 = &dest
+
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest ErrorsList
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
