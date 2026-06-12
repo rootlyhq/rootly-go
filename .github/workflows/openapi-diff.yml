@@ -159,7 +159,101 @@ jobs:
             const changelog = fs.readFileSync('/tmp/overlay-changelog.md', 'utf8').trim();
             const marker = '<!-- openapi-overlay-changelog -->';
             const sha = context.payload.pull_request.head.sha;
-            const body = `${marker}\n${sha}:\n\nThe OpenAPI spec, once \`overlay.yaml\` is applied to it, has the following changes.\nWhere possible, rootly-go maintainers should review this and reduce breaking changes where possible.\n${changelog}`;
+            const body = `${marker}\n${sha}:\n\nThe OpenAPI spec, once \`overlay.yaml\` is applied to it, has the following changes.\n${changelog}`;
+
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+            });
+
+            const existing = comments.find(c => c.body.includes(marker));
+
+            if (existing) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: existing.id,
+                body,
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                body,
+              });
+            }
+
+  diff-breaking:
+    name: Diff overlay-applied spec
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+        with:
+          fetch-depth: 0
+
+      - name: Get base spec and overlay
+        env:
+          PR_BASE_SHA: "${{ github.event.pull_request.base.sha }}"
+        run: |
+          if git show "${PR_BASE_SHA}:.vendored/rootly-api/swagger.json" > /tmp/base-swagger.json 2>/dev/null; then
+            echo "BASE_SPEC_EXISTS=true" >> "$GITHUB_ENV"
+          else
+            echo "BASE_SPEC_EXISTS=false" >> "$GITHUB_ENV"
+          fi
+          git show "${PR_BASE_SHA}:overlay.yaml" > /tmp/base-overlay.yaml 2>/dev/null || cp overlay.yaml /tmp/base-overlay.yaml
+
+      - name: Install oasdiff
+        env:
+          OASDIFF_VERSION: 1.16.0 # renovate: datasource=github-releases depName=oasdiff/oasdiff
+        run: |
+          curl -fsSL -o /tmp/oasdiff.tar.gz \
+            "https://github.com/oasdiff/oasdiff/releases/download/v${OASDIFF_VERSION}/oasdiff_${OASDIFF_VERSION}_linux_amd64.tar.gz"
+          tar -xzf /tmp/oasdiff.tar.gz -C /usr/local/bin oasdiff
+
+      - name: Install openapi CLI
+        env:
+          SPEAKEASY_OPENAPI_VERSION: v1.23.0 # renovate: datasource=github-releases depName=speakeasy-api/openapi
+        run: |
+          curl -fsSL -o /tmp/openapi.tar.gz \
+            "https://github.com/speakeasy-api/openapi/releases/download/${SPEAKEASY_OPENAPI_VERSION}/openapi_Linux_x86_64.tar.gz"
+          tar -xzf /tmp/openapi.tar.gz -C /usr/local/bin openapi
+
+      - name: Apply overlay to specs
+        if: env.BASE_SPEC_EXISTS == 'true'
+        run: |
+          openapi overlay apply /tmp/base-overlay.yaml /tmp/base-swagger.json > /tmp/base-overlay-applied.json
+          openapi overlay apply overlay.yaml .vendored/rootly-api/swagger.json > /tmp/pr-overlay-applied.json
+
+      - name: OpenAPI overlay breaking changes
+        if: env.BASE_SPEC_EXISTS == 'true'
+        run: |
+          CHANGELOG=$(oasdiff breaking --format markdown /tmp/base-overlay-applied.json /tmp/pr-overlay-applied.json || true)
+          if [ -z "$CHANGELOG" ]; then
+            CHANGELOG="_No API changes detected after overlay._"
+          fi
+          {
+            echo "$CHANGELOG"
+          } >> "$GITHUB_STEP_SUMMARY"
+          echo "$CHANGELOG" > /tmp/overlay-breaking.md
+
+      - name: Comment overlay changelog on PR
+        if: env.BASE_SPEC_EXISTS == 'true'
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
+        with:
+          script: |
+            const fs = require('fs');
+            const changelog = fs.readFileSync('/tmp/overlay-breaking.md', 'utf8').trim();
+            const marker = '<!-- openapi-overlay-breaking -->';
+            const sha = context.payload.pull_request.head.sha;
+            const hasChanges = !changelog.includes('No API changes detected');
+            const body = hasChanges
+              ? `${marker}\n## Breaking changes from ${sha}\n\nThe OpenAPI spec, once \`overlay.yaml\` is applied to it, has the following changes.\nWhere possible, rootly-go maintainers should review this and reduce breaking changes where possible.\n${changelog}`
+              : `${marker}\n## No breaking changes from ${sha}\n\n${changelog}`;
 
             const { data: comments } = await github.rest.issues.listComments({
               owner: context.repo.owner,
