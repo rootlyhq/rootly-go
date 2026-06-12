@@ -46,7 +46,7 @@ jobs:
         if: env.BASE_SPEC_EXISTS == 'true'
         run: |
           CHANGELOG=$(oasdiff changelog --format markdown /tmp/base-swagger.json .vendored/rootly-api/swagger.json || true)
-          if [ -z "$CHANGELOG" ]; then
+          if [ -z "$CHANGELOG" ] || echo "$CHANGELOG" | grep -q "No changes detected"; then
             CHANGELOG="_No API changes detected._"
           fi
           {
@@ -142,7 +142,7 @@ jobs:
         if: env.BASE_SPEC_EXISTS == 'true'
         run: |
           CHANGELOG=$(oasdiff changelog --format markdown /tmp/base-overlay-applied.json /tmp/pr-overlay-applied.json || true)
-          if [ -z "$CHANGELOG" ]; then
+          if [ -z "$CHANGELOG" ] || echo "$CHANGELOG" | grep -q "No changes detected"; then
             CHANGELOG="_No API changes detected after overlay._"
           fi
           {
@@ -159,7 +159,10 @@ jobs:
             const changelog = fs.readFileSync('/tmp/overlay-changelog.md', 'utf8').trim();
             const marker = '<!-- openapi-overlay-changelog -->';
             const sha = context.payload.pull_request.head.sha;
-            const body = `${marker}\n${sha}:\n\nThe OpenAPI spec, once \`overlay.yaml\` is applied to it, has the following changes.\n${changelog}`;
+            const hasChanges = !changelog.includes('No API changes detected');
+            const body = hasChanges
+              ? `${marker}\n${sha}:\n\nThe OpenAPI spec, once \`overlay.yaml\` is applied to it, has the following changes.\n${changelog}`
+              : `${marker}\n${sha}:\n\n${changelog}`;
 
             const { data: comments } = await github.rest.issues.listComments({
               owner: context.repo.owner,
@@ -233,7 +236,7 @@ jobs:
         if: env.BASE_SPEC_EXISTS == 'true'
         run: |
           CHANGELOG=$(oasdiff breaking --format markdown /tmp/base-overlay-applied.json /tmp/pr-overlay-applied.json || true)
-          if [ -z "$CHANGELOG" ]; then
+          if [ -z "$CHANGELOG" ] || echo "$CHANGELOG" | grep -q "No changes detected"; then
             CHANGELOG="_No API changes detected after overlay._"
           fi
           {
