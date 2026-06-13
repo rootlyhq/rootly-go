@@ -40782,8 +40782,7 @@ type AlertFieldResponseDataType string
 
 // AlertGroup defines model for alert_group.
 type AlertGroup struct {
-	// Attributes This field is deprecated. Please use the `conditions` field instead, `attributes` will be removed in the future.
-	// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+	// Deprecated: Please use the `conditions` field instead, `attributes` will be removed in the future.
 	Attributes []struct {
 		// JSONPath The JSON path to the value to group by.
 		JSONPath *string `json:"json_path,omitempty"`
@@ -40835,12 +40834,12 @@ type AlertGroup struct {
 	// Description The description of the alert group
 	Description nullable.Nullable[string] `json:"description"`
 
-	// GroupByAlertTitle [DEPRECATED] Whether the alerts are grouped by title or not. This field is deprecated. Please use the `conditions` field with advanced alert grouping instead.
-	// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+	// GroupByAlertTitle Whether the alerts should be grouped by titles
+	// Deprecated: Please use the `conditions` field with advanced alert grouping instead.
 	GroupByAlertTitle *bool `json:"group_by_alert_title,omitempty"`
 
-	// GroupByAlertUrgency [DEPRECATED] Whether the alerts are grouped by urgency or not. This field is deprecated. Please use the `conditions` field with advanced alert grouping instead.
-	// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+	// GroupByAlertUrgency Whether the alerts should be grouped by urgencies
+	// Deprecated: Please use the `conditions` field with advanced alert grouping instead.
 	GroupByAlertUrgency *bool `json:"group_by_alert_urgency,omitempty"`
 
 	// Name The name of the alert group
@@ -48432,8 +48431,7 @@ type NewAlertFieldDataType string
 type NewAlertGroup struct {
 	Data struct {
 		Attributes struct {
-			// Attributes This field is deprecated. Please use the `conditions` field instead, `attributes` will be removed in the future.
-			// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+			// Deprecated: Please use the `conditions` field instead, `attributes` will be removed in the future.
 			Attributes []struct {
 				// JSONPath The JSON path to the value to group by.
 				JSONPath *string `json:"json_path,omitempty"`
@@ -48470,12 +48468,12 @@ type NewAlertGroup struct {
 			// Description The description of the alert urgency
 			Description nullable.Nullable[string] `json:"description,omitempty"`
 
-			// GroupByAlertTitle [DEPRECATED] Whether the alerts should be grouped by titles. This field is deprecated. Please use the `conditions` field with advanced alert grouping instead.
-			// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+			// GroupByAlertTitle Whether the alerts should be grouped by titles
+			// Deprecated: Please use the `conditions` field with advanced alert grouping instead.
 			GroupByAlertTitle *NewAlertGroupDataAttributesGroupByAlertTitle `json:"group_by_alert_title,omitempty"`
 
-			// GroupByAlertUrgency [DEPRECATED] Whether the alerts should be grouped by urgencies. This field is deprecated. Please use the `conditions` field with advanced alert grouping instead.
-			// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+			// GroupByAlertUrgency Whether the alerts should be grouped by urgencies
+			// Deprecated: Please use the `conditions` field with advanced alert grouping instead.
 			GroupByAlertUrgency *NewAlertGroupDataAttributesGroupByAlertUrgency `json:"group_by_alert_urgency,omitempty"`
 
 			// Name The name of the alert group
@@ -48507,10 +48505,10 @@ type NewAlertGroupDataAttributesConditionsPropertyFieldConditionType string
 // NewAlertGroupDataAttributesConditionsPropertyFieldType The type of the property field
 type NewAlertGroupDataAttributesConditionsPropertyFieldType string
 
-// NewAlertGroupDataAttributesGroupByAlertTitle [DEPRECATED] Whether the alerts should be grouped by titles. This field is deprecated. Please use the `conditions` field with advanced alert grouping instead.
+// NewAlertGroupDataAttributesGroupByAlertTitle Whether the alerts should be grouped by titles
 type NewAlertGroupDataAttributesGroupByAlertTitle int
 
-// NewAlertGroupDataAttributesGroupByAlertUrgency [DEPRECATED] Whether the alerts should be grouped by urgencies. This field is deprecated. Please use the `conditions` field with advanced alert grouping instead.
+// NewAlertGroupDataAttributesGroupByAlertUrgency Whether the alerts should be grouped by urgencies
 type NewAlertGroupDataAttributesGroupByAlertUrgency int
 
 // NewAlertGroupDataAttributesTargetsTargetType The type of the target. Please contact support if you encounter issues using `Functionality` as a target type.
@@ -52117,8 +52115,8 @@ type NewStatusPage struct {
 			// AllowSearchEngineIndex Allow search engines to include your public status page in search results
 			AllowSearchEngineIndex nullable.Nullable[bool] `json:"allow_search_engine_index,omitempty"`
 
-			// AuthenticationEnabled Enable authentication (deprecated - use authentication_method instead)
-			// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+			// AuthenticationEnabled Enable authentication
+			// Deprecated: Use authentication_method instead.
 			AuthenticationEnabled nullable.Nullable[bool] `json:"authentication_enabled,omitempty"`
 
 			// AuthenticationMethod Authentication method
@@ -55920,8 +55918,8 @@ type StatusPage struct {
 	// AllowSearchEngineIndex Allow search engines to include your public status page in search results
 	AllowSearchEngineIndex nullable.Nullable[bool] `json:"allow_search_engine_index,omitempty"`
 
-	// AuthenticationEnabled Enable authentication (deprecated - use authentication_method instead)
-	// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+	// AuthenticationEnabled Enable authentication
+	// Deprecated: Use authentication_method instead.
 	AuthenticationEnabled nullable.Nullable[bool] `json:"authentication_enabled,omitempty"`
 
 	// AuthenticationMethod Authentication method
@@ -56622,8 +56620,7 @@ type UpdateAlertFieldDataType string
 type UpdateAlertGroup struct {
 	Data struct {
 		Attributes struct {
-			// Attributes This field is deprecated. Please use the `conditions` field instead, `attributes` will be removed in the future.
-			// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+			// Deprecated: Please use the `conditions` field instead, `attributes` will be removed in the future.
 			Attributes []struct {
 				// JSONPath The JSON path to the value to group by.
 				JSONPath *string `json:"json_path,omitempty"`
@@ -56660,12 +56657,12 @@ type UpdateAlertGroup struct {
 			// Description The description of the alert group
 			Description nullable.Nullable[string] `json:"description,omitempty"`
 
-			// GroupByAlertTitle [DEPRECATED] Whether the alerts should be grouped by titles. This field is deprecated. Please use the `conditions` field with advanced alert grouping instead.
-			// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+			// GroupByAlertTitle Whether the alerts should be grouped by titles
+			// Deprecated: Please use the `conditions` field with advanced alert grouping instead.
 			GroupByAlertTitle *UpdateAlertGroupDataAttributesGroupByAlertTitle `json:"group_by_alert_title,omitempty"`
 
-			// GroupByAlertUrgency [DEPRECATED] Whether the alerts should be grouped by urgencies. This field is deprecated. Please use the `conditions` field with advanced alert grouping instead.
-			// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+			// GroupByAlertUrgency Whether the alerts should be grouped by urgencies
+			// Deprecated: Please use the `conditions` field with advanced alert grouping instead.
 			GroupByAlertUrgency *UpdateAlertGroupDataAttributesGroupByAlertUrgency `json:"group_by_alert_urgency,omitempty"`
 
 			// Name The name of the alert group
@@ -56697,10 +56694,10 @@ type UpdateAlertGroupDataAttributesConditionsPropertyFieldConditionType string
 // UpdateAlertGroupDataAttributesConditionsPropertyFieldType The type of the property field
 type UpdateAlertGroupDataAttributesConditionsPropertyFieldType string
 
-// UpdateAlertGroupDataAttributesGroupByAlertTitle [DEPRECATED] Whether the alerts should be grouped by titles. This field is deprecated. Please use the `conditions` field with advanced alert grouping instead.
+// UpdateAlertGroupDataAttributesGroupByAlertTitle Whether the alerts should be grouped by titles
 type UpdateAlertGroupDataAttributesGroupByAlertTitle int
 
-// UpdateAlertGroupDataAttributesGroupByAlertUrgency [DEPRECATED] Whether the alerts should be grouped by urgencies. This field is deprecated. Please use the `conditions` field with advanced alert grouping instead.
+// UpdateAlertGroupDataAttributesGroupByAlertUrgency Whether the alerts should be grouped by urgencies
 type UpdateAlertGroupDataAttributesGroupByAlertUrgency int
 
 // UpdateAlertGroupDataAttributesTargetsTargetType The type of the target. Please contact support if you encounter issues using `Functionality` as a target type.
@@ -61097,8 +61094,8 @@ type UpdateStatusPage struct {
 			// AllowSearchEngineIndex Allow search engines to include your public status page in search results
 			AllowSearchEngineIndex nullable.Nullable[bool] `json:"allow_search_engine_index,omitempty"`
 
-			// AuthenticationEnabled Enable authentication (deprecated - use authentication_method instead)
-			// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+			// AuthenticationEnabled Enable authentication
+			// Deprecated: Use authentication_method instead.
 			AuthenticationEnabled nullable.Nullable[bool] `json:"authentication_enabled,omitempty"`
 
 			// AuthenticationMethod Authentication method

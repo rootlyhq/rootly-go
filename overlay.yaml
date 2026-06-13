@@ -17,6 +17,66 @@ actions:
         x-go-type: ID
         type: string
 
+  - target: $.components.schemas.update_alert_group.properties.data.properties.attributes.properties.attributes
+    update:
+      description: "" # unset it
+      x-deprecated-reason: Please use the `conditions` field instead, `attributes` will be removed in the future.
+
+  - target: $.components.schemas.alert_group.properties.attributes
+    update:
+      description: "" # unset it
+      x-deprecated-reason: Please use the `conditions` field instead, `attributes` will be removed in the future.
+
+  - target: $.components.schemas.alert_group.properties.group_by_alert_title
+    update:
+      description: "Whether the alerts should be grouped by titles"
+      x-deprecated-reason: Please use the `conditions` field with advanced alert grouping instead.
+
+  - target: $.components.schemas.alert_group.properties.group_by_alert_urgency
+    update:
+      description: "Whether the alerts should be grouped by urgencies"
+      x-deprecated-reason: Please use the `conditions` field with advanced alert grouping instead.
+
+  - target: $.components.schemas.new_alert_group.properties.data.properties.attributes.properties.attributes
+    update:
+      description: "" # unset it
+      x-deprecated-reason: Please use the `conditions` field instead, `attributes` will be removed in the future.
+
+  - target: $.components.schemas.new_alert_group.properties.data.properties.attributes.properties.group_by_alert_title
+    update:
+      description: "Whether the alerts should be grouped by titles"
+      x-deprecated-reason: Please use the `conditions` field with advanced alert grouping instead.
+
+  - target: $.components.schemas.new_alert_group.properties.data.properties.attributes.properties.group_by_alert_urgency
+    update:
+      description: "Whether the alerts should be grouped by urgencies"
+      x-deprecated-reason: Please use the `conditions` field with advanced alert grouping instead.
+
+  - target: $.components.schemas.new_status_page.properties.data.properties.attributes.properties.authentication_enabled
+    update:
+      description: Enable authentication
+      x-deprecated-reason: Use authentication_method instead.
+
+  - target: $.components.schemas.status_page.properties.authentication_enabled
+    update:
+      description: Enable authentication
+      x-deprecated-reason: Use authentication_method instead.
+
+  - target: $.components.schemas.update_alert_group.properties.data.properties.attributes.properties.group_by_alert_title
+    update:
+      description: "Whether the alerts should be grouped by titles"
+      x-deprecated-reason: Please use the `conditions` field with advanced alert grouping instead.
+
+  - target: $.components.schemas.update_alert_group.properties.data.properties.attributes.properties.group_by_alert_urgency
+    update:
+      description: "Whether the alerts should be grouped by urgencies"
+      x-deprecated-reason: Please use the `conditions` field with advanced alert grouping instead.
+
+  - target: $.components.schemas.update_status_page.properties.data.properties.attributes.properties.authentication_enabled
+    update:
+      description: Enable authentication
+      x-deprecated-reason: Use authentication_method instead.
+
   # don't introduce a breaking change when deprecating `source`
   - target: $.components.schemas.new_alert.properties.data.properties.attributes.properties.source
     update:
