@@ -23,7 +23,7 @@ jobs:
 
       - name: Install oasdiff
         env:
-          OASDIFF_VERSION: 1.18.6 # renovate: datasource=github-releases depName=oasdiff/oasdiff
+          OASDIFF_VERSION: 1.19.0 # renovate: datasource=github-releases depName=oasdiff/oasdiff
         run: |
           curl -fsSL -o /tmp/oasdiff.tar.gz \
             "https://github.com/oasdiff/oasdiff/releases/download/v${OASDIFF_VERSION}/oasdiff_${OASDIFF_VERSION}_linux_amd64.tar.gz"
@@ -118,7 +118,7 @@ jobs:
 
       - name: Install oasdiff
         env:
-          OASDIFF_VERSION: 1.18.6 # renovate: datasource=github-releases depName=oasdiff/oasdiff
+          OASDIFF_VERSION: 1.19.0 # renovate: datasource=github-releases depName=oasdiff/oasdiff
         run: |
           curl -fsSL -o /tmp/oasdiff.tar.gz \
             "https://github.com/oasdiff/oasdiff/releases/download/v${OASDIFF_VERSION}/oasdiff_${OASDIFF_VERSION}_linux_amd64.tar.gz"
@@ -212,7 +212,7 @@ jobs:
 
       - name: Install oasdiff
         env:
-          OASDIFF_VERSION: 1.18.6 # renovate: datasource=github-releases depName=oasdiff/oasdiff
+          OASDIFF_VERSION: 1.19.0 # renovate: datasource=github-releases depName=oasdiff/oasdiff
         run: |
           curl -fsSL -o /tmp/oasdiff.tar.gz \
             "https://github.com/oasdiff/oasdiff/releases/download/v${OASDIFF_VERSION}/oasdiff_${OASDIFF_VERSION}_linux_amd64.tar.gz"
