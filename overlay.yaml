@@ -129,6 +129,224 @@ actions:
         - new_relic
         - gitlab
 
+  # catalog_entity_property schemas are deprecated; descriptions were only the deprecation notice
+  - target: $.components.schemas.catalog_entity_property
+    update:
+      description: ""
+      x-deprecated-reason: This type is deprecated, please use `include=fields` on catalog entities or native catalog endpoints (teams, services, functionalities, incident_types, causes, environments) to retrieve field values instead.
+
+  - target: $.components.schemas.catalog_entity_property_list
+    update:
+      description: ""
+      x-deprecated-reason: This type is deprecated, please use `include=fields` on catalog entities or native catalog endpoints (teams, services, functionalities, incident_types, causes, environments) to retrieve field values instead.
+
+  - target: $.components.schemas.catalog_entity_property_response
+    update:
+      description: ""
+      x-deprecated-reason: This type is deprecated, please use `include=fields` on catalog entities or native catalog endpoints (teams, services, functionalities, incident_types, causes, environments) to retrieve field values instead.
+
+  - target: $.components.schemas.new_catalog_entity_property
+    update:
+      description: ""
+      x-deprecated-reason: This type is deprecated, please use the `fields` attribute on catalog entities or native catalog endpoints (teams, services, functionalities, incident_types, causes, environments) to set field values instead.
+
+  - target: $.components.schemas.update_catalog_entity_property
+    update:
+      description: ""
+      x-deprecated-reason: This type is deprecated, please use the `fields` attribute on catalog entities or native catalog endpoints (teams, services, functionalities, incident_types, causes, environments) to set field values instead.
+
+  # catalog_entity_property operations are deprecated; strip **Deprecated:** prefix from descriptions
+  - target: "$.paths['/v1/catalog_entities/{catalog_entity_id}/properties'].get"
+    update:
+      description: List Catalog Entity Properties.
+      x-deprecated-reason: This endpoint is deprecated, please use `include=fields` on catalog entities or native catalog endpoints (teams, services, functionalities, incident_types, causes, environments) to retrieve field values instead.
+
+  - target: "$.paths['/v1/catalog_entities/{catalog_entity_id}/properties'].post"
+    update:
+      description: Creates a new Catalog Entity Property from provided data.
+      x-deprecated-reason: This endpoint is deprecated, please use the `fields` attribute on catalog entities or native catalog endpoints (teams, services, functionalities, incident_types, causes, environments) to set field values instead.
+
+  - target: "$.paths['/v1/catalog_entity_properties/{id}'].get"
+    update:
+      description: Retrieves a specific Catalog Entity Property by id.
+      x-deprecated-reason: This endpoint is deprecated, please use `include=fields` on catalog entities or native catalog endpoints (teams, services, functionalities, incident_types, causes, environments) to retrieve field values instead.
+
+  - target: "$.paths['/v1/catalog_entity_properties/{id}'].put"
+    update:
+      description: Update a specific Catalog Entity Property by id.
+      x-deprecated-reason: This endpoint is deprecated, please use the `fields` attribute on catalog entities or native catalog endpoints (teams, services, functionalities, incident_types, causes, environments) to set field values instead.
+
+  - target: "$.paths['/v1/catalog_entity_properties/{id}'].delete"
+    update:
+      description: Delete a specific Catalog Entity Property by id.
+      x-deprecated-reason: This endpoint is deprecated, please use the `fields` attribute on catalog entities or native catalog endpoints (teams, services, functionalities, incident_types, causes, environments) to set field values instead.
+
+  # request body schemas for deprecated catalog_entity_property operations
+  - target: "$.paths['/v1/catalog_entities/{catalog_entity_id}/properties'].post.requestBody.content['application/vnd.api+json'].schema"
+    update:
+      x-deprecated-reason: This endpoint is deprecated, please use the `fields` attribute on catalog entities or native catalog endpoints (teams, services, functionalities, incident_types, causes, environments) to set field values instead.
+
+  - target: "$.paths['/v1/catalog_entity_properties/{id}'].put.requestBody.content['application/vnd.api+json'].schema"
+    update:
+      x-deprecated-reason: This endpoint is deprecated, please use the `fields` attribute on catalog entities or native catalog endpoints (teams, services, functionalities, incident_types, causes, environments) to set field values instead.
+
+  # custom_field operations are deprecated; strip [DEPRECATED] prefix from summary and description
+  - target: "$.paths['/v1/custom_field_options/{id}'].get"
+    update:
+      summary: Retrieves a custom field option
+      description: Retrieves a specific custom field option by id
+      x-deprecated-reason: Use form field endpoints instead.
+
+  - target: "$.paths['/v1/custom_field_options/{id}'].put"
+    update:
+      summary: Update a custom field option
+      description: Update a specific custom field option by id
+      x-deprecated-reason: Use form field endpoints instead.
+
+  - target: "$.paths['/v1/custom_field_options/{id}'].delete"
+    update:
+      summary: Delete a custom field option
+      description: Delete a specific Custom Field Option by id
+      x-deprecated-reason: Use form field endpoints instead.
+
+  - target: "$.paths['/v1/custom_fields'].post"
+    update:
+      summary: Creates a Custom Field
+      description: Creates a new custom field from provided data
+      x-deprecated-reason: Use form field endpoints instead.
+
+  - target: "$.paths['/v1/custom_fields'].get"
+    update:
+      summary: List Custom Fields
+      description: List Custom fields
+      x-deprecated-reason: Use form field endpoints instead.
+
+  - target: "$.paths['/v1/custom_fields/{custom_field_id}/options'].post"
+    update:
+      summary: Creates a custom field option
+      description: Creates a new custom field option from provided data
+      x-deprecated-reason: Use form field endpoints instead.
+
+  - target: "$.paths['/v1/custom_fields/{custom_field_id}/options'].get"
+    update:
+      summary: List custom field options
+      description: List custom field options
+      x-deprecated-reason: Use form field endpoints instead.
+
+  - target: "$.paths['/v1/custom_fields/{id}'].get"
+    update:
+      summary: Retrieves a Custom Field
+      x-deprecated-reason: Use form field endpoints instead.
+
+  - target: "$.paths['/v1/custom_fields/{id}'].put"
+    update:
+      summary: Update a Custom Field
+      description: Update a specific custom field by id
+      x-deprecated-reason: Use form field endpoints instead.
+
+  - target: "$.paths['/v1/custom_fields/{id}'].delete"
+    update:
+      summary: Delete a Custom Field
+      description: Delete a specific custom field by id
+      x-deprecated-reason: Use form field endpoints instead.
+
+  # request body schemas for deprecated custom_field operations
+  - target: "$.paths['/v1/custom_field_options/{id}'].put.requestBody.content['application/vnd.api+json'].schema"
+    update:
+      x-deprecated-reason: Use form field endpoints instead.
+
+  - target: "$.paths['/v1/custom_fields'].post.requestBody.content['application/vnd.api+json'].schema"
+    update:
+      x-deprecated-reason: Use form field endpoints instead.
+
+  - target: "$.paths['/v1/custom_fields/{custom_field_id}/options'].post.requestBody.content['application/vnd.api+json'].schema"
+    update:
+      x-deprecated-reason: Use form field endpoints instead.
+
+  - target: "$.paths['/v1/custom_fields/{id}'].put.requestBody.content['application/vnd.api+json'].schema"
+    update:
+      x-deprecated-reason: Use form field endpoints instead.
+
+  # incident_custom_field_selection operations are deprecated; strip [DEPRECATED] prefix from summary and description
+  - target: "$.paths['/v1/incident_custom_field_selections/{id}'].get"
+    update:
+      summary: Retrieves an incident custom field selection
+      description: Retrieves a specific incident custom field selection by id
+      x-deprecated-reason: Use form field endpoints instead.
+
+  - target: "$.paths['/v1/incident_custom_field_selections/{id}'].put"
+    update:
+      summary: Update an incident custom field selection
+      description: Update a specific incident custom field selection by id
+      x-deprecated-reason: Use form field endpoints instead.
+
+  - target: "$.paths['/v1/incident_custom_field_selections/{id}'].delete"
+    update:
+      summary: Delete an incident custom field selection
+      description: Delete a specific incident custom field selection by id
+      x-deprecated-reason: Use form field endpoints instead.
+
+  - target: "$.paths['/v1/incidents/{incident_id}/custom_field_selections'].post"
+    update:
+      summary: Creates an incident custom field selection
+      description: Creates a new incident custom field selection from provided data
+      x-deprecated-reason: Use form field endpoints instead.
+
+  - target: "$.paths['/v1/incidents/{incident_id}/custom_field_selections'].get"
+    update:
+      summary: List incident custom field selections
+      description: List incident custom field selections
+      x-deprecated-reason: Use form field endpoints instead.
+
+  # request body schemas for deprecated incident_custom_field_selection operations
+  - target: "$.paths['/v1/incident_custom_field_selections/{id}'].put.requestBody.content['application/vnd.api+json'].schema"
+    update:
+      x-deprecated-reason: Use form field endpoints instead.
+
+  - target: "$.paths['/v1/incidents/{incident_id}/custom_field_selections'].post.requestBody.content['application/vnd.api+json'].schema"
+    update:
+      x-deprecated-reason: Use form field endpoints instead.
+
+  # workflow_custom_field_selection operations are deprecated; strip [DEPRECATED] prefix from summary and description
+  - target: "$.paths['/v1/workflow_custom_field_selections/{id}'].get"
+    update:
+      summary: Retrieves a workflow custom field selection
+      description: Retrieves a specific workflow custom field selection by id
+      x-deprecated-reason: Use form field endpoints instead.
+
+  - target: "$.paths['/v1/workflow_custom_field_selections/{id}'].put"
+    update:
+      summary: Update a workflow custom field selection
+      description: Update a specific workflow custom field selection by id
+      x-deprecated-reason: Use form field endpoints instead.
+
+  - target: "$.paths['/v1/workflow_custom_field_selections/{id}'].delete"
+    update:
+      summary: Delete a workflow custom field selection
+      description: Delete a specific workflow custom field selection by id
+      x-deprecated-reason: Use form field endpoints instead.
+
+  - target: "$.paths['/v1/workflows/{workflow_id}/custom_field_selections'].post"
+    update:
+      summary: Creates a workflow custom field selection
+      description: Creates a new workflow custom field selection from provided data
+      x-deprecated-reason: Use form field endpoints instead.
+
+  - target: "$.paths['/v1/workflows/{workflow_id}/custom_field_selections'].get"
+    update:
+      summary: List workflow custom field selections
+      description: List workflow custom field selections
+      x-deprecated-reason: Use form field endpoints instead.
+
+  # request body schemas for deprecated workflow_custom_field_selection operations
+  - target: "$.paths['/v1/workflow_custom_field_selections/{id}'].put.requestBody.content['application/vnd.api+json'].schema"
+    update:
+      x-deprecated-reason: Use form field endpoints instead.
+
+  - target: "$.paths['/v1/workflows/{workflow_id}/custom_field_selections'].post.requestBody.content['application/vnd.api+json'].schema"
+    update:
+      x-deprecated-reason: Use form field endpoints instead.
+
   - target: $.components.schemas.update_alert.properties.data.properties.attributes.properties.source
     update:
       description: The source of the alert

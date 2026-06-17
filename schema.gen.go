@@ -42332,7 +42332,7 @@ type CatalogEntityList struct {
 // CatalogEntityListDataType defines model for CatalogEntityList.Data.Type.
 type CatalogEntityListDataType string
 
-// CatalogEntityProperty **Deprecated:** This endpoint is deprecated, please use `include=fields` on catalog entities or native catalog endpoints (teams, services, functionalities, incident_types, causes, environments) to retrieve field values instead.
+// CatalogEntityProperty defines model for catalog_entity_property.
 type CatalogEntityProperty struct {
 	CatalogEntityID string                   `json:"catalog_entity_id"`
 	CatalogFieldID  string                   `json:"catalog_field_id"`
@@ -42345,7 +42345,7 @@ type CatalogEntityProperty struct {
 // CatalogEntityPropertyKey defines model for CatalogEntityProperty.Key.
 type CatalogEntityPropertyKey string
 
-// CatalogEntityPropertyList **Deprecated:** This endpoint is deprecated, please use `include=fields` on catalog entities or native catalog endpoints (teams, services, functionalities, incident_types, causes, environments) to retrieve field values instead.
+// CatalogEntityPropertyList defines model for catalog_entity_property_list.
 type CatalogEntityPropertyList struct {
 	Data []struct {
 		Attributes CatalogEntityProperty `json:"attributes"`
@@ -42362,7 +42362,7 @@ type CatalogEntityPropertyList struct {
 // CatalogEntityPropertyListDataType defines model for CatalogEntityPropertyList.Data.Type.
 type CatalogEntityPropertyListDataType string
 
-// CatalogEntityPropertyResponse **Deprecated:** This endpoint is deprecated, please use `include=fields` on catalog entities or native catalog endpoints (teams, services, functionalities, incident_types, causes, environments) to retrieve field values instead.
+// CatalogEntityPropertyResponse defines model for catalog_entity_property_response.
 type CatalogEntityPropertyResponse struct {
 	Data struct {
 		Attributes CatalogEntityProperty `json:"attributes"`
@@ -49047,7 +49047,7 @@ type NewCatalogEntity struct {
 // NewCatalogEntityDataType defines model for NewCatalogEntity.Data.Type.
 type NewCatalogEntityDataType string
 
-// NewCatalogEntityProperty **Deprecated:** This endpoint is deprecated, please use the `fields` attribute on catalog entities or native catalog endpoints (teams, services, functionalities, incident_types, causes, environments) to set field values instead.
+// NewCatalogEntityProperty defines model for new_catalog_entity_property.
 type NewCatalogEntityProperty struct {
 	Data struct {
 		// Attributes Maximum of 50 values allowed per catalog field.
@@ -57238,7 +57238,7 @@ type UpdateCatalogEntity struct {
 // UpdateCatalogEntityDataType defines model for UpdateCatalogEntity.Data.Type.
 type UpdateCatalogEntityDataType string
 
-// UpdateCatalogEntityProperty **Deprecated:** This endpoint is deprecated, please use the `fields` attribute on catalog entities or native catalog endpoints (teams, services, functionalities, incident_types, causes, environments) to set field values instead.
+// UpdateCatalogEntityProperty defines model for update_catalog_entity_property.
 type UpdateCatalogEntityProperty struct {
 	Data struct {
 		Attributes struct {
