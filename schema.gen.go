@@ -1163,156 +1163,6 @@ func (e AlertNotificationTargetType) Valid() bool {
 	}
 }
 
-// Defines values for AlertSource.
-const (
-	AlertSourceAPI             AlertSource = "api"
-	AlertSourceAlertmanager    AlertSource = "alertmanager"
-	AlertSourceAppDynamics     AlertSource = "app_dynamics"
-	AlertSourceAppOptics       AlertSource = "app_optics"
-	AlertSourceAsana           AlertSource = "asana"
-	AlertSourceAwsSns          AlertSource = "aws_sns"
-	AlertSourceAzure           AlertSource = "azure"
-	AlertSourceBugSnag         AlertSource = "bug_snag"
-	AlertSourceCatchpoint      AlertSource = "catchpoint"
-	AlertSourceCheckly         AlertSource = "checkly"
-	AlertSourceChronosphere    AlertSource = "chronosphere"
-	AlertSourceClickup         AlertSource = "clickup"
-	AlertSourceCloudWatch      AlertSource = "cloud_watch"
-	AlertSourceDatadog         AlertSource = "datadog"
-	AlertSourceDynatrace       AlertSource = "dynatrace"
-	AlertSourceEmail           AlertSource = "email"
-	AlertSourceGenericWebhook  AlertSource = "generic_webhook"
-	AlertSourceGitlab          AlertSource = "gitlab"
-	AlertSourceGoogleChat      AlertSource = "google_chat"
-	AlertSourceGoogleCloud     AlertSource = "google_cloud"
-	AlertSourceGrafana         AlertSource = "grafana"
-	AlertSourceHeartbeat       AlertSource = "heartbeat"
-	AlertSourceHoneycomb       AlertSource = "honeycomb"
-	AlertSourceJira            AlertSource = "jira"
-	AlertSourceLinear          AlertSource = "linear"
-	AlertSourceLiveCallRouting AlertSource = "live_call_routing"
-	AlertSourceManual          AlertSource = "manual"
-	AlertSourceMobile          AlertSource = "mobile"
-	AlertSourceMonteCarlo      AlertSource = "monte_carlo"
-	AlertSourceNagios          AlertSource = "nagios"
-	AlertSourceNewRelic        AlertSource = "new_relic"
-	AlertSourceNobl9           AlertSource = "nobl9"
-	AlertSourceOpsgenie        AlertSource = "opsgenie"
-	AlertSourcePagerduty       AlertSource = "pagerduty"
-	AlertSourcePagertree       AlertSource = "pagertree"
-	AlertSourcePrtg            AlertSource = "prtg"
-	AlertSourceRollbar         AlertSource = "rollbar"
-	AlertSourceRootly          AlertSource = "rootly"
-	AlertSourceSentry          AlertSource = "sentry"
-	AlertSourceServiceNow      AlertSource = "service_now"
-	AlertSourceSlack           AlertSource = "slack"
-	AlertSourceSplunk          AlertSource = "splunk"
-	AlertSourceVictorops       AlertSource = "victorops"
-	AlertSourceWeb             AlertSource = "web"
-	AlertSourceWorkflow        AlertSource = "workflow"
-	AlertSourceZendesk         AlertSource = "zendesk"
-)
-
-// Valid indicates whether the value is a known member of the AlertSource enum.
-func (e AlertSource) Valid() bool {
-	switch e {
-	case AlertSourceAPI:
-		return true
-	case AlertSourceAlertmanager:
-		return true
-	case AlertSourceAppDynamics:
-		return true
-	case AlertSourceAppOptics:
-		return true
-	case AlertSourceAsana:
-		return true
-	case AlertSourceAwsSns:
-		return true
-	case AlertSourceAzure:
-		return true
-	case AlertSourceBugSnag:
-		return true
-	case AlertSourceCatchpoint:
-		return true
-	case AlertSourceCheckly:
-		return true
-	case AlertSourceChronosphere:
-		return true
-	case AlertSourceClickup:
-		return true
-	case AlertSourceCloudWatch:
-		return true
-	case AlertSourceDatadog:
-		return true
-	case AlertSourceDynatrace:
-		return true
-	case AlertSourceEmail:
-		return true
-	case AlertSourceGenericWebhook:
-		return true
-	case AlertSourceGitlab:
-		return true
-	case AlertSourceGoogleChat:
-		return true
-	case AlertSourceGoogleCloud:
-		return true
-	case AlertSourceGrafana:
-		return true
-	case AlertSourceHeartbeat:
-		return true
-	case AlertSourceHoneycomb:
-		return true
-	case AlertSourceJira:
-		return true
-	case AlertSourceLinear:
-		return true
-	case AlertSourceLiveCallRouting:
-		return true
-	case AlertSourceManual:
-		return true
-	case AlertSourceMobile:
-		return true
-	case AlertSourceMonteCarlo:
-		return true
-	case AlertSourceNagios:
-		return true
-	case AlertSourceNewRelic:
-		return true
-	case AlertSourceNobl9:
-		return true
-	case AlertSourceOpsgenie:
-		return true
-	case AlertSourcePagerduty:
-		return true
-	case AlertSourcePagertree:
-		return true
-	case AlertSourcePrtg:
-		return true
-	case AlertSourceRollbar:
-		return true
-	case AlertSourceRootly:
-		return true
-	case AlertSourceSentry:
-		return true
-	case AlertSourceServiceNow:
-		return true
-	case AlertSourceSlack:
-		return true
-	case AlertSourceSplunk:
-		return true
-	case AlertSourceVictorops:
-		return true
-	case AlertSourceWeb:
-		return true
-	case AlertSourceWorkflow:
-		return true
-	case AlertSourceZendesk:
-		return true
-	default:
-		return false
-	}
-}
-
 // Defines values for AlertStatus.
 const (
 	AlertStatusAcknowledged AlertStatus = "acknowledged"
@@ -1691,156 +1541,6 @@ func (e AlertGroupResponseDataType) Valid() bool {
 	}
 }
 
-// Defines values for AlertListDataSource.
-const (
-	AlertListDataSourceAPI             AlertListDataSource = "api"
-	AlertListDataSourceAlertmanager    AlertListDataSource = "alertmanager"
-	AlertListDataSourceAppDynamics     AlertListDataSource = "app_dynamics"
-	AlertListDataSourceAppOptics       AlertListDataSource = "app_optics"
-	AlertListDataSourceAsana           AlertListDataSource = "asana"
-	AlertListDataSourceAwsSns          AlertListDataSource = "aws_sns"
-	AlertListDataSourceAzure           AlertListDataSource = "azure"
-	AlertListDataSourceBugSnag         AlertListDataSource = "bug_snag"
-	AlertListDataSourceCatchpoint      AlertListDataSource = "catchpoint"
-	AlertListDataSourceCheckly         AlertListDataSource = "checkly"
-	AlertListDataSourceChronosphere    AlertListDataSource = "chronosphere"
-	AlertListDataSourceClickup         AlertListDataSource = "clickup"
-	AlertListDataSourceCloudWatch      AlertListDataSource = "cloud_watch"
-	AlertListDataSourceDatadog         AlertListDataSource = "datadog"
-	AlertListDataSourceDynatrace       AlertListDataSource = "dynatrace"
-	AlertListDataSourceEmail           AlertListDataSource = "email"
-	AlertListDataSourceGenericWebhook  AlertListDataSource = "generic_webhook"
-	AlertListDataSourceGitlab          AlertListDataSource = "gitlab"
-	AlertListDataSourceGoogleChat      AlertListDataSource = "google_chat"
-	AlertListDataSourceGoogleCloud     AlertListDataSource = "google_cloud"
-	AlertListDataSourceGrafana         AlertListDataSource = "grafana"
-	AlertListDataSourceHeartbeat       AlertListDataSource = "heartbeat"
-	AlertListDataSourceHoneycomb       AlertListDataSource = "honeycomb"
-	AlertListDataSourceJira            AlertListDataSource = "jira"
-	AlertListDataSourceLinear          AlertListDataSource = "linear"
-	AlertListDataSourceLiveCallRouting AlertListDataSource = "live_call_routing"
-	AlertListDataSourceManual          AlertListDataSource = "manual"
-	AlertListDataSourceMobile          AlertListDataSource = "mobile"
-	AlertListDataSourceMonteCarlo      AlertListDataSource = "monte_carlo"
-	AlertListDataSourceNagios          AlertListDataSource = "nagios"
-	AlertListDataSourceNewRelic        AlertListDataSource = "new_relic"
-	AlertListDataSourceNobl9           AlertListDataSource = "nobl9"
-	AlertListDataSourceOpsgenie        AlertListDataSource = "opsgenie"
-	AlertListDataSourcePagerduty       AlertListDataSource = "pagerduty"
-	AlertListDataSourcePagertree       AlertListDataSource = "pagertree"
-	AlertListDataSourcePrtg            AlertListDataSource = "prtg"
-	AlertListDataSourceRollbar         AlertListDataSource = "rollbar"
-	AlertListDataSourceRootly          AlertListDataSource = "rootly"
-	AlertListDataSourceSentry          AlertListDataSource = "sentry"
-	AlertListDataSourceServiceNow      AlertListDataSource = "service_now"
-	AlertListDataSourceSlack           AlertListDataSource = "slack"
-	AlertListDataSourceSplunk          AlertListDataSource = "splunk"
-	AlertListDataSourceVictorops       AlertListDataSource = "victorops"
-	AlertListDataSourceWeb             AlertListDataSource = "web"
-	AlertListDataSourceWorkflow        AlertListDataSource = "workflow"
-	AlertListDataSourceZendesk         AlertListDataSource = "zendesk"
-)
-
-// Valid indicates whether the value is a known member of the AlertListDataSource enum.
-func (e AlertListDataSource) Valid() bool {
-	switch e {
-	case AlertListDataSourceAPI:
-		return true
-	case AlertListDataSourceAlertmanager:
-		return true
-	case AlertListDataSourceAppDynamics:
-		return true
-	case AlertListDataSourceAppOptics:
-		return true
-	case AlertListDataSourceAsana:
-		return true
-	case AlertListDataSourceAwsSns:
-		return true
-	case AlertListDataSourceAzure:
-		return true
-	case AlertListDataSourceBugSnag:
-		return true
-	case AlertListDataSourceCatchpoint:
-		return true
-	case AlertListDataSourceCheckly:
-		return true
-	case AlertListDataSourceChronosphere:
-		return true
-	case AlertListDataSourceClickup:
-		return true
-	case AlertListDataSourceCloudWatch:
-		return true
-	case AlertListDataSourceDatadog:
-		return true
-	case AlertListDataSourceDynatrace:
-		return true
-	case AlertListDataSourceEmail:
-		return true
-	case AlertListDataSourceGenericWebhook:
-		return true
-	case AlertListDataSourceGitlab:
-		return true
-	case AlertListDataSourceGoogleChat:
-		return true
-	case AlertListDataSourceGoogleCloud:
-		return true
-	case AlertListDataSourceGrafana:
-		return true
-	case AlertListDataSourceHeartbeat:
-		return true
-	case AlertListDataSourceHoneycomb:
-		return true
-	case AlertListDataSourceJira:
-		return true
-	case AlertListDataSourceLinear:
-		return true
-	case AlertListDataSourceLiveCallRouting:
-		return true
-	case AlertListDataSourceManual:
-		return true
-	case AlertListDataSourceMobile:
-		return true
-	case AlertListDataSourceMonteCarlo:
-		return true
-	case AlertListDataSourceNagios:
-		return true
-	case AlertListDataSourceNewRelic:
-		return true
-	case AlertListDataSourceNobl9:
-		return true
-	case AlertListDataSourceOpsgenie:
-		return true
-	case AlertListDataSourcePagerduty:
-		return true
-	case AlertListDataSourcePagertree:
-		return true
-	case AlertListDataSourcePrtg:
-		return true
-	case AlertListDataSourceRollbar:
-		return true
-	case AlertListDataSourceRootly:
-		return true
-	case AlertListDataSourceSentry:
-		return true
-	case AlertListDataSourceServiceNow:
-		return true
-	case AlertListDataSourceSlack:
-		return true
-	case AlertListDataSourceSplunk:
-		return true
-	case AlertListDataSourceVictorops:
-		return true
-	case AlertListDataSourceWeb:
-		return true
-	case AlertListDataSourceWorkflow:
-		return true
-	case AlertListDataSourceZendesk:
-		return true
-	default:
-		return false
-	}
-}
-
 // Defines values for AlertListDataType.
 const (
 	AlertListDataTypeAlerts AlertListDataType = "alerts"
@@ -1850,156 +1550,6 @@ const (
 func (e AlertListDataType) Valid() bool {
 	switch e {
 	case AlertListDataTypeAlerts:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for AlertResponseDataSource.
-const (
-	AlertResponseDataSourceAPI             AlertResponseDataSource = "api"
-	AlertResponseDataSourceAlertmanager    AlertResponseDataSource = "alertmanager"
-	AlertResponseDataSourceAppDynamics     AlertResponseDataSource = "app_dynamics"
-	AlertResponseDataSourceAppOptics       AlertResponseDataSource = "app_optics"
-	AlertResponseDataSourceAsana           AlertResponseDataSource = "asana"
-	AlertResponseDataSourceAwsSns          AlertResponseDataSource = "aws_sns"
-	AlertResponseDataSourceAzure           AlertResponseDataSource = "azure"
-	AlertResponseDataSourceBugSnag         AlertResponseDataSource = "bug_snag"
-	AlertResponseDataSourceCatchpoint      AlertResponseDataSource = "catchpoint"
-	AlertResponseDataSourceCheckly         AlertResponseDataSource = "checkly"
-	AlertResponseDataSourceChronosphere    AlertResponseDataSource = "chronosphere"
-	AlertResponseDataSourceClickup         AlertResponseDataSource = "clickup"
-	AlertResponseDataSourceCloudWatch      AlertResponseDataSource = "cloud_watch"
-	AlertResponseDataSourceDatadog         AlertResponseDataSource = "datadog"
-	AlertResponseDataSourceDynatrace       AlertResponseDataSource = "dynatrace"
-	AlertResponseDataSourceEmail           AlertResponseDataSource = "email"
-	AlertResponseDataSourceGenericWebhook  AlertResponseDataSource = "generic_webhook"
-	AlertResponseDataSourceGitlab          AlertResponseDataSource = "gitlab"
-	AlertResponseDataSourceGoogleChat      AlertResponseDataSource = "google_chat"
-	AlertResponseDataSourceGoogleCloud     AlertResponseDataSource = "google_cloud"
-	AlertResponseDataSourceGrafana         AlertResponseDataSource = "grafana"
-	AlertResponseDataSourceHeartbeat       AlertResponseDataSource = "heartbeat"
-	AlertResponseDataSourceHoneycomb       AlertResponseDataSource = "honeycomb"
-	AlertResponseDataSourceJira            AlertResponseDataSource = "jira"
-	AlertResponseDataSourceLinear          AlertResponseDataSource = "linear"
-	AlertResponseDataSourceLiveCallRouting AlertResponseDataSource = "live_call_routing"
-	AlertResponseDataSourceManual          AlertResponseDataSource = "manual"
-	AlertResponseDataSourceMobile          AlertResponseDataSource = "mobile"
-	AlertResponseDataSourceMonteCarlo      AlertResponseDataSource = "monte_carlo"
-	AlertResponseDataSourceNagios          AlertResponseDataSource = "nagios"
-	AlertResponseDataSourceNewRelic        AlertResponseDataSource = "new_relic"
-	AlertResponseDataSourceNobl9           AlertResponseDataSource = "nobl9"
-	AlertResponseDataSourceOpsgenie        AlertResponseDataSource = "opsgenie"
-	AlertResponseDataSourcePagerduty       AlertResponseDataSource = "pagerduty"
-	AlertResponseDataSourcePagertree       AlertResponseDataSource = "pagertree"
-	AlertResponseDataSourcePrtg            AlertResponseDataSource = "prtg"
-	AlertResponseDataSourceRollbar         AlertResponseDataSource = "rollbar"
-	AlertResponseDataSourceRootly          AlertResponseDataSource = "rootly"
-	AlertResponseDataSourceSentry          AlertResponseDataSource = "sentry"
-	AlertResponseDataSourceServiceNow      AlertResponseDataSource = "service_now"
-	AlertResponseDataSourceSlack           AlertResponseDataSource = "slack"
-	AlertResponseDataSourceSplunk          AlertResponseDataSource = "splunk"
-	AlertResponseDataSourceVictorops       AlertResponseDataSource = "victorops"
-	AlertResponseDataSourceWeb             AlertResponseDataSource = "web"
-	AlertResponseDataSourceWorkflow        AlertResponseDataSource = "workflow"
-	AlertResponseDataSourceZendesk         AlertResponseDataSource = "zendesk"
-)
-
-// Valid indicates whether the value is a known member of the AlertResponseDataSource enum.
-func (e AlertResponseDataSource) Valid() bool {
-	switch e {
-	case AlertResponseDataSourceAPI:
-		return true
-	case AlertResponseDataSourceAlertmanager:
-		return true
-	case AlertResponseDataSourceAppDynamics:
-		return true
-	case AlertResponseDataSourceAppOptics:
-		return true
-	case AlertResponseDataSourceAsana:
-		return true
-	case AlertResponseDataSourceAwsSns:
-		return true
-	case AlertResponseDataSourceAzure:
-		return true
-	case AlertResponseDataSourceBugSnag:
-		return true
-	case AlertResponseDataSourceCatchpoint:
-		return true
-	case AlertResponseDataSourceCheckly:
-		return true
-	case AlertResponseDataSourceChronosphere:
-		return true
-	case AlertResponseDataSourceClickup:
-		return true
-	case AlertResponseDataSourceCloudWatch:
-		return true
-	case AlertResponseDataSourceDatadog:
-		return true
-	case AlertResponseDataSourceDynatrace:
-		return true
-	case AlertResponseDataSourceEmail:
-		return true
-	case AlertResponseDataSourceGenericWebhook:
-		return true
-	case AlertResponseDataSourceGitlab:
-		return true
-	case AlertResponseDataSourceGoogleChat:
-		return true
-	case AlertResponseDataSourceGoogleCloud:
-		return true
-	case AlertResponseDataSourceGrafana:
-		return true
-	case AlertResponseDataSourceHeartbeat:
-		return true
-	case AlertResponseDataSourceHoneycomb:
-		return true
-	case AlertResponseDataSourceJira:
-		return true
-	case AlertResponseDataSourceLinear:
-		return true
-	case AlertResponseDataSourceLiveCallRouting:
-		return true
-	case AlertResponseDataSourceManual:
-		return true
-	case AlertResponseDataSourceMobile:
-		return true
-	case AlertResponseDataSourceMonteCarlo:
-		return true
-	case AlertResponseDataSourceNagios:
-		return true
-	case AlertResponseDataSourceNewRelic:
-		return true
-	case AlertResponseDataSourceNobl9:
-		return true
-	case AlertResponseDataSourceOpsgenie:
-		return true
-	case AlertResponseDataSourcePagerduty:
-		return true
-	case AlertResponseDataSourcePagertree:
-		return true
-	case AlertResponseDataSourcePrtg:
-		return true
-	case AlertResponseDataSourceRollbar:
-		return true
-	case AlertResponseDataSourceRootly:
-		return true
-	case AlertResponseDataSourceSentry:
-		return true
-	case AlertResponseDataSourceServiceNow:
-		return true
-	case AlertResponseDataSourceSlack:
-		return true
-	case AlertResponseDataSourceSplunk:
-		return true
-	case AlertResponseDataSourceVictorops:
-		return true
-	case AlertResponseDataSourceWeb:
-		return true
-	case AlertResponseDataSourceWorkflow:
-		return true
-	case AlertResponseDataSourceZendesk:
 		return true
 	default:
 		return false
@@ -3360,6 +2910,7 @@ const (
 	AuditItemTypeIntegrationsGoogleMeetAccount     AuditItemType = "Integrations::GoogleMeetAccount"
 	AuditItemTypeIntegrationsJiraAccount           AuditItemType = "Integrations::JiraAccount"
 	AuditItemTypeIntegrationsMicrosoftTeamsAccount AuditItemType = "Integrations::MicrosoftTeamsAccount"
+	AuditItemTypeIntegrationsNotionAccount         AuditItemType = "Integrations::NotionAccount"
 	AuditItemTypeIntegrationsOpsgenieAccount       AuditItemType = "Integrations::OpsgenieAccount"
 	AuditItemTypeIntegrationsPagerdutyAccount      AuditItemType = "Integrations::PagerdutyAccount"
 	AuditItemTypeIntegrationsServiceNowAccount     AuditItemType = "Integrations::ServiceNowAccount"
@@ -3471,6 +3022,8 @@ func (e AuditItemType) Valid() bool {
 	case AuditItemTypeIntegrationsJiraAccount:
 		return true
 	case AuditItemTypeIntegrationsMicrosoftTeamsAccount:
+		return true
+	case AuditItemTypeIntegrationsNotionAccount:
 		return true
 	case AuditItemTypeIntegrationsOpsgenieAccount:
 		return true
@@ -3677,6 +3230,48 @@ func (e AutoAssignRoleVictorOpsTaskParamsTaskType) Valid() bool {
 	}
 }
 
+// Defines values for BulkDestroyCatalogEntities1ManagedBy.
+const (
+	BulkDestroyCatalogEntities1ManagedByAPI         BulkDestroyCatalogEntities1ManagedBy = "api"
+	BulkDestroyCatalogEntities1ManagedByBackstage   BulkDestroyCatalogEntities1ManagedBy = "backstage"
+	BulkDestroyCatalogEntities1ManagedByCatalogSync BulkDestroyCatalogEntities1ManagedBy = "catalog_sync"
+	BulkDestroyCatalogEntities1ManagedByPulumi      BulkDestroyCatalogEntities1ManagedBy = "pulumi"
+	BulkDestroyCatalogEntities1ManagedByTerraform   BulkDestroyCatalogEntities1ManagedBy = "terraform"
+)
+
+// Valid indicates whether the value is a known member of the BulkDestroyCatalogEntities1ManagedBy enum.
+func (e BulkDestroyCatalogEntities1ManagedBy) Valid() bool {
+	switch e {
+	case BulkDestroyCatalogEntities1ManagedByAPI:
+		return true
+	case BulkDestroyCatalogEntities1ManagedByBackstage:
+		return true
+	case BulkDestroyCatalogEntities1ManagedByCatalogSync:
+		return true
+	case BulkDestroyCatalogEntities1ManagedByPulumi:
+		return true
+	case BulkDestroyCatalogEntities1ManagedByTerraform:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for BulkUpsertCatalogEntitiesResponseDataType.
+const (
+	BulkUpsertCatalogEntitiesResponseDataTypeCatalogEntities BulkUpsertCatalogEntitiesResponseDataType = "catalog_entities"
+)
+
+// Valid indicates whether the value is a known member of the BulkUpsertCatalogEntitiesResponseDataType enum.
+func (e BulkUpsertCatalogEntitiesResponseDataType) Valid() bool {
+	switch e {
+	case BulkUpsertCatalogEntitiesResponseDataTypeCatalogEntities:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for CallPeopleTaskParamsTaskType.
 const (
 	CallPeopleTaskParamsTaskTypeCallPeople CallPeopleTaskParamsTaskType = "call_people"
@@ -3737,6 +3332,39 @@ func (e CatalogIcon) Valid() bool {
 	case CatalogIconUserGroup:
 		return true
 	case CatalogIconUsers:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for CatalogManagedBy.
+const (
+	CatalogManagedByAPI         CatalogManagedBy = "api"
+	CatalogManagedByAdminWeb    CatalogManagedBy = "admin_web"
+	CatalogManagedByBackstage   CatalogManagedBy = "backstage"
+	CatalogManagedByCatalogSync CatalogManagedBy = "catalog_sync"
+	CatalogManagedByPulumi      CatalogManagedBy = "pulumi"
+	CatalogManagedByTerraform   CatalogManagedBy = "terraform"
+	CatalogManagedByWeb         CatalogManagedBy = "web"
+)
+
+// Valid indicates whether the value is a known member of the CatalogManagedBy enum.
+func (e CatalogManagedBy) Valid() bool {
+	switch e {
+	case CatalogManagedByAPI:
+		return true
+	case CatalogManagedByAdminWeb:
+		return true
+	case CatalogManagedByBackstage:
+		return true
+	case CatalogManagedByCatalogSync:
+		return true
+	case CatalogManagedByPulumi:
+		return true
+	case CatalogManagedByTerraform:
+		return true
+	case CatalogManagedByWeb:
 		return true
 	default:
 		return false
@@ -3854,6 +3482,39 @@ const (
 func (e CatalogChecklistTemplateResponseDataType) Valid() bool {
 	switch e {
 	case CatalogChecklistTemplateResponseDataTypeCatalogChecklistTemplates:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for CatalogEntityManagedBy.
+const (
+	CatalogEntityManagedByAPI         CatalogEntityManagedBy = "api"
+	CatalogEntityManagedByAdminWeb    CatalogEntityManagedBy = "admin_web"
+	CatalogEntityManagedByBackstage   CatalogEntityManagedBy = "backstage"
+	CatalogEntityManagedByCatalogSync CatalogEntityManagedBy = "catalog_sync"
+	CatalogEntityManagedByPulumi      CatalogEntityManagedBy = "pulumi"
+	CatalogEntityManagedByTerraform   CatalogEntityManagedBy = "terraform"
+	CatalogEntityManagedByWeb         CatalogEntityManagedBy = "web"
+)
+
+// Valid indicates whether the value is a known member of the CatalogEntityManagedBy enum.
+func (e CatalogEntityManagedBy) Valid() bool {
+	switch e {
+	case CatalogEntityManagedByAPI:
+		return true
+	case CatalogEntityManagedByAdminWeb:
+		return true
+	case CatalogEntityManagedByBackstage:
+		return true
+	case CatalogEntityManagedByCatalogSync:
+		return true
+	case CatalogEntityManagedByPulumi:
+		return true
+	case CatalogEntityManagedByTerraform:
+		return true
+	case CatalogEntityManagedByWeb:
 		return true
 	default:
 		return false
@@ -4109,6 +3770,39 @@ func (e CatalogFieldKind) Valid() bool {
 	}
 }
 
+// Defines values for CatalogFieldManagedBy.
+const (
+	CatalogFieldManagedByAPI         CatalogFieldManagedBy = "api"
+	CatalogFieldManagedByAdminWeb    CatalogFieldManagedBy = "admin_web"
+	CatalogFieldManagedByBackstage   CatalogFieldManagedBy = "backstage"
+	CatalogFieldManagedByCatalogSync CatalogFieldManagedBy = "catalog_sync"
+	CatalogFieldManagedByPulumi      CatalogFieldManagedBy = "pulumi"
+	CatalogFieldManagedByTerraform   CatalogFieldManagedBy = "terraform"
+	CatalogFieldManagedByWeb         CatalogFieldManagedBy = "web"
+)
+
+// Valid indicates whether the value is a known member of the CatalogFieldManagedBy enum.
+func (e CatalogFieldManagedBy) Valid() bool {
+	switch e {
+	case CatalogFieldManagedByAPI:
+		return true
+	case CatalogFieldManagedByAdminWeb:
+		return true
+	case CatalogFieldManagedByBackstage:
+		return true
+	case CatalogFieldManagedByCatalogSync:
+		return true
+	case CatalogFieldManagedByPulumi:
+		return true
+	case CatalogFieldManagedByTerraform:
+		return true
+	case CatalogFieldManagedByWeb:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for CatalogFieldListDataType.
 const (
 	CatalogFieldListDataTypeCatalogProperties CatalogFieldListDataType = "catalog_properties"
@@ -4199,6 +3893,39 @@ func (e CatalogPropertyKind) Valid() bool {
 	case CatalogPropertyKindReference:
 		return true
 	case CatalogPropertyKindText:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for CatalogPropertyManagedBy.
+const (
+	CatalogPropertyManagedByAPI         CatalogPropertyManagedBy = "api"
+	CatalogPropertyManagedByAdminWeb    CatalogPropertyManagedBy = "admin_web"
+	CatalogPropertyManagedByBackstage   CatalogPropertyManagedBy = "backstage"
+	CatalogPropertyManagedByCatalogSync CatalogPropertyManagedBy = "catalog_sync"
+	CatalogPropertyManagedByPulumi      CatalogPropertyManagedBy = "pulumi"
+	CatalogPropertyManagedByTerraform   CatalogPropertyManagedBy = "terraform"
+	CatalogPropertyManagedByWeb         CatalogPropertyManagedBy = "web"
+)
+
+// Valid indicates whether the value is a known member of the CatalogPropertyManagedBy enum.
+func (e CatalogPropertyManagedBy) Valid() bool {
+	switch e {
+	case CatalogPropertyManagedByAPI:
+		return true
+	case CatalogPropertyManagedByAdminWeb:
+		return true
+	case CatalogPropertyManagedByBackstage:
+		return true
+	case CatalogPropertyManagedByCatalogSync:
+		return true
+	case CatalogPropertyManagedByPulumi:
+		return true
+	case CatalogPropertyManagedByTerraform:
+		return true
+	case CatalogPropertyManagedByWeb:
 		return true
 	default:
 		return false
@@ -24437,6 +24164,51 @@ func (e PulseTriggerParamsTriggers) Valid() bool {
 	}
 }
 
+// Defines values for ReceiptReason.
+const (
+	ReceiptReasonDeduplicated    ReceiptReason = "deduplicated"
+	ReceiptReasonNoRouteMatched  ReceiptReason = "no_route_matched"
+	ReceiptReasonSuppressed      ReceiptReason = "suppressed"
+	ReceiptReasonValidationError ReceiptReason = "validation_error"
+)
+
+// Valid indicates whether the value is a known member of the ReceiptReason enum.
+func (e ReceiptReason) Valid() bool {
+	switch e {
+	case ReceiptReasonDeduplicated:
+		return true
+	case ReceiptReasonNoRouteMatched:
+		return true
+	case ReceiptReasonSuppressed:
+		return true
+	case ReceiptReasonValidationError:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for ReceiptState.
+const (
+	ReceiptStateDone    ReceiptState = "done"
+	ReceiptStateFailed  ReceiptState = "failed"
+	ReceiptStatePending ReceiptState = "pending"
+)
+
+// Valid indicates whether the value is a known member of the ReceiptState enum.
+func (e ReceiptState) Valid() bool {
+	switch e {
+	case ReceiptStateDone:
+		return true
+	case ReceiptStateFailed:
+		return true
+	case ReceiptStatePending:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for RedisClientTaskParamsTaskType.
 const (
 	RedisClientTaskParamsTaskTypeRedisClient RedisClientTaskParamsTaskType = "redis_client"
@@ -26627,6 +26399,30 @@ const (
 func (e SnoozeAlertDataType) Valid() bool {
 	switch e {
 	case SnoozeAlertDataTypeAlerts:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for StartSessionRequestPlatform.
+const (
+	StartSessionRequestPlatformGoogleMeet     StartSessionRequestPlatform = "google_meet"
+	StartSessionRequestPlatformMicrosoftTeams StartSessionRequestPlatform = "microsoft_teams"
+	StartSessionRequestPlatformWebex          StartSessionRequestPlatform = "webex"
+	StartSessionRequestPlatformZoom           StartSessionRequestPlatform = "zoom"
+)
+
+// Valid indicates whether the value is a known member of the StartSessionRequestPlatform enum.
+func (e StartSessionRequestPlatform) Valid() bool {
+	switch e {
+	case StartSessionRequestPlatformGoogleMeet:
+		return true
+	case StartSessionRequestPlatformMicrosoftTeams:
+		return true
+	case StartSessionRequestPlatformWebex:
+		return true
+	case StartSessionRequestPlatformZoom:
 		return true
 	default:
 		return false
@@ -38359,6 +38155,7 @@ const (
 	ListAlertsParamsIncludeHeartbeat          ListAlertsParamsInclude = "heartbeat"
 	ListAlertsParamsIncludeIncidents          ListAlertsParamsInclude = "incidents"
 	ListAlertsParamsIncludeLiveCallRouter     ListAlertsParamsInclude = "live_call_router"
+	ListAlertsParamsIncludeNotifiedUsers      ListAlertsParamsInclude = "notified_users"
 	ListAlertsParamsIncludeResponders         ListAlertsParamsInclude = "responders"
 	ListAlertsParamsIncludeServices           ListAlertsParamsInclude = "services"
 )
@@ -38396,6 +38193,8 @@ func (e ListAlertsParamsInclude) Valid() bool {
 		return true
 	case ListAlertsParamsIncludeLiveCallRouter:
 		return true
+	case ListAlertsParamsIncludeNotifiedUsers:
+		return true
 	case ListAlertsParamsIncludeResponders:
 		return true
 	case ListAlertsParamsIncludeServices:
@@ -38422,6 +38221,7 @@ const (
 	GetAlertParamsIncludeHeartbeat          GetAlertParamsInclude = "heartbeat"
 	GetAlertParamsIncludeIncidents          GetAlertParamsInclude = "incidents"
 	GetAlertParamsIncludeLiveCallRouter     GetAlertParamsInclude = "live_call_router"
+	GetAlertParamsIncludeNotifiedUsers      GetAlertParamsInclude = "notified_users"
 	GetAlertParamsIncludeResponders         GetAlertParamsInclude = "responders"
 	GetAlertParamsIncludeServices           GetAlertParamsInclude = "services"
 )
@@ -38458,6 +38258,8 @@ func (e GetAlertParamsInclude) Valid() bool {
 	case GetAlertParamsIncludeIncidents:
 		return true
 	case GetAlertParamsIncludeLiveCallRouter:
+		return true
+	case GetAlertParamsIncludeNotifiedUsers:
 		return true
 	case GetAlertParamsIncludeResponders:
 		return true
@@ -39418,6 +39220,7 @@ const (
 	ListIncidentAlertsParamsIncludeHeartbeat          ListIncidentAlertsParamsInclude = "heartbeat"
 	ListIncidentAlertsParamsIncludeIncidents          ListIncidentAlertsParamsInclude = "incidents"
 	ListIncidentAlertsParamsIncludeLiveCallRouter     ListIncidentAlertsParamsInclude = "live_call_router"
+	ListIncidentAlertsParamsIncludeNotifiedUsers      ListIncidentAlertsParamsInclude = "notified_users"
 	ListIncidentAlertsParamsIncludeResponders         ListIncidentAlertsParamsInclude = "responders"
 	ListIncidentAlertsParamsIncludeServices           ListIncidentAlertsParamsInclude = "services"
 )
@@ -39454,6 +39257,8 @@ func (e ListIncidentAlertsParamsInclude) Valid() bool {
 	case ListIncidentAlertsParamsIncludeIncidents:
 		return true
 	case ListIncidentAlertsParamsIncludeLiveCallRouter:
+		return true
+	case ListIncidentAlertsParamsIncludeNotifiedUsers:
 		return true
 	case ListIncidentAlertsParamsIncludeResponders:
 		return true
@@ -40521,17 +40326,39 @@ type AddToTimelineTaskParamsTaskType string
 
 // Alert defines model for alert.
 type Alert struct {
-	// AlertFieldValuesAttributes Custom alert field values to create with the alert
-	AlertFieldValuesAttributes []nullable.Nullable[struct {
+	// AlertFieldValues Custom alert field values associated with the alert. Only present when the enable_alert_fields feature flag is enabled for the team.
+	AlertFieldValues nullable.Nullable[[]struct {
 		// AlertFieldID ID of the custom alert field
 		AlertFieldID string `json:"alert_field_id"`
 
+		// AlertID ID of the alert
+		AlertID string `json:"alert_id"`
+
+		// CreatedAt Date of creation
+		CreatedAt string `json:"created_at"`
+
+		// ID Unique ID of the alert field value
+		ID string `json:"id"`
+
+		// UpdatedAt Date of last update
+		UpdatedAt string `json:"updated_at"`
+
 		// Value Value for the alert field
 		Value string `json:"value"`
-	}] `json:"alert_field_values_attributes,omitempty"`
+	}] `json:"alert_field_values,omitempty"`
+	AlertUrgency nullable.Nullable[AlertUrgency] `json:"alert_urgency,omitempty"`
 
 	// AlertUrgencyID The ID of the alert urgency
 	AlertUrgencyID nullable.Nullable[string] `json:"alert_urgency_id,omitempty"`
+
+	// AlertingTargets Alerting targets associated with the alert. Only present when advanced routing is enabled for the team.
+	AlertingTargets nullable.Nullable[[]struct {
+		// ID ID of the alerting target
+		ID string `json:"id"`
+
+		// Type Type of the alerting target (e.g. team, user, escalation_policy, service, functionality, slack_channel)
+		Type string `json:"type"`
+	}] `json:"alerting_targets,omitempty"`
 
 	// CreatedAt Date of creation
 	CreatedAt string `json:"created_at"`
@@ -40604,7 +40431,7 @@ type Alert struct {
 	ShortID string `json:"short_id"`
 
 	// Source The source of the alert
-	Source AlertSource `json:"source"`
+	Source string `json:"source"`
 
 	// StartedAt When the alert started
 	StartedAt nullable.Nullable[time.Time] `json:"started_at,omitempty"`
@@ -40617,6 +40444,9 @@ type Alert struct {
 
 	// UpdatedAt Date of last update
 	UpdatedAt string `json:"updated_at"`
+
+	// URL The Rootly dashboard URL for the alert
+	URL *string `json:"url,omitempty"`
 }
 
 // AlertLabelsValue0 defines model for .
@@ -40638,9 +40468,6 @@ type AlertNoise string
 
 // AlertNotificationTargetType Only available for organizations with Rootly On-Call enabled. Can be one of Group, Service, EscalationPolicy, Functionality, User.
 type AlertNotificationTargetType string
-
-// AlertSource The source of the alert
-type AlertSource string
 
 // AlertStatus The status of the alert
 type AlertStatus string
@@ -40913,16 +40740,13 @@ type AlertList struct {
 		ID string `json:"id"`
 
 		// Source The source of the alert
-		Source *AlertListDataSource `json:"source,omitempty"`
-		Type   AlertListDataType    `json:"type"`
+		Source *string           `json:"source,omitempty"`
+		Type   AlertListDataType `json:"type"`
 	} `json:"data"`
 	Included []JsonapiIncludedResource `json:"included,omitempty"`
 	Links    Links                     `json:"links"`
 	Meta     Meta                      `json:"meta"`
 }
-
-// AlertListDataSource The source of the alert
-type AlertListDataSource string
 
 // AlertListDataType defines model for AlertList.Data.Type.
 type AlertListDataType string
@@ -40936,14 +40760,11 @@ type AlertResponse struct {
 		ID string `json:"id"`
 
 		// Source The source of the alert
-		Source *AlertResponseDataSource `json:"source,omitempty"`
-		Type   AlertResponseDataType    `json:"type"`
+		Source *string               `json:"source,omitempty"`
+		Type   AlertResponseDataType `json:"type"`
 	} `json:"data"`
 	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
-
-// AlertResponseDataSource The source of the alert
-type AlertResponseDataSource string
 
 // AlertResponseDataType defines model for AlertResponse.Data.Type.
 type AlertResponseDataType string
@@ -41335,11 +41156,20 @@ type AlertTriggerParamsTriggers string
 
 // AlertUrgency defines model for alert_urgency.
 type AlertUrgency struct {
+	// Color The color associated with this urgency level
+	Color nullable.Nullable[string] `json:"color,omitempty"`
+
 	// CreatedAt Date of creation
 	CreatedAt string `json:"created_at"`
 
+	// DeletedAt Date of deletion
+	DeletedAt nullable.Nullable[string] `json:"deleted_at,omitempty"`
+
 	// Description The description of the alert urgency
 	Description string `json:"description"`
+
+	// ID Unique ID of the alert urgency
+	ID *string `json:"id,omitempty"`
 
 	// Name The name of the alert urgency
 	Name string `json:"name"`
@@ -41347,8 +41177,14 @@ type AlertUrgency struct {
 	// Position Position of the alert urgency
 	Position int `json:"position"`
 
+	// TeamID The ID of the team this urgency belongs to
+	TeamID *int `json:"team_id,omitempty"`
+
 	// UpdatedAt Date of last update
 	UpdatedAt string `json:"updated_at"`
+
+	// Urgency The urgency level
+	Urgency nullable.Nullable[string] `json:"urgency,omitempty"`
 }
 
 // AlertUrgencyList defines model for alert_urgency_list.
@@ -41448,6 +41284,9 @@ type AlertsSource struct {
 
 	// Email The email generated for email alert sources
 	Email nullable.Nullable[string] `json:"email,omitempty"`
+
+	// Enabled Whether the alert source is enabled. Disabled sources do not create alerts from incoming events.
+	Enabled *bool `json:"enabled,omitempty"`
 
 	// Name The name of the alert source
 	Name string `json:"name"`
@@ -41826,6 +41665,9 @@ type Audit struct {
 	// ID ID of audit
 	ID nullable.Nullable[int] `json:"id,omitempty"`
 
+	// IPAddress IP address of the client that performed the action
+	IPAddress nullable.Nullable[string] `json:"ip_address,omitempty"`
+
 	// ItemID ID of the affected object
 	ItemID nullable.Nullable[string] `json:"item_id,omitempty"`
 
@@ -41840,6 +41682,15 @@ type Audit struct {
 
 	// ObjectChanges The changes that occurred on the object
 	ObjectChanges nullable.Nullable[map[string]interface{}] `json:"object_changes,omitempty"`
+
+	// RequestID Unique request ID (UUID) for the HTTP request that triggered the action
+	RequestID nullable.Nullable[string] `json:"request_id,omitempty"`
+
+	// SessionID SHA-256 fingerprint of the web session for correlating multiple actions within the same browser session
+	SessionID nullable.Nullable[string] `json:"session_id,omitempty"`
+
+	// UserAgent User-Agent header of the client that performed the action
+	UserAgent nullable.Nullable[string] `json:"user_agent,omitempty"`
 
 	// UserID The ID of who took action on the object. Together with whodunnit_type can be used to find the user
 	UserID nullable.Nullable[int] `json:"user_id,omitempty"`
@@ -42023,6 +41874,94 @@ type AutoAssignRoleVictorOpsTaskParams struct {
 // AutoAssignRoleVictorOpsTaskParamsTaskType defines model for AutoAssignRoleVictorOpsTaskParams.TaskType.
 type AutoAssignRoleVictorOpsTaskParamsTaskType string
 
+// BulkDestroyCatalogEntities Two mutually exclusive modes. Pass exactly one of: external_ids (delete specific entities) or managed_by (prune all managed entities not in keep set).
+type BulkDestroyCatalogEntities struct {
+	union json.RawMessage
+}
+
+// BulkDestroyCatalogEntities0 defines model for .
+type BulkDestroyCatalogEntities0 struct {
+	// ExternalIDs Array of external_ids to delete. Max 100 per request.
+	ExternalIDs []string `json:"external_ids"`
+}
+
+// BulkDestroyCatalogEntities1 defines model for .
+type BulkDestroyCatalogEntities1 struct {
+	// KeepExternalIDs Entities with these external_ids are preserved.
+	KeepExternalIDs []string `json:"keep_external_ids,omitempty"`
+
+	// ManagedBy Delete all entities with this managed_by value (web/admin_web not allowed).
+	ManagedBy BulkDestroyCatalogEntities1ManagedBy `json:"managed_by"`
+}
+
+// BulkDestroyCatalogEntities1ManagedBy Delete all entities with this managed_by value (web/admin_web not allowed).
+type BulkDestroyCatalogEntities1ManagedBy string
+
+// BulkDestroyCatalogEntitiesResponse defines model for bulk_destroy_catalog_entities_response.
+type BulkDestroyCatalogEntitiesResponse struct {
+	Data *struct {
+		// DeletedExternalIDs External IDs that were successfully deleted
+		DeletedExternalIDs []string `json:"deleted_external_ids,omitempty"`
+
+		// FailedExternalIDs External IDs where destroy failed (e.g. protected/synced entities)
+		FailedExternalIDs []string `json:"failed_external_ids,omitempty"`
+
+		// NotFoundExternalIDs External IDs that were not found (only present in external_ids mode)
+		NotFoundExternalIDs []string `json:"not_found_external_ids,omitempty"`
+	} `json:"data,omitempty"`
+}
+
+// BulkUpsertCatalogEntities defines model for bulk_upsert_catalog_entities.
+type BulkUpsertCatalogEntities struct {
+	// Entities Array of catalog entities to upsert. Each must have an external_id. Max 100 per request. external_ids must be unique within a batch.
+	Entities []struct {
+		BackstageID nullable.Nullable[string] `json:"backstage_id,omitempty"`
+		Description nullable.Nullable[string] `json:"description,omitempty"`
+
+		// ExternalID External identifier used as the upsert key. Must be unique within the catalog.
+		ExternalID string `json:"external_id"`
+
+		// Fields Property values for this entity. Only mentioned fields are written; unmentioned fields are preserved.
+		Fields []struct {
+			// CatalogFieldID UUID, slug, or external_id of the catalog field (required if catalog_property_id is absent)
+			CatalogFieldID *string `json:"catalog_field_id,omitempty"`
+
+			// CatalogPropertyID Alias for catalog_field_id (required if catalog_field_id is absent)
+			CatalogPropertyID *string `json:"catalog_property_id,omitempty"`
+
+			// Value The value for this field
+			Value string `json:"value"`
+		} `json:"fields,omitempty"`
+
+		// Name Required for new entities. Optional for updates (managed-fields: omitted attributes are preserved).
+		Name *string `json:"name,omitempty"`
+	} `json:"entities"`
+}
+
+// BulkUpsertCatalogEntitiesError defines model for bulk_upsert_catalog_entities_error.
+type BulkUpsertCatalogEntitiesError struct {
+	Errors []struct {
+		Errors     []string `json:"errors"`
+		ExternalID string   `json:"external_id"`
+
+		// Index Position of the failed entity in the batch
+		Index int `json:"index"`
+	} `json:"errors"`
+}
+
+// BulkUpsertCatalogEntitiesResponse defines model for bulk_upsert_catalog_entities_response.
+type BulkUpsertCatalogEntitiesResponse struct {
+	Data []struct {
+		Attributes *CatalogEntity                             `json:"attributes,omitempty"`
+		ID         *string                                    `json:"id,omitempty"`
+		Type       *BulkUpsertCatalogEntitiesResponseDataType `json:"type,omitempty"`
+	} `json:"data,omitempty"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+}
+
+// BulkUpsertCatalogEntitiesResponseDataType defines model for BulkUpsertCatalogEntitiesResponse.Data.Type.
+type BulkUpsertCatalogEntitiesResponseDataType string
+
 // CallPeopleTaskParams defines model for call_people_task_params.
 type CallPeopleTaskParams struct {
 	// Content The message to be read by text-to-voice
@@ -42055,8 +41994,14 @@ type CancelIncidentDataType string
 type Catalog struct {
 	CreatedAt   string                    `json:"created_at"`
 	Description nullable.Nullable[string] `json:"description,omitempty"`
-	Icon        CatalogIcon               `json:"icon"`
-	Name        string                    `json:"name"`
+
+	// ExternalID An external identifier for this catalog. Must be unique within the team.
+	ExternalID nullable.Nullable[string] `json:"external_id,omitempty"`
+	Icon       CatalogIcon               `json:"icon"`
+
+	// ManagedBy Which source manages this resource (read-only).
+	ManagedBy *CatalogManagedBy `json:"managed_by,omitempty"`
+	Name      string            `json:"name"`
 
 	// Position Default position of the catalog when displayed in a list.
 	Position  nullable.Nullable[int] `json:"position"`
@@ -42065,6 +42010,9 @@ type Catalog struct {
 
 // CatalogIcon defines model for Catalog.Icon.
 type CatalogIcon string
+
+// CatalogManagedBy Which source manages this resource (read-only).
+type CatalogManagedBy string
 
 // CatalogChecklistTemplate defines model for catalog_checklist_template.
 type CatalogChecklistTemplate struct {
@@ -42164,7 +42112,13 @@ type CatalogEntity struct {
 	BackstageID nullable.Nullable[string] `json:"backstage_id,omitempty"`
 	CreatedAt   string                    `json:"created_at"`
 	Description nullable.Nullable[string] `json:"description,omitempty"`
-	Name        string                    `json:"name"`
+
+	// ExternalID An external identifier for this catalog entity. Must be unique within the catalog.
+	ExternalID nullable.Nullable[string] `json:"external_id,omitempty"`
+
+	// ManagedBy Which source manages this resource (read-only).
+	ManagedBy *CatalogEntityManagedBy `json:"managed_by,omitempty"`
+	Name      string                  `json:"name"`
 
 	// Position Default position of the item when displayed in a list.
 	Position nullable.Nullable[int] `json:"position"`
@@ -42179,6 +42133,9 @@ type CatalogEntity struct {
 	} `json:"properties,omitempty"`
 	UpdatedAt string `json:"updated_at"`
 }
+
+// CatalogEntityManagedBy Which source manages this resource (read-only).
+type CatalogEntityManagedBy string
 
 // CatalogEntityChecklist defines model for catalog_entity_checklist.
 type CatalogEntityChecklist struct {
@@ -42405,10 +42362,16 @@ type CatalogField struct {
 	// CatalogType The type of catalog the field belongs to.
 	CatalogType *CatalogFieldCatalogType `json:"catalog_type,omitempty"`
 	CreatedAt   string                   `json:"created_at"`
-	Kind        CatalogFieldKind         `json:"kind"`
+
+	// ExternalID An external identifier for this catalog field. Must be unique within the scope.
+	ExternalID nullable.Nullable[string] `json:"external_id,omitempty"`
+	Kind       CatalogFieldKind          `json:"kind"`
 
 	// KindCatalogID Restricts values to items of specified catalog.
 	KindCatalogID nullable.Nullable[string] `json:"kind_catalog_id,omitempty"`
+
+	// ManagedBy Which source manages this resource (read-only).
+	ManagedBy *CatalogFieldManagedBy `json:"managed_by,omitempty"`
 
 	// Multiple Whether the attribute accepts multiple values.
 	Multiple bool   `json:"multiple"`
@@ -42428,6 +42391,9 @@ type CatalogFieldCatalogType string
 
 // CatalogFieldKind defines model for CatalogField.Kind.
 type CatalogFieldKind string
+
+// CatalogFieldManagedBy Which source manages this resource (read-only).
+type CatalogFieldManagedBy string
 
 // CatalogFieldList defines model for catalog_field_list.
 type CatalogFieldList struct {
@@ -42485,10 +42451,16 @@ type CatalogProperty struct {
 	// CatalogType The type of catalog the property belongs to.
 	CatalogType *CatalogPropertyCatalogType `json:"catalog_type,omitempty"`
 	CreatedAt   string                      `json:"created_at"`
-	Kind        CatalogPropertyKind         `json:"kind"`
+
+	// ExternalID An external identifier for this catalog property. Must be unique within the scope.
+	ExternalID nullable.Nullable[string] `json:"external_id,omitempty"`
+	Kind       CatalogPropertyKind       `json:"kind"`
 
 	// KindCatalogID Restricts values to items of specified catalog.
 	KindCatalogID nullable.Nullable[string] `json:"kind_catalog_id,omitempty"`
+
+	// ManagedBy Which source manages this resource (read-only).
+	ManagedBy *CatalogPropertyManagedBy `json:"managed_by,omitempty"`
 
 	// Multiple Whether the attribute accepts multiple values.
 	Multiple bool   `json:"multiple"`
@@ -42508,6 +42480,9 @@ type CatalogPropertyCatalogType string
 
 // CatalogPropertyKind defines model for CatalogProperty.Kind.
 type CatalogPropertyKind string
+
+// CatalogPropertyManagedBy Which source manages this resource (read-only).
+type CatalogPropertyManagedBy string
 
 // CatalogPropertyList defines model for catalog_property_list.
 type CatalogPropertyList struct {
@@ -46206,6 +46181,9 @@ type Heartbeat struct {
 	// NotificationTargetType The type of the notification target. Please contact support if you encounter issues using `Functionality` as a target type.
 	NotificationTargetType HeartbeatNotificationTargetType `json:"notification_target_type"`
 
+	// OwnerGroupIDs List of team IDs that own this heartbeat
+	OwnerGroupIDs []string `json:"owner_group_ids,omitempty"`
+
 	// PingURL URL to receive heartbeat pings.
 	PingURL nullable.Nullable[string] `json:"ping_url,omitempty"`
 
@@ -48210,14 +48188,14 @@ type MeetingRecording struct {
 	// CreatedAt When the recording session was created
 	CreatedAt time.Time `json:"created_at"`
 
+	// CreatedBy Source that created the recording (e.g. desktop_sdk, recall_bot)
+	CreatedBy nullable.Nullable[string] `json:"created_by,omitempty"`
+
 	// DurationMinutes Recording duration in minutes (null if not started)
 	DurationMinutes nullable.Nullable[float32] `json:"duration_minutes,omitempty"`
 
 	// EndedAt When the recording ended
 	EndedAt nullable.Nullable[time.Time] `json:"ended_at,omitempty"`
-
-	// HasVideo Whether a video recording file is attached
-	HasVideo *bool `json:"has_video,omitempty"`
 
 	// Platform Meeting platform
 	Platform MeetingRecordingPlatform `json:"platform"`
@@ -48234,11 +48212,17 @@ type MeetingRecording struct {
 	// Status Current recording lifecycle status
 	Status MeetingRecordingStatus `json:"status"`
 
+	// Title Human-readable label for the recording session
+	Title nullable.Nullable[string] `json:"title,omitempty"`
+
 	// TranscriptSummary AI-generated summary of the meeting transcript (null if no transcript or not yet analyzed)
 	TranscriptSummary nullable.Nullable[string] `json:"transcript_summary,omitempty"`
 
 	// UpdatedAt When the recording session was last updated
 	UpdatedAt time.Time `json:"updated_at"`
+
+	// VideoURL Signed URL to stream/download the video recording
+	VideoURL nullable.Nullable[string] `json:"video_url,omitempty"`
 
 	// WordCount Total word count across all transcript segments
 	WordCount *int `json:"word_count,omitempty"`
@@ -48749,6 +48733,9 @@ type NewAlertsSource struct {
 			// DeduplicationKeyRegexp Regular expression to extract key from value found at key path.
 			DeduplicationKeyRegexp nullable.Nullable[string] `json:"deduplication_key_regexp,omitempty"`
 
+			// Enabled Whether the alert source is enabled. Disabled sources do not create alerts from incoming events.
+			Enabled *bool `json:"enabled,omitempty"`
+
 			// Name The name of the alert source
 			Name string `json:"name"`
 
@@ -48939,9 +48926,12 @@ type NewAuthorizationDataType string
 type NewCatalog struct {
 	Data struct {
 		Attributes struct {
-			Description nullable.Nullable[string]     `json:"description,omitempty"`
-			Icon        *NewCatalogDataAttributesIcon `json:"icon,omitempty"`
-			Name        string                        `json:"name"`
+			Description nullable.Nullable[string] `json:"description,omitempty"`
+
+			// ExternalID An external identifier for this catalog. Must be unique within the team.
+			ExternalID nullable.Nullable[string]     `json:"external_id,omitempty"`
+			Icon       *NewCatalogDataAttributesIcon `json:"icon,omitempty"`
+			Name       string                        `json:"name"`
 
 			// Position Default position of the catalog when displayed in a list.
 			Position nullable.Nullable[int] `json:"position,omitempty"`
@@ -49038,7 +49028,10 @@ type NewCatalogEntity struct {
 			// BackstageID The Backstage entity ID this catalog entity is linked to.
 			BackstageID nullable.Nullable[string] `json:"backstage_id,omitempty"`
 			Description nullable.Nullable[string] `json:"description,omitempty"`
-			Name        string                    `json:"name"`
+
+			// ExternalID An external identifier for this catalog entity. Must be unique within the catalog.
+			ExternalID nullable.Nullable[string] `json:"external_id,omitempty"`
+			Name       string                    `json:"name"`
 
 			// Position Default position of the item when displayed in a list.
 			Position nullable.Nullable[int] `json:"position,omitempty"`
@@ -49087,7 +49080,10 @@ type NewCatalogField struct {
 		Attributes struct {
 			// CatalogType The type of catalog the field belongs to.
 			CatalogType *NewCatalogFieldDataAttributesCatalogType `json:"catalog_type,omitempty"`
-			Kind        NewCatalogFieldDataAttributesKind         `json:"kind"`
+
+			// ExternalID An external identifier for this catalog field. Must be unique within the scope.
+			ExternalID nullable.Nullable[string]         `json:"external_id,omitempty"`
+			Kind       NewCatalogFieldDataAttributesKind `json:"kind"`
 
 			// KindCatalogID Restricts values to items of specified catalog.
 			KindCatalogID nullable.Nullable[string] `json:"kind_catalog_id,omitempty"`
@@ -49121,7 +49117,10 @@ type NewCatalogProperty struct {
 		Attributes struct {
 			// CatalogType The type of catalog the property belongs to.
 			CatalogType *NewCatalogPropertyDataAttributesCatalogType `json:"catalog_type,omitempty"`
-			Kind        NewCatalogPropertyDataAttributesKind         `json:"kind"`
+
+			// ExternalID An external identifier for this catalog property. Must be unique within the scope.
+			ExternalID nullable.Nullable[string]            `json:"external_id,omitempty"`
+			Kind       NewCatalogPropertyDataAttributesKind `json:"kind"`
 
 			// KindCatalogID Restricts values to items of specified catalog.
 			KindCatalogID nullable.Nullable[string] `json:"kind_catalog_id,omitempty"`
@@ -50318,6 +50317,9 @@ type NewHeartbeat struct {
 
 			// NotificationTargetType The type of the notification target. Please contact support if you encounter issues using `Functionality` as a target type.
 			NotificationTargetType NewHeartbeatDataAttributesNotificationTargetType `json:"notification_target_type"`
+
+			// OwnerGroupIDs List of team IDs that own this heartbeat
+			OwnerGroupIDs []string `json:"owner_group_ids,omitempty"`
 		} `json:"attributes"`
 		Type NewHeartbeatDataType `json:"type"`
 	} `json:"data"`
@@ -50485,6 +50487,48 @@ type NewIncidentActionItem struct {
 			// DueDate The due date of the action item
 			DueDate nullable.Nullable[string] `json:"due_date,omitempty"`
 
+			// FormFieldSelections Custom field values to set on the action item. Ignored unless custom fields for action items are enabled for the organization.
+			FormFieldSelections nullable.Nullable[[]struct {
+				// UnderscoreDestroy Set to true to remove the field's value from the action item
+				UnderscoreDestroy nullable.Nullable[bool] `json:"_destroy,omitempty"`
+
+				// FormFieldID ID of the custom field
+				FormFieldID string `json:"form_field_id"`
+
+				// ID ID of an existing selection. Required when updating or removing a field's existing value.
+				ID *string `json:"id,omitempty"`
+
+				// SelectedCatalogEntityIDs IDs of the selected catalog entities
+				SelectedCatalogEntityIDs []string `json:"selected_catalog_entity_ids,omitempty"`
+
+				// SelectedCauseIDs IDs of the selected causes
+				SelectedCauseIDs []string `json:"selected_cause_ids,omitempty"`
+
+				// SelectedEnvironmentIDs IDs of the selected environments
+				SelectedEnvironmentIDs []string `json:"selected_environment_ids,omitempty"`
+
+				// SelectedFunctionalityIDs IDs of the selected functionalities
+				SelectedFunctionalityIDs []string `json:"selected_functionality_ids,omitempty"`
+
+				// SelectedGroupIDs IDs of the selected teams
+				SelectedGroupIDs []string `json:"selected_group_ids,omitempty"`
+
+				// SelectedIncidentTypeIDs IDs of the selected incident types
+				SelectedIncidentTypeIDs []string `json:"selected_incident_type_ids,omitempty"`
+
+				// SelectedOptionIDs IDs of the selected custom field options
+				SelectedOptionIDs []string `json:"selected_option_ids,omitempty"`
+
+				// SelectedServiceIDs IDs of the selected services
+				SelectedServiceIDs []string `json:"selected_service_ids,omitempty"`
+
+				// SelectedUserIDs IDs of the selected users
+				SelectedUserIDs []int `json:"selected_user_ids,omitempty"`
+
+				// Value Value for text, textarea, rich text, date, datetime, number, checkbox, or tag fields
+				Value *NewIncidentActionItem_Data_Attributes_FormFieldSelections_Value `json:"value,omitempty"`
+			}] `json:"form_field_selections,omitempty"`
+
 			// JiraIssueID The Jira issue ID.
 			JiraIssueID nullable.Nullable[string] `json:"jira_issue_id,omitempty"`
 
@@ -50508,6 +50552,17 @@ type NewIncidentActionItem struct {
 		} `json:"attributes"`
 		Type NewIncidentActionItemDataType `json:"type"`
 	} `json:"data"`
+}
+
+// NewIncidentActionItemDataAttributesFormFieldSelectionsValue0 defines model for .
+type NewIncidentActionItemDataAttributesFormFieldSelectionsValue0 = string
+
+// NewIncidentActionItemDataAttributesFormFieldSelectionsValue1 defines model for .
+type NewIncidentActionItemDataAttributesFormFieldSelectionsValue1 = []string
+
+// NewIncidentActionItem_Data_Attributes_FormFieldSelections_Value Value for text, textarea, rich text, date, datetime, number, checkbox, or tag fields
+type NewIncidentActionItem_Data_Attributes_FormFieldSelections_Value struct {
+	union json.RawMessage
 }
 
 // NewIncidentActionItemDataAttributesKind The kind of the action item
@@ -53975,6 +54030,27 @@ type PulseTriggerParamsTriggerType string
 // PulseTriggerParamsTriggers Actions that trigger the workflow
 type PulseTriggerParamsTriggers string
 
+// Receipt defines model for receipt.
+type Receipt struct {
+	// Reason Reason a receipt failed. Present when state is failed.
+	Reason *ReceiptReason `json:"reason,omitempty"`
+
+	// ResourceID ID of the referenced resource (present when set).
+	ResourceID *string `json:"resource_id,omitempty"`
+
+	// ResourceType Type of the referenced resource (present when set).
+	ResourceType *string `json:"resource_type,omitempty"`
+
+	// State Delivery state of the receipt.
+	State ReceiptState `json:"state"`
+}
+
+// ReceiptReason Reason a receipt failed. Present when state is failed.
+type ReceiptReason string
+
+// ReceiptState Delivery state of the receipt.
+type ReceiptState string
+
 // RedisClientTaskParams defines model for redis_client_task_params.
 type RedisClientTaskParams struct {
 	Commands               string  `json:"commands"`
@@ -55899,6 +55975,32 @@ type SnoozeAlert struct {
 // SnoozeAlertDataType defines model for SnoozeAlert.Data.Type.
 type SnoozeAlertDataType string
 
+// StartSessionRequest defines model for start_session_request.
+type StartSessionRequest struct {
+	// Platform Meeting platform
+	Platform *StartSessionRequestPlatform `json:"platform,omitempty"`
+
+	// Title Human-readable label for the recording session
+	Title nullable.Nullable[string] `json:"title,omitempty"`
+}
+
+// StartSessionRequestPlatform Meeting platform
+type StartSessionRequestPlatform string
+
+// StartSessionResponse defines model for start_session_response.
+type StartSessionResponse struct {
+	Data *struct {
+		// MeetingRecordingID Meeting recording UUID
+		MeetingRecordingID openapi_types.UUID `json:"meeting_recording_id"`
+
+		// SessionID Meeting recording UUID
+		SessionID openapi_types.UUID `json:"session_id"`
+
+		// StreamToken Token for the desktop client to stream audio
+		StreamToken string `json:"stream_token"`
+	} `json:"data,omitempty"`
+}
+
 // Status defines model for status.
 type Status struct {
 	Color       string                    `json:"color"`
@@ -56949,6 +57051,9 @@ type UpdateAlertsSource struct {
 			// DeduplicationKeyRegexp Regular expression to extract key from value found at key path.
 			DeduplicationKeyRegexp nullable.Nullable[string] `json:"deduplication_key_regexp,omitempty"`
 
+			// Enabled Whether the alert source is enabled. Disabled sources do not create alerts from incoming events.
+			Enabled *bool `json:"enabled,omitempty"`
+
 			// Name The name of the alert source
 			Name *string `json:"name,omitempty"`
 
@@ -57153,9 +57258,12 @@ type UpdateAuthorizationDataType string
 type UpdateCatalog struct {
 	Data struct {
 		Attributes struct {
-			Description nullable.Nullable[string]        `json:"description,omitempty"`
-			Icon        *UpdateCatalogDataAttributesIcon `json:"icon,omitempty"`
-			Name        *string                          `json:"name,omitempty"`
+			Description nullable.Nullable[string] `json:"description,omitempty"`
+
+			// ExternalID An external identifier for this catalog. Must be unique within the team.
+			ExternalID nullable.Nullable[string]        `json:"external_id,omitempty"`
+			Icon       *UpdateCatalogDataAttributesIcon `json:"icon,omitempty"`
+			Name       *string                          `json:"name,omitempty"`
 
 			// Position Default position of the catalog when displayed in a list.
 			Position nullable.Nullable[int] `json:"position,omitempty"`
@@ -57237,7 +57345,10 @@ type UpdateCatalogEntity struct {
 			// BackstageID The Backstage entity ID this catalog entity is linked to.
 			BackstageID nullable.Nullable[string] `json:"backstage_id,omitempty"`
 			Description nullable.Nullable[string] `json:"description,omitempty"`
-			Name        *string                   `json:"name,omitempty"`
+
+			// ExternalID An external identifier for this catalog entity. Must be unique within the catalog.
+			ExternalID nullable.Nullable[string] `json:"external_id,omitempty"`
+			Name       *string                   `json:"name,omitempty"`
 
 			// Position Default position of the item when displayed in a list.
 			Position nullable.Nullable[int] `json:"position,omitempty"`
@@ -57283,7 +57394,10 @@ type UpdateCatalogField struct {
 		Attributes struct {
 			// CatalogType The type of catalog the field belongs to.
 			CatalogType *UpdateCatalogFieldDataAttributesCatalogType `json:"catalog_type,omitempty"`
-			Kind        *UpdateCatalogFieldDataAttributesKind        `json:"kind,omitempty"`
+
+			// ExternalID An external identifier for this catalog field. Must be unique within the scope.
+			ExternalID nullable.Nullable[string]             `json:"external_id,omitempty"`
+			Kind       *UpdateCatalogFieldDataAttributesKind `json:"kind,omitempty"`
 
 			// KindCatalogID Restricts values to items of specified catalog.
 			KindCatalogID nullable.Nullable[string] `json:"kind_catalog_id,omitempty"`
@@ -57314,7 +57428,10 @@ type UpdateCatalogProperty struct {
 		Attributes struct {
 			// CatalogType The type of catalog the property belongs to.
 			CatalogType *UpdateCatalogPropertyDataAttributesCatalogType `json:"catalog_type,omitempty"`
-			Kind        *UpdateCatalogPropertyDataAttributesKind        `json:"kind,omitempty"`
+
+			// ExternalID An external identifier for this catalog property. Must be unique within the scope.
+			ExternalID nullable.Nullable[string]                `json:"external_id,omitempty"`
+			Kind       *UpdateCatalogPropertyDataAttributesKind `json:"kind,omitempty"`
 
 			// KindCatalogID Restricts values to items of specified catalog.
 			KindCatalogID nullable.Nullable[string] `json:"kind_catalog_id,omitempty"`
@@ -58775,6 +58892,9 @@ type UpdateHeartbeat struct {
 
 			// NotificationTargetType The type of the notification target. Please contact support if you encounter issues using `Functionality` as a target type.
 			NotificationTargetType *UpdateHeartbeatDataAttributesNotificationTargetType `json:"notification_target_type,omitempty"`
+
+			// OwnerGroupIDs List of team IDs that own this heartbeat
+			OwnerGroupIDs []string `json:"owner_group_ids,omitempty"`
 		} `json:"attributes"`
 		Type UpdateHeartbeatDataType `json:"type"`
 	} `json:"data"`
@@ -58942,6 +59062,48 @@ type UpdateIncidentActionItem struct {
 			// DueDate The due date of the action item
 			DueDate nullable.Nullable[string] `json:"due_date,omitempty"`
 
+			// FormFieldSelections Custom field values to set on the action item. Ignored unless custom fields for action items are enabled for the organization.
+			FormFieldSelections nullable.Nullable[[]struct {
+				// UnderscoreDestroy Set to true to remove the field's value from the action item
+				UnderscoreDestroy nullable.Nullable[bool] `json:"_destroy,omitempty"`
+
+				// FormFieldID ID of the custom field
+				FormFieldID string `json:"form_field_id"`
+
+				// ID ID of an existing selection. Required when updating or removing a field's existing value.
+				ID *string `json:"id,omitempty"`
+
+				// SelectedCatalogEntityIDs IDs of the selected catalog entities
+				SelectedCatalogEntityIDs []string `json:"selected_catalog_entity_ids,omitempty"`
+
+				// SelectedCauseIDs IDs of the selected causes
+				SelectedCauseIDs []string `json:"selected_cause_ids,omitempty"`
+
+				// SelectedEnvironmentIDs IDs of the selected environments
+				SelectedEnvironmentIDs []string `json:"selected_environment_ids,omitempty"`
+
+				// SelectedFunctionalityIDs IDs of the selected functionalities
+				SelectedFunctionalityIDs []string `json:"selected_functionality_ids,omitempty"`
+
+				// SelectedGroupIDs IDs of the selected teams
+				SelectedGroupIDs []string `json:"selected_group_ids,omitempty"`
+
+				// SelectedIncidentTypeIDs IDs of the selected incident types
+				SelectedIncidentTypeIDs []string `json:"selected_incident_type_ids,omitempty"`
+
+				// SelectedOptionIDs IDs of the selected custom field options
+				SelectedOptionIDs []string `json:"selected_option_ids,omitempty"`
+
+				// SelectedServiceIDs IDs of the selected services
+				SelectedServiceIDs []string `json:"selected_service_ids,omitempty"`
+
+				// SelectedUserIDs IDs of the selected users
+				SelectedUserIDs []int `json:"selected_user_ids,omitempty"`
+
+				// Value Value for text, textarea, rich text, date, datetime, number, checkbox, or tag fields
+				Value *UpdateIncidentActionItem_Data_Attributes_FormFieldSelections_Value `json:"value,omitempty"`
+			}] `json:"form_field_selections,omitempty"`
+
 			// JiraIssueID The Jira issue ID.
 			JiraIssueID nullable.Nullable[string] `json:"jira_issue_id,omitempty"`
 
@@ -58965,6 +59127,17 @@ type UpdateIncidentActionItem struct {
 		} `json:"attributes"`
 		Type UpdateIncidentActionItemDataType `json:"type"`
 	} `json:"data"`
+}
+
+// UpdateIncidentActionItemDataAttributesFormFieldSelectionsValue0 defines model for .
+type UpdateIncidentActionItemDataAttributesFormFieldSelectionsValue0 = string
+
+// UpdateIncidentActionItemDataAttributesFormFieldSelectionsValue1 defines model for .
+type UpdateIncidentActionItemDataAttributesFormFieldSelectionsValue1 = []string
+
+// UpdateIncidentActionItem_Data_Attributes_FormFieldSelections_Value Value for text, textarea, rich text, date, datetime, number, checkbox, or tag fields
+type UpdateIncidentActionItem_Data_Attributes_FormFieldSelections_Value struct {
+	union json.RawMessage
 }
 
 // UpdateIncidentActionItemDataAttributesKind The kind of the action item
@@ -62661,6 +62834,7 @@ type ListAlertsSourcesParams struct {
 	FilterStatuses    *string `form:"filter[statuses],omitempty" json:"filter[statuses],omitempty"`
 	FilterSourceTypes *string `form:"filter[source_types],omitempty" json:"filter[source_types],omitempty"`
 	FilterName        *string `form:"filter[name],omitempty" json:"filter[name],omitempty"`
+	FilterEnabled     *bool   `form:"filter[enabled],omitempty" json:"filter[enabled],omitempty"`
 	Sort              *string `form:"sort,omitempty" json:"sort,omitempty"`
 }
 
@@ -62933,6 +63107,8 @@ type ListCatalogsParams struct {
 	FilterSearch       *string                 `form:"filter[search],omitempty" json:"filter[search],omitempty"`
 	FilterSlug         *string                 `form:"filter[slug],omitempty" json:"filter[slug],omitempty"`
 	FilterName         *string                 `form:"filter[name],omitempty" json:"filter[name],omitempty"`
+	FilterExternalID   *string                 `form:"filter[external_id],omitempty" json:"filter[external_id],omitempty"`
+	FilterManagedBy    *string                 `form:"filter[managed_by],omitempty" json:"filter[managed_by],omitempty"`
 	FilterCreatedAtGt  *string                 `form:"filter[created_at][gt],omitempty" json:"filter[created_at][gt],omitempty"`
 	FilterCreatedAtGte *string                 `form:"filter[created_at][gte],omitempty" json:"filter[created_at][gte],omitempty"`
 	FilterCreatedAtLt  *string                 `form:"filter[created_at][lt],omitempty" json:"filter[created_at][lt],omitempty"`
@@ -62958,6 +63134,8 @@ type ListCatalogEntitiesParams struct {
 	FilterSlug         *string                        `form:"filter[slug],omitempty" json:"filter[slug],omitempty"`
 	FilterName         *string                        `form:"filter[name],omitempty" json:"filter[name],omitempty"`
 	FilterBackstageID  *string                        `form:"filter[backstage_id],omitempty" json:"filter[backstage_id],omitempty"`
+	FilterExternalID   *string                        `form:"filter[external_id],omitempty" json:"filter[external_id],omitempty"`
+	FilterManagedBy    *string                        `form:"filter[managed_by],omitempty" json:"filter[managed_by],omitempty"`
 	FilterCreatedAtGt  *string                        `form:"filter[created_at][gt],omitempty" json:"filter[created_at][gt],omitempty"`
 	FilterCreatedAtGte *string                        `form:"filter[created_at][gte],omitempty" json:"filter[created_at][gte],omitempty"`
 	FilterCreatedAtLt  *string                        `form:"filter[created_at][lt],omitempty" json:"filter[created_at][lt],omitempty"`
@@ -62969,6 +63147,16 @@ type ListCatalogEntitiesParamsInclude string
 
 // ListCatalogEntitiesParamsSort defines parameters for ListCatalogEntities.
 type ListCatalogEntitiesParamsSort string
+
+// BulkDeleteCatalogEntities422ApplicationVndAPIPlusJSONResponseBody defines parameters for BulkDeleteCatalogEntities.
+type BulkDeleteCatalogEntities422ApplicationVndAPIPlusJSONResponseBody struct {
+	union json.RawMessage
+}
+
+// BulkUpsertCatalogEntities422ApplicationVndAPIPlusJSONResponseBody defines parameters for BulkUpsertCatalogEntities.
+type BulkUpsertCatalogEntities422ApplicationVndAPIPlusJSONResponseBody struct {
+	union json.RawMessage
+}
 
 // ListCausesParams defines parameters for ListCauses.
 type ListCausesParams struct {
@@ -63878,6 +64066,18 @@ type GeneratePhoneNumberLiveCallRouterParamsCountryCode string
 // GeneratePhoneNumberLiveCallRouterParamsPhoneType defines parameters for GeneratePhoneNumberLiveCallRouter.
 type GeneratePhoneNumberLiveCallRouterParamsPhoneType string
 
+// ListAllMeetingRecordingsParams defines parameters for ListAllMeetingRecordings.
+type ListAllMeetingRecordingsParams struct {
+	// Status Filter by status
+	Status *string `form:"status,omitempty" json:"status,omitempty"`
+
+	// Platform Filter by platform
+	Platform *string `form:"platform,omitempty" json:"platform,omitempty"`
+
+	// CreatedBy Filter by creator type
+	CreatedBy *string `form:"created_by,omitempty" json:"created_by,omitempty"`
+}
+
 // ListOnCallPayReportsParams defines parameters for ListOnCallPayReports.
 type ListOnCallPayReportsParams struct {
 	Include            *string `form:"include,omitempty" json:"include,omitempty"`
@@ -64712,6 +64912,12 @@ type CreateCatalogApplicationVndAPIPlusJSONRequestBody = NewCatalog
 // CreateCatalogEntityApplicationVndAPIPlusJSONRequestBody defines body for CreateCatalogEntity for application/vnd.api+json ContentType.
 type CreateCatalogEntityApplicationVndAPIPlusJSONRequestBody = NewCatalogEntity
 
+// BulkDeleteCatalogEntitiesApplicationVndAPIPlusJSONRequestBody defines body for BulkDeleteCatalogEntities for application/vnd.api+json ContentType.
+type BulkDeleteCatalogEntitiesApplicationVndAPIPlusJSONRequestBody = BulkDestroyCatalogEntities
+
+// BulkUpsertCatalogEntitiesApplicationVndAPIPlusJSONRequestBody defines body for BulkUpsertCatalogEntities for application/vnd.api+json ContentType.
+type BulkUpsertCatalogEntitiesApplicationVndAPIPlusJSONRequestBody = BulkUpsertCatalogEntities
+
 // CreateCatalogPropertyApplicationVndAPIPlusJSONRequestBody defines body for CreateCatalogProperty for application/vnd.api+json ContentType.
 type CreateCatalogPropertyApplicationVndAPIPlusJSONRequestBody = NewCatalogField
 
@@ -65032,6 +65238,9 @@ type CreateLiveCallRouterApplicationVndAPIPlusJSONRequestBody = NewLiveCallRoute
 
 // UpdateLiveCallRouterApplicationVndAPIPlusJSONRequestBody defines body for UpdateLiveCallRouter for application/vnd.api+json ContentType.
 type UpdateLiveCallRouterApplicationVndAPIPlusJSONRequestBody = UpdateLiveCallRouter
+
+// StartRecordingSessionApplicationVndAPIPlusJSONRequestBody defines body for StartRecordingSession for application/vnd.api+json ContentType.
+type StartRecordingSessionApplicationVndAPIPlusJSONRequestBody = StartSessionRequest
 
 // UpdateUserNotificationRuleApplicationVndAPIPlusJSONRequestBody defines body for UpdateUserNotificationRule for application/vnd.api+json ContentType.
 type UpdateUserNotificationRuleApplicationVndAPIPlusJSONRequestBody = UpdateUserNotificationRule
@@ -65820,6 +66029,68 @@ func (t *AutoAssignRolePagerdutyTaskParams) UnmarshalJSON(b []byte) error {
 		}
 	}
 
+	return err
+}
+
+// AsBulkDestroyCatalogEntities0 returns the union data inside the BulkDestroyCatalogEntities as a BulkDestroyCatalogEntities0
+func (t BulkDestroyCatalogEntities) AsBulkDestroyCatalogEntities0() (BulkDestroyCatalogEntities0, error) {
+	var body BulkDestroyCatalogEntities0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromBulkDestroyCatalogEntities0 overwrites any union data inside the BulkDestroyCatalogEntities as the provided BulkDestroyCatalogEntities0
+func (t *BulkDestroyCatalogEntities) FromBulkDestroyCatalogEntities0(v BulkDestroyCatalogEntities0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeBulkDestroyCatalogEntities0 performs a merge with any union data inside the BulkDestroyCatalogEntities, using the provided BulkDestroyCatalogEntities0
+func (t *BulkDestroyCatalogEntities) MergeBulkDestroyCatalogEntities0(v BulkDestroyCatalogEntities0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsBulkDestroyCatalogEntities1 returns the union data inside the BulkDestroyCatalogEntities as a BulkDestroyCatalogEntities1
+func (t BulkDestroyCatalogEntities) AsBulkDestroyCatalogEntities1() (BulkDestroyCatalogEntities1, error) {
+	var body BulkDestroyCatalogEntities1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromBulkDestroyCatalogEntities1 overwrites any union data inside the BulkDestroyCatalogEntities as the provided BulkDestroyCatalogEntities1
+func (t *BulkDestroyCatalogEntities) FromBulkDestroyCatalogEntities1(v BulkDestroyCatalogEntities1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeBulkDestroyCatalogEntities1 performs a merge with any union data inside the BulkDestroyCatalogEntities, using the provided BulkDestroyCatalogEntities1
+func (t *BulkDestroyCatalogEntities) MergeBulkDestroyCatalogEntities1(v BulkDestroyCatalogEntities1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t BulkDestroyCatalogEntities) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *BulkDestroyCatalogEntities) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
 	return err
 }
 
@@ -67453,6 +67724,68 @@ func (t NewEscalationPolicyPath_Data_Attributes_Rules_Item) MarshalJSON() ([]byt
 }
 
 func (t *NewEscalationPolicyPath_Data_Attributes_Rules_Item) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsNewIncidentActionItemDataAttributesFormFieldSelectionsValue0 returns the union data inside the NewIncidentActionItem_Data_Attributes_FormFieldSelections_Value as a NewIncidentActionItemDataAttributesFormFieldSelectionsValue0
+func (t NewIncidentActionItem_Data_Attributes_FormFieldSelections_Value) AsNewIncidentActionItemDataAttributesFormFieldSelectionsValue0() (NewIncidentActionItemDataAttributesFormFieldSelectionsValue0, error) {
+	var body NewIncidentActionItemDataAttributesFormFieldSelectionsValue0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromNewIncidentActionItemDataAttributesFormFieldSelectionsValue0 overwrites any union data inside the NewIncidentActionItem_Data_Attributes_FormFieldSelections_Value as the provided NewIncidentActionItemDataAttributesFormFieldSelectionsValue0
+func (t *NewIncidentActionItem_Data_Attributes_FormFieldSelections_Value) FromNewIncidentActionItemDataAttributesFormFieldSelectionsValue0(v NewIncidentActionItemDataAttributesFormFieldSelectionsValue0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeNewIncidentActionItemDataAttributesFormFieldSelectionsValue0 performs a merge with any union data inside the NewIncidentActionItem_Data_Attributes_FormFieldSelections_Value, using the provided NewIncidentActionItemDataAttributesFormFieldSelectionsValue0
+func (t *NewIncidentActionItem_Data_Attributes_FormFieldSelections_Value) MergeNewIncidentActionItemDataAttributesFormFieldSelectionsValue0(v NewIncidentActionItemDataAttributesFormFieldSelectionsValue0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsNewIncidentActionItemDataAttributesFormFieldSelectionsValue1 returns the union data inside the NewIncidentActionItem_Data_Attributes_FormFieldSelections_Value as a NewIncidentActionItemDataAttributesFormFieldSelectionsValue1
+func (t NewIncidentActionItem_Data_Attributes_FormFieldSelections_Value) AsNewIncidentActionItemDataAttributesFormFieldSelectionsValue1() (NewIncidentActionItemDataAttributesFormFieldSelectionsValue1, error) {
+	var body NewIncidentActionItemDataAttributesFormFieldSelectionsValue1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromNewIncidentActionItemDataAttributesFormFieldSelectionsValue1 overwrites any union data inside the NewIncidentActionItem_Data_Attributes_FormFieldSelections_Value as the provided NewIncidentActionItemDataAttributesFormFieldSelectionsValue1
+func (t *NewIncidentActionItem_Data_Attributes_FormFieldSelections_Value) FromNewIncidentActionItemDataAttributesFormFieldSelectionsValue1(v NewIncidentActionItemDataAttributesFormFieldSelectionsValue1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeNewIncidentActionItemDataAttributesFormFieldSelectionsValue1 performs a merge with any union data inside the NewIncidentActionItem_Data_Attributes_FormFieldSelections_Value, using the provided NewIncidentActionItemDataAttributesFormFieldSelectionsValue1
+func (t *NewIncidentActionItem_Data_Attributes_FormFieldSelections_Value) MergeNewIncidentActionItemDataAttributesFormFieldSelectionsValue1(v NewIncidentActionItemDataAttributesFormFieldSelectionsValue1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t NewIncidentActionItem_Data_Attributes_FormFieldSelections_Value) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *NewIncidentActionItem_Data_Attributes_FormFieldSelections_Value) UnmarshalJSON(b []byte) error {
 	err := t.union.UnmarshalJSON(b)
 	return err
 }
@@ -73308,6 +73641,68 @@ func (t UpdateEscalationPolicyPath_Data_Attributes_Rules_Item) MarshalJSON() ([]
 }
 
 func (t *UpdateEscalationPolicyPath_Data_Attributes_Rules_Item) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsUpdateIncidentActionItemDataAttributesFormFieldSelectionsValue0 returns the union data inside the UpdateIncidentActionItem_Data_Attributes_FormFieldSelections_Value as a UpdateIncidentActionItemDataAttributesFormFieldSelectionsValue0
+func (t UpdateIncidentActionItem_Data_Attributes_FormFieldSelections_Value) AsUpdateIncidentActionItemDataAttributesFormFieldSelectionsValue0() (UpdateIncidentActionItemDataAttributesFormFieldSelectionsValue0, error) {
+	var body UpdateIncidentActionItemDataAttributesFormFieldSelectionsValue0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateIncidentActionItemDataAttributesFormFieldSelectionsValue0 overwrites any union data inside the UpdateIncidentActionItem_Data_Attributes_FormFieldSelections_Value as the provided UpdateIncidentActionItemDataAttributesFormFieldSelectionsValue0
+func (t *UpdateIncidentActionItem_Data_Attributes_FormFieldSelections_Value) FromUpdateIncidentActionItemDataAttributesFormFieldSelectionsValue0(v UpdateIncidentActionItemDataAttributesFormFieldSelectionsValue0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateIncidentActionItemDataAttributesFormFieldSelectionsValue0 performs a merge with any union data inside the UpdateIncidentActionItem_Data_Attributes_FormFieldSelections_Value, using the provided UpdateIncidentActionItemDataAttributesFormFieldSelectionsValue0
+func (t *UpdateIncidentActionItem_Data_Attributes_FormFieldSelections_Value) MergeUpdateIncidentActionItemDataAttributesFormFieldSelectionsValue0(v UpdateIncidentActionItemDataAttributesFormFieldSelectionsValue0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateIncidentActionItemDataAttributesFormFieldSelectionsValue1 returns the union data inside the UpdateIncidentActionItem_Data_Attributes_FormFieldSelections_Value as a UpdateIncidentActionItemDataAttributesFormFieldSelectionsValue1
+func (t UpdateIncidentActionItem_Data_Attributes_FormFieldSelections_Value) AsUpdateIncidentActionItemDataAttributesFormFieldSelectionsValue1() (UpdateIncidentActionItemDataAttributesFormFieldSelectionsValue1, error) {
+	var body UpdateIncidentActionItemDataAttributesFormFieldSelectionsValue1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateIncidentActionItemDataAttributesFormFieldSelectionsValue1 overwrites any union data inside the UpdateIncidentActionItem_Data_Attributes_FormFieldSelections_Value as the provided UpdateIncidentActionItemDataAttributesFormFieldSelectionsValue1
+func (t *UpdateIncidentActionItem_Data_Attributes_FormFieldSelections_Value) FromUpdateIncidentActionItemDataAttributesFormFieldSelectionsValue1(v UpdateIncidentActionItemDataAttributesFormFieldSelectionsValue1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateIncidentActionItemDataAttributesFormFieldSelectionsValue1 performs a merge with any union data inside the UpdateIncidentActionItem_Data_Attributes_FormFieldSelections_Value, using the provided UpdateIncidentActionItemDataAttributesFormFieldSelectionsValue1
+func (t *UpdateIncidentActionItem_Data_Attributes_FormFieldSelections_Value) MergeUpdateIncidentActionItemDataAttributesFormFieldSelectionsValue1(v UpdateIncidentActionItemDataAttributesFormFieldSelectionsValue1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t UpdateIncidentActionItem_Data_Attributes_FormFieldSelections_Value) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *UpdateIncidentActionItem_Data_Attributes_FormFieldSelections_Value) UnmarshalJSON(b []byte) error {
 	err := t.union.UnmarshalJSON(b)
 	return err
 }
@@ -81354,6 +81749,130 @@ func (t *WorkflowTask_TaskParams) UnmarshalJSON(b []byte) error {
 	return err
 }
 
+// AsErrorsList returns the union data inside the BulkDeleteCatalogEntities422ApplicationVndAPIPlusJSONResponseBody as a ErrorsList
+func (t BulkDeleteCatalogEntities422ApplicationVndAPIPlusJSONResponseBody) AsErrorsList() (ErrorsList, error) {
+	var body ErrorsList
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromErrorsList overwrites any union data inside the BulkDeleteCatalogEntities422ApplicationVndAPIPlusJSONResponseBody as the provided ErrorsList
+func (t *BulkDeleteCatalogEntities422ApplicationVndAPIPlusJSONResponseBody) FromErrorsList(v ErrorsList) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeErrorsList performs a merge with any union data inside the BulkDeleteCatalogEntities422ApplicationVndAPIPlusJSONResponseBody, using the provided ErrorsList
+func (t *BulkDeleteCatalogEntities422ApplicationVndAPIPlusJSONResponseBody) MergeErrorsList(v ErrorsList) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsBulkDestroyCatalogEntitiesResponse returns the union data inside the BulkDeleteCatalogEntities422ApplicationVndAPIPlusJSONResponseBody as a BulkDestroyCatalogEntitiesResponse
+func (t BulkDeleteCatalogEntities422ApplicationVndAPIPlusJSONResponseBody) AsBulkDestroyCatalogEntitiesResponse() (BulkDestroyCatalogEntitiesResponse, error) {
+	var body BulkDestroyCatalogEntitiesResponse
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromBulkDestroyCatalogEntitiesResponse overwrites any union data inside the BulkDeleteCatalogEntities422ApplicationVndAPIPlusJSONResponseBody as the provided BulkDestroyCatalogEntitiesResponse
+func (t *BulkDeleteCatalogEntities422ApplicationVndAPIPlusJSONResponseBody) FromBulkDestroyCatalogEntitiesResponse(v BulkDestroyCatalogEntitiesResponse) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeBulkDestroyCatalogEntitiesResponse performs a merge with any union data inside the BulkDeleteCatalogEntities422ApplicationVndAPIPlusJSONResponseBody, using the provided BulkDestroyCatalogEntitiesResponse
+func (t *BulkDeleteCatalogEntities422ApplicationVndAPIPlusJSONResponseBody) MergeBulkDestroyCatalogEntitiesResponse(v BulkDestroyCatalogEntitiesResponse) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t BulkDeleteCatalogEntities422ApplicationVndAPIPlusJSONResponseBody) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *BulkDeleteCatalogEntities422ApplicationVndAPIPlusJSONResponseBody) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsErrorsList returns the union data inside the BulkUpsertCatalogEntities422ApplicationVndAPIPlusJSONResponseBody as a ErrorsList
+func (t BulkUpsertCatalogEntities422ApplicationVndAPIPlusJSONResponseBody) AsErrorsList() (ErrorsList, error) {
+	var body ErrorsList
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromErrorsList overwrites any union data inside the BulkUpsertCatalogEntities422ApplicationVndAPIPlusJSONResponseBody as the provided ErrorsList
+func (t *BulkUpsertCatalogEntities422ApplicationVndAPIPlusJSONResponseBody) FromErrorsList(v ErrorsList) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeErrorsList performs a merge with any union data inside the BulkUpsertCatalogEntities422ApplicationVndAPIPlusJSONResponseBody, using the provided ErrorsList
+func (t *BulkUpsertCatalogEntities422ApplicationVndAPIPlusJSONResponseBody) MergeErrorsList(v ErrorsList) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsBulkUpsertCatalogEntitiesError returns the union data inside the BulkUpsertCatalogEntities422ApplicationVndAPIPlusJSONResponseBody as a BulkUpsertCatalogEntitiesError
+func (t BulkUpsertCatalogEntities422ApplicationVndAPIPlusJSONResponseBody) AsBulkUpsertCatalogEntitiesError() (BulkUpsertCatalogEntitiesError, error) {
+	var body BulkUpsertCatalogEntitiesError
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromBulkUpsertCatalogEntitiesError overwrites any union data inside the BulkUpsertCatalogEntities422ApplicationVndAPIPlusJSONResponseBody as the provided BulkUpsertCatalogEntitiesError
+func (t *BulkUpsertCatalogEntities422ApplicationVndAPIPlusJSONResponseBody) FromBulkUpsertCatalogEntitiesError(v BulkUpsertCatalogEntitiesError) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeBulkUpsertCatalogEntitiesError performs a merge with any union data inside the BulkUpsertCatalogEntities422ApplicationVndAPIPlusJSONResponseBody, using the provided BulkUpsertCatalogEntitiesError
+func (t *BulkUpsertCatalogEntities422ApplicationVndAPIPlusJSONResponseBody) MergeBulkUpsertCatalogEntitiesError(v BulkUpsertCatalogEntitiesError) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t BulkUpsertCatalogEntities422ApplicationVndAPIPlusJSONResponseBody) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *BulkUpsertCatalogEntities422ApplicationVndAPIPlusJSONResponseBody) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
 // RequestEditorFn is the function signature for the RequestEditor callback function
 type RequestEditorFn func(ctx context.Context, req *http.Request) error
 
@@ -82474,6 +82993,42 @@ type ClientInterface interface {
 	//
 	// Corresponds with POST /v1/catalogs/{catalog_id}/entities (the `CreateCatalogEntity` operationId).
 	CreateCatalogEntityWithApplicationVndAPIPlusJSONBody(ctx context.Context, catalogID string, body CreateCatalogEntityApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// BulkDeleteCatalogEntitiesWithBody Bulk delete Catalog Entities
+	//
+	// Delete catalog entities by external_id list, or prune by managed_by source. Two mutually exclusive modes.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /v1/catalogs/{catalog_id}/entities/bulk_delete (the `BulkDeleteCatalogEntities` operationId).
+	BulkDeleteCatalogEntitiesWithBody(ctx context.Context, catalogID string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// BulkDeleteCatalogEntitiesWithApplicationVndAPIPlusJSONBody Bulk delete Catalog Entities
+	//
+	// Delete catalog entities by external_id list, or prune by managed_by source. Two mutually exclusive modes.
+	//
+	// Takes a body of the `application/vnd.api+json` content type.
+	//
+	// Corresponds with POST /v1/catalogs/{catalog_id}/entities/bulk_delete (the `BulkDeleteCatalogEntities` operationId).
+	BulkDeleteCatalogEntitiesWithApplicationVndAPIPlusJSONBody(ctx context.Context, catalogID string, body BulkDeleteCatalogEntitiesApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// BulkUpsertCatalogEntitiesWithBody Bulk upsert Catalog Entities
+	//
+	// Create or update multiple catalog entities by external_id. Only attributes present in the payload are written (managed-fields semantics). Transactional: all succeed or all fail.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /v1/catalogs/{catalog_id}/entities/bulk_upsert (the `BulkUpsertCatalogEntities` operationId).
+	BulkUpsertCatalogEntitiesWithBody(ctx context.Context, catalogID string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// BulkUpsertCatalogEntitiesWithApplicationVndAPIPlusJSONBody Bulk upsert Catalog Entities
+	//
+	// Create or update multiple catalog entities by external_id. Only attributes present in the payload are written (managed-fields semantics). Transactional: all succeed or all fail.
+	//
+	// Takes a body of the `application/vnd.api+json` content type.
+	//
+	// Corresponds with POST /v1/catalogs/{catalog_id}/entities/bulk_upsert (the `BulkUpsertCatalogEntities` operationId).
+	BulkUpsertCatalogEntitiesWithApplicationVndAPIPlusJSONBody(ctx context.Context, catalogID string, body BulkUpsertCatalogEntitiesApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// ListCatalogProperties List Catalog Properties (alias for fields)
 	//
@@ -85260,6 +85815,31 @@ type ClientInterface interface {
 	// Corresponds with PUT /v1/live_call_routers/{id} (the `UpdateLiveCallRouter` operationId).
 	UpdateLiveCallRouterWithApplicationVndAPIPlusJSONBody(ctx context.Context, id ID, body UpdateLiveCallRouterApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
+	// ListAllMeetingRecordings List all meeting recordings
+	//
+	// List meeting recordings across the organization. Returns the current user's standalone recordings plus incident-backed recordings the user can access. Supports filtering by status, platform, and created_by.
+	//
+	// Corresponds with GET /v1/meeting_recordings (the `ListAllMeetingRecordings` operationId).
+	ListAllMeetingRecordings(ctx context.Context, params *ListAllMeetingRecordingsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// StartRecordingSessionWithBody Start a recording session
+	//
+	// Start a new desktop recording session. The server creates a recording record and returns a stream token the desktop client uses to send audio. No provider-specific configuration is needed from the client.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /v1/meeting_recordings/start_session (the `StartRecordingSession` operationId).
+	StartRecordingSessionWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// StartRecordingSessionWithApplicationVndAPIPlusJSONBody Start a recording session
+	//
+	// Start a new desktop recording session. The server creates a recording record and returns a stream token the desktop client uses to send audio. No provider-specific configuration is needed from the client.
+	//
+	// Takes a body of the `application/vnd.api+json` content type.
+	//
+	// Corresponds with POST /v1/meeting_recordings/start_session (the `StartRecordingSession` operationId).
+	StartRecordingSessionWithApplicationVndAPIPlusJSONBody(ctx context.Context, body StartRecordingSessionApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
 	// DeleteMeetingRecording Delete a meeting recording
 	//
 	// Delete a meeting recording. Only completed or failed recordings can be deleted. Active recordings (pending, recording, paused) must be stopped first.
@@ -86340,7 +86920,7 @@ type ClientInterface interface {
 
 	// CreateOverrideShiftWithBody creates an override shift
 	//
-	// Creates a new override shift from provided data. If any existing override shifts overlap with the specified time range, they will be automatically deleted and replaced by the new override.
+	// Creates a new override shift from provided data. If any existing override shifts overlap with the specified time range, they will be automatically deleted and replaced by the new override. This endpoint is idempotent: re-sending an identical override (same user and same start/end time) returns the existing override with a 200 status and does not recreate it.
 	//
 	// Takes any type of body and a specified content type.
 	//
@@ -86349,7 +86929,7 @@ type ClientInterface interface {
 
 	// CreateOverrideShiftWithApplicationVndAPIPlusJSONBody creates an override shift
 	//
-	// Creates a new override shift from provided data. If any existing override shifts overlap with the specified time range, they will be automatically deleted and replaced by the new override.
+	// Creates a new override shift from provided data. If any existing override shifts overlap with the specified time range, they will be automatically deleted and replaced by the new override. This endpoint is idempotent: re-sending an identical override (same user and same start/end time) returns the existing override with a 200 status and does not recreate it.
 	//
 	// Takes a body of the `application/vnd.api+json` content type.
 	//
@@ -89645,6 +90225,82 @@ func (c *Client) CreateCatalogEntityWithBody(ctx context.Context, catalogID stri
 // Corresponds with POST /v1/catalogs/{catalog_id}/entities (the `CreateCatalogEntity` operationId).
 func (c *Client) CreateCatalogEntityWithApplicationVndAPIPlusJSONBody(ctx context.Context, catalogID string, body CreateCatalogEntityApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewCreateCatalogEntityRequestWithApplicationVndAPIPlusJSONBody(c.Server, catalogID, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// BulkDeleteCatalogEntitiesWithBody Bulk delete Catalog Entities
+//
+// Delete catalog entities by external_id list, or prune by managed_by source. Two mutually exclusive modes.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/catalogs/{catalog_id}/entities/bulk_delete (the `BulkDeleteCatalogEntities` operationId).
+func (c *Client) BulkDeleteCatalogEntitiesWithBody(ctx context.Context, catalogID string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBulkDeleteCatalogEntitiesRequestWithBody(c.Server, catalogID, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// BulkDeleteCatalogEntitiesWithApplicationVndAPIPlusJSONBody Bulk delete Catalog Entities
+//
+// Delete catalog entities by external_id list, or prune by managed_by source. Two mutually exclusive modes.
+//
+// Takes a body of the `application/vnd.api+json` content type.
+//
+// Corresponds with POST /v1/catalogs/{catalog_id}/entities/bulk_delete (the `BulkDeleteCatalogEntities` operationId).
+func (c *Client) BulkDeleteCatalogEntitiesWithApplicationVndAPIPlusJSONBody(ctx context.Context, catalogID string, body BulkDeleteCatalogEntitiesApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBulkDeleteCatalogEntitiesRequestWithApplicationVndAPIPlusJSONBody(c.Server, catalogID, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// BulkUpsertCatalogEntitiesWithBody Bulk upsert Catalog Entities
+//
+// Create or update multiple catalog entities by external_id. Only attributes present in the payload are written (managed-fields semantics). Transactional: all succeed or all fail.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/catalogs/{catalog_id}/entities/bulk_upsert (the `BulkUpsertCatalogEntities` operationId).
+func (c *Client) BulkUpsertCatalogEntitiesWithBody(ctx context.Context, catalogID string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBulkUpsertCatalogEntitiesRequestWithBody(c.Server, catalogID, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// BulkUpsertCatalogEntitiesWithApplicationVndAPIPlusJSONBody Bulk upsert Catalog Entities
+//
+// Create or update multiple catalog entities by external_id. Only attributes present in the payload are written (managed-fields semantics). Transactional: all succeed or all fail.
+//
+// Takes a body of the `application/vnd.api+json` content type.
+//
+// Corresponds with POST /v1/catalogs/{catalog_id}/entities/bulk_upsert (the `BulkUpsertCatalogEntities` operationId).
+func (c *Client) BulkUpsertCatalogEntitiesWithApplicationVndAPIPlusJSONBody(ctx context.Context, catalogID string, body BulkUpsertCatalogEntitiesApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBulkUpsertCatalogEntitiesRequestWithApplicationVndAPIPlusJSONBody(c.Server, catalogID, body)
 	if err != nil {
 		return nil, err
 	}
@@ -95949,6 +96605,61 @@ func (c *Client) UpdateLiveCallRouterWithApplicationVndAPIPlusJSONBody(ctx conte
 	return c.Client.Do(req)
 }
 
+// ListAllMeetingRecordings List all meeting recordings
+//
+// List meeting recordings across the organization. Returns the current user's standalone recordings plus incident-backed recordings the user can access. Supports filtering by status, platform, and created_by.
+//
+// Corresponds with GET /v1/meeting_recordings (the `ListAllMeetingRecordings` operationId).
+func (c *Client) ListAllMeetingRecordings(ctx context.Context, params *ListAllMeetingRecordingsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewListAllMeetingRecordingsRequest(c.Server, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// StartRecordingSessionWithBody Start a recording session
+//
+// Start a new desktop recording session. The server creates a recording record and returns a stream token the desktop client uses to send audio. No provider-specific configuration is needed from the client.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/meeting_recordings/start_session (the `StartRecordingSession` operationId).
+func (c *Client) StartRecordingSessionWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewStartRecordingSessionRequestWithBody(c.Server, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// StartRecordingSessionWithApplicationVndAPIPlusJSONBody Start a recording session
+//
+// Start a new desktop recording session. The server creates a recording record and returns a stream token the desktop client uses to send audio. No provider-specific configuration is needed from the client.
+//
+// Takes a body of the `application/vnd.api+json` content type.
+//
+// Corresponds with POST /v1/meeting_recordings/start_session (the `StartRecordingSession` operationId).
+func (c *Client) StartRecordingSessionWithApplicationVndAPIPlusJSONBody(ctx context.Context, body StartRecordingSessionApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewStartRecordingSessionRequestWithApplicationVndAPIPlusJSONBody(c.Server, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
 // DeleteMeetingRecording Delete a meeting recording
 //
 // Delete a meeting recording. Only completed or failed recordings can be deleted. Active recordings (pending, recording, paused) must be stopped first.
@@ -98409,7 +99120,7 @@ func (c *Client) ListOverrideShifts(ctx context.Context, scheduleID string, para
 
 // CreateOverrideShiftWithBody creates an override shift
 //
-// Creates a new override shift from provided data. If any existing override shifts overlap with the specified time range, they will be automatically deleted and replaced by the new override.
+// Creates a new override shift from provided data. If any existing override shifts overlap with the specified time range, they will be automatically deleted and replaced by the new override. This endpoint is idempotent: re-sending an identical override (same user and same start/end time) returns the existing override with a 200 status and does not recreate it.
 //
 // Takes any type of body and a specified content type.
 //
@@ -98428,7 +99139,7 @@ func (c *Client) CreateOverrideShiftWithBody(ctx context.Context, scheduleID str
 
 // CreateOverrideShiftWithApplicationVndAPIPlusJSONBody creates an override shift
 //
-// Creates a new override shift from provided data. If any existing override shifts overlap with the specified time range, they will be automatically deleted and replaced by the new override.
+// Creates a new override shift from provided data. If any existing override shifts overlap with the specified time range, they will be automatically deleted and replaced by the new override. This endpoint is idempotent: re-sending an identical override (same user and same start/end time) returns the existing override with a 200 status and does not recreate it.
 //
 // Takes a body of the `application/vnd.api+json` content type.
 //
@@ -102853,6 +103564,18 @@ func NewListAlertsSourcesRequest(server string, params *ListAlertsSourcesParams)
 
 		}
 
+		if params.FilterEnabled != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[enabled]", *params.FilterEnabled, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "boolean", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
 		if params.Sort != nil {
 
 			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "sort", *params.Sort, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
@@ -106568,6 +107291,30 @@ func NewListCatalogsRequest(server string, params *ListCatalogsParams) (*http.Re
 
 		}
 
+		if params.FilterExternalID != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[external_id]", *params.FilterExternalID, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterManagedBy != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[managed_by]", *params.FilterManagedBy, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
 		if params.FilterCreatedAtGt != nil {
 
 			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[created_at][gt]", *params.FilterCreatedAtGt, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
@@ -106801,6 +107548,30 @@ func NewListCatalogEntitiesRequest(server string, catalogID string, params *List
 
 		}
 
+		if params.FilterExternalID != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[external_id]", *params.FilterExternalID, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterManagedBy != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[managed_by]", *params.FilterManagedBy, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
 		if params.FilterCreatedAtGt != nil {
 
 			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[created_at][gt]", *params.FilterCreatedAtGt, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
@@ -106891,6 +107662,100 @@ func NewCreateCatalogEntityRequestWithBody(server string, catalogID string, cont
 	}
 
 	operationPath := fmt.Sprintf("/v1/catalogs/%s/entities", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewBulkDeleteCatalogEntitiesRequestWithApplicationVndAPIPlusJSONBody calls the generic BulkDeleteCatalogEntities builder with application/vnd.api+json body
+func NewBulkDeleteCatalogEntitiesRequestWithApplicationVndAPIPlusJSONBody(server string, catalogID string, body BulkDeleteCatalogEntitiesApplicationVndAPIPlusJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewBulkDeleteCatalogEntitiesRequestWithBody(server, catalogID, "application/vnd.api+json", bodyReader)
+}
+
+// NewBulkDeleteCatalogEntitiesRequestWithBody constructs an http.Request for the BulkDeleteCatalogEntities method, with any body, and a specified content type
+func NewBulkDeleteCatalogEntitiesRequestWithBody(server string, catalogID string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "catalog_id", catalogID, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/catalogs/%s/entities/bulk_delete", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewBulkUpsertCatalogEntitiesRequestWithApplicationVndAPIPlusJSONBody calls the generic BulkUpsertCatalogEntities builder with application/vnd.api+json body
+func NewBulkUpsertCatalogEntitiesRequestWithApplicationVndAPIPlusJSONBody(server string, catalogID string, body BulkUpsertCatalogEntitiesApplicationVndAPIPlusJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewBulkUpsertCatalogEntitiesRequestWithBody(server, catalogID, "application/vnd.api+json", bodyReader)
+}
+
+// NewBulkUpsertCatalogEntitiesRequestWithBody constructs an http.Request for the BulkUpsertCatalogEntities method, with any body, and a specified content type
+func NewBulkUpsertCatalogEntitiesRequestWithBody(server string, catalogID string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "catalog_id", catalogID, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/catalogs/%s/entities/bulk_upsert", pathParam0)
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -122335,6 +123200,124 @@ func NewUpdateLiveCallRouterRequestWithBody(server string, id ID, contentType st
 	return req, nil
 }
 
+// NewListAllMeetingRecordingsRequest constructs an http.Request for the ListAllMeetingRecordings method
+func NewListAllMeetingRecordingsRequest(server string, params *ListAllMeetingRecordingsParams) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/meeting_recordings")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.Status != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "status", *params.Status, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Platform != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "platform", *params.Platform, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.CreatedBy != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "created_by", *params.CreatedBy, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewStartRecordingSessionRequestWithApplicationVndAPIPlusJSONBody calls the generic StartRecordingSession builder with application/vnd.api+json body
+func NewStartRecordingSessionRequestWithApplicationVndAPIPlusJSONBody(server string, body StartRecordingSessionApplicationVndAPIPlusJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewStartRecordingSessionRequestWithBody(server, "application/vnd.api+json", bodyReader)
+}
+
+// NewStartRecordingSessionRequestWithBody constructs an http.Request for the StartRecordingSession method, with any body, and a specified content type
+func NewStartRecordingSessionRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/meeting_recordings/start_session")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
 // NewDeleteMeetingRecordingRequest constructs an http.Request for the DeleteMeetingRecording method
 func NewDeleteMeetingRecordingRequest(server string, id ID) (*http.Request, error) {
 	var err error
@@ -136193,6 +137176,42 @@ type ClientWithResponsesInterface interface {
 	// Corresponds with POST /v1/catalogs/{catalog_id}/entities (the `CreateCatalogEntity` operationId).
 	CreateCatalogEntityWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, catalogID string, body CreateCatalogEntityApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateCatalogEntityResponse, error)
 
+	// BulkDeleteCatalogEntitiesWithBodyWithResponse Bulk delete Catalog Entities
+	//
+	// Delete catalog entities by external_id list, or prune by managed_by source. Two mutually exclusive modes.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/catalogs/{catalog_id}/entities/bulk_delete (the `BulkDeleteCatalogEntities` operationId).
+	BulkDeleteCatalogEntitiesWithBodyWithResponse(ctx context.Context, catalogID string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BulkDeleteCatalogEntitiesResponse, error)
+
+	// BulkDeleteCatalogEntitiesWithApplicationVndAPIPlusJSONBodyWithResponse Bulk delete Catalog Entities
+	//
+	// Delete catalog entities by external_id list, or prune by managed_by source. Two mutually exclusive modes.
+	//
+	// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/catalogs/{catalog_id}/entities/bulk_delete (the `BulkDeleteCatalogEntities` operationId).
+	BulkDeleteCatalogEntitiesWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, catalogID string, body BulkDeleteCatalogEntitiesApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*BulkDeleteCatalogEntitiesResponse, error)
+
+	// BulkUpsertCatalogEntitiesWithBodyWithResponse Bulk upsert Catalog Entities
+	//
+	// Create or update multiple catalog entities by external_id. Only attributes present in the payload are written (managed-fields semantics). Transactional: all succeed or all fail.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/catalogs/{catalog_id}/entities/bulk_upsert (the `BulkUpsertCatalogEntities` operationId).
+	BulkUpsertCatalogEntitiesWithBodyWithResponse(ctx context.Context, catalogID string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BulkUpsertCatalogEntitiesResponse, error)
+
+	// BulkUpsertCatalogEntitiesWithApplicationVndAPIPlusJSONBodyWithResponse Bulk upsert Catalog Entities
+	//
+	// Create or update multiple catalog entities by external_id. Only attributes present in the payload are written (managed-fields semantics). Transactional: all succeed or all fail.
+	//
+	// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/catalogs/{catalog_id}/entities/bulk_upsert (the `BulkUpsertCatalogEntities` operationId).
+	BulkUpsertCatalogEntitiesWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, catalogID string, body BulkUpsertCatalogEntitiesApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*BulkUpsertCatalogEntitiesResponse, error)
+
 	// ListCatalogPropertiesWithResponse List Catalog Properties (alias for fields)
 	//
 	// List Catalog Properties - returns catalog_properties type.
@@ -139272,6 +140291,33 @@ type ClientWithResponsesInterface interface {
 	// Corresponds with PUT /v1/live_call_routers/{id} (the `UpdateLiveCallRouter` operationId).
 	UpdateLiveCallRouterWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, id ID, body UpdateLiveCallRouterApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateLiveCallRouterResponse, error)
 
+	// ListAllMeetingRecordingsWithResponse List all meeting recordings
+	//
+	// List meeting recordings across the organization. Returns the current user's standalone recordings plus incident-backed recordings the user can access. Supports filtering by status, platform, and created_by.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /v1/meeting_recordings (the `ListAllMeetingRecordings` operationId).
+	ListAllMeetingRecordingsWithResponse(ctx context.Context, params *ListAllMeetingRecordingsParams, reqEditors ...RequestEditorFn) (*ListAllMeetingRecordingsResponse, error)
+
+	// StartRecordingSessionWithBodyWithResponse Start a recording session
+	//
+	// Start a new desktop recording session. The server creates a recording record and returns a stream token the desktop client uses to send audio. No provider-specific configuration is needed from the client.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/meeting_recordings/start_session (the `StartRecordingSession` operationId).
+	StartRecordingSessionWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*StartRecordingSessionResponse, error)
+
+	// StartRecordingSessionWithApplicationVndAPIPlusJSONBodyWithResponse Start a recording session
+	//
+	// Start a new desktop recording session. The server creates a recording record and returns a stream token the desktop client uses to send audio. No provider-specific configuration is needed from the client.
+	//
+	// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/meeting_recordings/start_session (the `StartRecordingSession` operationId).
+	StartRecordingSessionWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, body StartRecordingSessionApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*StartRecordingSessionResponse, error)
+
 	// DeleteMeetingRecordingWithResponse Delete a meeting recording
 	//
 	// Delete a meeting recording. Only completed or failed recordings can be deleted. Active recordings (pending, recording, paused) must be stopped first.
@@ -140484,7 +141530,7 @@ type ClientWithResponsesInterface interface {
 
 	// CreateOverrideShiftWithBodyWithResponse creates an override shift
 	//
-	// Creates a new override shift from provided data. If any existing override shifts overlap with the specified time range, they will be automatically deleted and replaced by the new override.
+	// Creates a new override shift from provided data. If any existing override shifts overlap with the specified time range, they will be automatically deleted and replaced by the new override. This endpoint is idempotent: re-sending an identical override (same user and same start/end time) returns the existing override with a 200 status and does not recreate it.
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -140493,7 +141539,7 @@ type ClientWithResponsesInterface interface {
 
 	// CreateOverrideShiftWithApplicationVndAPIPlusJSONBodyWithResponse creates an override shift
 	//
-	// Creates a new override shift from provided data. If any existing override shifts overlap with the specified time range, they will be automatically deleted and replaced by the new override.
+	// Creates a new override shift from provided data. If any existing override shifts overlap with the specified time range, they will be automatically deleted and replaced by the new override. This endpoint is idempotent: re-sending an identical override (same user and same start/end time) returns the existing override with a 200 status and does not recreate it.
 	//
 	// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -144481,6 +145527,76 @@ func (r CreateCatalogEntityResponse) StatusCode() int {
 
 // ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
 func (r CreateCatalogEntityResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type BulkDeleteCatalogEntitiesResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// ApplicationVndAPIJSON200 the response for an HTTP 200 `application/vnd.api+json` response
+	ApplicationVndAPIJSON200 *BulkDestroyCatalogEntitiesResponse
+	// ApplicationVndAPIJSON401 the response for an HTTP 401 `application/vnd.api+json` response
+	ApplicationVndAPIJSON401 *ErrorsList
+	// ApplicationVndAPIJSON422 the response for an HTTP 422 `application/vnd.api+json` response
+	ApplicationVndAPIJSON422 *BulkDeleteCatalogEntities422ApplicationVndAPIPlusJSONResponseBody
+}
+
+// Status returns HTTPResponse.Status
+func (r BulkDeleteCatalogEntitiesResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r BulkDeleteCatalogEntitiesResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r BulkDeleteCatalogEntitiesResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type BulkUpsertCatalogEntitiesResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// ApplicationVndAPIJSON200 the response for an HTTP 200 `application/vnd.api+json` response
+	ApplicationVndAPIJSON200 *BulkUpsertCatalogEntitiesResponse
+	// ApplicationVndAPIJSON401 the response for an HTTP 401 `application/vnd.api+json` response
+	ApplicationVndAPIJSON401 *ErrorsList
+	// ApplicationVndAPIJSON422 the response for an HTTP 422 `application/vnd.api+json` response
+	ApplicationVndAPIJSON422 *BulkUpsertCatalogEntities422ApplicationVndAPIPlusJSONResponseBody
+}
+
+// Status returns HTTPResponse.Status
+func (r BulkUpsertCatalogEntitiesResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r BulkUpsertCatalogEntitiesResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r BulkUpsertCatalogEntitiesResponse) ContentType() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Header.Get("Content-Type")
 	}
@@ -152659,6 +153775,64 @@ func (r UpdateLiveCallRouterResponse) ContentType() string {
 	return ""
 }
 
+type ListAllMeetingRecordingsResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// Status returns HTTPResponse.Status
+func (r ListAllMeetingRecordingsResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r ListAllMeetingRecordingsResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r ListAllMeetingRecordingsResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type StartRecordingSessionResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// Status returns HTTPResponse.Status
+func (r StartRecordingSessionResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r StartRecordingSessionResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r StartRecordingSessionResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
 type DeleteMeetingRecordingResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
@@ -155998,6 +157172,8 @@ func (r ListOverrideShiftsResponse) ContentType() string {
 type CreateOverrideShiftResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
+	// ApplicationVndAPIJSON200 the response for an HTTP 200 `application/vnd.api+json` response
+	ApplicationVndAPIJSON200 *OverrideShiftResponse
 	// ApplicationVndAPIJSON201 the response for an HTTP 201 `application/vnd.api+json` response
 	ApplicationVndAPIJSON201 *OverrideShiftResponse
 	// ApplicationVndAPIJSON401 the response for an HTTP 401 `application/vnd.api+json` response
@@ -161222,6 +162398,66 @@ func (c *ClientWithResponses) CreateCatalogEntityWithApplicationVndAPIPlusJSONBo
 	return ParseCreateCatalogEntityResponse(rsp)
 }
 
+// BulkDeleteCatalogEntitiesWithBodyWithResponse Bulk delete Catalog Entities
+//
+// Delete catalog entities by external_id list, or prune by managed_by source. Two mutually exclusive modes.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/catalogs/{catalog_id}/entities/bulk_delete (the `BulkDeleteCatalogEntities` operationId).
+func (c *ClientWithResponses) BulkDeleteCatalogEntitiesWithBodyWithResponse(ctx context.Context, catalogID string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BulkDeleteCatalogEntitiesResponse, error) {
+	rsp, err := c.BulkDeleteCatalogEntitiesWithBody(ctx, catalogID, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBulkDeleteCatalogEntitiesResponse(rsp)
+}
+
+// BulkDeleteCatalogEntitiesWithApplicationVndAPIPlusJSONBodyWithResponse Bulk delete Catalog Entities
+//
+// Delete catalog entities by external_id list, or prune by managed_by source. Two mutually exclusive modes.
+//
+// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/catalogs/{catalog_id}/entities/bulk_delete (the `BulkDeleteCatalogEntities` operationId).
+func (c *ClientWithResponses) BulkDeleteCatalogEntitiesWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, catalogID string, body BulkDeleteCatalogEntitiesApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*BulkDeleteCatalogEntitiesResponse, error) {
+	rsp, err := c.BulkDeleteCatalogEntitiesWithApplicationVndAPIPlusJSONBody(ctx, catalogID, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBulkDeleteCatalogEntitiesResponse(rsp)
+}
+
+// BulkUpsertCatalogEntitiesWithBodyWithResponse Bulk upsert Catalog Entities
+//
+// Create or update multiple catalog entities by external_id. Only attributes present in the payload are written (managed-fields semantics). Transactional: all succeed or all fail.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/catalogs/{catalog_id}/entities/bulk_upsert (the `BulkUpsertCatalogEntities` operationId).
+func (c *ClientWithResponses) BulkUpsertCatalogEntitiesWithBodyWithResponse(ctx context.Context, catalogID string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BulkUpsertCatalogEntitiesResponse, error) {
+	rsp, err := c.BulkUpsertCatalogEntitiesWithBody(ctx, catalogID, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBulkUpsertCatalogEntitiesResponse(rsp)
+}
+
+// BulkUpsertCatalogEntitiesWithApplicationVndAPIPlusJSONBodyWithResponse Bulk upsert Catalog Entities
+//
+// Create or update multiple catalog entities by external_id. Only attributes present in the payload are written (managed-fields semantics). Transactional: all succeed or all fail.
+//
+// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/catalogs/{catalog_id}/entities/bulk_upsert (the `BulkUpsertCatalogEntities` operationId).
+func (c *ClientWithResponses) BulkUpsertCatalogEntitiesWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, catalogID string, body BulkUpsertCatalogEntitiesApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*BulkUpsertCatalogEntitiesResponse, error) {
+	rsp, err := c.BulkUpsertCatalogEntitiesWithApplicationVndAPIPlusJSONBody(ctx, catalogID, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBulkUpsertCatalogEntitiesResponse(rsp)
+}
+
 // ListCatalogPropertiesWithResponse List Catalog Properties (alias for fields)
 //
 // List Catalog Properties - returns catalog_properties type.
@@ -166413,6 +167649,51 @@ func (c *ClientWithResponses) UpdateLiveCallRouterWithApplicationVndAPIPlusJSONB
 	return ParseUpdateLiveCallRouterResponse(rsp)
 }
 
+// ListAllMeetingRecordingsWithResponse List all meeting recordings
+//
+// List meeting recordings across the organization. Returns the current user's standalone recordings plus incident-backed recordings the user can access. Supports filtering by status, platform, and created_by.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/meeting_recordings (the `ListAllMeetingRecordings` operationId).
+func (c *ClientWithResponses) ListAllMeetingRecordingsWithResponse(ctx context.Context, params *ListAllMeetingRecordingsParams, reqEditors ...RequestEditorFn) (*ListAllMeetingRecordingsResponse, error) {
+	rsp, err := c.ListAllMeetingRecordings(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseListAllMeetingRecordingsResponse(rsp)
+}
+
+// StartRecordingSessionWithBodyWithResponse Start a recording session
+//
+// Start a new desktop recording session. The server creates a recording record and returns a stream token the desktop client uses to send audio. No provider-specific configuration is needed from the client.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/meeting_recordings/start_session (the `StartRecordingSession` operationId).
+func (c *ClientWithResponses) StartRecordingSessionWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*StartRecordingSessionResponse, error) {
+	rsp, err := c.StartRecordingSessionWithBody(ctx, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseStartRecordingSessionResponse(rsp)
+}
+
+// StartRecordingSessionWithApplicationVndAPIPlusJSONBodyWithResponse Start a recording session
+//
+// Start a new desktop recording session. The server creates a recording record and returns a stream token the desktop client uses to send audio. No provider-specific configuration is needed from the client.
+//
+// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/meeting_recordings/start_session (the `StartRecordingSession` operationId).
+func (c *ClientWithResponses) StartRecordingSessionWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, body StartRecordingSessionApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*StartRecordingSessionResponse, error) {
+	rsp, err := c.StartRecordingSessionWithApplicationVndAPIPlusJSONBody(ctx, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseStartRecordingSessionResponse(rsp)
+}
+
 // DeleteMeetingRecordingWithResponse Delete a meeting recording
 //
 // Delete a meeting recording. Only completed or failed recordings can be deleted. Active recordings (pending, recording, paused) must be stopped first.
@@ -168453,7 +169734,7 @@ func (c *ClientWithResponses) ListOverrideShiftsWithResponse(ctx context.Context
 
 // CreateOverrideShiftWithBodyWithResponse creates an override shift
 //
-// Creates a new override shift from provided data. If any existing override shifts overlap with the specified time range, they will be automatically deleted and replaced by the new override.
+// Creates a new override shift from provided data. If any existing override shifts overlap with the specified time range, they will be automatically deleted and replaced by the new override. This endpoint is idempotent: re-sending an identical override (same user and same start/end time) returns the existing override with a 200 status and does not recreate it.
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
@@ -168468,7 +169749,7 @@ func (c *ClientWithResponses) CreateOverrideShiftWithBodyWithResponse(ctx contex
 
 // CreateOverrideShiftWithApplicationVndAPIPlusJSONBodyWithResponse creates an override shift
 //
-// Creates a new override shift from provided data. If any existing override shifts overlap with the specified time range, they will be automatically deleted and replaced by the new override.
+// Creates a new override shift from provided data. If any existing override shifts overlap with the specified time range, they will be automatically deleted and replaced by the new override. This endpoint is idempotent: re-sending an identical override (same user and same start/end time) returns the existing override with a 200 status and does not recreate it.
 //
 // Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
 //
@@ -173274,6 +174555,86 @@ func ParseCreateCatalogEntityResponse(rsp *http.Response) (*CreateCatalogEntityR
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
 		var dest ErrorsList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON422 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseBulkDeleteCatalogEntitiesResponse parses an HTTP response from a BulkDeleteCatalogEntitiesWithResponse call
+func ParseBulkDeleteCatalogEntitiesResponse(rsp *http.Response) (*BulkDeleteCatalogEntitiesResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &BulkDeleteCatalogEntitiesResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest BulkDestroyCatalogEntitiesResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorsList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest BulkDeleteCatalogEntities422ApplicationVndAPIPlusJSONResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON422 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseBulkUpsertCatalogEntitiesResponse parses an HTTP response from a BulkUpsertCatalogEntitiesWithResponse call
+func ParseBulkUpsertCatalogEntitiesResponse(rsp *http.Response) (*BulkUpsertCatalogEntitiesResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &BulkUpsertCatalogEntitiesResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest BulkUpsertCatalogEntitiesResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorsList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest BulkUpsertCatalogEntities422ApplicationVndAPIPlusJSONResponseBody
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -181219,6 +182580,38 @@ func ParseUpdateLiveCallRouterResponse(rsp *http.Response) (*UpdateLiveCallRoute
 	return response, nil
 }
 
+// ParseListAllMeetingRecordingsResponse parses an HTTP response from a ListAllMeetingRecordingsWithResponse call
+func ParseListAllMeetingRecordingsResponse(rsp *http.Response) (*ListAllMeetingRecordingsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ListAllMeetingRecordingsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseStartRecordingSessionResponse parses an HTTP response from a StartRecordingSessionWithResponse call
+func ParseStartRecordingSessionResponse(rsp *http.Response) (*StartRecordingSessionResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &StartRecordingSessionResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
 // ParseDeleteMeetingRecordingResponse parses an HTTP response from a DeleteMeetingRecordingWithResponse call
 func ParseDeleteMeetingRecordingResponse(rsp *http.Response) (*DeleteMeetingRecordingResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
@@ -184473,6 +185866,13 @@ func ParseCreateOverrideShiftResponse(rsp *http.Response) (*CreateOverrideShiftR
 	}
 
 	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest OverrideShiftResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON200 = &dest
+
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
 		var dest OverrideShiftResponse
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
