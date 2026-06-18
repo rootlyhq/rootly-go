@@ -41949,8 +41949,8 @@ type BulkUpsertCatalogEntitiesError struct {
 	} `json:"errors"`
 }
 
-// BulkUpsertCatalogEntitiesResponse defines model for bulk_upsert_catalog_entities_response.
-type BulkUpsertCatalogEntitiesResponse struct {
+// BulkUpsertCatalogEntitiesPayload defines model for bulk_upsert_catalog_entities_response.
+type BulkUpsertCatalogEntitiesPayload struct {
 	Data []struct {
 		Attributes *CatalogEntity                             `json:"attributes,omitempty"`
 		ID         *string                                    `json:"id,omitempty"`
@@ -145572,7 +145572,7 @@ type BulkUpsertCatalogEntitiesResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	// ApplicationVndAPIJSON200 the response for an HTTP 200 `application/vnd.api+json` response
-	ApplicationVndAPIJSON200 *BulkUpsertCatalogEntitiesResponse
+	ApplicationVndAPIJSON200 *BulkUpsertCatalogEntitiesPayload
 	// ApplicationVndAPIJSON401 the response for an HTTP 401 `application/vnd.api+json` response
 	ApplicationVndAPIJSON401 *ErrorsList
 	// ApplicationVndAPIJSON422 the response for an HTTP 422 `application/vnd.api+json` response
@@ -174620,7 +174620,7 @@ func ParseBulkUpsertCatalogEntitiesResponse(rsp *http.Response) (*BulkUpsertCata
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest BulkUpsertCatalogEntitiesResponse
+		var dest BulkUpsertCatalogEntitiesPayload
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}

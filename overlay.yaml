@@ -397,3 +397,8 @@ actions:
         - checkly
         - new_relic
         - gitlab
+
+  # to avoid a name collision with `oapi-codegen`'s generated type
+  - target: $.components.schemas.bulk_upsert_catalog_entities_response
+    update:
+      x-go-name: BulkUpsertCatalogEntitiesPayload
