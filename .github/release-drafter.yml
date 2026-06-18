@@ -5,6 +5,35 @@ tag-template: $NEXT_PATCH_VERSION
 template: |
   $CHANGES
 
+  ## OpenAPI spec
+
+  A changelog view of this release's OpenAPI spec updates, via [`oasdiff`](https://github.com/oasdiff/oasdiff):
+
+  > [!CAUTION]
+  > The following needs to be updated before publishing.
+
+  Given:
+
+  - [`openapi`](https://github.com/speakeasy-api/openapi/tree/main#cli-tool) from Speakeasy
+  - [`oasdiff`](https://github.com/oasdiff/oasdiff)
+
+  Run on `master`, and specify the previous Git tag:
+
+  ```sh
+  export OLD_TAG=v0.10.5
+  openapi overlay apply <(git show "$OLD_TAG":overlay.yaml)  <(git show "$OLD_TAG":.vendored/rootly-api/swagger.json) > /tmp/rootly-go-$OLD_TAG.json
+  openapi overlay apply overlay.yaml  .vendored/rootly-api/swagger.json > /tmp/rootly-go-next.json
+  oasdiff changelog --format markdown /tmp/rootly-go-$OLD_TAG.json /tmp/rootly-go-next.json > /tmp/rootly-go-diff.md
+  ```
+
+  <details>
+
+  <summary>OpenAPI diff</summary>
+
+  # TODO fill in with `/tmp/rootly-go-diff.md`
+
+  </details>
+
 categories:
   - title: 🚀 New features and improvements
     labels:
