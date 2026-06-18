@@ -402,3 +402,154 @@ actions:
   - target: $.components.schemas.bulk_upsert_catalog_entities_response
     update:
       x-go-name: BulkUpsertCatalogEntitiesPayload
+
+  # don't introduce a breaking change when removing the `source` enum from alert response schemas
+  - target: $.components.schemas.alert.properties.source
+    update:
+      enum:
+        - rootly
+        - manual
+        - api
+        - heartbeat
+        - web
+        - slack
+        - email
+        - workflow
+        - live_call_routing
+        - mobile
+        - google_chat
+        - pagerduty
+        - opsgenie
+        - victorops
+        - pagertree
+        - datadog
+        - dynatrace
+        - nobl9
+        - zendesk
+        - asana
+        - clickup
+        - sentry
+        - rollbar
+        - jira
+        - honeycomb
+        - service_now
+        - linear
+        - grafana
+        - alertmanager
+        - google_cloud
+        - generic_webhook
+        - cloud_watch
+        - aws_sns
+        - azure
+        - splunk
+        - chronosphere
+        - app_optics
+        - bug_snag
+        - monte_carlo
+        - nagios
+        - prtg
+        - catchpoint
+        - app_dynamics
+        - checkly
+        - new_relic
+        - gitlab
+
+  - target: $.components.schemas.alert_response.properties.data.properties.source
+    update:
+      enum:
+        - rootly
+        - manual
+        - api
+        - heartbeat
+        - web
+        - slack
+        - email
+        - workflow
+        - live_call_routing
+        - mobile
+        - google_chat
+        - pagerduty
+        - opsgenie
+        - victorops
+        - pagertree
+        - datadog
+        - dynatrace
+        - nobl9
+        - zendesk
+        - asana
+        - clickup
+        - sentry
+        - rollbar
+        - jira
+        - honeycomb
+        - service_now
+        - linear
+        - grafana
+        - alertmanager
+        - google_cloud
+        - generic_webhook
+        - cloud_watch
+        - aws_sns
+        - azure
+        - splunk
+        - chronosphere
+        - app_optics
+        - bug_snag
+        - monte_carlo
+        - nagios
+        - prtg
+        - catchpoint
+        - app_dynamics
+        - checkly
+        - new_relic
+        - gitlab
+
+  - target: $.components.schemas.alert_list.properties.data.items.properties.source
+    update:
+      enum:
+        - rootly
+        - manual
+        - api
+        - heartbeat
+        - web
+        - slack
+        - email
+        - workflow
+        - live_call_routing
+        - mobile
+        - google_chat
+        - pagerduty
+        - opsgenie
+        - victorops
+        - pagertree
+        - datadog
+        - dynatrace
+        - nobl9
+        - zendesk
+        - asana
+        - clickup
+        - sentry
+        - rollbar
+        - jira
+        - honeycomb
+        - service_now
+        - linear
+        - grafana
+        - alertmanager
+        - google_cloud
+        - generic_webhook
+        - cloud_watch
+        - aws_sns
+        - azure
+        - splunk
+        - chronosphere
+        - app_optics
+        - bug_snag
+        - monte_carlo
+        - nagios
+        - prtg
+        - catchpoint
+        - app_dynamics
+        - checkly
+        - new_relic
+        - gitlab

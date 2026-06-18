@@ -1163,6 +1163,156 @@ func (e AlertNotificationTargetType) Valid() bool {
 	}
 }
 
+// Defines values for AlertSource.
+const (
+	AlertSourceAPI             AlertSource = "api"
+	AlertSourceAlertmanager    AlertSource = "alertmanager"
+	AlertSourceAppDynamics     AlertSource = "app_dynamics"
+	AlertSourceAppOptics       AlertSource = "app_optics"
+	AlertSourceAsana           AlertSource = "asana"
+	AlertSourceAwsSns          AlertSource = "aws_sns"
+	AlertSourceAzure           AlertSource = "azure"
+	AlertSourceBugSnag         AlertSource = "bug_snag"
+	AlertSourceCatchpoint      AlertSource = "catchpoint"
+	AlertSourceCheckly         AlertSource = "checkly"
+	AlertSourceChronosphere    AlertSource = "chronosphere"
+	AlertSourceClickup         AlertSource = "clickup"
+	AlertSourceCloudWatch      AlertSource = "cloud_watch"
+	AlertSourceDatadog         AlertSource = "datadog"
+	AlertSourceDynatrace       AlertSource = "dynatrace"
+	AlertSourceEmail           AlertSource = "email"
+	AlertSourceGenericWebhook  AlertSource = "generic_webhook"
+	AlertSourceGitlab          AlertSource = "gitlab"
+	AlertSourceGoogleChat      AlertSource = "google_chat"
+	AlertSourceGoogleCloud     AlertSource = "google_cloud"
+	AlertSourceGrafana         AlertSource = "grafana"
+	AlertSourceHeartbeat       AlertSource = "heartbeat"
+	AlertSourceHoneycomb       AlertSource = "honeycomb"
+	AlertSourceJira            AlertSource = "jira"
+	AlertSourceLinear          AlertSource = "linear"
+	AlertSourceLiveCallRouting AlertSource = "live_call_routing"
+	AlertSourceManual          AlertSource = "manual"
+	AlertSourceMobile          AlertSource = "mobile"
+	AlertSourceMonteCarlo      AlertSource = "monte_carlo"
+	AlertSourceNagios          AlertSource = "nagios"
+	AlertSourceNewRelic        AlertSource = "new_relic"
+	AlertSourceNobl9           AlertSource = "nobl9"
+	AlertSourceOpsgenie        AlertSource = "opsgenie"
+	AlertSourcePagerduty       AlertSource = "pagerduty"
+	AlertSourcePagertree       AlertSource = "pagertree"
+	AlertSourcePrtg            AlertSource = "prtg"
+	AlertSourceRollbar         AlertSource = "rollbar"
+	AlertSourceRootly          AlertSource = "rootly"
+	AlertSourceSentry          AlertSource = "sentry"
+	AlertSourceServiceNow      AlertSource = "service_now"
+	AlertSourceSlack           AlertSource = "slack"
+	AlertSourceSplunk          AlertSource = "splunk"
+	AlertSourceVictorops       AlertSource = "victorops"
+	AlertSourceWeb             AlertSource = "web"
+	AlertSourceWorkflow        AlertSource = "workflow"
+	AlertSourceZendesk         AlertSource = "zendesk"
+)
+
+// Valid indicates whether the value is a known member of the AlertSource enum.
+func (e AlertSource) Valid() bool {
+	switch e {
+	case AlertSourceAPI:
+		return true
+	case AlertSourceAlertmanager:
+		return true
+	case AlertSourceAppDynamics:
+		return true
+	case AlertSourceAppOptics:
+		return true
+	case AlertSourceAsana:
+		return true
+	case AlertSourceAwsSns:
+		return true
+	case AlertSourceAzure:
+		return true
+	case AlertSourceBugSnag:
+		return true
+	case AlertSourceCatchpoint:
+		return true
+	case AlertSourceCheckly:
+		return true
+	case AlertSourceChronosphere:
+		return true
+	case AlertSourceClickup:
+		return true
+	case AlertSourceCloudWatch:
+		return true
+	case AlertSourceDatadog:
+		return true
+	case AlertSourceDynatrace:
+		return true
+	case AlertSourceEmail:
+		return true
+	case AlertSourceGenericWebhook:
+		return true
+	case AlertSourceGitlab:
+		return true
+	case AlertSourceGoogleChat:
+		return true
+	case AlertSourceGoogleCloud:
+		return true
+	case AlertSourceGrafana:
+		return true
+	case AlertSourceHeartbeat:
+		return true
+	case AlertSourceHoneycomb:
+		return true
+	case AlertSourceJira:
+		return true
+	case AlertSourceLinear:
+		return true
+	case AlertSourceLiveCallRouting:
+		return true
+	case AlertSourceManual:
+		return true
+	case AlertSourceMobile:
+		return true
+	case AlertSourceMonteCarlo:
+		return true
+	case AlertSourceNagios:
+		return true
+	case AlertSourceNewRelic:
+		return true
+	case AlertSourceNobl9:
+		return true
+	case AlertSourceOpsgenie:
+		return true
+	case AlertSourcePagerduty:
+		return true
+	case AlertSourcePagertree:
+		return true
+	case AlertSourcePrtg:
+		return true
+	case AlertSourceRollbar:
+		return true
+	case AlertSourceRootly:
+		return true
+	case AlertSourceSentry:
+		return true
+	case AlertSourceServiceNow:
+		return true
+	case AlertSourceSlack:
+		return true
+	case AlertSourceSplunk:
+		return true
+	case AlertSourceVictorops:
+		return true
+	case AlertSourceWeb:
+		return true
+	case AlertSourceWorkflow:
+		return true
+	case AlertSourceZendesk:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for AlertStatus.
 const (
 	AlertStatusAcknowledged AlertStatus = "acknowledged"
@@ -1541,6 +1691,156 @@ func (e AlertGroupResponseDataType) Valid() bool {
 	}
 }
 
+// Defines values for AlertListDataSource.
+const (
+	AlertListDataSourceAPI             AlertListDataSource = "api"
+	AlertListDataSourceAlertmanager    AlertListDataSource = "alertmanager"
+	AlertListDataSourceAppDynamics     AlertListDataSource = "app_dynamics"
+	AlertListDataSourceAppOptics       AlertListDataSource = "app_optics"
+	AlertListDataSourceAsana           AlertListDataSource = "asana"
+	AlertListDataSourceAwsSns          AlertListDataSource = "aws_sns"
+	AlertListDataSourceAzure           AlertListDataSource = "azure"
+	AlertListDataSourceBugSnag         AlertListDataSource = "bug_snag"
+	AlertListDataSourceCatchpoint      AlertListDataSource = "catchpoint"
+	AlertListDataSourceCheckly         AlertListDataSource = "checkly"
+	AlertListDataSourceChronosphere    AlertListDataSource = "chronosphere"
+	AlertListDataSourceClickup         AlertListDataSource = "clickup"
+	AlertListDataSourceCloudWatch      AlertListDataSource = "cloud_watch"
+	AlertListDataSourceDatadog         AlertListDataSource = "datadog"
+	AlertListDataSourceDynatrace       AlertListDataSource = "dynatrace"
+	AlertListDataSourceEmail           AlertListDataSource = "email"
+	AlertListDataSourceGenericWebhook  AlertListDataSource = "generic_webhook"
+	AlertListDataSourceGitlab          AlertListDataSource = "gitlab"
+	AlertListDataSourceGoogleChat      AlertListDataSource = "google_chat"
+	AlertListDataSourceGoogleCloud     AlertListDataSource = "google_cloud"
+	AlertListDataSourceGrafana         AlertListDataSource = "grafana"
+	AlertListDataSourceHeartbeat       AlertListDataSource = "heartbeat"
+	AlertListDataSourceHoneycomb       AlertListDataSource = "honeycomb"
+	AlertListDataSourceJira            AlertListDataSource = "jira"
+	AlertListDataSourceLinear          AlertListDataSource = "linear"
+	AlertListDataSourceLiveCallRouting AlertListDataSource = "live_call_routing"
+	AlertListDataSourceManual          AlertListDataSource = "manual"
+	AlertListDataSourceMobile          AlertListDataSource = "mobile"
+	AlertListDataSourceMonteCarlo      AlertListDataSource = "monte_carlo"
+	AlertListDataSourceNagios          AlertListDataSource = "nagios"
+	AlertListDataSourceNewRelic        AlertListDataSource = "new_relic"
+	AlertListDataSourceNobl9           AlertListDataSource = "nobl9"
+	AlertListDataSourceOpsgenie        AlertListDataSource = "opsgenie"
+	AlertListDataSourcePagerduty       AlertListDataSource = "pagerduty"
+	AlertListDataSourcePagertree       AlertListDataSource = "pagertree"
+	AlertListDataSourcePrtg            AlertListDataSource = "prtg"
+	AlertListDataSourceRollbar         AlertListDataSource = "rollbar"
+	AlertListDataSourceRootly          AlertListDataSource = "rootly"
+	AlertListDataSourceSentry          AlertListDataSource = "sentry"
+	AlertListDataSourceServiceNow      AlertListDataSource = "service_now"
+	AlertListDataSourceSlack           AlertListDataSource = "slack"
+	AlertListDataSourceSplunk          AlertListDataSource = "splunk"
+	AlertListDataSourceVictorops       AlertListDataSource = "victorops"
+	AlertListDataSourceWeb             AlertListDataSource = "web"
+	AlertListDataSourceWorkflow        AlertListDataSource = "workflow"
+	AlertListDataSourceZendesk         AlertListDataSource = "zendesk"
+)
+
+// Valid indicates whether the value is a known member of the AlertListDataSource enum.
+func (e AlertListDataSource) Valid() bool {
+	switch e {
+	case AlertListDataSourceAPI:
+		return true
+	case AlertListDataSourceAlertmanager:
+		return true
+	case AlertListDataSourceAppDynamics:
+		return true
+	case AlertListDataSourceAppOptics:
+		return true
+	case AlertListDataSourceAsana:
+		return true
+	case AlertListDataSourceAwsSns:
+		return true
+	case AlertListDataSourceAzure:
+		return true
+	case AlertListDataSourceBugSnag:
+		return true
+	case AlertListDataSourceCatchpoint:
+		return true
+	case AlertListDataSourceCheckly:
+		return true
+	case AlertListDataSourceChronosphere:
+		return true
+	case AlertListDataSourceClickup:
+		return true
+	case AlertListDataSourceCloudWatch:
+		return true
+	case AlertListDataSourceDatadog:
+		return true
+	case AlertListDataSourceDynatrace:
+		return true
+	case AlertListDataSourceEmail:
+		return true
+	case AlertListDataSourceGenericWebhook:
+		return true
+	case AlertListDataSourceGitlab:
+		return true
+	case AlertListDataSourceGoogleChat:
+		return true
+	case AlertListDataSourceGoogleCloud:
+		return true
+	case AlertListDataSourceGrafana:
+		return true
+	case AlertListDataSourceHeartbeat:
+		return true
+	case AlertListDataSourceHoneycomb:
+		return true
+	case AlertListDataSourceJira:
+		return true
+	case AlertListDataSourceLinear:
+		return true
+	case AlertListDataSourceLiveCallRouting:
+		return true
+	case AlertListDataSourceManual:
+		return true
+	case AlertListDataSourceMobile:
+		return true
+	case AlertListDataSourceMonteCarlo:
+		return true
+	case AlertListDataSourceNagios:
+		return true
+	case AlertListDataSourceNewRelic:
+		return true
+	case AlertListDataSourceNobl9:
+		return true
+	case AlertListDataSourceOpsgenie:
+		return true
+	case AlertListDataSourcePagerduty:
+		return true
+	case AlertListDataSourcePagertree:
+		return true
+	case AlertListDataSourcePrtg:
+		return true
+	case AlertListDataSourceRollbar:
+		return true
+	case AlertListDataSourceRootly:
+		return true
+	case AlertListDataSourceSentry:
+		return true
+	case AlertListDataSourceServiceNow:
+		return true
+	case AlertListDataSourceSlack:
+		return true
+	case AlertListDataSourceSplunk:
+		return true
+	case AlertListDataSourceVictorops:
+		return true
+	case AlertListDataSourceWeb:
+		return true
+	case AlertListDataSourceWorkflow:
+		return true
+	case AlertListDataSourceZendesk:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for AlertListDataType.
 const (
 	AlertListDataTypeAlerts AlertListDataType = "alerts"
@@ -1550,6 +1850,156 @@ const (
 func (e AlertListDataType) Valid() bool {
 	switch e {
 	case AlertListDataTypeAlerts:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AlertResponseDataSource.
+const (
+	AlertResponseDataSourceAPI             AlertResponseDataSource = "api"
+	AlertResponseDataSourceAlertmanager    AlertResponseDataSource = "alertmanager"
+	AlertResponseDataSourceAppDynamics     AlertResponseDataSource = "app_dynamics"
+	AlertResponseDataSourceAppOptics       AlertResponseDataSource = "app_optics"
+	AlertResponseDataSourceAsana           AlertResponseDataSource = "asana"
+	AlertResponseDataSourceAwsSns          AlertResponseDataSource = "aws_sns"
+	AlertResponseDataSourceAzure           AlertResponseDataSource = "azure"
+	AlertResponseDataSourceBugSnag         AlertResponseDataSource = "bug_snag"
+	AlertResponseDataSourceCatchpoint      AlertResponseDataSource = "catchpoint"
+	AlertResponseDataSourceCheckly         AlertResponseDataSource = "checkly"
+	AlertResponseDataSourceChronosphere    AlertResponseDataSource = "chronosphere"
+	AlertResponseDataSourceClickup         AlertResponseDataSource = "clickup"
+	AlertResponseDataSourceCloudWatch      AlertResponseDataSource = "cloud_watch"
+	AlertResponseDataSourceDatadog         AlertResponseDataSource = "datadog"
+	AlertResponseDataSourceDynatrace       AlertResponseDataSource = "dynatrace"
+	AlertResponseDataSourceEmail           AlertResponseDataSource = "email"
+	AlertResponseDataSourceGenericWebhook  AlertResponseDataSource = "generic_webhook"
+	AlertResponseDataSourceGitlab          AlertResponseDataSource = "gitlab"
+	AlertResponseDataSourceGoogleChat      AlertResponseDataSource = "google_chat"
+	AlertResponseDataSourceGoogleCloud     AlertResponseDataSource = "google_cloud"
+	AlertResponseDataSourceGrafana         AlertResponseDataSource = "grafana"
+	AlertResponseDataSourceHeartbeat       AlertResponseDataSource = "heartbeat"
+	AlertResponseDataSourceHoneycomb       AlertResponseDataSource = "honeycomb"
+	AlertResponseDataSourceJira            AlertResponseDataSource = "jira"
+	AlertResponseDataSourceLinear          AlertResponseDataSource = "linear"
+	AlertResponseDataSourceLiveCallRouting AlertResponseDataSource = "live_call_routing"
+	AlertResponseDataSourceManual          AlertResponseDataSource = "manual"
+	AlertResponseDataSourceMobile          AlertResponseDataSource = "mobile"
+	AlertResponseDataSourceMonteCarlo      AlertResponseDataSource = "monte_carlo"
+	AlertResponseDataSourceNagios          AlertResponseDataSource = "nagios"
+	AlertResponseDataSourceNewRelic        AlertResponseDataSource = "new_relic"
+	AlertResponseDataSourceNobl9           AlertResponseDataSource = "nobl9"
+	AlertResponseDataSourceOpsgenie        AlertResponseDataSource = "opsgenie"
+	AlertResponseDataSourcePagerduty       AlertResponseDataSource = "pagerduty"
+	AlertResponseDataSourcePagertree       AlertResponseDataSource = "pagertree"
+	AlertResponseDataSourcePrtg            AlertResponseDataSource = "prtg"
+	AlertResponseDataSourceRollbar         AlertResponseDataSource = "rollbar"
+	AlertResponseDataSourceRootly          AlertResponseDataSource = "rootly"
+	AlertResponseDataSourceSentry          AlertResponseDataSource = "sentry"
+	AlertResponseDataSourceServiceNow      AlertResponseDataSource = "service_now"
+	AlertResponseDataSourceSlack           AlertResponseDataSource = "slack"
+	AlertResponseDataSourceSplunk          AlertResponseDataSource = "splunk"
+	AlertResponseDataSourceVictorops       AlertResponseDataSource = "victorops"
+	AlertResponseDataSourceWeb             AlertResponseDataSource = "web"
+	AlertResponseDataSourceWorkflow        AlertResponseDataSource = "workflow"
+	AlertResponseDataSourceZendesk         AlertResponseDataSource = "zendesk"
+)
+
+// Valid indicates whether the value is a known member of the AlertResponseDataSource enum.
+func (e AlertResponseDataSource) Valid() bool {
+	switch e {
+	case AlertResponseDataSourceAPI:
+		return true
+	case AlertResponseDataSourceAlertmanager:
+		return true
+	case AlertResponseDataSourceAppDynamics:
+		return true
+	case AlertResponseDataSourceAppOptics:
+		return true
+	case AlertResponseDataSourceAsana:
+		return true
+	case AlertResponseDataSourceAwsSns:
+		return true
+	case AlertResponseDataSourceAzure:
+		return true
+	case AlertResponseDataSourceBugSnag:
+		return true
+	case AlertResponseDataSourceCatchpoint:
+		return true
+	case AlertResponseDataSourceCheckly:
+		return true
+	case AlertResponseDataSourceChronosphere:
+		return true
+	case AlertResponseDataSourceClickup:
+		return true
+	case AlertResponseDataSourceCloudWatch:
+		return true
+	case AlertResponseDataSourceDatadog:
+		return true
+	case AlertResponseDataSourceDynatrace:
+		return true
+	case AlertResponseDataSourceEmail:
+		return true
+	case AlertResponseDataSourceGenericWebhook:
+		return true
+	case AlertResponseDataSourceGitlab:
+		return true
+	case AlertResponseDataSourceGoogleChat:
+		return true
+	case AlertResponseDataSourceGoogleCloud:
+		return true
+	case AlertResponseDataSourceGrafana:
+		return true
+	case AlertResponseDataSourceHeartbeat:
+		return true
+	case AlertResponseDataSourceHoneycomb:
+		return true
+	case AlertResponseDataSourceJira:
+		return true
+	case AlertResponseDataSourceLinear:
+		return true
+	case AlertResponseDataSourceLiveCallRouting:
+		return true
+	case AlertResponseDataSourceManual:
+		return true
+	case AlertResponseDataSourceMobile:
+		return true
+	case AlertResponseDataSourceMonteCarlo:
+		return true
+	case AlertResponseDataSourceNagios:
+		return true
+	case AlertResponseDataSourceNewRelic:
+		return true
+	case AlertResponseDataSourceNobl9:
+		return true
+	case AlertResponseDataSourceOpsgenie:
+		return true
+	case AlertResponseDataSourcePagerduty:
+		return true
+	case AlertResponseDataSourcePagertree:
+		return true
+	case AlertResponseDataSourcePrtg:
+		return true
+	case AlertResponseDataSourceRollbar:
+		return true
+	case AlertResponseDataSourceRootly:
+		return true
+	case AlertResponseDataSourceSentry:
+		return true
+	case AlertResponseDataSourceServiceNow:
+		return true
+	case AlertResponseDataSourceSlack:
+		return true
+	case AlertResponseDataSourceSplunk:
+		return true
+	case AlertResponseDataSourceVictorops:
+		return true
+	case AlertResponseDataSourceWeb:
+		return true
+	case AlertResponseDataSourceWorkflow:
+		return true
+	case AlertResponseDataSourceZendesk:
 		return true
 	default:
 		return false
@@ -40431,7 +40881,7 @@ type Alert struct {
 	ShortID string `json:"short_id"`
 
 	// Source The source of the alert
-	Source string `json:"source"`
+	Source AlertSource `json:"source"`
 
 	// StartedAt When the alert started
 	StartedAt nullable.Nullable[time.Time] `json:"started_at,omitempty"`
@@ -40468,6 +40918,9 @@ type AlertNoise string
 
 // AlertNotificationTargetType Only available for organizations with Rootly On-Call enabled. Can be one of Group, Service, EscalationPolicy, Functionality, User.
 type AlertNotificationTargetType string
+
+// AlertSource The source of the alert
+type AlertSource string
 
 // AlertStatus The status of the alert
 type AlertStatus string
@@ -40740,13 +41193,16 @@ type AlertList struct {
 		ID string `json:"id"`
 
 		// Source The source of the alert
-		Source *string           `json:"source,omitempty"`
-		Type   AlertListDataType `json:"type"`
+		Source *AlertListDataSource `json:"source,omitempty"`
+		Type   AlertListDataType    `json:"type"`
 	} `json:"data"`
 	Included []JsonapiIncludedResource `json:"included,omitempty"`
 	Links    Links                     `json:"links"`
 	Meta     Meta                      `json:"meta"`
 }
+
+// AlertListDataSource The source of the alert
+type AlertListDataSource string
 
 // AlertListDataType defines model for AlertList.Data.Type.
 type AlertListDataType string
@@ -40760,11 +41216,14 @@ type AlertResponse struct {
 		ID string `json:"id"`
 
 		// Source The source of the alert
-		Source *string               `json:"source,omitempty"`
-		Type   AlertResponseDataType `json:"type"`
+		Source *AlertResponseDataSource `json:"source,omitempty"`
+		Type   AlertResponseDataType    `json:"type"`
 	} `json:"data"`
 	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
+
+// AlertResponseDataSource The source of the alert
+type AlertResponseDataSource string
 
 // AlertResponseDataType defines model for AlertResponse.Data.Type.
 type AlertResponseDataType string
