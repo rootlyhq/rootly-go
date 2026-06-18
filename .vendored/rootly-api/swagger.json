@@ -32918,7 +32918,7 @@
         "parameters": [],
         "responses": {
           "201": {
-            "description": "webhooks_endpoint created",
+            "description": "webhooks_endpoint created with custom_headers",
             "content": {
               "application/vnd.api+json": {
                 "schema": {
@@ -33088,7 +33088,7 @@
         "parameters": [],
         "responses": {
           "200": {
-            "description": "webhooks_endpoint updated",
+            "description": "webhooks_endpoint custom_headers cleared with empty array",
             "content": {
               "application/vnd.api+json": {
                 "schema": {
@@ -87977,6 +87977,29 @@
                   },
                   "enabled": {
                     "type": "boolean"
+                  },
+                  "custom_headers": {
+                    "type": "array",
+                    "maxItems": 10,
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "string",
+                          "maxLength": 256
+                        },
+                        "value": {
+                          "type": "string",
+                          "maxLength": 8192
+                        }
+                      },
+                      "required": [
+                        "name",
+                        "value"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "description": "Custom HTTP headers sent with each delivery. Max 10. Reserved names (Content-Type, X-Rootly-Signature, Host, etc.) are rejected."
                   }
                 },
                 "additionalProperties": false,
@@ -88056,6 +88079,29 @@
                   },
                   "enabled": {
                     "type": "boolean"
+                  },
+                  "custom_headers": {
+                    "type": "array",
+                    "maxItems": 10,
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "string",
+                          "maxLength": 256
+                        },
+                        "value": {
+                          "type": "string",
+                          "maxLength": 8192
+                        }
+                      },
+                      "required": [
+                        "name",
+                        "value"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "description": "Custom HTTP headers sent with each delivery. Max 10. Reserved names (Content-Type, X-Rootly-Signature, Host, etc.) are rejected."
                   }
                 },
                 "additionalProperties": false
@@ -88131,6 +88177,29 @@
           },
           "enabled": {
             "type": "boolean"
+          },
+          "custom_headers": {
+            "type": "array",
+            "maxItems": 10,
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "maxLength": 256
+                },
+                "value": {
+                  "type": "string",
+                  "maxLength": 8192
+                }
+              },
+              "required": [
+                "name",
+                "value"
+              ],
+              "additionalProperties": false
+            },
+            "description": "Custom HTTP headers sent with each delivery. Max 10. Reserved names (Content-Type, X-Rootly-Signature, Host, etc.) are rejected."
           },
           "created_at": {
             "type": "string",

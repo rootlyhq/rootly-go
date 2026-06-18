@@ -53003,6 +53003,11 @@ type NewUserPhoneNumberDataType string
 type NewWebhooksEndpoint struct {
 	Data struct {
 		Attributes struct {
+			// CustomHeaders Custom HTTP headers sent with each delivery. Max 10. Reserved names (Content-Type, X-Rootly-Signature, Host, etc.) are rejected.
+			CustomHeaders []struct {
+				Name  string `json:"name"`
+				Value string `json:"value"`
+			} `json:"custom_headers,omitempty"`
 			Enabled    *bool                                         `json:"enabled,omitempty"`
 			EventTypes []NewWebhooksEndpointDataAttributesEventTypes `json:"event_types,omitempty"`
 
@@ -62195,6 +62200,11 @@ type UpdateVictorOpsIncidentTaskParamsTaskType string
 type UpdateWebhooksEndpoint struct {
 	Data struct {
 		Attributes struct {
+			// CustomHeaders Custom HTTP headers sent with each delivery. Max 10. Reserved names (Content-Type, X-Rootly-Signature, Host, etc.) are rejected.
+			CustomHeaders []struct {
+				Name  string `json:"name"`
+				Value string `json:"value"`
+			} `json:"custom_headers,omitempty"`
 			Enabled    *bool                                            `json:"enabled,omitempty"`
 			EventTypes []UpdateWebhooksEndpointDataAttributesEventTypes `json:"event_types,omitempty"`
 
@@ -62745,7 +62755,13 @@ type WebhooksDeliveryResponseDataType string
 // WebhooksEndpoint defines model for webhooks_endpoint.
 type WebhooksEndpoint struct {
 	// CreatedAt Date of creation
-	CreatedAt  string                       `json:"created_at"`
+	CreatedAt string `json:"created_at"`
+
+	// CustomHeaders Custom HTTP headers sent with each delivery. Max 10. Reserved names (Content-Type, X-Rootly-Signature, Host, etc.) are rejected.
+	CustomHeaders []struct {
+		Name  string `json:"name"`
+		Value string `json:"value"`
+	} `json:"custom_headers,omitempty"`
 	Enabled    bool                         `json:"enabled"`
 	EventTypes []WebhooksEndpointEventTypes `json:"event_types"`
 
