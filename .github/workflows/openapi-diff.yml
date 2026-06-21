@@ -89,11 +89,6 @@ jobs:
               });
             }
 
-      - name: OpenAPI breaking changes
-        if: env.BASE_SPEC_EXISTS == 'true'
-        run: oasdiff breaking /tmp/base-swagger.json .vendored/rootly-api/swagger.json --format githubactions
-        continue-on-error: true
-
   diff-overlay:
     name: Diff overlay-applied spec
     runs-on: ubuntu-latest
@@ -285,4 +280,3 @@ jobs:
       - name: OpenAPI overlay breaking changes
         if: env.BASE_SPEC_EXISTS == 'true'
         run: oasdiff breaking /tmp/base-overlay-applied.json /tmp/pr-overlay-applied.json --format githubactions
-        continue-on-error: true
