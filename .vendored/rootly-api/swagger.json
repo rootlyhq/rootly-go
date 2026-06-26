@@ -14053,6 +14053,256 @@
         }
       }
     },
+    "/v1/workflows/{workflow_id}/action_item_form_field_conditions": {
+      "parameters": [
+        {
+          "name": "workflow_id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "post": {
+        "summary": "Creates a workflow action item form field condition",
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "tags": [
+          "WorkflowActionItemFormFieldConditions"
+        ],
+        "description": "Creates a new workflow action item form field condition from provided data",
+        "operationId": "createWorkflowActionItemFormFieldCondition",
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": "workflow_action_item_form_field_condition created",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/workflow_action_item_form_field_condition_response"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "responds with unauthorized for invalid token",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors_list"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "responds with forbidden when the feature flag is disabled"
+          },
+          "422": {
+            "description": "rejects conditions on a non-action-item workflow",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors_list"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/vnd.api+json": {
+              "schema": {
+                "$ref": "#/components/schemas/new_workflow_action_item_form_field_condition"
+              }
+            }
+          },
+          "required": true
+        }
+      },
+      "get": {
+        "summary": "List workflow action item form field conditions",
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "tags": [
+          "WorkflowActionItemFormFieldConditions"
+        ],
+        "description": "List workflow action item form field conditions",
+        "operationId": "listWorkflowActionItemFormFieldConditions",
+        "parameters": [
+          {
+            "name": "include",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page[number]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "page[size]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/workflow_action_item_form_field_condition_list"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/workflow_action_item_form_field_conditions/{id}": {
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "get": {
+        "summary": "Retrieves a workflow action item form field condition",
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "tags": [
+          "WorkflowActionItemFormFieldConditions"
+        ],
+        "description": "Retrieves a specific workflow action item form field condition by id",
+        "operationId": "getWorkflowActionItemFormFieldCondition",
+        "responses": {
+          "200": {
+            "description": "includes native field ids",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/workflow_action_item_form_field_condition_response"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "resource not found",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors_list"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "summary": "Update a workflow action item form field condition",
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "tags": [
+          "WorkflowActionItemFormFieldConditions"
+        ],
+        "description": "Update a specific workflow action item form field condition by id",
+        "operationId": "updateWorkflowActionItemFormFieldCondition",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "ignores non-allowlisted attributes such as workflow_id",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/workflow_action_item_form_field_condition_response"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "resource not found",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors_list"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/vnd.api+json": {
+              "schema": {
+                "$ref": "#/components/schemas/update_workflow_action_item_form_field_condition"
+              }
+            }
+          },
+          "required": true
+        }
+      },
+      "delete": {
+        "summary": "Delete a workflow action item form field condition",
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "tags": [
+          "WorkflowActionItemFormFieldConditions"
+        ],
+        "description": "Delete a specific workflow action item form field condition by id",
+        "operationId": "deleteWorkflowActionItemFormFieldCondition",
+        "responses": {
+          "200": {
+            "description": "allows deleting an existing condition when the feature flag is disabled",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/workflow_action_item_form_field_condition_response"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "resource not found",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors_list"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/v1/workflows/{workflow_id}/custom_field_selections": {
       "parameters": [
         {
@@ -25477,6 +25727,47 @@
         }
       }
     },
+    "/v1/alerts/receipts/{id}": {
+      "get": {
+        "summary": "Get a receipt",
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "tags": [
+          "Alerts"
+        ],
+        "description": "Retrieve the delivery receipt for a notification by ID, including its state and (when applicable) failure reason and referenced resource.",
+        "operationId": "getReceipt",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Receipt ID",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "receipt found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/receipt"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "receipt not found"
+          }
+        }
+      }
+    },
     "/v1/retrospective_configurations": {
       "get": {
         "summary": "List retrospective configurations",
@@ -29372,6 +29663,151 @@
         }
       }
     },
+    "/v1/schedules/{schedule_id}/shift_coverage_requests": {
+      "parameters": [
+        {
+          "name": "schedule_id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "post": {
+        "summary": "creates shift coverage requests",
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "tags": [
+          "ShiftCoverageRequests"
+        ],
+        "description": "Creates coverage requests for the shifts overlapping the requested time range. A range can span multiple consecutive shifts (e.g. across a handoff), so one or more coverage requests may be created; the response is always a list. A coverage request broadcasts to schedule members so someone can volunteer to cover the shift.",
+        "operationId": "createShiftCoverageRequest",
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": "without override permission, can request coverage for own shift",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/shift_coverage_request_list"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "without override permission, cannot request coverage for another user's shift",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors_list"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/vnd.api+json": {
+              "schema": {
+                "$ref": "#/components/schemas/new_shift_coverage_request"
+              }
+            }
+          },
+          "required": true
+        }
+      },
+      "get": {
+        "summary": "list shift coverage requests",
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "tags": [
+          "ShiftCoverageRequests"
+        ],
+        "description": "List active shift coverage requests for a schedule.",
+        "operationId": "listShiftCoverageRequests",
+        "responses": {
+          "200": {
+            "description": "shift_coverage_requests listed",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/shift_coverage_request_list"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/shift_coverage_requests/{id}": {
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "get": {
+        "summary": "retrieves a shift coverage request",
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "tags": [
+          "ShiftCoverageRequests"
+        ],
+        "description": "Retrieves a specific shift coverage request.",
+        "operationId": "getShiftCoverageRequest",
+        "responses": {
+          "200": {
+            "description": "shift_coverage_request found",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/shift_coverage_request_response"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "deletes a shift coverage request",
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "tags": [
+          "ShiftCoverageRequests"
+        ],
+        "description": "Deletes a shift coverage request.",
+        "operationId": "deleteShiftCoverageRequest",
+        "responses": {
+          "200": {
+            "description": "shift_coverage_request deleted",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/shift_coverage_request_response"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/v1/shifts": {
       "get": {
         "summary": "List shifts",
@@ -32726,7 +33162,7 @@
         "parameters": [],
         "responses": {
           "200": {
-            "description": "update name and role simultaneously",
+            "description": "custom role with roles_permissions can update user role (IR-5606)",
             "content": {
               "application/vnd.api+json": {
                 "schema": {
@@ -33839,6 +34275,32 @@
             },
             "nullable": true
           },
+          "responders": {
+            "type": "array",
+            "description": "Users who responded to the alert. Included on all non-list responses (show, create, update, resolve, etc.); on list responses only when `include=responders` is requested.",
+            "items": {
+              "type": "object",
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/user_flat_response"
+                }
+              ]
+            },
+            "nullable": true
+          },
+          "notified_users": {
+            "type": "array",
+            "description": "Users who were notified about the alert. Included on all non-list responses (show, create, update, resolve, etc.); on list responses only when `include=notified_users` is requested.",
+            "items": {
+              "type": "object",
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/user"
+                }
+              ]
+            },
+            "nullable": true
+          },
           "alerting_targets": {
             "type": "array",
             "description": "Alerting targets associated with the alert. Only present when advanced routing is enabled for the team.",
@@ -34109,6 +34571,53 @@
           }
         }
       },
+      "alert_event_user": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "first_name": {
+            "type": "string",
+            "nullable": true
+          },
+          "last_name": {
+            "type": "string",
+            "nullable": true
+          },
+          "preferred_name": {
+            "type": "string",
+            "nullable": true
+          },
+          "full_name": {
+            "type": "string",
+            "nullable": true
+          },
+          "time_zone": {
+            "type": "string",
+            "nullable": true
+          },
+          "created_at": {
+            "type": "string"
+          },
+          "updated_at": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "email",
+          "created_at",
+          "updated_at"
+        ]
+      },
       "new_alert_event": {
         "type": "object",
         "properties": {
@@ -34266,6 +34775,154 @@
           "details": {
             "type": "string",
             "description": "Note message.",
+            "nullable": true
+          },
+          "user": {
+            "type": "object",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/alert_event_user"
+              }
+            ],
+            "nullable": true
+          },
+          "incident": {
+            "type": "object",
+            "nullable": true,
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "sequential_id": {
+                "type": "integer",
+                "nullable": true
+              },
+              "title": {
+                "type": "string"
+              },
+              "slug": {
+                "type": "string"
+              },
+              "kind": {
+                "type": "string"
+              },
+              "status": {
+                "type": "string"
+              },
+              "private": {
+                "type": "boolean"
+              },
+              "description": {
+                "type": "string",
+                "nullable": true
+              },
+              "started_at": {
+                "type": "string",
+                "nullable": true
+              },
+              "duration": {
+                "type": "integer",
+                "description": "Duration in seconds.",
+                "nullable": true
+              },
+              "url": {
+                "type": "string"
+              },
+              "created_at": {
+                "type": "string"
+              },
+              "updated_at": {
+                "type": "string"
+              }
+            }
+          },
+          "schedule": {
+            "type": "object",
+            "nullable": true,
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string",
+                "nullable": true
+              },
+              "escalation_policies": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "created_at": {
+                      "type": "string"
+                    },
+                    "updated_at": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "created_at": {
+                "type": "string"
+              },
+              "updated_at": {
+                "type": "string"
+              }
+            }
+          },
+          "escalation_level": {
+            "type": "integer",
+            "nullable": true
+          },
+          "escalation_target_type": {
+            "type": "string",
+            "description": "e.g. EscalationPolicy, User.",
+            "nullable": true
+          },
+          "escalation_target": {
+            "type": "object",
+            "description": "JSON:API-wrapped escalation target (User or EscalationPolicy).",
+            "nullable": true,
+            "properties": {
+              "data": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "type": {
+                    "type": "string",
+                    "description": "e.g. users, escalation_policies."
+                  },
+                  "attributes": {
+                    "type": "object"
+                  }
+                }
+              }
+            }
+          },
+          "slack_channel": {
+            "type": "object",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/slack_channel"
+              }
+            ],
+            "nullable": true
+          },
+          "incident_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
             "nullable": true
           },
           "created_at": {
@@ -38791,6 +39448,16 @@
           "user_id": {
             "type": "integer",
             "description": "The ID of who took action on the object. Together with whodunnit_type can be used to find the user",
+            "nullable": true
+          },
+          "user_name": {
+            "type": "string",
+            "description": "Display name of the user who performed the action",
+            "nullable": true
+          },
+          "user_email": {
+            "type": "string",
+            "description": "Email address of the user who performed the action",
             "nullable": true
           },
           "ip_address": {
@@ -46749,7 +47416,23 @@
                           "Samoa",
                           "Pacific/Apia",
                           "Tokelau Is.",
-                          "Pacific/Fakaofo"
+                          "Pacific/Fakaofo",
+                          "America/Adak",
+                          "America/Atka",
+                          "US/Aleutian",
+                          "America/Vancouver",
+                          "Canada/Pacific",
+                          "America/Miquelon",
+                          "Australia/Eucla",
+                          "Australia/LHI",
+                          "Australia/Lord_Howe",
+                          "Chile/EasterIsland",
+                          "Pacific/Easter",
+                          "Pacific/Gambier",
+                          "Pacific/Pitcairn",
+                          "Pacific/Marquesas",
+                          "Pacific/Kiritimati",
+                          "Pacific/Norfolk"
                         ],
                         "nullable": true
                       },
@@ -47137,7 +47820,23 @@
                           "Samoa",
                           "Pacific/Apia",
                           "Tokelau Is.",
-                          "Pacific/Fakaofo"
+                          "Pacific/Fakaofo",
+                          "America/Adak",
+                          "America/Atka",
+                          "US/Aleutian",
+                          "America/Vancouver",
+                          "Canada/Pacific",
+                          "America/Miquelon",
+                          "Australia/Eucla",
+                          "Australia/LHI",
+                          "Australia/Lord_Howe",
+                          "Chile/EasterIsland",
+                          "Pacific/Easter",
+                          "Pacific/Gambier",
+                          "Pacific/Pitcairn",
+                          "Pacific/Marquesas",
+                          "Pacific/Kiritimati",
+                          "Pacific/Norfolk"
                         ],
                         "nullable": true
                       },
@@ -47518,7 +48217,23 @@
                   "Samoa",
                   "Pacific/Apia",
                   "Tokelau Is.",
-                  "Pacific/Fakaofo"
+                  "Pacific/Fakaofo",
+                  "America/Adak",
+                  "America/Atka",
+                  "US/Aleutian",
+                  "America/Vancouver",
+                  "Canada/Pacific",
+                  "America/Miquelon",
+                  "Australia/Eucla",
+                  "Australia/LHI",
+                  "Australia/Lord_Howe",
+                  "Chile/EasterIsland",
+                  "Pacific/Easter",
+                  "Pacific/Gambier",
+                  "Pacific/Pitcairn",
+                  "Pacific/Marquesas",
+                  "Pacific/Kiritimati",
+                  "Pacific/Norfolk"
                 ],
                 "nullable": true
               },
@@ -48223,7 +48938,23 @@
                                 "Samoa",
                                 "Pacific/Apia",
                                 "Tokelau Is.",
-                                "Pacific/Fakaofo"
+                                "Pacific/Fakaofo",
+                                "America/Adak",
+                                "America/Atka",
+                                "US/Aleutian",
+                                "America/Vancouver",
+                                "Canada/Pacific",
+                                "America/Miquelon",
+                                "Australia/Eucla",
+                                "Australia/LHI",
+                                "Australia/Lord_Howe",
+                                "Chile/EasterIsland",
+                                "Pacific/Easter",
+                                "Pacific/Gambier",
+                                "Pacific/Pitcairn",
+                                "Pacific/Marquesas",
+                                "Pacific/Kiritimati",
+                                "Pacific/Norfolk"
                               ]
                             },
                             "time_blocks": {
@@ -48637,7 +49368,23 @@
                       "Samoa",
                       "Pacific/Apia",
                       "Tokelau Is.",
-                      "Pacific/Fakaofo"
+                      "Pacific/Fakaofo",
+                      "America/Adak",
+                      "America/Atka",
+                      "US/Aleutian",
+                      "America/Vancouver",
+                      "Canada/Pacific",
+                      "America/Miquelon",
+                      "Australia/Eucla",
+                      "Australia/LHI",
+                      "Australia/Lord_Howe",
+                      "Chile/EasterIsland",
+                      "Pacific/Easter",
+                      "Pacific/Gambier",
+                      "Pacific/Pitcairn",
+                      "Pacific/Marquesas",
+                      "Pacific/Kiritimati",
+                      "Pacific/Norfolk"
                     ],
                     "nullable": true
                   },
@@ -49255,7 +50002,23 @@
                                 "Samoa",
                                 "Pacific/Apia",
                                 "Tokelau Is.",
-                                "Pacific/Fakaofo"
+                                "Pacific/Fakaofo",
+                                "America/Adak",
+                                "America/Atka",
+                                "US/Aleutian",
+                                "America/Vancouver",
+                                "Canada/Pacific",
+                                "America/Miquelon",
+                                "Australia/Eucla",
+                                "Australia/LHI",
+                                "Australia/Lord_Howe",
+                                "Chile/EasterIsland",
+                                "Pacific/Easter",
+                                "Pacific/Gambier",
+                                "Pacific/Pitcairn",
+                                "Pacific/Marquesas",
+                                "Pacific/Kiritimati",
+                                "Pacific/Norfolk"
                               ]
                             },
                             "time_blocks": {
@@ -49670,7 +50433,23 @@
                       "Samoa",
                       "Pacific/Apia",
                       "Tokelau Is.",
-                      "Pacific/Fakaofo"
+                      "Pacific/Fakaofo",
+                      "America/Adak",
+                      "America/Atka",
+                      "US/Aleutian",
+                      "America/Vancouver",
+                      "Canada/Pacific",
+                      "America/Miquelon",
+                      "Australia/Eucla",
+                      "Australia/LHI",
+                      "Australia/Lord_Howe",
+                      "Chile/EasterIsland",
+                      "Pacific/Easter",
+                      "Pacific/Gambier",
+                      "Pacific/Pitcairn",
+                      "Pacific/Marquesas",
+                      "Pacific/Kiritimati",
+                      "Pacific/Norfolk"
                     ],
                     "nullable": true
                   },
@@ -50272,7 +51051,23 @@
                         "Samoa",
                         "Pacific/Apia",
                         "Tokelau Is.",
-                        "Pacific/Fakaofo"
+                        "Pacific/Fakaofo",
+                        "America/Adak",
+                        "America/Atka",
+                        "US/Aleutian",
+                        "America/Vancouver",
+                        "Canada/Pacific",
+                        "America/Miquelon",
+                        "Australia/Eucla",
+                        "Australia/LHI",
+                        "Australia/Lord_Howe",
+                        "Chile/EasterIsland",
+                        "Pacific/Easter",
+                        "Pacific/Gambier",
+                        "Pacific/Pitcairn",
+                        "Pacific/Marquesas",
+                        "Pacific/Kiritimati",
+                        "Pacific/Norfolk"
                       ]
                     },
                     "time_blocks": {
@@ -50687,7 +51482,23 @@
               "Samoa",
               "Pacific/Apia",
               "Tokelau Is.",
-              "Pacific/Fakaofo"
+              "Pacific/Fakaofo",
+              "America/Adak",
+              "America/Atka",
+              "US/Aleutian",
+              "America/Vancouver",
+              "Canada/Pacific",
+              "America/Miquelon",
+              "Australia/Eucla",
+              "Australia/LHI",
+              "Australia/Lord_Howe",
+              "Chile/EasterIsland",
+              "Pacific/Easter",
+              "Pacific/Gambier",
+              "Pacific/Pitcairn",
+              "Pacific/Marquesas",
+              "Pacific/Kiritimati",
+              "Pacific/Norfolk"
             ],
             "nullable": true
           },
@@ -55231,6 +56042,14 @@
           "mark_post_mortem_as_published": {
             "type": "boolean",
             "default": true
+          },
+          "include_overview": {
+            "type": "boolean",
+            "default": true
+          },
+          "include_timeline": {
+            "type": "boolean",
+            "default": true
           }
         },
         "required": [
@@ -55463,6 +56282,11 @@
           "parent_issue_number": {
             "type": "string",
             "description": "The parent issue number for sub-issue linking",
+            "nullable": true
+          },
+          "custom_fields_mapping": {
+            "type": "string",
+            "description": "Custom field mappings. Can contain liquid markup and need to be valid JSON",
             "nullable": true
           }
         },
@@ -56661,6 +57485,11 @@
           "assign_user_email": {
             "type": "string",
             "description": "The assigned user's email"
+          },
+          "custom_fields_mapping": {
+            "type": "string",
+            "description": "Custom field mappings. Can contain liquid markup and need to be valid JSON",
+            "nullable": true
           }
         },
         "required": [
@@ -56731,6 +57560,11 @@
           "assign_user_email": {
             "type": "string",
             "description": "The assigned user's email"
+          },
+          "custom_fields_mapping": {
+            "type": "string",
+            "description": "Custom field mappings. Can contain liquid markup and need to be valid JSON",
+            "nullable": true
           }
         },
         "required": [
@@ -57687,6 +58521,14 @@
               }
             },
             "description": "The Confluence template to use"
+          },
+          "include_overview": {
+            "type": "boolean",
+            "default": true
+          },
+          "include_timeline": {
+            "type": "boolean",
+            "default": true
           }
         },
         "required": [
@@ -59003,6 +59845,98 @@
         },
         "required": [
           "channels"
+        ]
+      },
+      "invite_to_microsoft_teams_channel_rootly_task_params": {
+        "type": "object",
+        "properties": {
+          "task_type": {
+            "type": "string",
+            "enum": [
+              "invite_to_microsoft_teams_channel_rootly"
+            ]
+          },
+          "team": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              }
+            }
+          },
+          "channel": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              }
+            }
+          },
+          "escalation_policy_target": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              }
+            }
+          },
+          "service_target": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              }
+            }
+          },
+          "user_target": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              }
+            }
+          },
+          "group_target": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              }
+            }
+          },
+          "schedule_target": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "required": [
+          "team",
+          "channel"
         ]
       },
       "invite_to_slack_channel_pagerduty_task_params": {
@@ -61011,6 +61945,11 @@
                 "type": "string"
               }
             }
+          },
+          "custom_fields_mapping": {
+            "type": "string",
+            "description": "Custom field mappings. Can contain liquid markup and need to be valid JSON",
+            "nullable": true
           }
         },
         "required": [
@@ -61397,6 +62336,11 @@
           "assign_user_email": {
             "type": "string",
             "description": "The assigned user's email"
+          },
+          "custom_fields_mapping": {
+            "type": "string",
+            "description": "Custom field mappings. Can contain liquid markup and need to be valid JSON",
+            "nullable": true
           }
         },
         "required": [
@@ -62674,6 +63618,9 @@
                         "$ref": "#/components/schemas/invite_to_slack_channel_rootly_task_params"
                       },
                       {
+                        "$ref": "#/components/schemas/invite_to_microsoft_teams_channel_rootly_task_params"
+                      },
+                      {
                         "$ref": "#/components/schemas/invite_to_slack_channel_pagerduty_task_params"
                       },
                       {
@@ -63162,6 +64109,9 @@
                         "$ref": "#/components/schemas/invite_to_slack_channel_rootly_task_params"
                       },
                       {
+                        "$ref": "#/components/schemas/invite_to_microsoft_teams_channel_rootly_task_params"
+                      },
+                      {
                         "$ref": "#/components/schemas/invite_to_slack_channel_pagerduty_task_params"
                       },
                       {
@@ -63622,6 +64572,9 @@
                 "$ref": "#/components/schemas/invite_to_slack_channel_rootly_task_params"
               },
               {
+                "$ref": "#/components/schemas/invite_to_microsoft_teams_channel_rootly_task_params"
+              },
+              {
                 "$ref": "#/components/schemas/invite_to_slack_channel_pagerduty_task_params"
               },
               {
@@ -63892,6 +64845,456 @@
                   "allOf": [
                     {
                       "$ref": "#/components/schemas/workflow_task"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "id",
+                "type",
+                "attributes"
+              ]
+            }
+          },
+          "links": {
+            "type": "object",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/links"
+              }
+            ]
+          },
+          "meta": {
+            "type": "object",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/meta"
+              }
+            ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
+          }
+        },
+        "required": [
+          "data",
+          "links",
+          "meta"
+        ]
+      },
+      "new_workflow_action_item_form_field_condition": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "workflow_action_item_form_field_conditions"
+                ]
+              },
+              "attributes": {
+                "type": "object",
+                "properties": {
+                  "form_field_id": {
+                    "type": "string",
+                    "description": "The custom field for this condition"
+                  },
+                  "action_item_condition": {
+                    "type": "string",
+                    "description": "The trigger condition",
+                    "enum": [
+                      "IS",
+                      "IS NOT",
+                      "ANY",
+                      "CONTAINS",
+                      "CONTAINS_ALL",
+                      "CONTAINS_NONE",
+                      "NONE",
+                      "SET",
+                      "UNSET"
+                    ],
+                    "default": "ANY"
+                  },
+                  "values": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "description": "The value to associate with the custom field trigger"
+                    }
+                  },
+                  "selected_catalog_entity_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "description": "The selected catalog entities for select and multi_select kinds"
+                    }
+                  },
+                  "selected_functionality_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "description": "The selected functionalities for select and multi_select kinds"
+                    }
+                  },
+                  "selected_group_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "description": "The selected groups (teams) for select and multi_select kinds"
+                    }
+                  },
+                  "selected_option_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "description": "The selected option id for select and multi_select kinds"
+                    }
+                  },
+                  "selected_service_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "description": "The selected services for select and multi_select kinds"
+                    }
+                  },
+                  "selected_user_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "integer",
+                      "description": "The selected user id for select and multi_select kinds"
+                    }
+                  },
+                  "selected_cause_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "description": "The selected causes for select and multi_select kinds"
+                    }
+                  },
+                  "selected_environment_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "description": "The selected environments for select and multi_select kinds"
+                    }
+                  },
+                  "selected_incident_type_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "description": "The selected incident types for select and multi_select kinds"
+                    }
+                  }
+                },
+                "additionalProperties": false,
+                "required": [
+                  "action_item_condition",
+                  "form_field_id"
+                ]
+              }
+            },
+            "required": [
+              "type",
+              "attributes"
+            ]
+          }
+        },
+        "required": [
+          "data"
+        ]
+      },
+      "update_workflow_action_item_form_field_condition": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "workflow_action_item_form_field_conditions"
+                ]
+              },
+              "attributes": {
+                "type": "object",
+                "properties": {
+                  "action_item_condition": {
+                    "type": "string",
+                    "description": "The trigger condition",
+                    "enum": [
+                      "IS",
+                      "IS NOT",
+                      "ANY",
+                      "CONTAINS",
+                      "CONTAINS_ALL",
+                      "CONTAINS_NONE",
+                      "NONE",
+                      "SET",
+                      "UNSET"
+                    ],
+                    "default": "ANY"
+                  },
+                  "values": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "description": "The value to associate with the custom field trigger"
+                    }
+                  },
+                  "selected_catalog_entity_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "description": "The selected catalog entities for select and multi_select kinds"
+                    }
+                  },
+                  "selected_functionality_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "description": "The selected functionalities for select and multi_select kinds"
+                    }
+                  },
+                  "selected_group_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "description": "The selected groups (teams) for select and multi_select kinds"
+                    }
+                  },
+                  "selected_option_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "description": "The selected option id for select and multi_select kinds"
+                    }
+                  },
+                  "selected_service_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "description": "The selected services for select and multi_select kinds"
+                    }
+                  },
+                  "selected_user_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "integer",
+                      "description": "The selected user id for select and multi_select kinds"
+                    }
+                  },
+                  "selected_cause_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "description": "The selected causes for select and multi_select kinds"
+                    }
+                  },
+                  "selected_environment_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "description": "The selected environments for select and multi_select kinds"
+                    }
+                  },
+                  "selected_incident_type_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "description": "The selected incident types for select and multi_select kinds"
+                    }
+                  }
+                },
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "type",
+              "attributes"
+            ]
+          }
+        },
+        "required": [
+          "data"
+        ]
+      },
+      "workflow_action_item_form_field_condition": {
+        "type": "object",
+        "properties": {
+          "workflow_id": {
+            "type": "string",
+            "description": "The workflow for this condition"
+          },
+          "form_field_id": {
+            "type": "string",
+            "description": "The custom field for this condition"
+          },
+          "action_item_condition": {
+            "type": "string",
+            "description": "The trigger condition",
+            "enum": [
+              "IS",
+              "IS NOT",
+              "ANY",
+              "CONTAINS",
+              "CONTAINS_ALL",
+              "CONTAINS_NONE",
+              "NONE",
+              "SET",
+              "UNSET"
+            ],
+            "default": "ANY"
+          },
+          "values": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "description": "The value to associate with the custom field trigger"
+            }
+          },
+          "selected_catalog_entity_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "description": "The selected catalog entities for select and multi_select kinds"
+            }
+          },
+          "selected_functionality_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "description": "The selected functionalities for select and multi_select kinds"
+            }
+          },
+          "selected_group_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "description": "The selected groups (teams) for select and multi_select kinds"
+            }
+          },
+          "selected_option_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "description": "The selected option id for select and multi_select kinds"
+            }
+          },
+          "selected_service_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "description": "The selected services for select and multi_select kinds"
+            }
+          },
+          "selected_user_ids": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "description": "The selected user id for select and multi_select kinds"
+            }
+          },
+          "selected_cause_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "description": "The selected causes for select and multi_select kinds"
+            }
+          },
+          "selected_environment_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "description": "The selected environments for select and multi_select kinds"
+            }
+          },
+          "selected_incident_type_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "description": "The selected incident types for select and multi_select kinds"
+            }
+          }
+        },
+        "required": [
+          "workflow_id",
+          "form_field_id",
+          "action_item_condition",
+          "selected_catalog_entity_ids",
+          "selected_option_ids",
+          "selected_user_ids"
+        ]
+      },
+      "workflow_action_item_form_field_condition_response": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Unique ID of the workflow_action_item_form_field_condition"
+              },
+              "type": {
+                "type": "string",
+                "enum": [
+                  "workflow_action_item_form_field_conditions"
+                ]
+              },
+              "attributes": {
+                "type": "object",
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/workflow_action_item_form_field_condition"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "id",
+              "type",
+              "attributes"
+            ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
+          }
+        },
+        "required": [
+          "data"
+        ]
+      },
+      "workflow_action_item_form_field_condition_list": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "description": "Unique ID of the workflow_action_item_form_field_condition"
+                },
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "workflow_action_item_form_field_conditions"
+                  ]
+                },
+                "attributes": {
+                  "type": "object",
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/workflow_action_item_form_field_condition"
                     }
                   ]
                 }
@@ -68925,6 +70328,16 @@
           "jira_issue_url": {
             "type": "string",
             "description": "The Jira issue URL.",
+            "nullable": true
+          },
+          "created_by": {
+            "type": "object",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/user_flat_response"
+              }
+            ],
+            "description": "User who created this action item",
             "nullable": true
           },
           "created_at": {
@@ -74465,6 +75878,36 @@
           "microsoft_teams_team_id": {
             "type": "string",
             "description": "Microsoft Teams team ID",
+            "nullable": true
+          },
+          "google_chat_space_id": {
+            "type": "string",
+            "description": "Google Chat space ID",
+            "nullable": true
+          },
+          "google_chat_space_name": {
+            "type": "string",
+            "description": "Google Chat space name",
+            "nullable": true
+          },
+          "google_chat_space_url": {
+            "type": "string",
+            "description": "Google Chat space URL",
+            "nullable": true
+          },
+          "google_chat_space_short_url": {
+            "type": "string",
+            "description": "Google Chat space short URL",
+            "nullable": true
+          },
+          "google_chat_space_archived": {
+            "type": "boolean",
+            "description": "Whether the Google Chat space is archived",
+            "nullable": true
+          },
+          "google_chat_space_domain_id": {
+            "type": "string",
+            "description": "Google Chat space domain ID",
             "nullable": true
           },
           "webex_meeting_id": {
@@ -84750,6 +86193,281 @@
           }
         }
       },
+      "new_shift_coverage_request": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "shift_coverage_requests"
+                ]
+              },
+              "attributes": {
+                "type": "object",
+                "properties": {
+                  "starts_at": {
+                    "type": "string",
+                    "description": "Start datetime of the time range to request coverage for",
+                    "format": "date-time",
+                    "nullable": false
+                  },
+                  "ends_at": {
+                    "type": "string",
+                    "description": "End datetime of the time range to request coverage for",
+                    "format": "date-time",
+                    "nullable": false
+                  },
+                  "user_id": {
+                    "type": "integer",
+                    "description": "Optional. Restrict coverage to shifts assigned to this user. When omitted, every shift overlapping the time range is covered.",
+                    "nullable": false
+                  }
+                },
+                "additionalProperties": false,
+                "required": [
+                  "starts_at",
+                  "ends_at"
+                ]
+              }
+            },
+            "required": [
+              "type",
+              "attributes"
+            ]
+          }
+        },
+        "required": [
+          "data"
+        ]
+      },
+      "shift_coverage_request": {
+        "type": "object",
+        "properties": {
+          "schedule_id": {
+            "type": "string",
+            "description": "ID of schedule",
+            "nullable": false
+          },
+          "shift_id": {
+            "type": "string",
+            "description": "ID of the shift being covered",
+            "nullable": false
+          },
+          "original_shift_user_id": {
+            "type": "integer",
+            "description": "ID of the user whose shift is being covered",
+            "nullable": false
+          },
+          "created_by_user_id": {
+            "type": "integer",
+            "description": "ID of the user who created the coverage request",
+            "nullable": false
+          },
+          "starts_at": {
+            "type": "string",
+            "description": "Start datetime of the coverage request",
+            "nullable": false
+          },
+          "ends_at": {
+            "type": "string",
+            "description": "End datetime of the coverage request",
+            "nullable": false
+          },
+          "created_at": {
+            "type": "string",
+            "description": "Date of creation"
+          },
+          "updated_at": {
+            "type": "string",
+            "description": "Date of last update"
+          },
+          "schedule": {
+            "type": "object",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/schedule_response"
+              }
+            ],
+            "description": "Schedule metadata",
+            "nullable": false
+          },
+          "shift": {
+            "type": "object",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/shift"
+              }
+            ],
+            "description": "Shift metadata",
+            "nullable": false
+          },
+          "original_shift_user": {
+            "type": "object",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/user_response"
+              }
+            ],
+            "description": "User whose shift is being covered",
+            "nullable": false
+          },
+          "created_by_user": {
+            "type": "object",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/user_response"
+              }
+            ],
+            "description": "User who created the coverage request",
+            "nullable": false
+          }
+        },
+        "required": [
+          "schedule_id",
+          "shift_id",
+          "original_shift_user_id",
+          "created_by_user_id",
+          "starts_at",
+          "ends_at"
+        ]
+      },
+      "shift_coverage_request_response": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Unique ID of the coverage request"
+              },
+              "type": {
+                "type": "string",
+                "enum": [
+                  "shift_coverage_requests"
+                ]
+              },
+              "attributes": {
+                "type": "object",
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/shift_coverage_request"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "id",
+              "type",
+              "attributes"
+            ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
+          }
+        },
+        "required": [
+          "data"
+        ]
+      },
+      "shift_coverage_request_list": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "description": "Unique ID of the coverage request"
+                },
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "shift_coverage_requests"
+                  ]
+                },
+                "attributes": {
+                  "type": "object",
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/shift_coverage_request"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "id",
+                "type",
+                "attributes"
+              ]
+            }
+          },
+          "links": {
+            "type": "object",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/links"
+              }
+            ]
+          },
+          "meta": {
+            "type": "object",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/meta"
+              }
+            ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
+          }
+        },
+        "required": [
+          "data"
+        ]
+      },
+      "slack_channel": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "slack_channel_name": {
+            "type": "string"
+          },
+          "slack_channel_id": {
+            "type": "string"
+          },
+          "slack_team_id": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string"
+          },
+          "updated_at": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "slack_channel_name",
+          "slack_channel_id",
+          "slack_team_id",
+          "created_at",
+          "updated_at"
+        ]
+      },
       "new_status_page_template": {
         "type": "object",
         "properties": {
@@ -87514,48 +89232,72 @@
       },
       "user_flat_response": {
         "type": "object",
-        "description": "Flat user object as returned by serializer",
+        "description": "Flat user attributes as returned by UserFlatSerializer (no nested associations)",
         "properties": {
           "id": {
             "type": "integer",
             "description": "User ID"
           },
+          "name": {
+            "type": "string",
+            "description": "Display name"
+          },
           "email": {
             "type": "string",
-            "description": "User email"
+            "description": "Email address"
+          },
+          "phone": {
+            "type": "string",
+            "description": "Primary phone number",
+            "nullable": true
+          },
+          "phone_2": {
+            "type": "string",
+            "description": "Secondary phone number",
+            "nullable": true
           },
           "first_name": {
             "type": "string",
-            "description": "User first name",
+            "description": "First name",
             "nullable": true
           },
           "last_name": {
             "type": "string",
-            "description": "User last name",
+            "description": "Last name",
+            "nullable": true
+          },
+          "preferred_name": {
+            "type": "string",
+            "description": "Preferred name",
             "nullable": true
           },
           "full_name": {
             "type": "string",
-            "description": "User full name",
+            "description": "Full name",
             "nullable": true
           },
           "full_name_with_team": {
             "type": "string",
-            "description": "User full name with team",
+            "description": "Full name with team context",
+            "nullable": true
+          },
+          "slack_id": {
+            "type": "string",
+            "description": "Slack user ID",
             "nullable": true
           },
           "time_zone": {
             "type": "string",
-            "description": "User time zone",
+            "description": "IANA time zone",
             "nullable": true
           },
           "created_at": {
             "type": "string",
-            "description": "User creation timestamp"
+            "description": "Date of creation"
           },
           "updated_at": {
             "type": "string",
-            "description": "User last update timestamp"
+            "description": "Date of last update"
           }
         },
         "required": [

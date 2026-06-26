@@ -6681,8 +6681,10 @@ const (
 	EscalationPolicyBusinessHoursTimeZoneAfricaNairobi               EscalationPolicyBusinessHoursTimeZone = "Africa/Nairobi"
 	EscalationPolicyBusinessHoursTimeZoneAlaska                      EscalationPolicyBusinessHoursTimeZone = "Alaska"
 	EscalationPolicyBusinessHoursTimeZoneAlmaty                      EscalationPolicyBusinessHoursTimeZone = "Almaty"
+	EscalationPolicyBusinessHoursTimeZoneAmericaAdak                 EscalationPolicyBusinessHoursTimeZone = "America/Adak"
 	EscalationPolicyBusinessHoursTimeZoneAmericaArgentinaBuenosAires EscalationPolicyBusinessHoursTimeZone = "America/Argentina/Buenos_Aires"
 	EscalationPolicyBusinessHoursTimeZoneAmericaAsuncion             EscalationPolicyBusinessHoursTimeZone = "America/Asuncion"
+	EscalationPolicyBusinessHoursTimeZoneAmericaAtka                 EscalationPolicyBusinessHoursTimeZone = "America/Atka"
 	EscalationPolicyBusinessHoursTimeZoneAmericaBogota               EscalationPolicyBusinessHoursTimeZone = "America/Bogota"
 	EscalationPolicyBusinessHoursTimeZoneAmericaCaracas              EscalationPolicyBusinessHoursTimeZone = "America/Caracas"
 	EscalationPolicyBusinessHoursTimeZoneAmericaChicago              EscalationPolicyBusinessHoursTimeZone = "America/Chicago"
@@ -6698,6 +6700,7 @@ const (
 	EscalationPolicyBusinessHoursTimeZoneAmericaLosAngeles           EscalationPolicyBusinessHoursTimeZone = "America/Los_Angeles"
 	EscalationPolicyBusinessHoursTimeZoneAmericaMazatlan             EscalationPolicyBusinessHoursTimeZone = "America/Mazatlan"
 	EscalationPolicyBusinessHoursTimeZoneAmericaMexicoCity           EscalationPolicyBusinessHoursTimeZone = "America/Mexico_City"
+	EscalationPolicyBusinessHoursTimeZoneAmericaMiquelon             EscalationPolicyBusinessHoursTimeZone = "America/Miquelon"
 	EscalationPolicyBusinessHoursTimeZoneAmericaMonterrey            EscalationPolicyBusinessHoursTimeZone = "America/Monterrey"
 	EscalationPolicyBusinessHoursTimeZoneAmericaMontevideo           EscalationPolicyBusinessHoursTimeZone = "America/Montevideo"
 	EscalationPolicyBusinessHoursTimeZoneAmericaNewYork              EscalationPolicyBusinessHoursTimeZone = "America/New_York"
@@ -6709,6 +6712,7 @@ const (
 	EscalationPolicyBusinessHoursTimeZoneAmericaSaoPaulo             EscalationPolicyBusinessHoursTimeZone = "America/Sao_Paulo"
 	EscalationPolicyBusinessHoursTimeZoneAmericaStJohns              EscalationPolicyBusinessHoursTimeZone = "America/St_Johns"
 	EscalationPolicyBusinessHoursTimeZoneAmericaTijuana              EscalationPolicyBusinessHoursTimeZone = "America/Tijuana"
+	EscalationPolicyBusinessHoursTimeZoneAmericaVancouver            EscalationPolicyBusinessHoursTimeZone = "America/Vancouver"
 	EscalationPolicyBusinessHoursTimeZoneAmericanSamoa               EscalationPolicyBusinessHoursTimeZone = "American Samoa"
 	EscalationPolicyBusinessHoursTimeZoneAmsterdam                   EscalationPolicyBusinessHoursTimeZone = "Amsterdam"
 	EscalationPolicyBusinessHoursTimeZoneArizona                     EscalationPolicyBusinessHoursTimeZone = "Arizona"
@@ -6763,7 +6767,10 @@ const (
 	EscalationPolicyBusinessHoursTimeZoneAustraliaBrisbane           EscalationPolicyBusinessHoursTimeZone = "Australia/Brisbane"
 	EscalationPolicyBusinessHoursTimeZoneAustraliaCanberra           EscalationPolicyBusinessHoursTimeZone = "Australia/Canberra"
 	EscalationPolicyBusinessHoursTimeZoneAustraliaDarwin             EscalationPolicyBusinessHoursTimeZone = "Australia/Darwin"
+	EscalationPolicyBusinessHoursTimeZoneAustraliaEucla              EscalationPolicyBusinessHoursTimeZone = "Australia/Eucla"
 	EscalationPolicyBusinessHoursTimeZoneAustraliaHobart             EscalationPolicyBusinessHoursTimeZone = "Australia/Hobart"
+	EscalationPolicyBusinessHoursTimeZoneAustraliaLHI                EscalationPolicyBusinessHoursTimeZone = "Australia/LHI"
+	EscalationPolicyBusinessHoursTimeZoneAustraliaLordHowe           EscalationPolicyBusinessHoursTimeZone = "Australia/Lord_Howe"
 	EscalationPolicyBusinessHoursTimeZoneAustraliaMelbourne          EscalationPolicyBusinessHoursTimeZone = "Australia/Melbourne"
 	EscalationPolicyBusinessHoursTimeZoneAustraliaPerth              EscalationPolicyBusinessHoursTimeZone = "Australia/Perth"
 	EscalationPolicyBusinessHoursTimeZoneAustraliaSydney             EscalationPolicyBusinessHoursTimeZone = "Australia/Sydney"
@@ -6784,6 +6791,7 @@ const (
 	EscalationPolicyBusinessHoursTimeZoneBudapest                    EscalationPolicyBusinessHoursTimeZone = "Budapest"
 	EscalationPolicyBusinessHoursTimeZoneBuenosAires                 EscalationPolicyBusinessHoursTimeZone = "Buenos Aires"
 	EscalationPolicyBusinessHoursTimeZoneCairo                       EscalationPolicyBusinessHoursTimeZone = "Cairo"
+	EscalationPolicyBusinessHoursTimeZoneCanadaPacific               EscalationPolicyBusinessHoursTimeZone = "Canada/Pacific"
 	EscalationPolicyBusinessHoursTimeZoneCanberra                    EscalationPolicyBusinessHoursTimeZone = "Canberra"
 	EscalationPolicyBusinessHoursTimeZoneCapeVerdeIs                 EscalationPolicyBusinessHoursTimeZone = "Cape Verde Is."
 	EscalationPolicyBusinessHoursTimeZoneCaracas                     EscalationPolicyBusinessHoursTimeZone = "Caracas"
@@ -6793,6 +6801,7 @@ const (
 	EscalationPolicyBusinessHoursTimeZoneChathamIs                   EscalationPolicyBusinessHoursTimeZone = "Chatham Is."
 	EscalationPolicyBusinessHoursTimeZoneChennai                     EscalationPolicyBusinessHoursTimeZone = "Chennai"
 	EscalationPolicyBusinessHoursTimeZoneChihuahua                   EscalationPolicyBusinessHoursTimeZone = "Chihuahua"
+	EscalationPolicyBusinessHoursTimeZoneChileEasterIsland           EscalationPolicyBusinessHoursTimeZone = "Chile/EasterIsland"
 	EscalationPolicyBusinessHoursTimeZoneChongqing                   EscalationPolicyBusinessHoursTimeZone = "Chongqing"
 	EscalationPolicyBusinessHoursTimeZoneCopenhagen                  EscalationPolicyBusinessHoursTimeZone = "Copenhagen"
 	EscalationPolicyBusinessHoursTimeZoneDarwin                      EscalationPolicyBusinessHoursTimeZone = "Darwin"
@@ -6898,15 +6907,21 @@ const (
 	EscalationPolicyBusinessHoursTimeZonePacificApia                 EscalationPolicyBusinessHoursTimeZone = "Pacific/Apia"
 	EscalationPolicyBusinessHoursTimeZonePacificAuckland             EscalationPolicyBusinessHoursTimeZone = "Pacific/Auckland"
 	EscalationPolicyBusinessHoursTimeZonePacificChatham              EscalationPolicyBusinessHoursTimeZone = "Pacific/Chatham"
+	EscalationPolicyBusinessHoursTimeZonePacificEaster               EscalationPolicyBusinessHoursTimeZone = "Pacific/Easter"
 	EscalationPolicyBusinessHoursTimeZonePacificFakaofo              EscalationPolicyBusinessHoursTimeZone = "Pacific/Fakaofo"
 	EscalationPolicyBusinessHoursTimeZonePacificFiji                 EscalationPolicyBusinessHoursTimeZone = "Pacific/Fiji"
+	EscalationPolicyBusinessHoursTimeZonePacificGambier              EscalationPolicyBusinessHoursTimeZone = "Pacific/Gambier"
 	EscalationPolicyBusinessHoursTimeZonePacificGuadalcanal          EscalationPolicyBusinessHoursTimeZone = "Pacific/Guadalcanal"
 	EscalationPolicyBusinessHoursTimeZonePacificGuam                 EscalationPolicyBusinessHoursTimeZone = "Pacific/Guam"
 	EscalationPolicyBusinessHoursTimeZonePacificHonolulu             EscalationPolicyBusinessHoursTimeZone = "Pacific/Honolulu"
+	EscalationPolicyBusinessHoursTimeZonePacificKiritimati           EscalationPolicyBusinessHoursTimeZone = "Pacific/Kiritimati"
 	EscalationPolicyBusinessHoursTimeZonePacificMajuro               EscalationPolicyBusinessHoursTimeZone = "Pacific/Majuro"
+	EscalationPolicyBusinessHoursTimeZonePacificMarquesas            EscalationPolicyBusinessHoursTimeZone = "Pacific/Marquesas"
 	EscalationPolicyBusinessHoursTimeZonePacificMidway               EscalationPolicyBusinessHoursTimeZone = "Pacific/Midway"
+	EscalationPolicyBusinessHoursTimeZonePacificNorfolk              EscalationPolicyBusinessHoursTimeZone = "Pacific/Norfolk"
 	EscalationPolicyBusinessHoursTimeZonePacificNoumea               EscalationPolicyBusinessHoursTimeZone = "Pacific/Noumea"
 	EscalationPolicyBusinessHoursTimeZonePacificPagoPago             EscalationPolicyBusinessHoursTimeZone = "Pacific/Pago_Pago"
+	EscalationPolicyBusinessHoursTimeZonePacificPitcairn             EscalationPolicyBusinessHoursTimeZone = "Pacific/Pitcairn"
 	EscalationPolicyBusinessHoursTimeZonePacificPortMoresby          EscalationPolicyBusinessHoursTimeZone = "Pacific/Port_Moresby"
 	EscalationPolicyBusinessHoursTimeZonePacificTimeUSCanada         EscalationPolicyBusinessHoursTimeZone = "Pacific Time (US & Canada)"
 	EscalationPolicyBusinessHoursTimeZonePacificTongatapu            EscalationPolicyBusinessHoursTimeZone = "Pacific/Tongatapu"
@@ -6945,6 +6960,7 @@ const (
 	EscalationPolicyBusinessHoursTimeZoneTijuana                     EscalationPolicyBusinessHoursTimeZone = "Tijuana"
 	EscalationPolicyBusinessHoursTimeZoneTokelauIs                   EscalationPolicyBusinessHoursTimeZone = "Tokelau Is."
 	EscalationPolicyBusinessHoursTimeZoneTokyo                       EscalationPolicyBusinessHoursTimeZone = "Tokyo"
+	EscalationPolicyBusinessHoursTimeZoneUSAleutian                  EscalationPolicyBusinessHoursTimeZone = "US/Aleutian"
 	EscalationPolicyBusinessHoursTimeZoneUTC                         EscalationPolicyBusinessHoursTimeZone = "UTC"
 	EscalationPolicyBusinessHoursTimeZoneUlaanbaatar                 EscalationPolicyBusinessHoursTimeZone = "Ulaanbaatar"
 	EscalationPolicyBusinessHoursTimeZoneUrumqi                      EscalationPolicyBusinessHoursTimeZone = "Urumqi"
@@ -6986,9 +7002,13 @@ func (e EscalationPolicyBusinessHoursTimeZone) Valid() bool {
 		return true
 	case EscalationPolicyBusinessHoursTimeZoneAlmaty:
 		return true
+	case EscalationPolicyBusinessHoursTimeZoneAmericaAdak:
+		return true
 	case EscalationPolicyBusinessHoursTimeZoneAmericaArgentinaBuenosAires:
 		return true
 	case EscalationPolicyBusinessHoursTimeZoneAmericaAsuncion:
+		return true
+	case EscalationPolicyBusinessHoursTimeZoneAmericaAtka:
 		return true
 	case EscalationPolicyBusinessHoursTimeZoneAmericaBogota:
 		return true
@@ -7020,6 +7040,8 @@ func (e EscalationPolicyBusinessHoursTimeZone) Valid() bool {
 		return true
 	case EscalationPolicyBusinessHoursTimeZoneAmericaMexicoCity:
 		return true
+	case EscalationPolicyBusinessHoursTimeZoneAmericaMiquelon:
+		return true
 	case EscalationPolicyBusinessHoursTimeZoneAmericaMonterrey:
 		return true
 	case EscalationPolicyBusinessHoursTimeZoneAmericaMontevideo:
@@ -7041,6 +7063,8 @@ func (e EscalationPolicyBusinessHoursTimeZone) Valid() bool {
 	case EscalationPolicyBusinessHoursTimeZoneAmericaStJohns:
 		return true
 	case EscalationPolicyBusinessHoursTimeZoneAmericaTijuana:
+		return true
+	case EscalationPolicyBusinessHoursTimeZoneAmericaVancouver:
 		return true
 	case EscalationPolicyBusinessHoursTimeZoneAmericanSamoa:
 		return true
@@ -7150,7 +7174,13 @@ func (e EscalationPolicyBusinessHoursTimeZone) Valid() bool {
 		return true
 	case EscalationPolicyBusinessHoursTimeZoneAustraliaDarwin:
 		return true
+	case EscalationPolicyBusinessHoursTimeZoneAustraliaEucla:
+		return true
 	case EscalationPolicyBusinessHoursTimeZoneAustraliaHobart:
+		return true
+	case EscalationPolicyBusinessHoursTimeZoneAustraliaLHI:
+		return true
+	case EscalationPolicyBusinessHoursTimeZoneAustraliaLordHowe:
 		return true
 	case EscalationPolicyBusinessHoursTimeZoneAustraliaMelbourne:
 		return true
@@ -7192,6 +7222,8 @@ func (e EscalationPolicyBusinessHoursTimeZone) Valid() bool {
 		return true
 	case EscalationPolicyBusinessHoursTimeZoneCairo:
 		return true
+	case EscalationPolicyBusinessHoursTimeZoneCanadaPacific:
+		return true
 	case EscalationPolicyBusinessHoursTimeZoneCanberra:
 		return true
 	case EscalationPolicyBusinessHoursTimeZoneCapeVerdeIs:
@@ -7209,6 +7241,8 @@ func (e EscalationPolicyBusinessHoursTimeZone) Valid() bool {
 	case EscalationPolicyBusinessHoursTimeZoneChennai:
 		return true
 	case EscalationPolicyBusinessHoursTimeZoneChihuahua:
+		return true
+	case EscalationPolicyBusinessHoursTimeZoneChileEasterIsland:
 		return true
 	case EscalationPolicyBusinessHoursTimeZoneChongqing:
 		return true
@@ -7420,9 +7454,13 @@ func (e EscalationPolicyBusinessHoursTimeZone) Valid() bool {
 		return true
 	case EscalationPolicyBusinessHoursTimeZonePacificChatham:
 		return true
+	case EscalationPolicyBusinessHoursTimeZonePacificEaster:
+		return true
 	case EscalationPolicyBusinessHoursTimeZonePacificFakaofo:
 		return true
 	case EscalationPolicyBusinessHoursTimeZonePacificFiji:
+		return true
+	case EscalationPolicyBusinessHoursTimeZonePacificGambier:
 		return true
 	case EscalationPolicyBusinessHoursTimeZonePacificGuadalcanal:
 		return true
@@ -7430,13 +7468,21 @@ func (e EscalationPolicyBusinessHoursTimeZone) Valid() bool {
 		return true
 	case EscalationPolicyBusinessHoursTimeZonePacificHonolulu:
 		return true
+	case EscalationPolicyBusinessHoursTimeZonePacificKiritimati:
+		return true
 	case EscalationPolicyBusinessHoursTimeZonePacificMajuro:
 		return true
+	case EscalationPolicyBusinessHoursTimeZonePacificMarquesas:
+		return true
 	case EscalationPolicyBusinessHoursTimeZonePacificMidway:
+		return true
+	case EscalationPolicyBusinessHoursTimeZonePacificNorfolk:
 		return true
 	case EscalationPolicyBusinessHoursTimeZonePacificNoumea:
 		return true
 	case EscalationPolicyBusinessHoursTimeZonePacificPagoPago:
+		return true
+	case EscalationPolicyBusinessHoursTimeZonePacificPitcairn:
 		return true
 	case EscalationPolicyBusinessHoursTimeZonePacificPortMoresby:
 		return true
@@ -7513,6 +7559,8 @@ func (e EscalationPolicyBusinessHoursTimeZone) Valid() bool {
 	case EscalationPolicyBusinessHoursTimeZoneTokelauIs:
 		return true
 	case EscalationPolicyBusinessHoursTimeZoneTokyo:
+		return true
+	case EscalationPolicyBusinessHoursTimeZoneUSAleutian:
 		return true
 	case EscalationPolicyBusinessHoursTimeZoneUTC:
 		return true
@@ -7914,8 +7962,10 @@ const (
 	EscalationPolicyPathRules5TimeZoneAfricaNairobi               EscalationPolicyPathRules5TimeZone = "Africa/Nairobi"
 	EscalationPolicyPathRules5TimeZoneAlaska                      EscalationPolicyPathRules5TimeZone = "Alaska"
 	EscalationPolicyPathRules5TimeZoneAlmaty                      EscalationPolicyPathRules5TimeZone = "Almaty"
+	EscalationPolicyPathRules5TimeZoneAmericaAdak                 EscalationPolicyPathRules5TimeZone = "America/Adak"
 	EscalationPolicyPathRules5TimeZoneAmericaArgentinaBuenosAires EscalationPolicyPathRules5TimeZone = "America/Argentina/Buenos_Aires"
 	EscalationPolicyPathRules5TimeZoneAmericaAsuncion             EscalationPolicyPathRules5TimeZone = "America/Asuncion"
+	EscalationPolicyPathRules5TimeZoneAmericaAtka                 EscalationPolicyPathRules5TimeZone = "America/Atka"
 	EscalationPolicyPathRules5TimeZoneAmericaBogota               EscalationPolicyPathRules5TimeZone = "America/Bogota"
 	EscalationPolicyPathRules5TimeZoneAmericaCaracas              EscalationPolicyPathRules5TimeZone = "America/Caracas"
 	EscalationPolicyPathRules5TimeZoneAmericaChicago              EscalationPolicyPathRules5TimeZone = "America/Chicago"
@@ -7931,6 +7981,7 @@ const (
 	EscalationPolicyPathRules5TimeZoneAmericaLosAngeles           EscalationPolicyPathRules5TimeZone = "America/Los_Angeles"
 	EscalationPolicyPathRules5TimeZoneAmericaMazatlan             EscalationPolicyPathRules5TimeZone = "America/Mazatlan"
 	EscalationPolicyPathRules5TimeZoneAmericaMexicoCity           EscalationPolicyPathRules5TimeZone = "America/Mexico_City"
+	EscalationPolicyPathRules5TimeZoneAmericaMiquelon             EscalationPolicyPathRules5TimeZone = "America/Miquelon"
 	EscalationPolicyPathRules5TimeZoneAmericaMonterrey            EscalationPolicyPathRules5TimeZone = "America/Monterrey"
 	EscalationPolicyPathRules5TimeZoneAmericaMontevideo           EscalationPolicyPathRules5TimeZone = "America/Montevideo"
 	EscalationPolicyPathRules5TimeZoneAmericaNewYork              EscalationPolicyPathRules5TimeZone = "America/New_York"
@@ -7942,6 +7993,7 @@ const (
 	EscalationPolicyPathRules5TimeZoneAmericaSaoPaulo             EscalationPolicyPathRules5TimeZone = "America/Sao_Paulo"
 	EscalationPolicyPathRules5TimeZoneAmericaStJohns              EscalationPolicyPathRules5TimeZone = "America/St_Johns"
 	EscalationPolicyPathRules5TimeZoneAmericaTijuana              EscalationPolicyPathRules5TimeZone = "America/Tijuana"
+	EscalationPolicyPathRules5TimeZoneAmericaVancouver            EscalationPolicyPathRules5TimeZone = "America/Vancouver"
 	EscalationPolicyPathRules5TimeZoneAmericanSamoa               EscalationPolicyPathRules5TimeZone = "American Samoa"
 	EscalationPolicyPathRules5TimeZoneAmsterdam                   EscalationPolicyPathRules5TimeZone = "Amsterdam"
 	EscalationPolicyPathRules5TimeZoneArizona                     EscalationPolicyPathRules5TimeZone = "Arizona"
@@ -7996,7 +8048,10 @@ const (
 	EscalationPolicyPathRules5TimeZoneAustraliaBrisbane           EscalationPolicyPathRules5TimeZone = "Australia/Brisbane"
 	EscalationPolicyPathRules5TimeZoneAustraliaCanberra           EscalationPolicyPathRules5TimeZone = "Australia/Canberra"
 	EscalationPolicyPathRules5TimeZoneAustraliaDarwin             EscalationPolicyPathRules5TimeZone = "Australia/Darwin"
+	EscalationPolicyPathRules5TimeZoneAustraliaEucla              EscalationPolicyPathRules5TimeZone = "Australia/Eucla"
 	EscalationPolicyPathRules5TimeZoneAustraliaHobart             EscalationPolicyPathRules5TimeZone = "Australia/Hobart"
+	EscalationPolicyPathRules5TimeZoneAustraliaLHI                EscalationPolicyPathRules5TimeZone = "Australia/LHI"
+	EscalationPolicyPathRules5TimeZoneAustraliaLordHowe           EscalationPolicyPathRules5TimeZone = "Australia/Lord_Howe"
 	EscalationPolicyPathRules5TimeZoneAustraliaMelbourne          EscalationPolicyPathRules5TimeZone = "Australia/Melbourne"
 	EscalationPolicyPathRules5TimeZoneAustraliaPerth              EscalationPolicyPathRules5TimeZone = "Australia/Perth"
 	EscalationPolicyPathRules5TimeZoneAustraliaSydney             EscalationPolicyPathRules5TimeZone = "Australia/Sydney"
@@ -8017,6 +8072,7 @@ const (
 	EscalationPolicyPathRules5TimeZoneBudapest                    EscalationPolicyPathRules5TimeZone = "Budapest"
 	EscalationPolicyPathRules5TimeZoneBuenosAires                 EscalationPolicyPathRules5TimeZone = "Buenos Aires"
 	EscalationPolicyPathRules5TimeZoneCairo                       EscalationPolicyPathRules5TimeZone = "Cairo"
+	EscalationPolicyPathRules5TimeZoneCanadaPacific               EscalationPolicyPathRules5TimeZone = "Canada/Pacific"
 	EscalationPolicyPathRules5TimeZoneCanberra                    EscalationPolicyPathRules5TimeZone = "Canberra"
 	EscalationPolicyPathRules5TimeZoneCapeVerdeIs                 EscalationPolicyPathRules5TimeZone = "Cape Verde Is."
 	EscalationPolicyPathRules5TimeZoneCaracas                     EscalationPolicyPathRules5TimeZone = "Caracas"
@@ -8026,6 +8082,7 @@ const (
 	EscalationPolicyPathRules5TimeZoneChathamIs                   EscalationPolicyPathRules5TimeZone = "Chatham Is."
 	EscalationPolicyPathRules5TimeZoneChennai                     EscalationPolicyPathRules5TimeZone = "Chennai"
 	EscalationPolicyPathRules5TimeZoneChihuahua                   EscalationPolicyPathRules5TimeZone = "Chihuahua"
+	EscalationPolicyPathRules5TimeZoneChileEasterIsland           EscalationPolicyPathRules5TimeZone = "Chile/EasterIsland"
 	EscalationPolicyPathRules5TimeZoneChongqing                   EscalationPolicyPathRules5TimeZone = "Chongqing"
 	EscalationPolicyPathRules5TimeZoneCopenhagen                  EscalationPolicyPathRules5TimeZone = "Copenhagen"
 	EscalationPolicyPathRules5TimeZoneDarwin                      EscalationPolicyPathRules5TimeZone = "Darwin"
@@ -8131,15 +8188,21 @@ const (
 	EscalationPolicyPathRules5TimeZonePacificApia                 EscalationPolicyPathRules5TimeZone = "Pacific/Apia"
 	EscalationPolicyPathRules5TimeZonePacificAuckland             EscalationPolicyPathRules5TimeZone = "Pacific/Auckland"
 	EscalationPolicyPathRules5TimeZonePacificChatham              EscalationPolicyPathRules5TimeZone = "Pacific/Chatham"
+	EscalationPolicyPathRules5TimeZonePacificEaster               EscalationPolicyPathRules5TimeZone = "Pacific/Easter"
 	EscalationPolicyPathRules5TimeZonePacificFakaofo              EscalationPolicyPathRules5TimeZone = "Pacific/Fakaofo"
 	EscalationPolicyPathRules5TimeZonePacificFiji                 EscalationPolicyPathRules5TimeZone = "Pacific/Fiji"
+	EscalationPolicyPathRules5TimeZonePacificGambier              EscalationPolicyPathRules5TimeZone = "Pacific/Gambier"
 	EscalationPolicyPathRules5TimeZonePacificGuadalcanal          EscalationPolicyPathRules5TimeZone = "Pacific/Guadalcanal"
 	EscalationPolicyPathRules5TimeZonePacificGuam                 EscalationPolicyPathRules5TimeZone = "Pacific/Guam"
 	EscalationPolicyPathRules5TimeZonePacificHonolulu             EscalationPolicyPathRules5TimeZone = "Pacific/Honolulu"
+	EscalationPolicyPathRules5TimeZonePacificKiritimati           EscalationPolicyPathRules5TimeZone = "Pacific/Kiritimati"
 	EscalationPolicyPathRules5TimeZonePacificMajuro               EscalationPolicyPathRules5TimeZone = "Pacific/Majuro"
+	EscalationPolicyPathRules5TimeZonePacificMarquesas            EscalationPolicyPathRules5TimeZone = "Pacific/Marquesas"
 	EscalationPolicyPathRules5TimeZonePacificMidway               EscalationPolicyPathRules5TimeZone = "Pacific/Midway"
+	EscalationPolicyPathRules5TimeZonePacificNorfolk              EscalationPolicyPathRules5TimeZone = "Pacific/Norfolk"
 	EscalationPolicyPathRules5TimeZonePacificNoumea               EscalationPolicyPathRules5TimeZone = "Pacific/Noumea"
 	EscalationPolicyPathRules5TimeZonePacificPagoPago             EscalationPolicyPathRules5TimeZone = "Pacific/Pago_Pago"
+	EscalationPolicyPathRules5TimeZonePacificPitcairn             EscalationPolicyPathRules5TimeZone = "Pacific/Pitcairn"
 	EscalationPolicyPathRules5TimeZonePacificPortMoresby          EscalationPolicyPathRules5TimeZone = "Pacific/Port_Moresby"
 	EscalationPolicyPathRules5TimeZonePacificTimeUSCanada         EscalationPolicyPathRules5TimeZone = "Pacific Time (US & Canada)"
 	EscalationPolicyPathRules5TimeZonePacificTongatapu            EscalationPolicyPathRules5TimeZone = "Pacific/Tongatapu"
@@ -8178,6 +8241,7 @@ const (
 	EscalationPolicyPathRules5TimeZoneTijuana                     EscalationPolicyPathRules5TimeZone = "Tijuana"
 	EscalationPolicyPathRules5TimeZoneTokelauIs                   EscalationPolicyPathRules5TimeZone = "Tokelau Is."
 	EscalationPolicyPathRules5TimeZoneTokyo                       EscalationPolicyPathRules5TimeZone = "Tokyo"
+	EscalationPolicyPathRules5TimeZoneUSAleutian                  EscalationPolicyPathRules5TimeZone = "US/Aleutian"
 	EscalationPolicyPathRules5TimeZoneUTC                         EscalationPolicyPathRules5TimeZone = "UTC"
 	EscalationPolicyPathRules5TimeZoneUlaanbaatar                 EscalationPolicyPathRules5TimeZone = "Ulaanbaatar"
 	EscalationPolicyPathRules5TimeZoneUrumqi                      EscalationPolicyPathRules5TimeZone = "Urumqi"
@@ -8219,9 +8283,13 @@ func (e EscalationPolicyPathRules5TimeZone) Valid() bool {
 		return true
 	case EscalationPolicyPathRules5TimeZoneAlmaty:
 		return true
+	case EscalationPolicyPathRules5TimeZoneAmericaAdak:
+		return true
 	case EscalationPolicyPathRules5TimeZoneAmericaArgentinaBuenosAires:
 		return true
 	case EscalationPolicyPathRules5TimeZoneAmericaAsuncion:
+		return true
+	case EscalationPolicyPathRules5TimeZoneAmericaAtka:
 		return true
 	case EscalationPolicyPathRules5TimeZoneAmericaBogota:
 		return true
@@ -8253,6 +8321,8 @@ func (e EscalationPolicyPathRules5TimeZone) Valid() bool {
 		return true
 	case EscalationPolicyPathRules5TimeZoneAmericaMexicoCity:
 		return true
+	case EscalationPolicyPathRules5TimeZoneAmericaMiquelon:
+		return true
 	case EscalationPolicyPathRules5TimeZoneAmericaMonterrey:
 		return true
 	case EscalationPolicyPathRules5TimeZoneAmericaMontevideo:
@@ -8274,6 +8344,8 @@ func (e EscalationPolicyPathRules5TimeZone) Valid() bool {
 	case EscalationPolicyPathRules5TimeZoneAmericaStJohns:
 		return true
 	case EscalationPolicyPathRules5TimeZoneAmericaTijuana:
+		return true
+	case EscalationPolicyPathRules5TimeZoneAmericaVancouver:
 		return true
 	case EscalationPolicyPathRules5TimeZoneAmericanSamoa:
 		return true
@@ -8383,7 +8455,13 @@ func (e EscalationPolicyPathRules5TimeZone) Valid() bool {
 		return true
 	case EscalationPolicyPathRules5TimeZoneAustraliaDarwin:
 		return true
+	case EscalationPolicyPathRules5TimeZoneAustraliaEucla:
+		return true
 	case EscalationPolicyPathRules5TimeZoneAustraliaHobart:
+		return true
+	case EscalationPolicyPathRules5TimeZoneAustraliaLHI:
+		return true
+	case EscalationPolicyPathRules5TimeZoneAustraliaLordHowe:
 		return true
 	case EscalationPolicyPathRules5TimeZoneAustraliaMelbourne:
 		return true
@@ -8425,6 +8503,8 @@ func (e EscalationPolicyPathRules5TimeZone) Valid() bool {
 		return true
 	case EscalationPolicyPathRules5TimeZoneCairo:
 		return true
+	case EscalationPolicyPathRules5TimeZoneCanadaPacific:
+		return true
 	case EscalationPolicyPathRules5TimeZoneCanberra:
 		return true
 	case EscalationPolicyPathRules5TimeZoneCapeVerdeIs:
@@ -8442,6 +8522,8 @@ func (e EscalationPolicyPathRules5TimeZone) Valid() bool {
 	case EscalationPolicyPathRules5TimeZoneChennai:
 		return true
 	case EscalationPolicyPathRules5TimeZoneChihuahua:
+		return true
+	case EscalationPolicyPathRules5TimeZoneChileEasterIsland:
 		return true
 	case EscalationPolicyPathRules5TimeZoneChongqing:
 		return true
@@ -8653,9 +8735,13 @@ func (e EscalationPolicyPathRules5TimeZone) Valid() bool {
 		return true
 	case EscalationPolicyPathRules5TimeZonePacificChatham:
 		return true
+	case EscalationPolicyPathRules5TimeZonePacificEaster:
+		return true
 	case EscalationPolicyPathRules5TimeZonePacificFakaofo:
 		return true
 	case EscalationPolicyPathRules5TimeZonePacificFiji:
+		return true
+	case EscalationPolicyPathRules5TimeZonePacificGambier:
 		return true
 	case EscalationPolicyPathRules5TimeZonePacificGuadalcanal:
 		return true
@@ -8663,13 +8749,21 @@ func (e EscalationPolicyPathRules5TimeZone) Valid() bool {
 		return true
 	case EscalationPolicyPathRules5TimeZonePacificHonolulu:
 		return true
+	case EscalationPolicyPathRules5TimeZonePacificKiritimati:
+		return true
 	case EscalationPolicyPathRules5TimeZonePacificMajuro:
 		return true
+	case EscalationPolicyPathRules5TimeZonePacificMarquesas:
+		return true
 	case EscalationPolicyPathRules5TimeZonePacificMidway:
+		return true
+	case EscalationPolicyPathRules5TimeZonePacificNorfolk:
 		return true
 	case EscalationPolicyPathRules5TimeZonePacificNoumea:
 		return true
 	case EscalationPolicyPathRules5TimeZonePacificPagoPago:
+		return true
+	case EscalationPolicyPathRules5TimeZonePacificPitcairn:
 		return true
 	case EscalationPolicyPathRules5TimeZonePacificPortMoresby:
 		return true
@@ -8746,6 +8840,8 @@ func (e EscalationPolicyPathRules5TimeZone) Valid() bool {
 	case EscalationPolicyPathRules5TimeZoneTokelauIs:
 		return true
 	case EscalationPolicyPathRules5TimeZoneTokyo:
+		return true
+	case EscalationPolicyPathRules5TimeZoneUSAleutian:
 		return true
 	case EscalationPolicyPathRules5TimeZoneUTC:
 		return true
@@ -8865,8 +8961,10 @@ const (
 	EscalationPolicyPathTimeRestrictionTimeZoneAfricaNairobi               EscalationPolicyPathTimeRestrictionTimeZone = "Africa/Nairobi"
 	EscalationPolicyPathTimeRestrictionTimeZoneAlaska                      EscalationPolicyPathTimeRestrictionTimeZone = "Alaska"
 	EscalationPolicyPathTimeRestrictionTimeZoneAlmaty                      EscalationPolicyPathTimeRestrictionTimeZone = "Almaty"
+	EscalationPolicyPathTimeRestrictionTimeZoneAmericaAdak                 EscalationPolicyPathTimeRestrictionTimeZone = "America/Adak"
 	EscalationPolicyPathTimeRestrictionTimeZoneAmericaArgentinaBuenosAires EscalationPolicyPathTimeRestrictionTimeZone = "America/Argentina/Buenos_Aires"
 	EscalationPolicyPathTimeRestrictionTimeZoneAmericaAsuncion             EscalationPolicyPathTimeRestrictionTimeZone = "America/Asuncion"
+	EscalationPolicyPathTimeRestrictionTimeZoneAmericaAtka                 EscalationPolicyPathTimeRestrictionTimeZone = "America/Atka"
 	EscalationPolicyPathTimeRestrictionTimeZoneAmericaBogota               EscalationPolicyPathTimeRestrictionTimeZone = "America/Bogota"
 	EscalationPolicyPathTimeRestrictionTimeZoneAmericaCaracas              EscalationPolicyPathTimeRestrictionTimeZone = "America/Caracas"
 	EscalationPolicyPathTimeRestrictionTimeZoneAmericaChicago              EscalationPolicyPathTimeRestrictionTimeZone = "America/Chicago"
@@ -8882,6 +8980,7 @@ const (
 	EscalationPolicyPathTimeRestrictionTimeZoneAmericaLosAngeles           EscalationPolicyPathTimeRestrictionTimeZone = "America/Los_Angeles"
 	EscalationPolicyPathTimeRestrictionTimeZoneAmericaMazatlan             EscalationPolicyPathTimeRestrictionTimeZone = "America/Mazatlan"
 	EscalationPolicyPathTimeRestrictionTimeZoneAmericaMexicoCity           EscalationPolicyPathTimeRestrictionTimeZone = "America/Mexico_City"
+	EscalationPolicyPathTimeRestrictionTimeZoneAmericaMiquelon             EscalationPolicyPathTimeRestrictionTimeZone = "America/Miquelon"
 	EscalationPolicyPathTimeRestrictionTimeZoneAmericaMonterrey            EscalationPolicyPathTimeRestrictionTimeZone = "America/Monterrey"
 	EscalationPolicyPathTimeRestrictionTimeZoneAmericaMontevideo           EscalationPolicyPathTimeRestrictionTimeZone = "America/Montevideo"
 	EscalationPolicyPathTimeRestrictionTimeZoneAmericaNewYork              EscalationPolicyPathTimeRestrictionTimeZone = "America/New_York"
@@ -8893,6 +8992,7 @@ const (
 	EscalationPolicyPathTimeRestrictionTimeZoneAmericaSaoPaulo             EscalationPolicyPathTimeRestrictionTimeZone = "America/Sao_Paulo"
 	EscalationPolicyPathTimeRestrictionTimeZoneAmericaStJohns              EscalationPolicyPathTimeRestrictionTimeZone = "America/St_Johns"
 	EscalationPolicyPathTimeRestrictionTimeZoneAmericaTijuana              EscalationPolicyPathTimeRestrictionTimeZone = "America/Tijuana"
+	EscalationPolicyPathTimeRestrictionTimeZoneAmericaVancouver            EscalationPolicyPathTimeRestrictionTimeZone = "America/Vancouver"
 	EscalationPolicyPathTimeRestrictionTimeZoneAmericanSamoa               EscalationPolicyPathTimeRestrictionTimeZone = "American Samoa"
 	EscalationPolicyPathTimeRestrictionTimeZoneAmsterdam                   EscalationPolicyPathTimeRestrictionTimeZone = "Amsterdam"
 	EscalationPolicyPathTimeRestrictionTimeZoneArizona                     EscalationPolicyPathTimeRestrictionTimeZone = "Arizona"
@@ -8947,7 +9047,10 @@ const (
 	EscalationPolicyPathTimeRestrictionTimeZoneAustraliaBrisbane           EscalationPolicyPathTimeRestrictionTimeZone = "Australia/Brisbane"
 	EscalationPolicyPathTimeRestrictionTimeZoneAustraliaCanberra           EscalationPolicyPathTimeRestrictionTimeZone = "Australia/Canberra"
 	EscalationPolicyPathTimeRestrictionTimeZoneAustraliaDarwin             EscalationPolicyPathTimeRestrictionTimeZone = "Australia/Darwin"
+	EscalationPolicyPathTimeRestrictionTimeZoneAustraliaEucla              EscalationPolicyPathTimeRestrictionTimeZone = "Australia/Eucla"
 	EscalationPolicyPathTimeRestrictionTimeZoneAustraliaHobart             EscalationPolicyPathTimeRestrictionTimeZone = "Australia/Hobart"
+	EscalationPolicyPathTimeRestrictionTimeZoneAustraliaLHI                EscalationPolicyPathTimeRestrictionTimeZone = "Australia/LHI"
+	EscalationPolicyPathTimeRestrictionTimeZoneAustraliaLordHowe           EscalationPolicyPathTimeRestrictionTimeZone = "Australia/Lord_Howe"
 	EscalationPolicyPathTimeRestrictionTimeZoneAustraliaMelbourne          EscalationPolicyPathTimeRestrictionTimeZone = "Australia/Melbourne"
 	EscalationPolicyPathTimeRestrictionTimeZoneAustraliaPerth              EscalationPolicyPathTimeRestrictionTimeZone = "Australia/Perth"
 	EscalationPolicyPathTimeRestrictionTimeZoneAustraliaSydney             EscalationPolicyPathTimeRestrictionTimeZone = "Australia/Sydney"
@@ -8968,6 +9071,7 @@ const (
 	EscalationPolicyPathTimeRestrictionTimeZoneBudapest                    EscalationPolicyPathTimeRestrictionTimeZone = "Budapest"
 	EscalationPolicyPathTimeRestrictionTimeZoneBuenosAires                 EscalationPolicyPathTimeRestrictionTimeZone = "Buenos Aires"
 	EscalationPolicyPathTimeRestrictionTimeZoneCairo                       EscalationPolicyPathTimeRestrictionTimeZone = "Cairo"
+	EscalationPolicyPathTimeRestrictionTimeZoneCanadaPacific               EscalationPolicyPathTimeRestrictionTimeZone = "Canada/Pacific"
 	EscalationPolicyPathTimeRestrictionTimeZoneCanberra                    EscalationPolicyPathTimeRestrictionTimeZone = "Canberra"
 	EscalationPolicyPathTimeRestrictionTimeZoneCapeVerdeIs                 EscalationPolicyPathTimeRestrictionTimeZone = "Cape Verde Is."
 	EscalationPolicyPathTimeRestrictionTimeZoneCaracas                     EscalationPolicyPathTimeRestrictionTimeZone = "Caracas"
@@ -8977,6 +9081,7 @@ const (
 	EscalationPolicyPathTimeRestrictionTimeZoneChathamIs                   EscalationPolicyPathTimeRestrictionTimeZone = "Chatham Is."
 	EscalationPolicyPathTimeRestrictionTimeZoneChennai                     EscalationPolicyPathTimeRestrictionTimeZone = "Chennai"
 	EscalationPolicyPathTimeRestrictionTimeZoneChihuahua                   EscalationPolicyPathTimeRestrictionTimeZone = "Chihuahua"
+	EscalationPolicyPathTimeRestrictionTimeZoneChileEasterIsland           EscalationPolicyPathTimeRestrictionTimeZone = "Chile/EasterIsland"
 	EscalationPolicyPathTimeRestrictionTimeZoneChongqing                   EscalationPolicyPathTimeRestrictionTimeZone = "Chongqing"
 	EscalationPolicyPathTimeRestrictionTimeZoneCopenhagen                  EscalationPolicyPathTimeRestrictionTimeZone = "Copenhagen"
 	EscalationPolicyPathTimeRestrictionTimeZoneDarwin                      EscalationPolicyPathTimeRestrictionTimeZone = "Darwin"
@@ -9082,15 +9187,21 @@ const (
 	EscalationPolicyPathTimeRestrictionTimeZonePacificApia                 EscalationPolicyPathTimeRestrictionTimeZone = "Pacific/Apia"
 	EscalationPolicyPathTimeRestrictionTimeZonePacificAuckland             EscalationPolicyPathTimeRestrictionTimeZone = "Pacific/Auckland"
 	EscalationPolicyPathTimeRestrictionTimeZonePacificChatham              EscalationPolicyPathTimeRestrictionTimeZone = "Pacific/Chatham"
+	EscalationPolicyPathTimeRestrictionTimeZonePacificEaster               EscalationPolicyPathTimeRestrictionTimeZone = "Pacific/Easter"
 	EscalationPolicyPathTimeRestrictionTimeZonePacificFakaofo              EscalationPolicyPathTimeRestrictionTimeZone = "Pacific/Fakaofo"
 	EscalationPolicyPathTimeRestrictionTimeZonePacificFiji                 EscalationPolicyPathTimeRestrictionTimeZone = "Pacific/Fiji"
+	EscalationPolicyPathTimeRestrictionTimeZonePacificGambier              EscalationPolicyPathTimeRestrictionTimeZone = "Pacific/Gambier"
 	EscalationPolicyPathTimeRestrictionTimeZonePacificGuadalcanal          EscalationPolicyPathTimeRestrictionTimeZone = "Pacific/Guadalcanal"
 	EscalationPolicyPathTimeRestrictionTimeZonePacificGuam                 EscalationPolicyPathTimeRestrictionTimeZone = "Pacific/Guam"
 	EscalationPolicyPathTimeRestrictionTimeZonePacificHonolulu             EscalationPolicyPathTimeRestrictionTimeZone = "Pacific/Honolulu"
+	EscalationPolicyPathTimeRestrictionTimeZonePacificKiritimati           EscalationPolicyPathTimeRestrictionTimeZone = "Pacific/Kiritimati"
 	EscalationPolicyPathTimeRestrictionTimeZonePacificMajuro               EscalationPolicyPathTimeRestrictionTimeZone = "Pacific/Majuro"
+	EscalationPolicyPathTimeRestrictionTimeZonePacificMarquesas            EscalationPolicyPathTimeRestrictionTimeZone = "Pacific/Marquesas"
 	EscalationPolicyPathTimeRestrictionTimeZonePacificMidway               EscalationPolicyPathTimeRestrictionTimeZone = "Pacific/Midway"
+	EscalationPolicyPathTimeRestrictionTimeZonePacificNorfolk              EscalationPolicyPathTimeRestrictionTimeZone = "Pacific/Norfolk"
 	EscalationPolicyPathTimeRestrictionTimeZonePacificNoumea               EscalationPolicyPathTimeRestrictionTimeZone = "Pacific/Noumea"
 	EscalationPolicyPathTimeRestrictionTimeZonePacificPagoPago             EscalationPolicyPathTimeRestrictionTimeZone = "Pacific/Pago_Pago"
+	EscalationPolicyPathTimeRestrictionTimeZonePacificPitcairn             EscalationPolicyPathTimeRestrictionTimeZone = "Pacific/Pitcairn"
 	EscalationPolicyPathTimeRestrictionTimeZonePacificPortMoresby          EscalationPolicyPathTimeRestrictionTimeZone = "Pacific/Port_Moresby"
 	EscalationPolicyPathTimeRestrictionTimeZonePacificTimeUSCanada         EscalationPolicyPathTimeRestrictionTimeZone = "Pacific Time (US & Canada)"
 	EscalationPolicyPathTimeRestrictionTimeZonePacificTongatapu            EscalationPolicyPathTimeRestrictionTimeZone = "Pacific/Tongatapu"
@@ -9129,6 +9240,7 @@ const (
 	EscalationPolicyPathTimeRestrictionTimeZoneTijuana                     EscalationPolicyPathTimeRestrictionTimeZone = "Tijuana"
 	EscalationPolicyPathTimeRestrictionTimeZoneTokelauIs                   EscalationPolicyPathTimeRestrictionTimeZone = "Tokelau Is."
 	EscalationPolicyPathTimeRestrictionTimeZoneTokyo                       EscalationPolicyPathTimeRestrictionTimeZone = "Tokyo"
+	EscalationPolicyPathTimeRestrictionTimeZoneUSAleutian                  EscalationPolicyPathTimeRestrictionTimeZone = "US/Aleutian"
 	EscalationPolicyPathTimeRestrictionTimeZoneUTC                         EscalationPolicyPathTimeRestrictionTimeZone = "UTC"
 	EscalationPolicyPathTimeRestrictionTimeZoneUlaanbaatar                 EscalationPolicyPathTimeRestrictionTimeZone = "Ulaanbaatar"
 	EscalationPolicyPathTimeRestrictionTimeZoneUrumqi                      EscalationPolicyPathTimeRestrictionTimeZone = "Urumqi"
@@ -9170,9 +9282,13 @@ func (e EscalationPolicyPathTimeRestrictionTimeZone) Valid() bool {
 		return true
 	case EscalationPolicyPathTimeRestrictionTimeZoneAlmaty:
 		return true
+	case EscalationPolicyPathTimeRestrictionTimeZoneAmericaAdak:
+		return true
 	case EscalationPolicyPathTimeRestrictionTimeZoneAmericaArgentinaBuenosAires:
 		return true
 	case EscalationPolicyPathTimeRestrictionTimeZoneAmericaAsuncion:
+		return true
+	case EscalationPolicyPathTimeRestrictionTimeZoneAmericaAtka:
 		return true
 	case EscalationPolicyPathTimeRestrictionTimeZoneAmericaBogota:
 		return true
@@ -9204,6 +9320,8 @@ func (e EscalationPolicyPathTimeRestrictionTimeZone) Valid() bool {
 		return true
 	case EscalationPolicyPathTimeRestrictionTimeZoneAmericaMexicoCity:
 		return true
+	case EscalationPolicyPathTimeRestrictionTimeZoneAmericaMiquelon:
+		return true
 	case EscalationPolicyPathTimeRestrictionTimeZoneAmericaMonterrey:
 		return true
 	case EscalationPolicyPathTimeRestrictionTimeZoneAmericaMontevideo:
@@ -9225,6 +9343,8 @@ func (e EscalationPolicyPathTimeRestrictionTimeZone) Valid() bool {
 	case EscalationPolicyPathTimeRestrictionTimeZoneAmericaStJohns:
 		return true
 	case EscalationPolicyPathTimeRestrictionTimeZoneAmericaTijuana:
+		return true
+	case EscalationPolicyPathTimeRestrictionTimeZoneAmericaVancouver:
 		return true
 	case EscalationPolicyPathTimeRestrictionTimeZoneAmericanSamoa:
 		return true
@@ -9334,7 +9454,13 @@ func (e EscalationPolicyPathTimeRestrictionTimeZone) Valid() bool {
 		return true
 	case EscalationPolicyPathTimeRestrictionTimeZoneAustraliaDarwin:
 		return true
+	case EscalationPolicyPathTimeRestrictionTimeZoneAustraliaEucla:
+		return true
 	case EscalationPolicyPathTimeRestrictionTimeZoneAustraliaHobart:
+		return true
+	case EscalationPolicyPathTimeRestrictionTimeZoneAustraliaLHI:
+		return true
+	case EscalationPolicyPathTimeRestrictionTimeZoneAustraliaLordHowe:
 		return true
 	case EscalationPolicyPathTimeRestrictionTimeZoneAustraliaMelbourne:
 		return true
@@ -9376,6 +9502,8 @@ func (e EscalationPolicyPathTimeRestrictionTimeZone) Valid() bool {
 		return true
 	case EscalationPolicyPathTimeRestrictionTimeZoneCairo:
 		return true
+	case EscalationPolicyPathTimeRestrictionTimeZoneCanadaPacific:
+		return true
 	case EscalationPolicyPathTimeRestrictionTimeZoneCanberra:
 		return true
 	case EscalationPolicyPathTimeRestrictionTimeZoneCapeVerdeIs:
@@ -9393,6 +9521,8 @@ func (e EscalationPolicyPathTimeRestrictionTimeZone) Valid() bool {
 	case EscalationPolicyPathTimeRestrictionTimeZoneChennai:
 		return true
 	case EscalationPolicyPathTimeRestrictionTimeZoneChihuahua:
+		return true
+	case EscalationPolicyPathTimeRestrictionTimeZoneChileEasterIsland:
 		return true
 	case EscalationPolicyPathTimeRestrictionTimeZoneChongqing:
 		return true
@@ -9604,9 +9734,13 @@ func (e EscalationPolicyPathTimeRestrictionTimeZone) Valid() bool {
 		return true
 	case EscalationPolicyPathTimeRestrictionTimeZonePacificChatham:
 		return true
+	case EscalationPolicyPathTimeRestrictionTimeZonePacificEaster:
+		return true
 	case EscalationPolicyPathTimeRestrictionTimeZonePacificFakaofo:
 		return true
 	case EscalationPolicyPathTimeRestrictionTimeZonePacificFiji:
+		return true
+	case EscalationPolicyPathTimeRestrictionTimeZonePacificGambier:
 		return true
 	case EscalationPolicyPathTimeRestrictionTimeZonePacificGuadalcanal:
 		return true
@@ -9614,13 +9748,21 @@ func (e EscalationPolicyPathTimeRestrictionTimeZone) Valid() bool {
 		return true
 	case EscalationPolicyPathTimeRestrictionTimeZonePacificHonolulu:
 		return true
+	case EscalationPolicyPathTimeRestrictionTimeZonePacificKiritimati:
+		return true
 	case EscalationPolicyPathTimeRestrictionTimeZonePacificMajuro:
 		return true
+	case EscalationPolicyPathTimeRestrictionTimeZonePacificMarquesas:
+		return true
 	case EscalationPolicyPathTimeRestrictionTimeZonePacificMidway:
+		return true
+	case EscalationPolicyPathTimeRestrictionTimeZonePacificNorfolk:
 		return true
 	case EscalationPolicyPathTimeRestrictionTimeZonePacificNoumea:
 		return true
 	case EscalationPolicyPathTimeRestrictionTimeZonePacificPagoPago:
+		return true
+	case EscalationPolicyPathTimeRestrictionTimeZonePacificPitcairn:
 		return true
 	case EscalationPolicyPathTimeRestrictionTimeZonePacificPortMoresby:
 		return true
@@ -9697,6 +9839,8 @@ func (e EscalationPolicyPathTimeRestrictionTimeZone) Valid() bool {
 	case EscalationPolicyPathTimeRestrictionTimeZoneTokelauIs:
 		return true
 	case EscalationPolicyPathTimeRestrictionTimeZoneTokyo:
+		return true
+	case EscalationPolicyPathTimeRestrictionTimeZoneUSAleutian:
 		return true
 	case EscalationPolicyPathTimeRestrictionTimeZoneUTC:
 		return true
@@ -12362,6 +12506,21 @@ func (e InviteToGoogleChatSpaceTaskParamsTaskType) Valid() bool {
 	}
 }
 
+// Defines values for InviteToMicrosoftTeamsChannelRootlyTaskParamsTaskType.
+const (
+	InviteToMicrosoftTeamsChannelRootlyTaskParamsTaskTypeInviteToMicrosoftTeamsChannelRootly InviteToMicrosoftTeamsChannelRootlyTaskParamsTaskType = "invite_to_microsoft_teams_channel_rootly"
+)
+
+// Valid indicates whether the value is a known member of the InviteToMicrosoftTeamsChannelRootlyTaskParamsTaskType enum.
+func (e InviteToMicrosoftTeamsChannelRootlyTaskParamsTaskType) Valid() bool {
+	switch e {
+	case InviteToMicrosoftTeamsChannelRootlyTaskParamsTaskTypeInviteToMicrosoftTeamsChannelRootly:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for InviteToMicrosoftTeamsChannelTaskParamsTaskType.
 const (
 	InviteToMicrosoftTeamsChannelTaskParamsTaskTypeInviteToMicrosoftTeamsChannel InviteToMicrosoftTeamsChannelTaskParamsTaskType = "invite_to_microsoft_teams_channel"
@@ -14937,8 +15096,10 @@ const (
 	NewEscalationPolicyDataAttributesBusinessHoursTimeZoneAfricaNairobi               NewEscalationPolicyDataAttributesBusinessHoursTimeZone = "Africa/Nairobi"
 	NewEscalationPolicyDataAttributesBusinessHoursTimeZoneAlaska                      NewEscalationPolicyDataAttributesBusinessHoursTimeZone = "Alaska"
 	NewEscalationPolicyDataAttributesBusinessHoursTimeZoneAlmaty                      NewEscalationPolicyDataAttributesBusinessHoursTimeZone = "Almaty"
+	NewEscalationPolicyDataAttributesBusinessHoursTimeZoneAmericaAdak                 NewEscalationPolicyDataAttributesBusinessHoursTimeZone = "America/Adak"
 	NewEscalationPolicyDataAttributesBusinessHoursTimeZoneAmericaArgentinaBuenosAires NewEscalationPolicyDataAttributesBusinessHoursTimeZone = "America/Argentina/Buenos_Aires"
 	NewEscalationPolicyDataAttributesBusinessHoursTimeZoneAmericaAsuncion             NewEscalationPolicyDataAttributesBusinessHoursTimeZone = "America/Asuncion"
+	NewEscalationPolicyDataAttributesBusinessHoursTimeZoneAmericaAtka                 NewEscalationPolicyDataAttributesBusinessHoursTimeZone = "America/Atka"
 	NewEscalationPolicyDataAttributesBusinessHoursTimeZoneAmericaBogota               NewEscalationPolicyDataAttributesBusinessHoursTimeZone = "America/Bogota"
 	NewEscalationPolicyDataAttributesBusinessHoursTimeZoneAmericaCaracas              NewEscalationPolicyDataAttributesBusinessHoursTimeZone = "America/Caracas"
 	NewEscalationPolicyDataAttributesBusinessHoursTimeZoneAmericaChicago              NewEscalationPolicyDataAttributesBusinessHoursTimeZone = "America/Chicago"
@@ -14954,6 +15115,7 @@ const (
 	NewEscalationPolicyDataAttributesBusinessHoursTimeZoneAmericaLosAngeles           NewEscalationPolicyDataAttributesBusinessHoursTimeZone = "America/Los_Angeles"
 	NewEscalationPolicyDataAttributesBusinessHoursTimeZoneAmericaMazatlan             NewEscalationPolicyDataAttributesBusinessHoursTimeZone = "America/Mazatlan"
 	NewEscalationPolicyDataAttributesBusinessHoursTimeZoneAmericaMexicoCity           NewEscalationPolicyDataAttributesBusinessHoursTimeZone = "America/Mexico_City"
+	NewEscalationPolicyDataAttributesBusinessHoursTimeZoneAmericaMiquelon             NewEscalationPolicyDataAttributesBusinessHoursTimeZone = "America/Miquelon"
 	NewEscalationPolicyDataAttributesBusinessHoursTimeZoneAmericaMonterrey            NewEscalationPolicyDataAttributesBusinessHoursTimeZone = "America/Monterrey"
 	NewEscalationPolicyDataAttributesBusinessHoursTimeZoneAmericaMontevideo           NewEscalationPolicyDataAttributesBusinessHoursTimeZone = "America/Montevideo"
 	NewEscalationPolicyDataAttributesBusinessHoursTimeZoneAmericaNewYork              NewEscalationPolicyDataAttributesBusinessHoursTimeZone = "America/New_York"
@@ -14965,6 +15127,7 @@ const (
 	NewEscalationPolicyDataAttributesBusinessHoursTimeZoneAmericaSaoPaulo             NewEscalationPolicyDataAttributesBusinessHoursTimeZone = "America/Sao_Paulo"
 	NewEscalationPolicyDataAttributesBusinessHoursTimeZoneAmericaStJohns              NewEscalationPolicyDataAttributesBusinessHoursTimeZone = "America/St_Johns"
 	NewEscalationPolicyDataAttributesBusinessHoursTimeZoneAmericaTijuana              NewEscalationPolicyDataAttributesBusinessHoursTimeZone = "America/Tijuana"
+	NewEscalationPolicyDataAttributesBusinessHoursTimeZoneAmericaVancouver            NewEscalationPolicyDataAttributesBusinessHoursTimeZone = "America/Vancouver"
 	NewEscalationPolicyDataAttributesBusinessHoursTimeZoneAmericanSamoa               NewEscalationPolicyDataAttributesBusinessHoursTimeZone = "American Samoa"
 	NewEscalationPolicyDataAttributesBusinessHoursTimeZoneAmsterdam                   NewEscalationPolicyDataAttributesBusinessHoursTimeZone = "Amsterdam"
 	NewEscalationPolicyDataAttributesBusinessHoursTimeZoneArizona                     NewEscalationPolicyDataAttributesBusinessHoursTimeZone = "Arizona"
@@ -15019,7 +15182,10 @@ const (
 	NewEscalationPolicyDataAttributesBusinessHoursTimeZoneAustraliaBrisbane           NewEscalationPolicyDataAttributesBusinessHoursTimeZone = "Australia/Brisbane"
 	NewEscalationPolicyDataAttributesBusinessHoursTimeZoneAustraliaCanberra           NewEscalationPolicyDataAttributesBusinessHoursTimeZone = "Australia/Canberra"
 	NewEscalationPolicyDataAttributesBusinessHoursTimeZoneAustraliaDarwin             NewEscalationPolicyDataAttributesBusinessHoursTimeZone = "Australia/Darwin"
+	NewEscalationPolicyDataAttributesBusinessHoursTimeZoneAustraliaEucla              NewEscalationPolicyDataAttributesBusinessHoursTimeZone = "Australia/Eucla"
 	NewEscalationPolicyDataAttributesBusinessHoursTimeZoneAustraliaHobart             NewEscalationPolicyDataAttributesBusinessHoursTimeZone = "Australia/Hobart"
+	NewEscalationPolicyDataAttributesBusinessHoursTimeZoneAustraliaLHI                NewEscalationPolicyDataAttributesBusinessHoursTimeZone = "Australia/LHI"
+	NewEscalationPolicyDataAttributesBusinessHoursTimeZoneAustraliaLordHowe           NewEscalationPolicyDataAttributesBusinessHoursTimeZone = "Australia/Lord_Howe"
 	NewEscalationPolicyDataAttributesBusinessHoursTimeZoneAustraliaMelbourne          NewEscalationPolicyDataAttributesBusinessHoursTimeZone = "Australia/Melbourne"
 	NewEscalationPolicyDataAttributesBusinessHoursTimeZoneAustraliaPerth              NewEscalationPolicyDataAttributesBusinessHoursTimeZone = "Australia/Perth"
 	NewEscalationPolicyDataAttributesBusinessHoursTimeZoneAustraliaSydney             NewEscalationPolicyDataAttributesBusinessHoursTimeZone = "Australia/Sydney"
@@ -15040,6 +15206,7 @@ const (
 	NewEscalationPolicyDataAttributesBusinessHoursTimeZoneBudapest                    NewEscalationPolicyDataAttributesBusinessHoursTimeZone = "Budapest"
 	NewEscalationPolicyDataAttributesBusinessHoursTimeZoneBuenosAires                 NewEscalationPolicyDataAttributesBusinessHoursTimeZone = "Buenos Aires"
 	NewEscalationPolicyDataAttributesBusinessHoursTimeZoneCairo                       NewEscalationPolicyDataAttributesBusinessHoursTimeZone = "Cairo"
+	NewEscalationPolicyDataAttributesBusinessHoursTimeZoneCanadaPacific               NewEscalationPolicyDataAttributesBusinessHoursTimeZone = "Canada/Pacific"
 	NewEscalationPolicyDataAttributesBusinessHoursTimeZoneCanberra                    NewEscalationPolicyDataAttributesBusinessHoursTimeZone = "Canberra"
 	NewEscalationPolicyDataAttributesBusinessHoursTimeZoneCapeVerdeIs                 NewEscalationPolicyDataAttributesBusinessHoursTimeZone = "Cape Verde Is."
 	NewEscalationPolicyDataAttributesBusinessHoursTimeZoneCaracas                     NewEscalationPolicyDataAttributesBusinessHoursTimeZone = "Caracas"
@@ -15049,6 +15216,7 @@ const (
 	NewEscalationPolicyDataAttributesBusinessHoursTimeZoneChathamIs                   NewEscalationPolicyDataAttributesBusinessHoursTimeZone = "Chatham Is."
 	NewEscalationPolicyDataAttributesBusinessHoursTimeZoneChennai                     NewEscalationPolicyDataAttributesBusinessHoursTimeZone = "Chennai"
 	NewEscalationPolicyDataAttributesBusinessHoursTimeZoneChihuahua                   NewEscalationPolicyDataAttributesBusinessHoursTimeZone = "Chihuahua"
+	NewEscalationPolicyDataAttributesBusinessHoursTimeZoneChileEasterIsland           NewEscalationPolicyDataAttributesBusinessHoursTimeZone = "Chile/EasterIsland"
 	NewEscalationPolicyDataAttributesBusinessHoursTimeZoneChongqing                   NewEscalationPolicyDataAttributesBusinessHoursTimeZone = "Chongqing"
 	NewEscalationPolicyDataAttributesBusinessHoursTimeZoneCopenhagen                  NewEscalationPolicyDataAttributesBusinessHoursTimeZone = "Copenhagen"
 	NewEscalationPolicyDataAttributesBusinessHoursTimeZoneDarwin                      NewEscalationPolicyDataAttributesBusinessHoursTimeZone = "Darwin"
@@ -15154,15 +15322,21 @@ const (
 	NewEscalationPolicyDataAttributesBusinessHoursTimeZonePacificApia                 NewEscalationPolicyDataAttributesBusinessHoursTimeZone = "Pacific/Apia"
 	NewEscalationPolicyDataAttributesBusinessHoursTimeZonePacificAuckland             NewEscalationPolicyDataAttributesBusinessHoursTimeZone = "Pacific/Auckland"
 	NewEscalationPolicyDataAttributesBusinessHoursTimeZonePacificChatham              NewEscalationPolicyDataAttributesBusinessHoursTimeZone = "Pacific/Chatham"
+	NewEscalationPolicyDataAttributesBusinessHoursTimeZonePacificEaster               NewEscalationPolicyDataAttributesBusinessHoursTimeZone = "Pacific/Easter"
 	NewEscalationPolicyDataAttributesBusinessHoursTimeZonePacificFakaofo              NewEscalationPolicyDataAttributesBusinessHoursTimeZone = "Pacific/Fakaofo"
 	NewEscalationPolicyDataAttributesBusinessHoursTimeZonePacificFiji                 NewEscalationPolicyDataAttributesBusinessHoursTimeZone = "Pacific/Fiji"
+	NewEscalationPolicyDataAttributesBusinessHoursTimeZonePacificGambier              NewEscalationPolicyDataAttributesBusinessHoursTimeZone = "Pacific/Gambier"
 	NewEscalationPolicyDataAttributesBusinessHoursTimeZonePacificGuadalcanal          NewEscalationPolicyDataAttributesBusinessHoursTimeZone = "Pacific/Guadalcanal"
 	NewEscalationPolicyDataAttributesBusinessHoursTimeZonePacificGuam                 NewEscalationPolicyDataAttributesBusinessHoursTimeZone = "Pacific/Guam"
 	NewEscalationPolicyDataAttributesBusinessHoursTimeZonePacificHonolulu             NewEscalationPolicyDataAttributesBusinessHoursTimeZone = "Pacific/Honolulu"
+	NewEscalationPolicyDataAttributesBusinessHoursTimeZonePacificKiritimati           NewEscalationPolicyDataAttributesBusinessHoursTimeZone = "Pacific/Kiritimati"
 	NewEscalationPolicyDataAttributesBusinessHoursTimeZonePacificMajuro               NewEscalationPolicyDataAttributesBusinessHoursTimeZone = "Pacific/Majuro"
+	NewEscalationPolicyDataAttributesBusinessHoursTimeZonePacificMarquesas            NewEscalationPolicyDataAttributesBusinessHoursTimeZone = "Pacific/Marquesas"
 	NewEscalationPolicyDataAttributesBusinessHoursTimeZonePacificMidway               NewEscalationPolicyDataAttributesBusinessHoursTimeZone = "Pacific/Midway"
+	NewEscalationPolicyDataAttributesBusinessHoursTimeZonePacificNorfolk              NewEscalationPolicyDataAttributesBusinessHoursTimeZone = "Pacific/Norfolk"
 	NewEscalationPolicyDataAttributesBusinessHoursTimeZonePacificNoumea               NewEscalationPolicyDataAttributesBusinessHoursTimeZone = "Pacific/Noumea"
 	NewEscalationPolicyDataAttributesBusinessHoursTimeZonePacificPagoPago             NewEscalationPolicyDataAttributesBusinessHoursTimeZone = "Pacific/Pago_Pago"
+	NewEscalationPolicyDataAttributesBusinessHoursTimeZonePacificPitcairn             NewEscalationPolicyDataAttributesBusinessHoursTimeZone = "Pacific/Pitcairn"
 	NewEscalationPolicyDataAttributesBusinessHoursTimeZonePacificPortMoresby          NewEscalationPolicyDataAttributesBusinessHoursTimeZone = "Pacific/Port_Moresby"
 	NewEscalationPolicyDataAttributesBusinessHoursTimeZonePacificTimeUSCanada         NewEscalationPolicyDataAttributesBusinessHoursTimeZone = "Pacific Time (US & Canada)"
 	NewEscalationPolicyDataAttributesBusinessHoursTimeZonePacificTongatapu            NewEscalationPolicyDataAttributesBusinessHoursTimeZone = "Pacific/Tongatapu"
@@ -15201,6 +15375,7 @@ const (
 	NewEscalationPolicyDataAttributesBusinessHoursTimeZoneTijuana                     NewEscalationPolicyDataAttributesBusinessHoursTimeZone = "Tijuana"
 	NewEscalationPolicyDataAttributesBusinessHoursTimeZoneTokelauIs                   NewEscalationPolicyDataAttributesBusinessHoursTimeZone = "Tokelau Is."
 	NewEscalationPolicyDataAttributesBusinessHoursTimeZoneTokyo                       NewEscalationPolicyDataAttributesBusinessHoursTimeZone = "Tokyo"
+	NewEscalationPolicyDataAttributesBusinessHoursTimeZoneUSAleutian                  NewEscalationPolicyDataAttributesBusinessHoursTimeZone = "US/Aleutian"
 	NewEscalationPolicyDataAttributesBusinessHoursTimeZoneUTC                         NewEscalationPolicyDataAttributesBusinessHoursTimeZone = "UTC"
 	NewEscalationPolicyDataAttributesBusinessHoursTimeZoneUlaanbaatar                 NewEscalationPolicyDataAttributesBusinessHoursTimeZone = "Ulaanbaatar"
 	NewEscalationPolicyDataAttributesBusinessHoursTimeZoneUrumqi                      NewEscalationPolicyDataAttributesBusinessHoursTimeZone = "Urumqi"
@@ -15242,9 +15417,13 @@ func (e NewEscalationPolicyDataAttributesBusinessHoursTimeZone) Valid() bool {
 		return true
 	case NewEscalationPolicyDataAttributesBusinessHoursTimeZoneAlmaty:
 		return true
+	case NewEscalationPolicyDataAttributesBusinessHoursTimeZoneAmericaAdak:
+		return true
 	case NewEscalationPolicyDataAttributesBusinessHoursTimeZoneAmericaArgentinaBuenosAires:
 		return true
 	case NewEscalationPolicyDataAttributesBusinessHoursTimeZoneAmericaAsuncion:
+		return true
+	case NewEscalationPolicyDataAttributesBusinessHoursTimeZoneAmericaAtka:
 		return true
 	case NewEscalationPolicyDataAttributesBusinessHoursTimeZoneAmericaBogota:
 		return true
@@ -15276,6 +15455,8 @@ func (e NewEscalationPolicyDataAttributesBusinessHoursTimeZone) Valid() bool {
 		return true
 	case NewEscalationPolicyDataAttributesBusinessHoursTimeZoneAmericaMexicoCity:
 		return true
+	case NewEscalationPolicyDataAttributesBusinessHoursTimeZoneAmericaMiquelon:
+		return true
 	case NewEscalationPolicyDataAttributesBusinessHoursTimeZoneAmericaMonterrey:
 		return true
 	case NewEscalationPolicyDataAttributesBusinessHoursTimeZoneAmericaMontevideo:
@@ -15297,6 +15478,8 @@ func (e NewEscalationPolicyDataAttributesBusinessHoursTimeZone) Valid() bool {
 	case NewEscalationPolicyDataAttributesBusinessHoursTimeZoneAmericaStJohns:
 		return true
 	case NewEscalationPolicyDataAttributesBusinessHoursTimeZoneAmericaTijuana:
+		return true
+	case NewEscalationPolicyDataAttributesBusinessHoursTimeZoneAmericaVancouver:
 		return true
 	case NewEscalationPolicyDataAttributesBusinessHoursTimeZoneAmericanSamoa:
 		return true
@@ -15406,7 +15589,13 @@ func (e NewEscalationPolicyDataAttributesBusinessHoursTimeZone) Valid() bool {
 		return true
 	case NewEscalationPolicyDataAttributesBusinessHoursTimeZoneAustraliaDarwin:
 		return true
+	case NewEscalationPolicyDataAttributesBusinessHoursTimeZoneAustraliaEucla:
+		return true
 	case NewEscalationPolicyDataAttributesBusinessHoursTimeZoneAustraliaHobart:
+		return true
+	case NewEscalationPolicyDataAttributesBusinessHoursTimeZoneAustraliaLHI:
+		return true
+	case NewEscalationPolicyDataAttributesBusinessHoursTimeZoneAustraliaLordHowe:
 		return true
 	case NewEscalationPolicyDataAttributesBusinessHoursTimeZoneAustraliaMelbourne:
 		return true
@@ -15448,6 +15637,8 @@ func (e NewEscalationPolicyDataAttributesBusinessHoursTimeZone) Valid() bool {
 		return true
 	case NewEscalationPolicyDataAttributesBusinessHoursTimeZoneCairo:
 		return true
+	case NewEscalationPolicyDataAttributesBusinessHoursTimeZoneCanadaPacific:
+		return true
 	case NewEscalationPolicyDataAttributesBusinessHoursTimeZoneCanberra:
 		return true
 	case NewEscalationPolicyDataAttributesBusinessHoursTimeZoneCapeVerdeIs:
@@ -15465,6 +15656,8 @@ func (e NewEscalationPolicyDataAttributesBusinessHoursTimeZone) Valid() bool {
 	case NewEscalationPolicyDataAttributesBusinessHoursTimeZoneChennai:
 		return true
 	case NewEscalationPolicyDataAttributesBusinessHoursTimeZoneChihuahua:
+		return true
+	case NewEscalationPolicyDataAttributesBusinessHoursTimeZoneChileEasterIsland:
 		return true
 	case NewEscalationPolicyDataAttributesBusinessHoursTimeZoneChongqing:
 		return true
@@ -15676,9 +15869,13 @@ func (e NewEscalationPolicyDataAttributesBusinessHoursTimeZone) Valid() bool {
 		return true
 	case NewEscalationPolicyDataAttributesBusinessHoursTimeZonePacificChatham:
 		return true
+	case NewEscalationPolicyDataAttributesBusinessHoursTimeZonePacificEaster:
+		return true
 	case NewEscalationPolicyDataAttributesBusinessHoursTimeZonePacificFakaofo:
 		return true
 	case NewEscalationPolicyDataAttributesBusinessHoursTimeZonePacificFiji:
+		return true
+	case NewEscalationPolicyDataAttributesBusinessHoursTimeZonePacificGambier:
 		return true
 	case NewEscalationPolicyDataAttributesBusinessHoursTimeZonePacificGuadalcanal:
 		return true
@@ -15686,13 +15883,21 @@ func (e NewEscalationPolicyDataAttributesBusinessHoursTimeZone) Valid() bool {
 		return true
 	case NewEscalationPolicyDataAttributesBusinessHoursTimeZonePacificHonolulu:
 		return true
+	case NewEscalationPolicyDataAttributesBusinessHoursTimeZonePacificKiritimati:
+		return true
 	case NewEscalationPolicyDataAttributesBusinessHoursTimeZonePacificMajuro:
 		return true
+	case NewEscalationPolicyDataAttributesBusinessHoursTimeZonePacificMarquesas:
+		return true
 	case NewEscalationPolicyDataAttributesBusinessHoursTimeZonePacificMidway:
+		return true
+	case NewEscalationPolicyDataAttributesBusinessHoursTimeZonePacificNorfolk:
 		return true
 	case NewEscalationPolicyDataAttributesBusinessHoursTimeZonePacificNoumea:
 		return true
 	case NewEscalationPolicyDataAttributesBusinessHoursTimeZonePacificPagoPago:
+		return true
+	case NewEscalationPolicyDataAttributesBusinessHoursTimeZonePacificPitcairn:
 		return true
 	case NewEscalationPolicyDataAttributesBusinessHoursTimeZonePacificPortMoresby:
 		return true
@@ -15769,6 +15974,8 @@ func (e NewEscalationPolicyDataAttributesBusinessHoursTimeZone) Valid() bool {
 	case NewEscalationPolicyDataAttributesBusinessHoursTimeZoneTokelauIs:
 		return true
 	case NewEscalationPolicyDataAttributesBusinessHoursTimeZoneTokyo:
+		return true
+	case NewEscalationPolicyDataAttributesBusinessHoursTimeZoneUSAleutian:
 		return true
 	case NewEscalationPolicyDataAttributesBusinessHoursTimeZoneUTC:
 		return true
@@ -16188,8 +16395,10 @@ const (
 	NewEscalationPolicyPathDataAttributesRules5TimeZoneAfricaNairobi               NewEscalationPolicyPathDataAttributesRules5TimeZone = "Africa/Nairobi"
 	NewEscalationPolicyPathDataAttributesRules5TimeZoneAlaska                      NewEscalationPolicyPathDataAttributesRules5TimeZone = "Alaska"
 	NewEscalationPolicyPathDataAttributesRules5TimeZoneAlmaty                      NewEscalationPolicyPathDataAttributesRules5TimeZone = "Almaty"
+	NewEscalationPolicyPathDataAttributesRules5TimeZoneAmericaAdak                 NewEscalationPolicyPathDataAttributesRules5TimeZone = "America/Adak"
 	NewEscalationPolicyPathDataAttributesRules5TimeZoneAmericaArgentinaBuenosAires NewEscalationPolicyPathDataAttributesRules5TimeZone = "America/Argentina/Buenos_Aires"
 	NewEscalationPolicyPathDataAttributesRules5TimeZoneAmericaAsuncion             NewEscalationPolicyPathDataAttributesRules5TimeZone = "America/Asuncion"
+	NewEscalationPolicyPathDataAttributesRules5TimeZoneAmericaAtka                 NewEscalationPolicyPathDataAttributesRules5TimeZone = "America/Atka"
 	NewEscalationPolicyPathDataAttributesRules5TimeZoneAmericaBogota               NewEscalationPolicyPathDataAttributesRules5TimeZone = "America/Bogota"
 	NewEscalationPolicyPathDataAttributesRules5TimeZoneAmericaCaracas              NewEscalationPolicyPathDataAttributesRules5TimeZone = "America/Caracas"
 	NewEscalationPolicyPathDataAttributesRules5TimeZoneAmericaChicago              NewEscalationPolicyPathDataAttributesRules5TimeZone = "America/Chicago"
@@ -16205,6 +16414,7 @@ const (
 	NewEscalationPolicyPathDataAttributesRules5TimeZoneAmericaLosAngeles           NewEscalationPolicyPathDataAttributesRules5TimeZone = "America/Los_Angeles"
 	NewEscalationPolicyPathDataAttributesRules5TimeZoneAmericaMazatlan             NewEscalationPolicyPathDataAttributesRules5TimeZone = "America/Mazatlan"
 	NewEscalationPolicyPathDataAttributesRules5TimeZoneAmericaMexicoCity           NewEscalationPolicyPathDataAttributesRules5TimeZone = "America/Mexico_City"
+	NewEscalationPolicyPathDataAttributesRules5TimeZoneAmericaMiquelon             NewEscalationPolicyPathDataAttributesRules5TimeZone = "America/Miquelon"
 	NewEscalationPolicyPathDataAttributesRules5TimeZoneAmericaMonterrey            NewEscalationPolicyPathDataAttributesRules5TimeZone = "America/Monterrey"
 	NewEscalationPolicyPathDataAttributesRules5TimeZoneAmericaMontevideo           NewEscalationPolicyPathDataAttributesRules5TimeZone = "America/Montevideo"
 	NewEscalationPolicyPathDataAttributesRules5TimeZoneAmericaNewYork              NewEscalationPolicyPathDataAttributesRules5TimeZone = "America/New_York"
@@ -16216,6 +16426,7 @@ const (
 	NewEscalationPolicyPathDataAttributesRules5TimeZoneAmericaSaoPaulo             NewEscalationPolicyPathDataAttributesRules5TimeZone = "America/Sao_Paulo"
 	NewEscalationPolicyPathDataAttributesRules5TimeZoneAmericaStJohns              NewEscalationPolicyPathDataAttributesRules5TimeZone = "America/St_Johns"
 	NewEscalationPolicyPathDataAttributesRules5TimeZoneAmericaTijuana              NewEscalationPolicyPathDataAttributesRules5TimeZone = "America/Tijuana"
+	NewEscalationPolicyPathDataAttributesRules5TimeZoneAmericaVancouver            NewEscalationPolicyPathDataAttributesRules5TimeZone = "America/Vancouver"
 	NewEscalationPolicyPathDataAttributesRules5TimeZoneAmericanSamoa               NewEscalationPolicyPathDataAttributesRules5TimeZone = "American Samoa"
 	NewEscalationPolicyPathDataAttributesRules5TimeZoneAmsterdam                   NewEscalationPolicyPathDataAttributesRules5TimeZone = "Amsterdam"
 	NewEscalationPolicyPathDataAttributesRules5TimeZoneArizona                     NewEscalationPolicyPathDataAttributesRules5TimeZone = "Arizona"
@@ -16270,7 +16481,10 @@ const (
 	NewEscalationPolicyPathDataAttributesRules5TimeZoneAustraliaBrisbane           NewEscalationPolicyPathDataAttributesRules5TimeZone = "Australia/Brisbane"
 	NewEscalationPolicyPathDataAttributesRules5TimeZoneAustraliaCanberra           NewEscalationPolicyPathDataAttributesRules5TimeZone = "Australia/Canberra"
 	NewEscalationPolicyPathDataAttributesRules5TimeZoneAustraliaDarwin             NewEscalationPolicyPathDataAttributesRules5TimeZone = "Australia/Darwin"
+	NewEscalationPolicyPathDataAttributesRules5TimeZoneAustraliaEucla              NewEscalationPolicyPathDataAttributesRules5TimeZone = "Australia/Eucla"
 	NewEscalationPolicyPathDataAttributesRules5TimeZoneAustraliaHobart             NewEscalationPolicyPathDataAttributesRules5TimeZone = "Australia/Hobart"
+	NewEscalationPolicyPathDataAttributesRules5TimeZoneAustraliaLHI                NewEscalationPolicyPathDataAttributesRules5TimeZone = "Australia/LHI"
+	NewEscalationPolicyPathDataAttributesRules5TimeZoneAustraliaLordHowe           NewEscalationPolicyPathDataAttributesRules5TimeZone = "Australia/Lord_Howe"
 	NewEscalationPolicyPathDataAttributesRules5TimeZoneAustraliaMelbourne          NewEscalationPolicyPathDataAttributesRules5TimeZone = "Australia/Melbourne"
 	NewEscalationPolicyPathDataAttributesRules5TimeZoneAustraliaPerth              NewEscalationPolicyPathDataAttributesRules5TimeZone = "Australia/Perth"
 	NewEscalationPolicyPathDataAttributesRules5TimeZoneAustraliaSydney             NewEscalationPolicyPathDataAttributesRules5TimeZone = "Australia/Sydney"
@@ -16291,6 +16505,7 @@ const (
 	NewEscalationPolicyPathDataAttributesRules5TimeZoneBudapest                    NewEscalationPolicyPathDataAttributesRules5TimeZone = "Budapest"
 	NewEscalationPolicyPathDataAttributesRules5TimeZoneBuenosAires                 NewEscalationPolicyPathDataAttributesRules5TimeZone = "Buenos Aires"
 	NewEscalationPolicyPathDataAttributesRules5TimeZoneCairo                       NewEscalationPolicyPathDataAttributesRules5TimeZone = "Cairo"
+	NewEscalationPolicyPathDataAttributesRules5TimeZoneCanadaPacific               NewEscalationPolicyPathDataAttributesRules5TimeZone = "Canada/Pacific"
 	NewEscalationPolicyPathDataAttributesRules5TimeZoneCanberra                    NewEscalationPolicyPathDataAttributesRules5TimeZone = "Canberra"
 	NewEscalationPolicyPathDataAttributesRules5TimeZoneCapeVerdeIs                 NewEscalationPolicyPathDataAttributesRules5TimeZone = "Cape Verde Is."
 	NewEscalationPolicyPathDataAttributesRules5TimeZoneCaracas                     NewEscalationPolicyPathDataAttributesRules5TimeZone = "Caracas"
@@ -16300,6 +16515,7 @@ const (
 	NewEscalationPolicyPathDataAttributesRules5TimeZoneChathamIs                   NewEscalationPolicyPathDataAttributesRules5TimeZone = "Chatham Is."
 	NewEscalationPolicyPathDataAttributesRules5TimeZoneChennai                     NewEscalationPolicyPathDataAttributesRules5TimeZone = "Chennai"
 	NewEscalationPolicyPathDataAttributesRules5TimeZoneChihuahua                   NewEscalationPolicyPathDataAttributesRules5TimeZone = "Chihuahua"
+	NewEscalationPolicyPathDataAttributesRules5TimeZoneChileEasterIsland           NewEscalationPolicyPathDataAttributesRules5TimeZone = "Chile/EasterIsland"
 	NewEscalationPolicyPathDataAttributesRules5TimeZoneChongqing                   NewEscalationPolicyPathDataAttributesRules5TimeZone = "Chongqing"
 	NewEscalationPolicyPathDataAttributesRules5TimeZoneCopenhagen                  NewEscalationPolicyPathDataAttributesRules5TimeZone = "Copenhagen"
 	NewEscalationPolicyPathDataAttributesRules5TimeZoneDarwin                      NewEscalationPolicyPathDataAttributesRules5TimeZone = "Darwin"
@@ -16405,15 +16621,21 @@ const (
 	NewEscalationPolicyPathDataAttributesRules5TimeZonePacificApia                 NewEscalationPolicyPathDataAttributesRules5TimeZone = "Pacific/Apia"
 	NewEscalationPolicyPathDataAttributesRules5TimeZonePacificAuckland             NewEscalationPolicyPathDataAttributesRules5TimeZone = "Pacific/Auckland"
 	NewEscalationPolicyPathDataAttributesRules5TimeZonePacificChatham              NewEscalationPolicyPathDataAttributesRules5TimeZone = "Pacific/Chatham"
+	NewEscalationPolicyPathDataAttributesRules5TimeZonePacificEaster               NewEscalationPolicyPathDataAttributesRules5TimeZone = "Pacific/Easter"
 	NewEscalationPolicyPathDataAttributesRules5TimeZonePacificFakaofo              NewEscalationPolicyPathDataAttributesRules5TimeZone = "Pacific/Fakaofo"
 	NewEscalationPolicyPathDataAttributesRules5TimeZonePacificFiji                 NewEscalationPolicyPathDataAttributesRules5TimeZone = "Pacific/Fiji"
+	NewEscalationPolicyPathDataAttributesRules5TimeZonePacificGambier              NewEscalationPolicyPathDataAttributesRules5TimeZone = "Pacific/Gambier"
 	NewEscalationPolicyPathDataAttributesRules5TimeZonePacificGuadalcanal          NewEscalationPolicyPathDataAttributesRules5TimeZone = "Pacific/Guadalcanal"
 	NewEscalationPolicyPathDataAttributesRules5TimeZonePacificGuam                 NewEscalationPolicyPathDataAttributesRules5TimeZone = "Pacific/Guam"
 	NewEscalationPolicyPathDataAttributesRules5TimeZonePacificHonolulu             NewEscalationPolicyPathDataAttributesRules5TimeZone = "Pacific/Honolulu"
+	NewEscalationPolicyPathDataAttributesRules5TimeZonePacificKiritimati           NewEscalationPolicyPathDataAttributesRules5TimeZone = "Pacific/Kiritimati"
 	NewEscalationPolicyPathDataAttributesRules5TimeZonePacificMajuro               NewEscalationPolicyPathDataAttributesRules5TimeZone = "Pacific/Majuro"
+	NewEscalationPolicyPathDataAttributesRules5TimeZonePacificMarquesas            NewEscalationPolicyPathDataAttributesRules5TimeZone = "Pacific/Marquesas"
 	NewEscalationPolicyPathDataAttributesRules5TimeZonePacificMidway               NewEscalationPolicyPathDataAttributesRules5TimeZone = "Pacific/Midway"
+	NewEscalationPolicyPathDataAttributesRules5TimeZonePacificNorfolk              NewEscalationPolicyPathDataAttributesRules5TimeZone = "Pacific/Norfolk"
 	NewEscalationPolicyPathDataAttributesRules5TimeZonePacificNoumea               NewEscalationPolicyPathDataAttributesRules5TimeZone = "Pacific/Noumea"
 	NewEscalationPolicyPathDataAttributesRules5TimeZonePacificPagoPago             NewEscalationPolicyPathDataAttributesRules5TimeZone = "Pacific/Pago_Pago"
+	NewEscalationPolicyPathDataAttributesRules5TimeZonePacificPitcairn             NewEscalationPolicyPathDataAttributesRules5TimeZone = "Pacific/Pitcairn"
 	NewEscalationPolicyPathDataAttributesRules5TimeZonePacificPortMoresby          NewEscalationPolicyPathDataAttributesRules5TimeZone = "Pacific/Port_Moresby"
 	NewEscalationPolicyPathDataAttributesRules5TimeZonePacificTimeUSCanada         NewEscalationPolicyPathDataAttributesRules5TimeZone = "Pacific Time (US & Canada)"
 	NewEscalationPolicyPathDataAttributesRules5TimeZonePacificTongatapu            NewEscalationPolicyPathDataAttributesRules5TimeZone = "Pacific/Tongatapu"
@@ -16452,6 +16674,7 @@ const (
 	NewEscalationPolicyPathDataAttributesRules5TimeZoneTijuana                     NewEscalationPolicyPathDataAttributesRules5TimeZone = "Tijuana"
 	NewEscalationPolicyPathDataAttributesRules5TimeZoneTokelauIs                   NewEscalationPolicyPathDataAttributesRules5TimeZone = "Tokelau Is."
 	NewEscalationPolicyPathDataAttributesRules5TimeZoneTokyo                       NewEscalationPolicyPathDataAttributesRules5TimeZone = "Tokyo"
+	NewEscalationPolicyPathDataAttributesRules5TimeZoneUSAleutian                  NewEscalationPolicyPathDataAttributesRules5TimeZone = "US/Aleutian"
 	NewEscalationPolicyPathDataAttributesRules5TimeZoneUTC                         NewEscalationPolicyPathDataAttributesRules5TimeZone = "UTC"
 	NewEscalationPolicyPathDataAttributesRules5TimeZoneUlaanbaatar                 NewEscalationPolicyPathDataAttributesRules5TimeZone = "Ulaanbaatar"
 	NewEscalationPolicyPathDataAttributesRules5TimeZoneUrumqi                      NewEscalationPolicyPathDataAttributesRules5TimeZone = "Urumqi"
@@ -16493,9 +16716,13 @@ func (e NewEscalationPolicyPathDataAttributesRules5TimeZone) Valid() bool {
 		return true
 	case NewEscalationPolicyPathDataAttributesRules5TimeZoneAlmaty:
 		return true
+	case NewEscalationPolicyPathDataAttributesRules5TimeZoneAmericaAdak:
+		return true
 	case NewEscalationPolicyPathDataAttributesRules5TimeZoneAmericaArgentinaBuenosAires:
 		return true
 	case NewEscalationPolicyPathDataAttributesRules5TimeZoneAmericaAsuncion:
+		return true
+	case NewEscalationPolicyPathDataAttributesRules5TimeZoneAmericaAtka:
 		return true
 	case NewEscalationPolicyPathDataAttributesRules5TimeZoneAmericaBogota:
 		return true
@@ -16527,6 +16754,8 @@ func (e NewEscalationPolicyPathDataAttributesRules5TimeZone) Valid() bool {
 		return true
 	case NewEscalationPolicyPathDataAttributesRules5TimeZoneAmericaMexicoCity:
 		return true
+	case NewEscalationPolicyPathDataAttributesRules5TimeZoneAmericaMiquelon:
+		return true
 	case NewEscalationPolicyPathDataAttributesRules5TimeZoneAmericaMonterrey:
 		return true
 	case NewEscalationPolicyPathDataAttributesRules5TimeZoneAmericaMontevideo:
@@ -16548,6 +16777,8 @@ func (e NewEscalationPolicyPathDataAttributesRules5TimeZone) Valid() bool {
 	case NewEscalationPolicyPathDataAttributesRules5TimeZoneAmericaStJohns:
 		return true
 	case NewEscalationPolicyPathDataAttributesRules5TimeZoneAmericaTijuana:
+		return true
+	case NewEscalationPolicyPathDataAttributesRules5TimeZoneAmericaVancouver:
 		return true
 	case NewEscalationPolicyPathDataAttributesRules5TimeZoneAmericanSamoa:
 		return true
@@ -16657,7 +16888,13 @@ func (e NewEscalationPolicyPathDataAttributesRules5TimeZone) Valid() bool {
 		return true
 	case NewEscalationPolicyPathDataAttributesRules5TimeZoneAustraliaDarwin:
 		return true
+	case NewEscalationPolicyPathDataAttributesRules5TimeZoneAustraliaEucla:
+		return true
 	case NewEscalationPolicyPathDataAttributesRules5TimeZoneAustraliaHobart:
+		return true
+	case NewEscalationPolicyPathDataAttributesRules5TimeZoneAustraliaLHI:
+		return true
+	case NewEscalationPolicyPathDataAttributesRules5TimeZoneAustraliaLordHowe:
 		return true
 	case NewEscalationPolicyPathDataAttributesRules5TimeZoneAustraliaMelbourne:
 		return true
@@ -16699,6 +16936,8 @@ func (e NewEscalationPolicyPathDataAttributesRules5TimeZone) Valid() bool {
 		return true
 	case NewEscalationPolicyPathDataAttributesRules5TimeZoneCairo:
 		return true
+	case NewEscalationPolicyPathDataAttributesRules5TimeZoneCanadaPacific:
+		return true
 	case NewEscalationPolicyPathDataAttributesRules5TimeZoneCanberra:
 		return true
 	case NewEscalationPolicyPathDataAttributesRules5TimeZoneCapeVerdeIs:
@@ -16716,6 +16955,8 @@ func (e NewEscalationPolicyPathDataAttributesRules5TimeZone) Valid() bool {
 	case NewEscalationPolicyPathDataAttributesRules5TimeZoneChennai:
 		return true
 	case NewEscalationPolicyPathDataAttributesRules5TimeZoneChihuahua:
+		return true
+	case NewEscalationPolicyPathDataAttributesRules5TimeZoneChileEasterIsland:
 		return true
 	case NewEscalationPolicyPathDataAttributesRules5TimeZoneChongqing:
 		return true
@@ -16927,9 +17168,13 @@ func (e NewEscalationPolicyPathDataAttributesRules5TimeZone) Valid() bool {
 		return true
 	case NewEscalationPolicyPathDataAttributesRules5TimeZonePacificChatham:
 		return true
+	case NewEscalationPolicyPathDataAttributesRules5TimeZonePacificEaster:
+		return true
 	case NewEscalationPolicyPathDataAttributesRules5TimeZonePacificFakaofo:
 		return true
 	case NewEscalationPolicyPathDataAttributesRules5TimeZonePacificFiji:
+		return true
+	case NewEscalationPolicyPathDataAttributesRules5TimeZonePacificGambier:
 		return true
 	case NewEscalationPolicyPathDataAttributesRules5TimeZonePacificGuadalcanal:
 		return true
@@ -16937,13 +17182,21 @@ func (e NewEscalationPolicyPathDataAttributesRules5TimeZone) Valid() bool {
 		return true
 	case NewEscalationPolicyPathDataAttributesRules5TimeZonePacificHonolulu:
 		return true
+	case NewEscalationPolicyPathDataAttributesRules5TimeZonePacificKiritimati:
+		return true
 	case NewEscalationPolicyPathDataAttributesRules5TimeZonePacificMajuro:
 		return true
+	case NewEscalationPolicyPathDataAttributesRules5TimeZonePacificMarquesas:
+		return true
 	case NewEscalationPolicyPathDataAttributesRules5TimeZonePacificMidway:
+		return true
+	case NewEscalationPolicyPathDataAttributesRules5TimeZonePacificNorfolk:
 		return true
 	case NewEscalationPolicyPathDataAttributesRules5TimeZonePacificNoumea:
 		return true
 	case NewEscalationPolicyPathDataAttributesRules5TimeZonePacificPagoPago:
+		return true
+	case NewEscalationPolicyPathDataAttributesRules5TimeZonePacificPitcairn:
 		return true
 	case NewEscalationPolicyPathDataAttributesRules5TimeZonePacificPortMoresby:
 		return true
@@ -17020,6 +17273,8 @@ func (e NewEscalationPolicyPathDataAttributesRules5TimeZone) Valid() bool {
 	case NewEscalationPolicyPathDataAttributesRules5TimeZoneTokelauIs:
 		return true
 	case NewEscalationPolicyPathDataAttributesRules5TimeZoneTokyo:
+		return true
+	case NewEscalationPolicyPathDataAttributesRules5TimeZoneUSAleutian:
 		return true
 	case NewEscalationPolicyPathDataAttributesRules5TimeZoneUTC:
 		return true
@@ -17139,8 +17394,10 @@ const (
 	NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAfricaNairobi               NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Africa/Nairobi"
 	NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAlaska                      NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Alaska"
 	NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAlmaty                      NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Almaty"
+	NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAmericaAdak                 NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "America/Adak"
 	NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAmericaArgentinaBuenosAires NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "America/Argentina/Buenos_Aires"
 	NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAmericaAsuncion             NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "America/Asuncion"
+	NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAmericaAtka                 NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "America/Atka"
 	NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAmericaBogota               NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "America/Bogota"
 	NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAmericaCaracas              NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "America/Caracas"
 	NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAmericaChicago              NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "America/Chicago"
@@ -17156,6 +17413,7 @@ const (
 	NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAmericaLosAngeles           NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "America/Los_Angeles"
 	NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAmericaMazatlan             NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "America/Mazatlan"
 	NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAmericaMexicoCity           NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "America/Mexico_City"
+	NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAmericaMiquelon             NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "America/Miquelon"
 	NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAmericaMonterrey            NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "America/Monterrey"
 	NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAmericaMontevideo           NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "America/Montevideo"
 	NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAmericaNewYork              NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "America/New_York"
@@ -17167,6 +17425,7 @@ const (
 	NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAmericaSaoPaulo             NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "America/Sao_Paulo"
 	NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAmericaStJohns              NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "America/St_Johns"
 	NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAmericaTijuana              NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "America/Tijuana"
+	NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAmericaVancouver            NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "America/Vancouver"
 	NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAmericanSamoa               NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "American Samoa"
 	NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAmsterdam                   NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Amsterdam"
 	NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneArizona                     NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Arizona"
@@ -17221,7 +17480,10 @@ const (
 	NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAustraliaBrisbane           NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Australia/Brisbane"
 	NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAustraliaCanberra           NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Australia/Canberra"
 	NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAustraliaDarwin             NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Australia/Darwin"
+	NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAustraliaEucla              NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Australia/Eucla"
 	NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAustraliaHobart             NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Australia/Hobart"
+	NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAustraliaLHI                NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Australia/LHI"
+	NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAustraliaLordHowe           NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Australia/Lord_Howe"
 	NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAustraliaMelbourne          NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Australia/Melbourne"
 	NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAustraliaPerth              NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Australia/Perth"
 	NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAustraliaSydney             NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Australia/Sydney"
@@ -17242,6 +17504,7 @@ const (
 	NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneBudapest                    NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Budapest"
 	NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneBuenosAires                 NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Buenos Aires"
 	NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneCairo                       NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Cairo"
+	NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneCanadaPacific               NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Canada/Pacific"
 	NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneCanberra                    NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Canberra"
 	NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneCapeVerdeIs                 NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Cape Verde Is."
 	NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneCaracas                     NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Caracas"
@@ -17251,6 +17514,7 @@ const (
 	NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneChathamIs                   NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Chatham Is."
 	NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneChennai                     NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Chennai"
 	NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneChihuahua                   NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Chihuahua"
+	NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneChileEasterIsland           NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Chile/EasterIsland"
 	NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneChongqing                   NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Chongqing"
 	NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneCopenhagen                  NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Copenhagen"
 	NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneDarwin                      NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Darwin"
@@ -17356,15 +17620,21 @@ const (
 	NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZonePacificApia                 NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Pacific/Apia"
 	NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZonePacificAuckland             NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Pacific/Auckland"
 	NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZonePacificChatham              NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Pacific/Chatham"
+	NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZonePacificEaster               NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Pacific/Easter"
 	NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZonePacificFakaofo              NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Pacific/Fakaofo"
 	NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZonePacificFiji                 NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Pacific/Fiji"
+	NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZonePacificGambier              NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Pacific/Gambier"
 	NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZonePacificGuadalcanal          NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Pacific/Guadalcanal"
 	NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZonePacificGuam                 NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Pacific/Guam"
 	NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZonePacificHonolulu             NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Pacific/Honolulu"
+	NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZonePacificKiritimati           NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Pacific/Kiritimati"
 	NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZonePacificMajuro               NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Pacific/Majuro"
+	NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZonePacificMarquesas            NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Pacific/Marquesas"
 	NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZonePacificMidway               NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Pacific/Midway"
+	NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZonePacificNorfolk              NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Pacific/Norfolk"
 	NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZonePacificNoumea               NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Pacific/Noumea"
 	NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZonePacificPagoPago             NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Pacific/Pago_Pago"
+	NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZonePacificPitcairn             NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Pacific/Pitcairn"
 	NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZonePacificPortMoresby          NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Pacific/Port_Moresby"
 	NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZonePacificTimeUSCanada         NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Pacific Time (US & Canada)"
 	NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZonePacificTongatapu            NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Pacific/Tongatapu"
@@ -17403,6 +17673,7 @@ const (
 	NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneTijuana                     NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Tijuana"
 	NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneTokelauIs                   NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Tokelau Is."
 	NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneTokyo                       NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Tokyo"
+	NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneUSAleutian                  NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "US/Aleutian"
 	NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneUTC                         NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "UTC"
 	NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneUlaanbaatar                 NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Ulaanbaatar"
 	NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneUrumqi                      NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Urumqi"
@@ -17444,9 +17715,13 @@ func (e NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone) Valid() bo
 		return true
 	case NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAlmaty:
 		return true
+	case NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAmericaAdak:
+		return true
 	case NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAmericaArgentinaBuenosAires:
 		return true
 	case NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAmericaAsuncion:
+		return true
+	case NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAmericaAtka:
 		return true
 	case NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAmericaBogota:
 		return true
@@ -17478,6 +17753,8 @@ func (e NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone) Valid() bo
 		return true
 	case NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAmericaMexicoCity:
 		return true
+	case NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAmericaMiquelon:
+		return true
 	case NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAmericaMonterrey:
 		return true
 	case NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAmericaMontevideo:
@@ -17499,6 +17776,8 @@ func (e NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone) Valid() bo
 	case NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAmericaStJohns:
 		return true
 	case NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAmericaTijuana:
+		return true
+	case NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAmericaVancouver:
 		return true
 	case NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAmericanSamoa:
 		return true
@@ -17608,7 +17887,13 @@ func (e NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone) Valid() bo
 		return true
 	case NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAustraliaDarwin:
 		return true
+	case NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAustraliaEucla:
+		return true
 	case NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAustraliaHobart:
+		return true
+	case NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAustraliaLHI:
+		return true
+	case NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAustraliaLordHowe:
 		return true
 	case NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAustraliaMelbourne:
 		return true
@@ -17650,6 +17935,8 @@ func (e NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone) Valid() bo
 		return true
 	case NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneCairo:
 		return true
+	case NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneCanadaPacific:
+		return true
 	case NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneCanberra:
 		return true
 	case NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneCapeVerdeIs:
@@ -17667,6 +17954,8 @@ func (e NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone) Valid() bo
 	case NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneChennai:
 		return true
 	case NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneChihuahua:
+		return true
+	case NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneChileEasterIsland:
 		return true
 	case NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneChongqing:
 		return true
@@ -17878,9 +18167,13 @@ func (e NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone) Valid() bo
 		return true
 	case NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZonePacificChatham:
 		return true
+	case NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZonePacificEaster:
+		return true
 	case NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZonePacificFakaofo:
 		return true
 	case NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZonePacificFiji:
+		return true
+	case NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZonePacificGambier:
 		return true
 	case NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZonePacificGuadalcanal:
 		return true
@@ -17888,13 +18181,21 @@ func (e NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone) Valid() bo
 		return true
 	case NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZonePacificHonolulu:
 		return true
+	case NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZonePacificKiritimati:
+		return true
 	case NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZonePacificMajuro:
 		return true
+	case NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZonePacificMarquesas:
+		return true
 	case NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZonePacificMidway:
+		return true
+	case NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZonePacificNorfolk:
 		return true
 	case NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZonePacificNoumea:
 		return true
 	case NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZonePacificPagoPago:
+		return true
+	case NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZonePacificPitcairn:
 		return true
 	case NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZonePacificPortMoresby:
 		return true
@@ -17971,6 +18272,8 @@ func (e NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone) Valid() bo
 	case NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneTokelauIs:
 		return true
 	case NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneTokyo:
+		return true
+	case NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneUSAleutian:
 		return true
 	case NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneUTC:
 		return true
@@ -21380,6 +21683,21 @@ func (e NewSeverityDataType) Valid() bool {
 	}
 }
 
+// Defines values for NewShiftCoverageRequestDataType.
+const (
+	NewShiftCoverageRequestDataTypeShiftCoverageRequests NewShiftCoverageRequestDataType = "shift_coverage_requests"
+)
+
+// Valid indicates whether the value is a known member of the NewShiftCoverageRequestDataType enum.
+func (e NewShiftCoverageRequestDataType) Valid() bool {
+	switch e {
+	case NewShiftCoverageRequestDataTypeShiftCoverageRequests:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for NewSLADataAttributesAssignmentDeadlineDays.
 const (
 	NewSLADataAttributesAssignmentDeadlineDaysN1  NewSLADataAttributesAssignmentDeadlineDays = 1
@@ -22163,6 +22481,60 @@ const (
 func (e NewWorkflowDataType) Valid() bool {
 	switch e {
 	case NewWorkflowDataTypeWorkflows:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for NewWorkflowActionItemFormFieldConditionDataAttributesActionItemCondition.
+const (
+	NewWorkflowActionItemFormFieldConditionDataAttributesActionItemConditionANY          NewWorkflowActionItemFormFieldConditionDataAttributesActionItemCondition = "ANY"
+	NewWorkflowActionItemFormFieldConditionDataAttributesActionItemConditionCONTAINS     NewWorkflowActionItemFormFieldConditionDataAttributesActionItemCondition = "CONTAINS"
+	NewWorkflowActionItemFormFieldConditionDataAttributesActionItemConditionCONTAINSALL  NewWorkflowActionItemFormFieldConditionDataAttributesActionItemCondition = "CONTAINS_ALL"
+	NewWorkflowActionItemFormFieldConditionDataAttributesActionItemConditionCONTAINSNONE NewWorkflowActionItemFormFieldConditionDataAttributesActionItemCondition = "CONTAINS_NONE"
+	NewWorkflowActionItemFormFieldConditionDataAttributesActionItemConditionIS           NewWorkflowActionItemFormFieldConditionDataAttributesActionItemCondition = "IS"
+	NewWorkflowActionItemFormFieldConditionDataAttributesActionItemConditionISNOT        NewWorkflowActionItemFormFieldConditionDataAttributesActionItemCondition = "IS NOT"
+	NewWorkflowActionItemFormFieldConditionDataAttributesActionItemConditionNONE         NewWorkflowActionItemFormFieldConditionDataAttributesActionItemCondition = "NONE"
+	NewWorkflowActionItemFormFieldConditionDataAttributesActionItemConditionSET          NewWorkflowActionItemFormFieldConditionDataAttributesActionItemCondition = "SET"
+	NewWorkflowActionItemFormFieldConditionDataAttributesActionItemConditionUNSET        NewWorkflowActionItemFormFieldConditionDataAttributesActionItemCondition = "UNSET"
+)
+
+// Valid indicates whether the value is a known member of the NewWorkflowActionItemFormFieldConditionDataAttributesActionItemCondition enum.
+func (e NewWorkflowActionItemFormFieldConditionDataAttributesActionItemCondition) Valid() bool {
+	switch e {
+	case NewWorkflowActionItemFormFieldConditionDataAttributesActionItemConditionANY:
+		return true
+	case NewWorkflowActionItemFormFieldConditionDataAttributesActionItemConditionCONTAINS:
+		return true
+	case NewWorkflowActionItemFormFieldConditionDataAttributesActionItemConditionCONTAINSALL:
+		return true
+	case NewWorkflowActionItemFormFieldConditionDataAttributesActionItemConditionCONTAINSNONE:
+		return true
+	case NewWorkflowActionItemFormFieldConditionDataAttributesActionItemConditionIS:
+		return true
+	case NewWorkflowActionItemFormFieldConditionDataAttributesActionItemConditionISNOT:
+		return true
+	case NewWorkflowActionItemFormFieldConditionDataAttributesActionItemConditionNONE:
+		return true
+	case NewWorkflowActionItemFormFieldConditionDataAttributesActionItemConditionSET:
+		return true
+	case NewWorkflowActionItemFormFieldConditionDataAttributesActionItemConditionUNSET:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for NewWorkflowActionItemFormFieldConditionDataType.
+const (
+	NewWorkflowActionItemFormFieldConditionDataTypeWorkflowActionItemFormFieldConditions NewWorkflowActionItemFormFieldConditionDataType = "workflow_action_item_form_field_conditions"
+)
+
+// Valid indicates whether the value is a known member of the NewWorkflowActionItemFormFieldConditionDataType enum.
+func (e NewWorkflowActionItemFormFieldConditionDataType) Valid() bool {
+	switch e {
+	case NewWorkflowActionItemFormFieldConditionDataTypeWorkflowActionItemFormFieldConditions:
 		return true
 	default:
 		return false
@@ -26528,6 +26900,36 @@ func (e SeverityResponseDataType) Valid() bool {
 	}
 }
 
+// Defines values for ShiftCoverageRequestListDataType.
+const (
+	ShiftCoverageRequestListDataTypeShiftCoverageRequests ShiftCoverageRequestListDataType = "shift_coverage_requests"
+)
+
+// Valid indicates whether the value is a known member of the ShiftCoverageRequestListDataType enum.
+func (e ShiftCoverageRequestListDataType) Valid() bool {
+	switch e {
+	case ShiftCoverageRequestListDataTypeShiftCoverageRequests:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for ShiftCoverageRequestResponseDataType.
+const (
+	ShiftCoverageRequestResponseDataTypeShiftCoverageRequests ShiftCoverageRequestResponseDataType = "shift_coverage_requests"
+)
+
+// Valid indicates whether the value is a known member of the ShiftCoverageRequestResponseDataType enum.
+func (e ShiftCoverageRequestResponseDataType) Valid() bool {
+	switch e {
+	case ShiftCoverageRequestResponseDataTypeShiftCoverageRequests:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for ShiftListDataType.
 const (
 	ShiftListDataTypeShifts ShiftListDataType = "shifts"
@@ -29622,8 +30024,10 @@ const (
 	UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneAfricaNairobi               UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone = "Africa/Nairobi"
 	UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneAlaska                      UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone = "Alaska"
 	UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneAlmaty                      UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone = "Almaty"
+	UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneAmericaAdak                 UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone = "America/Adak"
 	UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneAmericaArgentinaBuenosAires UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone = "America/Argentina/Buenos_Aires"
 	UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneAmericaAsuncion             UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone = "America/Asuncion"
+	UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneAmericaAtka                 UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone = "America/Atka"
 	UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneAmericaBogota               UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone = "America/Bogota"
 	UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneAmericaCaracas              UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone = "America/Caracas"
 	UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneAmericaChicago              UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone = "America/Chicago"
@@ -29639,6 +30043,7 @@ const (
 	UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneAmericaLosAngeles           UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone = "America/Los_Angeles"
 	UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneAmericaMazatlan             UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone = "America/Mazatlan"
 	UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneAmericaMexicoCity           UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone = "America/Mexico_City"
+	UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneAmericaMiquelon             UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone = "America/Miquelon"
 	UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneAmericaMonterrey            UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone = "America/Monterrey"
 	UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneAmericaMontevideo           UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone = "America/Montevideo"
 	UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneAmericaNewYork              UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone = "America/New_York"
@@ -29650,6 +30055,7 @@ const (
 	UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneAmericaSaoPaulo             UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone = "America/Sao_Paulo"
 	UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneAmericaStJohns              UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone = "America/St_Johns"
 	UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneAmericaTijuana              UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone = "America/Tijuana"
+	UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneAmericaVancouver            UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone = "America/Vancouver"
 	UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneAmericanSamoa               UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone = "American Samoa"
 	UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneAmsterdam                   UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone = "Amsterdam"
 	UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneArizona                     UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone = "Arizona"
@@ -29704,7 +30110,10 @@ const (
 	UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneAustraliaBrisbane           UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone = "Australia/Brisbane"
 	UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneAustraliaCanberra           UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone = "Australia/Canberra"
 	UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneAustraliaDarwin             UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone = "Australia/Darwin"
+	UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneAustraliaEucla              UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone = "Australia/Eucla"
 	UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneAustraliaHobart             UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone = "Australia/Hobart"
+	UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneAustraliaLHI                UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone = "Australia/LHI"
+	UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneAustraliaLordHowe           UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone = "Australia/Lord_Howe"
 	UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneAustraliaMelbourne          UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone = "Australia/Melbourne"
 	UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneAustraliaPerth              UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone = "Australia/Perth"
 	UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneAustraliaSydney             UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone = "Australia/Sydney"
@@ -29725,6 +30134,7 @@ const (
 	UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneBudapest                    UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone = "Budapest"
 	UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneBuenosAires                 UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone = "Buenos Aires"
 	UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneCairo                       UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone = "Cairo"
+	UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneCanadaPacific               UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone = "Canada/Pacific"
 	UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneCanberra                    UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone = "Canberra"
 	UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneCapeVerdeIs                 UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone = "Cape Verde Is."
 	UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneCaracas                     UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone = "Caracas"
@@ -29734,6 +30144,7 @@ const (
 	UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneChathamIs                   UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone = "Chatham Is."
 	UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneChennai                     UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone = "Chennai"
 	UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneChihuahua                   UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone = "Chihuahua"
+	UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneChileEasterIsland           UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone = "Chile/EasterIsland"
 	UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneChongqing                   UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone = "Chongqing"
 	UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneCopenhagen                  UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone = "Copenhagen"
 	UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneDarwin                      UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone = "Darwin"
@@ -29839,15 +30250,21 @@ const (
 	UpdateEscalationPolicyDataAttributesBusinessHoursTimeZonePacificApia                 UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone = "Pacific/Apia"
 	UpdateEscalationPolicyDataAttributesBusinessHoursTimeZonePacificAuckland             UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone = "Pacific/Auckland"
 	UpdateEscalationPolicyDataAttributesBusinessHoursTimeZonePacificChatham              UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone = "Pacific/Chatham"
+	UpdateEscalationPolicyDataAttributesBusinessHoursTimeZonePacificEaster               UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone = "Pacific/Easter"
 	UpdateEscalationPolicyDataAttributesBusinessHoursTimeZonePacificFakaofo              UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone = "Pacific/Fakaofo"
 	UpdateEscalationPolicyDataAttributesBusinessHoursTimeZonePacificFiji                 UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone = "Pacific/Fiji"
+	UpdateEscalationPolicyDataAttributesBusinessHoursTimeZonePacificGambier              UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone = "Pacific/Gambier"
 	UpdateEscalationPolicyDataAttributesBusinessHoursTimeZonePacificGuadalcanal          UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone = "Pacific/Guadalcanal"
 	UpdateEscalationPolicyDataAttributesBusinessHoursTimeZonePacificGuam                 UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone = "Pacific/Guam"
 	UpdateEscalationPolicyDataAttributesBusinessHoursTimeZonePacificHonolulu             UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone = "Pacific/Honolulu"
+	UpdateEscalationPolicyDataAttributesBusinessHoursTimeZonePacificKiritimati           UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone = "Pacific/Kiritimati"
 	UpdateEscalationPolicyDataAttributesBusinessHoursTimeZonePacificMajuro               UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone = "Pacific/Majuro"
+	UpdateEscalationPolicyDataAttributesBusinessHoursTimeZonePacificMarquesas            UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone = "Pacific/Marquesas"
 	UpdateEscalationPolicyDataAttributesBusinessHoursTimeZonePacificMidway               UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone = "Pacific/Midway"
+	UpdateEscalationPolicyDataAttributesBusinessHoursTimeZonePacificNorfolk              UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone = "Pacific/Norfolk"
 	UpdateEscalationPolicyDataAttributesBusinessHoursTimeZonePacificNoumea               UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone = "Pacific/Noumea"
 	UpdateEscalationPolicyDataAttributesBusinessHoursTimeZonePacificPagoPago             UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone = "Pacific/Pago_Pago"
+	UpdateEscalationPolicyDataAttributesBusinessHoursTimeZonePacificPitcairn             UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone = "Pacific/Pitcairn"
 	UpdateEscalationPolicyDataAttributesBusinessHoursTimeZonePacificPortMoresby          UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone = "Pacific/Port_Moresby"
 	UpdateEscalationPolicyDataAttributesBusinessHoursTimeZonePacificTimeUSCanada         UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone = "Pacific Time (US & Canada)"
 	UpdateEscalationPolicyDataAttributesBusinessHoursTimeZonePacificTongatapu            UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone = "Pacific/Tongatapu"
@@ -29886,6 +30303,7 @@ const (
 	UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneTijuana                     UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone = "Tijuana"
 	UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneTokelauIs                   UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone = "Tokelau Is."
 	UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneTokyo                       UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone = "Tokyo"
+	UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneUSAleutian                  UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone = "US/Aleutian"
 	UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneUTC                         UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone = "UTC"
 	UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneUlaanbaatar                 UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone = "Ulaanbaatar"
 	UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneUrumqi                      UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone = "Urumqi"
@@ -29927,9 +30345,13 @@ func (e UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone) Valid() bool 
 		return true
 	case UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneAlmaty:
 		return true
+	case UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneAmericaAdak:
+		return true
 	case UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneAmericaArgentinaBuenosAires:
 		return true
 	case UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneAmericaAsuncion:
+		return true
+	case UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneAmericaAtka:
 		return true
 	case UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneAmericaBogota:
 		return true
@@ -29961,6 +30383,8 @@ func (e UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone) Valid() bool 
 		return true
 	case UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneAmericaMexicoCity:
 		return true
+	case UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneAmericaMiquelon:
+		return true
 	case UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneAmericaMonterrey:
 		return true
 	case UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneAmericaMontevideo:
@@ -29982,6 +30406,8 @@ func (e UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone) Valid() bool 
 	case UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneAmericaStJohns:
 		return true
 	case UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneAmericaTijuana:
+		return true
+	case UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneAmericaVancouver:
 		return true
 	case UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneAmericanSamoa:
 		return true
@@ -30091,7 +30517,13 @@ func (e UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone) Valid() bool 
 		return true
 	case UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneAustraliaDarwin:
 		return true
+	case UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneAustraliaEucla:
+		return true
 	case UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneAustraliaHobart:
+		return true
+	case UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneAustraliaLHI:
+		return true
+	case UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneAustraliaLordHowe:
 		return true
 	case UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneAustraliaMelbourne:
 		return true
@@ -30133,6 +30565,8 @@ func (e UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone) Valid() bool 
 		return true
 	case UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneCairo:
 		return true
+	case UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneCanadaPacific:
+		return true
 	case UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneCanberra:
 		return true
 	case UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneCapeVerdeIs:
@@ -30150,6 +30584,8 @@ func (e UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone) Valid() bool 
 	case UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneChennai:
 		return true
 	case UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneChihuahua:
+		return true
+	case UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneChileEasterIsland:
 		return true
 	case UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneChongqing:
 		return true
@@ -30361,9 +30797,13 @@ func (e UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone) Valid() bool 
 		return true
 	case UpdateEscalationPolicyDataAttributesBusinessHoursTimeZonePacificChatham:
 		return true
+	case UpdateEscalationPolicyDataAttributesBusinessHoursTimeZonePacificEaster:
+		return true
 	case UpdateEscalationPolicyDataAttributesBusinessHoursTimeZonePacificFakaofo:
 		return true
 	case UpdateEscalationPolicyDataAttributesBusinessHoursTimeZonePacificFiji:
+		return true
+	case UpdateEscalationPolicyDataAttributesBusinessHoursTimeZonePacificGambier:
 		return true
 	case UpdateEscalationPolicyDataAttributesBusinessHoursTimeZonePacificGuadalcanal:
 		return true
@@ -30371,13 +30811,21 @@ func (e UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone) Valid() bool 
 		return true
 	case UpdateEscalationPolicyDataAttributesBusinessHoursTimeZonePacificHonolulu:
 		return true
+	case UpdateEscalationPolicyDataAttributesBusinessHoursTimeZonePacificKiritimati:
+		return true
 	case UpdateEscalationPolicyDataAttributesBusinessHoursTimeZonePacificMajuro:
 		return true
+	case UpdateEscalationPolicyDataAttributesBusinessHoursTimeZonePacificMarquesas:
+		return true
 	case UpdateEscalationPolicyDataAttributesBusinessHoursTimeZonePacificMidway:
+		return true
+	case UpdateEscalationPolicyDataAttributesBusinessHoursTimeZonePacificNorfolk:
 		return true
 	case UpdateEscalationPolicyDataAttributesBusinessHoursTimeZonePacificNoumea:
 		return true
 	case UpdateEscalationPolicyDataAttributesBusinessHoursTimeZonePacificPagoPago:
+		return true
+	case UpdateEscalationPolicyDataAttributesBusinessHoursTimeZonePacificPitcairn:
 		return true
 	case UpdateEscalationPolicyDataAttributesBusinessHoursTimeZonePacificPortMoresby:
 		return true
@@ -30454,6 +30902,8 @@ func (e UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone) Valid() bool 
 	case UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneTokelauIs:
 		return true
 	case UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneTokyo:
+		return true
+	case UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneUSAleutian:
 		return true
 	case UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneUTC:
 		return true
@@ -30873,8 +31323,10 @@ const (
 	UpdateEscalationPolicyPathDataAttributesRules5TimeZoneAfricaNairobi               UpdateEscalationPolicyPathDataAttributesRules5TimeZone = "Africa/Nairobi"
 	UpdateEscalationPolicyPathDataAttributesRules5TimeZoneAlaska                      UpdateEscalationPolicyPathDataAttributesRules5TimeZone = "Alaska"
 	UpdateEscalationPolicyPathDataAttributesRules5TimeZoneAlmaty                      UpdateEscalationPolicyPathDataAttributesRules5TimeZone = "Almaty"
+	UpdateEscalationPolicyPathDataAttributesRules5TimeZoneAmericaAdak                 UpdateEscalationPolicyPathDataAttributesRules5TimeZone = "America/Adak"
 	UpdateEscalationPolicyPathDataAttributesRules5TimeZoneAmericaArgentinaBuenosAires UpdateEscalationPolicyPathDataAttributesRules5TimeZone = "America/Argentina/Buenos_Aires"
 	UpdateEscalationPolicyPathDataAttributesRules5TimeZoneAmericaAsuncion             UpdateEscalationPolicyPathDataAttributesRules5TimeZone = "America/Asuncion"
+	UpdateEscalationPolicyPathDataAttributesRules5TimeZoneAmericaAtka                 UpdateEscalationPolicyPathDataAttributesRules5TimeZone = "America/Atka"
 	UpdateEscalationPolicyPathDataAttributesRules5TimeZoneAmericaBogota               UpdateEscalationPolicyPathDataAttributesRules5TimeZone = "America/Bogota"
 	UpdateEscalationPolicyPathDataAttributesRules5TimeZoneAmericaCaracas              UpdateEscalationPolicyPathDataAttributesRules5TimeZone = "America/Caracas"
 	UpdateEscalationPolicyPathDataAttributesRules5TimeZoneAmericaChicago              UpdateEscalationPolicyPathDataAttributesRules5TimeZone = "America/Chicago"
@@ -30890,6 +31342,7 @@ const (
 	UpdateEscalationPolicyPathDataAttributesRules5TimeZoneAmericaLosAngeles           UpdateEscalationPolicyPathDataAttributesRules5TimeZone = "America/Los_Angeles"
 	UpdateEscalationPolicyPathDataAttributesRules5TimeZoneAmericaMazatlan             UpdateEscalationPolicyPathDataAttributesRules5TimeZone = "America/Mazatlan"
 	UpdateEscalationPolicyPathDataAttributesRules5TimeZoneAmericaMexicoCity           UpdateEscalationPolicyPathDataAttributesRules5TimeZone = "America/Mexico_City"
+	UpdateEscalationPolicyPathDataAttributesRules5TimeZoneAmericaMiquelon             UpdateEscalationPolicyPathDataAttributesRules5TimeZone = "America/Miquelon"
 	UpdateEscalationPolicyPathDataAttributesRules5TimeZoneAmericaMonterrey            UpdateEscalationPolicyPathDataAttributesRules5TimeZone = "America/Monterrey"
 	UpdateEscalationPolicyPathDataAttributesRules5TimeZoneAmericaMontevideo           UpdateEscalationPolicyPathDataAttributesRules5TimeZone = "America/Montevideo"
 	UpdateEscalationPolicyPathDataAttributesRules5TimeZoneAmericaNewYork              UpdateEscalationPolicyPathDataAttributesRules5TimeZone = "America/New_York"
@@ -30901,6 +31354,7 @@ const (
 	UpdateEscalationPolicyPathDataAttributesRules5TimeZoneAmericaSaoPaulo             UpdateEscalationPolicyPathDataAttributesRules5TimeZone = "America/Sao_Paulo"
 	UpdateEscalationPolicyPathDataAttributesRules5TimeZoneAmericaStJohns              UpdateEscalationPolicyPathDataAttributesRules5TimeZone = "America/St_Johns"
 	UpdateEscalationPolicyPathDataAttributesRules5TimeZoneAmericaTijuana              UpdateEscalationPolicyPathDataAttributesRules5TimeZone = "America/Tijuana"
+	UpdateEscalationPolicyPathDataAttributesRules5TimeZoneAmericaVancouver            UpdateEscalationPolicyPathDataAttributesRules5TimeZone = "America/Vancouver"
 	UpdateEscalationPolicyPathDataAttributesRules5TimeZoneAmericanSamoa               UpdateEscalationPolicyPathDataAttributesRules5TimeZone = "American Samoa"
 	UpdateEscalationPolicyPathDataAttributesRules5TimeZoneAmsterdam                   UpdateEscalationPolicyPathDataAttributesRules5TimeZone = "Amsterdam"
 	UpdateEscalationPolicyPathDataAttributesRules5TimeZoneArizona                     UpdateEscalationPolicyPathDataAttributesRules5TimeZone = "Arizona"
@@ -30955,7 +31409,10 @@ const (
 	UpdateEscalationPolicyPathDataAttributesRules5TimeZoneAustraliaBrisbane           UpdateEscalationPolicyPathDataAttributesRules5TimeZone = "Australia/Brisbane"
 	UpdateEscalationPolicyPathDataAttributesRules5TimeZoneAustraliaCanberra           UpdateEscalationPolicyPathDataAttributesRules5TimeZone = "Australia/Canberra"
 	UpdateEscalationPolicyPathDataAttributesRules5TimeZoneAustraliaDarwin             UpdateEscalationPolicyPathDataAttributesRules5TimeZone = "Australia/Darwin"
+	UpdateEscalationPolicyPathDataAttributesRules5TimeZoneAustraliaEucla              UpdateEscalationPolicyPathDataAttributesRules5TimeZone = "Australia/Eucla"
 	UpdateEscalationPolicyPathDataAttributesRules5TimeZoneAustraliaHobart             UpdateEscalationPolicyPathDataAttributesRules5TimeZone = "Australia/Hobart"
+	UpdateEscalationPolicyPathDataAttributesRules5TimeZoneAustraliaLHI                UpdateEscalationPolicyPathDataAttributesRules5TimeZone = "Australia/LHI"
+	UpdateEscalationPolicyPathDataAttributesRules5TimeZoneAustraliaLordHowe           UpdateEscalationPolicyPathDataAttributesRules5TimeZone = "Australia/Lord_Howe"
 	UpdateEscalationPolicyPathDataAttributesRules5TimeZoneAustraliaMelbourne          UpdateEscalationPolicyPathDataAttributesRules5TimeZone = "Australia/Melbourne"
 	UpdateEscalationPolicyPathDataAttributesRules5TimeZoneAustraliaPerth              UpdateEscalationPolicyPathDataAttributesRules5TimeZone = "Australia/Perth"
 	UpdateEscalationPolicyPathDataAttributesRules5TimeZoneAustraliaSydney             UpdateEscalationPolicyPathDataAttributesRules5TimeZone = "Australia/Sydney"
@@ -30976,6 +31433,7 @@ const (
 	UpdateEscalationPolicyPathDataAttributesRules5TimeZoneBudapest                    UpdateEscalationPolicyPathDataAttributesRules5TimeZone = "Budapest"
 	UpdateEscalationPolicyPathDataAttributesRules5TimeZoneBuenosAires                 UpdateEscalationPolicyPathDataAttributesRules5TimeZone = "Buenos Aires"
 	UpdateEscalationPolicyPathDataAttributesRules5TimeZoneCairo                       UpdateEscalationPolicyPathDataAttributesRules5TimeZone = "Cairo"
+	UpdateEscalationPolicyPathDataAttributesRules5TimeZoneCanadaPacific               UpdateEscalationPolicyPathDataAttributesRules5TimeZone = "Canada/Pacific"
 	UpdateEscalationPolicyPathDataAttributesRules5TimeZoneCanberra                    UpdateEscalationPolicyPathDataAttributesRules5TimeZone = "Canberra"
 	UpdateEscalationPolicyPathDataAttributesRules5TimeZoneCapeVerdeIs                 UpdateEscalationPolicyPathDataAttributesRules5TimeZone = "Cape Verde Is."
 	UpdateEscalationPolicyPathDataAttributesRules5TimeZoneCaracas                     UpdateEscalationPolicyPathDataAttributesRules5TimeZone = "Caracas"
@@ -30985,6 +31443,7 @@ const (
 	UpdateEscalationPolicyPathDataAttributesRules5TimeZoneChathamIs                   UpdateEscalationPolicyPathDataAttributesRules5TimeZone = "Chatham Is."
 	UpdateEscalationPolicyPathDataAttributesRules5TimeZoneChennai                     UpdateEscalationPolicyPathDataAttributesRules5TimeZone = "Chennai"
 	UpdateEscalationPolicyPathDataAttributesRules5TimeZoneChihuahua                   UpdateEscalationPolicyPathDataAttributesRules5TimeZone = "Chihuahua"
+	UpdateEscalationPolicyPathDataAttributesRules5TimeZoneChileEasterIsland           UpdateEscalationPolicyPathDataAttributesRules5TimeZone = "Chile/EasterIsland"
 	UpdateEscalationPolicyPathDataAttributesRules5TimeZoneChongqing                   UpdateEscalationPolicyPathDataAttributesRules5TimeZone = "Chongqing"
 	UpdateEscalationPolicyPathDataAttributesRules5TimeZoneCopenhagen                  UpdateEscalationPolicyPathDataAttributesRules5TimeZone = "Copenhagen"
 	UpdateEscalationPolicyPathDataAttributesRules5TimeZoneDarwin                      UpdateEscalationPolicyPathDataAttributesRules5TimeZone = "Darwin"
@@ -31090,15 +31549,21 @@ const (
 	UpdateEscalationPolicyPathDataAttributesRules5TimeZonePacificApia                 UpdateEscalationPolicyPathDataAttributesRules5TimeZone = "Pacific/Apia"
 	UpdateEscalationPolicyPathDataAttributesRules5TimeZonePacificAuckland             UpdateEscalationPolicyPathDataAttributesRules5TimeZone = "Pacific/Auckland"
 	UpdateEscalationPolicyPathDataAttributesRules5TimeZonePacificChatham              UpdateEscalationPolicyPathDataAttributesRules5TimeZone = "Pacific/Chatham"
+	UpdateEscalationPolicyPathDataAttributesRules5TimeZonePacificEaster               UpdateEscalationPolicyPathDataAttributesRules5TimeZone = "Pacific/Easter"
 	UpdateEscalationPolicyPathDataAttributesRules5TimeZonePacificFakaofo              UpdateEscalationPolicyPathDataAttributesRules5TimeZone = "Pacific/Fakaofo"
 	UpdateEscalationPolicyPathDataAttributesRules5TimeZonePacificFiji                 UpdateEscalationPolicyPathDataAttributesRules5TimeZone = "Pacific/Fiji"
+	UpdateEscalationPolicyPathDataAttributesRules5TimeZonePacificGambier              UpdateEscalationPolicyPathDataAttributesRules5TimeZone = "Pacific/Gambier"
 	UpdateEscalationPolicyPathDataAttributesRules5TimeZonePacificGuadalcanal          UpdateEscalationPolicyPathDataAttributesRules5TimeZone = "Pacific/Guadalcanal"
 	UpdateEscalationPolicyPathDataAttributesRules5TimeZonePacificGuam                 UpdateEscalationPolicyPathDataAttributesRules5TimeZone = "Pacific/Guam"
 	UpdateEscalationPolicyPathDataAttributesRules5TimeZonePacificHonolulu             UpdateEscalationPolicyPathDataAttributesRules5TimeZone = "Pacific/Honolulu"
+	UpdateEscalationPolicyPathDataAttributesRules5TimeZonePacificKiritimati           UpdateEscalationPolicyPathDataAttributesRules5TimeZone = "Pacific/Kiritimati"
 	UpdateEscalationPolicyPathDataAttributesRules5TimeZonePacificMajuro               UpdateEscalationPolicyPathDataAttributesRules5TimeZone = "Pacific/Majuro"
+	UpdateEscalationPolicyPathDataAttributesRules5TimeZonePacificMarquesas            UpdateEscalationPolicyPathDataAttributesRules5TimeZone = "Pacific/Marquesas"
 	UpdateEscalationPolicyPathDataAttributesRules5TimeZonePacificMidway               UpdateEscalationPolicyPathDataAttributesRules5TimeZone = "Pacific/Midway"
+	UpdateEscalationPolicyPathDataAttributesRules5TimeZonePacificNorfolk              UpdateEscalationPolicyPathDataAttributesRules5TimeZone = "Pacific/Norfolk"
 	UpdateEscalationPolicyPathDataAttributesRules5TimeZonePacificNoumea               UpdateEscalationPolicyPathDataAttributesRules5TimeZone = "Pacific/Noumea"
 	UpdateEscalationPolicyPathDataAttributesRules5TimeZonePacificPagoPago             UpdateEscalationPolicyPathDataAttributesRules5TimeZone = "Pacific/Pago_Pago"
+	UpdateEscalationPolicyPathDataAttributesRules5TimeZonePacificPitcairn             UpdateEscalationPolicyPathDataAttributesRules5TimeZone = "Pacific/Pitcairn"
 	UpdateEscalationPolicyPathDataAttributesRules5TimeZonePacificPortMoresby          UpdateEscalationPolicyPathDataAttributesRules5TimeZone = "Pacific/Port_Moresby"
 	UpdateEscalationPolicyPathDataAttributesRules5TimeZonePacificTimeUSCanada         UpdateEscalationPolicyPathDataAttributesRules5TimeZone = "Pacific Time (US & Canada)"
 	UpdateEscalationPolicyPathDataAttributesRules5TimeZonePacificTongatapu            UpdateEscalationPolicyPathDataAttributesRules5TimeZone = "Pacific/Tongatapu"
@@ -31137,6 +31602,7 @@ const (
 	UpdateEscalationPolicyPathDataAttributesRules5TimeZoneTijuana                     UpdateEscalationPolicyPathDataAttributesRules5TimeZone = "Tijuana"
 	UpdateEscalationPolicyPathDataAttributesRules5TimeZoneTokelauIs                   UpdateEscalationPolicyPathDataAttributesRules5TimeZone = "Tokelau Is."
 	UpdateEscalationPolicyPathDataAttributesRules5TimeZoneTokyo                       UpdateEscalationPolicyPathDataAttributesRules5TimeZone = "Tokyo"
+	UpdateEscalationPolicyPathDataAttributesRules5TimeZoneUSAleutian                  UpdateEscalationPolicyPathDataAttributesRules5TimeZone = "US/Aleutian"
 	UpdateEscalationPolicyPathDataAttributesRules5TimeZoneUTC                         UpdateEscalationPolicyPathDataAttributesRules5TimeZone = "UTC"
 	UpdateEscalationPolicyPathDataAttributesRules5TimeZoneUlaanbaatar                 UpdateEscalationPolicyPathDataAttributesRules5TimeZone = "Ulaanbaatar"
 	UpdateEscalationPolicyPathDataAttributesRules5TimeZoneUrumqi                      UpdateEscalationPolicyPathDataAttributesRules5TimeZone = "Urumqi"
@@ -31178,9 +31644,13 @@ func (e UpdateEscalationPolicyPathDataAttributesRules5TimeZone) Valid() bool {
 		return true
 	case UpdateEscalationPolicyPathDataAttributesRules5TimeZoneAlmaty:
 		return true
+	case UpdateEscalationPolicyPathDataAttributesRules5TimeZoneAmericaAdak:
+		return true
 	case UpdateEscalationPolicyPathDataAttributesRules5TimeZoneAmericaArgentinaBuenosAires:
 		return true
 	case UpdateEscalationPolicyPathDataAttributesRules5TimeZoneAmericaAsuncion:
+		return true
+	case UpdateEscalationPolicyPathDataAttributesRules5TimeZoneAmericaAtka:
 		return true
 	case UpdateEscalationPolicyPathDataAttributesRules5TimeZoneAmericaBogota:
 		return true
@@ -31212,6 +31682,8 @@ func (e UpdateEscalationPolicyPathDataAttributesRules5TimeZone) Valid() bool {
 		return true
 	case UpdateEscalationPolicyPathDataAttributesRules5TimeZoneAmericaMexicoCity:
 		return true
+	case UpdateEscalationPolicyPathDataAttributesRules5TimeZoneAmericaMiquelon:
+		return true
 	case UpdateEscalationPolicyPathDataAttributesRules5TimeZoneAmericaMonterrey:
 		return true
 	case UpdateEscalationPolicyPathDataAttributesRules5TimeZoneAmericaMontevideo:
@@ -31233,6 +31705,8 @@ func (e UpdateEscalationPolicyPathDataAttributesRules5TimeZone) Valid() bool {
 	case UpdateEscalationPolicyPathDataAttributesRules5TimeZoneAmericaStJohns:
 		return true
 	case UpdateEscalationPolicyPathDataAttributesRules5TimeZoneAmericaTijuana:
+		return true
+	case UpdateEscalationPolicyPathDataAttributesRules5TimeZoneAmericaVancouver:
 		return true
 	case UpdateEscalationPolicyPathDataAttributesRules5TimeZoneAmericanSamoa:
 		return true
@@ -31342,7 +31816,13 @@ func (e UpdateEscalationPolicyPathDataAttributesRules5TimeZone) Valid() bool {
 		return true
 	case UpdateEscalationPolicyPathDataAttributesRules5TimeZoneAustraliaDarwin:
 		return true
+	case UpdateEscalationPolicyPathDataAttributesRules5TimeZoneAustraliaEucla:
+		return true
 	case UpdateEscalationPolicyPathDataAttributesRules5TimeZoneAustraliaHobart:
+		return true
+	case UpdateEscalationPolicyPathDataAttributesRules5TimeZoneAustraliaLHI:
+		return true
+	case UpdateEscalationPolicyPathDataAttributesRules5TimeZoneAustraliaLordHowe:
 		return true
 	case UpdateEscalationPolicyPathDataAttributesRules5TimeZoneAustraliaMelbourne:
 		return true
@@ -31384,6 +31864,8 @@ func (e UpdateEscalationPolicyPathDataAttributesRules5TimeZone) Valid() bool {
 		return true
 	case UpdateEscalationPolicyPathDataAttributesRules5TimeZoneCairo:
 		return true
+	case UpdateEscalationPolicyPathDataAttributesRules5TimeZoneCanadaPacific:
+		return true
 	case UpdateEscalationPolicyPathDataAttributesRules5TimeZoneCanberra:
 		return true
 	case UpdateEscalationPolicyPathDataAttributesRules5TimeZoneCapeVerdeIs:
@@ -31401,6 +31883,8 @@ func (e UpdateEscalationPolicyPathDataAttributesRules5TimeZone) Valid() bool {
 	case UpdateEscalationPolicyPathDataAttributesRules5TimeZoneChennai:
 		return true
 	case UpdateEscalationPolicyPathDataAttributesRules5TimeZoneChihuahua:
+		return true
+	case UpdateEscalationPolicyPathDataAttributesRules5TimeZoneChileEasterIsland:
 		return true
 	case UpdateEscalationPolicyPathDataAttributesRules5TimeZoneChongqing:
 		return true
@@ -31612,9 +32096,13 @@ func (e UpdateEscalationPolicyPathDataAttributesRules5TimeZone) Valid() bool {
 		return true
 	case UpdateEscalationPolicyPathDataAttributesRules5TimeZonePacificChatham:
 		return true
+	case UpdateEscalationPolicyPathDataAttributesRules5TimeZonePacificEaster:
+		return true
 	case UpdateEscalationPolicyPathDataAttributesRules5TimeZonePacificFakaofo:
 		return true
 	case UpdateEscalationPolicyPathDataAttributesRules5TimeZonePacificFiji:
+		return true
+	case UpdateEscalationPolicyPathDataAttributesRules5TimeZonePacificGambier:
 		return true
 	case UpdateEscalationPolicyPathDataAttributesRules5TimeZonePacificGuadalcanal:
 		return true
@@ -31622,13 +32110,21 @@ func (e UpdateEscalationPolicyPathDataAttributesRules5TimeZone) Valid() bool {
 		return true
 	case UpdateEscalationPolicyPathDataAttributesRules5TimeZonePacificHonolulu:
 		return true
+	case UpdateEscalationPolicyPathDataAttributesRules5TimeZonePacificKiritimati:
+		return true
 	case UpdateEscalationPolicyPathDataAttributesRules5TimeZonePacificMajuro:
 		return true
+	case UpdateEscalationPolicyPathDataAttributesRules5TimeZonePacificMarquesas:
+		return true
 	case UpdateEscalationPolicyPathDataAttributesRules5TimeZonePacificMidway:
+		return true
+	case UpdateEscalationPolicyPathDataAttributesRules5TimeZonePacificNorfolk:
 		return true
 	case UpdateEscalationPolicyPathDataAttributesRules5TimeZonePacificNoumea:
 		return true
 	case UpdateEscalationPolicyPathDataAttributesRules5TimeZonePacificPagoPago:
+		return true
+	case UpdateEscalationPolicyPathDataAttributesRules5TimeZonePacificPitcairn:
 		return true
 	case UpdateEscalationPolicyPathDataAttributesRules5TimeZonePacificPortMoresby:
 		return true
@@ -31705,6 +32201,8 @@ func (e UpdateEscalationPolicyPathDataAttributesRules5TimeZone) Valid() bool {
 	case UpdateEscalationPolicyPathDataAttributesRules5TimeZoneTokelauIs:
 		return true
 	case UpdateEscalationPolicyPathDataAttributesRules5TimeZoneTokyo:
+		return true
+	case UpdateEscalationPolicyPathDataAttributesRules5TimeZoneUSAleutian:
 		return true
 	case UpdateEscalationPolicyPathDataAttributesRules5TimeZoneUTC:
 		return true
@@ -31824,8 +32322,10 @@ const (
 	UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAfricaNairobi               UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Africa/Nairobi"
 	UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAlaska                      UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Alaska"
 	UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAlmaty                      UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Almaty"
+	UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAmericaAdak                 UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "America/Adak"
 	UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAmericaArgentinaBuenosAires UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "America/Argentina/Buenos_Aires"
 	UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAmericaAsuncion             UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "America/Asuncion"
+	UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAmericaAtka                 UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "America/Atka"
 	UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAmericaBogota               UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "America/Bogota"
 	UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAmericaCaracas              UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "America/Caracas"
 	UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAmericaChicago              UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "America/Chicago"
@@ -31841,6 +32341,7 @@ const (
 	UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAmericaLosAngeles           UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "America/Los_Angeles"
 	UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAmericaMazatlan             UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "America/Mazatlan"
 	UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAmericaMexicoCity           UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "America/Mexico_City"
+	UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAmericaMiquelon             UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "America/Miquelon"
 	UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAmericaMonterrey            UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "America/Monterrey"
 	UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAmericaMontevideo           UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "America/Montevideo"
 	UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAmericaNewYork              UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "America/New_York"
@@ -31852,6 +32353,7 @@ const (
 	UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAmericaSaoPaulo             UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "America/Sao_Paulo"
 	UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAmericaStJohns              UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "America/St_Johns"
 	UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAmericaTijuana              UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "America/Tijuana"
+	UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAmericaVancouver            UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "America/Vancouver"
 	UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAmericanSamoa               UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "American Samoa"
 	UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAmsterdam                   UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Amsterdam"
 	UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneArizona                     UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Arizona"
@@ -31906,7 +32408,10 @@ const (
 	UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAustraliaBrisbane           UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Australia/Brisbane"
 	UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAustraliaCanberra           UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Australia/Canberra"
 	UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAustraliaDarwin             UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Australia/Darwin"
+	UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAustraliaEucla              UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Australia/Eucla"
 	UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAustraliaHobart             UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Australia/Hobart"
+	UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAustraliaLHI                UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Australia/LHI"
+	UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAustraliaLordHowe           UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Australia/Lord_Howe"
 	UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAustraliaMelbourne          UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Australia/Melbourne"
 	UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAustraliaPerth              UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Australia/Perth"
 	UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAustraliaSydney             UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Australia/Sydney"
@@ -31927,6 +32432,7 @@ const (
 	UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneBudapest                    UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Budapest"
 	UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneBuenosAires                 UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Buenos Aires"
 	UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneCairo                       UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Cairo"
+	UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneCanadaPacific               UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Canada/Pacific"
 	UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneCanberra                    UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Canberra"
 	UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneCapeVerdeIs                 UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Cape Verde Is."
 	UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneCaracas                     UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Caracas"
@@ -31936,6 +32442,7 @@ const (
 	UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneChathamIs                   UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Chatham Is."
 	UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneChennai                     UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Chennai"
 	UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneChihuahua                   UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Chihuahua"
+	UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneChileEasterIsland           UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Chile/EasterIsland"
 	UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneChongqing                   UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Chongqing"
 	UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneCopenhagen                  UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Copenhagen"
 	UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneDarwin                      UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Darwin"
@@ -32041,15 +32548,21 @@ const (
 	UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZonePacificApia                 UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Pacific/Apia"
 	UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZonePacificAuckland             UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Pacific/Auckland"
 	UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZonePacificChatham              UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Pacific/Chatham"
+	UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZonePacificEaster               UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Pacific/Easter"
 	UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZonePacificFakaofo              UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Pacific/Fakaofo"
 	UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZonePacificFiji                 UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Pacific/Fiji"
+	UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZonePacificGambier              UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Pacific/Gambier"
 	UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZonePacificGuadalcanal          UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Pacific/Guadalcanal"
 	UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZonePacificGuam                 UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Pacific/Guam"
 	UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZonePacificHonolulu             UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Pacific/Honolulu"
+	UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZonePacificKiritimati           UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Pacific/Kiritimati"
 	UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZonePacificMajuro               UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Pacific/Majuro"
+	UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZonePacificMarquesas            UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Pacific/Marquesas"
 	UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZonePacificMidway               UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Pacific/Midway"
+	UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZonePacificNorfolk              UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Pacific/Norfolk"
 	UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZonePacificNoumea               UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Pacific/Noumea"
 	UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZonePacificPagoPago             UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Pacific/Pago_Pago"
+	UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZonePacificPitcairn             UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Pacific/Pitcairn"
 	UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZonePacificPortMoresby          UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Pacific/Port_Moresby"
 	UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZonePacificTimeUSCanada         UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Pacific Time (US & Canada)"
 	UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZonePacificTongatapu            UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Pacific/Tongatapu"
@@ -32088,6 +32601,7 @@ const (
 	UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneTijuana                     UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Tijuana"
 	UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneTokelauIs                   UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Tokelau Is."
 	UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneTokyo                       UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Tokyo"
+	UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneUSAleutian                  UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "US/Aleutian"
 	UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneUTC                         UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "UTC"
 	UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneUlaanbaatar                 UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Ulaanbaatar"
 	UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneUrumqi                      UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Urumqi"
@@ -32129,9 +32643,13 @@ func (e UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone) Valid()
 		return true
 	case UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAlmaty:
 		return true
+	case UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAmericaAdak:
+		return true
 	case UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAmericaArgentinaBuenosAires:
 		return true
 	case UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAmericaAsuncion:
+		return true
+	case UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAmericaAtka:
 		return true
 	case UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAmericaBogota:
 		return true
@@ -32163,6 +32681,8 @@ func (e UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone) Valid()
 		return true
 	case UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAmericaMexicoCity:
 		return true
+	case UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAmericaMiquelon:
+		return true
 	case UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAmericaMonterrey:
 		return true
 	case UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAmericaMontevideo:
@@ -32184,6 +32704,8 @@ func (e UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone) Valid()
 	case UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAmericaStJohns:
 		return true
 	case UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAmericaTijuana:
+		return true
+	case UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAmericaVancouver:
 		return true
 	case UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAmericanSamoa:
 		return true
@@ -32293,7 +32815,13 @@ func (e UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone) Valid()
 		return true
 	case UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAustraliaDarwin:
 		return true
+	case UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAustraliaEucla:
+		return true
 	case UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAustraliaHobart:
+		return true
+	case UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAustraliaLHI:
+		return true
+	case UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAustraliaLordHowe:
 		return true
 	case UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAustraliaMelbourne:
 		return true
@@ -32335,6 +32863,8 @@ func (e UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone) Valid()
 		return true
 	case UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneCairo:
 		return true
+	case UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneCanadaPacific:
+		return true
 	case UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneCanberra:
 		return true
 	case UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneCapeVerdeIs:
@@ -32352,6 +32882,8 @@ func (e UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone) Valid()
 	case UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneChennai:
 		return true
 	case UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneChihuahua:
+		return true
+	case UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneChileEasterIsland:
 		return true
 	case UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneChongqing:
 		return true
@@ -32563,9 +33095,13 @@ func (e UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone) Valid()
 		return true
 	case UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZonePacificChatham:
 		return true
+	case UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZonePacificEaster:
+		return true
 	case UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZonePacificFakaofo:
 		return true
 	case UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZonePacificFiji:
+		return true
+	case UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZonePacificGambier:
 		return true
 	case UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZonePacificGuadalcanal:
 		return true
@@ -32573,13 +33109,21 @@ func (e UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone) Valid()
 		return true
 	case UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZonePacificHonolulu:
 		return true
+	case UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZonePacificKiritimati:
+		return true
 	case UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZonePacificMajuro:
 		return true
+	case UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZonePacificMarquesas:
+		return true
 	case UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZonePacificMidway:
+		return true
+	case UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZonePacificNorfolk:
 		return true
 	case UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZonePacificNoumea:
 		return true
 	case UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZonePacificPagoPago:
+		return true
+	case UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZonePacificPitcairn:
 		return true
 	case UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZonePacificPortMoresby:
 		return true
@@ -32656,6 +33200,8 @@ func (e UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone) Valid()
 	case UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneTokelauIs:
 		return true
 	case UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneTokyo:
+		return true
+	case UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneUSAleutian:
 		return true
 	case UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneUTC:
 		return true
@@ -37532,6 +38078,60 @@ func (e UpdateWorkflowDataType) Valid() bool {
 	}
 }
 
+// Defines values for UpdateWorkflowActionItemFormFieldConditionDataAttributesActionItemCondition.
+const (
+	UpdateWorkflowActionItemFormFieldConditionDataAttributesActionItemConditionANY          UpdateWorkflowActionItemFormFieldConditionDataAttributesActionItemCondition = "ANY"
+	UpdateWorkflowActionItemFormFieldConditionDataAttributesActionItemConditionCONTAINS     UpdateWorkflowActionItemFormFieldConditionDataAttributesActionItemCondition = "CONTAINS"
+	UpdateWorkflowActionItemFormFieldConditionDataAttributesActionItemConditionCONTAINSALL  UpdateWorkflowActionItemFormFieldConditionDataAttributesActionItemCondition = "CONTAINS_ALL"
+	UpdateWorkflowActionItemFormFieldConditionDataAttributesActionItemConditionCONTAINSNONE UpdateWorkflowActionItemFormFieldConditionDataAttributesActionItemCondition = "CONTAINS_NONE"
+	UpdateWorkflowActionItemFormFieldConditionDataAttributesActionItemConditionIS           UpdateWorkflowActionItemFormFieldConditionDataAttributesActionItemCondition = "IS"
+	UpdateWorkflowActionItemFormFieldConditionDataAttributesActionItemConditionISNOT        UpdateWorkflowActionItemFormFieldConditionDataAttributesActionItemCondition = "IS NOT"
+	UpdateWorkflowActionItemFormFieldConditionDataAttributesActionItemConditionNONE         UpdateWorkflowActionItemFormFieldConditionDataAttributesActionItemCondition = "NONE"
+	UpdateWorkflowActionItemFormFieldConditionDataAttributesActionItemConditionSET          UpdateWorkflowActionItemFormFieldConditionDataAttributesActionItemCondition = "SET"
+	UpdateWorkflowActionItemFormFieldConditionDataAttributesActionItemConditionUNSET        UpdateWorkflowActionItemFormFieldConditionDataAttributesActionItemCondition = "UNSET"
+)
+
+// Valid indicates whether the value is a known member of the UpdateWorkflowActionItemFormFieldConditionDataAttributesActionItemCondition enum.
+func (e UpdateWorkflowActionItemFormFieldConditionDataAttributesActionItemCondition) Valid() bool {
+	switch e {
+	case UpdateWorkflowActionItemFormFieldConditionDataAttributesActionItemConditionANY:
+		return true
+	case UpdateWorkflowActionItemFormFieldConditionDataAttributesActionItemConditionCONTAINS:
+		return true
+	case UpdateWorkflowActionItemFormFieldConditionDataAttributesActionItemConditionCONTAINSALL:
+		return true
+	case UpdateWorkflowActionItemFormFieldConditionDataAttributesActionItemConditionCONTAINSNONE:
+		return true
+	case UpdateWorkflowActionItemFormFieldConditionDataAttributesActionItemConditionIS:
+		return true
+	case UpdateWorkflowActionItemFormFieldConditionDataAttributesActionItemConditionISNOT:
+		return true
+	case UpdateWorkflowActionItemFormFieldConditionDataAttributesActionItemConditionNONE:
+		return true
+	case UpdateWorkflowActionItemFormFieldConditionDataAttributesActionItemConditionSET:
+		return true
+	case UpdateWorkflowActionItemFormFieldConditionDataAttributesActionItemConditionUNSET:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateWorkflowActionItemFormFieldConditionDataType.
+const (
+	UpdateWorkflowActionItemFormFieldConditionDataTypeWorkflowActionItemFormFieldConditions UpdateWorkflowActionItemFormFieldConditionDataType = "workflow_action_item_form_field_conditions"
+)
+
+// Valid indicates whether the value is a known member of the UpdateWorkflowActionItemFormFieldConditionDataType enum.
+func (e UpdateWorkflowActionItemFormFieldConditionDataType) Valid() bool {
+	switch e {
+	case UpdateWorkflowActionItemFormFieldConditionDataTypeWorkflowActionItemFormFieldConditions:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for UpdateWorkflowCustomFieldSelectionDataAttributesIncidentCondition.
 const (
 	UpdateWorkflowCustomFieldSelectionDataAttributesIncidentConditionANY          UpdateWorkflowCustomFieldSelectionDataAttributesIncidentCondition = "ANY"
@@ -38078,6 +38678,75 @@ func (e WorkflowRepeatOn) Valid() bool {
 	case WorkflowRepeatOnU:
 		return true
 	case WorkflowRepeatOnW:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for WorkflowActionItemFormFieldConditionActionItemCondition.
+const (
+	WorkflowActionItemFormFieldConditionActionItemConditionANY          WorkflowActionItemFormFieldConditionActionItemCondition = "ANY"
+	WorkflowActionItemFormFieldConditionActionItemConditionCONTAINS     WorkflowActionItemFormFieldConditionActionItemCondition = "CONTAINS"
+	WorkflowActionItemFormFieldConditionActionItemConditionCONTAINSALL  WorkflowActionItemFormFieldConditionActionItemCondition = "CONTAINS_ALL"
+	WorkflowActionItemFormFieldConditionActionItemConditionCONTAINSNONE WorkflowActionItemFormFieldConditionActionItemCondition = "CONTAINS_NONE"
+	WorkflowActionItemFormFieldConditionActionItemConditionIS           WorkflowActionItemFormFieldConditionActionItemCondition = "IS"
+	WorkflowActionItemFormFieldConditionActionItemConditionISNOT        WorkflowActionItemFormFieldConditionActionItemCondition = "IS NOT"
+	WorkflowActionItemFormFieldConditionActionItemConditionNONE         WorkflowActionItemFormFieldConditionActionItemCondition = "NONE"
+	WorkflowActionItemFormFieldConditionActionItemConditionSET          WorkflowActionItemFormFieldConditionActionItemCondition = "SET"
+	WorkflowActionItemFormFieldConditionActionItemConditionUNSET        WorkflowActionItemFormFieldConditionActionItemCondition = "UNSET"
+)
+
+// Valid indicates whether the value is a known member of the WorkflowActionItemFormFieldConditionActionItemCondition enum.
+func (e WorkflowActionItemFormFieldConditionActionItemCondition) Valid() bool {
+	switch e {
+	case WorkflowActionItemFormFieldConditionActionItemConditionANY:
+		return true
+	case WorkflowActionItemFormFieldConditionActionItemConditionCONTAINS:
+		return true
+	case WorkflowActionItemFormFieldConditionActionItemConditionCONTAINSALL:
+		return true
+	case WorkflowActionItemFormFieldConditionActionItemConditionCONTAINSNONE:
+		return true
+	case WorkflowActionItemFormFieldConditionActionItemConditionIS:
+		return true
+	case WorkflowActionItemFormFieldConditionActionItemConditionISNOT:
+		return true
+	case WorkflowActionItemFormFieldConditionActionItemConditionNONE:
+		return true
+	case WorkflowActionItemFormFieldConditionActionItemConditionSET:
+		return true
+	case WorkflowActionItemFormFieldConditionActionItemConditionUNSET:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for WorkflowActionItemFormFieldConditionListDataType.
+const (
+	WorkflowActionItemFormFieldConditionListDataTypeWorkflowActionItemFormFieldConditions WorkflowActionItemFormFieldConditionListDataType = "workflow_action_item_form_field_conditions"
+)
+
+// Valid indicates whether the value is a known member of the WorkflowActionItemFormFieldConditionListDataType enum.
+func (e WorkflowActionItemFormFieldConditionListDataType) Valid() bool {
+	switch e {
+	case WorkflowActionItemFormFieldConditionListDataTypeWorkflowActionItemFormFieldConditions:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for WorkflowActionItemFormFieldConditionResponseDataType.
+const (
+	WorkflowActionItemFormFieldConditionResponseDataTypeWorkflowActionItemFormFieldConditions WorkflowActionItemFormFieldConditionResponseDataType = "workflow_action_item_form_field_conditions"
+)
+
+// Valid indicates whether the value is a known member of the WorkflowActionItemFormFieldConditionResponseDataType enum.
+func (e WorkflowActionItemFormFieldConditionResponseDataType) Valid() bool {
+	switch e {
+	case WorkflowActionItemFormFieldConditionResponseDataTypeWorkflowActionItemFormFieldConditions:
 		return true
 	default:
 		return false
@@ -40871,6 +41540,12 @@ type Alert struct {
 	// NotificationTargetType Only available for organizations with Rootly On-Call enabled. Can be one of Group, Service, EscalationPolicy, Functionality, User.
 	NotificationTargetType nullable.Nullable[AlertNotificationTargetType] `json:"notification_target_type,omitempty"`
 
+	// NotifiedUsers Users who were notified about the alert. Included on all non-list responses (show, create, update, resolve, etc.); on list responses only when `include=notified_users` is requested.
+	NotifiedUsers nullable.Nullable[[]User] `json:"notified_users,omitempty"`
+
+	// Responders Users who responded to the alert. Included on all non-list responses (show, create, update, resolve, etc.); on list responses only when `include=responders` is requested.
+	Responders nullable.Nullable[[]UserFlatResponse] `json:"responders,omitempty"`
+
 	// ServiceIDs The Service IDs to attach to the alert. If your organization has On-Call enabled and your notification target is a Service. This field will be automatically set for you.
 	ServiceIDs nullable.Nullable[[]string] `json:"service_ids,omitempty"`
 
@@ -40934,10 +41609,58 @@ type AlertEvent struct {
 	CreatedAt string `json:"created_at"`
 
 	// Details Note message.
-	Details   nullable.Nullable[string] `json:"details,omitempty"`
-	Kind      AlertEventKind            `json:"kind"`
-	Source    string                    `json:"source"`
-	UpdatedAt string                    `json:"updated_at"`
+	Details         nullable.Nullable[string] `json:"details,omitempty"`
+	EscalationLevel nullable.Nullable[int]    `json:"escalation_level,omitempty"`
+
+	// EscalationTarget JSON:API-wrapped escalation target (User or EscalationPolicy).
+	EscalationTarget nullable.Nullable[struct {
+		Data *struct {
+			Attributes map[string]interface{} `json:"attributes,omitempty"`
+			ID         *string                `json:"id,omitempty"`
+
+			// Type e.g. users, escalation_policies.
+			Type *string `json:"type,omitempty"`
+		} `json:"data,omitempty"`
+	}] `json:"escalation_target,omitempty"`
+
+	// EscalationTargetType e.g. EscalationPolicy, User.
+	EscalationTargetType nullable.Nullable[string] `json:"escalation_target_type,omitempty"`
+	Incident             nullable.Nullable[struct {
+		CreatedAt   *string                   `json:"created_at,omitempty"`
+		Description nullable.Nullable[string] `json:"description,omitempty"`
+
+		// Duration Duration in seconds.
+		Duration     nullable.Nullable[int]    `json:"duration,omitempty"`
+		ID           *string                   `json:"id,omitempty"`
+		Kind         *string                   `json:"kind,omitempty"`
+		Private      *bool                     `json:"private,omitempty"`
+		SequentialID nullable.Nullable[int]    `json:"sequential_id,omitempty"`
+		Slug         *string                   `json:"slug,omitempty"`
+		StartedAt    nullable.Nullable[string] `json:"started_at,omitempty"`
+		Status       *string                   `json:"status,omitempty"`
+		Title        *string                   `json:"title,omitempty"`
+		UpdatedAt    *string                   `json:"updated_at,omitempty"`
+		URL          *string                   `json:"url,omitempty"`
+	}] `json:"incident,omitempty"`
+	IncidentIDs nullable.Nullable[[]string] `json:"incident_ids,omitempty"`
+	Kind        AlertEventKind              `json:"kind"`
+	Schedule    nullable.Nullable[struct {
+		CreatedAt          *string                   `json:"created_at,omitempty"`
+		Description        nullable.Nullable[string] `json:"description,omitempty"`
+		EscalationPolicies []struct {
+			CreatedAt *string `json:"created_at,omitempty"`
+			ID        *string `json:"id,omitempty"`
+			Name      *string `json:"name,omitempty"`
+			UpdatedAt *string `json:"updated_at,omitempty"`
+		} `json:"escalation_policies,omitempty"`
+		ID        *string `json:"id,omitempty"`
+		Name      *string `json:"name,omitempty"`
+		UpdatedAt *string `json:"updated_at,omitempty"`
+	}] `json:"schedule,omitempty"`
+	SlackChannel nullable.Nullable[SlackChannel]   `json:"slack_channel,omitempty"`
+	Source       string                            `json:"source"`
+	UpdatedAt    string                            `json:"updated_at"`
+	User         nullable.Nullable[AlertEventUser] `json:"user,omitempty"`
 
 	// UserID Author of the note.
 	UserID nullable.Nullable[int] `json:"user_id,omitempty"`
@@ -41009,6 +41732,20 @@ type AlertEventResponse struct {
 
 // AlertEventResponseDataType defines model for AlertEventResponse.Data.Type.
 type AlertEventResponseDataType string
+
+// AlertEventUser defines model for alert_event_user.
+type AlertEventUser struct {
+	CreatedAt     string                    `json:"created_at"`
+	Email         string                    `json:"email"`
+	FirstName     nullable.Nullable[string] `json:"first_name,omitempty"`
+	FullName      nullable.Nullable[string] `json:"full_name,omitempty"`
+	ID            int                       `json:"id"`
+	LastName      nullable.Nullable[string] `json:"last_name,omitempty"`
+	Name          string                    `json:"name"`
+	PreferredName nullable.Nullable[string] `json:"preferred_name,omitempty"`
+	TimeZone      nullable.Nullable[string] `json:"time_zone,omitempty"`
+	UpdatedAt     string                    `json:"updated_at"`
+}
 
 // AlertField defines model for alert_field.
 type AlertField struct {
@@ -42151,8 +42888,14 @@ type Audit struct {
 	// UserAgent User-Agent header of the client that performed the action
 	UserAgent nullable.Nullable[string] `json:"user_agent,omitempty"`
 
+	// UserEmail Email address of the user who performed the action
+	UserEmail nullable.Nullable[string] `json:"user_email,omitempty"`
+
 	// UserID The ID of who took action on the object. Together with whodunnit_type can be used to find the user
 	UserID nullable.Nullable[int] `json:"user_id,omitempty"`
+
+	// UserName Display name of the user who performed the action
+	UserName nullable.Nullable[string] `json:"user_name,omitempty"`
 }
 
 // AuditItemType Describes the object in which the action was taken on
@@ -43598,7 +44341,9 @@ type CreateConfluencePageTaskParams struct {
 	} `json:"ancestor,omitempty"`
 
 	// Content The page content
-	Content *string `json:"content,omitempty"`
+	Content         *string `json:"content,omitempty"`
+	IncludeOverview *bool   `json:"include_overview,omitempty"`
+	IncludeTimeline *bool   `json:"include_timeline,omitempty"`
 
 	// Integration Specify integration id if you have more than one Confluence instance
 	Integration *struct {
@@ -43682,6 +44427,9 @@ type CreateDropboxPaperPageTaskParamsTaskType string
 type CreateGithubIssueTaskParams struct {
 	// Body The issue body
 	Body *string `json:"body,omitempty"`
+
+	// CustomFieldsMapping Custom field mappings. Can contain liquid markup and need to be valid JSON
+	CustomFieldsMapping nullable.Nullable[string] `json:"custom_fields_mapping,omitempty"`
 
 	// IssueType The issue type
 	IssueType *struct {
@@ -44141,6 +44889,9 @@ type CreateLinearIssueTaskParams struct {
 	// AssignUserEmail The assigned user's email
 	AssignUserEmail *string `json:"assign_user_email,omitempty"`
 
+	// CustomFieldsMapping Custom field mappings. Can contain liquid markup and need to be valid JSON
+	CustomFieldsMapping nullable.Nullable[string] `json:"custom_fields_mapping,omitempty"`
+
 	// Description The issue description
 	Description *string `json:"description,omitempty"`
 	Labels      []struct {
@@ -44184,6 +44935,9 @@ type CreateLinearIssueTaskParamsTaskType string
 type CreateLinearSubtaskIssueTaskParams struct {
 	// AssignUserEmail The assigned user's email
 	AssignUserEmail *string `json:"assign_user_email,omitempty"`
+
+	// CustomFieldsMapping Custom field mappings. Can contain liquid markup and need to be valid JSON
+	CustomFieldsMapping nullable.Nullable[string] `json:"custom_fields_mapping,omitempty"`
 
 	// Description The issue description
 	Description *string `json:"description,omitempty"`
@@ -46868,6 +47622,24 @@ type Incident struct {
 	// GitlabIssueURL GitLab issue URL
 	GitlabIssueURL nullable.Nullable[string] `json:"gitlab_issue_url,omitempty"`
 
+	// GoogleChatSpaceArchived Whether the Google Chat space is archived
+	GoogleChatSpaceArchived nullable.Nullable[bool] `json:"google_chat_space_archived,omitempty"`
+
+	// GoogleChatSpaceDomainID Google Chat space domain ID
+	GoogleChatSpaceDomainID nullable.Nullable[string] `json:"google_chat_space_domain_id,omitempty"`
+
+	// GoogleChatSpaceID Google Chat space ID
+	GoogleChatSpaceID nullable.Nullable[string] `json:"google_chat_space_id,omitempty"`
+
+	// GoogleChatSpaceName Google Chat space name
+	GoogleChatSpaceName nullable.Nullable[string] `json:"google_chat_space_name,omitempty"`
+
+	// GoogleChatSpaceShortURL Google Chat space short URL
+	GoogleChatSpaceShortURL nullable.Nullable[string] `json:"google_chat_space_short_url,omitempty"`
+
+	// GoogleChatSpaceURL Google Chat space URL
+	GoogleChatSpaceURL nullable.Nullable[string] `json:"google_chat_space_url,omitempty"`
+
 	// GoogleDriveID Google Drive document ID
 	GoogleDriveID nullable.Nullable[string] `json:"google_drive_id,omitempty"`
 
@@ -47182,6 +47954,9 @@ type IncidentActionItem struct {
 
 	// CreatedAt Date of creation
 	CreatedAt string `json:"created_at"`
+
+	// CreatedBy User who created this action item
+	CreatedBy nullable.Nullable[UserFlatResponse] `json:"created_by,omitempty"`
 
 	// Description The description of incident action item
 	Description nullable.Nullable[string] `json:"description,omitempty"`
@@ -48303,6 +49078,42 @@ type InviteToGoogleChatSpaceTaskParams struct {
 
 // InviteToGoogleChatSpaceTaskParamsTaskType defines model for InviteToGoogleChatSpaceTaskParams.TaskType.
 type InviteToGoogleChatSpaceTaskParamsTaskType string
+
+// InviteToMicrosoftTeamsChannelRootlyTaskParams defines model for invite_to_microsoft_teams_channel_rootly_task_params.
+type InviteToMicrosoftTeamsChannelRootlyTaskParams struct {
+	Channel struct {
+		ID   *string `json:"id,omitempty"`
+		Name *string `json:"name,omitempty"`
+	} `json:"channel"`
+	EscalationPolicyTarget *struct {
+		ID   *string `json:"id,omitempty"`
+		Name *string `json:"name,omitempty"`
+	} `json:"escalation_policy_target,omitempty"`
+	GroupTarget *struct {
+		ID   *string `json:"id,omitempty"`
+		Name *string `json:"name,omitempty"`
+	} `json:"group_target,omitempty"`
+	ScheduleTarget *struct {
+		ID   *string `json:"id,omitempty"`
+		Name *string `json:"name,omitempty"`
+	} `json:"schedule_target,omitempty"`
+	ServiceTarget *struct {
+		ID   *string `json:"id,omitempty"`
+		Name *string `json:"name,omitempty"`
+	} `json:"service_target,omitempty"`
+	TaskType *InviteToMicrosoftTeamsChannelRootlyTaskParamsTaskType `json:"task_type,omitempty"`
+	Team     struct {
+		ID   *string `json:"id,omitempty"`
+		Name *string `json:"name,omitempty"`
+	} `json:"team"`
+	UserTarget *struct {
+		ID   *string `json:"id,omitempty"`
+		Name *string `json:"name,omitempty"`
+	} `json:"user_target,omitempty"`
+}
+
+// InviteToMicrosoftTeamsChannelRootlyTaskParamsTaskType defines model for InviteToMicrosoftTeamsChannelRootlyTaskParams.TaskType.
+type InviteToMicrosoftTeamsChannelRootlyTaskParamsTaskType string
 
 // InviteToMicrosoftTeamsChannelTaskParams defines model for invite_to_microsoft_teams_channel_task_params.
 type InviteToMicrosoftTeamsChannelTaskParams struct {
@@ -52529,6 +53340,26 @@ type NewSeverityDataAttributesSeverity string
 // NewSeverityDataType defines model for NewSeverity.Data.Type.
 type NewSeverityDataType string
 
+// NewShiftCoverageRequest defines model for new_shift_coverage_request.
+type NewShiftCoverageRequest struct {
+	Data struct {
+		Attributes struct {
+			// EndsAt End datetime of the time range to request coverage for
+			EndsAt time.Time `json:"ends_at"`
+
+			// StartsAt Start datetime of the time range to request coverage for
+			StartsAt time.Time `json:"starts_at"`
+
+			// UserID Optional. Restrict coverage to shifts assigned to this user. When omitted, every shift overlapping the time range is covered.
+			UserID *int `json:"user_id,omitempty"`
+		} `json:"attributes"`
+		Type NewShiftCoverageRequestDataType `json:"type"`
+	} `json:"data"`
+}
+
+// NewShiftCoverageRequestDataType defines model for NewShiftCoverageRequest.Data.Type.
+type NewShiftCoverageRequestDataType string
+
 // NewSLA defines model for new_sla.
 type NewSLA struct {
 	Data struct {
@@ -53103,6 +53934,36 @@ type NewWorkflow_Data_Attributes_TriggerParams struct {
 
 // NewWorkflowDataType defines model for NewWorkflow.Data.Type.
 type NewWorkflowDataType string
+
+// NewWorkflowActionItemFormFieldCondition defines model for new_workflow_action_item_form_field_condition.
+type NewWorkflowActionItemFormFieldCondition struct {
+	Data struct {
+		Attributes struct {
+			// ActionItemCondition The trigger condition
+			ActionItemCondition NewWorkflowActionItemFormFieldConditionDataAttributesActionItemCondition `json:"action_item_condition"`
+
+			// FormFieldID The custom field for this condition
+			FormFieldID              string   `json:"form_field_id"`
+			SelectedCatalogEntityIDs []string `json:"selected_catalog_entity_ids,omitempty"`
+			SelectedCauseIDs         []string `json:"selected_cause_ids,omitempty"`
+			SelectedEnvironmentIDs   []string `json:"selected_environment_ids,omitempty"`
+			SelectedFunctionalityIDs []string `json:"selected_functionality_ids,omitempty"`
+			SelectedGroupIDs         []string `json:"selected_group_ids,omitempty"`
+			SelectedIncidentTypeIDs  []string `json:"selected_incident_type_ids,omitempty"`
+			SelectedOptionIDs        []string `json:"selected_option_ids,omitempty"`
+			SelectedServiceIDs       []string `json:"selected_service_ids,omitempty"`
+			SelectedUserIDs          []int    `json:"selected_user_ids,omitempty"`
+			Values                   []string `json:"values,omitempty"`
+		} `json:"attributes"`
+		Type NewWorkflowActionItemFormFieldConditionDataType `json:"type"`
+	} `json:"data"`
+}
+
+// NewWorkflowActionItemFormFieldConditionDataAttributesActionItemCondition The trigger condition
+type NewWorkflowActionItemFormFieldConditionDataAttributesActionItemCondition string
+
+// NewWorkflowActionItemFormFieldConditionDataType defines model for NewWorkflowActionItemFormFieldCondition.Data.Type.
+type NewWorkflowActionItemFormFieldConditionDataType string
 
 // NewWorkflowCustomFieldSelection defines model for new_workflow_custom_field_selection.
 type NewWorkflowCustomFieldSelection struct {
@@ -56121,6 +56982,77 @@ type Shift struct {
 	UserID nullable.Nullable[int] `json:"user_id,omitempty"`
 }
 
+// ShiftCoverageRequest defines model for shift_coverage_request.
+type ShiftCoverageRequest struct {
+	// CreatedAt Date of creation
+	CreatedAt *string `json:"created_at,omitempty"`
+
+	// CreatedByUser User who created the coverage request
+	CreatedByUser *UserResponse `json:"created_by_user,omitempty"`
+
+	// CreatedByUserID ID of the user who created the coverage request
+	CreatedByUserID int `json:"created_by_user_id"`
+
+	// EndsAt End datetime of the coverage request
+	EndsAt string `json:"ends_at"`
+
+	// OriginalShiftUser User whose shift is being covered
+	OriginalShiftUser *UserResponse `json:"original_shift_user,omitempty"`
+
+	// OriginalShiftUserID ID of the user whose shift is being covered
+	OriginalShiftUserID int `json:"original_shift_user_id"`
+
+	// Schedule Schedule metadata
+	Schedule *ScheduleResponse `json:"schedule,omitempty"`
+
+	// ScheduleID ID of schedule
+	ScheduleID string `json:"schedule_id"`
+
+	// Shift Shift metadata
+	Shift *Shift `json:"shift,omitempty"`
+
+	// ShiftID ID of the shift being covered
+	ShiftID string `json:"shift_id"`
+
+	// StartsAt Start datetime of the coverage request
+	StartsAt string `json:"starts_at"`
+
+	// UpdatedAt Date of last update
+	UpdatedAt *string `json:"updated_at,omitempty"`
+}
+
+// ShiftCoverageRequestList defines model for shift_coverage_request_list.
+type ShiftCoverageRequestList struct {
+	Data []struct {
+		Attributes ShiftCoverageRequest `json:"attributes"`
+
+		// ID Unique ID of the coverage request
+		ID   string                           `json:"id"`
+		Type ShiftCoverageRequestListDataType `json:"type"`
+	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    *Links                    `json:"links,omitempty"`
+	Meta     *Meta                     `json:"meta,omitempty"`
+}
+
+// ShiftCoverageRequestListDataType defines model for ShiftCoverageRequestList.Data.Type.
+type ShiftCoverageRequestListDataType string
+
+// ShiftCoverageRequestResponse defines model for shift_coverage_request_response.
+type ShiftCoverageRequestResponse struct {
+	Data struct {
+		Attributes ShiftCoverageRequest `json:"attributes"`
+
+		// ID Unique ID of the coverage request
+		ID   string                               `json:"id"`
+		Type ShiftCoverageRequestResponseDataType `json:"type"`
+	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+}
+
+// ShiftCoverageRequestResponseDataType defines model for ShiftCoverageRequestResponse.Data.Type.
+type ShiftCoverageRequestResponseDataType string
+
 // ShiftList defines model for shift_list.
 type ShiftList struct {
 	Data []struct {
@@ -56351,6 +57283,16 @@ type SLAResponse struct {
 
 // SLAResponseDataType defines model for SLAResponse.Data.Type.
 type SLAResponseDataType string
+
+// SlackChannel defines model for slack_channel.
+type SlackChannel struct {
+	CreatedAt        string `json:"created_at"`
+	ID               string `json:"id"`
+	SlackChannelID   string `json:"slack_channel_id"`
+	SlackChannelName string `json:"slack_channel_name"`
+	SlackTeamID      string `json:"slack_team_id"`
+	UpdatedAt        string `json:"updated_at"`
+}
 
 // SnapshotDatadogGraphTaskParams defines model for snapshot_datadog_graph_task_params.
 type SnapshotDatadogGraphTaskParams struct {
@@ -58183,7 +59125,9 @@ type UpdateConfluencePageTaskParams struct {
 	Content *string `json:"content,omitempty"`
 
 	// FileID The Confluence page ID
-	FileID string `json:"file_id"`
+	FileID          string `json:"file_id"`
+	IncludeOverview *bool  `json:"include_overview,omitempty"`
+	IncludeTimeline *bool  `json:"include_timeline,omitempty"`
 
 	// Integration Specify integration id if you have more than one Confluence instance
 	Integration *struct {
@@ -59177,6 +60121,9 @@ type UpdateGithubIssueTaskParams struct {
 		ID   *string `json:"id,omitempty"`
 		Name *string `json:"name,omitempty"`
 	} `json:"completion"`
+
+	// CustomFieldsMapping Custom field mappings. Can contain liquid markup and need to be valid JSON
+	CustomFieldsMapping nullable.Nullable[string] `json:"custom_fields_mapping,omitempty"`
 
 	// IssueID The issue id
 	IssueID string `json:"issue_id"`
@@ -60196,6 +61143,9 @@ type UpdateJiraIssueTaskParamsTaskType string
 type UpdateLinearIssueTaskParams struct {
 	// AssignUserEmail The assigned user's email
 	AssignUserEmail *string `json:"assign_user_email,omitempty"`
+
+	// CustomFieldsMapping Custom field mappings. Can contain liquid markup and need to be valid JSON
+	CustomFieldsMapping nullable.Nullable[string] `json:"custom_fields_mapping,omitempty"`
 
 	// Description The issue description
 	Description *string `json:"description,omitempty"`
@@ -62285,6 +63235,33 @@ type UpdateWorkflow_Data_Attributes_TriggerParams struct {
 // UpdateWorkflowDataType defines model for UpdateWorkflow.Data.Type.
 type UpdateWorkflowDataType string
 
+// UpdateWorkflowActionItemFormFieldCondition defines model for update_workflow_action_item_form_field_condition.
+type UpdateWorkflowActionItemFormFieldCondition struct {
+	Data struct {
+		Attributes struct {
+			// ActionItemCondition The trigger condition
+			ActionItemCondition      *UpdateWorkflowActionItemFormFieldConditionDataAttributesActionItemCondition `json:"action_item_condition,omitempty"`
+			SelectedCatalogEntityIDs []string                                                                     `json:"selected_catalog_entity_ids,omitempty"`
+			SelectedCauseIDs         []string                                                                     `json:"selected_cause_ids,omitempty"`
+			SelectedEnvironmentIDs   []string                                                                     `json:"selected_environment_ids,omitempty"`
+			SelectedFunctionalityIDs []string                                                                     `json:"selected_functionality_ids,omitempty"`
+			SelectedGroupIDs         []string                                                                     `json:"selected_group_ids,omitempty"`
+			SelectedIncidentTypeIDs  []string                                                                     `json:"selected_incident_type_ids,omitempty"`
+			SelectedOptionIDs        []string                                                                     `json:"selected_option_ids,omitempty"`
+			SelectedServiceIDs       []string                                                                     `json:"selected_service_ids,omitempty"`
+			SelectedUserIDs          []int                                                                        `json:"selected_user_ids,omitempty"`
+			Values                   []string                                                                     `json:"values,omitempty"`
+		} `json:"attributes"`
+		Type UpdateWorkflowActionItemFormFieldConditionDataType `json:"type"`
+	} `json:"data"`
+}
+
+// UpdateWorkflowActionItemFormFieldConditionDataAttributesActionItemCondition The trigger condition
+type UpdateWorkflowActionItemFormFieldConditionDataAttributesActionItemCondition string
+
+// UpdateWorkflowActionItemFormFieldConditionDataType defines model for UpdateWorkflowActionItemFormFieldCondition.Data.Type.
+type UpdateWorkflowActionItemFormFieldConditionDataType string
+
 // UpdateWorkflowCustomFieldSelection defines model for update_workflow_custom_field_selection.
 type UpdateWorkflowCustomFieldSelection struct {
 	Data struct {
@@ -62506,33 +63483,48 @@ type UserEmailAddressResponse struct {
 // UserEmailAddressResponseDataType defines model for UserEmailAddressResponse.Data.Type.
 type UserEmailAddressResponseDataType string
 
-// UserFlatResponse Flat user object as returned by serializer
+// UserFlatResponse Flat user attributes as returned by UserFlatSerializer (no nested associations)
 type UserFlatResponse struct {
-	// CreatedAt User creation timestamp
+	// CreatedAt Date of creation
 	CreatedAt string `json:"created_at"`
 
-	// Email User email
+	// Email Email address
 	Email string `json:"email"`
 
-	// FirstName User first name
+	// FirstName First name
 	FirstName nullable.Nullable[string] `json:"first_name,omitempty"`
 
-	// FullName User full name
+	// FullName Full name
 	FullName nullable.Nullable[string] `json:"full_name,omitempty"`
 
-	// FullNameWithTeam User full name with team
+	// FullNameWithTeam Full name with team context
 	FullNameWithTeam nullable.Nullable[string] `json:"full_name_with_team,omitempty"`
 
 	// ID User ID
 	ID int `json:"id"`
 
-	// LastName User last name
+	// LastName Last name
 	LastName nullable.Nullable[string] `json:"last_name,omitempty"`
 
-	// TimeZone User time zone
+	// Name Display name
+	Name *string `json:"name,omitempty"`
+
+	// Phone Primary phone number
+	Phone nullable.Nullable[string] `json:"phone,omitempty"`
+
+	// Phone2 Secondary phone number
+	Phone2 nullable.Nullable[string] `json:"phone_2,omitempty"`
+
+	// PreferredName Preferred name
+	PreferredName nullable.Nullable[string] `json:"preferred_name,omitempty"`
+
+	// SlackID Slack user ID
+	SlackID nullable.Nullable[string] `json:"slack_id,omitempty"`
+
+	// TimeZone IANA time zone
 	TimeZone nullable.Nullable[string] `json:"time_zone,omitempty"`
 
-	// UpdatedAt User last update timestamp
+	// UpdatedAt Date of last update
 	UpdatedAt string `json:"updated_at"`
 }
 
@@ -62884,6 +63876,63 @@ type WorkflowRepeatOn string
 type Workflow_TriggerParams struct {
 	union json.RawMessage
 }
+
+// WorkflowActionItemFormFieldCondition defines model for workflow_action_item_form_field_condition.
+type WorkflowActionItemFormFieldCondition struct {
+	// ActionItemCondition The trigger condition
+	ActionItemCondition WorkflowActionItemFormFieldConditionActionItemCondition `json:"action_item_condition"`
+
+	// FormFieldID The custom field for this condition
+	FormFieldID              string   `json:"form_field_id"`
+	SelectedCatalogEntityIDs []string `json:"selected_catalog_entity_ids"`
+	SelectedCauseIDs         []string `json:"selected_cause_ids,omitempty"`
+	SelectedEnvironmentIDs   []string `json:"selected_environment_ids,omitempty"`
+	SelectedFunctionalityIDs []string `json:"selected_functionality_ids,omitempty"`
+	SelectedGroupIDs         []string `json:"selected_group_ids,omitempty"`
+	SelectedIncidentTypeIDs  []string `json:"selected_incident_type_ids,omitempty"`
+	SelectedOptionIDs        []string `json:"selected_option_ids"`
+	SelectedServiceIDs       []string `json:"selected_service_ids,omitempty"`
+	SelectedUserIDs          []int    `json:"selected_user_ids"`
+	Values                   []string `json:"values,omitempty"`
+
+	// WorkflowID The workflow for this condition
+	WorkflowID string `json:"workflow_id"`
+}
+
+// WorkflowActionItemFormFieldConditionActionItemCondition The trigger condition
+type WorkflowActionItemFormFieldConditionActionItemCondition string
+
+// WorkflowActionItemFormFieldConditionList defines model for workflow_action_item_form_field_condition_list.
+type WorkflowActionItemFormFieldConditionList struct {
+	Data []struct {
+		Attributes WorkflowActionItemFormFieldCondition `json:"attributes"`
+
+		// ID Unique ID of the workflow_action_item_form_field_condition
+		ID   string                                           `json:"id"`
+		Type WorkflowActionItemFormFieldConditionListDataType `json:"type"`
+	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
+}
+
+// WorkflowActionItemFormFieldConditionListDataType defines model for WorkflowActionItemFormFieldConditionList.Data.Type.
+type WorkflowActionItemFormFieldConditionListDataType string
+
+// WorkflowActionItemFormFieldConditionResponse defines model for workflow_action_item_form_field_condition_response.
+type WorkflowActionItemFormFieldConditionResponse struct {
+	Data struct {
+		Attributes WorkflowActionItemFormFieldCondition `json:"attributes"`
+
+		// ID Unique ID of the workflow_action_item_form_field_condition
+		ID   string                                               `json:"id"`
+		Type WorkflowActionItemFormFieldConditionResponseDataType `json:"type"`
+	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+}
+
+// WorkflowActionItemFormFieldConditionResponseDataType defines model for WorkflowActionItemFormFieldConditionResponse.Data.Type.
+type WorkflowActionItemFormFieldConditionResponseDataType string
 
 // WorkflowCustomFieldSelection defines model for workflow_custom_field_selection.
 type WorkflowCustomFieldSelection struct {
@@ -65242,6 +66291,13 @@ type GetWorkflowParams struct {
 // GetWorkflowParamsInclude defines parameters for GetWorkflow.
 type GetWorkflowParamsInclude string
 
+// ListWorkflowActionItemFormFieldConditionsParams defines parameters for ListWorkflowActionItemFormFieldConditions.
+type ListWorkflowActionItemFormFieldConditionsParams struct {
+	Include    *string `form:"include,omitempty" json:"include,omitempty"`
+	PageNumber *int    `form:"page[number],omitempty" json:"page[number],omitempty"`
+	PageSize   *int    `form:"page[size],omitempty" json:"page[size],omitempty"`
+}
+
 // ListWorkflowCustomFieldSelectionsParams defines parameters for ListWorkflowCustomFieldSelections.
 type ListWorkflowCustomFieldSelectionsParams struct {
 	Include    *string `form:"include,omitempty" json:"include,omitempty"`
@@ -65831,6 +66887,9 @@ type CreateOverrideShiftApplicationVndAPIPlusJSONRequestBody = NewOverrideShift
 // CreateScheduleRotationApplicationVndAPIPlusJSONRequestBody defines body for CreateScheduleRotation for application/vnd.api+json ContentType.
 type CreateScheduleRotationApplicationVndAPIPlusJSONRequestBody = NewScheduleRotation
 
+// CreateShiftCoverageRequestApplicationVndAPIPlusJSONRequestBody defines body for CreateShiftCoverageRequest for application/vnd.api+json ContentType.
+type CreateShiftCoverageRequestApplicationVndAPIPlusJSONRequestBody = NewShiftCoverageRequest
+
 // CreateSecretApplicationVndAPIPlusJSONRequestBody defines body for CreateSecret for application/vnd.api+json ContentType.
 type CreateSecretApplicationVndAPIPlusJSONRequestBody = NewSecret
 
@@ -65906,6 +66965,9 @@ type CreateWebhooksEndpointApplicationVndAPIPlusJSONRequestBody = NewWebhooksEnd
 // UpdateWebhooksEndpointApplicationVndAPIPlusJSONRequestBody defines body for UpdateWebhooksEndpoint for application/vnd.api+json ContentType.
 type UpdateWebhooksEndpointApplicationVndAPIPlusJSONRequestBody = UpdateWebhooksEndpoint
 
+// UpdateWorkflowActionItemFormFieldConditionApplicationVndAPIPlusJSONRequestBody defines body for UpdateWorkflowActionItemFormFieldCondition for application/vnd.api+json ContentType.
+type UpdateWorkflowActionItemFormFieldConditionApplicationVndAPIPlusJSONRequestBody = UpdateWorkflowActionItemFormFieldCondition
+
 // UpdateWorkflowCustomFieldSelectionApplicationVndAPIPlusJSONRequestBody defines body for UpdateWorkflowCustomFieldSelection for application/vnd.api+json ContentType.
 //
 // Deprecated: Use form field endpoints instead.
@@ -65928,6 +66990,9 @@ type CreateWorkflowApplicationVndAPIPlusJSONRequestBody = NewWorkflow
 
 // UpdateWorkflowApplicationVndAPIPlusJSONRequestBody defines body for UpdateWorkflow for application/vnd.api+json ContentType.
 type UpdateWorkflowApplicationVndAPIPlusJSONRequestBody = UpdateWorkflow
+
+// CreateWorkflowActionItemFormFieldConditionApplicationVndAPIPlusJSONRequestBody defines body for CreateWorkflowActionItemFormFieldCondition for application/vnd.api+json ContentType.
+type CreateWorkflowActionItemFormFieldConditionApplicationVndAPIPlusJSONRequestBody = NewWorkflowActionItemFormFieldCondition
 
 // CreateWorkflowCustomFieldSelectionApplicationVndAPIPlusJSONRequestBody defines body for CreateWorkflowCustomFieldSelection for application/vnd.api+json ContentType.
 //
@@ -71077,6 +72142,32 @@ func (t *NewWorkflowTask_Data_Attributes_TaskParams) FromInviteToSlackChannelRoo
 
 // MergeInviteToSlackChannelRootlyTaskParams performs a merge with any union data inside the NewWorkflowTask_Data_Attributes_TaskParams, using the provided InviteToSlackChannelRootlyTaskParams
 func (t *NewWorkflowTask_Data_Attributes_TaskParams) MergeInviteToSlackChannelRootlyTaskParams(v InviteToSlackChannelRootlyTaskParams) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsInviteToMicrosoftTeamsChannelRootlyTaskParams returns the union data inside the NewWorkflowTask_Data_Attributes_TaskParams as a InviteToMicrosoftTeamsChannelRootlyTaskParams
+func (t NewWorkflowTask_Data_Attributes_TaskParams) AsInviteToMicrosoftTeamsChannelRootlyTaskParams() (InviteToMicrosoftTeamsChannelRootlyTaskParams, error) {
+	var body InviteToMicrosoftTeamsChannelRootlyTaskParams
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromInviteToMicrosoftTeamsChannelRootlyTaskParams overwrites any union data inside the NewWorkflowTask_Data_Attributes_TaskParams as the provided InviteToMicrosoftTeamsChannelRootlyTaskParams
+func (t *NewWorkflowTask_Data_Attributes_TaskParams) FromInviteToMicrosoftTeamsChannelRootlyTaskParams(v InviteToMicrosoftTeamsChannelRootlyTaskParams) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeInviteToMicrosoftTeamsChannelRootlyTaskParams performs a merge with any union data inside the NewWorkflowTask_Data_Attributes_TaskParams, using the provided InviteToMicrosoftTeamsChannelRootlyTaskParams
+func (t *NewWorkflowTask_Data_Attributes_TaskParams) MergeInviteToMicrosoftTeamsChannelRootlyTaskParams(v InviteToMicrosoftTeamsChannelRootlyTaskParams) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -76838,6 +77929,32 @@ func (t *UpdateWorkflowTask_Data_Attributes_TaskParams) MergeInviteToSlackChanne
 	return err
 }
 
+// AsInviteToMicrosoftTeamsChannelRootlyTaskParams returns the union data inside the UpdateWorkflowTask_Data_Attributes_TaskParams as a InviteToMicrosoftTeamsChannelRootlyTaskParams
+func (t UpdateWorkflowTask_Data_Attributes_TaskParams) AsInviteToMicrosoftTeamsChannelRootlyTaskParams() (InviteToMicrosoftTeamsChannelRootlyTaskParams, error) {
+	var body InviteToMicrosoftTeamsChannelRootlyTaskParams
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromInviteToMicrosoftTeamsChannelRootlyTaskParams overwrites any union data inside the UpdateWorkflowTask_Data_Attributes_TaskParams as the provided InviteToMicrosoftTeamsChannelRootlyTaskParams
+func (t *UpdateWorkflowTask_Data_Attributes_TaskParams) FromInviteToMicrosoftTeamsChannelRootlyTaskParams(v InviteToMicrosoftTeamsChannelRootlyTaskParams) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeInviteToMicrosoftTeamsChannelRootlyTaskParams performs a merge with any union data inside the UpdateWorkflowTask_Data_Attributes_TaskParams, using the provided InviteToMicrosoftTeamsChannelRootlyTaskParams
+func (t *UpdateWorkflowTask_Data_Attributes_TaskParams) MergeInviteToMicrosoftTeamsChannelRootlyTaskParams(v InviteToMicrosoftTeamsChannelRootlyTaskParams) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
 // AsInviteToSlackChannelPagerdutyTaskParams returns the union data inside the UpdateWorkflowTask_Data_Attributes_TaskParams as a InviteToSlackChannelPagerdutyTaskParams
 func (t UpdateWorkflowTask_Data_Attributes_TaskParams) AsInviteToSlackChannelPagerdutyTaskParams() (InviteToSlackChannelPagerdutyTaskParams, error) {
 	var body InviteToSlackChannelPagerdutyTaskParams
@@ -80758,6 +81875,32 @@ func (t *WorkflowTask_TaskParams) MergeInviteToSlackChannelRootlyTaskParams(v In
 	return err
 }
 
+// AsInviteToMicrosoftTeamsChannelRootlyTaskParams returns the union data inside the WorkflowTask_TaskParams as a InviteToMicrosoftTeamsChannelRootlyTaskParams
+func (t WorkflowTask_TaskParams) AsInviteToMicrosoftTeamsChannelRootlyTaskParams() (InviteToMicrosoftTeamsChannelRootlyTaskParams, error) {
+	var body InviteToMicrosoftTeamsChannelRootlyTaskParams
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromInviteToMicrosoftTeamsChannelRootlyTaskParams overwrites any union data inside the WorkflowTask_TaskParams as the provided InviteToMicrosoftTeamsChannelRootlyTaskParams
+func (t *WorkflowTask_TaskParams) FromInviteToMicrosoftTeamsChannelRootlyTaskParams(v InviteToMicrosoftTeamsChannelRootlyTaskParams) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeInviteToMicrosoftTeamsChannelRootlyTaskParams performs a merge with any union data inside the WorkflowTask_TaskParams, using the provided InviteToMicrosoftTeamsChannelRootlyTaskParams
+func (t *WorkflowTask_TaskParams) MergeInviteToMicrosoftTeamsChannelRootlyTaskParams(v InviteToMicrosoftTeamsChannelRootlyTaskParams) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
 // AsInviteToSlackChannelPagerdutyTaskParams returns the union data inside the WorkflowTask_TaskParams as a InviteToSlackChannelPagerdutyTaskParams
 func (t WorkflowTask_TaskParams) AsInviteToSlackChannelPagerdutyTaskParams() (InviteToSlackChannelPagerdutyTaskParams, error) {
 	var body InviteToSlackChannelPagerdutyTaskParams
@@ -82910,6 +84053,13 @@ type ClientInterface interface {
 	//
 	// Corresponds with POST /v1/alerts (the `CreateAlert` operationId).
 	CreateAlertWithApplicationVndAPIPlusJSONBody(ctx context.Context, body CreateAlertApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetReceipt Get a receipt
+	//
+	// Retrieve the delivery receipt for a notification by ID, including its state and (when applicable) failure reason and referenced resource.
+	//
+	// Corresponds with GET /v1/alerts/receipts/{id} (the `GetReceipt` operationId).
+	GetReceipt(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// ListAlertEvents List alert events
 	//
@@ -87434,6 +88584,31 @@ type ClientInterface interface {
 	// Corresponds with POST /v1/schedules/{schedule_id}/schedule_rotations (the `CreateScheduleRotation` operationId).
 	CreateScheduleRotationWithApplicationVndAPIPlusJSONBody(ctx context.Context, scheduleID string, body CreateScheduleRotationApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
+	// ListShiftCoverageRequests list shift coverage requests
+	//
+	// List active shift coverage requests for a schedule.
+	//
+	// Corresponds with GET /v1/schedules/{schedule_id}/shift_coverage_requests (the `ListShiftCoverageRequests` operationId).
+	ListShiftCoverageRequests(ctx context.Context, scheduleID string, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// CreateShiftCoverageRequestWithBody creates shift coverage requests
+	//
+	// Creates coverage requests for the shifts overlapping the requested time range. A range can span multiple consecutive shifts (e.g. across a handoff), so one or more coverage requests may be created; the response is always a list. A coverage request broadcasts to schedule members so someone can volunteer to cover the shift.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /v1/schedules/{schedule_id}/shift_coverage_requests (the `CreateShiftCoverageRequest` operationId).
+	CreateShiftCoverageRequestWithBody(ctx context.Context, scheduleID string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// CreateShiftCoverageRequestWithApplicationVndAPIPlusJSONBody creates shift coverage requests
+	//
+	// Creates coverage requests for the shifts overlapping the requested time range. A range can span multiple consecutive shifts (e.g. across a handoff), so one or more coverage requests may be created; the response is always a list. A coverage request broadcasts to schedule members so someone can volunteer to cover the shift.
+	//
+	// Takes a body of the `application/vnd.api+json` content type.
+	//
+	// Corresponds with POST /v1/schedules/{schedule_id}/shift_coverage_requests (the `CreateShiftCoverageRequest` operationId).
+	CreateShiftCoverageRequestWithApplicationVndAPIPlusJSONBody(ctx context.Context, scheduleID string, body CreateShiftCoverageRequestApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
 	// ListSecrets List secrets
 	//
 	// Corresponds with GET /v1/secrets (the `ListSecrets` operationId).
@@ -87633,6 +88808,20 @@ type ClientInterface interface {
 	//
 	// Corresponds with PUT /v1/severities/{id} (the `UpdateSeverity` operationId).
 	UpdateSeverityWithApplicationVndAPIPlusJSONBody(ctx context.Context, id ID, body UpdateSeverityApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// DeleteShiftCoverageRequest deletes a shift coverage request
+	//
+	// Deletes a shift coverage request.
+	//
+	// Corresponds with DELETE /v1/shift_coverage_requests/{id} (the `DeleteShiftCoverageRequest` operationId).
+	DeleteShiftCoverageRequest(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetShiftCoverageRequest retrieves a shift coverage request
+	//
+	// Retrieves a specific shift coverage request.
+	//
+	// Corresponds with GET /v1/shift_coverage_requests/{id} (the `GetShiftCoverageRequest` operationId).
+	GetShiftCoverageRequest(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// ListShifts List shifts
 	//
@@ -88177,6 +89366,38 @@ type ClientInterface interface {
 	// Corresponds with PUT /v1/webhooks/endpoints/{id} (the `UpdateWebhooksEndpoint` operationId).
 	UpdateWebhooksEndpointWithApplicationVndAPIPlusJSONBody(ctx context.Context, id ID, body UpdateWebhooksEndpointApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
+	// DeleteWorkflowActionItemFormFieldCondition Delete a workflow action item form field condition
+	//
+	// Delete a specific workflow action item form field condition by id.
+	//
+	// Corresponds with DELETE /v1/workflow_action_item_form_field_conditions/{id} (the `DeleteWorkflowActionItemFormFieldCondition` operationId).
+	DeleteWorkflowActionItemFormFieldCondition(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetWorkflowActionItemFormFieldCondition Retrieves a workflow action item form field condition
+	//
+	// Retrieves a specific workflow action item form field condition by id.
+	//
+	// Corresponds with GET /v1/workflow_action_item_form_field_conditions/{id} (the `GetWorkflowActionItemFormFieldCondition` operationId).
+	GetWorkflowActionItemFormFieldCondition(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// UpdateWorkflowActionItemFormFieldConditionWithBody Update a workflow action item form field condition
+	//
+	// Update a specific workflow action item form field condition by id.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with PUT /v1/workflow_action_item_form_field_conditions/{id} (the `UpdateWorkflowActionItemFormFieldCondition` operationId).
+	UpdateWorkflowActionItemFormFieldConditionWithBody(ctx context.Context, id ID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// UpdateWorkflowActionItemFormFieldConditionWithApplicationVndAPIPlusJSONBody Update a workflow action item form field condition
+	//
+	// Update a specific workflow action item form field condition by id.
+	//
+	// Takes a body of the `application/vnd.api+json` content type.
+	//
+	// Corresponds with PUT /v1/workflow_action_item_form_field_conditions/{id} (the `UpdateWorkflowActionItemFormFieldCondition` operationId).
+	UpdateWorkflowActionItemFormFieldConditionWithApplicationVndAPIPlusJSONBody(ctx context.Context, id ID, body UpdateWorkflowActionItemFormFieldConditionApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
 	// DeleteWorkflowCustomFieldSelection Delete a workflow custom field selection
 	//
 	// Delete a specific workflow custom field selection by id.
@@ -88390,6 +89611,29 @@ type ClientInterface interface {
 	//
 	// Corresponds with PUT /v1/workflows/{id} (the `UpdateWorkflow` operationId).
 	UpdateWorkflowWithApplicationVndAPIPlusJSONBody(ctx context.Context, id ID, body UpdateWorkflowApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// ListWorkflowActionItemFormFieldConditions List workflow action item form field conditions
+	//
+	// Corresponds with GET /v1/workflows/{workflow_id}/action_item_form_field_conditions (the `ListWorkflowActionItemFormFieldConditions` operationId).
+	ListWorkflowActionItemFormFieldConditions(ctx context.Context, workflowID string, params *ListWorkflowActionItemFormFieldConditionsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// CreateWorkflowActionItemFormFieldConditionWithBody Creates a workflow action item form field condition
+	//
+	// Creates a new workflow action item form field condition from provided data.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /v1/workflows/{workflow_id}/action_item_form_field_conditions (the `CreateWorkflowActionItemFormFieldCondition` operationId).
+	CreateWorkflowActionItemFormFieldConditionWithBody(ctx context.Context, workflowID string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// CreateWorkflowActionItemFormFieldConditionWithApplicationVndAPIPlusJSONBody Creates a workflow action item form field condition
+	//
+	// Creates a new workflow action item form field condition from provided data.
+	//
+	// Takes a body of the `application/vnd.api+json` content type.
+	//
+	// Corresponds with POST /v1/workflows/{workflow_id}/action_item_form_field_conditions (the `CreateWorkflowActionItemFormFieldCondition` operationId).
+	CreateWorkflowActionItemFormFieldConditionWithApplicationVndAPIPlusJSONBody(ctx context.Context, workflowID string, body CreateWorkflowActionItemFormFieldConditionApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// ListWorkflowCustomFieldSelections List workflow custom field selections
 	//
@@ -89539,6 +90783,23 @@ func (c *Client) CreateAlertWithBody(ctx context.Context, contentType string, bo
 // Corresponds with POST /v1/alerts (the `CreateAlert` operationId).
 func (c *Client) CreateAlertWithApplicationVndAPIPlusJSONBody(ctx context.Context, body CreateAlertApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewCreateAlertRequestWithApplicationVndAPIPlusJSONBody(c.Server, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetReceipt Get a receipt
+//
+// Retrieve the delivery receipt for a notification by ID, including its state and (when applicable) failure reason and referenced resource.
+//
+// Corresponds with GET /v1/alerts/receipts/{id} (the `GetReceipt` operationId).
+func (c *Client) GetReceipt(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetReceiptRequest(c.Server, id)
 	if err != nil {
 		return nil, err
 	}
@@ -99684,6 +100945,61 @@ func (c *Client) CreateScheduleRotationWithApplicationVndAPIPlusJSONBody(ctx con
 	return c.Client.Do(req)
 }
 
+// ListShiftCoverageRequests list shift coverage requests
+//
+// List active shift coverage requests for a schedule.
+//
+// Corresponds with GET /v1/schedules/{schedule_id}/shift_coverage_requests (the `ListShiftCoverageRequests` operationId).
+func (c *Client) ListShiftCoverageRequests(ctx context.Context, scheduleID string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewListShiftCoverageRequestsRequest(c.Server, scheduleID)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// CreateShiftCoverageRequestWithBody creates shift coverage requests
+//
+// Creates coverage requests for the shifts overlapping the requested time range. A range can span multiple consecutive shifts (e.g. across a handoff), so one or more coverage requests may be created; the response is always a list. A coverage request broadcasts to schedule members so someone can volunteer to cover the shift.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/schedules/{schedule_id}/shift_coverage_requests (the `CreateShiftCoverageRequest` operationId).
+func (c *Client) CreateShiftCoverageRequestWithBody(ctx context.Context, scheduleID string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateShiftCoverageRequestRequestWithBody(c.Server, scheduleID, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// CreateShiftCoverageRequestWithApplicationVndAPIPlusJSONBody creates shift coverage requests
+//
+// Creates coverage requests for the shifts overlapping the requested time range. A range can span multiple consecutive shifts (e.g. across a handoff), so one or more coverage requests may be created; the response is always a list. A coverage request broadcasts to schedule members so someone can volunteer to cover the shift.
+//
+// Takes a body of the `application/vnd.api+json` content type.
+//
+// Corresponds with POST /v1/schedules/{schedule_id}/shift_coverage_requests (the `CreateShiftCoverageRequest` operationId).
+func (c *Client) CreateShiftCoverageRequestWithApplicationVndAPIPlusJSONBody(ctx context.Context, scheduleID string, body CreateShiftCoverageRequestApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateShiftCoverageRequestRequestWithApplicationVndAPIPlusJSONBody(c.Server, scheduleID, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
 // ListSecrets List secrets
 //
 // Corresponds with GET /v1/secrets (the `ListSecrets` operationId).
@@ -100134,6 +101450,40 @@ func (c *Client) UpdateSeverityWithBody(ctx context.Context, id ID, contentType 
 // Corresponds with PUT /v1/severities/{id} (the `UpdateSeverity` operationId).
 func (c *Client) UpdateSeverityWithApplicationVndAPIPlusJSONBody(ctx context.Context, id ID, body UpdateSeverityApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewUpdateSeverityRequestWithApplicationVndAPIPlusJSONBody(c.Server, id, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// DeleteShiftCoverageRequest deletes a shift coverage request
+//
+// Deletes a shift coverage request.
+//
+// Corresponds with DELETE /v1/shift_coverage_requests/{id} (the `DeleteShiftCoverageRequest` operationId).
+func (c *Client) DeleteShiftCoverageRequest(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewDeleteShiftCoverageRequestRequest(c.Server, id)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetShiftCoverageRequest retrieves a shift coverage request
+//
+// Retrieves a specific shift coverage request.
+//
+// Corresponds with GET /v1/shift_coverage_requests/{id} (the `GetShiftCoverageRequest` operationId).
+func (c *Client) GetShiftCoverageRequest(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetShiftCoverageRequestRequest(c.Server, id)
 	if err != nil {
 		return nil, err
 	}
@@ -101397,6 +102747,78 @@ func (c *Client) UpdateWebhooksEndpointWithApplicationVndAPIPlusJSONBody(ctx con
 	return c.Client.Do(req)
 }
 
+// DeleteWorkflowActionItemFormFieldCondition Delete a workflow action item form field condition
+//
+// Delete a specific workflow action item form field condition by id.
+//
+// Corresponds with DELETE /v1/workflow_action_item_form_field_conditions/{id} (the `DeleteWorkflowActionItemFormFieldCondition` operationId).
+func (c *Client) DeleteWorkflowActionItemFormFieldCondition(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewDeleteWorkflowActionItemFormFieldConditionRequest(c.Server, id)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetWorkflowActionItemFormFieldCondition Retrieves a workflow action item form field condition
+//
+// Retrieves a specific workflow action item form field condition by id.
+//
+// Corresponds with GET /v1/workflow_action_item_form_field_conditions/{id} (the `GetWorkflowActionItemFormFieldCondition` operationId).
+func (c *Client) GetWorkflowActionItemFormFieldCondition(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetWorkflowActionItemFormFieldConditionRequest(c.Server, id)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// UpdateWorkflowActionItemFormFieldConditionWithBody Update a workflow action item form field condition
+//
+// Update a specific workflow action item form field condition by id.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with PUT /v1/workflow_action_item_form_field_conditions/{id} (the `UpdateWorkflowActionItemFormFieldCondition` operationId).
+func (c *Client) UpdateWorkflowActionItemFormFieldConditionWithBody(ctx context.Context, id ID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateWorkflowActionItemFormFieldConditionRequestWithBody(c.Server, id, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// UpdateWorkflowActionItemFormFieldConditionWithApplicationVndAPIPlusJSONBody Update a workflow action item form field condition
+//
+// Update a specific workflow action item form field condition by id.
+//
+// Takes a body of the `application/vnd.api+json` content type.
+//
+// Corresponds with PUT /v1/workflow_action_item_form_field_conditions/{id} (the `UpdateWorkflowActionItemFormFieldCondition` operationId).
+func (c *Client) UpdateWorkflowActionItemFormFieldConditionWithApplicationVndAPIPlusJSONBody(ctx context.Context, id ID, body UpdateWorkflowActionItemFormFieldConditionApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateWorkflowActionItemFormFieldConditionRequestWithApplicationVndAPIPlusJSONBody(c.Server, id, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
 // DeleteWorkflowCustomFieldSelection Delete a workflow custom field selection
 //
 // Delete a specific workflow custom field selection by id.
@@ -101857,6 +103279,59 @@ func (c *Client) UpdateWorkflowWithBody(ctx context.Context, id ID, contentType 
 // Corresponds with PUT /v1/workflows/{id} (the `UpdateWorkflow` operationId).
 func (c *Client) UpdateWorkflowWithApplicationVndAPIPlusJSONBody(ctx context.Context, id ID, body UpdateWorkflowApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewUpdateWorkflowRequestWithApplicationVndAPIPlusJSONBody(c.Server, id, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// ListWorkflowActionItemFormFieldConditions List workflow action item form field conditions
+//
+// Corresponds with GET /v1/workflows/{workflow_id}/action_item_form_field_conditions (the `ListWorkflowActionItemFormFieldConditions` operationId).
+func (c *Client) ListWorkflowActionItemFormFieldConditions(ctx context.Context, workflowID string, params *ListWorkflowActionItemFormFieldConditionsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewListWorkflowActionItemFormFieldConditionsRequest(c.Server, workflowID, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// CreateWorkflowActionItemFormFieldConditionWithBody Creates a workflow action item form field condition
+//
+// Creates a new workflow action item form field condition from provided data.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/workflows/{workflow_id}/action_item_form_field_conditions (the `CreateWorkflowActionItemFormFieldCondition` operationId).
+func (c *Client) CreateWorkflowActionItemFormFieldConditionWithBody(ctx context.Context, workflowID string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateWorkflowActionItemFormFieldConditionRequestWithBody(c.Server, workflowID, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// CreateWorkflowActionItemFormFieldConditionWithApplicationVndAPIPlusJSONBody Creates a workflow action item form field condition
+//
+// Creates a new workflow action item form field condition from provided data.
+//
+// Takes a body of the `application/vnd.api+json` content type.
+//
+// Corresponds with POST /v1/workflows/{workflow_id}/action_item_form_field_conditions (the `CreateWorkflowActionItemFormFieldCondition` operationId).
+func (c *Client) CreateWorkflowActionItemFormFieldConditionWithApplicationVndAPIPlusJSONBody(ctx context.Context, workflowID string, body CreateWorkflowActionItemFormFieldConditionApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateWorkflowActionItemFormFieldConditionRequestWithApplicationVndAPIPlusJSONBody(c.Server, workflowID, body)
 	if err != nil {
 		return nil, err
 	}
@@ -104939,6 +106414,40 @@ func NewCreateAlertRequestWithBody(server string, contentType string, body io.Re
 	}
 
 	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewGetReceiptRequest constructs an http.Request for the GetReceipt method
+func NewGetReceiptRequest(server string, id ID) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "id", id, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/alerts/receipts/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
 
 	return req, nil
 }
@@ -130118,6 +131627,87 @@ func NewCreateScheduleRotationRequestWithBody(server string, scheduleID string, 
 	return req, nil
 }
 
+// NewListShiftCoverageRequestsRequest constructs an http.Request for the ListShiftCoverageRequests method
+func NewListShiftCoverageRequestsRequest(server string, scheduleID string) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "schedule_id", scheduleID, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/schedules/%s/shift_coverage_requests", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewCreateShiftCoverageRequestRequestWithApplicationVndAPIPlusJSONBody calls the generic CreateShiftCoverageRequest builder with application/vnd.api+json body
+func NewCreateShiftCoverageRequestRequestWithApplicationVndAPIPlusJSONBody(server string, scheduleID string, body CreateShiftCoverageRequestApplicationVndAPIPlusJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewCreateShiftCoverageRequestRequestWithBody(server, scheduleID, "application/vnd.api+json", bodyReader)
+}
+
+// NewCreateShiftCoverageRequestRequestWithBody constructs an http.Request for the CreateShiftCoverageRequest method, with any body, and a specified content type
+func NewCreateShiftCoverageRequestRequestWithBody(server string, scheduleID string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "schedule_id", scheduleID, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/schedules/%s/shift_coverage_requests", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
 // NewListSecretsRequest constructs an http.Request for the ListSecrets method
 func NewListSecretsRequest(server string, params *ListSecretsParams) (*http.Request, error) {
 	var err error
@@ -131433,6 +133023,74 @@ func NewUpdateSeverityRequestWithBody(server string, id ID, contentType string, 
 	}
 
 	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewDeleteShiftCoverageRequestRequest constructs an http.Request for the DeleteShiftCoverageRequest method
+func NewDeleteShiftCoverageRequestRequest(server string, id ID) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "id", id, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/shift_coverage_requests/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodDelete, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewGetShiftCoverageRequestRequest constructs an http.Request for the GetShiftCoverageRequest method
+func NewGetShiftCoverageRequestRequest(server string, id ID) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "id", id, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/shift_coverage_requests/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
 
 	return req, nil
 }
@@ -134842,6 +136500,121 @@ func NewUpdateWebhooksEndpointRequestWithBody(server string, id ID, contentType 
 	return req, nil
 }
 
+// NewDeleteWorkflowActionItemFormFieldConditionRequest constructs an http.Request for the DeleteWorkflowActionItemFormFieldCondition method
+func NewDeleteWorkflowActionItemFormFieldConditionRequest(server string, id ID) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "id", id, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/workflow_action_item_form_field_conditions/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodDelete, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewGetWorkflowActionItemFormFieldConditionRequest constructs an http.Request for the GetWorkflowActionItemFormFieldCondition method
+func NewGetWorkflowActionItemFormFieldConditionRequest(server string, id ID) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "id", id, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/workflow_action_item_form_field_conditions/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewUpdateWorkflowActionItemFormFieldConditionRequestWithApplicationVndAPIPlusJSONBody calls the generic UpdateWorkflowActionItemFormFieldCondition builder with application/vnd.api+json body
+func NewUpdateWorkflowActionItemFormFieldConditionRequestWithApplicationVndAPIPlusJSONBody(server string, id ID, body UpdateWorkflowActionItemFormFieldConditionApplicationVndAPIPlusJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewUpdateWorkflowActionItemFormFieldConditionRequestWithBody(server, id, "application/vnd.api+json", bodyReader)
+}
+
+// NewUpdateWorkflowActionItemFormFieldConditionRequestWithBody constructs an http.Request for the UpdateWorkflowActionItemFormFieldCondition method, with any body, and a specified content type
+func NewUpdateWorkflowActionItemFormFieldConditionRequestWithBody(server string, id ID, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "id", id, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/workflow_action_item_form_field_conditions/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPut, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
 // NewDeleteWorkflowCustomFieldSelectionRequest constructs an http.Request for the DeleteWorkflowCustomFieldSelection method
 func NewDeleteWorkflowCustomFieldSelectionRequest(server string, id ID) (*http.Request, error) {
 	var err error
@@ -135839,6 +137612,138 @@ func NewUpdateWorkflowRequestWithBody(server string, id ID, contentType string, 
 	}
 
 	req, err := http.NewRequest(http.MethodPut, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewListWorkflowActionItemFormFieldConditionsRequest constructs an http.Request for the ListWorkflowActionItemFormFieldConditions method
+func NewListWorkflowActionItemFormFieldConditionsRequest(server string, workflowID string, params *ListWorkflowActionItemFormFieldConditionsParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "workflow_id", workflowID, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/workflows/%s/action_item_form_field_conditions", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.Include != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "include", *params.Include, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.PageNumber != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "page[number]", *params.PageNumber, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.PageSize != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "page[size]", *params.PageSize, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewCreateWorkflowActionItemFormFieldConditionRequestWithApplicationVndAPIPlusJSONBody calls the generic CreateWorkflowActionItemFormFieldCondition builder with application/vnd.api+json body
+func NewCreateWorkflowActionItemFormFieldConditionRequestWithApplicationVndAPIPlusJSONBody(server string, workflowID string, body CreateWorkflowActionItemFormFieldConditionApplicationVndAPIPlusJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewCreateWorkflowActionItemFormFieldConditionRequestWithBody(server, workflowID, "application/vnd.api+json", bodyReader)
+}
+
+// NewCreateWorkflowActionItemFormFieldConditionRequestWithBody constructs an http.Request for the CreateWorkflowActionItemFormFieldCondition method, with any body, and a specified content type
+func NewCreateWorkflowActionItemFormFieldConditionRequestWithBody(server string, workflowID string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "workflow_id", workflowID, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/workflows/%s/action_item_form_field_conditions", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
 	if err != nil {
 		return nil, err
 	}
@@ -137042,6 +138947,15 @@ type ClientWithResponsesInterface interface {
 	//
 	// Corresponds with POST /v1/alerts (the `CreateAlert` operationId).
 	CreateAlertWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, body CreateAlertApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateAlertResponse, error)
+
+	// GetReceiptWithResponse Get a receipt
+	//
+	// Retrieve the delivery receipt for a notification by ID, including its state and (when applicable) failure reason and referenced resource.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /v1/alerts/receipts/{id} (the `GetReceipt` operationId).
+	GetReceiptWithResponse(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*GetReceiptResponse, error)
 
 	// ListAlertEventsWithResponse List alert events
 	//
@@ -142046,6 +143960,33 @@ type ClientWithResponsesInterface interface {
 	// Corresponds with POST /v1/schedules/{schedule_id}/schedule_rotations (the `CreateScheduleRotation` operationId).
 	CreateScheduleRotationWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, scheduleID string, body CreateScheduleRotationApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateScheduleRotationResponse, error)
 
+	// ListShiftCoverageRequestsWithResponse list shift coverage requests
+	//
+	// List active shift coverage requests for a schedule.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /v1/schedules/{schedule_id}/shift_coverage_requests (the `ListShiftCoverageRequests` operationId).
+	ListShiftCoverageRequestsWithResponse(ctx context.Context, scheduleID string, reqEditors ...RequestEditorFn) (*ListShiftCoverageRequestsResponse, error)
+
+	// CreateShiftCoverageRequestWithBodyWithResponse creates shift coverage requests
+	//
+	// Creates coverage requests for the shifts overlapping the requested time range. A range can span multiple consecutive shifts (e.g. across a handoff), so one or more coverage requests may be created; the response is always a list. A coverage request broadcasts to schedule members so someone can volunteer to cover the shift.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/schedules/{schedule_id}/shift_coverage_requests (the `CreateShiftCoverageRequest` operationId).
+	CreateShiftCoverageRequestWithBodyWithResponse(ctx context.Context, scheduleID string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateShiftCoverageRequestResponse, error)
+
+	// CreateShiftCoverageRequestWithApplicationVndAPIPlusJSONBodyWithResponse creates shift coverage requests
+	//
+	// Creates coverage requests for the shifts overlapping the requested time range. A range can span multiple consecutive shifts (e.g. across a handoff), so one or more coverage requests may be created; the response is always a list. A coverage request broadcasts to schedule members so someone can volunteer to cover the shift.
+	//
+	// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/schedules/{schedule_id}/shift_coverage_requests (the `CreateShiftCoverageRequest` operationId).
+	CreateShiftCoverageRequestWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, scheduleID string, body CreateShiftCoverageRequestApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateShiftCoverageRequestResponse, error)
+
 	// ListSecretsWithResponse List secrets
 	//
 	// Returns a wrapper object for the known response body format(s).
@@ -142269,6 +144210,24 @@ type ClientWithResponsesInterface interface {
 	//
 	// Corresponds with PUT /v1/severities/{id} (the `UpdateSeverity` operationId).
 	UpdateSeverityWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, id ID, body UpdateSeverityApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateSeverityResponse, error)
+
+	// DeleteShiftCoverageRequestWithResponse deletes a shift coverage request
+	//
+	// Deletes a shift coverage request.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with DELETE /v1/shift_coverage_requests/{id} (the `DeleteShiftCoverageRequest` operationId).
+	DeleteShiftCoverageRequestWithResponse(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*DeleteShiftCoverageRequestResponse, error)
+
+	// GetShiftCoverageRequestWithResponse retrieves a shift coverage request
+	//
+	// Retrieves a specific shift coverage request.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /v1/shift_coverage_requests/{id} (the `GetShiftCoverageRequest` operationId).
+	GetShiftCoverageRequestWithResponse(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*GetShiftCoverageRequestResponse, error)
 
 	// ListShiftsWithResponse List shifts
 	//
@@ -142883,6 +144842,42 @@ type ClientWithResponsesInterface interface {
 	// Corresponds with PUT /v1/webhooks/endpoints/{id} (the `UpdateWebhooksEndpoint` operationId).
 	UpdateWebhooksEndpointWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, id ID, body UpdateWebhooksEndpointApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateWebhooksEndpointResponse, error)
 
+	// DeleteWorkflowActionItemFormFieldConditionWithResponse Delete a workflow action item form field condition
+	//
+	// Delete a specific workflow action item form field condition by id.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with DELETE /v1/workflow_action_item_form_field_conditions/{id} (the `DeleteWorkflowActionItemFormFieldCondition` operationId).
+	DeleteWorkflowActionItemFormFieldConditionWithResponse(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*DeleteWorkflowActionItemFormFieldConditionResponse, error)
+
+	// GetWorkflowActionItemFormFieldConditionWithResponse Retrieves a workflow action item form field condition
+	//
+	// Retrieves a specific workflow action item form field condition by id.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /v1/workflow_action_item_form_field_conditions/{id} (the `GetWorkflowActionItemFormFieldCondition` operationId).
+	GetWorkflowActionItemFormFieldConditionWithResponse(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*GetWorkflowActionItemFormFieldConditionResponse, error)
+
+	// UpdateWorkflowActionItemFormFieldConditionWithBodyWithResponse Update a workflow action item form field condition
+	//
+	// Update a specific workflow action item form field condition by id.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with PUT /v1/workflow_action_item_form_field_conditions/{id} (the `UpdateWorkflowActionItemFormFieldCondition` operationId).
+	UpdateWorkflowActionItemFormFieldConditionWithBodyWithResponse(ctx context.Context, id ID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateWorkflowActionItemFormFieldConditionResponse, error)
+
+	// UpdateWorkflowActionItemFormFieldConditionWithApplicationVndAPIPlusJSONBodyWithResponse Update a workflow action item form field condition
+	//
+	// Update a specific workflow action item form field condition by id.
+	//
+	// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with PUT /v1/workflow_action_item_form_field_conditions/{id} (the `UpdateWorkflowActionItemFormFieldCondition` operationId).
+	UpdateWorkflowActionItemFormFieldConditionWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, id ID, body UpdateWorkflowActionItemFormFieldConditionApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateWorkflowActionItemFormFieldConditionResponse, error)
+
 	// DeleteWorkflowCustomFieldSelectionWithResponse Delete a workflow custom field selection
 	//
 	// Delete a specific workflow custom field selection by id.
@@ -143120,6 +145115,31 @@ type ClientWithResponsesInterface interface {
 	//
 	// Corresponds with PUT /v1/workflows/{id} (the `UpdateWorkflow` operationId).
 	UpdateWorkflowWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, id ID, body UpdateWorkflowApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateWorkflowResponse, error)
+
+	// ListWorkflowActionItemFormFieldConditionsWithResponse List workflow action item form field conditions
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /v1/workflows/{workflow_id}/action_item_form_field_conditions (the `ListWorkflowActionItemFormFieldConditions` operationId).
+	ListWorkflowActionItemFormFieldConditionsWithResponse(ctx context.Context, workflowID string, params *ListWorkflowActionItemFormFieldConditionsParams, reqEditors ...RequestEditorFn) (*ListWorkflowActionItemFormFieldConditionsResponse, error)
+
+	// CreateWorkflowActionItemFormFieldConditionWithBodyWithResponse Creates a workflow action item form field condition
+	//
+	// Creates a new workflow action item form field condition from provided data.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/workflows/{workflow_id}/action_item_form_field_conditions (the `CreateWorkflowActionItemFormFieldCondition` operationId).
+	CreateWorkflowActionItemFormFieldConditionWithBodyWithResponse(ctx context.Context, workflowID string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateWorkflowActionItemFormFieldConditionResponse, error)
+
+	// CreateWorkflowActionItemFormFieldConditionWithApplicationVndAPIPlusJSONBodyWithResponse Creates a workflow action item form field condition
+	//
+	// Creates a new workflow action item form field condition from provided data.
+	//
+	// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/workflows/{workflow_id}/action_item_form_field_conditions (the `CreateWorkflowActionItemFormFieldCondition` operationId).
+	CreateWorkflowActionItemFormFieldConditionWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, workflowID string, body CreateWorkflowActionItemFormFieldConditionApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateWorkflowActionItemFormFieldConditionResponse, error)
 
 	// ListWorkflowCustomFieldSelectionsWithResponse List workflow custom field selections
 	//
@@ -144593,6 +146613,37 @@ func (r CreateAlertResponse) StatusCode() int {
 
 // ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
 func (r CreateAlertResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GetReceiptResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *Receipt
+}
+
+// Status returns HTTPResponse.Status
+func (r GetReceiptResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetReceiptResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetReceiptResponse) ContentType() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Header.Get("Content-Type")
 	}
@@ -157747,6 +159798,70 @@ func (r CreateScheduleRotationResponse) ContentType() string {
 	return ""
 }
 
+type ListShiftCoverageRequestsResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// ApplicationVndAPIJSON200 the response for an HTTP 200 `application/vnd.api+json` response
+	ApplicationVndAPIJSON200 *ShiftCoverageRequestList
+}
+
+// Status returns HTTPResponse.Status
+func (r ListShiftCoverageRequestsResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r ListShiftCoverageRequestsResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r ListShiftCoverageRequestsResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type CreateShiftCoverageRequestResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// ApplicationVndAPIJSON201 the response for an HTTP 201 `application/vnd.api+json` response
+	ApplicationVndAPIJSON201 *ShiftCoverageRequestList
+	// ApplicationVndAPIJSON422 the response for an HTTP 422 `application/vnd.api+json` response
+	ApplicationVndAPIJSON422 *ErrorsList
+}
+
+// Status returns HTTPResponse.Status
+func (r CreateShiftCoverageRequestResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r CreateShiftCoverageRequestResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r CreateShiftCoverageRequestResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
 type ListSecretsResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
@@ -158368,6 +160483,68 @@ func (r UpdateSeverityResponse) StatusCode() int {
 
 // ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
 func (r UpdateSeverityResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type DeleteShiftCoverageRequestResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// ApplicationVndAPIJSON200 the response for an HTTP 200 `application/vnd.api+json` response
+	ApplicationVndAPIJSON200 *ShiftCoverageRequestResponse
+}
+
+// Status returns HTTPResponse.Status
+func (r DeleteShiftCoverageRequestResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r DeleteShiftCoverageRequestResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r DeleteShiftCoverageRequestResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GetShiftCoverageRequestResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// ApplicationVndAPIJSON200 the response for an HTTP 200 `application/vnd.api+json` response
+	ApplicationVndAPIJSON200 *ShiftCoverageRequestResponse
+}
+
+// Status returns HTTPResponse.Status
+func (r GetShiftCoverageRequestResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetShiftCoverageRequestResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetShiftCoverageRequestResponse) ContentType() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Header.Get("Content-Type")
 	}
@@ -160133,6 +162310,105 @@ func (r UpdateWebhooksEndpointResponse) ContentType() string {
 	return ""
 }
 
+type DeleteWorkflowActionItemFormFieldConditionResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// ApplicationVndAPIJSON200 the response for an HTTP 200 `application/vnd.api+json` response
+	ApplicationVndAPIJSON200 *WorkflowActionItemFormFieldConditionResponse
+	// ApplicationVndAPIJSON404 the response for an HTTP 404 `application/vnd.api+json` response
+	ApplicationVndAPIJSON404 *ErrorsList
+}
+
+// Status returns HTTPResponse.Status
+func (r DeleteWorkflowActionItemFormFieldConditionResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r DeleteWorkflowActionItemFormFieldConditionResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r DeleteWorkflowActionItemFormFieldConditionResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GetWorkflowActionItemFormFieldConditionResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// ApplicationVndAPIJSON200 the response for an HTTP 200 `application/vnd.api+json` response
+	ApplicationVndAPIJSON200 *WorkflowActionItemFormFieldConditionResponse
+	// ApplicationVndAPIJSON404 the response for an HTTP 404 `application/vnd.api+json` response
+	ApplicationVndAPIJSON404 *ErrorsList
+}
+
+// Status returns HTTPResponse.Status
+func (r GetWorkflowActionItemFormFieldConditionResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetWorkflowActionItemFormFieldConditionResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetWorkflowActionItemFormFieldConditionResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type UpdateWorkflowActionItemFormFieldConditionResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// ApplicationVndAPIJSON200 the response for an HTTP 200 `application/vnd.api+json` response
+	ApplicationVndAPIJSON200 *WorkflowActionItemFormFieldConditionResponse
+	// ApplicationVndAPIJSON404 the response for an HTTP 404 `application/vnd.api+json` response
+	ApplicationVndAPIJSON404 *ErrorsList
+}
+
+// Status returns HTTPResponse.Status
+func (r UpdateWorkflowActionItemFormFieldConditionResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r UpdateWorkflowActionItemFormFieldConditionResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r UpdateWorkflowActionItemFormFieldConditionResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
 type DeleteWorkflowCustomFieldSelectionResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
@@ -160756,6 +163032,72 @@ func (r UpdateWorkflowResponse) StatusCode() int {
 
 // ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
 func (r UpdateWorkflowResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type ListWorkflowActionItemFormFieldConditionsResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// ApplicationVndAPIJSON200 the response for an HTTP 200 `application/vnd.api+json` response
+	ApplicationVndAPIJSON200 *WorkflowActionItemFormFieldConditionList
+}
+
+// Status returns HTTPResponse.Status
+func (r ListWorkflowActionItemFormFieldConditionsResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r ListWorkflowActionItemFormFieldConditionsResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r ListWorkflowActionItemFormFieldConditionsResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type CreateWorkflowActionItemFormFieldConditionResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// ApplicationVndAPIJSON201 the response for an HTTP 201 `application/vnd.api+json` response
+	ApplicationVndAPIJSON201 *WorkflowActionItemFormFieldConditionResponse
+	// ApplicationVndAPIJSON401 the response for an HTTP 401 `application/vnd.api+json` response
+	ApplicationVndAPIJSON401 *ErrorsList
+	// ApplicationVndAPIJSON422 the response for an HTTP 422 `application/vnd.api+json` response
+	ApplicationVndAPIJSON422 *ErrorsList
+}
+
+// Status returns HTTPResponse.Status
+func (r CreateWorkflowActionItemFormFieldConditionResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r CreateWorkflowActionItemFormFieldConditionResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r CreateWorkflowActionItemFormFieldConditionResponse) ContentType() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Header.Get("Content-Type")
 	}
@@ -161899,6 +164241,21 @@ func (c *ClientWithResponses) CreateAlertWithApplicationVndAPIPlusJSONBodyWithRe
 		return nil, err
 	}
 	return ParseCreateAlertResponse(rsp)
+}
+
+// GetReceiptWithResponse Get a receipt
+//
+// Retrieve the delivery receipt for a notification by ID, including its state and (when applicable) failure reason and referenced resource.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/alerts/receipts/{id} (the `GetReceipt` operationId).
+func (c *ClientWithResponses) GetReceiptWithResponse(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*GetReceiptResponse, error) {
+	rsp, err := c.GetReceipt(ctx, id, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetReceiptResponse(rsp)
 }
 
 // ListAlertEventsWithResponse List alert events
@@ -170280,6 +172637,51 @@ func (c *ClientWithResponses) CreateScheduleRotationWithApplicationVndAPIPlusJSO
 	return ParseCreateScheduleRotationResponse(rsp)
 }
 
+// ListShiftCoverageRequestsWithResponse list shift coverage requests
+//
+// List active shift coverage requests for a schedule.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/schedules/{schedule_id}/shift_coverage_requests (the `ListShiftCoverageRequests` operationId).
+func (c *ClientWithResponses) ListShiftCoverageRequestsWithResponse(ctx context.Context, scheduleID string, reqEditors ...RequestEditorFn) (*ListShiftCoverageRequestsResponse, error) {
+	rsp, err := c.ListShiftCoverageRequests(ctx, scheduleID, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseListShiftCoverageRequestsResponse(rsp)
+}
+
+// CreateShiftCoverageRequestWithBodyWithResponse creates shift coverage requests
+//
+// Creates coverage requests for the shifts overlapping the requested time range. A range can span multiple consecutive shifts (e.g. across a handoff), so one or more coverage requests may be created; the response is always a list. A coverage request broadcasts to schedule members so someone can volunteer to cover the shift.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/schedules/{schedule_id}/shift_coverage_requests (the `CreateShiftCoverageRequest` operationId).
+func (c *ClientWithResponses) CreateShiftCoverageRequestWithBodyWithResponse(ctx context.Context, scheduleID string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateShiftCoverageRequestResponse, error) {
+	rsp, err := c.CreateShiftCoverageRequestWithBody(ctx, scheduleID, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateShiftCoverageRequestResponse(rsp)
+}
+
+// CreateShiftCoverageRequestWithApplicationVndAPIPlusJSONBodyWithResponse creates shift coverage requests
+//
+// Creates coverage requests for the shifts overlapping the requested time range. A range can span multiple consecutive shifts (e.g. across a handoff), so one or more coverage requests may be created; the response is always a list. A coverage request broadcasts to schedule members so someone can volunteer to cover the shift.
+//
+// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/schedules/{schedule_id}/shift_coverage_requests (the `CreateShiftCoverageRequest` operationId).
+func (c *ClientWithResponses) CreateShiftCoverageRequestWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, scheduleID string, body CreateShiftCoverageRequestApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateShiftCoverageRequestResponse, error) {
+	rsp, err := c.CreateShiftCoverageRequestWithApplicationVndAPIPlusJSONBody(ctx, scheduleID, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateShiftCoverageRequestResponse(rsp)
+}
+
 // ListSecretsWithResponse List secrets
 //
 // Returns a wrapper object for the known response body format(s).
@@ -170658,6 +173060,36 @@ func (c *ClientWithResponses) UpdateSeverityWithApplicationVndAPIPlusJSONBodyWit
 		return nil, err
 	}
 	return ParseUpdateSeverityResponse(rsp)
+}
+
+// DeleteShiftCoverageRequestWithResponse deletes a shift coverage request
+//
+// Deletes a shift coverage request.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with DELETE /v1/shift_coverage_requests/{id} (the `DeleteShiftCoverageRequest` operationId).
+func (c *ClientWithResponses) DeleteShiftCoverageRequestWithResponse(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*DeleteShiftCoverageRequestResponse, error) {
+	rsp, err := c.DeleteShiftCoverageRequest(ctx, id, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseDeleteShiftCoverageRequestResponse(rsp)
+}
+
+// GetShiftCoverageRequestWithResponse retrieves a shift coverage request
+//
+// Retrieves a specific shift coverage request.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/shift_coverage_requests/{id} (the `GetShiftCoverageRequest` operationId).
+func (c *ClientWithResponses) GetShiftCoverageRequestWithResponse(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*GetShiftCoverageRequestResponse, error) {
+	rsp, err := c.GetShiftCoverageRequest(ctx, id, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetShiftCoverageRequestResponse(rsp)
 }
 
 // ListShiftsWithResponse List shifts
@@ -171699,6 +174131,66 @@ func (c *ClientWithResponses) UpdateWebhooksEndpointWithApplicationVndAPIPlusJSO
 	return ParseUpdateWebhooksEndpointResponse(rsp)
 }
 
+// DeleteWorkflowActionItemFormFieldConditionWithResponse Delete a workflow action item form field condition
+//
+// Delete a specific workflow action item form field condition by id.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with DELETE /v1/workflow_action_item_form_field_conditions/{id} (the `DeleteWorkflowActionItemFormFieldCondition` operationId).
+func (c *ClientWithResponses) DeleteWorkflowActionItemFormFieldConditionWithResponse(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*DeleteWorkflowActionItemFormFieldConditionResponse, error) {
+	rsp, err := c.DeleteWorkflowActionItemFormFieldCondition(ctx, id, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseDeleteWorkflowActionItemFormFieldConditionResponse(rsp)
+}
+
+// GetWorkflowActionItemFormFieldConditionWithResponse Retrieves a workflow action item form field condition
+//
+// Retrieves a specific workflow action item form field condition by id.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/workflow_action_item_form_field_conditions/{id} (the `GetWorkflowActionItemFormFieldCondition` operationId).
+func (c *ClientWithResponses) GetWorkflowActionItemFormFieldConditionWithResponse(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*GetWorkflowActionItemFormFieldConditionResponse, error) {
+	rsp, err := c.GetWorkflowActionItemFormFieldCondition(ctx, id, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetWorkflowActionItemFormFieldConditionResponse(rsp)
+}
+
+// UpdateWorkflowActionItemFormFieldConditionWithBodyWithResponse Update a workflow action item form field condition
+//
+// Update a specific workflow action item form field condition by id.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PUT /v1/workflow_action_item_form_field_conditions/{id} (the `UpdateWorkflowActionItemFormFieldCondition` operationId).
+func (c *ClientWithResponses) UpdateWorkflowActionItemFormFieldConditionWithBodyWithResponse(ctx context.Context, id ID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateWorkflowActionItemFormFieldConditionResponse, error) {
+	rsp, err := c.UpdateWorkflowActionItemFormFieldConditionWithBody(ctx, id, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateWorkflowActionItemFormFieldConditionResponse(rsp)
+}
+
+// UpdateWorkflowActionItemFormFieldConditionWithApplicationVndAPIPlusJSONBodyWithResponse Update a workflow action item form field condition
+//
+// Update a specific workflow action item form field condition by id.
+//
+// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PUT /v1/workflow_action_item_form_field_conditions/{id} (the `UpdateWorkflowActionItemFormFieldCondition` operationId).
+func (c *ClientWithResponses) UpdateWorkflowActionItemFormFieldConditionWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, id ID, body UpdateWorkflowActionItemFormFieldConditionApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateWorkflowActionItemFormFieldConditionResponse, error) {
+	rsp, err := c.UpdateWorkflowActionItemFormFieldConditionWithApplicationVndAPIPlusJSONBody(ctx, id, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateWorkflowActionItemFormFieldConditionResponse(rsp)
+}
+
 // DeleteWorkflowCustomFieldSelectionWithResponse Delete a workflow custom field selection
 //
 // Delete a specific workflow custom field selection by id.
@@ -172090,6 +174582,49 @@ func (c *ClientWithResponses) UpdateWorkflowWithApplicationVndAPIPlusJSONBodyWit
 		return nil, err
 	}
 	return ParseUpdateWorkflowResponse(rsp)
+}
+
+// ListWorkflowActionItemFormFieldConditionsWithResponse List workflow action item form field conditions
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/workflows/{workflow_id}/action_item_form_field_conditions (the `ListWorkflowActionItemFormFieldConditions` operationId).
+func (c *ClientWithResponses) ListWorkflowActionItemFormFieldConditionsWithResponse(ctx context.Context, workflowID string, params *ListWorkflowActionItemFormFieldConditionsParams, reqEditors ...RequestEditorFn) (*ListWorkflowActionItemFormFieldConditionsResponse, error) {
+	rsp, err := c.ListWorkflowActionItemFormFieldConditions(ctx, workflowID, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseListWorkflowActionItemFormFieldConditionsResponse(rsp)
+}
+
+// CreateWorkflowActionItemFormFieldConditionWithBodyWithResponse Creates a workflow action item form field condition
+//
+// Creates a new workflow action item form field condition from provided data.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/workflows/{workflow_id}/action_item_form_field_conditions (the `CreateWorkflowActionItemFormFieldCondition` operationId).
+func (c *ClientWithResponses) CreateWorkflowActionItemFormFieldConditionWithBodyWithResponse(ctx context.Context, workflowID string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateWorkflowActionItemFormFieldConditionResponse, error) {
+	rsp, err := c.CreateWorkflowActionItemFormFieldConditionWithBody(ctx, workflowID, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateWorkflowActionItemFormFieldConditionResponse(rsp)
+}
+
+// CreateWorkflowActionItemFormFieldConditionWithApplicationVndAPIPlusJSONBodyWithResponse Creates a workflow action item form field condition
+//
+// Creates a new workflow action item form field condition from provided data.
+//
+// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/workflows/{workflow_id}/action_item_form_field_conditions (the `CreateWorkflowActionItemFormFieldCondition` operationId).
+func (c *ClientWithResponses) CreateWorkflowActionItemFormFieldConditionWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, workflowID string, body CreateWorkflowActionItemFormFieldConditionApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateWorkflowActionItemFormFieldConditionResponse, error) {
+	rsp, err := c.CreateWorkflowActionItemFormFieldConditionWithApplicationVndAPIPlusJSONBody(ctx, workflowID, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateWorkflowActionItemFormFieldConditionResponse(rsp)
 }
 
 // ListWorkflowCustomFieldSelectionsWithResponse List workflow custom field selections
@@ -173659,6 +176194,32 @@ func ParseCreateAlertResponse(rsp *http.Response) (*CreateAlertResponse, error) 
 			return nil, err
 		}
 		response.ApplicationVndAPIJSON422 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetReceiptResponse parses an HTTP response from a GetReceiptWithResponse call
+func ParseGetReceiptResponse(rsp *http.Response) (*GetReceiptResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetReceiptResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest Receipt
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
 
 	}
 
@@ -186440,6 +189001,65 @@ func ParseCreateScheduleRotationResponse(rsp *http.Response) (*CreateScheduleRot
 	return response, nil
 }
 
+// ParseListShiftCoverageRequestsResponse parses an HTTP response from a ListShiftCoverageRequestsWithResponse call
+func ParseListShiftCoverageRequestsResponse(rsp *http.Response) (*ListShiftCoverageRequestsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ListShiftCoverageRequestsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest ShiftCoverageRequestList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseCreateShiftCoverageRequestResponse parses an HTTP response from a CreateShiftCoverageRequestWithResponse call
+func ParseCreateShiftCoverageRequestResponse(rsp *http.Response) (*CreateShiftCoverageRequestResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CreateShiftCoverageRequestResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
+		var dest ShiftCoverageRequestList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON201 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest ErrorsList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON422 = &dest
+
+	}
+
+	return response, nil
+}
+
 // ParseListSecretsResponse parses an HTTP response from a ListSecretsWithResponse call
 func ParseListSecretsResponse(rsp *http.Response) (*ListSecretsResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
@@ -187061,6 +189681,58 @@ func ParseUpdateSeverityResponse(rsp *http.Response) (*UpdateSeverityResponse, e
 			return nil, err
 		}
 		response.ApplicationVndAPIJSON404 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseDeleteShiftCoverageRequestResponse parses an HTTP response from a DeleteShiftCoverageRequestWithResponse call
+func ParseDeleteShiftCoverageRequestResponse(rsp *http.Response) (*DeleteShiftCoverageRequestResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &DeleteShiftCoverageRequestResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest ShiftCoverageRequestResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetShiftCoverageRequestResponse parses an HTTP response from a GetShiftCoverageRequestWithResponse call
+func ParseGetShiftCoverageRequestResponse(rsp *http.Response) (*GetShiftCoverageRequestResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetShiftCoverageRequestResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest ShiftCoverageRequestResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON200 = &dest
 
 	}
 
@@ -188851,6 +191523,105 @@ func ParseUpdateWebhooksEndpointResponse(rsp *http.Response) (*UpdateWebhooksEnd
 	return response, nil
 }
 
+// ParseDeleteWorkflowActionItemFormFieldConditionResponse parses an HTTP response from a DeleteWorkflowActionItemFormFieldConditionWithResponse call
+func ParseDeleteWorkflowActionItemFormFieldConditionResponse(rsp *http.Response) (*DeleteWorkflowActionItemFormFieldConditionResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &DeleteWorkflowActionItemFormFieldConditionResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest WorkflowActionItemFormFieldConditionResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorsList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON404 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetWorkflowActionItemFormFieldConditionResponse parses an HTTP response from a GetWorkflowActionItemFormFieldConditionWithResponse call
+func ParseGetWorkflowActionItemFormFieldConditionResponse(rsp *http.Response) (*GetWorkflowActionItemFormFieldConditionResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetWorkflowActionItemFormFieldConditionResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest WorkflowActionItemFormFieldConditionResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorsList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON404 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseUpdateWorkflowActionItemFormFieldConditionResponse parses an HTTP response from a UpdateWorkflowActionItemFormFieldConditionWithResponse call
+func ParseUpdateWorkflowActionItemFormFieldConditionResponse(rsp *http.Response) (*UpdateWorkflowActionItemFormFieldConditionResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &UpdateWorkflowActionItemFormFieldConditionResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest WorkflowActionItemFormFieldConditionResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorsList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON404 = &dest
+
+	}
+
+	return response, nil
+}
+
 // ParseDeleteWorkflowCustomFieldSelectionResponse parses an HTTP response from a DeleteWorkflowCustomFieldSelectionWithResponse call
 func ParseDeleteWorkflowCustomFieldSelectionResponse(rsp *http.Response) (*DeleteWorkflowCustomFieldSelectionResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
@@ -189479,6 +192250,72 @@ func ParseUpdateWorkflowResponse(rsp *http.Response) (*UpdateWorkflowResponse, e
 			return nil, err
 		}
 		response.ApplicationVndAPIJSON404 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseListWorkflowActionItemFormFieldConditionsResponse parses an HTTP response from a ListWorkflowActionItemFormFieldConditionsWithResponse call
+func ParseListWorkflowActionItemFormFieldConditionsResponse(rsp *http.Response) (*ListWorkflowActionItemFormFieldConditionsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ListWorkflowActionItemFormFieldConditionsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest WorkflowActionItemFormFieldConditionList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseCreateWorkflowActionItemFormFieldConditionResponse parses an HTTP response from a CreateWorkflowActionItemFormFieldConditionWithResponse call
+func ParseCreateWorkflowActionItemFormFieldConditionResponse(rsp *http.Response) (*CreateWorkflowActionItemFormFieldConditionResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CreateWorkflowActionItemFormFieldConditionResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
+		var dest WorkflowActionItemFormFieldConditionResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON201 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorsList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest ErrorsList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON422 = &dest
 
 	}
 
