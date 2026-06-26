@@ -3707,6 +3707,69 @@ func (e BulkDestroyCatalogEntities1ManagedBy) Valid() bool {
 	}
 }
 
+// Defines values for BulkImportAttributesEntityType.
+const (
+	BulkImportAttributesEntityTypeIncident BulkImportAttributesEntityType = "Incident"
+)
+
+// Valid indicates whether the value is a known member of the BulkImportAttributesEntityType enum.
+func (e BulkImportAttributesEntityType) Valid() bool {
+	switch e {
+	case BulkImportAttributesEntityTypeIncident:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for BulkImportAttributesStatus.
+const (
+	BulkImportAttributesStatusCompleted        BulkImportAttributesStatus = "completed"
+	BulkImportAttributesStatusFailed           BulkImportAttributesStatus = "failed"
+	BulkImportAttributesStatusImporting        BulkImportAttributesStatus = "importing"
+	BulkImportAttributesStatusIndexing         BulkImportAttributesStatus = "indexing"
+	BulkImportAttributesStatusPending          BulkImportAttributesStatus = "pending"
+	BulkImportAttributesStatusValidating       BulkImportAttributesStatus = "validating"
+	BulkImportAttributesStatusValidationFailed BulkImportAttributesStatus = "validation_failed"
+)
+
+// Valid indicates whether the value is a known member of the BulkImportAttributesStatus enum.
+func (e BulkImportAttributesStatus) Valid() bool {
+	switch e {
+	case BulkImportAttributesStatusCompleted:
+		return true
+	case BulkImportAttributesStatusFailed:
+		return true
+	case BulkImportAttributesStatusImporting:
+		return true
+	case BulkImportAttributesStatusIndexing:
+		return true
+	case BulkImportAttributesStatusPending:
+		return true
+	case BulkImportAttributesStatusValidating:
+		return true
+	case BulkImportAttributesStatusValidationFailed:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for BulkImportResponseDataType.
+const (
+	BulkImportResponseDataTypeBulkImport BulkImportResponseDataType = "bulk_import"
+)
+
+// Valid indicates whether the value is a known member of the BulkImportResponseDataType enum.
+func (e BulkImportResponseDataType) Valid() bool {
+	switch e {
+	case BulkImportResponseDataTypeBulkImport:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for BulkUpsertCatalogEntitiesResponseDataType.
 const (
 	BulkUpsertCatalogEntitiesResponseDataTypeCatalogEntities BulkUpsertCatalogEntitiesResponseDataType = "catalog_entities"
@@ -13997,6 +14060,21 @@ const (
 func (e NewAuthorizationDataType) Valid() bool {
 	switch e {
 	case NewAuthorizationDataTypeAuthorizations:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for NewBulkImportDataAttributesEntityType.
+const (
+	NewBulkImportDataAttributesEntityTypeIncident NewBulkImportDataAttributesEntityType = "Incident"
+)
+
+// Valid indicates whether the value is a known member of the NewBulkImportDataAttributesEntityType enum.
+func (e NewBulkImportDataAttributesEntityType) Valid() bool {
+	switch e {
+	case NewBulkImportDataAttributesEntityTypeIncident:
 		return true
 	default:
 		return false
@@ -43113,6 +43191,69 @@ type BulkDestroyCatalogEntitiesResponse struct {
 	} `json:"data,omitempty"`
 }
 
+// BulkImportAttributes defines model for bulk_import_attributes.
+type BulkImportAttributes struct {
+	// CompletedAt When import completed or failed
+	CompletedAt nullable.Nullable[time.Time] `json:"completed_at,omitempty"`
+
+	// CreatedAt When the bulk import was created
+	CreatedAt *time.Time `json:"created_at,omitempty"`
+
+	// EntityType Type of entity being imported
+	EntityType *BulkImportAttributesEntityType `json:"entity_type,omitempty"`
+
+	// ErrorMessage Error message if import failed
+	ErrorMessage nullable.Nullable[string] `json:"error_message,omitempty"`
+
+	// FailedRecords Number of records that failed to import
+	FailedRecords int `json:"failed_records"`
+
+	// FileURL URL of the JSONL file being imported
+	FileURL *string `json:"file_url,omitempty"`
+
+	// NotificationEmail Email address for notifications
+	NotificationEmail *openapi_types.Email `json:"notification_email,omitempty"`
+
+	// ProcessedRecords Number of records processed so far
+	ProcessedRecords int `json:"processed_records"`
+
+	// ProgressPercentage Import progress percentage (0-100)
+	ProgressPercentage float32 `json:"progress_percentage"`
+
+	// StartedAt When import processing started
+	StartedAt nullable.Nullable[time.Time] `json:"started_at,omitempty"`
+
+	// Status Current status of the import
+	Status BulkImportAttributesStatus `json:"status"`
+
+	// TotalRecords Total number of records in the file
+	TotalRecords nullable.Nullable[int] `json:"total_records,omitempty"`
+
+	// UpdatedAt When the bulk import was last updated
+	UpdatedAt *time.Time `json:"updated_at,omitempty"`
+
+	// ValidationErrors Validation errors encountered during validation phase
+	ValidationErrors nullable.Nullable[map[string]interface{}] `json:"validation_errors,omitempty"`
+}
+
+// BulkImportAttributesEntityType Type of entity being imported
+type BulkImportAttributesEntityType string
+
+// BulkImportAttributesStatus Current status of the import
+type BulkImportAttributesStatus string
+
+// BulkImportResponse defines model for bulk_import_response.
+type BulkImportResponse struct {
+	Data struct {
+		Attributes BulkImportAttributes       `json:"attributes"`
+		ID         openapi_types.UUID         `json:"id"`
+		Type       BulkImportResponseDataType `json:"type"`
+	} `json:"data"`
+}
+
+// BulkImportResponseDataType defines model for BulkImportResponse.Data.Type.
+type BulkImportResponseDataType string
+
 // BulkUpsertCatalogEntities defines model for bulk_upsert_catalog_entities.
 type BulkUpsertCatalogEntities struct {
 	// Entities Array of catalog entities to upsert. Each must have an external_id. Max 100 per request. external_ids must be unique within a batch.
@@ -50191,6 +50332,25 @@ type NewAuthorizationDataAttributesPermissions string
 
 // NewAuthorizationDataType defines model for NewAuthorization.Data.Type.
 type NewAuthorizationDataType string
+
+// NewBulkImport defines model for new_bulk_import.
+type NewBulkImport struct {
+	Data struct {
+		Attributes struct {
+			// EntityType Type of entity to import (currently only 'Incident' is supported)
+			EntityType NewBulkImportDataAttributesEntityType `json:"entity_type"`
+
+			// FileURL URL of the JSONL file to import. Must be accessible via HTTPS.
+			FileURL string `json:"file_url"`
+
+			// NotificationEmail Email address to receive import status notifications
+			NotificationEmail openapi_types.Email `json:"notification_email"`
+		} `json:"attributes"`
+	} `json:"data"`
+}
+
+// NewBulkImportDataAttributesEntityType Type of entity to import (currently only 'Incident' is supported)
+type NewBulkImportDataAttributesEntityType string
 
 // NewCatalog defines model for new_catalog.
 type NewCatalog struct {
@@ -66414,6 +66574,9 @@ type CreateAuthorizationApplicationVndAPIPlusJSONRequestBody = NewAuthorization
 
 // UpdateAuthorizationApplicationVndAPIPlusJSONRequestBody defines body for UpdateAuthorization for application/vnd.api+json ContentType.
 type UpdateAuthorizationApplicationVndAPIPlusJSONRequestBody = UpdateAuthorization
+
+// CreateBulkImportApplicationVndAPIPlusJSONRequestBody defines body for CreateBulkImport for application/vnd.api+json ContentType.
+type CreateBulkImportApplicationVndAPIPlusJSONRequestBody = NewBulkImport
 
 // CreateCatalogChecklistTemplateApplicationVndAPIPlusJSONRequestBody defines body for CreateCatalogChecklistTemplate for application/vnd.api+json ContentType.
 type CreateCatalogChecklistTemplateApplicationVndAPIPlusJSONRequestBody = NewCatalogChecklistTemplate
@@ -84364,6 +84527,36 @@ type ClientInterface interface {
 	// Corresponds with PUT /v1/authorizations/{id} (the `UpdateAuthorization` operationId).
 	UpdateAuthorizationWithApplicationVndAPIPlusJSONBody(ctx context.Context, id ID, body UpdateAuthorizationApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
+	// CreateBulkImportWithBody Create a bulk import
+	//
+	// Create a new bulk import for incidents. Requires global API key authentication.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /v1/bulk_imports (the `CreateBulkImport` operationId).
+	CreateBulkImportWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// CreateBulkImportWithApplicationVndAPIPlusJSONBody Create a bulk import
+	//
+	// Create a new bulk import for incidents. Requires global API key authentication.
+	//
+	// Takes a body of the `application/vnd.api+json` content type.
+	//
+	// Corresponds with POST /v1/bulk_imports (the `CreateBulkImport` operationId).
+	CreateBulkImportWithApplicationVndAPIPlusJSONBody(ctx context.Context, body CreateBulkImportApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetBulkImport Get bulk import status
+	//
+	// Retrieves the current status of a bulk import job.
+	//
+	// **Use this endpoint to:**
+	// - Poll for import progress
+	// - Check validation errors if status is `validation_failed`
+	// - Get final results when status is `completed` or `failed`
+	//
+	// Corresponds with GET /v1/bulk_imports/{id} (the `GetBulkImport` operationId).
+	GetBulkImport(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error)
+
 	// ListCatalogChecklistTemplates List catalog checklist templates
 	//
 	// Corresponds with GET /v1/catalog_checklist_templates (the `ListCatalogChecklistTemplates` operationId).
@@ -91403,6 +91596,66 @@ func (c *Client) UpdateAuthorizationWithBody(ctx context.Context, id ID, content
 // Corresponds with PUT /v1/authorizations/{id} (the `UpdateAuthorization` operationId).
 func (c *Client) UpdateAuthorizationWithApplicationVndAPIPlusJSONBody(ctx context.Context, id ID, body UpdateAuthorizationApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewUpdateAuthorizationRequestWithApplicationVndAPIPlusJSONBody(c.Server, id, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// CreateBulkImportWithBody Create a bulk import
+//
+// Create a new bulk import for incidents. Requires global API key authentication.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/bulk_imports (the `CreateBulkImport` operationId).
+func (c *Client) CreateBulkImportWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateBulkImportRequestWithBody(c.Server, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// CreateBulkImportWithApplicationVndAPIPlusJSONBody Create a bulk import
+//
+// Create a new bulk import for incidents. Requires global API key authentication.
+//
+// Takes a body of the `application/vnd.api+json` content type.
+//
+// Corresponds with POST /v1/bulk_imports (the `CreateBulkImport` operationId).
+func (c *Client) CreateBulkImportWithApplicationVndAPIPlusJSONBody(ctx context.Context, body CreateBulkImportApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateBulkImportRequestWithApplicationVndAPIPlusJSONBody(c.Server, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetBulkImport Get bulk import status
+//
+// Retrieves the current status of a bulk import job.
+//
+// **Use this endpoint to:**
+// - Poll for import progress
+// - Check validation errors if status is `validation_failed`
+// - Get final results when status is `completed` or `failed`
+//
+// Corresponds with GET /v1/bulk_imports/{id} (the `GetBulkImport` operationId).
+func (c *Client) GetBulkImport(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetBulkImportRequest(c.Server, id)
 	if err != nil {
 		return nil, err
 	}
@@ -107973,6 +108226,80 @@ func NewUpdateAuthorizationRequestWithBody(server string, id ID, contentType str
 	}
 
 	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewCreateBulkImportRequestWithApplicationVndAPIPlusJSONBody calls the generic CreateBulkImport builder with application/vnd.api+json body
+func NewCreateBulkImportRequestWithApplicationVndAPIPlusJSONBody(server string, body CreateBulkImportApplicationVndAPIPlusJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewCreateBulkImportRequestWithBody(server, "application/vnd.api+json", bodyReader)
+}
+
+// NewCreateBulkImportRequestWithBody constructs an http.Request for the CreateBulkImport method, with any body, and a specified content type
+func NewCreateBulkImportRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/bulk_imports")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewGetBulkImportRequest constructs an http.Request for the GetBulkImport method
+func NewGetBulkImportRequest(server string, id ID) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "id", id, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/bulk_imports/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
 
 	return req, nil
 }
@@ -139280,6 +139607,38 @@ type ClientWithResponsesInterface interface {
 	// Corresponds with PUT /v1/authorizations/{id} (the `UpdateAuthorization` operationId).
 	UpdateAuthorizationWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, id ID, body UpdateAuthorizationApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateAuthorizationResponse, error)
 
+	// CreateBulkImportWithBodyWithResponse Create a bulk import
+	//
+	// Create a new bulk import for incidents. Requires global API key authentication.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/bulk_imports (the `CreateBulkImport` operationId).
+	CreateBulkImportWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateBulkImportResponse, error)
+
+	// CreateBulkImportWithApplicationVndAPIPlusJSONBodyWithResponse Create a bulk import
+	//
+	// Create a new bulk import for incidents. Requires global API key authentication.
+	//
+	// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/bulk_imports (the `CreateBulkImport` operationId).
+	CreateBulkImportWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, body CreateBulkImportApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateBulkImportResponse, error)
+
+	// GetBulkImportWithResponse Get bulk import status
+	//
+	// Retrieves the current status of a bulk import job.
+	//
+	// **Use this endpoint to:**
+	// - Poll for import progress
+	// - Check validation errors if status is `validation_failed`
+	// - Get final results when status is `completed` or `failed`
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /v1/bulk_imports/{id} (the `GetBulkImport` operationId).
+	GetBulkImportWithResponse(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*GetBulkImportResponse, error)
+
 	// ListCatalogChecklistTemplatesWithResponse List catalog checklist templates
 	//
 	// Returns a wrapper object for the known response body format(s).
@@ -147310,6 +147669,64 @@ func (r UpdateAuthorizationResponse) StatusCode() int {
 
 // ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
 func (r UpdateAuthorizationResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type CreateBulkImportResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// Status returns HTTPResponse.Status
+func (r CreateBulkImportResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r CreateBulkImportResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r CreateBulkImportResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GetBulkImportResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// Status returns HTTPResponse.Status
+func (r GetBulkImportResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetBulkImportResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetBulkImportResponse) ContentType() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Header.Get("Content-Type")
 	}
@@ -164761,6 +165178,56 @@ func (c *ClientWithResponses) UpdateAuthorizationWithApplicationVndAPIPlusJSONBo
 	return ParseUpdateAuthorizationResponse(rsp)
 }
 
+// CreateBulkImportWithBodyWithResponse Create a bulk import
+//
+// Create a new bulk import for incidents. Requires global API key authentication.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/bulk_imports (the `CreateBulkImport` operationId).
+func (c *ClientWithResponses) CreateBulkImportWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateBulkImportResponse, error) {
+	rsp, err := c.CreateBulkImportWithBody(ctx, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateBulkImportResponse(rsp)
+}
+
+// CreateBulkImportWithApplicationVndAPIPlusJSONBodyWithResponse Create a bulk import
+//
+// Create a new bulk import for incidents. Requires global API key authentication.
+//
+// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/bulk_imports (the `CreateBulkImport` operationId).
+func (c *ClientWithResponses) CreateBulkImportWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, body CreateBulkImportApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateBulkImportResponse, error) {
+	rsp, err := c.CreateBulkImportWithApplicationVndAPIPlusJSONBody(ctx, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateBulkImportResponse(rsp)
+}
+
+// GetBulkImportWithResponse Get bulk import status
+//
+// Retrieves the current status of a bulk import job.
+//
+// **Use this endpoint to:**
+// - Poll for import progress
+// - Check validation errors if status is `validation_failed`
+// - Get final results when status is `completed` or `failed`
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/bulk_imports/{id} (the `GetBulkImport` operationId).
+func (c *ClientWithResponses) GetBulkImportWithResponse(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*GetBulkImportResponse, error) {
+	rsp, err := c.GetBulkImport(ctx, id, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetBulkImportResponse(rsp)
+}
+
 // ListCatalogChecklistTemplatesWithResponse List catalog checklist templates
 //
 // Returns a wrapper object for the known response body format(s).
@@ -176902,6 +177369,38 @@ func ParseUpdateAuthorizationResponse(rsp *http.Response) (*UpdateAuthorizationR
 		}
 		response.ApplicationVndAPIJSON404 = &dest
 
+	}
+
+	return response, nil
+}
+
+// ParseCreateBulkImportResponse parses an HTTP response from a CreateBulkImportWithResponse call
+func ParseCreateBulkImportResponse(rsp *http.Response) (*CreateBulkImportResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CreateBulkImportResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseGetBulkImportResponse parses an HTTP response from a GetBulkImportWithResponse call
+func ParseGetBulkImportResponse(rsp *http.Response) (*GetBulkImportResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetBulkImportResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
 	}
 
 	return response, nil
