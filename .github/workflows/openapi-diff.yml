@@ -279,4 +279,4 @@ jobs:
 
       - name: OpenAPI overlay breaking changes
         if: env.BASE_SPEC_EXISTS == 'true'
-        run: oasdiff breaking /tmp/base-overlay-applied.json /tmp/pr-overlay-applied.json --format githubactions
+        run: oasdiff breaking /tmp/base-overlay-applied.json /tmp/pr-overlay-applied.json --format githubactions --fail-on ERR
