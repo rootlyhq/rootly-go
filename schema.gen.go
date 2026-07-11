@@ -557,6 +557,45 @@ func (e ActionItemTriggerParamsIncidentConditionKind) Valid() bool {
 	}
 }
 
+// Defines values for ActionItemTriggerParamsIncidentConditionLabel.
+const (
+	ActionItemTriggerParamsIncidentConditionLabelANY          ActionItemTriggerParamsIncidentConditionLabel = "ANY"
+	ActionItemTriggerParamsIncidentConditionLabelCONTAINS     ActionItemTriggerParamsIncidentConditionLabel = "CONTAINS"
+	ActionItemTriggerParamsIncidentConditionLabelCONTAINSALL  ActionItemTriggerParamsIncidentConditionLabel = "CONTAINS_ALL"
+	ActionItemTriggerParamsIncidentConditionLabelCONTAINSNONE ActionItemTriggerParamsIncidentConditionLabel = "CONTAINS_NONE"
+	ActionItemTriggerParamsIncidentConditionLabelIS           ActionItemTriggerParamsIncidentConditionLabel = "IS"
+	ActionItemTriggerParamsIncidentConditionLabelISNOT        ActionItemTriggerParamsIncidentConditionLabel = "IS NOT"
+	ActionItemTriggerParamsIncidentConditionLabelNONE         ActionItemTriggerParamsIncidentConditionLabel = "NONE"
+	ActionItemTriggerParamsIncidentConditionLabelSET          ActionItemTriggerParamsIncidentConditionLabel = "SET"
+	ActionItemTriggerParamsIncidentConditionLabelUNSET        ActionItemTriggerParamsIncidentConditionLabel = "UNSET"
+)
+
+// Valid indicates whether the value is a known member of the ActionItemTriggerParamsIncidentConditionLabel enum.
+func (e ActionItemTriggerParamsIncidentConditionLabel) Valid() bool {
+	switch e {
+	case ActionItemTriggerParamsIncidentConditionLabelANY:
+		return true
+	case ActionItemTriggerParamsIncidentConditionLabelCONTAINS:
+		return true
+	case ActionItemTriggerParamsIncidentConditionLabelCONTAINSALL:
+		return true
+	case ActionItemTriggerParamsIncidentConditionLabelCONTAINSNONE:
+		return true
+	case ActionItemTriggerParamsIncidentConditionLabelIS:
+		return true
+	case ActionItemTriggerParamsIncidentConditionLabelISNOT:
+		return true
+	case ActionItemTriggerParamsIncidentConditionLabelNONE:
+		return true
+	case ActionItemTriggerParamsIncidentConditionLabelSET:
+		return true
+	case ActionItemTriggerParamsIncidentConditionLabelUNSET:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for ActionItemTriggerParamsIncidentConditionMitigatedAt.
 const (
 	ActionItemTriggerParamsIncidentConditionMitigatedAtSET   ActionItemTriggerParamsIncidentConditionMitigatedAt = "SET"
@@ -1118,6 +1157,54 @@ func (e AddToTimelineTaskParamsTaskType) Valid() bool {
 	}
 }
 
+// Defines values for AiChatResponseDataAttributesStatus.
+const (
+	AiChatResponseDataAttributesStatusUserInputRequired AiChatResponseDataAttributesStatus = "user_input_required"
+)
+
+// Valid indicates whether the value is a known member of the AiChatResponseDataAttributesStatus enum.
+func (e AiChatResponseDataAttributesStatus) Valid() bool {
+	switch e {
+	case AiChatResponseDataAttributesStatusUserInputRequired:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AiChatResponseDataType.
+const (
+	AiChatResponseDataTypeAiChatResponses AiChatResponseDataType = "ai_chat_responses"
+)
+
+// Valid indicates whether the value is a known member of the AiChatResponseDataType enum.
+func (e AiChatResponseDataType) Valid() bool {
+	switch e {
+	case AiChatResponseDataTypeAiChatResponses:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AiChatSessionMessageRole.
+const (
+	AiChatSessionMessageRoleAssistant AiChatSessionMessageRole = "assistant"
+	AiChatSessionMessageRoleUser      AiChatSessionMessageRole = "user"
+)
+
+// Valid indicates whether the value is a known member of the AiChatSessionMessageRole enum.
+func (e AiChatSessionMessageRole) Valid() bool {
+	switch e {
+	case AiChatSessionMessageRoleAssistant:
+		return true
+	case AiChatSessionMessageRoleUser:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for AlertNoise.
 const (
 	AlertNoiseNoise    AlertNoise = "noise"
@@ -1346,6 +1433,7 @@ const (
 	AlertEventActionAdded                 AlertEventAction = "added"
 	AlertEventActionAnswered              AlertEventAction = "answered"
 	AlertEventActionAttached              AlertEventAction = "attached"
+	AlertEventActionCallLifecycle         AlertEventAction = "call_lifecycle"
 	AlertEventActionCalled                AlertEventAction = "called"
 	AlertEventActionCreated               AlertEventAction = "created"
 	AlertEventActionDeferred              AlertEventAction = "deferred"
@@ -1354,6 +1442,7 @@ const (
 	AlertEventActionEscalationPolicyPaged AlertEventAction = "escalation_policy_paged"
 	AlertEventActionGoogleChatMessaged    AlertEventAction = "google_chat_messaged"
 	AlertEventActionIgnoredAlertRequest   AlertEventAction = "ignored_alert_request"
+	AlertEventActionLevelSkipped          AlertEventAction = "level_skipped"
 	AlertEventActionMarked                AlertEventAction = "marked"
 	AlertEventActionMsTeamsMessaged       AlertEventAction = "ms_teams_messaged"
 	AlertEventActionMuted                 AlertEventAction = "muted"
@@ -1384,6 +1473,8 @@ func (e AlertEventAction) Valid() bool {
 		return true
 	case AlertEventActionAttached:
 		return true
+	case AlertEventActionCallLifecycle:
+		return true
 	case AlertEventActionCalled:
 		return true
 	case AlertEventActionCreated:
@@ -1399,6 +1490,8 @@ func (e AlertEventAction) Valid() bool {
 	case AlertEventActionGoogleChatMessaged:
 		return true
 	case AlertEventActionIgnoredAlertRequest:
+		return true
+	case AlertEventActionLevelSkipped:
 		return true
 	case AlertEventActionMarked:
 		return true
@@ -7864,14 +7957,20 @@ func (e EscalationPolicyPathRules1RuleType) Valid() bool {
 
 // Defines values for EscalationPolicyPathRules2Operator.
 const (
-	EscalationPolicyPathRules2OperatorContains       EscalationPolicyPathRules2Operator = "contains"
-	EscalationPolicyPathRules2OperatorDoesNotContain EscalationPolicyPathRules2Operator = "does_not_contain"
-	EscalationPolicyPathRules2OperatorIs             EscalationPolicyPathRules2Operator = "is"
-	EscalationPolicyPathRules2OperatorIsNot          EscalationPolicyPathRules2Operator = "is_not"
-	EscalationPolicyPathRules2OperatorIsNotOneOf     EscalationPolicyPathRules2Operator = "is_not_one_of"
-	EscalationPolicyPathRules2OperatorIsNotSet       EscalationPolicyPathRules2Operator = "is_not_set"
-	EscalationPolicyPathRules2OperatorIsOneOf        EscalationPolicyPathRules2Operator = "is_one_of"
-	EscalationPolicyPathRules2OperatorIsSet          EscalationPolicyPathRules2Operator = "is_set"
+	EscalationPolicyPathRules2OperatorContains          EscalationPolicyPathRules2Operator = "contains"
+	EscalationPolicyPathRules2OperatorContainsKey       EscalationPolicyPathRules2Operator = "contains_key"
+	EscalationPolicyPathRules2OperatorDoesNotContain    EscalationPolicyPathRules2Operator = "does_not_contain"
+	EscalationPolicyPathRules2OperatorDoesNotContainKey EscalationPolicyPathRules2Operator = "does_not_contain_key"
+	EscalationPolicyPathRules2OperatorDoesNotMatch      EscalationPolicyPathRules2Operator = "does_not_match"
+	EscalationPolicyPathRules2OperatorDoesNotStartWith  EscalationPolicyPathRules2Operator = "does_not_start_with"
+	EscalationPolicyPathRules2OperatorIs                EscalationPolicyPathRules2Operator = "is"
+	EscalationPolicyPathRules2OperatorIsNot             EscalationPolicyPathRules2Operator = "is_not"
+	EscalationPolicyPathRules2OperatorIsNotOneOf        EscalationPolicyPathRules2Operator = "is_not_one_of"
+	EscalationPolicyPathRules2OperatorIsNotSet          EscalationPolicyPathRules2Operator = "is_not_set"
+	EscalationPolicyPathRules2OperatorIsOneOf           EscalationPolicyPathRules2Operator = "is_one_of"
+	EscalationPolicyPathRules2OperatorIsSet             EscalationPolicyPathRules2Operator = "is_set"
+	EscalationPolicyPathRules2OperatorMatches           EscalationPolicyPathRules2Operator = "matches"
+	EscalationPolicyPathRules2OperatorStartsWith        EscalationPolicyPathRules2Operator = "starts_with"
 )
 
 // Valid indicates whether the value is a known member of the EscalationPolicyPathRules2Operator enum.
@@ -7879,7 +7978,15 @@ func (e EscalationPolicyPathRules2Operator) Valid() bool {
 	switch e {
 	case EscalationPolicyPathRules2OperatorContains:
 		return true
+	case EscalationPolicyPathRules2OperatorContainsKey:
+		return true
 	case EscalationPolicyPathRules2OperatorDoesNotContain:
+		return true
+	case EscalationPolicyPathRules2OperatorDoesNotContainKey:
+		return true
+	case EscalationPolicyPathRules2OperatorDoesNotMatch:
+		return true
+	case EscalationPolicyPathRules2OperatorDoesNotStartWith:
 		return true
 	case EscalationPolicyPathRules2OperatorIs:
 		return true
@@ -7892,6 +7999,10 @@ func (e EscalationPolicyPathRules2Operator) Valid() bool {
 	case EscalationPolicyPathRules2OperatorIsOneOf:
 		return true
 	case EscalationPolicyPathRules2OperatorIsSet:
+		return true
+	case EscalationPolicyPathRules2OperatorMatches:
+		return true
+	case EscalationPolicyPathRules2OperatorStartsWith:
 		return true
 	default:
 		return false
@@ -12104,6 +12215,45 @@ func (e IncidentTriggerParamsIncidentConditionKind) Valid() bool {
 	}
 }
 
+// Defines values for IncidentTriggerParamsIncidentConditionLabel.
+const (
+	IncidentTriggerParamsIncidentConditionLabelANY          IncidentTriggerParamsIncidentConditionLabel = "ANY"
+	IncidentTriggerParamsIncidentConditionLabelCONTAINS     IncidentTriggerParamsIncidentConditionLabel = "CONTAINS"
+	IncidentTriggerParamsIncidentConditionLabelCONTAINSALL  IncidentTriggerParamsIncidentConditionLabel = "CONTAINS_ALL"
+	IncidentTriggerParamsIncidentConditionLabelCONTAINSNONE IncidentTriggerParamsIncidentConditionLabel = "CONTAINS_NONE"
+	IncidentTriggerParamsIncidentConditionLabelIS           IncidentTriggerParamsIncidentConditionLabel = "IS"
+	IncidentTriggerParamsIncidentConditionLabelISNOT        IncidentTriggerParamsIncidentConditionLabel = "IS NOT"
+	IncidentTriggerParamsIncidentConditionLabelNONE         IncidentTriggerParamsIncidentConditionLabel = "NONE"
+	IncidentTriggerParamsIncidentConditionLabelSET          IncidentTriggerParamsIncidentConditionLabel = "SET"
+	IncidentTriggerParamsIncidentConditionLabelUNSET        IncidentTriggerParamsIncidentConditionLabel = "UNSET"
+)
+
+// Valid indicates whether the value is a known member of the IncidentTriggerParamsIncidentConditionLabel enum.
+func (e IncidentTriggerParamsIncidentConditionLabel) Valid() bool {
+	switch e {
+	case IncidentTriggerParamsIncidentConditionLabelANY:
+		return true
+	case IncidentTriggerParamsIncidentConditionLabelCONTAINS:
+		return true
+	case IncidentTriggerParamsIncidentConditionLabelCONTAINSALL:
+		return true
+	case IncidentTriggerParamsIncidentConditionLabelCONTAINSNONE:
+		return true
+	case IncidentTriggerParamsIncidentConditionLabelIS:
+		return true
+	case IncidentTriggerParamsIncidentConditionLabelISNOT:
+		return true
+	case IncidentTriggerParamsIncidentConditionLabelNONE:
+		return true
+	case IncidentTriggerParamsIncidentConditionLabelSET:
+		return true
+	case IncidentTriggerParamsIncidentConditionLabelUNSET:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for IncidentTriggerParamsIncidentConditionMitigatedAt.
 const (
 	IncidentTriggerParamsIncidentConditionMitigatedAtSET   IncidentTriggerParamsIncidentConditionMitigatedAt = "SET"
@@ -12935,6 +13085,78 @@ func (e MeetingRecordingStatus) Valid() bool {
 	}
 }
 
+// Defines values for MeetingRecordingDetailPlatform.
+const (
+	MeetingRecordingDetailPlatformGoogleMeet     MeetingRecordingDetailPlatform = "google_meet"
+	MeetingRecordingDetailPlatformMicrosoftTeams MeetingRecordingDetailPlatform = "microsoft_teams"
+	MeetingRecordingDetailPlatformWebex          MeetingRecordingDetailPlatform = "webex"
+	MeetingRecordingDetailPlatformZoom           MeetingRecordingDetailPlatform = "zoom"
+)
+
+// Valid indicates whether the value is a known member of the MeetingRecordingDetailPlatform enum.
+func (e MeetingRecordingDetailPlatform) Valid() bool {
+	switch e {
+	case MeetingRecordingDetailPlatformGoogleMeet:
+		return true
+	case MeetingRecordingDetailPlatformMicrosoftTeams:
+		return true
+	case MeetingRecordingDetailPlatformWebex:
+		return true
+	case MeetingRecordingDetailPlatformZoom:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for MeetingRecordingDetailStatus.
+const (
+	MeetingRecordingDetailStatusAnalyzing MeetingRecordingDetailStatus = "analyzing"
+	MeetingRecordingDetailStatusCallEnded MeetingRecordingDetailStatus = "call_ended"
+	MeetingRecordingDetailStatusCompleted MeetingRecordingDetailStatus = "completed"
+	MeetingRecordingDetailStatusFailed    MeetingRecordingDetailStatus = "failed"
+	MeetingRecordingDetailStatusPaused    MeetingRecordingDetailStatus = "paused"
+	MeetingRecordingDetailStatusPending   MeetingRecordingDetailStatus = "pending"
+	MeetingRecordingDetailStatusRecording MeetingRecordingDetailStatus = "recording"
+)
+
+// Valid indicates whether the value is a known member of the MeetingRecordingDetailStatus enum.
+func (e MeetingRecordingDetailStatus) Valid() bool {
+	switch e {
+	case MeetingRecordingDetailStatusAnalyzing:
+		return true
+	case MeetingRecordingDetailStatusCallEnded:
+		return true
+	case MeetingRecordingDetailStatusCompleted:
+		return true
+	case MeetingRecordingDetailStatusFailed:
+		return true
+	case MeetingRecordingDetailStatusPaused:
+		return true
+	case MeetingRecordingDetailStatusPending:
+		return true
+	case MeetingRecordingDetailStatusRecording:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for MeetingRecordingDetailResponseDataType.
+const (
+	MeetingRecordingDetailResponseDataTypeMeetingRecordings MeetingRecordingDetailResponseDataType = "meeting_recordings"
+)
+
+// Valid indicates whether the value is a known member of the MeetingRecordingDetailResponseDataType enum.
+func (e MeetingRecordingDetailResponseDataType) Valid() bool {
+	switch e {
+	case MeetingRecordingDetailResponseDataTypeMeetingRecordings:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for MeetingRecordingListDataType.
 const (
 	MeetingRecordingListDataTypeMeetingRecordings MeetingRecordingListDataType = "meeting_recordings"
@@ -12944,6 +13166,21 @@ const (
 func (e MeetingRecordingListDataType) Valid() bool {
 	switch e {
 	case MeetingRecordingListDataTypeMeetingRecordings:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for MeetingRecordingResponseDataType.
+const (
+	MeetingRecordingResponseDataTypeMeetingRecordings MeetingRecordingResponseDataType = "meeting_recordings"
+)
+
+// Valid indicates whether the value is a known member of the MeetingRecordingResponseDataType enum.
+func (e MeetingRecordingResponseDataType) Valid() bool {
+	switch e {
+	case MeetingRecordingResponseDataTypeMeetingRecordings:
 		return true
 	default:
 		return false
@@ -13004,6 +13241,33 @@ func (e NewAlertDataAttributesNotificationTargetType) Valid() bool {
 	case NewAlertDataAttributesNotificationTargetTypeService:
 		return true
 	case NewAlertDataAttributesNotificationTargetTypeUser:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for NewAlertDataAttributesNotificationTargetsType.
+const (
+	NewAlertDataAttributesNotificationTargetsTypeEscalationPolicy NewAlertDataAttributesNotificationTargetsType = "EscalationPolicy"
+	NewAlertDataAttributesNotificationTargetsTypeFunctionality    NewAlertDataAttributesNotificationTargetsType = "Functionality"
+	NewAlertDataAttributesNotificationTargetsTypeGroup            NewAlertDataAttributesNotificationTargetsType = "Group"
+	NewAlertDataAttributesNotificationTargetsTypeService          NewAlertDataAttributesNotificationTargetsType = "Service"
+	NewAlertDataAttributesNotificationTargetsTypeUser             NewAlertDataAttributesNotificationTargetsType = "User"
+)
+
+// Valid indicates whether the value is a known member of the NewAlertDataAttributesNotificationTargetsType enum.
+func (e NewAlertDataAttributesNotificationTargetsType) Valid() bool {
+	switch e {
+	case NewAlertDataAttributesNotificationTargetsTypeEscalationPolicy:
+		return true
+	case NewAlertDataAttributesNotificationTargetsTypeFunctionality:
+		return true
+	case NewAlertDataAttributesNotificationTargetsTypeGroup:
+		return true
+	case NewAlertDataAttributesNotificationTargetsTypeService:
+		return true
+	case NewAlertDataAttributesNotificationTargetsTypeUser:
 		return true
 	default:
 		return false
@@ -16312,14 +16576,20 @@ func (e NewEscalationPolicyPathDataAttributesRules1RuleType) Valid() bool {
 
 // Defines values for NewEscalationPolicyPathDataAttributesRules2Operator.
 const (
-	NewEscalationPolicyPathDataAttributesRules2OperatorContains       NewEscalationPolicyPathDataAttributesRules2Operator = "contains"
-	NewEscalationPolicyPathDataAttributesRules2OperatorDoesNotContain NewEscalationPolicyPathDataAttributesRules2Operator = "does_not_contain"
-	NewEscalationPolicyPathDataAttributesRules2OperatorIs             NewEscalationPolicyPathDataAttributesRules2Operator = "is"
-	NewEscalationPolicyPathDataAttributesRules2OperatorIsNot          NewEscalationPolicyPathDataAttributesRules2Operator = "is_not"
-	NewEscalationPolicyPathDataAttributesRules2OperatorIsNotOneOf     NewEscalationPolicyPathDataAttributesRules2Operator = "is_not_one_of"
-	NewEscalationPolicyPathDataAttributesRules2OperatorIsNotSet       NewEscalationPolicyPathDataAttributesRules2Operator = "is_not_set"
-	NewEscalationPolicyPathDataAttributesRules2OperatorIsOneOf        NewEscalationPolicyPathDataAttributesRules2Operator = "is_one_of"
-	NewEscalationPolicyPathDataAttributesRules2OperatorIsSet          NewEscalationPolicyPathDataAttributesRules2Operator = "is_set"
+	NewEscalationPolicyPathDataAttributesRules2OperatorContains          NewEscalationPolicyPathDataAttributesRules2Operator = "contains"
+	NewEscalationPolicyPathDataAttributesRules2OperatorContainsKey       NewEscalationPolicyPathDataAttributesRules2Operator = "contains_key"
+	NewEscalationPolicyPathDataAttributesRules2OperatorDoesNotContain    NewEscalationPolicyPathDataAttributesRules2Operator = "does_not_contain"
+	NewEscalationPolicyPathDataAttributesRules2OperatorDoesNotContainKey NewEscalationPolicyPathDataAttributesRules2Operator = "does_not_contain_key"
+	NewEscalationPolicyPathDataAttributesRules2OperatorDoesNotMatch      NewEscalationPolicyPathDataAttributesRules2Operator = "does_not_match"
+	NewEscalationPolicyPathDataAttributesRules2OperatorDoesNotStartWith  NewEscalationPolicyPathDataAttributesRules2Operator = "does_not_start_with"
+	NewEscalationPolicyPathDataAttributesRules2OperatorIs                NewEscalationPolicyPathDataAttributesRules2Operator = "is"
+	NewEscalationPolicyPathDataAttributesRules2OperatorIsNot             NewEscalationPolicyPathDataAttributesRules2Operator = "is_not"
+	NewEscalationPolicyPathDataAttributesRules2OperatorIsNotOneOf        NewEscalationPolicyPathDataAttributesRules2Operator = "is_not_one_of"
+	NewEscalationPolicyPathDataAttributesRules2OperatorIsNotSet          NewEscalationPolicyPathDataAttributesRules2Operator = "is_not_set"
+	NewEscalationPolicyPathDataAttributesRules2OperatorIsOneOf           NewEscalationPolicyPathDataAttributesRules2Operator = "is_one_of"
+	NewEscalationPolicyPathDataAttributesRules2OperatorIsSet             NewEscalationPolicyPathDataAttributesRules2Operator = "is_set"
+	NewEscalationPolicyPathDataAttributesRules2OperatorMatches           NewEscalationPolicyPathDataAttributesRules2Operator = "matches"
+	NewEscalationPolicyPathDataAttributesRules2OperatorStartsWith        NewEscalationPolicyPathDataAttributesRules2Operator = "starts_with"
 )
 
 // Valid indicates whether the value is a known member of the NewEscalationPolicyPathDataAttributesRules2Operator enum.
@@ -16327,7 +16597,15 @@ func (e NewEscalationPolicyPathDataAttributesRules2Operator) Valid() bool {
 	switch e {
 	case NewEscalationPolicyPathDataAttributesRules2OperatorContains:
 		return true
+	case NewEscalationPolicyPathDataAttributesRules2OperatorContainsKey:
+		return true
 	case NewEscalationPolicyPathDataAttributesRules2OperatorDoesNotContain:
+		return true
+	case NewEscalationPolicyPathDataAttributesRules2OperatorDoesNotContainKey:
+		return true
+	case NewEscalationPolicyPathDataAttributesRules2OperatorDoesNotMatch:
+		return true
+	case NewEscalationPolicyPathDataAttributesRules2OperatorDoesNotStartWith:
 		return true
 	case NewEscalationPolicyPathDataAttributesRules2OperatorIs:
 		return true
@@ -16340,6 +16618,10 @@ func (e NewEscalationPolicyPathDataAttributesRules2Operator) Valid() bool {
 	case NewEscalationPolicyPathDataAttributesRules2OperatorIsOneOf:
 		return true
 	case NewEscalationPolicyPathDataAttributesRules2OperatorIsSet:
+		return true
+	case NewEscalationPolicyPathDataAttributesRules2OperatorMatches:
+		return true
+	case NewEscalationPolicyPathDataAttributesRules2OperatorStartsWith:
 		return true
 	default:
 		return false
@@ -20102,6 +20384,30 @@ func (e NewOnCallRoleDataAttributesEscalationPoliciesPermissions) Valid() bool {
 	}
 }
 
+// Defines values for NewOnCallRoleDataAttributesFunctionalitiesPermissions.
+const (
+	NewOnCallRoleDataAttributesFunctionalitiesPermissionsCreate NewOnCallRoleDataAttributesFunctionalitiesPermissions = "create"
+	NewOnCallRoleDataAttributesFunctionalitiesPermissionsDelete NewOnCallRoleDataAttributesFunctionalitiesPermissions = "delete"
+	NewOnCallRoleDataAttributesFunctionalitiesPermissionsRead   NewOnCallRoleDataAttributesFunctionalitiesPermissions = "read"
+	NewOnCallRoleDataAttributesFunctionalitiesPermissionsUpdate NewOnCallRoleDataAttributesFunctionalitiesPermissions = "update"
+)
+
+// Valid indicates whether the value is a known member of the NewOnCallRoleDataAttributesFunctionalitiesPermissions enum.
+func (e NewOnCallRoleDataAttributesFunctionalitiesPermissions) Valid() bool {
+	switch e {
+	case NewOnCallRoleDataAttributesFunctionalitiesPermissionsCreate:
+		return true
+	case NewOnCallRoleDataAttributesFunctionalitiesPermissionsDelete:
+		return true
+	case NewOnCallRoleDataAttributesFunctionalitiesPermissionsRead:
+		return true
+	case NewOnCallRoleDataAttributesFunctionalitiesPermissionsUpdate:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for NewOnCallRoleDataAttributesGroupsPermissions.
 const (
 	NewOnCallRoleDataAttributesGroupsPermissionsCreate NewOnCallRoleDataAttributesGroupsPermissions = "create"
@@ -23126,6 +23432,30 @@ func (e OnCallRoleEscalationPoliciesPermissions) Valid() bool {
 	}
 }
 
+// Defines values for OnCallRoleFunctionalitiesPermissions.
+const (
+	OnCallRoleFunctionalitiesPermissionsCreate OnCallRoleFunctionalitiesPermissions = "create"
+	OnCallRoleFunctionalitiesPermissionsDelete OnCallRoleFunctionalitiesPermissions = "delete"
+	OnCallRoleFunctionalitiesPermissionsRead   OnCallRoleFunctionalitiesPermissions = "read"
+	OnCallRoleFunctionalitiesPermissionsUpdate OnCallRoleFunctionalitiesPermissions = "update"
+)
+
+// Valid indicates whether the value is a known member of the OnCallRoleFunctionalitiesPermissions enum.
+func (e OnCallRoleFunctionalitiesPermissions) Valid() bool {
+	switch e {
+	case OnCallRoleFunctionalitiesPermissionsCreate:
+		return true
+	case OnCallRoleFunctionalitiesPermissionsDelete:
+		return true
+	case OnCallRoleFunctionalitiesPermissionsRead:
+		return true
+	case OnCallRoleFunctionalitiesPermissionsUpdate:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for OnCallRoleGroupsPermissions.
 const (
 	OnCallRoleGroupsPermissionsCreate OnCallRoleGroupsPermissions = "create"
@@ -24299,6 +24629,45 @@ func (e PostMortemTriggerParamsIncidentConditionKind) Valid() bool {
 	case PostMortemTriggerParamsIncidentConditionKindSET:
 		return true
 	case PostMortemTriggerParamsIncidentConditionKindUNSET:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PostMortemTriggerParamsIncidentConditionLabel.
+const (
+	PostMortemTriggerParamsIncidentConditionLabelANY          PostMortemTriggerParamsIncidentConditionLabel = "ANY"
+	PostMortemTriggerParamsIncidentConditionLabelCONTAINS     PostMortemTriggerParamsIncidentConditionLabel = "CONTAINS"
+	PostMortemTriggerParamsIncidentConditionLabelCONTAINSALL  PostMortemTriggerParamsIncidentConditionLabel = "CONTAINS_ALL"
+	PostMortemTriggerParamsIncidentConditionLabelCONTAINSNONE PostMortemTriggerParamsIncidentConditionLabel = "CONTAINS_NONE"
+	PostMortemTriggerParamsIncidentConditionLabelIS           PostMortemTriggerParamsIncidentConditionLabel = "IS"
+	PostMortemTriggerParamsIncidentConditionLabelISNOT        PostMortemTriggerParamsIncidentConditionLabel = "IS NOT"
+	PostMortemTriggerParamsIncidentConditionLabelNONE         PostMortemTriggerParamsIncidentConditionLabel = "NONE"
+	PostMortemTriggerParamsIncidentConditionLabelSET          PostMortemTriggerParamsIncidentConditionLabel = "SET"
+	PostMortemTriggerParamsIncidentConditionLabelUNSET        PostMortemTriggerParamsIncidentConditionLabel = "UNSET"
+)
+
+// Valid indicates whether the value is a known member of the PostMortemTriggerParamsIncidentConditionLabel enum.
+func (e PostMortemTriggerParamsIncidentConditionLabel) Valid() bool {
+	switch e {
+	case PostMortemTriggerParamsIncidentConditionLabelANY:
+		return true
+	case PostMortemTriggerParamsIncidentConditionLabelCONTAINS:
+		return true
+	case PostMortemTriggerParamsIncidentConditionLabelCONTAINSALL:
+		return true
+	case PostMortemTriggerParamsIncidentConditionLabelCONTAINSNONE:
+		return true
+	case PostMortemTriggerParamsIncidentConditionLabelIS:
+		return true
+	case PostMortemTriggerParamsIncidentConditionLabelISNOT:
+		return true
+	case PostMortemTriggerParamsIncidentConditionLabelNONE:
+		return true
+	case PostMortemTriggerParamsIncidentConditionLabelSET:
+		return true
+	case PostMortemTriggerParamsIncidentConditionLabelUNSET:
 		return true
 	default:
 		return false
@@ -31240,14 +31609,20 @@ func (e UpdateEscalationPolicyPathDataAttributesRules1RuleType) Valid() bool {
 
 // Defines values for UpdateEscalationPolicyPathDataAttributesRules2Operator.
 const (
-	UpdateEscalationPolicyPathDataAttributesRules2OperatorContains       UpdateEscalationPolicyPathDataAttributesRules2Operator = "contains"
-	UpdateEscalationPolicyPathDataAttributesRules2OperatorDoesNotContain UpdateEscalationPolicyPathDataAttributesRules2Operator = "does_not_contain"
-	UpdateEscalationPolicyPathDataAttributesRules2OperatorIs             UpdateEscalationPolicyPathDataAttributesRules2Operator = "is"
-	UpdateEscalationPolicyPathDataAttributesRules2OperatorIsNot          UpdateEscalationPolicyPathDataAttributesRules2Operator = "is_not"
-	UpdateEscalationPolicyPathDataAttributesRules2OperatorIsNotOneOf     UpdateEscalationPolicyPathDataAttributesRules2Operator = "is_not_one_of"
-	UpdateEscalationPolicyPathDataAttributesRules2OperatorIsNotSet       UpdateEscalationPolicyPathDataAttributesRules2Operator = "is_not_set"
-	UpdateEscalationPolicyPathDataAttributesRules2OperatorIsOneOf        UpdateEscalationPolicyPathDataAttributesRules2Operator = "is_one_of"
-	UpdateEscalationPolicyPathDataAttributesRules2OperatorIsSet          UpdateEscalationPolicyPathDataAttributesRules2Operator = "is_set"
+	UpdateEscalationPolicyPathDataAttributesRules2OperatorContains          UpdateEscalationPolicyPathDataAttributesRules2Operator = "contains"
+	UpdateEscalationPolicyPathDataAttributesRules2OperatorContainsKey       UpdateEscalationPolicyPathDataAttributesRules2Operator = "contains_key"
+	UpdateEscalationPolicyPathDataAttributesRules2OperatorDoesNotContain    UpdateEscalationPolicyPathDataAttributesRules2Operator = "does_not_contain"
+	UpdateEscalationPolicyPathDataAttributesRules2OperatorDoesNotContainKey UpdateEscalationPolicyPathDataAttributesRules2Operator = "does_not_contain_key"
+	UpdateEscalationPolicyPathDataAttributesRules2OperatorDoesNotMatch      UpdateEscalationPolicyPathDataAttributesRules2Operator = "does_not_match"
+	UpdateEscalationPolicyPathDataAttributesRules2OperatorDoesNotStartWith  UpdateEscalationPolicyPathDataAttributesRules2Operator = "does_not_start_with"
+	UpdateEscalationPolicyPathDataAttributesRules2OperatorIs                UpdateEscalationPolicyPathDataAttributesRules2Operator = "is"
+	UpdateEscalationPolicyPathDataAttributesRules2OperatorIsNot             UpdateEscalationPolicyPathDataAttributesRules2Operator = "is_not"
+	UpdateEscalationPolicyPathDataAttributesRules2OperatorIsNotOneOf        UpdateEscalationPolicyPathDataAttributesRules2Operator = "is_not_one_of"
+	UpdateEscalationPolicyPathDataAttributesRules2OperatorIsNotSet          UpdateEscalationPolicyPathDataAttributesRules2Operator = "is_not_set"
+	UpdateEscalationPolicyPathDataAttributesRules2OperatorIsOneOf           UpdateEscalationPolicyPathDataAttributesRules2Operator = "is_one_of"
+	UpdateEscalationPolicyPathDataAttributesRules2OperatorIsSet             UpdateEscalationPolicyPathDataAttributesRules2Operator = "is_set"
+	UpdateEscalationPolicyPathDataAttributesRules2OperatorMatches           UpdateEscalationPolicyPathDataAttributesRules2Operator = "matches"
+	UpdateEscalationPolicyPathDataAttributesRules2OperatorStartsWith        UpdateEscalationPolicyPathDataAttributesRules2Operator = "starts_with"
 )
 
 // Valid indicates whether the value is a known member of the UpdateEscalationPolicyPathDataAttributesRules2Operator enum.
@@ -31255,7 +31630,15 @@ func (e UpdateEscalationPolicyPathDataAttributesRules2Operator) Valid() bool {
 	switch e {
 	case UpdateEscalationPolicyPathDataAttributesRules2OperatorContains:
 		return true
+	case UpdateEscalationPolicyPathDataAttributesRules2OperatorContainsKey:
+		return true
 	case UpdateEscalationPolicyPathDataAttributesRules2OperatorDoesNotContain:
+		return true
+	case UpdateEscalationPolicyPathDataAttributesRules2OperatorDoesNotContainKey:
+		return true
+	case UpdateEscalationPolicyPathDataAttributesRules2OperatorDoesNotMatch:
+		return true
+	case UpdateEscalationPolicyPathDataAttributesRules2OperatorDoesNotStartWith:
 		return true
 	case UpdateEscalationPolicyPathDataAttributesRules2OperatorIs:
 		return true
@@ -31268,6 +31651,10 @@ func (e UpdateEscalationPolicyPathDataAttributesRules2Operator) Valid() bool {
 	case UpdateEscalationPolicyPathDataAttributesRules2OperatorIsOneOf:
 		return true
 	case UpdateEscalationPolicyPathDataAttributesRules2OperatorIsSet:
+		return true
+	case UpdateEscalationPolicyPathDataAttributesRules2OperatorMatches:
+		return true
+	case UpdateEscalationPolicyPathDataAttributesRules2OperatorStartsWith:
 		return true
 	default:
 		return false
@@ -35399,6 +35786,30 @@ func (e UpdateOnCallRoleDataAttributesEscalationPoliciesPermissions) Valid() boo
 	}
 }
 
+// Defines values for UpdateOnCallRoleDataAttributesFunctionalitiesPermissions.
+const (
+	UpdateOnCallRoleDataAttributesFunctionalitiesPermissionsCreate UpdateOnCallRoleDataAttributesFunctionalitiesPermissions = "create"
+	UpdateOnCallRoleDataAttributesFunctionalitiesPermissionsDelete UpdateOnCallRoleDataAttributesFunctionalitiesPermissions = "delete"
+	UpdateOnCallRoleDataAttributesFunctionalitiesPermissionsRead   UpdateOnCallRoleDataAttributesFunctionalitiesPermissions = "read"
+	UpdateOnCallRoleDataAttributesFunctionalitiesPermissionsUpdate UpdateOnCallRoleDataAttributesFunctionalitiesPermissions = "update"
+)
+
+// Valid indicates whether the value is a known member of the UpdateOnCallRoleDataAttributesFunctionalitiesPermissions enum.
+func (e UpdateOnCallRoleDataAttributesFunctionalitiesPermissions) Valid() bool {
+	switch e {
+	case UpdateOnCallRoleDataAttributesFunctionalitiesPermissionsCreate:
+		return true
+	case UpdateOnCallRoleDataAttributesFunctionalitiesPermissionsDelete:
+		return true
+	case UpdateOnCallRoleDataAttributesFunctionalitiesPermissionsRead:
+		return true
+	case UpdateOnCallRoleDataAttributesFunctionalitiesPermissionsUpdate:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for UpdateOnCallRoleDataAttributesGroupsPermissions.
 const (
 	UpdateOnCallRoleDataAttributesGroupsPermissionsCreate UpdateOnCallRoleDataAttributesGroupsPermissions = "create"
@@ -39242,6 +39653,7 @@ const (
 	ListAlertEventsFeedParamsFilterActionAdded                 ListAlertEventsFeedParamsFilterAction = "added"
 	ListAlertEventsFeedParamsFilterActionAnswered              ListAlertEventsFeedParamsFilterAction = "answered"
 	ListAlertEventsFeedParamsFilterActionAttached              ListAlertEventsFeedParamsFilterAction = "attached"
+	ListAlertEventsFeedParamsFilterActionCallLifecycle         ListAlertEventsFeedParamsFilterAction = "call_lifecycle"
 	ListAlertEventsFeedParamsFilterActionCalled                ListAlertEventsFeedParamsFilterAction = "called"
 	ListAlertEventsFeedParamsFilterActionCreated               ListAlertEventsFeedParamsFilterAction = "created"
 	ListAlertEventsFeedParamsFilterActionDeferred              ListAlertEventsFeedParamsFilterAction = "deferred"
@@ -39250,6 +39662,7 @@ const (
 	ListAlertEventsFeedParamsFilterActionEscalationPolicyPaged ListAlertEventsFeedParamsFilterAction = "escalation_policy_paged"
 	ListAlertEventsFeedParamsFilterActionGoogleChatMessaged    ListAlertEventsFeedParamsFilterAction = "google_chat_messaged"
 	ListAlertEventsFeedParamsFilterActionIgnoredAlertRequest   ListAlertEventsFeedParamsFilterAction = "ignored_alert_request"
+	ListAlertEventsFeedParamsFilterActionLevelSkipped          ListAlertEventsFeedParamsFilterAction = "level_skipped"
 	ListAlertEventsFeedParamsFilterActionMarked                ListAlertEventsFeedParamsFilterAction = "marked"
 	ListAlertEventsFeedParamsFilterActionMsTeamsMessaged       ListAlertEventsFeedParamsFilterAction = "ms_teams_messaged"
 	ListAlertEventsFeedParamsFilterActionMuted                 ListAlertEventsFeedParamsFilterAction = "muted"
@@ -39280,6 +39693,8 @@ func (e ListAlertEventsFeedParamsFilterAction) Valid() bool {
 		return true
 	case ListAlertEventsFeedParamsFilterActionAttached:
 		return true
+	case ListAlertEventsFeedParamsFilterActionCallLifecycle:
+		return true
 	case ListAlertEventsFeedParamsFilterActionCalled:
 		return true
 	case ListAlertEventsFeedParamsFilterActionCreated:
@@ -39295,6 +39710,8 @@ func (e ListAlertEventsFeedParamsFilterAction) Valid() bool {
 	case ListAlertEventsFeedParamsFilterActionGoogleChatMessaged:
 		return true
 	case ListAlertEventsFeedParamsFilterActionIgnoredAlertRequest:
+		return true
+	case ListAlertEventsFeedParamsFilterActionLevelSkipped:
 		return true
 	case ListAlertEventsFeedParamsFilterActionMarked:
 		return true
@@ -40598,6 +41015,21 @@ func (e GeneratePhoneNumberLiveCallRouterParamsPhoneType) Valid() bool {
 	}
 }
 
+// Defines values for GetMeetingRecordingParamsInclude.
+const (
+	GetMeetingRecordingParamsIncludeTranscript GetMeetingRecordingParamsInclude = "transcript"
+)
+
+// Valid indicates whether the value is a known member of the GetMeetingRecordingParamsInclude enum.
+func (e GetMeetingRecordingParamsInclude) Valid() bool {
+	switch e {
+	case GetMeetingRecordingParamsIncludeTranscript:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for ListOncallsParamsInclude.
 const (
 	ListOncallsParamsIncludeEscalationPolicy ListOncallsParamsInclude = "escalation_policy"
@@ -41200,6 +41632,8 @@ type ActionItemTriggerParams struct {
 	IncidentConditionIncidentRoles      *ActionItemTriggerParamsIncidentConditionIncidentRoles                    `json:"incident_condition_incident_roles,omitempty"`
 	IncidentConditionIncidentType       *ActionItemTriggerParamsIncidentConditionIncidentType                     `json:"incident_condition_incident_type,omitempty"`
 	IncidentConditionKind               *ActionItemTriggerParamsIncidentConditionKind                             `json:"incident_condition_kind,omitempty"`
+	IncidentConditionLabel              *ActionItemTriggerParamsIncidentConditionLabel                            `json:"incident_condition_label,omitempty"`
+	IncidentConditionLabelUseRegexp     *bool                                                                     `json:"incident_condition_label_use_regexp,omitempty"`
 	IncidentConditionMitigatedAt        nullable.Nullable[ActionItemTriggerParamsIncidentConditionMitigatedAt]    `json:"incident_condition_mitigated_at,omitempty"`
 	IncidentConditionResolvedAt         nullable.Nullable[ActionItemTriggerParamsIncidentConditionResolvedAt]     `json:"incident_condition_resolved_at,omitempty"`
 	IncidentConditionService            *ActionItemTriggerParamsIncidentConditionService                          `json:"incident_condition_service,omitempty"`
@@ -41214,6 +41648,7 @@ type ActionItemTriggerParams struct {
 	// IncidentInactivityDuration ex. 10 min, 1h, 3 days, 2 weeks
 	IncidentInactivityDuration nullable.Nullable[string]                 `json:"incident_inactivity_duration,omitempty"`
 	IncidentKinds              []ActionItemTriggerParamsIncidentKinds    `json:"incident_kinds,omitempty"`
+	IncidentLabels             []string                                  `json:"incident_labels,omitempty"`
 	IncidentStatuses           []ActionItemTriggerParamsIncidentStatuses `json:"incident_statuses,omitempty"`
 	IncidentVisibilities       []bool                                    `json:"incident_visibilities,omitempty"`
 	TriggerType                ActionItemTriggerParamsTriggerType        `json:"trigger_type"`
@@ -41270,6 +41705,9 @@ type ActionItemTriggerParamsIncidentConditionIncidentType string
 
 // ActionItemTriggerParamsIncidentConditionKind defines model for ActionItemTriggerParams.IncidentConditionKind.
 type ActionItemTriggerParamsIncidentConditionKind string
+
+// ActionItemTriggerParamsIncidentConditionLabel defines model for ActionItemTriggerParams.IncidentConditionLabel.
+type ActionItemTriggerParamsIncidentConditionLabel string
 
 // ActionItemTriggerParamsIncidentConditionMitigatedAt defines model for ActionItemTriggerParams.IncidentConditionMitigatedAt.
 type ActionItemTriggerParamsIncidentConditionMitigatedAt string
@@ -41520,6 +41958,57 @@ type AddToTimelineTaskParams struct {
 
 // AddToTimelineTaskParamsTaskType defines model for AddToTimelineTaskParams.TaskType.
 type AddToTimelineTaskParamsTaskType string
+
+// AiChatResponse defines model for ai_chat_response.
+type AiChatResponse struct {
+	Data struct {
+		Attributes struct {
+			// Reply Assistant reply text
+			Reply nullable.Nullable[string] `json:"reply,omitempty"`
+
+			// SessionID AI chat session UUID
+			SessionID openapi_types.UUID `json:"session_id"`
+
+			// Status Response status (present when user input is required)
+			Status nullable.Nullable[AiChatResponseDataAttributesStatus] `json:"status,omitempty"`
+		} `json:"attributes"`
+
+		// ID Session UUID
+		ID   openapi_types.UUID     `json:"id"`
+		Type AiChatResponseDataType `json:"type"`
+	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+}
+
+// AiChatResponseDataAttributesStatus Response status (present when user input is required)
+type AiChatResponseDataAttributesStatus string
+
+// AiChatResponseDataType defines model for AiChatResponse.Data.Type.
+type AiChatResponseDataType string
+
+// AiChatSessionMessage defines model for ai_chat_session_message.
+type AiChatSessionMessage struct {
+	// Content Message content
+	Content string `json:"content"`
+
+	// CreatedAt When the message was created
+	CreatedAt time.Time `json:"created_at"`
+
+	// ID Message UUID
+	ID openapi_types.UUID `json:"id"`
+
+	// Role Message author role
+	Role AiChatSessionMessageRole `json:"role"`
+}
+
+// AiChatSessionMessageRole Message author role
+type AiChatSessionMessageRole string
+
+// AiChatSessionMessageList defines model for ai_chat_session_message_list.
+type AiChatSessionMessageList struct {
+	Messages []AiChatSessionMessage `json:"messages"`
+	Meta     map[string]interface{} `json:"meta,omitempty"`
+}
 
 // Alert defines model for alert.
 type Alert struct {
@@ -44483,6 +44972,7 @@ type CreateConfluencePageTaskParams struct {
 
 	// Content The page content
 	Content         *string `json:"content,omitempty"`
+	CreateAsLiveDoc *bool   `json:"create_as_live_doc,omitempty"`
 	IncludeOverview *bool   `json:"include_overview,omitempty"`
 	IncludeTimeline *bool   `json:"include_timeline,omitempty"`
 
@@ -44716,6 +45206,8 @@ type CreateGoogleDocsPageTaskParams struct {
 		ID   *string `json:"id,omitempty"`
 		Name *string `json:"name,omitempty"`
 	} `json:"drive,omitempty"`
+	IncludeOverview           *bool `json:"include_overview,omitempty"`
+	IncludeTimeline           *bool `json:"include_timeline,omitempty"`
 	MarkPostMortemAsPublished *bool `json:"mark_post_mortem_as_published,omitempty"`
 	ParentFolder              *struct {
 		ID   *string `json:"id,omitempty"`
@@ -49020,6 +49512,8 @@ type IncidentTriggerParams struct {
 	IncidentConditionIncidentRoles  *IncidentTriggerParamsIncidentConditionIncidentRoles                    `json:"incident_condition_incident_roles,omitempty"`
 	IncidentConditionIncidentType   *IncidentTriggerParamsIncidentConditionIncidentType                     `json:"incident_condition_incident_type,omitempty"`
 	IncidentConditionKind           *IncidentTriggerParamsIncidentConditionKind                             `json:"incident_condition_kind,omitempty"`
+	IncidentConditionLabel          *IncidentTriggerParamsIncidentConditionLabel                            `json:"incident_condition_label,omitempty"`
+	IncidentConditionLabelUseRegexp *bool                                                                   `json:"incident_condition_label_use_regexp,omitempty"`
 	IncidentConditionMitigatedAt    nullable.Nullable[IncidentTriggerParamsIncidentConditionMitigatedAt]    `json:"incident_condition_mitigated_at,omitempty"`
 	IncidentConditionResolvedAt     nullable.Nullable[IncidentTriggerParamsIncidentConditionResolvedAt]     `json:"incident_condition_resolved_at,omitempty"`
 	IncidentConditionService        *IncidentTriggerParamsIncidentConditionService                          `json:"incident_condition_service,omitempty"`
@@ -49034,6 +49528,7 @@ type IncidentTriggerParams struct {
 	// IncidentInactivityDuration ex. 10 min, 1h, 3 days, 2 weeks
 	IncidentInactivityDuration nullable.Nullable[string]            `json:"incident_inactivity_duration,omitempty"`
 	IncidentKinds              []IncidentTriggerParamsIncidentKinds `json:"incident_kinds,omitempty"`
+	IncidentLabels             []string                             `json:"incident_labels,omitempty"`
 
 	// IncidentPostMortemConditionCause [DEPRECATED] Use incident_condition_cause instead
 	IncidentPostMortemConditionCause *IncidentTriggerParamsIncidentPostMortemConditionCause `json:"incident_post_mortem_condition_cause,omitempty"`
@@ -49072,6 +49567,9 @@ type IncidentTriggerParamsIncidentConditionIncidentType string
 
 // IncidentTriggerParamsIncidentConditionKind defines model for IncidentTriggerParams.IncidentConditionKind.
 type IncidentTriggerParamsIncidentConditionKind string
+
+// IncidentTriggerParamsIncidentConditionLabel defines model for IncidentTriggerParams.IncidentConditionLabel.
+type IncidentTriggerParamsIncidentConditionLabel string
 
 // IncidentTriggerParamsIncidentConditionMitigatedAt defines model for IncidentTriggerParams.IncidentConditionMitigatedAt.
 type IncidentTriggerParamsIncidentConditionMitigatedAt string
@@ -49501,11 +49999,20 @@ type LiveCallRouter struct {
 		Type LiveCallRouterEscalationPolicyTriggerParamsType `json:"type"`
 	} `json:"escalation_policy_trigger_params,omitempty"`
 
+	// InformationalNotificationMessage Optional message included in the SMS/push notification. Supports variables such as {{ alert.url }}, {{ alert.data.* }}, and {{ alert.alert_urgency.name }}.
+	InformationalNotificationMessage nullable.Nullable[string] `json:"informational_notification_message,omitempty"`
+
 	// Kind The kind of the live_call_router
 	Kind *LiveCallRouterKind `json:"kind,omitempty"`
 
 	// Name The name of the live_call_router
 	Name string `json:"name"`
+
+	// NotifyViaPushNotification Whether responders are also notified via push notification when this router pages them
+	NotifyViaPushNotification *bool `json:"notify_via_push_notification,omitempty"`
+
+	// NotifyViaSms Whether responders are also notified via SMS when this router pages them
+	NotifyViaSms *bool `json:"notify_via_sms,omitempty"`
 
 	// PagingTargets Paging targets that callers can select from when this live call router is configured as a phone tree.
 	PagingTargets []struct {
@@ -49533,6 +50040,9 @@ type LiveCallRouter struct {
 
 	// ShouldRedirectToVoicemailOnNoAnswer This prompts the caller to choose voicemail or connect live
 	ShouldRedirectToVoicemailOnNoAnswer *bool `json:"should_redirect_to_voicemail_on_no_answer,omitempty"`
+
+	// UnavailableResponderMessage The message played to the caller when a responder doesn't answer and the call moves on to the next person in the escalation. Leave blank to use the default message.
+	UnavailableResponderMessage nullable.Nullable[string] `json:"unavailable_responder_message,omitempty"`
 
 	// UpdatedAt Date of last update
 	UpdatedAt string `json:"updated_at"`
@@ -49608,6 +50118,9 @@ type MeetingRecording struct {
 	// EndedAt When the recording ended
 	EndedAt nullable.Nullable[time.Time] `json:"ended_at,omitempty"`
 
+	// MeetingURL Original meeting URL
+	MeetingURL nullable.Nullable[string] `json:"meeting_url,omitempty"`
+
 	// Platform Meeting platform
 	Platform MeetingRecordingPlatform `json:"platform"`
 
@@ -49645,6 +50158,97 @@ type MeetingRecordingPlatform string
 // MeetingRecordingStatus Current recording lifecycle status
 type MeetingRecordingStatus string
 
+// MeetingRecordingDetail defines model for meeting_recording_detail.
+type MeetingRecordingDetail struct {
+	// CreatedAt When the recording session was created
+	CreatedAt time.Time `json:"created_at"`
+
+	// CreatedBy Source that created the recording (e.g. desktop_sdk, recall_bot)
+	CreatedBy nullable.Nullable[string] `json:"created_by,omitempty"`
+
+	// DurationMinutes Recording duration in minutes (null if not started)
+	DurationMinutes nullable.Nullable[float32] `json:"duration_minutes,omitempty"`
+
+	// EndedAt When the recording ended
+	EndedAt nullable.Nullable[time.Time] `json:"ended_at,omitempty"`
+
+	// MeetingURL Original meeting URL
+	MeetingURL nullable.Nullable[string] `json:"meeting_url,omitempty"`
+
+	// Platform Meeting platform
+	Platform MeetingRecordingDetailPlatform `json:"platform"`
+
+	// RecallUploadID Recall upload identifier
+	RecallUploadID nullable.Nullable[string] `json:"recall_upload_id,omitempty"`
+
+	// RecordableID UUID of the associated recordable (e.g. incident)
+	RecordableID nullable.Nullable[string] `json:"recordable_id,omitempty"`
+
+	// RecordableType Type of the associated recordable (e.g. Incident)
+	RecordableType nullable.Nullable[string] `json:"recordable_type,omitempty"`
+
+	// SessionNumber Session number within the incident for this platform (starts at 1, increments on re-invite)
+	SessionNumber int `json:"session_number"`
+
+	// SpeakerCount Number of unique speakers detected in the transcript
+	SpeakerCount *int `json:"speaker_count,omitempty"`
+
+	// StartedAt When the bot started recording (null if bot never joined)
+	StartedAt nullable.Nullable[time.Time] `json:"started_at,omitempty"`
+
+	// Status Current recording lifecycle status
+	Status MeetingRecordingDetailStatus `json:"status"`
+
+	// Title Human-readable label for the recording session
+	Title nullable.Nullable[string] `json:"title,omitempty"`
+
+	// Transcript Array of speaker segments when populated, empty object when no transcript exists.
+	Transcript *MeetingRecordingDetail_Transcript `json:"transcript,omitempty"`
+
+	// TranscriptSummary AI-generated summary of the meeting transcript (null if no transcript or not yet analyzed)
+	TranscriptSummary nullable.Nullable[string] `json:"transcript_summary,omitempty"`
+
+	// UpdatedAt When the recording session was last updated
+	UpdatedAt time.Time `json:"updated_at"`
+
+	// VideoURL Signed URL to stream/download the video recording
+	VideoURL nullable.Nullable[string] `json:"video_url,omitempty"`
+
+	// WordCount Total word count across all transcript segments
+	WordCount *int `json:"word_count,omitempty"`
+}
+
+// MeetingRecordingDetailPlatform Meeting platform
+type MeetingRecordingDetailPlatform string
+
+// MeetingRecordingDetailStatus Current recording lifecycle status
+type MeetingRecordingDetailStatus string
+
+// MeetingRecordingDetailTranscript0 defines model for .
+type MeetingRecordingDetailTranscript0 = []MeetingRecordingTranscriptSegment
+
+// MeetingRecordingDetailTranscript1 defines model for .
+type MeetingRecordingDetailTranscript1 = map[string]interface{}
+
+// MeetingRecordingDetail_Transcript Array of speaker segments when populated, empty object when no transcript exists.
+type MeetingRecordingDetail_Transcript struct {
+	union json.RawMessage
+}
+
+// MeetingRecordingDetailResponse defines model for meeting_recording_detail_response.
+type MeetingRecordingDetailResponse struct {
+	Data struct {
+		Attributes MeetingRecordingDetail `json:"attributes"`
+
+		// ID Unique UUID of the meeting recording
+		ID   string                                 `json:"id"`
+		Type MeetingRecordingDetailResponseDataType `json:"type"`
+	} `json:"data"`
+}
+
+// MeetingRecordingDetailResponseDataType defines model for MeetingRecordingDetailResponse.Data.Type.
+type MeetingRecordingDetailResponseDataType string
+
 // MeetingRecordingList defines model for meeting_recording_list.
 type MeetingRecordingList struct {
 	Data []struct {
@@ -49654,12 +50258,46 @@ type MeetingRecordingList struct {
 		ID   string                       `json:"id"`
 		Type MeetingRecordingListDataType `json:"type"`
 	} `json:"data"`
-	Included []JsonapiIncludedResource `json:"included,omitempty"`
-	Meta     *Meta                     `json:"meta,omitempty"`
+	Meta *Meta `json:"meta,omitempty"`
 }
 
 // MeetingRecordingListDataType defines model for MeetingRecordingList.Data.Type.
 type MeetingRecordingListDataType string
+
+// MeetingRecordingResponse defines model for meeting_recording_response.
+type MeetingRecordingResponse struct {
+	Data struct {
+		Attributes MeetingRecording `json:"attributes"`
+
+		// ID Unique UUID of the meeting recording
+		ID   string                           `json:"id"`
+		Type MeetingRecordingResponseDataType `json:"type"`
+	} `json:"data"`
+}
+
+// MeetingRecordingResponseDataType defines model for MeetingRecordingResponse.Data.Type.
+type MeetingRecordingResponseDataType string
+
+// MeetingRecordingTranscriptSegment defines model for meeting_recording_transcript_segment.
+type MeetingRecordingTranscriptSegment struct {
+	// Speaker Speaker label (e.g. Speaker 1)
+	Speaker string `json:"speaker"`
+
+	// Words Timestamped words spoken by this speaker
+	Words []MeetingRecordingTranscriptWord `json:"words"`
+}
+
+// MeetingRecordingTranscriptWord defines model for meeting_recording_transcript_word.
+type MeetingRecordingTranscriptWord struct {
+	// EndTimestamp End time in seconds from recording start
+	EndTimestamp *float32 `json:"end_timestamp,omitempty"`
+
+	// StartTimestamp Start time in seconds from recording start
+	StartTimestamp *float32 `json:"start_timestamp,omitempty"`
+
+	// Text Transcribed word
+	Text string `json:"text"`
+}
 
 // Meta defines model for meta.
 type Meta struct {
@@ -49744,6 +50382,15 @@ type NewAlert struct {
 			// NotificationTargetType Only available for organizations with Rootly On-Call enabled. Can be one of Group, Service, EscalationPolicy, Functionality, User. Please contact support if you encounter issues using `Functionality` as a notification target type.
 			NotificationTargetType nullable.Nullable[NewAlertDataAttributesNotificationTargetType] `json:"notification_target_type,omitempty"`
 
+			// NotificationTargets Only available for organizations with Rootly On-Call enabled. Page multiple destinations (any combination of Group, Service, EscalationPolicy, Functionality, or User) in a single request. `Functionality` targets require the `enable_paging_functionalities` feature; a request that includes one while it is disabled is rejected. Applies to alert creation only. When provided, this takes precedence over the singular `notification_target_type` / `notification_target_id` fields.
+			NotificationTargets nullable.Nullable[[]struct {
+				// ID The identifier of the notification target object.
+				ID string `json:"id"`
+
+				// Type The type of the notification target. Can be one of Group, Service, EscalationPolicy, Functionality, User.
+				Type NewAlertDataAttributesNotificationTargetsType `json:"type"`
+			}] `json:"notification_targets,omitempty"`
+
 			// ServiceIDs The Service IDs to attach to the alert. If your organization has On-Call enabled and your notification target is a Service. This field will be automatically set for you.
 			ServiceIDs nullable.Nullable[[]string] `json:"service_ids,omitempty"`
 
@@ -49783,6 +50430,9 @@ type NewAlertDataAttributesNoise string
 
 // NewAlertDataAttributesNotificationTargetType Only available for organizations with Rootly On-Call enabled. Can be one of Group, Service, EscalationPolicy, Functionality, User. Please contact support if you encounter issues using `Functionality` as a notification target type.
 type NewAlertDataAttributesNotificationTargetType string
+
+// NewAlertDataAttributesNotificationTargetsType The type of the notification target. Can be one of Group, Service, EscalationPolicy, Functionality, User.
+type NewAlertDataAttributesNotificationTargetsType string
 
 // NewAlertDataAttributesSource The source of the alert
 //
@@ -52416,11 +53066,20 @@ type NewLiveCallRouter struct {
 				Type NewLiveCallRouterDataAttributesEscalationPolicyTriggerParamsType `json:"type"`
 			} `json:"escalation_policy_trigger_params,omitempty"`
 
+			// InformationalNotificationMessage Optional message included in the SMS/push notification. Supports variables such as {{ alert.url }}, {{ alert.data.* }}, and {{ alert.alert_urgency.name }}.
+			InformationalNotificationMessage nullable.Nullable[string] `json:"informational_notification_message,omitempty"`
+
 			// Kind The kind of the live_call_router
 			Kind NewLiveCallRouterDataAttributesKind `json:"kind"`
 
 			// Name The name of the live_call_router
 			Name string `json:"name"`
+
+			// NotifyViaPushNotification Whether responders are also notified via push notification when this router pages them
+			NotifyViaPushNotification *bool `json:"notify_via_push_notification,omitempty"`
+
+			// NotifyViaSms Whether responders are also notified via SMS when this router pages them
+			NotifyViaSms *bool `json:"notify_via_sms,omitempty"`
 
 			// PagingTargets Paging targets that callers can select from when this live call router is configured as a phone tree.
 			PagingTargets []struct {
@@ -52448,6 +53107,9 @@ type NewLiveCallRouter struct {
 
 			// ShouldRedirectToVoicemailOnNoAnswer This prompts the caller to choose voicemail or connect live
 			ShouldRedirectToVoicemailOnNoAnswer *bool `json:"should_redirect_to_voicemail_on_no_answer,omitempty"`
+
+			// UnavailableResponderMessage The message played to the caller when a responder doesn't answer and the call moves on to the next person in the escalation. Leave blank to use the default message.
+			UnavailableResponderMessage nullable.Nullable[string] `json:"unavailable_responder_message,omitempty"`
 
 			// VoicemailGreeting The voicemail greeting of the live_call_router
 			VoicemailGreeting string `json:"voicemail_greeting"`
@@ -52521,6 +53183,7 @@ type NewOnCallRole struct {
 			CatalogsPermissions           []NewOnCallRoleDataAttributesCatalogsPermissions           `json:"catalogs_permissions,omitempty"`
 			ContactsPermissions           []NewOnCallRoleDataAttributesContactsPermissions           `json:"contacts_permissions,omitempty"`
 			EscalationPoliciesPermissions []NewOnCallRoleDataAttributesEscalationPoliciesPermissions `json:"escalation_policies_permissions,omitempty"`
+			FunctionalitiesPermissions    []NewOnCallRoleDataAttributesFunctionalitiesPermissions    `json:"functionalities_permissions,omitempty"`
 			GroupsPermissions             []NewOnCallRoleDataAttributesGroupsPermissions             `json:"groups_permissions,omitempty"`
 			HeartbeatsPermissions         []NewOnCallRoleDataAttributesHeartbeatsPermissions         `json:"heartbeats_permissions,omitempty"`
 			IntegrationsPermissions       []NewOnCallRoleDataAttributesIntegrationsPermissions       `json:"integrations_permissions,omitempty"`
@@ -52576,6 +53239,9 @@ type NewOnCallRoleDataAttributesContactsPermissions string
 
 // NewOnCallRoleDataAttributesEscalationPoliciesPermissions defines model for NewOnCallRole.Data.Attributes.EscalationPoliciesPermissions.
 type NewOnCallRoleDataAttributesEscalationPoliciesPermissions string
+
+// NewOnCallRoleDataAttributesFunctionalitiesPermissions defines model for NewOnCallRole.Data.Attributes.FunctionalitiesPermissions.
+type NewOnCallRoleDataAttributesFunctionalitiesPermissions string
 
 // NewOnCallRoleDataAttributesGroupsPermissions defines model for NewOnCallRole.Data.Attributes.GroupsPermissions.
 type NewOnCallRoleDataAttributesGroupsPermissions string
@@ -54442,6 +55108,7 @@ type OnCallRole struct {
 	ContactsPermissions           []OnCallRoleContactsPermissions           `json:"contacts_permissions,omitempty"`
 	CreatedAt                     string                                    `json:"created_at"`
 	EscalationPoliciesPermissions []OnCallRoleEscalationPoliciesPermissions `json:"escalation_policies_permissions,omitempty"`
+	FunctionalitiesPermissions    []OnCallRoleFunctionalitiesPermissions    `json:"functionalities_permissions,omitempty"`
 	GroupsPermissions             []OnCallRoleGroupsPermissions             `json:"groups_permissions,omitempty"`
 	HeartbeatsPermissions         []OnCallRoleHeartbeatsPermissions         `json:"heartbeats_permissions,omitempty"`
 	IntegrationsPermissions       []OnCallRoleIntegrationsPermissions       `json:"integrations_permissions,omitempty"`
@@ -54498,6 +55165,9 @@ type OnCallRoleContactsPermissions string
 
 // OnCallRoleEscalationPoliciesPermissions defines model for OnCallRole.EscalationPoliciesPermissions.
 type OnCallRoleEscalationPoliciesPermissions string
+
+// OnCallRoleFunctionalitiesPermissions defines model for OnCallRole.FunctionalitiesPermissions.
+type OnCallRoleFunctionalitiesPermissions string
 
 // OnCallRoleGroupsPermissions defines model for OnCallRole.GroupsPermissions.
 type OnCallRoleGroupsPermissions string
@@ -54886,6 +55556,9 @@ type PageRootlyOnCallRespondersTaskParams struct {
 	// AlertUrgencyID Alert urgency ID
 	AlertUrgencyID string `json:"alert_urgency_id"`
 
+	// CreateNewAlert When true, always create a new alert instead of re-paging the alert that triggered the workflow
+	CreateNewAlert *bool `json:"create_new_alert,omitempty"`
+
 	// Description Alert description
 	Description            *string `json:"description,omitempty"`
 	EscalationNote         *string `json:"escalation_note,omitempty"`
@@ -55255,6 +55928,8 @@ type PostMortemTriggerParams struct {
 	IncidentConditionIncidentRoles  *PostMortemTriggerParamsIncidentConditionIncidentRoles                    `json:"incident_condition_incident_roles,omitempty"`
 	IncidentConditionIncidentType   *PostMortemTriggerParamsIncidentConditionIncidentType                     `json:"incident_condition_incident_type,omitempty"`
 	IncidentConditionKind           *PostMortemTriggerParamsIncidentConditionKind                             `json:"incident_condition_kind,omitempty"`
+	IncidentConditionLabel          *PostMortemTriggerParamsIncidentConditionLabel                            `json:"incident_condition_label,omitempty"`
+	IncidentConditionLabelUseRegexp *bool                                                                     `json:"incident_condition_label_use_regexp,omitempty"`
 	IncidentConditionMitigatedAt    nullable.Nullable[PostMortemTriggerParamsIncidentConditionMitigatedAt]    `json:"incident_condition_mitigated_at,omitempty"`
 	IncidentConditionResolvedAt     nullable.Nullable[PostMortemTriggerParamsIncidentConditionResolvedAt]     `json:"incident_condition_resolved_at,omitempty"`
 	IncidentConditionService        *PostMortemTriggerParamsIncidentConditionService                          `json:"incident_condition_service,omitempty"`
@@ -55269,6 +55944,7 @@ type PostMortemTriggerParams struct {
 	// IncidentInactivityDuration ex. 10 min, 1h, 3 days, 2 weeks
 	IncidentInactivityDuration  nullable.Nullable[string]                           `json:"incident_inactivity_duration,omitempty"`
 	IncidentKinds               []PostMortemTriggerParamsIncidentKinds              `json:"incident_kinds,omitempty"`
+	IncidentLabels              []string                                            `json:"incident_labels,omitempty"`
 	IncidentPostMortemCondition *PostMortemTriggerParamsIncidentPostMortemCondition `json:"incident_post_mortem_condition,omitempty"`
 
 	// IncidentPostMortemConditionCause [DEPRECATED] Use incident_condition_cause instead
@@ -55310,6 +55986,9 @@ type PostMortemTriggerParamsIncidentConditionIncidentType string
 
 // PostMortemTriggerParamsIncidentConditionKind defines model for PostMortemTriggerParams.IncidentConditionKind.
 type PostMortemTriggerParamsIncidentConditionKind string
+
+// PostMortemTriggerParamsIncidentConditionLabel defines model for PostMortemTriggerParams.IncidentConditionLabel.
+type PostMortemTriggerParamsIncidentConditionLabel string
 
 // PostMortemTriggerParamsIncidentConditionMitigatedAt defines model for PostMortemTriggerParams.IncidentConditionMitigatedAt.
 type PostMortemTriggerParamsIncidentConditionMitigatedAt string
@@ -60420,7 +61099,9 @@ type UpdateGoogleDocsPageTaskParams struct {
 	Content *string `json:"content,omitempty"`
 
 	// FileID The Google Doc file ID
-	FileID string `json:"file_id"`
+	FileID          string `json:"file_id"`
+	IncludeOverview *bool  `json:"include_overview,omitempty"`
+	IncludeTimeline *bool  `json:"include_timeline,omitempty"`
 
 	// PostMortemTemplateID Retrospective template to use when updating page, if desired
 	PostMortemTemplateID *string                                 `json:"post_mortem_template_id,omitempty"`
@@ -61375,11 +62056,20 @@ type UpdateLiveCallRouter struct {
 				Type UpdateLiveCallRouterDataAttributesEscalationPolicyTriggerParamsType `json:"type"`
 			} `json:"escalation_policy_trigger_params,omitempty"`
 
+			// InformationalNotificationMessage Optional message included in the SMS/push notification. Supports variables such as {{ alert.url }}, {{ alert.data.* }}, and {{ alert.alert_urgency.name }}.
+			InformationalNotificationMessage nullable.Nullable[string] `json:"informational_notification_message,omitempty"`
+
 			// Kind The kind of the live_call_router
 			Kind *UpdateLiveCallRouterDataAttributesKind `json:"kind,omitempty"`
 
 			// Name The name of the live_call_router
 			Name *string `json:"name,omitempty"`
+
+			// NotifyViaPushNotification Whether responders are also notified via push notification when this router pages them
+			NotifyViaPushNotification *bool `json:"notify_via_push_notification,omitempty"`
+
+			// NotifyViaSms Whether responders are also notified via SMS when this router pages them
+			NotifyViaSms *bool `json:"notify_via_sms,omitempty"`
 
 			// PagingTargets Paging targets that callers can select from when this live call router is configured as a phone tree.
 			PagingTargets []struct {
@@ -61404,6 +62094,9 @@ type UpdateLiveCallRouter struct {
 
 			// ShouldRedirectToVoicemailOnNoAnswer This prompts the caller to choose voicemail or connect live
 			ShouldRedirectToVoicemailOnNoAnswer *bool `json:"should_redirect_to_voicemail_on_no_answer,omitempty"`
+
+			// UnavailableResponderMessage The message played to the caller when a responder doesn't answer and the call moves on to the next person in the escalation. Leave blank to use the default message.
+			UnavailableResponderMessage nullable.Nullable[string] `json:"unavailable_responder_message,omitempty"`
 
 			// VoicemailGreeting The voicemail greeting of the live_call_router
 			VoicemailGreeting *string `json:"voicemail_greeting,omitempty"`
@@ -61527,6 +62220,7 @@ type UpdateOnCallRole struct {
 			CatalogsPermissions           []UpdateOnCallRoleDataAttributesCatalogsPermissions           `json:"catalogs_permissions,omitempty"`
 			ContactsPermissions           []UpdateOnCallRoleDataAttributesContactsPermissions           `json:"contacts_permissions,omitempty"`
 			EscalationPoliciesPermissions []UpdateOnCallRoleDataAttributesEscalationPoliciesPermissions `json:"escalation_policies_permissions,omitempty"`
+			FunctionalitiesPermissions    []UpdateOnCallRoleDataAttributesFunctionalitiesPermissions    `json:"functionalities_permissions,omitempty"`
 			GroupsPermissions             []UpdateOnCallRoleDataAttributesGroupsPermissions             `json:"groups_permissions,omitempty"`
 			HeartbeatsPermissions         []UpdateOnCallRoleDataAttributesHeartbeatsPermissions         `json:"heartbeats_permissions,omitempty"`
 			IntegrationsPermissions       []UpdateOnCallRoleDataAttributesIntegrationsPermissions       `json:"integrations_permissions,omitempty"`
@@ -61582,6 +62276,9 @@ type UpdateOnCallRoleDataAttributesContactsPermissions string
 
 // UpdateOnCallRoleDataAttributesEscalationPoliciesPermissions defines model for UpdateOnCallRole.Data.Attributes.EscalationPoliciesPermissions.
 type UpdateOnCallRoleDataAttributesEscalationPoliciesPermissions string
+
+// UpdateOnCallRoleDataAttributesFunctionalitiesPermissions defines model for UpdateOnCallRole.Data.Attributes.FunctionalitiesPermissions.
+type UpdateOnCallRoleDataAttributesFunctionalitiesPermissions string
 
 // UpdateOnCallRoleDataAttributesGroupsPermissions defines model for UpdateOnCallRole.Data.Attributes.GroupsPermissions.
 type UpdateOnCallRoleDataAttributesGroupsPermissions string
@@ -64433,7 +65130,62 @@ type ListAllIncidentActionItemsParams struct {
 	FilterCreatedAtGte         *string `form:"filter[created_at][gte],omitempty" json:"filter[created_at][gte],omitempty"`
 	FilterCreatedAtLt          *string `form:"filter[created_at][lt],omitempty" json:"filter[created_at][lt],omitempty"`
 	FilterCreatedAtLte         *string `form:"filter[created_at][lte],omitempty" json:"filter[created_at][lte],omitempty"`
+	FilterKindEq               *string `form:"filter[kind][eq],omitempty" json:"filter[kind][eq],omitempty"`
+	FilterKindNotEq            *string `form:"filter[kind][not_eq],omitempty" json:"filter[kind][not_eq],omitempty"`
+	FilterKindIn               *string `form:"filter[kind][in],omitempty" json:"filter[kind][in],omitempty"`
+	FilterKindNotIn            *string `form:"filter[kind][not_in],omitempty" json:"filter[kind][not_in],omitempty"`
+	FilterPriorityEq           *string `form:"filter[priority][eq],omitempty" json:"filter[priority][eq],omitempty"`
+	FilterPriorityNotEq        *string `form:"filter[priority][not_eq],omitempty" json:"filter[priority][not_eq],omitempty"`
+	FilterPriorityIn           *string `form:"filter[priority][in],omitempty" json:"filter[priority][in],omitempty"`
+	FilterPriorityNotIn        *string `form:"filter[priority][not_in],omitempty" json:"filter[priority][not_in],omitempty"`
+	FilterStatusEq             *string `form:"filter[status][eq],omitempty" json:"filter[status][eq],omitempty"`
+	FilterStatusNotEq          *string `form:"filter[status][not_eq],omitempty" json:"filter[status][not_eq],omitempty"`
+	FilterStatusIn             *string `form:"filter[status][in],omitempty" json:"filter[status][in],omitempty"`
+	FilterStatusNotIn          *string `form:"filter[status][not_in],omitempty" json:"filter[status][not_in],omitempty"`
+	FilterIncidentStatusEq     *string `form:"filter[incident_status][eq],omitempty" json:"filter[incident_status][eq],omitempty"`
+	FilterIncidentStatusNotEq  *string `form:"filter[incident_status][not_eq],omitempty" json:"filter[incident_status][not_eq],omitempty"`
+	FilterIncidentStatusIn     *string `form:"filter[incident_status][in],omitempty" json:"filter[incident_status][in],omitempty"`
+	FilterIncidentStatusNotIn  *string `form:"filter[incident_status][not_in],omitempty" json:"filter[incident_status][not_in],omitempty"`
 	Sort                       *string `form:"sort,omitempty" json:"sort,omitempty"`
+}
+
+// CreateAiChatParams defines parameters for CreateAiChat.
+type CreateAiChatParams struct {
+	// Message Message to send to the AI assistant
+	Message string `form:"message" json:"message"`
+
+	// SessionID Resume an existing session
+	SessionID *openapi_types.UUID `form:"session_id,omitempty" json:"session_id,omitempty"`
+
+	// IncidentID Bind session to an incident for context (mutually exclusive with alert_id)
+	IncidentID *openapi_types.UUID `form:"incident_id,omitempty" json:"incident_id,omitempty"`
+
+	// AlertID Bind session to an alert for context (mutually exclusive with incident_id)
+	AlertID *openapi_types.UUID `form:"alert_id,omitempty" json:"alert_id,omitempty"`
+}
+
+// ListAiChatSessionMessagesParams defines parameters for ListAiChatSessionMessages.
+type ListAiChatSessionMessagesParams struct {
+	// PageNumber Page number (default 1)
+	PageNumber *int `form:"page[number],omitempty" json:"page[number],omitempty"`
+
+	// PageSize Messages per page (max 100, default 50)
+	PageSize *int `form:"page[size],omitempty" json:"page[size],omitempty"`
+}
+
+// StreamAiChatParams defines parameters for StreamAiChat.
+type StreamAiChatParams struct {
+	// Message Message to send
+	Message string `form:"message" json:"message"`
+
+	// SessionID Resume an existing session
+	SessionID *openapi_types.UUID `form:"session_id,omitempty" json:"session_id,omitempty"`
+
+	// IncidentID Bind session to an incident (mutually exclusive with alert_id)
+	IncidentID *openapi_types.UUID `form:"incident_id,omitempty" json:"incident_id,omitempty"`
+
+	// AlertID Bind session to an alert (mutually exclusive with incident_id)
+	AlertID *openapi_types.UUID `form:"alert_id,omitempty" json:"alert_id,omitempty"`
 }
 
 // ListAlertEventsFeedParams defines parameters for ListAlertEventsFeed.
@@ -64478,21 +65230,45 @@ type ListAlertFieldsParams struct {
 	FilterCreatedAtGte *string `form:"filter[created_at][gte],omitempty" json:"filter[created_at][gte],omitempty"`
 	FilterCreatedAtLt  *string `form:"filter[created_at][lt],omitempty" json:"filter[created_at][lt],omitempty"`
 	FilterCreatedAtLte *string `form:"filter[created_at][lte],omitempty" json:"filter[created_at][lte],omitempty"`
+	FilterNameEq       *string `form:"filter[name][eq],omitempty" json:"filter[name][eq],omitempty"`
+	FilterNameNotEq    *string `form:"filter[name][not_eq],omitempty" json:"filter[name][not_eq],omitempty"`
+	FilterNameIn       *string `form:"filter[name][in],omitempty" json:"filter[name][in],omitempty"`
+	FilterNameNotIn    *string `form:"filter[name][not_in],omitempty" json:"filter[name][not_in],omitempty"`
+	FilterKindEq       *string `form:"filter[kind][eq],omitempty" json:"filter[kind][eq],omitempty"`
+	FilterKindNotEq    *string `form:"filter[kind][not_eq],omitempty" json:"filter[kind][not_eq],omitempty"`
+	FilterKindIn       *string `form:"filter[kind][in],omitempty" json:"filter[kind][in],omitempty"`
+	FilterKindNotIn    *string `form:"filter[kind][not_in],omitempty" json:"filter[kind][not_in],omitempty"`
 	Sort               *string `form:"sort,omitempty" json:"sort,omitempty"`
 }
 
 // ListAlertGroupsParams defines parameters for ListAlertGroups.
 type ListAlertGroupsParams struct {
-	Include *string `form:"include,omitempty" json:"include,omitempty"`
+	Include         *string `form:"include,omitempty" json:"include,omitempty"`
+	FilterSlugEq    *string `form:"filter[slug][eq],omitempty" json:"filter[slug][eq],omitempty"`
+	FilterSlugNotEq *string `form:"filter[slug][not_eq],omitempty" json:"filter[slug][not_eq],omitempty"`
+	FilterSlugIn    *string `form:"filter[slug][in],omitempty" json:"filter[slug][in],omitempty"`
+	FilterSlugNotIn *string `form:"filter[slug][not_in],omitempty" json:"filter[slug][not_in],omitempty"`
+	FilterNameEq    *string `form:"filter[name][eq],omitempty" json:"filter[name][eq],omitempty"`
+	FilterNameNotEq *string `form:"filter[name][not_eq],omitempty" json:"filter[name][not_eq],omitempty"`
+	FilterNameIn    *string `form:"filter[name][in],omitempty" json:"filter[name][in],omitempty"`
+	FilterNameNotIn *string `form:"filter[name][not_in],omitempty" json:"filter[name][not_in],omitempty"`
 }
 
 // ListAlertRoutesParams defines parameters for ListAlertRoutes.
 type ListAlertRoutesParams struct {
-	PageNumber   *int    `form:"page[number],omitempty" json:"page[number],omitempty"`
-	PageSize     *int    `form:"page[size],omitempty" json:"page[size],omitempty"`
-	FilterSearch *string `form:"filter[search],omitempty" json:"filter[search],omitempty"`
-	FilterName   *string `form:"filter[name],omitempty" json:"filter[name],omitempty"`
-	Sort         *string `form:"sort,omitempty" json:"sort,omitempty"`
+	PageNumber      *int    `form:"page[number],omitempty" json:"page[number],omitempty"`
+	PageSize        *int    `form:"page[size],omitempty" json:"page[size],omitempty"`
+	FilterSearch    *string `form:"filter[search],omitempty" json:"filter[search],omitempty"`
+	FilterName      *string `form:"filter[name],omitempty" json:"filter[name],omitempty"`
+	FilterSlugEq    *string `form:"filter[slug][eq],omitempty" json:"filter[slug][eq],omitempty"`
+	FilterSlugNotEq *string `form:"filter[slug][not_eq],omitempty" json:"filter[slug][not_eq],omitempty"`
+	FilterSlugIn    *string `form:"filter[slug][in],omitempty" json:"filter[slug][in],omitempty"`
+	FilterSlugNotIn *string `form:"filter[slug][not_in],omitempty" json:"filter[slug][not_in],omitempty"`
+	FilterNameEq    *string `form:"filter[name][eq],omitempty" json:"filter[name][eq],omitempty"`
+	FilterNameNotEq *string `form:"filter[name][not_eq],omitempty" json:"filter[name][not_eq],omitempty"`
+	FilterNameIn    *string `form:"filter[name][in],omitempty" json:"filter[name][in],omitempty"`
+	FilterNameNotIn *string `form:"filter[name][not_in],omitempty" json:"filter[name][not_in],omitempty"`
+	Sort            *string `form:"sort,omitempty" json:"sort,omitempty"`
 }
 
 // ListAlertRoutingRulesParams defines parameters for ListAlertRoutingRules.
@@ -64506,6 +65282,14 @@ type ListAlertRoutingRulesParams struct {
 	FilterCreatedAtGte *string `form:"filter[created_at][gte],omitempty" json:"filter[created_at][gte],omitempty"`
 	FilterCreatedAtLt  *string `form:"filter[created_at][lt],omitempty" json:"filter[created_at][lt],omitempty"`
 	FilterCreatedAtLte *string `form:"filter[created_at][lte],omitempty" json:"filter[created_at][lte],omitempty"`
+	FilterSlugEq       *string `form:"filter[slug][eq],omitempty" json:"filter[slug][eq],omitempty"`
+	FilterSlugNotEq    *string `form:"filter[slug][not_eq],omitempty" json:"filter[slug][not_eq],omitempty"`
+	FilterSlugIn       *string `form:"filter[slug][in],omitempty" json:"filter[slug][in],omitempty"`
+	FilterSlugNotIn    *string `form:"filter[slug][not_in],omitempty" json:"filter[slug][not_in],omitempty"`
+	FilterNameEq       *string `form:"filter[name][eq],omitempty" json:"filter[name][eq],omitempty"`
+	FilterNameNotEq    *string `form:"filter[name][not_eq],omitempty" json:"filter[name][not_eq],omitempty"`
+	FilterNameIn       *string `form:"filter[name][in],omitempty" json:"filter[name][in],omitempty"`
+	FilterNameNotIn    *string `form:"filter[name][not_in],omitempty" json:"filter[name][not_in],omitempty"`
 	Sort               *string `form:"sort,omitempty" json:"sort,omitempty"`
 }
 
@@ -64533,35 +65317,63 @@ type ListAlertUrgenciesParams struct {
 	FilterCreatedAtGte *string `form:"filter[created_at][gte],omitempty" json:"filter[created_at][gte],omitempty"`
 	FilterCreatedAtLt  *string `form:"filter[created_at][lt],omitempty" json:"filter[created_at][lt],omitempty"`
 	FilterCreatedAtLte *string `form:"filter[created_at][lte],omitempty" json:"filter[created_at][lte],omitempty"`
+	FilterNameEq       *string `form:"filter[name][eq],omitempty" json:"filter[name][eq],omitempty"`
+	FilterNameNotEq    *string `form:"filter[name][not_eq],omitempty" json:"filter[name][not_eq],omitempty"`
+	FilterNameIn       *string `form:"filter[name][in],omitempty" json:"filter[name][in],omitempty"`
+	FilterNameNotIn    *string `form:"filter[name][not_in],omitempty" json:"filter[name][not_in],omitempty"`
 	Sort               *string `form:"sort,omitempty" json:"sort,omitempty"`
 }
 
 // ListAlertsParams defines parameters for ListAlerts.
 type ListAlertsParams struct {
 	// Include comma separated if needed. eg: environments,services,groups
-	Include            *ListAlertsParamsInclude `form:"include,omitempty" json:"include,omitempty"`
-	FilterStatus       *string                  `form:"filter[status],omitempty" json:"filter[status],omitempty"`
-	FilterSource       *string                  `form:"filter[source],omitempty" json:"filter[source],omitempty"`
-	FilterServices     *string                  `form:"filter[services],omitempty" json:"filter[services],omitempty"`
-	FilterEnvironments *string                  `form:"filter[environments],omitempty" json:"filter[environments],omitempty"`
-	FilterGroups       *string                  `form:"filter[groups],omitempty" json:"filter[groups],omitempty"`
-	FilterLabels       *string                  `form:"filter[labels],omitempty" json:"filter[labels],omitempty"`
-	FilterStartedAtGt  *string                  `form:"filter[started_at][gt],omitempty" json:"filter[started_at][gt],omitempty"`
-	FilterStartedAtGte *string                  `form:"filter[started_at][gte],omitempty" json:"filter[started_at][gte],omitempty"`
-	FilterStartedAtLt  *string                  `form:"filter[started_at][lt],omitempty" json:"filter[started_at][lt],omitempty"`
-	FilterStartedAtLte *string                  `form:"filter[started_at][lte],omitempty" json:"filter[started_at][lte],omitempty"`
-	FilterEndedAtGt    *string                  `form:"filter[ended_at][gt],omitempty" json:"filter[ended_at][gt],omitempty"`
-	FilterEndedAtGte   *string                  `form:"filter[ended_at][gte],omitempty" json:"filter[ended_at][gte],omitempty"`
-	FilterEndedAtLt    *string                  `form:"filter[ended_at][lt],omitempty" json:"filter[ended_at][lt],omitempty"`
-	FilterEndedAtLte   *string                  `form:"filter[ended_at][lte],omitempty" json:"filter[ended_at][lte],omitempty"`
-	FilterCreatedAtGt  *string                  `form:"filter[created_at][gt],omitempty" json:"filter[created_at][gt],omitempty"`
-	FilterCreatedAtGte *string                  `form:"filter[created_at][gte],omitempty" json:"filter[created_at][gte],omitempty"`
-	FilterCreatedAtLt  *string                  `form:"filter[created_at][lt],omitempty" json:"filter[created_at][lt],omitempty"`
-	FilterCreatedAtLte *string                  `form:"filter[created_at][lte],omitempty" json:"filter[created_at][lte],omitempty"`
-	FilterUpdatedAtGt  *string                  `form:"filter[updated_at][gt],omitempty" json:"filter[updated_at][gt],omitempty"`
-	FilterUpdatedAtGte *string                  `form:"filter[updated_at][gte],omitempty" json:"filter[updated_at][gte],omitempty"`
-	FilterUpdatedAtLt  *string                  `form:"filter[updated_at][lt],omitempty" json:"filter[updated_at][lt],omitempty"`
-	FilterUpdatedAtLte *string                  `form:"filter[updated_at][lte],omitempty" json:"filter[updated_at][lte],omitempty"`
+	Include                 *ListAlertsParamsInclude `form:"include,omitempty" json:"include,omitempty"`
+	FilterStatus            *string                  `form:"filter[status],omitempty" json:"filter[status],omitempty"`
+	FilterSource            *string                  `form:"filter[source],omitempty" json:"filter[source],omitempty"`
+	FilterServices          *string                  `form:"filter[services],omitempty" json:"filter[services],omitempty"`
+	FilterEnvironments      *string                  `form:"filter[environments],omitempty" json:"filter[environments],omitempty"`
+	FilterGroups            *string                  `form:"filter[groups],omitempty" json:"filter[groups],omitempty"`
+	FilterLabels            *string                  `form:"filter[labels],omitempty" json:"filter[labels],omitempty"`
+	FilterStartedAtGt       *string                  `form:"filter[started_at][gt],omitempty" json:"filter[started_at][gt],omitempty"`
+	FilterStartedAtGte      *string                  `form:"filter[started_at][gte],omitempty" json:"filter[started_at][gte],omitempty"`
+	FilterStartedAtLt       *string                  `form:"filter[started_at][lt],omitempty" json:"filter[started_at][lt],omitempty"`
+	FilterStartedAtLte      *string                  `form:"filter[started_at][lte],omitempty" json:"filter[started_at][lte],omitempty"`
+	FilterEndedAtGt         *string                  `form:"filter[ended_at][gt],omitempty" json:"filter[ended_at][gt],omitempty"`
+	FilterEndedAtGte        *string                  `form:"filter[ended_at][gte],omitempty" json:"filter[ended_at][gte],omitempty"`
+	FilterEndedAtLt         *string                  `form:"filter[ended_at][lt],omitempty" json:"filter[ended_at][lt],omitempty"`
+	FilterEndedAtLte        *string                  `form:"filter[ended_at][lte],omitempty" json:"filter[ended_at][lte],omitempty"`
+	FilterCreatedAtGt       *string                  `form:"filter[created_at][gt],omitempty" json:"filter[created_at][gt],omitempty"`
+	FilterCreatedAtGte      *string                  `form:"filter[created_at][gte],omitempty" json:"filter[created_at][gte],omitempty"`
+	FilterCreatedAtLt       *string                  `form:"filter[created_at][lt],omitempty" json:"filter[created_at][lt],omitempty"`
+	FilterCreatedAtLte      *string                  `form:"filter[created_at][lte],omitempty" json:"filter[created_at][lte],omitempty"`
+	FilterUpdatedAtGt       *string                  `form:"filter[updated_at][gt],omitempty" json:"filter[updated_at][gt],omitempty"`
+	FilterUpdatedAtGte      *string                  `form:"filter[updated_at][gte],omitempty" json:"filter[updated_at][gte],omitempty"`
+	FilterUpdatedAtLt       *string                  `form:"filter[updated_at][lt],omitempty" json:"filter[updated_at][lt],omitempty"`
+	FilterUpdatedAtLte      *string                  `form:"filter[updated_at][lte],omitempty" json:"filter[updated_at][lte],omitempty"`
+	FilterStatusEq          *string                  `form:"filter[status][eq],omitempty" json:"filter[status][eq],omitempty"`
+	FilterStatusNotEq       *string                  `form:"filter[status][not_eq],omitempty" json:"filter[status][not_eq],omitempty"`
+	FilterStatusIn          *string                  `form:"filter[status][in],omitempty" json:"filter[status][in],omitempty"`
+	FilterStatusNotIn       *string                  `form:"filter[status][not_in],omitempty" json:"filter[status][not_in],omitempty"`
+	FilterSourceEq          *string                  `form:"filter[source][eq],omitempty" json:"filter[source][eq],omitempty"`
+	FilterSourceNotEq       *string                  `form:"filter[source][not_eq],omitempty" json:"filter[source][not_eq],omitempty"`
+	FilterSourceIn          *string                  `form:"filter[source][in],omitempty" json:"filter[source][in],omitempty"`
+	FilterSourceNotIn       *string                  `form:"filter[source][not_in],omitempty" json:"filter[source][not_in],omitempty"`
+	FilterServicesEq        *string                  `form:"filter[services][eq],omitempty" json:"filter[services][eq],omitempty"`
+	FilterServicesNotEq     *string                  `form:"filter[services][not_eq],omitempty" json:"filter[services][not_eq],omitempty"`
+	FilterServicesIn        *string                  `form:"filter[services][in],omitempty" json:"filter[services][in],omitempty"`
+	FilterServicesNotIn     *string                  `form:"filter[services][not_in],omitempty" json:"filter[services][not_in],omitempty"`
+	FilterGroupsEq          *string                  `form:"filter[groups][eq],omitempty" json:"filter[groups][eq],omitempty"`
+	FilterGroupsNotEq       *string                  `form:"filter[groups][not_eq],omitempty" json:"filter[groups][not_eq],omitempty"`
+	FilterGroupsIn          *string                  `form:"filter[groups][in],omitempty" json:"filter[groups][in],omitempty"`
+	FilterGroupsNotIn       *string                  `form:"filter[groups][not_in],omitempty" json:"filter[groups][not_in],omitempty"`
+	FilterEnvironmentsEq    *string                  `form:"filter[environments][eq],omitempty" json:"filter[environments][eq],omitempty"`
+	FilterEnvironmentsNotEq *string                  `form:"filter[environments][not_eq],omitempty" json:"filter[environments][not_eq],omitempty"`
+	FilterEnvironmentsIn    *string                  `form:"filter[environments][in],omitempty" json:"filter[environments][in],omitempty"`
+	FilterEnvironmentsNotIn *string                  `form:"filter[environments][not_in],omitempty" json:"filter[environments][not_in],omitempty"`
+	FilterLabelsEq          *string                  `form:"filter[labels][eq],omitempty" json:"filter[labels][eq],omitempty"`
+	FilterLabelsNotEq       *string                  `form:"filter[labels][not_eq],omitempty" json:"filter[labels][not_eq],omitempty"`
+	FilterLabelsIn          *string                  `form:"filter[labels][in],omitempty" json:"filter[labels][in],omitempty"`
+	FilterLabelsNotIn       *string                  `form:"filter[labels][not_in],omitempty" json:"filter[labels][not_in],omitempty"`
 
 	// PageAfter The cursor to fetch results using cursor pagination. A cursor is provided in meta.next_cursor in the response.
 	PageAfter  *string `form:"page[after],omitempty" json:"page[after],omitempty"`
@@ -64669,18 +65481,34 @@ type GetAPIKeyParams struct {
 
 // ListAuditsParams defines parameters for ListAudits.
 type ListAuditsParams struct {
-	Include            *string `form:"include,omitempty" json:"include,omitempty"`
-	PageNumber         *int    `form:"page[number],omitempty" json:"page[number],omitempty"`
-	PageSize           *int    `form:"page[size],omitempty" json:"page[size],omitempty"`
-	FilterCreatedAtGt  *string `form:"filter[created_at][gt],omitempty" json:"filter[created_at][gt],omitempty"`
-	FilterCreatedAtGte *string `form:"filter[created_at][gte],omitempty" json:"filter[created_at][gte],omitempty"`
-	FilterCreatedAtLt  *string `form:"filter[created_at][lt],omitempty" json:"filter[created_at][lt],omitempty"`
-	FilterCreatedAtLte *string `form:"filter[created_at][lte],omitempty" json:"filter[created_at][lte],omitempty"`
-	FilterUserID       *string `form:"filter[user_id],omitempty" json:"filter[user_id],omitempty"`
-	FilterAPIKeyID     *string `form:"filter[api_key_id],omitempty" json:"filter[api_key_id],omitempty"`
-	FilterSource       *string `form:"filter[source],omitempty" json:"filter[source],omitempty"`
-	FilterItemType     *string `form:"filter[item_type],omitempty" json:"filter[item_type],omitempty"`
-	Sort               *string `form:"sort,omitempty" json:"sort,omitempty"`
+	Include             *string `form:"include,omitempty" json:"include,omitempty"`
+	PageNumber          *int    `form:"page[number],omitempty" json:"page[number],omitempty"`
+	PageSize            *int    `form:"page[size],omitempty" json:"page[size],omitempty"`
+	FilterCreatedAtGt   *string `form:"filter[created_at][gt],omitempty" json:"filter[created_at][gt],omitempty"`
+	FilterCreatedAtGte  *string `form:"filter[created_at][gte],omitempty" json:"filter[created_at][gte],omitempty"`
+	FilterCreatedAtLt   *string `form:"filter[created_at][lt],omitempty" json:"filter[created_at][lt],omitempty"`
+	FilterCreatedAtLte  *string `form:"filter[created_at][lte],omitempty" json:"filter[created_at][lte],omitempty"`
+	FilterUserID        *string `form:"filter[user_id],omitempty" json:"filter[user_id],omitempty"`
+	FilterAPIKeyID      *string `form:"filter[api_key_id],omitempty" json:"filter[api_key_id],omitempty"`
+	FilterSource        *string `form:"filter[source],omitempty" json:"filter[source],omitempty"`
+	FilterItemType      *string `form:"filter[item_type],omitempty" json:"filter[item_type],omitempty"`
+	FilterUserIDEq      *string `form:"filter[user_id][eq],omitempty" json:"filter[user_id][eq],omitempty"`
+	FilterUserIDNotEq   *string `form:"filter[user_id][not_eq],omitempty" json:"filter[user_id][not_eq],omitempty"`
+	FilterUserIDIn      *string `form:"filter[user_id][in],omitempty" json:"filter[user_id][in],omitempty"`
+	FilterUserIDNotIn   *string `form:"filter[user_id][not_in],omitempty" json:"filter[user_id][not_in],omitempty"`
+	FilterAPIKeyIDEq    *string `form:"filter[api_key_id][eq],omitempty" json:"filter[api_key_id][eq],omitempty"`
+	FilterAPIKeyIDNotEq *string `form:"filter[api_key_id][not_eq],omitempty" json:"filter[api_key_id][not_eq],omitempty"`
+	FilterAPIKeyIDIn    *string `form:"filter[api_key_id][in],omitempty" json:"filter[api_key_id][in],omitempty"`
+	FilterAPIKeyIDNotIn *string `form:"filter[api_key_id][not_in],omitempty" json:"filter[api_key_id][not_in],omitempty"`
+	FilterSourceEq      *string `form:"filter[source][eq],omitempty" json:"filter[source][eq],omitempty"`
+	FilterSourceNotEq   *string `form:"filter[source][not_eq],omitempty" json:"filter[source][not_eq],omitempty"`
+	FilterSourceIn      *string `form:"filter[source][in],omitempty" json:"filter[source][in],omitempty"`
+	FilterSourceNotIn   *string `form:"filter[source][not_in],omitempty" json:"filter[source][not_in],omitempty"`
+	FilterItemTypeEq    *string `form:"filter[item_type][eq],omitempty" json:"filter[item_type][eq],omitempty"`
+	FilterItemTypeNotEq *string `form:"filter[item_type][not_eq],omitempty" json:"filter[item_type][not_eq],omitempty"`
+	FilterItemTypeIn    *string `form:"filter[item_type][in],omitempty" json:"filter[item_type][in],omitempty"`
+	FilterItemTypeNotIn *string `form:"filter[item_type][not_in],omitempty" json:"filter[item_type][not_in],omitempty"`
+	Sort                *string `form:"sort,omitempty" json:"sort,omitempty"`
 }
 
 // ListAuthorizationsParams defines parameters for ListAuthorizations.
@@ -64785,18 +65613,30 @@ type ListCatalogsParams struct {
 	Include *ListCatalogsParamsInclude `form:"include,omitempty" json:"include,omitempty"`
 
 	// Sort comma separated if needed. eg: created_at,updated_at
-	Sort               *ListCatalogsParamsSort `form:"sort,omitempty" json:"sort,omitempty"`
-	PageNumber         *int                    `form:"page[number],omitempty" json:"page[number],omitempty"`
-	PageSize           *int                    `form:"page[size],omitempty" json:"page[size],omitempty"`
-	FilterSearch       *string                 `form:"filter[search],omitempty" json:"filter[search],omitempty"`
-	FilterSlug         *string                 `form:"filter[slug],omitempty" json:"filter[slug],omitempty"`
-	FilterName         *string                 `form:"filter[name],omitempty" json:"filter[name],omitempty"`
-	FilterExternalID   *string                 `form:"filter[external_id],omitempty" json:"filter[external_id],omitempty"`
-	FilterManagedBy    *string                 `form:"filter[managed_by],omitempty" json:"filter[managed_by],omitempty"`
-	FilterCreatedAtGt  *string                 `form:"filter[created_at][gt],omitempty" json:"filter[created_at][gt],omitempty"`
-	FilterCreatedAtGte *string                 `form:"filter[created_at][gte],omitempty" json:"filter[created_at][gte],omitempty"`
-	FilterCreatedAtLt  *string                 `form:"filter[created_at][lt],omitempty" json:"filter[created_at][lt],omitempty"`
-	FilterCreatedAtLte *string                 `form:"filter[created_at][lte],omitempty" json:"filter[created_at][lte],omitempty"`
+	Sort                 *ListCatalogsParamsSort `form:"sort,omitempty" json:"sort,omitempty"`
+	PageNumber           *int                    `form:"page[number],omitempty" json:"page[number],omitempty"`
+	PageSize             *int                    `form:"page[size],omitempty" json:"page[size],omitempty"`
+	FilterSearch         *string                 `form:"filter[search],omitempty" json:"filter[search],omitempty"`
+	FilterSlug           *string                 `form:"filter[slug],omitempty" json:"filter[slug],omitempty"`
+	FilterName           *string                 `form:"filter[name],omitempty" json:"filter[name],omitempty"`
+	FilterExternalID     *string                 `form:"filter[external_id],omitempty" json:"filter[external_id],omitempty"`
+	FilterManagedBy      *string                 `form:"filter[managed_by],omitempty" json:"filter[managed_by],omitempty"`
+	FilterCreatedAtGt    *string                 `form:"filter[created_at][gt],omitempty" json:"filter[created_at][gt],omitempty"`
+	FilterCreatedAtGte   *string                 `form:"filter[created_at][gte],omitempty" json:"filter[created_at][gte],omitempty"`
+	FilterCreatedAtLt    *string                 `form:"filter[created_at][lt],omitempty" json:"filter[created_at][lt],omitempty"`
+	FilterCreatedAtLte   *string                 `form:"filter[created_at][lte],omitempty" json:"filter[created_at][lte],omitempty"`
+	FilterSlugEq         *string                 `form:"filter[slug][eq],omitempty" json:"filter[slug][eq],omitempty"`
+	FilterSlugNotEq      *string                 `form:"filter[slug][not_eq],omitempty" json:"filter[slug][not_eq],omitempty"`
+	FilterSlugIn         *string                 `form:"filter[slug][in],omitempty" json:"filter[slug][in],omitempty"`
+	FilterSlugNotIn      *string                 `form:"filter[slug][not_in],omitempty" json:"filter[slug][not_in],omitempty"`
+	FilterNameEq         *string                 `form:"filter[name][eq],omitempty" json:"filter[name][eq],omitempty"`
+	FilterNameNotEq      *string                 `form:"filter[name][not_eq],omitempty" json:"filter[name][not_eq],omitempty"`
+	FilterNameIn         *string                 `form:"filter[name][in],omitempty" json:"filter[name][in],omitempty"`
+	FilterNameNotIn      *string                 `form:"filter[name][not_in],omitempty" json:"filter[name][not_in],omitempty"`
+	FilterManagedByEq    *string                 `form:"filter[managed_by][eq],omitempty" json:"filter[managed_by][eq],omitempty"`
+	FilterManagedByNotEq *string                 `form:"filter[managed_by][not_eq],omitempty" json:"filter[managed_by][not_eq],omitempty"`
+	FilterManagedByIn    *string                 `form:"filter[managed_by][in],omitempty" json:"filter[managed_by][in],omitempty"`
+	FilterManagedByNotIn *string                 `form:"filter[managed_by][not_in],omitempty" json:"filter[managed_by][not_in],omitempty"`
 }
 
 // ListCatalogsParamsInclude defines parameters for ListCatalogs.
@@ -64811,19 +65651,31 @@ type ListCatalogEntitiesParams struct {
 	Include *ListCatalogEntitiesParamsInclude `form:"include,omitempty" json:"include,omitempty"`
 
 	// Sort comma separated if needed. eg: created_at,updated_at
-	Sort               *ListCatalogEntitiesParamsSort `form:"sort,omitempty" json:"sort,omitempty"`
-	PageNumber         *int                           `form:"page[number],omitempty" json:"page[number],omitempty"`
-	PageSize           *int                           `form:"page[size],omitempty" json:"page[size],omitempty"`
-	FilterSearch       *string                        `form:"filter[search],omitempty" json:"filter[search],omitempty"`
-	FilterSlug         *string                        `form:"filter[slug],omitempty" json:"filter[slug],omitempty"`
-	FilterName         *string                        `form:"filter[name],omitempty" json:"filter[name],omitempty"`
-	FilterBackstageID  *string                        `form:"filter[backstage_id],omitempty" json:"filter[backstage_id],omitempty"`
-	FilterExternalID   *string                        `form:"filter[external_id],omitempty" json:"filter[external_id],omitempty"`
-	FilterManagedBy    *string                        `form:"filter[managed_by],omitempty" json:"filter[managed_by],omitempty"`
-	FilterCreatedAtGt  *string                        `form:"filter[created_at][gt],omitempty" json:"filter[created_at][gt],omitempty"`
-	FilterCreatedAtGte *string                        `form:"filter[created_at][gte],omitempty" json:"filter[created_at][gte],omitempty"`
-	FilterCreatedAtLt  *string                        `form:"filter[created_at][lt],omitempty" json:"filter[created_at][lt],omitempty"`
-	FilterCreatedAtLte *string                        `form:"filter[created_at][lte],omitempty" json:"filter[created_at][lte],omitempty"`
+	Sort                 *ListCatalogEntitiesParamsSort `form:"sort,omitempty" json:"sort,omitempty"`
+	PageNumber           *int                           `form:"page[number],omitempty" json:"page[number],omitempty"`
+	PageSize             *int                           `form:"page[size],omitempty" json:"page[size],omitempty"`
+	FilterSearch         *string                        `form:"filter[search],omitempty" json:"filter[search],omitempty"`
+	FilterSlug           *string                        `form:"filter[slug],omitempty" json:"filter[slug],omitempty"`
+	FilterName           *string                        `form:"filter[name],omitempty" json:"filter[name],omitempty"`
+	FilterBackstageID    *string                        `form:"filter[backstage_id],omitempty" json:"filter[backstage_id],omitempty"`
+	FilterExternalID     *string                        `form:"filter[external_id],omitempty" json:"filter[external_id],omitempty"`
+	FilterManagedBy      *string                        `form:"filter[managed_by],omitempty" json:"filter[managed_by],omitempty"`
+	FilterCreatedAtGt    *string                        `form:"filter[created_at][gt],omitempty" json:"filter[created_at][gt],omitempty"`
+	FilterCreatedAtGte   *string                        `form:"filter[created_at][gte],omitempty" json:"filter[created_at][gte],omitempty"`
+	FilterCreatedAtLt    *string                        `form:"filter[created_at][lt],omitempty" json:"filter[created_at][lt],omitempty"`
+	FilterCreatedAtLte   *string                        `form:"filter[created_at][lte],omitempty" json:"filter[created_at][lte],omitempty"`
+	FilterSlugEq         *string                        `form:"filter[slug][eq],omitempty" json:"filter[slug][eq],omitempty"`
+	FilterSlugNotEq      *string                        `form:"filter[slug][not_eq],omitempty" json:"filter[slug][not_eq],omitempty"`
+	FilterSlugIn         *string                        `form:"filter[slug][in],omitempty" json:"filter[slug][in],omitempty"`
+	FilterSlugNotIn      *string                        `form:"filter[slug][not_in],omitempty" json:"filter[slug][not_in],omitempty"`
+	FilterNameEq         *string                        `form:"filter[name][eq],omitempty" json:"filter[name][eq],omitempty"`
+	FilterNameNotEq      *string                        `form:"filter[name][not_eq],omitempty" json:"filter[name][not_eq],omitempty"`
+	FilterNameIn         *string                        `form:"filter[name][in],omitempty" json:"filter[name][in],omitempty"`
+	FilterNameNotIn      *string                        `form:"filter[name][not_in],omitempty" json:"filter[name][not_in],omitempty"`
+	FilterManagedByEq    *string                        `form:"filter[managed_by][eq],omitempty" json:"filter[managed_by][eq],omitempty"`
+	FilterManagedByNotEq *string                        `form:"filter[managed_by][not_eq],omitempty" json:"filter[managed_by][not_eq],omitempty"`
+	FilterManagedByIn    *string                        `form:"filter[managed_by][in],omitempty" json:"filter[managed_by][in],omitempty"`
+	FilterManagedByNotIn *string                        `form:"filter[managed_by][not_in],omitempty" json:"filter[managed_by][not_in],omitempty"`
 }
 
 // ListCatalogEntitiesParamsInclude defines parameters for ListCatalogEntities.
@@ -64854,6 +65706,14 @@ type ListCausesParams struct {
 	FilterCreatedAtGte *string `form:"filter[created_at][gte],omitempty" json:"filter[created_at][gte],omitempty"`
 	FilterCreatedAtLt  *string `form:"filter[created_at][lt],omitempty" json:"filter[created_at][lt],omitempty"`
 	FilterCreatedAtLte *string `form:"filter[created_at][lte],omitempty" json:"filter[created_at][lte],omitempty"`
+	FilterSlugEq       *string `form:"filter[slug][eq],omitempty" json:"filter[slug][eq],omitempty"`
+	FilterSlugNotEq    *string `form:"filter[slug][not_eq],omitempty" json:"filter[slug][not_eq],omitempty"`
+	FilterSlugIn       *string `form:"filter[slug][in],omitempty" json:"filter[slug][in],omitempty"`
+	FilterSlugNotIn    *string `form:"filter[slug][not_in],omitempty" json:"filter[slug][not_in],omitempty"`
+	FilterNameEq       *string `form:"filter[name][eq],omitempty" json:"filter[name][eq],omitempty"`
+	FilterNameNotEq    *string `form:"filter[name][not_eq],omitempty" json:"filter[name][not_eq],omitempty"`
+	FilterNameIn       *string `form:"filter[name][in],omitempty" json:"filter[name][in],omitempty"`
+	FilterNameNotIn    *string `form:"filter[name][not_in],omitempty" json:"filter[name][not_in],omitempty"`
 }
 
 // ListCauseCatalogPropertiesParams defines parameters for ListCauseCatalogProperties.
@@ -64957,6 +65817,22 @@ type ListCustomFieldsParams struct {
 	FilterCreatedAtGte *string                     `form:"filter[created_at][gte],omitempty" json:"filter[created_at][gte],omitempty"`
 	FilterCreatedAtLt  *string                     `form:"filter[created_at][lt],omitempty" json:"filter[created_at][lt],omitempty"`
 	FilterCreatedAtLte *string                     `form:"filter[created_at][lte],omitempty" json:"filter[created_at][lte],omitempty"`
+	FilterSlugEq       *string                     `form:"filter[slug][eq],omitempty" json:"filter[slug][eq],omitempty"`
+	FilterSlugNotEq    *string                     `form:"filter[slug][not_eq],omitempty" json:"filter[slug][not_eq],omitempty"`
+	FilterSlugIn       *string                     `form:"filter[slug][in],omitempty" json:"filter[slug][in],omitempty"`
+	FilterSlugNotIn    *string                     `form:"filter[slug][not_in],omitempty" json:"filter[slug][not_in],omitempty"`
+	FilterLabelEq      *string                     `form:"filter[label][eq],omitempty" json:"filter[label][eq],omitempty"`
+	FilterLabelNotEq   *string                     `form:"filter[label][not_eq],omitempty" json:"filter[label][not_eq],omitempty"`
+	FilterLabelIn      *string                     `form:"filter[label][in],omitempty" json:"filter[label][in],omitempty"`
+	FilterLabelNotIn   *string                     `form:"filter[label][not_in],omitempty" json:"filter[label][not_in],omitempty"`
+	FilterKindEq       *string                     `form:"filter[kind][eq],omitempty" json:"filter[kind][eq],omitempty"`
+	FilterKindNotEq    *string                     `form:"filter[kind][not_eq],omitempty" json:"filter[kind][not_eq],omitempty"`
+	FilterKindIn       *string                     `form:"filter[kind][in],omitempty" json:"filter[kind][in],omitempty"`
+	FilterKindNotIn    *string                     `form:"filter[kind][not_in],omitempty" json:"filter[kind][not_in],omitempty"`
+	FilterEnabledEq    *string                     `form:"filter[enabled][eq],omitempty" json:"filter[enabled][eq],omitempty"`
+	FilterEnabledNotEq *string                     `form:"filter[enabled][not_eq],omitempty" json:"filter[enabled][not_eq],omitempty"`
+	FilterEnabledIn    *string                     `form:"filter[enabled][in],omitempty" json:"filter[enabled][in],omitempty"`
+	FilterEnabledNotIn *string                     `form:"filter[enabled][not_in],omitempty" json:"filter[enabled][not_in],omitempty"`
 }
 
 // ListCustomFieldsParamsInclude defines parameters for ListCustomFields.
@@ -65171,6 +66047,18 @@ type ListEnvironmentsParams struct {
 	FilterCreatedAtGte *string `form:"filter[created_at][gte],omitempty" json:"filter[created_at][gte],omitempty"`
 	FilterCreatedAtLt  *string `form:"filter[created_at][lt],omitempty" json:"filter[created_at][lt],omitempty"`
 	FilterCreatedAtLte *string `form:"filter[created_at][lte],omitempty" json:"filter[created_at][lte],omitempty"`
+	FilterSlugEq       *string `form:"filter[slug][eq],omitempty" json:"filter[slug][eq],omitempty"`
+	FilterSlugNotEq    *string `form:"filter[slug][not_eq],omitempty" json:"filter[slug][not_eq],omitempty"`
+	FilterSlugIn       *string `form:"filter[slug][in],omitempty" json:"filter[slug][in],omitempty"`
+	FilterSlugNotIn    *string `form:"filter[slug][not_in],omitempty" json:"filter[slug][not_in],omitempty"`
+	FilterNameEq       *string `form:"filter[name][eq],omitempty" json:"filter[name][eq],omitempty"`
+	FilterNameNotEq    *string `form:"filter[name][not_eq],omitempty" json:"filter[name][not_eq],omitempty"`
+	FilterNameIn       *string `form:"filter[name][in],omitempty" json:"filter[name][in],omitempty"`
+	FilterNameNotIn    *string `form:"filter[name][not_in],omitempty" json:"filter[name][not_in],omitempty"`
+	FilterColorEq      *string `form:"filter[color][eq],omitempty" json:"filter[color][eq],omitempty"`
+	FilterColorNotEq   *string `form:"filter[color][not_eq],omitempty" json:"filter[color][not_eq],omitempty"`
+	FilterColorIn      *string `form:"filter[color][in],omitempty" json:"filter[color][in],omitempty"`
+	FilterColorNotIn   *string `form:"filter[color][not_in],omitempty" json:"filter[color][not_in],omitempty"`
 	Sort               *string `form:"sort,omitempty" json:"sort,omitempty"`
 }
 
@@ -65227,6 +66115,14 @@ type ListEscalationPoliciesParams struct {
 	FilterCreatedAtGte *string `form:"filter[created_at][gte],omitempty" json:"filter[created_at][gte],omitempty"`
 	FilterCreatedAtLt  *string `form:"filter[created_at][lt],omitempty" json:"filter[created_at][lt],omitempty"`
 	FilterCreatedAtLte *string `form:"filter[created_at][lte],omitempty" json:"filter[created_at][lte],omitempty"`
+	FilterNameEq       *string `form:"filter[name][eq],omitempty" json:"filter[name][eq],omitempty"`
+	FilterNameNotEq    *string `form:"filter[name][not_eq],omitempty" json:"filter[name][not_eq],omitempty"`
+	FilterNameIn       *string `form:"filter[name][in],omitempty" json:"filter[name][in],omitempty"`
+	FilterNameNotIn    *string `form:"filter[name][not_in],omitempty" json:"filter[name][not_in],omitempty"`
+	FilterTeamIDsEq    *string `form:"filter[team_ids][eq],omitempty" json:"filter[team_ids][eq],omitempty"`
+	FilterTeamIDsNotEq *string `form:"filter[team_ids][not_eq],omitempty" json:"filter[team_ids][not_eq],omitempty"`
+	FilterTeamIDsIn    *string `form:"filter[team_ids][in],omitempty" json:"filter[team_ids][in],omitempty"`
+	FilterTeamIDsNotIn *string `form:"filter[team_ids][not_in],omitempty" json:"filter[team_ids][not_in],omitempty"`
 	PageNumber         *int    `form:"page[number],omitempty" json:"page[number],omitempty"`
 	PageSize           *int    `form:"page[size],omitempty" json:"page[size],omitempty"`
 }
@@ -65304,6 +66200,22 @@ type ListFormFieldsParams struct {
 	FilterCreatedAtGte *string                      `form:"filter[created_at][gte],omitempty" json:"filter[created_at][gte],omitempty"`
 	FilterCreatedAtLt  *string                      `form:"filter[created_at][lt],omitempty" json:"filter[created_at][lt],omitempty"`
 	FilterCreatedAtLte *string                      `form:"filter[created_at][lte],omitempty" json:"filter[created_at][lte],omitempty"`
+	FilterSlugEq       *string                      `form:"filter[slug][eq],omitempty" json:"filter[slug][eq],omitempty"`
+	FilterSlugNotEq    *string                      `form:"filter[slug][not_eq],omitempty" json:"filter[slug][not_eq],omitempty"`
+	FilterSlugIn       *string                      `form:"filter[slug][in],omitempty" json:"filter[slug][in],omitempty"`
+	FilterSlugNotIn    *string                      `form:"filter[slug][not_in],omitempty" json:"filter[slug][not_in],omitempty"`
+	FilterNameEq       *string                      `form:"filter[name][eq],omitempty" json:"filter[name][eq],omitempty"`
+	FilterNameNotEq    *string                      `form:"filter[name][not_eq],omitempty" json:"filter[name][not_eq],omitempty"`
+	FilterNameIn       *string                      `form:"filter[name][in],omitempty" json:"filter[name][in],omitempty"`
+	FilterNameNotIn    *string                      `form:"filter[name][not_in],omitempty" json:"filter[name][not_in],omitempty"`
+	FilterKindEq       *string                      `form:"filter[kind][eq],omitempty" json:"filter[kind][eq],omitempty"`
+	FilterKindNotEq    *string                      `form:"filter[kind][not_eq],omitempty" json:"filter[kind][not_eq],omitempty"`
+	FilterKindIn       *string                      `form:"filter[kind][in],omitempty" json:"filter[kind][in],omitempty"`
+	FilterKindNotIn    *string                      `form:"filter[kind][not_in],omitempty" json:"filter[kind][not_in],omitempty"`
+	FilterEnabledEq    *string                      `form:"filter[enabled][eq],omitempty" json:"filter[enabled][eq],omitempty"`
+	FilterEnabledNotEq *string                      `form:"filter[enabled][not_eq],omitempty" json:"filter[enabled][not_eq],omitempty"`
+	FilterEnabledIn    *string                      `form:"filter[enabled][in],omitempty" json:"filter[enabled][in],omitempty"`
+	FilterEnabledNotIn *string                      `form:"filter[enabled][not_in],omitempty" json:"filter[enabled][not_in],omitempty"`
 }
 
 // ListFormFieldsParamsInclude defines parameters for ListFormFields.
@@ -65380,6 +66292,14 @@ type ListFunctionalitiesParams struct {
 	FilterCreatedAtGte *string `form:"filter[created_at][gte],omitempty" json:"filter[created_at][gte],omitempty"`
 	FilterCreatedAtLt  *string `form:"filter[created_at][lt],omitempty" json:"filter[created_at][lt],omitempty"`
 	FilterCreatedAtLte *string `form:"filter[created_at][lte],omitempty" json:"filter[created_at][lte],omitempty"`
+	FilterNameEq       *string `form:"filter[name][eq],omitempty" json:"filter[name][eq],omitempty"`
+	FilterNameNotEq    *string `form:"filter[name][not_eq],omitempty" json:"filter[name][not_eq],omitempty"`
+	FilterNameIn       *string `form:"filter[name][in],omitempty" json:"filter[name][in],omitempty"`
+	FilterNameNotIn    *string `form:"filter[name][not_in],omitempty" json:"filter[name][not_in],omitempty"`
+	FilterSlugEq       *string `form:"filter[slug][eq],omitempty" json:"filter[slug][eq],omitempty"`
+	FilterSlugNotEq    *string `form:"filter[slug][not_eq],omitempty" json:"filter[slug][not_eq],omitempty"`
+	FilterSlugIn       *string `form:"filter[slug][in],omitempty" json:"filter[slug][in],omitempty"`
+	FilterSlugNotIn    *string `form:"filter[slug][not_in],omitempty" json:"filter[slug][not_in],omitempty"`
 	Sort               *string `form:"sort,omitempty" json:"sort,omitempty"`
 }
 
@@ -65484,6 +66404,18 @@ type ListIncidentRolesParams struct {
 	FilterCreatedAtGte *string `form:"filter[created_at][gte],omitempty" json:"filter[created_at][gte],omitempty"`
 	FilterCreatedAtLt  *string `form:"filter[created_at][lt],omitempty" json:"filter[created_at][lt],omitempty"`
 	FilterCreatedAtLte *string `form:"filter[created_at][lte],omitempty" json:"filter[created_at][lte],omitempty"`
+	FilterSlugEq       *string `form:"filter[slug][eq],omitempty" json:"filter[slug][eq],omitempty"`
+	FilterSlugNotEq    *string `form:"filter[slug][not_eq],omitempty" json:"filter[slug][not_eq],omitempty"`
+	FilterSlugIn       *string `form:"filter[slug][in],omitempty" json:"filter[slug][in],omitempty"`
+	FilterSlugNotIn    *string `form:"filter[slug][not_in],omitempty" json:"filter[slug][not_in],omitempty"`
+	FilterNameEq       *string `form:"filter[name][eq],omitempty" json:"filter[name][eq],omitempty"`
+	FilterNameNotEq    *string `form:"filter[name][not_eq],omitempty" json:"filter[name][not_eq],omitempty"`
+	FilterNameIn       *string `form:"filter[name][in],omitempty" json:"filter[name][in],omitempty"`
+	FilterNameNotIn    *string `form:"filter[name][not_in],omitempty" json:"filter[name][not_in],omitempty"`
+	FilterEnabledEq    *string `form:"filter[enabled][eq],omitempty" json:"filter[enabled][eq],omitempty"`
+	FilterEnabledNotEq *string `form:"filter[enabled][not_eq],omitempty" json:"filter[enabled][not_eq],omitempty"`
+	FilterEnabledIn    *string `form:"filter[enabled][in],omitempty" json:"filter[enabled][in],omitempty"`
+	FilterEnabledNotIn *string `form:"filter[enabled][not_in],omitempty" json:"filter[enabled][not_in],omitempty"`
 	Sort               *string `form:"sort,omitempty" json:"sort,omitempty"`
 }
 
@@ -65515,6 +66447,18 @@ type ListIncidentTypesParams struct {
 	FilterCreatedAtGte *string `form:"filter[created_at][gte],omitempty" json:"filter[created_at][gte],omitempty"`
 	FilterCreatedAtLt  *string `form:"filter[created_at][lt],omitempty" json:"filter[created_at][lt],omitempty"`
 	FilterCreatedAtLte *string `form:"filter[created_at][lte],omitempty" json:"filter[created_at][lte],omitempty"`
+	FilterSlugEq       *string `form:"filter[slug][eq],omitempty" json:"filter[slug][eq],omitempty"`
+	FilterSlugNotEq    *string `form:"filter[slug][not_eq],omitempty" json:"filter[slug][not_eq],omitempty"`
+	FilterSlugIn       *string `form:"filter[slug][in],omitempty" json:"filter[slug][in],omitempty"`
+	FilterSlugNotIn    *string `form:"filter[slug][not_in],omitempty" json:"filter[slug][not_in],omitempty"`
+	FilterNameEq       *string `form:"filter[name][eq],omitempty" json:"filter[name][eq],omitempty"`
+	FilterNameNotEq    *string `form:"filter[name][not_eq],omitempty" json:"filter[name][not_eq],omitempty"`
+	FilterNameIn       *string `form:"filter[name][in],omitempty" json:"filter[name][in],omitempty"`
+	FilterNameNotIn    *string `form:"filter[name][not_in],omitempty" json:"filter[name][not_in],omitempty"`
+	FilterColorEq      *string `form:"filter[color][eq],omitempty" json:"filter[color][eq],omitempty"`
+	FilterColorNotEq   *string `form:"filter[color][not_eq],omitempty" json:"filter[color][not_eq],omitempty"`
+	FilterColorIn      *string `form:"filter[color][in],omitempty" json:"filter[color][in],omitempty"`
+	FilterColorNotIn   *string `form:"filter[color][not_in],omitempty" json:"filter[color][not_in],omitempty"`
 	Sort               *string `form:"sort,omitempty" json:"sort,omitempty"`
 }
 
@@ -65573,42 +66517,141 @@ type ListIncidentsParams struct {
 	FilterCauseIDs                     *string `form:"filter[cause_ids],omitempty" json:"filter[cause_ids],omitempty"`
 	FilterCustomFieldSelectedOptionIDs *string `form:"filter[custom_field_selected_option_ids],omitempty" json:"filter[custom_field_selected_option_ids],omitempty"`
 	FilterSlackChannelID               *string `form:"filter[slack_channel_id],omitempty" json:"filter[slack_channel_id],omitempty"`
-	FilterCreatedAtGt                  *string `form:"filter[created_at][gt],omitempty" json:"filter[created_at][gt],omitempty"`
-	FilterCreatedAtGte                 *string `form:"filter[created_at][gte],omitempty" json:"filter[created_at][gte],omitempty"`
-	FilterCreatedAtLt                  *string `form:"filter[created_at][lt],omitempty" json:"filter[created_at][lt],omitempty"`
-	FilterCreatedAtLte                 *string `form:"filter[created_at][lte],omitempty" json:"filter[created_at][lte],omitempty"`
-	FilterUpdatedAtGt                  *string `form:"filter[updated_at][gt],omitempty" json:"filter[updated_at][gt],omitempty"`
-	FilterUpdatedAtGte                 *string `form:"filter[updated_at][gte],omitempty" json:"filter[updated_at][gte],omitempty"`
-	FilterUpdatedAtLt                  *string `form:"filter[updated_at][lt],omitempty" json:"filter[updated_at][lt],omitempty"`
-	FilterUpdatedAtLte                 *string `form:"filter[updated_at][lte],omitempty" json:"filter[updated_at][lte],omitempty"`
-	FilterStartedAtGt                  *string `form:"filter[started_at][gt],omitempty" json:"filter[started_at][gt],omitempty"`
-	FilterStartedAtGte                 *string `form:"filter[started_at][gte],omitempty" json:"filter[started_at][gte],omitempty"`
-	FilterStartedAtLt                  *string `form:"filter[started_at][lt],omitempty" json:"filter[started_at][lt],omitempty"`
-	FilterStartedAtLte                 *string `form:"filter[started_at][lte],omitempty" json:"filter[started_at][lte],omitempty"`
-	FilterDetectedAtGt                 *string `form:"filter[detected_at][gt],omitempty" json:"filter[detected_at][gt],omitempty"`
-	FilterDetectedAtGte                *string `form:"filter[detected_at][gte],omitempty" json:"filter[detected_at][gte],omitempty"`
-	FilterDetectedAtLt                 *string `form:"filter[detected_at][lt],omitempty" json:"filter[detected_at][lt],omitempty"`
-	FilterDetectedAtLte                *string `form:"filter[detected_at][lte],omitempty" json:"filter[detected_at][lte],omitempty"`
-	FilterAcknowledgedAtGt             *string `form:"filter[acknowledged_at][gt],omitempty" json:"filter[acknowledged_at][gt],omitempty"`
-	FilterAcknowledgedAtGte            *string `form:"filter[acknowledged_at][gte],omitempty" json:"filter[acknowledged_at][gte],omitempty"`
-	FilterAcknowledgedAtLt             *string `form:"filter[acknowledged_at][lt],omitempty" json:"filter[acknowledged_at][lt],omitempty"`
-	FilterAcknowledgedAtLte            *string `form:"filter[acknowledged_at][lte],omitempty" json:"filter[acknowledged_at][lte],omitempty"`
-	FilterMitigatedAtGt                *string `form:"filter[mitigated_at][gt],omitempty" json:"filter[mitigated_at][gt],omitempty"`
-	FilterMitigatedAtGte               *string `form:"filter[mitigated_at][gte],omitempty" json:"filter[mitigated_at][gte],omitempty"`
-	FilterMitigatedAtLt                *string `form:"filter[mitigated_at][lt],omitempty" json:"filter[mitigated_at][lt],omitempty"`
-	FilterMitigatedAtLte               *string `form:"filter[mitigated_at][lte],omitempty" json:"filter[mitigated_at][lte],omitempty"`
-	FilterResolvedAtGt                 *string `form:"filter[resolved_at][gt],omitempty" json:"filter[resolved_at][gt],omitempty"`
-	FilterResolvedAtGte                *string `form:"filter[resolved_at][gte],omitempty" json:"filter[resolved_at][gte],omitempty"`
-	FilterResolvedAtLt                 *string `form:"filter[resolved_at][lt],omitempty" json:"filter[resolved_at][lt],omitempty"`
-	FilterResolvedAtLte                *string `form:"filter[resolved_at][lte],omitempty" json:"filter[resolved_at][lte],omitempty"`
-	FilterClosedAtGt                   *string `form:"filter[closed_at][gt],omitempty" json:"filter[closed_at][gt],omitempty"`
-	FilterClosedAtGte                  *string `form:"filter[closed_at][gte],omitempty" json:"filter[closed_at][gte],omitempty"`
-	FilterClosedAtLt                   *string `form:"filter[closed_at][lt],omitempty" json:"filter[closed_at][lt],omitempty"`
-	FilterClosedAtLte                  *string `form:"filter[closed_at][lte],omitempty" json:"filter[closed_at][lte],omitempty"`
-	FilterInTriageAtGt                 *string `form:"filter[in_triage_at][gt],omitempty" json:"filter[in_triage_at][gt],omitempty"`
-	FilterInTriageAtGte                *string `form:"filter[in_triage_at][gte],omitempty" json:"filter[in_triage_at][gte],omitempty"`
-	FilterInTriageAtLt                 *string `form:"filter[in_triage_at][lt],omitempty" json:"filter[in_triage_at][lt],omitempty"`
-	FilterInTriageAtLte                *string `form:"filter[in_triage_at][lte],omitempty" json:"filter[in_triage_at][lte],omitempty"`
+
+	// FilterSequentialID Filter by the human-readable incident number (the 123 in INC-123).
+	FilterSequentialID            *string `form:"filter[sequential_id],omitempty" json:"filter[sequential_id],omitempty"`
+	FilterCreatedAtGt             *string `form:"filter[created_at][gt],omitempty" json:"filter[created_at][gt],omitempty"`
+	FilterCreatedAtGte            *string `form:"filter[created_at][gte],omitempty" json:"filter[created_at][gte],omitempty"`
+	FilterCreatedAtLt             *string `form:"filter[created_at][lt],omitempty" json:"filter[created_at][lt],omitempty"`
+	FilterCreatedAtLte            *string `form:"filter[created_at][lte],omitempty" json:"filter[created_at][lte],omitempty"`
+	FilterUpdatedAtGt             *string `form:"filter[updated_at][gt],omitempty" json:"filter[updated_at][gt],omitempty"`
+	FilterUpdatedAtGte            *string `form:"filter[updated_at][gte],omitempty" json:"filter[updated_at][gte],omitempty"`
+	FilterUpdatedAtLt             *string `form:"filter[updated_at][lt],omitempty" json:"filter[updated_at][lt],omitempty"`
+	FilterUpdatedAtLte            *string `form:"filter[updated_at][lte],omitempty" json:"filter[updated_at][lte],omitempty"`
+	FilterStartedAtGt             *string `form:"filter[started_at][gt],omitempty" json:"filter[started_at][gt],omitempty"`
+	FilterStartedAtGte            *string `form:"filter[started_at][gte],omitempty" json:"filter[started_at][gte],omitempty"`
+	FilterStartedAtLt             *string `form:"filter[started_at][lt],omitempty" json:"filter[started_at][lt],omitempty"`
+	FilterStartedAtLte            *string `form:"filter[started_at][lte],omitempty" json:"filter[started_at][lte],omitempty"`
+	FilterDetectedAtGt            *string `form:"filter[detected_at][gt],omitempty" json:"filter[detected_at][gt],omitempty"`
+	FilterDetectedAtGte           *string `form:"filter[detected_at][gte],omitempty" json:"filter[detected_at][gte],omitempty"`
+	FilterDetectedAtLt            *string `form:"filter[detected_at][lt],omitempty" json:"filter[detected_at][lt],omitempty"`
+	FilterDetectedAtLte           *string `form:"filter[detected_at][lte],omitempty" json:"filter[detected_at][lte],omitempty"`
+	FilterAcknowledgedAtGt        *string `form:"filter[acknowledged_at][gt],omitempty" json:"filter[acknowledged_at][gt],omitempty"`
+	FilterAcknowledgedAtGte       *string `form:"filter[acknowledged_at][gte],omitempty" json:"filter[acknowledged_at][gte],omitempty"`
+	FilterAcknowledgedAtLt        *string `form:"filter[acknowledged_at][lt],omitempty" json:"filter[acknowledged_at][lt],omitempty"`
+	FilterAcknowledgedAtLte       *string `form:"filter[acknowledged_at][lte],omitempty" json:"filter[acknowledged_at][lte],omitempty"`
+	FilterMitigatedAtGt           *string `form:"filter[mitigated_at][gt],omitempty" json:"filter[mitigated_at][gt],omitempty"`
+	FilterMitigatedAtGte          *string `form:"filter[mitigated_at][gte],omitempty" json:"filter[mitigated_at][gte],omitempty"`
+	FilterMitigatedAtLt           *string `form:"filter[mitigated_at][lt],omitempty" json:"filter[mitigated_at][lt],omitempty"`
+	FilterMitigatedAtLte          *string `form:"filter[mitigated_at][lte],omitempty" json:"filter[mitigated_at][lte],omitempty"`
+	FilterResolvedAtGt            *string `form:"filter[resolved_at][gt],omitempty" json:"filter[resolved_at][gt],omitempty"`
+	FilterResolvedAtGte           *string `form:"filter[resolved_at][gte],omitempty" json:"filter[resolved_at][gte],omitempty"`
+	FilterResolvedAtLt            *string `form:"filter[resolved_at][lt],omitempty" json:"filter[resolved_at][lt],omitempty"`
+	FilterResolvedAtLte           *string `form:"filter[resolved_at][lte],omitempty" json:"filter[resolved_at][lte],omitempty"`
+	FilterClosedAtGt              *string `form:"filter[closed_at][gt],omitempty" json:"filter[closed_at][gt],omitempty"`
+	FilterClosedAtGte             *string `form:"filter[closed_at][gte],omitempty" json:"filter[closed_at][gte],omitempty"`
+	FilterClosedAtLt              *string `form:"filter[closed_at][lt],omitempty" json:"filter[closed_at][lt],omitempty"`
+	FilterClosedAtLte             *string `form:"filter[closed_at][lte],omitempty" json:"filter[closed_at][lte],omitempty"`
+	FilterInTriageAtGt            *string `form:"filter[in_triage_at][gt],omitempty" json:"filter[in_triage_at][gt],omitempty"`
+	FilterInTriageAtGte           *string `form:"filter[in_triage_at][gte],omitempty" json:"filter[in_triage_at][gte],omitempty"`
+	FilterInTriageAtLt            *string `form:"filter[in_triage_at][lt],omitempty" json:"filter[in_triage_at][lt],omitempty"`
+	FilterInTriageAtLte           *string `form:"filter[in_triage_at][lte],omitempty" json:"filter[in_triage_at][lte],omitempty"`
+	FilterKindEq                  *string `form:"filter[kind][eq],omitempty" json:"filter[kind][eq],omitempty"`
+	FilterKindNotEq               *string `form:"filter[kind][not_eq],omitempty" json:"filter[kind][not_eq],omitempty"`
+	FilterKindIn                  *string `form:"filter[kind][in],omitempty" json:"filter[kind][in],omitempty"`
+	FilterKindNotIn               *string `form:"filter[kind][not_in],omitempty" json:"filter[kind][not_in],omitempty"`
+	FilterStatusEq                *string `form:"filter[status][eq],omitempty" json:"filter[status][eq],omitempty"`
+	FilterStatusNotEq             *string `form:"filter[status][not_eq],omitempty" json:"filter[status][not_eq],omitempty"`
+	FilterStatusIn                *string `form:"filter[status][in],omitempty" json:"filter[status][in],omitempty"`
+	FilterStatusNotIn             *string `form:"filter[status][not_in],omitempty" json:"filter[status][not_in],omitempty"`
+	FilterPrivateEq               *string `form:"filter[private][eq],omitempty" json:"filter[private][eq],omitempty"`
+	FilterPrivateNotEq            *string `form:"filter[private][not_eq],omitempty" json:"filter[private][not_eq],omitempty"`
+	FilterPrivateIn               *string `form:"filter[private][in],omitempty" json:"filter[private][in],omitempty"`
+	FilterPrivateNotIn            *string `form:"filter[private][not_in],omitempty" json:"filter[private][not_in],omitempty"`
+	FilterUserIDEq                *string `form:"filter[user_id][eq],omitempty" json:"filter[user_id][eq],omitempty"`
+	FilterUserIDNotEq             *string `form:"filter[user_id][not_eq],omitempty" json:"filter[user_id][not_eq],omitempty"`
+	FilterUserIDIn                *string `form:"filter[user_id][in],omitempty" json:"filter[user_id][in],omitempty"`
+	FilterUserIDNotIn             *string `form:"filter[user_id][not_in],omitempty" json:"filter[user_id][not_in],omitempty"`
+	FilterSeverityEq              *string `form:"filter[severity][eq],omitempty" json:"filter[severity][eq],omitempty"`
+	FilterSeverityNotEq           *string `form:"filter[severity][not_eq],omitempty" json:"filter[severity][not_eq],omitempty"`
+	FilterSeverityIn              *string `form:"filter[severity][in],omitempty" json:"filter[severity][in],omitempty"`
+	FilterSeverityNotIn           *string `form:"filter[severity][not_in],omitempty" json:"filter[severity][not_in],omitempty"`
+	FilterSeverityIDEq            *string `form:"filter[severity_id][eq],omitempty" json:"filter[severity_id][eq],omitempty"`
+	FilterSeverityIDNotEq         *string `form:"filter[severity_id][not_eq],omitempty" json:"filter[severity_id][not_eq],omitempty"`
+	FilterSeverityIDIn            *string `form:"filter[severity_id][in],omitempty" json:"filter[severity_id][in],omitempty"`
+	FilterSeverityIDNotIn         *string `form:"filter[severity_id][not_in],omitempty" json:"filter[severity_id][not_in],omitempty"`
+	FilterLabelsEq                *string `form:"filter[labels][eq],omitempty" json:"filter[labels][eq],omitempty"`
+	FilterLabelsNotEq             *string `form:"filter[labels][not_eq],omitempty" json:"filter[labels][not_eq],omitempty"`
+	FilterLabelsIn                *string `form:"filter[labels][in],omitempty" json:"filter[labels][in],omitempty"`
+	FilterLabelsNotIn             *string `form:"filter[labels][not_in],omitempty" json:"filter[labels][not_in],omitempty"`
+	FilterZendeskTicketIDEq       *string `form:"filter[zendesk_ticket_id][eq],omitempty" json:"filter[zendesk_ticket_id][eq],omitempty"`
+	FilterZendeskTicketIDNotEq    *string `form:"filter[zendesk_ticket_id][not_eq],omitempty" json:"filter[zendesk_ticket_id][not_eq],omitempty"`
+	FilterZendeskTicketIDIn       *string `form:"filter[zendesk_ticket_id][in],omitempty" json:"filter[zendesk_ticket_id][in],omitempty"`
+	FilterZendeskTicketIDNotIn    *string `form:"filter[zendesk_ticket_id][not_in],omitempty" json:"filter[zendesk_ticket_id][not_in],omitempty"`
+	FilterSequentialIDEq          *string `form:"filter[sequential_id][eq],omitempty" json:"filter[sequential_id][eq],omitempty"`
+	FilterSequentialIDNotEq       *string `form:"filter[sequential_id][not_eq],omitempty" json:"filter[sequential_id][not_eq],omitempty"`
+	FilterSequentialIDIn          *string `form:"filter[sequential_id][in],omitempty" json:"filter[sequential_id][in],omitempty"`
+	FilterSequentialIDNotIn       *string `form:"filter[sequential_id][not_in],omitempty" json:"filter[sequential_id][not_in],omitempty"`
+	FilterTypesEq                 *string `form:"filter[types][eq],omitempty" json:"filter[types][eq],omitempty"`
+	FilterTypesNotEq              *string `form:"filter[types][not_eq],omitempty" json:"filter[types][not_eq],omitempty"`
+	FilterTypesIn                 *string `form:"filter[types][in],omitempty" json:"filter[types][in],omitempty"`
+	FilterTypesNotIn              *string `form:"filter[types][not_in],omitempty" json:"filter[types][not_in],omitempty"`
+	FilterTypeIDsEq               *string `form:"filter[type_ids][eq],omitempty" json:"filter[type_ids][eq],omitempty"`
+	FilterTypeIDsNotEq            *string `form:"filter[type_ids][not_eq],omitempty" json:"filter[type_ids][not_eq],omitempty"`
+	FilterTypeIDsIn               *string `form:"filter[type_ids][in],omitempty" json:"filter[type_ids][in],omitempty"`
+	FilterTypeIDsNotIn            *string `form:"filter[type_ids][not_in],omitempty" json:"filter[type_ids][not_in],omitempty"`
+	FilterEnvironmentsEq          *string `form:"filter[environments][eq],omitempty" json:"filter[environments][eq],omitempty"`
+	FilterEnvironmentsNotEq       *string `form:"filter[environments][not_eq],omitempty" json:"filter[environments][not_eq],omitempty"`
+	FilterEnvironmentsIn          *string `form:"filter[environments][in],omitempty" json:"filter[environments][in],omitempty"`
+	FilterEnvironmentsNotIn       *string `form:"filter[environments][not_in],omitempty" json:"filter[environments][not_in],omitempty"`
+	FilterEnvironmentIDsEq        *string `form:"filter[environment_ids][eq],omitempty" json:"filter[environment_ids][eq],omitempty"`
+	FilterEnvironmentIDsNotEq     *string `form:"filter[environment_ids][not_eq],omitempty" json:"filter[environment_ids][not_eq],omitempty"`
+	FilterEnvironmentIDsIn        *string `form:"filter[environment_ids][in],omitempty" json:"filter[environment_ids][in],omitempty"`
+	FilterEnvironmentIDsNotIn     *string `form:"filter[environment_ids][not_in],omitempty" json:"filter[environment_ids][not_in],omitempty"`
+	FilterServicesEq              *string `form:"filter[services][eq],omitempty" json:"filter[services][eq],omitempty"`
+	FilterServicesNotEq           *string `form:"filter[services][not_eq],omitempty" json:"filter[services][not_eq],omitempty"`
+	FilterServicesIn              *string `form:"filter[services][in],omitempty" json:"filter[services][in],omitempty"`
+	FilterServicesNotIn           *string `form:"filter[services][not_in],omitempty" json:"filter[services][not_in],omitempty"`
+	FilterServiceIDsEq            *string `form:"filter[service_ids][eq],omitempty" json:"filter[service_ids][eq],omitempty"`
+	FilterServiceIDsNotEq         *string `form:"filter[service_ids][not_eq],omitempty" json:"filter[service_ids][not_eq],omitempty"`
+	FilterServiceIDsIn            *string `form:"filter[service_ids][in],omitempty" json:"filter[service_ids][in],omitempty"`
+	FilterServiceIDsNotIn         *string `form:"filter[service_ids][not_in],omitempty" json:"filter[service_ids][not_in],omitempty"`
+	FilterServiceNamesEq          *string `form:"filter[service_names][eq],omitempty" json:"filter[service_names][eq],omitempty"`
+	FilterServiceNamesNotEq       *string `form:"filter[service_names][not_eq],omitempty" json:"filter[service_names][not_eq],omitempty"`
+	FilterServiceNamesIn          *string `form:"filter[service_names][in],omitempty" json:"filter[service_names][in],omitempty"`
+	FilterServiceNamesNotIn       *string `form:"filter[service_names][not_in],omitempty" json:"filter[service_names][not_in],omitempty"`
+	FilterFunctionalitiesEq       *string `form:"filter[functionalities][eq],omitempty" json:"filter[functionalities][eq],omitempty"`
+	FilterFunctionalitiesNotEq    *string `form:"filter[functionalities][not_eq],omitempty" json:"filter[functionalities][not_eq],omitempty"`
+	FilterFunctionalitiesIn       *string `form:"filter[functionalities][in],omitempty" json:"filter[functionalities][in],omitempty"`
+	FilterFunctionalitiesNotIn    *string `form:"filter[functionalities][not_in],omitempty" json:"filter[functionalities][not_in],omitempty"`
+	FilterFunctionalityIDsEq      *string `form:"filter[functionality_ids][eq],omitempty" json:"filter[functionality_ids][eq],omitempty"`
+	FilterFunctionalityIDsNotEq   *string `form:"filter[functionality_ids][not_eq],omitempty" json:"filter[functionality_ids][not_eq],omitempty"`
+	FilterFunctionalityIDsIn      *string `form:"filter[functionality_ids][in],omitempty" json:"filter[functionality_ids][in],omitempty"`
+	FilterFunctionalityIDsNotIn   *string `form:"filter[functionality_ids][not_in],omitempty" json:"filter[functionality_ids][not_in],omitempty"`
+	FilterFunctionalityNamesEq    *string `form:"filter[functionality_names][eq],omitempty" json:"filter[functionality_names][eq],omitempty"`
+	FilterFunctionalityNamesNotEq *string `form:"filter[functionality_names][not_eq],omitempty" json:"filter[functionality_names][not_eq],omitempty"`
+	FilterFunctionalityNamesIn    *string `form:"filter[functionality_names][in],omitempty" json:"filter[functionality_names][in],omitempty"`
+	FilterFunctionalityNamesNotIn *string `form:"filter[functionality_names][not_in],omitempty" json:"filter[functionality_names][not_in],omitempty"`
+	FilterCausesEq                *string `form:"filter[causes][eq],omitempty" json:"filter[causes][eq],omitempty"`
+	FilterCausesNotEq             *string `form:"filter[causes][not_eq],omitempty" json:"filter[causes][not_eq],omitempty"`
+	FilterCausesIn                *string `form:"filter[causes][in],omitempty" json:"filter[causes][in],omitempty"`
+	FilterCausesNotIn             *string `form:"filter[causes][not_in],omitempty" json:"filter[causes][not_in],omitempty"`
+	FilterCauseIDsEq              *string `form:"filter[cause_ids][eq],omitempty" json:"filter[cause_ids][eq],omitempty"`
+	FilterCauseIDsNotEq           *string `form:"filter[cause_ids][not_eq],omitempty" json:"filter[cause_ids][not_eq],omitempty"`
+	FilterCauseIDsIn              *string `form:"filter[cause_ids][in],omitempty" json:"filter[cause_ids][in],omitempty"`
+	FilterCauseIDsNotIn           *string `form:"filter[cause_ids][not_in],omitempty" json:"filter[cause_ids][not_in],omitempty"`
+	FilterTeamsEq                 *string `form:"filter[teams][eq],omitempty" json:"filter[teams][eq],omitempty"`
+	FilterTeamsNotEq              *string `form:"filter[teams][not_eq],omitempty" json:"filter[teams][not_eq],omitempty"`
+	FilterTeamsIn                 *string `form:"filter[teams][in],omitempty" json:"filter[teams][in],omitempty"`
+	FilterTeamsNotIn              *string `form:"filter[teams][not_in],omitempty" json:"filter[teams][not_in],omitempty"`
+	FilterTeamIDsEq               *string `form:"filter[team_ids][eq],omitempty" json:"filter[team_ids][eq],omitempty"`
+	FilterTeamIDsNotEq            *string `form:"filter[team_ids][not_eq],omitempty" json:"filter[team_ids][not_eq],omitempty"`
+	FilterTeamIDsIn               *string `form:"filter[team_ids][in],omitempty" json:"filter[team_ids][in],omitempty"`
+	FilterTeamIDsNotIn            *string `form:"filter[team_ids][not_in],omitempty" json:"filter[team_ids][not_in],omitempty"`
+	FilterTeamNamesEq             *string `form:"filter[team_names][eq],omitempty" json:"filter[team_names][eq],omitempty"`
+	FilterTeamNamesNotEq          *string `form:"filter[team_names][not_eq],omitempty" json:"filter[team_names][not_eq],omitempty"`
+	FilterTeamNamesIn             *string `form:"filter[team_names][in],omitempty" json:"filter[team_names][in],omitempty"`
+	FilterTeamNamesNotIn          *string `form:"filter[team_names][not_in],omitempty" json:"filter[team_names][not_in],omitempty"`
 
 	// Sort comma separated if needed. eg: created_at,updated_at
 	Sort *ListIncidentsParamsSort `form:"sort,omitempty" json:"sort,omitempty"`
@@ -65761,6 +66804,15 @@ type ListAllMeetingRecordingsParams struct {
 	// CreatedBy Filter by creator type
 	CreatedBy *string `form:"created_by,omitempty" json:"created_by,omitempty"`
 }
+
+// GetMeetingRecordingParams defines parameters for GetMeetingRecording.
+type GetMeetingRecordingParams struct {
+	// Include comma separated if needed. eg: transcript
+	Include *GetMeetingRecordingParamsInclude `form:"include,omitempty" json:"include,omitempty"`
+}
+
+// GetMeetingRecordingParamsInclude defines parameters for GetMeetingRecording.
+type GetMeetingRecordingParamsInclude string
 
 // ListOnCallPayReportsParams defines parameters for ListOnCallPayReports.
 type ListOnCallPayReportsParams struct {
@@ -65934,26 +66986,46 @@ type ListIncidentPostMortemsParams struct {
 
 // ListPulsesParams defines parameters for ListPulses.
 type ListPulsesParams struct {
-	Include            *string `form:"include,omitempty" json:"include,omitempty"`
-	FilterSource       *string `form:"filter[source],omitempty" json:"filter[source],omitempty"`
-	FilterServices     *string `form:"filter[services],omitempty" json:"filter[services],omitempty"`
-	FilterEnvironments *string `form:"filter[environments],omitempty" json:"filter[environments],omitempty"`
-	FilterLabels       *string `form:"filter[labels],omitempty" json:"filter[labels],omitempty"`
-	FilterRefs         *string `form:"filter[refs],omitempty" json:"filter[refs],omitempty"`
-	FilterStartedAtGt  *string `form:"filter[started_at][gt],omitempty" json:"filter[started_at][gt],omitempty"`
-	FilterStartedAtGte *string `form:"filter[started_at][gte],omitempty" json:"filter[started_at][gte],omitempty"`
-	FilterStartedAtLt  *string `form:"filter[started_at][lt],omitempty" json:"filter[started_at][lt],omitempty"`
-	FilterStartedAtLte *string `form:"filter[started_at][lte],omitempty" json:"filter[started_at][lte],omitempty"`
-	FilterEndedAtGt    *string `form:"filter[ended_at][gt],omitempty" json:"filter[ended_at][gt],omitempty"`
-	FilterEndedAtGte   *string `form:"filter[ended_at][gte],omitempty" json:"filter[ended_at][gte],omitempty"`
-	FilterEndedAtLt    *string `form:"filter[ended_at][lt],omitempty" json:"filter[ended_at][lt],omitempty"`
-	FilterEndedAtLte   *string `form:"filter[ended_at][lte],omitempty" json:"filter[ended_at][lte],omitempty"`
-	FilterCreatedAtGt  *string `form:"filter[created_at][gt],omitempty" json:"filter[created_at][gt],omitempty"`
-	FilterCreatedAtGte *string `form:"filter[created_at][gte],omitempty" json:"filter[created_at][gte],omitempty"`
-	FilterCreatedAtLt  *string `form:"filter[created_at][lt],omitempty" json:"filter[created_at][lt],omitempty"`
-	FilterCreatedAtLte *string `form:"filter[created_at][lte],omitempty" json:"filter[created_at][lte],omitempty"`
-	PageNumber         *int    `form:"page[number],omitempty" json:"page[number],omitempty"`
-	PageSize           *int    `form:"page[size],omitempty" json:"page[size],omitempty"`
+	Include                 *string `form:"include,omitempty" json:"include,omitempty"`
+	FilterSource            *string `form:"filter[source],omitempty" json:"filter[source],omitempty"`
+	FilterServices          *string `form:"filter[services],omitempty" json:"filter[services],omitempty"`
+	FilterEnvironments      *string `form:"filter[environments],omitempty" json:"filter[environments],omitempty"`
+	FilterLabels            *string `form:"filter[labels],omitempty" json:"filter[labels],omitempty"`
+	FilterRefs              *string `form:"filter[refs],omitempty" json:"filter[refs],omitempty"`
+	FilterStartedAtGt       *string `form:"filter[started_at][gt],omitempty" json:"filter[started_at][gt],omitempty"`
+	FilterStartedAtGte      *string `form:"filter[started_at][gte],omitempty" json:"filter[started_at][gte],omitempty"`
+	FilterStartedAtLt       *string `form:"filter[started_at][lt],omitempty" json:"filter[started_at][lt],omitempty"`
+	FilterStartedAtLte      *string `form:"filter[started_at][lte],omitempty" json:"filter[started_at][lte],omitempty"`
+	FilterEndedAtGt         *string `form:"filter[ended_at][gt],omitempty" json:"filter[ended_at][gt],omitempty"`
+	FilterEndedAtGte        *string `form:"filter[ended_at][gte],omitempty" json:"filter[ended_at][gte],omitempty"`
+	FilterEndedAtLt         *string `form:"filter[ended_at][lt],omitempty" json:"filter[ended_at][lt],omitempty"`
+	FilterEndedAtLte        *string `form:"filter[ended_at][lte],omitempty" json:"filter[ended_at][lte],omitempty"`
+	FilterCreatedAtGt       *string `form:"filter[created_at][gt],omitempty" json:"filter[created_at][gt],omitempty"`
+	FilterCreatedAtGte      *string `form:"filter[created_at][gte],omitempty" json:"filter[created_at][gte],omitempty"`
+	FilterCreatedAtLt       *string `form:"filter[created_at][lt],omitempty" json:"filter[created_at][lt],omitempty"`
+	FilterCreatedAtLte      *string `form:"filter[created_at][lte],omitempty" json:"filter[created_at][lte],omitempty"`
+	FilterSourceEq          *string `form:"filter[source][eq],omitempty" json:"filter[source][eq],omitempty"`
+	FilterSourceNotEq       *string `form:"filter[source][not_eq],omitempty" json:"filter[source][not_eq],omitempty"`
+	FilterSourceIn          *string `form:"filter[source][in],omitempty" json:"filter[source][in],omitempty"`
+	FilterSourceNotIn       *string `form:"filter[source][not_in],omitempty" json:"filter[source][not_in],omitempty"`
+	FilterServicesEq        *string `form:"filter[services][eq],omitempty" json:"filter[services][eq],omitempty"`
+	FilterServicesNotEq     *string `form:"filter[services][not_eq],omitempty" json:"filter[services][not_eq],omitempty"`
+	FilterServicesIn        *string `form:"filter[services][in],omitempty" json:"filter[services][in],omitempty"`
+	FilterServicesNotIn     *string `form:"filter[services][not_in],omitempty" json:"filter[services][not_in],omitempty"`
+	FilterEnvironmentsEq    *string `form:"filter[environments][eq],omitempty" json:"filter[environments][eq],omitempty"`
+	FilterEnvironmentsNotEq *string `form:"filter[environments][not_eq],omitempty" json:"filter[environments][not_eq],omitempty"`
+	FilterEnvironmentsIn    *string `form:"filter[environments][in],omitempty" json:"filter[environments][in],omitempty"`
+	FilterEnvironmentsNotIn *string `form:"filter[environments][not_in],omitempty" json:"filter[environments][not_in],omitempty"`
+	FilterLabelsEq          *string `form:"filter[labels][eq],omitempty" json:"filter[labels][eq],omitempty"`
+	FilterLabelsNotEq       *string `form:"filter[labels][not_eq],omitempty" json:"filter[labels][not_eq],omitempty"`
+	FilterLabelsIn          *string `form:"filter[labels][in],omitempty" json:"filter[labels][in],omitempty"`
+	FilterLabelsNotIn       *string `form:"filter[labels][not_in],omitempty" json:"filter[labels][not_in],omitempty"`
+	FilterRefsEq            *string `form:"filter[refs][eq],omitempty" json:"filter[refs][eq],omitempty"`
+	FilterRefsNotEq         *string `form:"filter[refs][not_eq],omitempty" json:"filter[refs][not_eq],omitempty"`
+	FilterRefsIn            *string `form:"filter[refs][in],omitempty" json:"filter[refs][in],omitempty"`
+	FilterRefsNotIn         *string `form:"filter[refs][not_in],omitempty" json:"filter[refs][not_in],omitempty"`
+	PageNumber              *int    `form:"page[number],omitempty" json:"page[number],omitempty"`
+	PageSize                *int    `form:"page[size],omitempty" json:"page[size],omitempty"`
 }
 
 // ListRetrospectiveConfigurationsParams defines parameters for ListRetrospectiveConfigurations.
@@ -66086,6 +67158,10 @@ type ListSchedulesParams struct {
 	FilterCreatedAtGte *string `form:"filter[created_at][gte],omitempty" json:"filter[created_at][gte],omitempty"`
 	FilterCreatedAtLt  *string `form:"filter[created_at][lt],omitempty" json:"filter[created_at][lt],omitempty"`
 	FilterCreatedAtLte *string `form:"filter[created_at][lte],omitempty" json:"filter[created_at][lte],omitempty"`
+	FilterNameEq       *string `form:"filter[name][eq],omitempty" json:"filter[name][eq],omitempty"`
+	FilterNameNotEq    *string `form:"filter[name][not_eq],omitempty" json:"filter[name][not_eq],omitempty"`
+	FilterNameIn       *string `form:"filter[name][in],omitempty" json:"filter[name][in],omitempty"`
+	FilterNameNotIn    *string `form:"filter[name][not_in],omitempty" json:"filter[name][not_in],omitempty"`
 	PageNumber         *int    `form:"page[number],omitempty" json:"page[number],omitempty"`
 	PageSize           *int    `form:"page[size],omitempty" json:"page[size],omitempty"`
 }
@@ -66127,23 +67203,39 @@ type ListSecretsParams struct {
 
 // ListServicesParams defines parameters for ListServices.
 type ListServicesParams struct {
-	Include                        *string `form:"include,omitempty" json:"include,omitempty"`
-	PageNumber                     *int    `form:"page[number],omitempty" json:"page[number],omitempty"`
-	PageSize                       *int    `form:"page[size],omitempty" json:"page[size],omitempty"`
-	FilterSearch                   *string `form:"filter[search],omitempty" json:"filter[search],omitempty"`
-	FilterName                     *string `form:"filter[name],omitempty" json:"filter[name],omitempty"`
-	FilterSlug                     *string `form:"filter[slug],omitempty" json:"filter[slug],omitempty"`
-	FilterBackstageID              *string `form:"filter[backstage_id],omitempty" json:"filter[backstage_id],omitempty"`
-	FilterCortexID                 *string `form:"filter[cortex_id],omitempty" json:"filter[cortex_id],omitempty"`
-	FilterOpslevelID               *string `form:"filter[opslevel_id],omitempty" json:"filter[opslevel_id],omitempty"`
-	FilterExternalID               *string `form:"filter[external_id],omitempty" json:"filter[external_id],omitempty"`
-	FilterAlertBroadcastEnabled    *bool   `form:"filter[alert_broadcast_enabled],omitempty" json:"filter[alert_broadcast_enabled],omitempty"`
-	FilterIncidentBroadcastEnabled *bool   `form:"filter[incident_broadcast_enabled],omitempty" json:"filter[incident_broadcast_enabled],omitempty"`
-	FilterCreatedAtGt              *string `form:"filter[created_at][gt],omitempty" json:"filter[created_at][gt],omitempty"`
-	FilterCreatedAtGte             *string `form:"filter[created_at][gte],omitempty" json:"filter[created_at][gte],omitempty"`
-	FilterCreatedAtLt              *string `form:"filter[created_at][lt],omitempty" json:"filter[created_at][lt],omitempty"`
-	FilterCreatedAtLte             *string `form:"filter[created_at][lte],omitempty" json:"filter[created_at][lte],omitempty"`
-	Sort                           *string `form:"sort,omitempty" json:"sort,omitempty"`
+	Include                             *string `form:"include,omitempty" json:"include,omitempty"`
+	PageNumber                          *int    `form:"page[number],omitempty" json:"page[number],omitempty"`
+	PageSize                            *int    `form:"page[size],omitempty" json:"page[size],omitempty"`
+	FilterSearch                        *string `form:"filter[search],omitempty" json:"filter[search],omitempty"`
+	FilterName                          *string `form:"filter[name],omitempty" json:"filter[name],omitempty"`
+	FilterSlug                          *string `form:"filter[slug],omitempty" json:"filter[slug],omitempty"`
+	FilterBackstageID                   *string `form:"filter[backstage_id],omitempty" json:"filter[backstage_id],omitempty"`
+	FilterCortexID                      *string `form:"filter[cortex_id],omitempty" json:"filter[cortex_id],omitempty"`
+	FilterOpslevelID                    *string `form:"filter[opslevel_id],omitempty" json:"filter[opslevel_id],omitempty"`
+	FilterExternalID                    *string `form:"filter[external_id],omitempty" json:"filter[external_id],omitempty"`
+	FilterAlertBroadcastEnabled         *bool   `form:"filter[alert_broadcast_enabled],omitempty" json:"filter[alert_broadcast_enabled],omitempty"`
+	FilterIncidentBroadcastEnabled      *bool   `form:"filter[incident_broadcast_enabled],omitempty" json:"filter[incident_broadcast_enabled],omitempty"`
+	FilterCreatedAtGt                   *string `form:"filter[created_at][gt],omitempty" json:"filter[created_at][gt],omitempty"`
+	FilterCreatedAtGte                  *string `form:"filter[created_at][gte],omitempty" json:"filter[created_at][gte],omitempty"`
+	FilterCreatedAtLt                   *string `form:"filter[created_at][lt],omitempty" json:"filter[created_at][lt],omitempty"`
+	FilterCreatedAtLte                  *string `form:"filter[created_at][lte],omitempty" json:"filter[created_at][lte],omitempty"`
+	FilterNameEq                        *string `form:"filter[name][eq],omitempty" json:"filter[name][eq],omitempty"`
+	FilterNameNotEq                     *string `form:"filter[name][not_eq],omitempty" json:"filter[name][not_eq],omitempty"`
+	FilterNameIn                        *string `form:"filter[name][in],omitempty" json:"filter[name][in],omitempty"`
+	FilterNameNotIn                     *string `form:"filter[name][not_in],omitempty" json:"filter[name][not_in],omitempty"`
+	FilterSlugEq                        *string `form:"filter[slug][eq],omitempty" json:"filter[slug][eq],omitempty"`
+	FilterSlugNotEq                     *string `form:"filter[slug][not_eq],omitempty" json:"filter[slug][not_eq],omitempty"`
+	FilterSlugIn                        *string `form:"filter[slug][in],omitempty" json:"filter[slug][in],omitempty"`
+	FilterSlugNotIn                     *string `form:"filter[slug][not_in],omitempty" json:"filter[slug][not_in],omitempty"`
+	FilterAlertBroadcastEnabledEq       *string `form:"filter[alert_broadcast_enabled][eq],omitempty" json:"filter[alert_broadcast_enabled][eq],omitempty"`
+	FilterAlertBroadcastEnabledNotEq    *string `form:"filter[alert_broadcast_enabled][not_eq],omitempty" json:"filter[alert_broadcast_enabled][not_eq],omitempty"`
+	FilterAlertBroadcastEnabledIn       *string `form:"filter[alert_broadcast_enabled][in],omitempty" json:"filter[alert_broadcast_enabled][in],omitempty"`
+	FilterAlertBroadcastEnabledNotIn    *string `form:"filter[alert_broadcast_enabled][not_in],omitempty" json:"filter[alert_broadcast_enabled][not_in],omitempty"`
+	FilterIncidentBroadcastEnabledEq    *string `form:"filter[incident_broadcast_enabled][eq],omitempty" json:"filter[incident_broadcast_enabled][eq],omitempty"`
+	FilterIncidentBroadcastEnabledNotEq *string `form:"filter[incident_broadcast_enabled][not_eq],omitempty" json:"filter[incident_broadcast_enabled][not_eq],omitempty"`
+	FilterIncidentBroadcastEnabledIn    *string `form:"filter[incident_broadcast_enabled][in],omitempty" json:"filter[incident_broadcast_enabled][in],omitempty"`
+	FilterIncidentBroadcastEnabledNotIn *string `form:"filter[incident_broadcast_enabled][not_in],omitempty" json:"filter[incident_broadcast_enabled][not_in],omitempty"`
+	Sort                                *string `form:"sort,omitempty" json:"sort,omitempty"`
 }
 
 // ListServiceCatalogPropertiesParams defines parameters for ListServiceCatalogProperties.
@@ -66182,19 +67274,35 @@ type GetServiceUptimeChartParams struct {
 
 // ListSeveritiesParams defines parameters for ListSeverities.
 type ListSeveritiesParams struct {
-	Include            *string `form:"include,omitempty" json:"include,omitempty"`
-	PageNumber         *int    `form:"page[number],omitempty" json:"page[number],omitempty"`
-	PageSize           *int    `form:"page[size],omitempty" json:"page[size],omitempty"`
-	FilterSearch       *string `form:"filter[search],omitempty" json:"filter[search],omitempty"`
-	FilterSlug         *string `form:"filter[slug],omitempty" json:"filter[slug],omitempty"`
-	FilterName         *string `form:"filter[name],omitempty" json:"filter[name],omitempty"`
-	FilterSeverity     *string `form:"filter[severity],omitempty" json:"filter[severity],omitempty"`
-	FilterColor        *string `form:"filter[color],omitempty" json:"filter[color],omitempty"`
-	FilterCreatedAtGt  *string `form:"filter[created_at][gt],omitempty" json:"filter[created_at][gt],omitempty"`
-	FilterCreatedAtGte *string `form:"filter[created_at][gte],omitempty" json:"filter[created_at][gte],omitempty"`
-	FilterCreatedAtLt  *string `form:"filter[created_at][lt],omitempty" json:"filter[created_at][lt],omitempty"`
-	FilterCreatedAtLte *string `form:"filter[created_at][lte],omitempty" json:"filter[created_at][lte],omitempty"`
-	Sort               *string `form:"sort,omitempty" json:"sort,omitempty"`
+	Include             *string `form:"include,omitempty" json:"include,omitempty"`
+	PageNumber          *int    `form:"page[number],omitempty" json:"page[number],omitempty"`
+	PageSize            *int    `form:"page[size],omitempty" json:"page[size],omitempty"`
+	FilterSearch        *string `form:"filter[search],omitempty" json:"filter[search],omitempty"`
+	FilterSlug          *string `form:"filter[slug],omitempty" json:"filter[slug],omitempty"`
+	FilterName          *string `form:"filter[name],omitempty" json:"filter[name],omitempty"`
+	FilterSeverity      *string `form:"filter[severity],omitempty" json:"filter[severity],omitempty"`
+	FilterColor         *string `form:"filter[color],omitempty" json:"filter[color],omitempty"`
+	FilterCreatedAtGt   *string `form:"filter[created_at][gt],omitempty" json:"filter[created_at][gt],omitempty"`
+	FilterCreatedAtGte  *string `form:"filter[created_at][gte],omitempty" json:"filter[created_at][gte],omitempty"`
+	FilterCreatedAtLt   *string `form:"filter[created_at][lt],omitempty" json:"filter[created_at][lt],omitempty"`
+	FilterCreatedAtLte  *string `form:"filter[created_at][lte],omitempty" json:"filter[created_at][lte],omitempty"`
+	FilterSlugEq        *string `form:"filter[slug][eq],omitempty" json:"filter[slug][eq],omitempty"`
+	FilterSlugNotEq     *string `form:"filter[slug][not_eq],omitempty" json:"filter[slug][not_eq],omitempty"`
+	FilterSlugIn        *string `form:"filter[slug][in],omitempty" json:"filter[slug][in],omitempty"`
+	FilterSlugNotIn     *string `form:"filter[slug][not_in],omitempty" json:"filter[slug][not_in],omitempty"`
+	FilterNameEq        *string `form:"filter[name][eq],omitempty" json:"filter[name][eq],omitempty"`
+	FilterNameNotEq     *string `form:"filter[name][not_eq],omitempty" json:"filter[name][not_eq],omitempty"`
+	FilterNameIn        *string `form:"filter[name][in],omitempty" json:"filter[name][in],omitempty"`
+	FilterNameNotIn     *string `form:"filter[name][not_in],omitempty" json:"filter[name][not_in],omitempty"`
+	FilterSeverityEq    *string `form:"filter[severity][eq],omitempty" json:"filter[severity][eq],omitempty"`
+	FilterSeverityNotEq *string `form:"filter[severity][not_eq],omitempty" json:"filter[severity][not_eq],omitempty"`
+	FilterSeverityIn    *string `form:"filter[severity][in],omitempty" json:"filter[severity][in],omitempty"`
+	FilterSeverityNotIn *string `form:"filter[severity][not_in],omitempty" json:"filter[severity][not_in],omitempty"`
+	FilterColorEq       *string `form:"filter[color][eq],omitempty" json:"filter[color][eq],omitempty"`
+	FilterColorNotEq    *string `form:"filter[color][not_eq],omitempty" json:"filter[color][not_eq],omitempty"`
+	FilterColorIn       *string `form:"filter[color][in],omitempty" json:"filter[color][in],omitempty"`
+	FilterColorNotIn    *string `form:"filter[color][not_in],omitempty" json:"filter[color][not_in],omitempty"`
+	Sort                *string `form:"sort,omitempty" json:"sort,omitempty"`
 }
 
 // ListShiftsParams defines parameters for ListShifts.
@@ -66231,6 +67339,14 @@ type ListSLAsParams struct {
 	FilterCreatedAtGte *string `form:"filter[created_at][gte],omitempty" json:"filter[created_at][gte],omitempty"`
 	FilterCreatedAtLt  *string `form:"filter[created_at][lt],omitempty" json:"filter[created_at][lt],omitempty"`
 	FilterCreatedAtLte *string `form:"filter[created_at][lte],omitempty" json:"filter[created_at][lte],omitempty"`
+	FilterSlugEq       *string `form:"filter[slug][eq],omitempty" json:"filter[slug][eq],omitempty"`
+	FilterSlugNotEq    *string `form:"filter[slug][not_eq],omitempty" json:"filter[slug][not_eq],omitempty"`
+	FilterSlugIn       *string `form:"filter[slug][in],omitempty" json:"filter[slug][in],omitempty"`
+	FilterSlugNotIn    *string `form:"filter[slug][not_in],omitempty" json:"filter[slug][not_in],omitempty"`
+	FilterNameEq       *string `form:"filter[name][eq],omitempty" json:"filter[name][eq],omitempty"`
+	FilterNameNotEq    *string `form:"filter[name][not_eq],omitempty" json:"filter[name][not_eq],omitempty"`
+	FilterNameIn       *string `form:"filter[name][in],omitempty" json:"filter[name][in],omitempty"`
+	FilterNameNotIn    *string `form:"filter[name][not_in],omitempty" json:"filter[name][not_in],omitempty"`
 	Sort               *string `form:"sort,omitempty" json:"sort,omitempty"`
 }
 
@@ -66246,6 +67362,14 @@ type ListStatusPagesParams struct {
 	FilterCreatedAtGte *string `form:"filter[created_at][gte],omitempty" json:"filter[created_at][gte],omitempty"`
 	FilterCreatedAtLt  *string `form:"filter[created_at][lt],omitempty" json:"filter[created_at][lt],omitempty"`
 	FilterCreatedAtLte *string `form:"filter[created_at][lte],omitempty" json:"filter[created_at][lte],omitempty"`
+	FilterNameEq       *string `form:"filter[name][eq],omitempty" json:"filter[name][eq],omitempty"`
+	FilterNameNotEq    *string `form:"filter[name][not_eq],omitempty" json:"filter[name][not_eq],omitempty"`
+	FilterNameIn       *string `form:"filter[name][in],omitempty" json:"filter[name][in],omitempty"`
+	FilterNameNotIn    *string `form:"filter[name][not_in],omitempty" json:"filter[name][not_in],omitempty"`
+	FilterSlugEq       *string `form:"filter[slug][eq],omitempty" json:"filter[slug][eq],omitempty"`
+	FilterSlugNotEq    *string `form:"filter[slug][not_eq],omitempty" json:"filter[slug][not_eq],omitempty"`
+	FilterSlugIn       *string `form:"filter[slug][in],omitempty" json:"filter[slug][in],omitempty"`
+	FilterSlugNotIn    *string `form:"filter[slug][not_in],omitempty" json:"filter[slug][not_in],omitempty"`
 	Sort               *string `form:"sort,omitempty" json:"sort,omitempty"`
 }
 
@@ -66287,24 +67411,44 @@ type ListSubStatusesParams struct {
 // ListTeamsParams defines parameters for ListTeams.
 type ListTeamsParams struct {
 	// Include comma separated if needed. eg: users
-	Include                        *ListTeamsParamsInclude `form:"include,omitempty" json:"include,omitempty"`
-	PageNumber                     *int                    `form:"page[number],omitempty" json:"page[number],omitempty"`
-	PageSize                       *int                    `form:"page[size],omitempty" json:"page[size],omitempty"`
-	FilterSearch                   *string                 `form:"filter[search],omitempty" json:"filter[search],omitempty"`
-	FilterSlug                     *string                 `form:"filter[slug],omitempty" json:"filter[slug],omitempty"`
-	FilterName                     *string                 `form:"filter[name],omitempty" json:"filter[name],omitempty"`
-	FilterBackstageID              *string                 `form:"filter[backstage_id],omitempty" json:"filter[backstage_id],omitempty"`
-	FilterCortexID                 *string                 `form:"filter[cortex_id],omitempty" json:"filter[cortex_id],omitempty"`
-	FilterOpslevelID               *string                 `form:"filter[opslevel_id],omitempty" json:"filter[opslevel_id],omitempty"`
-	FilterExternalID               *string                 `form:"filter[external_id],omitempty" json:"filter[external_id],omitempty"`
-	FilterColor                    *string                 `form:"filter[color],omitempty" json:"filter[color],omitempty"`
-	FilterAlertBroadcastEnabled    *bool                   `form:"filter[alert_broadcast_enabled],omitempty" json:"filter[alert_broadcast_enabled],omitempty"`
-	FilterIncidentBroadcastEnabled *bool                   `form:"filter[incident_broadcast_enabled],omitempty" json:"filter[incident_broadcast_enabled],omitempty"`
-	FilterCreatedAtGt              *string                 `form:"filter[created_at][gt],omitempty" json:"filter[created_at][gt],omitempty"`
-	FilterCreatedAtGte             *string                 `form:"filter[created_at][gte],omitempty" json:"filter[created_at][gte],omitempty"`
-	FilterCreatedAtLt              *string                 `form:"filter[created_at][lt],omitempty" json:"filter[created_at][lt],omitempty"`
-	FilterCreatedAtLte             *string                 `form:"filter[created_at][lte],omitempty" json:"filter[created_at][lte],omitempty"`
-	Sort                           *string                 `form:"sort,omitempty" json:"sort,omitempty"`
+	Include                             *ListTeamsParamsInclude `form:"include,omitempty" json:"include,omitempty"`
+	PageNumber                          *int                    `form:"page[number],omitempty" json:"page[number],omitempty"`
+	PageSize                            *int                    `form:"page[size],omitempty" json:"page[size],omitempty"`
+	FilterSearch                        *string                 `form:"filter[search],omitempty" json:"filter[search],omitempty"`
+	FilterSlug                          *string                 `form:"filter[slug],omitempty" json:"filter[slug],omitempty"`
+	FilterName                          *string                 `form:"filter[name],omitempty" json:"filter[name],omitempty"`
+	FilterBackstageID                   *string                 `form:"filter[backstage_id],omitempty" json:"filter[backstage_id],omitempty"`
+	FilterCortexID                      *string                 `form:"filter[cortex_id],omitempty" json:"filter[cortex_id],omitempty"`
+	FilterOpslevelID                    *string                 `form:"filter[opslevel_id],omitempty" json:"filter[opslevel_id],omitempty"`
+	FilterExternalID                    *string                 `form:"filter[external_id],omitempty" json:"filter[external_id],omitempty"`
+	FilterColor                         *string                 `form:"filter[color],omitempty" json:"filter[color],omitempty"`
+	FilterAlertBroadcastEnabled         *bool                   `form:"filter[alert_broadcast_enabled],omitempty" json:"filter[alert_broadcast_enabled],omitempty"`
+	FilterIncidentBroadcastEnabled      *bool                   `form:"filter[incident_broadcast_enabled],omitempty" json:"filter[incident_broadcast_enabled],omitempty"`
+	FilterCreatedAtGt                   *string                 `form:"filter[created_at][gt],omitempty" json:"filter[created_at][gt],omitempty"`
+	FilterCreatedAtGte                  *string                 `form:"filter[created_at][gte],omitempty" json:"filter[created_at][gte],omitempty"`
+	FilterCreatedAtLt                   *string                 `form:"filter[created_at][lt],omitempty" json:"filter[created_at][lt],omitempty"`
+	FilterCreatedAtLte                  *string                 `form:"filter[created_at][lte],omitempty" json:"filter[created_at][lte],omitempty"`
+	FilterSlugEq                        *string                 `form:"filter[slug][eq],omitempty" json:"filter[slug][eq],omitempty"`
+	FilterSlugNotEq                     *string                 `form:"filter[slug][not_eq],omitempty" json:"filter[slug][not_eq],omitempty"`
+	FilterSlugIn                        *string                 `form:"filter[slug][in],omitempty" json:"filter[slug][in],omitempty"`
+	FilterSlugNotIn                     *string                 `form:"filter[slug][not_in],omitempty" json:"filter[slug][not_in],omitempty"`
+	FilterNameEq                        *string                 `form:"filter[name][eq],omitempty" json:"filter[name][eq],omitempty"`
+	FilterNameNotEq                     *string                 `form:"filter[name][not_eq],omitempty" json:"filter[name][not_eq],omitempty"`
+	FilterNameIn                        *string                 `form:"filter[name][in],omitempty" json:"filter[name][in],omitempty"`
+	FilterNameNotIn                     *string                 `form:"filter[name][not_in],omitempty" json:"filter[name][not_in],omitempty"`
+	FilterColorEq                       *string                 `form:"filter[color][eq],omitempty" json:"filter[color][eq],omitempty"`
+	FilterColorNotEq                    *string                 `form:"filter[color][not_eq],omitempty" json:"filter[color][not_eq],omitempty"`
+	FilterColorIn                       *string                 `form:"filter[color][in],omitempty" json:"filter[color][in],omitempty"`
+	FilterColorNotIn                    *string                 `form:"filter[color][not_in],omitempty" json:"filter[color][not_in],omitempty"`
+	FilterAlertBroadcastEnabledEq       *string                 `form:"filter[alert_broadcast_enabled][eq],omitempty" json:"filter[alert_broadcast_enabled][eq],omitempty"`
+	FilterAlertBroadcastEnabledNotEq    *string                 `form:"filter[alert_broadcast_enabled][not_eq],omitempty" json:"filter[alert_broadcast_enabled][not_eq],omitempty"`
+	FilterAlertBroadcastEnabledIn       *string                 `form:"filter[alert_broadcast_enabled][in],omitempty" json:"filter[alert_broadcast_enabled][in],omitempty"`
+	FilterAlertBroadcastEnabledNotIn    *string                 `form:"filter[alert_broadcast_enabled][not_in],omitempty" json:"filter[alert_broadcast_enabled][not_in],omitempty"`
+	FilterIncidentBroadcastEnabledEq    *string                 `form:"filter[incident_broadcast_enabled][eq],omitempty" json:"filter[incident_broadcast_enabled][eq],omitempty"`
+	FilterIncidentBroadcastEnabledNotEq *string                 `form:"filter[incident_broadcast_enabled][not_eq],omitempty" json:"filter[incident_broadcast_enabled][not_eq],omitempty"`
+	FilterIncidentBroadcastEnabledIn    *string                 `form:"filter[incident_broadcast_enabled][in],omitempty" json:"filter[incident_broadcast_enabled][in],omitempty"`
+	FilterIncidentBroadcastEnabledNotIn *string                 `form:"filter[incident_broadcast_enabled][not_in],omitempty" json:"filter[incident_broadcast_enabled][not_in],omitempty"`
+	Sort                                *string                 `form:"sort,omitempty" json:"sort,omitempty"`
 }
 
 // ListTeamsParamsInclude defines parameters for ListTeams.
@@ -66434,6 +67578,14 @@ type ListWorkflowsParams struct {
 	FilterCreatedAtGte *string                  `form:"filter[created_at][gte],omitempty" json:"filter[created_at][gte],omitempty"`
 	FilterCreatedAtLt  *string                  `form:"filter[created_at][lt],omitempty" json:"filter[created_at][lt],omitempty"`
 	FilterCreatedAtLte *string                  `form:"filter[created_at][lte],omitempty" json:"filter[created_at][lte],omitempty"`
+	FilterSlugEq       *string                  `form:"filter[slug][eq],omitempty" json:"filter[slug][eq],omitempty"`
+	FilterSlugNotEq    *string                  `form:"filter[slug][not_eq],omitempty" json:"filter[slug][not_eq],omitempty"`
+	FilterSlugIn       *string                  `form:"filter[slug][in],omitempty" json:"filter[slug][in],omitempty"`
+	FilterSlugNotIn    *string                  `form:"filter[slug][not_in],omitempty" json:"filter[slug][not_in],omitempty"`
+	FilterNameEq       *string                  `form:"filter[name][eq],omitempty" json:"filter[name][eq],omitempty"`
+	FilterNameNotEq    *string                  `form:"filter[name][not_eq],omitempty" json:"filter[name][not_eq],omitempty"`
+	FilterNameIn       *string                  `form:"filter[name][in],omitempty" json:"filter[name][in],omitempty"`
+	FilterNameNotIn    *string                  `form:"filter[name][not_in],omitempty" json:"filter[name][not_in],omitempty"`
 }
 
 // ListWorkflowsParamsInclude defines parameters for ListWorkflows.
@@ -66489,12 +67641,20 @@ type ListWorkflowRunsParamsInclude string
 
 // ListWorkflowTasksParams defines parameters for ListWorkflowTasks.
 type ListWorkflowTasksParams struct {
-	Include      *string `form:"include,omitempty" json:"include,omitempty"`
-	PageNumber   *int    `form:"page[number],omitempty" json:"page[number],omitempty"`
-	PageSize     *int    `form:"page[size],omitempty" json:"page[size],omitempty"`
-	FilterSearch *string `form:"filter[search],omitempty" json:"filter[search],omitempty"`
-	FilterName   *string `form:"filter[name],omitempty" json:"filter[name],omitempty"`
-	FilterSlug   *string `form:"filter[slug],omitempty" json:"filter[slug],omitempty"`
+	Include         *string `form:"include,omitempty" json:"include,omitempty"`
+	PageNumber      *int    `form:"page[number],omitempty" json:"page[number],omitempty"`
+	PageSize        *int    `form:"page[size],omitempty" json:"page[size],omitempty"`
+	FilterSearch    *string `form:"filter[search],omitempty" json:"filter[search],omitempty"`
+	FilterName      *string `form:"filter[name],omitempty" json:"filter[name],omitempty"`
+	FilterSlug      *string `form:"filter[slug],omitempty" json:"filter[slug],omitempty"`
+	FilterNameEq    *string `form:"filter[name][eq],omitempty" json:"filter[name][eq],omitempty"`
+	FilterNameNotEq *string `form:"filter[name][not_eq],omitempty" json:"filter[name][not_eq],omitempty"`
+	FilterNameIn    *string `form:"filter[name][in],omitempty" json:"filter[name][in],omitempty"`
+	FilterNameNotIn *string `form:"filter[name][not_in],omitempty" json:"filter[name][not_in],omitempty"`
+	FilterSlugEq    *string `form:"filter[slug][eq],omitempty" json:"filter[slug][eq],omitempty"`
+	FilterSlugNotEq *string `form:"filter[slug][not_eq],omitempty" json:"filter[slug][not_eq],omitempty"`
+	FilterSlugIn    *string `form:"filter[slug][in],omitempty" json:"filter[slug][in],omitempty"`
+	FilterSlugNotIn *string `form:"filter[slug][not_in],omitempty" json:"filter[slug][not_in],omitempty"`
 }
 
 // UpdateIncidentActionItemApplicationVndAPIPlusJSONRequestBody defines body for UpdateIncidentActionItem for application/vnd.api+json ContentType.
@@ -68998,6 +70158,68 @@ func (t *InviteToSlackChannelTaskParams) UnmarshalJSON(b []byte) error {
 		}
 	}
 
+	return err
+}
+
+// AsMeetingRecordingDetailTranscript0 returns the union data inside the MeetingRecordingDetail_Transcript as a MeetingRecordingDetailTranscript0
+func (t MeetingRecordingDetail_Transcript) AsMeetingRecordingDetailTranscript0() (MeetingRecordingDetailTranscript0, error) {
+	var body MeetingRecordingDetailTranscript0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromMeetingRecordingDetailTranscript0 overwrites any union data inside the MeetingRecordingDetail_Transcript as the provided MeetingRecordingDetailTranscript0
+func (t *MeetingRecordingDetail_Transcript) FromMeetingRecordingDetailTranscript0(v MeetingRecordingDetailTranscript0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeMeetingRecordingDetailTranscript0 performs a merge with any union data inside the MeetingRecordingDetail_Transcript, using the provided MeetingRecordingDetailTranscript0
+func (t *MeetingRecordingDetail_Transcript) MergeMeetingRecordingDetailTranscript0(v MeetingRecordingDetailTranscript0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsMeetingRecordingDetailTranscript1 returns the union data inside the MeetingRecordingDetail_Transcript as a MeetingRecordingDetailTranscript1
+func (t MeetingRecordingDetail_Transcript) AsMeetingRecordingDetailTranscript1() (MeetingRecordingDetailTranscript1, error) {
+	var body MeetingRecordingDetailTranscript1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromMeetingRecordingDetailTranscript1 overwrites any union data inside the MeetingRecordingDetail_Transcript as the provided MeetingRecordingDetailTranscript1
+func (t *MeetingRecordingDetail_Transcript) FromMeetingRecordingDetailTranscript1(v MeetingRecordingDetailTranscript1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeMeetingRecordingDetailTranscript1 performs a merge with any union data inside the MeetingRecordingDetail_Transcript, using the provided MeetingRecordingDetailTranscript1
+func (t *MeetingRecordingDetail_Transcript) MergeMeetingRecordingDetailTranscript1(v MeetingRecordingDetailTranscript1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t MeetingRecordingDetail_Transcript) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *MeetingRecordingDetail_Transcript) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
 	return err
 }
 
@@ -83765,6 +84987,34 @@ type ClientInterface interface {
 	// Corresponds with PUT /v1/action_items/{id} (the `UpdateIncidentActionItem` operationId).
 	UpdateIncidentActionItemWithApplicationVndAPIPlusJSONBody(ctx context.Context, id ID, body UpdateIncidentActionItemApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
+	// CreateAiChat Send AI chat message
+	//
+	// Send a message to the AI assistant and receive a synchronous reply. Optionally bind the conversation to an incident or alert for context-aware responses. Requires `ai.chat:write` OAuth scope or an API key.
+	//
+	// Corresponds with POST /v1/ai/chat (the `CreateAiChat` operationId).
+	CreateAiChat(ctx context.Context, params *CreateAiChatParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// DeleteAiChatSession Delete AI chat session
+	//
+	// Permanently deletes an AI chat session and all its messages. Requires `ai.chat:write` OAuth scope or an API key.
+	//
+	// Corresponds with DELETE /v1/ai/chat/sessions/{id} (the `DeleteAiChatSession` operationId).
+	DeleteAiChatSession(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// ListAiChatSessionMessages List AI chat session messages
+	//
+	// Returns the user and assistant message history for a session, paginated and chronologically ordered. Internal tool messages are filtered out. Requires `ai.chat:read` OAuth scope or an API key.
+	//
+	// Corresponds with GET /v1/ai/chat/sessions/{session_id}/messages (the `ListAiChatSessionMessages` operationId).
+	ListAiChatSessionMessages(ctx context.Context, sessionID openapi_types.UUID, params *ListAiChatSessionMessagesParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// StreamAiChat Stream AI chat response (SSE)
+	//
+	// Send a message and receive the AI response as a Server-Sent Events stream. Optionally bind to an incident or alert for context. Events: `session_id` (initial), `text` (content chunks), `task_update` (tool progress), `error`, `done` (terminal with status). Requires `ai.chat:write` OAuth scope or an API key.
+	//
+	// Corresponds with POST /v1/ai/chat/stream (the `StreamAiChat` operationId).
+	StreamAiChat(ctx context.Context, params *StreamAiChatParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
 	// ListAlertEventsFeed List alert events across alerts
 	//
 	// Returns a flat list of alert events across all alerts the requester can access. Designed for periodic polling: use `page[after]` with the `next_cursor` returned in the previous response to stream forward.
@@ -87670,7 +88920,14 @@ type ClientInterface interface {
 	// Retrieve a single meeting recording session including its status, duration, speaker count, word count, and transcript summary.
 	//
 	// Corresponds with GET /v1/meeting_recordings/{id} (the `GetMeetingRecording` operationId).
-	GetMeetingRecording(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error)
+	GetMeetingRecording(ctx context.Context, id ID, params *GetMeetingRecordingParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// DeleteStandaloneMeetingRecording Delete a standalone meeting recording
+	//
+	// Delete a standalone meeting recording (not linked to an incident). Only the recording owner can delete it. Active recordings (pending, recording, paused) must be stopped first. Returns 404 for incident-linked recordings or recordings owned by another user.
+	//
+	// Corresponds with DELETE /v1/meeting_recordings/{id}/delete_session (the `DeleteStandaloneMeetingRecording` operationId).
+	DeleteStandaloneMeetingRecording(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// DeleteMeetingRecordingVideo Delete video from a meeting recording
 	//
@@ -90004,6 +91261,74 @@ func (c *Client) UpdateIncidentActionItemWithBody(ctx context.Context, id ID, co
 // Corresponds with PUT /v1/action_items/{id} (the `UpdateIncidentActionItem` operationId).
 func (c *Client) UpdateIncidentActionItemWithApplicationVndAPIPlusJSONBody(ctx context.Context, id ID, body UpdateIncidentActionItemApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewUpdateIncidentActionItemRequestWithApplicationVndAPIPlusJSONBody(c.Server, id, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// CreateAiChat Send AI chat message
+//
+// Send a message to the AI assistant and receive a synchronous reply. Optionally bind the conversation to an incident or alert for context-aware responses. Requires `ai.chat:write` OAuth scope or an API key.
+//
+// Corresponds with POST /v1/ai/chat (the `CreateAiChat` operationId).
+func (c *Client) CreateAiChat(ctx context.Context, params *CreateAiChatParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateAiChatRequest(c.Server, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// DeleteAiChatSession Delete AI chat session
+//
+// Permanently deletes an AI chat session and all its messages. Requires `ai.chat:write` OAuth scope or an API key.
+//
+// Corresponds with DELETE /v1/ai/chat/sessions/{id} (the `DeleteAiChatSession` operationId).
+func (c *Client) DeleteAiChatSession(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewDeleteAiChatSessionRequest(c.Server, id)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// ListAiChatSessionMessages List AI chat session messages
+//
+// Returns the user and assistant message history for a session, paginated and chronologically ordered. Internal tool messages are filtered out. Requires `ai.chat:read` OAuth scope or an API key.
+//
+// Corresponds with GET /v1/ai/chat/sessions/{session_id}/messages (the `ListAiChatSessionMessages` operationId).
+func (c *Client) ListAiChatSessionMessages(ctx context.Context, sessionID openapi_types.UUID, params *ListAiChatSessionMessagesParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewListAiChatSessionMessagesRequest(c.Server, sessionID, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// StreamAiChat Stream AI chat response (SSE)
+//
+// Send a message and receive the AI response as a Server-Sent Events stream. Optionally bind to an incident or alert for context. Events: `session_id` (initial), `text` (content chunks), `task_update` (tool progress), `error`, `done` (terminal with status). Requires `ai.chat:write` OAuth scope or an API key.
+//
+// Corresponds with POST /v1/ai/chat/stream (the `StreamAiChat` operationId).
+func (c *Client) StreamAiChat(ctx context.Context, params *StreamAiChatParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewStreamAiChatRequest(c.Server, params)
 	if err != nil {
 		return nil, err
 	}
@@ -98671,8 +99996,25 @@ func (c *Client) DeleteMeetingRecording(ctx context.Context, id ID, reqEditors .
 // Retrieve a single meeting recording session including its status, duration, speaker count, word count, and transcript summary.
 //
 // Corresponds with GET /v1/meeting_recordings/{id} (the `GetMeetingRecording` operationId).
-func (c *Client) GetMeetingRecording(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetMeetingRecordingRequest(c.Server, id)
+func (c *Client) GetMeetingRecording(ctx context.Context, id ID, params *GetMeetingRecordingParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetMeetingRecordingRequest(c.Server, id, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// DeleteStandaloneMeetingRecording Delete a standalone meeting recording
+//
+// Delete a standalone meeting recording (not linked to an incident). Only the recording owner can delete it. Active recordings (pending, recording, paused) must be stopped first. Returns 404 for incident-linked recordings or recordings owned by another user.
+//
+// Corresponds with DELETE /v1/meeting_recordings/{id}/delete_session (the `DeleteStandaloneMeetingRecording` operationId).
+func (c *Client) DeleteStandaloneMeetingRecording(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewDeleteStandaloneMeetingRecordingRequest(c.Server, id)
 	if err != nil {
 		return nil, err
 	}
@@ -104066,6 +105408,198 @@ func NewListAllIncidentActionItemsRequest(server string, params *ListAllIncident
 
 		}
 
+		if params.FilterKindEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[kind][eq]", *params.FilterKindEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterKindNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[kind][not_eq]", *params.FilterKindNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterKindIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[kind][in]", *params.FilterKindIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterKindNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[kind][not_in]", *params.FilterKindNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterPriorityEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[priority][eq]", *params.FilterPriorityEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterPriorityNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[priority][not_eq]", *params.FilterPriorityNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterPriorityIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[priority][in]", *params.FilterPriorityIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterPriorityNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[priority][not_in]", *params.FilterPriorityNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterStatusEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[status][eq]", *params.FilterStatusEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterStatusNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[status][not_eq]", *params.FilterStatusNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterStatusIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[status][in]", *params.FilterStatusIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterStatusNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[status][not_in]", *params.FilterStatusNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterIncidentStatusEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[incident_status][eq]", *params.FilterIncidentStatusEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterIncidentStatusNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[incident_status][not_eq]", *params.FilterIncidentStatusNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterIncidentStatusIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[incident_status][in]", *params.FilterIncidentStatusIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterIncidentStatusNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[incident_status][not_in]", *params.FilterIncidentStatusNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
 		if params.Sort != nil {
 
 			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "sort", *params.Sort, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
@@ -104203,6 +105737,285 @@ func NewUpdateIncidentActionItemRequestWithBody(server string, id ID, contentTyp
 	}
 
 	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewCreateAiChatRequest constructs an http.Request for the CreateAiChat method
+func NewCreateAiChatRequest(server string, params *CreateAiChatParams) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/ai/chat")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if queryFrag, err := runtime.StyleParamWithOptions("form", true, "message", params.Message, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+			return nil, err
+		} else {
+			for _, qp := range strings.Split(queryFrag, "&") {
+				rawQueryFragments = append(rawQueryFragments, qp)
+			}
+		}
+
+		if params.SessionID != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "session_id", *params.SessionID, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: "uuid"}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.IncidentID != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "incident_id", *params.IncidentID, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: "uuid"}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.AlertID != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "alert_id", *params.AlertID, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: "uuid"}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewDeleteAiChatSessionRequest constructs an http.Request for the DeleteAiChatSession method
+func NewDeleteAiChatSessionRequest(server string, id ID) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "id", id, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/ai/chat/sessions/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodDelete, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewListAiChatSessionMessagesRequest constructs an http.Request for the ListAiChatSessionMessages method
+func NewListAiChatSessionMessagesRequest(server string, sessionID openapi_types.UUID, params *ListAiChatSessionMessagesParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "session_id", sessionID, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/ai/chat/sessions/%s/messages", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.PageNumber != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "page[number]", *params.PageNumber, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.PageSize != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "page[size]", *params.PageSize, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewStreamAiChatRequest constructs an http.Request for the StreamAiChat method
+func NewStreamAiChatRequest(server string, params *StreamAiChatParams) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/ai/chat/stream")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if queryFrag, err := runtime.StyleParamWithOptions("form", true, "message", params.Message, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+			return nil, err
+		} else {
+			for _, qp := range strings.Split(queryFrag, "&") {
+				rawQueryFragments = append(rawQueryFragments, qp)
+			}
+		}
+
+		if params.SessionID != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "session_id", *params.SessionID, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: "uuid"}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.IncidentID != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "incident_id", *params.IncidentID, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: "uuid"}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.AlertID != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "alert_id", *params.AlertID, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: "uuid"}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
 
 	return req, nil
 }
@@ -104644,6 +106457,102 @@ func NewListAlertFieldsRequest(server string, params *ListAlertFieldsParams) (*h
 
 		}
 
+		if params.FilterNameEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[name][eq]", *params.FilterNameEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterNameNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[name][not_eq]", *params.FilterNameNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterNameIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[name][in]", *params.FilterNameIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterNameNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[name][not_in]", *params.FilterNameNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterKindEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[kind][eq]", *params.FilterKindEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterKindNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[kind][not_eq]", *params.FilterKindNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterKindIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[kind][in]", *params.FilterKindIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterKindNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[kind][not_in]", *params.FilterKindNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
 		if params.Sort != nil {
 
 			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "sort", *params.Sort, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
@@ -104856,6 +106765,102 @@ func NewListAlertGroupsRequest(server string, params *ListAlertGroupsParams) (*h
 		if params.Include != nil {
 
 			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "include", *params.Include, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSlugEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[slug][eq]", *params.FilterSlugEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSlugNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[slug][not_eq]", *params.FilterSlugNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSlugIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[slug][in]", *params.FilterSlugIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSlugNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[slug][not_in]", *params.FilterSlugNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterNameEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[name][eq]", *params.FilterNameEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterNameNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[name][not_eq]", *params.FilterNameNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterNameIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[name][in]", *params.FilterNameIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterNameNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[name][not_in]", *params.FilterNameNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
 				return nil, err
 			} else {
 				for _, qp := range strings.Split(queryFrag, "&") {
@@ -105101,6 +107106,102 @@ func NewListAlertRoutesRequest(server string, params *ListAlertRoutesParams) (*h
 		if params.FilterName != nil {
 
 			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[name]", *params.FilterName, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSlugEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[slug][eq]", *params.FilterSlugEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSlugNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[slug][not_eq]", *params.FilterSlugNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSlugIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[slug][in]", *params.FilterSlugIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSlugNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[slug][not_in]", *params.FilterSlugNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterNameEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[name][eq]", *params.FilterNameEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterNameNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[name][not_eq]", *params.FilterNameNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterNameIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[name][in]", *params.FilterNameIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterNameNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[name][not_in]", *params.FilterNameNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
 				return nil, err
 			} else {
 				for _, qp := range strings.Split(queryFrag, "&") {
@@ -105465,6 +107566,102 @@ func NewListAlertRoutingRulesRequest(server string, params *ListAlertRoutingRule
 		if params.FilterCreatedAtLte != nil {
 
 			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[created_at][lte]", *params.FilterCreatedAtLte, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSlugEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[slug][eq]", *params.FilterSlugEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSlugNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[slug][not_eq]", *params.FilterSlugNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSlugIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[slug][in]", *params.FilterSlugIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSlugNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[slug][not_in]", *params.FilterSlugNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterNameEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[name][eq]", *params.FilterNameEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterNameNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[name][not_eq]", *params.FilterNameNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterNameIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[name][in]", *params.FilterNameIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterNameNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[name][not_in]", *params.FilterNameNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
 				return nil, err
 			} else {
 				for _, qp := range strings.Split(queryFrag, "&") {
@@ -106096,6 +108293,54 @@ func NewListAlertUrgenciesRequest(server string, params *ListAlertUrgenciesParam
 
 		}
 
+		if params.FilterNameEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[name][eq]", *params.FilterNameEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterNameNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[name][not_eq]", *params.FilterNameNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterNameIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[name][in]", *params.FilterNameIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterNameNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[name][not_in]", *params.FilterNameNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
 		if params.Sort != nil {
 
 			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "sort", *params.Sort, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
@@ -106572,6 +108817,294 @@ func NewListAlertsRequest(server string, params *ListAlertsParams) (*http.Reques
 		if params.FilterUpdatedAtLte != nil {
 
 			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[updated_at][lte]", *params.FilterUpdatedAtLte, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterStatusEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[status][eq]", *params.FilterStatusEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterStatusNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[status][not_eq]", *params.FilterStatusNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterStatusIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[status][in]", *params.FilterStatusIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterStatusNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[status][not_in]", *params.FilterStatusNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSourceEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[source][eq]", *params.FilterSourceEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSourceNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[source][not_eq]", *params.FilterSourceNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSourceIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[source][in]", *params.FilterSourceIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSourceNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[source][not_in]", *params.FilterSourceNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterServicesEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[services][eq]", *params.FilterServicesEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterServicesNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[services][not_eq]", *params.FilterServicesNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterServicesIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[services][in]", *params.FilterServicesIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterServicesNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[services][not_in]", *params.FilterServicesNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterGroupsEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[groups][eq]", *params.FilterGroupsEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterGroupsNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[groups][not_eq]", *params.FilterGroupsNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterGroupsIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[groups][in]", *params.FilterGroupsIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterGroupsNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[groups][not_in]", *params.FilterGroupsNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterEnvironmentsEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[environments][eq]", *params.FilterEnvironmentsEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterEnvironmentsNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[environments][not_eq]", *params.FilterEnvironmentsNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterEnvironmentsIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[environments][in]", *params.FilterEnvironmentsIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterEnvironmentsNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[environments][not_in]", *params.FilterEnvironmentsNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterLabelsEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[labels][eq]", *params.FilterLabelsEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterLabelsNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[labels][not_eq]", *params.FilterLabelsNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterLabelsIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[labels][in]", *params.FilterLabelsIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterLabelsNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[labels][not_in]", *params.FilterLabelsNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
 				return nil, err
 			} else {
 				for _, qp := range strings.Split(queryFrag, "&") {
@@ -107854,6 +110387,198 @@ func NewListAuditsRequest(server string, params *ListAuditsParams) (*http.Reques
 		if params.FilterItemType != nil {
 
 			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[item_type]", *params.FilterItemType, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterUserIDEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[user_id][eq]", *params.FilterUserIDEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterUserIDNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[user_id][not_eq]", *params.FilterUserIDNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterUserIDIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[user_id][in]", *params.FilterUserIDIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterUserIDNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[user_id][not_in]", *params.FilterUserIDNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterAPIKeyIDEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[api_key_id][eq]", *params.FilterAPIKeyIDEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterAPIKeyIDNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[api_key_id][not_eq]", *params.FilterAPIKeyIDNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterAPIKeyIDIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[api_key_id][in]", *params.FilterAPIKeyIDIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterAPIKeyIDNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[api_key_id][not_in]", *params.FilterAPIKeyIDNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSourceEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[source][eq]", *params.FilterSourceEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSourceNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[source][not_eq]", *params.FilterSourceNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSourceIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[source][in]", *params.FilterSourceIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSourceNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[source][not_in]", *params.FilterSourceNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterItemTypeEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[item_type][eq]", *params.FilterItemTypeEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterItemTypeNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[item_type][not_eq]", *params.FilterItemTypeNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterItemTypeIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[item_type][in]", *params.FilterItemTypeIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterItemTypeNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[item_type][not_in]", *params.FilterItemTypeNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
 				return nil, err
 			} else {
 				for _, qp := range strings.Split(queryFrag, "&") {
@@ -109674,6 +112399,150 @@ func NewListCatalogsRequest(server string, params *ListCatalogsParams) (*http.Re
 
 		}
 
+		if params.FilterSlugEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[slug][eq]", *params.FilterSlugEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSlugNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[slug][not_eq]", *params.FilterSlugNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSlugIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[slug][in]", *params.FilterSlugIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSlugNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[slug][not_in]", *params.FilterSlugNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterNameEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[name][eq]", *params.FilterNameEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterNameNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[name][not_eq]", *params.FilterNameNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterNameIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[name][in]", *params.FilterNameIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterNameNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[name][not_in]", *params.FilterNameNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterManagedByEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[managed_by][eq]", *params.FilterManagedByEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterManagedByNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[managed_by][not_eq]", *params.FilterManagedByNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterManagedByIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[managed_by][in]", *params.FilterManagedByIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterManagedByNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[managed_by][not_in]", *params.FilterManagedByNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
 		if encoded := queryValues.Encode(); encoded != "" {
 			rawQueryFragments = append(rawQueryFragments, encoded)
 		}
@@ -109922,6 +112791,150 @@ func NewListCatalogEntitiesRequest(server string, catalogID string, params *List
 		if params.FilterCreatedAtLte != nil {
 
 			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[created_at][lte]", *params.FilterCreatedAtLte, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSlugEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[slug][eq]", *params.FilterSlugEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSlugNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[slug][not_eq]", *params.FilterSlugNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSlugIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[slug][in]", *params.FilterSlugIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSlugNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[slug][not_in]", *params.FilterSlugNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterNameEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[name][eq]", *params.FilterNameEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterNameNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[name][not_eq]", *params.FilterNameNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterNameIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[name][in]", *params.FilterNameIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterNameNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[name][not_in]", *params.FilterNameNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterManagedByEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[managed_by][eq]", *params.FilterManagedByEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterManagedByNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[managed_by][not_eq]", *params.FilterManagedByNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterManagedByIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[managed_by][in]", *params.FilterManagedByIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterManagedByNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[managed_by][not_in]", *params.FilterManagedByNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
 				return nil, err
 			} else {
 				for _, qp := range strings.Split(queryFrag, "&") {
@@ -110421,6 +113434,102 @@ func NewListCausesRequest(server string, params *ListCausesParams) (*http.Reques
 		if params.FilterCreatedAtLte != nil {
 
 			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[created_at][lte]", *params.FilterCreatedAtLte, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSlugEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[slug][eq]", *params.FilterSlugEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSlugNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[slug][not_eq]", *params.FilterSlugNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSlugIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[slug][in]", *params.FilterSlugIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSlugNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[slug][not_in]", *params.FilterSlugNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterNameEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[name][eq]", *params.FilterNameEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterNameNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[name][not_eq]", *params.FilterNameNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterNameIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[name][in]", *params.FilterNameIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterNameNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[name][not_in]", *params.FilterNameNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
 				return nil, err
 			} else {
 				for _, qp := range strings.Split(queryFrag, "&") {
@@ -112407,6 +115516,198 @@ func NewListCustomFieldsRequest(server string, params *ListCustomFieldsParams) (
 		if params.FilterCreatedAtLte != nil {
 
 			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[created_at][lte]", *params.FilterCreatedAtLte, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSlugEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[slug][eq]", *params.FilterSlugEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSlugNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[slug][not_eq]", *params.FilterSlugNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSlugIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[slug][in]", *params.FilterSlugIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSlugNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[slug][not_in]", *params.FilterSlugNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterLabelEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[label][eq]", *params.FilterLabelEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterLabelNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[label][not_eq]", *params.FilterLabelNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterLabelIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[label][in]", *params.FilterLabelIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterLabelNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[label][not_in]", *params.FilterLabelNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterKindEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[kind][eq]", *params.FilterKindEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterKindNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[kind][not_eq]", *params.FilterKindNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterKindIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[kind][in]", *params.FilterKindIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterKindNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[kind][not_in]", *params.FilterKindNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterEnabledEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[enabled][eq]", *params.FilterEnabledEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterEnabledNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[enabled][not_eq]", *params.FilterEnabledNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterEnabledIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[enabled][in]", *params.FilterEnabledIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterEnabledNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[enabled][not_in]", *params.FilterEnabledNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
 				return nil, err
 			} else {
 				for _, qp := range strings.Split(queryFrag, "&") {
@@ -114585,6 +117886,150 @@ func NewListEnvironmentsRequest(server string, params *ListEnvironmentsParams) (
 
 		}
 
+		if params.FilterSlugEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[slug][eq]", *params.FilterSlugEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSlugNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[slug][not_eq]", *params.FilterSlugNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSlugIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[slug][in]", *params.FilterSlugIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSlugNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[slug][not_in]", *params.FilterSlugNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterNameEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[name][eq]", *params.FilterNameEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterNameNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[name][not_eq]", *params.FilterNameNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterNameIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[name][in]", *params.FilterNameIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterNameNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[name][not_in]", *params.FilterNameNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterColorEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[color][eq]", *params.FilterColorEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterColorNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[color][not_eq]", *params.FilterColorNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterColorIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[color][in]", *params.FilterColorIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterColorNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[color][not_in]", *params.FilterColorNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
 		if params.Sort != nil {
 
 			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "sort", *params.Sort, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
@@ -115484,6 +118929,102 @@ func NewListEscalationPoliciesRequest(server string, params *ListEscalationPolic
 		if params.FilterCreatedAtLte != nil {
 
 			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[created_at][lte]", *params.FilterCreatedAtLte, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterNameEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[name][eq]", *params.FilterNameEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterNameNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[name][not_eq]", *params.FilterNameNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterNameIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[name][in]", *params.FilterNameIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterNameNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[name][not_in]", *params.FilterNameNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterTeamIDsEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[team_ids][eq]", *params.FilterTeamIDsEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterTeamIDsNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[team_ids][not_eq]", *params.FilterTeamIDsNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterTeamIDsIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[team_ids][in]", *params.FilterTeamIDsIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterTeamIDsNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[team_ids][not_in]", *params.FilterTeamIDsNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
 				return nil, err
 			} else {
 				for _, qp := range strings.Split(queryFrag, "&") {
@@ -117225,6 +120766,198 @@ func NewListFormFieldsRequest(server string, params *ListFormFieldsParams) (*htt
 
 		}
 
+		if params.FilterSlugEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[slug][eq]", *params.FilterSlugEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSlugNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[slug][not_eq]", *params.FilterSlugNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSlugIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[slug][in]", *params.FilterSlugIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSlugNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[slug][not_in]", *params.FilterSlugNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterNameEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[name][eq]", *params.FilterNameEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterNameNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[name][not_eq]", *params.FilterNameNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterNameIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[name][in]", *params.FilterNameIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterNameNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[name][not_in]", *params.FilterNameNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterKindEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[kind][eq]", *params.FilterKindEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterKindNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[kind][not_eq]", *params.FilterKindNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterKindIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[kind][in]", *params.FilterKindIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterKindNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[kind][not_in]", *params.FilterKindNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterEnabledEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[enabled][eq]", *params.FilterEnabledEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterEnabledNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[enabled][not_eq]", *params.FilterEnabledNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterEnabledIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[enabled][in]", *params.FilterEnabledIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterEnabledNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[enabled][not_in]", *params.FilterEnabledNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
 		if encoded := queryValues.Encode(); encoded != "" {
 			rawQueryFragments = append(rawQueryFragments, encoded)
 		}
@@ -118616,6 +122349,102 @@ func NewListFunctionalitiesRequest(server string, params *ListFunctionalitiesPar
 		if params.FilterCreatedAtLte != nil {
 
 			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[created_at][lte]", *params.FilterCreatedAtLte, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterNameEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[name][eq]", *params.FilterNameEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterNameNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[name][not_eq]", *params.FilterNameNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterNameIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[name][in]", *params.FilterNameIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterNameNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[name][not_in]", *params.FilterNameNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSlugEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[slug][eq]", *params.FilterSlugEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSlugNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[slug][not_eq]", *params.FilterSlugNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSlugIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[slug][in]", *params.FilterSlugIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSlugNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[slug][not_in]", *params.FilterSlugNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
 				return nil, err
 			} else {
 				for _, qp := range strings.Split(queryFrag, "&") {
@@ -121260,6 +125089,150 @@ func NewListIncidentRolesRequest(server string, params *ListIncidentRolesParams)
 
 		}
 
+		if params.FilterSlugEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[slug][eq]", *params.FilterSlugEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSlugNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[slug][not_eq]", *params.FilterSlugNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSlugIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[slug][in]", *params.FilterSlugIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSlugNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[slug][not_in]", *params.FilterSlugNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterNameEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[name][eq]", *params.FilterNameEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterNameNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[name][not_eq]", *params.FilterNameNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterNameIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[name][in]", *params.FilterNameIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterNameNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[name][not_in]", *params.FilterNameNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterEnabledEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[enabled][eq]", *params.FilterEnabledEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterEnabledNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[enabled][not_eq]", *params.FilterEnabledNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterEnabledIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[enabled][in]", *params.FilterEnabledIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterEnabledNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[enabled][not_in]", *params.FilterEnabledNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
 		if params.Sort != nil {
 
 			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "sort", *params.Sort, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
@@ -121854,6 +125827,150 @@ func NewListIncidentTypesRequest(server string, params *ListIncidentTypesParams)
 		if params.FilterCreatedAtLte != nil {
 
 			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[created_at][lte]", *params.FilterCreatedAtLte, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSlugEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[slug][eq]", *params.FilterSlugEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSlugNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[slug][not_eq]", *params.FilterSlugNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSlugIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[slug][in]", *params.FilterSlugIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSlugNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[slug][not_in]", *params.FilterSlugNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterNameEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[name][eq]", *params.FilterNameEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterNameNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[name][not_eq]", *params.FilterNameNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterNameIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[name][in]", *params.FilterNameIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterNameNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[name][not_in]", *params.FilterNameNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterColorEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[color][eq]", *params.FilterColorEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterColorNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[color][not_eq]", *params.FilterColorNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterColorIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[color][in]", *params.FilterColorIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterColorNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[color][not_in]", *params.FilterColorNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
 				return nil, err
 			} else {
 				for _, qp := range strings.Split(queryFrag, "&") {
@@ -122622,6 +126739,18 @@ func NewListIncidentsRequest(server string, params *ListIncidentsParams) (*http.
 
 		}
 
+		if params.FilterSequentialID != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[sequential_id]", *params.FilterSequentialID, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
 		if params.FilterCreatedAtGt != nil {
 
 			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[created_at][gt]", *params.FilterCreatedAtGt, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
@@ -123045,6 +127174,1158 @@ func NewListIncidentsRequest(server string, params *ListIncidentsParams) (*http.
 		if params.FilterInTriageAtLte != nil {
 
 			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[in_triage_at][lte]", *params.FilterInTriageAtLte, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterKindEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[kind][eq]", *params.FilterKindEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterKindNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[kind][not_eq]", *params.FilterKindNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterKindIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[kind][in]", *params.FilterKindIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterKindNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[kind][not_in]", *params.FilterKindNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterStatusEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[status][eq]", *params.FilterStatusEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterStatusNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[status][not_eq]", *params.FilterStatusNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterStatusIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[status][in]", *params.FilterStatusIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterStatusNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[status][not_in]", *params.FilterStatusNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterPrivateEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[private][eq]", *params.FilterPrivateEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterPrivateNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[private][not_eq]", *params.FilterPrivateNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterPrivateIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[private][in]", *params.FilterPrivateIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterPrivateNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[private][not_in]", *params.FilterPrivateNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterUserIDEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[user_id][eq]", *params.FilterUserIDEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterUserIDNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[user_id][not_eq]", *params.FilterUserIDNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterUserIDIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[user_id][in]", *params.FilterUserIDIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterUserIDNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[user_id][not_in]", *params.FilterUserIDNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSeverityEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[severity][eq]", *params.FilterSeverityEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSeverityNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[severity][not_eq]", *params.FilterSeverityNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSeverityIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[severity][in]", *params.FilterSeverityIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSeverityNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[severity][not_in]", *params.FilterSeverityNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSeverityIDEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[severity_id][eq]", *params.FilterSeverityIDEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSeverityIDNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[severity_id][not_eq]", *params.FilterSeverityIDNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSeverityIDIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[severity_id][in]", *params.FilterSeverityIDIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSeverityIDNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[severity_id][not_in]", *params.FilterSeverityIDNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterLabelsEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[labels][eq]", *params.FilterLabelsEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterLabelsNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[labels][not_eq]", *params.FilterLabelsNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterLabelsIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[labels][in]", *params.FilterLabelsIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterLabelsNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[labels][not_in]", *params.FilterLabelsNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterZendeskTicketIDEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[zendesk_ticket_id][eq]", *params.FilterZendeskTicketIDEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterZendeskTicketIDNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[zendesk_ticket_id][not_eq]", *params.FilterZendeskTicketIDNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterZendeskTicketIDIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[zendesk_ticket_id][in]", *params.FilterZendeskTicketIDIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterZendeskTicketIDNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[zendesk_ticket_id][not_in]", *params.FilterZendeskTicketIDNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSequentialIDEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[sequential_id][eq]", *params.FilterSequentialIDEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSequentialIDNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[sequential_id][not_eq]", *params.FilterSequentialIDNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSequentialIDIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[sequential_id][in]", *params.FilterSequentialIDIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSequentialIDNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[sequential_id][not_in]", *params.FilterSequentialIDNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterTypesEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[types][eq]", *params.FilterTypesEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterTypesNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[types][not_eq]", *params.FilterTypesNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterTypesIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[types][in]", *params.FilterTypesIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterTypesNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[types][not_in]", *params.FilterTypesNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterTypeIDsEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[type_ids][eq]", *params.FilterTypeIDsEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterTypeIDsNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[type_ids][not_eq]", *params.FilterTypeIDsNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterTypeIDsIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[type_ids][in]", *params.FilterTypeIDsIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterTypeIDsNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[type_ids][not_in]", *params.FilterTypeIDsNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterEnvironmentsEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[environments][eq]", *params.FilterEnvironmentsEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterEnvironmentsNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[environments][not_eq]", *params.FilterEnvironmentsNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterEnvironmentsIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[environments][in]", *params.FilterEnvironmentsIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterEnvironmentsNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[environments][not_in]", *params.FilterEnvironmentsNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterEnvironmentIDsEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[environment_ids][eq]", *params.FilterEnvironmentIDsEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterEnvironmentIDsNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[environment_ids][not_eq]", *params.FilterEnvironmentIDsNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterEnvironmentIDsIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[environment_ids][in]", *params.FilterEnvironmentIDsIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterEnvironmentIDsNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[environment_ids][not_in]", *params.FilterEnvironmentIDsNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterServicesEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[services][eq]", *params.FilterServicesEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterServicesNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[services][not_eq]", *params.FilterServicesNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterServicesIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[services][in]", *params.FilterServicesIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterServicesNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[services][not_in]", *params.FilterServicesNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterServiceIDsEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[service_ids][eq]", *params.FilterServiceIDsEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterServiceIDsNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[service_ids][not_eq]", *params.FilterServiceIDsNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterServiceIDsIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[service_ids][in]", *params.FilterServiceIDsIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterServiceIDsNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[service_ids][not_in]", *params.FilterServiceIDsNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterServiceNamesEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[service_names][eq]", *params.FilterServiceNamesEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterServiceNamesNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[service_names][not_eq]", *params.FilterServiceNamesNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterServiceNamesIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[service_names][in]", *params.FilterServiceNamesIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterServiceNamesNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[service_names][not_in]", *params.FilterServiceNamesNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterFunctionalitiesEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[functionalities][eq]", *params.FilterFunctionalitiesEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterFunctionalitiesNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[functionalities][not_eq]", *params.FilterFunctionalitiesNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterFunctionalitiesIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[functionalities][in]", *params.FilterFunctionalitiesIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterFunctionalitiesNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[functionalities][not_in]", *params.FilterFunctionalitiesNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterFunctionalityIDsEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[functionality_ids][eq]", *params.FilterFunctionalityIDsEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterFunctionalityIDsNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[functionality_ids][not_eq]", *params.FilterFunctionalityIDsNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterFunctionalityIDsIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[functionality_ids][in]", *params.FilterFunctionalityIDsIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterFunctionalityIDsNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[functionality_ids][not_in]", *params.FilterFunctionalityIDsNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterFunctionalityNamesEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[functionality_names][eq]", *params.FilterFunctionalityNamesEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterFunctionalityNamesNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[functionality_names][not_eq]", *params.FilterFunctionalityNamesNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterFunctionalityNamesIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[functionality_names][in]", *params.FilterFunctionalityNamesIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterFunctionalityNamesNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[functionality_names][not_in]", *params.FilterFunctionalityNamesNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterCausesEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[causes][eq]", *params.FilterCausesEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterCausesNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[causes][not_eq]", *params.FilterCausesNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterCausesIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[causes][in]", *params.FilterCausesIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterCausesNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[causes][not_in]", *params.FilterCausesNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterCauseIDsEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[cause_ids][eq]", *params.FilterCauseIDsEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterCauseIDsNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[cause_ids][not_eq]", *params.FilterCauseIDsNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterCauseIDsIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[cause_ids][in]", *params.FilterCauseIDsIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterCauseIDsNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[cause_ids][not_in]", *params.FilterCauseIDsNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterTeamsEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[teams][eq]", *params.FilterTeamsEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterTeamsNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[teams][not_eq]", *params.FilterTeamsNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterTeamsIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[teams][in]", *params.FilterTeamsIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterTeamsNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[teams][not_in]", *params.FilterTeamsNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterTeamIDsEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[team_ids][eq]", *params.FilterTeamIDsEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterTeamIDsNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[team_ids][not_eq]", *params.FilterTeamIDsNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterTeamIDsIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[team_ids][in]", *params.FilterTeamIDsIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterTeamIDsNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[team_ids][not_in]", *params.FilterTeamIDsNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterTeamNamesEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[team_names][eq]", *params.FilterTeamNamesEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterTeamNamesNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[team_names][not_eq]", *params.FilterTeamNamesNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterTeamNamesIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[team_names][in]", *params.FilterTeamNamesIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterTeamNamesNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[team_names][not_in]", *params.FilterTeamNamesNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
 				return nil, err
 			} else {
 				for _, qp := range strings.Split(queryFrag, "&") {
@@ -125664,7 +130945,7 @@ func NewDeleteMeetingRecordingRequest(server string, id ID) (*http.Request, erro
 }
 
 // NewGetMeetingRecordingRequest constructs an http.Request for the GetMeetingRecording method
-func NewGetMeetingRecordingRequest(server string, id ID) (*http.Request, error) {
+func NewGetMeetingRecordingRequest(server string, id ID, params *GetMeetingRecordingParams) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -125689,7 +130970,68 @@ func NewGetMeetingRecordingRequest(server string, id ID) (*http.Request, error) 
 		return nil, err
 	}
 
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.Include != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "include", *params.Include, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
 	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewDeleteStandaloneMeetingRecordingRequest constructs an http.Request for the DeleteStandaloneMeetingRecording method
+func NewDeleteStandaloneMeetingRecordingRequest(server string, id ID) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "id", id, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/meeting_recordings/%s/delete_session", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodDelete, queryURL.String(), nil)
 	if err != nil {
 		return nil, err
 	}
@@ -128701,6 +134043,246 @@ func NewListPulsesRequest(server string, params *ListPulsesParams) (*http.Reques
 
 		}
 
+		if params.FilterSourceEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[source][eq]", *params.FilterSourceEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSourceNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[source][not_eq]", *params.FilterSourceNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSourceIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[source][in]", *params.FilterSourceIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSourceNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[source][not_in]", *params.FilterSourceNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterServicesEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[services][eq]", *params.FilterServicesEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterServicesNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[services][not_eq]", *params.FilterServicesNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterServicesIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[services][in]", *params.FilterServicesIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterServicesNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[services][not_in]", *params.FilterServicesNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterEnvironmentsEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[environments][eq]", *params.FilterEnvironmentsEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterEnvironmentsNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[environments][not_eq]", *params.FilterEnvironmentsNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterEnvironmentsIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[environments][in]", *params.FilterEnvironmentsIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterEnvironmentsNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[environments][not_in]", *params.FilterEnvironmentsNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterLabelsEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[labels][eq]", *params.FilterLabelsEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterLabelsNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[labels][not_eq]", *params.FilterLabelsNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterLabelsIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[labels][in]", *params.FilterLabelsIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterLabelsNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[labels][not_in]", *params.FilterLabelsNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterRefsEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[refs][eq]", *params.FilterRefsEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterRefsNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[refs][not_eq]", *params.FilterRefsNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterRefsIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[refs][in]", *params.FilterRefsIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterRefsNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[refs][not_in]", *params.FilterRefsNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
 		if params.PageNumber != nil {
 
 			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "page[number]", *params.PageNumber, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: ""}); err != nil {
@@ -131280,6 +136862,54 @@ func NewListSchedulesRequest(server string, params *ListSchedulesParams) (*http.
 
 		}
 
+		if params.FilterNameEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[name][eq]", *params.FilterNameEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterNameNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[name][not_eq]", *params.FilterNameNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterNameIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[name][in]", *params.FilterNameIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterNameNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[name][not_in]", *params.FilterNameNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
 		if params.PageNumber != nil {
 
 			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "page[number]", *params.PageNumber, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: ""}); err != nil {
@@ -132488,6 +138118,198 @@ func NewListServicesRequest(server string, params *ListServicesParams) (*http.Re
 
 		}
 
+		if params.FilterNameEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[name][eq]", *params.FilterNameEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterNameNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[name][not_eq]", *params.FilterNameNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterNameIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[name][in]", *params.FilterNameIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterNameNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[name][not_in]", *params.FilterNameNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSlugEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[slug][eq]", *params.FilterSlugEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSlugNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[slug][not_eq]", *params.FilterSlugNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSlugIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[slug][in]", *params.FilterSlugIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSlugNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[slug][not_in]", *params.FilterSlugNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterAlertBroadcastEnabledEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[alert_broadcast_enabled][eq]", *params.FilterAlertBroadcastEnabledEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterAlertBroadcastEnabledNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[alert_broadcast_enabled][not_eq]", *params.FilterAlertBroadcastEnabledNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterAlertBroadcastEnabledIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[alert_broadcast_enabled][in]", *params.FilterAlertBroadcastEnabledIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterAlertBroadcastEnabledNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[alert_broadcast_enabled][not_in]", *params.FilterAlertBroadcastEnabledNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterIncidentBroadcastEnabledEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[incident_broadcast_enabled][eq]", *params.FilterIncidentBroadcastEnabledEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterIncidentBroadcastEnabledNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[incident_broadcast_enabled][not_eq]", *params.FilterIncidentBroadcastEnabledNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterIncidentBroadcastEnabledIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[incident_broadcast_enabled][in]", *params.FilterIncidentBroadcastEnabledIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterIncidentBroadcastEnabledNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[incident_broadcast_enabled][not_in]", *params.FilterIncidentBroadcastEnabledNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
 		if params.Sort != nil {
 
 			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "sort", *params.Sort, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
@@ -133173,6 +138995,198 @@ func NewListSeveritiesRequest(server string, params *ListSeveritiesParams) (*htt
 
 		}
 
+		if params.FilterSlugEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[slug][eq]", *params.FilterSlugEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSlugNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[slug][not_eq]", *params.FilterSlugNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSlugIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[slug][in]", *params.FilterSlugIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSlugNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[slug][not_in]", *params.FilterSlugNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterNameEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[name][eq]", *params.FilterNameEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterNameNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[name][not_eq]", *params.FilterNameNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterNameIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[name][in]", *params.FilterNameIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterNameNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[name][not_in]", *params.FilterNameNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSeverityEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[severity][eq]", *params.FilterSeverityEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSeverityNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[severity][not_eq]", *params.FilterSeverityNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSeverityIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[severity][in]", *params.FilterSeverityIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSeverityNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[severity][not_in]", *params.FilterSeverityNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterColorEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[color][eq]", *params.FilterColorEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterColorNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[color][not_eq]", *params.FilterColorNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterColorIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[color][in]", *params.FilterColorIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterColorNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[color][not_in]", *params.FilterColorNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
 		if params.Sort != nil {
 
 			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "sort", *params.Sort, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
@@ -133684,6 +139698,102 @@ func NewListSLAsRequest(server string, params *ListSLAsParams) (*http.Request, e
 
 		}
 
+		if params.FilterSlugEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[slug][eq]", *params.FilterSlugEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSlugNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[slug][not_eq]", *params.FilterSlugNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSlugIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[slug][in]", *params.FilterSlugIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSlugNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[slug][not_in]", *params.FilterSlugNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterNameEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[name][eq]", *params.FilterNameEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterNameNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[name][not_eq]", *params.FilterNameNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterNameIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[name][in]", *params.FilterNameIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterNameNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[name][not_in]", *params.FilterNameNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
 		if params.Sort != nil {
 
 			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "sort", *params.Sort, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
@@ -134119,6 +140229,102 @@ func NewListStatusPagesRequest(server string, params *ListStatusPagesParams) (*h
 		if params.FilterCreatedAtLte != nil {
 
 			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[created_at][lte]", *params.FilterCreatedAtLte, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterNameEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[name][eq]", *params.FilterNameEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterNameNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[name][not_eq]", *params.FilterNameNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterNameIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[name][in]", *params.FilterNameIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterNameNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[name][not_in]", *params.FilterNameNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSlugEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[slug][eq]", *params.FilterSlugEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSlugNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[slug][not_eq]", *params.FilterSlugNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSlugIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[slug][in]", *params.FilterSlugIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSlugNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[slug][not_in]", *params.FilterSlugNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
 				return nil, err
 			} else {
 				for _, qp := range strings.Split(queryFrag, "&") {
@@ -135177,6 +141383,246 @@ func NewListTeamsRequest(server string, params *ListTeamsParams) (*http.Request,
 		if params.FilterCreatedAtLte != nil {
 
 			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[created_at][lte]", *params.FilterCreatedAtLte, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSlugEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[slug][eq]", *params.FilterSlugEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSlugNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[slug][not_eq]", *params.FilterSlugNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSlugIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[slug][in]", *params.FilterSlugIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSlugNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[slug][not_in]", *params.FilterSlugNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterNameEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[name][eq]", *params.FilterNameEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterNameNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[name][not_eq]", *params.FilterNameNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterNameIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[name][in]", *params.FilterNameIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterNameNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[name][not_in]", *params.FilterNameNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterColorEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[color][eq]", *params.FilterColorEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterColorNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[color][not_eq]", *params.FilterColorNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterColorIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[color][in]", *params.FilterColorIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterColorNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[color][not_in]", *params.FilterColorNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterAlertBroadcastEnabledEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[alert_broadcast_enabled][eq]", *params.FilterAlertBroadcastEnabledEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterAlertBroadcastEnabledNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[alert_broadcast_enabled][not_eq]", *params.FilterAlertBroadcastEnabledNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterAlertBroadcastEnabledIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[alert_broadcast_enabled][in]", *params.FilterAlertBroadcastEnabledIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterAlertBroadcastEnabledNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[alert_broadcast_enabled][not_in]", *params.FilterAlertBroadcastEnabledNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterIncidentBroadcastEnabledEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[incident_broadcast_enabled][eq]", *params.FilterIncidentBroadcastEnabledEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterIncidentBroadcastEnabledNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[incident_broadcast_enabled][not_eq]", *params.FilterIncidentBroadcastEnabledNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterIncidentBroadcastEnabledIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[incident_broadcast_enabled][in]", *params.FilterIncidentBroadcastEnabledIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterIncidentBroadcastEnabledNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[incident_broadcast_enabled][not_in]", *params.FilterIncidentBroadcastEnabledNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
 				return nil, err
 			} else {
 				for _, qp := range strings.Split(queryFrag, "&") {
@@ -137752,6 +144198,102 @@ func NewListWorkflowsRequest(server string, params *ListWorkflowsParams) (*http.
 
 		}
 
+		if params.FilterSlugEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[slug][eq]", *params.FilterSlugEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSlugNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[slug][not_eq]", *params.FilterSlugNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSlugIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[slug][in]", *params.FilterSlugIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSlugNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[slug][not_in]", *params.FilterSlugNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterNameEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[name][eq]", *params.FilterNameEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterNameNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[name][not_eq]", *params.FilterNameNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterNameIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[name][in]", *params.FilterNameIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterNameNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[name][not_in]", *params.FilterNameNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
 		if encoded := queryValues.Encode(); encoded != "" {
 			rawQueryFragments = append(rawQueryFragments, encoded)
 		}
@@ -138631,6 +145173,102 @@ func NewListWorkflowTasksRequest(server string, workflowID string, params *ListW
 
 		}
 
+		if params.FilterNameEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[name][eq]", *params.FilterNameEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterNameNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[name][not_eq]", *params.FilterNameNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterNameIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[name][in]", *params.FilterNameIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterNameNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[name][not_in]", *params.FilterNameNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSlugEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[slug][eq]", *params.FilterSlugEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSlugNotEq != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[slug][not_eq]", *params.FilterSlugNotEq, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSlugIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[slug][in]", *params.FilterSlugIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSlugNotIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[slug][not_in]", *params.FilterSlugNotIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
 		if encoded := queryValues.Encode(); encoded != "" {
 			rawQueryFragments = append(rawQueryFragments, encoded)
 		}
@@ -138778,6 +145416,42 @@ type ClientWithResponsesInterface interface {
 	//
 	// Corresponds with PUT /v1/action_items/{id} (the `UpdateIncidentActionItem` operationId).
 	UpdateIncidentActionItemWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, id ID, body UpdateIncidentActionItemApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateIncidentActionItemResponse, error)
+
+	// CreateAiChatWithResponse Send AI chat message
+	//
+	// Send a message to the AI assistant and receive a synchronous reply. Optionally bind the conversation to an incident or alert for context-aware responses. Requires `ai.chat:write` OAuth scope or an API key.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/ai/chat (the `CreateAiChat` operationId).
+	CreateAiChatWithResponse(ctx context.Context, params *CreateAiChatParams, reqEditors ...RequestEditorFn) (*CreateAiChatResponse, error)
+
+	// DeleteAiChatSessionWithResponse Delete AI chat session
+	//
+	// Permanently deletes an AI chat session and all its messages. Requires `ai.chat:write` OAuth scope or an API key.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with DELETE /v1/ai/chat/sessions/{id} (the `DeleteAiChatSession` operationId).
+	DeleteAiChatSessionWithResponse(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*DeleteAiChatSessionResponse, error)
+
+	// ListAiChatSessionMessagesWithResponse List AI chat session messages
+	//
+	// Returns the user and assistant message history for a session, paginated and chronologically ordered. Internal tool messages are filtered out. Requires `ai.chat:read` OAuth scope or an API key.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /v1/ai/chat/sessions/{session_id}/messages (the `ListAiChatSessionMessages` operationId).
+	ListAiChatSessionMessagesWithResponse(ctx context.Context, sessionID openapi_types.UUID, params *ListAiChatSessionMessagesParams, reqEditors ...RequestEditorFn) (*ListAiChatSessionMessagesResponse, error)
+
+	// StreamAiChatWithResponse Stream AI chat response (SSE)
+	//
+	// Send a message and receive the AI response as a Server-Sent Events stream. Optionally bind to an incident or alert for context. Events: `session_id` (initial), `text` (content chunks), `task_update` (tool progress), `error`, `done` (terminal with status). Requires `ai.chat:write` OAuth scope or an API key.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/ai/chat/stream (the `StreamAiChat` operationId).
+	StreamAiChatWithResponse(ctx context.Context, params *StreamAiChatParams, reqEditors ...RequestEditorFn) (*StreamAiChatResponse, error)
 
 	// ListAlertEventsFeedWithResponse List alert events across alerts
 	//
@@ -143082,7 +149756,16 @@ type ClientWithResponsesInterface interface {
 	// Returns a wrapper object for the known response body format(s).
 	//
 	// Corresponds with GET /v1/meeting_recordings/{id} (the `GetMeetingRecording` operationId).
-	GetMeetingRecordingWithResponse(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*GetMeetingRecordingResponse, error)
+	GetMeetingRecordingWithResponse(ctx context.Context, id ID, params *GetMeetingRecordingParams, reqEditors ...RequestEditorFn) (*GetMeetingRecordingResponse, error)
+
+	// DeleteStandaloneMeetingRecordingWithResponse Delete a standalone meeting recording
+	//
+	// Delete a standalone meeting recording (not linked to an incident). Only the recording owner can delete it. Active recordings (pending, recording, paused) must be stopped first. Returns 404 for incident-linked recordings or recordings owned by another user.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with DELETE /v1/meeting_recordings/{id}/delete_session (the `DeleteStandaloneMeetingRecording` operationId).
+	DeleteStandaloneMeetingRecordingWithResponse(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*DeleteStandaloneMeetingRecordingResponse, error)
 
 	// DeleteMeetingRecordingVideoWithResponse Delete video from a meeting recording
 	//
@@ -145731,6 +152414,126 @@ func (r UpdateIncidentActionItemResponse) StatusCode() int {
 
 // ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
 func (r UpdateIncidentActionItemResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type CreateAiChatResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// ApplicationVndAPIJSON200 the response for an HTTP 200 `application/vnd.api+json` response
+	ApplicationVndAPIJSON200 *AiChatResponse
+}
+
+// Status returns HTTPResponse.Status
+func (r CreateAiChatResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r CreateAiChatResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r CreateAiChatResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type DeleteAiChatSessionResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// Status returns HTTPResponse.Status
+func (r DeleteAiChatSessionResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r DeleteAiChatSessionResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r DeleteAiChatSessionResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type ListAiChatSessionMessagesResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// ApplicationVndAPIJSON200 the response for an HTTP 200 `application/vnd.api+json` response
+	ApplicationVndAPIJSON200 *AiChatSessionMessageList
+}
+
+// Status returns HTTPResponse.Status
+func (r ListAiChatSessionMessagesResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r ListAiChatSessionMessagesResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r ListAiChatSessionMessagesResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type StreamAiChatResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// Status returns HTTPResponse.Status
+func (r StreamAiChatResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r StreamAiChatResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r StreamAiChatResponse) ContentType() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Header.Get("Content-Type")
 	}
@@ -156306,6 +163109,8 @@ func (r ListMeetingRecordingsResponse) ContentType() string {
 type CreateMeetingRecordingResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
+	// ApplicationVndAPIJSON201 the response for an HTTP 201 `application/vnd.api+json` response
+	ApplicationVndAPIJSON201 *MeetingRecordingResponse
 }
 
 // Status returns HTTPResponse.Status
@@ -156335,6 +163140,8 @@ func (r CreateMeetingRecordingResponse) ContentType() string {
 type ImportMeetingRecordingResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
+	// ApplicationVndAPIJSON201 the response for an HTTP 201 `application/vnd.api+json` response
+	ApplicationVndAPIJSON201 *MeetingRecordingResponse
 }
 
 // Status returns HTTPResponse.Status
@@ -156721,6 +163528,8 @@ func (r UpdateLiveCallRouterResponse) ContentType() string {
 type ListAllMeetingRecordingsResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
+	// ApplicationVndAPIJSON200 the response for an HTTP 200 `application/vnd.api+json` response
+	ApplicationVndAPIJSON200 *MeetingRecordingList
 }
 
 // Status returns HTTPResponse.Status
@@ -156750,6 +163559,8 @@ func (r ListAllMeetingRecordingsResponse) ContentType() string {
 type StartRecordingSessionResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
+	// ApplicationVndAPIJSON201 the response for an HTTP 201 `application/vnd.api+json` response
+	ApplicationVndAPIJSON201 *StartSessionResponse
 }
 
 // Status returns HTTPResponse.Status
@@ -156779,6 +163590,8 @@ func (r StartRecordingSessionResponse) ContentType() string {
 type DeleteMeetingRecordingResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
+	// ApplicationVndAPIJSON200 the response for an HTTP 200 `application/vnd.api+json` response
+	ApplicationVndAPIJSON200 *MeetingRecordingResponse
 }
 
 // Status returns HTTPResponse.Status
@@ -156808,6 +163621,8 @@ func (r DeleteMeetingRecordingResponse) ContentType() string {
 type GetMeetingRecordingResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
+	// ApplicationVndAPIJSON200 the response for an HTTP 200 `application/vnd.api+json` response
+	ApplicationVndAPIJSON200 *MeetingRecordingResponse
 }
 
 // Status returns HTTPResponse.Status
@@ -156834,9 +163649,40 @@ func (r GetMeetingRecordingResponse) ContentType() string {
 	return ""
 }
 
+type DeleteStandaloneMeetingRecordingResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// Status returns HTTPResponse.Status
+func (r DeleteStandaloneMeetingRecordingResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r DeleteStandaloneMeetingRecordingResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r DeleteStandaloneMeetingRecordingResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
 type DeleteMeetingRecordingVideoResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
+	// ApplicationVndAPIJSON200 the response for an HTTP 200 `application/vnd.api+json` response
+	ApplicationVndAPIJSON200 *MeetingRecordingResponse
 }
 
 // Status returns HTTPResponse.Status
@@ -156866,6 +163712,8 @@ func (r DeleteMeetingRecordingVideoResponse) ContentType() string {
 type LeaveMeetingRecordingResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
+	// ApplicationVndAPIJSON200 the response for an HTTP 200 `application/vnd.api+json` response
+	ApplicationVndAPIJSON200 *MeetingRecordingResponse
 }
 
 // Status returns HTTPResponse.Status
@@ -156895,6 +163743,8 @@ func (r LeaveMeetingRecordingResponse) ContentType() string {
 type PauseMeetingRecordingResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
+	// ApplicationVndAPIJSON200 the response for an HTTP 200 `application/vnd.api+json` response
+	ApplicationVndAPIJSON200 *MeetingRecordingResponse
 }
 
 // Status returns HTTPResponse.Status
@@ -156924,6 +163774,8 @@ func (r PauseMeetingRecordingResponse) ContentType() string {
 type ResumeMeetingRecordingResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
+	// ApplicationVndAPIJSON200 the response for an HTTP 200 `application/vnd.api+json` response
+	ApplicationVndAPIJSON200 *MeetingRecordingResponse
 }
 
 // Status returns HTTPResponse.Status
@@ -156953,6 +163805,8 @@ func (r ResumeMeetingRecordingResponse) ContentType() string {
 type StopMeetingRecordingResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
+	// ApplicationVndAPIJSON200 the response for an HTTP 200 `application/vnd.api+json` response
+	ApplicationVndAPIJSON200 *MeetingRecordingResponse
 }
 
 // Status returns HTTPResponse.Status
@@ -163850,6 +170704,66 @@ func (c *ClientWithResponses) UpdateIncidentActionItemWithApplicationVndAPIPlusJ
 		return nil, err
 	}
 	return ParseUpdateIncidentActionItemResponse(rsp)
+}
+
+// CreateAiChatWithResponse Send AI chat message
+//
+// Send a message to the AI assistant and receive a synchronous reply. Optionally bind the conversation to an incident or alert for context-aware responses. Requires `ai.chat:write` OAuth scope or an API key.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/ai/chat (the `CreateAiChat` operationId).
+func (c *ClientWithResponses) CreateAiChatWithResponse(ctx context.Context, params *CreateAiChatParams, reqEditors ...RequestEditorFn) (*CreateAiChatResponse, error) {
+	rsp, err := c.CreateAiChat(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateAiChatResponse(rsp)
+}
+
+// DeleteAiChatSessionWithResponse Delete AI chat session
+//
+// Permanently deletes an AI chat session and all its messages. Requires `ai.chat:write` OAuth scope or an API key.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with DELETE /v1/ai/chat/sessions/{id} (the `DeleteAiChatSession` operationId).
+func (c *ClientWithResponses) DeleteAiChatSessionWithResponse(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*DeleteAiChatSessionResponse, error) {
+	rsp, err := c.DeleteAiChatSession(ctx, id, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseDeleteAiChatSessionResponse(rsp)
+}
+
+// ListAiChatSessionMessagesWithResponse List AI chat session messages
+//
+// Returns the user and assistant message history for a session, paginated and chronologically ordered. Internal tool messages are filtered out. Requires `ai.chat:read` OAuth scope or an API key.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/ai/chat/sessions/{session_id}/messages (the `ListAiChatSessionMessages` operationId).
+func (c *ClientWithResponses) ListAiChatSessionMessagesWithResponse(ctx context.Context, sessionID openapi_types.UUID, params *ListAiChatSessionMessagesParams, reqEditors ...RequestEditorFn) (*ListAiChatSessionMessagesResponse, error) {
+	rsp, err := c.ListAiChatSessionMessages(ctx, sessionID, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseListAiChatSessionMessagesResponse(rsp)
+}
+
+// StreamAiChatWithResponse Stream AI chat response (SSE)
+//
+// Send a message and receive the AI response as a Server-Sent Events stream. Optionally bind to an incident or alert for context. Events: `session_id` (initial), `text` (content chunks), `task_update` (tool progress), `error`, `done` (terminal with status). Requires `ai.chat:write` OAuth scope or an API key.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/ai/chat/stream (the `StreamAiChat` operationId).
+func (c *ClientWithResponses) StreamAiChatWithResponse(ctx context.Context, params *StreamAiChatParams, reqEditors ...RequestEditorFn) (*StreamAiChatResponse, error) {
+	rsp, err := c.StreamAiChat(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseStreamAiChatResponse(rsp)
 }
 
 // ListAlertEventsFeedWithResponse List alert events across alerts
@@ -171015,12 +177929,27 @@ func (c *ClientWithResponses) DeleteMeetingRecordingWithResponse(ctx context.Con
 // Returns a wrapper object for the known response body format(s).
 //
 // Corresponds with GET /v1/meeting_recordings/{id} (the `GetMeetingRecording` operationId).
-func (c *ClientWithResponses) GetMeetingRecordingWithResponse(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*GetMeetingRecordingResponse, error) {
-	rsp, err := c.GetMeetingRecording(ctx, id, reqEditors...)
+func (c *ClientWithResponses) GetMeetingRecordingWithResponse(ctx context.Context, id ID, params *GetMeetingRecordingParams, reqEditors ...RequestEditorFn) (*GetMeetingRecordingResponse, error) {
+	rsp, err := c.GetMeetingRecording(ctx, id, params, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
 	return ParseGetMeetingRecordingResponse(rsp)
+}
+
+// DeleteStandaloneMeetingRecordingWithResponse Delete a standalone meeting recording
+//
+// Delete a standalone meeting recording (not linked to an incident). Only the recording owner can delete it. Active recordings (pending, recording, paused) must be stopped first. Returns 404 for incident-linked recordings or recordings owned by another user.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with DELETE /v1/meeting_recordings/{id}/delete_session (the `DeleteStandaloneMeetingRecording` operationId).
+func (c *ClientWithResponses) DeleteStandaloneMeetingRecordingWithResponse(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*DeleteStandaloneMeetingRecordingResponse, error) {
+	rsp, err := c.DeleteStandaloneMeetingRecording(ctx, id, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseDeleteStandaloneMeetingRecordingResponse(rsp)
 }
 
 // DeleteMeetingRecordingVideoWithResponse Delete video from a meeting recording
@@ -175391,6 +182320,90 @@ func ParseUpdateIncidentActionItemResponse(rsp *http.Response) (*UpdateIncidentA
 		}
 		response.ApplicationVndAPIJSON404 = &dest
 
+	}
+
+	return response, nil
+}
+
+// ParseCreateAiChatResponse parses an HTTP response from a CreateAiChatWithResponse call
+func ParseCreateAiChatResponse(rsp *http.Response) (*CreateAiChatResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CreateAiChatResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest AiChatResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseDeleteAiChatSessionResponse parses an HTTP response from a DeleteAiChatSessionWithResponse call
+func ParseDeleteAiChatSessionResponse(rsp *http.Response) (*DeleteAiChatSessionResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &DeleteAiChatSessionResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseListAiChatSessionMessagesResponse parses an HTTP response from a ListAiChatSessionMessagesWithResponse call
+func ParseListAiChatSessionMessagesResponse(rsp *http.Response) (*ListAiChatSessionMessagesResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ListAiChatSessionMessagesResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest AiChatSessionMessageList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseStreamAiChatResponse parses an HTTP response from a StreamAiChatWithResponse call
+func ParseStreamAiChatResponse(rsp *http.Response) (*StreamAiChatResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &StreamAiChatResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
 	}
 
 	return response, nil
@@ -185754,6 +192767,16 @@ func ParseCreateMeetingRecordingResponse(rsp *http.Response) (*CreateMeetingReco
 		HTTPResponse: rsp,
 	}
 
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
+		var dest MeetingRecordingResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON201 = &dest
+
+	}
+
 	return response, nil
 }
 
@@ -185768,6 +192791,16 @@ func ParseImportMeetingRecordingResponse(rsp *http.Response) (*ImportMeetingReco
 	response := &ImportMeetingRecordingResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
+		var dest MeetingRecordingResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON201 = &dest
+
 	}
 
 	return response, nil
@@ -186128,6 +193161,16 @@ func ParseListAllMeetingRecordingsResponse(rsp *http.Response) (*ListAllMeetingR
 		HTTPResponse: rsp,
 	}
 
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest MeetingRecordingList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON200 = &dest
+
+	}
+
 	return response, nil
 }
 
@@ -186142,6 +193185,16 @@ func ParseStartRecordingSessionResponse(rsp *http.Response) (*StartRecordingSess
 	response := &StartRecordingSessionResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
+		var dest StartSessionResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON201 = &dest
+
 	}
 
 	return response, nil
@@ -186160,6 +193213,16 @@ func ParseDeleteMeetingRecordingResponse(rsp *http.Response) (*DeleteMeetingReco
 		HTTPResponse: rsp,
 	}
 
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest MeetingRecordingResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON200 = &dest
+
+	}
+
 	return response, nil
 }
 
@@ -186172,6 +193235,32 @@ func ParseGetMeetingRecordingResponse(rsp *http.Response) (*GetMeetingRecordingR
 	}
 
 	response := &GetMeetingRecordingResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest MeetingRecordingResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseDeleteStandaloneMeetingRecordingResponse parses an HTTP response from a DeleteStandaloneMeetingRecordingWithResponse call
+func ParseDeleteStandaloneMeetingRecordingResponse(rsp *http.Response) (*DeleteStandaloneMeetingRecordingResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &DeleteStandaloneMeetingRecordingResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
 	}
@@ -186192,6 +193281,16 @@ func ParseDeleteMeetingRecordingVideoResponse(rsp *http.Response) (*DeleteMeetin
 		HTTPResponse: rsp,
 	}
 
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest MeetingRecordingResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON200 = &dest
+
+	}
+
 	return response, nil
 }
 
@@ -186206,6 +193305,16 @@ func ParseLeaveMeetingRecordingResponse(rsp *http.Response) (*LeaveMeetingRecord
 	response := &LeaveMeetingRecordingResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest MeetingRecordingResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON200 = &dest
+
 	}
 
 	return response, nil
@@ -186224,6 +193333,16 @@ func ParsePauseMeetingRecordingResponse(rsp *http.Response) (*PauseMeetingRecord
 		HTTPResponse: rsp,
 	}
 
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest MeetingRecordingResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON200 = &dest
+
+	}
+
 	return response, nil
 }
 
@@ -186240,6 +193359,16 @@ func ParseResumeMeetingRecordingResponse(rsp *http.Response) (*ResumeMeetingReco
 		HTTPResponse: rsp,
 	}
 
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest MeetingRecordingResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON200 = &dest
+
+	}
+
 	return response, nil
 }
 
@@ -186254,6 +193383,16 @@ func ParseStopMeetingRecordingResponse(rsp *http.Response) (*StopMeetingRecordin
 	response := &StopMeetingRecordingResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest MeetingRecordingResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON200 = &dest
+
 	}
 
 	return response, nil

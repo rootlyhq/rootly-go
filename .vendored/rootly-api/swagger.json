@@ -9,6 +9,239 @@
     }
   },
   "paths": {
+    "/v1/ai/chat": {
+      "post": {
+        "summary": "Send AI chat message",
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "tags": [
+          "AI Chat"
+        ],
+        "description": "Send a message to the AI assistant and receive a synchronous reply. Optionally bind the conversation to an incident or alert for context-aware responses. Requires `ai.chat:write` OAuth scope or an API key.",
+        "operationId": "createAiChat",
+        "parameters": [
+          {
+            "name": "message",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Message to send to the AI assistant",
+            "required": true
+          },
+          {
+            "name": "session_id",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "Resume an existing session",
+            "required": false
+          },
+          {
+            "name": "incident_id",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "Bind session to an incident for context (mutually exclusive with alert_id)",
+            "required": false
+          },
+          {
+            "name": "alert_id",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "Bind session to an alert for context (mutually exclusive with incident_id)",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "AI chat response",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ai_chat_response"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "AI chat not enabled or insufficient scope"
+          },
+          "422": {
+            "description": "invalid request"
+          }
+        }
+      }
+    },
+    "/v1/ai/chat/stream": {
+      "post": {
+        "summary": "Stream AI chat response (SSE)",
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "tags": [
+          "AI Chat"
+        ],
+        "description": "Send a message and receive the AI response as a Server-Sent Events stream. Optionally bind to an incident or alert for context. Events: `session_id` (initial), `text` (content chunks), `task_update` (tool progress), `error`, `done` (terminal with status). Requires `ai.chat:write` OAuth scope or an API key.",
+        "operationId": "streamAiChat",
+        "parameters": [
+          {
+            "name": "message",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Message to send",
+            "required": true
+          },
+          {
+            "name": "session_id",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "Resume an existing session",
+            "required": false
+          },
+          {
+            "name": "incident_id",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "Bind session to an incident (mutually exclusive with alert_id)",
+            "required": false
+          },
+          {
+            "name": "alert_id",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "Bind session to an alert (mutually exclusive with incident_id)",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "SSE event stream"
+          },
+          "403": {
+            "description": "AI chat not enabled"
+          }
+        }
+      }
+    },
+    "/v1/ai/chat/sessions/{session_id}/messages": {
+      "get": {
+        "summary": "List AI chat session messages",
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "tags": [
+          "AI Chat"
+        ],
+        "description": "Returns the user and assistant message history for a session, paginated and chronologically ordered. Internal tool messages are filtered out. Requires `ai.chat:read` OAuth scope or an API key.",
+        "operationId": "listAiChatSessionMessages",
+        "parameters": [
+          {
+            "name": "session_id",
+            "in": "path",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "Session UUID",
+            "required": true
+          },
+          {
+            "name": "page[number]",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            },
+            "description": "Page number (default 1)",
+            "required": false
+          },
+          {
+            "name": "page[size]",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            },
+            "description": "Messages per page (max 100, default 50)",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "session messages",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ai_chat_session_message_list"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "session not found"
+          }
+        }
+      }
+    },
+    "/v1/ai/chat/sessions/{id}": {
+      "delete": {
+        "summary": "Delete AI chat session",
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "tags": [
+          "AI Chat"
+        ],
+        "description": "Permanently deletes an AI chat session and all its messages. Requires `ai.chat:write` OAuth scope or an API key.",
+        "operationId": "deleteAiChatSession",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "Session UUID",
+            "required": true
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "session deleted"
+          },
+          "404": {
+            "description": "session not found"
+          }
+        }
+      }
+    },
     "/v1/alerts/{alert_id}/events": {
       "parameters": [
         {
@@ -217,6 +450,8 @@
                 "created",
                 "escalation_policy_paged",
                 "ignored_alert_request",
+                "call_lifecycle",
+                "level_skipped",
                 "emailed",
                 "slacked",
                 "ms_teams_messaged",
@@ -573,6 +808,70 @@
             }
           },
           {
+            "name": "filter[name][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[name][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[name][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[name][not_in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[kind][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[kind][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[kind][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[kind][not_in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "sort",
             "in": "query",
             "required": false,
@@ -821,6 +1120,70 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "filter[slug][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[slug][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[slug][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[slug][not_in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[name][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[name][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[name][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[name][not_in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -1016,6 +1379,70 @@
           },
           {
             "name": "filter[name]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[slug][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[slug][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[slug][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[slug][not_in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[name][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[name][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[name][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[name][not_in]",
             "in": "query",
             "required": false,
             "schema": {
@@ -1509,6 +1936,70 @@
             }
           },
           {
+            "name": "filter[slug][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[slug][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[slug][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[slug][not_in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[name][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[name][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[name][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[name][not_in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "sort",
             "in": "query",
             "required": false,
@@ -1806,6 +2297,38 @@
           },
           {
             "name": "filter[created_at][lte]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[name][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[name][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[name][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[name][not_in]",
             "in": "query",
             "required": false,
             "schema": {
@@ -2631,6 +3154,198 @@
           },
           {
             "name": "filter[updated_at][lte]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[status][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[status][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[status][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[status][not_in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[source][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[source][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[source][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[source][not_in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[services][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[services][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[services][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[services][not_in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[groups][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[groups][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[groups][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[groups][not_in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[environments][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[environments][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[environments][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[environments][not_in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[labels][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[labels][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[labels][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[labels][not_in]",
             "in": "query",
             "required": false,
             "schema": {
@@ -3683,6 +4398,134 @@
             }
           },
           {
+            "name": "filter[user_id][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[user_id][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[user_id][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[user_id][not_in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[api_key_id][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[api_key_id][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[api_key_id][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[api_key_id][not_in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[source][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[source][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[source][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[source][not_in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[item_type][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[item_type][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[item_type][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[item_type][not_in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "sort",
             "in": "query",
             "required": false,
@@ -4663,6 +5506,102 @@
           },
           {
             "name": "filter[created_at][lte]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[slug][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[slug][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[slug][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[slug][not_in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[name][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[name][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[name][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[name][not_in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[managed_by][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[managed_by][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[managed_by][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[managed_by][not_in]",
             "in": "query",
             "required": false,
             "schema": {
@@ -5804,6 +6743,102 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "filter[slug][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[slug][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[slug][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[slug][not_in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[name][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[name][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[name][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[name][not_in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[managed_by][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[managed_by][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[managed_by][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[managed_by][not_in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -6103,6 +7138,70 @@
           },
           {
             "name": "filter[created_at][lte]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[slug][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[slug][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[slug][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[slug][not_in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[name][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[name][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[name][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[name][not_in]",
             "in": "query",
             "required": false,
             "schema": {
@@ -8047,6 +9146,134 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "filter[slug][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[slug][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[slug][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[slug][not_in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[label][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[label][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[label][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[label][not_in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[kind][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[kind][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[kind][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[kind][not_in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[enabled][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[enabled][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[enabled][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[enabled][not_in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -9983,6 +11210,102 @@
             }
           },
           {
+            "name": "filter[slug][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[slug][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[slug][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[slug][not_in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[name][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[name][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[name][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[name][not_in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[color][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[color][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[color][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[color][not_in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "sort",
             "in": "query",
             "required": false,
@@ -10466,6 +11789,70 @@
           },
           {
             "name": "filter[created_at][lte]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[name][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[name][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[name][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[name][not_in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[team_ids][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[team_ids][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[team_ids][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[team_ids][not_in]",
             "in": "query",
             "required": false,
             "schema": {
@@ -12480,6 +13867,134 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "filter[slug][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[slug][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[slug][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[slug][not_in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[name][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[name][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[name][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[name][not_in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[kind][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[kind][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[kind][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[kind][not_in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[enabled][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[enabled][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[enabled][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[enabled][not_in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -13384,6 +14899,70 @@
             }
           },
           {
+            "name": "filter[name][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[name][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[name][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[name][not_in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[slug][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[slug][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[slug][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[slug][not_in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "sort",
             "in": "query",
             "required": false,
@@ -13978,6 +15557,70 @@
           },
           {
             "name": "filter[slug]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[name][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[name][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[name][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[name][not_in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[slug][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[slug][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[slug][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[slug][not_in]",
             "in": "query",
             "required": false,
             "schema": {
@@ -15469,6 +17112,70 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "filter[slug][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[slug][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[slug][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[slug][not_in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[name][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[name][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[name][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[name][not_in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -16412,6 +18119,134 @@
           },
           {
             "name": "filter[created_at][lte]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[kind][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[kind][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[kind][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[kind][not_in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[priority][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[priority][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[priority][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[priority][not_in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[status][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[status][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[status][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[status][not_in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[incident_status][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[incident_status][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[incident_status][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[incident_status][not_in]",
             "in": "query",
             "required": false,
             "schema": {
@@ -19727,6 +21562,102 @@
             }
           },
           {
+            "name": "filter[slug][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[slug][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[slug][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[slug][not_in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[name][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[name][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[name][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[name][not_in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[enabled][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[enabled][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[enabled][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[enabled][not_in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "sort",
             "in": "query",
             "required": false,
@@ -20580,6 +22511,102 @@
             }
           },
           {
+            "name": "filter[slug][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[slug][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[slug][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[slug][not_in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[name][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[name][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[name][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[name][not_in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[color][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[color][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[color][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[color][not_in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "sort",
             "in": "query",
             "required": false,
@@ -21223,6 +23250,15 @@
             }
           },
           {
+            "name": "filter[sequential_id]",
+            "in": "query",
+            "required": false,
+            "description": "Filter by the human-readable incident number (the 123 in INC-123).",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "filter[created_at][gt]",
             "in": "query",
             "required": false,
@@ -21504,6 +23540,774 @@
           },
           {
             "name": "filter[in_triage_at][lte]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[kind][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[kind][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[kind][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[kind][not_in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[status][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[status][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[status][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[status][not_in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[private][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[private][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[private][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[private][not_in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[user_id][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[user_id][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[user_id][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[user_id][not_in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[severity][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[severity][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[severity][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[severity][not_in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[severity_id][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[severity_id][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[severity_id][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[severity_id][not_in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[labels][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[labels][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[labels][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[labels][not_in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[zendesk_ticket_id][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[zendesk_ticket_id][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[zendesk_ticket_id][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[zendesk_ticket_id][not_in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[sequential_id][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[sequential_id][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[sequential_id][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[sequential_id][not_in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[types][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[types][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[types][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[types][not_in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[type_ids][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[type_ids][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[type_ids][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[type_ids][not_in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[environments][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[environments][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[environments][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[environments][not_in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[environment_ids][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[environment_ids][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[environment_ids][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[environment_ids][not_in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[services][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[services][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[services][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[services][not_in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[service_ids][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[service_ids][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[service_ids][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[service_ids][not_in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[service_names][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[service_names][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[service_names][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[service_names][not_in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[functionalities][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[functionalities][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[functionalities][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[functionalities][not_in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[functionality_ids][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[functionality_ids][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[functionality_ids][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[functionality_ids][not_in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[functionality_names][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[functionality_names][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[functionality_names][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[functionality_names][not_in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[causes][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[causes][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[causes][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[causes][not_in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[cause_ids][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[cause_ids][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[cause_ids][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[cause_ids][not_in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[teams][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[teams][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[teams][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[teams][not_in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[team_ids][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[team_ids][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[team_ids][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[team_ids][not_in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[team_names][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[team_names][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[team_names][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[team_names][not_in]",
             "in": "query",
             "required": false,
             "schema": {
@@ -22890,7 +25694,7 @@
         "parameters": [],
         "responses": {
           "200": {
-            "description": "live_call_router updated",
+            "description": "live_call_router multichannel notification fields updated",
             "content": {
               "application/vnd.api+json": {
                 "schema": {
@@ -23055,7 +25859,14 @@
         ],
         "responses": {
           "201": {
-            "description": "recording session created"
+            "description": "recording session created",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/meeting_recording_response"
+                }
+              }
+            }
           },
           "422": {
             "description": "validation error (e.g. bot already active)"
@@ -23089,7 +25900,14 @@
         ],
         "responses": {
           "201": {
-            "description": "recording imported"
+            "description": "recording imported",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/meeting_recording_response"
+                }
+              }
+            }
           },
           "422": {
             "description": "validation error (e.g. unsupported source, duplicate recording)"
@@ -23150,7 +25968,14 @@
         ],
         "responses": {
           "200": {
-            "description": "meeting recordings found"
+            "description": "meeting recordings found",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/meeting_recording_list"
+                }
+              }
+            }
           }
         }
       }
@@ -23171,7 +25996,14 @@
         "parameters": [],
         "responses": {
           "201": {
-            "description": "session created"
+            "description": "session created",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/start_session_response"
+                }
+              }
+            }
           },
           "422": {
             "description": "invalid platform"
@@ -23184,6 +26016,43 @@
                 "$ref": "#/components/schemas/start_session_request"
               }
             }
+          }
+        }
+      }
+    },
+    "/v1/meeting_recordings/{id}/delete_session": {
+      "delete": {
+        "summary": "Delete a standalone meeting recording",
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "tags": [
+          "Meeting Recordings"
+        ],
+        "description": "Delete a standalone meeting recording (not linked to an incident). Only the recording owner can delete it. Active recordings (pending, recording, paused) must be stopped first. Returns 404 for incident-linked recordings or recordings owned by another user.",
+        "operationId": "deleteStandaloneMeetingRecording",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Meeting Recording UUID",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "recording deleted"
+          },
+          "422": {
+            "description": "cannot delete active recording"
+          },
+          "404": {
+            "description": "recording not found or not owned by user"
           }
         }
       }
@@ -23210,11 +26079,30 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "include",
+            "in": "query",
+            "description": "comma separated if needed. eg: transcript",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "transcript"
+              ]
+            },
+            "required": false
           }
         ],
         "responses": {
           "200": {
-            "description": "meeting recording found"
+            "description": "meeting recording found",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/meeting_recording_response"
+                }
+              }
+            }
           },
           "404": {
             "description": "meeting recording not found"
@@ -23246,7 +26134,14 @@
         ],
         "responses": {
           "200": {
-            "description": "meeting recording deleted"
+            "description": "meeting recording deleted",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/meeting_recording_response"
+                }
+              }
+            }
           },
           "422": {
             "description": "cannot delete active recording"
@@ -23280,7 +26175,14 @@
         ],
         "responses": {
           "200": {
-            "description": "video deleted"
+            "description": "video deleted",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/meeting_recording_response"
+                }
+              }
+            }
           },
           "422": {
             "description": "cannot delete video (active recording or no video)"
@@ -23314,7 +26216,14 @@
         ],
         "responses": {
           "200": {
-            "description": "recording paused"
+            "description": "recording paused",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/meeting_recording_response"
+                }
+              }
+            }
           },
           "422": {
             "description": "recording is not active"
@@ -23348,7 +26257,14 @@
         ],
         "responses": {
           "200": {
-            "description": "recording resumed"
+            "description": "recording resumed",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/meeting_recording_response"
+                }
+              }
+            }
           },
           "422": {
             "description": "recording is not paused"
@@ -23382,7 +26298,14 @@
         ],
         "responses": {
           "200": {
-            "description": "recording stopped"
+            "description": "recording stopped",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/meeting_recording_response"
+                }
+              }
+            }
           },
           "422": {
             "description": "recording cannot be stopped"
@@ -23416,7 +26339,14 @@
         ],
         "responses": {
           "200": {
-            "description": "bot left the call"
+            "description": "bot left the call",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/meeting_recording_response"
+                }
+              }
+            }
           },
           "422": {
             "description": "bot is not in a call"
@@ -25671,6 +28601,166 @@
           },
           {
             "name": "filter[created_at][lte]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[source][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[source][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[source][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[source][not_in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[services][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[services][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[services][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[services][not_in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[environments][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[environments][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[environments][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[environments][not_in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[labels][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[labels][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[labels][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[labels][not_in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[refs][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[refs][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[refs][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[refs][not_in]",
             "in": "query",
             "required": false,
             "schema": {
@@ -28270,6 +31360,38 @@
             }
           },
           {
+            "name": "filter[name][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[name][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[name][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[name][not_in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "page[number]",
             "in": "query",
             "required": false,
@@ -28927,6 +32049,134 @@
             }
           },
           {
+            "name": "filter[name][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[name][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[name][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[name][not_in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[slug][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[slug][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[slug][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[slug][not_in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[alert_broadcast_enabled][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[alert_broadcast_enabled][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[alert_broadcast_enabled][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[alert_broadcast_enabled][not_in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[incident_broadcast_enabled][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[incident_broadcast_enabled][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[incident_broadcast_enabled][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[incident_broadcast_enabled][not_in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "sort",
             "in": "query",
             "required": false,
@@ -29576,6 +32826,134 @@
             }
           },
           {
+            "name": "filter[slug][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[slug][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[slug][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[slug][not_in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[name][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[name][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[name][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[name][not_in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[severity][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[severity][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[severity][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[severity][not_in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[color][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[color][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[color][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[color][not_in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "sort",
             "in": "query",
             "required": false,
@@ -30141,6 +33519,70 @@
             }
           },
           {
+            "name": "filter[slug][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[slug][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[slug][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[slug][not_in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[name][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[name][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[name][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[name][not_in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "sort",
             "in": "query",
             "required": false,
@@ -30682,6 +34124,70 @@
           },
           {
             "name": "filter[created_at][lte]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[name][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[name][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[name][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[name][not_in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[slug][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[slug][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[slug][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[slug][not_in]",
             "in": "query",
             "required": false,
             "schema": {
@@ -31547,6 +35053,166 @@
           },
           {
             "name": "filter[created_at][lte]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[slug][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[slug][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[slug][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[slug][not_in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[name][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[name][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[name][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[name][not_in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[color][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[color][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[color][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[color][not_in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[alert_broadcast_enabled][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[alert_broadcast_enabled][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[alert_broadcast_enabled][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[alert_broadcast_enabled][not_in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[incident_broadcast_enabled][eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[incident_broadcast_enabled][not_eq]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[incident_broadcast_enabled][in]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[incident_broadcast_enabled][not_in]",
             "in": "query",
             "required": false,
             "schema": {
@@ -33679,6 +37345,117 @@
       }
     },
     "schemas": {
+      "ai_chat_response": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "format": "uuid",
+                "description": "Session UUID"
+              },
+              "type": {
+                "type": "string",
+                "enum": [
+                  "ai_chat_responses"
+                ]
+              },
+              "attributes": {
+                "type": "object",
+                "properties": {
+                  "session_id": {
+                    "type": "string",
+                    "format": "uuid",
+                    "description": "AI chat session UUID"
+                  },
+                  "reply": {
+                    "type": "string",
+                    "nullable": true,
+                    "description": "Assistant reply text"
+                  },
+                  "status": {
+                    "type": "string",
+                    "nullable": true,
+                    "description": "Response status (present when user input is required)",
+                    "enum": [
+                      "user_input_required"
+                    ]
+                  }
+                },
+                "required": [
+                  "session_id"
+                ]
+              }
+            },
+            "required": [
+              "id",
+              "type",
+              "attributes"
+            ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
+          }
+        },
+        "required": [
+          "data"
+        ]
+      },
+      "ai_chat_session_message": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Message UUID"
+          },
+          "role": {
+            "type": "string",
+            "description": "Message author role",
+            "enum": [
+              "user",
+              "assistant"
+            ]
+          },
+          "content": {
+            "type": "string",
+            "description": "Message content"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "description": "When the message was created"
+          }
+        },
+        "required": [
+          "id",
+          "role",
+          "content",
+          "created_at"
+        ]
+      },
+      "ai_chat_session_message_list": {
+        "type": "object",
+        "properties": {
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ai_chat_session_message"
+            }
+          },
+          "meta": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "messages"
+        ]
+      },
       "attach_alert": {
         "type": "object",
         "properties": {
@@ -33840,6 +37617,37 @@
                     "type": "string",
                     "description": "Only available for organizations with Rootly On-Call enabled. The _identifier_ of the notification target object.",
                     "nullable": true
+                  },
+                  "notification_targets": {
+                    "type": "array",
+                    "description": "Only available for organizations with Rootly On-Call enabled. Page multiple destinations (any combination of Group, Service, EscalationPolicy, Functionality, or User) in a single request. `Functionality` targets require the `enable_paging_functionalities` feature; a request that includes one while it is disabled is rejected. Applies to alert creation only. When provided, this takes precedence over the singular `notification_target_type` / `notification_target_id` fields.",
+                    "nullable": true,
+                    "minItems": 1,
+                    "items": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "type": {
+                          "type": "string",
+                          "enum": [
+                            "User",
+                            "Group",
+                            "EscalationPolicy",
+                            "Service",
+                            "Functionality"
+                          ],
+                          "description": "The type of the notification target. Can be one of Group, Service, EscalationPolicy, Functionality, User."
+                        },
+                        "id": {
+                          "type": "string",
+                          "description": "The identifier of the notification target object."
+                        }
+                      },
+                      "required": [
+                        "type",
+                        "id"
+                      ]
+                    }
                   },
                   "labels": {
                     "type": "array",
@@ -34810,6 +38618,8 @@
               "created",
               "escalation_policy_paged",
               "ignored_alert_request",
+              "call_lifecycle",
+              "level_skipped",
               "emailed",
               "slacked",
               "ms_teams_messaged",
@@ -48777,6 +52587,12 @@
                                 "is_not",
                                 "contains",
                                 "does_not_contain",
+                                "contains_key",
+                                "does_not_contain_key",
+                                "starts_with",
+                                "does_not_start_with",
+                                "matches",
+                                "does_not_match",
                                 "is_one_of",
                                 "is_not_one_of",
                                 "is_set",
@@ -49841,6 +53657,12 @@
                                 "is_not",
                                 "contains",
                                 "does_not_contain",
+                                "contains_key",
+                                "does_not_contain_key",
+                                "starts_with",
+                                "does_not_start_with",
+                                "matches",
+                                "does_not_match",
                                 "is_one_of",
                                 "is_not_one_of",
                                 "is_set",
@@ -50890,6 +54712,12 @@
                         "is_not",
                         "contains",
                         "does_not_contain",
+                        "contains_key",
+                        "does_not_contain_key",
+                        "starts_with",
+                        "does_not_start_with",
+                        "matches",
+                        "does_not_match",
                         "is_one_of",
                         "is_not_one_of",
                         "is_set",
@@ -56289,6 +60117,10 @@
           "include_timeline": {
             "type": "boolean",
             "default": true
+          },
+          "create_as_live_doc": {
+            "type": "boolean",
+            "default": false
           }
         },
         "required": [
@@ -56807,6 +60639,14 @@
           "template_id": {
             "type": "string",
             "description": "The Google Doc file ID to use as a template."
+          },
+          "include_overview": {
+            "type": "boolean",
+            "default": true
+          },
+          "include_timeline": {
+            "type": "boolean",
+            "default": true
           }
         },
         "required": [
@@ -57079,6 +60919,14 @@
           "permissions": {
             "type": "string",
             "description": "Page permissions JSON"
+          },
+          "include_overview": {
+            "type": "boolean",
+            "default": true
+          },
+          "include_timeline": {
+            "type": "boolean",
+            "default": true
           }
         },
         "required": [
@@ -60923,6 +64771,11 @@
           },
           "escalation_note": {
             "type": "string"
+          },
+          "create_new_alert": {
+            "type": "boolean",
+            "default": false,
+            "description": "When true, always create a new alert instead of re-paging the alert that triggered the workflow"
           }
         },
         "required": [
@@ -67391,6 +71244,31 @@
             ],
             "default": "ANY"
           },
+          "incident_condition_label": {
+            "type": "string",
+            "enum": [
+              "IS",
+              "IS NOT",
+              "ANY",
+              "CONTAINS",
+              "CONTAINS_ALL",
+              "CONTAINS_NONE",
+              "NONE",
+              "SET",
+              "UNSET"
+            ],
+            "default": "ANY"
+          },
+          "incident_condition_label_use_regexp": {
+            "type": "boolean",
+            "default": false
+          },
+          "incident_labels": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
           "incident_post_mortem_condition_cause": {
             "type": "string",
             "enum": [
@@ -67718,6 +71596,31 @@
               "UNSET"
             ],
             "default": "ANY"
+          },
+          "incident_condition_label": {
+            "type": "string",
+            "enum": [
+              "IS",
+              "IS NOT",
+              "ANY",
+              "CONTAINS",
+              "CONTAINS_ALL",
+              "CONTAINS_NONE",
+              "NONE",
+              "SET",
+              "UNSET"
+            ],
+            "default": "ANY"
+          },
+          "incident_condition_label_use_regexp": {
+            "type": "boolean",
+            "default": false
+          },
+          "incident_labels": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "incident_post_mortem_condition_cause": {
             "type": "string",
@@ -68064,6 +71967,31 @@
               "UNSET"
             ],
             "default": "ANY"
+          },
+          "incident_condition_label": {
+            "type": "string",
+            "enum": [
+              "IS",
+              "IS NOT",
+              "ANY",
+              "CONTAINS",
+              "CONTAINS_ALL",
+              "CONTAINS_NONE",
+              "NONE",
+              "SET",
+              "UNSET"
+            ],
+            "default": "ANY"
+          },
+          "incident_condition_label_use_regexp": {
+            "type": "boolean",
+            "default": false
+          },
+          "incident_labels": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "incident_condition_summary": {
             "type": "string",
@@ -69116,6 +73044,12 @@
                     "type": "string",
                     "description": "The caller greeting message of the live_call_router"
                   },
+                  "unavailable_responder_message": {
+                    "type": "string",
+                    "nullable": true,
+                    "maxLength": 300,
+                    "description": "The message played to the caller when a responder doesn't answer and the call moves on to the next person in the escalation. Leave blank to use the default message."
+                  },
                   "waiting_music_url": {
                     "type": "string",
                     "description": "The waiting music URL of the live_call_router",
@@ -69144,6 +73078,20 @@
                   "should_auto_resolve_alert_on_call_end": {
                     "type": "boolean",
                     "description": "This overrides the delay (seconds) in escalation levels"
+                  },
+                  "notify_via_sms": {
+                    "type": "boolean",
+                    "description": "Whether responders are also notified via SMS when this router pages them"
+                  },
+                  "notify_via_push_notification": {
+                    "type": "boolean",
+                    "description": "Whether responders are also notified via push notification when this router pages them"
+                  },
+                  "informational_notification_message": {
+                    "type": "string",
+                    "nullable": true,
+                    "maxLength": 160,
+                    "description": "Optional message included in the SMS/push notification. Supports variables such as {{ alert.url }}, {{ alert.data.* }}, and {{ alert.alert_urgency.name }}."
                   },
                   "alert_urgency_id": {
                     "type": "string",
@@ -69299,6 +73247,12 @@
                     "type": "string",
                     "description": "The caller greeting message of the live_call_router"
                   },
+                  "unavailable_responder_message": {
+                    "type": "string",
+                    "nullable": true,
+                    "maxLength": 300,
+                    "description": "The message played to the caller when a responder doesn't answer and the call moves on to the next person in the escalation. Leave blank to use the default message."
+                  },
                   "waiting_music_url": {
                     "type": "string",
                     "description": "The waiting music URL of the live_call_router",
@@ -69327,6 +73281,20 @@
                   "should_auto_resolve_alert_on_call_end": {
                     "type": "boolean",
                     "description": "This overrides the delay (seconds) in escalation levels"
+                  },
+                  "notify_via_sms": {
+                    "type": "boolean",
+                    "description": "Whether responders are also notified via SMS when this router pages them"
+                  },
+                  "notify_via_push_notification": {
+                    "type": "boolean",
+                    "description": "Whether responders are also notified via push notification when this router pages them"
+                  },
+                  "informational_notification_message": {
+                    "type": "string",
+                    "nullable": true,
+                    "maxLength": 160,
+                    "description": "Optional message included in the SMS/push notification. Supports variables such as {{ alert.url }}, {{ alert.data.* }}, and {{ alert.alert_urgency.name }}."
                   },
                   "alert_urgency_id": {
                     "type": "string",
@@ -69465,6 +73433,12 @@
             "type": "string",
             "description": "The caller greeting message of the live_call_router"
           },
+          "unavailable_responder_message": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 300,
+            "description": "The message played to the caller when a responder doesn't answer and the call moves on to the next person in the escalation. Leave blank to use the default message."
+          },
           "waiting_music_url": {
             "type": "string",
             "description": "The waiting music URL of the live_call_router",
@@ -69493,6 +73467,20 @@
           "should_auto_resolve_alert_on_call_end": {
             "type": "boolean",
             "description": "This overrides the delay (seconds) in escalation levels"
+          },
+          "notify_via_sms": {
+            "type": "boolean",
+            "description": "Whether responders are also notified via SMS when this router pages them"
+          },
+          "notify_via_push_notification": {
+            "type": "boolean",
+            "description": "Whether responders are also notified via push notification when this router pages them"
+          },
+          "informational_notification_message": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 160,
+            "description": "Optional message included in the SMS/push notification. Supports variables such as {{ alert.url }}, {{ alert.data.* }}, and {{ alert.alert_urgency.name }}."
           },
           "alert_urgency_id": {
             "type": "string",
@@ -76866,6 +80854,46 @@
           }
         }
       },
+      "meeting_recording_transcript_word": {
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": "string",
+            "description": "Transcribed word"
+          },
+          "start_timestamp": {
+            "type": "number",
+            "description": "Start time in seconds from recording start"
+          },
+          "end_timestamp": {
+            "type": "number",
+            "description": "End time in seconds from recording start"
+          }
+        },
+        "required": [
+          "text"
+        ]
+      },
+      "meeting_recording_transcript_segment": {
+        "type": "object",
+        "properties": {
+          "speaker": {
+            "type": "string",
+            "description": "Speaker label (e.g. Speaker 1)"
+          },
+          "words": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/meeting_recording_transcript_word"
+            },
+            "description": "Timestamped words spoken by this speaker"
+          }
+        },
+        "required": [
+          "speaker",
+          "words"
+        ]
+      },
       "meeting_recording": {
         "type": "object",
         "properties": {
@@ -76931,6 +80959,11 @@
             "description": "Human-readable label for the recording session",
             "nullable": true
           },
+          "meeting_url": {
+            "type": "string",
+            "nullable": true,
+            "description": "Original meeting URL"
+          },
           "video_url": {
             "type": "string",
             "nullable": true,
@@ -76958,6 +80991,121 @@
           "status",
           "created_at",
           "updated_at"
+        ]
+      },
+      "meeting_recording_detail": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/meeting_recording"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "transcript": {
+                "oneOf": [
+                  {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/meeting_recording_transcript_segment"
+                    }
+                  },
+                  {
+                    "type": "object",
+                    "maxProperties": 0
+                  }
+                ],
+                "description": "Array of speaker segments when populated, empty object when no transcript exists."
+              },
+              "recall_upload_id": {
+                "type": "string",
+                "nullable": true,
+                "description": "Recall upload identifier"
+              },
+              "recordable_id": {
+                "type": "string",
+                "nullable": true,
+                "description": "UUID of the associated recordable (e.g. incident)"
+              },
+              "recordable_type": {
+                "type": "string",
+                "nullable": true,
+                "description": "Type of the associated recordable (e.g. Incident)"
+              }
+            }
+          }
+        ]
+      },
+      "meeting_recording_detail_response": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Unique UUID of the meeting recording"
+              },
+              "type": {
+                "type": "string",
+                "enum": [
+                  "meeting_recordings"
+                ]
+              },
+              "attributes": {
+                "type": "object",
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/meeting_recording_detail"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "id",
+              "type",
+              "attributes"
+            ]
+          }
+        },
+        "required": [
+          "data"
+        ]
+      },
+      "meeting_recording_response": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Unique UUID of the meeting recording"
+              },
+              "type": {
+                "type": "string",
+                "enum": [
+                  "meeting_recordings"
+                ]
+              },
+              "attributes": {
+                "type": "object",
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/meeting_recording"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "id",
+              "type",
+              "attributes"
+            ]
+          }
+        },
+        "required": [
+          "data"
         ]
       },
       "meeting_recording_list": {
@@ -77001,12 +81149,6 @@
                 "$ref": "#/components/schemas/meta"
               }
             ]
-          },
-          "included": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/jsonapi_included_resource"
-            }
           }
         },
         "required": [
@@ -78117,6 +82259,18 @@
                       ]
                     }
                   },
+                  "functionalities_permissions": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "enum": [
+                        "create",
+                        "read",
+                        "update",
+                        "delete"
+                      ]
+                    }
+                  },
                   "webhooks_permissions": {
                     "type": "array",
                     "items": {
@@ -78436,6 +82590,18 @@
                       ]
                     }
                   },
+                  "functionalities_permissions": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "enum": [
+                        "create",
+                        "read",
+                        "update",
+                        "delete"
+                      ]
+                    }
+                  },
                   "webhooks_permissions": {
                     "type": "array",
                     "items": {
@@ -78733,6 +82899,18 @@
             }
           },
           "services_permissions": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "create",
+                "read",
+                "update",
+                "delete"
+              ]
+            }
+          },
+          "functionalities_permissions": {
             "type": "array",
             "items": {
               "type": "string",
