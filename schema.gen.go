@@ -3407,6 +3407,21 @@ func (e AttachDatadogDashboardsTaskParamsTaskType) Valid() bool {
 	}
 }
 
+// Defines values for AttachRetrospectivePdfToJiraIssueTaskParamsTaskType.
+const (
+	AttachRetrospectivePdfToJiraIssueTaskParamsTaskTypeAttachRetrospectivePdfToJiraIssue AttachRetrospectivePdfToJiraIssueTaskParamsTaskType = "attach_retrospective_pdf_to_jira_issue"
+)
+
+// Valid indicates whether the value is a known member of the AttachRetrospectivePdfToJiraIssueTaskParamsTaskType enum.
+func (e AttachRetrospectivePdfToJiraIssueTaskParamsTaskType) Valid() bool {
+	switch e {
+	case AttachRetrospectivePdfToJiraIssueTaskParamsTaskTypeAttachRetrospectivePdfToJiraIssue:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for AuditItemType.
 const (
 	AuditItemTypeAPIKey                            AuditItemType = "ApiKey"
@@ -3800,63 +3815,81 @@ func (e BulkDestroyCatalogEntities1ManagedBy) Valid() bool {
 	}
 }
 
-// Defines values for BulkImportAttributesEntityType.
+// Defines values for BulkDestroyEnvironments1ManagedBy.
 const (
-	BulkImportAttributesEntityTypeIncident BulkImportAttributesEntityType = "Incident"
+	BulkDestroyEnvironments1ManagedByAPI         BulkDestroyEnvironments1ManagedBy = "api"
+	BulkDestroyEnvironments1ManagedByBackstage   BulkDestroyEnvironments1ManagedBy = "backstage"
+	BulkDestroyEnvironments1ManagedByCatalogSync BulkDestroyEnvironments1ManagedBy = "catalog_sync"
+	BulkDestroyEnvironments1ManagedByPulumi      BulkDestroyEnvironments1ManagedBy = "pulumi"
+	BulkDestroyEnvironments1ManagedByTerraform   BulkDestroyEnvironments1ManagedBy = "terraform"
 )
 
-// Valid indicates whether the value is a known member of the BulkImportAttributesEntityType enum.
-func (e BulkImportAttributesEntityType) Valid() bool {
+// Valid indicates whether the value is a known member of the BulkDestroyEnvironments1ManagedBy enum.
+func (e BulkDestroyEnvironments1ManagedBy) Valid() bool {
 	switch e {
-	case BulkImportAttributesEntityTypeIncident:
+	case BulkDestroyEnvironments1ManagedByAPI:
+		return true
+	case BulkDestroyEnvironments1ManagedByBackstage:
+		return true
+	case BulkDestroyEnvironments1ManagedByCatalogSync:
+		return true
+	case BulkDestroyEnvironments1ManagedByPulumi:
+		return true
+	case BulkDestroyEnvironments1ManagedByTerraform:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for BulkImportAttributesStatus.
+// Defines values for BulkDestroyFunctionalities1ManagedBy.
 const (
-	BulkImportAttributesStatusCompleted        BulkImportAttributesStatus = "completed"
-	BulkImportAttributesStatusFailed           BulkImportAttributesStatus = "failed"
-	BulkImportAttributesStatusImporting        BulkImportAttributesStatus = "importing"
-	BulkImportAttributesStatusIndexing         BulkImportAttributesStatus = "indexing"
-	BulkImportAttributesStatusPending          BulkImportAttributesStatus = "pending"
-	BulkImportAttributesStatusValidating       BulkImportAttributesStatus = "validating"
-	BulkImportAttributesStatusValidationFailed BulkImportAttributesStatus = "validation_failed"
+	BulkDestroyFunctionalities1ManagedByAPI         BulkDestroyFunctionalities1ManagedBy = "api"
+	BulkDestroyFunctionalities1ManagedByBackstage   BulkDestroyFunctionalities1ManagedBy = "backstage"
+	BulkDestroyFunctionalities1ManagedByCatalogSync BulkDestroyFunctionalities1ManagedBy = "catalog_sync"
+	BulkDestroyFunctionalities1ManagedByPulumi      BulkDestroyFunctionalities1ManagedBy = "pulumi"
+	BulkDestroyFunctionalities1ManagedByTerraform   BulkDestroyFunctionalities1ManagedBy = "terraform"
 )
 
-// Valid indicates whether the value is a known member of the BulkImportAttributesStatus enum.
-func (e BulkImportAttributesStatus) Valid() bool {
+// Valid indicates whether the value is a known member of the BulkDestroyFunctionalities1ManagedBy enum.
+func (e BulkDestroyFunctionalities1ManagedBy) Valid() bool {
 	switch e {
-	case BulkImportAttributesStatusCompleted:
+	case BulkDestroyFunctionalities1ManagedByAPI:
 		return true
-	case BulkImportAttributesStatusFailed:
+	case BulkDestroyFunctionalities1ManagedByBackstage:
 		return true
-	case BulkImportAttributesStatusImporting:
+	case BulkDestroyFunctionalities1ManagedByCatalogSync:
 		return true
-	case BulkImportAttributesStatusIndexing:
+	case BulkDestroyFunctionalities1ManagedByPulumi:
 		return true
-	case BulkImportAttributesStatusPending:
-		return true
-	case BulkImportAttributesStatusValidating:
-		return true
-	case BulkImportAttributesStatusValidationFailed:
+	case BulkDestroyFunctionalities1ManagedByTerraform:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for BulkImportResponseDataType.
+// Defines values for BulkDestroyTeams1ManagedBy.
 const (
-	BulkImportResponseDataTypeBulkImport BulkImportResponseDataType = "bulk_import"
+	BulkDestroyTeams1ManagedByAPI         BulkDestroyTeams1ManagedBy = "api"
+	BulkDestroyTeams1ManagedByBackstage   BulkDestroyTeams1ManagedBy = "backstage"
+	BulkDestroyTeams1ManagedByCatalogSync BulkDestroyTeams1ManagedBy = "catalog_sync"
+	BulkDestroyTeams1ManagedByPulumi      BulkDestroyTeams1ManagedBy = "pulumi"
+	BulkDestroyTeams1ManagedByTerraform   BulkDestroyTeams1ManagedBy = "terraform"
 )
 
-// Valid indicates whether the value is a known member of the BulkImportResponseDataType enum.
-func (e BulkImportResponseDataType) Valid() bool {
+// Valid indicates whether the value is a known member of the BulkDestroyTeams1ManagedBy enum.
+func (e BulkDestroyTeams1ManagedBy) Valid() bool {
 	switch e {
-	case BulkImportResponseDataTypeBulkImport:
+	case BulkDestroyTeams1ManagedByAPI:
+		return true
+	case BulkDestroyTeams1ManagedByBackstage:
+		return true
+	case BulkDestroyTeams1ManagedByCatalogSync:
+		return true
+	case BulkDestroyTeams1ManagedByPulumi:
+		return true
+	case BulkDestroyTeams1ManagedByTerraform:
 		return true
 	default:
 		return false
@@ -3872,6 +3905,66 @@ const (
 func (e BulkUpsertCatalogEntitiesResponseDataType) Valid() bool {
 	switch e {
 	case BulkUpsertCatalogEntitiesResponseDataTypeCatalogEntities:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for BulkUpsertEnvironmentsResponseDataType.
+const (
+	BulkUpsertEnvironmentsResponseDataTypeEnvironments BulkUpsertEnvironmentsResponseDataType = "environments"
+)
+
+// Valid indicates whether the value is a known member of the BulkUpsertEnvironmentsResponseDataType enum.
+func (e BulkUpsertEnvironmentsResponseDataType) Valid() bool {
+	switch e {
+	case BulkUpsertEnvironmentsResponseDataTypeEnvironments:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for BulkUpsertFunctionalitiesResponseDataType.
+const (
+	BulkUpsertFunctionalitiesResponseDataTypeFunctionalities BulkUpsertFunctionalitiesResponseDataType = "functionalities"
+)
+
+// Valid indicates whether the value is a known member of the BulkUpsertFunctionalitiesResponseDataType enum.
+func (e BulkUpsertFunctionalitiesResponseDataType) Valid() bool {
+	switch e {
+	case BulkUpsertFunctionalitiesResponseDataTypeFunctionalities:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for BulkUpsertServicesResponseDataType.
+const (
+	BulkUpsertServicesResponseDataTypeServices BulkUpsertServicesResponseDataType = "services"
+)
+
+// Valid indicates whether the value is a known member of the BulkUpsertServicesResponseDataType enum.
+func (e BulkUpsertServicesResponseDataType) Valid() bool {
+	switch e {
+	case BulkUpsertServicesResponseDataTypeServices:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for BulkUpsertTeamsResponseDataType.
+const (
+	BulkUpsertTeamsResponseDataTypeGroups BulkUpsertTeamsResponseDataType = "groups"
+)
+
+// Valid indicates whether the value is a known member of the BulkUpsertTeamsResponseDataType enum.
+func (e BulkUpsertTeamsResponseDataType) Valid() bool {
+	switch e {
+	case BulkUpsertTeamsResponseDataTypeGroups:
 		return true
 	default:
 		return false
@@ -6746,6 +6839,39 @@ func (e EdgeConnectorActionDataType) Valid() bool {
 	}
 }
 
+// Defines values for EnvironmentManagedBy.
+const (
+	EnvironmentManagedByAPI         EnvironmentManagedBy = "api"
+	EnvironmentManagedByAdminWeb    EnvironmentManagedBy = "admin_web"
+	EnvironmentManagedByBackstage   EnvironmentManagedBy = "backstage"
+	EnvironmentManagedByCatalogSync EnvironmentManagedBy = "catalog_sync"
+	EnvironmentManagedByPulumi      EnvironmentManagedBy = "pulumi"
+	EnvironmentManagedByTerraform   EnvironmentManagedBy = "terraform"
+	EnvironmentManagedByWeb         EnvironmentManagedBy = "web"
+)
+
+// Valid indicates whether the value is a known member of the EnvironmentManagedBy enum.
+func (e EnvironmentManagedBy) Valid() bool {
+	switch e {
+	case EnvironmentManagedByAPI:
+		return true
+	case EnvironmentManagedByAdminWeb:
+		return true
+	case EnvironmentManagedByBackstage:
+		return true
+	case EnvironmentManagedByCatalogSync:
+		return true
+	case EnvironmentManagedByPulumi:
+		return true
+	case EnvironmentManagedByTerraform:
+		return true
+	case EnvironmentManagedByWeb:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for EnvironmentListDataType.
 const (
 	EnvironmentListDataTypeEnvironments EnvironmentListDataType = "environments"
@@ -7774,16 +7900,19 @@ func (e EscalationPolicyLevelNotificationTargetParamsTeamMembers) Valid() bool {
 
 // Defines values for EscalationPolicyLevelNotificationTargetParamsType.
 const (
-	EscalationPolicyLevelNotificationTargetParamsTypeSchedule     EscalationPolicyLevelNotificationTargetParamsType = "schedule"
-	EscalationPolicyLevelNotificationTargetParamsTypeService      EscalationPolicyLevelNotificationTargetParamsType = "service"
-	EscalationPolicyLevelNotificationTargetParamsTypeSlackChannel EscalationPolicyLevelNotificationTargetParamsType = "slack_channel"
-	EscalationPolicyLevelNotificationTargetParamsTypeTeam         EscalationPolicyLevelNotificationTargetParamsType = "team"
-	EscalationPolicyLevelNotificationTargetParamsTypeUser         EscalationPolicyLevelNotificationTargetParamsType = "user"
+	EscalationPolicyLevelNotificationTargetParamsTypeMicrosoftTeamsChannel EscalationPolicyLevelNotificationTargetParamsType = "microsoft_teams_channel"
+	EscalationPolicyLevelNotificationTargetParamsTypeSchedule              EscalationPolicyLevelNotificationTargetParamsType = "schedule"
+	EscalationPolicyLevelNotificationTargetParamsTypeService               EscalationPolicyLevelNotificationTargetParamsType = "service"
+	EscalationPolicyLevelNotificationTargetParamsTypeSlackChannel          EscalationPolicyLevelNotificationTargetParamsType = "slack_channel"
+	EscalationPolicyLevelNotificationTargetParamsTypeTeam                  EscalationPolicyLevelNotificationTargetParamsType = "team"
+	EscalationPolicyLevelNotificationTargetParamsTypeUser                  EscalationPolicyLevelNotificationTargetParamsType = "user"
 )
 
 // Valid indicates whether the value is a known member of the EscalationPolicyLevelNotificationTargetParamsType enum.
 func (e EscalationPolicyLevelNotificationTargetParamsType) Valid() bool {
 	switch e {
+	case EscalationPolicyLevelNotificationTargetParamsTypeMicrosoftTeamsChannel:
+		return true
 	case EscalationPolicyLevelNotificationTargetParamsTypeSchedule:
 		return true
 	case EscalationPolicyLevelNotificationTargetParamsTypeService:
@@ -10213,6 +10342,7 @@ const (
 	FormFieldKindSeverity                    FormFieldKind = "severity"
 	FormFieldKindShowOngoingIncidents        FormFieldKind = "show_ongoing_incidents"
 	FormFieldKindStartedAt                   FormFieldKind = "started_at"
+	FormFieldKindStatus                      FormFieldKind = "status"
 	FormFieldKindSummary                     FormFieldKind = "summary"
 	FormFieldKindTeams                       FormFieldKind = "teams"
 	FormFieldKindTitle                       FormFieldKind = "title"
@@ -10271,6 +10401,8 @@ func (e FormFieldKind) Valid() bool {
 	case FormFieldKindShowOngoingIncidents:
 		return true
 	case FormFieldKindStartedAt:
+		return true
+	case FormFieldKindStatus:
 		return true
 	case FormFieldKindSummary:
 		return true
@@ -10514,6 +10646,7 @@ func (e FormFieldPlacementResponseDataType) Valid() bool {
 // Defines values for FormFieldPositionForm.
 const (
 	FormFieldPositionFormIncidentPostMortem               FormFieldPositionForm = "incident_post_mortem"
+	FormFieldPositionFormSlackActionItemForm              FormFieldPositionForm = "slack_action_item_form"
 	FormFieldPositionFormSlackIncidentCancellationForm    FormFieldPositionForm = "slack_incident_cancellation_form"
 	FormFieldPositionFormSlackIncidentMitigationForm      FormFieldPositionForm = "slack_incident_mitigation_form"
 	FormFieldPositionFormSlackIncidentResolutionForm      FormFieldPositionForm = "slack_incident_resolution_form"
@@ -10522,6 +10655,7 @@ const (
 	FormFieldPositionFormSlackUpdateIncidentForm          FormFieldPositionForm = "slack_update_incident_form"
 	FormFieldPositionFormSlackUpdateIncidentStatusForm    FormFieldPositionForm = "slack_update_incident_status_form"
 	FormFieldPositionFormSlackUpdateScheduledIncidentForm FormFieldPositionForm = "slack_update_scheduled_incident_form"
+	FormFieldPositionFormWebActionItemForm                FormFieldPositionForm = "web_action_item_form"
 	FormFieldPositionFormWebIncidentCancellationForm      FormFieldPositionForm = "web_incident_cancellation_form"
 	FormFieldPositionFormWebIncidentMitigationForm        FormFieldPositionForm = "web_incident_mitigation_form"
 	FormFieldPositionFormWebIncidentPostMortemForm        FormFieldPositionForm = "web_incident_post_mortem_form"
@@ -10536,6 +10670,8 @@ const (
 func (e FormFieldPositionForm) Valid() bool {
 	switch e {
 	case FormFieldPositionFormIncidentPostMortem:
+		return true
+	case FormFieldPositionFormSlackActionItemForm:
 		return true
 	case FormFieldPositionFormSlackIncidentCancellationForm:
 		return true
@@ -10552,6 +10688,8 @@ func (e FormFieldPositionForm) Valid() bool {
 	case FormFieldPositionFormSlackUpdateIncidentStatusForm:
 		return true
 	case FormFieldPositionFormSlackUpdateScheduledIncidentForm:
+		return true
+	case FormFieldPositionFormWebActionItemForm:
 		return true
 	case FormFieldPositionFormWebIncidentCancellationForm:
 		return true
@@ -10688,6 +10826,39 @@ const (
 func (e FormSetResponseDataType) Valid() bool {
 	switch e {
 	case FormSetResponseDataTypeFormSets:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for FunctionalityManagedBy.
+const (
+	FunctionalityManagedByAPI         FunctionalityManagedBy = "api"
+	FunctionalityManagedByAdminWeb    FunctionalityManagedBy = "admin_web"
+	FunctionalityManagedByBackstage   FunctionalityManagedBy = "backstage"
+	FunctionalityManagedByCatalogSync FunctionalityManagedBy = "catalog_sync"
+	FunctionalityManagedByPulumi      FunctionalityManagedBy = "pulumi"
+	FunctionalityManagedByTerraform   FunctionalityManagedBy = "terraform"
+	FunctionalityManagedByWeb         FunctionalityManagedBy = "web"
+)
+
+// Valid indicates whether the value is a known member of the FunctionalityManagedBy enum.
+func (e FunctionalityManagedBy) Valid() bool {
+	switch e {
+	case FunctionalityManagedByAPI:
+		return true
+	case FunctionalityManagedByAdminWeb:
+		return true
+	case FunctionalityManagedByBackstage:
+		return true
+	case FunctionalityManagedByCatalogSync:
+		return true
+	case FunctionalityManagedByPulumi:
+		return true
+	case FunctionalityManagedByTerraform:
+		return true
+	case FunctionalityManagedByWeb:
 		return true
 	default:
 		return false
@@ -14330,21 +14501,6 @@ func (e NewAuthorizationDataType) Valid() bool {
 	}
 }
 
-// Defines values for NewBulkImportDataAttributesEntityType.
-const (
-	NewBulkImportDataAttributesEntityTypeIncident NewBulkImportDataAttributesEntityType = "Incident"
-)
-
-// Valid indicates whether the value is a known member of the NewBulkImportDataAttributesEntityType enum.
-func (e NewBulkImportDataAttributesEntityType) Valid() bool {
-	switch e {
-	case NewBulkImportDataAttributesEntityTypeIncident:
-		return true
-	default:
-		return false
-	}
-}
-
 // Defines values for NewCatalogDataAttributesIcon.
 const (
 	NewCatalogDataAttributesIconChartBar          NewCatalogDataAttributesIcon = "chart-bar"
@@ -16390,16 +16546,19 @@ func (e NewEscalationPolicyLevelDataAttributesNotificationTargetParamsTeamMember
 
 // Defines values for NewEscalationPolicyLevelDataAttributesNotificationTargetParamsType.
 const (
-	NewEscalationPolicyLevelDataAttributesNotificationTargetParamsTypeSchedule     NewEscalationPolicyLevelDataAttributesNotificationTargetParamsType = "schedule"
-	NewEscalationPolicyLevelDataAttributesNotificationTargetParamsTypeService      NewEscalationPolicyLevelDataAttributesNotificationTargetParamsType = "service"
-	NewEscalationPolicyLevelDataAttributesNotificationTargetParamsTypeSlackChannel NewEscalationPolicyLevelDataAttributesNotificationTargetParamsType = "slack_channel"
-	NewEscalationPolicyLevelDataAttributesNotificationTargetParamsTypeTeam         NewEscalationPolicyLevelDataAttributesNotificationTargetParamsType = "team"
-	NewEscalationPolicyLevelDataAttributesNotificationTargetParamsTypeUser         NewEscalationPolicyLevelDataAttributesNotificationTargetParamsType = "user"
+	NewEscalationPolicyLevelDataAttributesNotificationTargetParamsTypeMicrosoftTeamsChannel NewEscalationPolicyLevelDataAttributesNotificationTargetParamsType = "microsoft_teams_channel"
+	NewEscalationPolicyLevelDataAttributesNotificationTargetParamsTypeSchedule              NewEscalationPolicyLevelDataAttributesNotificationTargetParamsType = "schedule"
+	NewEscalationPolicyLevelDataAttributesNotificationTargetParamsTypeService               NewEscalationPolicyLevelDataAttributesNotificationTargetParamsType = "service"
+	NewEscalationPolicyLevelDataAttributesNotificationTargetParamsTypeSlackChannel          NewEscalationPolicyLevelDataAttributesNotificationTargetParamsType = "slack_channel"
+	NewEscalationPolicyLevelDataAttributesNotificationTargetParamsTypeTeam                  NewEscalationPolicyLevelDataAttributesNotificationTargetParamsType = "team"
+	NewEscalationPolicyLevelDataAttributesNotificationTargetParamsTypeUser                  NewEscalationPolicyLevelDataAttributesNotificationTargetParamsType = "user"
 )
 
 // Valid indicates whether the value is a known member of the NewEscalationPolicyLevelDataAttributesNotificationTargetParamsType enum.
 func (e NewEscalationPolicyLevelDataAttributesNotificationTargetParamsType) Valid() bool {
 	switch e {
+	case NewEscalationPolicyLevelDataAttributesNotificationTargetParamsTypeMicrosoftTeamsChannel:
+		return true
 	case NewEscalationPolicyLevelDataAttributesNotificationTargetParamsTypeSchedule:
 		return true
 	case NewEscalationPolicyLevelDataAttributesNotificationTargetParamsTypeService:
@@ -18817,6 +18976,7 @@ const (
 	NewFormFieldDataAttributesKindSeverity                    NewFormFieldDataAttributesKind = "severity"
 	NewFormFieldDataAttributesKindShowOngoingIncidents        NewFormFieldDataAttributesKind = "show_ongoing_incidents"
 	NewFormFieldDataAttributesKindStartedAt                   NewFormFieldDataAttributesKind = "started_at"
+	NewFormFieldDataAttributesKindStatus                      NewFormFieldDataAttributesKind = "status"
 	NewFormFieldDataAttributesKindSummary                     NewFormFieldDataAttributesKind = "summary"
 	NewFormFieldDataAttributesKindTeams                       NewFormFieldDataAttributesKind = "teams"
 	NewFormFieldDataAttributesKindTitle                       NewFormFieldDataAttributesKind = "title"
@@ -18875,6 +19035,8 @@ func (e NewFormFieldDataAttributesKind) Valid() bool {
 	case NewFormFieldDataAttributesKindShowOngoingIncidents:
 		return true
 	case NewFormFieldDataAttributesKindStartedAt:
+		return true
+	case NewFormFieldDataAttributesKindStatus:
 		return true
 	case NewFormFieldDataAttributesKindSummary:
 		return true
@@ -19073,6 +19235,7 @@ func (e NewFormFieldPlacementConditionDataType) Valid() bool {
 // Defines values for NewFormFieldPositionDataAttributesForm.
 const (
 	NewFormFieldPositionDataAttributesFormIncidentPostMortem               NewFormFieldPositionDataAttributesForm = "incident_post_mortem"
+	NewFormFieldPositionDataAttributesFormSlackActionItemForm              NewFormFieldPositionDataAttributesForm = "slack_action_item_form"
 	NewFormFieldPositionDataAttributesFormSlackIncidentCancellationForm    NewFormFieldPositionDataAttributesForm = "slack_incident_cancellation_form"
 	NewFormFieldPositionDataAttributesFormSlackIncidentMitigationForm      NewFormFieldPositionDataAttributesForm = "slack_incident_mitigation_form"
 	NewFormFieldPositionDataAttributesFormSlackIncidentResolutionForm      NewFormFieldPositionDataAttributesForm = "slack_incident_resolution_form"
@@ -19081,6 +19244,7 @@ const (
 	NewFormFieldPositionDataAttributesFormSlackUpdateIncidentForm          NewFormFieldPositionDataAttributesForm = "slack_update_incident_form"
 	NewFormFieldPositionDataAttributesFormSlackUpdateIncidentStatusForm    NewFormFieldPositionDataAttributesForm = "slack_update_incident_status_form"
 	NewFormFieldPositionDataAttributesFormSlackUpdateScheduledIncidentForm NewFormFieldPositionDataAttributesForm = "slack_update_scheduled_incident_form"
+	NewFormFieldPositionDataAttributesFormWebActionItemForm                NewFormFieldPositionDataAttributesForm = "web_action_item_form"
 	NewFormFieldPositionDataAttributesFormWebIncidentCancellationForm      NewFormFieldPositionDataAttributesForm = "web_incident_cancellation_form"
 	NewFormFieldPositionDataAttributesFormWebIncidentMitigationForm        NewFormFieldPositionDataAttributesForm = "web_incident_mitigation_form"
 	NewFormFieldPositionDataAttributesFormWebIncidentPostMortemForm        NewFormFieldPositionDataAttributesForm = "web_incident_post_mortem_form"
@@ -19095,6 +19259,8 @@ const (
 func (e NewFormFieldPositionDataAttributesForm) Valid() bool {
 	switch e {
 	case NewFormFieldPositionDataAttributesFormIncidentPostMortem:
+		return true
+	case NewFormFieldPositionDataAttributesFormSlackActionItemForm:
 		return true
 	case NewFormFieldPositionDataAttributesFormSlackIncidentCancellationForm:
 		return true
@@ -19111,6 +19277,8 @@ func (e NewFormFieldPositionDataAttributesForm) Valid() bool {
 	case NewFormFieldPositionDataAttributesFormSlackUpdateIncidentStatusForm:
 		return true
 	case NewFormFieldPositionDataAttributesFormSlackUpdateScheduledIncidentForm:
+		return true
+	case NewFormFieldPositionDataAttributesFormWebActionItemForm:
 		return true
 	case NewFormFieldPositionDataAttributesFormWebIncidentCancellationForm:
 		return true
@@ -28019,6 +28187,39 @@ func (e TeamAutoAddMembersScope) Valid() bool {
 	}
 }
 
+// Defines values for TeamManagedBy.
+const (
+	TeamManagedByAPI         TeamManagedBy = "api"
+	TeamManagedByAdminWeb    TeamManagedBy = "admin_web"
+	TeamManagedByBackstage   TeamManagedBy = "backstage"
+	TeamManagedByCatalogSync TeamManagedBy = "catalog_sync"
+	TeamManagedByPulumi      TeamManagedBy = "pulumi"
+	TeamManagedByTerraform   TeamManagedBy = "terraform"
+	TeamManagedByWeb         TeamManagedBy = "web"
+)
+
+// Valid indicates whether the value is a known member of the TeamManagedBy enum.
+func (e TeamManagedBy) Valid() bool {
+	switch e {
+	case TeamManagedByAPI:
+		return true
+	case TeamManagedByAdminWeb:
+		return true
+	case TeamManagedByBackstage:
+		return true
+	case TeamManagedByCatalogSync:
+		return true
+	case TeamManagedByPulumi:
+		return true
+	case TeamManagedByTerraform:
+		return true
+	case TeamManagedByWeb:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for TeamListDataType.
 const (
 	TeamListDataTypeGroups TeamListDataType = "groups"
@@ -31423,16 +31624,19 @@ func (e UpdateEscalationPolicyLevelDataAttributesNotificationTargetParamsTeamMem
 
 // Defines values for UpdateEscalationPolicyLevelDataAttributesNotificationTargetParamsType.
 const (
-	UpdateEscalationPolicyLevelDataAttributesNotificationTargetParamsTypeSchedule     UpdateEscalationPolicyLevelDataAttributesNotificationTargetParamsType = "schedule"
-	UpdateEscalationPolicyLevelDataAttributesNotificationTargetParamsTypeService      UpdateEscalationPolicyLevelDataAttributesNotificationTargetParamsType = "service"
-	UpdateEscalationPolicyLevelDataAttributesNotificationTargetParamsTypeSlackChannel UpdateEscalationPolicyLevelDataAttributesNotificationTargetParamsType = "slack_channel"
-	UpdateEscalationPolicyLevelDataAttributesNotificationTargetParamsTypeTeam         UpdateEscalationPolicyLevelDataAttributesNotificationTargetParamsType = "team"
-	UpdateEscalationPolicyLevelDataAttributesNotificationTargetParamsTypeUser         UpdateEscalationPolicyLevelDataAttributesNotificationTargetParamsType = "user"
+	UpdateEscalationPolicyLevelDataAttributesNotificationTargetParamsTypeMicrosoftTeamsChannel UpdateEscalationPolicyLevelDataAttributesNotificationTargetParamsType = "microsoft_teams_channel"
+	UpdateEscalationPolicyLevelDataAttributesNotificationTargetParamsTypeSchedule              UpdateEscalationPolicyLevelDataAttributesNotificationTargetParamsType = "schedule"
+	UpdateEscalationPolicyLevelDataAttributesNotificationTargetParamsTypeService               UpdateEscalationPolicyLevelDataAttributesNotificationTargetParamsType = "service"
+	UpdateEscalationPolicyLevelDataAttributesNotificationTargetParamsTypeSlackChannel          UpdateEscalationPolicyLevelDataAttributesNotificationTargetParamsType = "slack_channel"
+	UpdateEscalationPolicyLevelDataAttributesNotificationTargetParamsTypeTeam                  UpdateEscalationPolicyLevelDataAttributesNotificationTargetParamsType = "team"
+	UpdateEscalationPolicyLevelDataAttributesNotificationTargetParamsTypeUser                  UpdateEscalationPolicyLevelDataAttributesNotificationTargetParamsType = "user"
 )
 
 // Valid indicates whether the value is a known member of the UpdateEscalationPolicyLevelDataAttributesNotificationTargetParamsType enum.
 func (e UpdateEscalationPolicyLevelDataAttributesNotificationTargetParamsType) Valid() bool {
 	switch e {
+	case UpdateEscalationPolicyLevelDataAttributesNotificationTargetParamsTypeMicrosoftTeamsChannel:
+		return true
 	case UpdateEscalationPolicyLevelDataAttributesNotificationTargetParamsTypeSchedule:
 		return true
 	case UpdateEscalationPolicyLevelDataAttributesNotificationTargetParamsTypeService:
@@ -33850,6 +34054,7 @@ const (
 	UpdateFormFieldDataAttributesKindSeverity                    UpdateFormFieldDataAttributesKind = "severity"
 	UpdateFormFieldDataAttributesKindShowOngoingIncidents        UpdateFormFieldDataAttributesKind = "show_ongoing_incidents"
 	UpdateFormFieldDataAttributesKindStartedAt                   UpdateFormFieldDataAttributesKind = "started_at"
+	UpdateFormFieldDataAttributesKindStatus                      UpdateFormFieldDataAttributesKind = "status"
 	UpdateFormFieldDataAttributesKindSummary                     UpdateFormFieldDataAttributesKind = "summary"
 	UpdateFormFieldDataAttributesKindTeams                       UpdateFormFieldDataAttributesKind = "teams"
 	UpdateFormFieldDataAttributesKindTitle                       UpdateFormFieldDataAttributesKind = "title"
@@ -33908,6 +34113,8 @@ func (e UpdateFormFieldDataAttributesKind) Valid() bool {
 	case UpdateFormFieldDataAttributesKindShowOngoingIncidents:
 		return true
 	case UpdateFormFieldDataAttributesKindStartedAt:
+		return true
+	case UpdateFormFieldDataAttributesKindStatus:
 		return true
 	case UpdateFormFieldDataAttributesKindSummary:
 		return true
@@ -34106,6 +34313,7 @@ func (e UpdateFormFieldPlacementConditionDataType) Valid() bool {
 // Defines values for UpdateFormFieldPositionDataAttributesForm.
 const (
 	UpdateFormFieldPositionDataAttributesFormIncidentPostMortem               UpdateFormFieldPositionDataAttributesForm = "incident_post_mortem"
+	UpdateFormFieldPositionDataAttributesFormSlackActionItemForm              UpdateFormFieldPositionDataAttributesForm = "slack_action_item_form"
 	UpdateFormFieldPositionDataAttributesFormSlackIncidentCancellationForm    UpdateFormFieldPositionDataAttributesForm = "slack_incident_cancellation_form"
 	UpdateFormFieldPositionDataAttributesFormSlackIncidentMitigationForm      UpdateFormFieldPositionDataAttributesForm = "slack_incident_mitigation_form"
 	UpdateFormFieldPositionDataAttributesFormSlackIncidentResolutionForm      UpdateFormFieldPositionDataAttributesForm = "slack_incident_resolution_form"
@@ -34114,6 +34322,7 @@ const (
 	UpdateFormFieldPositionDataAttributesFormSlackUpdateIncidentForm          UpdateFormFieldPositionDataAttributesForm = "slack_update_incident_form"
 	UpdateFormFieldPositionDataAttributesFormSlackUpdateIncidentStatusForm    UpdateFormFieldPositionDataAttributesForm = "slack_update_incident_status_form"
 	UpdateFormFieldPositionDataAttributesFormSlackUpdateScheduledIncidentForm UpdateFormFieldPositionDataAttributesForm = "slack_update_scheduled_incident_form"
+	UpdateFormFieldPositionDataAttributesFormWebActionItemForm                UpdateFormFieldPositionDataAttributesForm = "web_action_item_form"
 	UpdateFormFieldPositionDataAttributesFormWebIncidentCancellationForm      UpdateFormFieldPositionDataAttributesForm = "web_incident_cancellation_form"
 	UpdateFormFieldPositionDataAttributesFormWebIncidentMitigationForm        UpdateFormFieldPositionDataAttributesForm = "web_incident_mitigation_form"
 	UpdateFormFieldPositionDataAttributesFormWebIncidentPostMortemForm        UpdateFormFieldPositionDataAttributesForm = "web_incident_post_mortem_form"
@@ -34128,6 +34337,8 @@ const (
 func (e UpdateFormFieldPositionDataAttributesForm) Valid() bool {
 	switch e {
 	case UpdateFormFieldPositionDataAttributesFormIncidentPostMortem:
+		return true
+	case UpdateFormFieldPositionDataAttributesFormSlackActionItemForm:
 		return true
 	case UpdateFormFieldPositionDataAttributesFormSlackIncidentCancellationForm:
 		return true
@@ -34144,6 +34355,8 @@ func (e UpdateFormFieldPositionDataAttributesForm) Valid() bool {
 	case UpdateFormFieldPositionDataAttributesFormSlackUpdateIncidentStatusForm:
 		return true
 	case UpdateFormFieldPositionDataAttributesFormSlackUpdateScheduledIncidentForm:
+		return true
+	case UpdateFormFieldPositionDataAttributesFormWebActionItemForm:
 		return true
 	case UpdateFormFieldPositionDataAttributesFormWebIncidentCancellationForm:
 		return true
@@ -43417,6 +43630,25 @@ type AttachDatadogDashboardsTaskParams struct {
 // AttachDatadogDashboardsTaskParamsTaskType defines model for AttachDatadogDashboardsTaskParams.TaskType.
 type AttachDatadogDashboardsTaskParamsTaskType string
 
+// AttachRetrospectivePdfToJiraIssueTaskParams defines model for attach_retrospective_pdf_to_jira_issue_task_params.
+type AttachRetrospectivePdfToJiraIssueTaskParams struct {
+	// Filename The attachment filename
+	Filename *string `json:"filename,omitempty"`
+
+	// Integration Specify integration id if you have more than one Jira instance
+	Integration *struct {
+		ID   *string `json:"id,omitempty"`
+		Name *string `json:"name,omitempty"`
+	} `json:"integration,omitempty"`
+
+	// IssueID The issue id
+	IssueID  string                                               `json:"issue_id"`
+	TaskType *AttachRetrospectivePdfToJiraIssueTaskParamsTaskType `json:"task_type,omitempty"`
+}
+
+// AttachRetrospectivePdfToJiraIssueTaskParamsTaskType defines model for AttachRetrospectivePdfToJiraIssueTaskParams.TaskType.
+type AttachRetrospectivePdfToJiraIssueTaskParamsTaskType string
+
 // Audit defines model for audit.
 type Audit struct {
 	// CreatedAt Date of creation
@@ -43672,76 +43904,144 @@ type BulkDestroyCatalogEntitiesResponse struct {
 		// DeletedExternalIDs External IDs that were successfully deleted
 		DeletedExternalIDs []string `json:"deleted_external_ids,omitempty"`
 
-		// FailedExternalIDs External IDs where destroy failed (e.g. protected/synced entities)
+		// FailedExternalIDs External IDs whose deletion the record itself blocked (e.g. minimum-one guard, restrict associations). Records the caller is not authorized to destroy are NOT listed here.
 		FailedExternalIDs []string `json:"failed_external_ids,omitempty"`
 
-		// NotFoundExternalIDs External IDs that were not found (only present in external_ids mode)
+		// NotFoundExternalIDs External IDs that were not found or not accessible to the caller (external_ids mode only)
 		NotFoundExternalIDs []string `json:"not_found_external_ids,omitempty"`
 	} `json:"data,omitempty"`
 }
 
-// BulkImportAttributes defines model for bulk_import_attributes.
-type BulkImportAttributes struct {
-	// CompletedAt When import completed or failed
-	CompletedAt nullable.Nullable[time.Time] `json:"completed_at,omitempty"`
-
-	// CreatedAt When the bulk import was created
-	CreatedAt *time.Time `json:"created_at,omitempty"`
-
-	// EntityType Type of entity being imported
-	EntityType *BulkImportAttributesEntityType `json:"entity_type,omitempty"`
-
-	// ErrorMessage Error message if import failed
-	ErrorMessage nullable.Nullable[string] `json:"error_message,omitempty"`
-
-	// FailedRecords Number of records that failed to import
-	FailedRecords int `json:"failed_records"`
-
-	// FileURL URL of the JSONL file being imported
-	FileURL *string `json:"file_url,omitempty"`
-
-	// NotificationEmail Email address for notifications
-	NotificationEmail *openapi_types.Email `json:"notification_email,omitempty"`
-
-	// ProcessedRecords Number of records processed so far
-	ProcessedRecords int `json:"processed_records"`
-
-	// ProgressPercentage Import progress percentage (0-100)
-	ProgressPercentage float32 `json:"progress_percentage"`
-
-	// StartedAt When import processing started
-	StartedAt nullable.Nullable[time.Time] `json:"started_at,omitempty"`
-
-	// Status Current status of the import
-	Status BulkImportAttributesStatus `json:"status"`
-
-	// TotalRecords Total number of records in the file
-	TotalRecords nullable.Nullable[int] `json:"total_records,omitempty"`
-
-	// UpdatedAt When the bulk import was last updated
-	UpdatedAt *time.Time `json:"updated_at,omitempty"`
-
-	// ValidationErrors Validation errors encountered during validation phase
-	ValidationErrors nullable.Nullable[map[string]interface{}] `json:"validation_errors,omitempty"`
+// BulkDestroyEnvironments Two mutually exclusive modes. Pass exactly one of: external_ids (delete specific records) or managed_by (prune all managed records not in keep set).
+type BulkDestroyEnvironments struct {
+	union json.RawMessage
 }
 
-// BulkImportAttributesEntityType Type of entity being imported
-type BulkImportAttributesEntityType string
-
-// BulkImportAttributesStatus Current status of the import
-type BulkImportAttributesStatus string
-
-// BulkImportResponse defines model for bulk_import_response.
-type BulkImportResponse struct {
-	Data struct {
-		Attributes BulkImportAttributes       `json:"attributes"`
-		ID         openapi_types.UUID         `json:"id"`
-		Type       BulkImportResponseDataType `json:"type"`
-	} `json:"data"`
+// BulkDestroyEnvironments0 defines model for .
+type BulkDestroyEnvironments0 struct {
+	// ExternalIDs Array of external_ids to delete. Max 100 per request.
+	ExternalIDs []string `json:"external_ids"`
 }
 
-// BulkImportResponseDataType defines model for BulkImportResponse.Data.Type.
-type BulkImportResponseDataType string
+// BulkDestroyEnvironments1 defines model for .
+type BulkDestroyEnvironments1 struct {
+	// KeepExternalIDs Records with these external_ids are preserved.
+	KeepExternalIDs []string `json:"keep_external_ids,omitempty"`
+
+	// ManagedBy Delete all records with this managed_by value (web/admin_web not allowed).
+	ManagedBy BulkDestroyEnvironments1ManagedBy `json:"managed_by"`
+}
+
+// BulkDestroyEnvironments1ManagedBy Delete all records with this managed_by value (web/admin_web not allowed).
+type BulkDestroyEnvironments1ManagedBy string
+
+// BulkDestroyEnvironmentsResponse defines model for bulk_destroy_environments_response.
+type BulkDestroyEnvironmentsResponse struct {
+	Data *struct {
+		// DeletedExternalIDs External IDs that were successfully deleted
+		DeletedExternalIDs []string `json:"deleted_external_ids,omitempty"`
+
+		// FailedExternalIDs External IDs whose deletion the record itself blocked (e.g. minimum-one guard, restrict associations). Records the caller is not authorized to destroy are NOT listed here.
+		FailedExternalIDs []string `json:"failed_external_ids,omitempty"`
+
+		// NotFoundExternalIDs External IDs that were not found or not accessible to the caller (external_ids mode only)
+		NotFoundExternalIDs []string `json:"not_found_external_ids,omitempty"`
+	} `json:"data,omitempty"`
+}
+
+// BulkDestroyFunctionalities Two mutually exclusive modes. Pass exactly one of: external_ids (delete specific records) or managed_by (prune all managed records not in keep set).
+type BulkDestroyFunctionalities struct {
+	union json.RawMessage
+}
+
+// BulkDestroyFunctionalities0 defines model for .
+type BulkDestroyFunctionalities0 struct {
+	// ExternalIDs Array of external_ids to delete. Max 100 per request.
+	ExternalIDs []string `json:"external_ids"`
+}
+
+// BulkDestroyFunctionalities1 defines model for .
+type BulkDestroyFunctionalities1 struct {
+	// KeepExternalIDs Records with these external_ids are preserved.
+	KeepExternalIDs []string `json:"keep_external_ids,omitempty"`
+
+	// ManagedBy Delete all records with this managed_by value (web/admin_web not allowed).
+	ManagedBy BulkDestroyFunctionalities1ManagedBy `json:"managed_by"`
+}
+
+// BulkDestroyFunctionalities1ManagedBy Delete all records with this managed_by value (web/admin_web not allowed).
+type BulkDestroyFunctionalities1ManagedBy string
+
+// BulkDestroyFunctionalitiesResponse defines model for bulk_destroy_functionalities_response.
+type BulkDestroyFunctionalitiesResponse struct {
+	Data *struct {
+		// DeletedExternalIDs External IDs that were successfully deleted
+		DeletedExternalIDs []string `json:"deleted_external_ids,omitempty"`
+
+		// FailedExternalIDs External IDs whose deletion the record itself blocked (e.g. minimum-one guard, restrict associations). Records the caller is not authorized to destroy are NOT listed here.
+		FailedExternalIDs []string `json:"failed_external_ids,omitempty"`
+
+		// NotFoundExternalIDs External IDs that were not found or not accessible to the caller (external_ids mode only)
+		NotFoundExternalIDs []string `json:"not_found_external_ids,omitempty"`
+	} `json:"data,omitempty"`
+}
+
+// BulkDestroyServices Delete specific services by external_id. (Prune-by-managed_by is not available for services yet — services.managed_by is still being migrated to the enum type.)
+type BulkDestroyServices struct {
+	// ExternalIDs Array of external_ids to delete. Max 100 per request.
+	ExternalIDs []string `json:"external_ids"`
+}
+
+// BulkDestroyServicesResponse defines model for bulk_destroy_services_response.
+type BulkDestroyServicesResponse struct {
+	Data *struct {
+		// DeletedExternalIDs External IDs that were successfully deleted
+		DeletedExternalIDs []string `json:"deleted_external_ids,omitempty"`
+
+		// FailedExternalIDs External IDs whose deletion the record itself blocked (e.g. minimum-one guard, restrict associations). Records the caller is not authorized to destroy are NOT listed here.
+		FailedExternalIDs []string `json:"failed_external_ids,omitempty"`
+
+		// NotFoundExternalIDs External IDs that were not found or not accessible to the caller (external_ids mode only)
+		NotFoundExternalIDs []string `json:"not_found_external_ids,omitempty"`
+	} `json:"data,omitempty"`
+}
+
+// BulkDestroyTeams Two mutually exclusive modes. Pass exactly one of: external_ids (delete specific records) or managed_by (prune all managed records not in keep set).
+type BulkDestroyTeams struct {
+	union json.RawMessage
+}
+
+// BulkDestroyTeams0 defines model for .
+type BulkDestroyTeams0 struct {
+	// ExternalIDs Array of external_ids to delete. Max 100 per request.
+	ExternalIDs []string `json:"external_ids"`
+}
+
+// BulkDestroyTeams1 defines model for .
+type BulkDestroyTeams1 struct {
+	// KeepExternalIDs Records with these external_ids are preserved.
+	KeepExternalIDs []string `json:"keep_external_ids,omitempty"`
+
+	// ManagedBy Delete all records with this managed_by value (web/admin_web not allowed).
+	ManagedBy BulkDestroyTeams1ManagedBy `json:"managed_by"`
+}
+
+// BulkDestroyTeams1ManagedBy Delete all records with this managed_by value (web/admin_web not allowed).
+type BulkDestroyTeams1ManagedBy string
+
+// BulkDestroyTeamsResponse defines model for bulk_destroy_teams_response.
+type BulkDestroyTeamsResponse struct {
+	Data *struct {
+		// DeletedExternalIDs External IDs that were successfully deleted
+		DeletedExternalIDs []string `json:"deleted_external_ids,omitempty"`
+
+		// FailedExternalIDs External IDs whose deletion the record itself blocked (e.g. minimum-one guard, restrict associations). Records the caller is not authorized to destroy are NOT listed here.
+		FailedExternalIDs []string `json:"failed_external_ids,omitempty"`
+
+		// NotFoundExternalIDs External IDs that were not found or not accessible to the caller (external_ids mode only)
+		NotFoundExternalIDs []string `json:"not_found_external_ids,omitempty"`
+	} `json:"data,omitempty"`
+}
 
 // BulkUpsertCatalogEntities defines model for bulk_upsert_catalog_entities.
 type BulkUpsertCatalogEntities struct {
@@ -43788,11 +44088,254 @@ type BulkUpsertCatalogEntitiesPayload struct {
 		ID         *string                                    `json:"id,omitempty"`
 		Type       *BulkUpsertCatalogEntitiesResponseDataType `json:"type,omitempty"`
 	} `json:"data,omitempty"`
-	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
 // BulkUpsertCatalogEntitiesResponseDataType defines model for BulkUpsertCatalogEntitiesResponse.Data.Type.
 type BulkUpsertCatalogEntitiesResponseDataType string
+
+// BulkUpsertEnvironments defines model for bulk_upsert_environments.
+type BulkUpsertEnvironments struct {
+	// Entities Environments to upsert, matched by external_id. Max 100 per request; external_ids unique within a batch. Only attributes present are written (managed-fields semantics).
+	Entities []struct {
+		Color       nullable.Nullable[string] `json:"color,omitempty"`
+		Description nullable.Nullable[string] `json:"description,omitempty"`
+
+		// ExternalID External identifier used as the upsert key. Unique per team.
+		ExternalID string `json:"external_id"`
+
+		// Fields Catalog property values (merge semantics: only mentioned fields written).
+		Fields []struct {
+			// CatalogFieldID UUID, slug, or external_id of the catalog field (required if catalog_property_id is absent)
+			CatalogFieldID *string `json:"catalog_field_id,omitempty"`
+
+			// CatalogPropertyID Alias for catalog_field_id (required if catalog_field_id is absent)
+			CatalogPropertyID *string `json:"catalog_property_id,omitempty"`
+
+			// Value The value for this field
+			Value string `json:"value"`
+		} `json:"fields,omitempty"`
+
+		// Name Required for new records. Optional for updates.
+		Name         *string                     `json:"name,omitempty"`
+		NotifyEmails nullable.Nullable[[]string] `json:"notify_emails,omitempty"`
+		Position     nullable.Nullable[int]      `json:"position,omitempty"`
+	} `json:"entities"`
+}
+
+// BulkUpsertEnvironmentsError defines model for bulk_upsert_environments_error.
+type BulkUpsertEnvironmentsError struct {
+	Errors []struct {
+		Errors     []string `json:"errors"`
+		ExternalID string   `json:"external_id"`
+
+		// Index Position of the failed record in the batch
+		Index int `json:"index"`
+	} `json:"errors"`
+}
+
+// BulkUpsertEnvironmentsResponse defines model for bulk_upsert_environments_response.
+type BulkUpsertEnvironmentsResponse struct {
+	Data []struct {
+		Attributes *Environment                            `json:"attributes,omitempty"`
+		ID         *string                                 `json:"id,omitempty"`
+		Type       *BulkUpsertEnvironmentsResponseDataType `json:"type,omitempty"`
+	} `json:"data,omitempty"`
+}
+
+// BulkUpsertEnvironmentsResponseDataType defines model for BulkUpsertEnvironmentsResponse.Data.Type.
+type BulkUpsertEnvironmentsResponseDataType string
+
+// BulkUpsertFunctionalities defines model for bulk_upsert_functionalities.
+type BulkUpsertFunctionalities struct {
+	// Entities Functionalities to upsert, matched by external_id. Max 100 per request; external_ids unique within a batch. Only attributes present are written (managed-fields semantics).
+	Entities []struct {
+		BackstageID nullable.Nullable[string] `json:"backstage_id,omitempty"`
+		Color       nullable.Nullable[string] `json:"color,omitempty"`
+		CortexID    nullable.Nullable[string] `json:"cortex_id,omitempty"`
+		Description nullable.Nullable[string] `json:"description,omitempty"`
+
+		// ExternalID External identifier used as the upsert key. Unique per team.
+		ExternalID string `json:"external_id"`
+
+		// Fields Catalog property values (merge semantics: only mentioned fields written).
+		Fields []struct {
+			// CatalogFieldID UUID, slug, or external_id of the catalog field (required if catalog_property_id is absent)
+			CatalogFieldID *string `json:"catalog_field_id,omitempty"`
+
+			// CatalogPropertyID Alias for catalog_field_id (required if catalog_field_id is absent)
+			CatalogPropertyID *string `json:"catalog_property_id,omitempty"`
+
+			// Value The value for this field
+			Value string `json:"value"`
+		} `json:"fields,omitempty"`
+
+		// Name Required for new records. Optional for updates.
+		Name               *string                     `json:"name,omitempty"`
+		NotifyEmails       nullable.Nullable[[]string] `json:"notify_emails,omitempty"`
+		OpsgenieID         nullable.Nullable[string]   `json:"opsgenie_id,omitempty"`
+		OpsgenieTeamID     nullable.Nullable[string]   `json:"opsgenie_team_id,omitempty"`
+		OpslevelID         nullable.Nullable[string]   `json:"opslevel_id,omitempty"`
+		PagerdutyID        nullable.Nullable[string]   `json:"pagerduty_id,omitempty"`
+		Position           nullable.Nullable[int]      `json:"position,omitempty"`
+		PublicDescription  nullable.Nullable[string]   `json:"public_description,omitempty"`
+		ServiceNowCiSysID  nullable.Nullable[string]   `json:"service_now_ci_sys_id,omitempty"`
+		ShowUptime         nullable.Nullable[bool]     `json:"show_uptime,omitempty"`
+		ShowUptimeLastDays nullable.Nullable[int]      `json:"show_uptime_last_days,omitempty"`
+	} `json:"entities"`
+}
+
+// BulkUpsertFunctionalitiesError defines model for bulk_upsert_functionalities_error.
+type BulkUpsertFunctionalitiesError struct {
+	Errors []struct {
+		Errors     []string `json:"errors"`
+		ExternalID string   `json:"external_id"`
+
+		// Index Position of the failed record in the batch
+		Index int `json:"index"`
+	} `json:"errors"`
+}
+
+// BulkUpsertFunctionalitiesResponse defines model for bulk_upsert_functionalities_response.
+type BulkUpsertFunctionalitiesResponse struct {
+	Data []struct {
+		Attributes *Functionality                             `json:"attributes,omitempty"`
+		ID         *string                                    `json:"id,omitempty"`
+		Type       *BulkUpsertFunctionalitiesResponseDataType `json:"type,omitempty"`
+	} `json:"data,omitempty"`
+}
+
+// BulkUpsertFunctionalitiesResponseDataType defines model for BulkUpsertFunctionalitiesResponse.Data.Type.
+type BulkUpsertFunctionalitiesResponseDataType string
+
+// BulkUpsertServices defines model for bulk_upsert_services.
+type BulkUpsertServices struct {
+	// Entities Services to upsert, matched by external_id. Max 100 per request; external_ids unique within a batch. Only attributes present are written (managed-fields semantics).
+	Entities []struct {
+		AlertsEmailEnabled nullable.Nullable[bool]   `json:"alerts_email_enabled,omitempty"`
+		BackstageID        nullable.Nullable[string] `json:"backstage_id,omitempty"`
+		Color              nullable.Nullable[string] `json:"color,omitempty"`
+		CortexID           nullable.Nullable[string] `json:"cortex_id,omitempty"`
+		Description        nullable.Nullable[string] `json:"description,omitempty"`
+
+		// ExternalID External identifier used as the upsert key. Unique per team.
+		ExternalID string `json:"external_id"`
+
+		// Fields Catalog property values (merge semantics: only mentioned fields written).
+		Fields []struct {
+			// CatalogFieldID UUID, slug, or external_id of the catalog field (required if catalog_property_id is absent)
+			CatalogFieldID *string `json:"catalog_field_id,omitempty"`
+
+			// CatalogPropertyID Alias for catalog_field_id (required if catalog_field_id is absent)
+			CatalogPropertyID *string `json:"catalog_property_id,omitempty"`
+
+			// Value The value for this field
+			Value string `json:"value"`
+		} `json:"fields,omitempty"`
+		GithubRepositoryBranch   nullable.Nullable[string] `json:"github_repository_branch,omitempty"`
+		GithubRepositoryName     nullable.Nullable[string] `json:"github_repository_name,omitempty"`
+		GitlabRepositoryBranch   nullable.Nullable[string] `json:"gitlab_repository_branch,omitempty"`
+		GitlabRepositoryName     nullable.Nullable[string] `json:"gitlab_repository_name,omitempty"`
+		KubernetesDeploymentName nullable.Nullable[string] `json:"kubernetes_deployment_name,omitempty"`
+
+		// Name Required for new records. Optional for updates.
+		Name               *string                     `json:"name,omitempty"`
+		NotifyEmails       nullable.Nullable[[]string] `json:"notify_emails,omitempty"`
+		OpsgenieID         nullable.Nullable[string]   `json:"opsgenie_id,omitempty"`
+		OpsgenieTeamID     nullable.Nullable[string]   `json:"opsgenie_team_id,omitempty"`
+		OpslevelID         nullable.Nullable[string]   `json:"opslevel_id,omitempty"`
+		PagerdutyID        nullable.Nullable[string]   `json:"pagerduty_id,omitempty"`
+		Position           nullable.Nullable[int]      `json:"position,omitempty"`
+		PublicDescription  nullable.Nullable[string]   `json:"public_description,omitempty"`
+		ServiceNowCiSysID  nullable.Nullable[string]   `json:"service_now_ci_sys_id,omitempty"`
+		ShowUptime         nullable.Nullable[bool]     `json:"show_uptime,omitempty"`
+		ShowUptimeLastDays nullable.Nullable[int]      `json:"show_uptime_last_days,omitempty"`
+	} `json:"entities"`
+}
+
+// BulkUpsertServicesError defines model for bulk_upsert_services_error.
+type BulkUpsertServicesError struct {
+	Errors []struct {
+		Errors     []string `json:"errors"`
+		ExternalID string   `json:"external_id"`
+
+		// Index Position of the failed record in the batch
+		Index int `json:"index"`
+	} `json:"errors"`
+}
+
+// BulkUpsertServicesResponse defines model for bulk_upsert_services_response.
+type BulkUpsertServicesResponse struct {
+	Data []struct {
+		Attributes *Service                            `json:"attributes,omitempty"`
+		ID         *string                             `json:"id,omitempty"`
+		Type       *BulkUpsertServicesResponseDataType `json:"type,omitempty"`
+	} `json:"data,omitempty"`
+}
+
+// BulkUpsertServicesResponseDataType defines model for BulkUpsertServicesResponse.Data.Type.
+type BulkUpsertServicesResponseDataType string
+
+// BulkUpsertTeams defines model for bulk_upsert_teams.
+type BulkUpsertTeams struct {
+	// Entities Teams to upsert, matched by external_id. Max 100 per request; external_ids unique within a batch. Only attributes present are written (managed-fields semantics).
+	Entities []struct {
+		AlertsEmailEnabled nullable.Nullable[bool]   `json:"alerts_email_enabled,omitempty"`
+		BackstageID        nullable.Nullable[string] `json:"backstage_id,omitempty"`
+		Color              nullable.Nullable[string] `json:"color,omitempty"`
+		CortexID           nullable.Nullable[string] `json:"cortex_id,omitempty"`
+		Description        nullable.Nullable[string] `json:"description,omitempty"`
+
+		// ExternalID External identifier used as the upsert key. Unique per team.
+		ExternalID string `json:"external_id"`
+
+		// Fields Catalog property values (merge semantics: only mentioned fields written).
+		Fields []struct {
+			// CatalogFieldID UUID, slug, or external_id of the catalog field (required if catalog_property_id is absent)
+			CatalogFieldID *string `json:"catalog_field_id,omitempty"`
+
+			// CatalogPropertyID Alias for catalog_field_id (required if catalog_field_id is absent)
+			CatalogPropertyID *string `json:"catalog_property_id,omitempty"`
+
+			// Value The value for this field
+			Value string `json:"value"`
+		} `json:"fields,omitempty"`
+
+		// Name Required for new records. Optional for updates.
+		Name               *string                     `json:"name,omitempty"`
+		NotifyEmails       nullable.Nullable[[]string] `json:"notify_emails,omitempty"`
+		OpsgenieID         nullable.Nullable[string]   `json:"opsgenie_id,omitempty"`
+		OpslevelID         nullable.Nullable[string]   `json:"opslevel_id,omitempty"`
+		PagerdutyID        nullable.Nullable[string]   `json:"pagerduty_id,omitempty"`
+		PagerdutyServiceID nullable.Nullable[string]   `json:"pagerduty_service_id,omitempty"`
+		PagertreeID        nullable.Nullable[string]   `json:"pagertree_id,omitempty"`
+		Position           nullable.Nullable[int]      `json:"position,omitempty"`
+		ServiceNowCiSysID  nullable.Nullable[string]   `json:"service_now_ci_sys_id,omitempty"`
+		VictorOpsID        nullable.Nullable[string]   `json:"victor_ops_id,omitempty"`
+	} `json:"entities"`
+}
+
+// BulkUpsertTeamsError defines model for bulk_upsert_teams_error.
+type BulkUpsertTeamsError struct {
+	Errors []struct {
+		Errors     []string `json:"errors"`
+		ExternalID string   `json:"external_id"`
+
+		// Index Position of the failed record in the batch
+		Index int `json:"index"`
+	} `json:"errors"`
+}
+
+// BulkUpsertTeamsResponse defines model for bulk_upsert_teams_response.
+type BulkUpsertTeamsResponse struct {
+	Data []struct {
+		Attributes *Team                            `json:"attributes,omitempty"`
+		ID         *string                          `json:"id,omitempty"`
+		Type       *BulkUpsertTeamsResponseDataType `json:"type,omitempty"`
+	} `json:"data,omitempty"`
+}
+
+// BulkUpsertTeamsResponseDataType defines model for BulkUpsertTeamsResponse.Data.Type.
+type BulkUpsertTeamsResponseDataType string
 
 // CallPeopleTaskParams defines model for call_people_task_params.
 type CallPeopleTaskParams struct {
@@ -46814,6 +47357,12 @@ type Environment struct {
 	// Description The description of the environment
 	Description nullable.Nullable[string] `json:"description,omitempty"`
 
+	// ExternalID The external id associated to this environment
+	ExternalID nullable.Nullable[string] `json:"external_id,omitempty"`
+
+	// ManagedBy How this environment is managed (provenance): web, api, terraform, etc. Read-only.
+	ManagedBy *EnvironmentManagedBy `json:"managed_by,omitempty"`
+
 	// Name The name of the environment
 	Name string `json:"name"`
 
@@ -46856,6 +47405,9 @@ type Environment struct {
 	// UpdatedAt Date of last update
 	UpdatedAt string `json:"updated_at"`
 }
+
+// EnvironmentManagedBy How this environment is managed (provenance): web, api, terraform, etc. Read-only.
+type EnvironmentManagedBy string
 
 // EnvironmentList defines model for environment_list.
 type EnvironmentList struct {
@@ -47778,6 +48330,9 @@ type Functionality struct {
 	// ExternalID The external id associated to this functionality
 	ExternalID nullable.Nullable[string] `json:"external_id,omitempty"`
 
+	// ManagedBy How this functionality is managed (provenance): web, api, terraform, etc. Read-only.
+	ManagedBy *FunctionalityManagedBy `json:"managed_by,omitempty"`
+
 	// Name The name of the functionality
 	Name string `json:"name"`
 
@@ -47844,6 +48399,9 @@ type Functionality struct {
 	// UpdatedAt Date of last update
 	UpdatedAt string `json:"updated_at"`
 }
+
+// FunctionalityManagedBy How this functionality is managed (provenance): web, api, terraform, etc. Read-only.
+type FunctionalityManagedBy string
 
 // FunctionalityList defines model for functionality_list.
 type FunctionalityList struct {
@@ -51008,25 +51566,6 @@ type NewAuthorizationDataAttributesPermissions string
 // NewAuthorizationDataType defines model for NewAuthorization.Data.Type.
 type NewAuthorizationDataType string
 
-// NewBulkImport defines model for new_bulk_import.
-type NewBulkImport struct {
-	Data struct {
-		Attributes struct {
-			// EntityType Type of entity to import (currently only 'Incident' is supported)
-			EntityType NewBulkImportDataAttributesEntityType `json:"entity_type"`
-
-			// FileURL URL of the JSONL file to import. Must be accessible via HTTPS.
-			FileURL string `json:"file_url"`
-
-			// NotificationEmail Email address to receive import status notifications
-			NotificationEmail openapi_types.Email `json:"notification_email"`
-		} `json:"attributes"`
-	} `json:"data"`
-}
-
-// NewBulkImportDataAttributesEntityType Type of entity to import (currently only 'Incident' is supported)
-type NewBulkImportDataAttributesEntityType string
-
 // NewCatalog defines model for new_catalog.
 type NewCatalog struct {
 	Data struct {
@@ -51713,6 +52252,9 @@ type NewEnvironment struct {
 			// Description The description of the environment
 			Description nullable.Nullable[string] `json:"description,omitempty"`
 
+			// ExternalID The external id associated to this environment
+			ExternalID nullable.Nullable[string] `json:"external_id,omitempty"`
+
 			// Name The name of the environment
 			Name string `json:"name"`
 
@@ -51814,7 +52356,7 @@ type NewEscalationPolicyLevel struct {
 
 			// NotificationTargetParams Escalation level's notification targets
 			NotificationTargetParams []nullable.Nullable[struct {
-				// ID The ID of notification target. If Slack channel, then id of the slack channel (eg. C06Q2JK7RQW)
+				// ID The ID of notification target. If Slack channel, then id of the slack channel (eg. C06Q2JK7RQW). If Microsoft Teams channel, then the Rootly channel UUID.
 				ID string `json:"id"`
 
 				// TeamMembers For targets with type=team, controls whether to notify admins, all team members, or escalate to team EP.
@@ -58645,6 +59187,9 @@ type Team struct {
 	// IncidentBroadcastEnabled Enable incidents to be broadcasted to a specific channel
 	IncidentBroadcastEnabled nullable.Nullable[bool] `json:"incident_broadcast_enabled,omitempty"`
 
+	// ManagedBy How this team is managed (provenance): web, api, terraform, etc. Read-only.
+	ManagedBy *TeamManagedBy `json:"managed_by,omitempty"`
+
 	// Name The name of the team
 	Name string `json:"name"`
 
@@ -58709,6 +59254,9 @@ type Team struct {
 
 // TeamAutoAddMembersScope Visibility-scoped auto-add behavior. Only present when the `enable_scoped_incident_channel_auto_add` feature flag is on for the organization. When set, it overrides `auto_add_members_when_attached`.
 type TeamAutoAddMembersScope string
+
+// TeamManagedBy How this team is managed (provenance): web, api, terraform, etc. Read-only.
+type TeamManagedBy string
 
 // TeamList defines model for team_list.
 type TeamList struct {
@@ -60314,6 +60862,9 @@ type UpdateEnvironment struct {
 
 			// Description The description of the environment
 			Description nullable.Nullable[string] `json:"description,omitempty"`
+
+			// ExternalID The external id associated to this environment
+			ExternalID nullable.Nullable[string] `json:"external_id,omitempty"`
 
 			// Name The name of the environment
 			Name *string `json:"name,omitempty"`
@@ -66101,6 +66652,16 @@ type ListEnvironmentsParams struct {
 	Sort               *string `form:"sort,omitempty" json:"sort,omitempty"`
 }
 
+// BulkDeleteEnvironments422ApplicationVndAPIPlusJSONResponseBody defines parameters for BulkDeleteEnvironments.
+type BulkDeleteEnvironments422ApplicationVndAPIPlusJSONResponseBody struct {
+	union json.RawMessage
+}
+
+// BulkUpsertEnvironments422ApplicationVndAPIPlusJSONResponseBody defines parameters for BulkUpsertEnvironments.
+type BulkUpsertEnvironments422ApplicationVndAPIPlusJSONResponseBody struct {
+	union json.RawMessage
+}
+
 // ListEnvironmentCatalogPropertiesParams defines parameters for ListEnvironmentCatalogProperties.
 type ListEnvironmentCatalogPropertiesParams struct {
 	// Include comma separated if needed. eg: catalog
@@ -66340,6 +66901,16 @@ type ListFunctionalitiesParams struct {
 	FilterSlugIn       *string `form:"filter[slug][in],omitempty" json:"filter[slug][in],omitempty"`
 	FilterSlugNotIn    *string `form:"filter[slug][not_in],omitempty" json:"filter[slug][not_in],omitempty"`
 	Sort               *string `form:"sort,omitempty" json:"sort,omitempty"`
+}
+
+// BulkDeleteFunctionalities422ApplicationVndAPIPlusJSONResponseBody defines parameters for BulkDeleteFunctionalities.
+type BulkDeleteFunctionalities422ApplicationVndAPIPlusJSONResponseBody struct {
+	union json.RawMessage
+}
+
+// BulkUpsertFunctionalities422ApplicationVndAPIPlusJSONResponseBody defines parameters for BulkUpsertFunctionalities.
+type BulkUpsertFunctionalities422ApplicationVndAPIPlusJSONResponseBody struct {
+	union json.RawMessage
 }
 
 // ListFunctionalityCatalogPropertiesParams defines parameters for ListFunctionalityCatalogProperties.
@@ -67277,6 +67848,16 @@ type ListServicesParams struct {
 	Sort                                *string `form:"sort,omitempty" json:"sort,omitempty"`
 }
 
+// BulkDeleteServices422ApplicationVndAPIPlusJSONResponseBody defines parameters for BulkDeleteServices.
+type BulkDeleteServices422ApplicationVndAPIPlusJSONResponseBody struct {
+	union json.RawMessage
+}
+
+// BulkUpsertServices422ApplicationVndAPIPlusJSONResponseBody defines parameters for BulkUpsertServices.
+type BulkUpsertServices422ApplicationVndAPIPlusJSONResponseBody struct {
+	union json.RawMessage
+}
+
 // ListServiceCatalogPropertiesParams defines parameters for ListServiceCatalogProperties.
 type ListServiceCatalogPropertiesParams struct {
 	// Include comma separated if needed. eg: catalog
@@ -67492,6 +68073,16 @@ type ListTeamsParams struct {
 
 // ListTeamsParamsInclude defines parameters for ListTeams.
 type ListTeamsParamsInclude string
+
+// BulkDeleteGroups422ApplicationVndAPIPlusJSONResponseBody defines parameters for BulkDeleteGroups.
+type BulkDeleteGroups422ApplicationVndAPIPlusJSONResponseBody struct {
+	union json.RawMessage
+}
+
+// BulkUpsertGroups422ApplicationVndAPIPlusJSONResponseBody defines parameters for BulkUpsertGroups.
+type BulkUpsertGroups422ApplicationVndAPIPlusJSONResponseBody struct {
+	union json.RawMessage
+}
 
 // ListGroupCatalogPropertiesParams defines parameters for ListGroupCatalogProperties.
 type ListGroupCatalogPropertiesParams struct {
@@ -67774,9 +68365,6 @@ type CreateAuthorizationApplicationVndAPIPlusJSONRequestBody = NewAuthorization
 // UpdateAuthorizationApplicationVndAPIPlusJSONRequestBody defines body for UpdateAuthorization for application/vnd.api+json ContentType.
 type UpdateAuthorizationApplicationVndAPIPlusJSONRequestBody = UpdateAuthorization
 
-// CreateBulkImportApplicationVndAPIPlusJSONRequestBody defines body for CreateBulkImport for application/vnd.api+json ContentType.
-type CreateBulkImportApplicationVndAPIPlusJSONRequestBody = NewBulkImport
-
 // CreateCatalogChecklistTemplateApplicationVndAPIPlusJSONRequestBody defines body for CreateCatalogChecklistTemplate for application/vnd.api+json ContentType.
 type CreateCatalogChecklistTemplateApplicationVndAPIPlusJSONRequestBody = NewCatalogChecklistTemplate
 
@@ -67906,6 +68494,12 @@ type UpdateUserEmailAddressApplicationVndAPIPlusJSONRequestBody = UpdateUserEmai
 // CreateEnvironmentApplicationVndAPIPlusJSONRequestBody defines body for CreateEnvironment for application/vnd.api+json ContentType.
 type CreateEnvironmentApplicationVndAPIPlusJSONRequestBody = NewEnvironment
 
+// BulkDeleteEnvironmentsApplicationVndAPIPlusJSONRequestBody defines body for BulkDeleteEnvironments for application/vnd.api+json ContentType.
+type BulkDeleteEnvironmentsApplicationVndAPIPlusJSONRequestBody = BulkDestroyEnvironments
+
+// BulkUpsertEnvironmentsApplicationVndAPIPlusJSONRequestBody defines body for BulkUpsertEnvironments for application/vnd.api+json ContentType.
+type BulkUpsertEnvironmentsApplicationVndAPIPlusJSONRequestBody = BulkUpsertEnvironments
+
 // CreateEnvironmentCatalogPropertyApplicationVndAPIPlusJSONRequestBody defines body for CreateEnvironmentCatalogProperty for application/vnd.api+json ContentType.
 type CreateEnvironmentCatalogPropertyApplicationVndAPIPlusJSONRequestBody = NewCatalogProperty
 
@@ -67989,6 +68583,12 @@ type UpdateFormSetApplicationVndAPIPlusJSONRequestBody = UpdateFormSet
 
 // CreateFunctionalityApplicationVndAPIPlusJSONRequestBody defines body for CreateFunctionality for application/vnd.api+json ContentType.
 type CreateFunctionalityApplicationVndAPIPlusJSONRequestBody = NewFunctionality
+
+// BulkDeleteFunctionalitiesApplicationVndAPIPlusJSONRequestBody defines body for BulkDeleteFunctionalities for application/vnd.api+json ContentType.
+type BulkDeleteFunctionalitiesApplicationVndAPIPlusJSONRequestBody = BulkDestroyFunctionalities
+
+// BulkUpsertFunctionalitiesApplicationVndAPIPlusJSONRequestBody defines body for BulkUpsertFunctionalities for application/vnd.api+json ContentType.
+type BulkUpsertFunctionalitiesApplicationVndAPIPlusJSONRequestBody = BulkUpsertFunctionalities
 
 // CreateFunctionalityCatalogPropertyApplicationVndAPIPlusJSONRequestBody defines body for CreateFunctionalityCatalogProperty for application/vnd.api+json ContentType.
 type CreateFunctionalityCatalogPropertyApplicationVndAPIPlusJSONRequestBody = NewCatalogProperty
@@ -68261,6 +68861,12 @@ type UpdateSecretApplicationVndAPIPlusJSONRequestBody = UpdateSecret
 // CreateServiceApplicationVndAPIPlusJSONRequestBody defines body for CreateService for application/vnd.api+json ContentType.
 type CreateServiceApplicationVndAPIPlusJSONRequestBody = NewService
 
+// BulkDeleteServicesApplicationVndAPIPlusJSONRequestBody defines body for BulkDeleteServices for application/vnd.api+json ContentType.
+type BulkDeleteServicesApplicationVndAPIPlusJSONRequestBody = BulkDestroyServices
+
+// BulkUpsertServicesApplicationVndAPIPlusJSONRequestBody defines body for BulkUpsertServices for application/vnd.api+json ContentType.
+type BulkUpsertServicesApplicationVndAPIPlusJSONRequestBody = BulkUpsertServices
+
 // CreateServiceCatalogPropertyApplicationVndAPIPlusJSONRequestBody defines body for CreateServiceCatalogProperty for application/vnd.api+json ContentType.
 type CreateServiceCatalogPropertyApplicationVndAPIPlusJSONRequestBody = NewCatalogProperty
 
@@ -68299,6 +68905,12 @@ type UpdateSubStatusApplicationVndAPIPlusJSONRequestBody = UpdateSubStatus
 
 // CreateTeamApplicationVndAPIPlusJSONRequestBody defines body for CreateTeam for application/vnd.api+json ContentType.
 type CreateTeamApplicationVndAPIPlusJSONRequestBody = NewTeam
+
+// BulkDeleteGroupsApplicationVndAPIPlusJSONRequestBody defines body for BulkDeleteGroups for application/vnd.api+json ContentType.
+type BulkDeleteGroupsApplicationVndAPIPlusJSONRequestBody = BulkDestroyTeams
+
+// BulkUpsertGroupsApplicationVndAPIPlusJSONRequestBody defines body for BulkUpsertGroups for application/vnd.api+json ContentType.
+type BulkUpsertGroupsApplicationVndAPIPlusJSONRequestBody = BulkUpsertTeams
 
 // CreateGroupCatalogPropertyApplicationVndAPIPlusJSONRequestBody defines body for CreateGroupCatalogProperty for application/vnd.api+json ContentType.
 type CreateGroupCatalogPropertyApplicationVndAPIPlusJSONRequestBody = NewCatalogProperty
@@ -68992,6 +69604,192 @@ func (t BulkDestroyCatalogEntities) MarshalJSON() ([]byte, error) {
 }
 
 func (t *BulkDestroyCatalogEntities) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsBulkDestroyEnvironments0 returns the union data inside the BulkDestroyEnvironments as a BulkDestroyEnvironments0
+func (t BulkDestroyEnvironments) AsBulkDestroyEnvironments0() (BulkDestroyEnvironments0, error) {
+	var body BulkDestroyEnvironments0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromBulkDestroyEnvironments0 overwrites any union data inside the BulkDestroyEnvironments as the provided BulkDestroyEnvironments0
+func (t *BulkDestroyEnvironments) FromBulkDestroyEnvironments0(v BulkDestroyEnvironments0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeBulkDestroyEnvironments0 performs a merge with any union data inside the BulkDestroyEnvironments, using the provided BulkDestroyEnvironments0
+func (t *BulkDestroyEnvironments) MergeBulkDestroyEnvironments0(v BulkDestroyEnvironments0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsBulkDestroyEnvironments1 returns the union data inside the BulkDestroyEnvironments as a BulkDestroyEnvironments1
+func (t BulkDestroyEnvironments) AsBulkDestroyEnvironments1() (BulkDestroyEnvironments1, error) {
+	var body BulkDestroyEnvironments1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromBulkDestroyEnvironments1 overwrites any union data inside the BulkDestroyEnvironments as the provided BulkDestroyEnvironments1
+func (t *BulkDestroyEnvironments) FromBulkDestroyEnvironments1(v BulkDestroyEnvironments1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeBulkDestroyEnvironments1 performs a merge with any union data inside the BulkDestroyEnvironments, using the provided BulkDestroyEnvironments1
+func (t *BulkDestroyEnvironments) MergeBulkDestroyEnvironments1(v BulkDestroyEnvironments1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t BulkDestroyEnvironments) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *BulkDestroyEnvironments) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsBulkDestroyFunctionalities0 returns the union data inside the BulkDestroyFunctionalities as a BulkDestroyFunctionalities0
+func (t BulkDestroyFunctionalities) AsBulkDestroyFunctionalities0() (BulkDestroyFunctionalities0, error) {
+	var body BulkDestroyFunctionalities0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromBulkDestroyFunctionalities0 overwrites any union data inside the BulkDestroyFunctionalities as the provided BulkDestroyFunctionalities0
+func (t *BulkDestroyFunctionalities) FromBulkDestroyFunctionalities0(v BulkDestroyFunctionalities0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeBulkDestroyFunctionalities0 performs a merge with any union data inside the BulkDestroyFunctionalities, using the provided BulkDestroyFunctionalities0
+func (t *BulkDestroyFunctionalities) MergeBulkDestroyFunctionalities0(v BulkDestroyFunctionalities0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsBulkDestroyFunctionalities1 returns the union data inside the BulkDestroyFunctionalities as a BulkDestroyFunctionalities1
+func (t BulkDestroyFunctionalities) AsBulkDestroyFunctionalities1() (BulkDestroyFunctionalities1, error) {
+	var body BulkDestroyFunctionalities1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromBulkDestroyFunctionalities1 overwrites any union data inside the BulkDestroyFunctionalities as the provided BulkDestroyFunctionalities1
+func (t *BulkDestroyFunctionalities) FromBulkDestroyFunctionalities1(v BulkDestroyFunctionalities1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeBulkDestroyFunctionalities1 performs a merge with any union data inside the BulkDestroyFunctionalities, using the provided BulkDestroyFunctionalities1
+func (t *BulkDestroyFunctionalities) MergeBulkDestroyFunctionalities1(v BulkDestroyFunctionalities1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t BulkDestroyFunctionalities) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *BulkDestroyFunctionalities) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsBulkDestroyTeams0 returns the union data inside the BulkDestroyTeams as a BulkDestroyTeams0
+func (t BulkDestroyTeams) AsBulkDestroyTeams0() (BulkDestroyTeams0, error) {
+	var body BulkDestroyTeams0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromBulkDestroyTeams0 overwrites any union data inside the BulkDestroyTeams as the provided BulkDestroyTeams0
+func (t *BulkDestroyTeams) FromBulkDestroyTeams0(v BulkDestroyTeams0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeBulkDestroyTeams0 performs a merge with any union data inside the BulkDestroyTeams, using the provided BulkDestroyTeams0
+func (t *BulkDestroyTeams) MergeBulkDestroyTeams0(v BulkDestroyTeams0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsBulkDestroyTeams1 returns the union data inside the BulkDestroyTeams as a BulkDestroyTeams1
+func (t BulkDestroyTeams) AsBulkDestroyTeams1() (BulkDestroyTeams1, error) {
+	var body BulkDestroyTeams1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromBulkDestroyTeams1 overwrites any union data inside the BulkDestroyTeams as the provided BulkDestroyTeams1
+func (t *BulkDestroyTeams) FromBulkDestroyTeams1(v BulkDestroyTeams1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeBulkDestroyTeams1 performs a merge with any union data inside the BulkDestroyTeams, using the provided BulkDestroyTeams1
+func (t *BulkDestroyTeams) MergeBulkDestroyTeams1(v BulkDestroyTeams1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t BulkDestroyTeams) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *BulkDestroyTeams) UnmarshalJSON(b []byte) error {
 	err := t.union.UnmarshalJSON(b)
 	return err
 }
@@ -72370,6 +73168,32 @@ func (t *NewWorkflowTask_Data_Attributes_TaskParams) FromCreateJiraSubtaskTaskPa
 
 // MergeCreateJiraSubtaskTaskParams performs a merge with any union data inside the NewWorkflowTask_Data_Attributes_TaskParams, using the provided CreateJiraSubtaskTaskParams
 func (t *NewWorkflowTask_Data_Attributes_TaskParams) MergeCreateJiraSubtaskTaskParams(v CreateJiraSubtaskTaskParams) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsAttachRetrospectivePdfToJiraIssueTaskParams returns the union data inside the NewWorkflowTask_Data_Attributes_TaskParams as a AttachRetrospectivePdfToJiraIssueTaskParams
+func (t NewWorkflowTask_Data_Attributes_TaskParams) AsAttachRetrospectivePdfToJiraIssueTaskParams() (AttachRetrospectivePdfToJiraIssueTaskParams, error) {
+	var body AttachRetrospectivePdfToJiraIssueTaskParams
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromAttachRetrospectivePdfToJiraIssueTaskParams overwrites any union data inside the NewWorkflowTask_Data_Attributes_TaskParams as the provided AttachRetrospectivePdfToJiraIssueTaskParams
+func (t *NewWorkflowTask_Data_Attributes_TaskParams) FromAttachRetrospectivePdfToJiraIssueTaskParams(v AttachRetrospectivePdfToJiraIssueTaskParams) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeAttachRetrospectivePdfToJiraIssueTaskParams performs a merge with any union data inside the NewWorkflowTask_Data_Attributes_TaskParams, using the provided AttachRetrospectivePdfToJiraIssueTaskParams
+func (t *NewWorkflowTask_Data_Attributes_TaskParams) MergeAttachRetrospectivePdfToJiraIssueTaskParams(v AttachRetrospectivePdfToJiraIssueTaskParams) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -78157,6 +78981,32 @@ func (t *UpdateWorkflowTask_Data_Attributes_TaskParams) MergeCreateJiraSubtaskTa
 	return err
 }
 
+// AsAttachRetrospectivePdfToJiraIssueTaskParams returns the union data inside the UpdateWorkflowTask_Data_Attributes_TaskParams as a AttachRetrospectivePdfToJiraIssueTaskParams
+func (t UpdateWorkflowTask_Data_Attributes_TaskParams) AsAttachRetrospectivePdfToJiraIssueTaskParams() (AttachRetrospectivePdfToJiraIssueTaskParams, error) {
+	var body AttachRetrospectivePdfToJiraIssueTaskParams
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromAttachRetrospectivePdfToJiraIssueTaskParams overwrites any union data inside the UpdateWorkflowTask_Data_Attributes_TaskParams as the provided AttachRetrospectivePdfToJiraIssueTaskParams
+func (t *UpdateWorkflowTask_Data_Attributes_TaskParams) FromAttachRetrospectivePdfToJiraIssueTaskParams(v AttachRetrospectivePdfToJiraIssueTaskParams) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeAttachRetrospectivePdfToJiraIssueTaskParams performs a merge with any union data inside the UpdateWorkflowTask_Data_Attributes_TaskParams, using the provided AttachRetrospectivePdfToJiraIssueTaskParams
+func (t *UpdateWorkflowTask_Data_Attributes_TaskParams) MergeAttachRetrospectivePdfToJiraIssueTaskParams(v AttachRetrospectivePdfToJiraIssueTaskParams) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
 // AsCreateLinearIssueTaskParams returns the union data inside the UpdateWorkflowTask_Data_Attributes_TaskParams as a CreateLinearIssueTaskParams
 func (t UpdateWorkflowTask_Data_Attributes_TaskParams) AsCreateLinearIssueTaskParams() (CreateLinearIssueTaskParams, error) {
 	var body CreateLinearIssueTaskParams
@@ -82103,6 +82953,32 @@ func (t *WorkflowTask_TaskParams) MergeCreateJiraSubtaskTaskParams(v CreateJiraS
 	return err
 }
 
+// AsAttachRetrospectivePdfToJiraIssueTaskParams returns the union data inside the WorkflowTask_TaskParams as a AttachRetrospectivePdfToJiraIssueTaskParams
+func (t WorkflowTask_TaskParams) AsAttachRetrospectivePdfToJiraIssueTaskParams() (AttachRetrospectivePdfToJiraIssueTaskParams, error) {
+	var body AttachRetrospectivePdfToJiraIssueTaskParams
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromAttachRetrospectivePdfToJiraIssueTaskParams overwrites any union data inside the WorkflowTask_TaskParams as the provided AttachRetrospectivePdfToJiraIssueTaskParams
+func (t *WorkflowTask_TaskParams) FromAttachRetrospectivePdfToJiraIssueTaskParams(v AttachRetrospectivePdfToJiraIssueTaskParams) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeAttachRetrospectivePdfToJiraIssueTaskParams performs a merge with any union data inside the WorkflowTask_TaskParams, using the provided AttachRetrospectivePdfToJiraIssueTaskParams
+func (t *WorkflowTask_TaskParams) MergeAttachRetrospectivePdfToJiraIssueTaskParams(v AttachRetrospectivePdfToJiraIssueTaskParams) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
 // AsCreateLinearIssueTaskParams returns the union data inside the WorkflowTask_TaskParams as a CreateLinearIssueTaskParams
 func (t WorkflowTask_TaskParams) AsCreateLinearIssueTaskParams() (CreateLinearIssueTaskParams, error) {
 	var body CreateLinearIssueTaskParams
@@ -84915,6 +85791,502 @@ func (t *BulkUpsertCatalogEntities422ApplicationVndAPIPlusJSONResponseBody) Unma
 	return err
 }
 
+// AsErrorsList returns the union data inside the BulkDeleteEnvironments422ApplicationVndAPIPlusJSONResponseBody as a ErrorsList
+func (t BulkDeleteEnvironments422ApplicationVndAPIPlusJSONResponseBody) AsErrorsList() (ErrorsList, error) {
+	var body ErrorsList
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromErrorsList overwrites any union data inside the BulkDeleteEnvironments422ApplicationVndAPIPlusJSONResponseBody as the provided ErrorsList
+func (t *BulkDeleteEnvironments422ApplicationVndAPIPlusJSONResponseBody) FromErrorsList(v ErrorsList) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeErrorsList performs a merge with any union data inside the BulkDeleteEnvironments422ApplicationVndAPIPlusJSONResponseBody, using the provided ErrorsList
+func (t *BulkDeleteEnvironments422ApplicationVndAPIPlusJSONResponseBody) MergeErrorsList(v ErrorsList) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsBulkDestroyEnvironmentsResponse returns the union data inside the BulkDeleteEnvironments422ApplicationVndAPIPlusJSONResponseBody as a BulkDestroyEnvironmentsResponse
+func (t BulkDeleteEnvironments422ApplicationVndAPIPlusJSONResponseBody) AsBulkDestroyEnvironmentsResponse() (BulkDestroyEnvironmentsResponse, error) {
+	var body BulkDestroyEnvironmentsResponse
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromBulkDestroyEnvironmentsResponse overwrites any union data inside the BulkDeleteEnvironments422ApplicationVndAPIPlusJSONResponseBody as the provided BulkDestroyEnvironmentsResponse
+func (t *BulkDeleteEnvironments422ApplicationVndAPIPlusJSONResponseBody) FromBulkDestroyEnvironmentsResponse(v BulkDestroyEnvironmentsResponse) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeBulkDestroyEnvironmentsResponse performs a merge with any union data inside the BulkDeleteEnvironments422ApplicationVndAPIPlusJSONResponseBody, using the provided BulkDestroyEnvironmentsResponse
+func (t *BulkDeleteEnvironments422ApplicationVndAPIPlusJSONResponseBody) MergeBulkDestroyEnvironmentsResponse(v BulkDestroyEnvironmentsResponse) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t BulkDeleteEnvironments422ApplicationVndAPIPlusJSONResponseBody) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *BulkDeleteEnvironments422ApplicationVndAPIPlusJSONResponseBody) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsErrorsList returns the union data inside the BulkUpsertEnvironments422ApplicationVndAPIPlusJSONResponseBody as a ErrorsList
+func (t BulkUpsertEnvironments422ApplicationVndAPIPlusJSONResponseBody) AsErrorsList() (ErrorsList, error) {
+	var body ErrorsList
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromErrorsList overwrites any union data inside the BulkUpsertEnvironments422ApplicationVndAPIPlusJSONResponseBody as the provided ErrorsList
+func (t *BulkUpsertEnvironments422ApplicationVndAPIPlusJSONResponseBody) FromErrorsList(v ErrorsList) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeErrorsList performs a merge with any union data inside the BulkUpsertEnvironments422ApplicationVndAPIPlusJSONResponseBody, using the provided ErrorsList
+func (t *BulkUpsertEnvironments422ApplicationVndAPIPlusJSONResponseBody) MergeErrorsList(v ErrorsList) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsBulkUpsertEnvironmentsError returns the union data inside the BulkUpsertEnvironments422ApplicationVndAPIPlusJSONResponseBody as a BulkUpsertEnvironmentsError
+func (t BulkUpsertEnvironments422ApplicationVndAPIPlusJSONResponseBody) AsBulkUpsertEnvironmentsError() (BulkUpsertEnvironmentsError, error) {
+	var body BulkUpsertEnvironmentsError
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromBulkUpsertEnvironmentsError overwrites any union data inside the BulkUpsertEnvironments422ApplicationVndAPIPlusJSONResponseBody as the provided BulkUpsertEnvironmentsError
+func (t *BulkUpsertEnvironments422ApplicationVndAPIPlusJSONResponseBody) FromBulkUpsertEnvironmentsError(v BulkUpsertEnvironmentsError) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeBulkUpsertEnvironmentsError performs a merge with any union data inside the BulkUpsertEnvironments422ApplicationVndAPIPlusJSONResponseBody, using the provided BulkUpsertEnvironmentsError
+func (t *BulkUpsertEnvironments422ApplicationVndAPIPlusJSONResponseBody) MergeBulkUpsertEnvironmentsError(v BulkUpsertEnvironmentsError) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t BulkUpsertEnvironments422ApplicationVndAPIPlusJSONResponseBody) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *BulkUpsertEnvironments422ApplicationVndAPIPlusJSONResponseBody) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsErrorsList returns the union data inside the BulkDeleteFunctionalities422ApplicationVndAPIPlusJSONResponseBody as a ErrorsList
+func (t BulkDeleteFunctionalities422ApplicationVndAPIPlusJSONResponseBody) AsErrorsList() (ErrorsList, error) {
+	var body ErrorsList
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromErrorsList overwrites any union data inside the BulkDeleteFunctionalities422ApplicationVndAPIPlusJSONResponseBody as the provided ErrorsList
+func (t *BulkDeleteFunctionalities422ApplicationVndAPIPlusJSONResponseBody) FromErrorsList(v ErrorsList) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeErrorsList performs a merge with any union data inside the BulkDeleteFunctionalities422ApplicationVndAPIPlusJSONResponseBody, using the provided ErrorsList
+func (t *BulkDeleteFunctionalities422ApplicationVndAPIPlusJSONResponseBody) MergeErrorsList(v ErrorsList) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsBulkDestroyFunctionalitiesResponse returns the union data inside the BulkDeleteFunctionalities422ApplicationVndAPIPlusJSONResponseBody as a BulkDestroyFunctionalitiesResponse
+func (t BulkDeleteFunctionalities422ApplicationVndAPIPlusJSONResponseBody) AsBulkDestroyFunctionalitiesResponse() (BulkDestroyFunctionalitiesResponse, error) {
+	var body BulkDestroyFunctionalitiesResponse
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromBulkDestroyFunctionalitiesResponse overwrites any union data inside the BulkDeleteFunctionalities422ApplicationVndAPIPlusJSONResponseBody as the provided BulkDestroyFunctionalitiesResponse
+func (t *BulkDeleteFunctionalities422ApplicationVndAPIPlusJSONResponseBody) FromBulkDestroyFunctionalitiesResponse(v BulkDestroyFunctionalitiesResponse) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeBulkDestroyFunctionalitiesResponse performs a merge with any union data inside the BulkDeleteFunctionalities422ApplicationVndAPIPlusJSONResponseBody, using the provided BulkDestroyFunctionalitiesResponse
+func (t *BulkDeleteFunctionalities422ApplicationVndAPIPlusJSONResponseBody) MergeBulkDestroyFunctionalitiesResponse(v BulkDestroyFunctionalitiesResponse) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t BulkDeleteFunctionalities422ApplicationVndAPIPlusJSONResponseBody) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *BulkDeleteFunctionalities422ApplicationVndAPIPlusJSONResponseBody) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsErrorsList returns the union data inside the BulkUpsertFunctionalities422ApplicationVndAPIPlusJSONResponseBody as a ErrorsList
+func (t BulkUpsertFunctionalities422ApplicationVndAPIPlusJSONResponseBody) AsErrorsList() (ErrorsList, error) {
+	var body ErrorsList
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromErrorsList overwrites any union data inside the BulkUpsertFunctionalities422ApplicationVndAPIPlusJSONResponseBody as the provided ErrorsList
+func (t *BulkUpsertFunctionalities422ApplicationVndAPIPlusJSONResponseBody) FromErrorsList(v ErrorsList) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeErrorsList performs a merge with any union data inside the BulkUpsertFunctionalities422ApplicationVndAPIPlusJSONResponseBody, using the provided ErrorsList
+func (t *BulkUpsertFunctionalities422ApplicationVndAPIPlusJSONResponseBody) MergeErrorsList(v ErrorsList) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsBulkUpsertFunctionalitiesError returns the union data inside the BulkUpsertFunctionalities422ApplicationVndAPIPlusJSONResponseBody as a BulkUpsertFunctionalitiesError
+func (t BulkUpsertFunctionalities422ApplicationVndAPIPlusJSONResponseBody) AsBulkUpsertFunctionalitiesError() (BulkUpsertFunctionalitiesError, error) {
+	var body BulkUpsertFunctionalitiesError
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromBulkUpsertFunctionalitiesError overwrites any union data inside the BulkUpsertFunctionalities422ApplicationVndAPIPlusJSONResponseBody as the provided BulkUpsertFunctionalitiesError
+func (t *BulkUpsertFunctionalities422ApplicationVndAPIPlusJSONResponseBody) FromBulkUpsertFunctionalitiesError(v BulkUpsertFunctionalitiesError) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeBulkUpsertFunctionalitiesError performs a merge with any union data inside the BulkUpsertFunctionalities422ApplicationVndAPIPlusJSONResponseBody, using the provided BulkUpsertFunctionalitiesError
+func (t *BulkUpsertFunctionalities422ApplicationVndAPIPlusJSONResponseBody) MergeBulkUpsertFunctionalitiesError(v BulkUpsertFunctionalitiesError) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t BulkUpsertFunctionalities422ApplicationVndAPIPlusJSONResponseBody) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *BulkUpsertFunctionalities422ApplicationVndAPIPlusJSONResponseBody) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsErrorsList returns the union data inside the BulkDeleteServices422ApplicationVndAPIPlusJSONResponseBody as a ErrorsList
+func (t BulkDeleteServices422ApplicationVndAPIPlusJSONResponseBody) AsErrorsList() (ErrorsList, error) {
+	var body ErrorsList
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromErrorsList overwrites any union data inside the BulkDeleteServices422ApplicationVndAPIPlusJSONResponseBody as the provided ErrorsList
+func (t *BulkDeleteServices422ApplicationVndAPIPlusJSONResponseBody) FromErrorsList(v ErrorsList) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeErrorsList performs a merge with any union data inside the BulkDeleteServices422ApplicationVndAPIPlusJSONResponseBody, using the provided ErrorsList
+func (t *BulkDeleteServices422ApplicationVndAPIPlusJSONResponseBody) MergeErrorsList(v ErrorsList) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsBulkDestroyServicesResponse returns the union data inside the BulkDeleteServices422ApplicationVndAPIPlusJSONResponseBody as a BulkDestroyServicesResponse
+func (t BulkDeleteServices422ApplicationVndAPIPlusJSONResponseBody) AsBulkDestroyServicesResponse() (BulkDestroyServicesResponse, error) {
+	var body BulkDestroyServicesResponse
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromBulkDestroyServicesResponse overwrites any union data inside the BulkDeleteServices422ApplicationVndAPIPlusJSONResponseBody as the provided BulkDestroyServicesResponse
+func (t *BulkDeleteServices422ApplicationVndAPIPlusJSONResponseBody) FromBulkDestroyServicesResponse(v BulkDestroyServicesResponse) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeBulkDestroyServicesResponse performs a merge with any union data inside the BulkDeleteServices422ApplicationVndAPIPlusJSONResponseBody, using the provided BulkDestroyServicesResponse
+func (t *BulkDeleteServices422ApplicationVndAPIPlusJSONResponseBody) MergeBulkDestroyServicesResponse(v BulkDestroyServicesResponse) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t BulkDeleteServices422ApplicationVndAPIPlusJSONResponseBody) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *BulkDeleteServices422ApplicationVndAPIPlusJSONResponseBody) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsErrorsList returns the union data inside the BulkUpsertServices422ApplicationVndAPIPlusJSONResponseBody as a ErrorsList
+func (t BulkUpsertServices422ApplicationVndAPIPlusJSONResponseBody) AsErrorsList() (ErrorsList, error) {
+	var body ErrorsList
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromErrorsList overwrites any union data inside the BulkUpsertServices422ApplicationVndAPIPlusJSONResponseBody as the provided ErrorsList
+func (t *BulkUpsertServices422ApplicationVndAPIPlusJSONResponseBody) FromErrorsList(v ErrorsList) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeErrorsList performs a merge with any union data inside the BulkUpsertServices422ApplicationVndAPIPlusJSONResponseBody, using the provided ErrorsList
+func (t *BulkUpsertServices422ApplicationVndAPIPlusJSONResponseBody) MergeErrorsList(v ErrorsList) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsBulkUpsertServicesError returns the union data inside the BulkUpsertServices422ApplicationVndAPIPlusJSONResponseBody as a BulkUpsertServicesError
+func (t BulkUpsertServices422ApplicationVndAPIPlusJSONResponseBody) AsBulkUpsertServicesError() (BulkUpsertServicesError, error) {
+	var body BulkUpsertServicesError
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromBulkUpsertServicesError overwrites any union data inside the BulkUpsertServices422ApplicationVndAPIPlusJSONResponseBody as the provided BulkUpsertServicesError
+func (t *BulkUpsertServices422ApplicationVndAPIPlusJSONResponseBody) FromBulkUpsertServicesError(v BulkUpsertServicesError) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeBulkUpsertServicesError performs a merge with any union data inside the BulkUpsertServices422ApplicationVndAPIPlusJSONResponseBody, using the provided BulkUpsertServicesError
+func (t *BulkUpsertServices422ApplicationVndAPIPlusJSONResponseBody) MergeBulkUpsertServicesError(v BulkUpsertServicesError) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t BulkUpsertServices422ApplicationVndAPIPlusJSONResponseBody) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *BulkUpsertServices422ApplicationVndAPIPlusJSONResponseBody) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsErrorsList returns the union data inside the BulkDeleteGroups422ApplicationVndAPIPlusJSONResponseBody as a ErrorsList
+func (t BulkDeleteGroups422ApplicationVndAPIPlusJSONResponseBody) AsErrorsList() (ErrorsList, error) {
+	var body ErrorsList
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromErrorsList overwrites any union data inside the BulkDeleteGroups422ApplicationVndAPIPlusJSONResponseBody as the provided ErrorsList
+func (t *BulkDeleteGroups422ApplicationVndAPIPlusJSONResponseBody) FromErrorsList(v ErrorsList) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeErrorsList performs a merge with any union data inside the BulkDeleteGroups422ApplicationVndAPIPlusJSONResponseBody, using the provided ErrorsList
+func (t *BulkDeleteGroups422ApplicationVndAPIPlusJSONResponseBody) MergeErrorsList(v ErrorsList) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsBulkDestroyTeamsResponse returns the union data inside the BulkDeleteGroups422ApplicationVndAPIPlusJSONResponseBody as a BulkDestroyTeamsResponse
+func (t BulkDeleteGroups422ApplicationVndAPIPlusJSONResponseBody) AsBulkDestroyTeamsResponse() (BulkDestroyTeamsResponse, error) {
+	var body BulkDestroyTeamsResponse
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromBulkDestroyTeamsResponse overwrites any union data inside the BulkDeleteGroups422ApplicationVndAPIPlusJSONResponseBody as the provided BulkDestroyTeamsResponse
+func (t *BulkDeleteGroups422ApplicationVndAPIPlusJSONResponseBody) FromBulkDestroyTeamsResponse(v BulkDestroyTeamsResponse) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeBulkDestroyTeamsResponse performs a merge with any union data inside the BulkDeleteGroups422ApplicationVndAPIPlusJSONResponseBody, using the provided BulkDestroyTeamsResponse
+func (t *BulkDeleteGroups422ApplicationVndAPIPlusJSONResponseBody) MergeBulkDestroyTeamsResponse(v BulkDestroyTeamsResponse) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t BulkDeleteGroups422ApplicationVndAPIPlusJSONResponseBody) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *BulkDeleteGroups422ApplicationVndAPIPlusJSONResponseBody) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsErrorsList returns the union data inside the BulkUpsertGroups422ApplicationVndAPIPlusJSONResponseBody as a ErrorsList
+func (t BulkUpsertGroups422ApplicationVndAPIPlusJSONResponseBody) AsErrorsList() (ErrorsList, error) {
+	var body ErrorsList
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromErrorsList overwrites any union data inside the BulkUpsertGroups422ApplicationVndAPIPlusJSONResponseBody as the provided ErrorsList
+func (t *BulkUpsertGroups422ApplicationVndAPIPlusJSONResponseBody) FromErrorsList(v ErrorsList) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeErrorsList performs a merge with any union data inside the BulkUpsertGroups422ApplicationVndAPIPlusJSONResponseBody, using the provided ErrorsList
+func (t *BulkUpsertGroups422ApplicationVndAPIPlusJSONResponseBody) MergeErrorsList(v ErrorsList) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsBulkUpsertTeamsError returns the union data inside the BulkUpsertGroups422ApplicationVndAPIPlusJSONResponseBody as a BulkUpsertTeamsError
+func (t BulkUpsertGroups422ApplicationVndAPIPlusJSONResponseBody) AsBulkUpsertTeamsError() (BulkUpsertTeamsError, error) {
+	var body BulkUpsertTeamsError
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromBulkUpsertTeamsError overwrites any union data inside the BulkUpsertGroups422ApplicationVndAPIPlusJSONResponseBody as the provided BulkUpsertTeamsError
+func (t *BulkUpsertGroups422ApplicationVndAPIPlusJSONResponseBody) FromBulkUpsertTeamsError(v BulkUpsertTeamsError) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeBulkUpsertTeamsError performs a merge with any union data inside the BulkUpsertGroups422ApplicationVndAPIPlusJSONResponseBody, using the provided BulkUpsertTeamsError
+func (t *BulkUpsertGroups422ApplicationVndAPIPlusJSONResponseBody) MergeBulkUpsertTeamsError(v BulkUpsertTeamsError) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t BulkUpsertGroups422ApplicationVndAPIPlusJSONResponseBody) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *BulkUpsertGroups422ApplicationVndAPIPlusJSONResponseBody) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
 // RequestEditorFn is the function signature for the RequestEditor callback function
 type RequestEditorFn func(ctx context.Context, req *http.Request) error
 
@@ -85815,36 +87187,6 @@ type ClientInterface interface {
 	//
 	// Corresponds with PUT /v1/authorizations/{id} (the `UpdateAuthorization` operationId).
 	UpdateAuthorizationWithApplicationVndAPIPlusJSONBody(ctx context.Context, id ID, body UpdateAuthorizationApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateBulkImportWithBody Create a bulk import
-	//
-	// Create a new bulk import for incidents. Requires global API key authentication.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v1/bulk_imports (the `CreateBulkImport` operationId).
-	CreateBulkImportWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateBulkImportWithApplicationVndAPIPlusJSONBody Create a bulk import
-	//
-	// Create a new bulk import for incidents. Requires global API key authentication.
-	//
-	// Takes a body of the `application/vnd.api+json` content type.
-	//
-	// Corresponds with POST /v1/bulk_imports (the `CreateBulkImport` operationId).
-	CreateBulkImportWithApplicationVndAPIPlusJSONBody(ctx context.Context, body CreateBulkImportApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetBulkImport Get bulk import status
-	//
-	// Retrieves the current status of a bulk import job.
-	//
-	// **Use this endpoint to:**
-	// - Poll for import progress
-	// - Check validation errors if status is `validation_failed`
-	// - Get final results when status is `completed` or `failed`
-	//
-	// Corresponds with GET /v1/bulk_imports/{id} (the `GetBulkImport` operationId).
-	GetBulkImport(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// ListCatalogChecklistTemplates List catalog checklist templates
 	//
@@ -86945,6 +88287,42 @@ type ClientInterface interface {
 	// Corresponds with POST /v1/environments (the `CreateEnvironment` operationId).
 	CreateEnvironmentWithApplicationVndAPIPlusJSONBody(ctx context.Context, body CreateEnvironmentApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
+	// BulkDeleteEnvironmentsWithBody Bulk delete Environments
+	//
+	// Delete environments by external_id list, or prune by managed_by source. Two mutually exclusive modes.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /v1/environments/bulk_delete (the `BulkDeleteEnvironments` operationId).
+	BulkDeleteEnvironmentsWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// BulkDeleteEnvironmentsWithApplicationVndAPIPlusJSONBody Bulk delete Environments
+	//
+	// Delete environments by external_id list, or prune by managed_by source. Two mutually exclusive modes.
+	//
+	// Takes a body of the `application/vnd.api+json` content type.
+	//
+	// Corresponds with POST /v1/environments/bulk_delete (the `BulkDeleteEnvironments` operationId).
+	BulkDeleteEnvironmentsWithApplicationVndAPIPlusJSONBody(ctx context.Context, body BulkDeleteEnvironmentsApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// BulkUpsertEnvironmentsWithBody Bulk upsert Environments
+	//
+	// Create or update multiple environments by external_id. Only attributes present in the payload are written (managed-fields semantics). Transactional: all succeed or all fail. Requires an API key with both create and update capability across the resource scope (team/org-scoped); record-scoped principals cannot use this endpoint (they receive 404), which also prevents the create-vs-update branch from leaking whether an external_id exists.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /v1/environments/bulk_upsert (the `BulkUpsertEnvironments` operationId).
+	BulkUpsertEnvironmentsWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// BulkUpsertEnvironmentsWithApplicationVndAPIPlusJSONBody Bulk upsert Environments
+	//
+	// Create or update multiple environments by external_id. Only attributes present in the payload are written (managed-fields semantics). Transactional: all succeed or all fail. Requires an API key with both create and update capability across the resource scope (team/org-scoped); record-scoped principals cannot use this endpoint (they receive 404), which also prevents the create-vs-update branch from leaking whether an external_id exists.
+	//
+	// Takes a body of the `application/vnd.api+json` content type.
+	//
+	// Corresponds with POST /v1/environments/bulk_upsert (the `BulkUpsertEnvironments` operationId).
+	BulkUpsertEnvironmentsWithApplicationVndAPIPlusJSONBody(ctx context.Context, body BulkUpsertEnvironmentsApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
 	// ListEnvironmentCatalogProperties List Catalog Properties
 	//
 	// List Environment Catalog Properties.
@@ -87718,6 +89096,42 @@ type ClientInterface interface {
 	//
 	// Corresponds with POST /v1/functionalities (the `CreateFunctionality` operationId).
 	CreateFunctionalityWithApplicationVndAPIPlusJSONBody(ctx context.Context, body CreateFunctionalityApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// BulkDeleteFunctionalitiesWithBody Bulk delete Functionalities
+	//
+	// Delete functionalities by external_id list, or prune by managed_by source. Two mutually exclusive modes.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /v1/functionalities/bulk_delete (the `BulkDeleteFunctionalities` operationId).
+	BulkDeleteFunctionalitiesWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// BulkDeleteFunctionalitiesWithApplicationVndAPIPlusJSONBody Bulk delete Functionalities
+	//
+	// Delete functionalities by external_id list, or prune by managed_by source. Two mutually exclusive modes.
+	//
+	// Takes a body of the `application/vnd.api+json` content type.
+	//
+	// Corresponds with POST /v1/functionalities/bulk_delete (the `BulkDeleteFunctionalities` operationId).
+	BulkDeleteFunctionalitiesWithApplicationVndAPIPlusJSONBody(ctx context.Context, body BulkDeleteFunctionalitiesApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// BulkUpsertFunctionalitiesWithBody Bulk upsert Functionalities
+	//
+	// Create or update multiple functionalities by external_id. Only attributes present in the payload are written (managed-fields semantics). Transactional: all succeed or all fail. Requires an API key with both create and update capability across the resource scope (team/org-scoped); record-scoped principals cannot use this endpoint (they receive 404), which also prevents the create-vs-update branch from leaking whether an external_id exists.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /v1/functionalities/bulk_upsert (the `BulkUpsertFunctionalities` operationId).
+	BulkUpsertFunctionalitiesWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// BulkUpsertFunctionalitiesWithApplicationVndAPIPlusJSONBody Bulk upsert Functionalities
+	//
+	// Create or update multiple functionalities by external_id. Only attributes present in the payload are written (managed-fields semantics). Transactional: all succeed or all fail. Requires an API key with both create and update capability across the resource scope (team/org-scoped); record-scoped principals cannot use this endpoint (they receive 404), which also prevents the create-vs-update branch from leaking whether an external_id exists.
+	//
+	// Takes a body of the `application/vnd.api+json` content type.
+	//
+	// Corresponds with POST /v1/functionalities/bulk_upsert (the `BulkUpsertFunctionalities` operationId).
+	BulkUpsertFunctionalitiesWithApplicationVndAPIPlusJSONBody(ctx context.Context, body BulkUpsertFunctionalitiesApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// ListFunctionalityCatalogProperties List Catalog Properties
 	//
@@ -90176,6 +91590,42 @@ type ClientInterface interface {
 	// Corresponds with POST /v1/services (the `CreateService` operationId).
 	CreateServiceWithApplicationVndAPIPlusJSONBody(ctx context.Context, body CreateServiceApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
+	// BulkDeleteServicesWithBody Bulk delete Services
+	//
+	// Delete services by external_id list. (Prune-by-managed_by is not available for services yet — the managed_by column is being migrated to the enum type.)
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /v1/services/bulk_delete (the `BulkDeleteServices` operationId).
+	BulkDeleteServicesWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// BulkDeleteServicesWithApplicationVndAPIPlusJSONBody Bulk delete Services
+	//
+	// Delete services by external_id list. (Prune-by-managed_by is not available for services yet — the managed_by column is being migrated to the enum type.)
+	//
+	// Takes a body of the `application/vnd.api+json` content type.
+	//
+	// Corresponds with POST /v1/services/bulk_delete (the `BulkDeleteServices` operationId).
+	BulkDeleteServicesWithApplicationVndAPIPlusJSONBody(ctx context.Context, body BulkDeleteServicesApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// BulkUpsertServicesWithBody Bulk upsert Services
+	//
+	// Create or update multiple services by external_id. Only attributes present in the payload are written (managed-fields semantics). Transactional: all succeed or all fail. Requires an API key with both create and update capability across the resource scope (team/org-scoped); record-scoped principals cannot use this endpoint (they receive 404), which also prevents the create-vs-update branch from leaking whether an external_id exists.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /v1/services/bulk_upsert (the `BulkUpsertServices` operationId).
+	BulkUpsertServicesWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// BulkUpsertServicesWithApplicationVndAPIPlusJSONBody Bulk upsert Services
+	//
+	// Create or update multiple services by external_id. Only attributes present in the payload are written (managed-fields semantics). Transactional: all succeed or all fail. Requires an API key with both create and update capability across the resource scope (team/org-scoped); record-scoped principals cannot use this endpoint (they receive 404), which also prevents the create-vs-update branch from leaking whether an external_id exists.
+	//
+	// Takes a body of the `application/vnd.api+json` content type.
+	//
+	// Corresponds with POST /v1/services/bulk_upsert (the `BulkUpsertServices` operationId).
+	BulkUpsertServicesWithApplicationVndAPIPlusJSONBody(ctx context.Context, body BulkUpsertServicesApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
 	// ListServiceCatalogProperties List Catalog Properties
 	//
 	// List Service Catalog Properties.
@@ -90571,6 +92021,42 @@ type ClientInterface interface {
 	//
 	// Corresponds with POST /v1/teams (the `CreateTeam` operationId).
 	CreateTeamWithApplicationVndAPIPlusJSONBody(ctx context.Context, body CreateTeamApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// BulkDeleteGroupsWithBody Bulk delete Teams
+	//
+	// Delete teams by external_id list, or prune by managed_by source. Two mutually exclusive modes.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /v1/teams/bulk_delete (the `BulkDeleteGroups` operationId).
+	BulkDeleteGroupsWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// BulkDeleteGroupsWithApplicationVndAPIPlusJSONBody Bulk delete Teams
+	//
+	// Delete teams by external_id list, or prune by managed_by source. Two mutually exclusive modes.
+	//
+	// Takes a body of the `application/vnd.api+json` content type.
+	//
+	// Corresponds with POST /v1/teams/bulk_delete (the `BulkDeleteGroups` operationId).
+	BulkDeleteGroupsWithApplicationVndAPIPlusJSONBody(ctx context.Context, body BulkDeleteGroupsApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// BulkUpsertGroupsWithBody Bulk upsert Teams
+	//
+	// Create or update multiple teams by external_id. Only attributes present in the payload are written (managed-fields semantics). Transactional: all succeed or all fail. Requires an API key with both create and update capability across the resource scope (team/org-scoped); record-scoped principals cannot use this endpoint (they receive 404), which also prevents the create-vs-update branch from leaking whether an external_id exists.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /v1/teams/bulk_upsert (the `BulkUpsertGroups` operationId).
+	BulkUpsertGroupsWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// BulkUpsertGroupsWithApplicationVndAPIPlusJSONBody Bulk upsert Teams
+	//
+	// Create or update multiple teams by external_id. Only attributes present in the payload are written (managed-fields semantics). Transactional: all succeed or all fail. Requires an API key with both create and update capability across the resource scope (team/org-scoped); record-scoped principals cannot use this endpoint (they receive 404), which also prevents the create-vs-update branch from leaking whether an external_id exists.
+	//
+	// Takes a body of the `application/vnd.api+json` content type.
+	//
+	// Corresponds with POST /v1/teams/bulk_upsert (the `BulkUpsertGroups` operationId).
+	BulkUpsertGroupsWithApplicationVndAPIPlusJSONBody(ctx context.Context, body BulkUpsertGroupsApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// ListGroupCatalogProperties List Catalog Properties
 	//
@@ -92960,66 +94446,6 @@ func (c *Client) UpdateAuthorizationWithBody(ctx context.Context, id ID, content
 // Corresponds with PUT /v1/authorizations/{id} (the `UpdateAuthorization` operationId).
 func (c *Client) UpdateAuthorizationWithApplicationVndAPIPlusJSONBody(ctx context.Context, id ID, body UpdateAuthorizationApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewUpdateAuthorizationRequestWithApplicationVndAPIPlusJSONBody(c.Server, id, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// CreateBulkImportWithBody Create a bulk import
-//
-// Create a new bulk import for incidents. Requires global API key authentication.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with POST /v1/bulk_imports (the `CreateBulkImport` operationId).
-func (c *Client) CreateBulkImportWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateBulkImportRequestWithBody(c.Server, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// CreateBulkImportWithApplicationVndAPIPlusJSONBody Create a bulk import
-//
-// Create a new bulk import for incidents. Requires global API key authentication.
-//
-// Takes a body of the `application/vnd.api+json` content type.
-//
-// Corresponds with POST /v1/bulk_imports (the `CreateBulkImport` operationId).
-func (c *Client) CreateBulkImportWithApplicationVndAPIPlusJSONBody(ctx context.Context, body CreateBulkImportApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateBulkImportRequestWithApplicationVndAPIPlusJSONBody(c.Server, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// GetBulkImport Get bulk import status
-//
-// Retrieves the current status of a bulk import job.
-//
-// **Use this endpoint to:**
-// - Poll for import progress
-// - Check validation errors if status is `validation_failed`
-// - Get final results when status is `completed` or `failed`
-//
-// Corresponds with GET /v1/bulk_imports/{id} (the `GetBulkImport` operationId).
-func (c *Client) GetBulkImport(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetBulkImportRequest(c.Server, id)
 	if err != nil {
 		return nil, err
 	}
@@ -95518,6 +96944,82 @@ func (c *Client) CreateEnvironmentWithApplicationVndAPIPlusJSONBody(ctx context.
 	return c.Client.Do(req)
 }
 
+// BulkDeleteEnvironmentsWithBody Bulk delete Environments
+//
+// Delete environments by external_id list, or prune by managed_by source. Two mutually exclusive modes.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/environments/bulk_delete (the `BulkDeleteEnvironments` operationId).
+func (c *Client) BulkDeleteEnvironmentsWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBulkDeleteEnvironmentsRequestWithBody(c.Server, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// BulkDeleteEnvironmentsWithApplicationVndAPIPlusJSONBody Bulk delete Environments
+//
+// Delete environments by external_id list, or prune by managed_by source. Two mutually exclusive modes.
+//
+// Takes a body of the `application/vnd.api+json` content type.
+//
+// Corresponds with POST /v1/environments/bulk_delete (the `BulkDeleteEnvironments` operationId).
+func (c *Client) BulkDeleteEnvironmentsWithApplicationVndAPIPlusJSONBody(ctx context.Context, body BulkDeleteEnvironmentsApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBulkDeleteEnvironmentsRequestWithApplicationVndAPIPlusJSONBody(c.Server, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// BulkUpsertEnvironmentsWithBody Bulk upsert Environments
+//
+// Create or update multiple environments by external_id. Only attributes present in the payload are written (managed-fields semantics). Transactional: all succeed or all fail. Requires an API key with both create and update capability across the resource scope (team/org-scoped); record-scoped principals cannot use this endpoint (they receive 404), which also prevents the create-vs-update branch from leaking whether an external_id exists.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/environments/bulk_upsert (the `BulkUpsertEnvironments` operationId).
+func (c *Client) BulkUpsertEnvironmentsWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBulkUpsertEnvironmentsRequestWithBody(c.Server, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// BulkUpsertEnvironmentsWithApplicationVndAPIPlusJSONBody Bulk upsert Environments
+//
+// Create or update multiple environments by external_id. Only attributes present in the payload are written (managed-fields semantics). Transactional: all succeed or all fail. Requires an API key with both create and update capability across the resource scope (team/org-scoped); record-scoped principals cannot use this endpoint (they receive 404), which also prevents the create-vs-update branch from leaking whether an external_id exists.
+//
+// Takes a body of the `application/vnd.api+json` content type.
+//
+// Corresponds with POST /v1/environments/bulk_upsert (the `BulkUpsertEnvironments` operationId).
+func (c *Client) BulkUpsertEnvironmentsWithApplicationVndAPIPlusJSONBody(ctx context.Context, body BulkUpsertEnvironmentsApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBulkUpsertEnvironmentsRequestWithApplicationVndAPIPlusJSONBody(c.Server, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
 // ListEnvironmentCatalogProperties List Catalog Properties
 //
 // List Environment Catalog Properties.
@@ -97242,6 +98744,82 @@ func (c *Client) CreateFunctionalityWithBody(ctx context.Context, contentType st
 // Corresponds with POST /v1/functionalities (the `CreateFunctionality` operationId).
 func (c *Client) CreateFunctionalityWithApplicationVndAPIPlusJSONBody(ctx context.Context, body CreateFunctionalityApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewCreateFunctionalityRequestWithApplicationVndAPIPlusJSONBody(c.Server, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// BulkDeleteFunctionalitiesWithBody Bulk delete Functionalities
+//
+// Delete functionalities by external_id list, or prune by managed_by source. Two mutually exclusive modes.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/functionalities/bulk_delete (the `BulkDeleteFunctionalities` operationId).
+func (c *Client) BulkDeleteFunctionalitiesWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBulkDeleteFunctionalitiesRequestWithBody(c.Server, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// BulkDeleteFunctionalitiesWithApplicationVndAPIPlusJSONBody Bulk delete Functionalities
+//
+// Delete functionalities by external_id list, or prune by managed_by source. Two mutually exclusive modes.
+//
+// Takes a body of the `application/vnd.api+json` content type.
+//
+// Corresponds with POST /v1/functionalities/bulk_delete (the `BulkDeleteFunctionalities` operationId).
+func (c *Client) BulkDeleteFunctionalitiesWithApplicationVndAPIPlusJSONBody(ctx context.Context, body BulkDeleteFunctionalitiesApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBulkDeleteFunctionalitiesRequestWithApplicationVndAPIPlusJSONBody(c.Server, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// BulkUpsertFunctionalitiesWithBody Bulk upsert Functionalities
+//
+// Create or update multiple functionalities by external_id. Only attributes present in the payload are written (managed-fields semantics). Transactional: all succeed or all fail. Requires an API key with both create and update capability across the resource scope (team/org-scoped); record-scoped principals cannot use this endpoint (they receive 404), which also prevents the create-vs-update branch from leaking whether an external_id exists.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/functionalities/bulk_upsert (the `BulkUpsertFunctionalities` operationId).
+func (c *Client) BulkUpsertFunctionalitiesWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBulkUpsertFunctionalitiesRequestWithBody(c.Server, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// BulkUpsertFunctionalitiesWithApplicationVndAPIPlusJSONBody Bulk upsert Functionalities
+//
+// Create or update multiple functionalities by external_id. Only attributes present in the payload are written (managed-fields semantics). Transactional: all succeed or all fail. Requires an API key with both create and update capability across the resource scope (team/org-scoped); record-scoped principals cannot use this endpoint (they receive 404), which also prevents the create-vs-update branch from leaking whether an external_id exists.
+//
+// Takes a body of the `application/vnd.api+json` content type.
+//
+// Corresponds with POST /v1/functionalities/bulk_upsert (the `BulkUpsertFunctionalities` operationId).
+func (c *Client) BulkUpsertFunctionalitiesWithApplicationVndAPIPlusJSONBody(ctx context.Context, body BulkUpsertFunctionalitiesApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBulkUpsertFunctionalitiesRequestWithApplicationVndAPIPlusJSONBody(c.Server, body)
 	if err != nil {
 		return nil, err
 	}
@@ -102812,6 +104390,82 @@ func (c *Client) CreateServiceWithApplicationVndAPIPlusJSONBody(ctx context.Cont
 	return c.Client.Do(req)
 }
 
+// BulkDeleteServicesWithBody Bulk delete Services
+//
+// Delete services by external_id list. (Prune-by-managed_by is not available for services yet — the managed_by column is being migrated to the enum type.)
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/services/bulk_delete (the `BulkDeleteServices` operationId).
+func (c *Client) BulkDeleteServicesWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBulkDeleteServicesRequestWithBody(c.Server, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// BulkDeleteServicesWithApplicationVndAPIPlusJSONBody Bulk delete Services
+//
+// Delete services by external_id list. (Prune-by-managed_by is not available for services yet — the managed_by column is being migrated to the enum type.)
+//
+// Takes a body of the `application/vnd.api+json` content type.
+//
+// Corresponds with POST /v1/services/bulk_delete (the `BulkDeleteServices` operationId).
+func (c *Client) BulkDeleteServicesWithApplicationVndAPIPlusJSONBody(ctx context.Context, body BulkDeleteServicesApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBulkDeleteServicesRequestWithApplicationVndAPIPlusJSONBody(c.Server, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// BulkUpsertServicesWithBody Bulk upsert Services
+//
+// Create or update multiple services by external_id. Only attributes present in the payload are written (managed-fields semantics). Transactional: all succeed or all fail. Requires an API key with both create and update capability across the resource scope (team/org-scoped); record-scoped principals cannot use this endpoint (they receive 404), which also prevents the create-vs-update branch from leaking whether an external_id exists.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/services/bulk_upsert (the `BulkUpsertServices` operationId).
+func (c *Client) BulkUpsertServicesWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBulkUpsertServicesRequestWithBody(c.Server, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// BulkUpsertServicesWithApplicationVndAPIPlusJSONBody Bulk upsert Services
+//
+// Create or update multiple services by external_id. Only attributes present in the payload are written (managed-fields semantics). Transactional: all succeed or all fail. Requires an API key with both create and update capability across the resource scope (team/org-scoped); record-scoped principals cannot use this endpoint (they receive 404), which also prevents the create-vs-update branch from leaking whether an external_id exists.
+//
+// Takes a body of the `application/vnd.api+json` content type.
+//
+// Corresponds with POST /v1/services/bulk_upsert (the `BulkUpsertServices` operationId).
+func (c *Client) BulkUpsertServicesWithApplicationVndAPIPlusJSONBody(ctx context.Context, body BulkUpsertServicesApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBulkUpsertServicesRequestWithApplicationVndAPIPlusJSONBody(c.Server, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
 // ListServiceCatalogProperties List Catalog Properties
 //
 // List Service Catalog Properties.
@@ -103718,6 +105372,82 @@ func (c *Client) CreateTeamWithBody(ctx context.Context, contentType string, bod
 // Corresponds with POST /v1/teams (the `CreateTeam` operationId).
 func (c *Client) CreateTeamWithApplicationVndAPIPlusJSONBody(ctx context.Context, body CreateTeamApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewCreateTeamRequestWithApplicationVndAPIPlusJSONBody(c.Server, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// BulkDeleteGroupsWithBody Bulk delete Teams
+//
+// Delete teams by external_id list, or prune by managed_by source. Two mutually exclusive modes.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/teams/bulk_delete (the `BulkDeleteGroups` operationId).
+func (c *Client) BulkDeleteGroupsWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBulkDeleteGroupsRequestWithBody(c.Server, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// BulkDeleteGroupsWithApplicationVndAPIPlusJSONBody Bulk delete Teams
+//
+// Delete teams by external_id list, or prune by managed_by source. Two mutually exclusive modes.
+//
+// Takes a body of the `application/vnd.api+json` content type.
+//
+// Corresponds with POST /v1/teams/bulk_delete (the `BulkDeleteGroups` operationId).
+func (c *Client) BulkDeleteGroupsWithApplicationVndAPIPlusJSONBody(ctx context.Context, body BulkDeleteGroupsApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBulkDeleteGroupsRequestWithApplicationVndAPIPlusJSONBody(c.Server, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// BulkUpsertGroupsWithBody Bulk upsert Teams
+//
+// Create or update multiple teams by external_id. Only attributes present in the payload are written (managed-fields semantics). Transactional: all succeed or all fail. Requires an API key with both create and update capability across the resource scope (team/org-scoped); record-scoped principals cannot use this endpoint (they receive 404), which also prevents the create-vs-update branch from leaking whether an external_id exists.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/teams/bulk_upsert (the `BulkUpsertGroups` operationId).
+func (c *Client) BulkUpsertGroupsWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBulkUpsertGroupsRequestWithBody(c.Server, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// BulkUpsertGroupsWithApplicationVndAPIPlusJSONBody Bulk upsert Teams
+//
+// Create or update multiple teams by external_id. Only attributes present in the payload are written (managed-fields semantics). Transactional: all succeed or all fail. Requires an API key with both create and update capability across the resource scope (team/org-scoped); record-scoped principals cannot use this endpoint (they receive 404), which also prevents the create-vs-update branch from leaking whether an external_id exists.
+//
+// Takes a body of the `application/vnd.api+json` content type.
+//
+// Corresponds with POST /v1/teams/bulk_upsert (the `BulkUpsertGroups` operationId).
+func (c *Client) BulkUpsertGroupsWithApplicationVndAPIPlusJSONBody(ctx context.Context, body BulkUpsertGroupsApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBulkUpsertGroupsRequestWithApplicationVndAPIPlusJSONBody(c.Server, body)
 	if err != nil {
 		return nil, err
 	}
@@ -110994,80 +112724,6 @@ func NewUpdateAuthorizationRequestWithBody(server string, id ID, contentType str
 	return req, nil
 }
 
-// NewCreateBulkImportRequestWithApplicationVndAPIPlusJSONBody calls the generic CreateBulkImport builder with application/vnd.api+json body
-func NewCreateBulkImportRequestWithApplicationVndAPIPlusJSONBody(server string, body CreateBulkImportApplicationVndAPIPlusJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewCreateBulkImportRequestWithBody(server, "application/vnd.api+json", bodyReader)
-}
-
-// NewCreateBulkImportRequestWithBody constructs an http.Request for the CreateBulkImport method, with any body, and a specified content type
-func NewCreateBulkImportRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/bulk_imports")
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewGetBulkImportRequest constructs an http.Request for the GetBulkImport method
-func NewGetBulkImportRequest(server string, id ID) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "id", id, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/bulk_imports/%s", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
 // NewListCatalogChecklistTemplatesRequest constructs an http.Request for the ListCatalogChecklistTemplates method
 func NewListCatalogChecklistTemplatesRequest(server string, params *ListCatalogChecklistTemplatesParams) (*http.Request, error) {
 	var err error
@@ -118135,6 +119791,86 @@ func NewCreateEnvironmentRequestWithBody(server string, contentType string, body
 	return req, nil
 }
 
+// NewBulkDeleteEnvironmentsRequestWithApplicationVndAPIPlusJSONBody calls the generic BulkDeleteEnvironments builder with application/vnd.api+json body
+func NewBulkDeleteEnvironmentsRequestWithApplicationVndAPIPlusJSONBody(server string, body BulkDeleteEnvironmentsApplicationVndAPIPlusJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewBulkDeleteEnvironmentsRequestWithBody(server, "application/vnd.api+json", bodyReader)
+}
+
+// NewBulkDeleteEnvironmentsRequestWithBody constructs an http.Request for the BulkDeleteEnvironments method, with any body, and a specified content type
+func NewBulkDeleteEnvironmentsRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/environments/bulk_delete")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewBulkUpsertEnvironmentsRequestWithApplicationVndAPIPlusJSONBody calls the generic BulkUpsertEnvironments builder with application/vnd.api+json body
+func NewBulkUpsertEnvironmentsRequestWithApplicationVndAPIPlusJSONBody(server string, body BulkUpsertEnvironmentsApplicationVndAPIPlusJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewBulkUpsertEnvironmentsRequestWithBody(server, "application/vnd.api+json", bodyReader)
+}
+
+// NewBulkUpsertEnvironmentsRequestWithBody constructs an http.Request for the BulkUpsertEnvironments method, with any body, and a specified content type
+func NewBulkUpsertEnvironmentsRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/environments/bulk_upsert")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
 // NewListEnvironmentCatalogPropertiesRequest constructs an http.Request for the ListEnvironmentCatalogProperties method
 func NewListEnvironmentCatalogPropertiesRequest(server string, params *ListEnvironmentCatalogPropertiesParams) (*http.Request, error) {
 	var err error
@@ -122540,6 +124276,86 @@ func NewCreateFunctionalityRequestWithBody(server string, contentType string, bo
 	}
 
 	operationPath := fmt.Sprintf("/v1/functionalities")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewBulkDeleteFunctionalitiesRequestWithApplicationVndAPIPlusJSONBody calls the generic BulkDeleteFunctionalities builder with application/vnd.api+json body
+func NewBulkDeleteFunctionalitiesRequestWithApplicationVndAPIPlusJSONBody(server string, body BulkDeleteFunctionalitiesApplicationVndAPIPlusJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewBulkDeleteFunctionalitiesRequestWithBody(server, "application/vnd.api+json", bodyReader)
+}
+
+// NewBulkDeleteFunctionalitiesRequestWithBody constructs an http.Request for the BulkDeleteFunctionalities method, with any body, and a specified content type
+func NewBulkDeleteFunctionalitiesRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/functionalities/bulk_delete")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewBulkUpsertFunctionalitiesRequestWithApplicationVndAPIPlusJSONBody calls the generic BulkUpsertFunctionalities builder with application/vnd.api+json body
+func NewBulkUpsertFunctionalitiesRequestWithApplicationVndAPIPlusJSONBody(server string, body BulkUpsertFunctionalitiesApplicationVndAPIPlusJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewBulkUpsertFunctionalitiesRequestWithBody(server, "application/vnd.api+json", bodyReader)
+}
+
+// NewBulkUpsertFunctionalitiesRequestWithBody constructs an http.Request for the BulkUpsertFunctionalities method, with any body, and a specified content type
+func NewBulkUpsertFunctionalitiesRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/functionalities/bulk_upsert")
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -138415,6 +140231,86 @@ func NewCreateServiceRequestWithBody(server string, contentType string, body io.
 	return req, nil
 }
 
+// NewBulkDeleteServicesRequestWithApplicationVndAPIPlusJSONBody calls the generic BulkDeleteServices builder with application/vnd.api+json body
+func NewBulkDeleteServicesRequestWithApplicationVndAPIPlusJSONBody(server string, body BulkDeleteServicesApplicationVndAPIPlusJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewBulkDeleteServicesRequestWithBody(server, "application/vnd.api+json", bodyReader)
+}
+
+// NewBulkDeleteServicesRequestWithBody constructs an http.Request for the BulkDeleteServices method, with any body, and a specified content type
+func NewBulkDeleteServicesRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/services/bulk_delete")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewBulkUpsertServicesRequestWithApplicationVndAPIPlusJSONBody calls the generic BulkUpsertServices builder with application/vnd.api+json body
+func NewBulkUpsertServicesRequestWithApplicationVndAPIPlusJSONBody(server string, body BulkUpsertServicesApplicationVndAPIPlusJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewBulkUpsertServicesRequestWithBody(server, "application/vnd.api+json", bodyReader)
+}
+
+// NewBulkUpsertServicesRequestWithBody constructs an http.Request for the BulkUpsertServices method, with any body, and a specified content type
+func NewBulkUpsertServicesRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/services/bulk_upsert")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
 // NewListServiceCatalogPropertiesRequest constructs an http.Request for the ListServiceCatalogProperties method
 func NewListServiceCatalogPropertiesRequest(server string, params *ListServiceCatalogPropertiesParams) (*http.Request, error) {
 	var err error
@@ -141718,6 +143614,86 @@ func NewCreateTeamRequestWithBody(server string, contentType string, body io.Rea
 	}
 
 	operationPath := fmt.Sprintf("/v1/teams")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewBulkDeleteGroupsRequestWithApplicationVndAPIPlusJSONBody calls the generic BulkDeleteGroups builder with application/vnd.api+json body
+func NewBulkDeleteGroupsRequestWithApplicationVndAPIPlusJSONBody(server string, body BulkDeleteGroupsApplicationVndAPIPlusJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewBulkDeleteGroupsRequestWithBody(server, "application/vnd.api+json", bodyReader)
+}
+
+// NewBulkDeleteGroupsRequestWithBody constructs an http.Request for the BulkDeleteGroups method, with any body, and a specified content type
+func NewBulkDeleteGroupsRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/teams/bulk_delete")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewBulkUpsertGroupsRequestWithApplicationVndAPIPlusJSONBody calls the generic BulkUpsertGroups builder with application/vnd.api+json body
+func NewBulkUpsertGroupsRequestWithApplicationVndAPIPlusJSONBody(server string, body BulkUpsertGroupsApplicationVndAPIPlusJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewBulkUpsertGroupsRequestWithBody(server, "application/vnd.api+json", bodyReader)
+}
+
+// NewBulkUpsertGroupsRequestWithBody constructs an http.Request for the BulkUpsertGroups method, with any body, and a specified content type
+func NewBulkUpsertGroupsRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/teams/bulk_upsert")
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -146320,38 +148296,6 @@ type ClientWithResponsesInterface interface {
 	// Corresponds with PUT /v1/authorizations/{id} (the `UpdateAuthorization` operationId).
 	UpdateAuthorizationWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, id ID, body UpdateAuthorizationApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateAuthorizationResponse, error)
 
-	// CreateBulkImportWithBodyWithResponse Create a bulk import
-	//
-	// Create a new bulk import for incidents. Requires global API key authentication.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/bulk_imports (the `CreateBulkImport` operationId).
-	CreateBulkImportWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateBulkImportResponse, error)
-
-	// CreateBulkImportWithApplicationVndAPIPlusJSONBodyWithResponse Create a bulk import
-	//
-	// Create a new bulk import for incidents. Requires global API key authentication.
-	//
-	// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/bulk_imports (the `CreateBulkImport` operationId).
-	CreateBulkImportWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, body CreateBulkImportApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateBulkImportResponse, error)
-
-	// GetBulkImportWithResponse Get bulk import status
-	//
-	// Retrieves the current status of a bulk import job.
-	//
-	// **Use this endpoint to:**
-	// - Poll for import progress
-	// - Check validation errors if status is `validation_failed`
-	// - Get final results when status is `completed` or `failed`
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/bulk_imports/{id} (the `GetBulkImport` operationId).
-	GetBulkImportWithResponse(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*GetBulkImportResponse, error)
-
 	// ListCatalogChecklistTemplatesWithResponse List catalog checklist templates
 	//
 	// Returns a wrapper object for the known response body format(s).
@@ -147577,6 +149521,42 @@ type ClientWithResponsesInterface interface {
 	// Corresponds with POST /v1/environments (the `CreateEnvironment` operationId).
 	CreateEnvironmentWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, body CreateEnvironmentApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateEnvironmentResponse, error)
 
+	// BulkDeleteEnvironmentsWithBodyWithResponse Bulk delete Environments
+	//
+	// Delete environments by external_id list, or prune by managed_by source. Two mutually exclusive modes.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/environments/bulk_delete (the `BulkDeleteEnvironments` operationId).
+	BulkDeleteEnvironmentsWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BulkDeleteEnvironmentsResponse, error)
+
+	// BulkDeleteEnvironmentsWithApplicationVndAPIPlusJSONBodyWithResponse Bulk delete Environments
+	//
+	// Delete environments by external_id list, or prune by managed_by source. Two mutually exclusive modes.
+	//
+	// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/environments/bulk_delete (the `BulkDeleteEnvironments` operationId).
+	BulkDeleteEnvironmentsWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, body BulkDeleteEnvironmentsApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*BulkDeleteEnvironmentsResponse, error)
+
+	// BulkUpsertEnvironmentsWithBodyWithResponse Bulk upsert Environments
+	//
+	// Create or update multiple environments by external_id. Only attributes present in the payload are written (managed-fields semantics). Transactional: all succeed or all fail. Requires an API key with both create and update capability across the resource scope (team/org-scoped); record-scoped principals cannot use this endpoint (they receive 404), which also prevents the create-vs-update branch from leaking whether an external_id exists.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/environments/bulk_upsert (the `BulkUpsertEnvironments` operationId).
+	BulkUpsertEnvironmentsWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BulkUpsertEnvironmentsResponse, error)
+
+	// BulkUpsertEnvironmentsWithApplicationVndAPIPlusJSONBodyWithResponse Bulk upsert Environments
+	//
+	// Create or update multiple environments by external_id. Only attributes present in the payload are written (managed-fields semantics). Transactional: all succeed or all fail. Requires an API key with both create and update capability across the resource scope (team/org-scoped); record-scoped principals cannot use this endpoint (they receive 404), which also prevents the create-vs-update branch from leaking whether an external_id exists.
+	//
+	// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/environments/bulk_upsert (the `BulkUpsertEnvironments` operationId).
+	BulkUpsertEnvironmentsWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, body BulkUpsertEnvironmentsApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*BulkUpsertEnvironmentsResponse, error)
+
 	// ListEnvironmentCatalogPropertiesWithResponse List Catalog Properties
 	//
 	// List Environment Catalog Properties.
@@ -148430,6 +150410,42 @@ type ClientWithResponsesInterface interface {
 	//
 	// Corresponds with POST /v1/functionalities (the `CreateFunctionality` operationId).
 	CreateFunctionalityWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, body CreateFunctionalityApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateFunctionalityResponse, error)
+
+	// BulkDeleteFunctionalitiesWithBodyWithResponse Bulk delete Functionalities
+	//
+	// Delete functionalities by external_id list, or prune by managed_by source. Two mutually exclusive modes.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/functionalities/bulk_delete (the `BulkDeleteFunctionalities` operationId).
+	BulkDeleteFunctionalitiesWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BulkDeleteFunctionalitiesResponse, error)
+
+	// BulkDeleteFunctionalitiesWithApplicationVndAPIPlusJSONBodyWithResponse Bulk delete Functionalities
+	//
+	// Delete functionalities by external_id list, or prune by managed_by source. Two mutually exclusive modes.
+	//
+	// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/functionalities/bulk_delete (the `BulkDeleteFunctionalities` operationId).
+	BulkDeleteFunctionalitiesWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, body BulkDeleteFunctionalitiesApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*BulkDeleteFunctionalitiesResponse, error)
+
+	// BulkUpsertFunctionalitiesWithBodyWithResponse Bulk upsert Functionalities
+	//
+	// Create or update multiple functionalities by external_id. Only attributes present in the payload are written (managed-fields semantics). Transactional: all succeed or all fail. Requires an API key with both create and update capability across the resource scope (team/org-scoped); record-scoped principals cannot use this endpoint (they receive 404), which also prevents the create-vs-update branch from leaking whether an external_id exists.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/functionalities/bulk_upsert (the `BulkUpsertFunctionalities` operationId).
+	BulkUpsertFunctionalitiesWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BulkUpsertFunctionalitiesResponse, error)
+
+	// BulkUpsertFunctionalitiesWithApplicationVndAPIPlusJSONBodyWithResponse Bulk upsert Functionalities
+	//
+	// Create or update multiple functionalities by external_id. Only attributes present in the payload are written (managed-fields semantics). Transactional: all succeed or all fail. Requires an API key with both create and update capability across the resource scope (team/org-scoped); record-scoped principals cannot use this endpoint (they receive 404), which also prevents the create-vs-update branch from leaking whether an external_id exists.
+	//
+	// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/functionalities/bulk_upsert (the `BulkUpsertFunctionalities` operationId).
+	BulkUpsertFunctionalitiesWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, body BulkUpsertFunctionalitiesApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*BulkUpsertFunctionalitiesResponse, error)
 
 	// ListFunctionalityCatalogPropertiesWithResponse List Catalog Properties
 	//
@@ -151154,6 +153170,42 @@ type ClientWithResponsesInterface interface {
 	// Corresponds with POST /v1/services (the `CreateService` operationId).
 	CreateServiceWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, body CreateServiceApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateServiceResponse, error)
 
+	// BulkDeleteServicesWithBodyWithResponse Bulk delete Services
+	//
+	// Delete services by external_id list. (Prune-by-managed_by is not available for services yet — the managed_by column is being migrated to the enum type.)
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/services/bulk_delete (the `BulkDeleteServices` operationId).
+	BulkDeleteServicesWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BulkDeleteServicesResponse, error)
+
+	// BulkDeleteServicesWithApplicationVndAPIPlusJSONBodyWithResponse Bulk delete Services
+	//
+	// Delete services by external_id list. (Prune-by-managed_by is not available for services yet — the managed_by column is being migrated to the enum type.)
+	//
+	// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/services/bulk_delete (the `BulkDeleteServices` operationId).
+	BulkDeleteServicesWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, body BulkDeleteServicesApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*BulkDeleteServicesResponse, error)
+
+	// BulkUpsertServicesWithBodyWithResponse Bulk upsert Services
+	//
+	// Create or update multiple services by external_id. Only attributes present in the payload are written (managed-fields semantics). Transactional: all succeed or all fail. Requires an API key with both create and update capability across the resource scope (team/org-scoped); record-scoped principals cannot use this endpoint (they receive 404), which also prevents the create-vs-update branch from leaking whether an external_id exists.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/services/bulk_upsert (the `BulkUpsertServices` operationId).
+	BulkUpsertServicesWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BulkUpsertServicesResponse, error)
+
+	// BulkUpsertServicesWithApplicationVndAPIPlusJSONBodyWithResponse Bulk upsert Services
+	//
+	// Create or update multiple services by external_id. Only attributes present in the payload are written (managed-fields semantics). Transactional: all succeed or all fail. Requires an API key with both create and update capability across the resource scope (team/org-scoped); record-scoped principals cannot use this endpoint (they receive 404), which also prevents the create-vs-update branch from leaking whether an external_id exists.
+	//
+	// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/services/bulk_upsert (the `BulkUpsertServices` operationId).
+	BulkUpsertServicesWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, body BulkUpsertServicesApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*BulkUpsertServicesResponse, error)
+
 	// ListServiceCatalogPropertiesWithResponse List Catalog Properties
 	//
 	// List Service Catalog Properties.
@@ -151601,6 +153653,42 @@ type ClientWithResponsesInterface interface {
 	//
 	// Corresponds with POST /v1/teams (the `CreateTeam` operationId).
 	CreateTeamWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, body CreateTeamApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateTeamResponse, error)
+
+	// BulkDeleteGroupsWithBodyWithResponse Bulk delete Teams
+	//
+	// Delete teams by external_id list, or prune by managed_by source. Two mutually exclusive modes.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/teams/bulk_delete (the `BulkDeleteGroups` operationId).
+	BulkDeleteGroupsWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BulkDeleteGroupsResponse, error)
+
+	// BulkDeleteGroupsWithApplicationVndAPIPlusJSONBodyWithResponse Bulk delete Teams
+	//
+	// Delete teams by external_id list, or prune by managed_by source. Two mutually exclusive modes.
+	//
+	// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/teams/bulk_delete (the `BulkDeleteGroups` operationId).
+	BulkDeleteGroupsWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, body BulkDeleteGroupsApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*BulkDeleteGroupsResponse, error)
+
+	// BulkUpsertGroupsWithBodyWithResponse Bulk upsert Teams
+	//
+	// Create or update multiple teams by external_id. Only attributes present in the payload are written (managed-fields semantics). Transactional: all succeed or all fail. Requires an API key with both create and update capability across the resource scope (team/org-scoped); record-scoped principals cannot use this endpoint (they receive 404), which also prevents the create-vs-update branch from leaking whether an external_id exists.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/teams/bulk_upsert (the `BulkUpsertGroups` operationId).
+	BulkUpsertGroupsWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BulkUpsertGroupsResponse, error)
+
+	// BulkUpsertGroupsWithApplicationVndAPIPlusJSONBodyWithResponse Bulk upsert Teams
+	//
+	// Create or update multiple teams by external_id. Only attributes present in the payload are written (managed-fields semantics). Transactional: all succeed or all fail. Requires an API key with both create and update capability across the resource scope (team/org-scoped); record-scoped principals cannot use this endpoint (they receive 404), which also prevents the create-vs-update branch from leaking whether an external_id exists.
+	//
+	// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/teams/bulk_upsert (the `BulkUpsertGroups` operationId).
+	BulkUpsertGroupsWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, body BulkUpsertGroupsApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*BulkUpsertGroupsResponse, error)
 
 	// ListGroupCatalogPropertiesWithResponse List Catalog Properties
 	//
@@ -154511,64 +156599,6 @@ func (r UpdateAuthorizationResponse) StatusCode() int {
 
 // ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
 func (r UpdateAuthorizationResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type CreateBulkImportResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-}
-
-// Status returns HTTPResponse.Status
-func (r CreateBulkImportResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r CreateBulkImportResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r CreateBulkImportResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type GetBulkImportResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-}
-
-// Status returns HTTPResponse.Status
-func (r GetBulkImportResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r GetBulkImportResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r GetBulkImportResponse) ContentType() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Header.Get("Content-Type")
 	}
@@ -157873,6 +159903,76 @@ func (r CreateEnvironmentResponse) ContentType() string {
 	return ""
 }
 
+type BulkDeleteEnvironmentsResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// ApplicationVndAPIJSON200 the response for an HTTP 200 `application/vnd.api+json` response
+	ApplicationVndAPIJSON200 *BulkDestroyEnvironmentsResponse
+	// ApplicationVndAPIJSON401 the response for an HTTP 401 `application/vnd.api+json` response
+	ApplicationVndAPIJSON401 *ErrorsList
+	// ApplicationVndAPIJSON422 the response for an HTTP 422 `application/vnd.api+json` response
+	ApplicationVndAPIJSON422 *BulkDeleteEnvironments422ApplicationVndAPIPlusJSONResponseBody
+}
+
+// Status returns HTTPResponse.Status
+func (r BulkDeleteEnvironmentsResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r BulkDeleteEnvironmentsResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r BulkDeleteEnvironmentsResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type BulkUpsertEnvironmentsResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// ApplicationVndAPIJSON200 the response for an HTTP 200 `application/vnd.api+json` response
+	ApplicationVndAPIJSON200 *BulkUpsertEnvironmentsResponse
+	// ApplicationVndAPIJSON401 the response for an HTTP 401 `application/vnd.api+json` response
+	ApplicationVndAPIJSON401 *ErrorsList
+	// ApplicationVndAPIJSON422 the response for an HTTP 422 `application/vnd.api+json` response
+	ApplicationVndAPIJSON422 *BulkUpsertEnvironments422ApplicationVndAPIPlusJSONResponseBody
+}
+
+// Status returns HTTPResponse.Status
+func (r BulkUpsertEnvironmentsResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r BulkUpsertEnvironmentsResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r BulkUpsertEnvironmentsResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
 type ListEnvironmentCatalogPropertiesResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
@@ -159233,6 +161333,8 @@ type UpdateFormFieldPlacementResponse struct {
 	ApplicationVndAPIJSON200 *FormFieldPlacementResponse
 	// ApplicationVndAPIJSON404 the response for an HTTP 404 `application/vnd.api+json` response
 	ApplicationVndAPIJSON404 *ErrorsList
+	// ApplicationVndAPIJSON422 the response for an HTTP 422 `application/vnd.api+json` response
+	ApplicationVndAPIJSON422 *ErrorsList
 }
 
 // Status returns HTTPResponse.Status
@@ -159332,6 +161434,8 @@ type UpdateFormFieldPositionResponse struct {
 	ApplicationVndAPIJSON200 *FormFieldPositionResponse
 	// ApplicationVndAPIJSON404 the response for an HTTP 404 `application/vnd.api+json` response
 	ApplicationVndAPIJSON404 *ErrorsList
+	// ApplicationVndAPIJSON422 the response for an HTTP 422 `application/vnd.api+json` response
+	ApplicationVndAPIJSON422 *ErrorsList
 }
 
 // Status returns HTTPResponse.Status
@@ -159594,6 +161698,8 @@ type CreateFormFieldPositionResponse struct {
 	ApplicationVndAPIJSON201 *FormFieldPositionResponse
 	// ApplicationVndAPIJSON401 the response for an HTTP 401 `application/vnd.api+json` response
 	ApplicationVndAPIJSON401 *ErrorsList
+	// ApplicationVndAPIJSON422 the response for an HTTP 422 `application/vnd.api+json` response
+	ApplicationVndAPIJSON422 *ErrorsList
 }
 
 // Status returns HTTPResponse.Status
@@ -160109,6 +162215,76 @@ func (r CreateFunctionalityResponse) StatusCode() int {
 
 // ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
 func (r CreateFunctionalityResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type BulkDeleteFunctionalitiesResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// ApplicationVndAPIJSON200 the response for an HTTP 200 `application/vnd.api+json` response
+	ApplicationVndAPIJSON200 *BulkDestroyFunctionalitiesResponse
+	// ApplicationVndAPIJSON401 the response for an HTTP 401 `application/vnd.api+json` response
+	ApplicationVndAPIJSON401 *ErrorsList
+	// ApplicationVndAPIJSON422 the response for an HTTP 422 `application/vnd.api+json` response
+	ApplicationVndAPIJSON422 *BulkDeleteFunctionalities422ApplicationVndAPIPlusJSONResponseBody
+}
+
+// Status returns HTTPResponse.Status
+func (r BulkDeleteFunctionalitiesResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r BulkDeleteFunctionalitiesResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r BulkDeleteFunctionalitiesResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type BulkUpsertFunctionalitiesResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// ApplicationVndAPIJSON200 the response for an HTTP 200 `application/vnd.api+json` response
+	ApplicationVndAPIJSON200 *BulkUpsertFunctionalitiesResponse
+	// ApplicationVndAPIJSON401 the response for an HTTP 401 `application/vnd.api+json` response
+	ApplicationVndAPIJSON401 *ErrorsList
+	// ApplicationVndAPIJSON422 the response for an HTTP 422 `application/vnd.api+json` response
+	ApplicationVndAPIJSON422 *BulkUpsertFunctionalities422ApplicationVndAPIPlusJSONResponseBody
+}
+
+// Status returns HTTPResponse.Status
+func (r BulkUpsertFunctionalitiesResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r BulkUpsertFunctionalitiesResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r BulkUpsertFunctionalitiesResponse) ContentType() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Header.Get("Content-Type")
 	}
@@ -167403,6 +169579,76 @@ func (r CreateServiceResponse) ContentType() string {
 	return ""
 }
 
+type BulkDeleteServicesResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// ApplicationVndAPIJSON200 the response for an HTTP 200 `application/vnd.api+json` response
+	ApplicationVndAPIJSON200 *BulkDestroyServicesResponse
+	// ApplicationVndAPIJSON401 the response for an HTTP 401 `application/vnd.api+json` response
+	ApplicationVndAPIJSON401 *ErrorsList
+	// ApplicationVndAPIJSON422 the response for an HTTP 422 `application/vnd.api+json` response
+	ApplicationVndAPIJSON422 *BulkDeleteServices422ApplicationVndAPIPlusJSONResponseBody
+}
+
+// Status returns HTTPResponse.Status
+func (r BulkDeleteServicesResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r BulkDeleteServicesResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r BulkDeleteServicesResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type BulkUpsertServicesResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// ApplicationVndAPIJSON200 the response for an HTTP 200 `application/vnd.api+json` response
+	ApplicationVndAPIJSON200 *BulkUpsertServicesResponse
+	// ApplicationVndAPIJSON401 the response for an HTTP 401 `application/vnd.api+json` response
+	ApplicationVndAPIJSON401 *ErrorsList
+	// ApplicationVndAPIJSON422 the response for an HTTP 422 `application/vnd.api+json` response
+	ApplicationVndAPIJSON422 *BulkUpsertServices422ApplicationVndAPIPlusJSONResponseBody
+}
+
+// Status returns HTTPResponse.Status
+func (r BulkUpsertServicesResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r BulkUpsertServicesResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r BulkUpsertServicesResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
 type ListServiceCatalogPropertiesResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
@@ -168682,6 +170928,76 @@ func (r CreateTeamResponse) StatusCode() int {
 
 // ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
 func (r CreateTeamResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type BulkDeleteGroupsResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// ApplicationVndAPIJSON200 the response for an HTTP 200 `application/vnd.api+json` response
+	ApplicationVndAPIJSON200 *BulkDestroyTeamsResponse
+	// ApplicationVndAPIJSON401 the response for an HTTP 401 `application/vnd.api+json` response
+	ApplicationVndAPIJSON401 *ErrorsList
+	// ApplicationVndAPIJSON422 the response for an HTTP 422 `application/vnd.api+json` response
+	ApplicationVndAPIJSON422 *BulkDeleteGroups422ApplicationVndAPIPlusJSONResponseBody
+}
+
+// Status returns HTTPResponse.Status
+func (r BulkDeleteGroupsResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r BulkDeleteGroupsResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r BulkDeleteGroupsResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type BulkUpsertGroupsResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// ApplicationVndAPIJSON200 the response for an HTTP 200 `application/vnd.api+json` response
+	ApplicationVndAPIJSON200 *BulkUpsertTeamsResponse
+	// ApplicationVndAPIJSON401 the response for an HTTP 401 `application/vnd.api+json` response
+	ApplicationVndAPIJSON401 *ErrorsList
+	// ApplicationVndAPIJSON422 the response for an HTTP 422 `application/vnd.api+json` response
+	ApplicationVndAPIJSON422 *BulkUpsertGroups422ApplicationVndAPIPlusJSONResponseBody
+}
+
+// Status returns HTTPResponse.Status
+func (r BulkUpsertGroupsResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r BulkUpsertGroupsResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r BulkUpsertGroupsResponse) ContentType() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Header.Get("Content-Type")
 	}
@@ -172131,56 +174447,6 @@ func (c *ClientWithResponses) UpdateAuthorizationWithApplicationVndAPIPlusJSONBo
 	return ParseUpdateAuthorizationResponse(rsp)
 }
 
-// CreateBulkImportWithBodyWithResponse Create a bulk import
-//
-// Create a new bulk import for incidents. Requires global API key authentication.
-//
-// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-//
-// Corresponds with POST /v1/bulk_imports (the `CreateBulkImport` operationId).
-func (c *ClientWithResponses) CreateBulkImportWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateBulkImportResponse, error) {
-	rsp, err := c.CreateBulkImportWithBody(ctx, contentType, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseCreateBulkImportResponse(rsp)
-}
-
-// CreateBulkImportWithApplicationVndAPIPlusJSONBodyWithResponse Create a bulk import
-//
-// Create a new bulk import for incidents. Requires global API key authentication.
-//
-// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
-//
-// Corresponds with POST /v1/bulk_imports (the `CreateBulkImport` operationId).
-func (c *ClientWithResponses) CreateBulkImportWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, body CreateBulkImportApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateBulkImportResponse, error) {
-	rsp, err := c.CreateBulkImportWithApplicationVndAPIPlusJSONBody(ctx, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseCreateBulkImportResponse(rsp)
-}
-
-// GetBulkImportWithResponse Get bulk import status
-//
-// Retrieves the current status of a bulk import job.
-//
-// **Use this endpoint to:**
-// - Poll for import progress
-// - Check validation errors if status is `validation_failed`
-// - Get final results when status is `completed` or `failed`
-//
-// Returns a wrapper object for the known response body format(s).
-//
-// Corresponds with GET /v1/bulk_imports/{id} (the `GetBulkImport` operationId).
-func (c *ClientWithResponses) GetBulkImportWithResponse(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*GetBulkImportResponse, error) {
-	rsp, err := c.GetBulkImport(ctx, id, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseGetBulkImportResponse(rsp)
-}
-
 // ListCatalogChecklistTemplatesWithResponse List catalog checklist templates
 //
 // Returns a wrapper object for the known response body format(s).
@@ -174246,6 +176512,66 @@ func (c *ClientWithResponses) CreateEnvironmentWithApplicationVndAPIPlusJSONBody
 	return ParseCreateEnvironmentResponse(rsp)
 }
 
+// BulkDeleteEnvironmentsWithBodyWithResponse Bulk delete Environments
+//
+// Delete environments by external_id list, or prune by managed_by source. Two mutually exclusive modes.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/environments/bulk_delete (the `BulkDeleteEnvironments` operationId).
+func (c *ClientWithResponses) BulkDeleteEnvironmentsWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BulkDeleteEnvironmentsResponse, error) {
+	rsp, err := c.BulkDeleteEnvironmentsWithBody(ctx, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBulkDeleteEnvironmentsResponse(rsp)
+}
+
+// BulkDeleteEnvironmentsWithApplicationVndAPIPlusJSONBodyWithResponse Bulk delete Environments
+//
+// Delete environments by external_id list, or prune by managed_by source. Two mutually exclusive modes.
+//
+// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/environments/bulk_delete (the `BulkDeleteEnvironments` operationId).
+func (c *ClientWithResponses) BulkDeleteEnvironmentsWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, body BulkDeleteEnvironmentsApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*BulkDeleteEnvironmentsResponse, error) {
+	rsp, err := c.BulkDeleteEnvironmentsWithApplicationVndAPIPlusJSONBody(ctx, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBulkDeleteEnvironmentsResponse(rsp)
+}
+
+// BulkUpsertEnvironmentsWithBodyWithResponse Bulk upsert Environments
+//
+// Create or update multiple environments by external_id. Only attributes present in the payload are written (managed-fields semantics). Transactional: all succeed or all fail. Requires an API key with both create and update capability across the resource scope (team/org-scoped); record-scoped principals cannot use this endpoint (they receive 404), which also prevents the create-vs-update branch from leaking whether an external_id exists.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/environments/bulk_upsert (the `BulkUpsertEnvironments` operationId).
+func (c *ClientWithResponses) BulkUpsertEnvironmentsWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BulkUpsertEnvironmentsResponse, error) {
+	rsp, err := c.BulkUpsertEnvironmentsWithBody(ctx, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBulkUpsertEnvironmentsResponse(rsp)
+}
+
+// BulkUpsertEnvironmentsWithApplicationVndAPIPlusJSONBodyWithResponse Bulk upsert Environments
+//
+// Create or update multiple environments by external_id. Only attributes present in the payload are written (managed-fields semantics). Transactional: all succeed or all fail. Requires an API key with both create and update capability across the resource scope (team/org-scoped); record-scoped principals cannot use this endpoint (they receive 404), which also prevents the create-vs-update branch from leaking whether an external_id exists.
+//
+// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/environments/bulk_upsert (the `BulkUpsertEnvironments` operationId).
+func (c *ClientWithResponses) BulkUpsertEnvironmentsWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, body BulkUpsertEnvironmentsApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*BulkUpsertEnvironmentsResponse, error) {
+	rsp, err := c.BulkUpsertEnvironmentsWithApplicationVndAPIPlusJSONBody(ctx, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBulkUpsertEnvironmentsResponse(rsp)
+}
+
 // ListEnvironmentCatalogPropertiesWithResponse List Catalog Properties
 //
 // List Environment Catalog Properties.
@@ -175674,6 +178000,66 @@ func (c *ClientWithResponses) CreateFunctionalityWithApplicationVndAPIPlusJSONBo
 		return nil, err
 	}
 	return ParseCreateFunctionalityResponse(rsp)
+}
+
+// BulkDeleteFunctionalitiesWithBodyWithResponse Bulk delete Functionalities
+//
+// Delete functionalities by external_id list, or prune by managed_by source. Two mutually exclusive modes.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/functionalities/bulk_delete (the `BulkDeleteFunctionalities` operationId).
+func (c *ClientWithResponses) BulkDeleteFunctionalitiesWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BulkDeleteFunctionalitiesResponse, error) {
+	rsp, err := c.BulkDeleteFunctionalitiesWithBody(ctx, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBulkDeleteFunctionalitiesResponse(rsp)
+}
+
+// BulkDeleteFunctionalitiesWithApplicationVndAPIPlusJSONBodyWithResponse Bulk delete Functionalities
+//
+// Delete functionalities by external_id list, or prune by managed_by source. Two mutually exclusive modes.
+//
+// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/functionalities/bulk_delete (the `BulkDeleteFunctionalities` operationId).
+func (c *ClientWithResponses) BulkDeleteFunctionalitiesWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, body BulkDeleteFunctionalitiesApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*BulkDeleteFunctionalitiesResponse, error) {
+	rsp, err := c.BulkDeleteFunctionalitiesWithApplicationVndAPIPlusJSONBody(ctx, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBulkDeleteFunctionalitiesResponse(rsp)
+}
+
+// BulkUpsertFunctionalitiesWithBodyWithResponse Bulk upsert Functionalities
+//
+// Create or update multiple functionalities by external_id. Only attributes present in the payload are written (managed-fields semantics). Transactional: all succeed or all fail. Requires an API key with both create and update capability across the resource scope (team/org-scoped); record-scoped principals cannot use this endpoint (they receive 404), which also prevents the create-vs-update branch from leaking whether an external_id exists.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/functionalities/bulk_upsert (the `BulkUpsertFunctionalities` operationId).
+func (c *ClientWithResponses) BulkUpsertFunctionalitiesWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BulkUpsertFunctionalitiesResponse, error) {
+	rsp, err := c.BulkUpsertFunctionalitiesWithBody(ctx, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBulkUpsertFunctionalitiesResponse(rsp)
+}
+
+// BulkUpsertFunctionalitiesWithApplicationVndAPIPlusJSONBodyWithResponse Bulk upsert Functionalities
+//
+// Create or update multiple functionalities by external_id. Only attributes present in the payload are written (managed-fields semantics). Transactional: all succeed or all fail. Requires an API key with both create and update capability across the resource scope (team/org-scoped); record-scoped principals cannot use this endpoint (they receive 404), which also prevents the create-vs-update branch from leaking whether an external_id exists.
+//
+// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/functionalities/bulk_upsert (the `BulkUpsertFunctionalities` operationId).
+func (c *ClientWithResponses) BulkUpsertFunctionalitiesWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, body BulkUpsertFunctionalitiesApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*BulkUpsertFunctionalitiesResponse, error) {
+	rsp, err := c.BulkUpsertFunctionalitiesWithApplicationVndAPIPlusJSONBody(ctx, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBulkUpsertFunctionalitiesResponse(rsp)
 }
 
 // ListFunctionalityCatalogPropertiesWithResponse List Catalog Properties
@@ -180263,6 +182649,66 @@ func (c *ClientWithResponses) CreateServiceWithApplicationVndAPIPlusJSONBodyWith
 	return ParseCreateServiceResponse(rsp)
 }
 
+// BulkDeleteServicesWithBodyWithResponse Bulk delete Services
+//
+// Delete services by external_id list. (Prune-by-managed_by is not available for services yet — the managed_by column is being migrated to the enum type.)
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/services/bulk_delete (the `BulkDeleteServices` operationId).
+func (c *ClientWithResponses) BulkDeleteServicesWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BulkDeleteServicesResponse, error) {
+	rsp, err := c.BulkDeleteServicesWithBody(ctx, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBulkDeleteServicesResponse(rsp)
+}
+
+// BulkDeleteServicesWithApplicationVndAPIPlusJSONBodyWithResponse Bulk delete Services
+//
+// Delete services by external_id list. (Prune-by-managed_by is not available for services yet — the managed_by column is being migrated to the enum type.)
+//
+// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/services/bulk_delete (the `BulkDeleteServices` operationId).
+func (c *ClientWithResponses) BulkDeleteServicesWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, body BulkDeleteServicesApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*BulkDeleteServicesResponse, error) {
+	rsp, err := c.BulkDeleteServicesWithApplicationVndAPIPlusJSONBody(ctx, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBulkDeleteServicesResponse(rsp)
+}
+
+// BulkUpsertServicesWithBodyWithResponse Bulk upsert Services
+//
+// Create or update multiple services by external_id. Only attributes present in the payload are written (managed-fields semantics). Transactional: all succeed or all fail. Requires an API key with both create and update capability across the resource scope (team/org-scoped); record-scoped principals cannot use this endpoint (they receive 404), which also prevents the create-vs-update branch from leaking whether an external_id exists.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/services/bulk_upsert (the `BulkUpsertServices` operationId).
+func (c *ClientWithResponses) BulkUpsertServicesWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BulkUpsertServicesResponse, error) {
+	rsp, err := c.BulkUpsertServicesWithBody(ctx, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBulkUpsertServicesResponse(rsp)
+}
+
+// BulkUpsertServicesWithApplicationVndAPIPlusJSONBodyWithResponse Bulk upsert Services
+//
+// Create or update multiple services by external_id. Only attributes present in the payload are written (managed-fields semantics). Transactional: all succeed or all fail. Requires an API key with both create and update capability across the resource scope (team/org-scoped); record-scoped principals cannot use this endpoint (they receive 404), which also prevents the create-vs-update branch from leaking whether an external_id exists.
+//
+// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/services/bulk_upsert (the `BulkUpsertServices` operationId).
+func (c *ClientWithResponses) BulkUpsertServicesWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, body BulkUpsertServicesApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*BulkUpsertServicesResponse, error) {
+	rsp, err := c.BulkUpsertServicesWithApplicationVndAPIPlusJSONBody(ctx, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBulkUpsertServicesResponse(rsp)
+}
+
 // ListServiceCatalogPropertiesWithResponse List Catalog Properties
 //
 // List Service Catalog Properties.
@@ -181021,6 +183467,66 @@ func (c *ClientWithResponses) CreateTeamWithApplicationVndAPIPlusJSONBodyWithRes
 		return nil, err
 	}
 	return ParseCreateTeamResponse(rsp)
+}
+
+// BulkDeleteGroupsWithBodyWithResponse Bulk delete Teams
+//
+// Delete teams by external_id list, or prune by managed_by source. Two mutually exclusive modes.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/teams/bulk_delete (the `BulkDeleteGroups` operationId).
+func (c *ClientWithResponses) BulkDeleteGroupsWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BulkDeleteGroupsResponse, error) {
+	rsp, err := c.BulkDeleteGroupsWithBody(ctx, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBulkDeleteGroupsResponse(rsp)
+}
+
+// BulkDeleteGroupsWithApplicationVndAPIPlusJSONBodyWithResponse Bulk delete Teams
+//
+// Delete teams by external_id list, or prune by managed_by source. Two mutually exclusive modes.
+//
+// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/teams/bulk_delete (the `BulkDeleteGroups` operationId).
+func (c *ClientWithResponses) BulkDeleteGroupsWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, body BulkDeleteGroupsApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*BulkDeleteGroupsResponse, error) {
+	rsp, err := c.BulkDeleteGroupsWithApplicationVndAPIPlusJSONBody(ctx, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBulkDeleteGroupsResponse(rsp)
+}
+
+// BulkUpsertGroupsWithBodyWithResponse Bulk upsert Teams
+//
+// Create or update multiple teams by external_id. Only attributes present in the payload are written (managed-fields semantics). Transactional: all succeed or all fail. Requires an API key with both create and update capability across the resource scope (team/org-scoped); record-scoped principals cannot use this endpoint (they receive 404), which also prevents the create-vs-update branch from leaking whether an external_id exists.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/teams/bulk_upsert (the `BulkUpsertGroups` operationId).
+func (c *ClientWithResponses) BulkUpsertGroupsWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BulkUpsertGroupsResponse, error) {
+	rsp, err := c.BulkUpsertGroupsWithBody(ctx, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBulkUpsertGroupsResponse(rsp)
+}
+
+// BulkUpsertGroupsWithApplicationVndAPIPlusJSONBodyWithResponse Bulk upsert Teams
+//
+// Create or update multiple teams by external_id. Only attributes present in the payload are written (managed-fields semantics). Transactional: all succeed or all fail. Requires an API key with both create and update capability across the resource scope (team/org-scoped); record-scoped principals cannot use this endpoint (they receive 404), which also prevents the create-vs-update branch from leaking whether an external_id exists.
+//
+// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/teams/bulk_upsert (the `BulkUpsertGroups` operationId).
+func (c *ClientWithResponses) BulkUpsertGroupsWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, body BulkUpsertGroupsApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*BulkUpsertGroupsResponse, error) {
+	rsp, err := c.BulkUpsertGroupsWithApplicationVndAPIPlusJSONBody(ctx, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBulkUpsertGroupsResponse(rsp)
 }
 
 // ListGroupCatalogPropertiesWithResponse List Catalog Properties
@@ -184426,38 +186932,6 @@ func ParseUpdateAuthorizationResponse(rsp *http.Response) (*UpdateAuthorizationR
 	return response, nil
 }
 
-// ParseCreateBulkImportResponse parses an HTTP response from a CreateBulkImportWithResponse call
-func ParseCreateBulkImportResponse(rsp *http.Response) (*CreateBulkImportResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &CreateBulkImportResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	return response, nil
-}
-
-// ParseGetBulkImportResponse parses an HTTP response from a GetBulkImportWithResponse call
-func ParseGetBulkImportResponse(rsp *http.Response) (*GetBulkImportResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &GetBulkImportResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	return response, nil
-}
-
 // ParseListCatalogChecklistTemplatesResponse parses an HTTP response from a ListCatalogChecklistTemplatesWithResponse call
 func ParseListCatalogChecklistTemplatesResponse(rsp *http.Response) (*ListCatalogChecklistTemplatesResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
@@ -187541,6 +190015,86 @@ func ParseCreateEnvironmentResponse(rsp *http.Response) (*CreateEnvironmentRespo
 	return response, nil
 }
 
+// ParseBulkDeleteEnvironmentsResponse parses an HTTP response from a BulkDeleteEnvironmentsWithResponse call
+func ParseBulkDeleteEnvironmentsResponse(rsp *http.Response) (*BulkDeleteEnvironmentsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &BulkDeleteEnvironmentsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest BulkDestroyEnvironmentsResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorsList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest BulkDeleteEnvironments422ApplicationVndAPIPlusJSONResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON422 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseBulkUpsertEnvironmentsResponse parses an HTTP response from a BulkUpsertEnvironmentsWithResponse call
+func ParseBulkUpsertEnvironmentsResponse(rsp *http.Response) (*BulkUpsertEnvironmentsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &BulkUpsertEnvironmentsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest BulkUpsertEnvironmentsResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorsList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest BulkUpsertEnvironments422ApplicationVndAPIPlusJSONResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON422 = &dest
+
+	}
+
+	return response, nil
+}
+
 // ParseListEnvironmentCatalogPropertiesResponse parses an HTTP response from a ListEnvironmentCatalogPropertiesWithResponse call
 func ParseListEnvironmentCatalogPropertiesResponse(rsp *http.Response) (*ListEnvironmentCatalogPropertiesResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
@@ -188922,6 +191476,13 @@ func ParseUpdateFormFieldPlacementResponse(rsp *http.Response) (*UpdateFormField
 		}
 		response.ApplicationVndAPIJSON404 = &dest
 
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest ErrorsList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON422 = &dest
+
 	}
 
 	return response, nil
@@ -189020,6 +191581,13 @@ func ParseUpdateFormFieldPositionResponse(rsp *http.Response) (*UpdateFormFieldP
 			return nil, err
 		}
 		response.ApplicationVndAPIJSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest ErrorsList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON422 = &dest
 
 	}
 
@@ -189277,6 +191845,13 @@ func ParseCreateFormFieldPositionResponse(rsp *http.Response) (*CreateFormFieldP
 			return nil, err
 		}
 		response.ApplicationVndAPIJSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest ErrorsList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON422 = &dest
 
 	}
 
@@ -189768,6 +192343,86 @@ func ParseCreateFunctionalityResponse(rsp *http.Response) (*CreateFunctionalityR
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
 		var dest ErrorsList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON422 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseBulkDeleteFunctionalitiesResponse parses an HTTP response from a BulkDeleteFunctionalitiesWithResponse call
+func ParseBulkDeleteFunctionalitiesResponse(rsp *http.Response) (*BulkDeleteFunctionalitiesResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &BulkDeleteFunctionalitiesResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest BulkDestroyFunctionalitiesResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorsList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest BulkDeleteFunctionalities422ApplicationVndAPIPlusJSONResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON422 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseBulkUpsertFunctionalitiesResponse parses an HTTP response from a BulkUpsertFunctionalitiesWithResponse call
+func ParseBulkUpsertFunctionalitiesResponse(rsp *http.Response) (*BulkUpsertFunctionalitiesResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &BulkUpsertFunctionalitiesResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest BulkUpsertFunctionalitiesResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorsList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest BulkUpsertFunctionalities422ApplicationVndAPIPlusJSONResponseBody
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -196968,6 +199623,86 @@ func ParseCreateServiceResponse(rsp *http.Response) (*CreateServiceResponse, err
 	return response, nil
 }
 
+// ParseBulkDeleteServicesResponse parses an HTTP response from a BulkDeleteServicesWithResponse call
+func ParseBulkDeleteServicesResponse(rsp *http.Response) (*BulkDeleteServicesResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &BulkDeleteServicesResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest BulkDestroyServicesResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorsList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest BulkDeleteServices422ApplicationVndAPIPlusJSONResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON422 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseBulkUpsertServicesResponse parses an HTTP response from a BulkUpsertServicesWithResponse call
+func ParseBulkUpsertServicesResponse(rsp *http.Response) (*BulkUpsertServicesResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &BulkUpsertServicesResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest BulkUpsertServicesResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorsList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest BulkUpsertServices422ApplicationVndAPIPlusJSONResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON422 = &dest
+
+	}
+
+	return response, nil
+}
+
 // ParseListServiceCatalogPropertiesResponse parses an HTTP response from a ListServiceCatalogPropertiesWithResponse call
 func ParseListServiceCatalogPropertiesResponse(rsp *http.Response) (*ListServiceCatalogPropertiesResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
@@ -198238,6 +200973,86 @@ func ParseCreateTeamResponse(rsp *http.Response) (*CreateTeamResponse, error) {
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
 		var dest ErrorsList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON422 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseBulkDeleteGroupsResponse parses an HTTP response from a BulkDeleteGroupsWithResponse call
+func ParseBulkDeleteGroupsResponse(rsp *http.Response) (*BulkDeleteGroupsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &BulkDeleteGroupsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest BulkDestroyTeamsResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorsList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest BulkDeleteGroups422ApplicationVndAPIPlusJSONResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON422 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseBulkUpsertGroupsResponse parses an HTTP response from a BulkUpsertGroupsWithResponse call
+func ParseBulkUpsertGroupsResponse(rsp *http.Response) (*BulkUpsertGroupsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &BulkUpsertGroupsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest BulkUpsertTeamsResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorsList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest BulkUpsertGroups422ApplicationVndAPIPlusJSONResponseBody
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}

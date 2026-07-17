@@ -4847,80 +4847,6 @@
         }
       }
     },
-    "/v1/bulk_imports": {
-      "post": {
-        "summary": "Create a bulk import",
-        "security": [
-          {
-            "bearer_auth": []
-          }
-        ],
-        "tags": [
-          "Bulk Imports"
-        ],
-        "description": "Create a new bulk import for incidents. Requires global API key authentication.",
-        "operationId": "createBulkImport",
-        "parameters": [],
-        "responses": {
-          "201": {
-            "description": "bulk import created"
-          },
-          "403": {
-            "description": "unauthorized - user lacks incident create permission"
-          },
-          "422": {
-            "description": "invalid parameters"
-          }
-        },
-        "requestBody": {
-          "content": {
-            "application/vnd.api+json": {
-              "schema": {
-                "$ref": "#/components/schemas/new_bulk_import"
-              }
-            }
-          },
-          "required": true
-        }
-      }
-    },
-    "/v1/bulk_imports/{id}": {
-      "get": {
-        "summary": "Get bulk import status",
-        "security": [
-          {
-            "bearer_auth": []
-          }
-        ],
-        "tags": [
-          "Bulk Imports"
-        ],
-        "description": "Retrieves the current status of a bulk import job.\n\n**Use this endpoint to:**\n- Poll for import progress\n- Check validation errors if status is `validation_failed`\n- Get final results when status is `completed` or `failed`\n",
-        "operationId": "getBulkImport",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "description": "Bulk import ID returned from the create endpoint",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "success"
-          },
-          "404": {
-            "description": "not found"
-          },
-          "403": {
-            "description": "organization API keys feature not enabled"
-          }
-        }
-      }
-    },
     "/v1/catalog_checklist_templates": {
       "post": {
         "summary": "Creates a catalog checklist template",
@@ -11653,6 +11579,136 @@
         }
       }
     },
+    "/v1/environments/bulk_upsert": {
+      "post": {
+        "summary": "Bulk upsert Environments",
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "tags": [
+          "Environments"
+        ],
+        "description": "Create or update multiple environments by external_id. Only attributes present in the payload are written (managed-fields semantics). Transactional: all succeed or all fail. Requires an API key with both create and update capability across the resource scope (team/org-scoped); record-scoped principals cannot use this endpoint (they receive 404), which also prevents the create-vs-update branch from leaking whether an external_id exists.",
+        "operationId": "bulkUpsertEnvironments",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "records upserted successfully",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/bulk_upsert_environments_response"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "validation or record-level error",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/errors_list"
+                    },
+                    {
+                      "$ref": "#/components/schemas/bulk_upsert_environments_error"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "unauthorized",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors_list"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/vnd.api+json": {
+              "schema": {
+                "$ref": "#/components/schemas/bulk_upsert_environments"
+              }
+            }
+          },
+          "required": true
+        }
+      }
+    },
+    "/v1/environments/bulk_delete": {
+      "post": {
+        "summary": "Bulk delete Environments",
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "tags": [
+          "Environments"
+        ],
+        "description": "Delete environments by external_id list, or prune by managed_by source. Two mutually exclusive modes.",
+        "operationId": "bulkDeleteEnvironments",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "records deleted successfully",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/bulk_destroy_environments_response"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "validation or partial-failure error",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/errors_list"
+                    },
+                    {
+                      "$ref": "#/components/schemas/bulk_destroy_environments_response"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "unauthorized",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors_list"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/vnd.api+json": {
+              "schema": {
+                "$ref": "#/components/schemas/bulk_destroy_environments"
+              }
+            }
+          },
+          "required": true
+        }
+      }
+    },
     "/v1/escalation_policies": {
       "post": {
         "summary": "Creates an escalation policy",
@@ -13233,7 +13289,7 @@
             }
           },
           "422": {
-            "description": "invalid request",
+            "description": "rejects a native field on an action item form",
             "content": {
               "application/vnd.api+json": {
                 "schema": {
@@ -13385,11 +13441,21 @@
         "parameters": [],
         "responses": {
           "200": {
-            "description": "form_field_placement updated with non_editable",
+            "description": "moves a custom field's placement onto an action item form",
             "content": {
               "application/vnd.api+json": {
                 "schema": {
                   "$ref": "#/components/schemas/form_field_placement_response"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "rejects moving a native field's placement onto an action item form",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors_list"
                 }
               }
             }
@@ -13537,11 +13603,21 @@
         "parameters": [],
         "responses": {
           "201": {
-            "description": "form_field_position created",
+            "description": "form_field_position created on an action item form",
             "content": {
               "application/vnd.api+json": {
                 "schema": {
                   "$ref": "#/components/schemas/form_field_position_response"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "rejects an action item form when the feature is disabled",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors_list"
                 }
               }
             }
@@ -13635,6 +13711,16 @@
               "application/vnd.api+json": {
                 "schema": {
                   "$ref": "#/components/schemas/form_field_position_response"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "does not error when updating with a nonexistent form_field_id",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors_list"
                 }
               }
             }
@@ -15438,6 +15524,136 @@
             "application/vnd.api+json": {
               "schema": {
                 "$ref": "#/components/schemas/new_catalog_property"
+              }
+            }
+          },
+          "required": true
+        }
+      }
+    },
+    "/v1/functionalities/bulk_upsert": {
+      "post": {
+        "summary": "Bulk upsert Functionalities",
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "tags": [
+          "Functionalities"
+        ],
+        "description": "Create or update multiple functionalities by external_id. Only attributes present in the payload are written (managed-fields semantics). Transactional: all succeed or all fail. Requires an API key with both create and update capability across the resource scope (team/org-scoped); record-scoped principals cannot use this endpoint (they receive 404), which also prevents the create-vs-update branch from leaking whether an external_id exists.",
+        "operationId": "bulkUpsertFunctionalities",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "records upserted successfully",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/bulk_upsert_functionalities_response"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "validation or record-level error",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/errors_list"
+                    },
+                    {
+                      "$ref": "#/components/schemas/bulk_upsert_functionalities_error"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "unauthorized",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors_list"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/vnd.api+json": {
+              "schema": {
+                "$ref": "#/components/schemas/bulk_upsert_functionalities"
+              }
+            }
+          },
+          "required": true
+        }
+      }
+    },
+    "/v1/functionalities/bulk_delete": {
+      "post": {
+        "summary": "Bulk delete Functionalities",
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "tags": [
+          "Functionalities"
+        ],
+        "description": "Delete functionalities by external_id list, or prune by managed_by source. Two mutually exclusive modes.",
+        "operationId": "bulkDeleteFunctionalities",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "records deleted successfully",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/bulk_destroy_functionalities_response"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "validation or partial-failure error",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/errors_list"
+                    },
+                    {
+                      "$ref": "#/components/schemas/bulk_destroy_functionalities_response"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "unauthorized",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors_list"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/vnd.api+json": {
+              "schema": {
+                "$ref": "#/components/schemas/bulk_destroy_functionalities"
               }
             }
           },
@@ -32659,6 +32875,136 @@
         }
       }
     },
+    "/v1/services/bulk_upsert": {
+      "post": {
+        "summary": "Bulk upsert Services",
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "tags": [
+          "Services"
+        ],
+        "description": "Create or update multiple services by external_id. Only attributes present in the payload are written (managed-fields semantics). Transactional: all succeed or all fail. Requires an API key with both create and update capability across the resource scope (team/org-scoped); record-scoped principals cannot use this endpoint (they receive 404), which also prevents the create-vs-update branch from leaking whether an external_id exists.",
+        "operationId": "bulkUpsertServices",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "records upserted successfully",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/bulk_upsert_services_response"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "validation or record-level error",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/errors_list"
+                    },
+                    {
+                      "$ref": "#/components/schemas/bulk_upsert_services_error"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "unauthorized",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors_list"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/vnd.api+json": {
+              "schema": {
+                "$ref": "#/components/schemas/bulk_upsert_services"
+              }
+            }
+          },
+          "required": true
+        }
+      }
+    },
+    "/v1/services/bulk_delete": {
+      "post": {
+        "summary": "Bulk delete Services",
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "tags": [
+          "Services"
+        ],
+        "description": "Delete services by external_id list. (Prune-by-managed_by is not available for services yet — the managed_by column is being migrated to the enum type.)",
+        "operationId": "bulkDeleteServices",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "records deleted successfully",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/bulk_destroy_services_response"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "validation or partial-failure error",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/errors_list"
+                    },
+                    {
+                      "$ref": "#/components/schemas/bulk_destroy_services_response"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "unauthorized",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors_list"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/vnd.api+json": {
+              "schema": {
+                "$ref": "#/components/schemas/bulk_destroy_services"
+              }
+            }
+          },
+          "required": true
+        }
+      }
+    },
     "/v1/severities": {
       "post": {
         "summary": "Creates a severity",
@@ -35633,6 +35979,136 @@
             "application/vnd.api+json": {
               "schema": {
                 "$ref": "#/components/schemas/new_catalog_property"
+              }
+            }
+          },
+          "required": true
+        }
+      }
+    },
+    "/v1/teams/bulk_upsert": {
+      "post": {
+        "summary": "Bulk upsert Teams",
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "tags": [
+          "Teams"
+        ],
+        "description": "Create or update multiple teams by external_id. Only attributes present in the payload are written (managed-fields semantics). Transactional: all succeed or all fail. Requires an API key with both create and update capability across the resource scope (team/org-scoped); record-scoped principals cannot use this endpoint (they receive 404), which also prevents the create-vs-update branch from leaking whether an external_id exists.",
+        "operationId": "bulkUpsertGroups",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "records upserted successfully",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/bulk_upsert_teams_response"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "validation or record-level error",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/errors_list"
+                    },
+                    {
+                      "$ref": "#/components/schemas/bulk_upsert_teams_error"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "unauthorized",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors_list"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/vnd.api+json": {
+              "schema": {
+                "$ref": "#/components/schemas/bulk_upsert_teams"
+              }
+            }
+          },
+          "required": true
+        }
+      }
+    },
+    "/v1/teams/bulk_delete": {
+      "post": {
+        "summary": "Bulk delete Teams",
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "tags": [
+          "Teams"
+        ],
+        "description": "Delete teams by external_id list, or prune by managed_by source. Two mutually exclusive modes.",
+        "operationId": "bulkDeleteGroups",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "records deleted successfully",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/bulk_destroy_teams_response"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "validation or partial-failure error",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/errors_list"
+                    },
+                    {
+                      "$ref": "#/components/schemas/bulk_destroy_teams_response"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "unauthorized",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors_list"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/vnd.api+json": {
+              "schema": {
+                "$ref": "#/components/schemas/bulk_destroy_teams"
               }
             }
           },
@@ -43719,171 +44195,6 @@
           "meta"
         ]
       },
-      "bulk_import_attributes": {
-        "type": "object",
-        "properties": {
-          "entity_type": {
-            "type": "string",
-            "enum": [
-              "Incident"
-            ],
-            "description": "Type of entity being imported"
-          },
-          "status": {
-            "type": "string",
-            "enum": [
-              "pending",
-              "validating",
-              "validation_failed",
-              "importing",
-              "indexing",
-              "completed",
-              "failed"
-            ],
-            "description": "Current status of the import"
-          },
-          "file_url": {
-            "type": "string",
-            "format": "uri",
-            "description": "URL of the JSONL file being imported"
-          },
-          "notification_email": {
-            "type": "string",
-            "format": "email",
-            "description": "Email address for notifications"
-          },
-          "total_records": {
-            "type": "integer",
-            "nullable": true,
-            "description": "Total number of records in the file"
-          },
-          "processed_records": {
-            "type": "integer",
-            "description": "Number of records processed so far"
-          },
-          "failed_records": {
-            "type": "integer",
-            "description": "Number of records that failed to import"
-          },
-          "validation_errors": {
-            "type": "object",
-            "nullable": true,
-            "description": "Validation errors encountered during validation phase"
-          },
-          "error_message": {
-            "type": "string",
-            "nullable": true,
-            "description": "Error message if import failed"
-          },
-          "progress_percentage": {
-            "type": "number",
-            "format": "float",
-            "description": "Import progress percentage (0-100)"
-          },
-          "started_at": {
-            "type": "string",
-            "format": "date-time",
-            "nullable": true,
-            "description": "When import processing started"
-          },
-          "completed_at": {
-            "type": "string",
-            "format": "date-time",
-            "nullable": true,
-            "description": "When import completed or failed"
-          },
-          "created_at": {
-            "type": "string",
-            "format": "date-time",
-            "description": "When the bulk import was created"
-          },
-          "updated_at": {
-            "type": "string",
-            "format": "date-time",
-            "description": "When the bulk import was last updated"
-          }
-        },
-        "required": [
-          "status",
-          "processed_records",
-          "failed_records",
-          "progress_percentage"
-        ]
-      },
-      "new_bulk_import": {
-        "type": "object",
-        "properties": {
-          "data": {
-            "type": "object",
-            "properties": {
-              "attributes": {
-                "type": "object",
-                "properties": {
-                  "entity_type": {
-                    "type": "string",
-                    "enum": [
-                      "Incident"
-                    ],
-                    "description": "Type of entity to import (currently only 'Incident' is supported)"
-                  },
-                  "file_url": {
-                    "type": "string",
-                    "format": "uri",
-                    "description": "URL of the JSONL file to import. Must be accessible via HTTPS."
-                  },
-                  "notification_email": {
-                    "type": "string",
-                    "format": "email",
-                    "description": "Email address to receive import status notifications"
-                  }
-                },
-                "required": [
-                  "entity_type",
-                  "file_url",
-                  "notification_email"
-                ]
-              }
-            },
-            "required": [
-              "attributes"
-            ]
-          }
-        },
-        "required": [
-          "data"
-        ]
-      },
-      "bulk_import_response": {
-        "type": "object",
-        "properties": {
-          "data": {
-            "type": "object",
-            "properties": {
-              "id": {
-                "type": "string",
-                "format": "uuid"
-              },
-              "type": {
-                "type": "string",
-                "enum": [
-                  "bulk_import"
-                ]
-              },
-              "attributes": {
-                "$ref": "#/components/schemas/bulk_import_attributes"
-              }
-            },
-            "required": [
-              "id",
-              "type",
-              "attributes"
-            ]
-          }
-        },
-        "required": [
-          "data"
-        ]
-      },
       "new_catalog": {
         "type": "object",
         "properties": {
@@ -45300,12 +45611,6 @@
                 }
               }
             }
-          },
-          "included": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/jsonapi_included_resource"
-            }
           }
         }
       },
@@ -45411,14 +45716,14 @@
                 "items": {
                   "type": "string"
                 },
-                "description": "External IDs where destroy failed (e.g. protected/synced entities)"
+                "description": "External IDs whose deletion the record itself blocked (e.g. minimum-one guard, restrict associations). Records the caller is not authorized to destroy are NOT listed here."
               },
               "not_found_external_ids": {
                 "type": "array",
                 "items": {
                   "type": "string"
                 },
-                "description": "External IDs that were not found (only present in external_ids mode)"
+                "description": "External IDs that were not found or not accessible to the caller (external_ids mode only)"
               }
             }
           }
@@ -50663,6 +50968,11 @@
                     "description": "Position of the environment",
                     "nullable": true
                   },
+                  "external_id": {
+                    "type": "string",
+                    "description": "The external id associated to this environment",
+                    "nullable": true
+                  },
                   "notify_emails": {
                     "type": "array",
                     "description": "Emails to attach to the environment",
@@ -50788,6 +51098,11 @@
                     "description": "Position of the environment",
                     "nullable": true
                   },
+                  "external_id": {
+                    "type": "string",
+                    "description": "The external id associated to this environment",
+                    "nullable": true
+                  },
                   "notify_emails": {
                     "type": "array",
                     "description": "Emails to attach to the environment",
@@ -50886,6 +51201,24 @@
           "slug": {
             "type": "string",
             "description": "The slug of the environment"
+          },
+          "managed_by": {
+            "type": "string",
+            "enum": [
+              "web",
+              "admin_web",
+              "api",
+              "terraform",
+              "pulumi",
+              "backstage",
+              "catalog_sync"
+            ],
+            "description": "How this environment is managed (provenance): web, api, terraform, etc. Read-only."
+          },
+          "external_id": {
+            "type": "string",
+            "description": "The external id associated to this environment",
+            "nullable": true
           },
           "description": {
             "type": "string",
@@ -51096,6 +51429,218 @@
           "links",
           "meta"
         ]
+      },
+      "bulk_upsert_environments": {
+        "type": "object",
+        "required": [
+          "entities"
+        ],
+        "properties": {
+          "entities": {
+            "type": "array",
+            "description": "Environments to upsert, matched by external_id. Max 100 per request; external_ids unique within a batch. Only attributes present are written (managed-fields semantics).",
+            "items": {
+              "type": "object",
+              "required": [
+                "external_id"
+              ],
+              "properties": {
+                "external_id": {
+                  "type": "string",
+                  "description": "External identifier used as the upsert key. Unique per team."
+                },
+                "name": {
+                  "type": "string",
+                  "description": "Required for new records. Optional for updates."
+                },
+                "description": {
+                  "type": "string",
+                  "nullable": true
+                },
+                "color": {
+                  "type": "string",
+                  "nullable": true
+                },
+                "position": {
+                  "type": "integer",
+                  "nullable": true
+                },
+                "notify_emails": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "nullable": true
+                },
+                "fields": {
+                  "type": "array",
+                  "description": "Catalog property values (merge semantics: only mentioned fields written).",
+                  "items": {
+                    "type": "object",
+                    "description": "Each field entry must include either catalog_field_id or catalog_property_id.",
+                    "properties": {
+                      "catalog_field_id": {
+                        "type": "string",
+                        "description": "UUID, slug, or external_id of the catalog field (required if catalog_property_id is absent)"
+                      },
+                      "catalog_property_id": {
+                        "type": "string",
+                        "description": "Alias for catalog_field_id (required if catalog_field_id is absent)"
+                      },
+                      "value": {
+                        "type": "string",
+                        "description": "The value for this field"
+                      }
+                    },
+                    "required": [
+                      "value"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "bulk_upsert_environments_response": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "environments"
+                  ]
+                },
+                "attributes": {
+                  "$ref": "#/components/schemas/environment"
+                }
+              }
+            }
+          }
+        }
+      },
+      "bulk_upsert_environments_error": {
+        "type": "object",
+        "required": [
+          "errors"
+        ],
+        "properties": {
+          "errors": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "index",
+                "external_id",
+                "errors"
+              ],
+              "properties": {
+                "index": {
+                  "type": "integer",
+                  "description": "Position of the failed record in the batch"
+                },
+                "external_id": {
+                  "type": "string"
+                },
+                "errors": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "bulk_destroy_environments": {
+        "description": "Two mutually exclusive modes. Pass exactly one of: external_ids (delete specific records) or managed_by (prune all managed records not in keep set).",
+        "oneOf": [
+          {
+            "type": "object",
+            "required": [
+              "external_ids"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "external_ids": {
+                "type": "array",
+                "description": "Array of external_ids to delete. Max 100 per request.",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "minItems": 1
+              }
+            }
+          },
+          {
+            "type": "object",
+            "required": [
+              "managed_by"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "managed_by": {
+                "type": "string",
+                "enum": [
+                  "api",
+                  "terraform",
+                  "pulumi",
+                  "backstage",
+                  "catalog_sync"
+                ],
+                "description": "Delete all records with this managed_by value (web/admin_web not allowed)."
+              },
+              "keep_external_ids": {
+                "type": "array",
+                "description": "Records with these external_ids are preserved.",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "bulk_destroy_environments_response": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "object",
+            "properties": {
+              "deleted_external_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "External IDs that were successfully deleted"
+              },
+              "failed_external_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "External IDs whose deletion the record itself blocked (e.g. minimum-one guard, restrict associations). Records the caller is not authorized to destroy are NOT listed here."
+              },
+              "not_found_external_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "External IDs that were not found or not accessible to the caller (external_ids mode only)"
+              }
+            }
+          }
+        }
       },
       "errors_list": {
         "type": "object",
@@ -55773,7 +56318,7 @@
                       "properties": {
                         "id": {
                           "type": "string",
-                          "description": "The ID of notification target. If Slack channel, then id of the slack channel (eg. C06Q2JK7RQW)"
+                          "description": "The ID of notification target. If Slack channel, then id of the slack channel (eg. C06Q2JK7RQW). If Microsoft Teams channel, then the Rootly channel UUID."
                         },
                         "type": {
                           "type": "string",
@@ -55783,6 +56328,7 @@
                             "user",
                             "schedule",
                             "slack_channel",
+                            "microsoft_teams_channel",
                             "service"
                           ]
                         },
@@ -55888,6 +56434,7 @@
                             "user",
                             "schedule",
                             "slack_channel",
+                            "microsoft_teams_channel",
                             "service"
                           ]
                         },
@@ -55989,6 +56536,7 @@
                     "user",
                     "schedule",
                     "slack_channel",
+                    "microsoft_teams_channel",
                     "service"
                   ]
                 },
@@ -56975,7 +57523,9 @@
                       "slack_incident_resolution_form",
                       "slack_incident_cancellation_form",
                       "slack_scheduled_incident_form",
-                      "slack_update_scheduled_incident_form"
+                      "slack_update_scheduled_incident_form",
+                      "web_action_item_form",
+                      "slack_action_item_form"
                     ]
                   },
                   "position": {
@@ -57040,7 +57590,9 @@
                       "slack_incident_resolution_form",
                       "slack_incident_cancellation_form",
                       "slack_scheduled_incident_form",
-                      "slack_update_scheduled_incident_form"
+                      "slack_update_scheduled_incident_form",
+                      "web_action_item_form",
+                      "slack_action_item_form"
                     ]
                   },
                   "position": {
@@ -57088,7 +57640,9 @@
               "slack_incident_resolution_form",
               "slack_incident_cancellation_form",
               "slack_scheduled_incident_form",
-              "slack_update_scheduled_incident_form"
+              "slack_update_scheduled_incident_form",
+              "web_action_item_form",
+              "slack_action_item_form"
             ]
           },
           "position": {
@@ -57238,6 +57792,7 @@
                       "causes",
                       "functionalities",
                       "teams",
+                      "status",
                       "visibility",
                       "mark_as_test",
                       "mark_as_backfilled",
@@ -57386,6 +57941,7 @@
                       "causes",
                       "functionalities",
                       "teams",
+                      "status",
                       "visibility",
                       "mark_as_test",
                       "mark_as_backfilled",
@@ -57518,6 +58074,7 @@
               "causes",
               "functionalities",
               "teams",
+              "status",
               "visibility",
               "mark_as_test",
               "mark_as_backfilled",
@@ -58645,6 +59202,19 @@
             "type": "string",
             "description": "The slug of the functionality"
           },
+          "managed_by": {
+            "type": "string",
+            "enum": [
+              "web",
+              "admin_web",
+              "api",
+              "terraform",
+              "pulumi",
+              "backstage",
+              "catalog_sync"
+            ],
+            "description": "How this functionality is managed (provenance): web, api, terraform, etc. Read-only."
+          },
           "description": {
             "type": "string",
             "description": "The description of the functionality",
@@ -58931,6 +59501,258 @@
           "links",
           "meta"
         ]
+      },
+      "bulk_upsert_functionalities": {
+        "type": "object",
+        "required": [
+          "entities"
+        ],
+        "properties": {
+          "entities": {
+            "type": "array",
+            "description": "Functionalities to upsert, matched by external_id. Max 100 per request; external_ids unique within a batch. Only attributes present are written (managed-fields semantics).",
+            "items": {
+              "type": "object",
+              "required": [
+                "external_id"
+              ],
+              "properties": {
+                "external_id": {
+                  "type": "string",
+                  "description": "External identifier used as the upsert key. Unique per team."
+                },
+                "name": {
+                  "type": "string",
+                  "description": "Required for new records. Optional for updates."
+                },
+                "description": {
+                  "type": "string",
+                  "nullable": true
+                },
+                "public_description": {
+                  "type": "string",
+                  "nullable": true
+                },
+                "color": {
+                  "type": "string",
+                  "nullable": true
+                },
+                "position": {
+                  "type": "integer",
+                  "nullable": true
+                },
+                "show_uptime": {
+                  "type": "boolean",
+                  "nullable": true
+                },
+                "show_uptime_last_days": {
+                  "type": "integer",
+                  "nullable": true
+                },
+                "notify_emails": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "nullable": true
+                },
+                "pagerduty_id": {
+                  "type": "string",
+                  "nullable": true
+                },
+                "opsgenie_id": {
+                  "type": "string",
+                  "nullable": true
+                },
+                "opsgenie_team_id": {
+                  "type": "string",
+                  "nullable": true
+                },
+                "backstage_id": {
+                  "type": "string",
+                  "nullable": true
+                },
+                "cortex_id": {
+                  "type": "string",
+                  "nullable": true
+                },
+                "opslevel_id": {
+                  "type": "string",
+                  "nullable": true
+                },
+                "service_now_ci_sys_id": {
+                  "type": "string",
+                  "nullable": true
+                },
+                "fields": {
+                  "type": "array",
+                  "description": "Catalog property values (merge semantics: only mentioned fields written).",
+                  "items": {
+                    "type": "object",
+                    "description": "Each field entry must include either catalog_field_id or catalog_property_id.",
+                    "properties": {
+                      "catalog_field_id": {
+                        "type": "string",
+                        "description": "UUID, slug, or external_id of the catalog field (required if catalog_property_id is absent)"
+                      },
+                      "catalog_property_id": {
+                        "type": "string",
+                        "description": "Alias for catalog_field_id (required if catalog_field_id is absent)"
+                      },
+                      "value": {
+                        "type": "string",
+                        "description": "The value for this field"
+                      }
+                    },
+                    "required": [
+                      "value"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "bulk_upsert_functionalities_response": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "functionalities"
+                  ]
+                },
+                "attributes": {
+                  "$ref": "#/components/schemas/functionality"
+                }
+              }
+            }
+          }
+        }
+      },
+      "bulk_upsert_functionalities_error": {
+        "type": "object",
+        "required": [
+          "errors"
+        ],
+        "properties": {
+          "errors": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "index",
+                "external_id",
+                "errors"
+              ],
+              "properties": {
+                "index": {
+                  "type": "integer",
+                  "description": "Position of the failed record in the batch"
+                },
+                "external_id": {
+                  "type": "string"
+                },
+                "errors": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "bulk_destroy_functionalities": {
+        "description": "Two mutually exclusive modes. Pass exactly one of: external_ids (delete specific records) or managed_by (prune all managed records not in keep set).",
+        "oneOf": [
+          {
+            "type": "object",
+            "required": [
+              "external_ids"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "external_ids": {
+                "type": "array",
+                "description": "Array of external_ids to delete. Max 100 per request.",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "minItems": 1
+              }
+            }
+          },
+          {
+            "type": "object",
+            "required": [
+              "managed_by"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "managed_by": {
+                "type": "string",
+                "enum": [
+                  "api",
+                  "terraform",
+                  "pulumi",
+                  "backstage",
+                  "catalog_sync"
+                ],
+                "description": "Delete all records with this managed_by value (web/admin_web not allowed)."
+              },
+              "keep_external_ids": {
+                "type": "array",
+                "description": "Records with these external_ids are preserved.",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "bulk_destroy_functionalities_response": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "object",
+            "properties": {
+              "deleted_external_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "External IDs that were successfully deleted"
+              },
+              "failed_external_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "External IDs whose deletion the record itself blocked (e.g. minimum-one guard, restrict associations). Records the caller is not authorized to destroy are NOT listed here."
+              },
+              "not_found_external_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "External IDs that were not found or not accessible to the caller (external_ids mode only)"
+              }
+            }
+          }
+        }
       },
       "add_action_item_task_params": {
         "type": "object",
@@ -61488,6 +62310,40 @@
           "parent_issue_id",
           "title",
           "subtask_issue_type"
+        ]
+      },
+      "attach_retrospective_pdf_to_jira_issue_task_params": {
+        "type": "object",
+        "properties": {
+          "task_type": {
+            "type": "string",
+            "enum": [
+              "attach_retrospective_pdf_to_jira_issue"
+            ]
+          },
+          "integration": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              }
+            },
+            "description": "Specify integration id if you have more than one Jira instance"
+          },
+          "issue_id": {
+            "type": "string",
+            "description": "The issue id"
+          },
+          "filename": {
+            "type": "string",
+            "description": "The attachment filename"
+          }
+        },
+        "required": [
+          "issue_id"
         ]
       },
       "create_linear_issue_task_params": {
@@ -67572,6 +68428,9 @@
                         "$ref": "#/components/schemas/create_jira_subtask_task_params"
                       },
                       {
+                        "$ref": "#/components/schemas/attach_retrospective_pdf_to_jira_issue_task_params"
+                      },
+                      {
                         "$ref": "#/components/schemas/create_linear_issue_task_params"
                       },
                       {
@@ -68063,6 +68922,9 @@
                         "$ref": "#/components/schemas/create_jira_subtask_task_params"
                       },
                       {
+                        "$ref": "#/components/schemas/attach_retrospective_pdf_to_jira_issue_task_params"
+                      },
+                      {
                         "$ref": "#/components/schemas/create_linear_issue_task_params"
                       },
                       {
@@ -68524,6 +69386,9 @@
               },
               {
                 "$ref": "#/components/schemas/create_jira_subtask_task_params"
+              },
+              {
+                "$ref": "#/components/schemas/attach_retrospective_pdf_to_jira_issue_task_params"
               },
               {
                 "$ref": "#/components/schemas/create_linear_issue_task_params"
@@ -90014,6 +90879,251 @@
           "meta"
         ]
       },
+      "bulk_upsert_services": {
+        "type": "object",
+        "required": [
+          "entities"
+        ],
+        "properties": {
+          "entities": {
+            "type": "array",
+            "description": "Services to upsert, matched by external_id. Max 100 per request; external_ids unique within a batch. Only attributes present are written (managed-fields semantics).",
+            "items": {
+              "type": "object",
+              "required": [
+                "external_id"
+              ],
+              "properties": {
+                "external_id": {
+                  "type": "string",
+                  "description": "External identifier used as the upsert key. Unique per team."
+                },
+                "name": {
+                  "type": "string",
+                  "description": "Required for new records. Optional for updates."
+                },
+                "description": {
+                  "type": "string",
+                  "nullable": true
+                },
+                "public_description": {
+                  "type": "string",
+                  "nullable": true
+                },
+                "color": {
+                  "type": "string",
+                  "nullable": true
+                },
+                "position": {
+                  "type": "integer",
+                  "nullable": true
+                },
+                "show_uptime": {
+                  "type": "boolean",
+                  "nullable": true
+                },
+                "show_uptime_last_days": {
+                  "type": "integer",
+                  "nullable": true
+                },
+                "github_repository_name": {
+                  "type": "string",
+                  "nullable": true
+                },
+                "github_repository_branch": {
+                  "type": "string",
+                  "nullable": true
+                },
+                "gitlab_repository_name": {
+                  "type": "string",
+                  "nullable": true
+                },
+                "gitlab_repository_branch": {
+                  "type": "string",
+                  "nullable": true
+                },
+                "kubernetes_deployment_name": {
+                  "type": "string",
+                  "nullable": true
+                },
+                "pagerduty_id": {
+                  "type": "string",
+                  "nullable": true
+                },
+                "opsgenie_id": {
+                  "type": "string",
+                  "nullable": true
+                },
+                "opsgenie_team_id": {
+                  "type": "string",
+                  "nullable": true
+                },
+                "cortex_id": {
+                  "type": "string",
+                  "nullable": true
+                },
+                "opslevel_id": {
+                  "type": "string",
+                  "nullable": true
+                },
+                "backstage_id": {
+                  "type": "string",
+                  "nullable": true
+                },
+                "service_now_ci_sys_id": {
+                  "type": "string",
+                  "nullable": true
+                },
+                "notify_emails": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "nullable": true
+                },
+                "alerts_email_enabled": {
+                  "type": "boolean",
+                  "nullable": true
+                },
+                "fields": {
+                  "type": "array",
+                  "description": "Catalog property values (merge semantics: only mentioned fields written).",
+                  "items": {
+                    "type": "object",
+                    "description": "Each field entry must include either catalog_field_id or catalog_property_id.",
+                    "properties": {
+                      "catalog_field_id": {
+                        "type": "string",
+                        "description": "UUID, slug, or external_id of the catalog field (required if catalog_property_id is absent)"
+                      },
+                      "catalog_property_id": {
+                        "type": "string",
+                        "description": "Alias for catalog_field_id (required if catalog_field_id is absent)"
+                      },
+                      "value": {
+                        "type": "string",
+                        "description": "The value for this field"
+                      }
+                    },
+                    "required": [
+                      "value"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "bulk_upsert_services_response": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "services"
+                  ]
+                },
+                "attributes": {
+                  "$ref": "#/components/schemas/service"
+                }
+              }
+            }
+          }
+        }
+      },
+      "bulk_upsert_services_error": {
+        "type": "object",
+        "required": [
+          "errors"
+        ],
+        "properties": {
+          "errors": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "index",
+                "external_id",
+                "errors"
+              ],
+              "properties": {
+                "index": {
+                  "type": "integer",
+                  "description": "Position of the failed record in the batch"
+                },
+                "external_id": {
+                  "type": "string"
+                },
+                "errors": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "bulk_destroy_services": {
+        "description": "Delete specific services by external_id. (Prune-by-managed_by is not available for services yet — services.managed_by is still being migrated to the enum type.)",
+        "type": "object",
+        "required": [
+          "external_ids"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "external_ids": {
+            "type": "array",
+            "description": "Array of external_ids to delete. Max 100 per request.",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 1
+          }
+        }
+      },
+      "bulk_destroy_services_response": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "object",
+            "properties": {
+              "deleted_external_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "External IDs that were successfully deleted"
+              },
+              "failed_external_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "External IDs whose deletion the record itself blocked (e.g. minimum-one guard, restrict associations). Records the caller is not authorized to destroy are NOT listed here."
+              },
+              "not_found_external_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "External IDs that were not found or not accessible to the caller (external_ids mode only)"
+              }
+            }
+          }
+        }
+      },
       "new_severity": {
         "type": "object",
         "properties": {
@@ -92494,6 +93604,19 @@
           "slug": {
             "type": "string"
           },
+          "managed_by": {
+            "type": "string",
+            "enum": [
+              "web",
+              "admin_web",
+              "api",
+              "terraform",
+              "pulumi",
+              "backstage",
+              "catalog_sync"
+            ],
+            "description": "How this team is managed (provenance): web, api, terraform, etc. Read-only."
+          },
           "description": {
             "type": "string",
             "description": "The description of the team",
@@ -92835,6 +93958,258 @@
           "links",
           "meta"
         ]
+      },
+      "bulk_upsert_teams": {
+        "type": "object",
+        "required": [
+          "entities"
+        ],
+        "properties": {
+          "entities": {
+            "type": "array",
+            "description": "Teams to upsert, matched by external_id. Max 100 per request; external_ids unique within a batch. Only attributes present are written (managed-fields semantics).",
+            "items": {
+              "type": "object",
+              "required": [
+                "external_id"
+              ],
+              "properties": {
+                "external_id": {
+                  "type": "string",
+                  "description": "External identifier used as the upsert key. Unique per team."
+                },
+                "name": {
+                  "type": "string",
+                  "description": "Required for new records. Optional for updates."
+                },
+                "description": {
+                  "type": "string",
+                  "nullable": true
+                },
+                "color": {
+                  "type": "string",
+                  "nullable": true
+                },
+                "position": {
+                  "type": "integer",
+                  "nullable": true
+                },
+                "notify_emails": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "nullable": true
+                },
+                "pagerduty_id": {
+                  "type": "string",
+                  "nullable": true
+                },
+                "pagerduty_service_id": {
+                  "type": "string",
+                  "nullable": true
+                },
+                "opsgenie_id": {
+                  "type": "string",
+                  "nullable": true
+                },
+                "victor_ops_id": {
+                  "type": "string",
+                  "nullable": true
+                },
+                "pagertree_id": {
+                  "type": "string",
+                  "nullable": true
+                },
+                "backstage_id": {
+                  "type": "string",
+                  "nullable": true
+                },
+                "cortex_id": {
+                  "type": "string",
+                  "nullable": true
+                },
+                "opslevel_id": {
+                  "type": "string",
+                  "nullable": true
+                },
+                "service_now_ci_sys_id": {
+                  "type": "string",
+                  "nullable": true
+                },
+                "alerts_email_enabled": {
+                  "type": "boolean",
+                  "nullable": true
+                },
+                "fields": {
+                  "type": "array",
+                  "description": "Catalog property values (merge semantics: only mentioned fields written).",
+                  "items": {
+                    "type": "object",
+                    "description": "Each field entry must include either catalog_field_id or catalog_property_id.",
+                    "properties": {
+                      "catalog_field_id": {
+                        "type": "string",
+                        "description": "UUID, slug, or external_id of the catalog field (required if catalog_property_id is absent)"
+                      },
+                      "catalog_property_id": {
+                        "type": "string",
+                        "description": "Alias for catalog_field_id (required if catalog_field_id is absent)"
+                      },
+                      "value": {
+                        "type": "string",
+                        "description": "The value for this field"
+                      }
+                    },
+                    "required": [
+                      "value"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "bulk_upsert_teams_response": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "groups"
+                  ]
+                },
+                "attributes": {
+                  "$ref": "#/components/schemas/team"
+                }
+              }
+            }
+          }
+        }
+      },
+      "bulk_upsert_teams_error": {
+        "type": "object",
+        "required": [
+          "errors"
+        ],
+        "properties": {
+          "errors": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "index",
+                "external_id",
+                "errors"
+              ],
+              "properties": {
+                "index": {
+                  "type": "integer",
+                  "description": "Position of the failed record in the batch"
+                },
+                "external_id": {
+                  "type": "string"
+                },
+                "errors": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "bulk_destroy_teams": {
+        "description": "Two mutually exclusive modes. Pass exactly one of: external_ids (delete specific records) or managed_by (prune all managed records not in keep set).",
+        "oneOf": [
+          {
+            "type": "object",
+            "required": [
+              "external_ids"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "external_ids": {
+                "type": "array",
+                "description": "Array of external_ids to delete. Max 100 per request.",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "minItems": 1
+              }
+            }
+          },
+          {
+            "type": "object",
+            "required": [
+              "managed_by"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "managed_by": {
+                "type": "string",
+                "enum": [
+                  "api",
+                  "terraform",
+                  "pulumi",
+                  "backstage",
+                  "catalog_sync"
+                ],
+                "description": "Delete all records with this managed_by value (web/admin_web not allowed)."
+              },
+              "keep_external_ids": {
+                "type": "array",
+                "description": "Records with these external_ids are preserved.",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "bulk_destroy_teams_response": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "object",
+            "properties": {
+              "deleted_external_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "External IDs that were successfully deleted"
+              },
+              "failed_external_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "External IDs whose deletion the record itself blocked (e.g. minimum-one guard, restrict associations). Records the caller is not authorized to destroy are NOT listed here."
+              },
+              "not_found_external_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "External IDs that were not found or not accessible to the caller (external_ids mode only)"
+              }
+            }
+          }
+        }
       },
       "new_user_notification_rule": {
         "type": "object",
