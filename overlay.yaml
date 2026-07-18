@@ -402,6 +402,18 @@ actions:
   - target: $.components.schemas.bulk_upsert_catalog_entities_response
     update:
       x-go-name: BulkUpsertCatalogEntitiesPayload
+  - target: $.components.schemas.bulk_upsert_environments_response
+    update:
+      x-go-name: BulkUpsertEnvironmentsPayload
+  - target: $.components.schemas.bulk_upsert_functionalities_response
+    update:
+      x-go-name: BulkUpsertFunctionalitiesPayload
+  - target: $.components.schemas.bulk_upsert_services_response
+    update:
+      x-go-name: BulkUpsertServicesPayload
+  - target: $.components.schemas.bulk_upsert_teams_response
+    update:
+      x-go-name: BulkUpsertTeamsPayload
 
   # don't introduce a breaking change when removing the `source` enum from alert response schemas
   - target: $.components.schemas.alert.properties.source

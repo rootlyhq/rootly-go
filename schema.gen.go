@@ -44133,8 +44133,8 @@ type BulkUpsertEnvironmentsError struct {
 	} `json:"errors"`
 }
 
-// BulkUpsertEnvironmentsResponse defines model for bulk_upsert_environments_response.
-type BulkUpsertEnvironmentsResponse struct {
+// BulkUpsertEnvironmentsPayload defines model for bulk_upsert_environments_response.
+type BulkUpsertEnvironmentsPayload struct {
 	Data []struct {
 		Attributes *Environment                            `json:"attributes,omitempty"`
 		ID         *string                                 `json:"id,omitempty"`
@@ -44195,8 +44195,8 @@ type BulkUpsertFunctionalitiesError struct {
 	} `json:"errors"`
 }
 
-// BulkUpsertFunctionalitiesResponse defines model for bulk_upsert_functionalities_response.
-type BulkUpsertFunctionalitiesResponse struct {
+// BulkUpsertFunctionalitiesPayload defines model for bulk_upsert_functionalities_response.
+type BulkUpsertFunctionalitiesPayload struct {
 	Data []struct {
 		Attributes *Functionality                             `json:"attributes,omitempty"`
 		ID         *string                                    `json:"id,omitempty"`
@@ -44263,8 +44263,8 @@ type BulkUpsertServicesError struct {
 	} `json:"errors"`
 }
 
-// BulkUpsertServicesResponse defines model for bulk_upsert_services_response.
-type BulkUpsertServicesResponse struct {
+// BulkUpsertServicesPayload defines model for bulk_upsert_services_response.
+type BulkUpsertServicesPayload struct {
 	Data []struct {
 		Attributes *Service                            `json:"attributes,omitempty"`
 		ID         *string                             `json:"id,omitempty"`
@@ -44325,8 +44325,8 @@ type BulkUpsertTeamsError struct {
 	} `json:"errors"`
 }
 
-// BulkUpsertTeamsResponse defines model for bulk_upsert_teams_response.
-type BulkUpsertTeamsResponse struct {
+// BulkUpsertTeamsPayload defines model for bulk_upsert_teams_response.
+type BulkUpsertTeamsPayload struct {
 	Data []struct {
 		Attributes *Team                            `json:"attributes,omitempty"`
 		ID         *string                          `json:"id,omitempty"`
@@ -159942,7 +159942,7 @@ type BulkUpsertEnvironmentsResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	// ApplicationVndAPIJSON200 the response for an HTTP 200 `application/vnd.api+json` response
-	ApplicationVndAPIJSON200 *BulkUpsertEnvironmentsResponse
+	ApplicationVndAPIJSON200 *BulkUpsertEnvironmentsPayload
 	// ApplicationVndAPIJSON401 the response for an HTTP 401 `application/vnd.api+json` response
 	ApplicationVndAPIJSON401 *ErrorsList
 	// ApplicationVndAPIJSON422 the response for an HTTP 422 `application/vnd.api+json` response
@@ -162260,7 +162260,7 @@ type BulkUpsertFunctionalitiesResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	// ApplicationVndAPIJSON200 the response for an HTTP 200 `application/vnd.api+json` response
-	ApplicationVndAPIJSON200 *BulkUpsertFunctionalitiesResponse
+	ApplicationVndAPIJSON200 *BulkUpsertFunctionalitiesPayload
 	// ApplicationVndAPIJSON401 the response for an HTTP 401 `application/vnd.api+json` response
 	ApplicationVndAPIJSON401 *ErrorsList
 	// ApplicationVndAPIJSON422 the response for an HTTP 422 `application/vnd.api+json` response
@@ -169618,7 +169618,7 @@ type BulkUpsertServicesResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	// ApplicationVndAPIJSON200 the response for an HTTP 200 `application/vnd.api+json` response
-	ApplicationVndAPIJSON200 *BulkUpsertServicesResponse
+	ApplicationVndAPIJSON200 *BulkUpsertServicesPayload
 	// ApplicationVndAPIJSON401 the response for an HTTP 401 `application/vnd.api+json` response
 	ApplicationVndAPIJSON401 *ErrorsList
 	// ApplicationVndAPIJSON422 the response for an HTTP 422 `application/vnd.api+json` response
@@ -170973,7 +170973,7 @@ type BulkUpsertGroupsResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	// ApplicationVndAPIJSON200 the response for an HTTP 200 `application/vnd.api+json` response
-	ApplicationVndAPIJSON200 *BulkUpsertTeamsResponse
+	ApplicationVndAPIJSON200 *BulkUpsertTeamsPayload
 	// ApplicationVndAPIJSON401 the response for an HTTP 401 `application/vnd.api+json` response
 	ApplicationVndAPIJSON401 *ErrorsList
 	// ApplicationVndAPIJSON422 the response for an HTTP 422 `application/vnd.api+json` response
@@ -190070,7 +190070,7 @@ func ParseBulkUpsertEnvironmentsResponse(rsp *http.Response) (*BulkUpsertEnviron
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest BulkUpsertEnvironmentsResponse
+		var dest BulkUpsertEnvironmentsPayload
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -192408,7 +192408,7 @@ func ParseBulkUpsertFunctionalitiesResponse(rsp *http.Response) (*BulkUpsertFunc
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest BulkUpsertFunctionalitiesResponse
+		var dest BulkUpsertFunctionalitiesPayload
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -199678,7 +199678,7 @@ func ParseBulkUpsertServicesResponse(rsp *http.Response) (*BulkUpsertServicesRes
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest BulkUpsertServicesResponse
+		var dest BulkUpsertServicesPayload
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -201038,7 +201038,7 @@ func ParseBulkUpsertGroupsResponse(rsp *http.Response) (*BulkUpsertGroupsRespons
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest BulkUpsertTeamsResponse
+		var dest BulkUpsertTeamsPayload
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
