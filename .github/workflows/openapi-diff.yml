@@ -5,7 +5,7 @@ on:
     branches:
       - master
     paths:
-      - ".vendored/rootly-api/swagger.json"
+      - ".vendored/rootly-api.json"
       - ".github/workflows/openapi-diff.yml"
       - "overlay.yaml"
 
@@ -36,7 +36,7 @@ jobs:
           if [ "${{ github.event_name }}" = "pull_request" ]; then
             BASE_REF="$PR_BASE_SHA"
           fi
-          if git show "${BASE_REF}:.vendored/rootly-api/swagger.json" > /tmp/base-swagger.json 2>/dev/null; then
+          if git show "${BASE_REF}:.vendored/rootly-api.json" > /tmp/base-swagger.json 2>/dev/null; then
             echo "BASE_SPEC_EXISTS=true" >> "$GITHUB_ENV"
           else
             echo "BASE_SPEC_EXISTS=false" >> "$GITHUB_ENV"
@@ -45,7 +45,7 @@ jobs:
       - name: OpenAPI changelog
         if: env.BASE_SPEC_EXISTS == 'true'
         run: |
-          CHANGELOG=$(oasdiff changelog --format markdown /tmp/base-swagger.json .vendored/rootly-api/swagger.json || true)
+          CHANGELOG=$(oasdiff changelog --format markdown /tmp/base-swagger.json .vendored/rootly-api.json || true)
           if [ -z "$CHANGELOG" ] || echo "$CHANGELOG" | grep -q "No changes detected"; then
             CHANGELOG="_No API changes detected._"
           fi
@@ -104,7 +104,7 @@ jobs:
         env:
           PR_BASE_SHA: "${{ github.event.pull_request.base.sha }}"
         run: |
-          if git show "${PR_BASE_SHA}:.vendored/rootly-api/swagger.json" > /tmp/base-swagger.json 2>/dev/null; then
+          if git show "${PR_BASE_SHA}:.vendored/rootly-api.json" > /tmp/base-swagger.json 2>/dev/null; then
             echo "BASE_SPEC_EXISTS=true" >> "$GITHUB_ENV"
           else
             echo "BASE_SPEC_EXISTS=false" >> "$GITHUB_ENV"
@@ -131,7 +131,7 @@ jobs:
         if: env.BASE_SPEC_EXISTS == 'true'
         run: |
           openapi overlay apply /tmp/base-overlay.yaml /tmp/base-swagger.json > /tmp/base-overlay-applied.json
-          openapi overlay apply overlay.yaml .vendored/rootly-api/swagger.json > /tmp/pr-overlay-applied.json
+          openapi overlay apply overlay.yaml .vendored/rootly-api.json > /tmp/pr-overlay-applied.json
 
       - name: OpenAPI overlay changelog
         if: env.BASE_SPEC_EXISTS == 'true'
@@ -198,7 +198,7 @@ jobs:
         env:
           PR_BASE_SHA: "${{ github.event.pull_request.base.sha }}"
         run: |
-          if git show "${PR_BASE_SHA}:.vendored/rootly-api/swagger.json" > /tmp/base-swagger.json 2>/dev/null; then
+          if git show "${PR_BASE_SHA}:.vendored/rootly-api.json" > /tmp/base-swagger.json 2>/dev/null; then
             echo "BASE_SPEC_EXISTS=true" >> "$GITHUB_ENV"
           else
             echo "BASE_SPEC_EXISTS=false" >> "$GITHUB_ENV"
@@ -225,7 +225,7 @@ jobs:
         if: env.BASE_SPEC_EXISTS == 'true'
         run: |
           openapi overlay apply /tmp/base-overlay.yaml /tmp/base-swagger.json > /tmp/base-overlay-applied.json
-          openapi overlay apply overlay.yaml .vendored/rootly-api/swagger.json > /tmp/pr-overlay-applied.json
+          openapi overlay apply overlay.yaml .vendored/rootly-api.json > /tmp/pr-overlay-applied.json
 
       - name: OpenAPI overlay breaking changes
         if: env.BASE_SPEC_EXISTS == 'true'

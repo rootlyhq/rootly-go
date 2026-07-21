@@ -42,9 +42,9 @@ jobs:
           LATEST_TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "")
           if [ -n "$LATEST_TAG" ]; then
             git show "${LATEST_TAG}:overlay.yaml" > /tmp/base-overlay.yaml 2>/dev/null || cp overlay.yaml /tmp/base-overlay.yaml
-            if git show "${LATEST_TAG}:.vendored/rootly-api/swagger.json" > /tmp/base-swagger.json 2>/dev/null; then
+            if git show "${LATEST_TAG}:.vendored/rootly-api.json" > /tmp/base-swagger.json 2>/dev/null; then
               openapi overlay apply /tmp/base-overlay.yaml /tmp/base-swagger.json > /tmp/base-overlay-applied.json
-              openapi overlay apply overlay.yaml .vendored/rootly-api/swagger.json > /tmp/pr-overlay-applied.json
+              openapi overlay apply overlay.yaml .vendored/rootly-api.json > /tmp/pr-overlay-applied.json
               CHANGELOG=$(oasdiff changelog --format markdown /tmp/base-overlay-applied.json /tmp/pr-overlay-applied.json || true)
               if [ -z "$CHANGELOG" ] || echo "$CHANGELOG" | grep -q "No changes detected"; then
                 SUMMARY="_No API changes detected._"

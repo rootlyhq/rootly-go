@@ -3,6 +3,7 @@ kind: Config
 directories:
   - path: .vendored
     contents:
-      - path: rootly-api
+      - path: rootly-api.json
+        newRootPath: swagger.json
         http:
           url: https://rootly-heroku.s3.amazonaws.com/swagger/v1/swagger.json
