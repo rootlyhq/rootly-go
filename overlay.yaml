@@ -565,3 +565,97 @@ actions:
         - checkly
         - new_relic
         - gitlab
+
+  # Freeform JSON payloads: fields the API returns as opaque `type: object`
+  # with no properties (or `additionalProperties: true`). Rendering these as
+  # `map[string]interface{}` loses type safety; `json.RawMessage` preserves
+  # the raw JSON without introducing a bare `interface{}`.
+  - target: $.components.schemas.alert.properties.data
+    update:
+      x-go-type: json.RawMessage
+
+  - target: $.components.schemas.new_alert.properties.data.properties.attributes.properties.data
+    update:
+      x-go-type: json.RawMessage
+
+  - target: $.components.schemas.update_alert.properties.data.properties.attributes.properties.data
+    update:
+      x-go-type: json.RawMessage
+
+  - target: $.components.schemas.pulse.properties.data
+    update:
+      x-go-type: json.RawMessage
+
+  - target: $.components.schemas.new_pulse.properties.data.properties.attributes.properties.data
+    update:
+      x-go-type: json.RawMessage
+
+  - target: $.components.schemas.update_pulse.properties.data.properties.attributes.properties.data
+    update:
+      x-go-type: json.RawMessage
+
+  - target: $.components.schemas.workflow_run.properties.context
+    update:
+      x-go-type: json.RawMessage
+
+  - target: $.components.schemas.new_workflow_run.properties.data.properties.attributes.anyOf[*].properties.context
+    update:
+      x-go-type: json.RawMessage
+
+  - target: $.components.schemas.post_mortem_template.properties.content_json
+    update:
+      x-go-type: json.RawMessage
+
+  - target: $.components.schemas.audit.properties.object
+    update:
+      x-go-type: json.RawMessage
+
+  - target: $.components.schemas.audit.properties.object_changes
+    update:
+      x-go-type: json.RawMessage
+
+  - target: $.components.schemas.ai_chat_session_message_list.properties.meta
+    update:
+      x-go-type: json.RawMessage
+
+  - target: $.components.schemas.jsonapi_included_resource.properties.attributes
+    update:
+      x-go-type: json.RawMessage
+
+  - target: $.components.schemas.jsonapi_included_resource.properties.relationships
+    update:
+      x-go-type: json.RawMessage
+
+  - target: $.components.schemas.dashboard_panel.properties.data.items
+    update:
+      x-go-type: json.RawMessage
+
+  - target: $.components.schemas.incidents_chart_response.properties.data
+    update:
+      x-go-type: json.RawMessage
+
+  - target: $.components.schemas.uptime_chart_response.properties.data
+    update:
+      x-go-type: json.RawMessage
+
+  - target: $.components.schemas.catalog_entity_checklist.properties.checklist_fields.items.properties.data.properties.attributes.properties.value_snapshot
+    update:
+      x-go-type: json.RawMessage
+
+  - target: $.components.schemas.alert_event.properties.escalation_target.properties.data.properties.attributes
+    update:
+      x-go-type: json.RawMessage
+
+  - target: $.components.schemas.update_edge_connector_action.properties.action.properties.metadata
+    update:
+      x-go-type: json.RawMessage
+
+  # The following two paths correspond to inline request-body schemas that
+  # do not reuse the component definitions above.
+  - target: $.paths['/v1/edge_connectors/{edge_connector_id}/actions/{id}'].patch.requestBody.content['application/vnd.api+json'].schema.properties.action.properties.metadata
+    update:
+      x-go-type: json.RawMessage
+
+  - target: $.paths['/v1/edge_connectors/{id}'].patch.requestBody.content['application/vnd.api+json'].schema.properties.data.properties.attributes.properties.filters
+    update:
+      x-go-type: json.RawMessage

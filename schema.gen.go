@@ -42216,7 +42216,7 @@ type AiChatSessionMessageRole string
 // AiChatSessionMessageList defines model for ai_chat_session_message_list.
 type AiChatSessionMessageList struct {
 	Messages []AiChatSessionMessage `json:"messages"`
-	Meta     map[string]interface{} `json:"meta,omitempty"`
+	Meta     *json.RawMessage       `json:"meta,omitempty"`
 }
 
 // Alert defines model for alert.
@@ -42259,7 +42259,7 @@ type Alert struct {
 	CreatedAt string `json:"created_at"`
 
 	// Data Additional data
-	Data nullable.Nullable[map[string]interface{}] `json:"data,omitempty"`
+	Data nullable.Nullable[json.RawMessage] `json:"data,omitempty"`
 
 	// DeduplicationKey Alerts sharing the same deduplication key are treated as a single alert.
 	DeduplicationKey nullable.Nullable[string] `json:"deduplication_key,omitempty"`
@@ -42391,8 +42391,8 @@ type AlertEvent struct {
 	// EscalationTarget JSON:API-wrapped escalation target (User or EscalationPolicy).
 	EscalationTarget nullable.Nullable[struct {
 		Data *struct {
-			Attributes map[string]interface{} `json:"attributes,omitempty"`
-			ID         *string                `json:"id,omitempty"`
+			Attributes *json.RawMessage `json:"attributes,omitempty"`
+			ID         *string          `json:"id,omitempty"`
 
 			// Type e.g. users, escalation_policies.
 			Type *string `json:"type,omitempty"`
@@ -43669,10 +43669,10 @@ type Audit struct {
 	ItemTypeDisplay nullable.Nullable[string] `json:"item_type_display,omitempty"`
 
 	// Object The object in which the action was taken on
-	Object nullable.Nullable[map[string]interface{}] `json:"object,omitempty"`
+	Object nullable.Nullable[json.RawMessage] `json:"object,omitempty"`
 
 	// ObjectChanges The changes that occurred on the object
-	ObjectChanges nullable.Nullable[map[string]interface{}] `json:"object_changes,omitempty"`
+	ObjectChanges nullable.Nullable[json.RawMessage] `json:"object_changes,omitempty"`
 
 	// RequestID Unique request ID (UUID) for the HTTP request that triggered the action
 	RequestID nullable.Nullable[string] `json:"request_id,omitempty"`
@@ -44548,7 +44548,7 @@ type CatalogEntityChecklist struct {
 				UpdatedAt *string `json:"updated_at,omitempty"`
 
 				// ValueSnapshot The value snapshot at time of checking
-				ValueSnapshot nullable.Nullable[map[string]interface{}] `json:"value_snapshot,omitempty"`
+				ValueSnapshot nullable.Nullable[json.RawMessage] `json:"value_snapshot,omitempty"`
 			} `json:"attributes,omitempty"`
 
 			// ID ID of the checklist field
@@ -47093,8 +47093,8 @@ type DashboardListDataType string
 // DashboardPanel defines model for dashboard_panel.
 type DashboardPanel struct {
 	// DashboardID The panel dashboard
-	DashboardID *string                  `json:"dashboard_id,omitempty"`
-	Data        []map[string]interface{} `json:"data,omitempty"`
+	DashboardID *string           `json:"dashboard_id,omitempty"`
+	Data        []json.RawMessage `json:"data,omitempty"`
 
 	// Name The name of the dashboard_panel
 	Name   nullable.Nullable[string] `json:"name,omitempty"`
@@ -50280,7 +50280,7 @@ type IncidentTypeResponseDataType string
 
 // IncidentsChartResponse defines model for incidents_chart_response.
 type IncidentsChartResponse struct {
-	Data map[string]interface{} `json:"data"`
+	Data json.RawMessage `json:"data"`
 }
 
 // InviteToGoogleChatSpaceTaskParams defines model for invite_to_google_chat_space_task_params.
@@ -50533,10 +50533,10 @@ type IPRangesResponseDataType string
 
 // JsonapiIncludedResource defines model for jsonapi_included_resource.
 type JsonapiIncludedResource struct {
-	Attributes    map[string]interface{} `json:"attributes,omitempty"`
-	ID            string                 `json:"id"`
-	Relationships map[string]interface{} `json:"relationships,omitempty"`
-	Type          string                 `json:"type"`
+	Attributes    *json.RawMessage `json:"attributes,omitempty"`
+	ID            string           `json:"id"`
+	Relationships *json.RawMessage `json:"relationships,omitempty"`
+	Type          string           `json:"type"`
 }
 
 // Links defines model for links.
@@ -50919,7 +50919,7 @@ type NewAlert struct {
 			AlertUrgencyID nullable.Nullable[string] `json:"alert_urgency_id,omitempty"`
 
 			// Data Additional data
-			Data nullable.Nullable[map[string]interface{}] `json:"data,omitempty"`
+			Data nullable.Nullable[json.RawMessage] `json:"data,omitempty"`
 
 			// DeduplicationKey Alerts sharing the same deduplication key are treated as a single alert.
 			DeduplicationKey nullable.Nullable[string] `json:"deduplication_key,omitempty"`
@@ -53981,7 +53981,7 @@ type NewPulse struct {
 	Data struct {
 		Attributes struct {
 			// Data Additional data
-			Data nullable.Nullable[map[string]interface{}] `json:"data,omitempty"`
+			Data nullable.Nullable[json.RawMessage] `json:"data,omitempty"`
 
 			// EndedAt Pulse end datetime
 			EndedAt nullable.Nullable[time.Time] `json:"ended_at,omitempty"`
@@ -55456,7 +55456,7 @@ type NewWorkflowRun struct {
 type NewWorkflowRunDataAttributes0 struct {
 	// CheckConditions If true, this will check conditions. If conditions are not satisfied the run will not be created.
 	CheckConditions nullable.Nullable[bool] `json:"check_conditions,omitempty"`
-	Context         map[string]interface{}  `json:"context,omitempty"`
+	Context         *json.RawMessage        `json:"context,omitempty"`
 
 	// Immediate If false, this will respect wait time configured on the workflow.
 	Immediate nullable.Nullable[bool] `json:"immediate,omitempty"`
@@ -55466,7 +55466,7 @@ type NewWorkflowRunDataAttributes0 struct {
 type NewWorkflowRunDataAttributes1 struct {
 	// CheckConditions If true, this will check conditions. If conditions are not satisfied the run will not be created
 	CheckConditions nullable.Nullable[bool] `json:"check_conditions,omitempty"`
-	Context         map[string]interface{}  `json:"context,omitempty"`
+	Context         *json.RawMessage        `json:"context,omitempty"`
 
 	// Immediate If false, this will respect wait time configured on the workflow
 	Immediate  nullable.Nullable[bool] `json:"immediate,omitempty"`
@@ -55477,7 +55477,7 @@ type NewWorkflowRunDataAttributes1 struct {
 type NewWorkflowRunDataAttributes2 struct {
 	// CheckConditions If true, this will check conditions. If conditions are not satisfied the run will not be created
 	CheckConditions nullable.Nullable[bool] `json:"check_conditions,omitempty"`
-	Context         map[string]interface{}  `json:"context,omitempty"`
+	Context         *json.RawMessage        `json:"context,omitempty"`
 
 	// Immediate If false, this will respect wait time configured on the workflow
 	Immediate    nullable.Nullable[bool] `json:"immediate,omitempty"`
@@ -55490,7 +55490,7 @@ type NewWorkflowRunDataAttributes3 struct {
 
 	// CheckConditions If true, this will check conditions. If conditions are not satisfied the run will not be created
 	CheckConditions nullable.Nullable[bool] `json:"check_conditions,omitempty"`
-	Context         map[string]interface{}  `json:"context,omitempty"`
+	Context         *json.RawMessage        `json:"context,omitempty"`
 
 	// Immediate If false, this will respect wait time configured on the workflow
 	Immediate nullable.Nullable[bool] `json:"immediate,omitempty"`
@@ -55502,7 +55502,7 @@ type NewWorkflowRunDataAttributes4 struct {
 
 	// CheckConditions If true, this will check conditions. If conditions are not satisfied the run will not be created
 	CheckConditions nullable.Nullable[bool] `json:"check_conditions,omitempty"`
-	Context         map[string]interface{}  `json:"context,omitempty"`
+	Context         *json.RawMessage        `json:"context,omitempty"`
 
 	// Immediate If false, this will respect wait time configured on the workflow
 	Immediate nullable.Nullable[bool] `json:"immediate,omitempty"`
@@ -55512,7 +55512,7 @@ type NewWorkflowRunDataAttributes4 struct {
 type NewWorkflowRunDataAttributes5 struct {
 	// CheckConditions If true, this will check conditions. If conditions are not satisfied the run will not be created
 	CheckConditions nullable.Nullable[bool] `json:"check_conditions,omitempty"`
-	Context         map[string]interface{}  `json:"context,omitempty"`
+	Context         *json.RawMessage        `json:"context,omitempty"`
 
 	// Immediate If false, this will respect wait time configured on the workflow
 	Immediate nullable.Nullable[bool] `json:"immediate,omitempty"`
@@ -56423,7 +56423,7 @@ type PostMortemTemplate struct {
 	ContentHTML nullable.Nullable[string] `json:"content_html,omitempty"`
 
 	// ContentJSON The postmortem template in TipTap JSON format
-	ContentJSON nullable.Nullable[map[string]interface{}] `json:"content_json,omitempty"`
+	ContentJSON nullable.Nullable[json.RawMessage] `json:"content_json,omitempty"`
 
 	// CreatedAt Date of creation
 	CreatedAt string `json:"created_at"`
@@ -56653,7 +56653,7 @@ type Pulse struct {
 	CreatedAt string `json:"created_at"`
 
 	// Data Additional data
-	Data nullable.Nullable[map[string]interface{}] `json:"data,omitempty"`
+	Data nullable.Nullable[json.RawMessage] `json:"data,omitempty"`
 
 	// Environments Environments attached to the pulse
 	Environments []Environment `json:"environments,omitempty"`
@@ -59447,7 +59447,7 @@ type UpdateAlert struct {
 			AlertUrgencyID nullable.Nullable[string] `json:"alert_urgency_id,omitempty"`
 
 			// Data Additional data
-			Data nullable.Nullable[map[string]interface{}] `json:"data,omitempty"`
+			Data nullable.Nullable[json.RawMessage] `json:"data,omitempty"`
 
 			// DeduplicationKey Alerts sharing the same deduplication key are treated as a single alert.
 			DeduplicationKey nullable.Nullable[string] `json:"deduplication_key,omitempty"`
@@ -60841,7 +60841,7 @@ type UpdateEdgeConnectorEdgeConnectorStatus string
 type UpdateEdgeConnectorAction struct {
 	Action struct {
 		ActionType *UpdateEdgeConnectorActionActionActionType `json:"action_type,omitempty"`
-		Metadata   map[string]interface{}                     `json:"metadata,omitempty"`
+		Metadata   *json.RawMessage                           `json:"metadata,omitempty"`
 		Name       *string                                    `json:"name,omitempty"`
 	} `json:"action"`
 }
@@ -63151,7 +63151,7 @@ type UpdatePulse struct {
 	Data struct {
 		Attributes struct {
 			// Data Additional data
-			Data nullable.Nullable[map[string]interface{}] `json:"data,omitempty"`
+			Data nullable.Nullable[json.RawMessage] `json:"data,omitempty"`
 
 			// EndedAt Pulse end datetime
 			EndedAt nullable.Nullable[time.Time] `json:"ended_at,omitempty"`
@@ -64848,7 +64848,7 @@ type UpdateZendeskTicketTaskParamsTaskType string
 
 // UptimeChartResponse defines model for uptime_chart_response.
 type UptimeChartResponse struct {
-	Data map[string]interface{} `json:"data"`
+	Data json.RawMessage `json:"data"`
 }
 
 // User defines model for user.
@@ -65580,7 +65580,7 @@ type WorkflowRun struct {
 	AlertID       nullable.Nullable[string] `json:"alert_id,omitempty"`
 	CanceledAt    nullable.Nullable[string] `json:"canceled_at,omitempty"`
 	CompletedAt   nullable.Nullable[string] `json:"completed_at,omitempty"`
-	Context       map[string]interface{}    `json:"context,omitempty"`
+	Context       *json.RawMessage          `json:"context,omitempty"`
 	FailedAt      nullable.Nullable[string] `json:"failed_at,omitempty"`
 	IncidentID    nullable.Nullable[string] `json:"incident_id,omitempty"`
 	PostMortemID  nullable.Nullable[string] `json:"post_mortem_id,omitempty"`
@@ -66581,7 +66581,7 @@ type CreateEdgeConnectorActionApplicationVndAPIPlusJSONBodyActionMetadataParamet
 type UpdateEdgeConnectorActionApplicationVndAPIPlusJSONBody struct {
 	Action *struct {
 		ActionType *UpdateEdgeConnectorActionApplicationVndAPIPlusJSONBodyActionActionType `json:"action_type,omitempty"`
-		Metadata   map[string]interface{}                                                  `json:"metadata,omitempty"`
+		Metadata   *json.RawMessage                                                        `json:"metadata,omitempty"`
 		Name       *string                                                                 `json:"name,omitempty"`
 	} `json:"action,omitempty"`
 }
@@ -66596,7 +66596,7 @@ type UpdateEdgeConnectorApplicationVndAPIPlusJSONBody struct {
 			Description *string `json:"description,omitempty"`
 
 			// Filters Event filters
-			Filters       map[string]interface{}                                                `json:"filters,omitempty"`
+			Filters       *json.RawMessage                                                      `json:"filters,omitempty"`
 			Name          *string                                                               `json:"name,omitempty"`
 			Status        *UpdateEdgeConnectorApplicationVndAPIPlusJSONBodyDataAttributesStatus `json:"status,omitempty"`
 			Subscriptions []string                                                              `json:"subscriptions,omitempty"`
