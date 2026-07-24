@@ -659,3 +659,15 @@ actions:
   - target: $.paths['/v1/edge_connectors/{id}'].patch.requestBody.content['application/vnd.api+json'].schema.properties.data.properties.attributes.properties.filters
     update:
       x-go-type: json.RawMessage
+
+  # Deliberately empty object schemas. RestartIncident has no request
+  # attributes; the second variant of the meeting recording transcript
+  # oneOf signals "no transcript". Both should generate an empty struct
+  # rather than a floating `map[string]interface{}`.
+  - target: $.components.schemas.restart_incident.properties.data.properties.attributes
+    update:
+      x-go-type: struct{}
+
+  - target: $.components.schemas.meeting_recording_detail.allOf[1].properties.transcript.oneOf[1]
+    update:
+      x-go-type: struct{}

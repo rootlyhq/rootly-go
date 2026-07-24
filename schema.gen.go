@@ -50807,7 +50807,7 @@ type MeetingRecordingDetailStatus string
 type MeetingRecordingDetailTranscript0 = []MeetingRecordingTranscriptSegment
 
 // MeetingRecordingDetailTranscript1 defines model for MeetingRecordingDetail.Transcript.1.
-type MeetingRecordingDetailTranscript1 = map[string]interface{}
+type MeetingRecordingDetailTranscript1 = struct{}
 
 // MeetingRecordingDetail_Transcript Array of speaker segments when populated, empty object when no transcript exists.
 type MeetingRecordingDetail_Transcript struct {
@@ -56907,7 +56907,7 @@ type ResolveIncidentDataType string
 // RestartIncident defines model for restart_incident.
 type RestartIncident struct {
 	Data struct {
-		Attributes map[string]interface{}  `json:"attributes,omitempty"`
+		Attributes *struct{}               `json:"attributes,omitempty"`
 		Type       RestartIncidentDataType `json:"type"`
 	} `json:"data"`
 }
