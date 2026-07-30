@@ -565,3 +565,15 @@ actions:
         - checkly
         - new_relic
         - gitlab
+
+  - target: $.components.schemas.escalation_policy.properties.business_hours
+    update:
+      x-deprecated-reason: "`BusinessHours` applies to the whole policy. Using `TimeRestrictionTimeZone` and `TimeRestrictions` is recommended instead, which applies per escalation path, which provides much more flexible scheduling."
+
+  - target: $.components.schemas.new_escalation_policy.properties.data.properties.attributes.properties.business_hours
+    update:
+      x-deprecated-reason: "`BusinessHours` applies to the whole policy. Using `TimeRestrictionTimeZone` and `TimeRestrictions` is recommended instead, which applies per escalation path, which provides much more flexible scheduling."
+
+  - target: $.components.schemas.update_escalation_policy.properties.data.properties.attributes.properties.business_hours
+    update:
+      x-deprecated-reason: "`BusinessHours` applies to the whole policy. Using `TimeRestrictionTimeZone` and `TimeRestrictions` is recommended instead, which applies per escalation path, which provides much more flexible scheduling."

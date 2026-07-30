@@ -48277,7 +48277,7 @@ type EscalateAlertDataType string
 
 // EscalationPolicy defines model for escalation_policy.
 type EscalationPolicy struct {
-	// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+	// Deprecated: `BusinessHours` applies to the whole policy. Using `TimeRestrictionTimeZone` and `TimeRestrictions` is recommended instead, which applies per escalation path, which provides much more flexible scheduling.
 	BusinessHours nullable.Nullable[struct {
 		// Days Business days
 		Days nullable.Nullable[[]EscalationPolicyBusinessHoursDays] `json:"days,omitempty"`
@@ -53163,7 +53163,7 @@ type NewEnvironmentDataType string
 type NewEscalationPolicy struct {
 	Data struct {
 		Attributes struct {
-			// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+			// Deprecated: `BusinessHours` applies to the whole policy. Using `TimeRestrictionTimeZone` and `TimeRestrictions` is recommended instead, which applies per escalation path, which provides much more flexible scheduling.
 			BusinessHours nullable.Nullable[struct {
 				// Days Business days
 				Days nullable.Nullable[[]NewEscalationPolicyDataAttributesBusinessHoursDays] `json:"days,omitempty"`
@@ -61851,7 +61851,7 @@ type UpdateEnvironmentDataType string
 type UpdateEscalationPolicy struct {
 	Data struct {
 		Attributes struct {
-			// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+			// Deprecated: `BusinessHours` applies to the whole policy. Using `TimeRestrictionTimeZone` and `TimeRestrictions` is recommended instead, which applies per escalation path, which provides much more flexible scheduling.
 			BusinessHours nullable.Nullable[struct {
 				// Days Business days
 				Days nullable.Nullable[[]UpdateEscalationPolicyDataAttributesBusinessHoursDays] `json:"days,omitempty"`
