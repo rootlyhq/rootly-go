@@ -1431,6 +1431,7 @@ const (
 	AlertEventActionAttached              AlertEventAction = "attached"
 	AlertEventActionCallLifecycle         AlertEventAction = "call_lifecycle"
 	AlertEventActionCalled                AlertEventAction = "called"
+	AlertEventActionCleared               AlertEventAction = "cleared"
 	AlertEventActionCreated               AlertEventAction = "created"
 	AlertEventActionDeferred              AlertEventAction = "deferred"
 	AlertEventActionEmailed               AlertEventAction = "emailed"
@@ -1449,6 +1450,7 @@ const (
 	AlertEventActionPaged                 AlertEventAction = "paged"
 	AlertEventActionRemoved               AlertEventAction = "removed"
 	AlertEventActionResolved              AlertEventAction = "resolved"
+	AlertEventActionRetriggerSuppressed   AlertEventAction = "retrigger_suppressed"
 	AlertEventActionRetriggered           AlertEventAction = "retriggered"
 	AlertEventActionSkipped               AlertEventAction = "skipped"
 	AlertEventActionSlacked               AlertEventAction = "slacked"
@@ -1472,6 +1474,8 @@ func (e AlertEventAction) Valid() bool {
 	case AlertEventActionCallLifecycle:
 		return true
 	case AlertEventActionCalled:
+		return true
+	case AlertEventActionCleared:
 		return true
 	case AlertEventActionCreated:
 		return true
@@ -1508,6 +1512,8 @@ func (e AlertEventAction) Valid() bool {
 	case AlertEventActionRemoved:
 		return true
 	case AlertEventActionResolved:
+		return true
+	case AlertEventActionRetriggerSuppressed:
 		return true
 	case AlertEventActionRetriggered:
 		return true
@@ -2104,6 +2110,123 @@ const (
 func (e AlertResponseDataType) Valid() bool {
 	switch e {
 	case AlertResponseDataTypeAlerts:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AlertRetriggerRuleConditionsKind.
+const (
+	AlertRetriggerRuleConditionsKindAlertField AlertRetriggerRuleConditionsKind = "alert_field"
+	AlertRetriggerRuleConditionsKindGroup      AlertRetriggerRuleConditionsKind = "group"
+	AlertRetriggerRuleConditionsKindPayload    AlertRetriggerRuleConditionsKind = "payload"
+	AlertRetriggerRuleConditionsKindService    AlertRetriggerRuleConditionsKind = "service"
+	AlertRetriggerRuleConditionsKindSource     AlertRetriggerRuleConditionsKind = "source"
+	AlertRetriggerRuleConditionsKindUrgency    AlertRetriggerRuleConditionsKind = "urgency"
+)
+
+// Valid indicates whether the value is a known member of the AlertRetriggerRuleConditionsKind enum.
+func (e AlertRetriggerRuleConditionsKind) Valid() bool {
+	switch e {
+	case AlertRetriggerRuleConditionsKindAlertField:
+		return true
+	case AlertRetriggerRuleConditionsKindGroup:
+		return true
+	case AlertRetriggerRuleConditionsKindPayload:
+		return true
+	case AlertRetriggerRuleConditionsKindService:
+		return true
+	case AlertRetriggerRuleConditionsKindSource:
+		return true
+	case AlertRetriggerRuleConditionsKindUrgency:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AlertRetriggerRuleConditionsOperator.
+const (
+	AlertRetriggerRuleConditionsOperatorContains       AlertRetriggerRuleConditionsOperator = "contains"
+	AlertRetriggerRuleConditionsOperatorDoesNotContain AlertRetriggerRuleConditionsOperator = "does_not_contain"
+	AlertRetriggerRuleConditionsOperatorEndsWith       AlertRetriggerRuleConditionsOperator = "ends_with"
+	AlertRetriggerRuleConditionsOperatorIsNotOneOf     AlertRetriggerRuleConditionsOperator = "is_not_one_of"
+	AlertRetriggerRuleConditionsOperatorIsNotSet       AlertRetriggerRuleConditionsOperator = "is_not_set"
+	AlertRetriggerRuleConditionsOperatorIsOneOf        AlertRetriggerRuleConditionsOperator = "is_one_of"
+	AlertRetriggerRuleConditionsOperatorIsSet          AlertRetriggerRuleConditionsOperator = "is_set"
+	AlertRetriggerRuleConditionsOperatorMatchesRegex   AlertRetriggerRuleConditionsOperator = "matches_regex"
+	AlertRetriggerRuleConditionsOperatorStartsWith     AlertRetriggerRuleConditionsOperator = "starts_with"
+)
+
+// Valid indicates whether the value is a known member of the AlertRetriggerRuleConditionsOperator enum.
+func (e AlertRetriggerRuleConditionsOperator) Valid() bool {
+	switch e {
+	case AlertRetriggerRuleConditionsOperatorContains:
+		return true
+	case AlertRetriggerRuleConditionsOperatorDoesNotContain:
+		return true
+	case AlertRetriggerRuleConditionsOperatorEndsWith:
+		return true
+	case AlertRetriggerRuleConditionsOperatorIsNotOneOf:
+		return true
+	case AlertRetriggerRuleConditionsOperatorIsNotSet:
+		return true
+	case AlertRetriggerRuleConditionsOperatorIsOneOf:
+		return true
+	case AlertRetriggerRuleConditionsOperatorIsSet:
+		return true
+	case AlertRetriggerRuleConditionsOperatorMatchesRegex:
+		return true
+	case AlertRetriggerRuleConditionsOperatorStartsWith:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AlertRetriggerRuleMatchMode.
+const (
+	AlertRetriggerRuleMatchModeMatchAllRules AlertRetriggerRuleMatchMode = "match-all-rules"
+	AlertRetriggerRuleMatchModeMatchAnyRule  AlertRetriggerRuleMatchMode = "match-any-rule"
+)
+
+// Valid indicates whether the value is a known member of the AlertRetriggerRuleMatchMode enum.
+func (e AlertRetriggerRuleMatchMode) Valid() bool {
+	switch e {
+	case AlertRetriggerRuleMatchModeMatchAllRules:
+		return true
+	case AlertRetriggerRuleMatchModeMatchAnyRule:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AlertRetriggerRuleListDataType.
+const (
+	AlertRetriggerRuleListDataTypeAlertRetriggerRules AlertRetriggerRuleListDataType = "alert_retrigger_rules"
+)
+
+// Valid indicates whether the value is a known member of the AlertRetriggerRuleListDataType enum.
+func (e AlertRetriggerRuleListDataType) Valid() bool {
+	switch e {
+	case AlertRetriggerRuleListDataTypeAlertRetriggerRules:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AlertRetriggerRuleResponseDataType.
+const (
+	AlertRetriggerRuleResponseDataTypeAlertRetriggerRules AlertRetriggerRuleResponseDataType = "alert_retrigger_rules"
+)
+
+// Valid indicates whether the value is a known member of the AlertRetriggerRuleResponseDataType enum.
+func (e AlertRetriggerRuleResponseDataType) Valid() bool {
+	switch e {
+	case AlertRetriggerRuleResponseDataTypeAlertRetriggerRules:
 		return true
 	default:
 		return false
@@ -3859,6 +3982,33 @@ func (e BulkDestroyFunctionalities1ManagedBy) Valid() bool {
 	case BulkDestroyFunctionalities1ManagedByPulumi:
 		return true
 	case BulkDestroyFunctionalities1ManagedByTerraform:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for BulkDestroyServices1ManagedBy.
+const (
+	BulkDestroyServices1ManagedByAPI         BulkDestroyServices1ManagedBy = "api"
+	BulkDestroyServices1ManagedByBackstage   BulkDestroyServices1ManagedBy = "backstage"
+	BulkDestroyServices1ManagedByCatalogSync BulkDestroyServices1ManagedBy = "catalog_sync"
+	BulkDestroyServices1ManagedByPulumi      BulkDestroyServices1ManagedBy = "pulumi"
+	BulkDestroyServices1ManagedByTerraform   BulkDestroyServices1ManagedBy = "terraform"
+)
+
+// Valid indicates whether the value is a known member of the BulkDestroyServices1ManagedBy enum.
+func (e BulkDestroyServices1ManagedBy) Valid() bool {
+	switch e {
+	case BulkDestroyServices1ManagedByAPI:
+		return true
+	case BulkDestroyServices1ManagedByBackstage:
+		return true
+	case BulkDestroyServices1ManagedByCatalogSync:
+		return true
+	case BulkDestroyServices1ManagedByPulumi:
+		return true
+	case BulkDestroyServices1ManagedByTerraform:
 		return true
 	default:
 		return false
@@ -10648,6 +10798,7 @@ const (
 	FormFieldPositionFormSlackIncidentResolutionForm      FormFieldPositionForm = "slack_incident_resolution_form"
 	FormFieldPositionFormSlackNewIncidentForm             FormFieldPositionForm = "slack_new_incident_form"
 	FormFieldPositionFormSlackScheduledIncidentForm       FormFieldPositionForm = "slack_scheduled_incident_form"
+	FormFieldPositionFormSlackTaskForm                    FormFieldPositionForm = "slack_task_form"
 	FormFieldPositionFormSlackUpdateIncidentForm          FormFieldPositionForm = "slack_update_incident_form"
 	FormFieldPositionFormSlackUpdateIncidentStatusForm    FormFieldPositionForm = "slack_update_incident_status_form"
 	FormFieldPositionFormSlackUpdateScheduledIncidentForm FormFieldPositionForm = "slack_update_scheduled_incident_form"
@@ -10658,6 +10809,7 @@ const (
 	FormFieldPositionFormWebIncidentResolutionForm        FormFieldPositionForm = "web_incident_resolution_form"
 	FormFieldPositionFormWebNewIncidentForm               FormFieldPositionForm = "web_new_incident_form"
 	FormFieldPositionFormWebScheduledIncidentForm         FormFieldPositionForm = "web_scheduled_incident_form"
+	FormFieldPositionFormWebTaskForm                      FormFieldPositionForm = "web_task_form"
 	FormFieldPositionFormWebUpdateIncidentForm            FormFieldPositionForm = "web_update_incident_form"
 	FormFieldPositionFormWebUpdateScheduledIncidentForm   FormFieldPositionForm = "web_update_scheduled_incident_form"
 )
@@ -10679,6 +10831,8 @@ func (e FormFieldPositionForm) Valid() bool {
 		return true
 	case FormFieldPositionFormSlackScheduledIncidentForm:
 		return true
+	case FormFieldPositionFormSlackTaskForm:
+		return true
 	case FormFieldPositionFormSlackUpdateIncidentForm:
 		return true
 	case FormFieldPositionFormSlackUpdateIncidentStatusForm:
@@ -10698,6 +10852,8 @@ func (e FormFieldPositionForm) Valid() bool {
 	case FormFieldPositionFormWebNewIncidentForm:
 		return true
 	case FormFieldPositionFormWebScheduledIncidentForm:
+		return true
+	case FormFieldPositionFormWebTaskForm:
 		return true
 	case FormFieldPositionFormWebUpdateIncidentForm:
 		return true
@@ -13828,6 +13984,162 @@ const (
 func (e NewAlertGroupDataType) Valid() bool {
 	switch e {
 	case NewAlertGroupDataTypeAlertGroups:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for NewAlertRetriggerRuleDataAttributesConditionsKind.
+const (
+	NewAlertRetriggerRuleDataAttributesConditionsKindAlertField NewAlertRetriggerRuleDataAttributesConditionsKind = "alert_field"
+	NewAlertRetriggerRuleDataAttributesConditionsKindGroup      NewAlertRetriggerRuleDataAttributesConditionsKind = "group"
+	NewAlertRetriggerRuleDataAttributesConditionsKindPayload    NewAlertRetriggerRuleDataAttributesConditionsKind = "payload"
+	NewAlertRetriggerRuleDataAttributesConditionsKindService    NewAlertRetriggerRuleDataAttributesConditionsKind = "service"
+	NewAlertRetriggerRuleDataAttributesConditionsKindSource     NewAlertRetriggerRuleDataAttributesConditionsKind = "source"
+	NewAlertRetriggerRuleDataAttributesConditionsKindUrgency    NewAlertRetriggerRuleDataAttributesConditionsKind = "urgency"
+)
+
+// Valid indicates whether the value is a known member of the NewAlertRetriggerRuleDataAttributesConditionsKind enum.
+func (e NewAlertRetriggerRuleDataAttributesConditionsKind) Valid() bool {
+	switch e {
+	case NewAlertRetriggerRuleDataAttributesConditionsKindAlertField:
+		return true
+	case NewAlertRetriggerRuleDataAttributesConditionsKindGroup:
+		return true
+	case NewAlertRetriggerRuleDataAttributesConditionsKindPayload:
+		return true
+	case NewAlertRetriggerRuleDataAttributesConditionsKindService:
+		return true
+	case NewAlertRetriggerRuleDataAttributesConditionsKindSource:
+		return true
+	case NewAlertRetriggerRuleDataAttributesConditionsKindUrgency:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for NewAlertRetriggerRuleDataAttributesConditionsOperator.
+const (
+	NewAlertRetriggerRuleDataAttributesConditionsOperatorContains       NewAlertRetriggerRuleDataAttributesConditionsOperator = "contains"
+	NewAlertRetriggerRuleDataAttributesConditionsOperatorDoesNotContain NewAlertRetriggerRuleDataAttributesConditionsOperator = "does_not_contain"
+	NewAlertRetriggerRuleDataAttributesConditionsOperatorEndsWith       NewAlertRetriggerRuleDataAttributesConditionsOperator = "ends_with"
+	NewAlertRetriggerRuleDataAttributesConditionsOperatorIsNotOneOf     NewAlertRetriggerRuleDataAttributesConditionsOperator = "is_not_one_of"
+	NewAlertRetriggerRuleDataAttributesConditionsOperatorIsNotSet       NewAlertRetriggerRuleDataAttributesConditionsOperator = "is_not_set"
+	NewAlertRetriggerRuleDataAttributesConditionsOperatorIsOneOf        NewAlertRetriggerRuleDataAttributesConditionsOperator = "is_one_of"
+	NewAlertRetriggerRuleDataAttributesConditionsOperatorIsSet          NewAlertRetriggerRuleDataAttributesConditionsOperator = "is_set"
+	NewAlertRetriggerRuleDataAttributesConditionsOperatorMatchesRegex   NewAlertRetriggerRuleDataAttributesConditionsOperator = "matches_regex"
+	NewAlertRetriggerRuleDataAttributesConditionsOperatorStartsWith     NewAlertRetriggerRuleDataAttributesConditionsOperator = "starts_with"
+)
+
+// Valid indicates whether the value is a known member of the NewAlertRetriggerRuleDataAttributesConditionsOperator enum.
+func (e NewAlertRetriggerRuleDataAttributesConditionsOperator) Valid() bool {
+	switch e {
+	case NewAlertRetriggerRuleDataAttributesConditionsOperatorContains:
+		return true
+	case NewAlertRetriggerRuleDataAttributesConditionsOperatorDoesNotContain:
+		return true
+	case NewAlertRetriggerRuleDataAttributesConditionsOperatorEndsWith:
+		return true
+	case NewAlertRetriggerRuleDataAttributesConditionsOperatorIsNotOneOf:
+		return true
+	case NewAlertRetriggerRuleDataAttributesConditionsOperatorIsNotSet:
+		return true
+	case NewAlertRetriggerRuleDataAttributesConditionsOperatorIsOneOf:
+		return true
+	case NewAlertRetriggerRuleDataAttributesConditionsOperatorIsSet:
+		return true
+	case NewAlertRetriggerRuleDataAttributesConditionsOperatorMatchesRegex:
+		return true
+	case NewAlertRetriggerRuleDataAttributesConditionsOperatorStartsWith:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for NewAlertRetriggerRuleDataAttributesMatchMode.
+const (
+	NewAlertRetriggerRuleDataAttributesMatchModeMatchAllRules NewAlertRetriggerRuleDataAttributesMatchMode = "match-all-rules"
+	NewAlertRetriggerRuleDataAttributesMatchModeMatchAnyRule  NewAlertRetriggerRuleDataAttributesMatchMode = "match-any-rule"
+)
+
+// Valid indicates whether the value is a known member of the NewAlertRetriggerRuleDataAttributesMatchMode enum.
+func (e NewAlertRetriggerRuleDataAttributesMatchMode) Valid() bool {
+	switch e {
+	case NewAlertRetriggerRuleDataAttributesMatchModeMatchAllRules:
+		return true
+	case NewAlertRetriggerRuleDataAttributesMatchModeMatchAnyRule:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for NewAlertRetriggerRuleDataAttributesTimeoutMinutes.
+const (
+	NewAlertRetriggerRuleDataAttributesTimeoutMinutesN10   NewAlertRetriggerRuleDataAttributesTimeoutMinutes = 10
+	NewAlertRetriggerRuleDataAttributesTimeoutMinutesN120  NewAlertRetriggerRuleDataAttributesTimeoutMinutes = 120
+	NewAlertRetriggerRuleDataAttributesTimeoutMinutesN1440 NewAlertRetriggerRuleDataAttributesTimeoutMinutes = 1440
+	NewAlertRetriggerRuleDataAttributesTimeoutMinutesN180  NewAlertRetriggerRuleDataAttributesTimeoutMinutes = 180
+	NewAlertRetriggerRuleDataAttributesTimeoutMinutesN20   NewAlertRetriggerRuleDataAttributesTimeoutMinutes = 20
+	NewAlertRetriggerRuleDataAttributesTimeoutMinutesN240  NewAlertRetriggerRuleDataAttributesTimeoutMinutes = 240
+	NewAlertRetriggerRuleDataAttributesTimeoutMinutesN30   NewAlertRetriggerRuleDataAttributesTimeoutMinutes = 30
+	NewAlertRetriggerRuleDataAttributesTimeoutMinutesN300  NewAlertRetriggerRuleDataAttributesTimeoutMinutes = 300
+	NewAlertRetriggerRuleDataAttributesTimeoutMinutesN360  NewAlertRetriggerRuleDataAttributesTimeoutMinutes = 360
+	NewAlertRetriggerRuleDataAttributesTimeoutMinutesN40   NewAlertRetriggerRuleDataAttributesTimeoutMinutes = 40
+	NewAlertRetriggerRuleDataAttributesTimeoutMinutesN50   NewAlertRetriggerRuleDataAttributesTimeoutMinutes = 50
+	NewAlertRetriggerRuleDataAttributesTimeoutMinutesN60   NewAlertRetriggerRuleDataAttributesTimeoutMinutes = 60
+	NewAlertRetriggerRuleDataAttributesTimeoutMinutesN720  NewAlertRetriggerRuleDataAttributesTimeoutMinutes = 720
+	NewAlertRetriggerRuleDataAttributesTimeoutMinutesN90   NewAlertRetriggerRuleDataAttributesTimeoutMinutes = 90
+)
+
+// Valid indicates whether the value is a known member of the NewAlertRetriggerRuleDataAttributesTimeoutMinutes enum.
+func (e NewAlertRetriggerRuleDataAttributesTimeoutMinutes) Valid() bool {
+	switch e {
+	case NewAlertRetriggerRuleDataAttributesTimeoutMinutesN10:
+		return true
+	case NewAlertRetriggerRuleDataAttributesTimeoutMinutesN120:
+		return true
+	case NewAlertRetriggerRuleDataAttributesTimeoutMinutesN1440:
+		return true
+	case NewAlertRetriggerRuleDataAttributesTimeoutMinutesN180:
+		return true
+	case NewAlertRetriggerRuleDataAttributesTimeoutMinutesN20:
+		return true
+	case NewAlertRetriggerRuleDataAttributesTimeoutMinutesN240:
+		return true
+	case NewAlertRetriggerRuleDataAttributesTimeoutMinutesN30:
+		return true
+	case NewAlertRetriggerRuleDataAttributesTimeoutMinutesN300:
+		return true
+	case NewAlertRetriggerRuleDataAttributesTimeoutMinutesN360:
+		return true
+	case NewAlertRetriggerRuleDataAttributesTimeoutMinutesN40:
+		return true
+	case NewAlertRetriggerRuleDataAttributesTimeoutMinutesN50:
+		return true
+	case NewAlertRetriggerRuleDataAttributesTimeoutMinutesN60:
+		return true
+	case NewAlertRetriggerRuleDataAttributesTimeoutMinutesN720:
+		return true
+	case NewAlertRetriggerRuleDataAttributesTimeoutMinutesN90:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for NewAlertRetriggerRuleDataType.
+const (
+	NewAlertRetriggerRuleDataTypeAlertRetriggerRules NewAlertRetriggerRuleDataType = "alert_retrigger_rules"
+)
+
+// Valid indicates whether the value is a known member of the NewAlertRetriggerRuleDataType enum.
+func (e NewAlertRetriggerRuleDataType) Valid() bool {
+	switch e {
+	case NewAlertRetriggerRuleDataTypeAlertRetriggerRules:
 		return true
 	default:
 		return false
@@ -19237,6 +19549,7 @@ const (
 	NewFormFieldPositionDataAttributesFormSlackIncidentResolutionForm      NewFormFieldPositionDataAttributesForm = "slack_incident_resolution_form"
 	NewFormFieldPositionDataAttributesFormSlackNewIncidentForm             NewFormFieldPositionDataAttributesForm = "slack_new_incident_form"
 	NewFormFieldPositionDataAttributesFormSlackScheduledIncidentForm       NewFormFieldPositionDataAttributesForm = "slack_scheduled_incident_form"
+	NewFormFieldPositionDataAttributesFormSlackTaskForm                    NewFormFieldPositionDataAttributesForm = "slack_task_form"
 	NewFormFieldPositionDataAttributesFormSlackUpdateIncidentForm          NewFormFieldPositionDataAttributesForm = "slack_update_incident_form"
 	NewFormFieldPositionDataAttributesFormSlackUpdateIncidentStatusForm    NewFormFieldPositionDataAttributesForm = "slack_update_incident_status_form"
 	NewFormFieldPositionDataAttributesFormSlackUpdateScheduledIncidentForm NewFormFieldPositionDataAttributesForm = "slack_update_scheduled_incident_form"
@@ -19247,6 +19560,7 @@ const (
 	NewFormFieldPositionDataAttributesFormWebIncidentResolutionForm        NewFormFieldPositionDataAttributesForm = "web_incident_resolution_form"
 	NewFormFieldPositionDataAttributesFormWebNewIncidentForm               NewFormFieldPositionDataAttributesForm = "web_new_incident_form"
 	NewFormFieldPositionDataAttributesFormWebScheduledIncidentForm         NewFormFieldPositionDataAttributesForm = "web_scheduled_incident_form"
+	NewFormFieldPositionDataAttributesFormWebTaskForm                      NewFormFieldPositionDataAttributesForm = "web_task_form"
 	NewFormFieldPositionDataAttributesFormWebUpdateIncidentForm            NewFormFieldPositionDataAttributesForm = "web_update_incident_form"
 	NewFormFieldPositionDataAttributesFormWebUpdateScheduledIncidentForm   NewFormFieldPositionDataAttributesForm = "web_update_scheduled_incident_form"
 )
@@ -19268,6 +19582,8 @@ func (e NewFormFieldPositionDataAttributesForm) Valid() bool {
 		return true
 	case NewFormFieldPositionDataAttributesFormSlackScheduledIncidentForm:
 		return true
+	case NewFormFieldPositionDataAttributesFormSlackTaskForm:
+		return true
 	case NewFormFieldPositionDataAttributesFormSlackUpdateIncidentForm:
 		return true
 	case NewFormFieldPositionDataAttributesFormSlackUpdateIncidentStatusForm:
@@ -19287,6 +19603,8 @@ func (e NewFormFieldPositionDataAttributesForm) Valid() bool {
 	case NewFormFieldPositionDataAttributesFormWebNewIncidentForm:
 		return true
 	case NewFormFieldPositionDataAttributesFormWebScheduledIncidentForm:
+		return true
+	case NewFormFieldPositionDataAttributesFormWebTaskForm:
 		return true
 	case NewFormFieldPositionDataAttributesFormWebUpdateIncidentForm:
 		return true
@@ -22789,6 +23107,7 @@ const (
 	NewUserNotificationRuleDataAttributesEnabledContactTypesDevice            NewUserNotificationRuleDataAttributesEnabledContactTypes = "device"
 	NewUserNotificationRuleDataAttributesEnabledContactTypesEmail             NewUserNotificationRuleDataAttributesEnabledContactTypes = "email"
 	NewUserNotificationRuleDataAttributesEnabledContactTypesGoogleChat        NewUserNotificationRuleDataAttributesEnabledContactTypes = "google_chat"
+	NewUserNotificationRuleDataAttributesEnabledContactTypesMicrosoftTeams    NewUserNotificationRuleDataAttributesEnabledContactTypes = "microsoft_teams"
 	NewUserNotificationRuleDataAttributesEnabledContactTypesNonCriticalDevice NewUserNotificationRuleDataAttributesEnabledContactTypes = "non_critical_device"
 	NewUserNotificationRuleDataAttributesEnabledContactTypesSlack             NewUserNotificationRuleDataAttributesEnabledContactTypes = "slack"
 	NewUserNotificationRuleDataAttributesEnabledContactTypesSms               NewUserNotificationRuleDataAttributesEnabledContactTypes = "sms"
@@ -22804,6 +23123,8 @@ func (e NewUserNotificationRuleDataAttributesEnabledContactTypes) Valid() bool {
 	case NewUserNotificationRuleDataAttributesEnabledContactTypesEmail:
 		return true
 	case NewUserNotificationRuleDataAttributesEnabledContactTypesGoogleChat:
+		return true
+	case NewUserNotificationRuleDataAttributesEnabledContactTypesMicrosoftTeams:
 		return true
 	case NewUserNotificationRuleDataAttributesEnabledContactTypesNonCriticalDevice:
 		return true
@@ -22846,9 +23167,25 @@ func (e NewUserPhoneNumberDataType) Valid() bool {
 	}
 }
 
+// Defines values for NewVerifiedDomainDataType.
+const (
+	NewVerifiedDomainDataTypeVerifiedDomains NewVerifiedDomainDataType = "verified_domains"
+)
+
+// Valid indicates whether the value is a known member of the NewVerifiedDomainDataType enum.
+func (e NewVerifiedDomainDataType) Valid() bool {
+	switch e {
+	case NewVerifiedDomainDataTypeVerifiedDomains:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for NewWebhooksEndpointDataAttributesEventTypes.
 const (
 	NewWebhooksEndpointDataAttributesEventTypesAlertCreated                   NewWebhooksEndpointDataAttributesEventTypes = "alert.created"
+	NewWebhooksEndpointDataAttributesEventTypesAlertUpdated                   NewWebhooksEndpointDataAttributesEventTypes = "alert.updated"
 	NewWebhooksEndpointDataAttributesEventTypesAuditLogCreated                NewWebhooksEndpointDataAttributesEventTypes = "audit_log.created"
 	NewWebhooksEndpointDataAttributesEventTypesGeniusWorkflowRunCanceled      NewWebhooksEndpointDataAttributesEventTypes = "genius_workflow_run.canceled"
 	NewWebhooksEndpointDataAttributesEventTypesGeniusWorkflowRunCompleted     NewWebhooksEndpointDataAttributesEventTypes = "genius_workflow_run.completed"
@@ -22885,6 +23222,8 @@ const (
 func (e NewWebhooksEndpointDataAttributesEventTypes) Valid() bool {
 	switch e {
 	case NewWebhooksEndpointDataAttributesEventTypesAlertCreated:
+		return true
+	case NewWebhooksEndpointDataAttributesEventTypesAlertUpdated:
 		return true
 	case NewWebhooksEndpointDataAttributesEventTypesAuditLogCreated:
 		return true
@@ -27427,6 +27766,39 @@ func (e SendWhatsappMessageTaskParamsTaskType) Valid() bool {
 	}
 }
 
+// Defines values for ServiceManagedBy.
+const (
+	ServiceManagedByAPI         ServiceManagedBy = "api"
+	ServiceManagedByAdminWeb    ServiceManagedBy = "admin_web"
+	ServiceManagedByBackstage   ServiceManagedBy = "backstage"
+	ServiceManagedByCatalogSync ServiceManagedBy = "catalog_sync"
+	ServiceManagedByPulumi      ServiceManagedBy = "pulumi"
+	ServiceManagedByTerraform   ServiceManagedBy = "terraform"
+	ServiceManagedByWeb         ServiceManagedBy = "web"
+)
+
+// Valid indicates whether the value is a known member of the ServiceManagedBy enum.
+func (e ServiceManagedBy) Valid() bool {
+	switch e {
+	case ServiceManagedByAPI:
+		return true
+	case ServiceManagedByAdminWeb:
+		return true
+	case ServiceManagedByBackstage:
+		return true
+	case ServiceManagedByCatalogSync:
+		return true
+	case ServiceManagedByPulumi:
+		return true
+	case ServiceManagedByTerraform:
+		return true
+	case ServiceManagedByWeb:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for ServiceListDataType.
 const (
 	ServiceListDataTypeServices ServiceListDataType = "services"
@@ -28912,6 +29284,162 @@ const (
 func (e UpdateAlertGroupDataType) Valid() bool {
 	switch e {
 	case UpdateAlertGroupDataTypeAlertGroups:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateAlertRetriggerRuleDataAttributesConditionsKind.
+const (
+	UpdateAlertRetriggerRuleDataAttributesConditionsKindAlertField UpdateAlertRetriggerRuleDataAttributesConditionsKind = "alert_field"
+	UpdateAlertRetriggerRuleDataAttributesConditionsKindGroup      UpdateAlertRetriggerRuleDataAttributesConditionsKind = "group"
+	UpdateAlertRetriggerRuleDataAttributesConditionsKindPayload    UpdateAlertRetriggerRuleDataAttributesConditionsKind = "payload"
+	UpdateAlertRetriggerRuleDataAttributesConditionsKindService    UpdateAlertRetriggerRuleDataAttributesConditionsKind = "service"
+	UpdateAlertRetriggerRuleDataAttributesConditionsKindSource     UpdateAlertRetriggerRuleDataAttributesConditionsKind = "source"
+	UpdateAlertRetriggerRuleDataAttributesConditionsKindUrgency    UpdateAlertRetriggerRuleDataAttributesConditionsKind = "urgency"
+)
+
+// Valid indicates whether the value is a known member of the UpdateAlertRetriggerRuleDataAttributesConditionsKind enum.
+func (e UpdateAlertRetriggerRuleDataAttributesConditionsKind) Valid() bool {
+	switch e {
+	case UpdateAlertRetriggerRuleDataAttributesConditionsKindAlertField:
+		return true
+	case UpdateAlertRetriggerRuleDataAttributesConditionsKindGroup:
+		return true
+	case UpdateAlertRetriggerRuleDataAttributesConditionsKindPayload:
+		return true
+	case UpdateAlertRetriggerRuleDataAttributesConditionsKindService:
+		return true
+	case UpdateAlertRetriggerRuleDataAttributesConditionsKindSource:
+		return true
+	case UpdateAlertRetriggerRuleDataAttributesConditionsKindUrgency:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateAlertRetriggerRuleDataAttributesConditionsOperator.
+const (
+	UpdateAlertRetriggerRuleDataAttributesConditionsOperatorContains       UpdateAlertRetriggerRuleDataAttributesConditionsOperator = "contains"
+	UpdateAlertRetriggerRuleDataAttributesConditionsOperatorDoesNotContain UpdateAlertRetriggerRuleDataAttributesConditionsOperator = "does_not_contain"
+	UpdateAlertRetriggerRuleDataAttributesConditionsOperatorEndsWith       UpdateAlertRetriggerRuleDataAttributesConditionsOperator = "ends_with"
+	UpdateAlertRetriggerRuleDataAttributesConditionsOperatorIsNotOneOf     UpdateAlertRetriggerRuleDataAttributesConditionsOperator = "is_not_one_of"
+	UpdateAlertRetriggerRuleDataAttributesConditionsOperatorIsNotSet       UpdateAlertRetriggerRuleDataAttributesConditionsOperator = "is_not_set"
+	UpdateAlertRetriggerRuleDataAttributesConditionsOperatorIsOneOf        UpdateAlertRetriggerRuleDataAttributesConditionsOperator = "is_one_of"
+	UpdateAlertRetriggerRuleDataAttributesConditionsOperatorIsSet          UpdateAlertRetriggerRuleDataAttributesConditionsOperator = "is_set"
+	UpdateAlertRetriggerRuleDataAttributesConditionsOperatorMatchesRegex   UpdateAlertRetriggerRuleDataAttributesConditionsOperator = "matches_regex"
+	UpdateAlertRetriggerRuleDataAttributesConditionsOperatorStartsWith     UpdateAlertRetriggerRuleDataAttributesConditionsOperator = "starts_with"
+)
+
+// Valid indicates whether the value is a known member of the UpdateAlertRetriggerRuleDataAttributesConditionsOperator enum.
+func (e UpdateAlertRetriggerRuleDataAttributesConditionsOperator) Valid() bool {
+	switch e {
+	case UpdateAlertRetriggerRuleDataAttributesConditionsOperatorContains:
+		return true
+	case UpdateAlertRetriggerRuleDataAttributesConditionsOperatorDoesNotContain:
+		return true
+	case UpdateAlertRetriggerRuleDataAttributesConditionsOperatorEndsWith:
+		return true
+	case UpdateAlertRetriggerRuleDataAttributesConditionsOperatorIsNotOneOf:
+		return true
+	case UpdateAlertRetriggerRuleDataAttributesConditionsOperatorIsNotSet:
+		return true
+	case UpdateAlertRetriggerRuleDataAttributesConditionsOperatorIsOneOf:
+		return true
+	case UpdateAlertRetriggerRuleDataAttributesConditionsOperatorIsSet:
+		return true
+	case UpdateAlertRetriggerRuleDataAttributesConditionsOperatorMatchesRegex:
+		return true
+	case UpdateAlertRetriggerRuleDataAttributesConditionsOperatorStartsWith:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateAlertRetriggerRuleDataAttributesMatchMode.
+const (
+	UpdateAlertRetriggerRuleDataAttributesMatchModeMatchAllRules UpdateAlertRetriggerRuleDataAttributesMatchMode = "match-all-rules"
+	UpdateAlertRetriggerRuleDataAttributesMatchModeMatchAnyRule  UpdateAlertRetriggerRuleDataAttributesMatchMode = "match-any-rule"
+)
+
+// Valid indicates whether the value is a known member of the UpdateAlertRetriggerRuleDataAttributesMatchMode enum.
+func (e UpdateAlertRetriggerRuleDataAttributesMatchMode) Valid() bool {
+	switch e {
+	case UpdateAlertRetriggerRuleDataAttributesMatchModeMatchAllRules:
+		return true
+	case UpdateAlertRetriggerRuleDataAttributesMatchModeMatchAnyRule:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateAlertRetriggerRuleDataAttributesTimeoutMinutes.
+const (
+	UpdateAlertRetriggerRuleDataAttributesTimeoutMinutesN10   UpdateAlertRetriggerRuleDataAttributesTimeoutMinutes = 10
+	UpdateAlertRetriggerRuleDataAttributesTimeoutMinutesN120  UpdateAlertRetriggerRuleDataAttributesTimeoutMinutes = 120
+	UpdateAlertRetriggerRuleDataAttributesTimeoutMinutesN1440 UpdateAlertRetriggerRuleDataAttributesTimeoutMinutes = 1440
+	UpdateAlertRetriggerRuleDataAttributesTimeoutMinutesN180  UpdateAlertRetriggerRuleDataAttributesTimeoutMinutes = 180
+	UpdateAlertRetriggerRuleDataAttributesTimeoutMinutesN20   UpdateAlertRetriggerRuleDataAttributesTimeoutMinutes = 20
+	UpdateAlertRetriggerRuleDataAttributesTimeoutMinutesN240  UpdateAlertRetriggerRuleDataAttributesTimeoutMinutes = 240
+	UpdateAlertRetriggerRuleDataAttributesTimeoutMinutesN30   UpdateAlertRetriggerRuleDataAttributesTimeoutMinutes = 30
+	UpdateAlertRetriggerRuleDataAttributesTimeoutMinutesN300  UpdateAlertRetriggerRuleDataAttributesTimeoutMinutes = 300
+	UpdateAlertRetriggerRuleDataAttributesTimeoutMinutesN360  UpdateAlertRetriggerRuleDataAttributesTimeoutMinutes = 360
+	UpdateAlertRetriggerRuleDataAttributesTimeoutMinutesN40   UpdateAlertRetriggerRuleDataAttributesTimeoutMinutes = 40
+	UpdateAlertRetriggerRuleDataAttributesTimeoutMinutesN50   UpdateAlertRetriggerRuleDataAttributesTimeoutMinutes = 50
+	UpdateAlertRetriggerRuleDataAttributesTimeoutMinutesN60   UpdateAlertRetriggerRuleDataAttributesTimeoutMinutes = 60
+	UpdateAlertRetriggerRuleDataAttributesTimeoutMinutesN720  UpdateAlertRetriggerRuleDataAttributesTimeoutMinutes = 720
+	UpdateAlertRetriggerRuleDataAttributesTimeoutMinutesN90   UpdateAlertRetriggerRuleDataAttributesTimeoutMinutes = 90
+)
+
+// Valid indicates whether the value is a known member of the UpdateAlertRetriggerRuleDataAttributesTimeoutMinutes enum.
+func (e UpdateAlertRetriggerRuleDataAttributesTimeoutMinutes) Valid() bool {
+	switch e {
+	case UpdateAlertRetriggerRuleDataAttributesTimeoutMinutesN10:
+		return true
+	case UpdateAlertRetriggerRuleDataAttributesTimeoutMinutesN120:
+		return true
+	case UpdateAlertRetriggerRuleDataAttributesTimeoutMinutesN1440:
+		return true
+	case UpdateAlertRetriggerRuleDataAttributesTimeoutMinutesN180:
+		return true
+	case UpdateAlertRetriggerRuleDataAttributesTimeoutMinutesN20:
+		return true
+	case UpdateAlertRetriggerRuleDataAttributesTimeoutMinutesN240:
+		return true
+	case UpdateAlertRetriggerRuleDataAttributesTimeoutMinutesN30:
+		return true
+	case UpdateAlertRetriggerRuleDataAttributesTimeoutMinutesN300:
+		return true
+	case UpdateAlertRetriggerRuleDataAttributesTimeoutMinutesN360:
+		return true
+	case UpdateAlertRetriggerRuleDataAttributesTimeoutMinutesN40:
+		return true
+	case UpdateAlertRetriggerRuleDataAttributesTimeoutMinutesN50:
+		return true
+	case UpdateAlertRetriggerRuleDataAttributesTimeoutMinutesN60:
+		return true
+	case UpdateAlertRetriggerRuleDataAttributesTimeoutMinutesN720:
+		return true
+	case UpdateAlertRetriggerRuleDataAttributesTimeoutMinutesN90:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateAlertRetriggerRuleDataType.
+const (
+	UpdateAlertRetriggerRuleDataTypeAlertRetriggerRules UpdateAlertRetriggerRuleDataType = "alert_retrigger_rules"
+)
+
+// Valid indicates whether the value is a known member of the UpdateAlertRetriggerRuleDataType enum.
+func (e UpdateAlertRetriggerRuleDataType) Valid() bool {
+	switch e {
+	case UpdateAlertRetriggerRuleDataTypeAlertRetriggerRules:
 		return true
 	default:
 		return false
@@ -34315,6 +34843,7 @@ const (
 	UpdateFormFieldPositionDataAttributesFormSlackIncidentResolutionForm      UpdateFormFieldPositionDataAttributesForm = "slack_incident_resolution_form"
 	UpdateFormFieldPositionDataAttributesFormSlackNewIncidentForm             UpdateFormFieldPositionDataAttributesForm = "slack_new_incident_form"
 	UpdateFormFieldPositionDataAttributesFormSlackScheduledIncidentForm       UpdateFormFieldPositionDataAttributesForm = "slack_scheduled_incident_form"
+	UpdateFormFieldPositionDataAttributesFormSlackTaskForm                    UpdateFormFieldPositionDataAttributesForm = "slack_task_form"
 	UpdateFormFieldPositionDataAttributesFormSlackUpdateIncidentForm          UpdateFormFieldPositionDataAttributesForm = "slack_update_incident_form"
 	UpdateFormFieldPositionDataAttributesFormSlackUpdateIncidentStatusForm    UpdateFormFieldPositionDataAttributesForm = "slack_update_incident_status_form"
 	UpdateFormFieldPositionDataAttributesFormSlackUpdateScheduledIncidentForm UpdateFormFieldPositionDataAttributesForm = "slack_update_scheduled_incident_form"
@@ -34325,6 +34854,7 @@ const (
 	UpdateFormFieldPositionDataAttributesFormWebIncidentResolutionForm        UpdateFormFieldPositionDataAttributesForm = "web_incident_resolution_form"
 	UpdateFormFieldPositionDataAttributesFormWebNewIncidentForm               UpdateFormFieldPositionDataAttributesForm = "web_new_incident_form"
 	UpdateFormFieldPositionDataAttributesFormWebScheduledIncidentForm         UpdateFormFieldPositionDataAttributesForm = "web_scheduled_incident_form"
+	UpdateFormFieldPositionDataAttributesFormWebTaskForm                      UpdateFormFieldPositionDataAttributesForm = "web_task_form"
 	UpdateFormFieldPositionDataAttributesFormWebUpdateIncidentForm            UpdateFormFieldPositionDataAttributesForm = "web_update_incident_form"
 	UpdateFormFieldPositionDataAttributesFormWebUpdateScheduledIncidentForm   UpdateFormFieldPositionDataAttributesForm = "web_update_scheduled_incident_form"
 )
@@ -34346,6 +34876,8 @@ func (e UpdateFormFieldPositionDataAttributesForm) Valid() bool {
 		return true
 	case UpdateFormFieldPositionDataAttributesFormSlackScheduledIncidentForm:
 		return true
+	case UpdateFormFieldPositionDataAttributesFormSlackTaskForm:
+		return true
 	case UpdateFormFieldPositionDataAttributesFormSlackUpdateIncidentForm:
 		return true
 	case UpdateFormFieldPositionDataAttributesFormSlackUpdateIncidentStatusForm:
@@ -34365,6 +34897,8 @@ func (e UpdateFormFieldPositionDataAttributesForm) Valid() bool {
 	case UpdateFormFieldPositionDataAttributesFormWebNewIncidentForm:
 		return true
 	case UpdateFormFieldPositionDataAttributesFormWebScheduledIncidentForm:
+		return true
+	case UpdateFormFieldPositionDataAttributesFormWebTaskForm:
 		return true
 	case UpdateFormFieldPositionDataAttributesFormWebUpdateIncidentForm:
 		return true
@@ -38548,6 +39082,7 @@ const (
 	UpdateUserNotificationRuleDataAttributesEnabledContactTypesDevice            UpdateUserNotificationRuleDataAttributesEnabledContactTypes = "device"
 	UpdateUserNotificationRuleDataAttributesEnabledContactTypesEmail             UpdateUserNotificationRuleDataAttributesEnabledContactTypes = "email"
 	UpdateUserNotificationRuleDataAttributesEnabledContactTypesGoogleChat        UpdateUserNotificationRuleDataAttributesEnabledContactTypes = "google_chat"
+	UpdateUserNotificationRuleDataAttributesEnabledContactTypesMicrosoftTeams    UpdateUserNotificationRuleDataAttributesEnabledContactTypes = "microsoft_teams"
 	UpdateUserNotificationRuleDataAttributesEnabledContactTypesNonCriticalDevice UpdateUserNotificationRuleDataAttributesEnabledContactTypes = "non_critical_device"
 	UpdateUserNotificationRuleDataAttributesEnabledContactTypesSlack             UpdateUserNotificationRuleDataAttributesEnabledContactTypes = "slack"
 	UpdateUserNotificationRuleDataAttributesEnabledContactTypesSms               UpdateUserNotificationRuleDataAttributesEnabledContactTypes = "sms"
@@ -38563,6 +39098,8 @@ func (e UpdateUserNotificationRuleDataAttributesEnabledContactTypes) Valid() boo
 	case UpdateUserNotificationRuleDataAttributesEnabledContactTypesEmail:
 		return true
 	case UpdateUserNotificationRuleDataAttributesEnabledContactTypesGoogleChat:
+		return true
+	case UpdateUserNotificationRuleDataAttributesEnabledContactTypesMicrosoftTeams:
 		return true
 	case UpdateUserNotificationRuleDataAttributesEnabledContactTypesNonCriticalDevice:
 		return true
@@ -38644,6 +39181,7 @@ func (e UpdateVictorOpsIncidentTaskParamsTaskType) Valid() bool {
 // Defines values for UpdateWebhooksEndpointDataAttributesEventTypes.
 const (
 	UpdateWebhooksEndpointDataAttributesEventTypesAlertCreated                   UpdateWebhooksEndpointDataAttributesEventTypes = "alert.created"
+	UpdateWebhooksEndpointDataAttributesEventTypesAlertUpdated                   UpdateWebhooksEndpointDataAttributesEventTypes = "alert.updated"
 	UpdateWebhooksEndpointDataAttributesEventTypesAuditLogCreated                UpdateWebhooksEndpointDataAttributesEventTypes = "audit_log.created"
 	UpdateWebhooksEndpointDataAttributesEventTypesGeniusWorkflowRunCanceled      UpdateWebhooksEndpointDataAttributesEventTypes = "genius_workflow_run.canceled"
 	UpdateWebhooksEndpointDataAttributesEventTypesGeniusWorkflowRunCompleted     UpdateWebhooksEndpointDataAttributesEventTypes = "genius_workflow_run.completed"
@@ -38680,6 +39218,8 @@ const (
 func (e UpdateWebhooksEndpointDataAttributesEventTypes) Valid() bool {
 	switch e {
 	case UpdateWebhooksEndpointDataAttributesEventTypesAlertCreated:
+		return true
+	case UpdateWebhooksEndpointDataAttributesEventTypesAlertUpdated:
 		return true
 	case UpdateWebhooksEndpointDataAttributesEventTypesAuditLogCreated:
 		return true
@@ -39064,6 +39604,7 @@ const (
 	UserNotificationRuleEnabledContactTypesDevice            UserNotificationRuleEnabledContactTypes = "device"
 	UserNotificationRuleEnabledContactTypesEmail             UserNotificationRuleEnabledContactTypes = "email"
 	UserNotificationRuleEnabledContactTypesGoogleChat        UserNotificationRuleEnabledContactTypes = "google_chat"
+	UserNotificationRuleEnabledContactTypesMicrosoftTeams    UserNotificationRuleEnabledContactTypes = "microsoft_teams"
 	UserNotificationRuleEnabledContactTypesNonCriticalDevice UserNotificationRuleEnabledContactTypes = "non_critical_device"
 	UserNotificationRuleEnabledContactTypesSlack             UserNotificationRuleEnabledContactTypes = "slack"
 	UserNotificationRuleEnabledContactTypesSms               UserNotificationRuleEnabledContactTypes = "sms"
@@ -39079,6 +39620,8 @@ func (e UserNotificationRuleEnabledContactTypes) Valid() bool {
 	case UserNotificationRuleEnabledContactTypesEmail:
 		return true
 	case UserNotificationRuleEnabledContactTypesGoogleChat:
+		return true
+	case UserNotificationRuleEnabledContactTypesMicrosoftTeams:
 		return true
 	case UserNotificationRuleEnabledContactTypesNonCriticalDevice:
 		return true
@@ -39184,6 +39727,102 @@ func (e UserResponseDataType) Valid() bool {
 	}
 }
 
+// Defines values for VerifiedDomainSource.
+const (
+	VerifiedDomainSourceManual    VerifiedDomainSource = "manual"
+	VerifiedDomainSourceMigration VerifiedDomainSource = "migration"
+	VerifiedDomainSourceOauthAuto VerifiedDomainSource = "oauth_auto"
+)
+
+// Valid indicates whether the value is a known member of the VerifiedDomainSource enum.
+func (e VerifiedDomainSource) Valid() bool {
+	switch e {
+	case VerifiedDomainSourceManual:
+		return true
+	case VerifiedDomainSourceMigration:
+		return true
+	case VerifiedDomainSourceOauthAuto:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for VerifiedDomainVerificationStatus.
+const (
+	VerifiedDomainVerificationStatusExpired  VerifiedDomainVerificationStatus = "expired"
+	VerifiedDomainVerificationStatusFailing  VerifiedDomainVerificationStatus = "failing"
+	VerifiedDomainVerificationStatusPending  VerifiedDomainVerificationStatus = "pending"
+	VerifiedDomainVerificationStatusVerified VerifiedDomainVerificationStatus = "verified"
+)
+
+// Valid indicates whether the value is a known member of the VerifiedDomainVerificationStatus enum.
+func (e VerifiedDomainVerificationStatus) Valid() bool {
+	switch e {
+	case VerifiedDomainVerificationStatusExpired:
+		return true
+	case VerifiedDomainVerificationStatusFailing:
+		return true
+	case VerifiedDomainVerificationStatusPending:
+		return true
+	case VerifiedDomainVerificationStatusVerified:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for VerifiedDomainListDataType.
+const (
+	VerifiedDomainListDataTypeVerifiedDomains VerifiedDomainListDataType = "verified_domains"
+)
+
+// Valid indicates whether the value is a known member of the VerifiedDomainListDataType enum.
+func (e VerifiedDomainListDataType) Valid() bool {
+	switch e {
+	case VerifiedDomainListDataTypeVerifiedDomains:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for VerifiedDomainResponseDataType.
+const (
+	VerifiedDomainResponseDataTypeVerifiedDomains VerifiedDomainResponseDataType = "verified_domains"
+)
+
+// Valid indicates whether the value is a known member of the VerifiedDomainResponseDataType enum.
+func (e VerifiedDomainResponseDataType) Valid() bool {
+	switch e {
+	case VerifiedDomainResponseDataTypeVerifiedDomains:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for WebhooksDeliveryStatus.
+const (
+	WebhooksDeliveryStatusFailed  WebhooksDeliveryStatus = "failed"
+	WebhooksDeliveryStatusPending WebhooksDeliveryStatus = "pending"
+	WebhooksDeliveryStatusSuccess WebhooksDeliveryStatus = "success"
+)
+
+// Valid indicates whether the value is a known member of the WebhooksDeliveryStatus enum.
+func (e WebhooksDeliveryStatus) Valid() bool {
+	switch e {
+	case WebhooksDeliveryStatusFailed:
+		return true
+	case WebhooksDeliveryStatusPending:
+		return true
+	case WebhooksDeliveryStatusSuccess:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for WebhooksDeliveryListDataType.
 const (
 	WebhooksDeliveryListDataTypeWebhooksDeliveries WebhooksDeliveryListDataType = "webhooks_deliveries"
@@ -39217,6 +39856,7 @@ func (e WebhooksDeliveryResponseDataType) Valid() bool {
 // Defines values for WebhooksEndpointEventTypes.
 const (
 	WebhooksEndpointEventTypesAlertCreated                   WebhooksEndpointEventTypes = "alert.created"
+	WebhooksEndpointEventTypesAlertUpdated                   WebhooksEndpointEventTypes = "alert.updated"
 	WebhooksEndpointEventTypesAuditLogCreated                WebhooksEndpointEventTypes = "audit_log.created"
 	WebhooksEndpointEventTypesGeniusWorkflowRunCanceled      WebhooksEndpointEventTypes = "genius_workflow_run.canceled"
 	WebhooksEndpointEventTypesGeniusWorkflowRunCompleted     WebhooksEndpointEventTypes = "genius_workflow_run.completed"
@@ -39253,6 +39893,8 @@ const (
 func (e WebhooksEndpointEventTypes) Valid() bool {
 	switch e {
 	case WebhooksEndpointEventTypesAlertCreated:
+		return true
+	case WebhooksEndpointEventTypesAlertUpdated:
 		return true
 	case WebhooksEndpointEventTypesAuditLogCreated:
 		return true
@@ -39864,6 +40506,7 @@ const (
 	ListAlertEventsFeedParamsFilterActionAttached              ListAlertEventsFeedParamsFilterAction = "attached"
 	ListAlertEventsFeedParamsFilterActionCallLifecycle         ListAlertEventsFeedParamsFilterAction = "call_lifecycle"
 	ListAlertEventsFeedParamsFilterActionCalled                ListAlertEventsFeedParamsFilterAction = "called"
+	ListAlertEventsFeedParamsFilterActionCleared               ListAlertEventsFeedParamsFilterAction = "cleared"
 	ListAlertEventsFeedParamsFilterActionCreated               ListAlertEventsFeedParamsFilterAction = "created"
 	ListAlertEventsFeedParamsFilterActionDeferred              ListAlertEventsFeedParamsFilterAction = "deferred"
 	ListAlertEventsFeedParamsFilterActionEmailed               ListAlertEventsFeedParamsFilterAction = "emailed"
@@ -39882,6 +40525,7 @@ const (
 	ListAlertEventsFeedParamsFilterActionPaged                 ListAlertEventsFeedParamsFilterAction = "paged"
 	ListAlertEventsFeedParamsFilterActionRemoved               ListAlertEventsFeedParamsFilterAction = "removed"
 	ListAlertEventsFeedParamsFilterActionResolved              ListAlertEventsFeedParamsFilterAction = "resolved"
+	ListAlertEventsFeedParamsFilterActionRetriggerSuppressed   ListAlertEventsFeedParamsFilterAction = "retrigger_suppressed"
 	ListAlertEventsFeedParamsFilterActionRetriggered           ListAlertEventsFeedParamsFilterAction = "retriggered"
 	ListAlertEventsFeedParamsFilterActionSkipped               ListAlertEventsFeedParamsFilterAction = "skipped"
 	ListAlertEventsFeedParamsFilterActionSlacked               ListAlertEventsFeedParamsFilterAction = "slacked"
@@ -39905,6 +40549,8 @@ func (e ListAlertEventsFeedParamsFilterAction) Valid() bool {
 	case ListAlertEventsFeedParamsFilterActionCallLifecycle:
 		return true
 	case ListAlertEventsFeedParamsFilterActionCalled:
+		return true
+	case ListAlertEventsFeedParamsFilterActionCleared:
 		return true
 	case ListAlertEventsFeedParamsFilterActionCreated:
 		return true
@@ -39941,6 +40587,8 @@ func (e ListAlertEventsFeedParamsFilterAction) Valid() bool {
 	case ListAlertEventsFeedParamsFilterActionRemoved:
 		return true
 	case ListAlertEventsFeedParamsFilterActionResolved:
+		return true
+	case ListAlertEventsFeedParamsFilterActionRetriggerSuppressed:
 		return true
 	case ListAlertEventsFeedParamsFilterActionRetriggered:
 		return true
@@ -42741,6 +43389,85 @@ type AlertResponseDataSource string
 // AlertResponseDataType defines model for AlertResponse.Data.Type.
 type AlertResponseDataType string
 
+// AlertRetriggerRule defines model for alert_retrigger_rule.
+type AlertRetriggerRule struct {
+	// Conditions The conditions for the rule
+	Conditions []struct {
+		// ID Unique ID of the condition
+		ID openapi_types.UUID `json:"id"`
+
+		// Kind The operand the condition matches on. Native operands (urgency, source, service, group) match by record; alert_field/payload match a field value.
+		Kind AlertRetriggerRuleConditionsKind `json:"kind"`
+
+		// Operator How the operand is compared. Native operands support is_one_of/is_not_one_of/is_set/is_not_set; alert_field/payload additionally support the string/regex operators.
+		Operator AlertRetriggerRuleConditionsOperator `json:"operator"`
+
+		// PropertyFieldName For alert_field conditions: the alert field id. For payload conditions: a JSON Path (e.g. $.priority).
+		PropertyFieldName *string `json:"property_field_name,omitempty"`
+
+		// RecordIDs For urgency/service/group/source conditions: the IDs of the matched records (AlertUrgency, Service, Group, or Alerts::Source).
+		RecordIDs []openapi_types.UUID `json:"record_ids,omitempty"`
+
+		// Values For source conditions: non-integration source aliases (e.g. manual, api). For alert_field/payload conditions: the values to compare against.
+		Values []string `json:"values,omitempty"`
+	} `json:"conditions,omitempty"`
+	CreatedAt *time.Time `json:"created_at,omitempty"`
+
+	// MatchMode Whether all or any of the conditions must match
+	MatchMode *AlertRetriggerRuleMatchMode `json:"match_mode,omitempty"`
+
+	// Name A human-readable name for the rule
+	Name *string `json:"name,omitempty"`
+
+	// Position The position of the rule for ordering evaluation
+	Position *int `json:"position,omitempty"`
+
+	// TimeoutMinutes Minutes after acknowledgment to re-trigger. Null means never re-trigger.
+	TimeoutMinutes nullable.Nullable[int] `json:"timeout_minutes,omitempty"`
+	UpdatedAt      *time.Time             `json:"updated_at,omitempty"`
+}
+
+// AlertRetriggerRuleConditionsKind The operand the condition matches on. Native operands (urgency, source, service, group) match by record; alert_field/payload match a field value.
+type AlertRetriggerRuleConditionsKind string
+
+// AlertRetriggerRuleConditionsOperator How the operand is compared. Native operands support is_one_of/is_not_one_of/is_set/is_not_set; alert_field/payload additionally support the string/regex operators.
+type AlertRetriggerRuleConditionsOperator string
+
+// AlertRetriggerRuleMatchMode Whether all or any of the conditions must match
+type AlertRetriggerRuleMatchMode string
+
+// AlertRetriggerRuleList defines model for alert_retrigger_rule_list.
+type AlertRetriggerRuleList struct {
+	Data []struct {
+		Attributes AlertRetriggerRule `json:"attributes"`
+
+		// ID Unique ID of the alert_retrigger_rule
+		ID   string                         `json:"id"`
+		Type AlertRetriggerRuleListDataType `json:"type"`
+	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
+}
+
+// AlertRetriggerRuleListDataType defines model for AlertRetriggerRuleList.Data.Type.
+type AlertRetriggerRuleListDataType string
+
+// AlertRetriggerRuleResponse defines model for alert_retrigger_rule_response.
+type AlertRetriggerRuleResponse struct {
+	Data struct {
+		Attributes AlertRetriggerRule `json:"attributes"`
+
+		// ID Unique ID of the alert_retrigger_rule
+		ID   string                             `json:"id"`
+		Type AlertRetriggerRuleResponseDataType `json:"type"`
+	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+}
+
+// AlertRetriggerRuleResponseDataType defines model for AlertRetriggerRuleResponse.Data.Type.
+type AlertRetriggerRuleResponseDataType string
+
 // AlertRoute defines model for alert_route.
 type AlertRoute struct {
 	AlertsSourceIDs []openapi_types.UUID `json:"alerts_source_ids"`
@@ -43852,10 +44579,51 @@ type AutoAssignRoleRootlyTaskParams struct {
 		ID   *string `json:"id,omitempty"`
 		Name *string `json:"name,omitempty"`
 	} `json:"user_target,omitempty"`
+	union json.RawMessage
 }
 
 // AutoAssignRoleRootlyTaskParamsTaskType defines model for AutoAssignRoleRootlyTaskParams.TaskType.
 type AutoAssignRoleRootlyTaskParamsTaskType string
+
+// AutoAssignRoleRootlyTaskParams0 defines model for AutoAssignRoleRootlyTaskParams.0.
+type AutoAssignRoleRootlyTaskParams0 struct {
+	EscalationPolicyTarget struct {
+		ID   *string `json:"id,omitempty"`
+		Name *string `json:"name,omitempty"`
+	} `json:"escalation_policy_target"`
+}
+
+// AutoAssignRoleRootlyTaskParams1 defines model for AutoAssignRoleRootlyTaskParams.1.
+type AutoAssignRoleRootlyTaskParams1 struct {
+	ServiceTarget struct {
+		ID   *string `json:"id,omitempty"`
+		Name *string `json:"name,omitempty"`
+	} `json:"service_target"`
+}
+
+// AutoAssignRoleRootlyTaskParams2 defines model for AutoAssignRoleRootlyTaskParams.2.
+type AutoAssignRoleRootlyTaskParams2 struct {
+	UserTarget struct {
+		ID   *string `json:"id,omitempty"`
+		Name *string `json:"name,omitempty"`
+	} `json:"user_target"`
+}
+
+// AutoAssignRoleRootlyTaskParams3 defines model for AutoAssignRoleRootlyTaskParams.3.
+type AutoAssignRoleRootlyTaskParams3 struct {
+	GroupTarget struct {
+		ID   *string `json:"id,omitempty"`
+		Name *string `json:"name,omitempty"`
+	} `json:"group_target"`
+}
+
+// AutoAssignRoleRootlyTaskParams4 defines model for AutoAssignRoleRootlyTaskParams.4.
+type AutoAssignRoleRootlyTaskParams4 struct {
+	ScheduleTarget struct {
+		ID   *string `json:"id,omitempty"`
+		Name *string `json:"name,omitempty"`
+	} `json:"schedule_target"`
+}
 
 // AutoAssignRoleVictorOpsTaskParams defines model for auto_assign_role_victor_ops_task_params.
 type AutoAssignRoleVictorOpsTaskParams struct {
@@ -43982,11 +44750,28 @@ type BulkDestroyFunctionalitiesResponse struct {
 	} `json:"data,omitempty"`
 }
 
-// BulkDestroyServices Delete specific services by external_id. (Prune-by-managed_by is not available for services yet — services.managed_by is still being migrated to the enum type.)
+// BulkDestroyServices Two mutually exclusive modes. Pass exactly one of: external_ids (delete specific records) or managed_by (prune all managed records not in keep set).
 type BulkDestroyServices struct {
+	union json.RawMessage
+}
+
+// BulkDestroyServices0 defines model for BulkDestroyServices.0.
+type BulkDestroyServices0 struct {
 	// ExternalIDs Array of external_ids to delete. Max 100 per request.
 	ExternalIDs []string `json:"external_ids"`
 }
+
+// BulkDestroyServices1 defines model for BulkDestroyServices.1.
+type BulkDestroyServices1 struct {
+	// KeepExternalIDs Records with these external_ids are preserved.
+	KeepExternalIDs []string `json:"keep_external_ids,omitempty"`
+
+	// ManagedBy Delete all records with this managed_by value (web/admin_web not allowed).
+	ManagedBy BulkDestroyServices1ManagedBy `json:"managed_by"`
+}
+
+// BulkDestroyServices1ManagedBy Delete all records with this managed_by value (web/admin_web not allowed).
+type BulkDestroyServices1ManagedBy string
 
 // BulkDestroyServicesResponse defines model for bulk_destroy_services_response.
 type BulkDestroyServicesResponse struct {
@@ -45447,6 +46232,10 @@ type CreateClickupTaskTaskParams struct {
 
 	// DueDate The due date
 	DueDate *string `json:"due_date,omitempty"`
+	List    struct {
+		ID   *string `json:"id,omitempty"`
+		Name *string `json:"name,omitempty"`
+	} `json:"list"`
 
 	// Priority The priority id and display name
 	Priority *struct {
@@ -45637,7 +46426,7 @@ type CreateGitlabIssueTaskParams struct {
 	DueDate *string `json:"due_date,omitempty"`
 
 	// IssueType The issue type
-	IssueType *CreateGitlabIssueTaskParamsIssueType `json:"issue_type,omitempty"`
+	IssueType CreateGitlabIssueTaskParamsIssueType `json:"issue_type"`
 
 	// Labels The issue labels
 	Labels     *string `json:"labels,omitempty"`
@@ -45934,6 +46723,16 @@ type CreateJiraIssueTaskParams struct {
 	// ReporterUserEmail The reporter user's email
 	ReporterUserEmail *string `json:"reporter_user_email,omitempty"`
 
+	// RetryCount Number of times to retry on rate-limit (HTTP 429) responses (0-4). 0 disables retry.
+	//
+	// Example: 3
+	RetryCount *int `json:"retry_count,omitempty"`
+
+	// RetryWaitTime Seconds to wait before each retry (1-15). Retry-After header is honored when present and <= 90s, taking the larger of retry_wait_time and the header value.
+	//
+	// Example: 2
+	RetryWaitTime *int `json:"retry_wait_time,omitempty"`
+
 	// Status The status id and display name
 	Status *struct {
 		ID   *string `json:"id,omitempty"`
@@ -45988,6 +46787,16 @@ type CreateJiraSubtaskTaskParams struct {
 
 	// ReporterUserEmail The reporter user's email
 	ReporterUserEmail *string `json:"reporter_user_email,omitempty"`
+
+	// RetryCount Number of times to retry on rate-limit (HTTP 429) responses (0-4). 0 disables retry.
+	//
+	// Example: 3
+	RetryCount *int `json:"retry_count,omitempty"`
+
+	// RetryWaitTime Seconds to wait before each retry (1-15). Retry-After header is honored when present and <= 90s, taking the larger of retry_wait_time and the header value.
+	//
+	// Example: 2
+	RetryWaitTime *int `json:"retry_wait_time,omitempty"`
 
 	// Status The status id and display name
 	Status *struct {
@@ -46253,8 +47062,10 @@ type CreateMotionTaskTaskParams struct {
 	DueDate *string `json:"due_date,omitempty"`
 
 	// Duration The duration. Eg.  "NONE", "REMINDER", or a integer greater than 0.
-	Duration *string  `json:"duration,omitempty"`
-	Labels   []string `json:"labels,omitempty"`
+	Duration *string `json:"duration,omitempty"`
+
+	// Labels The task labels
+	Labels *string `json:"labels,omitempty"`
 
 	// Priority The priority id and display name
 	Priority *struct {
@@ -47466,6 +48277,7 @@ type EscalateAlertDataType string
 
 // EscalationPolicy defines model for escalation_policy.
 type EscalationPolicy struct {
+	// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
 	BusinessHours nullable.Nullable[struct {
 		// Days Business days
 		Days nullable.Nullable[[]EscalationPolicyBusinessHoursDays] `json:"days,omitempty"`
@@ -48202,7 +49014,7 @@ type FormSet struct {
 	// CreatedAt Date of creation
 	CreatedAt string `json:"created_at"`
 
-	// Forms The forms included in the form set. Add custom forms using the custom form's `slug` field. Or choose a built-in form: `web_new_incident_form`, `web_update_incident_form`, `web_incident_post_mortem_form`, `web_incident_mitigation_form`, `web_incident_resolution_form`, `web_incident_cancellation_form`, `web_scheduled_incident_form`, `web_update_scheduled_incident_form`, `slack_new_incident_form`, `slack_update_incident_form`, `slack_update_incident_status_form`, `slack_incident_mitigation_form`, `slack_incident_resolution_form`, `slack_incident_cancellation_form`, `slack_scheduled_incident_form`, `slack_update_scheduled_incident_form`, `google_chat_new_incident_form`, `google_chat_update_incident_form`
+	// Forms The forms included in the form set. Add custom forms using the custom form's `slug` field. Or choose a built-in form: `web_new_incident_form`, `web_update_incident_form`, `web_incident_post_mortem_form`, `web_incident_mitigation_form`, `web_incident_resolution_form`, `web_incident_cancellation_form`, `web_scheduled_incident_form`, `web_update_scheduled_incident_form`, `slack_new_incident_form`, `slack_update_incident_form`, `slack_update_incident_status_form`, `slack_incident_mitigation_form`, `slack_incident_resolution_form`, `slack_incident_cancellation_form`, `slack_scheduled_incident_form`, `slack_update_scheduled_incident_form`, `google_chat_new_incident_form`, `google_chat_update_incident_form`, `microsoft_teams_new_incident_form`
 	Forms []string `json:"forms"`
 
 	// IsDefault Whether the form set is default
@@ -51153,6 +51965,59 @@ type NewAlertGroupDataAttributesTargetsTargetType string
 // NewAlertGroupDataType defines model for NewAlertGroup.Data.Type.
 type NewAlertGroupDataType string
 
+// NewAlertRetriggerRule defines model for new_alert_retrigger_rule.
+type NewAlertRetriggerRule struct {
+	Data struct {
+		Attributes struct {
+			// Conditions The conditions that determine which alerts this rule applies to. An empty array applies to every alert.
+			Conditions []struct {
+				// Kind The operand the condition matches on. Native operands (urgency, source, service, group) match by record; alert_field/payload match a field value.
+				Kind NewAlertRetriggerRuleDataAttributesConditionsKind `json:"kind"`
+
+				// Operator How the operand is compared. Native operands support is_one_of/is_not_one_of/is_set/is_not_set; alert_field/payload additionally support the string/regex operators.
+				Operator NewAlertRetriggerRuleDataAttributesConditionsOperator `json:"operator"`
+
+				// PropertyFieldName For alert_field conditions: the alert field id. For payload conditions: a JSON Path (e.g. $.priority).
+				PropertyFieldName *string `json:"property_field_name,omitempty"`
+
+				// RecordIDs For urgency/service/group/source conditions: the IDs of the matched records (AlertUrgency, Service, Group, or Alerts::Source).
+				RecordIDs []openapi_types.UUID `json:"record_ids,omitempty"`
+
+				// Values For source conditions: non-integration source aliases (e.g. manual, api). For alert_field/payload conditions: the values to compare against.
+				Values []string `json:"values,omitempty"`
+			} `json:"conditions,omitempty"`
+
+			// MatchMode Whether all or any of the conditions must match
+			MatchMode *NewAlertRetriggerRuleDataAttributesMatchMode `json:"match_mode,omitempty"`
+
+			// Name A human-readable name for the rule
+			Name string `json:"name"`
+
+			// Position The position of the rule; the first matching rule (by position) decides the outcome
+			Position *int `json:"position,omitempty"`
+
+			// TimeoutMinutes Re-trigger the alert this many minutes after acknowledgment. Null means never re-trigger.
+			TimeoutMinutes nullable.Nullable[NewAlertRetriggerRuleDataAttributesTimeoutMinutes] `json:"timeout_minutes,omitempty"`
+		} `json:"attributes"`
+		Type NewAlertRetriggerRuleDataType `json:"type"`
+	} `json:"data"`
+}
+
+// NewAlertRetriggerRuleDataAttributesConditionsKind The operand the condition matches on. Native operands (urgency, source, service, group) match by record; alert_field/payload match a field value.
+type NewAlertRetriggerRuleDataAttributesConditionsKind string
+
+// NewAlertRetriggerRuleDataAttributesConditionsOperator How the operand is compared. Native operands support is_one_of/is_not_one_of/is_set/is_not_set; alert_field/payload additionally support the string/regex operators.
+type NewAlertRetriggerRuleDataAttributesConditionsOperator string
+
+// NewAlertRetriggerRuleDataAttributesMatchMode Whether all or any of the conditions must match
+type NewAlertRetriggerRuleDataAttributesMatchMode string
+
+// NewAlertRetriggerRuleDataAttributesTimeoutMinutes Re-trigger the alert this many minutes after acknowledgment. Null means never re-trigger.
+type NewAlertRetriggerRuleDataAttributesTimeoutMinutes int
+
+// NewAlertRetriggerRuleDataType defines model for NewAlertRetriggerRule.Data.Type.
+type NewAlertRetriggerRuleDataType string
+
 // NewAlertRoute defines model for new_alert_route.
 type NewAlertRoute struct {
 	Data *struct {
@@ -52298,6 +53163,7 @@ type NewEnvironmentDataType string
 type NewEscalationPolicy struct {
 	Data struct {
 		Attributes struct {
+			// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
 			BusinessHours nullable.Nullable[struct {
 				// Days Business days
 				Days nullable.Nullable[[]NewEscalationPolicyDataAttributesBusinessHoursDays] `json:"days,omitempty"`
@@ -52796,7 +53662,7 @@ type NewFormFieldPositionDataType string
 type NewFormSet struct {
 	Data struct {
 		Attributes struct {
-			// Forms The forms included in the form set. Add custom forms using the custom form's `slug` field. Or choose a built-in form: `web_new_incident_form`, `web_update_incident_form`, `web_incident_post_mortem_form`, `web_incident_mitigation_form`, `web_incident_resolution_form`, `web_incident_cancellation_form`, `web_scheduled_incident_form`, `web_update_scheduled_incident_form`, `slack_new_incident_form`, `slack_update_incident_form`, `slack_update_incident_status_form`, `slack_incident_mitigation_form`, `slack_incident_resolution_form`, `slack_incident_cancellation_form`, `slack_scheduled_incident_form`, `slack_update_scheduled_incident_form`, `google_chat_new_incident_form`, `google_chat_update_incident_form`
+			// Forms The forms included in the form set. Add custom forms using the custom form's `slug` field. Or choose a built-in form: `web_new_incident_form`, `web_update_incident_form`, `web_incident_post_mortem_form`, `web_incident_mitigation_form`, `web_incident_resolution_form`, `web_incident_cancellation_form`, `web_scheduled_incident_form`, `web_update_scheduled_incident_form`, `slack_new_incident_form`, `slack_update_incident_form`, `slack_update_incident_status_form`, `slack_incident_mitigation_form`, `slack_incident_resolution_form`, `slack_incident_cancellation_form`, `slack_scheduled_incident_form`, `slack_update_scheduled_incident_form`, `google_chat_new_incident_form`, `google_chat_update_incident_form`, `microsoft_teams_new_incident_form`
 			Forms []string `json:"forms"`
 
 			// Name The name of the form set
@@ -55219,6 +56085,20 @@ type NewUserPhoneNumber struct {
 // NewUserPhoneNumberDataType defines model for NewUserPhoneNumber.Data.Type.
 type NewUserPhoneNumberDataType string
 
+// NewVerifiedDomain defines model for new_verified_domain.
+type NewVerifiedDomain struct {
+	Data struct {
+		Attributes struct {
+			// Domain The domain to verify (e.g. acme.com)
+			Domain string `json:"domain"`
+		} `json:"attributes"`
+		Type NewVerifiedDomainDataType `json:"type"`
+	} `json:"data"`
+}
+
+// NewVerifiedDomainDataType defines model for NewVerifiedDomain.Data.Type.
+type NewVerifiedDomainDataType string
+
 // NewWebhooksEndpoint defines model for new_webhooks_endpoint.
 type NewWebhooksEndpoint struct {
 	Data struct {
@@ -56631,9 +57511,12 @@ type PublishIncidentTaskParams struct {
 	PublicTitle       string `json:"public_title"`
 
 	// ShouldTweet For Statuspage.io integrated pages auto publishes a tweet for your update
-	ShouldTweet        *bool                           `json:"should_tweet,omitempty"`
-	Status             PublishIncidentTaskParamsStatus `json:"status"`
-	StatusPageID       string                          `json:"status_page_id"`
+	ShouldTweet  *bool                           `json:"should_tweet,omitempty"`
+	Status       PublishIncidentTaskParamsStatus `json:"status"`
+	StatusPageID string                          `json:"status_page_id"`
+
+	// StatusPageIDs Publishes the update to every listed status page (requires the status-page-v3-limited-bulk-publish feature). When set, it takes precedence over status_page_id and the first entry becomes status_page_id.
+	StatusPageIDs      []string `json:"status_page_ids,omitempty"`
 	StatusPageTemplate *struct {
 		ID   *string `json:"id,omitempty"`
 		Name *string `json:"name,omitempty"`
@@ -58183,6 +59066,9 @@ type Service struct {
 	// KubernetesDeploymentName The Kubernetes deployment name associated to this service. eg: namespace/deployment-name
 	KubernetesDeploymentName nullable.Nullable[string] `json:"kubernetes_deployment_name,omitempty"`
 
+	// ManagedBy How this service is managed (provenance): web, api, terraform, etc. Read-only.
+	ManagedBy *ServiceManagedBy `json:"managed_by,omitempty"`
+
 	// Name The name of the service
 	Name string `json:"name"`
 
@@ -58246,6 +59132,9 @@ type Service struct {
 	// UpdatedAt Date of last update
 	UpdatedAt string `json:"updated_at"`
 }
+
+// ServiceManagedBy How this service is managed (provenance): web, api, terraform, etc. Read-only.
+type ServiceManagedBy string
 
 // ServiceList defines model for service_list.
 type ServiceList struct {
@@ -59650,6 +60539,59 @@ type UpdateAlertGroupDataAttributesTargetsTargetType string
 // UpdateAlertGroupDataType defines model for UpdateAlertGroup.Data.Type.
 type UpdateAlertGroupDataType string
 
+// UpdateAlertRetriggerRule defines model for update_alert_retrigger_rule.
+type UpdateAlertRetriggerRule struct {
+	Data struct {
+		Attributes struct {
+			// Conditions The full desired set of conditions; replaces the rule's existing conditions. An empty array applies to every alert.
+			Conditions []struct {
+				// Kind The operand the condition matches on. Native operands (urgency, source, service, group) match by record; alert_field/payload match a field value.
+				Kind UpdateAlertRetriggerRuleDataAttributesConditionsKind `json:"kind"`
+
+				// Operator How the operand is compared. Native operands support is_one_of/is_not_one_of/is_set/is_not_set; alert_field/payload additionally support the string/regex operators.
+				Operator UpdateAlertRetriggerRuleDataAttributesConditionsOperator `json:"operator"`
+
+				// PropertyFieldName For alert_field conditions: the alert field id. For payload conditions: a JSON Path (e.g. $.priority).
+				PropertyFieldName *string `json:"property_field_name,omitempty"`
+
+				// RecordIDs For urgency/service/group/source conditions: the IDs of the matched records (AlertUrgency, Service, Group, or Alerts::Source).
+				RecordIDs []openapi_types.UUID `json:"record_ids,omitempty"`
+
+				// Values For source conditions: non-integration source aliases (e.g. manual, api). For alert_field/payload conditions: the values to compare against.
+				Values []string `json:"values,omitempty"`
+			} `json:"conditions,omitempty"`
+
+			// MatchMode Whether all or any of the conditions must match
+			MatchMode *UpdateAlertRetriggerRuleDataAttributesMatchMode `json:"match_mode,omitempty"`
+
+			// Name A human-readable name for the rule
+			Name *string `json:"name,omitempty"`
+
+			// Position The position of the rule for ordering evaluation
+			Position *int `json:"position,omitempty"`
+
+			// TimeoutMinutes Re-trigger the alert this many minutes after acknowledgment. Null means never re-trigger.
+			TimeoutMinutes nullable.Nullable[UpdateAlertRetriggerRuleDataAttributesTimeoutMinutes] `json:"timeout_minutes,omitempty"`
+		} `json:"attributes"`
+		Type UpdateAlertRetriggerRuleDataType `json:"type"`
+	} `json:"data"`
+}
+
+// UpdateAlertRetriggerRuleDataAttributesConditionsKind The operand the condition matches on. Native operands (urgency, source, service, group) match by record; alert_field/payload match a field value.
+type UpdateAlertRetriggerRuleDataAttributesConditionsKind string
+
+// UpdateAlertRetriggerRuleDataAttributesConditionsOperator How the operand is compared. Native operands support is_one_of/is_not_one_of/is_set/is_not_set; alert_field/payload additionally support the string/regex operators.
+type UpdateAlertRetriggerRuleDataAttributesConditionsOperator string
+
+// UpdateAlertRetriggerRuleDataAttributesMatchMode Whether all or any of the conditions must match
+type UpdateAlertRetriggerRuleDataAttributesMatchMode string
+
+// UpdateAlertRetriggerRuleDataAttributesTimeoutMinutes Re-trigger the alert this many minutes after acknowledgment. Null means never re-trigger.
+type UpdateAlertRetriggerRuleDataAttributesTimeoutMinutes int
+
+// UpdateAlertRetriggerRuleDataType defines model for UpdateAlertRetriggerRule.Data.Type.
+type UpdateAlertRetriggerRuleDataType string
+
 // UpdateAlertRoute defines model for update_alert_route.
 type UpdateAlertRoute struct {
 	Data struct {
@@ -60909,6 +61851,7 @@ type UpdateEnvironmentDataType string
 type UpdateEscalationPolicy struct {
 	Data struct {
 		Attributes struct {
+			// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
 			BusinessHours nullable.Nullable[struct {
 				// Days Business days
 				Days nullable.Nullable[[]UpdateEscalationPolicyDataAttributesBusinessHoursDays] `json:"days,omitempty"`
@@ -61404,7 +62347,7 @@ type UpdateFormFieldPositionDataType string
 type UpdateFormSet struct {
 	Data struct {
 		Attributes struct {
-			// Forms The forms included in the form set. Add custom forms using the custom form's `slug` field. Or choose a built-in form: `web_new_incident_form`, `web_update_incident_form`, `web_incident_post_mortem_form`, `web_incident_mitigation_form`, `web_incident_resolution_form`, `web_incident_cancellation_form`, `web_scheduled_incident_form`, `web_update_scheduled_incident_form`, `slack_new_incident_form`, `slack_update_incident_form`, `slack_update_incident_status_form`, `slack_incident_mitigation_form`, `slack_incident_resolution_form`, `slack_incident_cancellation_form`, `slack_scheduled_incident_form`, `slack_update_scheduled_incident_form`, `google_chat_new_incident_form`, `google_chat_update_incident_form`
+			// Forms The forms included in the form set. Add custom forms using the custom form's `slug` field. Or choose a built-in form: `web_new_incident_form`, `web_update_incident_form`, `web_incident_post_mortem_form`, `web_incident_mitigation_form`, `web_incident_resolution_form`, `web_incident_cancellation_form`, `web_scheduled_incident_form`, `web_update_scheduled_incident_form`, `slack_new_incident_form`, `slack_update_incident_form`, `slack_update_incident_status_form`, `slack_incident_mitigation_form`, `slack_incident_resolution_form`, `slack_incident_cancellation_form`, `slack_scheduled_incident_form`, `slack_update_scheduled_incident_form`, `google_chat_new_incident_form`, `google_chat_update_incident_form`, `microsoft_teams_new_incident_form`
 			Forms []string `json:"forms,omitempty"`
 
 			// Name The name of the form set
@@ -62544,6 +63487,16 @@ type UpdateJiraIssueTaskParams struct {
 
 	// ReporterUserEmail The reporter user's email
 	ReporterUserEmail *string `json:"reporter_user_email,omitempty"`
+
+	// RetryCount Number of times to retry on rate-limit (HTTP 429) responses (0-4). 0 disables retry.
+	//
+	// Example: 3
+	RetryCount *int `json:"retry_count,omitempty"`
+
+	// RetryWaitTime Seconds to wait before each retry (1-15). Retry-After header is honored when present and <= 90s, taking the larger of retry_wait_time and the header value.
+	//
+	// Example: 2
+	RetryWaitTime *int `json:"retry_wait_time,omitempty"`
 
 	// Status The status id and display name
 	Status *struct {
@@ -65137,6 +66090,83 @@ type UserResponse struct {
 // UserResponseDataType defines model for UserResponse.Data.Type.
 type UserResponseDataType string
 
+// VerifiedDomain defines model for verified_domain.
+type VerifiedDomain struct {
+	// CheckFailuresCount Number of consecutive check failures
+	CheckFailuresCount *int `json:"check_failures_count,omitempty"`
+
+	// CreatedAt Date of creation
+	CreatedAt string `json:"created_at"`
+
+	// Domain The domain name
+	Domain string `json:"domain"`
+
+	// LastCheckPassedAt When the TXT record was last found
+	LastCheckPassedAt nullable.Nullable[string] `json:"last_check_passed_at,omitempty"`
+
+	// LastCheckedAt When the domain was last checked
+	LastCheckedAt nullable.Nullable[string] `json:"last_checked_at,omitempty"`
+
+	// Source How the domain was added
+	Source *VerifiedDomainSource `json:"source,omitempty"`
+
+	// TxtHost The TXT record hostname to add
+	TxtHost *string `json:"txt_host,omitempty"`
+
+	// TxtValue The TXT record value to add
+	TxtValue *string `json:"txt_value,omitempty"`
+
+	// UpdatedAt Date of last update
+	UpdatedAt string `json:"updated_at"`
+
+	// VerificationStatus Verification status
+	VerificationStatus VerifiedDomainVerificationStatus `json:"verification_status"`
+
+	// VerificationToken The verification token
+	VerificationToken string `json:"verification_token"`
+
+	// VerifiedAt When the domain was first verified
+	VerifiedAt nullable.Nullable[string] `json:"verified_at,omitempty"`
+}
+
+// VerifiedDomainSource How the domain was added
+type VerifiedDomainSource string
+
+// VerifiedDomainVerificationStatus Verification status
+type VerifiedDomainVerificationStatus string
+
+// VerifiedDomainList defines model for verified_domain_list.
+type VerifiedDomainList struct {
+	Data []struct {
+		Attributes VerifiedDomain `json:"attributes"`
+
+		// ID Unique ID of the verified domain
+		ID   string                     `json:"id"`
+		Type VerifiedDomainListDataType `json:"type"`
+	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
+}
+
+// VerifiedDomainListDataType defines model for VerifiedDomainList.Data.Type.
+type VerifiedDomainListDataType string
+
+// VerifiedDomainResponse defines model for verified_domain_response.
+type VerifiedDomainResponse struct {
+	Data struct {
+		Attributes VerifiedDomain `json:"attributes"`
+
+		// ID Unique ID of the verified domain
+		ID   string                         `json:"id"`
+		Type VerifiedDomainResponseDataType `json:"type"`
+	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+}
+
+// VerifiedDomainResponseDataType defines model for VerifiedDomainResponse.Data.Type.
+type VerifiedDomainResponseDataType string
+
 // VerifyPhoneNumberRequest defines model for verify_phone_number_request.
 type VerifyPhoneNumberRequest struct {
 	// Code 6-digit verification code
@@ -65151,9 +66181,18 @@ type WebhooksDelivery struct {
 	EndpointID  string                    `json:"endpoint_id"`
 	Payload     string                    `json:"payload"`
 
+	// ResponseStatus HTTP status code recorded for the delivery attempt. It is null before the first attempt. For SSRF and transport failures, Rootly generates this code because no destination response was received.
+	ResponseStatus nullable.Nullable[int] `json:"response_status"`
+
+	// Status Delivery status
+	Status WebhooksDeliveryStatus `json:"status"`
+
 	// UpdatedAt Date of last update
 	UpdatedAt string `json:"updated_at"`
 }
+
+// WebhooksDeliveryStatus Delivery status
+type WebhooksDeliveryStatus string
 
 // WebhooksDeliveryList defines model for webhooks_delivery_list.
 type WebhooksDeliveryList struct {
@@ -68156,6 +69195,12 @@ type ListUserNotificationRulesParams struct {
 	Sort       *string `form:"sort,omitempty" json:"sort,omitempty"`
 }
 
+// GetV1VerifiedDomainsParams defines parameters for GetV1VerifiedDomains.
+type GetV1VerifiedDomainsParams struct {
+	PageNumber *int `form:"page[number],omitempty" json:"page[number],omitempty"`
+	PageSize   *int `form:"page[size],omitempty" json:"page[size],omitempty"`
+}
+
 // ListWebhooksEndpointsParams defines parameters for ListWebhooksEndpoints.
 type ListWebhooksEndpointsParams struct {
 	Include    *string `form:"include,omitempty" json:"include,omitempty"`
@@ -68170,6 +69215,33 @@ type ListWebhooksDeliveriesParams struct {
 	Include    *string `form:"include,omitempty" json:"include,omitempty"`
 	PageNumber *int    `form:"page[number],omitempty" json:"page[number],omitempty"`
 	PageSize   *int    `form:"page[size],omitempty" json:"page[size],omitempty"`
+
+	// FilterStatus Delivery status: pending, success, failed. Comma-separated. Unknown values are ignored; if no valid values remain, the result set is empty.
+	FilterStatus *string `form:"filter[status],omitempty" json:"filter[status],omitempty"`
+
+	// FilterCreatedAtGt Created after this timestamp (exclusive). Use ISO 8601 with Z or a numeric UTC offset.
+	FilterCreatedAtGt *time.Time `form:"filter[created_at][gt],omitempty" json:"filter[created_at][gt],omitempty"`
+
+	// FilterCreatedAtGte Created at or after this timestamp (inclusive). Use ISO 8601 with Z or a numeric UTC offset.
+	FilterCreatedAtGte *time.Time `form:"filter[created_at][gte],omitempty" json:"filter[created_at][gte],omitempty"`
+
+	// FilterCreatedAtLt Created before this timestamp (exclusive). Use ISO 8601 with Z or a numeric UTC offset.
+	FilterCreatedAtLt *time.Time `form:"filter[created_at][lt],omitempty" json:"filter[created_at][lt],omitempty"`
+
+	// FilterCreatedAtLte Created at or before this timestamp (inclusive). Use ISO 8601 with Z or a numeric UTC offset.
+	FilterCreatedAtLte *time.Time `form:"filter[created_at][lte],omitempty" json:"filter[created_at][lte],omitempty"`
+
+	// FilterDeliveredAtGt Delivered after this timestamp (exclusive). Use ISO 8601 with Z or a numeric UTC offset.
+	FilterDeliveredAtGt *time.Time `form:"filter[delivered_at][gt],omitempty" json:"filter[delivered_at][gt],omitempty"`
+
+	// FilterDeliveredAtGte Delivered at or after this timestamp (inclusive). Use ISO 8601 with Z or a numeric UTC offset.
+	FilterDeliveredAtGte *time.Time `form:"filter[delivered_at][gte],omitempty" json:"filter[delivered_at][gte],omitempty"`
+
+	// FilterDeliveredAtLt Delivered before this timestamp (exclusive). Use ISO 8601 with Z or a numeric UTC offset.
+	FilterDeliveredAtLt *time.Time `form:"filter[delivered_at][lt],omitempty" json:"filter[delivered_at][lt],omitempty"`
+
+	// FilterDeliveredAtLte Delivered at or before this timestamp (inclusive). Use ISO 8601 with Z or a numeric UTC offset.
+	FilterDeliveredAtLte *time.Time `form:"filter[delivered_at][lte],omitempty" json:"filter[delivered_at][lte],omitempty"`
 }
 
 // ListWorkflowGroupsParams defines parameters for ListWorkflowGroups.
@@ -68297,6 +69369,12 @@ type CreateAlertGroupApplicationVndAPIPlusJSONRequestBody = NewAlertGroup
 
 // UpdateAlertGroupApplicationVndAPIPlusJSONRequestBody defines body for UpdateAlertGroup for application/vnd.api+json ContentType.
 type UpdateAlertGroupApplicationVndAPIPlusJSONRequestBody = UpdateAlertGroup
+
+// CreateAlertRetriggerRuleApplicationVndAPIPlusJSONRequestBody defines body for CreateAlertRetriggerRule for application/vnd.api+json ContentType.
+type CreateAlertRetriggerRuleApplicationVndAPIPlusJSONRequestBody = NewAlertRetriggerRule
+
+// UpdateAlertRetriggerRuleApplicationVndAPIPlusJSONRequestBody defines body for UpdateAlertRetriggerRule for application/vnd.api+json ContentType.
+type UpdateAlertRetriggerRuleApplicationVndAPIPlusJSONRequestBody = UpdateAlertRetriggerRule
 
 // CreateAlertRouteApplicationVndAPIPlusJSONRequestBody defines body for CreateAlertRoute for application/vnd.api+json ContentType.
 type CreateAlertRouteApplicationVndAPIPlusJSONRequestBody = NewAlertRoute
@@ -68926,6 +70004,9 @@ type CreateUserNotificationRuleApplicationVndAPIPlusJSONRequestBody = NewUserNot
 // CreateUserPhoneNumberApplicationVndAPIPlusJSONRequestBody defines body for CreateUserPhoneNumber for application/vnd.api+json ContentType.
 type CreateUserPhoneNumberApplicationVndAPIPlusJSONRequestBody = NewUserPhoneNumber
 
+// PostV1VerifiedDomainsApplicationVndAPIPlusJSONRequestBody defines body for PostV1VerifiedDomains for application/vnd.api+json ContentType.
+type PostV1VerifiedDomainsApplicationVndAPIPlusJSONRequestBody = NewVerifiedDomain
+
 // CreateWebhooksEndpointApplicationVndAPIPlusJSONRequestBody defines body for CreateWebhooksEndpoint for application/vnd.api+json ContentType.
 type CreateWebhooksEndpointApplicationVndAPIPlusJSONRequestBody = NewWebhooksEndpoint
 
@@ -69539,6 +70620,262 @@ func (t *AutoAssignRolePagerdutyTaskParams) UnmarshalJSON(b []byte) error {
 	return err
 }
 
+// AsAutoAssignRoleRootlyTaskParams0 returns the union data inside the AutoAssignRoleRootlyTaskParams as a AutoAssignRoleRootlyTaskParams0
+func (t AutoAssignRoleRootlyTaskParams) AsAutoAssignRoleRootlyTaskParams0() (AutoAssignRoleRootlyTaskParams0, error) {
+	var body AutoAssignRoleRootlyTaskParams0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromAutoAssignRoleRootlyTaskParams0 overwrites any union data inside the AutoAssignRoleRootlyTaskParams as the provided AutoAssignRoleRootlyTaskParams0
+func (t *AutoAssignRoleRootlyTaskParams) FromAutoAssignRoleRootlyTaskParams0(v AutoAssignRoleRootlyTaskParams0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeAutoAssignRoleRootlyTaskParams0 performs a merge with any union data inside the AutoAssignRoleRootlyTaskParams, using the provided AutoAssignRoleRootlyTaskParams0
+func (t *AutoAssignRoleRootlyTaskParams) MergeAutoAssignRoleRootlyTaskParams0(v AutoAssignRoleRootlyTaskParams0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsAutoAssignRoleRootlyTaskParams1 returns the union data inside the AutoAssignRoleRootlyTaskParams as a AutoAssignRoleRootlyTaskParams1
+func (t AutoAssignRoleRootlyTaskParams) AsAutoAssignRoleRootlyTaskParams1() (AutoAssignRoleRootlyTaskParams1, error) {
+	var body AutoAssignRoleRootlyTaskParams1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromAutoAssignRoleRootlyTaskParams1 overwrites any union data inside the AutoAssignRoleRootlyTaskParams as the provided AutoAssignRoleRootlyTaskParams1
+func (t *AutoAssignRoleRootlyTaskParams) FromAutoAssignRoleRootlyTaskParams1(v AutoAssignRoleRootlyTaskParams1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeAutoAssignRoleRootlyTaskParams1 performs a merge with any union data inside the AutoAssignRoleRootlyTaskParams, using the provided AutoAssignRoleRootlyTaskParams1
+func (t *AutoAssignRoleRootlyTaskParams) MergeAutoAssignRoleRootlyTaskParams1(v AutoAssignRoleRootlyTaskParams1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsAutoAssignRoleRootlyTaskParams2 returns the union data inside the AutoAssignRoleRootlyTaskParams as a AutoAssignRoleRootlyTaskParams2
+func (t AutoAssignRoleRootlyTaskParams) AsAutoAssignRoleRootlyTaskParams2() (AutoAssignRoleRootlyTaskParams2, error) {
+	var body AutoAssignRoleRootlyTaskParams2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromAutoAssignRoleRootlyTaskParams2 overwrites any union data inside the AutoAssignRoleRootlyTaskParams as the provided AutoAssignRoleRootlyTaskParams2
+func (t *AutoAssignRoleRootlyTaskParams) FromAutoAssignRoleRootlyTaskParams2(v AutoAssignRoleRootlyTaskParams2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeAutoAssignRoleRootlyTaskParams2 performs a merge with any union data inside the AutoAssignRoleRootlyTaskParams, using the provided AutoAssignRoleRootlyTaskParams2
+func (t *AutoAssignRoleRootlyTaskParams) MergeAutoAssignRoleRootlyTaskParams2(v AutoAssignRoleRootlyTaskParams2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsAutoAssignRoleRootlyTaskParams3 returns the union data inside the AutoAssignRoleRootlyTaskParams as a AutoAssignRoleRootlyTaskParams3
+func (t AutoAssignRoleRootlyTaskParams) AsAutoAssignRoleRootlyTaskParams3() (AutoAssignRoleRootlyTaskParams3, error) {
+	var body AutoAssignRoleRootlyTaskParams3
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromAutoAssignRoleRootlyTaskParams3 overwrites any union data inside the AutoAssignRoleRootlyTaskParams as the provided AutoAssignRoleRootlyTaskParams3
+func (t *AutoAssignRoleRootlyTaskParams) FromAutoAssignRoleRootlyTaskParams3(v AutoAssignRoleRootlyTaskParams3) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeAutoAssignRoleRootlyTaskParams3 performs a merge with any union data inside the AutoAssignRoleRootlyTaskParams, using the provided AutoAssignRoleRootlyTaskParams3
+func (t *AutoAssignRoleRootlyTaskParams) MergeAutoAssignRoleRootlyTaskParams3(v AutoAssignRoleRootlyTaskParams3) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsAutoAssignRoleRootlyTaskParams4 returns the union data inside the AutoAssignRoleRootlyTaskParams as a AutoAssignRoleRootlyTaskParams4
+func (t AutoAssignRoleRootlyTaskParams) AsAutoAssignRoleRootlyTaskParams4() (AutoAssignRoleRootlyTaskParams4, error) {
+	var body AutoAssignRoleRootlyTaskParams4
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromAutoAssignRoleRootlyTaskParams4 overwrites any union data inside the AutoAssignRoleRootlyTaskParams as the provided AutoAssignRoleRootlyTaskParams4
+func (t *AutoAssignRoleRootlyTaskParams) FromAutoAssignRoleRootlyTaskParams4(v AutoAssignRoleRootlyTaskParams4) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeAutoAssignRoleRootlyTaskParams4 performs a merge with any union data inside the AutoAssignRoleRootlyTaskParams, using the provided AutoAssignRoleRootlyTaskParams4
+func (t *AutoAssignRoleRootlyTaskParams) MergeAutoAssignRoleRootlyTaskParams4(v AutoAssignRoleRootlyTaskParams4) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t AutoAssignRoleRootlyTaskParams) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	if err != nil {
+		return nil, err
+	}
+	object := make(map[string]json.RawMessage)
+	if t.union != nil {
+		err = json.Unmarshal(b, &object)
+		if err != nil {
+			return nil, err
+		}
+	}
+
+	if t.EscalationPolicyTarget != nil {
+		object["escalation_policy_target"], err = json.Marshal(t.EscalationPolicyTarget)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'escalation_policy_target': %w", err)
+		}
+	}
+
+	if t.GroupTarget != nil {
+		object["group_target"], err = json.Marshal(t.GroupTarget)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'group_target': %w", err)
+		}
+	}
+
+	object["incident_role_id"], err = json.Marshal(t.IncidentRoleID)
+	if err != nil {
+		return nil, fmt.Errorf("error marshaling 'incident_role_id': %w", err)
+	}
+
+	if t.ScheduleTarget != nil {
+		object["schedule_target"], err = json.Marshal(t.ScheduleTarget)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'schedule_target': %w", err)
+		}
+	}
+
+	if t.ServiceTarget != nil {
+		object["service_target"], err = json.Marshal(t.ServiceTarget)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'service_target': %w", err)
+		}
+	}
+
+	if t.TaskType != nil {
+		object["task_type"], err = json.Marshal(t.TaskType)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'task_type': %w", err)
+		}
+	}
+
+	if t.UserTarget != nil {
+		object["user_target"], err = json.Marshal(t.UserTarget)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'user_target': %w", err)
+		}
+	}
+	b, err = json.Marshal(object)
+	return b, err
+}
+
+func (t *AutoAssignRoleRootlyTaskParams) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	if err != nil {
+		return err
+	}
+	object := make(map[string]json.RawMessage)
+	err = json.Unmarshal(b, &object)
+	if err != nil {
+		return err
+	}
+
+	if raw, found := object["escalation_policy_target"]; found {
+		err = json.Unmarshal(raw, &t.EscalationPolicyTarget)
+		if err != nil {
+			return fmt.Errorf("error reading 'escalation_policy_target': %w", err)
+		}
+	}
+
+	if raw, found := object["group_target"]; found {
+		err = json.Unmarshal(raw, &t.GroupTarget)
+		if err != nil {
+			return fmt.Errorf("error reading 'group_target': %w", err)
+		}
+	}
+
+	if raw, found := object["incident_role_id"]; found {
+		err = json.Unmarshal(raw, &t.IncidentRoleID)
+		if err != nil {
+			return fmt.Errorf("error reading 'incident_role_id': %w", err)
+		}
+	}
+
+	if raw, found := object["schedule_target"]; found {
+		err = json.Unmarshal(raw, &t.ScheduleTarget)
+		if err != nil {
+			return fmt.Errorf("error reading 'schedule_target': %w", err)
+		}
+	}
+
+	if raw, found := object["service_target"]; found {
+		err = json.Unmarshal(raw, &t.ServiceTarget)
+		if err != nil {
+			return fmt.Errorf("error reading 'service_target': %w", err)
+		}
+	}
+
+	if raw, found := object["task_type"]; found {
+		err = json.Unmarshal(raw, &t.TaskType)
+		if err != nil {
+			return fmt.Errorf("error reading 'task_type': %w", err)
+		}
+	}
+
+	if raw, found := object["user_target"]; found {
+		err = json.Unmarshal(raw, &t.UserTarget)
+		if err != nil {
+			return fmt.Errorf("error reading 'user_target': %w", err)
+		}
+	}
+
+	return err
+}
+
 // AsBulkDestroyCatalogEntities0 returns the union data inside the BulkDestroyCatalogEntities as a BulkDestroyCatalogEntities0
 func (t BulkDestroyCatalogEntities) AsBulkDestroyCatalogEntities0() (BulkDestroyCatalogEntities0, error) {
 	var body BulkDestroyCatalogEntities0
@@ -69721,6 +71058,68 @@ func (t BulkDestroyFunctionalities) MarshalJSON() ([]byte, error) {
 }
 
 func (t *BulkDestroyFunctionalities) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsBulkDestroyServices0 returns the union data inside the BulkDestroyServices as a BulkDestroyServices0
+func (t BulkDestroyServices) AsBulkDestroyServices0() (BulkDestroyServices0, error) {
+	var body BulkDestroyServices0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromBulkDestroyServices0 overwrites any union data inside the BulkDestroyServices as the provided BulkDestroyServices0
+func (t *BulkDestroyServices) FromBulkDestroyServices0(v BulkDestroyServices0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeBulkDestroyServices0 performs a merge with any union data inside the BulkDestroyServices, using the provided BulkDestroyServices0
+func (t *BulkDestroyServices) MergeBulkDestroyServices0(v BulkDestroyServices0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsBulkDestroyServices1 returns the union data inside the BulkDestroyServices as a BulkDestroyServices1
+func (t BulkDestroyServices) AsBulkDestroyServices1() (BulkDestroyServices1, error) {
+	var body BulkDestroyServices1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromBulkDestroyServices1 overwrites any union data inside the BulkDestroyServices as the provided BulkDestroyServices1
+func (t *BulkDestroyServices) FromBulkDestroyServices1(v BulkDestroyServices1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeBulkDestroyServices1 performs a merge with any union data inside the BulkDestroyServices, using the provided BulkDestroyServices1
+func (t *BulkDestroyServices) MergeBulkDestroyServices1(v BulkDestroyServices1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t BulkDestroyServices) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *BulkDestroyServices) UnmarshalJSON(b []byte) error {
 	err := t.union.UnmarshalJSON(b)
 	return err
 }
@@ -86568,6 +87967,49 @@ type ClientInterface interface {
 	// Corresponds with PATCH /v1/alert_groups/{id} (the `UpdateAlertGroup` operationId).
 	UpdateAlertGroupWithApplicationVndAPIPlusJSONBody(ctx context.Context, id ID, body UpdateAlertGroupApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
+	// ListAlertRetriggerRules List alert re-trigger rules
+	//
+	// Corresponds with GET /v1/alert_retrigger_rules (the `ListAlertRetriggerRules` operationId).
+	ListAlertRetriggerRules(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// CreateAlertRetriggerRuleWithBody Creates an alert re-trigger rule
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /v1/alert_retrigger_rules (the `CreateAlertRetriggerRule` operationId).
+	CreateAlertRetriggerRuleWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// CreateAlertRetriggerRuleWithApplicationVndAPIPlusJSONBody Creates an alert re-trigger rule
+	//
+	// Takes a body of the `application/vnd.api+json` content type.
+	//
+	// Corresponds with POST /v1/alert_retrigger_rules (the `CreateAlertRetriggerRule` operationId).
+	CreateAlertRetriggerRuleWithApplicationVndAPIPlusJSONBody(ctx context.Context, body CreateAlertRetriggerRuleApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// DeleteAlertRetriggerRule Deletes an alert re-trigger rule
+	//
+	// Corresponds with DELETE /v1/alert_retrigger_rules/{id} (the `DeleteAlertRetriggerRule` operationId).
+	DeleteAlertRetriggerRule(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetAlertRetriggerRule Retrieves an alert re-trigger rule
+	//
+	// Corresponds with GET /v1/alert_retrigger_rules/{id} (the `GetAlertRetriggerRule` operationId).
+	GetAlertRetriggerRule(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// UpdateAlertRetriggerRuleWithBody Updates an alert re-trigger rule
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with PUT /v1/alert_retrigger_rules/{id} (the `UpdateAlertRetriggerRule` operationId).
+	UpdateAlertRetriggerRuleWithBody(ctx context.Context, id ID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// UpdateAlertRetriggerRuleWithApplicationVndAPIPlusJSONBody Updates an alert re-trigger rule
+	//
+	// Takes a body of the `application/vnd.api+json` content type.
+	//
+	// Corresponds with PUT /v1/alert_retrigger_rules/{id} (the `UpdateAlertRetriggerRule` operationId).
+	UpdateAlertRetriggerRuleWithApplicationVndAPIPlusJSONBody(ctx context.Context, id ID, body UpdateAlertRetriggerRuleApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
 	// ListAlertRoutes List alert routes
 	//
 	// List all alert routes for the current team with filtering and pagination. **Note: This endpoint requires access to Advanced Alert Routing. If you're unsure whether you have access to this feature, please contact Rootly customer support.**
@@ -91585,7 +93027,7 @@ type ClientInterface interface {
 
 	// BulkDeleteServicesWithBody Bulk delete Services
 	//
-	// Delete services by external_id list. (Prune-by-managed_by is not available for services yet — the managed_by column is being migrated to the enum type.)
+	// Delete services by external_id list, or prune by managed_by source. Two mutually exclusive modes.
 	//
 	// Takes any type of body and a specified content type.
 	//
@@ -91594,7 +93036,7 @@ type ClientInterface interface {
 
 	// BulkDeleteServicesWithApplicationVndAPIPlusJSONBody Bulk delete Services
 	//
-	// Delete services by external_id list. (Prune-by-managed_by is not available for services yet — the managed_by column is being migrated to the enum type.)
+	// Delete services by external_id list, or prune by managed_by source. Two mutually exclusive modes.
 	//
 	// Takes a body of the `application/vnd.api+json` content type.
 	//
@@ -92259,6 +93701,35 @@ type ClientInterface interface {
 	//
 	// Corresponds with POST /v1/users/{user_id}/phone_numbers (the `CreateUserPhoneNumber` operationId).
 	CreateUserPhoneNumberWithApplicationVndAPIPlusJSONBody(ctx context.Context, userID string, body CreateUserPhoneNumberApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetV1VerifiedDomains List verified domains
+	//
+	// Corresponds with GET /v1/verified_domains (the `GetV1VerifiedDomains` operationId).
+	GetV1VerifiedDomains(ctx context.Context, params *GetV1VerifiedDomainsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PostV1VerifiedDomainsWithBody Create a verified domain
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /v1/verified_domains (the `PostV1VerifiedDomains` operationId).
+	PostV1VerifiedDomainsWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PostV1VerifiedDomainsWithApplicationVndAPIPlusJSONBody Create a verified domain
+	//
+	// Takes a body of the `application/vnd.api+json` content type.
+	//
+	// Corresponds with POST /v1/verified_domains (the `PostV1VerifiedDomains` operationId).
+	PostV1VerifiedDomainsWithApplicationVndAPIPlusJSONBody(ctx context.Context, body PostV1VerifiedDomainsApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// DeleteV1VerifiedDomainsID Delete a verified domain
+	//
+	// Corresponds with DELETE /v1/verified_domains/{id} (the `DeleteV1VerifiedDomainsID` operationId).
+	DeleteV1VerifiedDomainsID(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetV1VerifiedDomainsID Show a verified domain
+	//
+	// Corresponds with GET /v1/verified_domains/{id} (the `GetV1VerifiedDomainsID` operationId).
+	GetV1VerifiedDomainsID(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// GetWebhooksDelivery Retrieves a webhook delivery
 	//
@@ -93186,6 +94657,119 @@ func (c *Client) UpdateAlertGroupWithBody(ctx context.Context, id ID, contentTyp
 // Corresponds with PATCH /v1/alert_groups/{id} (the `UpdateAlertGroup` operationId).
 func (c *Client) UpdateAlertGroupWithApplicationVndAPIPlusJSONBody(ctx context.Context, id ID, body UpdateAlertGroupApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewUpdateAlertGroupRequestWithApplicationVndAPIPlusJSONBody(c.Server, id, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// ListAlertRetriggerRules List alert re-trigger rules
+//
+// Corresponds with GET /v1/alert_retrigger_rules (the `ListAlertRetriggerRules` operationId).
+func (c *Client) ListAlertRetriggerRules(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewListAlertRetriggerRulesRequest(c.Server)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// CreateAlertRetriggerRuleWithBody Creates an alert re-trigger rule
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/alert_retrigger_rules (the `CreateAlertRetriggerRule` operationId).
+func (c *Client) CreateAlertRetriggerRuleWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateAlertRetriggerRuleRequestWithBody(c.Server, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// CreateAlertRetriggerRuleWithApplicationVndAPIPlusJSONBody Creates an alert re-trigger rule
+//
+// Takes a body of the `application/vnd.api+json` content type.
+//
+// Corresponds with POST /v1/alert_retrigger_rules (the `CreateAlertRetriggerRule` operationId).
+func (c *Client) CreateAlertRetriggerRuleWithApplicationVndAPIPlusJSONBody(ctx context.Context, body CreateAlertRetriggerRuleApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateAlertRetriggerRuleRequestWithApplicationVndAPIPlusJSONBody(c.Server, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// DeleteAlertRetriggerRule Deletes an alert re-trigger rule
+//
+// Corresponds with DELETE /v1/alert_retrigger_rules/{id} (the `DeleteAlertRetriggerRule` operationId).
+func (c *Client) DeleteAlertRetriggerRule(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewDeleteAlertRetriggerRuleRequest(c.Server, id)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetAlertRetriggerRule Retrieves an alert re-trigger rule
+//
+// Corresponds with GET /v1/alert_retrigger_rules/{id} (the `GetAlertRetriggerRule` operationId).
+func (c *Client) GetAlertRetriggerRule(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetAlertRetriggerRuleRequest(c.Server, id)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// UpdateAlertRetriggerRuleWithBody Updates an alert re-trigger rule
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with PUT /v1/alert_retrigger_rules/{id} (the `UpdateAlertRetriggerRule` operationId).
+func (c *Client) UpdateAlertRetriggerRuleWithBody(ctx context.Context, id ID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateAlertRetriggerRuleRequestWithBody(c.Server, id, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// UpdateAlertRetriggerRuleWithApplicationVndAPIPlusJSONBody Updates an alert re-trigger rule
+//
+// Takes a body of the `application/vnd.api+json` content type.
+//
+// Corresponds with PUT /v1/alert_retrigger_rules/{id} (the `UpdateAlertRetriggerRule` operationId).
+func (c *Client) UpdateAlertRetriggerRuleWithApplicationVndAPIPlusJSONBody(ctx context.Context, id ID, body UpdateAlertRetriggerRuleApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateAlertRetriggerRuleRequestWithApplicationVndAPIPlusJSONBody(c.Server, id, body)
 	if err != nil {
 		return nil, err
 	}
@@ -104385,7 +105969,7 @@ func (c *Client) CreateServiceWithApplicationVndAPIPlusJSONBody(ctx context.Cont
 
 // BulkDeleteServicesWithBody Bulk delete Services
 //
-// Delete services by external_id list. (Prune-by-managed_by is not available for services yet — the managed_by column is being migrated to the enum type.)
+// Delete services by external_id list, or prune by managed_by source. Two mutually exclusive modes.
 //
 // Takes any type of body and a specified content type.
 //
@@ -104404,7 +105988,7 @@ func (c *Client) BulkDeleteServicesWithBody(ctx context.Context, contentType str
 
 // BulkDeleteServicesWithApplicationVndAPIPlusJSONBody Bulk delete Services
 //
-// Delete services by external_id list. (Prune-by-managed_by is not available for services yet — the managed_by column is being migrated to the enum type.)
+// Delete services by external_id list, or prune by managed_by source. Two mutually exclusive modes.
 //
 // Takes a body of the `application/vnd.api+json` content type.
 //
@@ -105920,6 +107504,85 @@ func (c *Client) CreateUserPhoneNumberWithBody(ctx context.Context, userID strin
 // Corresponds with POST /v1/users/{user_id}/phone_numbers (the `CreateUserPhoneNumber` operationId).
 func (c *Client) CreateUserPhoneNumberWithApplicationVndAPIPlusJSONBody(ctx context.Context, userID string, body CreateUserPhoneNumberApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewCreateUserPhoneNumberRequestWithApplicationVndAPIPlusJSONBody(c.Server, userID, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetV1VerifiedDomains List verified domains
+//
+// Corresponds with GET /v1/verified_domains (the `GetV1VerifiedDomains` operationId).
+func (c *Client) GetV1VerifiedDomains(ctx context.Context, params *GetV1VerifiedDomainsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetV1VerifiedDomainsRequest(c.Server, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PostV1VerifiedDomainsWithBody Create a verified domain
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/verified_domains (the `PostV1VerifiedDomains` operationId).
+func (c *Client) PostV1VerifiedDomainsWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPostV1VerifiedDomainsRequestWithBody(c.Server, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PostV1VerifiedDomainsWithApplicationVndAPIPlusJSONBody Create a verified domain
+//
+// Takes a body of the `application/vnd.api+json` content type.
+//
+// Corresponds with POST /v1/verified_domains (the `PostV1VerifiedDomains` operationId).
+func (c *Client) PostV1VerifiedDomainsWithApplicationVndAPIPlusJSONBody(ctx context.Context, body PostV1VerifiedDomainsApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPostV1VerifiedDomainsRequestWithApplicationVndAPIPlusJSONBody(c.Server, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// DeleteV1VerifiedDomainsID Delete a verified domain
+//
+// Corresponds with DELETE /v1/verified_domains/{id} (the `DeleteV1VerifiedDomainsID` operationId).
+func (c *Client) DeleteV1VerifiedDomainsID(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewDeleteV1VerifiedDomainsIDRequest(c.Server, id)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetV1VerifiedDomainsID Show a verified domain
+//
+// Corresponds with GET /v1/verified_domains/{id} (the `GetV1VerifiedDomainsID` operationId).
+func (c *Client) GetV1VerifiedDomainsID(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetV1VerifiedDomainsIDRequest(c.Server, id)
 	if err != nil {
 		return nil, err
 	}
@@ -108792,6 +110455,188 @@ func NewUpdateAlertGroupRequestWithBody(server string, id ID, contentType string
 	}
 
 	req, err := http.NewRequest(http.MethodPatch, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewListAlertRetriggerRulesRequest constructs an http.Request for the ListAlertRetriggerRules method
+func NewListAlertRetriggerRulesRequest(server string) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/alert_retrigger_rules")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewCreateAlertRetriggerRuleRequestWithApplicationVndAPIPlusJSONBody calls the generic CreateAlertRetriggerRule builder with application/vnd.api+json body
+func NewCreateAlertRetriggerRuleRequestWithApplicationVndAPIPlusJSONBody(server string, body CreateAlertRetriggerRuleApplicationVndAPIPlusJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewCreateAlertRetriggerRuleRequestWithBody(server, "application/vnd.api+json", bodyReader)
+}
+
+// NewCreateAlertRetriggerRuleRequestWithBody constructs an http.Request for the CreateAlertRetriggerRule method, with any body, and a specified content type
+func NewCreateAlertRetriggerRuleRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/alert_retrigger_rules")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewDeleteAlertRetriggerRuleRequest constructs an http.Request for the DeleteAlertRetriggerRule method
+func NewDeleteAlertRetriggerRuleRequest(server string, id ID) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "id", id, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/alert_retrigger_rules/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodDelete, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewGetAlertRetriggerRuleRequest constructs an http.Request for the GetAlertRetriggerRule method
+func NewGetAlertRetriggerRuleRequest(server string, id ID) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "id", id, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/alert_retrigger_rules/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewUpdateAlertRetriggerRuleRequestWithApplicationVndAPIPlusJSONBody calls the generic UpdateAlertRetriggerRule builder with application/vnd.api+json body
+func NewUpdateAlertRetriggerRuleRequestWithApplicationVndAPIPlusJSONBody(server string, id ID, body UpdateAlertRetriggerRuleApplicationVndAPIPlusJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewUpdateAlertRetriggerRuleRequestWithBody(server, id, "application/vnd.api+json", bodyReader)
+}
+
+// NewUpdateAlertRetriggerRuleRequestWithBody constructs an http.Request for the UpdateAlertRetriggerRule method, with any body, and a specified content type
+func NewUpdateAlertRetriggerRuleRequestWithBody(server string, id ID, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "id", id, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/alert_retrigger_rules/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPut, queryURL.String(), body)
 	if err != nil {
 		return nil, err
 	}
@@ -144871,6 +146716,180 @@ func NewCreateUserPhoneNumberRequestWithBody(server string, userID string, conte
 	return req, nil
 }
 
+// NewGetV1VerifiedDomainsRequest constructs an http.Request for the GetV1VerifiedDomains method
+func NewGetV1VerifiedDomainsRequest(server string, params *GetV1VerifiedDomainsParams) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/verified_domains")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.PageNumber != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "page[number]", *params.PageNumber, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.PageSize != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "page[size]", *params.PageSize, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewPostV1VerifiedDomainsRequestWithApplicationVndAPIPlusJSONBody calls the generic PostV1VerifiedDomains builder with application/vnd.api+json body
+func NewPostV1VerifiedDomainsRequestWithApplicationVndAPIPlusJSONBody(server string, body PostV1VerifiedDomainsApplicationVndAPIPlusJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewPostV1VerifiedDomainsRequestWithBody(server, "application/vnd.api+json", bodyReader)
+}
+
+// NewPostV1VerifiedDomainsRequestWithBody constructs an http.Request for the PostV1VerifiedDomains method, with any body, and a specified content type
+func NewPostV1VerifiedDomainsRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/verified_domains")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewDeleteV1VerifiedDomainsIDRequest constructs an http.Request for the DeleteV1VerifiedDomainsID method
+func NewDeleteV1VerifiedDomainsIDRequest(server string, id ID) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "id", id, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/verified_domains/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodDelete, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewGetV1VerifiedDomainsIDRequest constructs an http.Request for the GetV1VerifiedDomainsID method
+func NewGetV1VerifiedDomainsIDRequest(server string, id ID) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "id", id, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/verified_domains/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
 // NewGetWebhooksDeliveryRequest constructs an http.Request for the GetWebhooksDelivery method
 func NewGetWebhooksDeliveryRequest(server string, id ID) (*http.Request, error) {
 	var err error
@@ -145143,6 +147162,114 @@ func NewListWebhooksDeliveriesRequest(server string, endpointID string, params *
 		if params.PageSize != nil {
 
 			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "page[size]", *params.PageSize, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterStatus != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[status]", *params.FilterStatus, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterCreatedAtGt != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[created_at][gt]", *params.FilterCreatedAtGt, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: "date-time"}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterCreatedAtGte != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[created_at][gte]", *params.FilterCreatedAtGte, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: "date-time"}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterCreatedAtLt != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[created_at][lt]", *params.FilterCreatedAtLt, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: "date-time"}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterCreatedAtLte != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[created_at][lte]", *params.FilterCreatedAtLte, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: "date-time"}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterDeliveredAtGt != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[delivered_at][gt]", *params.FilterDeliveredAtGt, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: "date-time"}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterDeliveredAtGte != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[delivered_at][gte]", *params.FilterDeliveredAtGte, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: "date-time"}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterDeliveredAtLt != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[delivered_at][lt]", *params.FilterDeliveredAtLt, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: "date-time"}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterDeliveredAtLte != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[delivered_at][lte]", *params.FilterDeliveredAtLte, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: "date-time"}); err != nil {
 				return nil, err
 			} else {
 				for _, qp := range strings.Split(queryFrag, "&") {
@@ -147627,6 +149754,55 @@ type ClientWithResponsesInterface interface {
 	//
 	// Corresponds with PATCH /v1/alert_groups/{id} (the `UpdateAlertGroup` operationId).
 	UpdateAlertGroupWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, id ID, body UpdateAlertGroupApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateAlertGroupResponse, error)
+
+	// ListAlertRetriggerRulesWithResponse List alert re-trigger rules
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /v1/alert_retrigger_rules (the `ListAlertRetriggerRules` operationId).
+	ListAlertRetriggerRulesWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*ListAlertRetriggerRulesResponse, error)
+
+	// CreateAlertRetriggerRuleWithBodyWithResponse Creates an alert re-trigger rule
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/alert_retrigger_rules (the `CreateAlertRetriggerRule` operationId).
+	CreateAlertRetriggerRuleWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateAlertRetriggerRuleResponse, error)
+
+	// CreateAlertRetriggerRuleWithApplicationVndAPIPlusJSONBodyWithResponse Creates an alert re-trigger rule
+	//
+	// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/alert_retrigger_rules (the `CreateAlertRetriggerRule` operationId).
+	CreateAlertRetriggerRuleWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, body CreateAlertRetriggerRuleApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateAlertRetriggerRuleResponse, error)
+
+	// DeleteAlertRetriggerRuleWithResponse Deletes an alert re-trigger rule
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with DELETE /v1/alert_retrigger_rules/{id} (the `DeleteAlertRetriggerRule` operationId).
+	DeleteAlertRetriggerRuleWithResponse(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*DeleteAlertRetriggerRuleResponse, error)
+
+	// GetAlertRetriggerRuleWithResponse Retrieves an alert re-trigger rule
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /v1/alert_retrigger_rules/{id} (the `GetAlertRetriggerRule` operationId).
+	GetAlertRetriggerRuleWithResponse(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*GetAlertRetriggerRuleResponse, error)
+
+	// UpdateAlertRetriggerRuleWithBodyWithResponse Updates an alert re-trigger rule
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with PUT /v1/alert_retrigger_rules/{id} (the `UpdateAlertRetriggerRule` operationId).
+	UpdateAlertRetriggerRuleWithBodyWithResponse(ctx context.Context, id ID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateAlertRetriggerRuleResponse, error)
+
+	// UpdateAlertRetriggerRuleWithApplicationVndAPIPlusJSONBodyWithResponse Updates an alert re-trigger rule
+	//
+	// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with PUT /v1/alert_retrigger_rules/{id} (the `UpdateAlertRetriggerRule` operationId).
+	UpdateAlertRetriggerRuleWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, id ID, body UpdateAlertRetriggerRuleApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateAlertRetriggerRuleResponse, error)
 
 	// ListAlertRoutesWithResponse List alert routes
 	//
@@ -153165,7 +155341,7 @@ type ClientWithResponsesInterface interface {
 
 	// BulkDeleteServicesWithBodyWithResponse Bulk delete Services
 	//
-	// Delete services by external_id list. (Prune-by-managed_by is not available for services yet — the managed_by column is being migrated to the enum type.)
+	// Delete services by external_id list, or prune by managed_by source. Two mutually exclusive modes.
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -153174,7 +155350,7 @@ type ClientWithResponsesInterface interface {
 
 	// BulkDeleteServicesWithApplicationVndAPIPlusJSONBodyWithResponse Bulk delete Services
 	//
-	// Delete services by external_id list. (Prune-by-managed_by is not available for services yet — the managed_by column is being migrated to the enum type.)
+	// Delete services by external_id list, or prune by managed_by source. Two mutually exclusive modes.
 	//
 	// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -153917,6 +156093,41 @@ type ClientWithResponsesInterface interface {
 	//
 	// Corresponds with POST /v1/users/{user_id}/phone_numbers (the `CreateUserPhoneNumber` operationId).
 	CreateUserPhoneNumberWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, userID string, body CreateUserPhoneNumberApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateUserPhoneNumberResponse, error)
+
+	// GetV1VerifiedDomainsWithResponse List verified domains
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /v1/verified_domains (the `GetV1VerifiedDomains` operationId).
+	GetV1VerifiedDomainsWithResponse(ctx context.Context, params *GetV1VerifiedDomainsParams, reqEditors ...RequestEditorFn) (*GetV1VerifiedDomainsResponse, error)
+
+	// PostV1VerifiedDomainsWithBodyWithResponse Create a verified domain
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/verified_domains (the `PostV1VerifiedDomains` operationId).
+	PostV1VerifiedDomainsWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PostV1VerifiedDomainsResponse, error)
+
+	// PostV1VerifiedDomainsWithApplicationVndAPIPlusJSONBodyWithResponse Create a verified domain
+	//
+	// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/verified_domains (the `PostV1VerifiedDomains` operationId).
+	PostV1VerifiedDomainsWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, body PostV1VerifiedDomainsApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*PostV1VerifiedDomainsResponse, error)
+
+	// DeleteV1VerifiedDomainsIDWithResponse Delete a verified domain
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with DELETE /v1/verified_domains/{id} (the `DeleteV1VerifiedDomainsID` operationId).
+	DeleteV1VerifiedDomainsIDWithResponse(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*DeleteV1VerifiedDomainsIDResponse, error)
+
+	// GetV1VerifiedDomainsIDWithResponse Show a verified domain
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /v1/verified_domains/{id} (the `GetV1VerifiedDomainsID` operationId).
+	GetV1VerifiedDomainsIDWithResponse(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*GetV1VerifiedDomainsIDResponse, error)
 
 	// GetWebhooksDeliveryWithResponse Retrieves a webhook delivery
 	//
@@ -155114,6 +157325,161 @@ func (r UpdateAlertGroupResponse) StatusCode() int {
 
 // ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
 func (r UpdateAlertGroupResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type ListAlertRetriggerRulesResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// ApplicationVndAPIJSON200 the response for an HTTP 200 `application/vnd.api+json` response
+	ApplicationVndAPIJSON200 *AlertRetriggerRuleList
+}
+
+// Status returns HTTPResponse.Status
+func (r ListAlertRetriggerRulesResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r ListAlertRetriggerRulesResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r ListAlertRetriggerRulesResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type CreateAlertRetriggerRuleResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// ApplicationVndAPIJSON201 the response for an HTTP 201 `application/vnd.api+json` response
+	ApplicationVndAPIJSON201 *AlertRetriggerRuleResponse
+	// ApplicationVndAPIJSON422 the response for an HTTP 422 `application/vnd.api+json` response
+	ApplicationVndAPIJSON422 *ErrorsList
+}
+
+// Status returns HTTPResponse.Status
+func (r CreateAlertRetriggerRuleResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r CreateAlertRetriggerRuleResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r CreateAlertRetriggerRuleResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type DeleteAlertRetriggerRuleResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// Status returns HTTPResponse.Status
+func (r DeleteAlertRetriggerRuleResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r DeleteAlertRetriggerRuleResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r DeleteAlertRetriggerRuleResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GetAlertRetriggerRuleResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// ApplicationVndAPIJSON200 the response for an HTTP 200 `application/vnd.api+json` response
+	ApplicationVndAPIJSON200 *AlertRetriggerRuleResponse
+}
+
+// Status returns HTTPResponse.Status
+func (r GetAlertRetriggerRuleResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetAlertRetriggerRuleResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetAlertRetriggerRuleResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type UpdateAlertRetriggerRuleResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// ApplicationVndAPIJSON200 the response for an HTTP 200 `application/vnd.api+json` response
+	ApplicationVndAPIJSON200 *AlertRetriggerRuleResponse
+}
+
+// Status returns HTTPResponse.Status
+func (r UpdateAlertRetriggerRuleResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r UpdateAlertRetriggerRuleResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r UpdateAlertRetriggerRuleResponse) ContentType() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Header.Get("Content-Type")
 	}
@@ -171669,6 +174035,130 @@ func (r CreateUserPhoneNumberResponse) ContentType() string {
 	return ""
 }
 
+type GetV1VerifiedDomainsResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// ApplicationVndAPIJSON200 the response for an HTTP 200 `application/vnd.api+json` response
+	ApplicationVndAPIJSON200 *VerifiedDomainList
+}
+
+// Status returns HTTPResponse.Status
+func (r GetV1VerifiedDomainsResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetV1VerifiedDomainsResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetV1VerifiedDomainsResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type PostV1VerifiedDomainsResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// ApplicationVndAPIJSON201 the response for an HTTP 201 `application/vnd.api+json` response
+	ApplicationVndAPIJSON201 *VerifiedDomainResponse
+}
+
+// Status returns HTTPResponse.Status
+func (r PostV1VerifiedDomainsResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r PostV1VerifiedDomainsResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r PostV1VerifiedDomainsResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type DeleteV1VerifiedDomainsIDResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// ApplicationVndAPIJSON200 the response for an HTTP 200 `application/vnd.api+json` response
+	ApplicationVndAPIJSON200 *VerifiedDomainResponse
+}
+
+// Status returns HTTPResponse.Status
+func (r DeleteV1VerifiedDomainsIDResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r DeleteV1VerifiedDomainsIDResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r DeleteV1VerifiedDomainsIDResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GetV1VerifiedDomainsIDResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// ApplicationVndAPIJSON200 the response for an HTTP 200 `application/vnd.api+json` response
+	ApplicationVndAPIJSON200 *VerifiedDomainResponse
+}
+
+// Status returns HTTPResponse.Status
+func (r GetV1VerifiedDomainsIDResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetV1VerifiedDomainsIDResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetV1VerifiedDomainsIDResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
 type GetWebhooksDeliveryResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
@@ -171804,6 +174294,8 @@ type ListWebhooksDeliveriesResponse struct {
 	HTTPResponse *http.Response
 	// ApplicationVndAPIJSON200 the response for an HTTP 200 `application/vnd.api+json` response
 	ApplicationVndAPIJSON200 *WebhooksDeliveryList
+	// ApplicationVndAPIJSON400 the response for an HTTP 400 `application/vnd.api+json` response
+	ApplicationVndAPIJSON400 *ErrorsList
 }
 
 // Status returns HTTPResponse.Status
@@ -173393,6 +175885,97 @@ func (c *ClientWithResponses) UpdateAlertGroupWithApplicationVndAPIPlusJSONBodyW
 		return nil, err
 	}
 	return ParseUpdateAlertGroupResponse(rsp)
+}
+
+// ListAlertRetriggerRulesWithResponse List alert re-trigger rules
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/alert_retrigger_rules (the `ListAlertRetriggerRules` operationId).
+func (c *ClientWithResponses) ListAlertRetriggerRulesWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*ListAlertRetriggerRulesResponse, error) {
+	rsp, err := c.ListAlertRetriggerRules(ctx, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseListAlertRetriggerRulesResponse(rsp)
+}
+
+// CreateAlertRetriggerRuleWithBodyWithResponse Creates an alert re-trigger rule
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/alert_retrigger_rules (the `CreateAlertRetriggerRule` operationId).
+func (c *ClientWithResponses) CreateAlertRetriggerRuleWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateAlertRetriggerRuleResponse, error) {
+	rsp, err := c.CreateAlertRetriggerRuleWithBody(ctx, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateAlertRetriggerRuleResponse(rsp)
+}
+
+// CreateAlertRetriggerRuleWithApplicationVndAPIPlusJSONBodyWithResponse Creates an alert re-trigger rule
+//
+// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/alert_retrigger_rules (the `CreateAlertRetriggerRule` operationId).
+func (c *ClientWithResponses) CreateAlertRetriggerRuleWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, body CreateAlertRetriggerRuleApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateAlertRetriggerRuleResponse, error) {
+	rsp, err := c.CreateAlertRetriggerRuleWithApplicationVndAPIPlusJSONBody(ctx, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateAlertRetriggerRuleResponse(rsp)
+}
+
+// DeleteAlertRetriggerRuleWithResponse Deletes an alert re-trigger rule
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with DELETE /v1/alert_retrigger_rules/{id} (the `DeleteAlertRetriggerRule` operationId).
+func (c *ClientWithResponses) DeleteAlertRetriggerRuleWithResponse(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*DeleteAlertRetriggerRuleResponse, error) {
+	rsp, err := c.DeleteAlertRetriggerRule(ctx, id, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseDeleteAlertRetriggerRuleResponse(rsp)
+}
+
+// GetAlertRetriggerRuleWithResponse Retrieves an alert re-trigger rule
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/alert_retrigger_rules/{id} (the `GetAlertRetriggerRule` operationId).
+func (c *ClientWithResponses) GetAlertRetriggerRuleWithResponse(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*GetAlertRetriggerRuleResponse, error) {
+	rsp, err := c.GetAlertRetriggerRule(ctx, id, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetAlertRetriggerRuleResponse(rsp)
+}
+
+// UpdateAlertRetriggerRuleWithBodyWithResponse Updates an alert re-trigger rule
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PUT /v1/alert_retrigger_rules/{id} (the `UpdateAlertRetriggerRule` operationId).
+func (c *ClientWithResponses) UpdateAlertRetriggerRuleWithBodyWithResponse(ctx context.Context, id ID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateAlertRetriggerRuleResponse, error) {
+	rsp, err := c.UpdateAlertRetriggerRuleWithBody(ctx, id, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateAlertRetriggerRuleResponse(rsp)
+}
+
+// UpdateAlertRetriggerRuleWithApplicationVndAPIPlusJSONBodyWithResponse Updates an alert re-trigger rule
+//
+// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PUT /v1/alert_retrigger_rules/{id} (the `UpdateAlertRetriggerRule` operationId).
+func (c *ClientWithResponses) UpdateAlertRetriggerRuleWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, id ID, body UpdateAlertRetriggerRuleApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateAlertRetriggerRuleResponse, error) {
+	rsp, err := c.UpdateAlertRetriggerRuleWithApplicationVndAPIPlusJSONBody(ctx, id, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateAlertRetriggerRuleResponse(rsp)
 }
 
 // ListAlertRoutesWithResponse List alert routes
@@ -182644,7 +185227,7 @@ func (c *ClientWithResponses) CreateServiceWithApplicationVndAPIPlusJSONBodyWith
 
 // BulkDeleteServicesWithBodyWithResponse Bulk delete Services
 //
-// Delete services by external_id list. (Prune-by-managed_by is not available for services yet — the managed_by column is being migrated to the enum type.)
+// Delete services by external_id list, or prune by managed_by source. Two mutually exclusive modes.
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
@@ -182659,7 +185242,7 @@ func (c *ClientWithResponses) BulkDeleteServicesWithBodyWithResponse(ctx context
 
 // BulkDeleteServicesWithApplicationVndAPIPlusJSONBodyWithResponse Bulk delete Services
 //
-// Delete services by external_id list. (Prune-by-managed_by is not available for services yet — the managed_by column is being migrated to the enum type.)
+// Delete services by external_id list, or prune by managed_by source. Two mutually exclusive modes.
 //
 // Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
 //
@@ -183917,6 +186500,71 @@ func (c *ClientWithResponses) CreateUserPhoneNumberWithApplicationVndAPIPlusJSON
 		return nil, err
 	}
 	return ParseCreateUserPhoneNumberResponse(rsp)
+}
+
+// GetV1VerifiedDomainsWithResponse List verified domains
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/verified_domains (the `GetV1VerifiedDomains` operationId).
+func (c *ClientWithResponses) GetV1VerifiedDomainsWithResponse(ctx context.Context, params *GetV1VerifiedDomainsParams, reqEditors ...RequestEditorFn) (*GetV1VerifiedDomainsResponse, error) {
+	rsp, err := c.GetV1VerifiedDomains(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetV1VerifiedDomainsResponse(rsp)
+}
+
+// PostV1VerifiedDomainsWithBodyWithResponse Create a verified domain
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/verified_domains (the `PostV1VerifiedDomains` operationId).
+func (c *ClientWithResponses) PostV1VerifiedDomainsWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PostV1VerifiedDomainsResponse, error) {
+	rsp, err := c.PostV1VerifiedDomainsWithBody(ctx, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePostV1VerifiedDomainsResponse(rsp)
+}
+
+// PostV1VerifiedDomainsWithApplicationVndAPIPlusJSONBodyWithResponse Create a verified domain
+//
+// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/verified_domains (the `PostV1VerifiedDomains` operationId).
+func (c *ClientWithResponses) PostV1VerifiedDomainsWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, body PostV1VerifiedDomainsApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*PostV1VerifiedDomainsResponse, error) {
+	rsp, err := c.PostV1VerifiedDomainsWithApplicationVndAPIPlusJSONBody(ctx, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePostV1VerifiedDomainsResponse(rsp)
+}
+
+// DeleteV1VerifiedDomainsIDWithResponse Delete a verified domain
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with DELETE /v1/verified_domains/{id} (the `DeleteV1VerifiedDomainsID` operationId).
+func (c *ClientWithResponses) DeleteV1VerifiedDomainsIDWithResponse(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*DeleteV1VerifiedDomainsIDResponse, error) {
+	rsp, err := c.DeleteV1VerifiedDomainsID(ctx, id, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseDeleteV1VerifiedDomainsIDResponse(rsp)
+}
+
+// GetV1VerifiedDomainsIDWithResponse Show a verified domain
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/verified_domains/{id} (the `GetV1VerifiedDomainsID` operationId).
+func (c *ClientWithResponses) GetV1VerifiedDomainsIDWithResponse(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*GetV1VerifiedDomainsIDResponse, error) {
+	rsp, err := c.GetV1VerifiedDomainsID(ctx, id, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetV1VerifiedDomainsIDResponse(rsp)
 }
 
 // GetWebhooksDeliveryWithResponse Retrieves a webhook delivery
@@ -185408,6 +188056,133 @@ func ParseUpdateAlertGroupResponse(rsp *http.Response) (*UpdateAlertGroupRespons
 			return nil, err
 		}
 		response.ApplicationVndAPIJSON404 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseListAlertRetriggerRulesResponse parses an HTTP response from a ListAlertRetriggerRulesWithResponse call
+func ParseListAlertRetriggerRulesResponse(rsp *http.Response) (*ListAlertRetriggerRulesResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ListAlertRetriggerRulesResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest AlertRetriggerRuleList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseCreateAlertRetriggerRuleResponse parses an HTTP response from a CreateAlertRetriggerRuleWithResponse call
+func ParseCreateAlertRetriggerRuleResponse(rsp *http.Response) (*CreateAlertRetriggerRuleResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CreateAlertRetriggerRuleResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
+		var dest AlertRetriggerRuleResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON201 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest ErrorsList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON422 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseDeleteAlertRetriggerRuleResponse parses an HTTP response from a DeleteAlertRetriggerRuleWithResponse call
+func ParseDeleteAlertRetriggerRuleResponse(rsp *http.Response) (*DeleteAlertRetriggerRuleResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &DeleteAlertRetriggerRuleResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseGetAlertRetriggerRuleResponse parses an HTTP response from a GetAlertRetriggerRuleWithResponse call
+func ParseGetAlertRetriggerRuleResponse(rsp *http.Response) (*GetAlertRetriggerRuleResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetAlertRetriggerRuleResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest AlertRetriggerRuleResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseUpdateAlertRetriggerRuleResponse parses an HTTP response from a UpdateAlertRetriggerRuleWithResponse call
+func ParseUpdateAlertRetriggerRuleResponse(rsp *http.Response) (*UpdateAlertRetriggerRuleResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &UpdateAlertRetriggerRuleResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest AlertRetriggerRuleResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON200 = &dest
 
 	}
 
@@ -201833,6 +204608,110 @@ func ParseCreateUserPhoneNumberResponse(rsp *http.Response) (*CreateUserPhoneNum
 	return response, nil
 }
 
+// ParseGetV1VerifiedDomainsResponse parses an HTTP response from a GetV1VerifiedDomainsWithResponse call
+func ParseGetV1VerifiedDomainsResponse(rsp *http.Response) (*GetV1VerifiedDomainsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetV1VerifiedDomainsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest VerifiedDomainList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParsePostV1VerifiedDomainsResponse parses an HTTP response from a PostV1VerifiedDomainsWithResponse call
+func ParsePostV1VerifiedDomainsResponse(rsp *http.Response) (*PostV1VerifiedDomainsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &PostV1VerifiedDomainsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
+		var dest VerifiedDomainResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON201 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseDeleteV1VerifiedDomainsIDResponse parses an HTTP response from a DeleteV1VerifiedDomainsIDWithResponse call
+func ParseDeleteV1VerifiedDomainsIDResponse(rsp *http.Response) (*DeleteV1VerifiedDomainsIDResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &DeleteV1VerifiedDomainsIDResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest VerifiedDomainResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetV1VerifiedDomainsIDResponse parses an HTTP response from a GetV1VerifiedDomainsIDWithResponse call
+func ParseGetV1VerifiedDomainsIDResponse(rsp *http.Response) (*GetV1VerifiedDomainsIDResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetV1VerifiedDomainsIDResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest VerifiedDomainResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
 // ParseGetWebhooksDeliveryResponse parses an HTTP response from a GetWebhooksDeliveryWithResponse call
 func ParseGetWebhooksDeliveryResponse(rsp *http.Response) (*GetWebhooksDeliveryResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
@@ -201978,6 +204857,13 @@ func ParseListWebhooksDeliveriesResponse(rsp *http.Response) (*ListWebhooksDeliv
 			return nil, err
 		}
 		response.ApplicationVndAPIJSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorsList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON400 = &dest
 
 	}
 

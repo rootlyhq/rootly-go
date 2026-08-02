@@ -3,6 +3,10 @@
   "info": {
     "title": "Rootly API v1",
     "version": "v1",
+    "license": {
+      "name": "Rootly",
+      "url": "https://rootly.com"
+    },
     "description": "# How to generate an API Key?\n- **Organization dropdown** > **Organization Settings** > **API Keys**\n\n# JSON:API Specification\nRootly is using **JSON:API** (https://jsonapi.org) specification:\n- JSON:API is a specification for how a client should request that resources be fetched or modified, and how a server should respond to those requests.\n- JSON:API is designed to minimize both the number of requests and the amount of data transmitted between clients and servers. This efficiency is achieved without compromising readability, flexibility, or discoverability.\n- JSON:API requires use of the JSON:API media type (**application/vnd.api+json**) for exchanging data.\n\n# Authentication and Requests\nWe use standard HTTP Authentication over HTTPS to authorize your requests.\n```\n  curl --request GET \\\n--header 'Content-Type: application/vnd.api+json' \\\n--header 'Authorization: Bearer YOUR-TOKEN' \\\n--url https://api.rootly.com/v1/incidents\n```\n\n<br/>\n\n# Rate limiting\n- There is a default limit of **5** **GET**, **HEAD**, and **OPTIONS** calls **per API key** every **60 seconds** (0 hours). The limit is calculated over a **0-hour sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments.\n- There is a default limit of **3** **POST**, **PUT**, **PATCH** or **DELETE** calls **per API key** every **60 seconds** (0 hours). The limit is calculated over a **0-hour sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments.\n- When rate limits are exceeded, the API will return a **429 Too Many Requests** HTTP status code with the response: `{\"error\": \"Rate limit exceeded. Try again later.\"}`\n- **X-RateLimit headers** are included in every API response, providing real-time rate limit information:\n  - **X-RateLimit-Limit** - The maximum number of requests permitted and the time window (e.g., \"1000, 1000;window=3600\" for 1000 requests per hour)\n  - **X-RateLimit-Remaining** - The number of requests remaining in the current rate limit window\n  - **X-RateLimit-Used** - The number of requests already made in the current window\n  - **X-RateLimit-Reset** - The time at which the current rate limit window resets, in UTC epoch seconds\n\n# Pagination\n- Pagination is supported for all endpoints that return a collection of items.\n- Pagination is controlled by the **page** query parameter\n\n## Example\n```\n  curl --request GET \\\n--header 'Content-Type: application/vnd.api+json' \\\n--header 'Authorization: Bearer YOUR-TOKEN' \\\n--url https://api.rootly.com/v1/incidents?page[number]=1&page[size]=10\n```\n\n",
     "x-logo": {
       "url": "https://rootly-heroku.s3.us-east-1.amazonaws.com/swagger/v1/logo.png"
@@ -469,6 +473,7 @@
                 "resolved",
                 "attached",
                 "snoozed",
+                "retrigger_suppressed",
                 "triggered",
                 "open",
                 "updated",
@@ -476,6 +481,7 @@
                 "removed",
                 "marked",
                 "not_marked",
+                "cleared",
                 "muted",
                 "deferred"
               ]
@@ -1335,6 +1341,165 @@
                 }
               }
             }
+          }
+        }
+      }
+    },
+    "/v1/alert_retrigger_rules": {
+      "get": {
+        "summary": "List alert re-trigger rules",
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "tags": [
+          "AlertRetriggerRules"
+        ],
+        "operationId": "listAlertRetriggerRules",
+        "responses": {
+          "200": {
+            "description": "alert re-trigger rules listed",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/alert_retrigger_rule_list"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Creates an alert re-trigger rule",
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "tags": [
+          "AlertRetriggerRules"
+        ],
+        "operationId": "createAlertRetriggerRule",
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": "alert re-trigger rule created",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/alert_retrigger_rule_response"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "invalid request",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors_list"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/vnd.api+json": {
+              "schema": {
+                "$ref": "#/components/schemas/new_alert_retrigger_rule"
+              }
+            }
+          },
+          "required": true
+        }
+      }
+    },
+    "/v1/alert_retrigger_rules/{id}": {
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "get": {
+        "summary": "Retrieves an alert re-trigger rule",
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "tags": [
+          "AlertRetriggerRules"
+        ],
+        "operationId": "getAlertRetriggerRule",
+        "responses": {
+          "200": {
+            "description": "alert re-trigger rule found",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/alert_retrigger_rule_response"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "summary": "Updates an alert re-trigger rule",
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "tags": [
+          "AlertRetriggerRules"
+        ],
+        "operationId": "updateAlertRetriggerRule",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "alert re-trigger rule updated",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/alert_retrigger_rule_response"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/vnd.api+json": {
+              "schema": {
+                "$ref": "#/components/schemas/update_alert_retrigger_rule"
+              }
+            }
+          },
+          "required": true
+        }
+      },
+      "delete": {
+        "summary": "Deletes an alert re-trigger rule",
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "tags": [
+          "AlertRetriggerRules"
+        ],
+        "operationId": "deleteAlertRetriggerRule",
+        "responses": {
+          "200": {
+            "description": "alert re-trigger rule deleted"
           }
         }
       }
@@ -32951,7 +33116,7 @@
         "tags": [
           "Services"
         ],
-        "description": "Delete services by external_id list. (Prune-by-managed_by is not available for services yet — the managed_by column is being migrated to the enum type.)",
+        "description": "Delete services by external_id list, or prune by managed_by source. Two mutually exclusive modes.",
         "operationId": "bulkDeleteServices",
         "parameters": [],
         "responses": {
@@ -37409,6 +37574,151 @@
         }
       }
     },
+    "/v1/verified_domains": {
+      "get": {
+        "summary": "List verified domains",
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "tags": [
+          "Verified Domains"
+        ],
+        "parameters": [
+          {
+            "name": "page[number]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "page[size]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "verified domains found",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/verified_domain_list"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Create a verified domain",
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "tags": [
+          "Verified Domains"
+        ],
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": "verified domain created",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/verified_domain_response"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/vnd.api+json": {
+              "schema": {
+                "$ref": "#/components/schemas/new_verified_domain"
+              }
+            }
+          },
+          "required": true
+        }
+      }
+    },
+    "/v1/verified_domains/{id}": {
+      "get": {
+        "summary": "Show a verified domain",
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "tags": [
+          "Verified Domains"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "verified domain found",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/verified_domain_response"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete a verified domain",
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "tags": [
+          "Verified Domains"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "verified domain deleted",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/verified_domain_response"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/v1/webhooks/endpoints/{endpoint_id}/deliveries": {
       "get": {
         "summary": "List webhook deliveries",
@@ -37454,6 +37764,95 @@
             "schema": {
               "type": "integer"
             }
+          },
+          {
+            "name": "filter[status]",
+            "in": "query",
+            "required": false,
+            "description": "Delivery status: pending, success, failed. Comma-separated. Unknown values are ignored; if no valid values remain, the result set is empty.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[created_at][gt]",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "required": false,
+            "description": "Created after this timestamp (exclusive). Use ISO 8601 with Z or a numeric UTC offset."
+          },
+          {
+            "name": "filter[created_at][gte]",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "required": false,
+            "description": "Created at or after this timestamp (inclusive). Use ISO 8601 with Z or a numeric UTC offset."
+          },
+          {
+            "name": "filter[created_at][lt]",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "required": false,
+            "description": "Created before this timestamp (exclusive). Use ISO 8601 with Z or a numeric UTC offset."
+          },
+          {
+            "name": "filter[created_at][lte]",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "required": false,
+            "description": "Created at or before this timestamp (inclusive). Use ISO 8601 with Z or a numeric UTC offset."
+          },
+          {
+            "name": "filter[delivered_at][gt]",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "required": false,
+            "description": "Delivered after this timestamp (exclusive). Use ISO 8601 with Z or a numeric UTC offset."
+          },
+          {
+            "name": "filter[delivered_at][gte]",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "required": false,
+            "description": "Delivered at or after this timestamp (inclusive). Use ISO 8601 with Z or a numeric UTC offset."
+          },
+          {
+            "name": "filter[delivered_at][lt]",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "required": false,
+            "description": "Delivered before this timestamp (exclusive). Use ISO 8601 with Z or a numeric UTC offset."
+          },
+          {
+            "name": "filter[delivered_at][lte]",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "required": false,
+            "description": "Delivered at or before this timestamp (inclusive). Use ISO 8601 with Z or a numeric UTC offset."
           }
         ],
         "responses": {
@@ -37463,6 +37862,16 @@
               "application/vnd.api+json": {
                 "schema": {
                   "$ref": "#/components/schemas/webhooks_delivery_list"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "invalid date filter",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors_list"
                 }
               }
             }
@@ -39113,6 +39522,7 @@
               "resolved",
               "attached",
               "snoozed",
+              "retrigger_suppressed",
               "triggered",
               "open",
               "updated",
@@ -39120,6 +39530,7 @@
               "removed",
               "marked",
               "not_marked",
+              "cleared",
               "muted",
               "deferred"
             ]
@@ -42236,6 +42647,463 @@
         },
         "required": [
           "position"
+        ]
+      },
+      "new_alert_retrigger_rule": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "alert_retrigger_rules"
+                ]
+              },
+              "attributes": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "description": "A human-readable name for the rule"
+                  },
+                  "match_mode": {
+                    "type": "string",
+                    "description": "Whether all or any of the conditions must match",
+                    "enum": [
+                      "match-all-rules",
+                      "match-any-rule"
+                    ]
+                  },
+                  "timeout_minutes": {
+                    "type": "integer",
+                    "nullable": true,
+                    "description": "Re-trigger the alert this many minutes after acknowledgment. Null means never re-trigger.",
+                    "enum": [
+                      10,
+                      20,
+                      30,
+                      40,
+                      50,
+                      60,
+                      90,
+                      120,
+                      180,
+                      240,
+                      300,
+                      360,
+                      720,
+                      1440
+                    ]
+                  },
+                  "position": {
+                    "type": "integer",
+                    "description": "The position of the rule; the first matching rule (by position) decides the outcome"
+                  },
+                  "conditions": {
+                    "type": "array",
+                    "description": "The conditions that determine which alerts this rule applies to. An empty array applies to every alert.",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "kind": {
+                          "type": "string",
+                          "description": "The operand the condition matches on. Native operands (urgency, source, service, group) match by record; alert_field/payload match a field value.",
+                          "enum": [
+                            "urgency",
+                            "source",
+                            "service",
+                            "group",
+                            "alert_field",
+                            "payload"
+                          ]
+                        },
+                        "operator": {
+                          "type": "string",
+                          "description": "How the operand is compared. Native operands support is_one_of/is_not_one_of/is_set/is_not_set; alert_field/payload additionally support the string/regex operators.",
+                          "enum": [
+                            "is_one_of",
+                            "is_not_one_of",
+                            "is_set",
+                            "is_not_set",
+                            "contains",
+                            "does_not_contain",
+                            "starts_with",
+                            "ends_with",
+                            "matches_regex"
+                          ]
+                        },
+                        "record_ids": {
+                          "type": "array",
+                          "description": "For urgency/service/group/source conditions: the IDs of the matched records (AlertUrgency, Service, Group, or Alerts::Source).",
+                          "items": {
+                            "type": "string",
+                            "format": "uuid"
+                          }
+                        },
+                        "values": {
+                          "type": "array",
+                          "description": "For source conditions: non-integration source aliases (e.g. manual, api). For alert_field/payload conditions: the values to compare against.",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "property_field_name": {
+                          "type": "string",
+                          "description": "For alert_field conditions: the alert field id. For payload conditions: a JSON Path (e.g. $.priority)."
+                        }
+                      },
+                      "required": [
+                        "kind",
+                        "operator"
+                      ]
+                    }
+                  }
+                },
+                "required": [
+                  "name"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "type",
+              "attributes"
+            ]
+          }
+        },
+        "required": [
+          "data"
+        ]
+      },
+      "update_alert_retrigger_rule": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "alert_retrigger_rules"
+                ]
+              },
+              "attributes": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "description": "A human-readable name for the rule"
+                  },
+                  "match_mode": {
+                    "type": "string",
+                    "description": "Whether all or any of the conditions must match",
+                    "enum": [
+                      "match-all-rules",
+                      "match-any-rule"
+                    ]
+                  },
+                  "timeout_minutes": {
+                    "type": "integer",
+                    "nullable": true,
+                    "description": "Re-trigger the alert this many minutes after acknowledgment. Null means never re-trigger.",
+                    "enum": [
+                      10,
+                      20,
+                      30,
+                      40,
+                      50,
+                      60,
+                      90,
+                      120,
+                      180,
+                      240,
+                      300,
+                      360,
+                      720,
+                      1440
+                    ]
+                  },
+                  "position": {
+                    "type": "integer",
+                    "description": "The position of the rule for ordering evaluation"
+                  },
+                  "conditions": {
+                    "type": "array",
+                    "description": "The full desired set of conditions; replaces the rule's existing conditions. An empty array applies to every alert.",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "kind": {
+                          "type": "string",
+                          "description": "The operand the condition matches on. Native operands (urgency, source, service, group) match by record; alert_field/payload match a field value.",
+                          "enum": [
+                            "urgency",
+                            "source",
+                            "service",
+                            "group",
+                            "alert_field",
+                            "payload"
+                          ]
+                        },
+                        "operator": {
+                          "type": "string",
+                          "description": "How the operand is compared. Native operands support is_one_of/is_not_one_of/is_set/is_not_set; alert_field/payload additionally support the string/regex operators.",
+                          "enum": [
+                            "is_one_of",
+                            "is_not_one_of",
+                            "is_set",
+                            "is_not_set",
+                            "contains",
+                            "does_not_contain",
+                            "starts_with",
+                            "ends_with",
+                            "matches_regex"
+                          ]
+                        },
+                        "record_ids": {
+                          "type": "array",
+                          "description": "For urgency/service/group/source conditions: the IDs of the matched records (AlertUrgency, Service, Group, or Alerts::Source).",
+                          "items": {
+                            "type": "string",
+                            "format": "uuid"
+                          }
+                        },
+                        "values": {
+                          "type": "array",
+                          "description": "For source conditions: non-integration source aliases (e.g. manual, api). For alert_field/payload conditions: the values to compare against.",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "property_field_name": {
+                          "type": "string",
+                          "description": "For alert_field conditions: the alert field id. For payload conditions: a JSON Path (e.g. $.priority)."
+                        }
+                      },
+                      "required": [
+                        "kind",
+                        "operator"
+                      ]
+                    }
+                  }
+                },
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "type",
+              "attributes"
+            ]
+          }
+        },
+        "required": [
+          "data"
+        ]
+      },
+      "alert_retrigger_rule": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "A human-readable name for the rule"
+          },
+          "match_mode": {
+            "type": "string",
+            "description": "Whether all or any of the conditions must match",
+            "enum": [
+              "match-all-rules",
+              "match-any-rule"
+            ]
+          },
+          "timeout_minutes": {
+            "type": "integer",
+            "nullable": true,
+            "description": "Minutes after acknowledgment to re-trigger. Null means never re-trigger."
+          },
+          "position": {
+            "type": "integer",
+            "description": "The position of the rule for ordering evaluation"
+          },
+          "conditions": {
+            "type": "array",
+            "description": "The conditions for the rule",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "format": "uuid",
+                  "description": "Unique ID of the condition"
+                },
+                "kind": {
+                  "type": "string",
+                  "description": "The operand the condition matches on. Native operands (urgency, source, service, group) match by record; alert_field/payload match a field value.",
+                  "enum": [
+                    "urgency",
+                    "source",
+                    "service",
+                    "group",
+                    "alert_field",
+                    "payload"
+                  ]
+                },
+                "operator": {
+                  "type": "string",
+                  "description": "How the operand is compared. Native operands support is_one_of/is_not_one_of/is_set/is_not_set; alert_field/payload additionally support the string/regex operators.",
+                  "enum": [
+                    "is_one_of",
+                    "is_not_one_of",
+                    "is_set",
+                    "is_not_set",
+                    "contains",
+                    "does_not_contain",
+                    "starts_with",
+                    "ends_with",
+                    "matches_regex"
+                  ]
+                },
+                "record_ids": {
+                  "type": "array",
+                  "description": "For urgency/service/group/source conditions: the IDs of the matched records (AlertUrgency, Service, Group, or Alerts::Source).",
+                  "items": {
+                    "type": "string",
+                    "format": "uuid"
+                  }
+                },
+                "values": {
+                  "type": "array",
+                  "description": "For source conditions: non-integration source aliases (e.g. manual, api). For alert_field/payload conditions: the values to compare against.",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "property_field_name": {
+                  "type": "string",
+                  "description": "For alert_field conditions: the alert field id. For payload conditions: a JSON Path (e.g. $.priority)."
+                }
+              },
+              "required": [
+                "id",
+                "kind",
+                "operator"
+              ]
+            }
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "alert_retrigger_rule_response": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Unique ID of the alert_retrigger_rule"
+              },
+              "type": {
+                "type": "string",
+                "enum": [
+                  "alert_retrigger_rules"
+                ]
+              },
+              "attributes": {
+                "type": "object",
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/alert_retrigger_rule"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "id",
+              "type",
+              "attributes"
+            ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
+          }
+        },
+        "required": [
+          "data"
+        ]
+      },
+      "alert_retrigger_rule_list": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "description": "Unique ID of the alert_retrigger_rule"
+                },
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "alert_retrigger_rules"
+                  ]
+                },
+                "attributes": {
+                  "type": "object",
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/alert_retrigger_rule"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "id",
+                "type",
+                "attributes"
+              ]
+            }
+          },
+          "links": {
+            "type": "object",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/links"
+              }
+            ]
+          },
+          "meta": {
+            "type": "object",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/meta"
+              }
+            ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
+          }
+        },
+        "required": [
+          "data",
+          "links",
+          "meta"
         ]
       },
       "new_alert_field": {
@@ -52058,7 +52926,8 @@
                         "nullable": true
                       }
                     },
-                    "nullable": true
+                    "nullable": true,
+                    "deprecated": true
                   }
                 },
                 "additionalProperties": false,
@@ -52462,7 +53331,8 @@
                         "nullable": true
                       }
                     },
-                    "nullable": true
+                    "nullable": true,
+                    "deprecated": true
                   }
                 },
                 "additionalProperties": false
@@ -52859,7 +53729,8 @@
                 "nullable": true
               }
             },
-            "nullable": true
+            "nullable": true,
+            "deprecated": true
           },
           "created_at": {
             "type": "string",
@@ -57525,7 +58396,9 @@
                       "slack_scheduled_incident_form",
                       "slack_update_scheduled_incident_form",
                       "web_action_item_form",
-                      "slack_action_item_form"
+                      "slack_action_item_form",
+                      "web_task_form",
+                      "slack_task_form"
                     ]
                   },
                   "position": {
@@ -57592,7 +58465,9 @@
                       "slack_scheduled_incident_form",
                       "slack_update_scheduled_incident_form",
                       "web_action_item_form",
-                      "slack_action_item_form"
+                      "slack_action_item_form",
+                      "web_task_form",
+                      "slack_task_form"
                     ]
                   },
                   "position": {
@@ -57642,7 +58517,9 @@
               "slack_scheduled_incident_form",
               "slack_update_scheduled_incident_form",
               "web_action_item_form",
-              "slack_action_item_form"
+              "slack_action_item_form",
+              "web_task_form",
+              "slack_task_form"
             ]
           },
           "position": {
@@ -58564,10 +59441,10 @@
                   },
                   "forms": {
                     "type": "array",
-                    "description": "The forms included in the form set. Add custom forms using the custom form's `slug` field. Or choose a built-in form: `web_new_incident_form`, `web_update_incident_form`, `web_incident_post_mortem_form`, `web_incident_mitigation_form`, `web_incident_resolution_form`, `web_incident_cancellation_form`, `web_scheduled_incident_form`, `web_update_scheduled_incident_form`, `slack_new_incident_form`, `slack_update_incident_form`, `slack_update_incident_status_form`, `slack_incident_mitigation_form`, `slack_incident_resolution_form`, `slack_incident_cancellation_form`, `slack_scheduled_incident_form`, `slack_update_scheduled_incident_form`, `google_chat_new_incident_form`, `google_chat_update_incident_form`",
+                    "description": "The forms included in the form set. Add custom forms using the custom form's `slug` field. Or choose a built-in form: `web_new_incident_form`, `web_update_incident_form`, `web_incident_post_mortem_form`, `web_incident_mitigation_form`, `web_incident_resolution_form`, `web_incident_cancellation_form`, `web_scheduled_incident_form`, `web_update_scheduled_incident_form`, `slack_new_incident_form`, `slack_update_incident_form`, `slack_update_incident_status_form`, `slack_incident_mitigation_form`, `slack_incident_resolution_form`, `slack_incident_cancellation_form`, `slack_scheduled_incident_form`, `slack_update_scheduled_incident_form`, `google_chat_new_incident_form`, `google_chat_update_incident_form`, `microsoft_teams_new_incident_form`",
                     "items": {
                       "type": "string",
-                      "description": "The form included in the form set. Add custom forms using the custom form's `slug` field. Or choose a built-in form: `web_new_incident_form`, `web_update_incident_form`, `web_incident_post_mortem_form`, `web_incident_mitigation_form`, `web_incident_resolution_form`, `web_incident_cancellation_form`, `web_scheduled_incident_form`, `web_update_scheduled_incident_form`, `slack_new_incident_form`, `slack_update_incident_form`, `slack_update_incident_status_form`, `slack_incident_mitigation_form`, `slack_incident_resolution_form`, `slack_incident_cancellation_form`, `slack_scheduled_incident_form`, `slack_update_scheduled_incident_form`, `google_chat_new_incident_form`, `google_chat_update_incident_form`"
+                      "description": "The form included in the form set. Add custom forms using the custom form's `slug` field. Or choose a built-in form: `web_new_incident_form`, `web_update_incident_form`, `web_incident_post_mortem_form`, `web_incident_mitigation_form`, `web_incident_resolution_form`, `web_incident_cancellation_form`, `web_scheduled_incident_form`, `web_update_scheduled_incident_form`, `slack_new_incident_form`, `slack_update_incident_form`, `slack_update_incident_status_form`, `slack_incident_mitigation_form`, `slack_incident_resolution_form`, `slack_incident_cancellation_form`, `slack_scheduled_incident_form`, `slack_update_scheduled_incident_form`, `google_chat_new_incident_form`, `google_chat_update_incident_form`, `microsoft_teams_new_incident_form`"
                     }
                   }
                 },
@@ -58609,10 +59486,10 @@
                   },
                   "forms": {
                     "type": "array",
-                    "description": "The forms included in the form set. Add custom forms using the custom form's `slug` field. Or choose a built-in form: `web_new_incident_form`, `web_update_incident_form`, `web_incident_post_mortem_form`, `web_incident_mitigation_form`, `web_incident_resolution_form`, `web_incident_cancellation_form`, `web_scheduled_incident_form`, `web_update_scheduled_incident_form`, `slack_new_incident_form`, `slack_update_incident_form`, `slack_update_incident_status_form`, `slack_incident_mitigation_form`, `slack_incident_resolution_form`, `slack_incident_cancellation_form`, `slack_scheduled_incident_form`, `slack_update_scheduled_incident_form`, `google_chat_new_incident_form`, `google_chat_update_incident_form`",
+                    "description": "The forms included in the form set. Add custom forms using the custom form's `slug` field. Or choose a built-in form: `web_new_incident_form`, `web_update_incident_form`, `web_incident_post_mortem_form`, `web_incident_mitigation_form`, `web_incident_resolution_form`, `web_incident_cancellation_form`, `web_scheduled_incident_form`, `web_update_scheduled_incident_form`, `slack_new_incident_form`, `slack_update_incident_form`, `slack_update_incident_status_form`, `slack_incident_mitigation_form`, `slack_incident_resolution_form`, `slack_incident_cancellation_form`, `slack_scheduled_incident_form`, `slack_update_scheduled_incident_form`, `google_chat_new_incident_form`, `google_chat_update_incident_form`, `microsoft_teams_new_incident_form`",
                     "items": {
                       "type": "string",
-                      "description": "The form included in the form set. Add custom forms using the custom form's `slug` field. Or choose a built-in form: `web_new_incident_form`, `web_update_incident_form`, `web_incident_post_mortem_form`, `web_incident_mitigation_form`, `web_incident_resolution_form`, `web_incident_cancellation_form`, `web_scheduled_incident_form`, `web_update_scheduled_incident_form`, `slack_new_incident_form`, `slack_update_incident_form`, `slack_update_incident_status_form`, `slack_incident_mitigation_form`, `slack_incident_resolution_form`, `slack_incident_cancellation_form`, `slack_scheduled_incident_form`, `slack_update_scheduled_incident_form`, `google_chat_new_incident_form`, `google_chat_update_incident_form`"
+                      "description": "The form included in the form set. Add custom forms using the custom form's `slug` field. Or choose a built-in form: `web_new_incident_form`, `web_update_incident_form`, `web_incident_post_mortem_form`, `web_incident_mitigation_form`, `web_incident_resolution_form`, `web_incident_cancellation_form`, `web_scheduled_incident_form`, `web_update_scheduled_incident_form`, `slack_new_incident_form`, `slack_update_incident_form`, `slack_update_incident_status_form`, `slack_incident_mitigation_form`, `slack_incident_resolution_form`, `slack_incident_cancellation_form`, `slack_scheduled_incident_form`, `slack_update_scheduled_incident_form`, `google_chat_new_incident_form`, `google_chat_update_incident_form`, `microsoft_teams_new_incident_form`"
                     }
                   }
                 },
@@ -58646,10 +59523,10 @@
           },
           "forms": {
             "type": "array",
-            "description": "The forms included in the form set. Add custom forms using the custom form's `slug` field. Or choose a built-in form: `web_new_incident_form`, `web_update_incident_form`, `web_incident_post_mortem_form`, `web_incident_mitigation_form`, `web_incident_resolution_form`, `web_incident_cancellation_form`, `web_scheduled_incident_form`, `web_update_scheduled_incident_form`, `slack_new_incident_form`, `slack_update_incident_form`, `slack_update_incident_status_form`, `slack_incident_mitigation_form`, `slack_incident_resolution_form`, `slack_incident_cancellation_form`, `slack_scheduled_incident_form`, `slack_update_scheduled_incident_form`, `google_chat_new_incident_form`, `google_chat_update_incident_form`",
+            "description": "The forms included in the form set. Add custom forms using the custom form's `slug` field. Or choose a built-in form: `web_new_incident_form`, `web_update_incident_form`, `web_incident_post_mortem_form`, `web_incident_mitigation_form`, `web_incident_resolution_form`, `web_incident_cancellation_form`, `web_scheduled_incident_form`, `web_update_scheduled_incident_form`, `slack_new_incident_form`, `slack_update_incident_form`, `slack_update_incident_status_form`, `slack_incident_mitigation_form`, `slack_incident_resolution_form`, `slack_incident_cancellation_form`, `slack_scheduled_incident_form`, `slack_update_scheduled_incident_form`, `google_chat_new_incident_form`, `google_chat_update_incident_form`, `microsoft_teams_new_incident_form`",
             "items": {
               "type": "string",
-              "description": "The form included in the form set. Add custom forms using the custom form's `slug` field. Or choose a built-in form: `web_new_incident_form`, `web_update_incident_form`, `web_incident_post_mortem_form`, `web_incident_mitigation_form`, `web_incident_resolution_form`, `web_incident_cancellation_form`, `web_scheduled_incident_form`, `web_update_scheduled_incident_form`, `slack_new_incident_form`, `slack_update_incident_form`, `slack_update_incident_status_form`, `slack_incident_mitigation_form`, `slack_incident_resolution_form`, `slack_incident_cancellation_form`, `slack_scheduled_incident_form`, `slack_update_scheduled_incident_form`, `google_chat_new_incident_form`, `google_chat_update_incident_form`"
+              "description": "The form included in the form set. Add custom forms using the custom form's `slug` field. Or choose a built-in form: `web_new_incident_form`, `web_update_incident_form`, `web_incident_post_mortem_form`, `web_incident_mitigation_form`, `web_incident_resolution_form`, `web_incident_cancellation_form`, `web_scheduled_incident_form`, `web_update_scheduled_incident_form`, `slack_new_incident_form`, `slack_update_incident_form`, `slack_update_incident_status_form`, `slack_incident_mitigation_form`, `slack_incident_resolution_form`, `slack_incident_cancellation_form`, `slack_scheduled_incident_form`, `slack_update_scheduled_incident_form`, `google_chat_new_incident_form`, `google_chat_update_incident_form`, `microsoft_teams_new_incident_form`"
             }
           },
           "created_at": {
@@ -60286,6 +61163,98 @@
         },
         "required": [
           "incident_role_id"
+        ],
+        "oneOf": [
+          {
+            "required": [
+              "escalation_policy_target"
+            ],
+            "properties": {
+              "escalation_policy_target": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "required": [
+              "service_target"
+            ],
+            "properties": {
+              "service_target": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "required": [
+              "user_target"
+            ],
+            "properties": {
+              "user_target": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "required": [
+              "group_target"
+            ],
+            "properties": {
+              "group_target": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "required": [
+              "schedule_target"
+            ],
+            "properties": {
+              "schedule_target": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
         ]
       },
       "auto_assign_role_pagerduty_task_params": {
@@ -61237,7 +62206,8 @@
         },
         "required": [
           "repository",
-          "title"
+          "title",
+          "issue_type"
         ]
       },
       "create_outlook_event_task_params": {
@@ -62197,6 +63167,18 @@
             "type": "string",
             "description": "Update payload. Can contain liquid markup and need to be valid JSON",
             "nullable": true
+          },
+          "retry_count": {
+            "type": "integer",
+            "description": "Number of times to retry on rate-limit (HTTP 429) responses (0-4). 0 disables retry.",
+            "default": 0,
+            "example": 3
+          },
+          "retry_wait_time": {
+            "type": "integer",
+            "description": "Seconds to wait before each retry (1-15). Retry-After header is honored when present and <= 90s, taking the larger of retry_wait_time and the header value.",
+            "default": 1,
+            "example": 2
           }
         },
         "required": [
@@ -62303,6 +63285,18 @@
             "type": "string",
             "description": "Update payload. Can contain liquid markup and need to be valid JSON",
             "nullable": true
+          },
+          "retry_count": {
+            "type": "integer",
+            "description": "Number of times to retry on rate-limit (HTTP 429) responses (0-4). 0 disables retry.",
+            "default": 0,
+            "example": 3
+          },
+          "retry_wait_time": {
+            "type": "integer",
+            "description": "Seconds to wait before each retry (1-15). Retry-After header is honored when present and <= 90s, taking the larger of retry_wait_time and the header value.",
+            "default": 1,
+            "example": 2
           }
         },
         "required": [
@@ -64051,6 +65045,17 @@
             "type": "string",
             "description": "The task description"
           },
+          "list": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              }
+            }
+          },
           "tags": {
             "type": "string",
             "description": "The task tags"
@@ -64083,7 +65088,8 @@
           }
         },
         "required": [
-          "title"
+          "title",
+          "list"
         ]
       },
       "create_motion_task_task_params": {
@@ -64137,10 +65143,8 @@
             "description": "The task description"
           },
           "labels": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+            "type": "string",
+            "description": "The task labels"
           },
           "priority": {
             "type": "object",
@@ -65919,6 +66923,14 @@
           "status_page_id": {
             "type": "string"
           },
+          "status_page_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 50,
+            "description": "Publishes the update to every listed status page (requires the status-page-v3-limited-bulk-publish feature). When set, it takes precedence over status_page_id and the first entry becomes status_page_id."
+          },
           "integration_payload": {
             "type": "string",
             "description": "Additional API Payload you can pass to statuspage.io for example. Can contain liquid markup and need to be valid JSON",
@@ -67202,6 +68214,18 @@
             "type": "string",
             "description": "Update payload. Can contain liquid markup and need to be valid JSON",
             "nullable": true
+          },
+          "retry_count": {
+            "type": "integer",
+            "description": "Number of times to retry on rate-limit (HTTP 429) responses (0-4). 0 disables retry.",
+            "default": 0,
+            "example": 3
+          },
+          "retry_wait_time": {
+            "type": "integer",
+            "description": "Seconds to wait before each retry (1-15). Retry-After header is honored when present and <= 90s, taking the larger of retry_wait_time and the header value.",
+            "default": 1,
+            "example": 2
           }
         },
         "required": [
@@ -90517,6 +91541,19 @@
             "type": "string",
             "description": "The slug of the service"
           },
+          "managed_by": {
+            "type": "string",
+            "enum": [
+              "web",
+              "admin_web",
+              "api",
+              "terraform",
+              "pulumi",
+              "backstage",
+              "catalog_sync"
+            ],
+            "description": "How this service is managed (provenance): web, api, terraform, etc. Read-only."
+          },
           "description": {
             "type": "string",
             "description": "The description of the service",
@@ -91075,23 +92112,54 @@
         }
       },
       "bulk_destroy_services": {
-        "description": "Delete specific services by external_id. (Prune-by-managed_by is not available for services yet — services.managed_by is still being migrated to the enum type.)",
-        "type": "object",
-        "required": [
-          "external_ids"
-        ],
-        "additionalProperties": false,
-        "properties": {
-          "external_ids": {
-            "type": "array",
-            "description": "Array of external_ids to delete. Max 100 per request.",
-            "items": {
-              "type": "string",
-              "minLength": 1
-            },
-            "minItems": 1
+        "description": "Two mutually exclusive modes. Pass exactly one of: external_ids (delete specific records) or managed_by (prune all managed records not in keep set).",
+        "oneOf": [
+          {
+            "type": "object",
+            "required": [
+              "external_ids"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "external_ids": {
+                "type": "array",
+                "description": "Array of external_ids to delete. Max 100 per request.",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "minItems": 1
+              }
+            }
+          },
+          {
+            "type": "object",
+            "required": [
+              "managed_by"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "managed_by": {
+                "type": "string",
+                "enum": [
+                  "api",
+                  "terraform",
+                  "pulumi",
+                  "backstage",
+                  "catalog_sync"
+                ],
+                "description": "Delete all records with this managed_by value (web/admin_web not allowed)."
+              },
+              "keep_external_ids": {
+                "type": "array",
+                "description": "Records with these external_ids are preserved.",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
           }
-        }
+        ]
       },
       "bulk_destroy_services_response": {
         "type": "object",
@@ -94268,7 +95336,8 @@
                         "device",
                         "non_critical_device",
                         "slack",
-                        "google_chat"
+                        "google_chat",
+                        "microsoft_teams"
                       ]
                     },
                     "nullable": false
@@ -94347,7 +95416,8 @@
                         "device",
                         "non_critical_device",
                         "slack",
-                        "google_chat"
+                        "google_chat",
+                        "microsoft_teams"
                       ]
                     },
                     "nullable": false
@@ -94414,7 +95484,8 @@
                 "device",
                 "non_critical_device",
                 "slack",
-                "google_chat"
+                "google_chat",
+                "microsoft_teams"
               ]
             },
             "nullable": false
@@ -95319,6 +96390,20 @@
           "payload": {
             "type": "string"
           },
+          "status": {
+            "type": "string",
+            "enum": [
+              "pending",
+              "success",
+              "failed"
+            ],
+            "description": "Delivery status"
+          },
+          "response_status": {
+            "type": "integer",
+            "nullable": true,
+            "description": "HTTP status code recorded for the delivery attempt. It is null before the first attempt. For SSRF and transport failures, Rootly generates this code because no destination response was received."
+          },
           "delivered_at": {
             "type": "string",
             "nullable": true
@@ -95335,6 +96420,8 @@
         "required": [
           "endpoint_id",
           "payload",
+          "status",
+          "response_status",
           "delivered_at",
           "created_at",
           "updated_at"
@@ -95498,6 +96585,7 @@
                         "incident_event.updated",
                         "incident_event.deleted",
                         "alert.created",
+                        "alert.updated",
                         "pulse.created",
                         "shift.started",
                         "genius_workflow_run.queued",
@@ -95600,6 +96688,7 @@
                         "incident_event.updated",
                         "incident_event.deleted",
                         "alert.created",
+                        "alert.updated",
                         "pulse.created",
                         "shift.started",
                         "genius_workflow_run.queued",
@@ -95694,6 +96783,7 @@
                 "incident_event.updated",
                 "incident_event.deleted",
                 "alert.created",
+                "alert.updated",
                 "pulse.created",
                 "shift.started",
                 "genius_workflow_run.queued",
@@ -97564,6 +98654,225 @@
                   "allOf": [
                     {
                       "$ref": "#/components/schemas/sla"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "id",
+                "type",
+                "attributes"
+              ]
+            }
+          },
+          "links": {
+            "type": "object",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/links"
+              }
+            ]
+          },
+          "meta": {
+            "type": "object",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/meta"
+              }
+            ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
+          }
+        },
+        "required": [
+          "data",
+          "links",
+          "meta"
+        ]
+      },
+      "new_verified_domain": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "verified_domains"
+                ]
+              },
+              "attributes": {
+                "type": "object",
+                "properties": {
+                  "domain": {
+                    "type": "string",
+                    "description": "The domain to verify (e.g. acme.com)"
+                  }
+                },
+                "additionalProperties": false,
+                "required": [
+                  "domain"
+                ]
+              }
+            },
+            "required": [
+              "type",
+              "attributes"
+            ]
+          }
+        },
+        "required": [
+          "data"
+        ]
+      },
+      "verified_domain": {
+        "type": "object",
+        "properties": {
+          "domain": {
+            "type": "string",
+            "description": "The domain name"
+          },
+          "verification_status": {
+            "type": "string",
+            "description": "Verification status",
+            "enum": [
+              "pending",
+              "verified",
+              "failing",
+              "expired"
+            ]
+          },
+          "verification_token": {
+            "type": "string",
+            "description": "The verification token"
+          },
+          "txt_host": {
+            "type": "string",
+            "description": "The TXT record hostname to add",
+            "readOnly": true
+          },
+          "txt_value": {
+            "type": "string",
+            "description": "The TXT record value to add",
+            "readOnly": true
+          },
+          "verified_at": {
+            "type": "string",
+            "description": "When the domain was first verified",
+            "nullable": true
+          },
+          "last_checked_at": {
+            "type": "string",
+            "description": "When the domain was last checked",
+            "nullable": true
+          },
+          "last_check_passed_at": {
+            "type": "string",
+            "description": "When the TXT record was last found",
+            "nullable": true
+          },
+          "check_failures_count": {
+            "type": "integer",
+            "description": "Number of consecutive check failures"
+          },
+          "source": {
+            "type": "string",
+            "description": "How the domain was added",
+            "enum": [
+              "manual",
+              "migration",
+              "oauth_auto"
+            ]
+          },
+          "created_at": {
+            "type": "string",
+            "description": "Date of creation"
+          },
+          "updated_at": {
+            "type": "string",
+            "description": "Date of last update"
+          }
+        },
+        "required": [
+          "domain",
+          "verification_status",
+          "verification_token",
+          "txt_host",
+          "txt_value",
+          "created_at",
+          "updated_at"
+        ]
+      },
+      "verified_domain_response": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Unique ID of the verified domain"
+              },
+              "type": {
+                "type": "string",
+                "enum": [
+                  "verified_domains"
+                ]
+              },
+              "attributes": {
+                "type": "object",
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/verified_domain"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "id",
+              "type",
+              "attributes"
+            ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
+          }
+        },
+        "required": [
+          "data"
+        ]
+      },
+      "verified_domain_list": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "description": "Unique ID of the verified domain"
+                },
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "verified_domains"
+                  ]
+                },
+                "attributes": {
+                  "type": "object",
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/verified_domain"
                     }
                   ]
                 }
