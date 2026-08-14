@@ -577,3 +577,49 @@ actions:
   - target: $.components.schemas.update_escalation_policy.properties.data.properties.attributes.properties.business_hours
     update:
       x-deprecated-reason: "`BusinessHours` applies to the whole policy. Using `TimeRestrictionTimeZone` and `TimeRestrictions` is recommended instead, which applies per escalation path, which provides much more flexible scheduling."
+
+  # Preserve the existing rootly-go API when upstream schemas become stricter.
+  - target: $.components.schemas.bulk_destroy_services.oneOf
+    remove: true
+
+  - target: $.components.schemas.bulk_destroy_services
+    update:
+      description: Delete specific services by external_id.
+      type: object
+      required:
+        - external_ids
+      additionalProperties: false
+      properties:
+        external_ids:
+          type: array
+          description: Array of external_ids to delete. Max 100 per request.
+          items:
+            type: string
+            minLength: 1
+          minItems: 1
+
+  - target: $.components.schemas.create_motion_task_task_params.properties.labels
+    update:
+      type: array
+      items:
+        type: string
+
+  - target: $.components.schemas.create_clickup_task_task_params.required
+    remove: true
+
+  - target: $.components.schemas.create_clickup_task_task_params
+    update:
+      required:
+      - title
+
+  - target: $.components.schemas.create_gitlab_issue_task_params.required
+    remove: true
+
+  - target: $.components.schemas.create_gitlab_issue_task_params
+    update:
+      required:
+      - repository
+      - title
+
+  - target: $.components.schemas.auto_assign_role_rootly_task_params.oneOf
+    remove: true

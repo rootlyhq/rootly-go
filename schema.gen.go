@@ -3988,33 +3988,6 @@ func (e BulkDestroyFunctionalities1ManagedBy) Valid() bool {
 	}
 }
 
-// Defines values for BulkDestroyServices1ManagedBy.
-const (
-	BulkDestroyServices1ManagedByAPI         BulkDestroyServices1ManagedBy = "api"
-	BulkDestroyServices1ManagedByBackstage   BulkDestroyServices1ManagedBy = "backstage"
-	BulkDestroyServices1ManagedByCatalogSync BulkDestroyServices1ManagedBy = "catalog_sync"
-	BulkDestroyServices1ManagedByPulumi      BulkDestroyServices1ManagedBy = "pulumi"
-	BulkDestroyServices1ManagedByTerraform   BulkDestroyServices1ManagedBy = "terraform"
-)
-
-// Valid indicates whether the value is a known member of the BulkDestroyServices1ManagedBy enum.
-func (e BulkDestroyServices1ManagedBy) Valid() bool {
-	switch e {
-	case BulkDestroyServices1ManagedByAPI:
-		return true
-	case BulkDestroyServices1ManagedByBackstage:
-		return true
-	case BulkDestroyServices1ManagedByCatalogSync:
-		return true
-	case BulkDestroyServices1ManagedByPulumi:
-		return true
-	case BulkDestroyServices1ManagedByTerraform:
-		return true
-	default:
-		return false
-	}
-}
-
 // Defines values for BulkDestroyTeams1ManagedBy.
 const (
 	BulkDestroyTeams1ManagedByAPI         BulkDestroyTeams1ManagedBy = "api"
@@ -44579,51 +44552,10 @@ type AutoAssignRoleRootlyTaskParams struct {
 		ID   *string `json:"id,omitempty"`
 		Name *string `json:"name,omitempty"`
 	} `json:"user_target,omitempty"`
-	union json.RawMessage
 }
 
 // AutoAssignRoleRootlyTaskParamsTaskType defines model for AutoAssignRoleRootlyTaskParams.TaskType.
 type AutoAssignRoleRootlyTaskParamsTaskType string
-
-// AutoAssignRoleRootlyTaskParams0 defines model for AutoAssignRoleRootlyTaskParams.0.
-type AutoAssignRoleRootlyTaskParams0 struct {
-	EscalationPolicyTarget struct {
-		ID   *string `json:"id,omitempty"`
-		Name *string `json:"name,omitempty"`
-	} `json:"escalation_policy_target"`
-}
-
-// AutoAssignRoleRootlyTaskParams1 defines model for AutoAssignRoleRootlyTaskParams.1.
-type AutoAssignRoleRootlyTaskParams1 struct {
-	ServiceTarget struct {
-		ID   *string `json:"id,omitempty"`
-		Name *string `json:"name,omitempty"`
-	} `json:"service_target"`
-}
-
-// AutoAssignRoleRootlyTaskParams2 defines model for AutoAssignRoleRootlyTaskParams.2.
-type AutoAssignRoleRootlyTaskParams2 struct {
-	UserTarget struct {
-		ID   *string `json:"id,omitempty"`
-		Name *string `json:"name,omitempty"`
-	} `json:"user_target"`
-}
-
-// AutoAssignRoleRootlyTaskParams3 defines model for AutoAssignRoleRootlyTaskParams.3.
-type AutoAssignRoleRootlyTaskParams3 struct {
-	GroupTarget struct {
-		ID   *string `json:"id,omitempty"`
-		Name *string `json:"name,omitempty"`
-	} `json:"group_target"`
-}
-
-// AutoAssignRoleRootlyTaskParams4 defines model for AutoAssignRoleRootlyTaskParams.4.
-type AutoAssignRoleRootlyTaskParams4 struct {
-	ScheduleTarget struct {
-		ID   *string `json:"id,omitempty"`
-		Name *string `json:"name,omitempty"`
-	} `json:"schedule_target"`
-}
 
 // AutoAssignRoleVictorOpsTaskParams defines model for auto_assign_role_victor_ops_task_params.
 type AutoAssignRoleVictorOpsTaskParams struct {
@@ -44750,28 +44682,11 @@ type BulkDestroyFunctionalitiesResponse struct {
 	} `json:"data,omitempty"`
 }
 
-// BulkDestroyServices Two mutually exclusive modes. Pass exactly one of: external_ids (delete specific records) or managed_by (prune all managed records not in keep set).
+// BulkDestroyServices Delete specific services by external_id.
 type BulkDestroyServices struct {
-	union json.RawMessage
-}
-
-// BulkDestroyServices0 defines model for BulkDestroyServices.0.
-type BulkDestroyServices0 struct {
 	// ExternalIDs Array of external_ids to delete. Max 100 per request.
 	ExternalIDs []string `json:"external_ids"`
 }
-
-// BulkDestroyServices1 defines model for BulkDestroyServices.1.
-type BulkDestroyServices1 struct {
-	// KeepExternalIDs Records with these external_ids are preserved.
-	KeepExternalIDs []string `json:"keep_external_ids,omitempty"`
-
-	// ManagedBy Delete all records with this managed_by value (web/admin_web not allowed).
-	ManagedBy BulkDestroyServices1ManagedBy `json:"managed_by"`
-}
-
-// BulkDestroyServices1ManagedBy Delete all records with this managed_by value (web/admin_web not allowed).
-type BulkDestroyServices1ManagedBy string
 
 // BulkDestroyServicesResponse defines model for bulk_destroy_services_response.
 type BulkDestroyServicesResponse struct {
@@ -46232,10 +46147,10 @@ type CreateClickupTaskTaskParams struct {
 
 	// DueDate The due date
 	DueDate *string `json:"due_date,omitempty"`
-	List    struct {
+	List    *struct {
 		ID   *string `json:"id,omitempty"`
 		Name *string `json:"name,omitempty"`
-	} `json:"list"`
+	} `json:"list,omitempty"`
 
 	// Priority The priority id and display name
 	Priority *struct {
@@ -46426,7 +46341,7 @@ type CreateGitlabIssueTaskParams struct {
 	DueDate *string `json:"due_date,omitempty"`
 
 	// IssueType The issue type
-	IssueType CreateGitlabIssueTaskParamsIssueType `json:"issue_type"`
+	IssueType *CreateGitlabIssueTaskParamsIssueType `json:"issue_type,omitempty"`
 
 	// Labels The issue labels
 	Labels     *string `json:"labels,omitempty"`
@@ -47065,7 +46980,7 @@ type CreateMotionTaskTaskParams struct {
 	Duration *string `json:"duration,omitempty"`
 
 	// Labels The task labels
-	Labels *string `json:"labels,omitempty"`
+	Labels []string `json:"labels,omitempty"`
 
 	// Priority The priority id and display name
 	Priority *struct {
@@ -70620,262 +70535,6 @@ func (t *AutoAssignRolePagerdutyTaskParams) UnmarshalJSON(b []byte) error {
 	return err
 }
 
-// AsAutoAssignRoleRootlyTaskParams0 returns the union data inside the AutoAssignRoleRootlyTaskParams as a AutoAssignRoleRootlyTaskParams0
-func (t AutoAssignRoleRootlyTaskParams) AsAutoAssignRoleRootlyTaskParams0() (AutoAssignRoleRootlyTaskParams0, error) {
-	var body AutoAssignRoleRootlyTaskParams0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromAutoAssignRoleRootlyTaskParams0 overwrites any union data inside the AutoAssignRoleRootlyTaskParams as the provided AutoAssignRoleRootlyTaskParams0
-func (t *AutoAssignRoleRootlyTaskParams) FromAutoAssignRoleRootlyTaskParams0(v AutoAssignRoleRootlyTaskParams0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeAutoAssignRoleRootlyTaskParams0 performs a merge with any union data inside the AutoAssignRoleRootlyTaskParams, using the provided AutoAssignRoleRootlyTaskParams0
-func (t *AutoAssignRoleRootlyTaskParams) MergeAutoAssignRoleRootlyTaskParams0(v AutoAssignRoleRootlyTaskParams0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsAutoAssignRoleRootlyTaskParams1 returns the union data inside the AutoAssignRoleRootlyTaskParams as a AutoAssignRoleRootlyTaskParams1
-func (t AutoAssignRoleRootlyTaskParams) AsAutoAssignRoleRootlyTaskParams1() (AutoAssignRoleRootlyTaskParams1, error) {
-	var body AutoAssignRoleRootlyTaskParams1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromAutoAssignRoleRootlyTaskParams1 overwrites any union data inside the AutoAssignRoleRootlyTaskParams as the provided AutoAssignRoleRootlyTaskParams1
-func (t *AutoAssignRoleRootlyTaskParams) FromAutoAssignRoleRootlyTaskParams1(v AutoAssignRoleRootlyTaskParams1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeAutoAssignRoleRootlyTaskParams1 performs a merge with any union data inside the AutoAssignRoleRootlyTaskParams, using the provided AutoAssignRoleRootlyTaskParams1
-func (t *AutoAssignRoleRootlyTaskParams) MergeAutoAssignRoleRootlyTaskParams1(v AutoAssignRoleRootlyTaskParams1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsAutoAssignRoleRootlyTaskParams2 returns the union data inside the AutoAssignRoleRootlyTaskParams as a AutoAssignRoleRootlyTaskParams2
-func (t AutoAssignRoleRootlyTaskParams) AsAutoAssignRoleRootlyTaskParams2() (AutoAssignRoleRootlyTaskParams2, error) {
-	var body AutoAssignRoleRootlyTaskParams2
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromAutoAssignRoleRootlyTaskParams2 overwrites any union data inside the AutoAssignRoleRootlyTaskParams as the provided AutoAssignRoleRootlyTaskParams2
-func (t *AutoAssignRoleRootlyTaskParams) FromAutoAssignRoleRootlyTaskParams2(v AutoAssignRoleRootlyTaskParams2) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeAutoAssignRoleRootlyTaskParams2 performs a merge with any union data inside the AutoAssignRoleRootlyTaskParams, using the provided AutoAssignRoleRootlyTaskParams2
-func (t *AutoAssignRoleRootlyTaskParams) MergeAutoAssignRoleRootlyTaskParams2(v AutoAssignRoleRootlyTaskParams2) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsAutoAssignRoleRootlyTaskParams3 returns the union data inside the AutoAssignRoleRootlyTaskParams as a AutoAssignRoleRootlyTaskParams3
-func (t AutoAssignRoleRootlyTaskParams) AsAutoAssignRoleRootlyTaskParams3() (AutoAssignRoleRootlyTaskParams3, error) {
-	var body AutoAssignRoleRootlyTaskParams3
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromAutoAssignRoleRootlyTaskParams3 overwrites any union data inside the AutoAssignRoleRootlyTaskParams as the provided AutoAssignRoleRootlyTaskParams3
-func (t *AutoAssignRoleRootlyTaskParams) FromAutoAssignRoleRootlyTaskParams3(v AutoAssignRoleRootlyTaskParams3) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeAutoAssignRoleRootlyTaskParams3 performs a merge with any union data inside the AutoAssignRoleRootlyTaskParams, using the provided AutoAssignRoleRootlyTaskParams3
-func (t *AutoAssignRoleRootlyTaskParams) MergeAutoAssignRoleRootlyTaskParams3(v AutoAssignRoleRootlyTaskParams3) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsAutoAssignRoleRootlyTaskParams4 returns the union data inside the AutoAssignRoleRootlyTaskParams as a AutoAssignRoleRootlyTaskParams4
-func (t AutoAssignRoleRootlyTaskParams) AsAutoAssignRoleRootlyTaskParams4() (AutoAssignRoleRootlyTaskParams4, error) {
-	var body AutoAssignRoleRootlyTaskParams4
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromAutoAssignRoleRootlyTaskParams4 overwrites any union data inside the AutoAssignRoleRootlyTaskParams as the provided AutoAssignRoleRootlyTaskParams4
-func (t *AutoAssignRoleRootlyTaskParams) FromAutoAssignRoleRootlyTaskParams4(v AutoAssignRoleRootlyTaskParams4) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeAutoAssignRoleRootlyTaskParams4 performs a merge with any union data inside the AutoAssignRoleRootlyTaskParams, using the provided AutoAssignRoleRootlyTaskParams4
-func (t *AutoAssignRoleRootlyTaskParams) MergeAutoAssignRoleRootlyTaskParams4(v AutoAssignRoleRootlyTaskParams4) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t AutoAssignRoleRootlyTaskParams) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	if err != nil {
-		return nil, err
-	}
-	object := make(map[string]json.RawMessage)
-	if t.union != nil {
-		err = json.Unmarshal(b, &object)
-		if err != nil {
-			return nil, err
-		}
-	}
-
-	if t.EscalationPolicyTarget != nil {
-		object["escalation_policy_target"], err = json.Marshal(t.EscalationPolicyTarget)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'escalation_policy_target': %w", err)
-		}
-	}
-
-	if t.GroupTarget != nil {
-		object["group_target"], err = json.Marshal(t.GroupTarget)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'group_target': %w", err)
-		}
-	}
-
-	object["incident_role_id"], err = json.Marshal(t.IncidentRoleID)
-	if err != nil {
-		return nil, fmt.Errorf("error marshaling 'incident_role_id': %w", err)
-	}
-
-	if t.ScheduleTarget != nil {
-		object["schedule_target"], err = json.Marshal(t.ScheduleTarget)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'schedule_target': %w", err)
-		}
-	}
-
-	if t.ServiceTarget != nil {
-		object["service_target"], err = json.Marshal(t.ServiceTarget)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'service_target': %w", err)
-		}
-	}
-
-	if t.TaskType != nil {
-		object["task_type"], err = json.Marshal(t.TaskType)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'task_type': %w", err)
-		}
-	}
-
-	if t.UserTarget != nil {
-		object["user_target"], err = json.Marshal(t.UserTarget)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'user_target': %w", err)
-		}
-	}
-	b, err = json.Marshal(object)
-	return b, err
-}
-
-func (t *AutoAssignRoleRootlyTaskParams) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	if err != nil {
-		return err
-	}
-	object := make(map[string]json.RawMessage)
-	err = json.Unmarshal(b, &object)
-	if err != nil {
-		return err
-	}
-
-	if raw, found := object["escalation_policy_target"]; found {
-		err = json.Unmarshal(raw, &t.EscalationPolicyTarget)
-		if err != nil {
-			return fmt.Errorf("error reading 'escalation_policy_target': %w", err)
-		}
-	}
-
-	if raw, found := object["group_target"]; found {
-		err = json.Unmarshal(raw, &t.GroupTarget)
-		if err != nil {
-			return fmt.Errorf("error reading 'group_target': %w", err)
-		}
-	}
-
-	if raw, found := object["incident_role_id"]; found {
-		err = json.Unmarshal(raw, &t.IncidentRoleID)
-		if err != nil {
-			return fmt.Errorf("error reading 'incident_role_id': %w", err)
-		}
-	}
-
-	if raw, found := object["schedule_target"]; found {
-		err = json.Unmarshal(raw, &t.ScheduleTarget)
-		if err != nil {
-			return fmt.Errorf("error reading 'schedule_target': %w", err)
-		}
-	}
-
-	if raw, found := object["service_target"]; found {
-		err = json.Unmarshal(raw, &t.ServiceTarget)
-		if err != nil {
-			return fmt.Errorf("error reading 'service_target': %w", err)
-		}
-	}
-
-	if raw, found := object["task_type"]; found {
-		err = json.Unmarshal(raw, &t.TaskType)
-		if err != nil {
-			return fmt.Errorf("error reading 'task_type': %w", err)
-		}
-	}
-
-	if raw, found := object["user_target"]; found {
-		err = json.Unmarshal(raw, &t.UserTarget)
-		if err != nil {
-			return fmt.Errorf("error reading 'user_target': %w", err)
-		}
-	}
-
-	return err
-}
-
 // AsBulkDestroyCatalogEntities0 returns the union data inside the BulkDestroyCatalogEntities as a BulkDestroyCatalogEntities0
 func (t BulkDestroyCatalogEntities) AsBulkDestroyCatalogEntities0() (BulkDestroyCatalogEntities0, error) {
 	var body BulkDestroyCatalogEntities0
@@ -71058,68 +70717,6 @@ func (t BulkDestroyFunctionalities) MarshalJSON() ([]byte, error) {
 }
 
 func (t *BulkDestroyFunctionalities) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsBulkDestroyServices0 returns the union data inside the BulkDestroyServices as a BulkDestroyServices0
-func (t BulkDestroyServices) AsBulkDestroyServices0() (BulkDestroyServices0, error) {
-	var body BulkDestroyServices0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromBulkDestroyServices0 overwrites any union data inside the BulkDestroyServices as the provided BulkDestroyServices0
-func (t *BulkDestroyServices) FromBulkDestroyServices0(v BulkDestroyServices0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeBulkDestroyServices0 performs a merge with any union data inside the BulkDestroyServices, using the provided BulkDestroyServices0
-func (t *BulkDestroyServices) MergeBulkDestroyServices0(v BulkDestroyServices0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsBulkDestroyServices1 returns the union data inside the BulkDestroyServices as a BulkDestroyServices1
-func (t BulkDestroyServices) AsBulkDestroyServices1() (BulkDestroyServices1, error) {
-	var body BulkDestroyServices1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromBulkDestroyServices1 overwrites any union data inside the BulkDestroyServices as the provided BulkDestroyServices1
-func (t *BulkDestroyServices) FromBulkDestroyServices1(v BulkDestroyServices1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeBulkDestroyServices1 performs a merge with any union data inside the BulkDestroyServices, using the provided BulkDestroyServices1
-func (t *BulkDestroyServices) MergeBulkDestroyServices1(v BulkDestroyServices1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t BulkDestroyServices) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *BulkDestroyServices) UnmarshalJSON(b []byte) error {
 	err := t.union.UnmarshalJSON(b)
 	return err
 }
