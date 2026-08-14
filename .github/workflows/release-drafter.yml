@@ -17,13 +17,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           fetch-depth: 0
 
       - name: Install oasdiff
         env:
-          OASDIFF_VERSION: 1.22.0 # renovate: datasource=github-releases depName=oasdiff/oasdiff
+          OASDIFF_VERSION: 1.26.1 # renovate: datasource=github-releases depName=oasdiff/oasdiff
         run: |
           curl -fsSL -o /tmp/oasdiff.tar.gz \
             "https://github.com/oasdiff/oasdiff/releases/download/v${OASDIFF_VERSION}/oasdiff_${OASDIFF_VERSION}_linux_amd64.tar.gz"
@@ -31,7 +31,7 @@ jobs:
 
       - name: Install openapi CLI
         env:
-          SPEAKEASY_OPENAPI_VERSION: v1.24.0 # renovate: datasource=github-releases depName=speakeasy-api/openapi
+          SPEAKEASY_OPENAPI_VERSION: v1.24.1 # renovate: datasource=github-releases depName=speakeasy-api/openapi
         run: |
           curl -fsSL -o /tmp/openapi.tar.gz \
             "https://github.com/speakeasy-api/openapi/releases/download/${SPEAKEASY_OPENAPI_VERSION}/openapi_Linux_x86_64.tar.gz"
@@ -42,9 +42,9 @@ jobs:
           LATEST_TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "")
           if [ -n "$LATEST_TAG" ]; then
             git show "${LATEST_TAG}:overlay.yaml" > /tmp/base-overlay.yaml 2>/dev/null || cp overlay.yaml /tmp/base-overlay.yaml
-            if git show "${LATEST_TAG}:.vendored/rootly-api/swagger.json" > /tmp/base-swagger.json 2>/dev/null; then
+            if git show "${LATEST_TAG}:.vendored/rootly-api.json" > /tmp/base-swagger.json 2>/dev/null; then
               openapi overlay apply /tmp/base-overlay.yaml /tmp/base-swagger.json > /tmp/base-overlay-applied.json
-              openapi overlay apply overlay.yaml .vendored/rootly-api/swagger.json > /tmp/pr-overlay-applied.json
+              openapi overlay apply overlay.yaml .vendored/rootly-api.json > /tmp/pr-overlay-applied.json
               CHANGELOG=$(oasdiff changelog --format markdown /tmp/base-overlay-applied.json /tmp/pr-overlay-applied.json || true)
               if [ -z "$CHANGELOG" ] || echo "$CHANGELOG" | grep -q "No changes detected"; then
                 SUMMARY="_No API changes detected._"
@@ -81,7 +81,7 @@ jobs:
           echo "${CHANGELOG:-}" > /tmp/openapi-diff.md
 
       - id: release_drafter
-        uses: release-drafter/release-drafter@4d75298e00d9e34c483e5ff8c68d0ea1c1940c1e # v7.5.1
+        uses: release-drafter/release-drafter@34d80673e067bdc0c24568d3af899c216adcfaa9 # v7.7.0
         with:
           name: next
           tag: next

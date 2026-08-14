@@ -5,7 +5,7 @@ on:
     branches:
       - master
     paths:
-      - ".vendored/rootly-api/swagger.json"
+      - ".vendored/rootly-api.json"
       - ".github/workflows/openapi-diff.yml"
       - "overlay.yaml"
 
@@ -17,13 +17,13 @@ jobs:
       pull-requests: write
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           fetch-depth: 2
 
       - name: Install oasdiff
         env:
-          OASDIFF_VERSION: 1.22.0 # renovate: datasource=github-releases depName=oasdiff/oasdiff
+          OASDIFF_VERSION: 1.26.1 # renovate: datasource=github-releases depName=oasdiff/oasdiff
         run: |
           curl -fsSL -o /tmp/oasdiff.tar.gz \
             "https://github.com/oasdiff/oasdiff/releases/download/v${OASDIFF_VERSION}/oasdiff_${OASDIFF_VERSION}_linux_amd64.tar.gz"
@@ -36,7 +36,7 @@ jobs:
           if [ "${{ github.event_name }}" = "pull_request" ]; then
             BASE_REF="$PR_BASE_SHA"
           fi
-          if git show "${BASE_REF}:.vendored/rootly-api/swagger.json" > /tmp/base-swagger.json 2>/dev/null; then
+          if git show "${BASE_REF}:.vendored/rootly-api.json" > /tmp/base-swagger.json 2>/dev/null; then
             echo "BASE_SPEC_EXISTS=true" >> "$GITHUB_ENV"
           else
             echo "BASE_SPEC_EXISTS=false" >> "$GITHUB_ENV"
@@ -45,7 +45,7 @@ jobs:
       - name: OpenAPI changelog
         if: env.BASE_SPEC_EXISTS == 'true'
         run: |
-          CHANGELOG=$(oasdiff changelog --format markdown /tmp/base-swagger.json .vendored/rootly-api/swagger.json || true)
+          CHANGELOG=$(oasdiff changelog --format markdown /tmp/base-swagger.json .vendored/rootly-api.json || true)
           if [ -z "$CHANGELOG" ] || echo "$CHANGELOG" | grep -q "No changes detected"; then
             CHANGELOG="_No API changes detected._"
           fi
@@ -96,7 +96,7 @@ jobs:
       pull-requests: write
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           fetch-depth: 0
 
@@ -104,7 +104,7 @@ jobs:
         env:
           PR_BASE_SHA: "${{ github.event.pull_request.base.sha }}"
         run: |
-          if git show "${PR_BASE_SHA}:.vendored/rootly-api/swagger.json" > /tmp/base-swagger.json 2>/dev/null; then
+          if git show "${PR_BASE_SHA}:.vendored/rootly-api.json" > /tmp/base-swagger.json 2>/dev/null; then
             echo "BASE_SPEC_EXISTS=true" >> "$GITHUB_ENV"
           else
             echo "BASE_SPEC_EXISTS=false" >> "$GITHUB_ENV"
@@ -113,7 +113,7 @@ jobs:
 
       - name: Install oasdiff
         env:
-          OASDIFF_VERSION: 1.22.0 # renovate: datasource=github-releases depName=oasdiff/oasdiff
+          OASDIFF_VERSION: 1.26.1 # renovate: datasource=github-releases depName=oasdiff/oasdiff
         run: |
           curl -fsSL -o /tmp/oasdiff.tar.gz \
             "https://github.com/oasdiff/oasdiff/releases/download/v${OASDIFF_VERSION}/oasdiff_${OASDIFF_VERSION}_linux_amd64.tar.gz"
@@ -121,7 +121,7 @@ jobs:
 
       - name: Install openapi CLI
         env:
-          SPEAKEASY_OPENAPI_VERSION: v1.24.0 # renovate: datasource=github-releases depName=speakeasy-api/openapi
+          SPEAKEASY_OPENAPI_VERSION: v1.24.1 # renovate: datasource=github-releases depName=speakeasy-api/openapi
         run: |
           curl -fsSL -o /tmp/openapi.tar.gz \
             "https://github.com/speakeasy-api/openapi/releases/download/${SPEAKEASY_OPENAPI_VERSION}/openapi_Linux_x86_64.tar.gz"
@@ -131,7 +131,7 @@ jobs:
         if: env.BASE_SPEC_EXISTS == 'true'
         run: |
           openapi overlay apply /tmp/base-overlay.yaml /tmp/base-swagger.json > /tmp/base-overlay-applied.json
-          openapi overlay apply overlay.yaml .vendored/rootly-api/swagger.json > /tmp/pr-overlay-applied.json
+          openapi overlay apply overlay.yaml .vendored/rootly-api.json > /tmp/pr-overlay-applied.json
 
       - name: OpenAPI overlay changelog
         if: env.BASE_SPEC_EXISTS == 'true'
@@ -190,7 +190,7 @@ jobs:
       pull-requests: write
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           fetch-depth: 0
 
@@ -198,7 +198,7 @@ jobs:
         env:
           PR_BASE_SHA: "${{ github.event.pull_request.base.sha }}"
         run: |
-          if git show "${PR_BASE_SHA}:.vendored/rootly-api/swagger.json" > /tmp/base-swagger.json 2>/dev/null; then
+          if git show "${PR_BASE_SHA}:.vendored/rootly-api.json" > /tmp/base-swagger.json 2>/dev/null; then
             echo "BASE_SPEC_EXISTS=true" >> "$GITHUB_ENV"
           else
             echo "BASE_SPEC_EXISTS=false" >> "$GITHUB_ENV"
@@ -207,7 +207,7 @@ jobs:
 
       - name: Install oasdiff
         env:
-          OASDIFF_VERSION: 1.22.0 # renovate: datasource=github-releases depName=oasdiff/oasdiff
+          OASDIFF_VERSION: 1.26.1 # renovate: datasource=github-releases depName=oasdiff/oasdiff
         run: |
           curl -fsSL -o /tmp/oasdiff.tar.gz \
             "https://github.com/oasdiff/oasdiff/releases/download/v${OASDIFF_VERSION}/oasdiff_${OASDIFF_VERSION}_linux_amd64.tar.gz"
@@ -215,7 +215,7 @@ jobs:
 
       - name: Install openapi CLI
         env:
-          SPEAKEASY_OPENAPI_VERSION: v1.24.0 # renovate: datasource=github-releases depName=speakeasy-api/openapi
+          SPEAKEASY_OPENAPI_VERSION: v1.24.1 # renovate: datasource=github-releases depName=speakeasy-api/openapi
         run: |
           curl -fsSL -o /tmp/openapi.tar.gz \
             "https://github.com/speakeasy-api/openapi/releases/download/${SPEAKEASY_OPENAPI_VERSION}/openapi_Linux_x86_64.tar.gz"
@@ -225,7 +225,7 @@ jobs:
         if: env.BASE_SPEC_EXISTS == 'true'
         run: |
           openapi overlay apply /tmp/base-overlay.yaml /tmp/base-swagger.json > /tmp/base-overlay-applied.json
-          openapi overlay apply overlay.yaml .vendored/rootly-api/swagger.json > /tmp/pr-overlay-applied.json
+          openapi overlay apply overlay.yaml .vendored/rootly-api.json > /tmp/pr-overlay-applied.json
 
       - name: OpenAPI overlay breaking changes
         if: env.BASE_SPEC_EXISTS == 'true'
