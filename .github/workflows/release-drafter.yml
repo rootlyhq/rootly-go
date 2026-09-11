@@ -23,7 +23,7 @@ jobs:
 
       - name: Install oasdiff
         env:
-          OASDIFF_VERSION: 1.28.0 # renovate: datasource=github-releases depName=oasdiff/oasdiff
+          OASDIFF_VERSION: 1.31.0 # renovate: datasource=github-releases depName=oasdiff/oasdiff
         run: |
           curl -fsSL -o /tmp/oasdiff.tar.gz \
             "https://github.com/oasdiff/oasdiff/releases/download/v${OASDIFF_VERSION}/oasdiff_${OASDIFF_VERSION}_linux_amd64.tar.gz"
@@ -31,7 +31,7 @@ jobs:
 
       - name: Install openapi CLI
         env:
-          SPEAKEASY_OPENAPI_VERSION: v1.24.1 # renovate: datasource=github-releases depName=speakeasy-api/openapi
+          SPEAKEASY_OPENAPI_VERSION: v1.25.1 # renovate: datasource=github-releases depName=speakeasy-api/openapi
         run: |
           curl -fsSL -o /tmp/openapi.tar.gz \
             "https://github.com/speakeasy-api/openapi/releases/download/${SPEAKEASY_OPENAPI_VERSION}/openapi_Linux_x86_64.tar.gz"
