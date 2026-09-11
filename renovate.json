@@ -111,5 +111,8 @@
         "Change": "Updated OpenAPI spec"
       }
     }
+  },
+  "constraints": {
+    "golang": "1.25"
   }
 }
