@@ -14,7 +14,12 @@
     {
       "description": "Require human review for `toolchain` directive and Mise updates",
       "matchDepNames": [
-        "go"
+        "go",
+        "golang"
+      ],
+      "matchDepTypes": [
+        "tool-constraint",
+        "tools"
       ],
       "dependencyDashboardApproval": true,
       "groupName": "go-toolchain"
