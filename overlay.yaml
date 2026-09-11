@@ -623,3 +623,314 @@ actions:
 
   - target: $.components.schemas.auto_assign_role_rootly_task_params.oneOf
     remove: true
+
+  # slug deprecations
+  - target: $.components.schemas.new_alert_field.properties.data.properties.attributes.properties.slug
+    update:
+      description: ""
+      x-deprecated-reason: "`slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version."
+
+  - target: $.components.schemas.new_alert_group.properties.data.properties.attributes.properties.slug
+    update:
+      description: ""
+      x-deprecated-reason: "`slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version."
+
+  - target: $.components.schemas.new_catalog.properties.data.properties.attributes.properties.slug
+    update:
+      description: ""
+      x-deprecated-reason: "`slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version."
+
+  - target: $.components.schemas.new_catalog_checklist_template.properties.data.properties.attributes.properties.slug
+    update:
+      description: ""
+      x-deprecated-reason: "`slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version."
+
+  - target: $.components.schemas.new_catalog_entity.properties.data.properties.attributes.properties.slug
+    update:
+      description: ""
+      x-deprecated-reason: "`slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version."
+
+  - target: $.components.schemas.new_catalog_field.properties.data.properties.attributes.properties.slug
+    update:
+      description: ""
+      x-deprecated-reason: "`slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version."
+
+  - target: $.components.schemas.new_catalog_property.properties.data.properties.attributes.properties.slug
+    update:
+      description: ""
+      x-deprecated-reason: "`slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version."
+
+  - target: $.components.schemas.new_cause.properties.data.properties.attributes.properties.slug
+    update:
+      description: ""
+      x-deprecated-reason: "`slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version."
+
+  - target: $.components.schemas.new_communications_stage.properties.data.properties.attributes.properties.slug
+    update:
+      description: ""
+      x-deprecated-reason: "`slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version."
+
+  - target: $.components.schemas.new_communications_type.properties.data.properties.attributes.properties.slug
+    update:
+      description: ""
+      x-deprecated-reason: "`slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version."
+
+  - target: $.components.schemas.new_custom_form.properties.data.properties.attributes.properties.slug
+    update:
+      description: ""
+      x-deprecated-reason: "`slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version."
+
+  - target: $.components.schemas.new_environment.properties.data.properties.attributes.properties.slug
+    update:
+      description: ""
+      x-deprecated-reason: "`slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version."
+
+  - target: $.components.schemas.new_form_field.properties.data.properties.attributes.properties.slug
+    update:
+      description: ""
+      x-deprecated-reason: "`slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version."
+
+  - target: $.components.schemas.new_form_set.properties.data.properties.attributes.properties.slug
+    update:
+      description: ""
+      x-deprecated-reason: "`slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version."
+
+  - target: $.components.schemas.new_functionality.properties.data.properties.attributes.properties.slug
+    update:
+      description: ""
+      x-deprecated-reason: "`slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version."
+
+  - target: $.components.schemas.new_incident_permission_set.properties.data.properties.attributes.properties.slug
+    update:
+      description: ""
+      x-deprecated-reason: "`slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version."
+
+  - target: $.components.schemas.new_incident_role.properties.data.properties.attributes.properties.slug
+    update:
+      description: ""
+      x-deprecated-reason: "`slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version."
+
+  - target: $.components.schemas.new_incident_type.properties.data.properties.attributes.properties.slug
+    update:
+      description: ""
+      x-deprecated-reason: "`slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version."
+
+  - target: $.components.schemas.new_on_call_role.properties.data.properties.attributes.properties.slug
+    update:
+      description: ""
+      x-deprecated-reason: "`slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version."
+
+  - target: $.components.schemas.new_post_mortem_template.properties.data.properties.attributes.properties.slug
+    update:
+      description: ""
+      x-deprecated-reason: "`slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version."
+
+  - target: $.components.schemas.new_retrospective_step.properties.data.properties.attributes.properties.slug
+    update:
+      description: ""
+      x-deprecated-reason: "`slug` is derived from `title`; any submitted value is ignored. This property will be removed from the request schema in a future version."
+
+  - target: $.components.schemas.new_role.properties.data.properties.attributes.properties.slug
+    update:
+      description: ""
+      x-deprecated-reason: "Custom role slugs remain accepted temporarily. Stop setting `slug`; it will become read-only and be derived from `name` when this property is removed from the request schema in a future version."
+
+  - target: $.components.schemas.new_service.properties.data.properties.attributes.properties.slug
+    update:
+      description: ""
+      x-deprecated-reason: "`slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version."
+
+  - target: $.components.schemas.new_severity.properties.data.properties.attributes.properties.slug
+    update:
+      description: ""
+      x-deprecated-reason: "`slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version."
+
+  - target: $.components.schemas.new_sla.properties.data.properties.attributes.properties.slug
+    update:
+      description: ""
+      x-deprecated-reason: "`slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version."
+
+  - target: $.components.schemas.new_status_page.properties.data.properties.attributes.properties.slug
+    update:
+      description: ""
+      x-deprecated-reason: "`slug` is derived from `title`; any submitted value is ignored. This property will be removed from the request schema in a future version."
+
+  - target: $.components.schemas.new_sub_status.properties.data.properties.attributes.properties.slug
+    update:
+      description: ""
+      x-deprecated-reason: "`slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version."
+
+  - target: $.components.schemas.new_team.properties.data.properties.attributes.properties.slug
+    update:
+      description: ""
+      x-deprecated-reason: "`slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version."
+
+  - target: $.components.schemas.new_webhooks_endpoint.properties.data.properties.attributes.properties.slug
+    update:
+      description: ""
+      x-deprecated-reason: "`slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version."
+
+  - target: $.components.schemas.new_workflow.properties.data.properties.attributes.properties.slug
+    update:
+      description: ""
+      x-deprecated-reason: "`slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version."
+
+  - target: $.components.schemas.new_workflow_group.properties.data.properties.attributes.properties.slug
+    update:
+      description: ""
+      x-deprecated-reason: "`slug` is derived from `name` and `kind`; any submitted value is ignored. This property will be removed from the request schema in a future version."
+
+  - target: $.components.schemas.update_alert_field.properties.data.properties.attributes.properties.slug
+    update:
+      description: ""
+      x-deprecated-reason: "`slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version."
+
+  - target: $.components.schemas.update_alert_group.properties.data.properties.attributes.properties.slug
+    update:
+      description: ""
+      x-deprecated-reason: "`slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version."
+
+  - target: $.components.schemas.update_catalog.properties.data.properties.attributes.properties.slug
+    update:
+      description: ""
+      x-deprecated-reason: "`slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version."
+
+  - target: $.components.schemas.update_catalog_checklist_template.properties.data.properties.attributes.properties.slug
+    update:
+      description: ""
+      x-deprecated-reason: "`slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version."
+
+  - target: $.components.schemas.update_catalog_entity.properties.data.properties.attributes.properties.slug
+    update:
+      description: ""
+      x-deprecated-reason: "`slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version."
+
+  - target: $.components.schemas.update_catalog_field.properties.data.properties.attributes.properties.slug
+    update:
+      description: ""
+      x-deprecated-reason: "`slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version."
+
+  - target: $.components.schemas.update_catalog_property.properties.data.properties.attributes.properties.slug
+    update:
+      description: ""
+      x-deprecated-reason: "`slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version."
+
+  - target: $.components.schemas.update_cause.properties.data.properties.attributes.properties.slug
+    update:
+      description: ""
+      x-deprecated-reason: "`slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version."
+
+  - target: $.components.schemas.update_communications_stage.properties.data.properties.attributes.properties.slug
+    update:
+      description: ""
+      x-deprecated-reason: "`slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version."
+
+  - target: $.components.schemas.update_communications_type.properties.data.properties.attributes.properties.slug
+    update:
+      description: ""
+      x-deprecated-reason: "`slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version."
+
+  - target: $.components.schemas.update_custom_form.properties.data.properties.attributes.properties.slug
+    update:
+      description: ""
+      x-deprecated-reason: "`slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version."
+
+  - target: $.components.schemas.update_environment.properties.data.properties.attributes.properties.slug
+    update:
+      description: ""
+      x-deprecated-reason: "`slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version."
+
+  - target: $.components.schemas.update_form_field.properties.data.properties.attributes.properties.slug
+    update:
+      description: ""
+      x-deprecated-reason: "`slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version."
+
+  - target: $.components.schemas.update_form_set.properties.data.properties.attributes.properties.slug
+    update:
+      description: ""
+      x-deprecated-reason: "`slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version."
+
+  - target: $.components.schemas.update_functionality.properties.data.properties.attributes.properties.slug
+    update:
+      description: ""
+      x-deprecated-reason: "`slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version."
+
+  - target: $.components.schemas.update_incident_permission_set.properties.data.properties.attributes.properties.slug
+    update:
+      description: ""
+      x-deprecated-reason: "`slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version."
+
+  - target: $.components.schemas.update_incident_role.properties.data.properties.attributes.properties.slug
+    update:
+      description: ""
+      x-deprecated-reason: "`slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version."
+
+  - target: $.components.schemas.update_incident_type.properties.data.properties.attributes.properties.slug
+    update:
+      description: ""
+      x-deprecated-reason: "`slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version."
+
+  - target: $.components.schemas.update_on_call_role.properties.data.properties.attributes.properties.slug
+    update:
+      description: ""
+      x-deprecated-reason: "`slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version."
+
+  - target: $.components.schemas.update_post_mortem_template.properties.data.properties.attributes.properties.slug
+    update:
+      description: ""
+      x-deprecated-reason: "`slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version."
+
+  - target: $.components.schemas.update_retrospective_step.properties.data.properties.attributes.properties.slug
+    update:
+      description: ""
+      x-deprecated-reason: "`slug` is derived from `title`; any submitted value is ignored. This property will be removed from the request schema in a future version."
+
+  - target: $.components.schemas.update_role.properties.data.properties.attributes.properties.slug
+    update:
+      description: ""
+      x-deprecated-reason: "Custom role slugs remain accepted temporarily. Stop setting `slug`; it will become read-only and be derived from `name` when this property is removed from the request schema in a future version."
+
+  - target: $.components.schemas.update_service.properties.data.properties.attributes.properties.slug
+    update:
+      description: ""
+      x-deprecated-reason: "`slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version."
+
+  - target: $.components.schemas.update_severity.properties.data.properties.attributes.properties.slug
+    update:
+      description: ""
+      x-deprecated-reason: "`slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version."
+
+  - target: $.components.schemas.update_sla.properties.data.properties.attributes.properties.slug
+    update:
+      description: ""
+      x-deprecated-reason: "`slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version."
+
+  - target: $.components.schemas.update_status_page.properties.data.properties.attributes.properties.slug
+    update:
+      description: ""
+      x-deprecated-reason: "`slug` is derived from `title`; any submitted value is ignored. This property will be removed from the request schema in a future version."
+
+  - target: $.components.schemas.update_sub_status.properties.data.properties.attributes.properties.slug
+    update:
+      description: ""
+      x-deprecated-reason: "`slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version."
+
+  - target: $.components.schemas.update_team.properties.data.properties.attributes.properties.slug
+    update:
+      description: ""
+      x-deprecated-reason: "`slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version."
+
+  - target: $.components.schemas.update_webhooks_endpoint.properties.data.properties.attributes.properties.slug
+    update:
+      description: ""
+      x-deprecated-reason: "`slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version."
+
+  - target: $.components.schemas.update_workflow.properties.data.properties.attributes.properties.slug
+    update:
+      description: ""
+      x-deprecated-reason: "`slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version."
+
+  - target: $.components.schemas.update_workflow_group.properties.data.properties.attributes.properties.slug
+    update:
+      description: ""
+      x-deprecated-reason: "`slug` is derived from `name` and `kind`; any submitted value is ignored. This property will be removed from the request schema in a future version."

@@ -56712,9 +56712,7 @@ type NewAlertField struct {
 
 			// OwnerGroupIDs IDs of the teams that own the alert field. Callers with org-wide alert field permissions may omit it or pass an empty list to create an org-wide field. Callers without them (team admins, team-scoped API keys) get their administered teams by default when it is omitted, and must otherwise pass at least one team they administer; an explicit empty list or null is rejected.
 			OwnerGroupIDs nullable.Nullable[[]string] `json:"owner_group_ids,omitempty"`
-
-			// Slug Deprecated. `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
-			// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+			// Deprecated: `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
 			Slug nullable.Nullable[string] `json:"slug,omitempty"`
 		} `json:"attributes"`
 		Type NewAlertFieldDataType `json:"type"`
@@ -56778,9 +56776,7 @@ type NewAlertGroup struct {
 
 			// OwnerGroupIDs Teams that own this alert group. Admins of an owning team can manage it, and an owned alert group can only target destinations that belong to its owning teams. Only available when owning teams for alert groups are enabled for the organization.
 			OwnerGroupIDs []openapi_types.UUID `json:"owner_group_ids,omitempty"`
-
-			// Slug Deprecated. `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
-			// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+			// Deprecated: `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
 			Slug    nullable.Nullable[string] `json:"slug,omitempty"`
 			Targets []struct {
 				// TargetID id for the Group, Service, EscalationPolicy or Functionality
@@ -57322,9 +57318,7 @@ type NewCatalog struct {
 
 			// Position Default position of the catalog when displayed in a list.
 			Position nullable.Nullable[int] `json:"position,omitempty"`
-
-			// Slug Deprecated. `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
-			// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+			// Deprecated: `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
 			Slug nullable.Nullable[string] `json:"slug,omitempty"`
 		} `json:"attributes"`
 		Type NewCatalogDataType `json:"type"`
@@ -57367,9 +57361,7 @@ type NewCatalogChecklistTemplate struct {
 
 			// ScopeType The scope type
 			ScopeType NewCatalogChecklistTemplateDataAttributesScopeType `json:"scope_type"`
-
-			// Slug Deprecated. `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
-			// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+			// Deprecated: `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
 			Slug nullable.Nullable[string] `json:"slug,omitempty"`
 		} `json:"attributes"`
 		Type NewCatalogChecklistTemplateDataType `json:"type"`
@@ -57442,9 +57434,7 @@ type NewCatalogEntity struct {
 
 			// PublicDescription The status page description of the catalog entity
 			PublicDescription nullable.Nullable[string] `json:"public_description,omitempty"`
-
-			// Slug Deprecated. `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
-			// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+			// Deprecated: `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
 			Slug nullable.Nullable[string] `json:"slug,omitempty"`
 		} `json:"attributes"`
 		Type NewCatalogEntityDataType `json:"type"`
@@ -57499,9 +57489,7 @@ type NewCatalogField struct {
 
 			// Required Whether the field is required.
 			Required *bool `json:"required,omitempty"`
-
-			// Slug Deprecated. `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
-			// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+			// Deprecated: `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
 			Slug nullable.Nullable[string] `json:"slug,omitempty"`
 		} `json:"attributes"`
 		Type NewCatalogFieldDataType `json:"type"`
@@ -57540,9 +57528,7 @@ type NewCatalogProperty struct {
 
 			// Required Whether the property is required.
 			Required *bool `json:"required,omitempty"`
-
-			// Slug Deprecated. `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
-			// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+			// Deprecated: `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
 			Slug nullable.Nullable[string] `json:"slug,omitempty"`
 		} `json:"attributes"`
 		Type NewCatalogPropertyDataType `json:"type"`
@@ -57582,9 +57568,7 @@ type NewCause struct {
 
 			// PublicDescription The status page description of the cause
 			PublicDescription nullable.Nullable[string] `json:"public_description,omitempty"`
-
-			// Slug Deprecated. `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
-			// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+			// Deprecated: `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
 			Slug nullable.Nullable[string] `json:"slug,omitempty"`
 		} `json:"attributes"`
 		Type NewCauseDataType `json:"type"`
@@ -57683,9 +57667,7 @@ type NewCommunicationsStage struct {
 
 			// Position Position of the communications stage
 			Position nullable.Nullable[int] `json:"position,omitempty"`
-
-			// Slug Deprecated. `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
-			// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+			// Deprecated: `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
 			Slug nullable.Nullable[string] `json:"slug,omitempty"`
 		} `json:"attributes"`
 		Type NewCommunicationsStageDataType `json:"type"`
@@ -57751,9 +57733,7 @@ type NewCommunicationsType struct {
 
 			// Position Position of the communications type
 			Position nullable.Nullable[int] `json:"position,omitempty"`
-
-			// Slug Deprecated. `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
-			// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+			// Deprecated: `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
 			Slug nullable.Nullable[string] `json:"slug,omitempty"`
 		} `json:"attributes"`
 		Type NewCommunicationsTypeDataType `json:"type"`
@@ -57826,9 +57806,7 @@ type NewCustomForm struct {
 
 			// Name The name of the custom form.
 			Name string `json:"name"`
-
-			// Slug Deprecated. `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
-			// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+			// Deprecated: `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
 			Slug nullable.Nullable[string] `json:"slug,omitempty"`
 		} `json:"attributes"`
 		Type NewCustomFormDataType `json:"type"`
@@ -58081,9 +58059,7 @@ type NewEnvironment struct {
 				// Name Slack channel name
 				Name string `json:"name"`
 			}] `json:"slack_channels,omitempty"`
-
-			// Slug Deprecated. `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
-			// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+			// Deprecated: `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
 			Slug nullable.Nullable[string] `json:"slug,omitempty"`
 		} `json:"attributes"`
 		Type NewEnvironmentDataType `json:"type"`
@@ -58669,9 +58645,7 @@ type NewFormField struct {
 			// ShowOnIncidentDetails Whether the form field is shown on the incident details panel
 			ShowOnIncidentDetails *bool    `json:"show_on_incident_details,omitempty"`
 			Shown                 []string `json:"shown,omitempty"`
-
-			// Slug Deprecated. `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
-			// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+			// Deprecated: `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
 			Slug nullable.Nullable[string] `json:"slug,omitempty"`
 
 			// ValueKind The value kind of the form field
@@ -58822,9 +58796,7 @@ type NewFormSet struct {
 
 			// Name The name of the form set
 			Name string `json:"name"`
-
-			// Slug Deprecated. `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
-			// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+			// Deprecated: `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
 			Slug nullable.Nullable[string] `json:"slug,omitempty"`
 		} `json:"attributes"`
 		Type NewFormSetDataType `json:"type"`
@@ -58947,9 +58919,7 @@ type NewFunctionality struct {
 				// Name Slack channel name
 				Name string `json:"name"`
 			}] `json:"slack_channels,omitempty"`
-
-			// Slug Deprecated. `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
-			// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+			// Deprecated: `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
 			Slug nullable.Nullable[string] `json:"slug,omitempty"`
 		} `json:"attributes"`
 		Type NewFunctionalityDataType `json:"type"`
@@ -59403,9 +59373,7 @@ type NewIncidentPermissionSet struct {
 			Name                       string                                                             `json:"name"`
 			PrivateIncidentPermissions []NewIncidentPermissionSetDataAttributesPrivateIncidentPermissions `json:"private_incident_permissions,omitempty"`
 			PublicIncidentPermissions  []NewIncidentPermissionSetDataAttributesPublicIncidentPermissions  `json:"public_incident_permissions,omitempty"`
-
-			// Slug Deprecated. `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
-			// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+			// Deprecated: `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
 			Slug nullable.Nullable[string] `json:"slug,omitempty"`
 		} `json:"attributes"`
 		Type NewIncidentPermissionSetDataType `json:"type"`
@@ -59502,9 +59470,7 @@ type NewIncidentRole struct {
 
 			// Position Position of the incident role
 			Position nullable.Nullable[int] `json:"position,omitempty"`
-
-			// Slug Deprecated. `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
-			// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+			// Deprecated: `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
 			Slug nullable.Nullable[string] `json:"slug,omitempty"`
 
 			// Summary The summary of the incident role
@@ -59650,9 +59616,7 @@ type NewIncidentType struct {
 				// Name Slack channel name
 				Name string `json:"name"`
 			}] `json:"slack_channels,omitempty"`
-
-			// Slug Deprecated. `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
-			// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+			// Deprecated: `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
 			Slug nullable.Nullable[string] `json:"slug,omitempty"`
 		} `json:"attributes"`
 		Type NewIncidentTypeDataType `json:"type"`
@@ -59825,9 +59789,7 @@ type NewOnCallRole struct {
 			ScheduleOverridePermissions      []NewOnCallRoleDataAttributesScheduleOverridePermissions      `json:"schedule_override_permissions,omitempty"`
 			SchedulesPermissions             []NewOnCallRoleDataAttributesSchedulesPermissions             `json:"schedules_permissions,omitempty"`
 			ServicesPermissions              []NewOnCallRoleDataAttributesServicesPermissions              `json:"services_permissions,omitempty"`
-
-			// Slug Deprecated. `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
-			// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+			// Deprecated: `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
 			Slug nullable.Nullable[string] `json:"slug,omitempty"`
 
 			// SystemRole The kind of role (user and custom type roles are only editable)
@@ -60034,9 +59996,7 @@ type NewPostMortemTemplate struct {
 
 			// Name The name of the postmortem template
 			Name string `json:"name"`
-
-			// Slug Deprecated. `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
-			// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+			// Deprecated: `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
 			Slug nullable.Nullable[string] `json:"slug,omitempty"`
 		} `json:"attributes"`
 		Type NewPostMortemTemplateDataType `json:"type"`
@@ -60188,9 +60148,7 @@ type NewRetrospectiveStep struct {
 
 			// Skippable Is the step skippable?
 			Skippable *bool `json:"skippable,omitempty"`
-
-			// Slug Deprecated. `slug` is derived from `title`; any submitted value is ignored. This property will be removed from the request schema in a future version.
-			// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+			// Deprecated: `slug` is derived from `title`; any submitted value is ignored. This property will be removed from the request schema in a future version.
 			Slug nullable.Nullable[string] `json:"slug,omitempty"`
 
 			// Title The name of the step
@@ -60242,9 +60200,7 @@ type NewRole struct {
 			ServicesPermissions         []NewRoleDataAttributesServicesPermissions         `json:"services_permissions,omitempty"`
 			SeveritiesPermissions       []NewRoleDataAttributesSeveritiesPermissions       `json:"severities_permissions,omitempty"`
 			SlasPermissions             []NewRoleDataAttributesSlasPermissions             `json:"slas_permissions,omitempty"`
-
-			// Slug Deprecated. Custom role slugs remain accepted temporarily. Stop setting `slug`; it will become read-only and be derived from `name` when this property is removed from the request schema in a future version.
-			// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+			// Deprecated: Custom role slugs remain accepted temporarily. Stop setting `slug`; it will become read-only and be derived from `name` when this property is removed from the request schema in a future version.
 			Slug                         nullable.Nullable[string]                                              `json:"slug,omitempty"`
 			StatusPageUpdatesPermissions nullable.Nullable[[]NewRoleDataAttributesStatusPageUpdatesPermissions] `json:"status_page_updates_permissions,omitempty"`
 			StatusPagesPermissions       []NewRoleDataAttributesStatusPagesPermissions                          `json:"status_pages_permissions,omitempty"`
@@ -60759,9 +60715,7 @@ type NewService struct {
 				// Name Slack channel name
 				Name string `json:"name"`
 			}] `json:"slack_channels,omitempty"`
-
-			// Slug Deprecated. `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
-			// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+			// Deprecated: `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
 			Slug nullable.Nullable[string] `json:"slug,omitempty"`
 		} `json:"attributes"`
 		Type NewServiceDataType `json:"type"`
@@ -60813,9 +60767,7 @@ type NewSeverity struct {
 				// Name Slack channel name
 				Name string `json:"name"`
 			}] `json:"slack_channels,omitempty"`
-
-			// Slug Deprecated. `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
-			// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+			// Deprecated: `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
 			Slug nullable.Nullable[string] `json:"slug,omitempty"`
 		} `json:"attributes"`
 		Type NewSeverityDataType `json:"type"`
@@ -60923,9 +60875,7 @@ type NewSLA struct {
 
 			// Position Position of the SLA for ordering
 			Position nullable.Nullable[int] `json:"position,omitempty"`
-
-			// Slug Deprecated. `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
-			// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+			// Deprecated: `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
 			Slug nullable.Nullable[string] `json:"slug,omitempty"`
 		} `json:"attributes"`
 		Type NewSLADataType `json:"type"`
@@ -61032,9 +60982,7 @@ type NewStatusPage struct {
 
 			// ShowUptimeLastDays Show uptime over x days
 			ShowUptimeLastDays nullable.Nullable[NewStatusPageDataAttributesShowUptimeLastDays] `json:"show_uptime_last_days,omitempty"`
-
-			// Slug Deprecated. `slug` is derived from `title`; any submitted value is ignored. This property will be removed from the request schema in a future version.
-			// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+			// Deprecated: `slug` is derived from `title`; any submitted value is ignored. This property will be removed from the request schema in a future version.
 			Slug nullable.Nullable[string] `json:"slug,omitempty"`
 
 			// SuccessMessage Message showing when all components are operational
@@ -61199,9 +61147,7 @@ type NewSubStatus struct {
 			Name         string                                 `json:"name"`
 			ParentStatus NewSubStatusDataAttributesParentStatus `json:"parent_status"`
 			Position     nullable.Nullable[int]                 `json:"position,omitempty"`
-
-			// Slug Deprecated. `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
-			// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+			// Deprecated: `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
 			Slug nullable.Nullable[string] `json:"slug,omitempty"`
 		} `json:"attributes"`
 		Type NewSubStatusDataType `json:"type"`
@@ -61328,9 +61274,7 @@ type NewTeam struct {
 				// Name Slack channel name
 				Name string `json:"name"`
 			}] `json:"slack_channels,omitempty"`
-
-			// Slug Deprecated. `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
-			// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+			// Deprecated: `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
 			Slug nullable.Nullable[string] `json:"slug,omitempty"`
 
 			// UserIDs The user ids of the members of this team.
@@ -61443,9 +61387,7 @@ type NewWebhooksEndpoint struct {
 
 			// Secret The webhook signing secret used to verify webhook requests.
 			Secret *string `json:"secret,omitempty"`
-
-			// Slug Deprecated. `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
-			// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+			// Deprecated: `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
 			Slug nullable.Nullable[string] `json:"slug,omitempty"`
 
 			// URL The URL of the endpoint.
@@ -61520,9 +61462,7 @@ type NewWorkflow struct {
 			RepeatOn            []NewWorkflowDataAttributesRepeatOn `json:"repeat_on,omitempty"`
 			ServiceIDs          []string                            `json:"service_ids,omitempty"`
 			SeverityIDs         []string                            `json:"severity_ids,omitempty"`
-
-			// Slug Deprecated. `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
-			// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+			// Deprecated: `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
 			Slug          nullable.Nullable[string]                  `json:"slug,omitempty"`
 			SubStatusIDs  []string                                   `json:"sub_status_ids,omitempty"`
 			TriggerParams *NewWorkflow_Data_Attributes_TriggerParams `json:"trigger_params,omitempty"`
@@ -61663,9 +61603,7 @@ type NewWorkflowGroup struct {
 
 			// Position The position of the workflow group
 			Position *int `json:"position,omitempty"`
-
-			// Slug Deprecated. `slug` is derived from `name` and `kind`; any submitted value is ignored. This property will be removed from the request schema in a future version.
-			// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+			// Deprecated: `slug` is derived from `name` and `kind`; any submitted value is ignored. This property will be removed from the request schema in a future version.
 			Slug nullable.Nullable[string] `json:"slug,omitempty"`
 		} `json:"attributes"`
 		Type NewWorkflowGroupDataType `json:"type"`
@@ -66052,9 +65990,7 @@ type UpdateAlertField struct {
 
 			// OwnerGroupIDs IDs of the teams that own the alert field. Callers with org-wide alert field permissions replace the full set. Callers without them may only add teams they administer, must leave at least one owner, and owners they do not administer are preserved.
 			OwnerGroupIDs nullable.Nullable[[]string] `json:"owner_group_ids,omitempty"`
-
-			// Slug Deprecated. `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
-			// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+			// Deprecated: `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
 			Slug nullable.Nullable[string] `json:"slug,omitempty"`
 		} `json:"attributes"`
 
@@ -66121,9 +66057,7 @@ type UpdateAlertGroup struct {
 
 			// OwnerGroupIDs Teams that own this alert group. Admins of an owning team can manage it, and an owned alert group can only target destinations that belong to its owning teams. Only available when owning teams for alert groups are enabled for the organization.
 			OwnerGroupIDs []openapi_types.UUID `json:"owner_group_ids,omitempty"`
-
-			// Slug Deprecated. `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
-			// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+			// Deprecated: `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
 			Slug    nullable.Nullable[string] `json:"slug,omitempty"`
 			Targets []struct {
 				// TargetID id for the Group, Service, EscalationPolicy or Functionality
@@ -66690,9 +66624,7 @@ type UpdateCatalog struct {
 
 			// Position Default position of the catalog when displayed in a list.
 			Position nullable.Nullable[int] `json:"position,omitempty"`
-
-			// Slug Deprecated. `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
-			// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+			// Deprecated: `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
 			Slug nullable.Nullable[string] `json:"slug,omitempty"`
 		} `json:"attributes"`
 
@@ -66729,9 +66661,7 @@ type UpdateCatalogChecklistTemplate struct {
 				// Type Type of owner
 				Type UpdateCatalogChecklistTemplateDataAttributesOwnersType `json:"type"`
 			}] `json:"owners,omitempty"`
-
-			// Slug Deprecated. `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
-			// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+			// Deprecated: `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
 			Slug nullable.Nullable[string] `json:"slug,omitempty"`
 		} `json:"attributes"`
 
@@ -66801,9 +66731,7 @@ type UpdateCatalogEntity struct {
 
 			// PublicDescription The status page description of the catalog entity
 			PublicDescription nullable.Nullable[string] `json:"public_description,omitempty"`
-
-			// Slug Deprecated. `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
-			// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+			// Deprecated: `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
 			Slug nullable.Nullable[string] `json:"slug,omitempty"`
 		} `json:"attributes"`
 
@@ -66858,9 +66786,7 @@ type UpdateCatalogField struct {
 
 			// Required Whether the field is required.
 			Required *bool `json:"required,omitempty"`
-
-			// Slug Deprecated. `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
-			// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+			// Deprecated: `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
 			Slug nullable.Nullable[string] `json:"slug,omitempty"`
 		} `json:"attributes"`
 
@@ -66899,9 +66825,7 @@ type UpdateCatalogProperty struct {
 
 			// Required Whether the property is required.
 			Required *bool `json:"required,omitempty"`
-
-			// Slug Deprecated. `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
-			// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+			// Deprecated: `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
 			Slug nullable.Nullable[string] `json:"slug,omitempty"`
 		} `json:"attributes"`
 
@@ -66944,9 +66868,7 @@ type UpdateCause struct {
 
 			// PublicDescription The status page description of the cause
 			PublicDescription nullable.Nullable[string] `json:"public_description,omitempty"`
-
-			// Slug Deprecated. `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
-			// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+			// Deprecated: `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
 			Slug nullable.Nullable[string] `json:"slug,omitempty"`
 		} `json:"attributes"`
 
@@ -67118,9 +67040,7 @@ type UpdateCommunicationsStage struct {
 
 			// Position Position of the communications stage
 			Position nullable.Nullable[int] `json:"position,omitempty"`
-
-			// Slug Deprecated. `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
-			// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+			// Deprecated: `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
 			Slug nullable.Nullable[string] `json:"slug,omitempty"`
 		} `json:"attributes"`
 
@@ -67192,9 +67112,7 @@ type UpdateCommunicationsType struct {
 
 			// Position Position of the communications type
 			Position nullable.Nullable[int] `json:"position,omitempty"`
-
-			// Slug Deprecated. `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
-			// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+			// Deprecated: `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
 			Slug nullable.Nullable[string] `json:"slug,omitempty"`
 		} `json:"attributes"`
 
@@ -67310,9 +67228,7 @@ type UpdateCustomForm struct {
 
 			// Name The name of the custom form.
 			Name *string `json:"name,omitempty"`
-
-			// Slug Deprecated. `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
-			// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+			// Deprecated: `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
 			Slug nullable.Nullable[string] `json:"slug,omitempty"`
 		} `json:"attributes"`
 
@@ -67593,9 +67509,7 @@ type UpdateEnvironment struct {
 				// Name Slack channel name
 				Name string `json:"name"`
 			}] `json:"slack_channels,omitempty"`
-
-			// Slug Deprecated. `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
-			// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+			// Deprecated: `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
 			Slug nullable.Nullable[string] `json:"slug,omitempty"`
 		} `json:"attributes"`
 
@@ -68193,9 +68107,7 @@ type UpdateFormField struct {
 			// ShowOnIncidentDetails Whether the form field is shown on the incident details panel
 			ShowOnIncidentDetails *bool    `json:"show_on_incident_details,omitempty"`
 			Shown                 []string `json:"shown,omitempty"`
-
-			// Slug Deprecated. `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
-			// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+			// Deprecated: `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
 			Slug nullable.Nullable[string] `json:"slug,omitempty"`
 
 			// ValueKind The value kind of the form field
@@ -68358,9 +68270,7 @@ type UpdateFormSet struct {
 
 			// Name The name of the form set
 			Name *string `json:"name,omitempty"`
-
-			// Slug Deprecated. `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
-			// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+			// Deprecated: `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
 			Slug nullable.Nullable[string] `json:"slug,omitempty"`
 		} `json:"attributes"`
 
@@ -68483,9 +68393,7 @@ type UpdateFunctionality struct {
 				// Name Slack channel name
 				Name string `json:"name"`
 			}] `json:"slack_channels,omitempty"`
-
-			// Slug Deprecated. `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
-			// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+			// Deprecated: `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
 			Slug nullable.Nullable[string] `json:"slug,omitempty"`
 		} `json:"attributes"`
 
@@ -69117,9 +69025,7 @@ type UpdateIncidentPermissionSet struct {
 			Name                       *string                                                               `json:"name,omitempty"`
 			PrivateIncidentPermissions []UpdateIncidentPermissionSetDataAttributesPrivateIncidentPermissions `json:"private_incident_permissions,omitempty"`
 			PublicIncidentPermissions  []UpdateIncidentPermissionSetDataAttributesPublicIncidentPermissions  `json:"public_incident_permissions,omitempty"`
-
-			// Slug Deprecated. `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
-			// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+			// Deprecated: `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
 			Slug nullable.Nullable[string] `json:"slug,omitempty"`
 		} `json:"attributes"`
 
@@ -69340,9 +69246,7 @@ type UpdateIncidentRole struct {
 
 			// Position Position of the incident role
 			Position nullable.Nullable[int] `json:"position,omitempty"`
-
-			// Slug Deprecated. `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
-			// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+			// Deprecated: `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
 			Slug nullable.Nullable[string] `json:"slug,omitempty"`
 
 			// Summary The summary of the incident role
@@ -69543,9 +69447,7 @@ type UpdateIncidentType struct {
 				// Name Slack channel name
 				Name string `json:"name"`
 			}] `json:"slack_channels,omitempty"`
-
-			// Slug Deprecated. `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
-			// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+			// Deprecated: `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
 			Slug nullable.Nullable[string] `json:"slug,omitempty"`
 		} `json:"attributes"`
 
@@ -69883,9 +69785,7 @@ type UpdateOnCallRole struct {
 			ScheduleOverridePermissions      []UpdateOnCallRoleDataAttributesScheduleOverridePermissions      `json:"schedule_override_permissions,omitempty"`
 			SchedulesPermissions             []UpdateOnCallRoleDataAttributesSchedulesPermissions             `json:"schedules_permissions,omitempty"`
 			ServicesPermissions              []UpdateOnCallRoleDataAttributesServicesPermissions              `json:"services_permissions,omitempty"`
-
-			// Slug Deprecated. `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
-			// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+			// Deprecated: `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
 			Slug nullable.Nullable[string] `json:"slug,omitempty"`
 
 			// SystemRole The kind of role (user and custom type roles are only editable)
@@ -70221,9 +70121,7 @@ type UpdatePostMortemTemplate struct {
 
 			// Name The name of the postmortem template
 			Name *string `json:"name,omitempty"`
-
-			// Slug Deprecated. `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
-			// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+			// Deprecated: `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
 			Slug nullable.Nullable[string] `json:"slug,omitempty"`
 		} `json:"attributes"`
 
@@ -70431,9 +70329,7 @@ type UpdateRetrospectiveStep struct {
 
 			// Skippable Is the step skippable?
 			Skippable *bool `json:"skippable,omitempty"`
-
-			// Slug Deprecated. `slug` is derived from `title`; any submitted value is ignored. This property will be removed from the request schema in a future version.
-			// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+			// Deprecated: `slug` is derived from `title`; any submitted value is ignored. This property will be removed from the request schema in a future version.
 			Slug nullable.Nullable[string] `json:"slug,omitempty"`
 
 			// Title The name of the step
@@ -70492,9 +70388,7 @@ type UpdateRole struct {
 			ServicesPermissions         []UpdateRoleDataAttributesServicesPermissions         `json:"services_permissions,omitempty"`
 			SeveritiesPermissions       []UpdateRoleDataAttributesSeveritiesPermissions       `json:"severities_permissions,omitempty"`
 			SlasPermissions             []UpdateRoleDataAttributesSlasPermissions             `json:"slas_permissions,omitempty"`
-
-			// Slug Deprecated. Custom role slugs remain accepted temporarily. Stop setting `slug`; it will become read-only and be derived from `name` when this property is removed from the request schema in a future version.
-			// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+			// Deprecated: Custom role slugs remain accepted temporarily. Stop setting `slug`; it will become read-only and be derived from `name` when this property is removed from the request schema in a future version.
 			Slug                         nullable.Nullable[string]                                                 `json:"slug,omitempty"`
 			StatusPageUpdatesPermissions nullable.Nullable[[]UpdateRoleDataAttributesStatusPageUpdatesPermissions] `json:"status_page_updates_permissions,omitempty"`
 			StatusPagesPermissions       []UpdateRoleDataAttributesStatusPagesPermissions                          `json:"status_pages_permissions,omitempty"`
@@ -71006,9 +70900,7 @@ type UpdateService struct {
 				// Name Slack channel name
 				Name string `json:"name"`
 			}] `json:"slack_channels,omitempty"`
-
-			// Slug Deprecated. `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
-			// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+			// Deprecated: `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
 			Slug nullable.Nullable[string] `json:"slug,omitempty"`
 		} `json:"attributes"`
 
@@ -71091,9 +70983,7 @@ type UpdateSeverity struct {
 				// Name Slack channel name
 				Name string `json:"name"`
 			}] `json:"slack_channels,omitempty"`
-
-			// Slug Deprecated. `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
-			// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+			// Deprecated: `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
 			Slug nullable.Nullable[string] `json:"slug,omitempty"`
 		} `json:"attributes"`
 
@@ -71253,9 +71143,7 @@ type UpdateSLA struct {
 
 			// Position Position of the SLA for ordering
 			Position nullable.Nullable[int] `json:"position,omitempty"`
-
-			// Slug Deprecated. `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
-			// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+			// Deprecated: `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
 			Slug nullable.Nullable[string] `json:"slug,omitempty"`
 		} `json:"attributes"`
 
@@ -71388,9 +71276,7 @@ type UpdateStatusPage struct {
 
 			// ShowUptimeLastDays Show uptime over x days
 			ShowUptimeLastDays nullable.Nullable[UpdateStatusPageDataAttributesShowUptimeLastDays] `json:"show_uptime_last_days,omitempty"`
-
-			// Slug Deprecated. `slug` is derived from `title`; any submitted value is ignored. This property will be removed from the request schema in a future version.
-			// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+			// Deprecated: `slug` is derived from `title`; any submitted value is ignored. This property will be removed from the request schema in a future version.
 			Slug nullable.Nullable[string] `json:"slug,omitempty"`
 
 			// SuccessMessage Message showing when all components are operational
@@ -71572,9 +71458,7 @@ type UpdateSubStatus struct {
 			Description nullable.Nullable[string] `json:"description,omitempty"`
 			Name        *string                   `json:"name,omitempty"`
 			Position    nullable.Nullable[int]    `json:"position,omitempty"`
-
-			// Slug Deprecated. `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
-			// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+			// Deprecated: `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
 			Slug nullable.Nullable[string] `json:"slug,omitempty"`
 		} `json:"attributes"`
 
@@ -71698,9 +71582,7 @@ type UpdateTeam struct {
 				// Name Slack channel name
 				Name string `json:"name"`
 			}] `json:"slack_channels,omitempty"`
-
-			// Slug Deprecated. `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
-			// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+			// Deprecated: `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
 			Slug nullable.Nullable[string] `json:"slug,omitempty"`
 
 			// UserIDs The user ids of the members of this team.
@@ -71892,9 +71774,7 @@ type UpdateWebhooksEndpoint struct {
 
 			// Name The name of the endpoint
 			Name *string `json:"name,omitempty"`
-
-			// Slug Deprecated. `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
-			// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+			// Deprecated: `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
 			Slug nullable.Nullable[string] `json:"slug,omitempty"`
 		} `json:"attributes"`
 
@@ -71965,9 +71845,7 @@ type UpdateWorkflow struct {
 			RepeatEveryDuration nullable.Nullable[string] `json:"repeat_every_duration,omitempty"`
 			ServiceIDs          []string                  `json:"service_ids,omitempty"`
 			SeverityIDs         []string                  `json:"severity_ids,omitempty"`
-
-			// Slug Deprecated. `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
-			// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+			// Deprecated: `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
 			Slug          nullable.Nullable[string]                     `json:"slug,omitempty"`
 			SubStatusIDs  []string                                      `json:"sub_status_ids,omitempty"`
 			TriggerParams *UpdateWorkflow_Data_Attributes_TriggerParams `json:"trigger_params,omitempty"`
@@ -72099,9 +71977,7 @@ type UpdateWorkflowGroup struct {
 
 			// Position The position of the workflow group
 			Position *int `json:"position,omitempty"`
-
-			// Slug Deprecated. `slug` is derived from `name` and `kind`; any submitted value is ignored. This property will be removed from the request schema in a future version.
-			// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+			// Deprecated: `slug` is derived from `name` and `kind`; any submitted value is ignored. This property will be removed from the request schema in a future version.
 			Slug nullable.Nullable[string] `json:"slug,omitempty"`
 		} `json:"attributes"`
 
