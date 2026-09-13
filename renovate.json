@@ -19,7 +19,8 @@
       ],
       "matchDepTypes": [
         "tool-constraint",
-        "tools"
+        "tools",
+        "uses-with"
       ],
       "dependencyDashboardApproval": true,
       "groupName": "go-toolchain"
