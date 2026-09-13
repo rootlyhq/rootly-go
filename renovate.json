@@ -76,6 +76,25 @@
       }
     },
     {
+      "description": "Run `go generate` after updating Go toolchain",
+      "matchPackageNames": [
+        "go",
+        "golang"
+      ],
+      "postUpgradeTasks": {
+        "commands": [
+          "go generate ./..."
+        ],
+        "fileFilters": [
+          "**/*.gen.go"
+        ],
+        "executionMode": "update",
+        "installTools": {
+          "golang": {}
+        }
+      }
+    },
+    {
       "matchUpdateTypes": [
         "major"
       ],
