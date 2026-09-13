@@ -77,7 +77,7 @@
     },
     {
       "description": "Run `go generate` after updating Go toolchain",
-      "matchPackageNames": [
+      "matchDepNames": [
         "go",
         "golang"
       ],
