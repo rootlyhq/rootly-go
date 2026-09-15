@@ -36,7 +36,8 @@ jobs:
           if [ "${{ github.event_name }}" = "pull_request" ]; then
             BASE_REF="$PR_BASE_SHA"
           fi
-          if git show "${BASE_REF}:.vendored/rootly-api.json" > /tmp/base-swagger.json 2>/dev/null; then
+          if git show "${BASE_REF}:.vendored/rootly-api.json" > /tmp/base-swagger.json 2>/dev/null || \
+             git show "${BASE_REF}:.vendored/rootly-api/swagger.json" > /tmp/base-swagger.json 2>/dev/null; then
             echo "BASE_SPEC_EXISTS=true" >> "$GITHUB_ENV"
           else
             echo "BASE_SPEC_EXISTS=false" >> "$GITHUB_ENV"
@@ -104,7 +105,8 @@ jobs:
         env:
           PR_BASE_SHA: "${{ github.event.pull_request.base.sha }}"
         run: |
-          if git show "${PR_BASE_SHA}:.vendored/rootly-api.json" > /tmp/base-swagger.json 2>/dev/null; then
+          if git show "${PR_BASE_SHA}:.vendored/rootly-api.json" > /tmp/base-swagger.json 2>/dev/null || \
+             git show "${PR_BASE_SHA}:.vendored/rootly-api/swagger.json" > /tmp/base-swagger.json 2>/dev/null; then
             echo "BASE_SPEC_EXISTS=true" >> "$GITHUB_ENV"
           else
             echo "BASE_SPEC_EXISTS=false" >> "$GITHUB_ENV"
@@ -198,7 +200,8 @@ jobs:
         env:
           PR_BASE_SHA: "${{ github.event.pull_request.base.sha }}"
         run: |
-          if git show "${PR_BASE_SHA}:.vendored/rootly-api.json" > /tmp/base-swagger.json 2>/dev/null; then
+          if git show "${PR_BASE_SHA}:.vendored/rootly-api.json" > /tmp/base-swagger.json 2>/dev/null || \
+             git show "${PR_BASE_SHA}:.vendored/rootly-api/swagger.json" > /tmp/base-swagger.json 2>/dev/null; then
             echo "BASE_SPEC_EXISTS=true" >> "$GITHUB_ENV"
           else
             echo "BASE_SPEC_EXISTS=false" >> "$GITHUB_ENV"
