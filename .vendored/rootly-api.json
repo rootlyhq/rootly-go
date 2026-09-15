@@ -5024,80 +5024,6 @@
         }
       }
     },
-    "/v1/bulk_imports": {
-      "post": {
-        "summary": "Create a bulk import",
-        "security": [
-          {
-            "bearer_auth": []
-          }
-        ],
-        "tags": [
-          "Bulk Imports"
-        ],
-        "description": "Create a new bulk import for incidents. Requires global API key authentication.",
-        "operationId": "createBulkImport",
-        "parameters": [],
-        "responses": {
-          "201": {
-            "description": "bulk import created"
-          },
-          "403": {
-            "description": "unauthorized - user lacks incident create permission"
-          },
-          "422": {
-            "description": "invalid parameters"
-          }
-        },
-        "requestBody": {
-          "content": {
-            "application/vnd.api+json": {
-              "schema": {
-                "$ref": "#/components/schemas/new_bulk_import"
-              }
-            }
-          },
-          "required": true
-        }
-      }
-    },
-    "/v1/bulk_imports/{id}": {
-      "get": {
-        "summary": "Get bulk import status",
-        "security": [
-          {
-            "bearer_auth": []
-          }
-        ],
-        "tags": [
-          "Bulk Imports"
-        ],
-        "description": "Retrieves the current status of a bulk import job.\n\n**Use this endpoint to:**\n- Poll for import progress\n- Check validation errors if status is `validation_failed`\n- Get final results when status is `completed` or `failed`\n",
-        "operationId": "getBulkImport",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "description": "Bulk import ID returned from the create endpoint",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "success"
-          },
-          "404": {
-            "description": "not found"
-          },
-          "403": {
-            "description": "organization API keys feature not enabled"
-          }
-        }
-      }
-    },
     "/v1/catalog_checklist_templates": {
       "post": {
         "summary": "Creates a catalog checklist template",
@@ -23502,10 +23428,31 @@
         ],
         "description": "Creates a new incident from provided data",
         "operationId": "createIncident",
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "Idempotency-Key",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "maxLength": 255
+            },
+            "description": "Optional client-generated key that makes creation safe to retry. Within 24 hours, a repeat request carrying the same key returns the incident created by the first request with status 200 instead of creating a duplicate. Keys are scoped to the team. Keys longer than 255 characters are rejected with 422."
+          }
+        ],
         "responses": {
           "201": {
             "description": "incident created",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/incident_response"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "incident already created for this Idempotency-Key",
             "content": {
               "application/vnd.api+json": {
                 "schema": {
@@ -28924,6 +28871,178 @@
                 }
               }
             }
+          }
+        }
+      }
+    },
+    "/v1/private_agents/enrollment_tokens": {
+      "post": {
+        "summary": "Create a one-time token for agent enrollment",
+        "operationId": "createPrivateAgentEnrollmentToken",
+        "tags": [
+          "Private Agents"
+        ],
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "description": "Issue a one-time token valid for 24 hours. No request body is required. Requires Private Agent management permission and the Private Agents feature. The agent uses this token for gRPC Enroll; the agent record is created on enrollment, not by this request. The plaintext is returned only here and is not recoverable. Repeated requests issue distinct tokens; this endpoint is not idempotent.",
+        "responses": {
+          "201": {
+            "description": "Enrollment token issued",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/private_agent_enrollment_token_response"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid or missing API credential"
+          },
+          "404": {
+            "description": "Not authorized or feature disabled"
+          }
+        }
+      }
+    },
+    "/v1/private_agents": {
+      "get": {
+        "summary": "List private agents",
+        "operationId": "listPrivateAgents",
+        "tags": [
+          "Private Agents"
+        ],
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "description": "List this tenant's agents, including revoked and offline agents. Inventory pages omit provider snapshots to bound database and response costs; use Get private agent for provider inventory and last-reported health. Requires Private Agent management access and the Private Agents feature. Credentials and capability schemas are never returned.",
+        "parameters": [
+          {
+            "name": "page[number]",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "required": false
+          },
+          {
+            "name": "page[size]",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 1000,
+              "default": 50
+            },
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Agents listed",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/private_agent_list"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid or missing API credential"
+          }
+        }
+      }
+    },
+    "/v1/private_agents/{id}": {
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "required": true
+        }
+      ],
+      "get": {
+        "summary": "Get private agent",
+        "operationId": "getPrivateAgent",
+        "tags": [
+          "Private Agents"
+        ],
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Agent details",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/private_agent_response"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found or unauthorized"
+          },
+          "401": {
+            "description": "Invalid or missing API credential"
+          }
+        }
+      }
+    },
+    "/v1/private_agents/{id}/revoke": {
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "required": true
+        }
+      ],
+      "post": {
+        "summary": "Revoke private agent",
+        "operationId": "revokePrivateAgent",
+        "tags": [
+          "Private Agents"
+        ],
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "description": "Invalidate access and refresh credentials and remove provider routing registrations. Retains the agent and invocation history. Repeated revocation is safe. An executing customer-side operation is not guaranteed to stop immediately. Use a new enrollment token to re-enroll a revoked installation.",
+        "responses": {
+          "200": {
+            "description": "Agent revoked",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/private_agent_response"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found or unauthorized"
+          },
+          "401": {
+            "description": "Invalid or missing API credential"
           }
         }
       }
@@ -45934,7 +46053,11 @@
         "properties": {
           "event": {
             "type": "string",
-            "description": "Describes the action that was taken."
+            "description": "The raw stored action that was taken. Rows written before IR-6875 may carry a trailing `!` for status transitions (e.g. `mark_as_resolved!`); prefer `event_display` for presentation."
+          },
+          "event_display": {
+            "type": "string",
+            "description": "Human-friendly display name for the action, normalized so a status change reads the same regardless of the surface it came from"
           },
           "item_type": {
             "type": "string",
@@ -46418,171 +46541,6 @@
           "data",
           "links",
           "meta"
-        ]
-      },
-      "bulk_import_attributes": {
-        "type": "object",
-        "properties": {
-          "entity_type": {
-            "type": "string",
-            "enum": [
-              "Incident"
-            ],
-            "description": "Type of entity being imported"
-          },
-          "status": {
-            "type": "string",
-            "enum": [
-              "pending",
-              "validating",
-              "validation_failed",
-              "importing",
-              "indexing",
-              "completed",
-              "failed"
-            ],
-            "description": "Current status of the import"
-          },
-          "file_url": {
-            "type": "string",
-            "format": "uri",
-            "description": "URL of the JSONL file being imported"
-          },
-          "notification_email": {
-            "type": "string",
-            "format": "email",
-            "description": "Email address for notifications"
-          },
-          "total_records": {
-            "type": "integer",
-            "nullable": true,
-            "description": "Total number of records in the file"
-          },
-          "processed_records": {
-            "type": "integer",
-            "description": "Number of records processed so far"
-          },
-          "failed_records": {
-            "type": "integer",
-            "description": "Number of records that failed to import"
-          },
-          "validation_errors": {
-            "type": "object",
-            "nullable": true,
-            "description": "Validation errors encountered during validation phase"
-          },
-          "error_message": {
-            "type": "string",
-            "nullable": true,
-            "description": "Error message if import failed"
-          },
-          "progress_percentage": {
-            "type": "number",
-            "format": "float",
-            "description": "Import progress percentage (0-100)"
-          },
-          "started_at": {
-            "type": "string",
-            "format": "date-time",
-            "nullable": true,
-            "description": "When import processing started"
-          },
-          "completed_at": {
-            "type": "string",
-            "format": "date-time",
-            "nullable": true,
-            "description": "When import completed or failed"
-          },
-          "created_at": {
-            "type": "string",
-            "format": "date-time",
-            "description": "When the bulk import was created"
-          },
-          "updated_at": {
-            "type": "string",
-            "format": "date-time",
-            "description": "When the bulk import was last updated"
-          }
-        },
-        "required": [
-          "status",
-          "processed_records",
-          "failed_records",
-          "progress_percentage"
-        ]
-      },
-      "new_bulk_import": {
-        "type": "object",
-        "properties": {
-          "data": {
-            "type": "object",
-            "properties": {
-              "attributes": {
-                "type": "object",
-                "properties": {
-                  "entity_type": {
-                    "type": "string",
-                    "enum": [
-                      "Incident"
-                    ],
-                    "description": "Type of entity to import (currently only 'Incident' is supported)"
-                  },
-                  "file_url": {
-                    "type": "string",
-                    "format": "uri",
-                    "description": "URL of the JSONL file to import. Must be accessible via HTTPS."
-                  },
-                  "notification_email": {
-                    "type": "string",
-                    "format": "email",
-                    "description": "Email address to receive import status notifications"
-                  }
-                },
-                "required": [
-                  "entity_type",
-                  "file_url",
-                  "notification_email"
-                ]
-              }
-            },
-            "required": [
-              "attributes"
-            ]
-          }
-        },
-        "required": [
-          "data"
-        ]
-      },
-      "bulk_import_response": {
-        "type": "object",
-        "properties": {
-          "data": {
-            "type": "object",
-            "properties": {
-              "id": {
-                "type": "string",
-                "format": "uuid"
-              },
-              "type": {
-                "type": "string",
-                "enum": [
-                  "bulk_import"
-                ]
-              },
-              "attributes": {
-                "$ref": "#/components/schemas/bulk_import_attributes"
-              }
-            },
-            "required": [
-              "id",
-              "type",
-              "attributes"
-            ]
-          }
-        },
-        "required": [
-          "data"
         ]
       },
       "new_catalog": {
@@ -53393,6 +53351,334 @@
           "edge_connector"
         ]
       },
+      "private_agent": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "type",
+          "attributes"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "private_agents"
+            ]
+          },
+          "attributes": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "name",
+              "status",
+              "online",
+              "deployment_mode",
+              "agent_version",
+              "last_seen_at",
+              "schema_digest",
+              "providers",
+              "created_at",
+              "updated_at"
+            ],
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "status": {
+                "type": "string",
+                "enum": [
+                  "active",
+                  "revoked"
+                ]
+              },
+              "online": {
+                "type": "boolean",
+                "description": "Active agent seen within two minutes; does not imply all providers are healthy."
+              },
+              "deployment_mode": {
+                "type": "string",
+                "enum": [
+                  "combined",
+                  "split-core"
+                ]
+              },
+              "agent_version": {
+                "type": "string"
+              },
+              "last_seen_at": {
+                "type": "string",
+                "format": "date-time",
+                "nullable": true
+              },
+              "schema_digest": {
+                "type": "string",
+                "nullable": true
+              },
+              "created_at": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "updated_at": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "providers": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "id",
+                    "type",
+                    "version",
+                    "health",
+                    "policy",
+                    "capabilities"
+                  ],
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string",
+                      "description": "Provider adapter type, such as kubernetes or prometheus."
+                    },
+                    "version": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "health": {
+                      "type": "object",
+                      "nullable": true,
+                      "additionalProperties": false,
+                      "description": "Last reported provider health; may be stale when the agent is offline. Invalid or absent fields are omitted.",
+                      "properties": {
+                        "status": {
+                          "type": "string"
+                        },
+                        "observed_at": {
+                          "type": "string"
+                        },
+                        "message": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "policy": {
+                      "type": "object",
+                      "nullable": true,
+                      "additionalProperties": false,
+                      "description": "Reported local policy, not credentials or provider connection configuration. Invalid or absent fields are omitted.",
+                      "properties": {
+                        "digest": {
+                          "type": "string"
+                        },
+                        "cluster_scoped": {
+                          "type": "boolean"
+                        },
+                        "pod_logs": {
+                          "type": "boolean"
+                        },
+                        "namespaces": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    },
+                    "capabilities": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "required": [
+                          "name",
+                          "version"
+                        ],
+                        "properties": {
+                          "name": {
+                            "type": "string"
+                          },
+                          "version": {
+                            "type": "string"
+                          },
+                          "description": {
+                            "type": "string"
+                          },
+                          "sensitivity": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "private_agent_response": {
+        "type": "object",
+        "required": [
+          "data"
+        ],
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/private_agent"
+          }
+        }
+      },
+      "private_agent_list": {
+        "type": "object",
+        "required": [
+          "data",
+          "meta"
+        ],
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/private_agent_summary"
+            }
+          },
+          "meta": {
+            "type": "object"
+          }
+        }
+      },
+      "private_agent_enrollment_token_response": {
+        "type": "object",
+        "required": [
+          "data"
+        ],
+        "properties": {
+          "data": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "type",
+              "attributes"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "format": "uuid"
+              },
+              "type": {
+                "type": "string",
+                "enum": [
+                  "private_agent_enrollment_tokens"
+                ]
+              },
+              "attributes": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "token",
+                  "expires_at"
+                ],
+                "properties": {
+                  "token": {
+                    "type": "string",
+                    "description": "One-time secret. Returned only on creation; do not log or store in source control."
+                  },
+                  "expires_at": {
+                    "type": "string",
+                    "format": "date-time"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "private_agent_summary": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "type",
+          "attributes"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "private_agents"
+            ]
+          },
+          "attributes": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "name",
+              "status",
+              "online",
+              "deployment_mode",
+              "agent_version",
+              "last_seen_at",
+              "schema_digest",
+              "created_at",
+              "updated_at"
+            ],
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "status": {
+                "type": "string",
+                "enum": [
+                  "active",
+                  "revoked"
+                ]
+              },
+              "online": {
+                "type": "boolean",
+                "description": "Active agent seen within two minutes; does not imply all providers are healthy."
+              },
+              "deployment_mode": {
+                "type": "string",
+                "enum": [
+                  "combined",
+                  "split-core"
+                ]
+              },
+              "agent_version": {
+                "type": "string"
+              },
+              "last_seen_at": {
+                "type": "string",
+                "format": "date-time",
+                "nullable": true
+              },
+              "schema_digest": {
+                "type": "string",
+                "nullable": true
+              },
+              "created_at": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "updated_at": {
+                "type": "string",
+                "format": "date-time"
+              }
+            }
+          }
+        }
+      },
       "edge_connector_action": {
         "type": "object",
         "properties": {
@@ -55852,6 +56138,7 @@
                       "type": "object",
                       "oneOf": [
                         {
+                          "title": "Alert urgency",
                           "properties": {
                             "rule_type": {
                               "type": "string",
@@ -55866,6 +56153,17 @@
                               "items": {
                                 "type": "string"
                               }
+                            },
+                            "operator": {
+                              "type": "string",
+                              "description": "How the alert's urgency should be matched. is and is_not take exactly one id",
+                              "enum": [
+                                "is",
+                                "is_not",
+                                "is_one_of",
+                                "is_not_one_of"
+                              ],
+                              "default": "is_one_of"
                             }
                           },
                           "required": [
@@ -55874,6 +56172,7 @@
                           ]
                         },
                         {
+                          "title": "Working hours",
                           "properties": {
                             "rule_type": {
                               "type": "string",
@@ -55893,6 +56192,7 @@
                           ]
                         },
                         {
+                          "title": "JSON path",
                           "properties": {
                             "rule_type": {
                               "type": "string",
@@ -55945,6 +56245,7 @@
                           ]
                         },
                         {
+                          "title": "Alert field",
                           "properties": {
                             "rule_type": {
                               "type": "string",
@@ -55997,6 +56298,7 @@
                           ]
                         },
                         {
+                          "title": "Service",
                           "properties": {
                             "rule_type": {
                               "type": "string",
@@ -56011,6 +56313,17 @@
                               "items": {
                                 "type": "string"
                               }
+                            },
+                            "operator": {
+                              "type": "string",
+                              "description": "How the alert's services should be matched. is and is_not take exactly one id",
+                              "enum": [
+                                "is",
+                                "is_not",
+                                "is_one_of",
+                                "is_not_one_of"
+                              ],
+                              "default": "is_one_of"
                             }
                           },
                           "required": [
@@ -56019,6 +56332,7 @@
                           ]
                         },
                         {
+                          "title": "Deferral window",
                           "properties": {
                             "rule_type": {
                               "type": "string",
@@ -56410,6 +56724,7 @@
                           ]
                         },
                         {
+                          "title": "Alert source",
                           "properties": {
                             "rule_type": {
                               "type": "string",
@@ -56443,6 +56758,7 @@
                           ]
                         },
                         {
+                          "title": "Related incidents",
                           "properties": {
                             "rule_type": {
                               "type": "string",
@@ -56502,6 +56818,7 @@
                             "type": "object",
                             "oneOf": [
                               {
+                                "title": "Alert urgency",
                                 "properties": {
                                   "rule_type": {
                                     "type": "string",
@@ -56516,6 +56833,17 @@
                                     "items": {
                                       "type": "string"
                                     }
+                                  },
+                                  "operator": {
+                                    "type": "string",
+                                    "description": "How the alert's urgency should be matched. is and is_not take exactly one id",
+                                    "enum": [
+                                      "is",
+                                      "is_not",
+                                      "is_one_of",
+                                      "is_not_one_of"
+                                    ],
+                                    "default": "is_one_of"
                                   }
                                 },
                                 "required": [
@@ -56524,6 +56852,7 @@
                                 ]
                               },
                               {
+                                "title": "Working hours",
                                 "properties": {
                                   "rule_type": {
                                     "type": "string",
@@ -56543,6 +56872,7 @@
                                 ]
                               },
                               {
+                                "title": "JSON path",
                                 "properties": {
                                   "rule_type": {
                                     "type": "string",
@@ -56595,6 +56925,7 @@
                                 ]
                               },
                               {
+                                "title": "Alert field",
                                 "properties": {
                                   "rule_type": {
                                     "type": "string",
@@ -56647,6 +56978,7 @@
                                 ]
                               },
                               {
+                                "title": "Service",
                                 "properties": {
                                   "rule_type": {
                                     "type": "string",
@@ -56661,6 +56993,17 @@
                                     "items": {
                                       "type": "string"
                                     }
+                                  },
+                                  "operator": {
+                                    "type": "string",
+                                    "description": "How the alert's services should be matched. is and is_not take exactly one id",
+                                    "enum": [
+                                      "is",
+                                      "is_not",
+                                      "is_one_of",
+                                      "is_not_one_of"
+                                    ],
+                                    "default": "is_one_of"
                                   }
                                 },
                                 "required": [
@@ -56669,6 +57012,7 @@
                                 ]
                               },
                               {
+                                "title": "Deferral window",
                                 "properties": {
                                   "rule_type": {
                                     "type": "string",
@@ -57060,6 +57404,7 @@
                                 ]
                               },
                               {
+                                "title": "Alert source",
                                 "properties": {
                                   "rule_type": {
                                     "type": "string",
@@ -57093,6 +57438,7 @@
                                 ]
                               },
                               {
+                                "title": "Related incidents",
                                 "properties": {
                                   "rule_type": {
                                     "type": "string",
@@ -57610,6 +57956,7 @@
                       "type": "object",
                       "oneOf": [
                         {
+                          "title": "Alert urgency",
                           "properties": {
                             "rule_type": {
                               "type": "string",
@@ -57624,6 +57971,17 @@
                               "items": {
                                 "type": "string"
                               }
+                            },
+                            "operator": {
+                              "type": "string",
+                              "description": "How the alert's urgency should be matched. is and is_not take exactly one id",
+                              "enum": [
+                                "is",
+                                "is_not",
+                                "is_one_of",
+                                "is_not_one_of"
+                              ],
+                              "default": "is_one_of"
                             }
                           },
                           "required": [
@@ -57632,6 +57990,7 @@
                           ]
                         },
                         {
+                          "title": "Working hours",
                           "properties": {
                             "rule_type": {
                               "type": "string",
@@ -57651,6 +58010,7 @@
                           ]
                         },
                         {
+                          "title": "JSON path",
                           "properties": {
                             "rule_type": {
                               "type": "string",
@@ -57703,6 +58063,7 @@
                           ]
                         },
                         {
+                          "title": "Alert field",
                           "properties": {
                             "rule_type": {
                               "type": "string",
@@ -57755,6 +58116,7 @@
                           ]
                         },
                         {
+                          "title": "Service",
                           "properties": {
                             "rule_type": {
                               "type": "string",
@@ -57769,6 +58131,17 @@
                               "items": {
                                 "type": "string"
                               }
+                            },
+                            "operator": {
+                              "type": "string",
+                              "description": "How the alert's services should be matched. is and is_not take exactly one id",
+                              "enum": [
+                                "is",
+                                "is_not",
+                                "is_one_of",
+                                "is_not_one_of"
+                              ],
+                              "default": "is_one_of"
                             }
                           },
                           "required": [
@@ -57777,6 +58150,7 @@
                           ]
                         },
                         {
+                          "title": "Deferral window",
                           "properties": {
                             "rule_type": {
                               "type": "string",
@@ -58168,6 +58542,7 @@
                           ]
                         },
                         {
+                          "title": "Alert source",
                           "properties": {
                             "rule_type": {
                               "type": "string",
@@ -58201,6 +58576,7 @@
                           ]
                         },
                         {
+                          "title": "Related incidents",
                           "properties": {
                             "rule_type": {
                               "type": "string",
@@ -58261,6 +58637,7 @@
                             "type": "object",
                             "oneOf": [
                               {
+                                "title": "Alert urgency",
                                 "properties": {
                                   "rule_type": {
                                     "type": "string",
@@ -58275,6 +58652,17 @@
                                     "items": {
                                       "type": "string"
                                     }
+                                  },
+                                  "operator": {
+                                    "type": "string",
+                                    "description": "How the alert's urgency should be matched. is and is_not take exactly one id",
+                                    "enum": [
+                                      "is",
+                                      "is_not",
+                                      "is_one_of",
+                                      "is_not_one_of"
+                                    ],
+                                    "default": "is_one_of"
                                   }
                                 },
                                 "required": [
@@ -58283,6 +58671,7 @@
                                 ]
                               },
                               {
+                                "title": "Working hours",
                                 "properties": {
                                   "rule_type": {
                                     "type": "string",
@@ -58302,6 +58691,7 @@
                                 ]
                               },
                               {
+                                "title": "JSON path",
                                 "properties": {
                                   "rule_type": {
                                     "type": "string",
@@ -58354,6 +58744,7 @@
                                 ]
                               },
                               {
+                                "title": "Alert field",
                                 "properties": {
                                   "rule_type": {
                                     "type": "string",
@@ -58406,6 +58797,7 @@
                                 ]
                               },
                               {
+                                "title": "Service",
                                 "properties": {
                                   "rule_type": {
                                     "type": "string",
@@ -58420,6 +58812,17 @@
                                     "items": {
                                       "type": "string"
                                     }
+                                  },
+                                  "operator": {
+                                    "type": "string",
+                                    "description": "How the alert's services should be matched. is and is_not take exactly one id",
+                                    "enum": [
+                                      "is",
+                                      "is_not",
+                                      "is_one_of",
+                                      "is_not_one_of"
+                                    ],
+                                    "default": "is_one_of"
                                   }
                                 },
                                 "required": [
@@ -58428,6 +58831,7 @@
                                 ]
                               },
                               {
+                                "title": "Deferral window",
                                 "properties": {
                                   "rule_type": {
                                     "type": "string",
@@ -58819,6 +59223,7 @@
                                 ]
                               },
                               {
+                                "title": "Alert source",
                                 "properties": {
                                   "rule_type": {
                                     "type": "string",
@@ -58852,6 +59257,7 @@
                                 ]
                               },
                               {
+                                "title": "Related incidents",
                                 "properties": {
                                   "rule_type": {
                                     "type": "string",
@@ -59349,6 +59755,7 @@
               "type": "object",
               "oneOf": [
                 {
+                  "title": "Alert urgency",
                   "properties": {
                     "rule_type": {
                       "type": "string",
@@ -59363,6 +59770,17 @@
                       "items": {
                         "type": "string"
                       }
+                    },
+                    "operator": {
+                      "type": "string",
+                      "description": "How the alert's urgency should be matched. is and is_not take exactly one id",
+                      "enum": [
+                        "is",
+                        "is_not",
+                        "is_one_of",
+                        "is_not_one_of"
+                      ],
+                      "default": "is_one_of"
                     }
                   },
                   "required": [
@@ -59371,6 +59789,7 @@
                   ]
                 },
                 {
+                  "title": "Working hours",
                   "properties": {
                     "rule_type": {
                       "type": "string",
@@ -59390,6 +59809,7 @@
                   ]
                 },
                 {
+                  "title": "JSON path",
                   "properties": {
                     "rule_type": {
                       "type": "string",
@@ -59442,6 +59862,7 @@
                   ]
                 },
                 {
+                  "title": "Alert field",
                   "properties": {
                     "rule_type": {
                       "type": "string",
@@ -59494,6 +59915,7 @@
                   ]
                 },
                 {
+                  "title": "Service",
                   "properties": {
                     "rule_type": {
                       "type": "string",
@@ -59508,6 +59930,17 @@
                       "items": {
                         "type": "string"
                       }
+                    },
+                    "operator": {
+                      "type": "string",
+                      "description": "How the alert's services should be matched. is and is_not take exactly one id",
+                      "enum": [
+                        "is",
+                        "is_not",
+                        "is_one_of",
+                        "is_not_one_of"
+                      ],
+                      "default": "is_one_of"
                     }
                   },
                   "required": [
@@ -59516,6 +59949,7 @@
                   ]
                 },
                 {
+                  "title": "Deferral window",
                   "properties": {
                     "rule_type": {
                       "type": "string",
@@ -59907,6 +60341,7 @@
                   ]
                 },
                 {
+                  "title": "Alert source",
                   "properties": {
                     "rule_type": {
                       "type": "string",
@@ -59940,6 +60375,7 @@
                   ]
                 },
                 {
+                  "title": "Related incidents",
                   "properties": {
                     "rule_type": {
                       "type": "string",
@@ -60000,6 +60436,7 @@
                     "type": "object",
                     "oneOf": [
                       {
+                        "title": "Alert urgency",
                         "properties": {
                           "rule_type": {
                             "type": "string",
@@ -60014,6 +60451,17 @@
                             "items": {
                               "type": "string"
                             }
+                          },
+                          "operator": {
+                            "type": "string",
+                            "description": "How the alert's urgency should be matched. is and is_not take exactly one id",
+                            "enum": [
+                              "is",
+                              "is_not",
+                              "is_one_of",
+                              "is_not_one_of"
+                            ],
+                            "default": "is_one_of"
                           }
                         },
                         "required": [
@@ -60022,6 +60470,7 @@
                         ]
                       },
                       {
+                        "title": "Working hours",
                         "properties": {
                           "rule_type": {
                             "type": "string",
@@ -60041,6 +60490,7 @@
                         ]
                       },
                       {
+                        "title": "JSON path",
                         "properties": {
                           "rule_type": {
                             "type": "string",
@@ -60093,6 +60543,7 @@
                         ]
                       },
                       {
+                        "title": "Alert field",
                         "properties": {
                           "rule_type": {
                             "type": "string",
@@ -60145,6 +60596,7 @@
                         ]
                       },
                       {
+                        "title": "Service",
                         "properties": {
                           "rule_type": {
                             "type": "string",
@@ -60159,6 +60611,17 @@
                             "items": {
                               "type": "string"
                             }
+                          },
+                          "operator": {
+                            "type": "string",
+                            "description": "How the alert's services should be matched. is and is_not take exactly one id",
+                            "enum": [
+                              "is",
+                              "is_not",
+                              "is_one_of",
+                              "is_not_one_of"
+                            ],
+                            "default": "is_one_of"
                           }
                         },
                         "required": [
@@ -60167,6 +60630,7 @@
                         ]
                       },
                       {
+                        "title": "Deferral window",
                         "properties": {
                           "rule_type": {
                             "type": "string",
@@ -60558,6 +61022,7 @@
                         ]
                       },
                       {
+                        "title": "Alert source",
                         "properties": {
                           "rule_type": {
                             "type": "string",
@@ -60591,6 +61056,7 @@
                         ]
                       },
                       {
+                        "title": "Related incidents",
                         "properties": {
                           "rule_type": {
                             "type": "string",
@@ -71557,6 +72023,68 @@
           "title"
         ]
       },
+      "create_slack_canvas_task_params": {
+        "type": "object",
+        "description": "Create a canvas in a Slack channel, preserving an existing canvas. The connected Slack app must have Canvas permissions.",
+        "properties": {
+          "task_type": {
+            "type": "string",
+            "enum": [
+              "create_slack_canvas"
+            ]
+          },
+          "channel": {
+            "type": "object",
+            "description": "Slack channel containing the canvas. Channel IDs support Liquid variables.",
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S",
+                "description": "Slack channel ID.",
+                "example": "{{ incident.slack_channel_id }}"
+              },
+              "name": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S",
+                "description": "Channel display name.",
+                "example": "incident-channel"
+              }
+            },
+            "required": [
+              "id",
+              "name"
+            ],
+            "additionalProperties": false
+          },
+          "title": {
+            "type": "string",
+            "description": "The canvas title. Supports Liquid variables."
+          },
+          "content": {
+            "type": "string",
+            "description": "The initial canvas content in Markdown. Supports Liquid variables. An existing channel canvas is preserved."
+          },
+          "retry_count": {
+            "type": "integer",
+            "description": "Number of times to retry on rate-limit (HTTP 429) responses (0-4). 0 disables retry.",
+            "default": 0,
+            "example": 3
+          },
+          "retry_wait_time": {
+            "type": "integer",
+            "description": "Seconds to wait before each retry (1-15). Retry-After header is honored when present and <= 90s, taking the larger of retry_wait_time and the header value.",
+            "default": 1,
+            "example": 2
+          }
+        },
+        "required": [
+          "channel",
+          "title",
+          "content"
+        ]
+      },
       "send_slack_message_task_params": {
         "type": "object",
         "properties": {
@@ -71674,6 +72202,10 @@
           "send_only_as_threaded_message": {
             "type": "boolean",
             "description": "When set to true, if the parent for this threaded message cannot be found the message will be skipped."
+          },
+          "allow_cross_workflow_threading": {
+            "type": "boolean",
+            "description": "When set to true, allows workflows from different sources (e.g. different incidents or alerts) to thread together on the same parent message."
           },
           "retry_count": {
             "type": "integer",
@@ -72819,6 +73351,77 @@
           "topic"
         ]
       },
+      "update_slack_canvas_task_params": {
+        "type": "object",
+        "description": "Update the selected channel canvas using Markdown. The connected Slack app must have Canvas permissions.",
+        "properties": {
+          "task_type": {
+            "type": "string",
+            "enum": [
+              "update_slack_canvas"
+            ]
+          },
+          "channel": {
+            "type": "object",
+            "description": "Slack channel containing the canvas. Channel IDs support Liquid variables.",
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S",
+                "description": "Slack channel ID.",
+                "example": "{{ incident.slack_channel_id }}"
+              },
+              "name": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S",
+                "description": "Channel display name.",
+                "example": "incident-channel"
+              }
+            },
+            "required": [
+              "id",
+              "name"
+            ],
+            "additionalProperties": false
+          },
+          "content": {
+            "type": "string",
+            "description": "The canvas content in Markdown. Supports Liquid variables."
+          },
+          "operation": {
+            "type": "string",
+            "enum": [
+              "insert_at_end",
+              "replace"
+            ],
+            "default": "insert_at_end",
+            "description": "Append content or replace the selected table or entire canvas."
+          },
+          "section_name": {
+            "type": "string",
+            "nullable": true,
+            "description": "With replace, target the single table containing this label. Include the label in the replacement table. Blank replaces the entire canvas. Supports Liquid."
+          },
+          "retry_count": {
+            "type": "integer",
+            "description": "Number of times to retry on rate-limit (HTTP 429) responses (0-4). 0 disables retry.",
+            "default": 0,
+            "example": 3
+          },
+          "retry_wait_time": {
+            "type": "integer",
+            "description": "Seconds to wait before each retry (1-15). Retry-After header is honored when present and <= 90s, taking the larger of retry_wait_time and the header value.",
+            "default": 1,
+            "example": 2
+          }
+        },
+        "required": [
+          "channel",
+          "content"
+        ]
+      },
       "update_status_task_params": {
         "type": "object",
         "properties": {
@@ -73315,6 +73918,10 @@
           "send_only_as_threaded_message": {
             "type": "boolean",
             "description": "When set to true, if the parent for this threaded message cannot be found the message will be skipped."
+          },
+          "allow_cross_workflow_threading": {
+            "type": "boolean",
+            "description": "When set to true, allows workflows from different sources (e.g. different incidents or alerts) to thread together on the same parent message."
           },
           "retry_count": {
             "type": "integer",
@@ -74012,6 +74619,9 @@
                         "$ref": "#/components/schemas/create_slack_channel_task_params"
                       },
                       {
+                        "$ref": "#/components/schemas/create_slack_canvas_task_params"
+                      },
+                      {
                         "$ref": "#/components/schemas/send_slack_message_task_params"
                       },
                       {
@@ -74070,6 +74680,9 @@
                       },
                       {
                         "$ref": "#/components/schemas/update_slack_channel_topic_task_params"
+                      },
+                      {
+                        "$ref": "#/components/schemas/update_slack_canvas_task_params"
                       },
                       {
                         "$ref": "#/components/schemas/update_status_task_params"
@@ -74515,6 +75128,9 @@
                         "$ref": "#/components/schemas/create_slack_channel_task_params"
                       },
                       {
+                        "$ref": "#/components/schemas/create_slack_canvas_task_params"
+                      },
+                      {
                         "$ref": "#/components/schemas/send_slack_message_task_params"
                       },
                       {
@@ -74573,6 +75189,9 @@
                       },
                       {
                         "$ref": "#/components/schemas/update_slack_channel_topic_task_params"
+                      },
+                      {
+                        "$ref": "#/components/schemas/update_slack_canvas_task_params"
                       },
                       {
                         "$ref": "#/components/schemas/update_status_task_params"
@@ -74986,6 +75605,9 @@
                 "$ref": "#/components/schemas/create_slack_channel_task_params"
               },
               {
+                "$ref": "#/components/schemas/create_slack_canvas_task_params"
+              },
+              {
                 "$ref": "#/components/schemas/send_slack_message_task_params"
               },
               {
@@ -75044,6 +75666,9 @@
               },
               {
                 "$ref": "#/components/schemas/update_slack_channel_topic_task_params"
+              },
+              {
+                "$ref": "#/components/schemas/update_slack_canvas_task_params"
               },
               {
                 "$ref": "#/components/schemas/update_status_task_params"
