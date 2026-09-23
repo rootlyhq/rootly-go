@@ -14,7 +14,13 @@
     {
       "description": "Require human review for `toolchain` directive and Mise updates",
       "matchDepNames": [
-        "go"
+        "go",
+        "golang"
+      ],
+      "matchDepTypes": [
+        "tool-constraint",
+        "tools",
+        "uses-with"
       ],
       "dependencyDashboardApproval": true,
       "groupName": "go-toolchain"
@@ -55,6 +61,25 @@
       "description": "Run `go generate` after updating `oapi-codegen`",
       "matchPackageNames": [
         "github.com/oapi-codegen/oapi-codegen/v2"
+      ],
+      "postUpgradeTasks": {
+        "commands": [
+          "go generate ./..."
+        ],
+        "fileFilters": [
+          "**/*.gen.go"
+        ],
+        "executionMode": "update",
+        "installTools": {
+          "golang": {}
+        }
+      }
+    },
+    {
+      "description": "Run `go generate` after updating Go toolchain",
+      "matchDepNames": [
+        "go",
+        "golang"
       ],
       "postUpgradeTasks": {
         "commands": [
@@ -111,5 +136,8 @@
         "Change": "Updated OpenAPI spec"
       }
     }
+  },
+  "constraints": {
+    "golang": "1.25"
   }
 }

@@ -16,27 +16,24 @@ package main
 import (
     "context"
     "fmt"
-    "net/http"
-    
+
     "github.com/rootlyhq/rootly-go"
 )
 
 func main() {
     // Create a new client
-    client, err := rootly.NewClient("https://api.rootly.com", rootly.WithRequestEditorFn(
-        func(ctx context.Context, req *http.Request) error {
-            req.Header.Set("Authorization", "Bearer YOUR_API_TOKEN")
-            return nil
-        },
-    ))
+    client, err := rootly.NewClient("https://api.rootly.com", rootly.WithBearerToken("YOUR_API_TOKEN"))
     if err != nil {
         panic(err)
     }
-    
-    // Use the client to make API calls
-    ctx := context.Background()
-    // Example: List incidents
-    // response, err := client.GetIncidents(ctx, &rootly.GetIncidentsParams{})
+
+    // List incidents
+    response, err := client.ListIncidents(context.Background(), &rootly.ListIncidentsParams{})
+    if err != nil {
+        panic(err)
+    }
+    defer response.Body.Close()
+    fmt.Println(response.Status)
 }
 ```
 
