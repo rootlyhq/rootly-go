@@ -16,7 +16,6 @@ package main
 import (
     "context"
     "fmt"
-    "net/http"
 
     "github.com/oapi-codegen/oapi-codegen/v2/pkg/securityprovider"
     "github.com/rootlyhq/rootly-go"
@@ -24,7 +23,7 @@ import (
 
 func main() {
     // Set up our auth provider
-    authFn, err := securityprovider.NewSecurityProviderBearerToken("YOUR_TOKEN")
+    authFn, err := securityprovider.NewSecurityProviderBearerToken("YOUR_API_TOKEN")
     if err != nil {
         panic(err)
     }
@@ -35,10 +34,13 @@ func main() {
         panic(err)
     }
 
-    // Use the client to make API calls
-    ctx := context.Background()
-    // Example: List incidents
-    // response, err := client.GetIncidents(ctx, &rootly.GetIncidentsParams{})
+    // List incidents
+    response, err := client.ListIncidents(context.Background(), &rootly.ListIncidentsParams{})
+    if err != nil {
+        panic(err)
+    }
+    defer response.Body.Close()
+    fmt.Println(response.Status)
 }
 ```
 

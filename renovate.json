@@ -2,17 +2,25 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:best-practices",
-    "helpers:pinGitHubActionDigestsToSemver"
+    "helpers:pinGitHubActionDigestsToSemver",
+    "github>oapi-codegen/renovate-config:user"
   ],
   "addLabels": [
     "dependencies"
   ],
   "separateMinorPatch": true,
+  "minimumReleaseAge": "3 days",
   "packageRules": [
     {
       "description": "Require human review for `toolchain` directive and Mise updates",
       "matchDepNames": [
-        "go"
+        "go",
+        "golang"
+      ],
+      "matchDepTypes": [
+        "tool-constraint",
+        "tools",
+        "uses-with"
       ],
       "dependencyDashboardApproval": true,
       "groupName": "go-toolchain"
@@ -66,6 +74,37 @@
           "golang": {}
         }
       }
+    },
+    {
+      "description": "Run `go generate` after updating Go toolchain",
+      "matchDepNames": [
+        "go",
+        "golang"
+      ],
+      "postUpgradeTasks": {
+        "commands": [
+          "go generate ./..."
+        ],
+        "fileFilters": [
+          "**/*.gen.go"
+        ],
+        "executionMode": "update",
+        "installTools": {
+          "golang": {}
+        }
+      }
+    },
+    {
+      "matchUpdateTypes": [
+        "major"
+      ],
+      "minimumReleaseAge": "7 days"
+    },
+    {
+      "matchUpdateTypes": [
+        "lockFileMaintenance"
+      ],
+      "minimumReleaseAge": null
     }
   ],
   "postUpdateOptions": [
@@ -73,17 +112,6 @@
     "gomodUpdateImportPaths"
   ],
   "customManagers": [
-    {
-      "customType": "regex",
-      "managerFilePatterns": [
-        "**/config.yaml"
-      ],
-      "matchStrings": [
-        "# yaml-language-server: \\$schema=https://raw.githubusercontent.com/oapi-codegen/oapi-codegen/(?<currentValue>[^/]+)/configuration-schema.json"
-      ],
-      "depNameTemplate": "github.com/oapi-codegen/oapi-codegen/v2",
-      "datasourceTemplate": "go"
-    },
     {
       "customType": "regex",
       "managerFilePatterns": [
@@ -108,5 +136,8 @@
         "Change": "Updated OpenAPI spec"
       }
     }
+  },
+  "constraints": {
+    "golang": "1.25"
   }
 }

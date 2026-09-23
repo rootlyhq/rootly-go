@@ -5,6 +5,10 @@ tag-template: $NEXT_PATCH_VERSION
 template: |
   $CHANGES
 
+  ## OpenAPI spec
+
+  <!-- OPENAPI_DIFF -->
+
 categories:
   - title: 🚀 New features and improvements
     labels:

@@ -1,0 +1,2 @@
+# for the embedded OpenAPI spec itself, show it as "generated", so GitHub doesn't show a rich diff
+spec.gen.go linguist-generated
