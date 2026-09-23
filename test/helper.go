@@ -4,7 +4,6 @@ import (
 	"os"
 	"testing"
 
-	"github.com/oapi-codegen/oapi-codegen/v2/pkg/securityprovider"
 	"github.com/rootlyhq/rootly-go"
 )
 
@@ -16,12 +15,7 @@ func SetupClient(t *testing.T) *rootly.ClientWithResponses {
 		t.Skip("Skipping integration test: ROOTLY_API_TOKEN not set")
 	}
 
-	authFn, err := securityprovider.NewSecurityProviderBearerToken(apiToken)
-	if err != nil {
-		t.Fatalf("Failed to create SecurityProvider: %v", err)
-	}
-
-	client, err := rootly.NewClientWithResponses(rootly.ServerURLProduction, rootly.WithRequestEditorFn(authFn.Intercept))
+	client, err := rootly.NewClientWithResponses(rootly.ServerURLProduction, rootly.WithBearerToken(apiToken))
 	if err != nil {
 		t.Fatalf("Failed to create client: %v", err)
 	}
