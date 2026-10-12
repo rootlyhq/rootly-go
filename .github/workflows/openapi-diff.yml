@@ -139,7 +139,7 @@ jobs:
       - name: OpenAPI overlay changelog
         if: env.BASE_SPEC_EXISTS == 'true'
         run: |
-          CHANGELOG=$(oasdiff changelog --format markdown /tmp/base-overlay-applied.json /tmp/pr-overlay-applied.json || true)
+          CHANGELOG=$(oasdiff changelog --format markdown /tmp/base-overlay-applied.json /tmp/pr-overlay-applied.json --severity-levels .github/oasdiff/severity-levels.txt || true)
           if [ -z "$CHANGELOG" ] || echo "$CHANGELOG" | grep -q "No changes detected"; then
             CHANGELOG="_No API changes detected after overlay._"
           fi
