@@ -24,7 +24,7 @@
         "tags": [
           "AI Chat"
         ],
-        "description": "Send a message to the AI assistant and receive a synchronous reply. Optionally bind the conversation to an incident or alert for context-aware responses. Requires `ai.chat:write` OAuth scope or an API key.",
+        "description": "Send a message to the AI assistant and receive a synchronous reply. Optionally bind the conversation to an incident or alert for context-aware responses. For eligible unbound home chat, `checkpoint_id` and `decision` confirm or cancel approval-gated writes. Responses include `confirmation` for a pending write and `checkpoint_resolved` after resume. If an action-item write needs required fields the model did not supply, no checkpoint is created and the turn completes with a plain reply linking to that incident's action-item form in the Rootly web app. The synchronous response has no `confirmation` key; only `confirmation` responses are resumable. Requires `ai.chat:write` OAuth scope or an API key.",
         "operationId": "createAiChat",
         "parameters": [
           {
@@ -33,8 +33,8 @@
             "schema": {
               "type": "string"
             },
-            "description": "Message to send to the AI assistant",
-            "required": true
+            "description": "Message to send. Required unless checkpoint_id is supplied.",
+            "required": false
           },
           {
             "name": "session_id",
@@ -44,6 +44,29 @@
               "format": "uuid"
             },
             "description": "Resume an existing session",
+            "required": false
+          },
+          {
+            "name": "checkpoint_id",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "Pending confirmation checkpoint to resolve",
+            "required": false
+          },
+          {
+            "name": "decision",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "confirm",
+                "cancel"
+              ]
+            },
+            "description": "Resolve the checkpoint with confirm or cancel",
             "required": false
           },
           {
@@ -79,10 +102,44 @@
             }
           },
           "403": {
-            "description": "AI chat not enabled or insufficient scope"
+            "description": "AI chat not enabled, insufficient scope, or home-chat caller is ineligible",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ai_chat_error_response"
+                }
+              }
+            }
           },
           "422": {
-            "description": "invalid request"
+            "description": "invalid request, missing session_id, invalid decision, or agent error",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ai_chat_error_response"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "confirm session or checkpoint not found, or unresumable message session for an eligible home-chat caller",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ai_chat_error_response"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "AI processing failed",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ai_chat_error_response"
+                }
+              }
+            }
           }
         }
       }
@@ -98,7 +155,7 @@
         "tags": [
           "AI Chat"
         ],
-        "description": "Send a message and receive the AI response as a Server-Sent Events stream. Optionally bind to an incident or alert for context. Events: `session_id` (initial), `text` (content chunks), `task_update` (tool progress), `error`, `done` (terminal with status). Requires `ai.chat:write` OAuth scope or an API key.",
+        "description": "Send a message and receive the AI response as a Server-Sent Events stream. Optionally bind to an incident or alert for context. For eligible unbound home chat, `checkpoint_id` and `decision` confirm or cancel approval-gated writes. Events include `confirmation_required` for pending writes and `checkpoint_resolved` before replay. If an action-item write needs required fields the model did not supply, no checkpoint is created and the turn completes with a plain reply linking to that incident's action-item form in the Rootly web app. The stream emits `done` with `status: complete` and no `confirmation_required` event; only `confirmation_required` events are resumable. Requires `ai.chat:write` OAuth scope or an API key.",
         "operationId": "streamAiChat",
         "parameters": [
           {
@@ -107,8 +164,8 @@
             "schema": {
               "type": "string"
             },
-            "description": "Message to send",
-            "required": true
+            "description": "Message to send. Required unless checkpoint_id is supplied.",
+            "required": false
           },
           {
             "name": "session_id",
@@ -118,6 +175,29 @@
               "format": "uuid"
             },
             "description": "Resume an existing session",
+            "required": false
+          },
+          {
+            "name": "checkpoint_id",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "Pending confirmation checkpoint to resolve",
+            "required": false
+          },
+          {
+            "name": "decision",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "confirm",
+                "cancel"
+              ]
+            },
+            "description": "Resolve the checkpoint with confirm or cancel",
             "required": false
           },
           {
@@ -146,7 +226,34 @@
             "description": "SSE event stream"
           },
           "403": {
-            "description": "AI chat not enabled"
+            "description": "AI chat not enabled or home-chat caller is ineligible",
+            "content": {
+              "text/event-stream": {
+                "schema": {
+                  "$ref": "#/components/schemas/ai_chat_error_response"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "confirm session or checkpoint not found, or unresumable message session for an eligible home-chat caller",
+            "content": {
+              "text/event-stream": {
+                "schema": {
+                  "$ref": "#/components/schemas/ai_chat_error_response"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "session_id is missing or the confirmation decision is invalid",
+            "content": {
+              "text/event-stream": {
+                "schema": {
+                  "$ref": "#/components/schemas/ai_chat_error_response"
+                }
+              }
+            }
           }
         }
       }
@@ -39805,10 +39912,57 @@
                   "status": {
                     "type": "string",
                     "nullable": true,
-                    "description": "Response status (present when user input is required)",
+                    "description": "Response status",
                     "enum": [
-                      "user_input_required"
+                      "user_input_required",
+                      "fields_required",
+                      "confirmation_required",
+                      "complete",
+                      "pending",
+                      "confirmed",
+                      "cancelled",
+                      "expired"
                     ]
+                  },
+                  "confirmation": {
+                    "type": "object",
+                    "description": "Present when an approval-gated home-chat write is waiting for confirmation",
+                    "properties": {
+                      "checkpoint_id": {
+                        "type": "string",
+                        "format": "uuid"
+                      },
+                      "question": {
+                        "type": "string"
+                      },
+                      "preview": {
+                        "type": "object",
+                        "nullable": true,
+                        "additionalProperties": true
+                      },
+                      "missing_fields": {
+                        "type": "array",
+                        "nullable": true,
+                        "items": {
+                          "type": "object",
+                          "additionalProperties": true
+                        }
+                      },
+                      "expires_at": {
+                        "type": "string",
+                        "format": "date-time"
+                      }
+                    },
+                    "required": [
+                      "checkpoint_id",
+                      "question",
+                      "preview",
+                      "missing_fields",
+                      "expires_at"
+                    ]
+                  },
+                  "checkpoint_resolved": {
+                    "$ref": "#/components/schemas/ai_chat_checkpoint_resolution"
                   }
                 },
                 "required": [
@@ -39853,16 +40007,80 @@
             "type": "string",
             "description": "Message content"
           },
+          "failed": {
+            "type": "boolean",
+            "nullable": false,
+            "description": "Whether the message belongs to a failed turn"
+          },
           "created_at": {
             "type": "string",
             "format": "date-time",
             "description": "When the message was created"
+          },
+          "confirmation": {
+            "type": "object",
+            "description": "Approval checkpoint attached to an assistant message in home-chat history",
+            "properties": {
+              "checkpoint_id": {
+                "type": "string",
+                "format": "uuid"
+              },
+              "question": {
+                "type": "string"
+              },
+              "preview": {
+                "type": "object",
+                "nullable": true,
+                "additionalProperties": true
+              },
+              "missing_fields": {
+                "type": "array",
+                "nullable": true,
+                "items": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              },
+              "expires_at": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "status": {
+                "type": "string",
+                "enum": [
+                  "pending",
+                  "confirmed",
+                  "cancelled",
+                  "expired"
+                ]
+              },
+              "replay": {
+                "type": "string",
+                "nullable": true,
+                "enum": [
+                  "in_progress",
+                  "retryable",
+                  "completed",
+                  "expired"
+                ]
+              }
+            },
+            "required": [
+              "checkpoint_id",
+              "question",
+              "preview",
+              "missing_fields",
+              "expires_at",
+              "status",
+              "replay"
+            ]
           }
         },
         "required": [
           "id",
           "role",
           "content",
+          "failed",
           "created_at"
         ]
       },
@@ -39881,6 +40099,77 @@
         },
         "required": [
           "messages"
+        ]
+      },
+      "ai_chat_checkpoint_resolution": {
+        "type": "object",
+        "description": "Checkpoint state after a confirm or cancel request",
+        "properties": {
+          "checkpoint_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "pending",
+              "confirmed",
+              "cancelled",
+              "expired"
+            ]
+          },
+          "replay": {
+            "type": "string",
+            "nullable": true,
+            "enum": [
+              "in_progress",
+              "retryable",
+              "completed",
+              "expired"
+            ]
+          }
+        },
+        "required": [
+          "checkpoint_id",
+          "status",
+          "replay"
+        ]
+      },
+      "ai_chat_error_response": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "type": "string"
+                },
+                "status": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "title",
+                "status"
+              ]
+            }
+          },
+          "meta": {
+            "type": "object",
+            "properties": {
+              "checkpoint_resolved": {
+                "$ref": "#/components/schemas/ai_chat_checkpoint_resolution"
+              }
+            },
+            "required": [
+              "checkpoint_resolved"
+            ]
+          }
+        },
+        "required": [
+          "errors"
         ]
       },
       "attach_alert": {
