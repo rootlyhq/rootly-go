@@ -2342,6 +2342,123 @@ func (e AlertResponseDataType) Valid() bool {
 	}
 }
 
+// Defines values for AlertRetriggerRuleConditionsKind.
+const (
+	AlertRetriggerRuleConditionsKindAlertField AlertRetriggerRuleConditionsKind = "alert_field"
+	AlertRetriggerRuleConditionsKindGroup      AlertRetriggerRuleConditionsKind = "group"
+	AlertRetriggerRuleConditionsKindPayload    AlertRetriggerRuleConditionsKind = "payload"
+	AlertRetriggerRuleConditionsKindService    AlertRetriggerRuleConditionsKind = "service"
+	AlertRetriggerRuleConditionsKindSource     AlertRetriggerRuleConditionsKind = "source"
+	AlertRetriggerRuleConditionsKindUrgency    AlertRetriggerRuleConditionsKind = "urgency"
+)
+
+// Valid indicates whether the value is a known member of the AlertRetriggerRuleConditionsKind enum.
+func (e AlertRetriggerRuleConditionsKind) Valid() bool {
+	switch e {
+	case AlertRetriggerRuleConditionsKindAlertField:
+		return true
+	case AlertRetriggerRuleConditionsKindGroup:
+		return true
+	case AlertRetriggerRuleConditionsKindPayload:
+		return true
+	case AlertRetriggerRuleConditionsKindService:
+		return true
+	case AlertRetriggerRuleConditionsKindSource:
+		return true
+	case AlertRetriggerRuleConditionsKindUrgency:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AlertRetriggerRuleConditionsOperator.
+const (
+	AlertRetriggerRuleConditionsOperatorContains       AlertRetriggerRuleConditionsOperator = "contains"
+	AlertRetriggerRuleConditionsOperatorDoesNotContain AlertRetriggerRuleConditionsOperator = "does_not_contain"
+	AlertRetriggerRuleConditionsOperatorEndsWith       AlertRetriggerRuleConditionsOperator = "ends_with"
+	AlertRetriggerRuleConditionsOperatorIsNotOneOf     AlertRetriggerRuleConditionsOperator = "is_not_one_of"
+	AlertRetriggerRuleConditionsOperatorIsNotSet       AlertRetriggerRuleConditionsOperator = "is_not_set"
+	AlertRetriggerRuleConditionsOperatorIsOneOf        AlertRetriggerRuleConditionsOperator = "is_one_of"
+	AlertRetriggerRuleConditionsOperatorIsSet          AlertRetriggerRuleConditionsOperator = "is_set"
+	AlertRetriggerRuleConditionsOperatorMatchesRegex   AlertRetriggerRuleConditionsOperator = "matches_regex"
+	AlertRetriggerRuleConditionsOperatorStartsWith     AlertRetriggerRuleConditionsOperator = "starts_with"
+)
+
+// Valid indicates whether the value is a known member of the AlertRetriggerRuleConditionsOperator enum.
+func (e AlertRetriggerRuleConditionsOperator) Valid() bool {
+	switch e {
+	case AlertRetriggerRuleConditionsOperatorContains:
+		return true
+	case AlertRetriggerRuleConditionsOperatorDoesNotContain:
+		return true
+	case AlertRetriggerRuleConditionsOperatorEndsWith:
+		return true
+	case AlertRetriggerRuleConditionsOperatorIsNotOneOf:
+		return true
+	case AlertRetriggerRuleConditionsOperatorIsNotSet:
+		return true
+	case AlertRetriggerRuleConditionsOperatorIsOneOf:
+		return true
+	case AlertRetriggerRuleConditionsOperatorIsSet:
+		return true
+	case AlertRetriggerRuleConditionsOperatorMatchesRegex:
+		return true
+	case AlertRetriggerRuleConditionsOperatorStartsWith:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AlertRetriggerRuleMatchMode.
+const (
+	AlertRetriggerRuleMatchModeMatchAllRules AlertRetriggerRuleMatchMode = "match-all-rules"
+	AlertRetriggerRuleMatchModeMatchAnyRule  AlertRetriggerRuleMatchMode = "match-any-rule"
+)
+
+// Valid indicates whether the value is a known member of the AlertRetriggerRuleMatchMode enum.
+func (e AlertRetriggerRuleMatchMode) Valid() bool {
+	switch e {
+	case AlertRetriggerRuleMatchModeMatchAllRules:
+		return true
+	case AlertRetriggerRuleMatchModeMatchAnyRule:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AlertRetriggerRuleListDataType.
+const (
+	AlertRetriggerRuleListDataTypeAlertRetriggerRules AlertRetriggerRuleListDataType = "alert_retrigger_rules"
+)
+
+// Valid indicates whether the value is a known member of the AlertRetriggerRuleListDataType enum.
+func (e AlertRetriggerRuleListDataType) Valid() bool {
+	switch e {
+	case AlertRetriggerRuleListDataTypeAlertRetriggerRules:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AlertRetriggerRuleResponseDataType.
+const (
+	AlertRetriggerRuleResponseDataTypeAlertRetriggerRules AlertRetriggerRuleResponseDataType = "alert_retrigger_rules"
+)
+
+// Valid indicates whether the value is a known member of the AlertRetriggerRuleResponseDataType enum.
+func (e AlertRetriggerRuleResponseDataType) Valid() bool {
+	switch e {
+	case AlertRetriggerRuleResponseDataTypeAlertRetriggerRules:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for AlertRouteRulesConditionGroupsConditionsConditionableType.
 const (
 	AlertRouteRulesConditionGroupsConditionsConditionableTypeAlertField AlertRouteRulesConditionGroupsConditionsConditionableType = "AlertField"
@@ -4172,6 +4289,69 @@ func (e BulkDestroyTeams1ManagedBy) Valid() bool {
 	case BulkDestroyTeams1ManagedByPulumi:
 		return true
 	case BulkDestroyTeams1ManagedByTerraform:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for BulkImportAttributesEntityType.
+const (
+	BulkImportAttributesEntityTypeIncident BulkImportAttributesEntityType = "Incident"
+)
+
+// Valid indicates whether the value is a known member of the BulkImportAttributesEntityType enum.
+func (e BulkImportAttributesEntityType) Valid() bool {
+	switch e {
+	case BulkImportAttributesEntityTypeIncident:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for BulkImportAttributesStatus.
+const (
+	BulkImportAttributesStatusCompleted        BulkImportAttributesStatus = "completed"
+	BulkImportAttributesStatusFailed           BulkImportAttributesStatus = "failed"
+	BulkImportAttributesStatusImporting        BulkImportAttributesStatus = "importing"
+	BulkImportAttributesStatusIndexing         BulkImportAttributesStatus = "indexing"
+	BulkImportAttributesStatusPending          BulkImportAttributesStatus = "pending"
+	BulkImportAttributesStatusValidating       BulkImportAttributesStatus = "validating"
+	BulkImportAttributesStatusValidationFailed BulkImportAttributesStatus = "validation_failed"
+)
+
+// Valid indicates whether the value is a known member of the BulkImportAttributesStatus enum.
+func (e BulkImportAttributesStatus) Valid() bool {
+	switch e {
+	case BulkImportAttributesStatusCompleted:
+		return true
+	case BulkImportAttributesStatusFailed:
+		return true
+	case BulkImportAttributesStatusImporting:
+		return true
+	case BulkImportAttributesStatusIndexing:
+		return true
+	case BulkImportAttributesStatusPending:
+		return true
+	case BulkImportAttributesStatusValidating:
+		return true
+	case BulkImportAttributesStatusValidationFailed:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for BulkImportResponseDataType.
+const (
+	BulkImportResponseDataTypeBulkImport BulkImportResponseDataType = "bulk_import"
+)
+
+// Valid indicates whether the value is a known member of the BulkImportResponseDataType enum.
+func (e BulkImportResponseDataType) Valid() bool {
+	switch e {
+	case BulkImportResponseDataTypeBulkImport:
 		return true
 	default:
 		return false
@@ -15683,6 +15863,162 @@ func (e NewAlertGroupDataType) Valid() bool {
 	}
 }
 
+// Defines values for NewAlertRetriggerRuleDataAttributesConditionsKind.
+const (
+	NewAlertRetriggerRuleDataAttributesConditionsKindAlertField NewAlertRetriggerRuleDataAttributesConditionsKind = "alert_field"
+	NewAlertRetriggerRuleDataAttributesConditionsKindGroup      NewAlertRetriggerRuleDataAttributesConditionsKind = "group"
+	NewAlertRetriggerRuleDataAttributesConditionsKindPayload    NewAlertRetriggerRuleDataAttributesConditionsKind = "payload"
+	NewAlertRetriggerRuleDataAttributesConditionsKindService    NewAlertRetriggerRuleDataAttributesConditionsKind = "service"
+	NewAlertRetriggerRuleDataAttributesConditionsKindSource     NewAlertRetriggerRuleDataAttributesConditionsKind = "source"
+	NewAlertRetriggerRuleDataAttributesConditionsKindUrgency    NewAlertRetriggerRuleDataAttributesConditionsKind = "urgency"
+)
+
+// Valid indicates whether the value is a known member of the NewAlertRetriggerRuleDataAttributesConditionsKind enum.
+func (e NewAlertRetriggerRuleDataAttributesConditionsKind) Valid() bool {
+	switch e {
+	case NewAlertRetriggerRuleDataAttributesConditionsKindAlertField:
+		return true
+	case NewAlertRetriggerRuleDataAttributesConditionsKindGroup:
+		return true
+	case NewAlertRetriggerRuleDataAttributesConditionsKindPayload:
+		return true
+	case NewAlertRetriggerRuleDataAttributesConditionsKindService:
+		return true
+	case NewAlertRetriggerRuleDataAttributesConditionsKindSource:
+		return true
+	case NewAlertRetriggerRuleDataAttributesConditionsKindUrgency:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for NewAlertRetriggerRuleDataAttributesConditionsOperator.
+const (
+	NewAlertRetriggerRuleDataAttributesConditionsOperatorContains       NewAlertRetriggerRuleDataAttributesConditionsOperator = "contains"
+	NewAlertRetriggerRuleDataAttributesConditionsOperatorDoesNotContain NewAlertRetriggerRuleDataAttributesConditionsOperator = "does_not_contain"
+	NewAlertRetriggerRuleDataAttributesConditionsOperatorEndsWith       NewAlertRetriggerRuleDataAttributesConditionsOperator = "ends_with"
+	NewAlertRetriggerRuleDataAttributesConditionsOperatorIsNotOneOf     NewAlertRetriggerRuleDataAttributesConditionsOperator = "is_not_one_of"
+	NewAlertRetriggerRuleDataAttributesConditionsOperatorIsNotSet       NewAlertRetriggerRuleDataAttributesConditionsOperator = "is_not_set"
+	NewAlertRetriggerRuleDataAttributesConditionsOperatorIsOneOf        NewAlertRetriggerRuleDataAttributesConditionsOperator = "is_one_of"
+	NewAlertRetriggerRuleDataAttributesConditionsOperatorIsSet          NewAlertRetriggerRuleDataAttributesConditionsOperator = "is_set"
+	NewAlertRetriggerRuleDataAttributesConditionsOperatorMatchesRegex   NewAlertRetriggerRuleDataAttributesConditionsOperator = "matches_regex"
+	NewAlertRetriggerRuleDataAttributesConditionsOperatorStartsWith     NewAlertRetriggerRuleDataAttributesConditionsOperator = "starts_with"
+)
+
+// Valid indicates whether the value is a known member of the NewAlertRetriggerRuleDataAttributesConditionsOperator enum.
+func (e NewAlertRetriggerRuleDataAttributesConditionsOperator) Valid() bool {
+	switch e {
+	case NewAlertRetriggerRuleDataAttributesConditionsOperatorContains:
+		return true
+	case NewAlertRetriggerRuleDataAttributesConditionsOperatorDoesNotContain:
+		return true
+	case NewAlertRetriggerRuleDataAttributesConditionsOperatorEndsWith:
+		return true
+	case NewAlertRetriggerRuleDataAttributesConditionsOperatorIsNotOneOf:
+		return true
+	case NewAlertRetriggerRuleDataAttributesConditionsOperatorIsNotSet:
+		return true
+	case NewAlertRetriggerRuleDataAttributesConditionsOperatorIsOneOf:
+		return true
+	case NewAlertRetriggerRuleDataAttributesConditionsOperatorIsSet:
+		return true
+	case NewAlertRetriggerRuleDataAttributesConditionsOperatorMatchesRegex:
+		return true
+	case NewAlertRetriggerRuleDataAttributesConditionsOperatorStartsWith:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for NewAlertRetriggerRuleDataAttributesMatchMode.
+const (
+	NewAlertRetriggerRuleDataAttributesMatchModeMatchAllRules NewAlertRetriggerRuleDataAttributesMatchMode = "match-all-rules"
+	NewAlertRetriggerRuleDataAttributesMatchModeMatchAnyRule  NewAlertRetriggerRuleDataAttributesMatchMode = "match-any-rule"
+)
+
+// Valid indicates whether the value is a known member of the NewAlertRetriggerRuleDataAttributesMatchMode enum.
+func (e NewAlertRetriggerRuleDataAttributesMatchMode) Valid() bool {
+	switch e {
+	case NewAlertRetriggerRuleDataAttributesMatchModeMatchAllRules:
+		return true
+	case NewAlertRetriggerRuleDataAttributesMatchModeMatchAnyRule:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for NewAlertRetriggerRuleDataAttributesTimeoutMinutes.
+const (
+	NewAlertRetriggerRuleDataAttributesTimeoutMinutesN10   NewAlertRetriggerRuleDataAttributesTimeoutMinutes = 10
+	NewAlertRetriggerRuleDataAttributesTimeoutMinutesN120  NewAlertRetriggerRuleDataAttributesTimeoutMinutes = 120
+	NewAlertRetriggerRuleDataAttributesTimeoutMinutesN1440 NewAlertRetriggerRuleDataAttributesTimeoutMinutes = 1440
+	NewAlertRetriggerRuleDataAttributesTimeoutMinutesN180  NewAlertRetriggerRuleDataAttributesTimeoutMinutes = 180
+	NewAlertRetriggerRuleDataAttributesTimeoutMinutesN20   NewAlertRetriggerRuleDataAttributesTimeoutMinutes = 20
+	NewAlertRetriggerRuleDataAttributesTimeoutMinutesN240  NewAlertRetriggerRuleDataAttributesTimeoutMinutes = 240
+	NewAlertRetriggerRuleDataAttributesTimeoutMinutesN30   NewAlertRetriggerRuleDataAttributesTimeoutMinutes = 30
+	NewAlertRetriggerRuleDataAttributesTimeoutMinutesN300  NewAlertRetriggerRuleDataAttributesTimeoutMinutes = 300
+	NewAlertRetriggerRuleDataAttributesTimeoutMinutesN360  NewAlertRetriggerRuleDataAttributesTimeoutMinutes = 360
+	NewAlertRetriggerRuleDataAttributesTimeoutMinutesN40   NewAlertRetriggerRuleDataAttributesTimeoutMinutes = 40
+	NewAlertRetriggerRuleDataAttributesTimeoutMinutesN50   NewAlertRetriggerRuleDataAttributesTimeoutMinutes = 50
+	NewAlertRetriggerRuleDataAttributesTimeoutMinutesN60   NewAlertRetriggerRuleDataAttributesTimeoutMinutes = 60
+	NewAlertRetriggerRuleDataAttributesTimeoutMinutesN720  NewAlertRetriggerRuleDataAttributesTimeoutMinutes = 720
+	NewAlertRetriggerRuleDataAttributesTimeoutMinutesN90   NewAlertRetriggerRuleDataAttributesTimeoutMinutes = 90
+)
+
+// Valid indicates whether the value is a known member of the NewAlertRetriggerRuleDataAttributesTimeoutMinutes enum.
+func (e NewAlertRetriggerRuleDataAttributesTimeoutMinutes) Valid() bool {
+	switch e {
+	case NewAlertRetriggerRuleDataAttributesTimeoutMinutesN10:
+		return true
+	case NewAlertRetriggerRuleDataAttributesTimeoutMinutesN120:
+		return true
+	case NewAlertRetriggerRuleDataAttributesTimeoutMinutesN1440:
+		return true
+	case NewAlertRetriggerRuleDataAttributesTimeoutMinutesN180:
+		return true
+	case NewAlertRetriggerRuleDataAttributesTimeoutMinutesN20:
+		return true
+	case NewAlertRetriggerRuleDataAttributesTimeoutMinutesN240:
+		return true
+	case NewAlertRetriggerRuleDataAttributesTimeoutMinutesN30:
+		return true
+	case NewAlertRetriggerRuleDataAttributesTimeoutMinutesN300:
+		return true
+	case NewAlertRetriggerRuleDataAttributesTimeoutMinutesN360:
+		return true
+	case NewAlertRetriggerRuleDataAttributesTimeoutMinutesN40:
+		return true
+	case NewAlertRetriggerRuleDataAttributesTimeoutMinutesN50:
+		return true
+	case NewAlertRetriggerRuleDataAttributesTimeoutMinutesN60:
+		return true
+	case NewAlertRetriggerRuleDataAttributesTimeoutMinutesN720:
+		return true
+	case NewAlertRetriggerRuleDataAttributesTimeoutMinutesN90:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for NewAlertRetriggerRuleDataType.
+const (
+	NewAlertRetriggerRuleDataTypeAlertRetriggerRules NewAlertRetriggerRuleDataType = "alert_retrigger_rules"
+)
+
+// Valid indicates whether the value is a known member of the NewAlertRetriggerRuleDataType enum.
+func (e NewAlertRetriggerRuleDataType) Valid() bool {
+	switch e {
+	case NewAlertRetriggerRuleDataTypeAlertRetriggerRules:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for NewAlertRouteDataAttributesRulesConditionGroupsConditionsConditionableType.
 const (
 	NewAlertRouteDataAttributesRulesConditionGroupsConditionsConditionableTypeAlertField NewAlertRouteDataAttributesRulesConditionGroupsConditionsConditionableType = "AlertField"
@@ -15899,63 +16235,6 @@ const (
 func (e NewAlertRoutingRuleDataType) Valid() bool {
 	switch e {
 	case NewAlertRoutingRuleDataTypeAlertRoutingRules:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for NewAlertUrgencyDataAttributesRetriggerTimeoutMinutes.
-const (
-	NewAlertUrgencyDataAttributesRetriggerTimeoutMinutesMinus1 NewAlertUrgencyDataAttributesRetriggerTimeoutMinutes = -1
-	NewAlertUrgencyDataAttributesRetriggerTimeoutMinutesN10    NewAlertUrgencyDataAttributesRetriggerTimeoutMinutes = 10
-	NewAlertUrgencyDataAttributesRetriggerTimeoutMinutesN120   NewAlertUrgencyDataAttributesRetriggerTimeoutMinutes = 120
-	NewAlertUrgencyDataAttributesRetriggerTimeoutMinutesN1440  NewAlertUrgencyDataAttributesRetriggerTimeoutMinutes = 1440
-	NewAlertUrgencyDataAttributesRetriggerTimeoutMinutesN180   NewAlertUrgencyDataAttributesRetriggerTimeoutMinutes = 180
-	NewAlertUrgencyDataAttributesRetriggerTimeoutMinutesN20    NewAlertUrgencyDataAttributesRetriggerTimeoutMinutes = 20
-	NewAlertUrgencyDataAttributesRetriggerTimeoutMinutesN240   NewAlertUrgencyDataAttributesRetriggerTimeoutMinutes = 240
-	NewAlertUrgencyDataAttributesRetriggerTimeoutMinutesN30    NewAlertUrgencyDataAttributesRetriggerTimeoutMinutes = 30
-	NewAlertUrgencyDataAttributesRetriggerTimeoutMinutesN300   NewAlertUrgencyDataAttributesRetriggerTimeoutMinutes = 300
-	NewAlertUrgencyDataAttributesRetriggerTimeoutMinutesN360   NewAlertUrgencyDataAttributesRetriggerTimeoutMinutes = 360
-	NewAlertUrgencyDataAttributesRetriggerTimeoutMinutesN40    NewAlertUrgencyDataAttributesRetriggerTimeoutMinutes = 40
-	NewAlertUrgencyDataAttributesRetriggerTimeoutMinutesN50    NewAlertUrgencyDataAttributesRetriggerTimeoutMinutes = 50
-	NewAlertUrgencyDataAttributesRetriggerTimeoutMinutesN60    NewAlertUrgencyDataAttributesRetriggerTimeoutMinutes = 60
-	NewAlertUrgencyDataAttributesRetriggerTimeoutMinutesN720   NewAlertUrgencyDataAttributesRetriggerTimeoutMinutes = 720
-	NewAlertUrgencyDataAttributesRetriggerTimeoutMinutesN90    NewAlertUrgencyDataAttributesRetriggerTimeoutMinutes = 90
-)
-
-// Valid indicates whether the value is a known member of the NewAlertUrgencyDataAttributesRetriggerTimeoutMinutes enum.
-func (e NewAlertUrgencyDataAttributesRetriggerTimeoutMinutes) Valid() bool {
-	switch e {
-	case NewAlertUrgencyDataAttributesRetriggerTimeoutMinutesMinus1:
-		return true
-	case NewAlertUrgencyDataAttributesRetriggerTimeoutMinutesN10:
-		return true
-	case NewAlertUrgencyDataAttributesRetriggerTimeoutMinutesN120:
-		return true
-	case NewAlertUrgencyDataAttributesRetriggerTimeoutMinutesN1440:
-		return true
-	case NewAlertUrgencyDataAttributesRetriggerTimeoutMinutesN180:
-		return true
-	case NewAlertUrgencyDataAttributesRetriggerTimeoutMinutesN20:
-		return true
-	case NewAlertUrgencyDataAttributesRetriggerTimeoutMinutesN240:
-		return true
-	case NewAlertUrgencyDataAttributesRetriggerTimeoutMinutesN30:
-		return true
-	case NewAlertUrgencyDataAttributesRetriggerTimeoutMinutesN300:
-		return true
-	case NewAlertUrgencyDataAttributesRetriggerTimeoutMinutesN360:
-		return true
-	case NewAlertUrgencyDataAttributesRetriggerTimeoutMinutesN40:
-		return true
-	case NewAlertUrgencyDataAttributesRetriggerTimeoutMinutesN50:
-		return true
-	case NewAlertUrgencyDataAttributesRetriggerTimeoutMinutesN60:
-		return true
-	case NewAlertUrgencyDataAttributesRetriggerTimeoutMinutesN720:
-		return true
-	case NewAlertUrgencyDataAttributesRetriggerTimeoutMinutesN90:
 		return true
 	default:
 		return false
@@ -16424,6 +16703,21 @@ const (
 func (e NewAuthorizationDataType) Valid() bool {
 	switch e {
 	case NewAuthorizationDataTypeAuthorizations:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for NewBulkImportDataAttributesEntityType.
+const (
+	NewBulkImportDataAttributesEntityTypeIncident NewBulkImportDataAttributesEntityType = "Incident"
+)
+
+// Valid indicates whether the value is a known member of the NewBulkImportDataAttributesEntityType enum.
+func (e NewBulkImportDataAttributesEntityType) Valid() bool {
+	switch e {
+	case NewBulkImportDataAttributesEntityTypeIncident:
 		return true
 	default:
 		return false
@@ -19973,63 +20267,6 @@ func (e NewEscalationPolicyPathDataAttributesPathType) Valid() bool {
 	case NewEscalationPolicyPathDataAttributesPathTypeDeferral:
 		return true
 	case NewEscalationPolicyPathDataAttributesPathTypeEscalation:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutes.
-const (
-	NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesMinus1 NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutes = -1
-	NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN10    NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutes = 10
-	NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN120   NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutes = 120
-	NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN1440  NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutes = 1440
-	NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN180   NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutes = 180
-	NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN20    NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutes = 20
-	NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN240   NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutes = 240
-	NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN30    NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutes = 30
-	NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN300   NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutes = 300
-	NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN360   NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutes = 360
-	NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN40    NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutes = 40
-	NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN50    NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutes = 50
-	NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN60    NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutes = 60
-	NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN720   NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutes = 720
-	NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN90    NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutes = 90
-)
-
-// Valid indicates whether the value is a known member of the NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutes enum.
-func (e NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutes) Valid() bool {
-	switch e {
-	case NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesMinus1:
-		return true
-	case NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN10:
-		return true
-	case NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN120:
-		return true
-	case NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN1440:
-		return true
-	case NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN180:
-		return true
-	case NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN20:
-		return true
-	case NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN240:
-		return true
-	case NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN30:
-		return true
-	case NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN300:
-		return true
-	case NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN360:
-		return true
-	case NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN40:
-		return true
-	case NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN50:
-		return true
-	case NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN60:
-		return true
-	case NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN720:
-		return true
-	case NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN90:
 		return true
 	default:
 		return false
@@ -33572,6 +33809,162 @@ func (e UpdateAlertGroupDataType) Valid() bool {
 	}
 }
 
+// Defines values for UpdateAlertRetriggerRuleDataAttributesConditionsKind.
+const (
+	UpdateAlertRetriggerRuleDataAttributesConditionsKindAlertField UpdateAlertRetriggerRuleDataAttributesConditionsKind = "alert_field"
+	UpdateAlertRetriggerRuleDataAttributesConditionsKindGroup      UpdateAlertRetriggerRuleDataAttributesConditionsKind = "group"
+	UpdateAlertRetriggerRuleDataAttributesConditionsKindPayload    UpdateAlertRetriggerRuleDataAttributesConditionsKind = "payload"
+	UpdateAlertRetriggerRuleDataAttributesConditionsKindService    UpdateAlertRetriggerRuleDataAttributesConditionsKind = "service"
+	UpdateAlertRetriggerRuleDataAttributesConditionsKindSource     UpdateAlertRetriggerRuleDataAttributesConditionsKind = "source"
+	UpdateAlertRetriggerRuleDataAttributesConditionsKindUrgency    UpdateAlertRetriggerRuleDataAttributesConditionsKind = "urgency"
+)
+
+// Valid indicates whether the value is a known member of the UpdateAlertRetriggerRuleDataAttributesConditionsKind enum.
+func (e UpdateAlertRetriggerRuleDataAttributesConditionsKind) Valid() bool {
+	switch e {
+	case UpdateAlertRetriggerRuleDataAttributesConditionsKindAlertField:
+		return true
+	case UpdateAlertRetriggerRuleDataAttributesConditionsKindGroup:
+		return true
+	case UpdateAlertRetriggerRuleDataAttributesConditionsKindPayload:
+		return true
+	case UpdateAlertRetriggerRuleDataAttributesConditionsKindService:
+		return true
+	case UpdateAlertRetriggerRuleDataAttributesConditionsKindSource:
+		return true
+	case UpdateAlertRetriggerRuleDataAttributesConditionsKindUrgency:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateAlertRetriggerRuleDataAttributesConditionsOperator.
+const (
+	UpdateAlertRetriggerRuleDataAttributesConditionsOperatorContains       UpdateAlertRetriggerRuleDataAttributesConditionsOperator = "contains"
+	UpdateAlertRetriggerRuleDataAttributesConditionsOperatorDoesNotContain UpdateAlertRetriggerRuleDataAttributesConditionsOperator = "does_not_contain"
+	UpdateAlertRetriggerRuleDataAttributesConditionsOperatorEndsWith       UpdateAlertRetriggerRuleDataAttributesConditionsOperator = "ends_with"
+	UpdateAlertRetriggerRuleDataAttributesConditionsOperatorIsNotOneOf     UpdateAlertRetriggerRuleDataAttributesConditionsOperator = "is_not_one_of"
+	UpdateAlertRetriggerRuleDataAttributesConditionsOperatorIsNotSet       UpdateAlertRetriggerRuleDataAttributesConditionsOperator = "is_not_set"
+	UpdateAlertRetriggerRuleDataAttributesConditionsOperatorIsOneOf        UpdateAlertRetriggerRuleDataAttributesConditionsOperator = "is_one_of"
+	UpdateAlertRetriggerRuleDataAttributesConditionsOperatorIsSet          UpdateAlertRetriggerRuleDataAttributesConditionsOperator = "is_set"
+	UpdateAlertRetriggerRuleDataAttributesConditionsOperatorMatchesRegex   UpdateAlertRetriggerRuleDataAttributesConditionsOperator = "matches_regex"
+	UpdateAlertRetriggerRuleDataAttributesConditionsOperatorStartsWith     UpdateAlertRetriggerRuleDataAttributesConditionsOperator = "starts_with"
+)
+
+// Valid indicates whether the value is a known member of the UpdateAlertRetriggerRuleDataAttributesConditionsOperator enum.
+func (e UpdateAlertRetriggerRuleDataAttributesConditionsOperator) Valid() bool {
+	switch e {
+	case UpdateAlertRetriggerRuleDataAttributesConditionsOperatorContains:
+		return true
+	case UpdateAlertRetriggerRuleDataAttributesConditionsOperatorDoesNotContain:
+		return true
+	case UpdateAlertRetriggerRuleDataAttributesConditionsOperatorEndsWith:
+		return true
+	case UpdateAlertRetriggerRuleDataAttributesConditionsOperatorIsNotOneOf:
+		return true
+	case UpdateAlertRetriggerRuleDataAttributesConditionsOperatorIsNotSet:
+		return true
+	case UpdateAlertRetriggerRuleDataAttributesConditionsOperatorIsOneOf:
+		return true
+	case UpdateAlertRetriggerRuleDataAttributesConditionsOperatorIsSet:
+		return true
+	case UpdateAlertRetriggerRuleDataAttributesConditionsOperatorMatchesRegex:
+		return true
+	case UpdateAlertRetriggerRuleDataAttributesConditionsOperatorStartsWith:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateAlertRetriggerRuleDataAttributesMatchMode.
+const (
+	UpdateAlertRetriggerRuleDataAttributesMatchModeMatchAllRules UpdateAlertRetriggerRuleDataAttributesMatchMode = "match-all-rules"
+	UpdateAlertRetriggerRuleDataAttributesMatchModeMatchAnyRule  UpdateAlertRetriggerRuleDataAttributesMatchMode = "match-any-rule"
+)
+
+// Valid indicates whether the value is a known member of the UpdateAlertRetriggerRuleDataAttributesMatchMode enum.
+func (e UpdateAlertRetriggerRuleDataAttributesMatchMode) Valid() bool {
+	switch e {
+	case UpdateAlertRetriggerRuleDataAttributesMatchModeMatchAllRules:
+		return true
+	case UpdateAlertRetriggerRuleDataAttributesMatchModeMatchAnyRule:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateAlertRetriggerRuleDataAttributesTimeoutMinutes.
+const (
+	UpdateAlertRetriggerRuleDataAttributesTimeoutMinutesN10   UpdateAlertRetriggerRuleDataAttributesTimeoutMinutes = 10
+	UpdateAlertRetriggerRuleDataAttributesTimeoutMinutesN120  UpdateAlertRetriggerRuleDataAttributesTimeoutMinutes = 120
+	UpdateAlertRetriggerRuleDataAttributesTimeoutMinutesN1440 UpdateAlertRetriggerRuleDataAttributesTimeoutMinutes = 1440
+	UpdateAlertRetriggerRuleDataAttributesTimeoutMinutesN180  UpdateAlertRetriggerRuleDataAttributesTimeoutMinutes = 180
+	UpdateAlertRetriggerRuleDataAttributesTimeoutMinutesN20   UpdateAlertRetriggerRuleDataAttributesTimeoutMinutes = 20
+	UpdateAlertRetriggerRuleDataAttributesTimeoutMinutesN240  UpdateAlertRetriggerRuleDataAttributesTimeoutMinutes = 240
+	UpdateAlertRetriggerRuleDataAttributesTimeoutMinutesN30   UpdateAlertRetriggerRuleDataAttributesTimeoutMinutes = 30
+	UpdateAlertRetriggerRuleDataAttributesTimeoutMinutesN300  UpdateAlertRetriggerRuleDataAttributesTimeoutMinutes = 300
+	UpdateAlertRetriggerRuleDataAttributesTimeoutMinutesN360  UpdateAlertRetriggerRuleDataAttributesTimeoutMinutes = 360
+	UpdateAlertRetriggerRuleDataAttributesTimeoutMinutesN40   UpdateAlertRetriggerRuleDataAttributesTimeoutMinutes = 40
+	UpdateAlertRetriggerRuleDataAttributesTimeoutMinutesN50   UpdateAlertRetriggerRuleDataAttributesTimeoutMinutes = 50
+	UpdateAlertRetriggerRuleDataAttributesTimeoutMinutesN60   UpdateAlertRetriggerRuleDataAttributesTimeoutMinutes = 60
+	UpdateAlertRetriggerRuleDataAttributesTimeoutMinutesN720  UpdateAlertRetriggerRuleDataAttributesTimeoutMinutes = 720
+	UpdateAlertRetriggerRuleDataAttributesTimeoutMinutesN90   UpdateAlertRetriggerRuleDataAttributesTimeoutMinutes = 90
+)
+
+// Valid indicates whether the value is a known member of the UpdateAlertRetriggerRuleDataAttributesTimeoutMinutes enum.
+func (e UpdateAlertRetriggerRuleDataAttributesTimeoutMinutes) Valid() bool {
+	switch e {
+	case UpdateAlertRetriggerRuleDataAttributesTimeoutMinutesN10:
+		return true
+	case UpdateAlertRetriggerRuleDataAttributesTimeoutMinutesN120:
+		return true
+	case UpdateAlertRetriggerRuleDataAttributesTimeoutMinutesN1440:
+		return true
+	case UpdateAlertRetriggerRuleDataAttributesTimeoutMinutesN180:
+		return true
+	case UpdateAlertRetriggerRuleDataAttributesTimeoutMinutesN20:
+		return true
+	case UpdateAlertRetriggerRuleDataAttributesTimeoutMinutesN240:
+		return true
+	case UpdateAlertRetriggerRuleDataAttributesTimeoutMinutesN30:
+		return true
+	case UpdateAlertRetriggerRuleDataAttributesTimeoutMinutesN300:
+		return true
+	case UpdateAlertRetriggerRuleDataAttributesTimeoutMinutesN360:
+		return true
+	case UpdateAlertRetriggerRuleDataAttributesTimeoutMinutesN40:
+		return true
+	case UpdateAlertRetriggerRuleDataAttributesTimeoutMinutesN50:
+		return true
+	case UpdateAlertRetriggerRuleDataAttributesTimeoutMinutesN60:
+		return true
+	case UpdateAlertRetriggerRuleDataAttributesTimeoutMinutesN720:
+		return true
+	case UpdateAlertRetriggerRuleDataAttributesTimeoutMinutesN90:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateAlertRetriggerRuleDataType.
+const (
+	UpdateAlertRetriggerRuleDataTypeAlertRetriggerRules UpdateAlertRetriggerRuleDataType = "alert_retrigger_rules"
+)
+
+// Valid indicates whether the value is a known member of the UpdateAlertRetriggerRuleDataType enum.
+func (e UpdateAlertRetriggerRuleDataType) Valid() bool {
+	switch e {
+	case UpdateAlertRetriggerRuleDataTypeAlertRetriggerRules:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for UpdateAlertRouteDataAttributesRulesConditionGroupsConditionsConditionableType.
 const (
 	UpdateAlertRouteDataAttributesRulesConditionGroupsConditionsConditionableTypeAlertField UpdateAlertRouteDataAttributesRulesConditionGroupsConditionsConditionableType = "AlertField"
@@ -33788,63 +34181,6 @@ const (
 func (e UpdateAlertRoutingRuleDataType) Valid() bool {
 	switch e {
 	case UpdateAlertRoutingRuleDataTypeAlertRoutingRules:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutes.
-const (
-	UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutesMinus1 UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutes = -1
-	UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutesN10    UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutes = 10
-	UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutesN120   UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutes = 120
-	UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutesN1440  UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutes = 1440
-	UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutesN180   UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutes = 180
-	UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutesN20    UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutes = 20
-	UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutesN240   UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutes = 240
-	UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutesN30    UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutes = 30
-	UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutesN300   UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutes = 300
-	UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutesN360   UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutes = 360
-	UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutesN40    UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutes = 40
-	UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutesN50    UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutes = 50
-	UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutesN60    UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutes = 60
-	UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutesN720   UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutes = 720
-	UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutesN90    UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutes = 90
-)
-
-// Valid indicates whether the value is a known member of the UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutes enum.
-func (e UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutes) Valid() bool {
-	switch e {
-	case UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutesMinus1:
-		return true
-	case UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutesN10:
-		return true
-	case UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutesN120:
-		return true
-	case UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutesN1440:
-		return true
-	case UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutesN180:
-		return true
-	case UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutesN20:
-		return true
-	case UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutesN240:
-		return true
-	case UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutesN30:
-		return true
-	case UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutesN300:
-		return true
-	case UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutesN360:
-		return true
-	case UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutesN40:
-		return true
-	case UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutesN50:
-		return true
-	case UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutesN60:
-		return true
-	case UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutesN720:
-		return true
-	case UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutesN90:
 		return true
 	default:
 		return false
@@ -37856,63 +38192,6 @@ func (e UpdateEscalationPolicyPathDataAttributesPathType) Valid() bool {
 	case UpdateEscalationPolicyPathDataAttributesPathTypeDeferral:
 		return true
 	case UpdateEscalationPolicyPathDataAttributesPathTypeEscalation:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutes.
-const (
-	UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesMinus1 UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutes = -1
-	UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN10    UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutes = 10
-	UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN120   UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutes = 120
-	UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN1440  UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutes = 1440
-	UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN180   UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutes = 180
-	UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN20    UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutes = 20
-	UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN240   UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutes = 240
-	UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN30    UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutes = 30
-	UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN300   UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutes = 300
-	UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN360   UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutes = 360
-	UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN40    UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutes = 40
-	UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN50    UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutes = 50
-	UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN60    UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutes = 60
-	UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN720   UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutes = 720
-	UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN90    UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutes = 90
-)
-
-// Valid indicates whether the value is a known member of the UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutes enum.
-func (e UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutes) Valid() bool {
-	switch e {
-	case UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesMinus1:
-		return true
-	case UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN10:
-		return true
-	case UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN120:
-		return true
-	case UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN1440:
-		return true
-	case UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN180:
-		return true
-	case UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN20:
-		return true
-	case UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN240:
-		return true
-	case UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN30:
-		return true
-	case UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN300:
-		return true
-	case UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN360:
-		return true
-	case UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN40:
-		return true
-	case UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN50:
-		return true
-	case UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN60:
-		return true
-	case UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN720:
-		return true
-	case UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN90:
 		return true
 	default:
 		return false
@@ -49656,6 +49935,85 @@ type AlertResponseDataSource string
 // AlertResponseDataType defines model for AlertResponse.Data.Type.
 type AlertResponseDataType string
 
+// AlertRetriggerRule defines model for alert_retrigger_rule.
+type AlertRetriggerRule struct {
+	// Conditions The conditions for the rule
+	Conditions []struct {
+		// ID Unique ID of the condition
+		ID openapi_types.UUID `json:"id"`
+
+		// Kind The operand the condition matches on. Native operands (urgency, source, service, group) match by record; alert_field/payload match a field value.
+		Kind AlertRetriggerRuleConditionsKind `json:"kind"`
+
+		// Operator How the operand is compared. Native operands support is_one_of/is_not_one_of/is_set/is_not_set; alert_field/payload additionally support the string/regex operators.
+		Operator AlertRetriggerRuleConditionsOperator `json:"operator"`
+
+		// PropertyFieldName For alert_field conditions: the alert field id. For payload conditions: a JSON Path (e.g. $.priority).
+		PropertyFieldName *string `json:"property_field_name,omitempty"`
+
+		// RecordIDs For urgency/service/group/source conditions: the IDs of the matched records (AlertUrgency, Service, Group, or Alerts::Source).
+		RecordIDs []openapi_types.UUID `json:"record_ids,omitempty"`
+
+		// Values For source conditions: non-integration source aliases (e.g. manual, api). For alert_field/payload conditions: the values to compare against.
+		Values []string `json:"values,omitempty"`
+	} `json:"conditions,omitempty"`
+	CreatedAt *time.Time `json:"created_at,omitempty"`
+
+	// MatchMode Whether all or any of the conditions must match
+	MatchMode *AlertRetriggerRuleMatchMode `json:"match_mode,omitempty"`
+
+	// Name A human-readable name for the rule
+	Name *string `json:"name,omitempty"`
+
+	// Position The position of the rule for ordering evaluation
+	Position *int `json:"position,omitempty"`
+
+	// TimeoutMinutes Minutes after acknowledgment to re-trigger. Null means never re-trigger.
+	TimeoutMinutes nullable.Nullable[int] `json:"timeout_minutes,omitempty"`
+	UpdatedAt      *time.Time             `json:"updated_at,omitempty"`
+}
+
+// AlertRetriggerRuleConditionsKind The operand the condition matches on. Native operands (urgency, source, service, group) match by record; alert_field/payload match a field value.
+type AlertRetriggerRuleConditionsKind string
+
+// AlertRetriggerRuleConditionsOperator How the operand is compared. Native operands support is_one_of/is_not_one_of/is_set/is_not_set; alert_field/payload additionally support the string/regex operators.
+type AlertRetriggerRuleConditionsOperator string
+
+// AlertRetriggerRuleMatchMode Whether all or any of the conditions must match
+type AlertRetriggerRuleMatchMode string
+
+// AlertRetriggerRuleList defines model for alert_retrigger_rule_list.
+type AlertRetriggerRuleList struct {
+	Data []struct {
+		Attributes AlertRetriggerRule `json:"attributes"`
+
+		// ID Unique ID of the alert_retrigger_rule
+		ID   string                         `json:"id"`
+		Type AlertRetriggerRuleListDataType `json:"type"`
+	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
+}
+
+// AlertRetriggerRuleListDataType defines model for AlertRetriggerRuleList.Data.Type.
+type AlertRetriggerRuleListDataType string
+
+// AlertRetriggerRuleResponse defines model for alert_retrigger_rule_response.
+type AlertRetriggerRuleResponse struct {
+	Data struct {
+		Attributes AlertRetriggerRule `json:"attributes"`
+
+		// ID Unique ID of the alert_retrigger_rule
+		ID   string                             `json:"id"`
+		Type AlertRetriggerRuleResponseDataType `json:"type"`
+	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+}
+
+// AlertRetriggerRuleResponseDataType defines model for AlertRetriggerRuleResponse.Data.Type.
+type AlertRetriggerRuleResponseDataType string
+
 // AlertRoute defines model for alert_route.
 type AlertRoute struct {
 	AlertsSourceIDs []openapi_types.UUID `json:"alerts_source_ids"`
@@ -51000,6 +51358,69 @@ type BulkDestroyTeamsResponse struct {
 		NotFoundExternalIDs []string `json:"not_found_external_ids,omitempty"`
 	} `json:"data,omitempty"`
 }
+
+// BulkImportAttributes defines model for bulk_import_attributes.
+type BulkImportAttributes struct {
+	// CompletedAt When import completed or failed
+	CompletedAt nullable.Nullable[time.Time] `json:"completed_at,omitempty"`
+
+	// CreatedAt When the bulk import was created
+	CreatedAt *time.Time `json:"created_at,omitempty"`
+
+	// EntityType Type of entity being imported
+	EntityType *BulkImportAttributesEntityType `json:"entity_type,omitempty"`
+
+	// ErrorMessage Error message if import failed
+	ErrorMessage nullable.Nullable[string] `json:"error_message,omitempty"`
+
+	// FailedRecords Number of records that failed to import
+	FailedRecords int `json:"failed_records"`
+
+	// FileURL URL of the JSONL file being imported
+	FileURL *string `json:"file_url,omitempty"`
+
+	// NotificationEmail Email address for notifications
+	NotificationEmail *openapi_types.Email `json:"notification_email,omitempty"`
+
+	// ProcessedRecords Number of records processed so far
+	ProcessedRecords int `json:"processed_records"`
+
+	// ProgressPercentage Import progress percentage (0-100)
+	ProgressPercentage float32 `json:"progress_percentage"`
+
+	// StartedAt When import processing started
+	StartedAt nullable.Nullable[time.Time] `json:"started_at,omitempty"`
+
+	// Status Current status of the import
+	Status BulkImportAttributesStatus `json:"status"`
+
+	// TotalRecords Total number of records in the file
+	TotalRecords nullable.Nullable[int] `json:"total_records,omitempty"`
+
+	// UpdatedAt When the bulk import was last updated
+	UpdatedAt *time.Time `json:"updated_at,omitempty"`
+
+	// ValidationErrors Validation errors encountered during validation phase
+	ValidationErrors nullable.Nullable[map[string]interface{}] `json:"validation_errors,omitempty"`
+}
+
+// BulkImportAttributesEntityType Type of entity being imported
+type BulkImportAttributesEntityType string
+
+// BulkImportAttributesStatus Current status of the import
+type BulkImportAttributesStatus string
+
+// BulkImportResponse defines model for bulk_import_response.
+type BulkImportResponse struct {
+	Data struct {
+		Attributes BulkImportAttributes       `json:"attributes"`
+		ID         openapi_types.UUID         `json:"id"`
+		Type       BulkImportResponseDataType `json:"type"`
+	} `json:"data"`
+}
+
+// BulkImportResponseDataType defines model for BulkImportResponse.Data.Type.
+type BulkImportResponseDataType string
 
 // BulkUpsertCatalogEntities defines model for bulk_upsert_catalog_entities.
 type BulkUpsertCatalogEntities struct {
@@ -58616,6 +59037,59 @@ type NewAlertGroupDataAttributesTargetsTargetType string
 // NewAlertGroupDataType defines model for NewAlertGroup.Data.Type.
 type NewAlertGroupDataType string
 
+// NewAlertRetriggerRule defines model for new_alert_retrigger_rule.
+type NewAlertRetriggerRule struct {
+	Data struct {
+		Attributes struct {
+			// Conditions The conditions that determine which alerts this rule applies to. An empty array applies to every alert.
+			Conditions []struct {
+				// Kind The operand the condition matches on. Native operands (urgency, source, service, group) match by record; alert_field/payload match a field value.
+				Kind NewAlertRetriggerRuleDataAttributesConditionsKind `json:"kind"`
+
+				// Operator How the operand is compared. Native operands support is_one_of/is_not_one_of/is_set/is_not_set; alert_field/payload additionally support the string/regex operators.
+				Operator NewAlertRetriggerRuleDataAttributesConditionsOperator `json:"operator"`
+
+				// PropertyFieldName For alert_field conditions: the alert field id. For payload conditions: a JSON Path (e.g. $.priority).
+				PropertyFieldName *string `json:"property_field_name,omitempty"`
+
+				// RecordIDs For urgency/service/group/source conditions: the IDs of the matched records (AlertUrgency, Service, Group, or Alerts::Source).
+				RecordIDs []openapi_types.UUID `json:"record_ids,omitempty"`
+
+				// Values For source conditions: non-integration source aliases (e.g. manual, api). For alert_field/payload conditions: the values to compare against.
+				Values []string `json:"values,omitempty"`
+			} `json:"conditions,omitempty"`
+
+			// MatchMode Whether all or any of the conditions must match
+			MatchMode *NewAlertRetriggerRuleDataAttributesMatchMode `json:"match_mode,omitempty"`
+
+			// Name A human-readable name for the rule
+			Name string `json:"name"`
+
+			// Position The position of the rule; the first matching rule (by position) decides the outcome
+			Position *int `json:"position,omitempty"`
+
+			// TimeoutMinutes Re-trigger the alert this many minutes after acknowledgment. Null means never re-trigger.
+			TimeoutMinutes nullable.Nullable[NewAlertRetriggerRuleDataAttributesTimeoutMinutes] `json:"timeout_minutes,omitempty"`
+		} `json:"attributes"`
+		Type NewAlertRetriggerRuleDataType `json:"type"`
+	} `json:"data"`
+}
+
+// NewAlertRetriggerRuleDataAttributesConditionsKind The operand the condition matches on. Native operands (urgency, source, service, group) match by record; alert_field/payload match a field value.
+type NewAlertRetriggerRuleDataAttributesConditionsKind string
+
+// NewAlertRetriggerRuleDataAttributesConditionsOperator How the operand is compared. Native operands support is_one_of/is_not_one_of/is_set/is_not_set; alert_field/payload additionally support the string/regex operators.
+type NewAlertRetriggerRuleDataAttributesConditionsOperator string
+
+// NewAlertRetriggerRuleDataAttributesMatchMode Whether all or any of the conditions must match
+type NewAlertRetriggerRuleDataAttributesMatchMode string
+
+// NewAlertRetriggerRuleDataAttributesTimeoutMinutes Re-trigger the alert this many minutes after acknowledgment. Null means never re-trigger.
+type NewAlertRetriggerRuleDataAttributesTimeoutMinutes int
+
+// NewAlertRetriggerRuleDataType defines model for NewAlertRetriggerRule.Data.Type.
+type NewAlertRetriggerRuleDataType string
+
 // NewAlertRoute defines model for new_alert_route.
 type NewAlertRoute struct {
 	Data *struct {
@@ -58768,14 +59242,11 @@ type NewAlertUrgency struct {
 			Position nullable.Nullable[int] `json:"position,omitempty"`
 
 			// RetriggerTimeoutMinutes Re-trigger acknowledged alerts of this urgency after N minutes; null inherits the workspace default, -1 = never.
-			RetriggerTimeoutMinutes nullable.Nullable[NewAlertUrgencyDataAttributesRetriggerTimeoutMinutes] `json:"retrigger_timeout_minutes,omitempty"`
+			RetriggerTimeoutMinutes nullable.Nullable[int] `json:"retrigger_timeout_minutes,omitempty"`
 		} `json:"attributes"`
 		Type NewAlertUrgencyDataType `json:"type"`
 	} `json:"data"`
 }
-
-// NewAlertUrgencyDataAttributesRetriggerTimeoutMinutes Re-trigger acknowledged alerts of this urgency after N minutes; null inherits the workspace default, -1 = never.
-type NewAlertUrgencyDataAttributesRetriggerTimeoutMinutes int
 
 // NewAlertUrgencyDataType defines model for NewAlertUrgency.Data.Type.
 type NewAlertUrgencyDataType string
@@ -59039,6 +59510,25 @@ type NewAuthorizationDataAttributesPermissions string
 
 // NewAuthorizationDataType defines model for NewAuthorization.Data.Type.
 type NewAuthorizationDataType string
+
+// NewBulkImport defines model for new_bulk_import.
+type NewBulkImport struct {
+	Data struct {
+		Attributes struct {
+			// EntityType Type of entity to import (currently only 'Incident' is supported)
+			EntityType NewBulkImportDataAttributesEntityType `json:"entity_type"`
+
+			// FileURL URL of the JSONL file to import. Must be accessible via HTTPS.
+			FileURL string `json:"file_url"`
+
+			// NotificationEmail Email address to receive import status notifications
+			NotificationEmail openapi_types.Email `json:"notification_email"`
+		} `json:"attributes"`
+	} `json:"data"`
+}
+
+// NewBulkImportDataAttributesEntityType Type of entity to import (currently only 'Incident' is supported)
+type NewBulkImportDataAttributesEntityType string
 
 // NewCatalog defines model for new_catalog.
 type NewCatalog struct {
@@ -59968,7 +60458,7 @@ type NewEscalationPolicyPath struct {
 			RepeatCount nullable.Nullable[int] `json:"repeat_count,omitempty"`
 
 			// RetriggerTimeoutMinutes Re-trigger acknowledged alerts on this path after N minutes; null inherits the urgency/workspace default, -1 = never.
-			RetriggerTimeoutMinutes nullable.Nullable[NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutes] `json:"retrigger_timeout_minutes,omitempty"`
+			RetriggerTimeoutMinutes nullable.Nullable[int] `json:"retrigger_timeout_minutes,omitempty"`
 
 			// Rules Escalation path conditions
 			Rules []NewEscalationPolicyPath_Data_Attributes_Rules_Item `json:"rules,omitempty"`
@@ -60188,9 +60678,6 @@ type NewEscalationPolicyPathDataAttributesNotificationTypeRulesNotificationType 
 
 // NewEscalationPolicyPathDataAttributesPathType The type of escalation path to create
 type NewEscalationPolicyPathDataAttributesPathType string
-
-// NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutes Re-trigger acknowledged alerts on this path after N minutes; null inherits the urgency/workspace default, -1 = never.
-type NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutes int
 
 // NewEscalationPolicyPathDataAttributesRules0 defines model for NewEscalationPolicyPath.Data.Attributes.Rules.0.
 type NewEscalationPolicyPathDataAttributesRules0 struct {
@@ -68718,6 +69205,62 @@ type UpdateAlertGroupDataAttributesTargetsTargetType string
 // UpdateAlertGroupDataType defines model for UpdateAlertGroup.Data.Type.
 type UpdateAlertGroupDataType string
 
+// UpdateAlertRetriggerRule defines model for update_alert_retrigger_rule.
+type UpdateAlertRetriggerRule struct {
+	Data struct {
+		Attributes struct {
+			// Conditions The full desired set of conditions; replaces the rule's existing conditions. An empty array applies to every alert.
+			Conditions []struct {
+				// Kind The operand the condition matches on. Native operands (urgency, source, service, group) match by record; alert_field/payload match a field value.
+				Kind UpdateAlertRetriggerRuleDataAttributesConditionsKind `json:"kind"`
+
+				// Operator How the operand is compared. Native operands support is_one_of/is_not_one_of/is_set/is_not_set; alert_field/payload additionally support the string/regex operators.
+				Operator UpdateAlertRetriggerRuleDataAttributesConditionsOperator `json:"operator"`
+
+				// PropertyFieldName For alert_field conditions: the alert field id. For payload conditions: a JSON Path (e.g. $.priority).
+				PropertyFieldName *string `json:"property_field_name,omitempty"`
+
+				// RecordIDs For urgency/service/group/source conditions: the IDs of the matched records (AlertUrgency, Service, Group, or Alerts::Source).
+				RecordIDs []openapi_types.UUID `json:"record_ids,omitempty"`
+
+				// Values For source conditions: non-integration source aliases (e.g. manual, api). For alert_field/payload conditions: the values to compare against.
+				Values []string `json:"values,omitempty"`
+			} `json:"conditions,omitempty"`
+
+			// MatchMode Whether all or any of the conditions must match
+			MatchMode *UpdateAlertRetriggerRuleDataAttributesMatchMode `json:"match_mode,omitempty"`
+
+			// Name A human-readable name for the rule
+			Name *string `json:"name,omitempty"`
+
+			// Position The position of the rule for ordering evaluation
+			Position *int `json:"position,omitempty"`
+
+			// TimeoutMinutes Re-trigger the alert this many minutes after acknowledgment. Null means never re-trigger.
+			TimeoutMinutes nullable.Nullable[UpdateAlertRetriggerRuleDataAttributesTimeoutMinutes] `json:"timeout_minutes,omitempty"`
+		} `json:"attributes"`
+
+		// ID Accepted for JSON:API client compatibility, but ignored. The resource to update is identified by the id in the path.
+		ID   *string                          `json:"id,omitempty"`
+		Type UpdateAlertRetriggerRuleDataType `json:"type"`
+	} `json:"data"`
+}
+
+// UpdateAlertRetriggerRuleDataAttributesConditionsKind The operand the condition matches on. Native operands (urgency, source, service, group) match by record; alert_field/payload match a field value.
+type UpdateAlertRetriggerRuleDataAttributesConditionsKind string
+
+// UpdateAlertRetriggerRuleDataAttributesConditionsOperator How the operand is compared. Native operands support is_one_of/is_not_one_of/is_set/is_not_set; alert_field/payload additionally support the string/regex operators.
+type UpdateAlertRetriggerRuleDataAttributesConditionsOperator string
+
+// UpdateAlertRetriggerRuleDataAttributesMatchMode Whether all or any of the conditions must match
+type UpdateAlertRetriggerRuleDataAttributesMatchMode string
+
+// UpdateAlertRetriggerRuleDataAttributesTimeoutMinutes Re-trigger the alert this many minutes after acknowledgment. Null means never re-trigger.
+type UpdateAlertRetriggerRuleDataAttributesTimeoutMinutes int
+
+// UpdateAlertRetriggerRuleDataType defines model for UpdateAlertRetriggerRule.Data.Type.
+type UpdateAlertRetriggerRuleDataType string
+
 // UpdateAlertRoute defines model for update_alert_route.
 type UpdateAlertRoute struct {
 	Data struct {
@@ -68879,7 +69422,7 @@ type UpdateAlertUrgency struct {
 			Position nullable.Nullable[int] `json:"position,omitempty"`
 
 			// RetriggerTimeoutMinutes Re-trigger acknowledged alerts of this urgency after N minutes; null inherits the workspace default, -1 = never.
-			RetriggerTimeoutMinutes nullable.Nullable[UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutes] `json:"retrigger_timeout_minutes,omitempty"`
+			RetriggerTimeoutMinutes nullable.Nullable[int] `json:"retrigger_timeout_minutes,omitempty"`
 		} `json:"attributes"`
 
 		// ID Accepted for JSON:API client compatibility, but ignored. The resource to update is identified by the id in the path.
@@ -68887,9 +69430,6 @@ type UpdateAlertUrgency struct {
 		Type UpdateAlertUrgencyDataType `json:"type"`
 	} `json:"data"`
 }
-
-// UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutes Re-trigger acknowledged alerts of this urgency after N minutes; null inherits the workspace default, -1 = never.
-type UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutes int
 
 // UpdateAlertUrgencyDataType defines model for UpdateAlertUrgency.Data.Type.
 type UpdateAlertUrgencyDataType string
@@ -70261,7 +70801,7 @@ type UpdateEscalationPolicyPath struct {
 			RepeatCount nullable.Nullable[int] `json:"repeat_count,omitempty"`
 
 			// RetriggerTimeoutMinutes Re-trigger acknowledged alerts on this path after N minutes; null inherits the urgency/workspace default, -1 = never.
-			RetriggerTimeoutMinutes nullable.Nullable[UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutes] `json:"retrigger_timeout_minutes,omitempty"`
+			RetriggerTimeoutMinutes nullable.Nullable[int] `json:"retrigger_timeout_minutes,omitempty"`
 
 			// Rules Escalation path conditions
 			Rules []nullable.Nullable[UpdateEscalationPolicyPath_Data_Attributes_Rules_Item] `json:"rules,omitempty"`
@@ -70484,9 +71024,6 @@ type UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesNotificationTy
 
 // UpdateEscalationPolicyPathDataAttributesPathType The type of escalation path. Cannot be changed after creation.
 type UpdateEscalationPolicyPathDataAttributesPathType string
-
-// UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutes Re-trigger acknowledged alerts on this path after N minutes; null inherits the urgency/workspace default, -1 = never.
-type UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutes int
 
 // UpdateEscalationPolicyPathDataAttributesRules0 defines model for UpdateEscalationPolicyPath.Data.Attributes.Rules.0.
 type UpdateEscalationPolicyPathDataAttributesRules0 struct {
@@ -78540,6 +79077,16 @@ type CreateAlertGroupApplicationVndAPIPlusJSONRequestBody = NewAlertGroup
 // UpdateAlertGroupApplicationVndAPIPlusJSONRequestBody defines body for UpdateAlertGroup for application/vnd.api+json ContentType.
 type UpdateAlertGroupApplicationVndAPIPlusJSONRequestBody = UpdateAlertGroup
 
+// CreateAlertRetriggerRuleApplicationVndAPIPlusJSONRequestBody defines body for CreateAlertRetriggerRule for application/vnd.api+json ContentType.
+//
+// Deprecated: Alert re-trigger rules are no longer served by the Rootly API; use `retrigger_timeout_minutes` on alert urgencies or escalation paths instead. This will be removed in a future version.
+type CreateAlertRetriggerRuleApplicationVndAPIPlusJSONRequestBody = NewAlertRetriggerRule
+
+// UpdateAlertRetriggerRuleApplicationVndAPIPlusJSONRequestBody defines body for UpdateAlertRetriggerRule for application/vnd.api+json ContentType.
+//
+// Deprecated: Alert re-trigger rules are no longer served by the Rootly API; use `retrigger_timeout_minutes` on alert urgencies or escalation paths instead. This will be removed in a future version.
+type UpdateAlertRetriggerRuleApplicationVndAPIPlusJSONRequestBody = UpdateAlertRetriggerRule
+
 // CreateAlertRouteApplicationVndAPIPlusJSONRequestBody defines body for CreateAlertRoute for application/vnd.api+json ContentType.
 type CreateAlertRouteApplicationVndAPIPlusJSONRequestBody = NewAlertRoute
 
@@ -78605,6 +79152,11 @@ type CreateAuthorizationApplicationVndAPIPlusJSONRequestBody = NewAuthorization
 
 // UpdateAuthorizationApplicationVndAPIPlusJSONRequestBody defines body for UpdateAuthorization for application/vnd.api+json ContentType.
 type UpdateAuthorizationApplicationVndAPIPlusJSONRequestBody = UpdateAuthorization
+
+// CreateBulkImportApplicationVndAPIPlusJSONRequestBody defines body for CreateBulkImport for application/vnd.api+json ContentType.
+//
+// Deprecated: The incident bulk import API is no longer served by the Rootly API. This will be removed in a future version.
+type CreateBulkImportApplicationVndAPIPlusJSONRequestBody = NewBulkImport
 
 // CreateCatalogChecklistTemplateApplicationVndAPIPlusJSONRequestBody defines body for CreateCatalogChecklistTemplate for application/vnd.api+json ContentType.
 type CreateCatalogChecklistTemplateApplicationVndAPIPlusJSONRequestBody = NewCatalogChecklistTemplate
@@ -98519,6 +99071,63 @@ type ClientInterface interface {
 	// Corresponds with PATCH /v1/alert_groups/{id} (the `UpdateAlertGroup` operationId).
 	UpdateAlertGroupWithApplicationVndAPIPlusJSONBody(ctx context.Context, id ID, body UpdateAlertGroupApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
+	// ListAlertRetriggerRules List alert re-trigger rules
+	//
+	// Corresponds with GET /v1/alert_retrigger_rules (the `ListAlertRetriggerRules` operationId).
+	//
+	// Deprecated: Alert re-trigger rules are no longer served by the Rootly API; use `retrigger_timeout_minutes` on alert urgencies or escalation paths instead. This will be removed in a future version.
+	ListAlertRetriggerRules(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// CreateAlertRetriggerRuleWithBody Creates an alert re-trigger rule
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /v1/alert_retrigger_rules (the `CreateAlertRetriggerRule` operationId).
+	//
+	// Deprecated: Alert re-trigger rules are no longer served by the Rootly API; use `retrigger_timeout_minutes` on alert urgencies or escalation paths instead. This will be removed in a future version.
+	CreateAlertRetriggerRuleWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// CreateAlertRetriggerRuleWithApplicationVndAPIPlusJSONBody Creates an alert re-trigger rule
+	//
+	// Takes a body of the `application/vnd.api+json` content type.
+	//
+	// Corresponds with POST /v1/alert_retrigger_rules (the `CreateAlertRetriggerRule` operationId).
+	//
+	// Deprecated: Alert re-trigger rules are no longer served by the Rootly API; use `retrigger_timeout_minutes` on alert urgencies or escalation paths instead. This will be removed in a future version.
+	CreateAlertRetriggerRuleWithApplicationVndAPIPlusJSONBody(ctx context.Context, body CreateAlertRetriggerRuleApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// DeleteAlertRetriggerRule Deletes an alert re-trigger rule
+	//
+	// Corresponds with DELETE /v1/alert_retrigger_rules/{id} (the `DeleteAlertRetriggerRule` operationId).
+	//
+	// Deprecated: Alert re-trigger rules are no longer served by the Rootly API; use `retrigger_timeout_minutes` on alert urgencies or escalation paths instead. This will be removed in a future version.
+	DeleteAlertRetriggerRule(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetAlertRetriggerRule Retrieves an alert re-trigger rule
+	//
+	// Corresponds with GET /v1/alert_retrigger_rules/{id} (the `GetAlertRetriggerRule` operationId).
+	//
+	// Deprecated: Alert re-trigger rules are no longer served by the Rootly API; use `retrigger_timeout_minutes` on alert urgencies or escalation paths instead. This will be removed in a future version.
+	GetAlertRetriggerRule(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// UpdateAlertRetriggerRuleWithBody Updates an alert re-trigger rule
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with PUT /v1/alert_retrigger_rules/{id} (the `UpdateAlertRetriggerRule` operationId).
+	//
+	// Deprecated: Alert re-trigger rules are no longer served by the Rootly API; use `retrigger_timeout_minutes` on alert urgencies or escalation paths instead. This will be removed in a future version.
+	UpdateAlertRetriggerRuleWithBody(ctx context.Context, id ID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// UpdateAlertRetriggerRuleWithApplicationVndAPIPlusJSONBody Updates an alert re-trigger rule
+	//
+	// Takes a body of the `application/vnd.api+json` content type.
+	//
+	// Corresponds with PUT /v1/alert_retrigger_rules/{id} (the `UpdateAlertRetriggerRule` operationId).
+	//
+	// Deprecated: Alert re-trigger rules are no longer served by the Rootly API; use `retrigger_timeout_minutes` on alert urgencies or escalation paths instead. This will be removed in a future version.
+	UpdateAlertRetriggerRuleWithApplicationVndAPIPlusJSONBody(ctx context.Context, id ID, body UpdateAlertRetriggerRuleApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
 	// ListAlertRoutes List alert routes
 	//
 	// List all alert routes for the current team with filtering and pagination. **Note: This endpoint requires access to Advanced Alert Routing. If you're unsure whether you have access to this feature, please contact Rootly customer support.**
@@ -99182,6 +99791,42 @@ type ClientInterface interface {
 	//
 	// Corresponds with PUT /v1/authorizations/{id} (the `UpdateAuthorization` operationId).
 	UpdateAuthorizationWithApplicationVndAPIPlusJSONBody(ctx context.Context, id ID, body UpdateAuthorizationApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// CreateBulkImportWithBody Create a bulk import
+	//
+	// Create a new bulk import for incidents. Requires global API key authentication.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /v1/bulk_imports (the `CreateBulkImport` operationId).
+	//
+	// Deprecated: The incident bulk import API is no longer served by the Rootly API. This will be removed in a future version.
+	CreateBulkImportWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// CreateBulkImportWithApplicationVndAPIPlusJSONBody Create a bulk import
+	//
+	// Create a new bulk import for incidents. Requires global API key authentication.
+	//
+	// Takes a body of the `application/vnd.api+json` content type.
+	//
+	// Corresponds with POST /v1/bulk_imports (the `CreateBulkImport` operationId).
+	//
+	// Deprecated: The incident bulk import API is no longer served by the Rootly API. This will be removed in a future version.
+	CreateBulkImportWithApplicationVndAPIPlusJSONBody(ctx context.Context, body CreateBulkImportApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetBulkImport Get bulk import status
+	//
+	// Retrieves the current status of a bulk import job.
+	//
+	// **Use this endpoint to:**
+	// - Poll for import progress
+	// - Check validation errors if status is `validation_failed`
+	// - Get final results when status is `completed` or `failed`
+	//
+	// Corresponds with GET /v1/bulk_imports/{id} (the `GetBulkImport` operationId).
+	//
+	// Deprecated: The incident bulk import API is no longer served by the Rootly API. This will be removed in a future version.
+	GetBulkImport(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// ListCatalogChecklistTemplates List catalog checklist templates
 	//
@@ -105512,6 +106157,126 @@ func (c *Client) UpdateAlertGroupWithApplicationVndAPIPlusJSONBody(ctx context.C
 	return c.Client.Do(req)
 }
 
+// ListAlertRetriggerRules List alert re-trigger rules
+//
+// Corresponds with GET /v1/alert_retrigger_rules (the `ListAlertRetriggerRules` operationId).
+// Deprecated: Alert re-trigger rules are no longer served by the Rootly API; use `retrigger_timeout_minutes` on alert urgencies or escalation paths instead. This will be removed in a future version.
+func (c *Client) ListAlertRetriggerRules(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewListAlertRetriggerRulesRequest(c.Server)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// CreateAlertRetriggerRuleWithBody Creates an alert re-trigger rule
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/alert_retrigger_rules (the `CreateAlertRetriggerRule` operationId).
+// Deprecated: Alert re-trigger rules are no longer served by the Rootly API; use `retrigger_timeout_minutes` on alert urgencies or escalation paths instead. This will be removed in a future version.
+func (c *Client) CreateAlertRetriggerRuleWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateAlertRetriggerRuleRequestWithBody(c.Server, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// CreateAlertRetriggerRuleWithApplicationVndAPIPlusJSONBody Creates an alert re-trigger rule
+//
+// Takes a body of the `application/vnd.api+json` content type.
+//
+// Corresponds with POST /v1/alert_retrigger_rules (the `CreateAlertRetriggerRule` operationId).
+// Deprecated: Alert re-trigger rules are no longer served by the Rootly API; use `retrigger_timeout_minutes` on alert urgencies or escalation paths instead. This will be removed in a future version.
+func (c *Client) CreateAlertRetriggerRuleWithApplicationVndAPIPlusJSONBody(ctx context.Context, body CreateAlertRetriggerRuleApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateAlertRetriggerRuleRequestWithApplicationVndAPIPlusJSONBody(c.Server, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// DeleteAlertRetriggerRule Deletes an alert re-trigger rule
+//
+// Corresponds with DELETE /v1/alert_retrigger_rules/{id} (the `DeleteAlertRetriggerRule` operationId).
+// Deprecated: Alert re-trigger rules are no longer served by the Rootly API; use `retrigger_timeout_minutes` on alert urgencies or escalation paths instead. This will be removed in a future version.
+func (c *Client) DeleteAlertRetriggerRule(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewDeleteAlertRetriggerRuleRequest(c.Server, id)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetAlertRetriggerRule Retrieves an alert re-trigger rule
+//
+// Corresponds with GET /v1/alert_retrigger_rules/{id} (the `GetAlertRetriggerRule` operationId).
+// Deprecated: Alert re-trigger rules are no longer served by the Rootly API; use `retrigger_timeout_minutes` on alert urgencies or escalation paths instead. This will be removed in a future version.
+func (c *Client) GetAlertRetriggerRule(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetAlertRetriggerRuleRequest(c.Server, id)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// UpdateAlertRetriggerRuleWithBody Updates an alert re-trigger rule
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with PUT /v1/alert_retrigger_rules/{id} (the `UpdateAlertRetriggerRule` operationId).
+// Deprecated: Alert re-trigger rules are no longer served by the Rootly API; use `retrigger_timeout_minutes` on alert urgencies or escalation paths instead. This will be removed in a future version.
+func (c *Client) UpdateAlertRetriggerRuleWithBody(ctx context.Context, id ID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateAlertRetriggerRuleRequestWithBody(c.Server, id, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// UpdateAlertRetriggerRuleWithApplicationVndAPIPlusJSONBody Updates an alert re-trigger rule
+//
+// Takes a body of the `application/vnd.api+json` content type.
+//
+// Corresponds with PUT /v1/alert_retrigger_rules/{id} (the `UpdateAlertRetriggerRule` operationId).
+// Deprecated: Alert re-trigger rules are no longer served by the Rootly API; use `retrigger_timeout_minutes` on alert urgencies or escalation paths instead. This will be removed in a future version.
+func (c *Client) UpdateAlertRetriggerRuleWithApplicationVndAPIPlusJSONBody(ctx context.Context, id ID, body UpdateAlertRetriggerRuleApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateAlertRetriggerRuleRequestWithApplicationVndAPIPlusJSONBody(c.Server, id, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
 // ListAlertRoutes List alert routes
 //
 // List all alert routes for the current team with filtering and pagination. **Note: This endpoint requires access to Advanced Alert Routing. If you're unsure whether you have access to this feature, please contact Rootly customer support.**
@@ -106856,6 +107621,69 @@ func (c *Client) UpdateAuthorizationWithBody(ctx context.Context, id ID, content
 // Corresponds with PUT /v1/authorizations/{id} (the `UpdateAuthorization` operationId).
 func (c *Client) UpdateAuthorizationWithApplicationVndAPIPlusJSONBody(ctx context.Context, id ID, body UpdateAuthorizationApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewUpdateAuthorizationRequestWithApplicationVndAPIPlusJSONBody(c.Server, id, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// CreateBulkImportWithBody Create a bulk import
+//
+// Create a new bulk import for incidents. Requires global API key authentication.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/bulk_imports (the `CreateBulkImport` operationId).
+// Deprecated: The incident bulk import API is no longer served by the Rootly API. This will be removed in a future version.
+func (c *Client) CreateBulkImportWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateBulkImportRequestWithBody(c.Server, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// CreateBulkImportWithApplicationVndAPIPlusJSONBody Create a bulk import
+//
+// Create a new bulk import for incidents. Requires global API key authentication.
+//
+// Takes a body of the `application/vnd.api+json` content type.
+//
+// Corresponds with POST /v1/bulk_imports (the `CreateBulkImport` operationId).
+// Deprecated: The incident bulk import API is no longer served by the Rootly API. This will be removed in a future version.
+func (c *Client) CreateBulkImportWithApplicationVndAPIPlusJSONBody(ctx context.Context, body CreateBulkImportApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateBulkImportRequestWithApplicationVndAPIPlusJSONBody(c.Server, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetBulkImport Get bulk import status
+//
+// Retrieves the current status of a bulk import job.
+//
+// **Use this endpoint to:**
+// - Poll for import progress
+// - Check validation errors if status is `validation_failed`
+// - Get final results when status is `completed` or `failed`
+//
+// Corresponds with GET /v1/bulk_imports/{id} (the `GetBulkImport` operationId).
+// Deprecated: The incident bulk import API is no longer served by the Rootly API. This will be removed in a future version.
+func (c *Client) GetBulkImport(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetBulkImportRequest(c.Server, id)
 	if err != nil {
 		return nil, err
 	}
@@ -121920,6 +122748,188 @@ func NewUpdateAlertGroupRequestWithBody(server string, id ID, contentType string
 	return req, nil
 }
 
+// NewListAlertRetriggerRulesRequest constructs an http.Request for the ListAlertRetriggerRules method
+func NewListAlertRetriggerRulesRequest(server string) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/alert_retrigger_rules")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewCreateAlertRetriggerRuleRequestWithApplicationVndAPIPlusJSONBody calls the generic CreateAlertRetriggerRule builder with application/vnd.api+json body
+func NewCreateAlertRetriggerRuleRequestWithApplicationVndAPIPlusJSONBody(server string, body CreateAlertRetriggerRuleApplicationVndAPIPlusJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewCreateAlertRetriggerRuleRequestWithBody(server, "application/vnd.api+json", bodyReader)
+}
+
+// NewCreateAlertRetriggerRuleRequestWithBody constructs an http.Request for the CreateAlertRetriggerRule method, with any body, and a specified content type
+func NewCreateAlertRetriggerRuleRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/alert_retrigger_rules")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewDeleteAlertRetriggerRuleRequest constructs an http.Request for the DeleteAlertRetriggerRule method
+func NewDeleteAlertRetriggerRuleRequest(server string, id ID) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "id", id, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/alert_retrigger_rules/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodDelete, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewGetAlertRetriggerRuleRequest constructs an http.Request for the GetAlertRetriggerRule method
+func NewGetAlertRetriggerRuleRequest(server string, id ID) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "id", id, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/alert_retrigger_rules/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewUpdateAlertRetriggerRuleRequestWithApplicationVndAPIPlusJSONBody calls the generic UpdateAlertRetriggerRule builder with application/vnd.api+json body
+func NewUpdateAlertRetriggerRuleRequestWithApplicationVndAPIPlusJSONBody(server string, id ID, body UpdateAlertRetriggerRuleApplicationVndAPIPlusJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewUpdateAlertRetriggerRuleRequestWithBody(server, id, "application/vnd.api+json", bodyReader)
+}
+
+// NewUpdateAlertRetriggerRuleRequestWithBody constructs an http.Request for the UpdateAlertRetriggerRule method, with any body, and a specified content type
+func NewUpdateAlertRetriggerRuleRequestWithBody(server string, id ID, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "id", id, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/alert_retrigger_rules/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPut, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
 // NewListAlertRoutesRequest constructs an http.Request for the ListAlertRoutes method
 func NewListAlertRoutesRequest(server string, params *ListAlertRoutesParams) (*http.Request, error) {
 	var err error
@@ -125960,6 +126970,80 @@ func NewUpdateAuthorizationRequestWithBody(server string, id ID, contentType str
 	}
 
 	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewCreateBulkImportRequestWithApplicationVndAPIPlusJSONBody calls the generic CreateBulkImport builder with application/vnd.api+json body
+func NewCreateBulkImportRequestWithApplicationVndAPIPlusJSONBody(server string, body CreateBulkImportApplicationVndAPIPlusJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewCreateBulkImportRequestWithBody(server, "application/vnd.api+json", bodyReader)
+}
+
+// NewCreateBulkImportRequestWithBody constructs an http.Request for the CreateBulkImport method, with any body, and a specified content type
+func NewCreateBulkImportRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/bulk_imports")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewGetBulkImportRequest constructs an http.Request for the GetBulkImport method
+func NewGetBulkImportRequest(server string, id ID) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "id", id, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/bulk_imports/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
 
 	return req, nil
 }
@@ -162477,6 +163561,69 @@ type ClientWithResponsesInterface interface {
 	// Corresponds with PATCH /v1/alert_groups/{id} (the `UpdateAlertGroup` operationId).
 	UpdateAlertGroupWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, id ID, body UpdateAlertGroupApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateAlertGroupResponse, error)
 
+	// ListAlertRetriggerRulesWithResponse List alert re-trigger rules
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /v1/alert_retrigger_rules (the `ListAlertRetriggerRules` operationId).
+	//
+	// Deprecated: Alert re-trigger rules are no longer served by the Rootly API; use `retrigger_timeout_minutes` on alert urgencies or escalation paths instead. This will be removed in a future version.
+	ListAlertRetriggerRulesWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*ListAlertRetriggerRulesResponse, error)
+
+	// CreateAlertRetriggerRuleWithBodyWithResponse Creates an alert re-trigger rule
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/alert_retrigger_rules (the `CreateAlertRetriggerRule` operationId).
+	//
+	// Deprecated: Alert re-trigger rules are no longer served by the Rootly API; use `retrigger_timeout_minutes` on alert urgencies or escalation paths instead. This will be removed in a future version.
+	CreateAlertRetriggerRuleWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateAlertRetriggerRuleResponse, error)
+
+	// CreateAlertRetriggerRuleWithApplicationVndAPIPlusJSONBodyWithResponse Creates an alert re-trigger rule
+	//
+	// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/alert_retrigger_rules (the `CreateAlertRetriggerRule` operationId).
+	//
+	// Deprecated: Alert re-trigger rules are no longer served by the Rootly API; use `retrigger_timeout_minutes` on alert urgencies or escalation paths instead. This will be removed in a future version.
+	CreateAlertRetriggerRuleWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, body CreateAlertRetriggerRuleApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateAlertRetriggerRuleResponse, error)
+
+	// DeleteAlertRetriggerRuleWithResponse Deletes an alert re-trigger rule
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with DELETE /v1/alert_retrigger_rules/{id} (the `DeleteAlertRetriggerRule` operationId).
+	//
+	// Deprecated: Alert re-trigger rules are no longer served by the Rootly API; use `retrigger_timeout_minutes` on alert urgencies or escalation paths instead. This will be removed in a future version.
+	DeleteAlertRetriggerRuleWithResponse(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*DeleteAlertRetriggerRuleResponse, error)
+
+	// GetAlertRetriggerRuleWithResponse Retrieves an alert re-trigger rule
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /v1/alert_retrigger_rules/{id} (the `GetAlertRetriggerRule` operationId).
+	//
+	// Deprecated: Alert re-trigger rules are no longer served by the Rootly API; use `retrigger_timeout_minutes` on alert urgencies or escalation paths instead. This will be removed in a future version.
+	GetAlertRetriggerRuleWithResponse(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*GetAlertRetriggerRuleResponse, error)
+
+	// UpdateAlertRetriggerRuleWithBodyWithResponse Updates an alert re-trigger rule
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with PUT /v1/alert_retrigger_rules/{id} (the `UpdateAlertRetriggerRule` operationId).
+	//
+	// Deprecated: Alert re-trigger rules are no longer served by the Rootly API; use `retrigger_timeout_minutes` on alert urgencies or escalation paths instead. This will be removed in a future version.
+	UpdateAlertRetriggerRuleWithBodyWithResponse(ctx context.Context, id ID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateAlertRetriggerRuleResponse, error)
+
+	// UpdateAlertRetriggerRuleWithApplicationVndAPIPlusJSONBodyWithResponse Updates an alert re-trigger rule
+	//
+	// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with PUT /v1/alert_retrigger_rules/{id} (the `UpdateAlertRetriggerRule` operationId).
+	//
+	// Deprecated: Alert re-trigger rules are no longer served by the Rootly API; use `retrigger_timeout_minutes` on alert urgencies or escalation paths instead. This will be removed in a future version.
+	UpdateAlertRetriggerRuleWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, id ID, body UpdateAlertRetriggerRuleApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateAlertRetriggerRuleResponse, error)
+
 	// ListAlertRoutesWithResponse List alert routes
 	//
 	// List all alert routes for the current team with filtering and pagination. **Note: This endpoint requires access to Advanced Alert Routing. If you're unsure whether you have access to this feature, please contact Rootly customer support.**
@@ -163190,6 +164337,44 @@ type ClientWithResponsesInterface interface {
 	//
 	// Corresponds with PUT /v1/authorizations/{id} (the `UpdateAuthorization` operationId).
 	UpdateAuthorizationWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, id ID, body UpdateAuthorizationApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateAuthorizationResponse, error)
+
+	// CreateBulkImportWithBodyWithResponse Create a bulk import
+	//
+	// Create a new bulk import for incidents. Requires global API key authentication.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/bulk_imports (the `CreateBulkImport` operationId).
+	//
+	// Deprecated: The incident bulk import API is no longer served by the Rootly API. This will be removed in a future version.
+	CreateBulkImportWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateBulkImportResponse, error)
+
+	// CreateBulkImportWithApplicationVndAPIPlusJSONBodyWithResponse Create a bulk import
+	//
+	// Create a new bulk import for incidents. Requires global API key authentication.
+	//
+	// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/bulk_imports (the `CreateBulkImport` operationId).
+	//
+	// Deprecated: The incident bulk import API is no longer served by the Rootly API. This will be removed in a future version.
+	CreateBulkImportWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, body CreateBulkImportApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateBulkImportResponse, error)
+
+	// GetBulkImportWithResponse Get bulk import status
+	//
+	// Retrieves the current status of a bulk import job.
+	//
+	// **Use this endpoint to:**
+	// - Poll for import progress
+	// - Check validation errors if status is `validation_failed`
+	// - Get final results when status is `completed` or `failed`
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /v1/bulk_imports/{id} (the `GetBulkImport` operationId).
+	//
+	// Deprecated: The incident bulk import API is no longer served by the Rootly API. This will be removed in a future version.
+	GetBulkImportWithResponse(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*GetBulkImportResponse, error)
 
 	// ListCatalogChecklistTemplatesWithResponse List catalog checklist templates
 	//
@@ -170395,6 +171580,161 @@ func (r UpdateAlertGroupResponse) ContentType() string {
 	return ""
 }
 
+type ListAlertRetriggerRulesResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// ApplicationVndAPIJSON200 the response for an HTTP 200 `application/vnd.api+json` response
+	ApplicationVndAPIJSON200 *AlertRetriggerRuleList
+}
+
+// Status returns HTTPResponse.Status
+func (r ListAlertRetriggerRulesResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r ListAlertRetriggerRulesResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r ListAlertRetriggerRulesResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type CreateAlertRetriggerRuleResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// ApplicationVndAPIJSON201 the response for an HTTP 201 `application/vnd.api+json` response
+	ApplicationVndAPIJSON201 *AlertRetriggerRuleResponse
+	// ApplicationVndAPIJSON422 the response for an HTTP 422 `application/vnd.api+json` response
+	ApplicationVndAPIJSON422 *ErrorsList
+}
+
+// Status returns HTTPResponse.Status
+func (r CreateAlertRetriggerRuleResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r CreateAlertRetriggerRuleResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r CreateAlertRetriggerRuleResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type DeleteAlertRetriggerRuleResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// Status returns HTTPResponse.Status
+func (r DeleteAlertRetriggerRuleResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r DeleteAlertRetriggerRuleResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r DeleteAlertRetriggerRuleResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GetAlertRetriggerRuleResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// ApplicationVndAPIJSON200 the response for an HTTP 200 `application/vnd.api+json` response
+	ApplicationVndAPIJSON200 *AlertRetriggerRuleResponse
+}
+
+// Status returns HTTPResponse.Status
+func (r GetAlertRetriggerRuleResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetAlertRetriggerRuleResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetAlertRetriggerRuleResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type UpdateAlertRetriggerRuleResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// ApplicationVndAPIJSON200 the response for an HTTP 200 `application/vnd.api+json` response
+	ApplicationVndAPIJSON200 *AlertRetriggerRuleResponse
+}
+
+// Status returns HTTPResponse.Status
+func (r UpdateAlertRetriggerRuleResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r UpdateAlertRetriggerRuleResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r UpdateAlertRetriggerRuleResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
 type ListAlertRoutesResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
@@ -171972,6 +173312,64 @@ func (r UpdateAuthorizationResponse) StatusCode() int {
 
 // ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
 func (r UpdateAuthorizationResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type CreateBulkImportResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// Status returns HTTPResponse.Status
+func (r CreateBulkImportResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r CreateBulkImportResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r CreateBulkImportResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GetBulkImportResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// Status returns HTTPResponse.Status
+func (r GetBulkImportResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetBulkImportResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetBulkImportResponse) ContentType() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Header.Get("Content-Type")
 	}
@@ -189764,6 +191162,109 @@ func (c *ClientWithResponses) UpdateAlertGroupWithApplicationVndAPIPlusJSONBodyW
 	return ParseUpdateAlertGroupResponse(rsp)
 }
 
+// ListAlertRetriggerRulesWithResponse List alert re-trigger rules
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/alert_retrigger_rules (the `ListAlertRetriggerRules` operationId).
+//
+// Deprecated: Alert re-trigger rules are no longer served by the Rootly API; use `retrigger_timeout_minutes` on alert urgencies or escalation paths instead. This will be removed in a future version.
+func (c *ClientWithResponses) ListAlertRetriggerRulesWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*ListAlertRetriggerRulesResponse, error) {
+	rsp, err := c.ListAlertRetriggerRules(ctx, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseListAlertRetriggerRulesResponse(rsp)
+}
+
+// CreateAlertRetriggerRuleWithBodyWithResponse Creates an alert re-trigger rule
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/alert_retrigger_rules (the `CreateAlertRetriggerRule` operationId).
+//
+// Deprecated: Alert re-trigger rules are no longer served by the Rootly API; use `retrigger_timeout_minutes` on alert urgencies or escalation paths instead. This will be removed in a future version.
+func (c *ClientWithResponses) CreateAlertRetriggerRuleWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateAlertRetriggerRuleResponse, error) {
+	rsp, err := c.CreateAlertRetriggerRuleWithBody(ctx, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateAlertRetriggerRuleResponse(rsp)
+}
+
+// CreateAlertRetriggerRuleWithApplicationVndAPIPlusJSONBodyWithResponse Creates an alert re-trigger rule
+//
+// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/alert_retrigger_rules (the `CreateAlertRetriggerRule` operationId).
+// Deprecated: Alert re-trigger rules are no longer served by the Rootly API; use `retrigger_timeout_minutes` on alert urgencies or escalation paths instead. This will be removed in a future version.
+func (c *ClientWithResponses) CreateAlertRetriggerRuleWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, body CreateAlertRetriggerRuleApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateAlertRetriggerRuleResponse, error) {
+	rsp, err := c.CreateAlertRetriggerRuleWithApplicationVndAPIPlusJSONBody(ctx, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateAlertRetriggerRuleResponse(rsp)
+}
+
+// DeleteAlertRetriggerRuleWithResponse Deletes an alert re-trigger rule
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with DELETE /v1/alert_retrigger_rules/{id} (the `DeleteAlertRetriggerRule` operationId).
+//
+// Deprecated: Alert re-trigger rules are no longer served by the Rootly API; use `retrigger_timeout_minutes` on alert urgencies or escalation paths instead. This will be removed in a future version.
+func (c *ClientWithResponses) DeleteAlertRetriggerRuleWithResponse(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*DeleteAlertRetriggerRuleResponse, error) {
+	rsp, err := c.DeleteAlertRetriggerRule(ctx, id, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseDeleteAlertRetriggerRuleResponse(rsp)
+}
+
+// GetAlertRetriggerRuleWithResponse Retrieves an alert re-trigger rule
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/alert_retrigger_rules/{id} (the `GetAlertRetriggerRule` operationId).
+//
+// Deprecated: Alert re-trigger rules are no longer served by the Rootly API; use `retrigger_timeout_minutes` on alert urgencies or escalation paths instead. This will be removed in a future version.
+func (c *ClientWithResponses) GetAlertRetriggerRuleWithResponse(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*GetAlertRetriggerRuleResponse, error) {
+	rsp, err := c.GetAlertRetriggerRule(ctx, id, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetAlertRetriggerRuleResponse(rsp)
+}
+
+// UpdateAlertRetriggerRuleWithBodyWithResponse Updates an alert re-trigger rule
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PUT /v1/alert_retrigger_rules/{id} (the `UpdateAlertRetriggerRule` operationId).
+//
+// Deprecated: Alert re-trigger rules are no longer served by the Rootly API; use `retrigger_timeout_minutes` on alert urgencies or escalation paths instead. This will be removed in a future version.
+func (c *ClientWithResponses) UpdateAlertRetriggerRuleWithBodyWithResponse(ctx context.Context, id ID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateAlertRetriggerRuleResponse, error) {
+	rsp, err := c.UpdateAlertRetriggerRuleWithBody(ctx, id, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateAlertRetriggerRuleResponse(rsp)
+}
+
+// UpdateAlertRetriggerRuleWithApplicationVndAPIPlusJSONBodyWithResponse Updates an alert re-trigger rule
+//
+// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PUT /v1/alert_retrigger_rules/{id} (the `UpdateAlertRetriggerRule` operationId).
+// Deprecated: Alert re-trigger rules are no longer served by the Rootly API; use `retrigger_timeout_minutes` on alert urgencies or escalation paths instead. This will be removed in a future version.
+func (c *ClientWithResponses) UpdateAlertRetriggerRuleWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, id ID, body UpdateAlertRetriggerRuleApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateAlertRetriggerRuleResponse, error) {
+	rsp, err := c.UpdateAlertRetriggerRuleWithApplicationVndAPIPlusJSONBody(ctx, id, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateAlertRetriggerRuleResponse(rsp)
+}
+
 // ListAlertRoutesWithResponse List alert routes
 //
 // List all alert routes for the current team with filtering and pagination. **Note: This endpoint requires access to Advanced Alert Routing. If you're unsure whether you have access to this feature, please contact Rootly customer support.**
@@ -190890,6 +192391,61 @@ func (c *ClientWithResponses) UpdateAuthorizationWithApplicationVndAPIPlusJSONBo
 		return nil, err
 	}
 	return ParseUpdateAuthorizationResponse(rsp)
+}
+
+// CreateBulkImportWithBodyWithResponse Create a bulk import
+//
+// Create a new bulk import for incidents. Requires global API key authentication.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/bulk_imports (the `CreateBulkImport` operationId).
+//
+// Deprecated: The incident bulk import API is no longer served by the Rootly API. This will be removed in a future version.
+func (c *ClientWithResponses) CreateBulkImportWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateBulkImportResponse, error) {
+	rsp, err := c.CreateBulkImportWithBody(ctx, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateBulkImportResponse(rsp)
+}
+
+// CreateBulkImportWithApplicationVndAPIPlusJSONBodyWithResponse Create a bulk import
+//
+// Create a new bulk import for incidents. Requires global API key authentication.
+//
+// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/bulk_imports (the `CreateBulkImport` operationId).
+// Deprecated: The incident bulk import API is no longer served by the Rootly API. This will be removed in a future version.
+func (c *ClientWithResponses) CreateBulkImportWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, body CreateBulkImportApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateBulkImportResponse, error) {
+	rsp, err := c.CreateBulkImportWithApplicationVndAPIPlusJSONBody(ctx, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateBulkImportResponse(rsp)
+}
+
+// GetBulkImportWithResponse Get bulk import status
+//
+// Retrieves the current status of a bulk import job.
+//
+// **Use this endpoint to:**
+// - Poll for import progress
+// - Check validation errors if status is `validation_failed`
+// - Get final results when status is `completed` or `failed`
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/bulk_imports/{id} (the `GetBulkImport` operationId).
+//
+// Deprecated: The incident bulk import API is no longer served by the Rootly API. This will be removed in a future version.
+func (c *ClientWithResponses) GetBulkImportWithResponse(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*GetBulkImportResponse, error) {
+	rsp, err := c.GetBulkImport(ctx, id, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetBulkImportResponse(rsp)
 }
 
 // ListCatalogChecklistTemplatesWithResponse List catalog checklist templates
@@ -202471,6 +204027,133 @@ func ParseUpdateAlertGroupResponse(rsp *http.Response) (*UpdateAlertGroupRespons
 	return response, nil
 }
 
+// ParseListAlertRetriggerRulesResponse parses an HTTP response from a ListAlertRetriggerRulesWithResponse call
+func ParseListAlertRetriggerRulesResponse(rsp *http.Response) (*ListAlertRetriggerRulesResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ListAlertRetriggerRulesResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest AlertRetriggerRuleList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseCreateAlertRetriggerRuleResponse parses an HTTP response from a CreateAlertRetriggerRuleWithResponse call
+func ParseCreateAlertRetriggerRuleResponse(rsp *http.Response) (*CreateAlertRetriggerRuleResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CreateAlertRetriggerRuleResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
+		var dest AlertRetriggerRuleResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON201 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest ErrorsList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON422 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseDeleteAlertRetriggerRuleResponse parses an HTTP response from a DeleteAlertRetriggerRuleWithResponse call
+func ParseDeleteAlertRetriggerRuleResponse(rsp *http.Response) (*DeleteAlertRetriggerRuleResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &DeleteAlertRetriggerRuleResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseGetAlertRetriggerRuleResponse parses an HTTP response from a GetAlertRetriggerRuleWithResponse call
+func ParseGetAlertRetriggerRuleResponse(rsp *http.Response) (*GetAlertRetriggerRuleResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetAlertRetriggerRuleResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest AlertRetriggerRuleResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseUpdateAlertRetriggerRuleResponse parses an HTTP response from a UpdateAlertRetriggerRuleWithResponse call
+func ParseUpdateAlertRetriggerRuleResponse(rsp *http.Response) (*UpdateAlertRetriggerRuleResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &UpdateAlertRetriggerRuleResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest AlertRetriggerRuleResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
 // ParseListAlertRoutesResponse parses an HTTP response from a ListAlertRoutesWithResponse call
 func ParseListAlertRoutesResponse(rsp *http.Response) (*ListAlertRoutesResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
@@ -204112,6 +205795,38 @@ func ParseUpdateAuthorizationResponse(rsp *http.Response) (*UpdateAuthorizationR
 		}
 		response.ApplicationVndAPIJSON404 = &dest
 
+	}
+
+	return response, nil
+}
+
+// ParseCreateBulkImportResponse parses an HTTP response from a CreateBulkImportWithResponse call
+func ParseCreateBulkImportResponse(rsp *http.Response) (*CreateBulkImportResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CreateBulkImportResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseGetBulkImportResponse parses an HTTP response from a GetBulkImportWithResponse call
+func ParseGetBulkImportResponse(rsp *http.Response) (*GetBulkImportResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetBulkImportResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
 	}
 
 	return response, nil

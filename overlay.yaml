@@ -8,6 +8,652 @@ actions:
     update:
       description: Production
 
+  # keep endpoints removed upstream, deprecated, until the next breaking release
+  - target: "$.paths"
+    update:
+      "/v1/alert_retrigger_rules":
+        get:
+          summary: List alert re-trigger rules
+          security:
+          - bearer_auth: []
+          tags:
+          - AlertRetriggerRules
+          operationId: listAlertRetriggerRules
+          responses:
+            '200':
+              description: alert re-trigger rules listed
+              content:
+                application/vnd.api+json:
+                  schema:
+                    "$ref": "#/components/schemas/alert_retrigger_rule_list"
+          deprecated: true
+          x-deprecated-reason: Alert re-trigger rules are no longer served by the Rootly API; use `retrigger_timeout_minutes` on alert urgencies or escalation paths instead. This will be removed in a future version.
+        post:
+          summary: Creates an alert re-trigger rule
+          security:
+          - bearer_auth: []
+          tags:
+          - AlertRetriggerRules
+          operationId: createAlertRetriggerRule
+          parameters: []
+          responses:
+            '201':
+              description: alert re-trigger rule created
+              content:
+                application/vnd.api+json:
+                  schema:
+                    "$ref": "#/components/schemas/alert_retrigger_rule_response"
+            '422':
+              description: invalid request
+              content:
+                application/vnd.api+json:
+                  schema:
+                    "$ref": "#/components/schemas/errors_list"
+          requestBody:
+            content:
+              application/vnd.api+json:
+                schema:
+                  "$ref": "#/components/schemas/new_alert_retrigger_rule"
+            required: true
+          deprecated: true
+          x-deprecated-reason: Alert re-trigger rules are no longer served by the Rootly API; use `retrigger_timeout_minutes` on alert urgencies or escalation paths instead. This will be removed in a future version.
+      "/v1/alert_retrigger_rules/{id}":
+        parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+        get:
+          summary: Retrieves an alert re-trigger rule
+          security:
+          - bearer_auth: []
+          tags:
+          - AlertRetriggerRules
+          operationId: getAlertRetriggerRule
+          responses:
+            '200':
+              description: alert re-trigger rule found
+              content:
+                application/vnd.api+json:
+                  schema:
+                    "$ref": "#/components/schemas/alert_retrigger_rule_response"
+          deprecated: true
+          x-deprecated-reason: Alert re-trigger rules are no longer served by the Rootly API; use `retrigger_timeout_minutes` on alert urgencies or escalation paths instead. This will be removed in a future version.
+        put:
+          summary: Updates an alert re-trigger rule
+          security:
+          - bearer_auth: []
+          tags:
+          - AlertRetriggerRules
+          operationId: updateAlertRetriggerRule
+          parameters: []
+          responses:
+            '200':
+              description: alert re-trigger rule updated
+              content:
+                application/vnd.api+json:
+                  schema:
+                    "$ref": "#/components/schemas/alert_retrigger_rule_response"
+          requestBody:
+            content:
+              application/vnd.api+json:
+                schema:
+                  "$ref": "#/components/schemas/update_alert_retrigger_rule"
+            required: true
+          deprecated: true
+          x-deprecated-reason: Alert re-trigger rules are no longer served by the Rootly API; use `retrigger_timeout_minutes` on alert urgencies or escalation paths instead. This will be removed in a future version.
+        delete:
+          summary: Deletes an alert re-trigger rule
+          security:
+          - bearer_auth: []
+          tags:
+          - AlertRetriggerRules
+          operationId: deleteAlertRetriggerRule
+          responses:
+            '200':
+              description: alert re-trigger rule deleted
+          deprecated: true
+          x-deprecated-reason: Alert re-trigger rules are no longer served by the Rootly API; use `retrigger_timeout_minutes` on alert urgencies or escalation paths instead. This will be removed in a future version.
+  - target: "$.components.schemas"
+    update:
+      alert_retrigger_rule:
+        type: object
+        properties:
+          name:
+            type: string
+            description: A human-readable name for the rule
+          match_mode:
+            type: string
+            description: Whether all or any of the conditions must match
+            enum:
+            - match-all-rules
+            - match-any-rule
+          timeout_minutes:
+            type: integer
+            nullable: true
+            description: Minutes after acknowledgment to re-trigger. Null means never re-trigger.
+          position:
+            type: integer
+            description: The position of the rule for ordering evaluation
+          conditions:
+            type: array
+            description: The conditions for the rule
+            items:
+              type: object
+              properties:
+                id:
+                  type: string
+                  format: uuid
+                  description: Unique ID of the condition
+                kind:
+                  type: string
+                  description: The operand the condition matches on. Native operands (urgency, source, service, group) match by record; alert_field/payload match a field value.
+                  enum:
+                  - urgency
+                  - source
+                  - service
+                  - group
+                  - alert_field
+                  - payload
+                operator:
+                  type: string
+                  description: How the operand is compared. Native operands support is_one_of/is_not_one_of/is_set/is_not_set; alert_field/payload additionally support the string/regex operators.
+                  enum:
+                  - is_one_of
+                  - is_not_one_of
+                  - is_set
+                  - is_not_set
+                  - contains
+                  - does_not_contain
+                  - starts_with
+                  - ends_with
+                  - matches_regex
+                record_ids:
+                  type: array
+                  description: 'For urgency/service/group/source conditions: the IDs of the matched records (AlertUrgency, Service, Group, or Alerts::Source).'
+                  items:
+                    type: string
+                    format: uuid
+                values:
+                  type: array
+                  description: 'For source conditions: non-integration source aliases (e.g. manual, api). For alert_field/payload conditions: the values to compare against.'
+                  items:
+                    type: string
+                property_field_name:
+                  type: string
+                  description: 'For alert_field conditions: the alert field id. For payload conditions: a JSON Path (e.g. $.priority).'
+              required:
+              - id
+              - kind
+              - operator
+          created_at:
+            type: string
+            format: date-time
+          updated_at:
+            type: string
+            format: date-time
+        x-deprecated-reason: Alert re-trigger rules are no longer served by the Rootly API; use `retrigger_timeout_minutes` on alert urgencies or escalation paths instead. This will be removed in a future version.
+      alert_retrigger_rule_list:
+        type: object
+        properties:
+          data:
+            type: array
+            items:
+              type: object
+              properties:
+                id:
+                  type: string
+                  description: Unique ID of the alert_retrigger_rule
+                type:
+                  type: string
+                  enum:
+                  - alert_retrigger_rules
+                attributes:
+                  type: object
+                  allOf:
+                  - "$ref": "#/components/schemas/alert_retrigger_rule"
+              required:
+              - id
+              - type
+              - attributes
+          links:
+            type: object
+            allOf:
+            - "$ref": "#/components/schemas/links"
+          meta:
+            type: object
+            allOf:
+            - "$ref": "#/components/schemas/meta"
+          included:
+            type: array
+            items:
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+        required:
+        - data
+        - links
+        - meta
+        x-deprecated-reason: Alert re-trigger rules are no longer served by the Rootly API; use `retrigger_timeout_minutes` on alert urgencies or escalation paths instead. This will be removed in a future version.
+      alert_retrigger_rule_response:
+        type: object
+        properties:
+          data:
+            type: object
+            properties:
+              id:
+                type: string
+                description: Unique ID of the alert_retrigger_rule
+              type:
+                type: string
+                enum:
+                - alert_retrigger_rules
+              attributes:
+                type: object
+                allOf:
+                - "$ref": "#/components/schemas/alert_retrigger_rule"
+            required:
+            - id
+            - type
+            - attributes
+          included:
+            type: array
+            items:
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+        required:
+        - data
+        x-deprecated-reason: Alert re-trigger rules are no longer served by the Rootly API; use `retrigger_timeout_minutes` on alert urgencies or escalation paths instead. This will be removed in a future version.
+      new_alert_retrigger_rule:
+        type: object
+        properties:
+          data:
+            type: object
+            properties:
+              type:
+                type: string
+                enum:
+                - alert_retrigger_rules
+              attributes:
+                type: object
+                properties:
+                  name:
+                    type: string
+                    description: A human-readable name for the rule
+                  match_mode:
+                    type: string
+                    description: Whether all or any of the conditions must match
+                    enum:
+                    - match-all-rules
+                    - match-any-rule
+                  timeout_minutes:
+                    type: integer
+                    nullable: true
+                    description: Re-trigger the alert this many minutes after acknowledgment. Null means never re-trigger.
+                    enum:
+                    - 10
+                    - 20
+                    - 30
+                    - 40
+                    - 50
+                    - 60
+                    - 90
+                    - 120
+                    - 180
+                    - 240
+                    - 300
+                    - 360
+                    - 720
+                    - 1440
+                  position:
+                    type: integer
+                    description: The position of the rule; the first matching rule (by position) decides the outcome
+                  conditions:
+                    type: array
+                    description: The conditions that determine which alerts this rule applies to. An empty array applies to every alert.
+                    items:
+                      type: object
+                      properties:
+                        kind:
+                          type: string
+                          description: The operand the condition matches on. Native operands (urgency, source, service, group) match by record; alert_field/payload match a field value.
+                          enum:
+                          - urgency
+                          - source
+                          - service
+                          - group
+                          - alert_field
+                          - payload
+                        operator:
+                          type: string
+                          description: How the operand is compared. Native operands support is_one_of/is_not_one_of/is_set/is_not_set; alert_field/payload additionally support the string/regex operators.
+                          enum:
+                          - is_one_of
+                          - is_not_one_of
+                          - is_set
+                          - is_not_set
+                          - contains
+                          - does_not_contain
+                          - starts_with
+                          - ends_with
+                          - matches_regex
+                        record_ids:
+                          type: array
+                          description: 'For urgency/service/group/source conditions: the IDs of the matched records (AlertUrgency, Service, Group, or Alerts::Source).'
+                          items:
+                            type: string
+                            format: uuid
+                        values:
+                          type: array
+                          description: 'For source conditions: non-integration source aliases (e.g. manual, api). For alert_field/payload conditions: the values to compare against.'
+                          items:
+                            type: string
+                        property_field_name:
+                          type: string
+                          description: 'For alert_field conditions: the alert field id. For payload conditions: a JSON Path (e.g. $.priority).'
+                      additionalProperties: false
+                      required:
+                      - kind
+                      - operator
+                required:
+                - name
+                additionalProperties: false
+            additionalProperties: false
+            required:
+            - type
+            - attributes
+        additionalProperties: false
+        required:
+        - data
+        x-deprecated-reason: Alert re-trigger rules are no longer served by the Rootly API; use `retrigger_timeout_minutes` on alert urgencies or escalation paths instead. This will be removed in a future version.
+      update_alert_retrigger_rule:
+        type: object
+        properties:
+          data:
+            type: object
+            properties:
+              id:
+                type: string
+                description: Accepted for JSON:API client compatibility, but ignored. The resource to update is identified by the id in the path.
+              type:
+                type: string
+                enum:
+                - alert_retrigger_rules
+              attributes:
+                type: object
+                properties:
+                  name:
+                    type: string
+                    description: A human-readable name for the rule
+                  match_mode:
+                    type: string
+                    description: Whether all or any of the conditions must match
+                    enum:
+                    - match-all-rules
+                    - match-any-rule
+                  timeout_minutes:
+                    type: integer
+                    nullable: true
+                    description: Re-trigger the alert this many minutes after acknowledgment. Null means never re-trigger.
+                    enum:
+                    - 10
+                    - 20
+                    - 30
+                    - 40
+                    - 50
+                    - 60
+                    - 90
+                    - 120
+                    - 180
+                    - 240
+                    - 300
+                    - 360
+                    - 720
+                    - 1440
+                  position:
+                    type: integer
+                    description: The position of the rule for ordering evaluation
+                  conditions:
+                    type: array
+                    description: The full desired set of conditions; replaces the rule's existing conditions. An empty array applies to every alert.
+                    items:
+                      type: object
+                      properties:
+                        kind:
+                          type: string
+                          description: The operand the condition matches on. Native operands (urgency, source, service, group) match by record; alert_field/payload match a field value.
+                          enum:
+                          - urgency
+                          - source
+                          - service
+                          - group
+                          - alert_field
+                          - payload
+                        operator:
+                          type: string
+                          description: How the operand is compared. Native operands support is_one_of/is_not_one_of/is_set/is_not_set; alert_field/payload additionally support the string/regex operators.
+                          enum:
+                          - is_one_of
+                          - is_not_one_of
+                          - is_set
+                          - is_not_set
+                          - contains
+                          - does_not_contain
+                          - starts_with
+                          - ends_with
+                          - matches_regex
+                        record_ids:
+                          type: array
+                          description: 'For urgency/service/group/source conditions: the IDs of the matched records (AlertUrgency, Service, Group, or Alerts::Source).'
+                          items:
+                            type: string
+                            format: uuid
+                        values:
+                          type: array
+                          description: 'For source conditions: non-integration source aliases (e.g. manual, api). For alert_field/payload conditions: the values to compare against.'
+                          items:
+                            type: string
+                        property_field_name:
+                          type: string
+                          description: 'For alert_field conditions: the alert field id. For payload conditions: a JSON Path (e.g. $.priority).'
+                      additionalProperties: false
+                      required:
+                      - kind
+                      - operator
+                additionalProperties: false
+            additionalProperties: false
+            required:
+            - type
+            - attributes
+        additionalProperties: false
+        required:
+        - data
+        x-deprecated-reason: Alert re-trigger rules are no longer served by the Rootly API; use `retrigger_timeout_minutes` on alert urgencies or escalation paths instead. This will be removed in a future version.
+  - target: "$.paths"
+    update:
+      "/v1/bulk_imports":
+        post:
+          summary: Create a bulk import
+          security:
+          - bearer_auth: []
+          tags:
+          - Bulk Imports
+          description: Create a new bulk import for incidents. Requires global API key authentication.
+          operationId: createBulkImport
+          parameters: []
+          responses:
+            '201':
+              description: bulk import created
+            '403':
+              description: unauthorized - user lacks incident create permission
+            '422':
+              description: invalid parameters
+          requestBody:
+            content:
+              application/vnd.api+json:
+                schema:
+                  "$ref": "#/components/schemas/new_bulk_import"
+            required: true
+          deprecated: true
+          x-deprecated-reason: The incident bulk import API is no longer served by the Rootly API. This will be removed in a future version.
+      "/v1/bulk_imports/{id}":
+        get:
+          summary: Get bulk import status
+          security:
+          - bearer_auth: []
+          tags:
+          - Bulk Imports
+          description: |
+            Retrieves the current status of a bulk import job.
+
+            **Use this endpoint to:**
+            - Poll for import progress
+            - Check validation errors if status is `validation_failed`
+            - Get final results when status is `completed` or `failed`
+          operationId: getBulkImport
+          parameters:
+          - name: id
+            in: path
+            required: true
+            description: Bulk import ID returned from the create endpoint
+            schema:
+              type: string
+          responses:
+            '200':
+              description: success
+            '404':
+              description: not found
+            '403':
+              description: organization API keys feature not enabled
+          deprecated: true
+          x-deprecated-reason: The incident bulk import API is no longer served by the Rootly API. This will be removed in a future version.
+  - target: "$.components.schemas"
+    update:
+      bulk_import_attributes:
+        type: object
+        properties:
+          entity_type:
+            type: string
+            enum:
+            - Incident
+            description: Type of entity being imported
+          status:
+            type: string
+            enum:
+            - pending
+            - validating
+            - validation_failed
+            - importing
+            - indexing
+            - completed
+            - failed
+            description: Current status of the import
+          file_url:
+            type: string
+            format: uri
+            description: URL of the JSONL file being imported
+          notification_email:
+            type: string
+            format: email
+            description: Email address for notifications
+          total_records:
+            type: integer
+            nullable: true
+            description: Total number of records in the file
+          processed_records:
+            type: integer
+            description: Number of records processed so far
+          failed_records:
+            type: integer
+            description: Number of records that failed to import
+          validation_errors:
+            type: object
+            nullable: true
+            description: Validation errors encountered during validation phase
+          error_message:
+            type: string
+            nullable: true
+            description: Error message if import failed
+          progress_percentage:
+            type: number
+            format: float
+            description: Import progress percentage (0-100)
+          started_at:
+            type: string
+            format: date-time
+            nullable: true
+            description: When import processing started
+          completed_at:
+            type: string
+            format: date-time
+            nullable: true
+            description: When import completed or failed
+          created_at:
+            type: string
+            format: date-time
+            description: When the bulk import was created
+          updated_at:
+            type: string
+            format: date-time
+            description: When the bulk import was last updated
+        required:
+        - status
+        - processed_records
+        - failed_records
+        - progress_percentage
+        x-deprecated-reason: The incident bulk import API is no longer served by the Rootly API. This will be removed in a future version.
+      bulk_import_response:
+        type: object
+        properties:
+          data:
+            type: object
+            properties:
+              id:
+                type: string
+                format: uuid
+              type:
+                type: string
+                enum:
+                - bulk_import
+              attributes:
+                "$ref": "#/components/schemas/bulk_import_attributes"
+            required:
+            - id
+            - type
+            - attributes
+        required:
+        - data
+        x-deprecated-reason: The incident bulk import API is no longer served by the Rootly API. This will be removed in a future version.
+      new_bulk_import:
+        type: object
+        properties:
+          data:
+            type: object
+            properties:
+              attributes:
+                type: object
+                properties:
+                  entity_type:
+                    type: string
+                    enum:
+                    - Incident
+                    description: Type of entity to import (currently only 'Incident' is supported)
+                  file_url:
+                    type: string
+                    format: uri
+                    description: URL of the JSONL file to import. Must be accessible via HTTPS.
+                  notification_email:
+                    type: string
+                    format: email
+                    description: Email address to receive import status notifications
+                required:
+                - entity_type
+                - file_url
+                - notification_email
+            required:
+            - attributes
+        required:
+        - data
+        x-deprecated-reason: The incident bulk import API is no longer served by the Rootly API. This will be removed in a future version.
+
   - target: $.paths.*.parameters[?(@.name == "id")].schema.anyOf
     remove: true
 
@@ -622,6 +1268,10 @@ actions:
       - title
 
   - target: $.components.schemas.auto_assign_role_rootly_task_params.oneOf
+    remove: true
+
+  # keep `retrigger_timeout_minutes` as `nullable.Nullable[int]`; the API still validates the allowed values
+  - target: $.components.schemas.*.properties.data.properties.attributes.properties.retrigger_timeout_minutes.enum
     remove: true
 
   # slug deprecations
