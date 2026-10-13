@@ -8,6 +8,7 @@ on:
       - ".vendored/rootly-api.json"
       - ".github/workflows/openapi-diff.yml"
       - "overlay.yaml"
+      - ".github/oasdiff/**"
 
 jobs:
   diff-upstream:
@@ -138,7 +139,7 @@ jobs:
       - name: OpenAPI overlay changelog
         if: env.BASE_SPEC_EXISTS == 'true'
         run: |
-          CHANGELOG=$(oasdiff changelog --format markdown /tmp/base-overlay-applied.json /tmp/pr-overlay-applied.json || true)
+          CHANGELOG=$(oasdiff changelog --format markdown /tmp/base-overlay-applied.json /tmp/pr-overlay-applied.json --severity-levels .github/oasdiff/severity-levels.txt || true)
           if [ -z "$CHANGELOG" ] || echo "$CHANGELOG" | grep -q "No changes detected"; then
             CHANGELOG="_No API changes detected after overlay._"
           fi
@@ -233,7 +234,7 @@ jobs:
       - name: OpenAPI overlay breaking changes
         if: env.BASE_SPEC_EXISTS == 'true'
         run: |
-          CHANGELOG=$(oasdiff breaking --format markdown /tmp/base-overlay-applied.json /tmp/pr-overlay-applied.json || true)
+          CHANGELOG=$(oasdiff breaking --format markdown /tmp/base-overlay-applied.json /tmp/pr-overlay-applied.json --severity-levels .github/oasdiff/severity-levels.txt || true)
           if [ -z "$CHANGELOG" ] || echo "$CHANGELOG" | grep -q "No changes detected"; then
             CHANGELOG="_No API changes detected after overlay._"
           fi
@@ -282,4 +283,4 @@ jobs:
 
       - name: OpenAPI overlay breaking changes
         if: env.BASE_SPEC_EXISTS == 'true'
-        run: oasdiff breaking /tmp/base-overlay-applied.json /tmp/pr-overlay-applied.json --format githubactions --fail-on ERR
+        run: oasdiff breaking /tmp/base-overlay-applied.json /tmp/pr-overlay-applied.json --format githubactions --fail-on ERR --severity-levels .github/oasdiff/severity-levels.txt
