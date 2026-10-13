@@ -1205,14 +1205,83 @@ func (e AddToTimelineTaskParamsTaskType) Valid() bool {
 	}
 }
 
+// Defines values for AiChatCheckpointResolutionReplay.
+const (
+	AiChatCheckpointResolutionReplayCompleted  AiChatCheckpointResolutionReplay = "completed"
+	AiChatCheckpointResolutionReplayExpired    AiChatCheckpointResolutionReplay = "expired"
+	AiChatCheckpointResolutionReplayInProgress AiChatCheckpointResolutionReplay = "in_progress"
+	AiChatCheckpointResolutionReplayRetryable  AiChatCheckpointResolutionReplay = "retryable"
+)
+
+// Valid indicates whether the value is a known member of the AiChatCheckpointResolutionReplay enum.
+func (e AiChatCheckpointResolutionReplay) Valid() bool {
+	switch e {
+	case AiChatCheckpointResolutionReplayCompleted:
+		return true
+	case AiChatCheckpointResolutionReplayExpired:
+		return true
+	case AiChatCheckpointResolutionReplayInProgress:
+		return true
+	case AiChatCheckpointResolutionReplayRetryable:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AiChatCheckpointResolutionStatus.
+const (
+	AiChatCheckpointResolutionStatusCancelled AiChatCheckpointResolutionStatus = "cancelled"
+	AiChatCheckpointResolutionStatusConfirmed AiChatCheckpointResolutionStatus = "confirmed"
+	AiChatCheckpointResolutionStatusExpired   AiChatCheckpointResolutionStatus = "expired"
+	AiChatCheckpointResolutionStatusPending   AiChatCheckpointResolutionStatus = "pending"
+)
+
+// Valid indicates whether the value is a known member of the AiChatCheckpointResolutionStatus enum.
+func (e AiChatCheckpointResolutionStatus) Valid() bool {
+	switch e {
+	case AiChatCheckpointResolutionStatusCancelled:
+		return true
+	case AiChatCheckpointResolutionStatusConfirmed:
+		return true
+	case AiChatCheckpointResolutionStatusExpired:
+		return true
+	case AiChatCheckpointResolutionStatusPending:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for AiChatResponseDataAttributesStatus.
 const (
-	AiChatResponseDataAttributesStatusUserInputRequired AiChatResponseDataAttributesStatus = "user_input_required"
+	AiChatResponseDataAttributesStatusCancelled            AiChatResponseDataAttributesStatus = "cancelled"
+	AiChatResponseDataAttributesStatusComplete             AiChatResponseDataAttributesStatus = "complete"
+	AiChatResponseDataAttributesStatusConfirmationRequired AiChatResponseDataAttributesStatus = "confirmation_required"
+	AiChatResponseDataAttributesStatusConfirmed            AiChatResponseDataAttributesStatus = "confirmed"
+	AiChatResponseDataAttributesStatusExpired              AiChatResponseDataAttributesStatus = "expired"
+	AiChatResponseDataAttributesStatusFieldsRequired       AiChatResponseDataAttributesStatus = "fields_required"
+	AiChatResponseDataAttributesStatusPending              AiChatResponseDataAttributesStatus = "pending"
+	AiChatResponseDataAttributesStatusUserInputRequired    AiChatResponseDataAttributesStatus = "user_input_required"
 )
 
 // Valid indicates whether the value is a known member of the AiChatResponseDataAttributesStatus enum.
 func (e AiChatResponseDataAttributesStatus) Valid() bool {
 	switch e {
+	case AiChatResponseDataAttributesStatusCancelled:
+		return true
+	case AiChatResponseDataAttributesStatusComplete:
+		return true
+	case AiChatResponseDataAttributesStatusConfirmationRequired:
+		return true
+	case AiChatResponseDataAttributesStatusConfirmed:
+		return true
+	case AiChatResponseDataAttributesStatusExpired:
+		return true
+	case AiChatResponseDataAttributesStatusFieldsRequired:
+		return true
+	case AiChatResponseDataAttributesStatusPending:
+		return true
 	case AiChatResponseDataAttributesStatusUserInputRequired:
 		return true
 	default:
@@ -1229,6 +1298,54 @@ const (
 func (e AiChatResponseDataType) Valid() bool {
 	switch e {
 	case AiChatResponseDataTypeAiChatResponses:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AiChatSessionMessageConfirmationReplay.
+const (
+	AiChatSessionMessageConfirmationReplayCompleted  AiChatSessionMessageConfirmationReplay = "completed"
+	AiChatSessionMessageConfirmationReplayExpired    AiChatSessionMessageConfirmationReplay = "expired"
+	AiChatSessionMessageConfirmationReplayInProgress AiChatSessionMessageConfirmationReplay = "in_progress"
+	AiChatSessionMessageConfirmationReplayRetryable  AiChatSessionMessageConfirmationReplay = "retryable"
+)
+
+// Valid indicates whether the value is a known member of the AiChatSessionMessageConfirmationReplay enum.
+func (e AiChatSessionMessageConfirmationReplay) Valid() bool {
+	switch e {
+	case AiChatSessionMessageConfirmationReplayCompleted:
+		return true
+	case AiChatSessionMessageConfirmationReplayExpired:
+		return true
+	case AiChatSessionMessageConfirmationReplayInProgress:
+		return true
+	case AiChatSessionMessageConfirmationReplayRetryable:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AiChatSessionMessageConfirmationStatus.
+const (
+	AiChatSessionMessageConfirmationStatusCancelled AiChatSessionMessageConfirmationStatus = "cancelled"
+	AiChatSessionMessageConfirmationStatusConfirmed AiChatSessionMessageConfirmationStatus = "confirmed"
+	AiChatSessionMessageConfirmationStatusExpired   AiChatSessionMessageConfirmationStatus = "expired"
+	AiChatSessionMessageConfirmationStatusPending   AiChatSessionMessageConfirmationStatus = "pending"
+)
+
+// Valid indicates whether the value is a known member of the AiChatSessionMessageConfirmationStatus enum.
+func (e AiChatSessionMessageConfirmationStatus) Valid() bool {
+	switch e {
+	case AiChatSessionMessageConfirmationStatusCancelled:
+		return true
+	case AiChatSessionMessageConfirmationStatusConfirmed:
+		return true
+	case AiChatSessionMessageConfirmationStatusExpired:
+		return true
+	case AiChatSessionMessageConfirmationStatusPending:
 		return true
 	default:
 		return false
@@ -46814,6 +46931,42 @@ func (e WorkflowTaskResponseDataType) Valid() bool {
 	}
 }
 
+// Defines values for CreateAiChatParamsDecision.
+const (
+	CreateAiChatParamsDecisionCancel  CreateAiChatParamsDecision = "cancel"
+	CreateAiChatParamsDecisionConfirm CreateAiChatParamsDecision = "confirm"
+)
+
+// Valid indicates whether the value is a known member of the CreateAiChatParamsDecision enum.
+func (e CreateAiChatParamsDecision) Valid() bool {
+	switch e {
+	case CreateAiChatParamsDecisionCancel:
+		return true
+	case CreateAiChatParamsDecisionConfirm:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for StreamAiChatParamsDecision.
+const (
+	StreamAiChatParamsDecisionCancel  StreamAiChatParamsDecision = "cancel"
+	StreamAiChatParamsDecisionConfirm StreamAiChatParamsDecision = "confirm"
+)
+
+// Valid indicates whether the value is a known member of the StreamAiChatParamsDecision enum.
+func (e StreamAiChatParamsDecision) Valid() bool {
+	switch e {
+	case StreamAiChatParamsDecisionCancel:
+		return true
+	case StreamAiChatParamsDecisionConfirm:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for ListAlertEventsFeedParamsSort.
 const (
 	ListAlertEventsFeedParamsSortCreatedAt      ListAlertEventsFeedParamsSort = "created_at"
@@ -49268,17 +49421,54 @@ type AddToTimelineTaskParams struct {
 // AddToTimelineTaskParamsTaskType defines model for AddToTimelineTaskParams.TaskType.
 type AddToTimelineTaskParamsTaskType string
 
+// AiChatCheckpointResolution Checkpoint state after a confirm or cancel request
+type AiChatCheckpointResolution struct {
+	CheckpointID openapi_types.UUID                                  `json:"checkpoint_id"`
+	Replay       nullable.Nullable[AiChatCheckpointResolutionReplay] `json:"replay"`
+	Status       AiChatCheckpointResolutionStatus                    `json:"status"`
+}
+
+// AiChatCheckpointResolutionReplay defines model for AiChatCheckpointResolution.Replay.
+type AiChatCheckpointResolutionReplay string
+
+// AiChatCheckpointResolutionStatus defines model for AiChatCheckpointResolution.Status.
+type AiChatCheckpointResolutionStatus string
+
+// AiChatErrorResponse defines model for ai_chat_error_response.
+type AiChatErrorResponse struct {
+	Errors []struct {
+		Status string `json:"status"`
+		Title  string `json:"title"`
+	} `json:"errors"`
+	Meta *struct {
+		// CheckpointResolved Checkpoint state after a confirm or cancel request
+		CheckpointResolved AiChatCheckpointResolution `json:"checkpoint_resolved"`
+	} `json:"meta,omitempty"`
+}
+
 // AiChatResponse defines model for ai_chat_response.
 type AiChatResponse struct {
 	Data struct {
 		Attributes struct {
+			// CheckpointResolved Checkpoint state after a confirm or cancel request
+			CheckpointResolved *AiChatCheckpointResolution `json:"checkpoint_resolved,omitempty"`
+
+			// Confirmation Present when an approval-gated home-chat write is waiting for confirmation
+			Confirmation *struct {
+				CheckpointID  openapi_types.UUID                          `json:"checkpoint_id"`
+				ExpiresAt     time.Time                                   `json:"expires_at"`
+				MissingFields nullable.Nullable[[]map[string]interface{}] `json:"missing_fields"`
+				Preview       nullable.Nullable[map[string]interface{}]   `json:"preview"`
+				Question      string                                      `json:"question"`
+			} `json:"confirmation,omitempty"`
+
 			// Reply Assistant reply text
 			Reply nullable.Nullable[string] `json:"reply,omitempty"`
 
 			// SessionID AI chat session UUID
 			SessionID openapi_types.UUID `json:"session_id"`
 
-			// Status Response status (present when user input is required)
+			// Status Response status
 			Status nullable.Nullable[AiChatResponseDataAttributesStatus] `json:"status,omitempty"`
 		} `json:"attributes"`
 
@@ -49289,7 +49479,7 @@ type AiChatResponse struct {
 	Included []JsonapiIncludedResource `json:"included,omitempty"`
 }
 
-// AiChatResponseDataAttributesStatus Response status (present when user input is required)
+// AiChatResponseDataAttributesStatus Response status
 type AiChatResponseDataAttributesStatus string
 
 // AiChatResponseDataType defines model for AiChatResponse.Data.Type.
@@ -49297,11 +49487,25 @@ type AiChatResponseDataType string
 
 // AiChatSessionMessage defines model for ai_chat_session_message.
 type AiChatSessionMessage struct {
+	// Confirmation Approval checkpoint attached to an assistant message in home-chat history
+	Confirmation *struct {
+		CheckpointID  openapi_types.UUID                                        `json:"checkpoint_id"`
+		ExpiresAt     time.Time                                                 `json:"expires_at"`
+		MissingFields nullable.Nullable[[]map[string]interface{}]               `json:"missing_fields"`
+		Preview       nullable.Nullable[map[string]interface{}]                 `json:"preview"`
+		Question      string                                                    `json:"question"`
+		Replay        nullable.Nullable[AiChatSessionMessageConfirmationReplay] `json:"replay"`
+		Status        AiChatSessionMessageConfirmationStatus                    `json:"status"`
+	} `json:"confirmation,omitempty"`
+
 	// Content Message content
 	Content string `json:"content"`
 
 	// CreatedAt When the message was created
 	CreatedAt time.Time `json:"created_at"`
+
+	// Failed Whether the message belongs to a failed turn
+	Failed bool `json:"failed"`
 
 	// ID Message UUID
 	ID openapi_types.UUID `json:"id"`
@@ -49309,6 +49513,12 @@ type AiChatSessionMessage struct {
 	// Role Message author role
 	Role AiChatSessionMessageRole `json:"role"`
 }
+
+// AiChatSessionMessageConfirmationReplay defines model for AiChatSessionMessage.Confirmation.Replay.
+type AiChatSessionMessageConfirmationReplay string
+
+// AiChatSessionMessageConfirmationStatus defines model for AiChatSessionMessage.Confirmation.Status.
+type AiChatSessionMessageConfirmationStatus string
 
 // AiChatSessionMessageRole Message author role
 type AiChatSessionMessageRole string
@@ -76414,11 +76624,17 @@ type ListAllIncidentActionItemsParams struct {
 
 // CreateAiChatParams defines parameters for CreateAiChat.
 type CreateAiChatParams struct {
-	// Message Message to send to the AI assistant
-	Message string `form:"message" json:"message"`
+	// Message Message to send. Required unless checkpoint_id is supplied.
+	Message *string `form:"message,omitempty" json:"message,omitempty"`
 
 	// SessionID Resume an existing session
 	SessionID *openapi_types.UUID `form:"session_id,omitempty" json:"session_id,omitempty"`
+
+	// CheckpointID Pending confirmation checkpoint to resolve
+	CheckpointID *openapi_types.UUID `form:"checkpoint_id,omitempty" json:"checkpoint_id,omitempty"`
+
+	// Decision Resolve the checkpoint with confirm or cancel
+	Decision *CreateAiChatParamsDecision `form:"decision,omitempty" json:"decision,omitempty"`
 
 	// IncidentID Bind session to an incident for context (mutually exclusive with alert_id)
 	IncidentID *openapi_types.UUID `form:"incident_id,omitempty" json:"incident_id,omitempty"`
@@ -76426,6 +76642,9 @@ type CreateAiChatParams struct {
 	// AlertID Bind session to an alert for context (mutually exclusive with incident_id)
 	AlertID *openapi_types.UUID `form:"alert_id,omitempty" json:"alert_id,omitempty"`
 }
+
+// CreateAiChatParamsDecision defines parameters for CreateAiChat.
+type CreateAiChatParamsDecision string
 
 // ListAiChatSessionMessagesParams defines parameters for ListAiChatSessionMessages.
 type ListAiChatSessionMessagesParams struct {
@@ -76438,11 +76657,17 @@ type ListAiChatSessionMessagesParams struct {
 
 // StreamAiChatParams defines parameters for StreamAiChat.
 type StreamAiChatParams struct {
-	// Message Message to send
-	Message string `form:"message" json:"message"`
+	// Message Message to send. Required unless checkpoint_id is supplied.
+	Message *string `form:"message,omitempty" json:"message,omitempty"`
 
 	// SessionID Resume an existing session
 	SessionID *openapi_types.UUID `form:"session_id,omitempty" json:"session_id,omitempty"`
+
+	// CheckpointID Pending confirmation checkpoint to resolve
+	CheckpointID *openapi_types.UUID `form:"checkpoint_id,omitempty" json:"checkpoint_id,omitempty"`
+
+	// Decision Resolve the checkpoint with confirm or cancel
+	Decision *StreamAiChatParamsDecision `form:"decision,omitempty" json:"decision,omitempty"`
 
 	// IncidentID Bind session to an incident (mutually exclusive with alert_id)
 	IncidentID *openapi_types.UUID `form:"incident_id,omitempty" json:"incident_id,omitempty"`
@@ -76450,6 +76675,9 @@ type StreamAiChatParams struct {
 	// AlertID Bind session to an alert (mutually exclusive with incident_id)
 	AlertID *openapi_types.UUID `form:"alert_id,omitempty" json:"alert_id,omitempty"`
 }
+
+// StreamAiChatParamsDecision defines parameters for StreamAiChat.
+type StreamAiChatParamsDecision string
 
 // ListAlertEventsFeedParams defines parameters for ListAlertEventsFeed.
 type ListAlertEventsFeedParams struct {
@@ -98877,7 +99105,7 @@ type ClientInterface interface {
 
 	// CreateAiChat Send AI chat message
 	//
-	// Send a message to the AI assistant and receive a synchronous reply. Optionally bind the conversation to an incident or alert for context-aware responses. Requires `ai.chat:write` OAuth scope or an API key.
+	// Send a message to the AI assistant and receive a synchronous reply. Optionally bind the conversation to an incident or alert for context-aware responses. For eligible unbound home chat, `checkpoint_id` and `decision` confirm or cancel approval-gated writes. Responses include `confirmation` for a pending write and `checkpoint_resolved` after resume. If an action-item write needs required fields the model did not supply, no checkpoint is created and the turn completes with a plain reply linking to that incident's action-item form in the Rootly web app. The synchronous response has no `confirmation` key; only `confirmation` responses are resumable. Requires `ai.chat:write` OAuth scope or an API key.
 	//
 	// Corresponds with POST /v1/ai/chat (the `CreateAiChat` operationId).
 	CreateAiChat(ctx context.Context, params *CreateAiChatParams, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -98898,7 +99126,7 @@ type ClientInterface interface {
 
 	// StreamAiChat Stream AI chat response (SSE)
 	//
-	// Send a message and receive the AI response as a Server-Sent Events stream. Optionally bind to an incident or alert for context. Events: `session_id` (initial), `text` (content chunks), `task_update` (tool progress), `error`, `done` (terminal with status). Requires `ai.chat:write` OAuth scope or an API key.
+	// Send a message and receive the AI response as a Server-Sent Events stream. Optionally bind to an incident or alert for context. For eligible unbound home chat, `checkpoint_id` and `decision` confirm or cancel approval-gated writes. Events include `confirmation_required` for pending writes and `checkpoint_resolved` before replay. If an action-item write needs required fields the model did not supply, no checkpoint is created and the turn completes with a plain reply linking to that incident's action-item form in the Rootly web app. The stream emits `done` with `status: complete` and no `confirmation_required` event; only `confirmation_required` events are resumable. Requires `ai.chat:write` OAuth scope or an API key.
 	//
 	// Corresponds with POST /v1/ai/chat/stream (the `StreamAiChat` operationId).
 	StreamAiChat(ctx context.Context, params *StreamAiChatParams, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -105703,7 +105931,7 @@ func (c *Client) UpdateIncidentActionItemWithApplicationVndAPIPlusJSONBody(ctx c
 
 // CreateAiChat Send AI chat message
 //
-// Send a message to the AI assistant and receive a synchronous reply. Optionally bind the conversation to an incident or alert for context-aware responses. Requires `ai.chat:write` OAuth scope or an API key.
+// Send a message to the AI assistant and receive a synchronous reply. Optionally bind the conversation to an incident or alert for context-aware responses. For eligible unbound home chat, `checkpoint_id` and `decision` confirm or cancel approval-gated writes. Responses include `confirmation` for a pending write and `checkpoint_resolved` after resume. If an action-item write needs required fields the model did not supply, no checkpoint is created and the turn completes with a plain reply linking to that incident's action-item form in the Rootly web app. The synchronous response has no `confirmation` key; only `confirmation` responses are resumable. Requires `ai.chat:write` OAuth scope or an API key.
 //
 // Corresponds with POST /v1/ai/chat (the `CreateAiChat` operationId).
 func (c *Client) CreateAiChat(ctx context.Context, params *CreateAiChatParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
@@ -105754,7 +105982,7 @@ func (c *Client) ListAiChatSessionMessages(ctx context.Context, sessionID openap
 
 // StreamAiChat Stream AI chat response (SSE)
 //
-// Send a message and receive the AI response as a Server-Sent Events stream. Optionally bind to an incident or alert for context. Events: `session_id` (initial), `text` (content chunks), `task_update` (tool progress), `error`, `done` (terminal with status). Requires `ai.chat:write` OAuth scope or an API key.
+// Send a message and receive the AI response as a Server-Sent Events stream. Optionally bind to an incident or alert for context. For eligible unbound home chat, `checkpoint_id` and `decision` confirm or cancel approval-gated writes. Events include `confirmation_required` for pending writes and `checkpoint_resolved` before replay. If an action-item write needs required fields the model did not supply, no checkpoint is created and the turn completes with a plain reply linking to that incident's action-item form in the Rootly web app. The stream emits `done` with `status: complete` and no `confirmation_required` event; only `confirmation_required` events are resumable. Requires `ai.chat:write` OAuth scope or an API key.
 //
 // Corresponds with POST /v1/ai/chat/stream (the `StreamAiChat` operationId).
 func (c *Client) StreamAiChat(ctx context.Context, params *StreamAiChatParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
@@ -121411,17 +121639,45 @@ func NewCreateAiChatRequest(server string, params *CreateAiChatParams) (*http.Re
 		// per the OpenAPI spec (e.g. "color=blue,black,brown").
 		var rawQueryFragments []string
 
-		if queryFrag, err := runtime.StyleParamWithOptions("form", true, "message", params.Message, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-			return nil, err
-		} else {
-			for _, qp := range strings.Split(queryFrag, "&") {
-				rawQueryFragments = append(rawQueryFragments, qp)
+		if params.Message != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "message", *params.Message, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
 			}
+
 		}
 
 		if params.SessionID != nil {
 
 			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "session_id", *params.SessionID, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: "uuid"}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.CheckpointID != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "checkpoint_id", *params.CheckpointID, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: "uuid"}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Decision != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "decision", *params.Decision, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
 				return nil, err
 			} else {
 				for _, qp := range strings.Split(queryFrag, "&") {
@@ -121604,17 +121860,45 @@ func NewStreamAiChatRequest(server string, params *StreamAiChatParams) (*http.Re
 		// per the OpenAPI spec (e.g. "color=blue,black,brown").
 		var rawQueryFragments []string
 
-		if queryFrag, err := runtime.StyleParamWithOptions("form", true, "message", params.Message, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-			return nil, err
-		} else {
-			for _, qp := range strings.Split(queryFrag, "&") {
-				rawQueryFragments = append(rawQueryFragments, qp)
+		if params.Message != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "message", *params.Message, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
 			}
+
 		}
 
 		if params.SessionID != nil {
 
 			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "session_id", *params.SessionID, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: "uuid"}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.CheckpointID != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "checkpoint_id", *params.CheckpointID, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: "uuid"}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Decision != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "decision", *params.Decision, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
 				return nil, err
 			} else {
 				for _, qp := range strings.Split(queryFrag, "&") {
@@ -163339,7 +163623,7 @@ type ClientWithResponsesInterface interface {
 
 	// CreateAiChatWithResponse Send AI chat message
 	//
-	// Send a message to the AI assistant and receive a synchronous reply. Optionally bind the conversation to an incident or alert for context-aware responses. Requires `ai.chat:write` OAuth scope or an API key.
+	// Send a message to the AI assistant and receive a synchronous reply. Optionally bind the conversation to an incident or alert for context-aware responses. For eligible unbound home chat, `checkpoint_id` and `decision` confirm or cancel approval-gated writes. Responses include `confirmation` for a pending write and `checkpoint_resolved` after resume. If an action-item write needs required fields the model did not supply, no checkpoint is created and the turn completes with a plain reply linking to that incident's action-item form in the Rootly web app. The synchronous response has no `confirmation` key; only `confirmation` responses are resumable. Requires `ai.chat:write` OAuth scope or an API key.
 	//
 	// Returns a wrapper object for the known response body format(s).
 	//
@@ -163366,7 +163650,7 @@ type ClientWithResponsesInterface interface {
 
 	// StreamAiChatWithResponse Stream AI chat response (SSE)
 	//
-	// Send a message and receive the AI response as a Server-Sent Events stream. Optionally bind to an incident or alert for context. Events: `session_id` (initial), `text` (content chunks), `task_update` (tool progress), `error`, `done` (terminal with status). Requires `ai.chat:write` OAuth scope or an API key.
+	// Send a message and receive the AI response as a Server-Sent Events stream. Optionally bind to an incident or alert for context. For eligible unbound home chat, `checkpoint_id` and `decision` confirm or cancel approval-gated writes. Events include `confirmation_required` for pending writes and `checkpoint_resolved` before replay. If an action-item write needs required fields the model did not supply, no checkpoint is created and the turn completes with a plain reply linking to that incident's action-item form in the Rootly web app. The stream emits `done` with `status: complete` and no `confirmation_required` event; only `confirmation_required` events are resumable. Requires `ai.chat:write` OAuth scope or an API key.
 	//
 	// Returns a wrapper object for the known response body format(s).
 	//
@@ -170935,6 +171219,14 @@ type CreateAiChatResponse struct {
 	HTTPResponse *http.Response
 	// ApplicationVndAPIJSON200 the response for an HTTP 200 `application/vnd.api+json` response
 	ApplicationVndAPIJSON200 *AiChatResponse
+	// ApplicationVndAPIJSON403 the response for an HTTP 403 `application/vnd.api+json` response
+	ApplicationVndAPIJSON403 *AiChatErrorResponse
+	// ApplicationVndAPIJSON404 the response for an HTTP 404 `application/vnd.api+json` response
+	ApplicationVndAPIJSON404 *AiChatErrorResponse
+	// ApplicationVndAPIJSON422 the response for an HTTP 422 `application/vnd.api+json` response
+	ApplicationVndAPIJSON422 *AiChatErrorResponse
+	// ApplicationVndAPIJSON500 the response for an HTTP 500 `application/vnd.api+json` response
+	ApplicationVndAPIJSON500 *AiChatErrorResponse
 }
 
 // Status returns HTTPResponse.Status
@@ -190784,7 +191076,7 @@ func (c *ClientWithResponses) UpdateIncidentActionItemWithApplicationVndAPIPlusJ
 
 // CreateAiChatWithResponse Send AI chat message
 //
-// Send a message to the AI assistant and receive a synchronous reply. Optionally bind the conversation to an incident or alert for context-aware responses. Requires `ai.chat:write` OAuth scope or an API key.
+// Send a message to the AI assistant and receive a synchronous reply. Optionally bind the conversation to an incident or alert for context-aware responses. For eligible unbound home chat, `checkpoint_id` and `decision` confirm or cancel approval-gated writes. Responses include `confirmation` for a pending write and `checkpoint_resolved` after resume. If an action-item write needs required fields the model did not supply, no checkpoint is created and the turn completes with a plain reply linking to that incident's action-item form in the Rootly web app. The synchronous response has no `confirmation` key; only `confirmation` responses are resumable. Requires `ai.chat:write` OAuth scope or an API key.
 //
 // Returns a wrapper object for the known response body format(s).
 //
@@ -190829,7 +191121,7 @@ func (c *ClientWithResponses) ListAiChatSessionMessagesWithResponse(ctx context.
 
 // StreamAiChatWithResponse Stream AI chat response (SSE)
 //
-// Send a message and receive the AI response as a Server-Sent Events stream. Optionally bind to an incident or alert for context. Events: `session_id` (initial), `text` (content chunks), `task_update` (tool progress), `error`, `done` (terminal with status). Requires `ai.chat:write` OAuth scope or an API key.
+// Send a message and receive the AI response as a Server-Sent Events stream. Optionally bind to an incident or alert for context. For eligible unbound home chat, `checkpoint_id` and `decision` confirm or cancel approval-gated writes. Events include `confirmation_required` for pending writes and `checkpoint_resolved` before replay. If an action-item write needs required fields the model did not supply, no checkpoint is created and the turn completes with a plain reply linking to that incident's action-item form in the Rootly web app. The stream emits `done` with `status: complete` and no `confirmation_required` event; only `confirmation_required` events are resumable. Requires `ai.chat:write` OAuth scope or an API key.
 //
 // Returns a wrapper object for the known response body format(s).
 //
@@ -203417,11 +203709,33 @@ func ParseCreateAiChatResponse(rsp *http.Response) (*CreateAiChatResponse, error
 		}
 		response.ApplicationVndAPIJSON200 = &dest
 
-	case rsp.StatusCode == 403:
-		break // No content-type
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest AiChatErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON403 = &dest
 
-	case rsp.StatusCode == 422:
-		break // No content-type
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest AiChatErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest AiChatErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON422 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest AiChatErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON500 = &dest
 
 	}
 
