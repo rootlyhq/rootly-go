@@ -23,6 +23,21 @@ import (
 // ServerURLProduction defines the Server URL for Production
 const ServerURLProduction = "https://api.rootly.com"
 
+// Defines values for AcknowledgeAlertDataType.
+const (
+	AcknowledgeAlertDataTypeAlerts AcknowledgeAlertDataType = "alerts"
+)
+
+// Valid indicates whether the value is a known member of the AcknowledgeAlertDataType enum.
+func (e AcknowledgeAlertDataType) Valid() bool {
+	switch e {
+	case AcknowledgeAlertDataTypeAlerts:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for ActionItemTriggerParamsIncidentActionItemCondition.
 const (
 	ActionItemTriggerParamsIncidentActionItemConditionALL  ActionItemTriggerParamsIncidentActionItemCondition = "ALL"
@@ -623,6 +638,42 @@ func (e ActionItemTriggerParamsIncidentConditionResolvedAt) Valid() bool {
 	case ActionItemTriggerParamsIncidentConditionResolvedAtSET:
 		return true
 	case ActionItemTriggerParamsIncidentConditionResolvedAtUNSET:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for ActionItemTriggerParamsIncidentConditionScheduledFor.
+const (
+	ActionItemTriggerParamsIncidentConditionScheduledForSET   ActionItemTriggerParamsIncidentConditionScheduledFor = "SET"
+	ActionItemTriggerParamsIncidentConditionScheduledForUNSET ActionItemTriggerParamsIncidentConditionScheduledFor = "UNSET"
+)
+
+// Valid indicates whether the value is a known member of the ActionItemTriggerParamsIncidentConditionScheduledFor enum.
+func (e ActionItemTriggerParamsIncidentConditionScheduledFor) Valid() bool {
+	switch e {
+	case ActionItemTriggerParamsIncidentConditionScheduledForSET:
+		return true
+	case ActionItemTriggerParamsIncidentConditionScheduledForUNSET:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for ActionItemTriggerParamsIncidentConditionScheduledUntil.
+const (
+	ActionItemTriggerParamsIncidentConditionScheduledUntilSET   ActionItemTriggerParamsIncidentConditionScheduledUntil = "SET"
+	ActionItemTriggerParamsIncidentConditionScheduledUntilUNSET ActionItemTriggerParamsIncidentConditionScheduledUntil = "UNSET"
+)
+
+// Valid indicates whether the value is a known member of the ActionItemTriggerParamsIncidentConditionScheduledUntil enum.
+func (e ActionItemTriggerParamsIncidentConditionScheduledUntil) Valid() bool {
+	switch e {
+	case ActionItemTriggerParamsIncidentConditionScheduledUntilSET:
+		return true
+	case ActionItemTriggerParamsIncidentConditionScheduledUntilUNSET:
 		return true
 	default:
 		return false
@@ -1424,11 +1475,156 @@ func (e AlertStatus) Valid() bool {
 	}
 }
 
+// Defines values for AlertConfigurationAlertAcknowledgmentTimeoutMinutes.
+const (
+	AlertConfigurationAlertAcknowledgmentTimeoutMinutesN10   AlertConfigurationAlertAcknowledgmentTimeoutMinutes = 10
+	AlertConfigurationAlertAcknowledgmentTimeoutMinutesN120  AlertConfigurationAlertAcknowledgmentTimeoutMinutes = 120
+	AlertConfigurationAlertAcknowledgmentTimeoutMinutesN1440 AlertConfigurationAlertAcknowledgmentTimeoutMinutes = 1440
+	AlertConfigurationAlertAcknowledgmentTimeoutMinutesN180  AlertConfigurationAlertAcknowledgmentTimeoutMinutes = 180
+	AlertConfigurationAlertAcknowledgmentTimeoutMinutesN20   AlertConfigurationAlertAcknowledgmentTimeoutMinutes = 20
+	AlertConfigurationAlertAcknowledgmentTimeoutMinutesN240  AlertConfigurationAlertAcknowledgmentTimeoutMinutes = 240
+	AlertConfigurationAlertAcknowledgmentTimeoutMinutesN30   AlertConfigurationAlertAcknowledgmentTimeoutMinutes = 30
+	AlertConfigurationAlertAcknowledgmentTimeoutMinutesN300  AlertConfigurationAlertAcknowledgmentTimeoutMinutes = 300
+	AlertConfigurationAlertAcknowledgmentTimeoutMinutesN360  AlertConfigurationAlertAcknowledgmentTimeoutMinutes = 360
+	AlertConfigurationAlertAcknowledgmentTimeoutMinutesN40   AlertConfigurationAlertAcknowledgmentTimeoutMinutes = 40
+	AlertConfigurationAlertAcknowledgmentTimeoutMinutesN50   AlertConfigurationAlertAcknowledgmentTimeoutMinutes = 50
+	AlertConfigurationAlertAcknowledgmentTimeoutMinutesN60   AlertConfigurationAlertAcknowledgmentTimeoutMinutes = 60
+	AlertConfigurationAlertAcknowledgmentTimeoutMinutesN720  AlertConfigurationAlertAcknowledgmentTimeoutMinutes = 720
+	AlertConfigurationAlertAcknowledgmentTimeoutMinutesN90   AlertConfigurationAlertAcknowledgmentTimeoutMinutes = 90
+)
+
+// Valid indicates whether the value is a known member of the AlertConfigurationAlertAcknowledgmentTimeoutMinutes enum.
+func (e AlertConfigurationAlertAcknowledgmentTimeoutMinutes) Valid() bool {
+	switch e {
+	case AlertConfigurationAlertAcknowledgmentTimeoutMinutesN10:
+		return true
+	case AlertConfigurationAlertAcknowledgmentTimeoutMinutesN120:
+		return true
+	case AlertConfigurationAlertAcknowledgmentTimeoutMinutesN1440:
+		return true
+	case AlertConfigurationAlertAcknowledgmentTimeoutMinutesN180:
+		return true
+	case AlertConfigurationAlertAcknowledgmentTimeoutMinutesN20:
+		return true
+	case AlertConfigurationAlertAcknowledgmentTimeoutMinutesN240:
+		return true
+	case AlertConfigurationAlertAcknowledgmentTimeoutMinutesN30:
+		return true
+	case AlertConfigurationAlertAcknowledgmentTimeoutMinutesN300:
+		return true
+	case AlertConfigurationAlertAcknowledgmentTimeoutMinutesN360:
+		return true
+	case AlertConfigurationAlertAcknowledgmentTimeoutMinutesN40:
+		return true
+	case AlertConfigurationAlertAcknowledgmentTimeoutMinutesN50:
+		return true
+	case AlertConfigurationAlertAcknowledgmentTimeoutMinutesN60:
+		return true
+	case AlertConfigurationAlertAcknowledgmentTimeoutMinutesN720:
+		return true
+	case AlertConfigurationAlertAcknowledgmentTimeoutMinutesN90:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AlertConfigurationDefaultUserNotificationSettingsAudibleContactTypes.
+const (
+	AlertConfigurationDefaultUserNotificationSettingsAudibleContactTypesCall   AlertConfigurationDefaultUserNotificationSettingsAudibleContactTypes = "call"
+	AlertConfigurationDefaultUserNotificationSettingsAudibleContactTypesDevice AlertConfigurationDefaultUserNotificationSettingsAudibleContactTypes = "device"
+	AlertConfigurationDefaultUserNotificationSettingsAudibleContactTypesEmail  AlertConfigurationDefaultUserNotificationSettingsAudibleContactTypes = "email"
+	AlertConfigurationDefaultUserNotificationSettingsAudibleContactTypesSms    AlertConfigurationDefaultUserNotificationSettingsAudibleContactTypes = "sms"
+)
+
+// Valid indicates whether the value is a known member of the AlertConfigurationDefaultUserNotificationSettingsAudibleContactTypes enum.
+func (e AlertConfigurationDefaultUserNotificationSettingsAudibleContactTypes) Valid() bool {
+	switch e {
+	case AlertConfigurationDefaultUserNotificationSettingsAudibleContactTypesCall:
+		return true
+	case AlertConfigurationDefaultUserNotificationSettingsAudibleContactTypesDevice:
+		return true
+	case AlertConfigurationDefaultUserNotificationSettingsAudibleContactTypesEmail:
+		return true
+	case AlertConfigurationDefaultUserNotificationSettingsAudibleContactTypesSms:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AlertConfigurationDefaultUserNotificationSettingsQuietContactTypes.
+const (
+	AlertConfigurationDefaultUserNotificationSettingsQuietContactTypesCall              AlertConfigurationDefaultUserNotificationSettingsQuietContactTypes = "call"
+	AlertConfigurationDefaultUserNotificationSettingsQuietContactTypesEmail             AlertConfigurationDefaultUserNotificationSettingsQuietContactTypes = "email"
+	AlertConfigurationDefaultUserNotificationSettingsQuietContactTypesNonCriticalDevice AlertConfigurationDefaultUserNotificationSettingsQuietContactTypes = "non_critical_device"
+	AlertConfigurationDefaultUserNotificationSettingsQuietContactTypesSms               AlertConfigurationDefaultUserNotificationSettingsQuietContactTypes = "sms"
+)
+
+// Valid indicates whether the value is a known member of the AlertConfigurationDefaultUserNotificationSettingsQuietContactTypes enum.
+func (e AlertConfigurationDefaultUserNotificationSettingsQuietContactTypes) Valid() bool {
+	switch e {
+	case AlertConfigurationDefaultUserNotificationSettingsQuietContactTypesCall:
+		return true
+	case AlertConfigurationDefaultUserNotificationSettingsQuietContactTypesEmail:
+		return true
+	case AlertConfigurationDefaultUserNotificationSettingsQuietContactTypesNonCriticalDevice:
+		return true
+	case AlertConfigurationDefaultUserNotificationSettingsQuietContactTypesSms:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AlertConfigurationManualPagingFormSettings.
+const (
+	AlertConfigurationManualPagingFormSettingsEscalationPolicy AlertConfigurationManualPagingFormSettings = "escalation_policy"
+	AlertConfigurationManualPagingFormSettingsFunctionality    AlertConfigurationManualPagingFormSettings = "functionality"
+	AlertConfigurationManualPagingFormSettingsService          AlertConfigurationManualPagingFormSettings = "service"
+	AlertConfigurationManualPagingFormSettingsTeam             AlertConfigurationManualPagingFormSettings = "team"
+	AlertConfigurationManualPagingFormSettingsUser             AlertConfigurationManualPagingFormSettings = "user"
+)
+
+// Valid indicates whether the value is a known member of the AlertConfigurationManualPagingFormSettings enum.
+func (e AlertConfigurationManualPagingFormSettings) Valid() bool {
+	switch e {
+	case AlertConfigurationManualPagingFormSettingsEscalationPolicy:
+		return true
+	case AlertConfigurationManualPagingFormSettingsFunctionality:
+		return true
+	case AlertConfigurationManualPagingFormSettingsService:
+		return true
+	case AlertConfigurationManualPagingFormSettingsTeam:
+		return true
+	case AlertConfigurationManualPagingFormSettingsUser:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AlertConfigurationResponseDataType.
+const (
+	AlertConfigurationResponseDataTypeAlertConfigurations AlertConfigurationResponseDataType = "alert_configurations"
+)
+
+// Valid indicates whether the value is a known member of the AlertConfigurationResponseDataType enum.
+func (e AlertConfigurationResponseDataType) Valid() bool {
+	switch e {
+	case AlertConfigurationResponseDataTypeAlertConfigurations:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for AlertEventAction.
 const (
 	AlertEventActionAckTimeoutRetriggered   AlertEventAction = "ack_timeout_retriggered"
 	AlertEventActionAcknowledged            AlertEventAction = "acknowledged"
 	AlertEventActionAdded                   AlertEventAction = "added"
+	AlertEventActionAiSreDelegated          AlertEventAction = "ai_sre_delegated"
 	AlertEventActionAnswered                AlertEventAction = "answered"
 	AlertEventActionAttached                AlertEventAction = "attached"
 	AlertEventActionCallLifecycle           AlertEventAction = "call_lifecycle"
@@ -1452,6 +1648,7 @@ const (
 	AlertEventActionPaged                   AlertEventAction = "paged"
 	AlertEventActionRemoved                 AlertEventAction = "removed"
 	AlertEventActionResolved                AlertEventAction = "resolved"
+	AlertEventActionRetriggerCancelled      AlertEventAction = "retrigger_cancelled"
 	AlertEventActionRetriggerSuppressed     AlertEventAction = "retrigger_suppressed"
 	AlertEventActionRetriggered             AlertEventAction = "retriggered"
 	AlertEventActionSkipped                 AlertEventAction = "skipped"
@@ -1461,6 +1658,7 @@ const (
 	AlertEventActionTexted                  AlertEventAction = "texted"
 	AlertEventActionTriggered               AlertEventAction = "triggered"
 	AlertEventActionUpdated                 AlertEventAction = "updated"
+	AlertEventActionUserPaged               AlertEventAction = "user_paged"
 )
 
 // Valid indicates whether the value is a known member of the AlertEventAction enum.
@@ -1471,6 +1669,8 @@ func (e AlertEventAction) Valid() bool {
 	case AlertEventActionAcknowledged:
 		return true
 	case AlertEventActionAdded:
+		return true
+	case AlertEventActionAiSreDelegated:
 		return true
 	case AlertEventActionAnswered:
 		return true
@@ -1518,6 +1718,8 @@ func (e AlertEventAction) Valid() bool {
 		return true
 	case AlertEventActionResolved:
 		return true
+	case AlertEventActionRetriggerCancelled:
+		return true
 	case AlertEventActionRetriggerSuppressed:
 		return true
 	case AlertEventActionRetriggered:
@@ -1535,6 +1737,8 @@ func (e AlertEventAction) Valid() bool {
 	case AlertEventActionTriggered:
 		return true
 	case AlertEventActionUpdated:
+		return true
+	case AlertEventActionUserPaged:
 		return true
 	default:
 		return false
@@ -2132,123 +2336,6 @@ const (
 func (e AlertResponseDataType) Valid() bool {
 	switch e {
 	case AlertResponseDataTypeAlerts:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for AlertRetriggerRuleConditionsKind.
-const (
-	AlertRetriggerRuleConditionsKindAlertField AlertRetriggerRuleConditionsKind = "alert_field"
-	AlertRetriggerRuleConditionsKindGroup      AlertRetriggerRuleConditionsKind = "group"
-	AlertRetriggerRuleConditionsKindPayload    AlertRetriggerRuleConditionsKind = "payload"
-	AlertRetriggerRuleConditionsKindService    AlertRetriggerRuleConditionsKind = "service"
-	AlertRetriggerRuleConditionsKindSource     AlertRetriggerRuleConditionsKind = "source"
-	AlertRetriggerRuleConditionsKindUrgency    AlertRetriggerRuleConditionsKind = "urgency"
-)
-
-// Valid indicates whether the value is a known member of the AlertRetriggerRuleConditionsKind enum.
-func (e AlertRetriggerRuleConditionsKind) Valid() bool {
-	switch e {
-	case AlertRetriggerRuleConditionsKindAlertField:
-		return true
-	case AlertRetriggerRuleConditionsKindGroup:
-		return true
-	case AlertRetriggerRuleConditionsKindPayload:
-		return true
-	case AlertRetriggerRuleConditionsKindService:
-		return true
-	case AlertRetriggerRuleConditionsKindSource:
-		return true
-	case AlertRetriggerRuleConditionsKindUrgency:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for AlertRetriggerRuleConditionsOperator.
-const (
-	AlertRetriggerRuleConditionsOperatorContains       AlertRetriggerRuleConditionsOperator = "contains"
-	AlertRetriggerRuleConditionsOperatorDoesNotContain AlertRetriggerRuleConditionsOperator = "does_not_contain"
-	AlertRetriggerRuleConditionsOperatorEndsWith       AlertRetriggerRuleConditionsOperator = "ends_with"
-	AlertRetriggerRuleConditionsOperatorIsNotOneOf     AlertRetriggerRuleConditionsOperator = "is_not_one_of"
-	AlertRetriggerRuleConditionsOperatorIsNotSet       AlertRetriggerRuleConditionsOperator = "is_not_set"
-	AlertRetriggerRuleConditionsOperatorIsOneOf        AlertRetriggerRuleConditionsOperator = "is_one_of"
-	AlertRetriggerRuleConditionsOperatorIsSet          AlertRetriggerRuleConditionsOperator = "is_set"
-	AlertRetriggerRuleConditionsOperatorMatchesRegex   AlertRetriggerRuleConditionsOperator = "matches_regex"
-	AlertRetriggerRuleConditionsOperatorStartsWith     AlertRetriggerRuleConditionsOperator = "starts_with"
-)
-
-// Valid indicates whether the value is a known member of the AlertRetriggerRuleConditionsOperator enum.
-func (e AlertRetriggerRuleConditionsOperator) Valid() bool {
-	switch e {
-	case AlertRetriggerRuleConditionsOperatorContains:
-		return true
-	case AlertRetriggerRuleConditionsOperatorDoesNotContain:
-		return true
-	case AlertRetriggerRuleConditionsOperatorEndsWith:
-		return true
-	case AlertRetriggerRuleConditionsOperatorIsNotOneOf:
-		return true
-	case AlertRetriggerRuleConditionsOperatorIsNotSet:
-		return true
-	case AlertRetriggerRuleConditionsOperatorIsOneOf:
-		return true
-	case AlertRetriggerRuleConditionsOperatorIsSet:
-		return true
-	case AlertRetriggerRuleConditionsOperatorMatchesRegex:
-		return true
-	case AlertRetriggerRuleConditionsOperatorStartsWith:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for AlertRetriggerRuleMatchMode.
-const (
-	AlertRetriggerRuleMatchModeMatchAllRules AlertRetriggerRuleMatchMode = "match-all-rules"
-	AlertRetriggerRuleMatchModeMatchAnyRule  AlertRetriggerRuleMatchMode = "match-any-rule"
-)
-
-// Valid indicates whether the value is a known member of the AlertRetriggerRuleMatchMode enum.
-func (e AlertRetriggerRuleMatchMode) Valid() bool {
-	switch e {
-	case AlertRetriggerRuleMatchModeMatchAllRules:
-		return true
-	case AlertRetriggerRuleMatchModeMatchAnyRule:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for AlertRetriggerRuleListDataType.
-const (
-	AlertRetriggerRuleListDataTypeAlertRetriggerRules AlertRetriggerRuleListDataType = "alert_retrigger_rules"
-)
-
-// Valid indicates whether the value is a known member of the AlertRetriggerRuleListDataType enum.
-func (e AlertRetriggerRuleListDataType) Valid() bool {
-	switch e {
-	case AlertRetriggerRuleListDataTypeAlertRetriggerRules:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for AlertRetriggerRuleResponseDataType.
-const (
-	AlertRetriggerRuleResponseDataTypeAlertRetriggerRules AlertRetriggerRuleResponseDataType = "alert_retrigger_rules"
-)
-
-// Valid indicates whether the value is a known member of the AlertRetriggerRuleResponseDataType enum.
-func (e AlertRetriggerRuleResponseDataType) Valid() bool {
-	switch e {
-	case AlertRetriggerRuleResponseDataTypeAlertRetriggerRules:
 		return true
 	default:
 		return false
@@ -3320,6 +3407,33 @@ func (e AlertsSourceSourceableAttributesFieldMappingsAttributesField) Valid() bo
 	}
 }
 
+// Defines values for AlertsSourceSourceableAttributesNotificationTargetType.
+const (
+	AlertsSourceSourceableAttributesNotificationTargetTypeEscalationPolicy AlertsSourceSourceableAttributesNotificationTargetType = "EscalationPolicy"
+	AlertsSourceSourceableAttributesNotificationTargetTypeFunctionality    AlertsSourceSourceableAttributesNotificationTargetType = "Functionality"
+	AlertsSourceSourceableAttributesNotificationTargetTypeGroup            AlertsSourceSourceableAttributesNotificationTargetType = "Group"
+	AlertsSourceSourceableAttributesNotificationTargetTypeService          AlertsSourceSourceableAttributesNotificationTargetType = "Service"
+	AlertsSourceSourceableAttributesNotificationTargetTypeUser             AlertsSourceSourceableAttributesNotificationTargetType = "User"
+)
+
+// Valid indicates whether the value is a known member of the AlertsSourceSourceableAttributesNotificationTargetType enum.
+func (e AlertsSourceSourceableAttributesNotificationTargetType) Valid() bool {
+	switch e {
+	case AlertsSourceSourceableAttributesNotificationTargetTypeEscalationPolicy:
+		return true
+	case AlertsSourceSourceableAttributesNotificationTargetTypeFunctionality:
+		return true
+	case AlertsSourceSourceableAttributesNotificationTargetTypeGroup:
+		return true
+	case AlertsSourceSourceableAttributesNotificationTargetTypeService:
+		return true
+	case AlertsSourceSourceableAttributesNotificationTargetTypeUser:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for AlertsSourceStatus.
 const (
 	AlertsSourceStatusConnected       AlertsSourceStatus = "connected"
@@ -3584,6 +3698,7 @@ const (
 	AuditItemTypeAlertRoute                        AuditItemType = "AlertRoute"
 	AuditItemTypeAlertRoutingRule                  AuditItemType = "AlertRoutingRule"
 	AuditItemTypeAlertsSource                      AuditItemType = "Alerts::Source"
+	AuditItemTypeBrowserIPPolicy                   AuditItemType = "BrowserIpPolicy"
 	AuditItemTypeCatalog                           AuditItemType = "Catalog"
 	AuditItemTypeCatalogEntity                     AuditItemType = "CatalogEntity"
 	AuditItemTypeCatalogEntityProperty             AuditItemType = "CatalogEntityProperty"
@@ -3597,6 +3712,7 @@ const (
 	AuditItemTypeEdgeConnectorAction               AuditItemType = "EdgeConnector::Action"
 	AuditItemTypeEnvironment                       AuditItemType = "Environment"
 	AuditItemTypeEscalationPolicy                  AuditItemType = "EscalationPolicy"
+	AuditItemTypeEscalationPolicyLevel             AuditItemType = "EscalationPolicyLevel"
 	AuditItemTypeEscalationPolicyPath              AuditItemType = "EscalationPolicyPath"
 	AuditItemTypeExportJob                         AuditItemType = "ExportJob"
 	AuditItemTypeFormField                         AuditItemType = "FormField"
@@ -3635,6 +3751,7 @@ const (
 	AuditItemTypeLiveCallRouter                    AuditItemType = "LiveCallRouter"
 	AuditItemTypeLoginActivity                     AuditItemType = "LoginActivity"
 	AuditItemTypeMembership                        AuditItemType = "Membership"
+	AuditItemTypeOauthApplication                  AuditItemType = "OauthApplication"
 	AuditItemTypeOnCallRole                        AuditItemType = "OnCallRole"
 	AuditItemTypePlaybook                          AuditItemType = "Playbook"
 	AuditItemTypePlaybookTask                      AuditItemType = "PlaybookTask"
@@ -3644,6 +3761,7 @@ const (
 	AuditItemTypeService                           AuditItemType = "Service"
 	AuditItemTypeSeverity                          AuditItemType = "Severity"
 	AuditItemTypeStatusPage                        AuditItemType = "StatusPage"
+	AuditItemTypeWebhooksOutgoingEndpoint          AuditItemType = "Webhooks::Outgoing::Endpoint"
 )
 
 // Valid indicates whether the value is a known member of the AuditItemType enum.
@@ -3656,6 +3774,8 @@ func (e AuditItemType) Valid() bool {
 	case AuditItemTypeAlertRoutingRule:
 		return true
 	case AuditItemTypeAlertsSource:
+		return true
+	case AuditItemTypeBrowserIPPolicy:
 		return true
 	case AuditItemTypeCatalog:
 		return true
@@ -3682,6 +3802,8 @@ func (e AuditItemType) Valid() bool {
 	case AuditItemTypeEnvironment:
 		return true
 	case AuditItemTypeEscalationPolicy:
+		return true
+	case AuditItemTypeEscalationPolicyLevel:
 		return true
 	case AuditItemTypeEscalationPolicyPath:
 		return true
@@ -3759,6 +3881,8 @@ func (e AuditItemType) Valid() bool {
 		return true
 	case AuditItemTypeMembership:
 		return true
+	case AuditItemTypeOauthApplication:
+		return true
 	case AuditItemTypeOnCallRole:
 		return true
 	case AuditItemTypePlaybook:
@@ -3776,6 +3900,8 @@ func (e AuditItemType) Valid() bool {
 	case AuditItemTypeSeverity:
 		return true
 	case AuditItemTypeStatusPage:
+		return true
+	case AuditItemTypeWebhooksOutgoingEndpoint:
 		return true
 	default:
 		return false
@@ -4052,69 +4178,6 @@ func (e BulkDestroyTeams1ManagedBy) Valid() bool {
 	}
 }
 
-// Defines values for BulkImportAttributesEntityType.
-const (
-	BulkImportAttributesEntityTypeIncident BulkImportAttributesEntityType = "Incident"
-)
-
-// Valid indicates whether the value is a known member of the BulkImportAttributesEntityType enum.
-func (e BulkImportAttributesEntityType) Valid() bool {
-	switch e {
-	case BulkImportAttributesEntityTypeIncident:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for BulkImportAttributesStatus.
-const (
-	BulkImportAttributesStatusCompleted        BulkImportAttributesStatus = "completed"
-	BulkImportAttributesStatusFailed           BulkImportAttributesStatus = "failed"
-	BulkImportAttributesStatusImporting        BulkImportAttributesStatus = "importing"
-	BulkImportAttributesStatusIndexing         BulkImportAttributesStatus = "indexing"
-	BulkImportAttributesStatusPending          BulkImportAttributesStatus = "pending"
-	BulkImportAttributesStatusValidating       BulkImportAttributesStatus = "validating"
-	BulkImportAttributesStatusValidationFailed BulkImportAttributesStatus = "validation_failed"
-)
-
-// Valid indicates whether the value is a known member of the BulkImportAttributesStatus enum.
-func (e BulkImportAttributesStatus) Valid() bool {
-	switch e {
-	case BulkImportAttributesStatusCompleted:
-		return true
-	case BulkImportAttributesStatusFailed:
-		return true
-	case BulkImportAttributesStatusImporting:
-		return true
-	case BulkImportAttributesStatusIndexing:
-		return true
-	case BulkImportAttributesStatusPending:
-		return true
-	case BulkImportAttributesStatusValidating:
-		return true
-	case BulkImportAttributesStatusValidationFailed:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for BulkImportResponseDataType.
-const (
-	BulkImportResponseDataTypeBulkImport BulkImportResponseDataType = "bulk_import"
-)
-
-// Valid indicates whether the value is a known member of the BulkImportResponseDataType enum.
-func (e BulkImportResponseDataType) Valid() bool {
-	switch e {
-	case BulkImportResponseDataTypeBulkImport:
-		return true
-	default:
-		return false
-	}
-}
-
 // Defines values for BulkUpsertCatalogEntitiesResponseDataType.
 const (
 	BulkUpsertCatalogEntitiesResponseDataTypeCatalogEntities BulkUpsertCatalogEntitiesResponseDataType = "catalog_entities"
@@ -4169,6 +4232,27 @@ const (
 func (e BulkUpsertServicesResponseDataType) Valid() bool {
 	switch e {
 	case BulkUpsertServicesResponseDataTypeServices:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for BulkUpsertTeamsEntitiesScheduleOverridePolicy.
+const (
+	BulkUpsertTeamsEntitiesScheduleOverridePolicyAdmins   BulkUpsertTeamsEntitiesScheduleOverridePolicy = "admins"
+	BulkUpsertTeamsEntitiesScheduleOverridePolicyEveryone BulkUpsertTeamsEntitiesScheduleOverridePolicy = "everyone"
+	BulkUpsertTeamsEntitiesScheduleOverridePolicyMembers  BulkUpsertTeamsEntitiesScheduleOverridePolicy = "members"
+)
+
+// Valid indicates whether the value is a known member of the BulkUpsertTeamsEntitiesScheduleOverridePolicy enum.
+func (e BulkUpsertTeamsEntitiesScheduleOverridePolicy) Valid() bool {
+	switch e {
+	case BulkUpsertTeamsEntitiesScheduleOverridePolicyAdmins:
+		return true
+	case BulkUpsertTeamsEntitiesScheduleOverridePolicyEveryone:
+		return true
+	case BulkUpsertTeamsEntitiesScheduleOverridePolicyMembers:
 		return true
 	default:
 		return false
@@ -6209,6 +6293,21 @@ func (e CreateShortcutTaskTaskParamsTaskType) Valid() bool {
 	}
 }
 
+// Defines values for CreateSlackCanvasTaskParamsTaskType.
+const (
+	CreateSlackCanvasTaskParamsTaskTypeCreateSlackCanvas CreateSlackCanvasTaskParamsTaskType = "create_slack_canvas"
+)
+
+// Valid indicates whether the value is a known member of the CreateSlackCanvasTaskParamsTaskType enum.
+func (e CreateSlackCanvasTaskParamsTaskType) Valid() bool {
+	switch e {
+	case CreateSlackCanvasTaskParamsTaskTypeCreateSlackCanvas:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for CreateSlackChannelTaskParamsPrivate.
 const (
 	CreateSlackChannelTaskParamsPrivateAuto  CreateSlackChannelTaskParamsPrivate = "auto"
@@ -7272,6 +7371,7 @@ const (
 	EscalationPolicyBusinessHoursTimeZoneAsiaUrumqi                  EscalationPolicyBusinessHoursTimeZone = "Asia/Urumqi"
 	EscalationPolicyBusinessHoursTimeZoneAsiaVladivostok             EscalationPolicyBusinessHoursTimeZone = "Asia/Vladivostok"
 	EscalationPolicyBusinessHoursTimeZoneAsiaYakutsk                 EscalationPolicyBusinessHoursTimeZone = "Asia/Yakutsk"
+	EscalationPolicyBusinessHoursTimeZoneAsiaYangon                  EscalationPolicyBusinessHoursTimeZone = "Asia/Yangon"
 	EscalationPolicyBusinessHoursTimeZoneAsiaYekaterinburg           EscalationPolicyBusinessHoursTimeZone = "Asia/Yekaterinburg"
 	EscalationPolicyBusinessHoursTimeZoneAsiaYerevan                 EscalationPolicyBusinessHoursTimeZone = "Asia/Yerevan"
 	EscalationPolicyBusinessHoursTimeZoneAstana                      EscalationPolicyBusinessHoursTimeZone = "Astana"
@@ -7345,6 +7445,7 @@ const (
 	EscalationPolicyBusinessHoursTimeZoneEuropeIstanbul              EscalationPolicyBusinessHoursTimeZone = "Europe/Istanbul"
 	EscalationPolicyBusinessHoursTimeZoneEuropeKaliningrad           EscalationPolicyBusinessHoursTimeZone = "Europe/Kaliningrad"
 	EscalationPolicyBusinessHoursTimeZoneEuropeKiev                  EscalationPolicyBusinessHoursTimeZone = "Europe/Kiev"
+	EscalationPolicyBusinessHoursTimeZoneEuropeKyiv                  EscalationPolicyBusinessHoursTimeZone = "Europe/Kyiv"
 	EscalationPolicyBusinessHoursTimeZoneEuropeLisbon                EscalationPolicyBusinessHoursTimeZone = "Europe/Lisbon"
 	EscalationPolicyBusinessHoursTimeZoneEuropeLjubljana             EscalationPolicyBusinessHoursTimeZone = "Europe/Ljubljana"
 	EscalationPolicyBusinessHoursTimeZoneEuropeLondon                EscalationPolicyBusinessHoursTimeZone = "Europe/London"
@@ -7665,6 +7766,8 @@ func (e EscalationPolicyBusinessHoursTimeZone) Valid() bool {
 		return true
 	case EscalationPolicyBusinessHoursTimeZoneAsiaYakutsk:
 		return true
+	case EscalationPolicyBusinessHoursTimeZoneAsiaYangon:
+		return true
 	case EscalationPolicyBusinessHoursTimeZoneAsiaYekaterinburg:
 		return true
 	case EscalationPolicyBusinessHoursTimeZoneAsiaYerevan:
@@ -7810,6 +7913,8 @@ func (e EscalationPolicyBusinessHoursTimeZone) Valid() bool {
 	case EscalationPolicyBusinessHoursTimeZoneEuropeKaliningrad:
 		return true
 	case EscalationPolicyBusinessHoursTimeZoneEuropeKiev:
+		return true
+	case EscalationPolicyBusinessHoursTimeZoneEuropeKyiv:
 		return true
 	case EscalationPolicyBusinessHoursTimeZoneEuropeLisbon:
 		return true
@@ -8327,6 +8432,30 @@ func (e EscalationPolicyPathNotificationTypeFallback) Valid() bool {
 	}
 }
 
+// Defines values for EscalationPolicyPathNotificationTypeRulesConditions0Operator.
+const (
+	EscalationPolicyPathNotificationTypeRulesConditions0OperatorIs         EscalationPolicyPathNotificationTypeRulesConditions0Operator = "is"
+	EscalationPolicyPathNotificationTypeRulesConditions0OperatorIsNot      EscalationPolicyPathNotificationTypeRulesConditions0Operator = "is_not"
+	EscalationPolicyPathNotificationTypeRulesConditions0OperatorIsNotOneOf EscalationPolicyPathNotificationTypeRulesConditions0Operator = "is_not_one_of"
+	EscalationPolicyPathNotificationTypeRulesConditions0OperatorIsOneOf    EscalationPolicyPathNotificationTypeRulesConditions0Operator = "is_one_of"
+)
+
+// Valid indicates whether the value is a known member of the EscalationPolicyPathNotificationTypeRulesConditions0Operator enum.
+func (e EscalationPolicyPathNotificationTypeRulesConditions0Operator) Valid() bool {
+	switch e {
+	case EscalationPolicyPathNotificationTypeRulesConditions0OperatorIs:
+		return true
+	case EscalationPolicyPathNotificationTypeRulesConditions0OperatorIsNot:
+		return true
+	case EscalationPolicyPathNotificationTypeRulesConditions0OperatorIsNotOneOf:
+		return true
+	case EscalationPolicyPathNotificationTypeRulesConditions0OperatorIsOneOf:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for EscalationPolicyPathNotificationTypeRulesConditions0RuleType.
 const (
 	EscalationPolicyPathNotificationTypeRulesConditions0RuleTypeAlertUrgency EscalationPolicyPathNotificationTypeRulesConditions0RuleType = "alert_urgency"
@@ -8495,6 +8624,30 @@ func (e EscalationPolicyPathNotificationTypeRulesConditions3RuleType) Valid() bo
 	}
 }
 
+// Defines values for EscalationPolicyPathNotificationTypeRulesConditions4Operator.
+const (
+	EscalationPolicyPathNotificationTypeRulesConditions4OperatorIs         EscalationPolicyPathNotificationTypeRulesConditions4Operator = "is"
+	EscalationPolicyPathNotificationTypeRulesConditions4OperatorIsNot      EscalationPolicyPathNotificationTypeRulesConditions4Operator = "is_not"
+	EscalationPolicyPathNotificationTypeRulesConditions4OperatorIsNotOneOf EscalationPolicyPathNotificationTypeRulesConditions4Operator = "is_not_one_of"
+	EscalationPolicyPathNotificationTypeRulesConditions4OperatorIsOneOf    EscalationPolicyPathNotificationTypeRulesConditions4Operator = "is_one_of"
+)
+
+// Valid indicates whether the value is a known member of the EscalationPolicyPathNotificationTypeRulesConditions4Operator enum.
+func (e EscalationPolicyPathNotificationTypeRulesConditions4Operator) Valid() bool {
+	switch e {
+	case EscalationPolicyPathNotificationTypeRulesConditions4OperatorIs:
+		return true
+	case EscalationPolicyPathNotificationTypeRulesConditions4OperatorIsNot:
+		return true
+	case EscalationPolicyPathNotificationTypeRulesConditions4OperatorIsNotOneOf:
+		return true
+	case EscalationPolicyPathNotificationTypeRulesConditions4OperatorIsOneOf:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for EscalationPolicyPathNotificationTypeRulesConditions4RuleType.
 const (
 	EscalationPolicyPathNotificationTypeRulesConditions4RuleTypeService EscalationPolicyPathNotificationTypeRulesConditions4RuleType = "service"
@@ -8610,6 +8763,7 @@ const (
 	EscalationPolicyPathNotificationTypeRulesConditions5TimeZoneAsiaUrumqi                  EscalationPolicyPathNotificationTypeRulesConditions5TimeZone = "Asia/Urumqi"
 	EscalationPolicyPathNotificationTypeRulesConditions5TimeZoneAsiaVladivostok             EscalationPolicyPathNotificationTypeRulesConditions5TimeZone = "Asia/Vladivostok"
 	EscalationPolicyPathNotificationTypeRulesConditions5TimeZoneAsiaYakutsk                 EscalationPolicyPathNotificationTypeRulesConditions5TimeZone = "Asia/Yakutsk"
+	EscalationPolicyPathNotificationTypeRulesConditions5TimeZoneAsiaYangon                  EscalationPolicyPathNotificationTypeRulesConditions5TimeZone = "Asia/Yangon"
 	EscalationPolicyPathNotificationTypeRulesConditions5TimeZoneAsiaYekaterinburg           EscalationPolicyPathNotificationTypeRulesConditions5TimeZone = "Asia/Yekaterinburg"
 	EscalationPolicyPathNotificationTypeRulesConditions5TimeZoneAsiaYerevan                 EscalationPolicyPathNotificationTypeRulesConditions5TimeZone = "Asia/Yerevan"
 	EscalationPolicyPathNotificationTypeRulesConditions5TimeZoneAstana                      EscalationPolicyPathNotificationTypeRulesConditions5TimeZone = "Astana"
@@ -8683,6 +8837,7 @@ const (
 	EscalationPolicyPathNotificationTypeRulesConditions5TimeZoneEuropeIstanbul              EscalationPolicyPathNotificationTypeRulesConditions5TimeZone = "Europe/Istanbul"
 	EscalationPolicyPathNotificationTypeRulesConditions5TimeZoneEuropeKaliningrad           EscalationPolicyPathNotificationTypeRulesConditions5TimeZone = "Europe/Kaliningrad"
 	EscalationPolicyPathNotificationTypeRulesConditions5TimeZoneEuropeKiev                  EscalationPolicyPathNotificationTypeRulesConditions5TimeZone = "Europe/Kiev"
+	EscalationPolicyPathNotificationTypeRulesConditions5TimeZoneEuropeKyiv                  EscalationPolicyPathNotificationTypeRulesConditions5TimeZone = "Europe/Kyiv"
 	EscalationPolicyPathNotificationTypeRulesConditions5TimeZoneEuropeLisbon                EscalationPolicyPathNotificationTypeRulesConditions5TimeZone = "Europe/Lisbon"
 	EscalationPolicyPathNotificationTypeRulesConditions5TimeZoneEuropeLjubljana             EscalationPolicyPathNotificationTypeRulesConditions5TimeZone = "Europe/Ljubljana"
 	EscalationPolicyPathNotificationTypeRulesConditions5TimeZoneEuropeLondon                EscalationPolicyPathNotificationTypeRulesConditions5TimeZone = "Europe/London"
@@ -9003,6 +9158,8 @@ func (e EscalationPolicyPathNotificationTypeRulesConditions5TimeZone) Valid() bo
 		return true
 	case EscalationPolicyPathNotificationTypeRulesConditions5TimeZoneAsiaYakutsk:
 		return true
+	case EscalationPolicyPathNotificationTypeRulesConditions5TimeZoneAsiaYangon:
+		return true
 	case EscalationPolicyPathNotificationTypeRulesConditions5TimeZoneAsiaYekaterinburg:
 		return true
 	case EscalationPolicyPathNotificationTypeRulesConditions5TimeZoneAsiaYerevan:
@@ -9148,6 +9305,8 @@ func (e EscalationPolicyPathNotificationTypeRulesConditions5TimeZone) Valid() bo
 	case EscalationPolicyPathNotificationTypeRulesConditions5TimeZoneEuropeKaliningrad:
 		return true
 	case EscalationPolicyPathNotificationTypeRulesConditions5TimeZoneEuropeKiev:
+		return true
+	case EscalationPolicyPathNotificationTypeRulesConditions5TimeZoneEuropeKyiv:
 		return true
 	case EscalationPolicyPathNotificationTypeRulesConditions5TimeZoneEuropeLisbon:
 		return true
@@ -9578,6 +9737,30 @@ func (e EscalationPolicyPathPathType) Valid() bool {
 	}
 }
 
+// Defines values for EscalationPolicyPathRules0Operator.
+const (
+	EscalationPolicyPathRules0OperatorIs         EscalationPolicyPathRules0Operator = "is"
+	EscalationPolicyPathRules0OperatorIsNot      EscalationPolicyPathRules0Operator = "is_not"
+	EscalationPolicyPathRules0OperatorIsNotOneOf EscalationPolicyPathRules0Operator = "is_not_one_of"
+	EscalationPolicyPathRules0OperatorIsOneOf    EscalationPolicyPathRules0Operator = "is_one_of"
+)
+
+// Valid indicates whether the value is a known member of the EscalationPolicyPathRules0Operator enum.
+func (e EscalationPolicyPathRules0Operator) Valid() bool {
+	switch e {
+	case EscalationPolicyPathRules0OperatorIs:
+		return true
+	case EscalationPolicyPathRules0OperatorIsNot:
+		return true
+	case EscalationPolicyPathRules0OperatorIsNotOneOf:
+		return true
+	case EscalationPolicyPathRules0OperatorIsOneOf:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for EscalationPolicyPathRules0RuleType.
 const (
 	EscalationPolicyPathRules0RuleTypeAlertUrgency EscalationPolicyPathRules0RuleType = "alert_urgency"
@@ -9746,6 +9929,30 @@ func (e EscalationPolicyPathRules3RuleType) Valid() bool {
 	}
 }
 
+// Defines values for EscalationPolicyPathRules4Operator.
+const (
+	EscalationPolicyPathRules4OperatorIs         EscalationPolicyPathRules4Operator = "is"
+	EscalationPolicyPathRules4OperatorIsNot      EscalationPolicyPathRules4Operator = "is_not"
+	EscalationPolicyPathRules4OperatorIsNotOneOf EscalationPolicyPathRules4Operator = "is_not_one_of"
+	EscalationPolicyPathRules4OperatorIsOneOf    EscalationPolicyPathRules4Operator = "is_one_of"
+)
+
+// Valid indicates whether the value is a known member of the EscalationPolicyPathRules4Operator enum.
+func (e EscalationPolicyPathRules4Operator) Valid() bool {
+	switch e {
+	case EscalationPolicyPathRules4OperatorIs:
+		return true
+	case EscalationPolicyPathRules4OperatorIsNot:
+		return true
+	case EscalationPolicyPathRules4OperatorIsNotOneOf:
+		return true
+	case EscalationPolicyPathRules4OperatorIsOneOf:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for EscalationPolicyPathRules4RuleType.
 const (
 	EscalationPolicyPathRules4RuleTypeService EscalationPolicyPathRules4RuleType = "service"
@@ -9861,6 +10068,7 @@ const (
 	EscalationPolicyPathRules5TimeZoneAsiaUrumqi                  EscalationPolicyPathRules5TimeZone = "Asia/Urumqi"
 	EscalationPolicyPathRules5TimeZoneAsiaVladivostok             EscalationPolicyPathRules5TimeZone = "Asia/Vladivostok"
 	EscalationPolicyPathRules5TimeZoneAsiaYakutsk                 EscalationPolicyPathRules5TimeZone = "Asia/Yakutsk"
+	EscalationPolicyPathRules5TimeZoneAsiaYangon                  EscalationPolicyPathRules5TimeZone = "Asia/Yangon"
 	EscalationPolicyPathRules5TimeZoneAsiaYekaterinburg           EscalationPolicyPathRules5TimeZone = "Asia/Yekaterinburg"
 	EscalationPolicyPathRules5TimeZoneAsiaYerevan                 EscalationPolicyPathRules5TimeZone = "Asia/Yerevan"
 	EscalationPolicyPathRules5TimeZoneAstana                      EscalationPolicyPathRules5TimeZone = "Astana"
@@ -9934,6 +10142,7 @@ const (
 	EscalationPolicyPathRules5TimeZoneEuropeIstanbul              EscalationPolicyPathRules5TimeZone = "Europe/Istanbul"
 	EscalationPolicyPathRules5TimeZoneEuropeKaliningrad           EscalationPolicyPathRules5TimeZone = "Europe/Kaliningrad"
 	EscalationPolicyPathRules5TimeZoneEuropeKiev                  EscalationPolicyPathRules5TimeZone = "Europe/Kiev"
+	EscalationPolicyPathRules5TimeZoneEuropeKyiv                  EscalationPolicyPathRules5TimeZone = "Europe/Kyiv"
 	EscalationPolicyPathRules5TimeZoneEuropeLisbon                EscalationPolicyPathRules5TimeZone = "Europe/Lisbon"
 	EscalationPolicyPathRules5TimeZoneEuropeLjubljana             EscalationPolicyPathRules5TimeZone = "Europe/Ljubljana"
 	EscalationPolicyPathRules5TimeZoneEuropeLondon                EscalationPolicyPathRules5TimeZone = "Europe/London"
@@ -10254,6 +10463,8 @@ func (e EscalationPolicyPathRules5TimeZone) Valid() bool {
 		return true
 	case EscalationPolicyPathRules5TimeZoneAsiaYakutsk:
 		return true
+	case EscalationPolicyPathRules5TimeZoneAsiaYangon:
+		return true
 	case EscalationPolicyPathRules5TimeZoneAsiaYekaterinburg:
 		return true
 	case EscalationPolicyPathRules5TimeZoneAsiaYerevan:
@@ -10399,6 +10610,8 @@ func (e EscalationPolicyPathRules5TimeZone) Valid() bool {
 	case EscalationPolicyPathRules5TimeZoneEuropeKaliningrad:
 		return true
 	case EscalationPolicyPathRules5TimeZoneEuropeKiev:
+		return true
+	case EscalationPolicyPathRules5TimeZoneEuropeKyiv:
 		return true
 	case EscalationPolicyPathRules5TimeZoneEuropeLisbon:
 		return true
@@ -10860,6 +11073,7 @@ const (
 	EscalationPolicyPathTimeRestrictionTimeZoneAsiaUrumqi                  EscalationPolicyPathTimeRestrictionTimeZone = "Asia/Urumqi"
 	EscalationPolicyPathTimeRestrictionTimeZoneAsiaVladivostok             EscalationPolicyPathTimeRestrictionTimeZone = "Asia/Vladivostok"
 	EscalationPolicyPathTimeRestrictionTimeZoneAsiaYakutsk                 EscalationPolicyPathTimeRestrictionTimeZone = "Asia/Yakutsk"
+	EscalationPolicyPathTimeRestrictionTimeZoneAsiaYangon                  EscalationPolicyPathTimeRestrictionTimeZone = "Asia/Yangon"
 	EscalationPolicyPathTimeRestrictionTimeZoneAsiaYekaterinburg           EscalationPolicyPathTimeRestrictionTimeZone = "Asia/Yekaterinburg"
 	EscalationPolicyPathTimeRestrictionTimeZoneAsiaYerevan                 EscalationPolicyPathTimeRestrictionTimeZone = "Asia/Yerevan"
 	EscalationPolicyPathTimeRestrictionTimeZoneAstana                      EscalationPolicyPathTimeRestrictionTimeZone = "Astana"
@@ -10933,6 +11147,7 @@ const (
 	EscalationPolicyPathTimeRestrictionTimeZoneEuropeIstanbul              EscalationPolicyPathTimeRestrictionTimeZone = "Europe/Istanbul"
 	EscalationPolicyPathTimeRestrictionTimeZoneEuropeKaliningrad           EscalationPolicyPathTimeRestrictionTimeZone = "Europe/Kaliningrad"
 	EscalationPolicyPathTimeRestrictionTimeZoneEuropeKiev                  EscalationPolicyPathTimeRestrictionTimeZone = "Europe/Kiev"
+	EscalationPolicyPathTimeRestrictionTimeZoneEuropeKyiv                  EscalationPolicyPathTimeRestrictionTimeZone = "Europe/Kyiv"
 	EscalationPolicyPathTimeRestrictionTimeZoneEuropeLisbon                EscalationPolicyPathTimeRestrictionTimeZone = "Europe/Lisbon"
 	EscalationPolicyPathTimeRestrictionTimeZoneEuropeLjubljana             EscalationPolicyPathTimeRestrictionTimeZone = "Europe/Ljubljana"
 	EscalationPolicyPathTimeRestrictionTimeZoneEuropeLondon                EscalationPolicyPathTimeRestrictionTimeZone = "Europe/London"
@@ -11253,6 +11468,8 @@ func (e EscalationPolicyPathTimeRestrictionTimeZone) Valid() bool {
 		return true
 	case EscalationPolicyPathTimeRestrictionTimeZoneAsiaYakutsk:
 		return true
+	case EscalationPolicyPathTimeRestrictionTimeZoneAsiaYangon:
+		return true
 	case EscalationPolicyPathTimeRestrictionTimeZoneAsiaYekaterinburg:
 		return true
 	case EscalationPolicyPathTimeRestrictionTimeZoneAsiaYerevan:
@@ -11398,6 +11615,8 @@ func (e EscalationPolicyPathTimeRestrictionTimeZone) Valid() bool {
 	case EscalationPolicyPathTimeRestrictionTimeZoneEuropeKaliningrad:
 		return true
 	case EscalationPolicyPathTimeRestrictionTimeZoneEuropeKiev:
+		return true
+	case EscalationPolicyPathTimeRestrictionTimeZoneEuropeKyiv:
 		return true
 	case EscalationPolicyPathTimeRestrictionTimeZoneEuropeLisbon:
 		return true
@@ -14036,6 +14255,42 @@ func (e IncidentTriggerParamsIncidentConditionResolvedAt) Valid() bool {
 	}
 }
 
+// Defines values for IncidentTriggerParamsIncidentConditionScheduledFor.
+const (
+	IncidentTriggerParamsIncidentConditionScheduledForSET   IncidentTriggerParamsIncidentConditionScheduledFor = "SET"
+	IncidentTriggerParamsIncidentConditionScheduledForUNSET IncidentTriggerParamsIncidentConditionScheduledFor = "UNSET"
+)
+
+// Valid indicates whether the value is a known member of the IncidentTriggerParamsIncidentConditionScheduledFor enum.
+func (e IncidentTriggerParamsIncidentConditionScheduledFor) Valid() bool {
+	switch e {
+	case IncidentTriggerParamsIncidentConditionScheduledForSET:
+		return true
+	case IncidentTriggerParamsIncidentConditionScheduledForUNSET:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for IncidentTriggerParamsIncidentConditionScheduledUntil.
+const (
+	IncidentTriggerParamsIncidentConditionScheduledUntilSET   IncidentTriggerParamsIncidentConditionScheduledUntil = "SET"
+	IncidentTriggerParamsIncidentConditionScheduledUntilUNSET IncidentTriggerParamsIncidentConditionScheduledUntil = "UNSET"
+)
+
+// Valid indicates whether the value is a known member of the IncidentTriggerParamsIncidentConditionScheduledUntil enum.
+func (e IncidentTriggerParamsIncidentConditionScheduledUntil) Valid() bool {
+	switch e {
+	case IncidentTriggerParamsIncidentConditionScheduledUntilSET:
+		return true
+	case IncidentTriggerParamsIncidentConditionScheduledUntilUNSET:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for IncidentTriggerParamsIncidentConditionService.
 const (
 	IncidentTriggerParamsIncidentConditionServiceANY          IncidentTriggerParamsIncidentConditionService = "ANY"
@@ -14579,6 +14834,21 @@ const (
 func (e IPRangesResponseDataType) Valid() bool {
 	switch e {
 	case IPRangesResponseDataTypeIPRanges:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for LinkIncidentsDataType.
+const (
+	LinkIncidentsDataTypeProblems LinkIncidentsDataType = "problems"
+)
+
+// Valid indicates whether the value is a known member of the LinkIncidentsDataType enum.
+func (e LinkIncidentsDataType) Valid() bool {
+	switch e {
+	case LinkIncidentsDataTypeProblems:
 		return true
 	default:
 		return false
@@ -15413,162 +15683,6 @@ func (e NewAlertGroupDataType) Valid() bool {
 	}
 }
 
-// Defines values for NewAlertRetriggerRuleDataAttributesConditionsKind.
-const (
-	NewAlertRetriggerRuleDataAttributesConditionsKindAlertField NewAlertRetriggerRuleDataAttributesConditionsKind = "alert_field"
-	NewAlertRetriggerRuleDataAttributesConditionsKindGroup      NewAlertRetriggerRuleDataAttributesConditionsKind = "group"
-	NewAlertRetriggerRuleDataAttributesConditionsKindPayload    NewAlertRetriggerRuleDataAttributesConditionsKind = "payload"
-	NewAlertRetriggerRuleDataAttributesConditionsKindService    NewAlertRetriggerRuleDataAttributesConditionsKind = "service"
-	NewAlertRetriggerRuleDataAttributesConditionsKindSource     NewAlertRetriggerRuleDataAttributesConditionsKind = "source"
-	NewAlertRetriggerRuleDataAttributesConditionsKindUrgency    NewAlertRetriggerRuleDataAttributesConditionsKind = "urgency"
-)
-
-// Valid indicates whether the value is a known member of the NewAlertRetriggerRuleDataAttributesConditionsKind enum.
-func (e NewAlertRetriggerRuleDataAttributesConditionsKind) Valid() bool {
-	switch e {
-	case NewAlertRetriggerRuleDataAttributesConditionsKindAlertField:
-		return true
-	case NewAlertRetriggerRuleDataAttributesConditionsKindGroup:
-		return true
-	case NewAlertRetriggerRuleDataAttributesConditionsKindPayload:
-		return true
-	case NewAlertRetriggerRuleDataAttributesConditionsKindService:
-		return true
-	case NewAlertRetriggerRuleDataAttributesConditionsKindSource:
-		return true
-	case NewAlertRetriggerRuleDataAttributesConditionsKindUrgency:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for NewAlertRetriggerRuleDataAttributesConditionsOperator.
-const (
-	NewAlertRetriggerRuleDataAttributesConditionsOperatorContains       NewAlertRetriggerRuleDataAttributesConditionsOperator = "contains"
-	NewAlertRetriggerRuleDataAttributesConditionsOperatorDoesNotContain NewAlertRetriggerRuleDataAttributesConditionsOperator = "does_not_contain"
-	NewAlertRetriggerRuleDataAttributesConditionsOperatorEndsWith       NewAlertRetriggerRuleDataAttributesConditionsOperator = "ends_with"
-	NewAlertRetriggerRuleDataAttributesConditionsOperatorIsNotOneOf     NewAlertRetriggerRuleDataAttributesConditionsOperator = "is_not_one_of"
-	NewAlertRetriggerRuleDataAttributesConditionsOperatorIsNotSet       NewAlertRetriggerRuleDataAttributesConditionsOperator = "is_not_set"
-	NewAlertRetriggerRuleDataAttributesConditionsOperatorIsOneOf        NewAlertRetriggerRuleDataAttributesConditionsOperator = "is_one_of"
-	NewAlertRetriggerRuleDataAttributesConditionsOperatorIsSet          NewAlertRetriggerRuleDataAttributesConditionsOperator = "is_set"
-	NewAlertRetriggerRuleDataAttributesConditionsOperatorMatchesRegex   NewAlertRetriggerRuleDataAttributesConditionsOperator = "matches_regex"
-	NewAlertRetriggerRuleDataAttributesConditionsOperatorStartsWith     NewAlertRetriggerRuleDataAttributesConditionsOperator = "starts_with"
-)
-
-// Valid indicates whether the value is a known member of the NewAlertRetriggerRuleDataAttributesConditionsOperator enum.
-func (e NewAlertRetriggerRuleDataAttributesConditionsOperator) Valid() bool {
-	switch e {
-	case NewAlertRetriggerRuleDataAttributesConditionsOperatorContains:
-		return true
-	case NewAlertRetriggerRuleDataAttributesConditionsOperatorDoesNotContain:
-		return true
-	case NewAlertRetriggerRuleDataAttributesConditionsOperatorEndsWith:
-		return true
-	case NewAlertRetriggerRuleDataAttributesConditionsOperatorIsNotOneOf:
-		return true
-	case NewAlertRetriggerRuleDataAttributesConditionsOperatorIsNotSet:
-		return true
-	case NewAlertRetriggerRuleDataAttributesConditionsOperatorIsOneOf:
-		return true
-	case NewAlertRetriggerRuleDataAttributesConditionsOperatorIsSet:
-		return true
-	case NewAlertRetriggerRuleDataAttributesConditionsOperatorMatchesRegex:
-		return true
-	case NewAlertRetriggerRuleDataAttributesConditionsOperatorStartsWith:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for NewAlertRetriggerRuleDataAttributesMatchMode.
-const (
-	NewAlertRetriggerRuleDataAttributesMatchModeMatchAllRules NewAlertRetriggerRuleDataAttributesMatchMode = "match-all-rules"
-	NewAlertRetriggerRuleDataAttributesMatchModeMatchAnyRule  NewAlertRetriggerRuleDataAttributesMatchMode = "match-any-rule"
-)
-
-// Valid indicates whether the value is a known member of the NewAlertRetriggerRuleDataAttributesMatchMode enum.
-func (e NewAlertRetriggerRuleDataAttributesMatchMode) Valid() bool {
-	switch e {
-	case NewAlertRetriggerRuleDataAttributesMatchModeMatchAllRules:
-		return true
-	case NewAlertRetriggerRuleDataAttributesMatchModeMatchAnyRule:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for NewAlertRetriggerRuleDataAttributesTimeoutMinutes.
-const (
-	NewAlertRetriggerRuleDataAttributesTimeoutMinutesN10   NewAlertRetriggerRuleDataAttributesTimeoutMinutes = 10
-	NewAlertRetriggerRuleDataAttributesTimeoutMinutesN120  NewAlertRetriggerRuleDataAttributesTimeoutMinutes = 120
-	NewAlertRetriggerRuleDataAttributesTimeoutMinutesN1440 NewAlertRetriggerRuleDataAttributesTimeoutMinutes = 1440
-	NewAlertRetriggerRuleDataAttributesTimeoutMinutesN180  NewAlertRetriggerRuleDataAttributesTimeoutMinutes = 180
-	NewAlertRetriggerRuleDataAttributesTimeoutMinutesN20   NewAlertRetriggerRuleDataAttributesTimeoutMinutes = 20
-	NewAlertRetriggerRuleDataAttributesTimeoutMinutesN240  NewAlertRetriggerRuleDataAttributesTimeoutMinutes = 240
-	NewAlertRetriggerRuleDataAttributesTimeoutMinutesN30   NewAlertRetriggerRuleDataAttributesTimeoutMinutes = 30
-	NewAlertRetriggerRuleDataAttributesTimeoutMinutesN300  NewAlertRetriggerRuleDataAttributesTimeoutMinutes = 300
-	NewAlertRetriggerRuleDataAttributesTimeoutMinutesN360  NewAlertRetriggerRuleDataAttributesTimeoutMinutes = 360
-	NewAlertRetriggerRuleDataAttributesTimeoutMinutesN40   NewAlertRetriggerRuleDataAttributesTimeoutMinutes = 40
-	NewAlertRetriggerRuleDataAttributesTimeoutMinutesN50   NewAlertRetriggerRuleDataAttributesTimeoutMinutes = 50
-	NewAlertRetriggerRuleDataAttributesTimeoutMinutesN60   NewAlertRetriggerRuleDataAttributesTimeoutMinutes = 60
-	NewAlertRetriggerRuleDataAttributesTimeoutMinutesN720  NewAlertRetriggerRuleDataAttributesTimeoutMinutes = 720
-	NewAlertRetriggerRuleDataAttributesTimeoutMinutesN90   NewAlertRetriggerRuleDataAttributesTimeoutMinutes = 90
-)
-
-// Valid indicates whether the value is a known member of the NewAlertRetriggerRuleDataAttributesTimeoutMinutes enum.
-func (e NewAlertRetriggerRuleDataAttributesTimeoutMinutes) Valid() bool {
-	switch e {
-	case NewAlertRetriggerRuleDataAttributesTimeoutMinutesN10:
-		return true
-	case NewAlertRetriggerRuleDataAttributesTimeoutMinutesN120:
-		return true
-	case NewAlertRetriggerRuleDataAttributesTimeoutMinutesN1440:
-		return true
-	case NewAlertRetriggerRuleDataAttributesTimeoutMinutesN180:
-		return true
-	case NewAlertRetriggerRuleDataAttributesTimeoutMinutesN20:
-		return true
-	case NewAlertRetriggerRuleDataAttributesTimeoutMinutesN240:
-		return true
-	case NewAlertRetriggerRuleDataAttributesTimeoutMinutesN30:
-		return true
-	case NewAlertRetriggerRuleDataAttributesTimeoutMinutesN300:
-		return true
-	case NewAlertRetriggerRuleDataAttributesTimeoutMinutesN360:
-		return true
-	case NewAlertRetriggerRuleDataAttributesTimeoutMinutesN40:
-		return true
-	case NewAlertRetriggerRuleDataAttributesTimeoutMinutesN50:
-		return true
-	case NewAlertRetriggerRuleDataAttributesTimeoutMinutesN60:
-		return true
-	case NewAlertRetriggerRuleDataAttributesTimeoutMinutesN720:
-		return true
-	case NewAlertRetriggerRuleDataAttributesTimeoutMinutesN90:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for NewAlertRetriggerRuleDataType.
-const (
-	NewAlertRetriggerRuleDataTypeAlertRetriggerRules NewAlertRetriggerRuleDataType = "alert_retrigger_rules"
-)
-
-// Valid indicates whether the value is a known member of the NewAlertRetriggerRuleDataType enum.
-func (e NewAlertRetriggerRuleDataType) Valid() bool {
-	switch e {
-	case NewAlertRetriggerRuleDataTypeAlertRetriggerRules:
-		return true
-	default:
-		return false
-	}
-}
-
 // Defines values for NewAlertRouteDataAttributesRulesConditionGroupsConditionsConditionableType.
 const (
 	NewAlertRouteDataAttributesRulesConditionGroupsConditionsConditionableTypeAlertField NewAlertRouteDataAttributesRulesConditionGroupsConditionsConditionableType = "AlertField"
@@ -15785,6 +15899,63 @@ const (
 func (e NewAlertRoutingRuleDataType) Valid() bool {
 	switch e {
 	case NewAlertRoutingRuleDataTypeAlertRoutingRules:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for NewAlertUrgencyDataAttributesRetriggerTimeoutMinutes.
+const (
+	NewAlertUrgencyDataAttributesRetriggerTimeoutMinutesMinus1 NewAlertUrgencyDataAttributesRetriggerTimeoutMinutes = -1
+	NewAlertUrgencyDataAttributesRetriggerTimeoutMinutesN10    NewAlertUrgencyDataAttributesRetriggerTimeoutMinutes = 10
+	NewAlertUrgencyDataAttributesRetriggerTimeoutMinutesN120   NewAlertUrgencyDataAttributesRetriggerTimeoutMinutes = 120
+	NewAlertUrgencyDataAttributesRetriggerTimeoutMinutesN1440  NewAlertUrgencyDataAttributesRetriggerTimeoutMinutes = 1440
+	NewAlertUrgencyDataAttributesRetriggerTimeoutMinutesN180   NewAlertUrgencyDataAttributesRetriggerTimeoutMinutes = 180
+	NewAlertUrgencyDataAttributesRetriggerTimeoutMinutesN20    NewAlertUrgencyDataAttributesRetriggerTimeoutMinutes = 20
+	NewAlertUrgencyDataAttributesRetriggerTimeoutMinutesN240   NewAlertUrgencyDataAttributesRetriggerTimeoutMinutes = 240
+	NewAlertUrgencyDataAttributesRetriggerTimeoutMinutesN30    NewAlertUrgencyDataAttributesRetriggerTimeoutMinutes = 30
+	NewAlertUrgencyDataAttributesRetriggerTimeoutMinutesN300   NewAlertUrgencyDataAttributesRetriggerTimeoutMinutes = 300
+	NewAlertUrgencyDataAttributesRetriggerTimeoutMinutesN360   NewAlertUrgencyDataAttributesRetriggerTimeoutMinutes = 360
+	NewAlertUrgencyDataAttributesRetriggerTimeoutMinutesN40    NewAlertUrgencyDataAttributesRetriggerTimeoutMinutes = 40
+	NewAlertUrgencyDataAttributesRetriggerTimeoutMinutesN50    NewAlertUrgencyDataAttributesRetriggerTimeoutMinutes = 50
+	NewAlertUrgencyDataAttributesRetriggerTimeoutMinutesN60    NewAlertUrgencyDataAttributesRetriggerTimeoutMinutes = 60
+	NewAlertUrgencyDataAttributesRetriggerTimeoutMinutesN720   NewAlertUrgencyDataAttributesRetriggerTimeoutMinutes = 720
+	NewAlertUrgencyDataAttributesRetriggerTimeoutMinutesN90    NewAlertUrgencyDataAttributesRetriggerTimeoutMinutes = 90
+)
+
+// Valid indicates whether the value is a known member of the NewAlertUrgencyDataAttributesRetriggerTimeoutMinutes enum.
+func (e NewAlertUrgencyDataAttributesRetriggerTimeoutMinutes) Valid() bool {
+	switch e {
+	case NewAlertUrgencyDataAttributesRetriggerTimeoutMinutesMinus1:
+		return true
+	case NewAlertUrgencyDataAttributesRetriggerTimeoutMinutesN10:
+		return true
+	case NewAlertUrgencyDataAttributesRetriggerTimeoutMinutesN120:
+		return true
+	case NewAlertUrgencyDataAttributesRetriggerTimeoutMinutesN1440:
+		return true
+	case NewAlertUrgencyDataAttributesRetriggerTimeoutMinutesN180:
+		return true
+	case NewAlertUrgencyDataAttributesRetriggerTimeoutMinutesN20:
+		return true
+	case NewAlertUrgencyDataAttributesRetriggerTimeoutMinutesN240:
+		return true
+	case NewAlertUrgencyDataAttributesRetriggerTimeoutMinutesN30:
+		return true
+	case NewAlertUrgencyDataAttributesRetriggerTimeoutMinutesN300:
+		return true
+	case NewAlertUrgencyDataAttributesRetriggerTimeoutMinutesN360:
+		return true
+	case NewAlertUrgencyDataAttributesRetriggerTimeoutMinutesN40:
+		return true
+	case NewAlertUrgencyDataAttributesRetriggerTimeoutMinutesN50:
+		return true
+	case NewAlertUrgencyDataAttributesRetriggerTimeoutMinutesN60:
+		return true
+	case NewAlertUrgencyDataAttributesRetriggerTimeoutMinutesN720:
+		return true
+	case NewAlertUrgencyDataAttributesRetriggerTimeoutMinutesN90:
 		return true
 	default:
 		return false
@@ -16109,6 +16280,33 @@ func (e NewAlertsSourceDataAttributesSourceableAttributesFieldMappingsAttributes
 	}
 }
 
+// Defines values for NewAlertsSourceDataAttributesSourceableAttributesNotificationTargetType.
+const (
+	NewAlertsSourceDataAttributesSourceableAttributesNotificationTargetTypeEscalationPolicy NewAlertsSourceDataAttributesSourceableAttributesNotificationTargetType = "EscalationPolicy"
+	NewAlertsSourceDataAttributesSourceableAttributesNotificationTargetTypeFunctionality    NewAlertsSourceDataAttributesSourceableAttributesNotificationTargetType = "Functionality"
+	NewAlertsSourceDataAttributesSourceableAttributesNotificationTargetTypeGroup            NewAlertsSourceDataAttributesSourceableAttributesNotificationTargetType = "Group"
+	NewAlertsSourceDataAttributesSourceableAttributesNotificationTargetTypeService          NewAlertsSourceDataAttributesSourceableAttributesNotificationTargetType = "Service"
+	NewAlertsSourceDataAttributesSourceableAttributesNotificationTargetTypeUser             NewAlertsSourceDataAttributesSourceableAttributesNotificationTargetType = "User"
+)
+
+// Valid indicates whether the value is a known member of the NewAlertsSourceDataAttributesSourceableAttributesNotificationTargetType enum.
+func (e NewAlertsSourceDataAttributesSourceableAttributesNotificationTargetType) Valid() bool {
+	switch e {
+	case NewAlertsSourceDataAttributesSourceableAttributesNotificationTargetTypeEscalationPolicy:
+		return true
+	case NewAlertsSourceDataAttributesSourceableAttributesNotificationTargetTypeFunctionality:
+		return true
+	case NewAlertsSourceDataAttributesSourceableAttributesNotificationTargetTypeGroup:
+		return true
+	case NewAlertsSourceDataAttributesSourceableAttributesNotificationTargetTypeService:
+		return true
+	case NewAlertsSourceDataAttributesSourceableAttributesNotificationTargetTypeUser:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for NewAlertsSourceDataType.
 const (
 	NewAlertsSourceDataTypeAlertSources NewAlertsSourceDataType = "alert_sources"
@@ -16226,21 +16424,6 @@ const (
 func (e NewAuthorizationDataType) Valid() bool {
 	switch e {
 	case NewAuthorizationDataTypeAuthorizations:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for NewBulkImportDataAttributesEntityType.
-const (
-	NewBulkImportDataAttributesEntityTypeIncident NewBulkImportDataAttributesEntityType = "Incident"
-)
-
-// Valid indicates whether the value is a known member of the NewBulkImportDataAttributesEntityType enum.
-func (e NewBulkImportDataAttributesEntityType) Valid() bool {
-	switch e {
-	case NewBulkImportDataAttributesEntityTypeIncident:
 		return true
 	default:
 		return false
@@ -17412,6 +17595,7 @@ const (
 	NewEscalationPolicyDataAttributesBusinessHoursTimeZoneAsiaUrumqi                  NewEscalationPolicyDataAttributesBusinessHoursTimeZone = "Asia/Urumqi"
 	NewEscalationPolicyDataAttributesBusinessHoursTimeZoneAsiaVladivostok             NewEscalationPolicyDataAttributesBusinessHoursTimeZone = "Asia/Vladivostok"
 	NewEscalationPolicyDataAttributesBusinessHoursTimeZoneAsiaYakutsk                 NewEscalationPolicyDataAttributesBusinessHoursTimeZone = "Asia/Yakutsk"
+	NewEscalationPolicyDataAttributesBusinessHoursTimeZoneAsiaYangon                  NewEscalationPolicyDataAttributesBusinessHoursTimeZone = "Asia/Yangon"
 	NewEscalationPolicyDataAttributesBusinessHoursTimeZoneAsiaYekaterinburg           NewEscalationPolicyDataAttributesBusinessHoursTimeZone = "Asia/Yekaterinburg"
 	NewEscalationPolicyDataAttributesBusinessHoursTimeZoneAsiaYerevan                 NewEscalationPolicyDataAttributesBusinessHoursTimeZone = "Asia/Yerevan"
 	NewEscalationPolicyDataAttributesBusinessHoursTimeZoneAstana                      NewEscalationPolicyDataAttributesBusinessHoursTimeZone = "Astana"
@@ -17485,6 +17669,7 @@ const (
 	NewEscalationPolicyDataAttributesBusinessHoursTimeZoneEuropeIstanbul              NewEscalationPolicyDataAttributesBusinessHoursTimeZone = "Europe/Istanbul"
 	NewEscalationPolicyDataAttributesBusinessHoursTimeZoneEuropeKaliningrad           NewEscalationPolicyDataAttributesBusinessHoursTimeZone = "Europe/Kaliningrad"
 	NewEscalationPolicyDataAttributesBusinessHoursTimeZoneEuropeKiev                  NewEscalationPolicyDataAttributesBusinessHoursTimeZone = "Europe/Kiev"
+	NewEscalationPolicyDataAttributesBusinessHoursTimeZoneEuropeKyiv                  NewEscalationPolicyDataAttributesBusinessHoursTimeZone = "Europe/Kyiv"
 	NewEscalationPolicyDataAttributesBusinessHoursTimeZoneEuropeLisbon                NewEscalationPolicyDataAttributesBusinessHoursTimeZone = "Europe/Lisbon"
 	NewEscalationPolicyDataAttributesBusinessHoursTimeZoneEuropeLjubljana             NewEscalationPolicyDataAttributesBusinessHoursTimeZone = "Europe/Ljubljana"
 	NewEscalationPolicyDataAttributesBusinessHoursTimeZoneEuropeLondon                NewEscalationPolicyDataAttributesBusinessHoursTimeZone = "Europe/London"
@@ -17805,6 +17990,8 @@ func (e NewEscalationPolicyDataAttributesBusinessHoursTimeZone) Valid() bool {
 		return true
 	case NewEscalationPolicyDataAttributesBusinessHoursTimeZoneAsiaYakutsk:
 		return true
+	case NewEscalationPolicyDataAttributesBusinessHoursTimeZoneAsiaYangon:
+		return true
 	case NewEscalationPolicyDataAttributesBusinessHoursTimeZoneAsiaYekaterinburg:
 		return true
 	case NewEscalationPolicyDataAttributesBusinessHoursTimeZoneAsiaYerevan:
@@ -17950,6 +18137,8 @@ func (e NewEscalationPolicyDataAttributesBusinessHoursTimeZone) Valid() bool {
 	case NewEscalationPolicyDataAttributesBusinessHoursTimeZoneEuropeKaliningrad:
 		return true
 	case NewEscalationPolicyDataAttributesBusinessHoursTimeZoneEuropeKiev:
+		return true
+	case NewEscalationPolicyDataAttributesBusinessHoursTimeZoneEuropeKyiv:
 		return true
 	case NewEscalationPolicyDataAttributesBusinessHoursTimeZoneEuropeLisbon:
 		return true
@@ -18485,6 +18674,30 @@ func (e NewEscalationPolicyPathDataAttributesNotificationTypeFallback) Valid() b
 	}
 }
 
+// Defines values for NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions0Operator.
+const (
+	NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions0OperatorIs         NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions0Operator = "is"
+	NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions0OperatorIsNot      NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions0Operator = "is_not"
+	NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions0OperatorIsNotOneOf NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions0Operator = "is_not_one_of"
+	NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions0OperatorIsOneOf    NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions0Operator = "is_one_of"
+)
+
+// Valid indicates whether the value is a known member of the NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions0Operator enum.
+func (e NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions0Operator) Valid() bool {
+	switch e {
+	case NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions0OperatorIs:
+		return true
+	case NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions0OperatorIsNot:
+		return true
+	case NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions0OperatorIsNotOneOf:
+		return true
+	case NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions0OperatorIsOneOf:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions0RuleType.
 const (
 	NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions0RuleTypeAlertUrgency NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions0RuleType = "alert_urgency"
@@ -18653,6 +18866,30 @@ func (e NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions3Rul
 	}
 }
 
+// Defines values for NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions4Operator.
+const (
+	NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions4OperatorIs         NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions4Operator = "is"
+	NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions4OperatorIsNot      NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions4Operator = "is_not"
+	NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions4OperatorIsNotOneOf NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions4Operator = "is_not_one_of"
+	NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions4OperatorIsOneOf    NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions4Operator = "is_one_of"
+)
+
+// Valid indicates whether the value is a known member of the NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions4Operator enum.
+func (e NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions4Operator) Valid() bool {
+	switch e {
+	case NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions4OperatorIs:
+		return true
+	case NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions4OperatorIsNot:
+		return true
+	case NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions4OperatorIsNotOneOf:
+		return true
+	case NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions4OperatorIsOneOf:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions4RuleType.
 const (
 	NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions4RuleTypeService NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions4RuleType = "service"
@@ -18768,6 +19005,7 @@ const (
 	NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions5TimeZoneAsiaUrumqi                  NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions5TimeZone = "Asia/Urumqi"
 	NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions5TimeZoneAsiaVladivostok             NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions5TimeZone = "Asia/Vladivostok"
 	NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions5TimeZoneAsiaYakutsk                 NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions5TimeZone = "Asia/Yakutsk"
+	NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions5TimeZoneAsiaYangon                  NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions5TimeZone = "Asia/Yangon"
 	NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions5TimeZoneAsiaYekaterinburg           NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions5TimeZone = "Asia/Yekaterinburg"
 	NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions5TimeZoneAsiaYerevan                 NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions5TimeZone = "Asia/Yerevan"
 	NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions5TimeZoneAstana                      NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions5TimeZone = "Astana"
@@ -18841,6 +19079,7 @@ const (
 	NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions5TimeZoneEuropeIstanbul              NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions5TimeZone = "Europe/Istanbul"
 	NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions5TimeZoneEuropeKaliningrad           NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions5TimeZone = "Europe/Kaliningrad"
 	NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions5TimeZoneEuropeKiev                  NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions5TimeZone = "Europe/Kiev"
+	NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions5TimeZoneEuropeKyiv                  NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions5TimeZone = "Europe/Kyiv"
 	NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions5TimeZoneEuropeLisbon                NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions5TimeZone = "Europe/Lisbon"
 	NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions5TimeZoneEuropeLjubljana             NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions5TimeZone = "Europe/Ljubljana"
 	NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions5TimeZoneEuropeLondon                NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions5TimeZone = "Europe/London"
@@ -19161,6 +19400,8 @@ func (e NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions5Tim
 		return true
 	case NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions5TimeZoneAsiaYakutsk:
 		return true
+	case NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions5TimeZoneAsiaYangon:
+		return true
 	case NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions5TimeZoneAsiaYekaterinburg:
 		return true
 	case NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions5TimeZoneAsiaYerevan:
@@ -19306,6 +19547,8 @@ func (e NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions5Tim
 	case NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions5TimeZoneEuropeKaliningrad:
 		return true
 	case NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions5TimeZoneEuropeKiev:
+		return true
+	case NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions5TimeZoneEuropeKyiv:
 		return true
 	case NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions5TimeZoneEuropeLisbon:
 		return true
@@ -19736,6 +19979,87 @@ func (e NewEscalationPolicyPathDataAttributesPathType) Valid() bool {
 	}
 }
 
+// Defines values for NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutes.
+const (
+	NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesMinus1 NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutes = -1
+	NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN10    NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutes = 10
+	NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN120   NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutes = 120
+	NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN1440  NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutes = 1440
+	NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN180   NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutes = 180
+	NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN20    NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutes = 20
+	NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN240   NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutes = 240
+	NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN30    NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutes = 30
+	NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN300   NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutes = 300
+	NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN360   NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutes = 360
+	NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN40    NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutes = 40
+	NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN50    NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutes = 50
+	NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN60    NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutes = 60
+	NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN720   NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutes = 720
+	NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN90    NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutes = 90
+)
+
+// Valid indicates whether the value is a known member of the NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutes enum.
+func (e NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutes) Valid() bool {
+	switch e {
+	case NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesMinus1:
+		return true
+	case NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN10:
+		return true
+	case NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN120:
+		return true
+	case NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN1440:
+		return true
+	case NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN180:
+		return true
+	case NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN20:
+		return true
+	case NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN240:
+		return true
+	case NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN30:
+		return true
+	case NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN300:
+		return true
+	case NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN360:
+		return true
+	case NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN40:
+		return true
+	case NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN50:
+		return true
+	case NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN60:
+		return true
+	case NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN720:
+		return true
+	case NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN90:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for NewEscalationPolicyPathDataAttributesRules0Operator.
+const (
+	NewEscalationPolicyPathDataAttributesRules0OperatorIs         NewEscalationPolicyPathDataAttributesRules0Operator = "is"
+	NewEscalationPolicyPathDataAttributesRules0OperatorIsNot      NewEscalationPolicyPathDataAttributesRules0Operator = "is_not"
+	NewEscalationPolicyPathDataAttributesRules0OperatorIsNotOneOf NewEscalationPolicyPathDataAttributesRules0Operator = "is_not_one_of"
+	NewEscalationPolicyPathDataAttributesRules0OperatorIsOneOf    NewEscalationPolicyPathDataAttributesRules0Operator = "is_one_of"
+)
+
+// Valid indicates whether the value is a known member of the NewEscalationPolicyPathDataAttributesRules0Operator enum.
+func (e NewEscalationPolicyPathDataAttributesRules0Operator) Valid() bool {
+	switch e {
+	case NewEscalationPolicyPathDataAttributesRules0OperatorIs:
+		return true
+	case NewEscalationPolicyPathDataAttributesRules0OperatorIsNot:
+		return true
+	case NewEscalationPolicyPathDataAttributesRules0OperatorIsNotOneOf:
+		return true
+	case NewEscalationPolicyPathDataAttributesRules0OperatorIsOneOf:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for NewEscalationPolicyPathDataAttributesRules0RuleType.
 const (
 	NewEscalationPolicyPathDataAttributesRules0RuleTypeAlertUrgency NewEscalationPolicyPathDataAttributesRules0RuleType = "alert_urgency"
@@ -19904,6 +20228,30 @@ func (e NewEscalationPolicyPathDataAttributesRules3RuleType) Valid() bool {
 	}
 }
 
+// Defines values for NewEscalationPolicyPathDataAttributesRules4Operator.
+const (
+	NewEscalationPolicyPathDataAttributesRules4OperatorIs         NewEscalationPolicyPathDataAttributesRules4Operator = "is"
+	NewEscalationPolicyPathDataAttributesRules4OperatorIsNot      NewEscalationPolicyPathDataAttributesRules4Operator = "is_not"
+	NewEscalationPolicyPathDataAttributesRules4OperatorIsNotOneOf NewEscalationPolicyPathDataAttributesRules4Operator = "is_not_one_of"
+	NewEscalationPolicyPathDataAttributesRules4OperatorIsOneOf    NewEscalationPolicyPathDataAttributesRules4Operator = "is_one_of"
+)
+
+// Valid indicates whether the value is a known member of the NewEscalationPolicyPathDataAttributesRules4Operator enum.
+func (e NewEscalationPolicyPathDataAttributesRules4Operator) Valid() bool {
+	switch e {
+	case NewEscalationPolicyPathDataAttributesRules4OperatorIs:
+		return true
+	case NewEscalationPolicyPathDataAttributesRules4OperatorIsNot:
+		return true
+	case NewEscalationPolicyPathDataAttributesRules4OperatorIsNotOneOf:
+		return true
+	case NewEscalationPolicyPathDataAttributesRules4OperatorIsOneOf:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for NewEscalationPolicyPathDataAttributesRules4RuleType.
 const (
 	NewEscalationPolicyPathDataAttributesRules4RuleTypeService NewEscalationPolicyPathDataAttributesRules4RuleType = "service"
@@ -20019,6 +20367,7 @@ const (
 	NewEscalationPolicyPathDataAttributesRules5TimeZoneAsiaUrumqi                  NewEscalationPolicyPathDataAttributesRules5TimeZone = "Asia/Urumqi"
 	NewEscalationPolicyPathDataAttributesRules5TimeZoneAsiaVladivostok             NewEscalationPolicyPathDataAttributesRules5TimeZone = "Asia/Vladivostok"
 	NewEscalationPolicyPathDataAttributesRules5TimeZoneAsiaYakutsk                 NewEscalationPolicyPathDataAttributesRules5TimeZone = "Asia/Yakutsk"
+	NewEscalationPolicyPathDataAttributesRules5TimeZoneAsiaYangon                  NewEscalationPolicyPathDataAttributesRules5TimeZone = "Asia/Yangon"
 	NewEscalationPolicyPathDataAttributesRules5TimeZoneAsiaYekaterinburg           NewEscalationPolicyPathDataAttributesRules5TimeZone = "Asia/Yekaterinburg"
 	NewEscalationPolicyPathDataAttributesRules5TimeZoneAsiaYerevan                 NewEscalationPolicyPathDataAttributesRules5TimeZone = "Asia/Yerevan"
 	NewEscalationPolicyPathDataAttributesRules5TimeZoneAstana                      NewEscalationPolicyPathDataAttributesRules5TimeZone = "Astana"
@@ -20092,6 +20441,7 @@ const (
 	NewEscalationPolicyPathDataAttributesRules5TimeZoneEuropeIstanbul              NewEscalationPolicyPathDataAttributesRules5TimeZone = "Europe/Istanbul"
 	NewEscalationPolicyPathDataAttributesRules5TimeZoneEuropeKaliningrad           NewEscalationPolicyPathDataAttributesRules5TimeZone = "Europe/Kaliningrad"
 	NewEscalationPolicyPathDataAttributesRules5TimeZoneEuropeKiev                  NewEscalationPolicyPathDataAttributesRules5TimeZone = "Europe/Kiev"
+	NewEscalationPolicyPathDataAttributesRules5TimeZoneEuropeKyiv                  NewEscalationPolicyPathDataAttributesRules5TimeZone = "Europe/Kyiv"
 	NewEscalationPolicyPathDataAttributesRules5TimeZoneEuropeLisbon                NewEscalationPolicyPathDataAttributesRules5TimeZone = "Europe/Lisbon"
 	NewEscalationPolicyPathDataAttributesRules5TimeZoneEuropeLjubljana             NewEscalationPolicyPathDataAttributesRules5TimeZone = "Europe/Ljubljana"
 	NewEscalationPolicyPathDataAttributesRules5TimeZoneEuropeLondon                NewEscalationPolicyPathDataAttributesRules5TimeZone = "Europe/London"
@@ -20412,6 +20762,8 @@ func (e NewEscalationPolicyPathDataAttributesRules5TimeZone) Valid() bool {
 		return true
 	case NewEscalationPolicyPathDataAttributesRules5TimeZoneAsiaYakutsk:
 		return true
+	case NewEscalationPolicyPathDataAttributesRules5TimeZoneAsiaYangon:
+		return true
 	case NewEscalationPolicyPathDataAttributesRules5TimeZoneAsiaYekaterinburg:
 		return true
 	case NewEscalationPolicyPathDataAttributesRules5TimeZoneAsiaYerevan:
@@ -20557,6 +20909,8 @@ func (e NewEscalationPolicyPathDataAttributesRules5TimeZone) Valid() bool {
 	case NewEscalationPolicyPathDataAttributesRules5TimeZoneEuropeKaliningrad:
 		return true
 	case NewEscalationPolicyPathDataAttributesRules5TimeZoneEuropeKiev:
+		return true
+	case NewEscalationPolicyPathDataAttributesRules5TimeZoneEuropeKyiv:
 		return true
 	case NewEscalationPolicyPathDataAttributesRules5TimeZoneEuropeLisbon:
 		return true
@@ -21018,6 +21372,7 @@ const (
 	NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAsiaUrumqi                  NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Asia/Urumqi"
 	NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAsiaVladivostok             NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Asia/Vladivostok"
 	NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAsiaYakutsk                 NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Asia/Yakutsk"
+	NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAsiaYangon                  NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Asia/Yangon"
 	NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAsiaYekaterinburg           NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Asia/Yekaterinburg"
 	NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAsiaYerevan                 NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Asia/Yerevan"
 	NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAstana                      NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Astana"
@@ -21091,6 +21446,7 @@ const (
 	NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneEuropeIstanbul              NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Europe/Istanbul"
 	NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneEuropeKaliningrad           NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Europe/Kaliningrad"
 	NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneEuropeKiev                  NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Europe/Kiev"
+	NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneEuropeKyiv                  NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Europe/Kyiv"
 	NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneEuropeLisbon                NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Europe/Lisbon"
 	NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneEuropeLjubljana             NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Europe/Ljubljana"
 	NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneEuropeLondon                NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Europe/London"
@@ -21411,6 +21767,8 @@ func (e NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone) Valid() bo
 		return true
 	case NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAsiaYakutsk:
 		return true
+	case NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAsiaYangon:
+		return true
 	case NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAsiaYekaterinburg:
 		return true
 	case NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAsiaYerevan:
@@ -21556,6 +21914,8 @@ func (e NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZone) Valid() bo
 	case NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneEuropeKaliningrad:
 		return true
 	case NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneEuropeKiev:
+		return true
+	case NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneEuropeKyiv:
 		return true
 	case NewEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneEuropeLisbon:
 		return true
@@ -23762,6 +24122,27 @@ func (e NewOnCallRoleDataAttributesLiveCallRoutingPermissions) Valid() bool {
 	}
 }
 
+// Defines values for NewOnCallRoleDataAttributesMembersPermissions.
+const (
+	NewOnCallRoleDataAttributesMembersPermissionsDelete NewOnCallRoleDataAttributesMembersPermissions = "delete"
+	NewOnCallRoleDataAttributesMembersPermissionsRead   NewOnCallRoleDataAttributesMembersPermissions = "read"
+	NewOnCallRoleDataAttributesMembersPermissionsUpdate NewOnCallRoleDataAttributesMembersPermissions = "update"
+)
+
+// Valid indicates whether the value is a known member of the NewOnCallRoleDataAttributesMembersPermissions enum.
+func (e NewOnCallRoleDataAttributesMembersPermissions) Valid() bool {
+	switch e {
+	case NewOnCallRoleDataAttributesMembersPermissionsDelete:
+		return true
+	case NewOnCallRoleDataAttributesMembersPermissionsRead:
+		return true
+	case NewOnCallRoleDataAttributesMembersPermissionsUpdate:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for NewOnCallRoleDataAttributesOnCallReadinessReportPermissions.
 const (
 	NewOnCallRoleDataAttributesOnCallReadinessReportPermissionsRead NewOnCallRoleDataAttributesOnCallReadinessReportPermissions = "read"
@@ -23978,6 +24359,24 @@ func (e NewOverrideShiftDataType) Valid() bool {
 	}
 }
 
+// Defines values for NewPlaybookDataAttributesKind.
+const (
+	NewPlaybookDataAttributesKindExternalURL      NewPlaybookDataAttributesKind = "external_url"
+	NewPlaybookDataAttributesKindInternalDocument NewPlaybookDataAttributesKind = "internal_document"
+)
+
+// Valid indicates whether the value is a known member of the NewPlaybookDataAttributesKind enum.
+func (e NewPlaybookDataAttributesKind) Valid() bool {
+	switch e {
+	case NewPlaybookDataAttributesKindExternalURL:
+		return true
+	case NewPlaybookDataAttributesKindInternalDocument:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for NewPlaybookDataType.
 const (
 	NewPlaybookDataTypePlaybooks NewPlaybookDataType = "playbooks"
@@ -24035,6 +24434,105 @@ const (
 func (e NewPostMortemTemplateDataType) Valid() bool {
 	switch e {
 	case NewPostMortemTemplateDataTypePostMortemTemplates:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for NewProblemDataAttributesPriority.
+const (
+	NewProblemDataAttributesPriorityP0 NewProblemDataAttributesPriority = "P0"
+	NewProblemDataAttributesPriorityP1 NewProblemDataAttributesPriority = "P1"
+	NewProblemDataAttributesPriorityP2 NewProblemDataAttributesPriority = "P2"
+	NewProblemDataAttributesPriorityP3 NewProblemDataAttributesPriority = "P3"
+)
+
+// Valid indicates whether the value is a known member of the NewProblemDataAttributesPriority enum.
+func (e NewProblemDataAttributesPriority) Valid() bool {
+	switch e {
+	case NewProblemDataAttributesPriorityP0:
+		return true
+	case NewProblemDataAttributesPriorityP1:
+		return true
+	case NewProblemDataAttributesPriorityP2:
+		return true
+	case NewProblemDataAttributesPriorityP3:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for NewProblemDataType.
+const (
+	NewProblemDataTypeProblems NewProblemDataType = "problems"
+)
+
+// Valid indicates whether the value is a known member of the NewProblemDataType enum.
+func (e NewProblemDataType) Valid() bool {
+	switch e {
+	case NewProblemDataTypeProblems:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for NewProblemActionItemDataAttributesPriority.
+const (
+	NewProblemActionItemDataAttributesPriorityHigh   NewProblemActionItemDataAttributesPriority = "high"
+	NewProblemActionItemDataAttributesPriorityLow    NewProblemActionItemDataAttributesPriority = "low"
+	NewProblemActionItemDataAttributesPriorityMedium NewProblemActionItemDataAttributesPriority = "medium"
+)
+
+// Valid indicates whether the value is a known member of the NewProblemActionItemDataAttributesPriority enum.
+func (e NewProblemActionItemDataAttributesPriority) Valid() bool {
+	switch e {
+	case NewProblemActionItemDataAttributesPriorityHigh:
+		return true
+	case NewProblemActionItemDataAttributesPriorityLow:
+		return true
+	case NewProblemActionItemDataAttributesPriorityMedium:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for NewProblemActionItemDataAttributesStatus.
+const (
+	NewProblemActionItemDataAttributesStatusCancelled  NewProblemActionItemDataAttributesStatus = "cancelled"
+	NewProblemActionItemDataAttributesStatusDone       NewProblemActionItemDataAttributesStatus = "done"
+	NewProblemActionItemDataAttributesStatusInProgress NewProblemActionItemDataAttributesStatus = "in_progress"
+	NewProblemActionItemDataAttributesStatusOpen       NewProblemActionItemDataAttributesStatus = "open"
+)
+
+// Valid indicates whether the value is a known member of the NewProblemActionItemDataAttributesStatus enum.
+func (e NewProblemActionItemDataAttributesStatus) Valid() bool {
+	switch e {
+	case NewProblemActionItemDataAttributesStatusCancelled:
+		return true
+	case NewProblemActionItemDataAttributesStatusDone:
+		return true
+	case NewProblemActionItemDataAttributesStatusInProgress:
+		return true
+	case NewProblemActionItemDataAttributesStatusOpen:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for NewProblemActionItemDataType.
+const (
+	NewProblemActionItemDataTypeProblemActionItems NewProblemActionItemDataType = "problem_action_items"
+)
+
+// Valid indicates whether the value is a known member of the NewProblemActionItemDataType enum.
+func (e NewProblemActionItemDataType) Valid() bool {
+	switch e {
+	case NewProblemActionItemDataTypeProblemActionItems:
 		return true
 	default:
 		return false
@@ -24611,6 +25109,30 @@ func (e NewRoleDataAttributesPlaybooksPermissions) Valid() bool {
 	case NewRoleDataAttributesPlaybooksPermissionsRead:
 		return true
 	case NewRoleDataAttributesPlaybooksPermissionsUpdate:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for NewRoleDataAttributesPrivateAgentPermissions.
+const (
+	NewRoleDataAttributesPrivateAgentPermissionsCreate NewRoleDataAttributesPrivateAgentPermissions = "create"
+	NewRoleDataAttributesPrivateAgentPermissionsDelete NewRoleDataAttributesPrivateAgentPermissions = "delete"
+	NewRoleDataAttributesPrivateAgentPermissionsRead   NewRoleDataAttributesPrivateAgentPermissions = "read"
+	NewRoleDataAttributesPrivateAgentPermissionsUpdate NewRoleDataAttributesPrivateAgentPermissions = "update"
+)
+
+// Valid indicates whether the value is a known member of the NewRoleDataAttributesPrivateAgentPermissions enum.
+func (e NewRoleDataAttributesPrivateAgentPermissions) Valid() bool {
+	switch e {
+	case NewRoleDataAttributesPrivateAgentPermissionsCreate:
+		return true
+	case NewRoleDataAttributesPrivateAgentPermissionsDelete:
+		return true
+	case NewRoleDataAttributesPrivateAgentPermissionsRead:
+		return true
+	case NewRoleDataAttributesPrivateAgentPermissionsUpdate:
 		return true
 	default:
 		return false
@@ -25787,6 +26309,39 @@ func (e NewStatusPageComponentGroupDataType) Valid() bool {
 	}
 }
 
+// Defines values for NewStatusPageTeamDataAttributesPermissionLevel.
+const (
+	NewStatusPageTeamDataAttributesPermissionLevelEditAndPublish NewStatusPageTeamDataAttributesPermissionLevel = "edit_and_publish"
+	NewStatusPageTeamDataAttributesPermissionLevelPublishOnly    NewStatusPageTeamDataAttributesPermissionLevel = "publish_only"
+)
+
+// Valid indicates whether the value is a known member of the NewStatusPageTeamDataAttributesPermissionLevel enum.
+func (e NewStatusPageTeamDataAttributesPermissionLevel) Valid() bool {
+	switch e {
+	case NewStatusPageTeamDataAttributesPermissionLevelEditAndPublish:
+		return true
+	case NewStatusPageTeamDataAttributesPermissionLevelPublishOnly:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for NewStatusPageTeamDataType.
+const (
+	NewStatusPageTeamDataTypeStatusPageGroups NewStatusPageTeamDataType = "status_page_groups"
+)
+
+// Valid indicates whether the value is a known member of the NewStatusPageTeamDataType enum.
+func (e NewStatusPageTeamDataType) Valid() bool {
+	switch e {
+	case NewStatusPageTeamDataTypeStatusPageGroups:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for NewStatusPageTemplateDataAttributesKind.
 const (
 	NewStatusPageTemplateDataAttributesKindNormal    NewStatusPageTemplateDataAttributesKind = "normal"
@@ -25904,6 +26459,27 @@ func (e NewTeamDataAttributesAutoAddMembersScope) Valid() bool {
 	case NewTeamDataAttributesAutoAddMembersScopePublicAndTest:
 		return true
 	case NewTeamDataAttributesAutoAddMembersScopePublicOnly:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for NewTeamDataAttributesScheduleOverridePolicy.
+const (
+	NewTeamDataAttributesScheduleOverridePolicyAdmins   NewTeamDataAttributesScheduleOverridePolicy = "admins"
+	NewTeamDataAttributesScheduleOverridePolicyEveryone NewTeamDataAttributesScheduleOverridePolicy = "everyone"
+	NewTeamDataAttributesScheduleOverridePolicyMembers  NewTeamDataAttributesScheduleOverridePolicy = "members"
+)
+
+// Valid indicates whether the value is a known member of the NewTeamDataAttributesScheduleOverridePolicy enum.
+func (e NewTeamDataAttributesScheduleOverridePolicy) Valid() bool {
+	switch e {
+	case NewTeamDataAttributesScheduleOverridePolicyAdmins:
+		return true
+	case NewTeamDataAttributesScheduleOverridePolicyEveryone:
+		return true
+	case NewTeamDataAttributesScheduleOverridePolicyMembers:
 		return true
 	default:
 		return false
@@ -26960,6 +27536,27 @@ func (e OnCallRoleLiveCallRoutingPermissions) Valid() bool {
 	}
 }
 
+// Defines values for OnCallRoleMembersPermissions.
+const (
+	OnCallRoleMembersPermissionsDelete OnCallRoleMembersPermissions = "delete"
+	OnCallRoleMembersPermissionsRead   OnCallRoleMembersPermissions = "read"
+	OnCallRoleMembersPermissionsUpdate OnCallRoleMembersPermissions = "update"
+)
+
+// Valid indicates whether the value is a known member of the OnCallRoleMembersPermissions enum.
+func (e OnCallRoleMembersPermissions) Valid() bool {
+	switch e {
+	case OnCallRoleMembersPermissionsDelete:
+		return true
+	case OnCallRoleMembersPermissionsRead:
+		return true
+	case OnCallRoleMembersPermissionsUpdate:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for OnCallRoleOnCallReadinessReportPermissions.
 const (
 	OnCallRoleOnCallReadinessReportPermissionsRead OnCallRoleOnCallReadinessReportPermissions = "read"
@@ -27581,6 +28178,24 @@ func (e PatchAlertRouteDataType) Valid() bool {
 	}
 }
 
+// Defines values for PlaybookKind.
+const (
+	PlaybookKindExternalURL      PlaybookKind = "external_url"
+	PlaybookKindInternalDocument PlaybookKind = "internal_document"
+)
+
+// Valid indicates whether the value is a known member of the PlaybookKind enum.
+func (e PlaybookKind) Valid() bool {
+	switch e {
+	case PlaybookKindExternalURL:
+		return true
+	case PlaybookKindInternalDocument:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for PlaybookListDataType.
 const (
 	PlaybookListDataTypePlaybooks PlaybookListDataType = "playbooks"
@@ -28094,6 +28709,42 @@ func (e PostMortemTriggerParamsIncidentConditionResolvedAt) Valid() bool {
 	}
 }
 
+// Defines values for PostMortemTriggerParamsIncidentConditionScheduledFor.
+const (
+	PostMortemTriggerParamsIncidentConditionScheduledForSET   PostMortemTriggerParamsIncidentConditionScheduledFor = "SET"
+	PostMortemTriggerParamsIncidentConditionScheduledForUNSET PostMortemTriggerParamsIncidentConditionScheduledFor = "UNSET"
+)
+
+// Valid indicates whether the value is a known member of the PostMortemTriggerParamsIncidentConditionScheduledFor enum.
+func (e PostMortemTriggerParamsIncidentConditionScheduledFor) Valid() bool {
+	switch e {
+	case PostMortemTriggerParamsIncidentConditionScheduledForSET:
+		return true
+	case PostMortemTriggerParamsIncidentConditionScheduledForUNSET:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PostMortemTriggerParamsIncidentConditionScheduledUntil.
+const (
+	PostMortemTriggerParamsIncidentConditionScheduledUntilSET   PostMortemTriggerParamsIncidentConditionScheduledUntil = "SET"
+	PostMortemTriggerParamsIncidentConditionScheduledUntilUNSET PostMortemTriggerParamsIncidentConditionScheduledUntil = "UNSET"
+)
+
+// Valid indicates whether the value is a known member of the PostMortemTriggerParamsIncidentConditionScheduledUntil enum.
+func (e PostMortemTriggerParamsIncidentConditionScheduledUntil) Valid() bool {
+	switch e {
+	case PostMortemTriggerParamsIncidentConditionScheduledUntilSET:
+		return true
+	case PostMortemTriggerParamsIncidentConditionScheduledUntilUNSET:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for PostMortemTriggerParamsIncidentConditionService.
 const (
 	PostMortemTriggerParamsIncidentConditionServiceANY          PostMortemTriggerParamsIncidentConditionService = "ANY"
@@ -28571,6 +29222,294 @@ func (e PrintTaskParamsTaskType) Valid() bool {
 	}
 }
 
+// Defines values for PrivateAgentAttributesDeploymentMode.
+const (
+	PrivateAgentAttributesDeploymentModeCombined  PrivateAgentAttributesDeploymentMode = "combined"
+	PrivateAgentAttributesDeploymentModeSplitCore PrivateAgentAttributesDeploymentMode = "split-core"
+)
+
+// Valid indicates whether the value is a known member of the PrivateAgentAttributesDeploymentMode enum.
+func (e PrivateAgentAttributesDeploymentMode) Valid() bool {
+	switch e {
+	case PrivateAgentAttributesDeploymentModeCombined:
+		return true
+	case PrivateAgentAttributesDeploymentModeSplitCore:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PrivateAgentAttributesStatus.
+const (
+	PrivateAgentAttributesStatusActive  PrivateAgentAttributesStatus = "active"
+	PrivateAgentAttributesStatusRevoked PrivateAgentAttributesStatus = "revoked"
+)
+
+// Valid indicates whether the value is a known member of the PrivateAgentAttributesStatus enum.
+func (e PrivateAgentAttributesStatus) Valid() bool {
+	switch e {
+	case PrivateAgentAttributesStatusActive:
+		return true
+	case PrivateAgentAttributesStatusRevoked:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PrivateAgentType.
+const (
+	PrivateAgentTypePrivateAgents PrivateAgentType = "private_agents"
+)
+
+// Valid indicates whether the value is a known member of the PrivateAgentType enum.
+func (e PrivateAgentType) Valid() bool {
+	switch e {
+	case PrivateAgentTypePrivateAgents:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PrivateAgentEnrollmentTokenResponseDataType.
+const (
+	PrivateAgentEnrollmentTokenResponseDataTypePrivateAgentEnrollmentTokens PrivateAgentEnrollmentTokenResponseDataType = "private_agent_enrollment_tokens"
+)
+
+// Valid indicates whether the value is a known member of the PrivateAgentEnrollmentTokenResponseDataType enum.
+func (e PrivateAgentEnrollmentTokenResponseDataType) Valid() bool {
+	switch e {
+	case PrivateAgentEnrollmentTokenResponseDataTypePrivateAgentEnrollmentTokens:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PrivateAgentSummaryAttributesDeploymentMode.
+const (
+	PrivateAgentSummaryAttributesDeploymentModeCombined  PrivateAgentSummaryAttributesDeploymentMode = "combined"
+	PrivateAgentSummaryAttributesDeploymentModeSplitCore PrivateAgentSummaryAttributesDeploymentMode = "split-core"
+)
+
+// Valid indicates whether the value is a known member of the PrivateAgentSummaryAttributesDeploymentMode enum.
+func (e PrivateAgentSummaryAttributesDeploymentMode) Valid() bool {
+	switch e {
+	case PrivateAgentSummaryAttributesDeploymentModeCombined:
+		return true
+	case PrivateAgentSummaryAttributesDeploymentModeSplitCore:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PrivateAgentSummaryAttributesStatus.
+const (
+	PrivateAgentSummaryAttributesStatusActive  PrivateAgentSummaryAttributesStatus = "active"
+	PrivateAgentSummaryAttributesStatusRevoked PrivateAgentSummaryAttributesStatus = "revoked"
+)
+
+// Valid indicates whether the value is a known member of the PrivateAgentSummaryAttributesStatus enum.
+func (e PrivateAgentSummaryAttributesStatus) Valid() bool {
+	switch e {
+	case PrivateAgentSummaryAttributesStatusActive:
+		return true
+	case PrivateAgentSummaryAttributesStatusRevoked:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PrivateAgentSummaryType.
+const (
+	PrivateAgentSummaryTypePrivateAgents PrivateAgentSummaryType = "private_agents"
+)
+
+// Valid indicates whether the value is a known member of the PrivateAgentSummaryType enum.
+func (e PrivateAgentSummaryType) Valid() bool {
+	switch e {
+	case PrivateAgentSummaryTypePrivateAgents:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PrivateAgentUpdateDataType.
+const (
+	PrivateAgentUpdateDataTypePrivateAgents PrivateAgentUpdateDataType = "private_agents"
+)
+
+// Valid indicates whether the value is a known member of the PrivateAgentUpdateDataType enum.
+func (e PrivateAgentUpdateDataType) Valid() bool {
+	switch e {
+	case PrivateAgentUpdateDataTypePrivateAgents:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for ProblemPriority.
+const (
+	ProblemPriorityP0 ProblemPriority = "P0"
+	ProblemPriorityP1 ProblemPriority = "P1"
+	ProblemPriorityP2 ProblemPriority = "P2"
+	ProblemPriorityP3 ProblemPriority = "P3"
+)
+
+// Valid indicates whether the value is a known member of the ProblemPriority enum.
+func (e ProblemPriority) Valid() bool {
+	switch e {
+	case ProblemPriorityP0:
+		return true
+	case ProblemPriorityP1:
+		return true
+	case ProblemPriorityP2:
+		return true
+	case ProblemPriorityP3:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for ProblemStatus.
+const (
+	ProblemStatusCancelled  ProblemStatus = "cancelled"
+	ProblemStatusCompleted  ProblemStatus = "completed"
+	ProblemStatusCreated    ProblemStatus = "created"
+	ProblemStatusDeferred   ProblemStatus = "deferred"
+	ProblemStatusInProgress ProblemStatus = "in_progress"
+)
+
+// Valid indicates whether the value is a known member of the ProblemStatus enum.
+func (e ProblemStatus) Valid() bool {
+	switch e {
+	case ProblemStatusCancelled:
+		return true
+	case ProblemStatusCompleted:
+		return true
+	case ProblemStatusCreated:
+		return true
+	case ProblemStatusDeferred:
+		return true
+	case ProblemStatusInProgress:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for ProblemActionItemPriority.
+const (
+	ProblemActionItemPriorityHigh   ProblemActionItemPriority = "high"
+	ProblemActionItemPriorityLow    ProblemActionItemPriority = "low"
+	ProblemActionItemPriorityMedium ProblemActionItemPriority = "medium"
+)
+
+// Valid indicates whether the value is a known member of the ProblemActionItemPriority enum.
+func (e ProblemActionItemPriority) Valid() bool {
+	switch e {
+	case ProblemActionItemPriorityHigh:
+		return true
+	case ProblemActionItemPriorityLow:
+		return true
+	case ProblemActionItemPriorityMedium:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for ProblemActionItemStatus.
+const (
+	ProblemActionItemStatusCancelled  ProblemActionItemStatus = "cancelled"
+	ProblemActionItemStatusDone       ProblemActionItemStatus = "done"
+	ProblemActionItemStatusInProgress ProblemActionItemStatus = "in_progress"
+	ProblemActionItemStatusOpen       ProblemActionItemStatus = "open"
+)
+
+// Valid indicates whether the value is a known member of the ProblemActionItemStatus enum.
+func (e ProblemActionItemStatus) Valid() bool {
+	switch e {
+	case ProblemActionItemStatusCancelled:
+		return true
+	case ProblemActionItemStatusDone:
+		return true
+	case ProblemActionItemStatusInProgress:
+		return true
+	case ProblemActionItemStatusOpen:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for ProblemActionItemListDataType.
+const (
+	ProblemActionItemListDataTypeProblemActionItems ProblemActionItemListDataType = "problem_action_items"
+)
+
+// Valid indicates whether the value is a known member of the ProblemActionItemListDataType enum.
+func (e ProblemActionItemListDataType) Valid() bool {
+	switch e {
+	case ProblemActionItemListDataTypeProblemActionItems:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for ProblemActionItemResponseDataType.
+const (
+	ProblemActionItemResponseDataTypeProblemActionItems ProblemActionItemResponseDataType = "problem_action_items"
+)
+
+// Valid indicates whether the value is a known member of the ProblemActionItemResponseDataType enum.
+func (e ProblemActionItemResponseDataType) Valid() bool {
+	switch e {
+	case ProblemActionItemResponseDataTypeProblemActionItems:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for ProblemListDataType.
+const (
+	ProblemListDataTypeProblems ProblemListDataType = "problems"
+)
+
+// Valid indicates whether the value is a known member of the ProblemListDataType enum.
+func (e ProblemListDataType) Valid() bool {
+	switch e {
+	case ProblemListDataTypeProblems:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for ProblemResponseDataType.
+const (
+	ProblemResponseDataTypeProblems ProblemResponseDataType = "problems"
+)
+
+// Valid indicates whether the value is a known member of the ProblemResponseDataType enum.
+func (e ProblemResponseDataType) Valid() bool {
+	switch e {
+	case ProblemResponseDataTypeProblems:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for PublishIncidentTaskParamsSelectedComponentStatuses.
 const (
 	PublishIncidentTaskParamsSelectedComponentStatusesDegradedPerformance PublishIncidentTaskParamsSelectedComponentStatuses = "degraded_performance"
@@ -28622,6 +29561,30 @@ func (e PublishIncidentTaskParamsStatus) Valid() bool {
 	case PublishIncidentTaskParamsStatusResolved:
 		return true
 	case PublishIncidentTaskParamsStatusScheduled:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PublishIncidentTaskParamsSyncedComponentStatus.
+const (
+	PublishIncidentTaskParamsSyncedComponentStatusDegradedPerformance PublishIncidentTaskParamsSyncedComponentStatus = "degraded_performance"
+	PublishIncidentTaskParamsSyncedComponentStatusMajorOutage         PublishIncidentTaskParamsSyncedComponentStatus = "major_outage"
+	PublishIncidentTaskParamsSyncedComponentStatusOperational         PublishIncidentTaskParamsSyncedComponentStatus = "operational"
+	PublishIncidentTaskParamsSyncedComponentStatusPartialOutage       PublishIncidentTaskParamsSyncedComponentStatus = "partial_outage"
+)
+
+// Valid indicates whether the value is a known member of the PublishIncidentTaskParamsSyncedComponentStatus enum.
+func (e PublishIncidentTaskParamsSyncedComponentStatus) Valid() bool {
+	switch e {
+	case PublishIncidentTaskParamsSyncedComponentStatusDegradedPerformance:
+		return true
+	case PublishIncidentTaskParamsSyncedComponentStatusMajorOutage:
+		return true
+	case PublishIncidentTaskParamsSyncedComponentStatusOperational:
+		return true
+	case PublishIncidentTaskParamsSyncedComponentStatusPartialOutage:
 		return true
 	default:
 		return false
@@ -28895,6 +29858,36 @@ const (
 func (e RedisClientTaskParamsTaskType) Valid() bool {
 	switch e {
 	case RedisClientTaskParamsTaskTypeRedisClient:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for RemoveFromSlackChannelTaskParamsTargetKind.
+const (
+	RemoveFromSlackChannelTaskParamsTargetKindUsersWithoutPrivateIncidentAccess RemoveFromSlackChannelTaskParamsTargetKind = "users_without_private_incident_access"
+)
+
+// Valid indicates whether the value is a known member of the RemoveFromSlackChannelTaskParamsTargetKind enum.
+func (e RemoveFromSlackChannelTaskParamsTargetKind) Valid() bool {
+	switch e {
+	case RemoveFromSlackChannelTaskParamsTargetKindUsersWithoutPrivateIncidentAccess:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for RemoveFromSlackChannelTaskParamsTaskType.
+const (
+	RemoveFromSlackChannelTaskParamsTaskTypeRemoveFromSlackChannel RemoveFromSlackChannelTaskParamsTaskType = "remove_from_slack_channel"
+)
+
+// Valid indicates whether the value is a known member of the RemoveFromSlackChannelTaskParamsTaskType enum.
+func (e RemoveFromSlackChannelTaskParamsTaskType) Valid() bool {
+	switch e {
+	case RemoveFromSlackChannelTaskParamsTaskTypeRemoveFromSlackChannel:
 		return true
 	default:
 		return false
@@ -29705,6 +30698,30 @@ func (e RolePlaybooksPermissions) Valid() bool {
 	case RolePlaybooksPermissionsRead:
 		return true
 	case RolePlaybooksPermissionsUpdate:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for RolePrivateAgentPermissions.
+const (
+	RolePrivateAgentPermissionsCreate RolePrivateAgentPermissions = "create"
+	RolePrivateAgentPermissionsDelete RolePrivateAgentPermissions = "delete"
+	RolePrivateAgentPermissionsRead   RolePrivateAgentPermissions = "read"
+	RolePrivateAgentPermissionsUpdate RolePrivateAgentPermissions = "update"
+)
+
+// Valid indicates whether the value is a known member of the RolePrivateAgentPermissions enum.
+func (e RolePrivateAgentPermissions) Valid() bool {
+	switch e {
+	case RolePrivateAgentPermissionsCreate:
+		return true
+	case RolePrivateAgentPermissionsDelete:
+		return true
+	case RolePrivateAgentPermissionsRead:
+		return true
+	case RolePrivateAgentPermissionsUpdate:
 		return true
 	default:
 		return false
@@ -31445,6 +32462,54 @@ func (e StatusPageResponseDataType) Valid() bool {
 	}
 }
 
+// Defines values for StatusPageTeamPermissionLevel.
+const (
+	StatusPageTeamPermissionLevelEditAndPublish StatusPageTeamPermissionLevel = "edit_and_publish"
+	StatusPageTeamPermissionLevelPublishOnly    StatusPageTeamPermissionLevel = "publish_only"
+)
+
+// Valid indicates whether the value is a known member of the StatusPageTeamPermissionLevel enum.
+func (e StatusPageTeamPermissionLevel) Valid() bool {
+	switch e {
+	case StatusPageTeamPermissionLevelEditAndPublish:
+		return true
+	case StatusPageTeamPermissionLevelPublishOnly:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for StatusPageTeamListDataType.
+const (
+	StatusPageTeamListDataTypeStatusPageGroups StatusPageTeamListDataType = "status_page_groups"
+)
+
+// Valid indicates whether the value is a known member of the StatusPageTeamListDataType enum.
+func (e StatusPageTeamListDataType) Valid() bool {
+	switch e {
+	case StatusPageTeamListDataTypeStatusPageGroups:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for StatusPageTeamResponseDataType.
+const (
+	StatusPageTeamResponseDataTypeStatusPageGroups StatusPageTeamResponseDataType = "status_page_groups"
+)
+
+// Valid indicates whether the value is a known member of the StatusPageTeamResponseDataType enum.
+func (e StatusPageTeamResponseDataType) Valid() bool {
+	switch e {
+	case StatusPageTeamResponseDataTypeStatusPageGroups:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for StatusPageTemplateKind.
 const (
 	StatusPageTemplateKindNormal    StatusPageTemplateKind = "normal"
@@ -31631,6 +32696,27 @@ func (e TeamManagedBy) Valid() bool {
 	case TeamManagedByTerraform:
 		return true
 	case TeamManagedByWeb:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for TeamScheduleOverridePolicy.
+const (
+	TeamScheduleOverridePolicyAdmins   TeamScheduleOverridePolicy = "admins"
+	TeamScheduleOverridePolicyEveryone TeamScheduleOverridePolicy = "everyone"
+	TeamScheduleOverridePolicyMembers  TeamScheduleOverridePolicy = "members"
+)
+
+// Valid indicates whether the value is a known member of the TeamScheduleOverridePolicy enum.
+func (e TeamScheduleOverridePolicy) Valid() bool {
+	switch e {
+	case TeamScheduleOverridePolicyAdmins:
+		return true
+	case TeamScheduleOverridePolicyEveryone:
+		return true
+	case TeamScheduleOverridePolicyMembers:
 		return true
 	default:
 		return false
@@ -32144,6 +33230,150 @@ func (e UpdateAlertDataType) Valid() bool {
 	}
 }
 
+// Defines values for UpdateAlertConfigurationDataAttributesAlertAcknowledgmentTimeoutMinutes.
+const (
+	UpdateAlertConfigurationDataAttributesAlertAcknowledgmentTimeoutMinutesN10   UpdateAlertConfigurationDataAttributesAlertAcknowledgmentTimeoutMinutes = 10
+	UpdateAlertConfigurationDataAttributesAlertAcknowledgmentTimeoutMinutesN120  UpdateAlertConfigurationDataAttributesAlertAcknowledgmentTimeoutMinutes = 120
+	UpdateAlertConfigurationDataAttributesAlertAcknowledgmentTimeoutMinutesN1440 UpdateAlertConfigurationDataAttributesAlertAcknowledgmentTimeoutMinutes = 1440
+	UpdateAlertConfigurationDataAttributesAlertAcknowledgmentTimeoutMinutesN180  UpdateAlertConfigurationDataAttributesAlertAcknowledgmentTimeoutMinutes = 180
+	UpdateAlertConfigurationDataAttributesAlertAcknowledgmentTimeoutMinutesN20   UpdateAlertConfigurationDataAttributesAlertAcknowledgmentTimeoutMinutes = 20
+	UpdateAlertConfigurationDataAttributesAlertAcknowledgmentTimeoutMinutesN240  UpdateAlertConfigurationDataAttributesAlertAcknowledgmentTimeoutMinutes = 240
+	UpdateAlertConfigurationDataAttributesAlertAcknowledgmentTimeoutMinutesN30   UpdateAlertConfigurationDataAttributesAlertAcknowledgmentTimeoutMinutes = 30
+	UpdateAlertConfigurationDataAttributesAlertAcknowledgmentTimeoutMinutesN300  UpdateAlertConfigurationDataAttributesAlertAcknowledgmentTimeoutMinutes = 300
+	UpdateAlertConfigurationDataAttributesAlertAcknowledgmentTimeoutMinutesN360  UpdateAlertConfigurationDataAttributesAlertAcknowledgmentTimeoutMinutes = 360
+	UpdateAlertConfigurationDataAttributesAlertAcknowledgmentTimeoutMinutesN40   UpdateAlertConfigurationDataAttributesAlertAcknowledgmentTimeoutMinutes = 40
+	UpdateAlertConfigurationDataAttributesAlertAcknowledgmentTimeoutMinutesN50   UpdateAlertConfigurationDataAttributesAlertAcknowledgmentTimeoutMinutes = 50
+	UpdateAlertConfigurationDataAttributesAlertAcknowledgmentTimeoutMinutesN60   UpdateAlertConfigurationDataAttributesAlertAcknowledgmentTimeoutMinutes = 60
+	UpdateAlertConfigurationDataAttributesAlertAcknowledgmentTimeoutMinutesN720  UpdateAlertConfigurationDataAttributesAlertAcknowledgmentTimeoutMinutes = 720
+	UpdateAlertConfigurationDataAttributesAlertAcknowledgmentTimeoutMinutesN90   UpdateAlertConfigurationDataAttributesAlertAcknowledgmentTimeoutMinutes = 90
+)
+
+// Valid indicates whether the value is a known member of the UpdateAlertConfigurationDataAttributesAlertAcknowledgmentTimeoutMinutes enum.
+func (e UpdateAlertConfigurationDataAttributesAlertAcknowledgmentTimeoutMinutes) Valid() bool {
+	switch e {
+	case UpdateAlertConfigurationDataAttributesAlertAcknowledgmentTimeoutMinutesN10:
+		return true
+	case UpdateAlertConfigurationDataAttributesAlertAcknowledgmentTimeoutMinutesN120:
+		return true
+	case UpdateAlertConfigurationDataAttributesAlertAcknowledgmentTimeoutMinutesN1440:
+		return true
+	case UpdateAlertConfigurationDataAttributesAlertAcknowledgmentTimeoutMinutesN180:
+		return true
+	case UpdateAlertConfigurationDataAttributesAlertAcknowledgmentTimeoutMinutesN20:
+		return true
+	case UpdateAlertConfigurationDataAttributesAlertAcknowledgmentTimeoutMinutesN240:
+		return true
+	case UpdateAlertConfigurationDataAttributesAlertAcknowledgmentTimeoutMinutesN30:
+		return true
+	case UpdateAlertConfigurationDataAttributesAlertAcknowledgmentTimeoutMinutesN300:
+		return true
+	case UpdateAlertConfigurationDataAttributesAlertAcknowledgmentTimeoutMinutesN360:
+		return true
+	case UpdateAlertConfigurationDataAttributesAlertAcknowledgmentTimeoutMinutesN40:
+		return true
+	case UpdateAlertConfigurationDataAttributesAlertAcknowledgmentTimeoutMinutesN50:
+		return true
+	case UpdateAlertConfigurationDataAttributesAlertAcknowledgmentTimeoutMinutesN60:
+		return true
+	case UpdateAlertConfigurationDataAttributesAlertAcknowledgmentTimeoutMinutesN720:
+		return true
+	case UpdateAlertConfigurationDataAttributesAlertAcknowledgmentTimeoutMinutesN90:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateAlertConfigurationDataAttributesDefaultUserNotificationSettingsAudibleContactTypes.
+const (
+	UpdateAlertConfigurationDataAttributesDefaultUserNotificationSettingsAudibleContactTypesCall   UpdateAlertConfigurationDataAttributesDefaultUserNotificationSettingsAudibleContactTypes = "call"
+	UpdateAlertConfigurationDataAttributesDefaultUserNotificationSettingsAudibleContactTypesDevice UpdateAlertConfigurationDataAttributesDefaultUserNotificationSettingsAudibleContactTypes = "device"
+	UpdateAlertConfigurationDataAttributesDefaultUserNotificationSettingsAudibleContactTypesEmail  UpdateAlertConfigurationDataAttributesDefaultUserNotificationSettingsAudibleContactTypes = "email"
+	UpdateAlertConfigurationDataAttributesDefaultUserNotificationSettingsAudibleContactTypesSms    UpdateAlertConfigurationDataAttributesDefaultUserNotificationSettingsAudibleContactTypes = "sms"
+)
+
+// Valid indicates whether the value is a known member of the UpdateAlertConfigurationDataAttributesDefaultUserNotificationSettingsAudibleContactTypes enum.
+func (e UpdateAlertConfigurationDataAttributesDefaultUserNotificationSettingsAudibleContactTypes) Valid() bool {
+	switch e {
+	case UpdateAlertConfigurationDataAttributesDefaultUserNotificationSettingsAudibleContactTypesCall:
+		return true
+	case UpdateAlertConfigurationDataAttributesDefaultUserNotificationSettingsAudibleContactTypesDevice:
+		return true
+	case UpdateAlertConfigurationDataAttributesDefaultUserNotificationSettingsAudibleContactTypesEmail:
+		return true
+	case UpdateAlertConfigurationDataAttributesDefaultUserNotificationSettingsAudibleContactTypesSms:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateAlertConfigurationDataAttributesDefaultUserNotificationSettingsQuietContactTypes.
+const (
+	UpdateAlertConfigurationDataAttributesDefaultUserNotificationSettingsQuietContactTypesCall              UpdateAlertConfigurationDataAttributesDefaultUserNotificationSettingsQuietContactTypes = "call"
+	UpdateAlertConfigurationDataAttributesDefaultUserNotificationSettingsQuietContactTypesEmail             UpdateAlertConfigurationDataAttributesDefaultUserNotificationSettingsQuietContactTypes = "email"
+	UpdateAlertConfigurationDataAttributesDefaultUserNotificationSettingsQuietContactTypesNonCriticalDevice UpdateAlertConfigurationDataAttributesDefaultUserNotificationSettingsQuietContactTypes = "non_critical_device"
+	UpdateAlertConfigurationDataAttributesDefaultUserNotificationSettingsQuietContactTypesSms               UpdateAlertConfigurationDataAttributesDefaultUserNotificationSettingsQuietContactTypes = "sms"
+)
+
+// Valid indicates whether the value is a known member of the UpdateAlertConfigurationDataAttributesDefaultUserNotificationSettingsQuietContactTypes enum.
+func (e UpdateAlertConfigurationDataAttributesDefaultUserNotificationSettingsQuietContactTypes) Valid() bool {
+	switch e {
+	case UpdateAlertConfigurationDataAttributesDefaultUserNotificationSettingsQuietContactTypesCall:
+		return true
+	case UpdateAlertConfigurationDataAttributesDefaultUserNotificationSettingsQuietContactTypesEmail:
+		return true
+	case UpdateAlertConfigurationDataAttributesDefaultUserNotificationSettingsQuietContactTypesNonCriticalDevice:
+		return true
+	case UpdateAlertConfigurationDataAttributesDefaultUserNotificationSettingsQuietContactTypesSms:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateAlertConfigurationDataAttributesManualPagingFormSettings.
+const (
+	UpdateAlertConfigurationDataAttributesManualPagingFormSettingsEscalationPolicy UpdateAlertConfigurationDataAttributesManualPagingFormSettings = "escalation_policy"
+	UpdateAlertConfigurationDataAttributesManualPagingFormSettingsFunctionality    UpdateAlertConfigurationDataAttributesManualPagingFormSettings = "functionality"
+	UpdateAlertConfigurationDataAttributesManualPagingFormSettingsService          UpdateAlertConfigurationDataAttributesManualPagingFormSettings = "service"
+	UpdateAlertConfigurationDataAttributesManualPagingFormSettingsTeam             UpdateAlertConfigurationDataAttributesManualPagingFormSettings = "team"
+	UpdateAlertConfigurationDataAttributesManualPagingFormSettingsUser             UpdateAlertConfigurationDataAttributesManualPagingFormSettings = "user"
+)
+
+// Valid indicates whether the value is a known member of the UpdateAlertConfigurationDataAttributesManualPagingFormSettings enum.
+func (e UpdateAlertConfigurationDataAttributesManualPagingFormSettings) Valid() bool {
+	switch e {
+	case UpdateAlertConfigurationDataAttributesManualPagingFormSettingsEscalationPolicy:
+		return true
+	case UpdateAlertConfigurationDataAttributesManualPagingFormSettingsFunctionality:
+		return true
+	case UpdateAlertConfigurationDataAttributesManualPagingFormSettingsService:
+		return true
+	case UpdateAlertConfigurationDataAttributesManualPagingFormSettingsTeam:
+		return true
+	case UpdateAlertConfigurationDataAttributesManualPagingFormSettingsUser:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateAlertConfigurationDataType.
+const (
+	UpdateAlertConfigurationDataTypeAlertConfigurations UpdateAlertConfigurationDataType = "alert_configurations"
+)
+
+// Valid indicates whether the value is a known member of the UpdateAlertConfigurationDataType enum.
+func (e UpdateAlertConfigurationDataType) Valid() bool {
+	switch e {
+	case UpdateAlertConfigurationDataTypeAlertConfigurations:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for UpdateAlertEventDataType.
 const (
 	UpdateAlertEventDataTypeAlertEvents UpdateAlertEventDataType = "alert_events"
@@ -32336,162 +33566,6 @@ const (
 func (e UpdateAlertGroupDataType) Valid() bool {
 	switch e {
 	case UpdateAlertGroupDataTypeAlertGroups:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for UpdateAlertRetriggerRuleDataAttributesConditionsKind.
-const (
-	UpdateAlertRetriggerRuleDataAttributesConditionsKindAlertField UpdateAlertRetriggerRuleDataAttributesConditionsKind = "alert_field"
-	UpdateAlertRetriggerRuleDataAttributesConditionsKindGroup      UpdateAlertRetriggerRuleDataAttributesConditionsKind = "group"
-	UpdateAlertRetriggerRuleDataAttributesConditionsKindPayload    UpdateAlertRetriggerRuleDataAttributesConditionsKind = "payload"
-	UpdateAlertRetriggerRuleDataAttributesConditionsKindService    UpdateAlertRetriggerRuleDataAttributesConditionsKind = "service"
-	UpdateAlertRetriggerRuleDataAttributesConditionsKindSource     UpdateAlertRetriggerRuleDataAttributesConditionsKind = "source"
-	UpdateAlertRetriggerRuleDataAttributesConditionsKindUrgency    UpdateAlertRetriggerRuleDataAttributesConditionsKind = "urgency"
-)
-
-// Valid indicates whether the value is a known member of the UpdateAlertRetriggerRuleDataAttributesConditionsKind enum.
-func (e UpdateAlertRetriggerRuleDataAttributesConditionsKind) Valid() bool {
-	switch e {
-	case UpdateAlertRetriggerRuleDataAttributesConditionsKindAlertField:
-		return true
-	case UpdateAlertRetriggerRuleDataAttributesConditionsKindGroup:
-		return true
-	case UpdateAlertRetriggerRuleDataAttributesConditionsKindPayload:
-		return true
-	case UpdateAlertRetriggerRuleDataAttributesConditionsKindService:
-		return true
-	case UpdateAlertRetriggerRuleDataAttributesConditionsKindSource:
-		return true
-	case UpdateAlertRetriggerRuleDataAttributesConditionsKindUrgency:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for UpdateAlertRetriggerRuleDataAttributesConditionsOperator.
-const (
-	UpdateAlertRetriggerRuleDataAttributesConditionsOperatorContains       UpdateAlertRetriggerRuleDataAttributesConditionsOperator = "contains"
-	UpdateAlertRetriggerRuleDataAttributesConditionsOperatorDoesNotContain UpdateAlertRetriggerRuleDataAttributesConditionsOperator = "does_not_contain"
-	UpdateAlertRetriggerRuleDataAttributesConditionsOperatorEndsWith       UpdateAlertRetriggerRuleDataAttributesConditionsOperator = "ends_with"
-	UpdateAlertRetriggerRuleDataAttributesConditionsOperatorIsNotOneOf     UpdateAlertRetriggerRuleDataAttributesConditionsOperator = "is_not_one_of"
-	UpdateAlertRetriggerRuleDataAttributesConditionsOperatorIsNotSet       UpdateAlertRetriggerRuleDataAttributesConditionsOperator = "is_not_set"
-	UpdateAlertRetriggerRuleDataAttributesConditionsOperatorIsOneOf        UpdateAlertRetriggerRuleDataAttributesConditionsOperator = "is_one_of"
-	UpdateAlertRetriggerRuleDataAttributesConditionsOperatorIsSet          UpdateAlertRetriggerRuleDataAttributesConditionsOperator = "is_set"
-	UpdateAlertRetriggerRuleDataAttributesConditionsOperatorMatchesRegex   UpdateAlertRetriggerRuleDataAttributesConditionsOperator = "matches_regex"
-	UpdateAlertRetriggerRuleDataAttributesConditionsOperatorStartsWith     UpdateAlertRetriggerRuleDataAttributesConditionsOperator = "starts_with"
-)
-
-// Valid indicates whether the value is a known member of the UpdateAlertRetriggerRuleDataAttributesConditionsOperator enum.
-func (e UpdateAlertRetriggerRuleDataAttributesConditionsOperator) Valid() bool {
-	switch e {
-	case UpdateAlertRetriggerRuleDataAttributesConditionsOperatorContains:
-		return true
-	case UpdateAlertRetriggerRuleDataAttributesConditionsOperatorDoesNotContain:
-		return true
-	case UpdateAlertRetriggerRuleDataAttributesConditionsOperatorEndsWith:
-		return true
-	case UpdateAlertRetriggerRuleDataAttributesConditionsOperatorIsNotOneOf:
-		return true
-	case UpdateAlertRetriggerRuleDataAttributesConditionsOperatorIsNotSet:
-		return true
-	case UpdateAlertRetriggerRuleDataAttributesConditionsOperatorIsOneOf:
-		return true
-	case UpdateAlertRetriggerRuleDataAttributesConditionsOperatorIsSet:
-		return true
-	case UpdateAlertRetriggerRuleDataAttributesConditionsOperatorMatchesRegex:
-		return true
-	case UpdateAlertRetriggerRuleDataAttributesConditionsOperatorStartsWith:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for UpdateAlertRetriggerRuleDataAttributesMatchMode.
-const (
-	UpdateAlertRetriggerRuleDataAttributesMatchModeMatchAllRules UpdateAlertRetriggerRuleDataAttributesMatchMode = "match-all-rules"
-	UpdateAlertRetriggerRuleDataAttributesMatchModeMatchAnyRule  UpdateAlertRetriggerRuleDataAttributesMatchMode = "match-any-rule"
-)
-
-// Valid indicates whether the value is a known member of the UpdateAlertRetriggerRuleDataAttributesMatchMode enum.
-func (e UpdateAlertRetriggerRuleDataAttributesMatchMode) Valid() bool {
-	switch e {
-	case UpdateAlertRetriggerRuleDataAttributesMatchModeMatchAllRules:
-		return true
-	case UpdateAlertRetriggerRuleDataAttributesMatchModeMatchAnyRule:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for UpdateAlertRetriggerRuleDataAttributesTimeoutMinutes.
-const (
-	UpdateAlertRetriggerRuleDataAttributesTimeoutMinutesN10   UpdateAlertRetriggerRuleDataAttributesTimeoutMinutes = 10
-	UpdateAlertRetriggerRuleDataAttributesTimeoutMinutesN120  UpdateAlertRetriggerRuleDataAttributesTimeoutMinutes = 120
-	UpdateAlertRetriggerRuleDataAttributesTimeoutMinutesN1440 UpdateAlertRetriggerRuleDataAttributesTimeoutMinutes = 1440
-	UpdateAlertRetriggerRuleDataAttributesTimeoutMinutesN180  UpdateAlertRetriggerRuleDataAttributesTimeoutMinutes = 180
-	UpdateAlertRetriggerRuleDataAttributesTimeoutMinutesN20   UpdateAlertRetriggerRuleDataAttributesTimeoutMinutes = 20
-	UpdateAlertRetriggerRuleDataAttributesTimeoutMinutesN240  UpdateAlertRetriggerRuleDataAttributesTimeoutMinutes = 240
-	UpdateAlertRetriggerRuleDataAttributesTimeoutMinutesN30   UpdateAlertRetriggerRuleDataAttributesTimeoutMinutes = 30
-	UpdateAlertRetriggerRuleDataAttributesTimeoutMinutesN300  UpdateAlertRetriggerRuleDataAttributesTimeoutMinutes = 300
-	UpdateAlertRetriggerRuleDataAttributesTimeoutMinutesN360  UpdateAlertRetriggerRuleDataAttributesTimeoutMinutes = 360
-	UpdateAlertRetriggerRuleDataAttributesTimeoutMinutesN40   UpdateAlertRetriggerRuleDataAttributesTimeoutMinutes = 40
-	UpdateAlertRetriggerRuleDataAttributesTimeoutMinutesN50   UpdateAlertRetriggerRuleDataAttributesTimeoutMinutes = 50
-	UpdateAlertRetriggerRuleDataAttributesTimeoutMinutesN60   UpdateAlertRetriggerRuleDataAttributesTimeoutMinutes = 60
-	UpdateAlertRetriggerRuleDataAttributesTimeoutMinutesN720  UpdateAlertRetriggerRuleDataAttributesTimeoutMinutes = 720
-	UpdateAlertRetriggerRuleDataAttributesTimeoutMinutesN90   UpdateAlertRetriggerRuleDataAttributesTimeoutMinutes = 90
-)
-
-// Valid indicates whether the value is a known member of the UpdateAlertRetriggerRuleDataAttributesTimeoutMinutes enum.
-func (e UpdateAlertRetriggerRuleDataAttributesTimeoutMinutes) Valid() bool {
-	switch e {
-	case UpdateAlertRetriggerRuleDataAttributesTimeoutMinutesN10:
-		return true
-	case UpdateAlertRetriggerRuleDataAttributesTimeoutMinutesN120:
-		return true
-	case UpdateAlertRetriggerRuleDataAttributesTimeoutMinutesN1440:
-		return true
-	case UpdateAlertRetriggerRuleDataAttributesTimeoutMinutesN180:
-		return true
-	case UpdateAlertRetriggerRuleDataAttributesTimeoutMinutesN20:
-		return true
-	case UpdateAlertRetriggerRuleDataAttributesTimeoutMinutesN240:
-		return true
-	case UpdateAlertRetriggerRuleDataAttributesTimeoutMinutesN30:
-		return true
-	case UpdateAlertRetriggerRuleDataAttributesTimeoutMinutesN300:
-		return true
-	case UpdateAlertRetriggerRuleDataAttributesTimeoutMinutesN360:
-		return true
-	case UpdateAlertRetriggerRuleDataAttributesTimeoutMinutesN40:
-		return true
-	case UpdateAlertRetriggerRuleDataAttributesTimeoutMinutesN50:
-		return true
-	case UpdateAlertRetriggerRuleDataAttributesTimeoutMinutesN60:
-		return true
-	case UpdateAlertRetriggerRuleDataAttributesTimeoutMinutesN720:
-		return true
-	case UpdateAlertRetriggerRuleDataAttributesTimeoutMinutesN90:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for UpdateAlertRetriggerRuleDataType.
-const (
-	UpdateAlertRetriggerRuleDataTypeAlertRetriggerRules UpdateAlertRetriggerRuleDataType = "alert_retrigger_rules"
-)
-
-// Valid indicates whether the value is a known member of the UpdateAlertRetriggerRuleDataType enum.
-func (e UpdateAlertRetriggerRuleDataType) Valid() bool {
-	switch e {
-	case UpdateAlertRetriggerRuleDataTypeAlertRetriggerRules:
 		return true
 	default:
 		return false
@@ -32714,6 +33788,63 @@ const (
 func (e UpdateAlertRoutingRuleDataType) Valid() bool {
 	switch e {
 	case UpdateAlertRoutingRuleDataTypeAlertRoutingRules:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutes.
+const (
+	UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutesMinus1 UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutes = -1
+	UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutesN10    UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutes = 10
+	UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutesN120   UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutes = 120
+	UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutesN1440  UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutes = 1440
+	UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutesN180   UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutes = 180
+	UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutesN20    UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutes = 20
+	UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutesN240   UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutes = 240
+	UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutesN30    UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutes = 30
+	UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutesN300   UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutes = 300
+	UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutesN360   UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutes = 360
+	UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutesN40    UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutes = 40
+	UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutesN50    UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutes = 50
+	UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutesN60    UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutes = 60
+	UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutesN720   UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutes = 720
+	UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutesN90    UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutes = 90
+)
+
+// Valid indicates whether the value is a known member of the UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutes enum.
+func (e UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutes) Valid() bool {
+	switch e {
+	case UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutesMinus1:
+		return true
+	case UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutesN10:
+		return true
+	case UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutesN120:
+		return true
+	case UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutesN1440:
+		return true
+	case UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutesN180:
+		return true
+	case UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutesN20:
+		return true
+	case UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutesN240:
+		return true
+	case UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutesN30:
+		return true
+	case UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutesN300:
+		return true
+	case UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutesN360:
+		return true
+	case UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutesN40:
+		return true
+	case UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutesN50:
+		return true
+	case UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutesN60:
+		return true
+	case UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutesN720:
+		return true
+	case UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutesN90:
 		return true
 	default:
 		return false
@@ -33032,6 +34163,33 @@ func (e UpdateAlertsSourceDataAttributesSourceableAttributesFieldMappingsAttribu
 	case UpdateAlertsSourceDataAttributesSourceableAttributesFieldMappingsAttributesFieldNotificationTargetType:
 		return true
 	case UpdateAlertsSourceDataAttributesSourceableAttributesFieldMappingsAttributesFieldState:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateAlertsSourceDataAttributesSourceableAttributesNotificationTargetType.
+const (
+	UpdateAlertsSourceDataAttributesSourceableAttributesNotificationTargetTypeEscalationPolicy UpdateAlertsSourceDataAttributesSourceableAttributesNotificationTargetType = "EscalationPolicy"
+	UpdateAlertsSourceDataAttributesSourceableAttributesNotificationTargetTypeFunctionality    UpdateAlertsSourceDataAttributesSourceableAttributesNotificationTargetType = "Functionality"
+	UpdateAlertsSourceDataAttributesSourceableAttributesNotificationTargetTypeGroup            UpdateAlertsSourceDataAttributesSourceableAttributesNotificationTargetType = "Group"
+	UpdateAlertsSourceDataAttributesSourceableAttributesNotificationTargetTypeService          UpdateAlertsSourceDataAttributesSourceableAttributesNotificationTargetType = "Service"
+	UpdateAlertsSourceDataAttributesSourceableAttributesNotificationTargetTypeUser             UpdateAlertsSourceDataAttributesSourceableAttributesNotificationTargetType = "User"
+)
+
+// Valid indicates whether the value is a known member of the UpdateAlertsSourceDataAttributesSourceableAttributesNotificationTargetType enum.
+func (e UpdateAlertsSourceDataAttributesSourceableAttributesNotificationTargetType) Valid() bool {
+	switch e {
+	case UpdateAlertsSourceDataAttributesSourceableAttributesNotificationTargetTypeEscalationPolicy:
+		return true
+	case UpdateAlertsSourceDataAttributesSourceableAttributesNotificationTargetTypeFunctionality:
+		return true
+	case UpdateAlertsSourceDataAttributesSourceableAttributesNotificationTargetTypeGroup:
+		return true
+	case UpdateAlertsSourceDataAttributesSourceableAttributesNotificationTargetTypeService:
+		return true
+	case UpdateAlertsSourceDataAttributesSourceableAttributesNotificationTargetTypeUser:
 		return true
 	default:
 		return false
@@ -34320,6 +35478,7 @@ const (
 	UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneAsiaUrumqi                  UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone = "Asia/Urumqi"
 	UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneAsiaVladivostok             UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone = "Asia/Vladivostok"
 	UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneAsiaYakutsk                 UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone = "Asia/Yakutsk"
+	UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneAsiaYangon                  UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone = "Asia/Yangon"
 	UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneAsiaYekaterinburg           UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone = "Asia/Yekaterinburg"
 	UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneAsiaYerevan                 UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone = "Asia/Yerevan"
 	UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneAstana                      UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone = "Astana"
@@ -34393,6 +35552,7 @@ const (
 	UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneEuropeIstanbul              UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone = "Europe/Istanbul"
 	UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneEuropeKaliningrad           UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone = "Europe/Kaliningrad"
 	UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneEuropeKiev                  UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone = "Europe/Kiev"
+	UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneEuropeKyiv                  UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone = "Europe/Kyiv"
 	UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneEuropeLisbon                UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone = "Europe/Lisbon"
 	UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneEuropeLjubljana             UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone = "Europe/Ljubljana"
 	UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneEuropeLondon                UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone = "Europe/London"
@@ -34713,6 +35873,8 @@ func (e UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone) Valid() bool 
 		return true
 	case UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneAsiaYakutsk:
 		return true
+	case UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneAsiaYangon:
+		return true
 	case UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneAsiaYekaterinburg:
 		return true
 	case UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneAsiaYerevan:
@@ -34858,6 +36020,8 @@ func (e UpdateEscalationPolicyDataAttributesBusinessHoursTimeZone) Valid() bool 
 	case UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneEuropeKaliningrad:
 		return true
 	case UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneEuropeKiev:
+		return true
+	case UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneEuropeKyiv:
 		return true
 	case UpdateEscalationPolicyDataAttributesBusinessHoursTimeZoneEuropeLisbon:
 		return true
@@ -35393,6 +36557,30 @@ func (e UpdateEscalationPolicyPathDataAttributesNotificationTypeFallback) Valid(
 	}
 }
 
+// Defines values for UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions0Operator.
+const (
+	UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions0OperatorIs         UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions0Operator = "is"
+	UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions0OperatorIsNot      UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions0Operator = "is_not"
+	UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions0OperatorIsNotOneOf UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions0Operator = "is_not_one_of"
+	UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions0OperatorIsOneOf    UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions0Operator = "is_one_of"
+)
+
+// Valid indicates whether the value is a known member of the UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions0Operator enum.
+func (e UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions0Operator) Valid() bool {
+	switch e {
+	case UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions0OperatorIs:
+		return true
+	case UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions0OperatorIsNot:
+		return true
+	case UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions0OperatorIsNotOneOf:
+		return true
+	case UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions0OperatorIsOneOf:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions0RuleType.
 const (
 	UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions0RuleTypeAlertUrgency UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions0RuleType = "alert_urgency"
@@ -35561,6 +36749,30 @@ func (e UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions3
 	}
 }
 
+// Defines values for UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions4Operator.
+const (
+	UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions4OperatorIs         UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions4Operator = "is"
+	UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions4OperatorIsNot      UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions4Operator = "is_not"
+	UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions4OperatorIsNotOneOf UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions4Operator = "is_not_one_of"
+	UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions4OperatorIsOneOf    UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions4Operator = "is_one_of"
+)
+
+// Valid indicates whether the value is a known member of the UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions4Operator enum.
+func (e UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions4Operator) Valid() bool {
+	switch e {
+	case UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions4OperatorIs:
+		return true
+	case UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions4OperatorIsNot:
+		return true
+	case UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions4OperatorIsNotOneOf:
+		return true
+	case UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions4OperatorIsOneOf:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions4RuleType.
 const (
 	UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions4RuleTypeService UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions4RuleType = "service"
@@ -35676,6 +36888,7 @@ const (
 	UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions5TimeZoneAsiaUrumqi                  UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions5TimeZone = "Asia/Urumqi"
 	UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions5TimeZoneAsiaVladivostok             UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions5TimeZone = "Asia/Vladivostok"
 	UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions5TimeZoneAsiaYakutsk                 UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions5TimeZone = "Asia/Yakutsk"
+	UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions5TimeZoneAsiaYangon                  UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions5TimeZone = "Asia/Yangon"
 	UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions5TimeZoneAsiaYekaterinburg           UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions5TimeZone = "Asia/Yekaterinburg"
 	UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions5TimeZoneAsiaYerevan                 UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions5TimeZone = "Asia/Yerevan"
 	UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions5TimeZoneAstana                      UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions5TimeZone = "Astana"
@@ -35749,6 +36962,7 @@ const (
 	UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions5TimeZoneEuropeIstanbul              UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions5TimeZone = "Europe/Istanbul"
 	UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions5TimeZoneEuropeKaliningrad           UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions5TimeZone = "Europe/Kaliningrad"
 	UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions5TimeZoneEuropeKiev                  UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions5TimeZone = "Europe/Kiev"
+	UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions5TimeZoneEuropeKyiv                  UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions5TimeZone = "Europe/Kyiv"
 	UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions5TimeZoneEuropeLisbon                UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions5TimeZone = "Europe/Lisbon"
 	UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions5TimeZoneEuropeLjubljana             UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions5TimeZone = "Europe/Ljubljana"
 	UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions5TimeZoneEuropeLondon                UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions5TimeZone = "Europe/London"
@@ -36069,6 +37283,8 @@ func (e UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions5
 		return true
 	case UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions5TimeZoneAsiaYakutsk:
 		return true
+	case UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions5TimeZoneAsiaYangon:
+		return true
 	case UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions5TimeZoneAsiaYekaterinburg:
 		return true
 	case UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions5TimeZoneAsiaYerevan:
@@ -36214,6 +37430,8 @@ func (e UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions5
 	case UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions5TimeZoneEuropeKaliningrad:
 		return true
 	case UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions5TimeZoneEuropeKiev:
+		return true
+	case UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions5TimeZoneEuropeKyiv:
 		return true
 	case UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions5TimeZoneEuropeLisbon:
 		return true
@@ -36644,6 +37862,87 @@ func (e UpdateEscalationPolicyPathDataAttributesPathType) Valid() bool {
 	}
 }
 
+// Defines values for UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutes.
+const (
+	UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesMinus1 UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutes = -1
+	UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN10    UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutes = 10
+	UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN120   UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutes = 120
+	UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN1440  UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutes = 1440
+	UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN180   UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutes = 180
+	UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN20    UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutes = 20
+	UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN240   UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutes = 240
+	UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN30    UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutes = 30
+	UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN300   UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutes = 300
+	UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN360   UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutes = 360
+	UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN40    UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutes = 40
+	UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN50    UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutes = 50
+	UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN60    UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutes = 60
+	UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN720   UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutes = 720
+	UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN90    UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutes = 90
+)
+
+// Valid indicates whether the value is a known member of the UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutes enum.
+func (e UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutes) Valid() bool {
+	switch e {
+	case UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesMinus1:
+		return true
+	case UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN10:
+		return true
+	case UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN120:
+		return true
+	case UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN1440:
+		return true
+	case UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN180:
+		return true
+	case UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN20:
+		return true
+	case UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN240:
+		return true
+	case UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN30:
+		return true
+	case UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN300:
+		return true
+	case UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN360:
+		return true
+	case UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN40:
+		return true
+	case UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN50:
+		return true
+	case UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN60:
+		return true
+	case UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN720:
+		return true
+	case UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutesN90:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateEscalationPolicyPathDataAttributesRules0Operator.
+const (
+	UpdateEscalationPolicyPathDataAttributesRules0OperatorIs         UpdateEscalationPolicyPathDataAttributesRules0Operator = "is"
+	UpdateEscalationPolicyPathDataAttributesRules0OperatorIsNot      UpdateEscalationPolicyPathDataAttributesRules0Operator = "is_not"
+	UpdateEscalationPolicyPathDataAttributesRules0OperatorIsNotOneOf UpdateEscalationPolicyPathDataAttributesRules0Operator = "is_not_one_of"
+	UpdateEscalationPolicyPathDataAttributesRules0OperatorIsOneOf    UpdateEscalationPolicyPathDataAttributesRules0Operator = "is_one_of"
+)
+
+// Valid indicates whether the value is a known member of the UpdateEscalationPolicyPathDataAttributesRules0Operator enum.
+func (e UpdateEscalationPolicyPathDataAttributesRules0Operator) Valid() bool {
+	switch e {
+	case UpdateEscalationPolicyPathDataAttributesRules0OperatorIs:
+		return true
+	case UpdateEscalationPolicyPathDataAttributesRules0OperatorIsNot:
+		return true
+	case UpdateEscalationPolicyPathDataAttributesRules0OperatorIsNotOneOf:
+		return true
+	case UpdateEscalationPolicyPathDataAttributesRules0OperatorIsOneOf:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for UpdateEscalationPolicyPathDataAttributesRules0RuleType.
 const (
 	UpdateEscalationPolicyPathDataAttributesRules0RuleTypeAlertUrgency UpdateEscalationPolicyPathDataAttributesRules0RuleType = "alert_urgency"
@@ -36812,6 +38111,30 @@ func (e UpdateEscalationPolicyPathDataAttributesRules3RuleType) Valid() bool {
 	}
 }
 
+// Defines values for UpdateEscalationPolicyPathDataAttributesRules4Operator.
+const (
+	UpdateEscalationPolicyPathDataAttributesRules4OperatorIs         UpdateEscalationPolicyPathDataAttributesRules4Operator = "is"
+	UpdateEscalationPolicyPathDataAttributesRules4OperatorIsNot      UpdateEscalationPolicyPathDataAttributesRules4Operator = "is_not"
+	UpdateEscalationPolicyPathDataAttributesRules4OperatorIsNotOneOf UpdateEscalationPolicyPathDataAttributesRules4Operator = "is_not_one_of"
+	UpdateEscalationPolicyPathDataAttributesRules4OperatorIsOneOf    UpdateEscalationPolicyPathDataAttributesRules4Operator = "is_one_of"
+)
+
+// Valid indicates whether the value is a known member of the UpdateEscalationPolicyPathDataAttributesRules4Operator enum.
+func (e UpdateEscalationPolicyPathDataAttributesRules4Operator) Valid() bool {
+	switch e {
+	case UpdateEscalationPolicyPathDataAttributesRules4OperatorIs:
+		return true
+	case UpdateEscalationPolicyPathDataAttributesRules4OperatorIsNot:
+		return true
+	case UpdateEscalationPolicyPathDataAttributesRules4OperatorIsNotOneOf:
+		return true
+	case UpdateEscalationPolicyPathDataAttributesRules4OperatorIsOneOf:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for UpdateEscalationPolicyPathDataAttributesRules4RuleType.
 const (
 	UpdateEscalationPolicyPathDataAttributesRules4RuleTypeService UpdateEscalationPolicyPathDataAttributesRules4RuleType = "service"
@@ -36927,6 +38250,7 @@ const (
 	UpdateEscalationPolicyPathDataAttributesRules5TimeZoneAsiaUrumqi                  UpdateEscalationPolicyPathDataAttributesRules5TimeZone = "Asia/Urumqi"
 	UpdateEscalationPolicyPathDataAttributesRules5TimeZoneAsiaVladivostok             UpdateEscalationPolicyPathDataAttributesRules5TimeZone = "Asia/Vladivostok"
 	UpdateEscalationPolicyPathDataAttributesRules5TimeZoneAsiaYakutsk                 UpdateEscalationPolicyPathDataAttributesRules5TimeZone = "Asia/Yakutsk"
+	UpdateEscalationPolicyPathDataAttributesRules5TimeZoneAsiaYangon                  UpdateEscalationPolicyPathDataAttributesRules5TimeZone = "Asia/Yangon"
 	UpdateEscalationPolicyPathDataAttributesRules5TimeZoneAsiaYekaterinburg           UpdateEscalationPolicyPathDataAttributesRules5TimeZone = "Asia/Yekaterinburg"
 	UpdateEscalationPolicyPathDataAttributesRules5TimeZoneAsiaYerevan                 UpdateEscalationPolicyPathDataAttributesRules5TimeZone = "Asia/Yerevan"
 	UpdateEscalationPolicyPathDataAttributesRules5TimeZoneAstana                      UpdateEscalationPolicyPathDataAttributesRules5TimeZone = "Astana"
@@ -37000,6 +38324,7 @@ const (
 	UpdateEscalationPolicyPathDataAttributesRules5TimeZoneEuropeIstanbul              UpdateEscalationPolicyPathDataAttributesRules5TimeZone = "Europe/Istanbul"
 	UpdateEscalationPolicyPathDataAttributesRules5TimeZoneEuropeKaliningrad           UpdateEscalationPolicyPathDataAttributesRules5TimeZone = "Europe/Kaliningrad"
 	UpdateEscalationPolicyPathDataAttributesRules5TimeZoneEuropeKiev                  UpdateEscalationPolicyPathDataAttributesRules5TimeZone = "Europe/Kiev"
+	UpdateEscalationPolicyPathDataAttributesRules5TimeZoneEuropeKyiv                  UpdateEscalationPolicyPathDataAttributesRules5TimeZone = "Europe/Kyiv"
 	UpdateEscalationPolicyPathDataAttributesRules5TimeZoneEuropeLisbon                UpdateEscalationPolicyPathDataAttributesRules5TimeZone = "Europe/Lisbon"
 	UpdateEscalationPolicyPathDataAttributesRules5TimeZoneEuropeLjubljana             UpdateEscalationPolicyPathDataAttributesRules5TimeZone = "Europe/Ljubljana"
 	UpdateEscalationPolicyPathDataAttributesRules5TimeZoneEuropeLondon                UpdateEscalationPolicyPathDataAttributesRules5TimeZone = "Europe/London"
@@ -37320,6 +38645,8 @@ func (e UpdateEscalationPolicyPathDataAttributesRules5TimeZone) Valid() bool {
 		return true
 	case UpdateEscalationPolicyPathDataAttributesRules5TimeZoneAsiaYakutsk:
 		return true
+	case UpdateEscalationPolicyPathDataAttributesRules5TimeZoneAsiaYangon:
+		return true
 	case UpdateEscalationPolicyPathDataAttributesRules5TimeZoneAsiaYekaterinburg:
 		return true
 	case UpdateEscalationPolicyPathDataAttributesRules5TimeZoneAsiaYerevan:
@@ -37465,6 +38792,8 @@ func (e UpdateEscalationPolicyPathDataAttributesRules5TimeZone) Valid() bool {
 	case UpdateEscalationPolicyPathDataAttributesRules5TimeZoneEuropeKaliningrad:
 		return true
 	case UpdateEscalationPolicyPathDataAttributesRules5TimeZoneEuropeKiev:
+		return true
+	case UpdateEscalationPolicyPathDataAttributesRules5TimeZoneEuropeKyiv:
 		return true
 	case UpdateEscalationPolicyPathDataAttributesRules5TimeZoneEuropeLisbon:
 		return true
@@ -37926,6 +39255,7 @@ const (
 	UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAsiaUrumqi                  UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Asia/Urumqi"
 	UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAsiaVladivostok             UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Asia/Vladivostok"
 	UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAsiaYakutsk                 UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Asia/Yakutsk"
+	UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAsiaYangon                  UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Asia/Yangon"
 	UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAsiaYekaterinburg           UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Asia/Yekaterinburg"
 	UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAsiaYerevan                 UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Asia/Yerevan"
 	UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAstana                      UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Astana"
@@ -37999,6 +39329,7 @@ const (
 	UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneEuropeIstanbul              UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Europe/Istanbul"
 	UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneEuropeKaliningrad           UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Europe/Kaliningrad"
 	UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneEuropeKiev                  UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Europe/Kiev"
+	UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneEuropeKyiv                  UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Europe/Kyiv"
 	UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneEuropeLisbon                UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Europe/Lisbon"
 	UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneEuropeLjubljana             UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Europe/Ljubljana"
 	UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneEuropeLondon                UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone = "Europe/London"
@@ -38319,6 +39650,8 @@ func (e UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone) Valid()
 		return true
 	case UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAsiaYakutsk:
 		return true
+	case UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAsiaYangon:
+		return true
 	case UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAsiaYekaterinburg:
 		return true
 	case UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneAsiaYerevan:
@@ -38464,6 +39797,8 @@ func (e UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZone) Valid()
 	case UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneEuropeKaliningrad:
 		return true
 	case UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneEuropeKiev:
+		return true
+	case UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneEuropeKyiv:
 		return true
 	case UpdateEscalationPolicyPathDataAttributesTimeRestrictionTimeZoneEuropeLisbon:
 		return true
@@ -41015,6 +42350,27 @@ func (e UpdateOnCallRoleDataAttributesLiveCallRoutingPermissions) Valid() bool {
 	}
 }
 
+// Defines values for UpdateOnCallRoleDataAttributesMembersPermissions.
+const (
+	UpdateOnCallRoleDataAttributesMembersPermissionsDelete UpdateOnCallRoleDataAttributesMembersPermissions = "delete"
+	UpdateOnCallRoleDataAttributesMembersPermissionsRead   UpdateOnCallRoleDataAttributesMembersPermissions = "read"
+	UpdateOnCallRoleDataAttributesMembersPermissionsUpdate UpdateOnCallRoleDataAttributesMembersPermissions = "update"
+)
+
+// Valid indicates whether the value is a known member of the UpdateOnCallRoleDataAttributesMembersPermissions enum.
+func (e UpdateOnCallRoleDataAttributesMembersPermissions) Valid() bool {
+	switch e {
+	case UpdateOnCallRoleDataAttributesMembersPermissionsDelete:
+		return true
+	case UpdateOnCallRoleDataAttributesMembersPermissionsRead:
+		return true
+	case UpdateOnCallRoleDataAttributesMembersPermissionsUpdate:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for UpdateOnCallRoleDataAttributesOnCallReadinessReportPermissions.
 const (
 	UpdateOnCallRoleDataAttributesOnCallReadinessReportPermissionsRead UpdateOnCallRoleDataAttributesOnCallReadinessReportPermissions = "read"
@@ -41474,6 +42830,24 @@ func (e UpdatePagertreeAlertTaskParamsUrgency) Valid() bool {
 	}
 }
 
+// Defines values for UpdatePlaybookDataAttributesKind.
+const (
+	UpdatePlaybookDataAttributesKindExternalURL      UpdatePlaybookDataAttributesKind = "external_url"
+	UpdatePlaybookDataAttributesKindInternalDocument UpdatePlaybookDataAttributesKind = "internal_document"
+)
+
+// Valid indicates whether the value is a known member of the UpdatePlaybookDataAttributesKind enum.
+func (e UpdatePlaybookDataAttributesKind) Valid() bool {
+	switch e {
+	case UpdatePlaybookDataAttributesKindExternalURL:
+		return true
+	case UpdatePlaybookDataAttributesKindInternalDocument:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for UpdatePlaybookDataType.
 const (
 	UpdatePlaybookDataTypePlaybooks UpdatePlaybookDataType = "playbooks"
@@ -41531,6 +42905,159 @@ const (
 func (e UpdatePostMortemTemplateDataType) Valid() bool {
 	switch e {
 	case UpdatePostMortemTemplateDataTypePostMortemTemplates:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProblemDataAttributesExpectedStatus.
+const (
+	UpdateProblemDataAttributesExpectedStatusCancelled  UpdateProblemDataAttributesExpectedStatus = "cancelled"
+	UpdateProblemDataAttributesExpectedStatusCompleted  UpdateProblemDataAttributesExpectedStatus = "completed"
+	UpdateProblemDataAttributesExpectedStatusCreated    UpdateProblemDataAttributesExpectedStatus = "created"
+	UpdateProblemDataAttributesExpectedStatusDeferred   UpdateProblemDataAttributesExpectedStatus = "deferred"
+	UpdateProblemDataAttributesExpectedStatusInProgress UpdateProblemDataAttributesExpectedStatus = "in_progress"
+)
+
+// Valid indicates whether the value is a known member of the UpdateProblemDataAttributesExpectedStatus enum.
+func (e UpdateProblemDataAttributesExpectedStatus) Valid() bool {
+	switch e {
+	case UpdateProblemDataAttributesExpectedStatusCancelled:
+		return true
+	case UpdateProblemDataAttributesExpectedStatusCompleted:
+		return true
+	case UpdateProblemDataAttributesExpectedStatusCreated:
+		return true
+	case UpdateProblemDataAttributesExpectedStatusDeferred:
+		return true
+	case UpdateProblemDataAttributesExpectedStatusInProgress:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProblemDataAttributesPriority.
+const (
+	UpdateProblemDataAttributesPriorityP0 UpdateProblemDataAttributesPriority = "P0"
+	UpdateProblemDataAttributesPriorityP1 UpdateProblemDataAttributesPriority = "P1"
+	UpdateProblemDataAttributesPriorityP2 UpdateProblemDataAttributesPriority = "P2"
+	UpdateProblemDataAttributesPriorityP3 UpdateProblemDataAttributesPriority = "P3"
+)
+
+// Valid indicates whether the value is a known member of the UpdateProblemDataAttributesPriority enum.
+func (e UpdateProblemDataAttributesPriority) Valid() bool {
+	switch e {
+	case UpdateProblemDataAttributesPriorityP0:
+		return true
+	case UpdateProblemDataAttributesPriorityP1:
+		return true
+	case UpdateProblemDataAttributesPriorityP2:
+		return true
+	case UpdateProblemDataAttributesPriorityP3:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProblemDataAttributesStatus.
+const (
+	UpdateProblemDataAttributesStatusCancelled  UpdateProblemDataAttributesStatus = "cancelled"
+	UpdateProblemDataAttributesStatusCompleted  UpdateProblemDataAttributesStatus = "completed"
+	UpdateProblemDataAttributesStatusCreated    UpdateProblemDataAttributesStatus = "created"
+	UpdateProblemDataAttributesStatusDeferred   UpdateProblemDataAttributesStatus = "deferred"
+	UpdateProblemDataAttributesStatusInProgress UpdateProblemDataAttributesStatus = "in_progress"
+)
+
+// Valid indicates whether the value is a known member of the UpdateProblemDataAttributesStatus enum.
+func (e UpdateProblemDataAttributesStatus) Valid() bool {
+	switch e {
+	case UpdateProblemDataAttributesStatusCancelled:
+		return true
+	case UpdateProblemDataAttributesStatusCompleted:
+		return true
+	case UpdateProblemDataAttributesStatusCreated:
+		return true
+	case UpdateProblemDataAttributesStatusDeferred:
+		return true
+	case UpdateProblemDataAttributesStatusInProgress:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProblemDataType.
+const (
+	UpdateProblemDataTypeProblems UpdateProblemDataType = "problems"
+)
+
+// Valid indicates whether the value is a known member of the UpdateProblemDataType enum.
+func (e UpdateProblemDataType) Valid() bool {
+	switch e {
+	case UpdateProblemDataTypeProblems:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProblemActionItemDataAttributesPriority.
+const (
+	UpdateProblemActionItemDataAttributesPriorityHigh   UpdateProblemActionItemDataAttributesPriority = "high"
+	UpdateProblemActionItemDataAttributesPriorityLow    UpdateProblemActionItemDataAttributesPriority = "low"
+	UpdateProblemActionItemDataAttributesPriorityMedium UpdateProblemActionItemDataAttributesPriority = "medium"
+)
+
+// Valid indicates whether the value is a known member of the UpdateProblemActionItemDataAttributesPriority enum.
+func (e UpdateProblemActionItemDataAttributesPriority) Valid() bool {
+	switch e {
+	case UpdateProblemActionItemDataAttributesPriorityHigh:
+		return true
+	case UpdateProblemActionItemDataAttributesPriorityLow:
+		return true
+	case UpdateProblemActionItemDataAttributesPriorityMedium:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProblemActionItemDataAttributesStatus.
+const (
+	UpdateProblemActionItemDataAttributesStatusCancelled  UpdateProblemActionItemDataAttributesStatus = "cancelled"
+	UpdateProblemActionItemDataAttributesStatusDone       UpdateProblemActionItemDataAttributesStatus = "done"
+	UpdateProblemActionItemDataAttributesStatusInProgress UpdateProblemActionItemDataAttributesStatus = "in_progress"
+	UpdateProblemActionItemDataAttributesStatusOpen       UpdateProblemActionItemDataAttributesStatus = "open"
+)
+
+// Valid indicates whether the value is a known member of the UpdateProblemActionItemDataAttributesStatus enum.
+func (e UpdateProblemActionItemDataAttributesStatus) Valid() bool {
+	switch e {
+	case UpdateProblemActionItemDataAttributesStatusCancelled:
+		return true
+	case UpdateProblemActionItemDataAttributesStatusDone:
+		return true
+	case UpdateProblemActionItemDataAttributesStatusInProgress:
+		return true
+	case UpdateProblemActionItemDataAttributesStatusOpen:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProblemActionItemDataType.
+const (
+	UpdateProblemActionItemDataTypeProblemActionItems UpdateProblemActionItemDataType = "problem_action_items"
+)
+
+// Valid indicates whether the value is a known member of the UpdateProblemActionItemDataType enum.
+func (e UpdateProblemActionItemDataType) Valid() bool {
+	switch e {
+	case UpdateProblemActionItemDataTypeProblemActionItems:
 		return true
 	default:
 		return false
@@ -42119,6 +43646,30 @@ func (e UpdateRoleDataAttributesPlaybooksPermissions) Valid() bool {
 	case UpdateRoleDataAttributesPlaybooksPermissionsRead:
 		return true
 	case UpdateRoleDataAttributesPlaybooksPermissionsUpdate:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateRoleDataAttributesPrivateAgentPermissions.
+const (
+	UpdateRoleDataAttributesPrivateAgentPermissionsCreate UpdateRoleDataAttributesPrivateAgentPermissions = "create"
+	UpdateRoleDataAttributesPrivateAgentPermissionsDelete UpdateRoleDataAttributesPrivateAgentPermissions = "delete"
+	UpdateRoleDataAttributesPrivateAgentPermissionsRead   UpdateRoleDataAttributesPrivateAgentPermissions = "read"
+	UpdateRoleDataAttributesPrivateAgentPermissionsUpdate UpdateRoleDataAttributesPrivateAgentPermissions = "update"
+)
+
+// Valid indicates whether the value is a known member of the UpdateRoleDataAttributesPrivateAgentPermissions enum.
+func (e UpdateRoleDataAttributesPrivateAgentPermissions) Valid() bool {
+	switch e {
+	case UpdateRoleDataAttributesPrivateAgentPermissionsCreate:
+		return true
+	case UpdateRoleDataAttributesPrivateAgentPermissionsDelete:
+		return true
+	case UpdateRoleDataAttributesPrivateAgentPermissionsRead:
+		return true
+	case UpdateRoleDataAttributesPrivateAgentPermissionsUpdate:
 		return true
 	default:
 		return false
@@ -43115,6 +44666,39 @@ func (e UpdateSLADataType) Valid() bool {
 	}
 }
 
+// Defines values for UpdateSlackCanvasTaskParamsOperation.
+const (
+	UpdateSlackCanvasTaskParamsOperationInsertAtEnd UpdateSlackCanvasTaskParamsOperation = "insert_at_end"
+	UpdateSlackCanvasTaskParamsOperationReplace     UpdateSlackCanvasTaskParamsOperation = "replace"
+)
+
+// Valid indicates whether the value is a known member of the UpdateSlackCanvasTaskParamsOperation enum.
+func (e UpdateSlackCanvasTaskParamsOperation) Valid() bool {
+	switch e {
+	case UpdateSlackCanvasTaskParamsOperationInsertAtEnd:
+		return true
+	case UpdateSlackCanvasTaskParamsOperationReplace:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateSlackCanvasTaskParamsTaskType.
+const (
+	UpdateSlackCanvasTaskParamsTaskTypeUpdateSlackCanvas UpdateSlackCanvasTaskParamsTaskType = "update_slack_canvas"
+)
+
+// Valid indicates whether the value is a known member of the UpdateSlackCanvasTaskParamsTaskType enum.
+func (e UpdateSlackCanvasTaskParamsTaskType) Valid() bool {
+	switch e {
+	case UpdateSlackCanvasTaskParamsTaskTypeUpdateSlackCanvas:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for UpdateSlackChannelTopicTaskParamsTaskType.
 const (
 	UpdateSlackChannelTopicTaskParamsTaskTypeUpdateSlackChannelTopic UpdateSlackChannelTopicTaskParamsTaskType = "update_slack_channel_topic"
@@ -43277,6 +44861,39 @@ func (e UpdateStatusPageComponentGroupDataType) Valid() bool {
 	}
 }
 
+// Defines values for UpdateStatusPageTeamDataAttributesPermissionLevel.
+const (
+	UpdateStatusPageTeamDataAttributesPermissionLevelEditAndPublish UpdateStatusPageTeamDataAttributesPermissionLevel = "edit_and_publish"
+	UpdateStatusPageTeamDataAttributesPermissionLevelPublishOnly    UpdateStatusPageTeamDataAttributesPermissionLevel = "publish_only"
+)
+
+// Valid indicates whether the value is a known member of the UpdateStatusPageTeamDataAttributesPermissionLevel enum.
+func (e UpdateStatusPageTeamDataAttributesPermissionLevel) Valid() bool {
+	switch e {
+	case UpdateStatusPageTeamDataAttributesPermissionLevelEditAndPublish:
+		return true
+	case UpdateStatusPageTeamDataAttributesPermissionLevelPublishOnly:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateStatusPageTeamDataType.
+const (
+	UpdateStatusPageTeamDataTypeStatusPageGroups UpdateStatusPageTeamDataType = "status_page_groups"
+)
+
+// Valid indicates whether the value is a known member of the UpdateStatusPageTeamDataType enum.
+func (e UpdateStatusPageTeamDataType) Valid() bool {
+	switch e {
+	case UpdateStatusPageTeamDataTypeStatusPageGroups:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for UpdateStatusPageTemplateDataAttributesKind.
 const (
 	UpdateStatusPageTemplateDataAttributesKindNormal    UpdateStatusPageTemplateDataAttributesKind = "normal"
@@ -43421,6 +45038,27 @@ func (e UpdateTeamDataAttributesAutoAddMembersScope) Valid() bool {
 	case UpdateTeamDataAttributesAutoAddMembersScopePublicAndTest:
 		return true
 	case UpdateTeamDataAttributesAutoAddMembersScopePublicOnly:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateTeamDataAttributesScheduleOverridePolicy.
+const (
+	UpdateTeamDataAttributesScheduleOverridePolicyAdmins   UpdateTeamDataAttributesScheduleOverridePolicy = "admins"
+	UpdateTeamDataAttributesScheduleOverridePolicyEveryone UpdateTeamDataAttributesScheduleOverridePolicy = "everyone"
+	UpdateTeamDataAttributesScheduleOverridePolicyMembers  UpdateTeamDataAttributesScheduleOverridePolicy = "members"
+)
+
+// Valid indicates whether the value is a known member of the UpdateTeamDataAttributesScheduleOverridePolicy enum.
+func (e UpdateTeamDataAttributesScheduleOverridePolicy) Valid() bool {
+	switch e {
+	case UpdateTeamDataAttributesScheduleOverridePolicyAdmins:
+		return true
+	case UpdateTeamDataAttributesScheduleOverridePolicyEveryone:
+		return true
+	case UpdateTeamDataAttributesScheduleOverridePolicyMembers:
 		return true
 	default:
 		return false
@@ -44968,6 +46606,7 @@ const (
 	ListAlertEventsFeedParamsFilterActionAckTimeoutRetriggered   ListAlertEventsFeedParamsFilterAction = "ack_timeout_retriggered"
 	ListAlertEventsFeedParamsFilterActionAcknowledged            ListAlertEventsFeedParamsFilterAction = "acknowledged"
 	ListAlertEventsFeedParamsFilterActionAdded                   ListAlertEventsFeedParamsFilterAction = "added"
+	ListAlertEventsFeedParamsFilterActionAiSreDelegated          ListAlertEventsFeedParamsFilterAction = "ai_sre_delegated"
 	ListAlertEventsFeedParamsFilterActionAnswered                ListAlertEventsFeedParamsFilterAction = "answered"
 	ListAlertEventsFeedParamsFilterActionAttached                ListAlertEventsFeedParamsFilterAction = "attached"
 	ListAlertEventsFeedParamsFilterActionCallLifecycle           ListAlertEventsFeedParamsFilterAction = "call_lifecycle"
@@ -44991,6 +46630,7 @@ const (
 	ListAlertEventsFeedParamsFilterActionPaged                   ListAlertEventsFeedParamsFilterAction = "paged"
 	ListAlertEventsFeedParamsFilterActionRemoved                 ListAlertEventsFeedParamsFilterAction = "removed"
 	ListAlertEventsFeedParamsFilterActionResolved                ListAlertEventsFeedParamsFilterAction = "resolved"
+	ListAlertEventsFeedParamsFilterActionRetriggerCancelled      ListAlertEventsFeedParamsFilterAction = "retrigger_cancelled"
 	ListAlertEventsFeedParamsFilterActionRetriggerSuppressed     ListAlertEventsFeedParamsFilterAction = "retrigger_suppressed"
 	ListAlertEventsFeedParamsFilterActionRetriggered             ListAlertEventsFeedParamsFilterAction = "retriggered"
 	ListAlertEventsFeedParamsFilterActionSkipped                 ListAlertEventsFeedParamsFilterAction = "skipped"
@@ -45000,6 +46640,7 @@ const (
 	ListAlertEventsFeedParamsFilterActionTexted                  ListAlertEventsFeedParamsFilterAction = "texted"
 	ListAlertEventsFeedParamsFilterActionTriggered               ListAlertEventsFeedParamsFilterAction = "triggered"
 	ListAlertEventsFeedParamsFilterActionUpdated                 ListAlertEventsFeedParamsFilterAction = "updated"
+	ListAlertEventsFeedParamsFilterActionUserPaged               ListAlertEventsFeedParamsFilterAction = "user_paged"
 )
 
 // Valid indicates whether the value is a known member of the ListAlertEventsFeedParamsFilterAction enum.
@@ -45010,6 +46651,8 @@ func (e ListAlertEventsFeedParamsFilterAction) Valid() bool {
 	case ListAlertEventsFeedParamsFilterActionAcknowledged:
 		return true
 	case ListAlertEventsFeedParamsFilterActionAdded:
+		return true
+	case ListAlertEventsFeedParamsFilterActionAiSreDelegated:
 		return true
 	case ListAlertEventsFeedParamsFilterActionAnswered:
 		return true
@@ -45057,6 +46700,8 @@ func (e ListAlertEventsFeedParamsFilterAction) Valid() bool {
 		return true
 	case ListAlertEventsFeedParamsFilterActionResolved:
 		return true
+	case ListAlertEventsFeedParamsFilterActionRetriggerCancelled:
+		return true
 	case ListAlertEventsFeedParamsFilterActionRetriggerSuppressed:
 		return true
 	case ListAlertEventsFeedParamsFilterActionRetriggered:
@@ -45074,6 +46719,8 @@ func (e ListAlertEventsFeedParamsFilterAction) Valid() bool {
 	case ListAlertEventsFeedParamsFilterActionTriggered:
 		return true
 	case ListAlertEventsFeedParamsFilterActionUpdated:
+		return true
+	case ListAlertEventsFeedParamsFilterActionUserPaged:
 		return true
 	default:
 		return false
@@ -46946,6 +48593,37 @@ func (e ListWorkflowRunsParamsInclude) Valid() bool {
 	}
 }
 
+// AcknowledgeAlert defines model for acknowledge_alert.
+type AcknowledgeAlert struct {
+	Data *struct {
+		Attributes *struct {
+			// Actor The user to record as performing this action. Only available when actor attribution is enabled for the organization; otherwise it is ignored. Only supported with Global and Team API keys; with a Team API key the user must belong to one of the key's teams. When omitted or null, the action is attributed to the API key. Otherwise provide either `email` or `user_id`, not both.
+			Actor nullable.Nullable[AcknowledgeAlert_Data_Attributes_Actor] `json:"actor,omitempty"`
+		} `json:"attributes,omitempty"`
+		Type *AcknowledgeAlertDataType `json:"type,omitempty"`
+	} `json:"data,omitempty"`
+}
+
+// AcknowledgeAlertDataAttributesActor0 defines model for AcknowledgeAlert.Data.Attributes.Actor.0.
+type AcknowledgeAlertDataAttributesActor0 struct {
+	// Email Email of the user, including verified secondary emails.
+	Email string `json:"email"`
+}
+
+// AcknowledgeAlertDataAttributesActor1 defines model for AcknowledgeAlert.Data.Attributes.Actor.1.
+type AcknowledgeAlertDataAttributesActor1 struct {
+	// UserID Rootly ID of the user.
+	UserID string `json:"user_id"`
+}
+
+// AcknowledgeAlert_Data_Attributes_Actor The user to record as performing this action. Only available when actor attribution is enabled for the organization; otherwise it is ignored. Only supported with Global and Team API keys; with a Team API key the user must belong to one of the key's teams. When omitted or null, the action is attributed to the API key. Otherwise provide either `email` or `user_id`, not both.
+type AcknowledgeAlert_Data_Attributes_Actor struct {
+	union json.RawMessage
+}
+
+// AcknowledgeAlertDataType defines model for AcknowledgeAlert.Data.Type.
+type AcknowledgeAlertDataType string
+
 // ActionItemTriggerParams defines model for action_item_trigger_params.
 type ActionItemTriggerParams struct {
 	IncidentActionItemCondition         *ActionItemTriggerParamsIncidentActionItemCondition                       `json:"incident_action_item_condition,omitempty"`
@@ -46970,6 +48648,8 @@ type ActionItemTriggerParams struct {
 	IncidentConditionLabelUseRegexp     *bool                                                                     `json:"incident_condition_label_use_regexp,omitempty"`
 	IncidentConditionMitigatedAt        nullable.Nullable[ActionItemTriggerParamsIncidentConditionMitigatedAt]    `json:"incident_condition_mitigated_at,omitempty"`
 	IncidentConditionResolvedAt         nullable.Nullable[ActionItemTriggerParamsIncidentConditionResolvedAt]     `json:"incident_condition_resolved_at,omitempty"`
+	IncidentConditionScheduledFor       nullable.Nullable[ActionItemTriggerParamsIncidentConditionScheduledFor]   `json:"incident_condition_scheduled_for,omitempty"`
+	IncidentConditionScheduledUntil     nullable.Nullable[ActionItemTriggerParamsIncidentConditionScheduledUntil] `json:"incident_condition_scheduled_until,omitempty"`
 	IncidentConditionService            *ActionItemTriggerParamsIncidentConditionService                          `json:"incident_condition_service,omitempty"`
 	IncidentConditionSeverity           *ActionItemTriggerParamsIncidentConditionSeverity                         `json:"incident_condition_severity,omitempty"`
 	IncidentConditionStartedAt          nullable.Nullable[ActionItemTriggerParamsIncidentConditionStartedAt]      `json:"incident_condition_started_at,omitempty"`
@@ -47048,6 +48728,12 @@ type ActionItemTriggerParamsIncidentConditionMitigatedAt string
 
 // ActionItemTriggerParamsIncidentConditionResolvedAt defines model for ActionItemTriggerParams.IncidentConditionResolvedAt.
 type ActionItemTriggerParamsIncidentConditionResolvedAt string
+
+// ActionItemTriggerParamsIncidentConditionScheduledFor defines model for ActionItemTriggerParams.IncidentConditionScheduledFor.
+type ActionItemTriggerParamsIncidentConditionScheduledFor string
+
+// ActionItemTriggerParamsIncidentConditionScheduledUntil defines model for ActionItemTriggerParams.IncidentConditionScheduledUntil.
+type ActionItemTriggerParamsIncidentConditionScheduledUntil string
 
 // ActionItemTriggerParamsIncidentConditionService defines model for ActionItemTriggerParams.IncidentConditionService.
 type ActionItemTriggerParamsIncidentConditionService string
@@ -47472,6 +49158,15 @@ type Alert struct {
 	// ShortID Human-readable short identifier for the alert
 	ShortID string `json:"short_id"`
 
+	// SlackNotifications Slack channel and root thread ts of each announcement Rootly posted for the alert. Only present when the alert-slack-message-references feature flag is enabled for the team.
+	SlackNotifications nullable.Nullable[[]struct {
+		// ChannelID Slack channel ID
+		ChannelID string `json:"channel_id"`
+
+		// ThreadTS Slack ts of the root announcement message
+		ThreadTS string `json:"thread_ts"`
+	}] `json:"slack_notifications,omitempty"`
+
 	// Source The source of the alert
 	Source AlertSource `json:"source"`
 
@@ -47516,6 +49211,67 @@ type AlertSource string
 
 // AlertStatus The status of the alert
 type AlertStatus string
+
+// AlertConfiguration defines model for alert_configuration.
+type AlertConfiguration struct {
+	// AlertAcknowledgment Re-trigger behaviour for acknowledged alerts. Replaces the stored object as a whole.
+	AlertAcknowledgment *struct {
+		// RetriggerManualAlerts Whether alerts created from a manual page also re-trigger. Changing it is rejected with 422 until the manual page re-trigger opt-out is enabled for the team.
+		RetriggerManualAlerts *bool `json:"retrigger_manual_alerts,omitempty"`
+
+		// TimeoutEnabled Re-trigger an acknowledged alert after the timeout.
+		TimeoutEnabled *bool `json:"timeout_enabled,omitempty"`
+
+		// TimeoutMinutes Minutes before an acknowledged alert re-triggers.
+		TimeoutMinutes *AlertConfigurationAlertAcknowledgmentTimeoutMinutes `json:"timeout_minutes,omitempty"`
+	} `json:"alert_acknowledgment,omitempty"`
+	CreatedAt *time.Time `json:"created_at,omitempty"`
+
+	// DefaultUserNotificationSettings Channel defaults for new users, per urgency level. Omitted levels keep the built-in defaults; existing users are never changed. Present and accepted only while org-default-notification-settings is on for the team.
+	DefaultUserNotificationSettings *struct {
+		// AudibleContactTypes Channels enabled on a newly created user's audible notification rule. At least one channel is required.
+		AudibleContactTypes []AlertConfigurationDefaultUserNotificationSettingsAudibleContactTypes `json:"audible_contact_types,omitempty"`
+
+		// QuietContactTypes Channels enabled on a newly created user's quiet notification rule. At least one channel is required.
+		QuietContactTypes []AlertConfigurationDefaultUserNotificationSettingsQuietContactTypes `json:"quiet_contact_types,omitempty"`
+
+		// RequireCriticalAlertOrCallOnFirstAudibleLevel Whether users must keep Critical Alerts or Phone Call enabled on level 1 of their audible notification rules. Defaults to true when omitted; updates that omit this key keep the stored value. Only organization owners and admins who can update the alert configuration can change it, and only while the rollout flag is on.
+		RequireCriticalAlertOrCallOnFirstAudibleLevel *bool `json:"require_critical_alert_or_call_on_first_audible_level,omitempty"`
+	} `json:"default_user_notification_settings,omitempty"`
+
+	// ManualPagingFormSettings Stored entity types for the manual paging form, as configured; at least one is required. The form itself may hide a type the team cannot use yet, such as functionality.
+	ManualPagingFormSettings []AlertConfigurationManualPagingFormSettings `json:"manual_paging_form_settings,omitempty"`
+
+	// ManualPagingUrgencyIDs Alert urgency ids allowed when manually paging. Empty means all; deleted urgencies are left out. Present and accepted only while the manual-page-urgency-allowlist feature is on for the team.
+	ManualPagingUrgencyIDs []openapi_types.UUID `json:"manual_paging_urgency_ids,omitempty"`
+	UpdatedAt              *time.Time           `json:"updated_at,omitempty"`
+}
+
+// AlertConfigurationAlertAcknowledgmentTimeoutMinutes Minutes before an acknowledged alert re-triggers.
+type AlertConfigurationAlertAcknowledgmentTimeoutMinutes int
+
+// AlertConfigurationDefaultUserNotificationSettingsAudibleContactTypes defines model for AlertConfiguration.DefaultUserNotificationSettings.AudibleContactTypes.
+type AlertConfigurationDefaultUserNotificationSettingsAudibleContactTypes string
+
+// AlertConfigurationDefaultUserNotificationSettingsQuietContactTypes defines model for AlertConfiguration.DefaultUserNotificationSettings.QuietContactTypes.
+type AlertConfigurationDefaultUserNotificationSettingsQuietContactTypes string
+
+// AlertConfigurationManualPagingFormSettings defines model for AlertConfiguration.ManualPagingFormSettings.
+type AlertConfigurationManualPagingFormSettings string
+
+// AlertConfigurationResponse defines model for alert_configuration_response.
+type AlertConfigurationResponse struct {
+	Data struct {
+		Attributes AlertConfiguration `json:"attributes"`
+
+		// ID Unique ID of the alert_configuration
+		ID   string                             `json:"id"`
+		Type AlertConfigurationResponseDataType `json:"type"`
+	} `json:"data"`
+}
+
+// AlertConfigurationResponseDataType defines model for AlertConfigurationResponse.Data.Type.
+type AlertConfigurationResponseDataType string
 
 // AlertEvent defines model for alert_event.
 type AlertEvent struct {
@@ -47577,10 +49333,16 @@ type AlertEvent struct {
 		Name      *string `json:"name,omitempty"`
 		UpdatedAt *string `json:"updated_at,omitempty"`
 	}] `json:"schedule,omitempty"`
-	SlackChannel nullable.Nullable[SlackChannel]   `json:"slack_channel,omitempty"`
-	Source       string                            `json:"source"`
-	UpdatedAt    string                            `json:"updated_at"`
-	User         nullable.Nullable[AlertEventUser] `json:"user,omitempty"`
+	SlackChannel nullable.Nullable[SlackChannel] `json:"slack_channel,omitempty"`
+
+	// SlackMessagePermalink Permalink to the Slack message Rootly posted for this event, when present.
+	SlackMessagePermalink nullable.Nullable[string] `json:"slack_message_permalink,omitempty"`
+
+	// SlackMessageTS Slack thread ts of the message Rootly posted for this event, when present.
+	SlackMessageTS nullable.Nullable[string]         `json:"slack_message_ts,omitempty"`
+	Source         string                            `json:"source"`
+	UpdatedAt      string                            `json:"updated_at"`
+	User           nullable.Nullable[AlertEventUser] `json:"user,omitempty"`
 
 	// UserID Author of the note.
 	UserID nullable.Nullable[int] `json:"user_id,omitempty"`
@@ -47893,85 +49655,6 @@ type AlertResponseDataSource string
 
 // AlertResponseDataType defines model for AlertResponse.Data.Type.
 type AlertResponseDataType string
-
-// AlertRetriggerRule defines model for alert_retrigger_rule.
-type AlertRetriggerRule struct {
-	// Conditions The conditions for the rule
-	Conditions []struct {
-		// ID Unique ID of the condition
-		ID openapi_types.UUID `json:"id"`
-
-		// Kind The operand the condition matches on. Native operands (urgency, source, service, group) match by record; alert_field/payload match a field value.
-		Kind AlertRetriggerRuleConditionsKind `json:"kind"`
-
-		// Operator How the operand is compared. Native operands support is_one_of/is_not_one_of/is_set/is_not_set; alert_field/payload additionally support the string/regex operators.
-		Operator AlertRetriggerRuleConditionsOperator `json:"operator"`
-
-		// PropertyFieldName For alert_field conditions: the alert field id. For payload conditions: a JSON Path (e.g. $.priority).
-		PropertyFieldName *string `json:"property_field_name,omitempty"`
-
-		// RecordIDs For urgency/service/group/source conditions: the IDs of the matched records (AlertUrgency, Service, Group, or Alerts::Source).
-		RecordIDs []openapi_types.UUID `json:"record_ids,omitempty"`
-
-		// Values For source conditions: non-integration source aliases (e.g. manual, api). For alert_field/payload conditions: the values to compare against.
-		Values []string `json:"values,omitempty"`
-	} `json:"conditions,omitempty"`
-	CreatedAt *time.Time `json:"created_at,omitempty"`
-
-	// MatchMode Whether all or any of the conditions must match
-	MatchMode *AlertRetriggerRuleMatchMode `json:"match_mode,omitempty"`
-
-	// Name A human-readable name for the rule
-	Name *string `json:"name,omitempty"`
-
-	// Position The position of the rule for ordering evaluation
-	Position *int `json:"position,omitempty"`
-
-	// TimeoutMinutes Minutes after acknowledgment to re-trigger. Null means never re-trigger.
-	TimeoutMinutes nullable.Nullable[int] `json:"timeout_minutes,omitempty"`
-	UpdatedAt      *time.Time             `json:"updated_at,omitempty"`
-}
-
-// AlertRetriggerRuleConditionsKind The operand the condition matches on. Native operands (urgency, source, service, group) match by record; alert_field/payload match a field value.
-type AlertRetriggerRuleConditionsKind string
-
-// AlertRetriggerRuleConditionsOperator How the operand is compared. Native operands support is_one_of/is_not_one_of/is_set/is_not_set; alert_field/payload additionally support the string/regex operators.
-type AlertRetriggerRuleConditionsOperator string
-
-// AlertRetriggerRuleMatchMode Whether all or any of the conditions must match
-type AlertRetriggerRuleMatchMode string
-
-// AlertRetriggerRuleList defines model for alert_retrigger_rule_list.
-type AlertRetriggerRuleList struct {
-	Data []struct {
-		Attributes AlertRetriggerRule `json:"attributes"`
-
-		// ID Unique ID of the alert_retrigger_rule
-		ID   string                         `json:"id"`
-		Type AlertRetriggerRuleListDataType `json:"type"`
-	} `json:"data"`
-	Included []JsonapiIncludedResource `json:"included,omitempty"`
-	Links    Links                     `json:"links"`
-	Meta     Meta                      `json:"meta"`
-}
-
-// AlertRetriggerRuleListDataType defines model for AlertRetriggerRuleList.Data.Type.
-type AlertRetriggerRuleListDataType string
-
-// AlertRetriggerRuleResponse defines model for alert_retrigger_rule_response.
-type AlertRetriggerRuleResponse struct {
-	Data struct {
-		Attributes AlertRetriggerRule `json:"attributes"`
-
-		// ID Unique ID of the alert_retrigger_rule
-		ID   string                             `json:"id"`
-		Type AlertRetriggerRuleResponseDataType `json:"type"`
-	} `json:"data"`
-	Included []JsonapiIncludedResource `json:"included,omitempty"`
-}
-
-// AlertRetriggerRuleResponseDataType defines model for AlertRetriggerRuleResponse.Data.Type.
-type AlertRetriggerRuleResponseDataType string
 
 // AlertRoute defines model for alert_route.
 type AlertRoute struct {
@@ -48381,7 +50064,7 @@ type AlertUrgency struct {
 	// Position Position of the alert urgency
 	Position int `json:"position"`
 
-	// RetriggerTimeoutMinutes Re-trigger acknowledged alerts of this urgency after N minutes; null inherits the workspace default, negative = never.
+	// RetriggerTimeoutMinutes Re-trigger acknowledged alerts of this urgency after N minutes; null inherits the workspace default, -1 = never.
 	RetriggerTimeoutMinutes nullable.Nullable[int] `json:"retrigger_timeout_minutes,omitempty"`
 
 	// TeamID The ID of the team this urgency belongs to
@@ -48552,7 +50235,7 @@ type AlertsSource struct {
 	// SourceType The alert source type
 	SourceType *AlertsSourceSourceType `json:"source_type,omitempty"`
 
-	// SourceableAttributes Provide additional attributes for the underlying source. `auto_resolve`, `resolve_state` and `field_mappings_attributes` apply to generic_webhook sources; `accept_threaded_emails` applies to email sources.
+	// SourceableAttributes Provide additional attributes for the underlying source. `auto_resolve`, `resolve_state` and `field_mappings_attributes` apply to generic_webhook sources; `accept_threaded_emails`, `notification_target_type` and `notification_target_id` apply to email sources.
 	SourceableAttributes nullable.Nullable[struct {
 		// AcceptThreadedEmails Set this to false to reject threaded emails
 		AcceptThreadedEmails *bool `json:"accept_threaded_emails,omitempty"`
@@ -48571,6 +50254,12 @@ type AlertsSource struct {
 
 		// ID Unique ID of the underlying source. Read-only; it is resolved from the alert source itself on update.
 		ID *openapi_types.UUID `json:"id,omitempty"`
+
+		// NotificationTargetID Email sources only. The ID of the notification target. Set to null to clear it; this also clears `notification_target_type`. Only used when the `email-alert-source-notification-target` feature flag is on for the team.
+		NotificationTargetID nullable.Nullable[string] `json:"notification_target_id,omitempty"`
+
+		// NotificationTargetType Email sources only. The type of the notification target every alert from this source pages directly; While it points to an active, pageable target, Alert Routes are not evaluated. Only used when the `email-alert-source-notification-target` feature flag is on for the team.
+		NotificationTargetType nullable.Nullable[AlertsSourceSourceableAttributesNotificationTargetType] `json:"notification_target_type,omitempty"`
 
 		// ResolveState This value is matched with the value extracted from alerts payload using JSON path in field_mappings_attributes
 		ResolveState nullable.Nullable[string] `json:"resolve_state,omitempty"`
@@ -48622,6 +50311,9 @@ type AlertsSourceSourceType string
 // AlertsSourceSourceableAttributesFieldMappingsAttributesField Select the field on which the condition to be evaluated
 type AlertsSourceSourceableAttributesFieldMappingsAttributesField string
 
+// AlertsSourceSourceableAttributesNotificationTargetType Email sources only. The type of the notification target every alert from this source pages directly; While it points to an active, pageable target, Alert Routes are not evaluated. Only used when the `email-alert-source-notification-target` feature flag is on for the team.
+type AlertsSourceSourceableAttributesNotificationTargetType string
+
 // AlertsSourceStatus The status of the alert source
 type AlertsSourceStatus string
 
@@ -48670,6 +50362,9 @@ type APIKey struct {
 
 	// GracePeriodEndsAt Grace period end date
 	GracePeriodEndsAt nullable.Nullable[string] `json:"grace_period_ends_at,omitempty"`
+
+	// GroupID The group (team) ID for team API keys. Keys created via the API have exactly one group; for keys with multiple groups this is the first group.
+	GroupID nullable.Nullable[string] `json:"group_id,omitempty"`
 
 	// Kind The kind of the API key
 	Kind APIKeyKind `json:"kind"`
@@ -48740,6 +50435,9 @@ type APIKeyWithTokenResponse struct {
 
 			// GracePeriodEndsAt Grace period end date
 			GracePeriodEndsAt nullable.Nullable[string] `json:"grace_period_ends_at,omitempty"`
+
+			// GroupID The group (team) ID for team API keys. Keys created via the API have exactly one group; for keys with multiple groups this is the first group.
+			GroupID nullable.Nullable[string] `json:"group_id,omitempty"`
 
 			// Kind The kind of the API key
 			Kind APIKeyWithTokenResponseDataAttributesKind `json:"kind"`
@@ -48911,8 +50609,11 @@ type Audit struct {
 	// CreatedAt Date of creation
 	CreatedAt string `json:"created_at"`
 
-	// Event Describes the action that was taken.
+	// Event The raw stored action that was taken. Rows written before IR-6875 may carry a trailing `!` for status transitions (e.g. `mark_as_resolved!`); prefer `event_display` for presentation.
 	Event string `json:"event"`
+
+	// EventDisplay Human-friendly display name for the action, normalized so a status change reads the same regardless of the surface it came from
+	EventDisplay *string `json:"event_display,omitempty"`
 
 	// ID ID of audit
 	ID nullable.Nullable[int] `json:"id,omitempty"`
@@ -49300,69 +51001,6 @@ type BulkDestroyTeamsResponse struct {
 	} `json:"data,omitempty"`
 }
 
-// BulkImportAttributes defines model for bulk_import_attributes.
-type BulkImportAttributes struct {
-	// CompletedAt When import completed or failed
-	CompletedAt nullable.Nullable[time.Time] `json:"completed_at,omitempty"`
-
-	// CreatedAt When the bulk import was created
-	CreatedAt *time.Time `json:"created_at,omitempty"`
-
-	// EntityType Type of entity being imported
-	EntityType *BulkImportAttributesEntityType `json:"entity_type,omitempty"`
-
-	// ErrorMessage Error message if import failed
-	ErrorMessage nullable.Nullable[string] `json:"error_message,omitempty"`
-
-	// FailedRecords Number of records that failed to import
-	FailedRecords int `json:"failed_records"`
-
-	// FileURL URL of the JSONL file being imported
-	FileURL *string `json:"file_url,omitempty"`
-
-	// NotificationEmail Email address for notifications
-	NotificationEmail *openapi_types.Email `json:"notification_email,omitempty"`
-
-	// ProcessedRecords Number of records processed so far
-	ProcessedRecords int `json:"processed_records"`
-
-	// ProgressPercentage Import progress percentage (0-100)
-	ProgressPercentage float32 `json:"progress_percentage"`
-
-	// StartedAt When import processing started
-	StartedAt nullable.Nullable[time.Time] `json:"started_at,omitempty"`
-
-	// Status Current status of the import
-	Status BulkImportAttributesStatus `json:"status"`
-
-	// TotalRecords Total number of records in the file
-	TotalRecords nullable.Nullable[int] `json:"total_records,omitempty"`
-
-	// UpdatedAt When the bulk import was last updated
-	UpdatedAt *time.Time `json:"updated_at,omitempty"`
-
-	// ValidationErrors Validation errors encountered during validation phase
-	ValidationErrors nullable.Nullable[map[string]interface{}] `json:"validation_errors,omitempty"`
-}
-
-// BulkImportAttributesEntityType Type of entity being imported
-type BulkImportAttributesEntityType string
-
-// BulkImportAttributesStatus Current status of the import
-type BulkImportAttributesStatus string
-
-// BulkImportResponse defines model for bulk_import_response.
-type BulkImportResponse struct {
-	Data struct {
-		Attributes BulkImportAttributes       `json:"attributes"`
-		ID         openapi_types.UUID         `json:"id"`
-		Type       BulkImportResponseDataType `json:"type"`
-	} `json:"data"`
-}
-
-// BulkImportResponseDataType defines model for BulkImportResponse.Data.Type.
-type BulkImportResponseDataType string
-
 // BulkUpsertCatalogEntities defines model for bulk_upsert_catalog_entities.
 type BulkUpsertCatalogEntities struct {
 	// Entities Array of catalog entities to upsert. Each must have an external_id. Max 100 per request. external_ids must be unique within a batch.
@@ -49492,11 +51130,14 @@ type BulkUpsertFunctionalities struct {
 		} `json:"fields,omitempty"`
 
 		// Name Required for new records. Optional for updates.
-		Name               *string                     `json:"name,omitempty"`
-		NotifyEmails       nullable.Nullable[[]string] `json:"notify_emails,omitempty"`
-		OpsgenieID         nullable.Nullable[string]   `json:"opsgenie_id,omitempty"`
-		OpsgenieTeamID     nullable.Nullable[string]   `json:"opsgenie_team_id,omitempty"`
-		OpslevelID         nullable.Nullable[string]   `json:"opslevel_id,omitempty"`
+		Name           *string                     `json:"name,omitempty"`
+		NotifyEmails   nullable.Nullable[[]string] `json:"notify_emails,omitempty"`
+		OpsgenieID     nullable.Nullable[string]   `json:"opsgenie_id,omitempty"`
+		OpsgenieTeamID nullable.Nullable[string]   `json:"opsgenie_team_id,omitempty"`
+		OpslevelID     nullable.Nullable[string]   `json:"opslevel_id,omitempty"`
+
+		// OwnerGroupIDs Owner team IDs. Replaces the functionality's owning teams when present; an empty array clears them; omit to leave them unchanged.
+		OwnerGroupIDs      nullable.Nullable[[]string] `json:"owner_group_ids,omitempty"`
 		PagerdutyID        nullable.Nullable[string]   `json:"pagerduty_id,omitempty"`
 		Position           nullable.Nullable[int]      `json:"position,omitempty"`
 		PublicDescription  nullable.Nullable[string]   `json:"public_description,omitempty"`
@@ -49560,11 +51201,14 @@ type BulkUpsertServices struct {
 		KubernetesDeploymentName nullable.Nullable[string] `json:"kubernetes_deployment_name,omitempty"`
 
 		// Name Required for new records. Optional for updates.
-		Name               *string                     `json:"name,omitempty"`
-		NotifyEmails       nullable.Nullable[[]string] `json:"notify_emails,omitempty"`
-		OpsgenieID         nullable.Nullable[string]   `json:"opsgenie_id,omitempty"`
-		OpsgenieTeamID     nullable.Nullable[string]   `json:"opsgenie_team_id,omitempty"`
-		OpslevelID         nullable.Nullable[string]   `json:"opslevel_id,omitempty"`
+		Name           *string                     `json:"name,omitempty"`
+		NotifyEmails   nullable.Nullable[[]string] `json:"notify_emails,omitempty"`
+		OpsgenieID     nullable.Nullable[string]   `json:"opsgenie_id,omitempty"`
+		OpsgenieTeamID nullable.Nullable[string]   `json:"opsgenie_team_id,omitempty"`
+		OpslevelID     nullable.Nullable[string]   `json:"opslevel_id,omitempty"`
+
+		// OwnerGroupIDs Owner team IDs. Replaces the service's owning teams when present; an empty array clears them; omit to leave them unchanged.
+		OwnerGroupIDs      nullable.Nullable[[]string] `json:"owner_group_ids,omitempty"`
 		PagerdutyID        nullable.Nullable[string]   `json:"pagerduty_id,omitempty"`
 		Position           nullable.Nullable[int]      `json:"position,omitempty"`
 		PublicDescription  nullable.Nullable[string]   `json:"public_description,omitempty"`
@@ -49632,10 +51276,16 @@ type BulkUpsertTeams struct {
 		PagertreeID        nullable.Nullable[string]   `json:"pagertree_id,omitempty"`
 		Position           nullable.Nullable[int]      `json:"position,omitempty"`
 		PublicDescription  nullable.Nullable[string]   `json:"public_description,omitempty"`
-		ServiceNowCiSysID  nullable.Nullable[string]   `json:"service_now_ci_sys_id,omitempty"`
-		VictorOpsID        nullable.Nullable[string]   `json:"victor_ops_id,omitempty"`
+
+		// ScheduleOverridePolicy Who can create and update overrides for schedules owned by this team: `everyone` in the organization, only team `members`, or only team `admins`. Users still need override permission from their on-call role. Only available when the team-level schedule override policy feature is enabled for the organization. Requests that set it while that feature is disabled are rejected.
+		ScheduleOverridePolicy *BulkUpsertTeamsEntitiesScheduleOverridePolicy `json:"schedule_override_policy,omitempty"`
+		ServiceNowCiSysID      nullable.Nullable[string]                      `json:"service_now_ci_sys_id,omitempty"`
+		VictorOpsID            nullable.Nullable[string]                      `json:"victor_ops_id,omitempty"`
 	} `json:"entities"`
 }
+
+// BulkUpsertTeamsEntitiesScheduleOverridePolicy Who can create and update overrides for schedules owned by this team: `everyone` in the organization, only team `members`, or only team `admins`. Users still need override permission from their on-call role. Only available when the team-level schedule override policy feature is enabled for the organization. Requests that set it while that feature is disabled are rejected.
+type BulkUpsertTeamsEntitiesScheduleOverridePolicy string
 
 // BulkUpsertTeamsError defines model for bulk_upsert_teams_error.
 type BulkUpsertTeamsError struct {
@@ -51191,6 +52841,16 @@ type CreateGoogleMeetingTaskParams struct {
 	// RecordingMode The video layout for the bot's recording (e.g. speaker_view, gallery_view, gallery_view_v2, audio_only)
 	RecordingMode nullable.Nullable[CreateGoogleMeetingTaskParamsRecordingMode] `json:"recording_mode,omitempty"`
 
+	// RetryCount Number of times to retry on rate-limit (HTTP 429) responses (0-4). 0 disables retry.
+	//
+	// Example: 3
+	RetryCount *int `json:"retry_count,omitempty"`
+
+	// RetryWaitTime Seconds to wait before each retry (1-15). Retry-After header is honored when present and <= 90s, taking the larger of retry_wait_time and the header value.
+	//
+	// Example: 2
+	RetryWaitTime *int `json:"retry_wait_time,omitempty"`
+
 	// Summary [DEPRECATED] The meeting summary
 	Summary  nullable.Nullable[string]              `json:"summary"`
 	TaskType *CreateGoogleMeetingTaskParamsTaskType `json:"task_type,omitempty"`
@@ -52022,6 +53682,42 @@ type CreateShortcutTaskTaskParams struct {
 // CreateShortcutTaskTaskParamsTaskType defines model for CreateShortcutTaskTaskParams.TaskType.
 type CreateShortcutTaskTaskParamsTaskType string
 
+// CreateSlackCanvasTaskParams Create a canvas in a Slack channel, preserving an existing canvas. The connected Slack app must have Canvas permissions.
+type CreateSlackCanvasTaskParams struct {
+	// Channel Slack channel containing the canvas. Channel IDs support Liquid variables.
+	Channel struct {
+		// ID Slack channel ID.
+		//
+		// Example: {{ incident.slack_channel_id }}
+		ID string `json:"id"`
+
+		// Name Channel display name.
+		//
+		// Example: incident-channel
+		Name string `json:"name"`
+	} `json:"channel"`
+
+	// Content The initial canvas content in Markdown. Supports Liquid variables. An existing channel canvas is preserved.
+	Content string `json:"content"`
+
+	// RetryCount Number of times to retry on rate-limit (HTTP 429) responses (0-4). 0 disables retry.
+	//
+	// Example: 3
+	RetryCount *int `json:"retry_count,omitempty"`
+
+	// RetryWaitTime Seconds to wait before each retry (1-15). Retry-After header is honored when present and <= 90s, taking the larger of retry_wait_time and the header value.
+	//
+	// Example: 2
+	RetryWaitTime *int                                 `json:"retry_wait_time,omitempty"`
+	TaskType      *CreateSlackCanvasTaskParamsTaskType `json:"task_type,omitempty"`
+
+	// Title The canvas title. Supports Liquid variables.
+	Title string `json:"title"`
+}
+
+// CreateSlackCanvasTaskParamsTaskType defines model for CreateSlackCanvasTaskParams.TaskType.
+type CreateSlackCanvasTaskParamsTaskType string
+
 // CreateSlackChannelTaskParams defines model for create_slack_channel_task_params.
 type CreateSlackChannelTaskParams struct {
 	Private *CreateSlackChannelTaskParamsPrivate `json:"private,omitempty"`
@@ -52227,7 +53923,17 @@ type CreateZoomMeetingTaskParams struct {
 
 	// RecordingMode The video layout for the bot's recording (e.g. speaker_view, gallery_view, gallery_view_v2, audio_only)
 	RecordingMode nullable.Nullable[CreateZoomMeetingTaskParamsRecordingMode] `json:"recording_mode,omitempty"`
-	TaskType      *CreateZoomMeetingTaskParamsTaskType                        `json:"task_type,omitempty"`
+
+	// RetryCount Number of times to retry on rate-limit (HTTP 429) responses (0-4). 0 disables retry.
+	//
+	// Example: 3
+	RetryCount *int `json:"retry_count,omitempty"`
+
+	// RetryWaitTime Seconds to wait before each retry (1-15). Retry-After header is honored when present and <= 90s, taking the larger of retry_wait_time and the header value.
+	//
+	// Example: 2
+	RetryWaitTime *int                                 `json:"retry_wait_time,omitempty"`
+	TaskType      *CreateZoomMeetingTaskParamsTaskType `json:"task_type,omitempty"`
 
 	// Topic The meeting topic
 	Topic string `json:"topic"`
@@ -52856,6 +54562,9 @@ type ErrorsList struct {
 type EscalateAlert struct {
 	Data *struct {
 		Attributes *struct {
+			// Actor The user to record as performing this action. Only available when actor attribution is enabled for the organization; otherwise it is ignored. Only supported with Global and Team API keys; with a Team API key the user must belong to one of the key's teams. When omitted or null, the action is attributed to the API key. Otherwise provide either `email` or `user_id`, not both.
+			Actor nullable.Nullable[EscalateAlert_Data_Attributes_Actor] `json:"actor,omitempty"`
+
 			// EscalationPolicyID The ID of the escalation policy to escalate to. If omitted, uses the alert's current escalation policy from metadata. Required for resolved alerts whose metadata may have been cleared.
 			EscalationPolicyID *string `json:"escalation_policy_id,omitempty"`
 
@@ -52864,6 +54573,23 @@ type EscalateAlert struct {
 		} `json:"attributes,omitempty"`
 		Type *EscalateAlertDataType `json:"type,omitempty"`
 	} `json:"data,omitempty"`
+}
+
+// EscalateAlertDataAttributesActor0 defines model for EscalateAlert.Data.Attributes.Actor.0.
+type EscalateAlertDataAttributesActor0 struct {
+	// Email Email of the user, including verified secondary emails.
+	Email string `json:"email"`
+}
+
+// EscalateAlertDataAttributesActor1 defines model for EscalateAlert.Data.Attributes.Actor.1.
+type EscalateAlertDataAttributesActor1 struct {
+	// UserID Rootly ID of the user.
+	UserID string `json:"user_id"`
+}
+
+// EscalateAlert_Data_Attributes_Actor The user to record as performing this action. Only available when actor attribution is enabled for the organization; otherwise it is ignored. Only supported with Global and Team API keys; with a Team API key the user must belong to one of the key's teams. When omitted or null, the action is attributed to the API key. Otherwise provide either `email` or `user_id`, not both.
+type EscalateAlert_Data_Attributes_Actor struct {
+	union json.RawMessage
 }
 
 // EscalateAlertDataType defines model for EscalateAlert.Data.Type.
@@ -53086,7 +54812,7 @@ type EscalationPolicyPath struct {
 	// RepeatCount The number of times this path will be executed until someone acknowledges the alert
 	RepeatCount nullable.Nullable[int] `json:"repeat_count"`
 
-	// RetriggerTimeoutMinutes Re-trigger acknowledged alerts on this path after N minutes; null inherits the urgency/workspace default, negative = never.
+	// RetriggerTimeoutMinutes Re-trigger acknowledged alerts on this path after N minutes; null inherits the urgency/workspace default, -1 = never.
 	RetriggerTimeoutMinutes nullable.Nullable[int] `json:"retrigger_timeout_minutes,omitempty"`
 
 	// Rules Escalation path rules
@@ -53122,12 +54848,18 @@ type EscalationPolicyPathNotificationTypeFallback string
 
 // EscalationPolicyPathNotificationTypeRulesConditions0 defines model for EscalationPolicyPath.NotificationTypeRules.Conditions.0.
 type EscalationPolicyPathNotificationTypeRulesConditions0 struct {
+	// Operator How the alert's urgency should be matched. is and is_not take exactly one id
+	Operator *EscalationPolicyPathNotificationTypeRulesConditions0Operator `json:"operator,omitempty"`
+
 	// RuleType The type of the escalation path rule
 	RuleType EscalationPolicyPathNotificationTypeRulesConditions0RuleType `json:"rule_type"`
 
 	// UrgencyIDs Alert urgency ids for which this escalation path should be used
 	UrgencyIDs []string `json:"urgency_ids"`
 }
+
+// EscalationPolicyPathNotificationTypeRulesConditions0Operator How the alert's urgency should be matched. is and is_not take exactly one id
+type EscalationPolicyPathNotificationTypeRulesConditions0Operator string
 
 // EscalationPolicyPathNotificationTypeRulesConditions0RuleType The type of the escalation path rule
 type EscalationPolicyPathNotificationTypeRulesConditions0RuleType string
@@ -53194,12 +54926,18 @@ type EscalationPolicyPathNotificationTypeRulesConditions3RuleType string
 
 // EscalationPolicyPathNotificationTypeRulesConditions4 defines model for EscalationPolicyPath.NotificationTypeRules.Conditions.4.
 type EscalationPolicyPathNotificationTypeRulesConditions4 struct {
+	// Operator How the alert's services should be matched. is and is_not take exactly one id
+	Operator *EscalationPolicyPathNotificationTypeRulesConditions4Operator `json:"operator,omitempty"`
+
 	// RuleType The type of the escalation path rule
 	RuleType EscalationPolicyPathNotificationTypeRulesConditions4RuleType `json:"rule_type"`
 
 	// ServiceIDs Service ids for which this escalation path should be used
 	ServiceIDs []string `json:"service_ids"`
 }
+
+// EscalationPolicyPathNotificationTypeRulesConditions4Operator How the alert's services should be matched. is and is_not take exactly one id
+type EscalationPolicyPathNotificationTypeRulesConditions4Operator string
 
 // EscalationPolicyPathNotificationTypeRulesConditions4RuleType The type of the escalation path rule
 type EscalationPolicyPathNotificationTypeRulesConditions4RuleType string
@@ -53295,12 +55033,18 @@ type EscalationPolicyPathPathType string
 
 // EscalationPolicyPathRules0 defines model for EscalationPolicyPath.Rules.0.
 type EscalationPolicyPathRules0 struct {
+	// Operator How the alert's urgency should be matched. is and is_not take exactly one id
+	Operator *EscalationPolicyPathRules0Operator `json:"operator,omitempty"`
+
 	// RuleType The type of the escalation path rule
 	RuleType EscalationPolicyPathRules0RuleType `json:"rule_type"`
 
 	// UrgencyIDs Alert urgency ids for which this escalation path should be used
 	UrgencyIDs []string `json:"urgency_ids"`
 }
+
+// EscalationPolicyPathRules0Operator How the alert's urgency should be matched. is and is_not take exactly one id
+type EscalationPolicyPathRules0Operator string
 
 // EscalationPolicyPathRules0RuleType The type of the escalation path rule
 type EscalationPolicyPathRules0RuleType string
@@ -53367,12 +55111,18 @@ type EscalationPolicyPathRules3RuleType string
 
 // EscalationPolicyPathRules4 defines model for EscalationPolicyPath.Rules.4.
 type EscalationPolicyPathRules4 struct {
+	// Operator How the alert's services should be matched. is and is_not take exactly one id
+	Operator *EscalationPolicyPathRules4Operator `json:"operator,omitempty"`
+
 	// RuleType The type of the escalation path rule
 	RuleType EscalationPolicyPathRules4RuleType `json:"rule_type"`
 
 	// ServiceIDs Service ids for which this escalation path should be used
 	ServiceIDs []string `json:"service_ids"`
 }
+
+// EscalationPolicyPathRules4Operator How the alert's services should be matched. is and is_not take exactly one id
+type EscalationPolicyPathRules4Operator string
 
 // EscalationPolicyPathRules4RuleType The type of the escalation path rule
 type EscalationPolicyPathRules4RuleType string
@@ -53831,7 +55581,7 @@ type FormSet struct {
 	// CreatedAt Date of creation
 	CreatedAt string `json:"created_at"`
 
-	// Forms The forms included in the form set. Add custom forms using the custom form's `slug` field. Or choose a built-in form: `web_new_incident_form`, `web_update_incident_form`, `web_incident_post_mortem_form`, `web_incident_mitigation_form`, `web_incident_resolution_form`, `web_incident_cancellation_form`, `web_scheduled_incident_form`, `web_update_scheduled_incident_form`, `slack_new_incident_form`, `slack_update_incident_form`, `slack_update_incident_status_form`, `slack_incident_mitigation_form`, `slack_incident_resolution_form`, `slack_incident_cancellation_form`, `slack_scheduled_incident_form`, `slack_update_scheduled_incident_form`, `google_chat_new_incident_form`, `google_chat_update_incident_form`, `microsoft_teams_new_incident_form`
+	// Forms The forms included in the form set. Add custom forms using the custom form's `slug` field. Or choose a built-in form: `web_new_incident_form`, `web_update_incident_form`, `web_incident_post_mortem_form`, `web_incident_mitigation_form`, `web_incident_resolution_form`, `web_incident_cancellation_form`, `web_scheduled_incident_form`, `web_update_scheduled_incident_form`, `slack_new_incident_form`, `slack_update_incident_form`, `slack_update_incident_status_form`, `slack_incident_mitigation_form`, `slack_incident_resolution_form`, `slack_incident_cancellation_form`, `slack_scheduled_incident_form`, `slack_update_scheduled_incident_form`, `google_chat_new_incident_form`, `google_chat_update_incident_form`, `google_chat_incident_mitigation_form`, `google_chat_incident_resolution_form`, `google_chat_incident_cancellation_form`, `microsoft_teams_new_incident_form`
 	Forms []string `json:"forms"`
 
 	// IsDefault Whether the form set is default
@@ -55747,6 +57497,8 @@ type IncidentTriggerParams struct {
 	IncidentConditionLabelUseRegexp *bool                                                                   `json:"incident_condition_label_use_regexp,omitempty"`
 	IncidentConditionMitigatedAt    nullable.Nullable[IncidentTriggerParamsIncidentConditionMitigatedAt]    `json:"incident_condition_mitigated_at,omitempty"`
 	IncidentConditionResolvedAt     nullable.Nullable[IncidentTriggerParamsIncidentConditionResolvedAt]     `json:"incident_condition_resolved_at,omitempty"`
+	IncidentConditionScheduledFor   nullable.Nullable[IncidentTriggerParamsIncidentConditionScheduledFor]   `json:"incident_condition_scheduled_for,omitempty"`
+	IncidentConditionScheduledUntil nullable.Nullable[IncidentTriggerParamsIncidentConditionScheduledUntil] `json:"incident_condition_scheduled_until,omitempty"`
 	IncidentConditionService        *IncidentTriggerParamsIncidentConditionService                          `json:"incident_condition_service,omitempty"`
 	IncidentConditionSeverity       *IncidentTriggerParamsIncidentConditionSeverity                         `json:"incident_condition_severity,omitempty"`
 	IncidentConditionStartedAt      nullable.Nullable[IncidentTriggerParamsIncidentConditionStartedAt]      `json:"incident_condition_started_at,omitempty"`
@@ -55807,6 +57559,12 @@ type IncidentTriggerParamsIncidentConditionMitigatedAt string
 
 // IncidentTriggerParamsIncidentConditionResolvedAt defines model for IncidentTriggerParams.IncidentConditionResolvedAt.
 type IncidentTriggerParamsIncidentConditionResolvedAt string
+
+// IncidentTriggerParamsIncidentConditionScheduledFor defines model for IncidentTriggerParams.IncidentConditionScheduledFor.
+type IncidentTriggerParamsIncidentConditionScheduledFor string
+
+// IncidentTriggerParamsIncidentConditionScheduledUntil defines model for IncidentTriggerParams.IncidentConditionScheduledUntil.
+type IncidentTriggerParamsIncidentConditionScheduledUntil string
 
 // IncidentTriggerParamsIncidentConditionService defines model for IncidentTriggerParams.IncidentConditionService.
 type IncidentTriggerParamsIncidentConditionService string
@@ -56194,6 +57952,23 @@ type JsonapiIncludedResource struct {
 	Type          string                 `json:"type"`
 }
 
+// LinkIncidents defines model for link_incidents.
+type LinkIncidents struct {
+	Data struct {
+		Attributes struct {
+			// IncidentID ID of a single incident to link
+			IncidentID *string `json:"incident_id,omitempty"`
+
+			// IncidentIDs IDs of incidents to link
+			IncidentIDs []string `json:"incident_ids,omitempty"`
+		} `json:"attributes"`
+		Type LinkIncidentsDataType `json:"type"`
+	} `json:"data"`
+}
+
+// LinkIncidentsDataType defines model for LinkIncidents.Data.Type.
+type LinkIncidentsDataType string
+
 // Links defines model for links.
 type Links struct {
 	First string                    `json:"first"`
@@ -56564,6 +58339,9 @@ type MitigateIncidentDataType string
 type NewAlert struct {
 	Data struct {
 		Attributes struct {
+			// Actor The user to record as performing this action. Only available when actor attribution is enabled for the organization; otherwise it is ignored. Only supported with Global and Team API keys; with a Team API key the user must belong to one of the key's teams. When omitted or null, the action is attributed to the API key. Otherwise provide either `email` or `user_id`, not both.
+			Actor nullable.Nullable[NewAlert_Data_Attributes_Actor] `json:"actor,omitempty"`
+
 			// AlertFieldValuesAttributes Custom alert field values to create with the alert
 			AlertFieldValuesAttributes []nullable.Nullable[struct {
 				// AlertFieldID ID of the custom alert field
@@ -56646,6 +58424,23 @@ type NewAlert struct {
 		} `json:"attributes"`
 		Type NewAlertDataType `json:"type"`
 	} `json:"data"`
+}
+
+// NewAlertDataAttributesActor0 defines model for NewAlert.Data.Attributes.Actor.0.
+type NewAlertDataAttributesActor0 struct {
+	// Email Email of the user, including verified secondary emails.
+	Email string `json:"email"`
+}
+
+// NewAlertDataAttributesActor1 defines model for NewAlert.Data.Attributes.Actor.1.
+type NewAlertDataAttributesActor1 struct {
+	// UserID Rootly ID of the user.
+	UserID string `json:"user_id"`
+}
+
+// NewAlert_Data_Attributes_Actor The user to record as performing this action. Only available when actor attribution is enabled for the organization; otherwise it is ignored. Only supported with Global and Team API keys; with a Team API key the user must belong to one of the key's teams. When omitted or null, the action is attributed to the API key. Otherwise provide either `email` or `user_id`, not both.
+type NewAlert_Data_Attributes_Actor struct {
+	union json.RawMessage
 }
 
 // NewAlertDataAttributesLabelsValue0 defines model for NewAlert.Data.Attributes.Labels.Value.0.
@@ -56821,59 +58616,6 @@ type NewAlertGroupDataAttributesTargetsTargetType string
 // NewAlertGroupDataType defines model for NewAlertGroup.Data.Type.
 type NewAlertGroupDataType string
 
-// NewAlertRetriggerRule defines model for new_alert_retrigger_rule.
-type NewAlertRetriggerRule struct {
-	Data struct {
-		Attributes struct {
-			// Conditions The conditions that determine which alerts this rule applies to. An empty array applies to every alert.
-			Conditions []struct {
-				// Kind The operand the condition matches on. Native operands (urgency, source, service, group) match by record; alert_field/payload match a field value.
-				Kind NewAlertRetriggerRuleDataAttributesConditionsKind `json:"kind"`
-
-				// Operator How the operand is compared. Native operands support is_one_of/is_not_one_of/is_set/is_not_set; alert_field/payload additionally support the string/regex operators.
-				Operator NewAlertRetriggerRuleDataAttributesConditionsOperator `json:"operator"`
-
-				// PropertyFieldName For alert_field conditions: the alert field id. For payload conditions: a JSON Path (e.g. $.priority).
-				PropertyFieldName *string `json:"property_field_name,omitempty"`
-
-				// RecordIDs For urgency/service/group/source conditions: the IDs of the matched records (AlertUrgency, Service, Group, or Alerts::Source).
-				RecordIDs []openapi_types.UUID `json:"record_ids,omitempty"`
-
-				// Values For source conditions: non-integration source aliases (e.g. manual, api). For alert_field/payload conditions: the values to compare against.
-				Values []string `json:"values,omitempty"`
-			} `json:"conditions,omitempty"`
-
-			// MatchMode Whether all or any of the conditions must match
-			MatchMode *NewAlertRetriggerRuleDataAttributesMatchMode `json:"match_mode,omitempty"`
-
-			// Name A human-readable name for the rule
-			Name string `json:"name"`
-
-			// Position The position of the rule; the first matching rule (by position) decides the outcome
-			Position *int `json:"position,omitempty"`
-
-			// TimeoutMinutes Re-trigger the alert this many minutes after acknowledgment. Null means never re-trigger.
-			TimeoutMinutes nullable.Nullable[NewAlertRetriggerRuleDataAttributesTimeoutMinutes] `json:"timeout_minutes,omitempty"`
-		} `json:"attributes"`
-		Type NewAlertRetriggerRuleDataType `json:"type"`
-	} `json:"data"`
-}
-
-// NewAlertRetriggerRuleDataAttributesConditionsKind The operand the condition matches on. Native operands (urgency, source, service, group) match by record; alert_field/payload match a field value.
-type NewAlertRetriggerRuleDataAttributesConditionsKind string
-
-// NewAlertRetriggerRuleDataAttributesConditionsOperator How the operand is compared. Native operands support is_one_of/is_not_one_of/is_set/is_not_set; alert_field/payload additionally support the string/regex operators.
-type NewAlertRetriggerRuleDataAttributesConditionsOperator string
-
-// NewAlertRetriggerRuleDataAttributesMatchMode Whether all or any of the conditions must match
-type NewAlertRetriggerRuleDataAttributesMatchMode string
-
-// NewAlertRetriggerRuleDataAttributesTimeoutMinutes Re-trigger the alert this many minutes after acknowledgment. Null means never re-trigger.
-type NewAlertRetriggerRuleDataAttributesTimeoutMinutes int
-
-// NewAlertRetriggerRuleDataType defines model for NewAlertRetriggerRule.Data.Type.
-type NewAlertRetriggerRuleDataType string
-
 // NewAlertRoute defines model for new_alert_route.
 type NewAlertRoute struct {
 	Data *struct {
@@ -57025,12 +58767,15 @@ type NewAlertUrgency struct {
 			// Position Position of the alert urgency
 			Position nullable.Nullable[int] `json:"position,omitempty"`
 
-			// RetriggerTimeoutMinutes Re-trigger acknowledged alerts of this urgency after N minutes; null inherits the workspace default, negative = never.
-			RetriggerTimeoutMinutes nullable.Nullable[int] `json:"retrigger_timeout_minutes,omitempty"`
+			// RetriggerTimeoutMinutes Re-trigger acknowledged alerts of this urgency after N minutes; null inherits the workspace default, -1 = never.
+			RetriggerTimeoutMinutes nullable.Nullable[NewAlertUrgencyDataAttributesRetriggerTimeoutMinutes] `json:"retrigger_timeout_minutes,omitempty"`
 		} `json:"attributes"`
 		Type NewAlertUrgencyDataType `json:"type"`
 	} `json:"data"`
 }
+
+// NewAlertUrgencyDataAttributesRetriggerTimeoutMinutes Re-trigger acknowledged alerts of this urgency after N minutes; null inherits the workspace default, -1 = never.
+type NewAlertUrgencyDataAttributesRetriggerTimeoutMinutes int
 
 // NewAlertUrgencyDataType defines model for NewAlertUrgency.Data.Type.
 type NewAlertUrgencyDataType string
@@ -57154,7 +58899,7 @@ type NewAlertsSource struct {
 			// SourceType The alert source type
 			SourceType *NewAlertsSourceDataAttributesSourceType `json:"source_type,omitempty"`
 
-			// SourceableAttributes Provide additional attributes for the underlying source. `auto_resolve`, `resolve_state` and `field_mappings_attributes` apply to generic_webhook sources; `accept_threaded_emails` applies to email sources.
+			// SourceableAttributes Provide additional attributes for the underlying source. `auto_resolve`, `resolve_state` and `field_mappings_attributes` apply to generic_webhook sources; `accept_threaded_emails`, `notification_target_type` and `notification_target_id` apply to email sources.
 			SourceableAttributes nullable.Nullable[struct {
 				// AcceptThreadedEmails Set this to false to reject threaded emails
 				AcceptThreadedEmails *bool `json:"accept_threaded_emails,omitempty"`
@@ -57170,6 +58915,12 @@ type NewAlertsSource struct {
 					// JSONPath JSON path expression to extract a specific value from the alert's payload for evaluation. For `notification_target_id` only: if your account has opted in to Dynamic Notification Targets, this may also be a Liquid template that resolves to a notification target id at routing time.
 					JSONPath *string `json:"json_path,omitempty"`
 				} `json:"field_mappings_attributes,omitempty"`
+
+				// NotificationTargetID Email sources only. The ID of the notification target. Set to null to clear it; this also clears `notification_target_type`. Only used when the `email-alert-source-notification-target` feature flag is on for the team.
+				NotificationTargetID nullable.Nullable[string] `json:"notification_target_id,omitempty"`
+
+				// NotificationTargetType Email sources only. The type of the notification target every alert from this source pages directly; While it points to an active, pageable target, Alert Routes are not evaluated. Only used when the `email-alert-source-notification-target` feature flag is on for the team.
+				NotificationTargetType nullable.Nullable[NewAlertsSourceDataAttributesSourceableAttributesNotificationTargetType] `json:"notification_target_type,omitempty"`
 
 				// ResolveState This value is matched with the value extracted from alerts payload using JSON path in field_mappings_attributes
 				ResolveState nullable.Nullable[string] `json:"resolve_state,omitempty"`
@@ -57214,6 +58965,9 @@ type NewAlertsSourceDataAttributesSourceType string
 
 // NewAlertsSourceDataAttributesSourceableAttributesFieldMappingsAttributesField Select the field on which the condition to be evaluated
 type NewAlertsSourceDataAttributesSourceableAttributesFieldMappingsAttributesField string
+
+// NewAlertsSourceDataAttributesSourceableAttributesNotificationTargetType Email sources only. The type of the notification target every alert from this source pages directly; While it points to an active, pageable target, Alert Routes are not evaluated. Only used when the `email-alert-source-notification-target` feature flag is on for the team.
+type NewAlertsSourceDataAttributesSourceableAttributesNotificationTargetType string
 
 // NewAlertsSourceDataType defines model for NewAlertsSource.Data.Type.
 type NewAlertsSourceDataType string
@@ -57285,25 +59039,6 @@ type NewAuthorizationDataAttributesPermissions string
 
 // NewAuthorizationDataType defines model for NewAuthorization.Data.Type.
 type NewAuthorizationDataType string
-
-// NewBulkImport defines model for new_bulk_import.
-type NewBulkImport struct {
-	Data struct {
-		Attributes struct {
-			// EntityType Type of entity to import (currently only 'Incident' is supported)
-			EntityType NewBulkImportDataAttributesEntityType `json:"entity_type"`
-
-			// FileURL URL of the JSONL file to import. Must be accessible via HTTPS.
-			FileURL string `json:"file_url"`
-
-			// NotificationEmail Email address to receive import status notifications
-			NotificationEmail openapi_types.Email `json:"notification_email"`
-		} `json:"attributes"`
-	} `json:"data"`
-}
-
-// NewBulkImportDataAttributesEntityType Type of entity to import (currently only 'Incident' is supported)
-type NewBulkImportDataAttributesEntityType string
 
 // NewCatalog defines model for new_catalog.
 type NewCatalog struct {
@@ -58232,8 +59967,8 @@ type NewEscalationPolicyPath struct {
 			// RepeatCount The number of times this path will be executed until someone acknowledges the alert
 			RepeatCount nullable.Nullable[int] `json:"repeat_count,omitempty"`
 
-			// RetriggerTimeoutMinutes Re-trigger acknowledged alerts on this path after N minutes; null inherits the urgency/workspace default, negative = never.
-			RetriggerTimeoutMinutes nullable.Nullable[int] `json:"retrigger_timeout_minutes,omitempty"`
+			// RetriggerTimeoutMinutes Re-trigger acknowledged alerts on this path after N minutes; null inherits the urgency/workspace default, -1 = never.
+			RetriggerTimeoutMinutes nullable.Nullable[NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutes] `json:"retrigger_timeout_minutes,omitempty"`
 
 			// Rules Escalation path conditions
 			Rules []NewEscalationPolicyPath_Data_Attributes_Rules_Item `json:"rules,omitempty"`
@@ -58271,12 +60006,18 @@ type NewEscalationPolicyPathDataAttributesNotificationTypeFallback string
 
 // NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions0 defines model for NewEscalationPolicyPath.Data.Attributes.NotificationTypeRules.Conditions.0.
 type NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions0 struct {
+	// Operator How the alert's urgency should be matched. is and is_not take exactly one id
+	Operator *NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions0Operator `json:"operator,omitempty"`
+
 	// RuleType The type of the escalation path rule
 	RuleType NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions0RuleType `json:"rule_type"`
 
 	// UrgencyIDs Alert urgency ids for which this escalation path should be used
 	UrgencyIDs []string `json:"urgency_ids"`
 }
+
+// NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions0Operator How the alert's urgency should be matched. is and is_not take exactly one id
+type NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions0Operator string
 
 // NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions0RuleType The type of the escalation path rule
 type NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions0RuleType string
@@ -58343,12 +60084,18 @@ type NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions3RuleTy
 
 // NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions4 defines model for NewEscalationPolicyPath.Data.Attributes.NotificationTypeRules.Conditions.4.
 type NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions4 struct {
+	// Operator How the alert's services should be matched. is and is_not take exactly one id
+	Operator *NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions4Operator `json:"operator,omitempty"`
+
 	// RuleType The type of the escalation path rule
 	RuleType NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions4RuleType `json:"rule_type"`
 
 	// ServiceIDs Service ids for which this escalation path should be used
 	ServiceIDs []string `json:"service_ids"`
 }
+
+// NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions4Operator How the alert's services should be matched. is and is_not take exactly one id
+type NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions4Operator string
 
 // NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions4RuleType The type of the escalation path rule
 type NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions4RuleType string
@@ -58442,14 +60189,23 @@ type NewEscalationPolicyPathDataAttributesNotificationTypeRulesNotificationType 
 // NewEscalationPolicyPathDataAttributesPathType The type of escalation path to create
 type NewEscalationPolicyPathDataAttributesPathType string
 
+// NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutes Re-trigger acknowledged alerts on this path after N minutes; null inherits the urgency/workspace default, -1 = never.
+type NewEscalationPolicyPathDataAttributesRetriggerTimeoutMinutes int
+
 // NewEscalationPolicyPathDataAttributesRules0 defines model for NewEscalationPolicyPath.Data.Attributes.Rules.0.
 type NewEscalationPolicyPathDataAttributesRules0 struct {
+	// Operator How the alert's urgency should be matched. is and is_not take exactly one id
+	Operator *NewEscalationPolicyPathDataAttributesRules0Operator `json:"operator,omitempty"`
+
 	// RuleType The type of the escalation path rule
 	RuleType NewEscalationPolicyPathDataAttributesRules0RuleType `json:"rule_type"`
 
 	// UrgencyIDs Alert urgency ids for which this escalation path should be used
 	UrgencyIDs []string `json:"urgency_ids"`
 }
+
+// NewEscalationPolicyPathDataAttributesRules0Operator How the alert's urgency should be matched. is and is_not take exactly one id
+type NewEscalationPolicyPathDataAttributesRules0Operator string
 
 // NewEscalationPolicyPathDataAttributesRules0RuleType The type of the escalation path rule
 type NewEscalationPolicyPathDataAttributesRules0RuleType string
@@ -58516,12 +60272,18 @@ type NewEscalationPolicyPathDataAttributesRules3RuleType string
 
 // NewEscalationPolicyPathDataAttributesRules4 defines model for NewEscalationPolicyPath.Data.Attributes.Rules.4.
 type NewEscalationPolicyPathDataAttributesRules4 struct {
+	// Operator How the alert's services should be matched. is and is_not take exactly one id
+	Operator *NewEscalationPolicyPathDataAttributesRules4Operator `json:"operator,omitempty"`
+
 	// RuleType The type of the escalation path rule
 	RuleType NewEscalationPolicyPathDataAttributesRules4RuleType `json:"rule_type"`
 
 	// ServiceIDs Service ids for which this escalation path should be used
 	ServiceIDs []string `json:"service_ids"`
 }
+
+// NewEscalationPolicyPathDataAttributesRules4Operator How the alert's services should be matched. is and is_not take exactly one id
+type NewEscalationPolicyPathDataAttributesRules4Operator string
 
 // NewEscalationPolicyPathDataAttributesRules4RuleType The type of the escalation path rule
 type NewEscalationPolicyPathDataAttributesRules4RuleType string
@@ -58791,7 +60553,7 @@ type NewFormFieldPositionDataType string
 type NewFormSet struct {
 	Data struct {
 		Attributes struct {
-			// Forms The forms included in the form set. Add custom forms using the custom form's `slug` field. Or choose a built-in form: `web_new_incident_form`, `web_update_incident_form`, `web_incident_post_mortem_form`, `web_incident_mitigation_form`, `web_incident_resolution_form`, `web_incident_cancellation_form`, `web_scheduled_incident_form`, `web_update_scheduled_incident_form`, `slack_new_incident_form`, `slack_update_incident_form`, `slack_update_incident_status_form`, `slack_incident_mitigation_form`, `slack_incident_resolution_form`, `slack_incident_cancellation_form`, `slack_scheduled_incident_form`, `slack_update_scheduled_incident_form`, `google_chat_new_incident_form`, `google_chat_update_incident_form`, `microsoft_teams_new_incident_form`
+			// Forms The forms included in the form set. Add custom forms using the custom form's `slug` field. Or choose a built-in form: `web_new_incident_form`, `web_update_incident_form`, `web_incident_post_mortem_form`, `web_incident_mitigation_form`, `web_incident_resolution_form`, `web_incident_cancellation_form`, `web_scheduled_incident_form`, `web_update_scheduled_incident_form`, `slack_new_incident_form`, `slack_update_incident_form`, `slack_update_incident_status_form`, `slack_incident_mitigation_form`, `slack_incident_resolution_form`, `slack_incident_cancellation_form`, `slack_scheduled_incident_form`, `slack_update_scheduled_incident_form`, `google_chat_new_incident_form`, `google_chat_update_incident_form`, `google_chat_incident_mitigation_form`, `google_chat_incident_resolution_form`, `google_chat_incident_cancellation_form`, `microsoft_teams_new_incident_form`
 			Forms []string `json:"forms"`
 
 			// Name The name of the form set
@@ -59523,7 +61285,7 @@ type NewIncidentStatusPageEvent struct {
 			// StartedAt When the event started. Defaults to the time of creation.
 			StartedAt nullable.Nullable[time.Time] `json:"started_at,omitempty"`
 
-			// Status The status of the incident event
+			// Status The status of the incident event. Defaults to investigating, which is only valid for incidents; scheduled maintenances must set a maintenance status (e.g. scheduled, in_progress, completed) or the request is rejected with a 422.
 			Status *NewIncidentStatusPageEventDataAttributesStatus `json:"status,omitempty"`
 
 			// StatusPageComponents Affected status page components and their statuses. This field is in Early Access and is not generally available; contact Rootly Support to request access. Ignored for terminal event statuses (resolved, completed), which clear component impact. A status is required per component except for scheduled maintenance incidents.
@@ -59542,7 +61304,7 @@ type NewIncidentStatusPageEvent struct {
 	} `json:"data"`
 }
 
-// NewIncidentStatusPageEventDataAttributesStatus The status of the incident event
+// NewIncidentStatusPageEventDataAttributesStatus The status of the incident event. Defaults to investigating, which is only valid for incidents; scheduled maintenances must set a maintenance status (e.g. scheduled, in_progress, completed) or the request is rejected with a 422.
 type NewIncidentStatusPageEventDataAttributesStatus string
 
 // NewIncidentStatusPageEventDataAttributesStatusPageComponentsStatus The status to record for the component
@@ -59781,6 +61543,7 @@ type NewOnCallRole struct {
 			IntegrationsPermissions       []NewOnCallRoleDataAttributesIntegrationsPermissions       `json:"integrations_permissions,omitempty"`
 			InvitationsPermissions        []NewOnCallRoleDataAttributesInvitationsPermissions        `json:"invitations_permissions,omitempty"`
 			LiveCallRoutingPermissions    []NewOnCallRoleDataAttributesLiveCallRoutingPermissions    `json:"live_call_routing_permissions,omitempty"`
+			MembersPermissions            []NewOnCallRoleDataAttributesMembersPermissions            `json:"members_permissions,omitempty"`
 
 			// Name The role name.
 			Name                             string                                                        `json:"name"`
@@ -59851,6 +61614,9 @@ type NewOnCallRoleDataAttributesInvitationsPermissions string
 
 // NewOnCallRoleDataAttributesLiveCallRoutingPermissions defines model for NewOnCallRole.Data.Attributes.LiveCallRoutingPermissions.
 type NewOnCallRoleDataAttributesLiveCallRoutingPermissions string
+
+// NewOnCallRoleDataAttributesMembersPermissions defines model for NewOnCallRole.Data.Attributes.MembersPermissions.
+type NewOnCallRoleDataAttributesMembersPermissions string
 
 // NewOnCallRoleDataAttributesOnCallReadinessReportPermissions defines model for NewOnCallRole.Data.Attributes.OnCallReadinessReportPermissions.
 type NewOnCallRoleDataAttributesOnCallReadinessReportPermissions string
@@ -59927,6 +61693,12 @@ type NewOverrideShiftDataType string
 type NewPlaybook struct {
 	Data struct {
 		Attributes struct {
+			// CauseIDs The Cause IDs to attach to the incident
+			CauseIDs nullable.Nullable[[]string] `json:"cause_ids,omitempty"`
+
+			// Content Sanitized HTML instructions. Still returned when `kind` is `external_url`, where the body may be stale — branch on `kind`, not on `content` being present.
+			Content nullable.Nullable[string] `json:"content,omitempty"`
+
 			// EnvironmentIDs The Environment IDs to attach to the incident
 			EnvironmentIDs nullable.Nullable[[]string] `json:"environment_ids,omitempty"`
 
@@ -59941,6 +61713,9 @@ type NewPlaybook struct {
 
 			// IncidentTypeIDs The Incident Type IDs to attach to the incident
 			IncidentTypeIDs nullable.Nullable[[]string] `json:"incident_type_ids,omitempty"`
+
+			// Kind Whether the playbook body lives in Rootly (`internal_document`) or at an external link (`external_url`).
+			Kind nullable.Nullable[NewPlaybookDataAttributesKind] `json:"kind,omitempty"`
 
 			// ServiceIDs The Service IDs to attach to the incident
 			ServiceIDs nullable.Nullable[[]string] `json:"service_ids,omitempty"`
@@ -59957,6 +61732,9 @@ type NewPlaybook struct {
 		Type NewPlaybookDataType `json:"type"`
 	} `json:"data"`
 }
+
+// NewPlaybookDataAttributesKind Whether the playbook body lives in Rootly (`internal_document`) or at an external link (`external_url`).
+type NewPlaybookDataAttributesKind string
 
 // NewPlaybookDataType defines model for NewPlaybook.Data.Type.
 type NewPlaybookDataType string
@@ -60008,6 +61786,109 @@ type NewPostMortemTemplateDataAttributesFormat string
 
 // NewPostMortemTemplateDataType defines model for NewPostMortemTemplate.Data.Type.
 type NewPostMortemTemplateDataType string
+
+// NewProblem defines model for new_problem.
+type NewProblem struct {
+	Data struct {
+		Attributes struct {
+			// CancellationReason The reason for cancelling the problem
+			CancellationReason nullable.Nullable[string] `json:"cancellation_reason,omitempty"`
+
+			// DeferralReason The reason and accepted risk for deferring the problem
+			DeferralReason nullable.Nullable[string] `json:"deferral_reason,omitempty"`
+
+			// Description The description of the problem
+			Description nullable.Nullable[string] `json:"description,omitempty"`
+
+			// DueDate The due date of the problem
+			DueDate nullable.Nullable[openapi_types.Date] `json:"due_date,omitempty"`
+
+			// ExitCriteria The exit criteria of the problem
+			ExitCriteria nullable.Nullable[string] `json:"exit_criteria,omitempty"`
+
+			// FormFieldSelections Custom (form) field selections for the problem
+			FormFieldSelections []map[string]interface{} `json:"form_field_selections,omitempty"`
+
+			// ImpactSoFar The impact observed so far
+			ImpactSoFar nullable.Nullable[string] `json:"impact_so_far,omitempty"`
+
+			// IncidentIDs IDs of incidents to link to the problem
+			IncidentIDs []string `json:"incident_ids,omitempty"`
+
+			// NextReviewAt The next review date for a deferred problem
+			NextReviewAt nullable.Nullable[string] `json:"next_review_at,omitempty"`
+
+			// OwnerGroupID ID of the group (team) that owns the problem
+			OwnerGroupID nullable.Nullable[string] `json:"owner_group_id,omitempty"`
+
+			// OwnerUserID ID of the user who owns the problem
+			OwnerUserID nullable.Nullable[int] `json:"owner_user_id,omitempty"`
+
+			// Priority The priority of the problem
+			Priority nullable.Nullable[NewProblemDataAttributesPriority] `json:"priority,omitempty"`
+
+			// ReReviewCadence Days between reviews for a deferred problem
+			ReReviewCadence nullable.Nullable[int] `json:"re_review_cadence,omitempty"`
+
+			// Resolution The resolution of the problem
+			Resolution nullable.Nullable[string] `json:"resolution,omitempty"`
+
+			// RootCause The root cause of the problem
+			RootCause nullable.Nullable[string] `json:"root_cause,omitempty"`
+
+			// Scope The scope of the problem
+			Scope nullable.Nullable[string] `json:"scope,omitempty"`
+
+			// Title The title of the problem
+			Title string `json:"title"`
+		} `json:"attributes"`
+		Type NewProblemDataType `json:"type"`
+	} `json:"data"`
+}
+
+// NewProblemDataAttributesPriority The priority of the problem
+type NewProblemDataAttributesPriority string
+
+// NewProblemDataType defines model for NewProblem.Data.Type.
+type NewProblemDataType string
+
+// NewProblemActionItem defines model for new_problem_action_item.
+type NewProblemActionItem struct {
+	Data struct {
+		Attributes struct {
+			// AssignedToUserID ID of user you wish to assign this action item
+			AssignedToUserID nullable.Nullable[int] `json:"assigned_to_user_id,omitempty"`
+
+			// Description The description of the action item
+			Description nullable.Nullable[string] `json:"description,omitempty"`
+
+			// DueDate The due date of the action item
+			DueDate nullable.Nullable[string] `json:"due_date,omitempty"`
+
+			// JiraIssueURL The Jira issue URL.
+			JiraIssueURL nullable.Nullable[string] `json:"jira_issue_url,omitempty"`
+
+			// Priority The priority of the action item
+			Priority *NewProblemActionItemDataAttributesPriority `json:"priority,omitempty"`
+
+			// Status The status of the action item
+			Status *NewProblemActionItemDataAttributesStatus `json:"status,omitempty"`
+
+			// Summary The summary of the action item
+			Summary string `json:"summary"`
+		} `json:"attributes"`
+		Type NewProblemActionItemDataType `json:"type"`
+	} `json:"data"`
+}
+
+// NewProblemActionItemDataAttributesPriority The priority of the action item
+type NewProblemActionItemDataAttributesPriority string
+
+// NewProblemActionItemDataAttributesStatus The status of the action item
+type NewProblemActionItemDataAttributesStatus string
+
+// NewProblemActionItemDataType defines model for NewProblemActionItem.Data.Type.
+type NewProblemActionItemDataType string
 
 // NewPulse defines model for new_pulse.
 type NewPulse struct {
@@ -60189,9 +62070,12 @@ type NewRole struct {
 			InvitationsPermissions   []NewRoleDataAttributesInvitationsPermissions   `json:"invitations_permissions,omitempty"`
 
 			// Name The role name.
-			Name                        string                                             `json:"name"`
-			PagingPermissions           []NewRoleDataAttributesPagingPermissions           `json:"paging_permissions,omitempty"`
-			PlaybooksPermissions        []NewRoleDataAttributesPlaybooksPermissions        `json:"playbooks_permissions,omitempty"`
+			Name                 string                                      `json:"name"`
+			PagingPermissions    []NewRoleDataAttributesPagingPermissions    `json:"paging_permissions,omitempty"`
+			PlaybooksPermissions []NewRoleDataAttributesPlaybooksPermissions `json:"playbooks_permissions,omitempty"`
+
+			// PrivateAgentPermissions Private Agent management permissions: create issues enrollment tokens, read views agent inventory and details, and delete revokes agent credentials. Create and delete can be used independently through the API; browser inventory requires read.
+			PrivateAgentPermissions     []NewRoleDataAttributesPrivateAgentPermissions     `json:"private_agent_permissions,omitempty"`
 			PrivateIncidentsPermissions []NewRoleDataAttributesPrivateIncidentsPermissions `json:"private_incidents_permissions,omitempty"`
 			PulsesPermissions           []NewRoleDataAttributesPulsesPermissions           `json:"pulses_permissions,omitempty"`
 			RetrospectivePermissions    []NewRoleDataAttributesRetrospectivePermissions    `json:"retrospective_permissions,omitempty"`
@@ -60275,6 +62159,9 @@ type NewRoleDataAttributesPagingPermissions string
 // NewRoleDataAttributesPlaybooksPermissions defines model for NewRole.Data.Attributes.PlaybooksPermissions.
 type NewRoleDataAttributesPlaybooksPermissions string
 
+// NewRoleDataAttributesPrivateAgentPermissions defines model for NewRole.Data.Attributes.PrivateAgentPermissions.
+type NewRoleDataAttributesPrivateAgentPermissions string
+
 // NewRoleDataAttributesPrivateIncidentsPermissions defines model for NewRole.Data.Attributes.PrivateIncidentsPermissions.
 type NewRoleDataAttributesPrivateIncidentsPermissions string
 
@@ -60323,6 +62210,13 @@ type NewSchedule struct {
 		Attributes struct {
 			// AllTimeCoverage 24/7 coverage of the schedule
 			AllTimeCoverage nullable.Nullable[bool] `json:"all_time_coverage,omitempty"`
+
+			// BusinessHours Controls shadow paging on the schedule. Null disables shadow paging. start_time and end_time are HH:MM 24-hour format strings.
+			BusinessHours nullable.Nullable[struct {
+				EndTime         string `json:"end_time"`
+				IncludeWeekends bool   `json:"include_weekends"`
+				StartTime       string `json:"start_time"`
+			}] `json:"business_hours,omitempty"`
 
 			// Description The description of the schedule
 			Description nullable.Nullable[string] `json:"description,omitempty"`
@@ -60787,6 +62681,9 @@ type NewShiftCoverageRequest struct {
 			// EndsAt End datetime of the time range to request coverage for
 			EndsAt time.Time `json:"ends_at"`
 
+			// RecipientUserIDs Optional. Notify selected active schedule members for every covered shift when targeted-shift-coverage is enabled. Recipients must be eligible for each shift. Omitted, empty, or flag-disabled selections broadcast.
+			RecipientUserIDs []int `json:"recipient_user_ids,omitempty"`
+
 			// StartsAt Start datetime of the time range to request coverage for
 			StartsAt time.Time `json:"starts_at"`
 
@@ -61097,6 +62994,26 @@ type NewStatusPageComponentGroup struct {
 // NewStatusPageComponentGroupDataType defines model for NewStatusPageComponentGroup.Data.Type.
 type NewStatusPageComponentGroupDataType string
 
+// NewStatusPageTeam defines model for new_status_page_team.
+type NewStatusPageTeam struct {
+	Data struct {
+		Attributes struct {
+			// GroupID ID of the team granted access to the status page. Teams are listed by GET /v1/teams. A status page accepts at most 50 teams
+			GroupID openapi_types.UUID `json:"group_id"`
+
+			// PermissionLevel publish_only lets team members post status page updates and announcements. edit_and_publish also lets them edit the page, its components, templates, and subscribers. Defaults to edit_and_publish
+			PermissionLevel *NewStatusPageTeamDataAttributesPermissionLevel `json:"permission_level,omitempty"`
+		} `json:"attributes"`
+		Type NewStatusPageTeamDataType `json:"type"`
+	} `json:"data"`
+}
+
+// NewStatusPageTeamDataAttributesPermissionLevel publish_only lets team members post status page updates and announcements. edit_and_publish also lets them edit the page, its components, templates, and subscribers. Defaults to edit_and_publish
+type NewStatusPageTeamDataAttributesPermissionLevel string
+
+// NewStatusPageTeamDataType defines model for NewStatusPageTeam.Data.Type.
+type NewStatusPageTeamDataType string
+
 // NewStatusPageTemplate defines model for new_status_page_template.
 type NewStatusPageTemplate struct {
 	Data struct {
@@ -61254,6 +63171,15 @@ type NewTeam struct {
 			// PublicDescription The status page description of the team
 			PublicDescription nullable.Nullable[string] `json:"public_description,omitempty"`
 
+			// ScheduleOverridePolicy Who can create and update overrides for schedules owned by this team: `everyone` in the organization, only team `members`, or only team `admins`. Users still need override permission from their on-call role. Only available when the team-level schedule override policy feature is enabled for the organization. Requests that set it while that feature is disabled are rejected.
+			ScheduleOverridePolicy *NewTeamDataAttributesScheduleOverridePolicy `json:"schedule_override_policy,omitempty"`
+
+			// ScimGroupExternalID Link by the SCIM group's externalId from your identity provider instead of scim_group_id. Write-only. Rejected when it names a different SCIM group than scim_group_id.
+			ScimGroupExternalID nullable.Nullable[string] `json:"scim_group_external_id,omitempty"`
+
+			// ScimGroupID The SCIM group id linked to this team. Membership syncs from the SCIM group while the team keeps its own name.
+			ScimGroupID nullable.Nullable[string] `json:"scim_group_id,omitempty"`
+
 			// ServiceNowCiSysID The Service Now CI sys id associated to this team
 			ServiceNowCiSysID nullable.Nullable[string] `json:"service_now_ci_sys_id,omitempty"`
 
@@ -61289,6 +63215,9 @@ type NewTeam struct {
 
 // NewTeamDataAttributesAutoAddMembersScope Visibility-scoped auto-add behavior. Only present when the `enable_scoped_incident_channel_auto_add` feature flag is on for the organization. When set, it overrides `auto_add_members_when_attached`.
 type NewTeamDataAttributesAutoAddMembersScope string
+
+// NewTeamDataAttributesScheduleOverridePolicy Who can create and update overrides for schedules owned by this team: `everyone` in the organization, only team `members`, or only team `admins`. Users still need override permission from their on-call role. Only available when the team-level schedule override policy feature is enabled for the organization. Requests that set it while that feature is disabled are rejected.
+type NewTeamDataAttributesScheduleOverridePolicy string
 
 // NewTeamDataType defines model for NewTeam.Data.Type.
 type NewTeamDataType string
@@ -61435,9 +63364,12 @@ type NewWorkflow struct {
 			// FailureNotificationMode Where failure notifications for this workflow are sent. `inherit` uses the account default channel, `custom` uses `failure_notification_channels`, `off` suppresses them.
 			FailureNotificationMode *NewWorkflowDataAttributesFailureNotificationMode `json:"failure_notification_mode,omitempty"`
 			FunctionalityIDs        []string                                          `json:"functionality_ids,omitempty"`
-			GroupIDs                []string                                          `json:"group_ids,omitempty"`
-			IncidentRoleIDs         []string                                          `json:"incident_role_ids,omitempty"`
-			IncidentTypeIDs         []string                                          `json:"incident_type_ids,omitempty"`
+
+			// GroupAssignmentIDs Owning team IDs. Requires team-scoped workflows.
+			GroupAssignmentIDs []string `json:"group_assignment_ids,omitempty"`
+			GroupIDs           []string `json:"group_ids,omitempty"`
+			IncidentRoleIDs    []string `json:"incident_role_ids,omitempty"`
+			IncidentTypeIDs    []string `json:"incident_type_ids,omitempty"`
 
 			// Locked Restricts workflow edits to admins when turned on. Only admins can set this field.
 			Locked *bool `json:"locked,omitempty"`
@@ -61460,8 +63392,11 @@ type NewWorkflow struct {
 			// RepeatEveryDuration Repeat workflow every duration
 			RepeatEveryDuration nullable.Nullable[string]           `json:"repeat_every_duration,omitempty"`
 			RepeatOn            []NewWorkflowDataAttributesRepeatOn `json:"repeat_on,omitempty"`
-			ServiceIDs          []string                            `json:"service_ids,omitempty"`
-			SeverityIDs         []string                            `json:"severity_ids,omitempty"`
+
+			// RunOncePerResource When true, the workflow runs at most once per incident. Later triggers on the same incident create a canceled run instead. Manual runs and repeats are not affected. Only applies to incident workflows.
+			RunOncePerResource *bool    `json:"run_once_per_resource,omitempty"`
+			ServiceIDs         []string `json:"service_ids,omitempty"`
+			SeverityIDs        []string `json:"severity_ids,omitempty"`
 			// Deprecated: `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
 			Slug          nullable.Nullable[string]                  `json:"slug,omitempty"`
 			SubStatusIDs  []string                                   `json:"sub_status_ids,omitempty"`
@@ -61864,6 +63799,7 @@ type OnCallRole struct {
 	IntegrationsPermissions       []OnCallRoleIntegrationsPermissions       `json:"integrations_permissions,omitempty"`
 	InvitationsPermissions        []OnCallRoleInvitationsPermissions        `json:"invitations_permissions,omitempty"`
 	LiveCallRoutingPermissions    []OnCallRoleLiveCallRoutingPermissions    `json:"live_call_routing_permissions,omitempty"`
+	MembersPermissions            []OnCallRoleMembersPermissions            `json:"members_permissions,omitempty"`
 
 	// Name The role name.
 	Name                             string                                       `json:"name"`
@@ -61933,6 +63869,9 @@ type OnCallRoleInvitationsPermissions string
 
 // OnCallRoleLiveCallRoutingPermissions defines model for OnCallRole.LiveCallRoutingPermissions.
 type OnCallRoleLiveCallRoutingPermissions string
+
+// OnCallRoleMembersPermissions defines model for OnCallRole.MembersPermissions.
+type OnCallRoleMembersPermissions string
 
 // OnCallRoleOnCallReadinessReportPermissions defines model for OnCallRole.OnCallReadinessReportPermissions.
 type OnCallRoleOnCallReadinessReportPermissions string
@@ -62146,6 +64085,27 @@ type OncallRelationshipsScheduleDataType string
 
 // OncallRelationshipsUserDataType defines model for OncallRelationships.User.Data.Type.
 type OncallRelationshipsUserDataType string
+
+// OverriddenShift defines model for overridden_shift.
+type OverriddenShift struct {
+	// AssigneeID ID of the overridden assignee
+	AssigneeID nullable.Nullable[string] `json:"assignee_id,omitempty"`
+
+	// AssigneeType Type of the overridden assignee (User or Schedule)
+	AssigneeType nullable.Nullable[string] `json:"assignee_type,omitempty"`
+
+	// EndsAt End datetime of the overridden portion
+	EndsAt string `json:"ends_at"`
+
+	// RotationID ID of the rotation the overridden shift belongs to
+	RotationID nullable.Nullable[string] `json:"rotation_id,omitempty"`
+
+	// StartsAt Start datetime of the overridden portion
+	StartsAt string `json:"starts_at"`
+
+	// UserID ID of the user whose shift was overridden
+	UserID nullable.Nullable[int] `json:"user_id,omitempty"`
+}
 
 // OverrideShift defines model for override_shift.
 type OverrideShift struct {
@@ -62487,6 +64447,12 @@ type PhoneVerificationResponse struct {
 
 // Playbook defines model for playbook.
 type Playbook struct {
+	// CauseIDs The Cause IDs to attach to the incident
+	CauseIDs nullable.Nullable[[]string] `json:"cause_ids,omitempty"`
+
+	// Content Sanitized HTML instructions. Still returned when `kind` is `external_url`, where the body may be stale — branch on `kind`, not on `content` being present.
+	Content nullable.Nullable[string] `json:"content,omitempty"`
+
 	// CreatedAt Date of creation
 	CreatedAt string `json:"created_at"`
 
@@ -62505,6 +64471,9 @@ type Playbook struct {
 	// IncidentTypeIDs The Incident Type IDs to attach to the incident
 	IncidentTypeIDs nullable.Nullable[[]string] `json:"incident_type_ids,omitempty"`
 
+	// Kind Whether the playbook body lives in Rootly (`internal_document`) or at an external link (`external_url`).
+	Kind nullable.Nullable[PlaybookKind] `json:"kind,omitempty"`
+
 	// ServiceIDs The Service IDs to attach to the incident
 	ServiceIDs nullable.Nullable[[]string] `json:"service_ids,omitempty"`
 
@@ -62520,6 +64489,9 @@ type Playbook struct {
 	// UpdatedAt Date of last update
 	UpdatedAt string `json:"updated_at"`
 }
+
+// PlaybookKind Whether the playbook body lives in Rootly (`internal_document`) or at an external link (`external_url`).
+type PlaybookKind string
 
 // PlaybookList defines model for playbook_list.
 type PlaybookList struct {
@@ -62685,6 +64657,8 @@ type PostMortemTriggerParams struct {
 	IncidentConditionLabelUseRegexp *bool                                                                     `json:"incident_condition_label_use_regexp,omitempty"`
 	IncidentConditionMitigatedAt    nullable.Nullable[PostMortemTriggerParamsIncidentConditionMitigatedAt]    `json:"incident_condition_mitigated_at,omitempty"`
 	IncidentConditionResolvedAt     nullable.Nullable[PostMortemTriggerParamsIncidentConditionResolvedAt]     `json:"incident_condition_resolved_at,omitempty"`
+	IncidentConditionScheduledFor   nullable.Nullable[PostMortemTriggerParamsIncidentConditionScheduledFor]   `json:"incident_condition_scheduled_for,omitempty"`
+	IncidentConditionScheduledUntil nullable.Nullable[PostMortemTriggerParamsIncidentConditionScheduledUntil] `json:"incident_condition_scheduled_until,omitempty"`
 	IncidentConditionService        *PostMortemTriggerParamsIncidentConditionService                          `json:"incident_condition_service,omitempty"`
 	IncidentConditionSeverity       *PostMortemTriggerParamsIncidentConditionSeverity                         `json:"incident_condition_severity,omitempty"`
 	IncidentConditionStartedAt      nullable.Nullable[PostMortemTriggerParamsIncidentConditionStartedAt]      `json:"incident_condition_started_at,omitempty"`
@@ -62749,6 +64723,12 @@ type PostMortemTriggerParamsIncidentConditionMitigatedAt string
 // PostMortemTriggerParamsIncidentConditionResolvedAt defines model for PostMortemTriggerParams.IncidentConditionResolvedAt.
 type PostMortemTriggerParamsIncidentConditionResolvedAt string
 
+// PostMortemTriggerParamsIncidentConditionScheduledFor defines model for PostMortemTriggerParams.IncidentConditionScheduledFor.
+type PostMortemTriggerParamsIncidentConditionScheduledFor string
+
+// PostMortemTriggerParamsIncidentConditionScheduledUntil defines model for PostMortemTriggerParams.IncidentConditionScheduledUntil.
+type PostMortemTriggerParamsIncidentConditionScheduledUntil string
+
 // PostMortemTriggerParamsIncidentConditionService defines model for PostMortemTriggerParams.IncidentConditionService.
 type PostMortemTriggerParamsIncidentConditionService string
 
@@ -62804,6 +64784,412 @@ type PrintTaskParams struct {
 // PrintTaskParamsTaskType defines model for PrintTaskParams.TaskType.
 type PrintTaskParamsTaskType string
 
+// PrivateAgent defines model for private_agent.
+type PrivateAgent struct {
+	Attributes struct {
+		AgentVersion   string                               `json:"agent_version"`
+		CreatedAt      time.Time                            `json:"created_at"`
+		DeploymentMode PrivateAgentAttributesDeploymentMode `json:"deployment_mode"`
+
+		// Description Non-sensitive routing metadata. Do not include secrets or personal data.
+		Description nullable.Nullable[string] `json:"description"`
+
+		// Enabled For active agents, whether Rootly may advertise tools and assign new work.
+		Enabled    bool                         `json:"enabled"`
+		LastSeenAt nullable.Nullable[time.Time] `json:"last_seen_at"`
+		Name       string                       `json:"name"`
+
+		// Online Active agent seen within two minutes; does not imply all providers are healthy.
+		Online    bool `json:"online"`
+		Providers []struct {
+			Capabilities []struct {
+				Description *string `json:"description,omitempty"`
+				Name        string  `json:"name"`
+				Sensitivity *string `json:"sensitivity,omitempty"`
+				Version     string  `json:"version"`
+			} `json:"capabilities"`
+
+			// Health Last reported provider health; may be stale when the agent is offline. Invalid or absent fields are omitted.
+			Health nullable.Nullable[struct {
+				Message    *string `json:"message,omitempty"`
+				ObservedAt *string `json:"observed_at,omitempty"`
+				Status     *string `json:"status,omitempty"`
+			}] `json:"health"`
+			ID string `json:"id"`
+
+			// Policy Reported local policy, not credentials or provider connection configuration. Fields are provider-type specific: Kubernetes reports namespace scope; search providers report index scope; databases report database/schema scope; HTTP reports method/path/header scope; Kafka reports topic and message-read scope; Redis and Valkey report diagnostic limits; and each provider family normally reports only its applicable numeric limits. Management responses may preserve legacy cross-family fields for backwards compatibility; capability catalog and dispatch use provider-scoped execution metadata. Invalid or absent fields are omitted.
+			Policy nullable.Nullable[struct {
+				AllowMessageReads       *bool    `json:"allow_message_reads,omitempty"`
+				AllowedIndices          []string `json:"allowed_indices,omitempty"`
+				AllowedMethods          []string `json:"allowed_methods,omitempty"`
+				AllowedPathPrefixes     []string `json:"allowed_path_prefixes,omitempty"`
+				AllowedRequestHeaders   []string `json:"allowed_request_headers,omitempty"`
+				AllowedSchemas          []string `json:"allowed_schemas,omitempty"`
+				AllowedTopics           []string `json:"allowed_topics,omitempty"`
+				ClusterScoped           *bool    `json:"cluster_scoped,omitempty"`
+				Database                *string  `json:"database,omitempty"`
+				DeniedTopics            []string `json:"denied_topics,omitempty"`
+				Digest                  *string  `json:"digest,omitempty"`
+				ExposedResponseHeaders  []string `json:"exposed_response_headers,omitempty"`
+				IncludeInternalTopics   *bool    `json:"include_internal_topics,omitempty"`
+				IncludeMessageValues    *bool    `json:"include_message_values,omitempty"`
+				MaximumAttributeValues  *int     `json:"maximum_attribute_values,omitempty"`
+				MaximumConcurrency      *int     `json:"maximum_concurrency,omitempty"`
+				MaximumDocuments        *int     `json:"maximum_documents,omitempty"`
+				MaximumEntries          *int     `json:"maximum_entries,omitempty"`
+				MaximumExemplars        *int     `json:"maximum_exemplars,omitempty"`
+				MaximumIndices          *int     `json:"maximum_indices,omitempty"`
+				MaximumItems            *int     `json:"maximum_items,omitempty"`
+				MaximumLabelValues      *int     `json:"maximum_label_values,omitempty"`
+				MaximumMessageBytes     *int     `json:"maximum_message_bytes,omitempty"`
+				MaximumMessages         *int     `json:"maximum_messages,omitempty"`
+				MaximumNodes            *int     `json:"maximum_nodes,omitempty"`
+				MaximumPatternPoints    *int     `json:"maximum_pattern_points,omitempty"`
+				MaximumPointsPerSeries  *int     `json:"maximum_points_per_series,omitempty"`
+				MaximumProfileTypes     *int     `json:"maximum_profile_types,omitempty"`
+				MaximumQueryBytes       *int     `json:"maximum_query_bytes,omitempty"`
+				MaximumRangeSeconds     *int     `json:"maximum_range_seconds,omitempty"`
+				MaximumRequestBytes     *int     `json:"maximum_request_bytes,omitempty"`
+				MaximumResponseBytes    *int     `json:"maximum_response_bytes,omitempty"`
+				MaximumResultBytes      *int     `json:"maximum_result_bytes,omitempty"`
+				MaximumRows             *int     `json:"maximum_rows,omitempty"`
+				MaximumScanBytes        *int     `json:"maximum_scan_bytes,omitempty"`
+				MaximumScanRecords      *int     `json:"maximum_scan_records,omitempty"`
+				MaximumSeries           *int     `json:"maximum_series,omitempty"`
+				MaximumShards           *int     `json:"maximum_shards,omitempty"`
+				MaximumSlowlogEntries   *int     `json:"maximum_slowlog_entries,omitempty"`
+				MaximumSpansPerSpanSet  *int     `json:"maximum_spans_per_span_set,omitempty"`
+				MaximumStaleValues      *int     `json:"maximum_stale_values,omitempty"`
+				MaximumTimeoutSeconds   *int     `json:"maximum_timeout_seconds,omitempty"`
+				MaximumTraces           *int     `json:"maximum_traces,omitempty"`
+				Namespaces              []string `json:"namespaces,omitempty"`
+				PodLogs                 *bool    `json:"pod_logs,omitempty"`
+				StuckTransactionSeconds *int     `json:"stuck_transaction_seconds,omitempty"`
+				TimestampField          *string  `json:"timestamp_field,omitempty"`
+			}] `json:"policy"`
+
+			// Type Provider adapter type, such as kubernetes, prometheus, loki, tempo, pyroscope, elasticsearch, opensearch, postgresql, mysql, mcp, http, kafka, redis, or valkey.
+			Type    string                    `json:"type"`
+			Version nullable.Nullable[string] `json:"version"`
+		} `json:"providers"`
+		SchemaDigest nullable.Nullable[string]    `json:"schema_digest"`
+		Status       PrivateAgentAttributesStatus `json:"status"`
+		UpdatedAt    time.Time                    `json:"updated_at"`
+	} `json:"attributes"`
+	ID   openapi_types.UUID `json:"id"`
+	Type PrivateAgentType   `json:"type"`
+}
+
+// PrivateAgentAttributesDeploymentMode defines model for PrivateAgent.Attributes.DeploymentMode.
+type PrivateAgentAttributesDeploymentMode string
+
+// PrivateAgentAttributesStatus defines model for PrivateAgent.Attributes.Status.
+type PrivateAgentAttributesStatus string
+
+// PrivateAgentType defines model for PrivateAgent.Type.
+type PrivateAgentType string
+
+// PrivateAgentEnrollmentTokenResponse defines model for private_agent_enrollment_token_response.
+type PrivateAgentEnrollmentTokenResponse struct {
+	Data struct {
+		Attributes struct {
+			ExpiresAt time.Time `json:"expires_at"`
+
+			// Token One-time secret. Returned only on creation; do not log or store in source control.
+			Token string `json:"token"`
+		} `json:"attributes"`
+		ID   openapi_types.UUID                          `json:"id"`
+		Type PrivateAgentEnrollmentTokenResponseDataType `json:"type"`
+	} `json:"data"`
+}
+
+// PrivateAgentEnrollmentTokenResponseDataType defines model for PrivateAgentEnrollmentTokenResponse.Data.Type.
+type PrivateAgentEnrollmentTokenResponseDataType string
+
+// PrivateAgentList defines model for private_agent_list.
+type PrivateAgentList struct {
+	Data []PrivateAgentSummary  `json:"data"`
+	Meta map[string]interface{} `json:"meta"`
+}
+
+// PrivateAgentResponse defines model for private_agent_response.
+type PrivateAgentResponse struct {
+	Data PrivateAgent `json:"data"`
+}
+
+// PrivateAgentSummary defines model for private_agent_summary.
+type PrivateAgentSummary struct {
+	Attributes struct {
+		AgentVersion   string                                      `json:"agent_version"`
+		CreatedAt      time.Time                                   `json:"created_at"`
+		DeploymentMode PrivateAgentSummaryAttributesDeploymentMode `json:"deployment_mode"`
+
+		// Description Non-sensitive routing metadata. Do not include secrets or personal data.
+		Description nullable.Nullable[string] `json:"description"`
+
+		// Enabled For active agents, whether Rootly may advertise tools and assign new work.
+		Enabled    bool                         `json:"enabled"`
+		LastSeenAt nullable.Nullable[time.Time] `json:"last_seen_at"`
+		Name       string                       `json:"name"`
+
+		// Online Active agent seen within two minutes; does not imply all providers are healthy.
+		Online       bool                                `json:"online"`
+		SchemaDigest nullable.Nullable[string]           `json:"schema_digest"`
+		Status       PrivateAgentSummaryAttributesStatus `json:"status"`
+		UpdatedAt    time.Time                           `json:"updated_at"`
+	} `json:"attributes"`
+	ID   openapi_types.UUID      `json:"id"`
+	Type PrivateAgentSummaryType `json:"type"`
+}
+
+// PrivateAgentSummaryAttributesDeploymentMode defines model for PrivateAgentSummary.Attributes.DeploymentMode.
+type PrivateAgentSummaryAttributesDeploymentMode string
+
+// PrivateAgentSummaryAttributesStatus defines model for PrivateAgentSummary.Attributes.Status.
+type PrivateAgentSummaryAttributesStatus string
+
+// PrivateAgentSummaryType defines model for PrivateAgentSummary.Type.
+type PrivateAgentSummaryType string
+
+// PrivateAgentUpdate defines model for private_agent_update.
+type PrivateAgentUpdate struct {
+	Data struct {
+		Attributes struct {
+			// Description Non-sensitive routing metadata. Do not include secrets or personal data.
+			Description nullable.Nullable[string] `json:"description,omitempty"`
+			Enabled     *bool                     `json:"enabled,omitempty"`
+			Name        *string                   `json:"name,omitempty"`
+		} `json:"attributes"`
+		Type PrivateAgentUpdateDataType `json:"type"`
+	} `json:"data"`
+}
+
+// PrivateAgentUpdateDataType defines model for PrivateAgentUpdate.Data.Type.
+type PrivateAgentUpdateDataType string
+
+// Problem defines model for problem.
+type Problem struct {
+	// ActionItemsCount Number of action items on the problem
+	ActionItemsCount *int `json:"action_items_count,omitempty"`
+
+	// CancellationReason The reason for cancelling the problem
+	CancellationReason nullable.Nullable[string] `json:"cancellation_reason,omitempty"`
+
+	// CancelledAt When the problem was cancelled
+	CancelledAt nullable.Nullable[string] `json:"cancelled_at,omitempty"`
+
+	// CancelledByUserID ID of the user who cancelled the problem
+	CancelledByUserID nullable.Nullable[int] `json:"cancelled_by_user_id,omitempty"`
+
+	// CompletedAt When the problem was completed
+	CompletedAt nullable.Nullable[string] `json:"completed_at,omitempty"`
+
+	// CompletedByUserID ID of the user who completed the problem
+	CompletedByUserID nullable.Nullable[int] `json:"completed_by_user_id,omitempty"`
+
+	// CreatedAt Date of creation
+	CreatedAt string `json:"created_at"`
+
+	// CreatedByUserID ID of the user who created the problem
+	CreatedByUserID *int `json:"created_by_user_id,omitempty"`
+
+	// DeferralReason The reason and accepted risk for deferring the problem
+	DeferralReason nullable.Nullable[string] `json:"deferral_reason,omitempty"`
+
+	// DeferredAt When the problem was deferred
+	DeferredAt nullable.Nullable[string] `json:"deferred_at,omitempty"`
+
+	// DeferredByUserID ID of the user who approved deferring the problem
+	DeferredByUserID nullable.Nullable[int] `json:"deferred_by_user_id,omitempty"`
+
+	// Description The description of the problem
+	Description nullable.Nullable[string] `json:"description,omitempty"`
+
+	// DisplayID Human-readable identifier of the problem (e.g. PROB-12)
+	DisplayID *string `json:"display_id,omitempty"`
+
+	// DueDate The due date of the problem
+	DueDate nullable.Nullable[openapi_types.Date] `json:"due_date,omitempty"`
+
+	// ExitCriteria The exit criteria of the problem
+	ExitCriteria nullable.Nullable[string] `json:"exit_criteria,omitempty"`
+
+	// ImpactSoFar The impact observed so far
+	ImpactSoFar nullable.Nullable[string] `json:"impact_so_far,omitempty"`
+
+	// InProgressAt When the problem moved to in progress
+	InProgressAt nullable.Nullable[string] `json:"in_progress_at,omitempty"`
+
+	// InProgressByUserID ID of the user who moved the problem to in progress
+	InProgressByUserID nullable.Nullable[int] `json:"in_progress_by_user_id,omitempty"`
+
+	// IncidentIDs IDs of incidents linked to the problem
+	IncidentIDs []string `json:"incident_ids,omitempty"`
+
+	// IncidentsCount Number of incidents linked to the problem
+	IncidentsCount *int `json:"incidents_count,omitempty"`
+
+	// NextReviewAt The next review date for a deferred problem
+	NextReviewAt nullable.Nullable[string] `json:"next_review_at,omitempty"`
+
+	// OwnerGroupID ID of the group (team) that owns the problem
+	OwnerGroupID nullable.Nullable[string] `json:"owner_group_id,omitempty"`
+
+	// OwnerUserID ID of the user who owns the problem
+	OwnerUserID nullable.Nullable[int] `json:"owner_user_id,omitempty"`
+
+	// Priority The priority of the problem
+	Priority nullable.Nullable[ProblemPriority] `json:"priority,omitempty"`
+
+	// ReReviewCadence Days between reviews for a deferred problem
+	ReReviewCadence nullable.Nullable[int] `json:"re_review_cadence,omitempty"`
+
+	// Resolution The resolution of the problem
+	Resolution nullable.Nullable[string] `json:"resolution,omitempty"`
+
+	// RootCause The root cause of the problem
+	RootCause nullable.Nullable[string] `json:"root_cause,omitempty"`
+
+	// Scope The scope of the problem
+	Scope nullable.Nullable[string] `json:"scope,omitempty"`
+
+	// SequentialID Team-scoped sequential number of the problem
+	SequentialID *int `json:"sequential_id,omitempty"`
+
+	// Status The status of the problem
+	Status *ProblemStatus `json:"status,omitempty"`
+
+	// SubscribersCount Number of users following the problem
+	SubscribersCount *int `json:"subscribers_count,omitempty"`
+
+	// Title The title of the problem
+	Title string `json:"title"`
+
+	// UpdatedAt Date of last update
+	UpdatedAt string `json:"updated_at"`
+
+	// URL URL of the problem in the Rootly web app
+	URL *string `json:"url,omitempty"`
+
+	// UsersAssignedCount Number of problem role assignees
+	UsersAssignedCount *int `json:"users_assigned_count,omitempty"`
+}
+
+// ProblemPriority The priority of the problem
+type ProblemPriority string
+
+// ProblemStatus The status of the problem
+type ProblemStatus string
+
+// ProblemActionItem defines model for problem_action_item.
+type ProblemActionItem struct {
+	// AssignedTo User assigned to this action item
+	AssignedTo nullable.Nullable[UserFlatResponse] `json:"assigned_to,omitempty"`
+
+	// AssignedToUserID ID of user you wish to assign this action item
+	AssignedToUserID nullable.Nullable[int] `json:"assigned_to_user_id,omitempty"`
+
+	// CreatedAt Date of creation
+	CreatedAt string `json:"created_at"`
+
+	// CreatedBy User who created this action item
+	CreatedBy nullable.Nullable[UserFlatResponse] `json:"created_by,omitempty"`
+
+	// Description The description of the action item
+	Description nullable.Nullable[string] `json:"description,omitempty"`
+
+	// DueDate The due date of the action item
+	DueDate nullable.Nullable[string] `json:"due_date,omitempty"`
+
+	// JiraIssueURL The Jira issue URL.
+	JiraIssueURL nullable.Nullable[string] `json:"jira_issue_url,omitempty"`
+
+	// Priority The priority of the action item
+	Priority *ProblemActionItemPriority `json:"priority,omitempty"`
+
+	// ProblemID ID of the problem this action item belongs to
+	ProblemID *string `json:"problem_id,omitempty"`
+
+	// Status The status of the action item
+	Status *ProblemActionItemStatus `json:"status,omitempty"`
+
+	// Summary The summary of the action item
+	Summary string `json:"summary"`
+
+	// UpdatedAt Date of last update
+	UpdatedAt string `json:"updated_at"`
+}
+
+// ProblemActionItemPriority The priority of the action item
+type ProblemActionItemPriority string
+
+// ProblemActionItemStatus The status of the action item
+type ProblemActionItemStatus string
+
+// ProblemActionItemList defines model for problem_action_item_list.
+type ProblemActionItemList struct {
+	Data []struct {
+		Attributes ProblemActionItem `json:"attributes"`
+
+		// ID Unique ID of the action item
+		ID   string                        `json:"id"`
+		Type ProblemActionItemListDataType `json:"type"`
+	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
+}
+
+// ProblemActionItemListDataType defines model for ProblemActionItemList.Data.Type.
+type ProblemActionItemListDataType string
+
+// ProblemActionItemResponse defines model for problem_action_item_response.
+type ProblemActionItemResponse struct {
+	Data struct {
+		Attributes ProblemActionItem `json:"attributes"`
+
+		// ID Unique ID of the action item
+		ID   string                            `json:"id"`
+		Type ProblemActionItemResponseDataType `json:"type"`
+	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+}
+
+// ProblemActionItemResponseDataType defines model for ProblemActionItemResponse.Data.Type.
+type ProblemActionItemResponseDataType string
+
+// ProblemList defines model for problem_list.
+type ProblemList struct {
+	Data []struct {
+		Attributes Problem `json:"attributes"`
+
+		// ID Unique ID of the problem
+		ID   string              `json:"id"`
+		Type ProblemListDataType `json:"type"`
+	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
+}
+
+// ProblemListDataType defines model for ProblemList.Data.Type.
+type ProblemListDataType string
+
+// ProblemResponse defines model for problem_response.
+type ProblemResponse struct {
+	Data struct {
+		Attributes Problem `json:"attributes"`
+
+		// ID Unique ID of the problem
+		ID   string                  `json:"id"`
+		Type ProblemResponseDataType `json:"type"`
+	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+}
+
+// ProblemResponseDataType defines model for ProblemResponse.Data.Type.
+type ProblemResponseDataType string
+
 // PublishIncidentTaskParams defines model for publish_incident_task_params.
 type PublishIncidentTaskParams struct {
 	// Event Incident event description
@@ -62837,7 +65223,13 @@ type PublishIncidentTaskParams struct {
 		ID   *string `json:"id,omitempty"`
 		Name *string `json:"name,omitempty"`
 	} `json:"status_page_template,omitempty"`
-	TaskType *PublishIncidentTaskParamsTaskType `json:"task_type,omitempty"`
+
+	// SyncIncidentComponents When true, every run also publishes the incident's tagged services and functionalities that are components on the target page. Defaults to true when selected_component_keys is empty. This field is in Early Access and is not generally available; contact Rootly Support to request access.
+	SyncIncidentComponents nullable.Nullable[bool] `json:"sync_incident_components,omitempty"`
+
+	// SyncedComponentStatus Impact status published for components synced from the incident. Defaults to degraded_performance. A component also listed in selected_component_keys keeps its selected_component_statuses entry.
+	SyncedComponentStatus nullable.Nullable[PublishIncidentTaskParamsSyncedComponentStatus] `json:"synced_component_status,omitempty"`
+	TaskType              *PublishIncidentTaskParamsTaskType                                `json:"task_type,omitempty"`
 }
 
 // PublishIncidentTaskParamsSelectedComponentStatuses defines model for PublishIncidentTaskParams.SelectedComponentStatuses.
@@ -62845,6 +65237,9 @@ type PublishIncidentTaskParamsSelectedComponentStatuses string
 
 // PublishIncidentTaskParamsStatus defines model for PublishIncidentTaskParams.Status.
 type PublishIncidentTaskParamsStatus string
+
+// PublishIncidentTaskParamsSyncedComponentStatus Impact status published for components synced from the incident. Defaults to degraded_performance. A component also listed in selected_component_keys keeps its selected_component_statuses entry.
+type PublishIncidentTaskParamsSyncedComponentStatus string
 
 // PublishIncidentTaskParamsTaskType defines model for PublishIncidentTaskParams.TaskType.
 type PublishIncidentTaskParamsTaskType string
@@ -62999,6 +65394,19 @@ type RedisClientTaskParams struct {
 // RedisClientTaskParamsTaskType defines model for RedisClientTaskParams.TaskType.
 type RedisClientTaskParamsTaskType string
 
+// RemoveFromSlackChannelTaskParams defines model for remove_from_slack_channel_task_params.
+type RemoveFromSlackChannelTaskParams struct {
+	DryRun     *bool                                       `json:"dry_run,omitempty"`
+	TargetKind *RemoveFromSlackChannelTaskParamsTargetKind `json:"target_kind,omitempty"`
+	TaskType   *RemoveFromSlackChannelTaskParamsTaskType   `json:"task_type,omitempty"`
+}
+
+// RemoveFromSlackChannelTaskParamsTargetKind defines model for RemoveFromSlackChannelTaskParams.TargetKind.
+type RemoveFromSlackChannelTaskParamsTargetKind string
+
+// RemoveFromSlackChannelTaskParamsTaskType defines model for RemoveFromSlackChannelTaskParams.TaskType.
+type RemoveFromSlackChannelTaskParamsTaskType string
+
 // RemoveGoogleDocsPermissionsTaskParams defines model for remove_google_docs_permissions_task_params.
 type RemoveGoogleDocsPermissionsTaskParams struct {
 	AttributeToQueryBy RemoveGoogleDocsPermissionsTaskParamsAttributeToQueryBy `json:"attribute_to_query_by"`
@@ -63089,6 +65497,9 @@ type RenameSlackChannelTaskParamsTaskType string
 type ResolveAlert struct {
 	Data *struct {
 		Attributes *struct {
+			// Actor The user to record as performing this action. Only available when actor attribution is enabled for the organization; otherwise it is ignored. Only supported with Global and Team API keys; with a Team API key the user must belong to one of the key's teams. When omitted or null, the action is attributed to the API key. Otherwise provide either `email` or `user_id`, not both.
+			Actor nullable.Nullable[ResolveAlert_Data_Attributes_Actor] `json:"actor,omitempty"`
+
 			// ResolutionMessage How was the alert resolved?
 			ResolutionMessage nullable.Nullable[string] `json:"resolution_message,omitempty"`
 
@@ -63097,6 +65508,23 @@ type ResolveAlert struct {
 		} `json:"attributes,omitempty"`
 		Type *ResolveAlertDataType `json:"type,omitempty"`
 	} `json:"data,omitempty"`
+}
+
+// ResolveAlertDataAttributesActor0 defines model for ResolveAlert.Data.Attributes.Actor.0.
+type ResolveAlertDataAttributesActor0 struct {
+	// Email Email of the user, including verified secondary emails.
+	Email string `json:"email"`
+}
+
+// ResolveAlertDataAttributesActor1 defines model for ResolveAlert.Data.Attributes.Actor.1.
+type ResolveAlertDataAttributesActor1 struct {
+	// UserID Rootly ID of the user.
+	UserID string `json:"user_id"`
+}
+
+// ResolveAlert_Data_Attributes_Actor The user to record as performing this action. Only available when actor attribution is enabled for the organization; otherwise it is ignored. Only supported with Global and Team API keys; with a Team API key the user must belong to one of the key's teams. When omitted or null, the action is attributed to the API key. Otherwise provide either `email` or `user_id`, not both.
+type ResolveAlert_Data_Attributes_Actor struct {
+	union json.RawMessage
 }
 
 // ResolveAlertDataType defines model for ResolveAlert.Data.Type.
@@ -63435,9 +65863,12 @@ type Role struct {
 	IsEditable *bool `json:"is_editable,omitempty"`
 
 	// Name The role name.
-	Name                        string                            `json:"name"`
-	PagingPermissions           []RolePagingPermissions           `json:"paging_permissions,omitempty"`
-	PlaybooksPermissions        []RolePlaybooksPermissions        `json:"playbooks_permissions,omitempty"`
+	Name                 string                     `json:"name"`
+	PagingPermissions    []RolePagingPermissions    `json:"paging_permissions,omitempty"`
+	PlaybooksPermissions []RolePlaybooksPermissions `json:"playbooks_permissions,omitempty"`
+
+	// PrivateAgentPermissions Private Agent management permissions: create issues enrollment tokens, read views agent inventory and details, and delete revokes agent credentials. Create and delete can be used independently through the API; browser inventory requires read.
+	PrivateAgentPermissions     []RolePrivateAgentPermissions     `json:"private_agent_permissions,omitempty"`
 	PrivateIncidentsPermissions []RolePrivateIncidentsPermissions `json:"private_incidents_permissions,omitempty"`
 	PulsesPermissions           []RolePulsesPermissions           `json:"pulses_permissions,omitempty"`
 	RetrospectivePermissions    []RoleRetrospectivePermissions    `json:"retrospective_permissions,omitempty"`
@@ -63519,6 +65950,9 @@ type RolePagingPermissions string
 
 // RolePlaybooksPermissions defines model for Role.PlaybooksPermissions.
 type RolePlaybooksPermissions string
+
+// RolePrivateAgentPermissions defines model for Role.PrivateAgentPermissions.
+type RolePrivateAgentPermissions string
 
 // RolePrivateIncidentsPermissions defines model for Role.PrivateIncidentsPermissions.
 type RolePrivateIncidentsPermissions string
@@ -63642,6 +66076,13 @@ type RunCommandHerokuTaskParamsTaskType string
 type Schedule struct {
 	// AllTimeCoverage 24/7 coverage of the schedule
 	AllTimeCoverage nullable.Nullable[bool] `json:"all_time_coverage,omitempty"`
+
+	// BusinessHours Controls shadow paging on the schedule. Null disables shadow paging. start_time and end_time are HH:MM 24-hour format strings.
+	BusinessHours nullable.Nullable[struct {
+		EndTime         string `json:"end_time"`
+		IncludeWeekends bool   `json:"include_weekends"`
+		StartTime       string `json:"start_time"`
+	}] `json:"business_hours,omitempty"`
 
 	// CreatedAt Date of creation
 	CreatedAt string `json:"created_at"`
@@ -64114,6 +66555,7 @@ type SendMicrosoftTeamsBlocksTaskParams struct {
 	// Attachments Support liquid markup. Needs to be a valid JSON string after liquid is parsed
 	Attachments string `json:"attachments"`
 	Channels    []struct {
+		// ID Microsoft Teams conversation ID (19:...@thread.*) or a Liquid variable such as {{ incident.microsoft_teams_channel_id }}
 		ID   *string `json:"id,omitempty"`
 		Name *string `json:"name,omitempty"`
 	} `json:"channels,omitempty"`
@@ -64127,6 +66569,7 @@ type SendMicrosoftTeamsBlocksTaskParamsTaskType string
 // SendMicrosoftTeamsBlocksTaskParams0 defines model for SendMicrosoftTeamsBlocksTaskParams.0.
 type SendMicrosoftTeamsBlocksTaskParams0 struct {
 	Channels []struct {
+		// ID Microsoft Teams conversation ID (19:...@thread.*) or a Liquid variable such as {{ incident.microsoft_teams_channel_id }}
 		ID   *string `json:"id,omitempty"`
 		Name *string `json:"name,omitempty"`
 	} `json:"channels"`
@@ -64150,6 +66593,7 @@ type SendMicrosoftTeamsChatMessageTaskParamsTaskType string
 // SendMicrosoftTeamsMessageTaskParams defines model for send_microsoft_teams_message_task_params.
 type SendMicrosoftTeamsMessageTaskParams struct {
 	Channels []struct {
+		// ID Microsoft Teams conversation ID (19:...@thread.*) or a Liquid variable such as {{ incident.microsoft_teams_channel_id }}
 		ID   *string `json:"id,omitempty"`
 		Name *string `json:"name,omitempty"`
 	} `json:"channels,omitempty"`
@@ -64166,6 +66610,7 @@ type SendMicrosoftTeamsMessageTaskParamsTaskType string
 // SendMicrosoftTeamsMessageTaskParams0 defines model for SendMicrosoftTeamsMessageTaskParams.0.
 type SendMicrosoftTeamsMessageTaskParams0 struct {
 	Channels []struct {
+		// ID Microsoft Teams conversation ID (19:...@thread.*) or a Liquid variable such as {{ incident.microsoft_teams_channel_id }}
 		ID   *string `json:"id,omitempty"`
 		Name *string `json:"name,omitempty"`
 	} `json:"channels"`
@@ -64173,6 +66618,9 @@ type SendMicrosoftTeamsMessageTaskParams0 struct {
 
 // SendSlackBlocksTaskParams defines model for send_slack_blocks_task_params.
 type SendSlackBlocksTaskParams struct {
+	// AllowCrossWorkflowThreading When set to true, allows workflows from different sources (e.g. different incidents or alerts) to thread together on the same parent message.
+	AllowCrossWorkflowThreading *bool `json:"allow_cross_workflow_threading,omitempty"`
+
 	// Attachments Support liquid markup. Needs to be a valid JSON string after liquid is parsed
 	Attachments *string `json:"attachments,omitempty"`
 
@@ -64250,8 +66698,11 @@ type SendSlackBlocksTaskParams2 struct {
 
 // SendSlackMessageTaskParams defines model for send_slack_message_task_params.
 type SendSlackMessageTaskParams struct {
-	Actionables                   []SendSlackMessageTaskParamsActionables `json:"actionables,omitempty"`
-	BroadcastThreadReplyToChannel *bool                                   `json:"broadcast_thread_reply_to_channel,omitempty"`
+	Actionables []SendSlackMessageTaskParamsActionables `json:"actionables,omitempty"`
+
+	// AllowCrossWorkflowThreading When set to true, allows workflows from different sources (e.g. different incidents or alerts) to thread together on the same parent message.
+	AllowCrossWorkflowThreading   *bool `json:"allow_cross_workflow_threading,omitempty"`
+	BroadcastThreadReplyToChannel *bool `json:"broadcast_thread_reply_to_channel,omitempty"`
 	Channels                      []struct {
 		ID   *string `json:"id,omitempty"`
 		Name *string `json:"name,omitempty"`
@@ -64626,6 +67077,9 @@ type Shift struct {
 
 	// IsShadow Denotes shift is a shadow shift
 	IsShadow bool `json:"is_shadow"`
+
+	// OverriddenShifts For override shifts, the portions of the regular shifts this override replaces, clipped to the override window. Null for non-override shifts. Available when overridden shifts are enabled for the organization.
+	OverriddenShifts nullable.Nullable[[]OverriddenShift] `json:"overridden_shifts,omitempty"`
 
 	// RotationID ID of rotation
 	RotationID nullable.Nullable[string] `json:"rotation_id"`
@@ -65031,11 +67485,31 @@ type SnapshotNewRelicGraphTaskParamsTaskType string
 type SnoozeAlert struct {
 	Data struct {
 		Attributes struct {
+			// Actor The user to record as performing this action. Only available when actor attribution is enabled for the organization; otherwise it is ignored. Only supported with Global and Team API keys; with a Team API key the user must belong to one of the key's teams. When omitted or null, the action is attributed to the API key. Otherwise provide either `email` or `user_id`, not both.
+			Actor nullable.Nullable[SnoozeAlert_Data_Attributes_Actor] `json:"actor,omitempty"`
+
 			// DelayMinutes Number of minutes to snooze the alert for
 			DelayMinutes int `json:"delay_minutes"`
 		} `json:"attributes"`
 		Type SnoozeAlertDataType `json:"type"`
 	} `json:"data"`
+}
+
+// SnoozeAlertDataAttributesActor0 defines model for SnoozeAlert.Data.Attributes.Actor.0.
+type SnoozeAlertDataAttributesActor0 struct {
+	// Email Email of the user, including verified secondary emails.
+	Email string `json:"email"`
+}
+
+// SnoozeAlertDataAttributesActor1 defines model for SnoozeAlert.Data.Attributes.Actor.1.
+type SnoozeAlertDataAttributesActor1 struct {
+	// UserID Rootly ID of the user.
+	UserID string `json:"user_id"`
+}
+
+// SnoozeAlert_Data_Attributes_Actor The user to record as performing this action. Only available when actor attribution is enabled for the organization; otherwise it is ignored. Only supported with Global and Team API keys; with a Team API key the user must belong to one of the key's teams. When omitted or null, the action is attributed to the API key. Otherwise provide either `email` or `user_id`, not both.
+type SnoozeAlert_Data_Attributes_Actor struct {
+	union json.RawMessage
 }
 
 // SnoozeAlertDataType defines model for SnoozeAlert.Data.Type.
@@ -65421,6 +67895,59 @@ type StatusPageResponse struct {
 // StatusPageResponseDataType defines model for StatusPageResponse.Data.Type.
 type StatusPageResponseDataType string
 
+// StatusPageTeam defines model for status_page_team.
+type StatusPageTeam struct {
+	// CreatedAt Date of creation
+	CreatedAt time.Time `json:"created_at"`
+
+	// GroupID ID of the team granted access to the status page
+	GroupID openapi_types.UUID `json:"group_id"`
+
+	// PermissionLevel Access level granted to members of the team
+	PermissionLevel StatusPageTeamPermissionLevel `json:"permission_level"`
+
+	// StatusPageID ID of the status page the team is assigned to
+	StatusPageID string `json:"status_page_id"`
+
+	// UpdatedAt Date of last update
+	UpdatedAt time.Time `json:"updated_at"`
+}
+
+// StatusPageTeamPermissionLevel Access level granted to members of the team
+type StatusPageTeamPermissionLevel string
+
+// StatusPageTeamList defines model for status_page_team_list.
+type StatusPageTeamList struct {
+	Data []struct {
+		Attributes StatusPageTeam `json:"attributes"`
+
+		// ID Unique ID of the status page team assignment
+		ID   string                     `json:"id"`
+		Type StatusPageTeamListDataType `json:"type"`
+	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
+}
+
+// StatusPageTeamListDataType defines model for StatusPageTeamList.Data.Type.
+type StatusPageTeamListDataType string
+
+// StatusPageTeamResponse defines model for status_page_team_response.
+type StatusPageTeamResponse struct {
+	Data struct {
+		Attributes StatusPageTeam `json:"attributes"`
+
+		// ID Unique ID of the status page team assignment
+		ID   string                         `json:"id"`
+		Type StatusPageTeamResponseDataType `json:"type"`
+	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+}
+
+// StatusPageTeamResponseDataType defines model for StatusPageTeamResponse.Data.Type.
+type StatusPageTeamResponseDataType string
+
 // StatusPageTemplate defines model for status_page_template.
 type StatusPageTemplate struct {
 	// Body Description of the event the template will populate
@@ -65649,6 +68176,12 @@ type Team struct {
 	// PublicDescription The status page description of the team
 	PublicDescription nullable.Nullable[string] `json:"public_description,omitempty"`
 
+	// ScheduleOverridePolicy Who can create and update overrides for schedules owned by this team: `everyone` in the organization, only team `members`, or only team `admins`. Users still need override permission from their on-call role. Only available when the team-level schedule override policy feature is enabled for the organization. Requests that set it while that feature is disabled are rejected.
+	ScheduleOverridePolicy *TeamScheduleOverridePolicy `json:"schedule_override_policy,omitempty"`
+
+	// ScimGroupID The SCIM group id linked to this team
+	ScimGroupID nullable.Nullable[string] `json:"scim_group_id,omitempty"`
+
 	// ServiceNowCiSysID The Service Now CI sys id associated to this team
 	ServiceNowCiSysID nullable.Nullable[string] `json:"service_now_ci_sys_id,omitempty"`
 
@@ -65686,6 +68219,9 @@ type TeamAutoAddMembersScope string
 
 // TeamManagedBy How this team is managed (provenance): web, api, terraform, etc. Read-only.
 type TeamManagedBy string
+
+// TeamScheduleOverridePolicy Who can create and update overrides for schedules owned by this team: `everyone` in the organization, only team `members`, or only team `admins`. Users still need override permission from their on-call role. Only available when the team-level schedule override policy feature is enabled for the organization. Requests that set it while that feature is disabled are rejected.
+type TeamScheduleOverridePolicy string
 
 // TeamList defines model for team_list.
 type TeamList struct {
@@ -65867,6 +68403,9 @@ type UpdateAirtableTableRecordTaskParamsTaskType string
 type UpdateAlert struct {
 	Data struct {
 		Attributes struct {
+			// Actor The user to record as performing this action. Only available when actor attribution is enabled for the organization; otherwise it is ignored. Only supported with Global and Team API keys; with a Team API key the user must belong to one of the key's teams. When omitted or null, the action is attributed to the API key. Otherwise provide either `email` or `user_id`, not both.
+			Actor nullable.Nullable[UpdateAlert_Data_Attributes_Actor] `json:"actor,omitempty"`
+
 			// AlertFieldValuesAttributes Custom alert field values to create with the alert
 			AlertFieldValuesAttributes []nullable.Nullable[struct {
 				// AlertFieldID ID of the custom alert field
@@ -65936,6 +68475,23 @@ type UpdateAlert struct {
 	} `json:"data"`
 }
 
+// UpdateAlertDataAttributesActor0 defines model for UpdateAlert.Data.Attributes.Actor.0.
+type UpdateAlertDataAttributesActor0 struct {
+	// Email Email of the user, including verified secondary emails.
+	Email string `json:"email"`
+}
+
+// UpdateAlertDataAttributesActor1 defines model for UpdateAlert.Data.Attributes.Actor.1.
+type UpdateAlertDataAttributesActor1 struct {
+	// UserID Rootly ID of the user.
+	UserID string `json:"user_id"`
+}
+
+// UpdateAlert_Data_Attributes_Actor The user to record as performing this action. Only available when actor attribution is enabled for the organization; otherwise it is ignored. Only supported with Global and Team API keys; with a Team API key the user must belong to one of the key's teams. When omitted or null, the action is attributed to the API key. Otherwise provide either `email` or `user_id`, not both.
+type UpdateAlert_Data_Attributes_Actor struct {
+	union json.RawMessage
+}
+
 // UpdateAlertDataAttributesLabelsValue0 defines model for UpdateAlert.Data.Attributes.Labels.Value.0.
 type UpdateAlertDataAttributesLabelsValue0 = string
 
@@ -65960,6 +68516,63 @@ type UpdateAlertDataAttributesSource string
 
 // UpdateAlertDataType defines model for UpdateAlert.Data.Type.
 type UpdateAlertDataType string
+
+// UpdateAlertConfiguration defines model for update_alert_configuration.
+type UpdateAlertConfiguration struct {
+	Data struct {
+		// Attributes Every attribute is optional and replaces its stored value. An attribute whose feature is not enabled for the team is refused with 403.
+		Attributes struct {
+			// AlertAcknowledgment Re-trigger behaviour for acknowledged alerts. Replaces the stored object as a whole.
+			AlertAcknowledgment *struct {
+				// RetriggerManualAlerts Whether alerts created from a manual page also re-trigger. Changing it is rejected with 422 until the manual page re-trigger opt-out is enabled for the team.
+				RetriggerManualAlerts *bool `json:"retrigger_manual_alerts,omitempty"`
+
+				// TimeoutEnabled Re-trigger an acknowledged alert after the timeout.
+				TimeoutEnabled *bool `json:"timeout_enabled,omitempty"`
+
+				// TimeoutMinutes Minutes before an acknowledged alert re-triggers.
+				TimeoutMinutes *UpdateAlertConfigurationDataAttributesAlertAcknowledgmentTimeoutMinutes `json:"timeout_minutes,omitempty"`
+			} `json:"alert_acknowledgment,omitempty"`
+
+			// DefaultUserNotificationSettings Channel defaults for new users, per urgency level. Omitted levels keep the built-in defaults; existing users are never changed. Present and accepted only while org-default-notification-settings is on for the team.
+			DefaultUserNotificationSettings *struct {
+				// AudibleContactTypes Channels enabled on a newly created user's audible notification rule. At least one channel is required.
+				AudibleContactTypes []UpdateAlertConfigurationDataAttributesDefaultUserNotificationSettingsAudibleContactTypes `json:"audible_contact_types,omitempty"`
+
+				// QuietContactTypes Channels enabled on a newly created user's quiet notification rule. At least one channel is required.
+				QuietContactTypes []UpdateAlertConfigurationDataAttributesDefaultUserNotificationSettingsQuietContactTypes `json:"quiet_contact_types,omitempty"`
+
+				// RequireCriticalAlertOrCallOnFirstAudibleLevel Whether users must keep Critical Alerts or Phone Call enabled on level 1 of their audible notification rules. Defaults to true when omitted; updates that omit this key keep the stored value. Only organization owners and admins who can update the alert configuration can change it, and only while the rollout flag is on.
+				RequireCriticalAlertOrCallOnFirstAudibleLevel *bool `json:"require_critical_alert_or_call_on_first_audible_level,omitempty"`
+			} `json:"default_user_notification_settings,omitempty"`
+
+			// ManualPagingFormSettings Stored entity types for the manual paging form, as configured; at least one is required. The form itself may hide a type the team cannot use yet, such as functionality.
+			ManualPagingFormSettings []UpdateAlertConfigurationDataAttributesManualPagingFormSettings `json:"manual_paging_form_settings,omitempty"`
+
+			// ManualPagingUrgencyIDs Alert urgency ids allowed when manually paging. Empty means all; deleted urgencies are left out. Present and accepted only while the manual-page-urgency-allowlist feature is on for the team.
+			ManualPagingUrgencyIDs []openapi_types.UUID `json:"manual_paging_urgency_ids,omitempty"`
+		} `json:"attributes"`
+
+		// ID Accepted for JSON:API client compatibility, but ignored. Each team has a single alert configuration, so no id is needed.
+		ID   *string                          `json:"id,omitempty"`
+		Type UpdateAlertConfigurationDataType `json:"type"`
+	} `json:"data"`
+}
+
+// UpdateAlertConfigurationDataAttributesAlertAcknowledgmentTimeoutMinutes Minutes before an acknowledged alert re-triggers.
+type UpdateAlertConfigurationDataAttributesAlertAcknowledgmentTimeoutMinutes int
+
+// UpdateAlertConfigurationDataAttributesDefaultUserNotificationSettingsAudibleContactTypes defines model for UpdateAlertConfiguration.Data.Attributes.DefaultUserNotificationSettings.AudibleContactTypes.
+type UpdateAlertConfigurationDataAttributesDefaultUserNotificationSettingsAudibleContactTypes string
+
+// UpdateAlertConfigurationDataAttributesDefaultUserNotificationSettingsQuietContactTypes defines model for UpdateAlertConfiguration.Data.Attributes.DefaultUserNotificationSettings.QuietContactTypes.
+type UpdateAlertConfigurationDataAttributesDefaultUserNotificationSettingsQuietContactTypes string
+
+// UpdateAlertConfigurationDataAttributesManualPagingFormSettings defines model for UpdateAlertConfiguration.Data.Attributes.ManualPagingFormSettings.
+type UpdateAlertConfigurationDataAttributesManualPagingFormSettings string
+
+// UpdateAlertConfigurationDataType defines model for UpdateAlertConfiguration.Data.Type.
+type UpdateAlertConfigurationDataType string
 
 // UpdateAlertEvent Update an alert event. Note: Only alert events with kind='note' can be updated. You cannot change the kind field.
 type UpdateAlertEvent struct {
@@ -66104,62 +68717,6 @@ type UpdateAlertGroupDataAttributesTargetsTargetType string
 
 // UpdateAlertGroupDataType defines model for UpdateAlertGroup.Data.Type.
 type UpdateAlertGroupDataType string
-
-// UpdateAlertRetriggerRule defines model for update_alert_retrigger_rule.
-type UpdateAlertRetriggerRule struct {
-	Data struct {
-		Attributes struct {
-			// Conditions The full desired set of conditions; replaces the rule's existing conditions. An empty array applies to every alert.
-			Conditions []struct {
-				// Kind The operand the condition matches on. Native operands (urgency, source, service, group) match by record; alert_field/payload match a field value.
-				Kind UpdateAlertRetriggerRuleDataAttributesConditionsKind `json:"kind"`
-
-				// Operator How the operand is compared. Native operands support is_one_of/is_not_one_of/is_set/is_not_set; alert_field/payload additionally support the string/regex operators.
-				Operator UpdateAlertRetriggerRuleDataAttributesConditionsOperator `json:"operator"`
-
-				// PropertyFieldName For alert_field conditions: the alert field id. For payload conditions: a JSON Path (e.g. $.priority).
-				PropertyFieldName *string `json:"property_field_name,omitempty"`
-
-				// RecordIDs For urgency/service/group/source conditions: the IDs of the matched records (AlertUrgency, Service, Group, or Alerts::Source).
-				RecordIDs []openapi_types.UUID `json:"record_ids,omitempty"`
-
-				// Values For source conditions: non-integration source aliases (e.g. manual, api). For alert_field/payload conditions: the values to compare against.
-				Values []string `json:"values,omitempty"`
-			} `json:"conditions,omitempty"`
-
-			// MatchMode Whether all or any of the conditions must match
-			MatchMode *UpdateAlertRetriggerRuleDataAttributesMatchMode `json:"match_mode,omitempty"`
-
-			// Name A human-readable name for the rule
-			Name *string `json:"name,omitempty"`
-
-			// Position The position of the rule for ordering evaluation
-			Position *int `json:"position,omitempty"`
-
-			// TimeoutMinutes Re-trigger the alert this many minutes after acknowledgment. Null means never re-trigger.
-			TimeoutMinutes nullable.Nullable[UpdateAlertRetriggerRuleDataAttributesTimeoutMinutes] `json:"timeout_minutes,omitempty"`
-		} `json:"attributes"`
-
-		// ID Accepted for JSON:API client compatibility, but ignored. The resource to update is identified by the id in the path.
-		ID   *string                          `json:"id,omitempty"`
-		Type UpdateAlertRetriggerRuleDataType `json:"type"`
-	} `json:"data"`
-}
-
-// UpdateAlertRetriggerRuleDataAttributesConditionsKind The operand the condition matches on. Native operands (urgency, source, service, group) match by record; alert_field/payload match a field value.
-type UpdateAlertRetriggerRuleDataAttributesConditionsKind string
-
-// UpdateAlertRetriggerRuleDataAttributesConditionsOperator How the operand is compared. Native operands support is_one_of/is_not_one_of/is_set/is_not_set; alert_field/payload additionally support the string/regex operators.
-type UpdateAlertRetriggerRuleDataAttributesConditionsOperator string
-
-// UpdateAlertRetriggerRuleDataAttributesMatchMode Whether all or any of the conditions must match
-type UpdateAlertRetriggerRuleDataAttributesMatchMode string
-
-// UpdateAlertRetriggerRuleDataAttributesTimeoutMinutes Re-trigger the alert this many minutes after acknowledgment. Null means never re-trigger.
-type UpdateAlertRetriggerRuleDataAttributesTimeoutMinutes int
-
-// UpdateAlertRetriggerRuleDataType defines model for UpdateAlertRetriggerRule.Data.Type.
-type UpdateAlertRetriggerRuleDataType string
 
 // UpdateAlertRoute defines model for update_alert_route.
 type UpdateAlertRoute struct {
@@ -66321,8 +68878,8 @@ type UpdateAlertUrgency struct {
 			// Position Position of the alert urgency
 			Position nullable.Nullable[int] `json:"position,omitempty"`
 
-			// RetriggerTimeoutMinutes Re-trigger acknowledged alerts of this urgency after N minutes; null inherits the workspace default, negative = never.
-			RetriggerTimeoutMinutes nullable.Nullable[int] `json:"retrigger_timeout_minutes,omitempty"`
+			// RetriggerTimeoutMinutes Re-trigger acknowledged alerts of this urgency after N minutes; null inherits the workspace default, -1 = never.
+			RetriggerTimeoutMinutes nullable.Nullable[UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutes] `json:"retrigger_timeout_minutes,omitempty"`
 		} `json:"attributes"`
 
 		// ID Accepted for JSON:API client compatibility, but ignored. The resource to update is identified by the id in the path.
@@ -66330,6 +68887,9 @@ type UpdateAlertUrgency struct {
 		Type UpdateAlertUrgencyDataType `json:"type"`
 	} `json:"data"`
 }
+
+// UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutes Re-trigger acknowledged alerts of this urgency after N minutes; null inherits the workspace default, -1 = never.
+type UpdateAlertUrgencyDataAttributesRetriggerTimeoutMinutes int
 
 // UpdateAlertUrgencyDataType defines model for UpdateAlertUrgency.Data.Type.
 type UpdateAlertUrgencyDataType string
@@ -66456,7 +69016,7 @@ type UpdateAlertsSource struct {
 			// SourceType The alert source type
 			SourceType *UpdateAlertsSourceDataAttributesSourceType `json:"source_type,omitempty"`
 
-			// SourceableAttributes Provide additional attributes for the underlying source. `auto_resolve`, `resolve_state` and `field_mappings_attributes` apply to generic_webhook sources; `accept_threaded_emails` applies to email sources.
+			// SourceableAttributes Provide additional attributes for the underlying source. `auto_resolve`, `resolve_state` and `field_mappings_attributes` apply to generic_webhook sources; `accept_threaded_emails`, `notification_target_type` and `notification_target_id` apply to email sources.
 			SourceableAttributes nullable.Nullable[struct {
 				// AcceptThreadedEmails Set this to false to reject threaded emails
 				AcceptThreadedEmails *bool `json:"accept_threaded_emails,omitempty"`
@@ -66472,6 +69032,12 @@ type UpdateAlertsSource struct {
 					// JSONPath JSON path expression to extract a specific value from the alert's payload for evaluation. For `notification_target_id` only: if your account has opted in to Dynamic Notification Targets, this may also be a Liquid template that resolves to a notification target id at routing time.
 					JSONPath *string `json:"json_path,omitempty"`
 				} `json:"field_mappings_attributes,omitempty"`
+
+				// NotificationTargetID Email sources only. The ID of the notification target. Set to null to clear it; this also clears `notification_target_type`. Only used when the `email-alert-source-notification-target` feature flag is on for the team.
+				NotificationTargetID nullable.Nullable[string] `json:"notification_target_id,omitempty"`
+
+				// NotificationTargetType Email sources only. The type of the notification target every alert from this source pages directly; While it points to an active, pageable target, Alert Routes are not evaluated. Only used when the `email-alert-source-notification-target` feature flag is on for the team.
+				NotificationTargetType nullable.Nullable[UpdateAlertsSourceDataAttributesSourceableAttributesNotificationTargetType] `json:"notification_target_type,omitempty"`
 
 				// ResolveState This value is matched with the value extracted from alerts payload using JSON path in field_mappings_attributes
 				ResolveState nullable.Nullable[string] `json:"resolve_state,omitempty"`
@@ -66519,6 +69085,9 @@ type UpdateAlertsSourceDataAttributesSourceType string
 
 // UpdateAlertsSourceDataAttributesSourceableAttributesFieldMappingsAttributesField Select the field on which the condition to be evaluated
 type UpdateAlertsSourceDataAttributesSourceableAttributesFieldMappingsAttributesField string
+
+// UpdateAlertsSourceDataAttributesSourceableAttributesNotificationTargetType Email sources only. The type of the notification target every alert from this source pages directly; While it points to an active, pageable target, Alert Routes are not evaluated. Only used when the `email-alert-source-notification-target` feature flag is on for the team.
+type UpdateAlertsSourceDataAttributesSourceableAttributesNotificationTargetType string
 
 // UpdateAlertsSourceDataType defines model for UpdateAlertsSource.Data.Type.
 type UpdateAlertsSourceDataType string
@@ -67691,8 +70260,8 @@ type UpdateEscalationPolicyPath struct {
 			// RepeatCount The number of times this path will be executed until someone acknowledges the alert
 			RepeatCount nullable.Nullable[int] `json:"repeat_count,omitempty"`
 
-			// RetriggerTimeoutMinutes Re-trigger acknowledged alerts on this path after N minutes; null inherits the urgency/workspace default, negative = never.
-			RetriggerTimeoutMinutes nullable.Nullable[int] `json:"retrigger_timeout_minutes,omitempty"`
+			// RetriggerTimeoutMinutes Re-trigger acknowledged alerts on this path after N minutes; null inherits the urgency/workspace default, -1 = never.
+			RetriggerTimeoutMinutes nullable.Nullable[UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutes] `json:"retrigger_timeout_minutes,omitempty"`
 
 			// Rules Escalation path conditions
 			Rules []nullable.Nullable[UpdateEscalationPolicyPath_Data_Attributes_Rules_Item] `json:"rules,omitempty"`
@@ -67733,12 +70302,18 @@ type UpdateEscalationPolicyPathDataAttributesNotificationTypeFallback string
 
 // UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions0 defines model for UpdateEscalationPolicyPath.Data.Attributes.NotificationTypeRules.Conditions.0.
 type UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions0 struct {
+	// Operator How the alert's urgency should be matched. is and is_not take exactly one id
+	Operator *UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions0Operator `json:"operator,omitempty"`
+
 	// RuleType The type of the escalation path rule
 	RuleType UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions0RuleType `json:"rule_type"`
 
 	// UrgencyIDs Alert urgency ids for which this escalation path should be used
 	UrgencyIDs []string `json:"urgency_ids"`
 }
+
+// UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions0Operator How the alert's urgency should be matched. is and is_not take exactly one id
+type UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions0Operator string
 
 // UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions0RuleType The type of the escalation path rule
 type UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions0RuleType string
@@ -67805,12 +70380,18 @@ type UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions3Rul
 
 // UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions4 defines model for UpdateEscalationPolicyPath.Data.Attributes.NotificationTypeRules.Conditions.4.
 type UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions4 struct {
+	// Operator How the alert's services should be matched. is and is_not take exactly one id
+	Operator *UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions4Operator `json:"operator,omitempty"`
+
 	// RuleType The type of the escalation path rule
 	RuleType UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions4RuleType `json:"rule_type"`
 
 	// ServiceIDs Service ids for which this escalation path should be used
 	ServiceIDs []string `json:"service_ids"`
 }
+
+// UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions4Operator How the alert's services should be matched. is and is_not take exactly one id
+type UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions4Operator string
 
 // UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions4RuleType The type of the escalation path rule
 type UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions4RuleType string
@@ -67904,14 +70485,23 @@ type UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesNotificationTy
 // UpdateEscalationPolicyPathDataAttributesPathType The type of escalation path. Cannot be changed after creation.
 type UpdateEscalationPolicyPathDataAttributesPathType string
 
+// UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutes Re-trigger acknowledged alerts on this path after N minutes; null inherits the urgency/workspace default, -1 = never.
+type UpdateEscalationPolicyPathDataAttributesRetriggerTimeoutMinutes int
+
 // UpdateEscalationPolicyPathDataAttributesRules0 defines model for UpdateEscalationPolicyPath.Data.Attributes.Rules.0.
 type UpdateEscalationPolicyPathDataAttributesRules0 struct {
+	// Operator How the alert's urgency should be matched. is and is_not take exactly one id
+	Operator *UpdateEscalationPolicyPathDataAttributesRules0Operator `json:"operator,omitempty"`
+
 	// RuleType The type of the escalation path rule
 	RuleType UpdateEscalationPolicyPathDataAttributesRules0RuleType `json:"rule_type"`
 
 	// UrgencyIDs Alert urgency ids for which this escalation path should be used
 	UrgencyIDs []string `json:"urgency_ids"`
 }
+
+// UpdateEscalationPolicyPathDataAttributesRules0Operator How the alert's urgency should be matched. is and is_not take exactly one id
+type UpdateEscalationPolicyPathDataAttributesRules0Operator string
 
 // UpdateEscalationPolicyPathDataAttributesRules0RuleType The type of the escalation path rule
 type UpdateEscalationPolicyPathDataAttributesRules0RuleType string
@@ -67978,12 +70568,18 @@ type UpdateEscalationPolicyPathDataAttributesRules3RuleType string
 
 // UpdateEscalationPolicyPathDataAttributesRules4 defines model for UpdateEscalationPolicyPath.Data.Attributes.Rules.4.
 type UpdateEscalationPolicyPathDataAttributesRules4 struct {
+	// Operator How the alert's services should be matched. is and is_not take exactly one id
+	Operator *UpdateEscalationPolicyPathDataAttributesRules4Operator `json:"operator,omitempty"`
+
 	// RuleType The type of the escalation path rule
 	RuleType UpdateEscalationPolicyPathDataAttributesRules4RuleType `json:"rule_type"`
 
 	// ServiceIDs Service ids for which this escalation path should be used
 	ServiceIDs []string `json:"service_ids"`
 }
+
+// UpdateEscalationPolicyPathDataAttributesRules4Operator How the alert's services should be matched. is and is_not take exactly one id
+type UpdateEscalationPolicyPathDataAttributesRules4Operator string
 
 // UpdateEscalationPolicyPathDataAttributesRules4RuleType The type of the escalation path rule
 type UpdateEscalationPolicyPathDataAttributesRules4RuleType string
@@ -68265,7 +70861,7 @@ type UpdateFormFieldPositionDataType string
 type UpdateFormSet struct {
 	Data struct {
 		Attributes struct {
-			// Forms The forms included in the form set. Add custom forms using the custom form's `slug` field. Or choose a built-in form: `web_new_incident_form`, `web_update_incident_form`, `web_incident_post_mortem_form`, `web_incident_mitigation_form`, `web_incident_resolution_form`, `web_incident_cancellation_form`, `web_scheduled_incident_form`, `web_update_scheduled_incident_form`, `slack_new_incident_form`, `slack_update_incident_form`, `slack_update_incident_status_form`, `slack_incident_mitigation_form`, `slack_incident_resolution_form`, `slack_incident_cancellation_form`, `slack_scheduled_incident_form`, `slack_update_scheduled_incident_form`, `google_chat_new_incident_form`, `google_chat_update_incident_form`, `microsoft_teams_new_incident_form`
+			// Forms The forms included in the form set. Add custom forms using the custom form's `slug` field. Or choose a built-in form: `web_new_incident_form`, `web_update_incident_form`, `web_incident_post_mortem_form`, `web_incident_mitigation_form`, `web_incident_resolution_form`, `web_incident_cancellation_form`, `web_scheduled_incident_form`, `web_update_scheduled_incident_form`, `slack_new_incident_form`, `slack_update_incident_form`, `slack_update_incident_status_form`, `slack_incident_mitigation_form`, `slack_incident_resolution_form`, `slack_incident_cancellation_form`, `slack_scheduled_incident_form`, `slack_update_scheduled_incident_form`, `google_chat_new_incident_form`, `google_chat_update_incident_form`, `google_chat_incident_mitigation_form`, `google_chat_incident_resolution_form`, `google_chat_incident_cancellation_form`, `microsoft_teams_new_incident_form`
 			Forms []string `json:"forms,omitempty"`
 
 			// Name The name of the form set
@@ -69777,6 +72373,7 @@ type UpdateOnCallRole struct {
 			IntegrationsPermissions       []UpdateOnCallRoleDataAttributesIntegrationsPermissions       `json:"integrations_permissions,omitempty"`
 			InvitationsPermissions        []UpdateOnCallRoleDataAttributesInvitationsPermissions        `json:"invitations_permissions,omitempty"`
 			LiveCallRoutingPermissions    []UpdateOnCallRoleDataAttributesLiveCallRoutingPermissions    `json:"live_call_routing_permissions,omitempty"`
+			MembersPermissions            []UpdateOnCallRoleDataAttributesMembersPermissions            `json:"members_permissions,omitempty"`
 
 			// Name The role name.
 			Name                             *string                                                          `json:"name,omitempty"`
@@ -69850,6 +72447,9 @@ type UpdateOnCallRoleDataAttributesInvitationsPermissions string
 
 // UpdateOnCallRoleDataAttributesLiveCallRoutingPermissions defines model for UpdateOnCallRole.Data.Attributes.LiveCallRoutingPermissions.
 type UpdateOnCallRoleDataAttributesLiveCallRoutingPermissions string
+
+// UpdateOnCallRoleDataAttributesMembersPermissions defines model for UpdateOnCallRole.Data.Attributes.MembersPermissions.
+type UpdateOnCallRoleDataAttributesMembersPermissions string
 
 // UpdateOnCallRoleDataAttributesOnCallReadinessReportPermissions defines model for UpdateOnCallRole.Data.Attributes.OnCallReadinessReportPermissions.
 type UpdateOnCallRoleDataAttributesOnCallReadinessReportPermissions string
@@ -70046,6 +72646,12 @@ type UpdatePagertreeAlertTaskParamsUrgency string
 type UpdatePlaybook struct {
 	Data struct {
 		Attributes struct {
+			// CauseIDs The Cause IDs to attach to the incident
+			CauseIDs nullable.Nullable[[]string] `json:"cause_ids,omitempty"`
+
+			// Content Sanitized HTML instructions. Still returned when `kind` is `external_url`, where the body may be stale — branch on `kind`, not on `content` being present.
+			Content nullable.Nullable[string] `json:"content,omitempty"`
+
 			// EnvironmentIDs The Environment IDs to attach to the incident
 			EnvironmentIDs nullable.Nullable[[]string] `json:"environment_ids,omitempty"`
 
@@ -70060,6 +72666,9 @@ type UpdatePlaybook struct {
 
 			// IncidentTypeIDs The Incident Type IDs to attach to the incident
 			IncidentTypeIDs nullable.Nullable[[]string] `json:"incident_type_ids,omitempty"`
+
+			// Kind Whether the playbook body lives in Rootly (`internal_document`) or at an external link (`external_url`).
+			Kind nullable.Nullable[UpdatePlaybookDataAttributesKind] `json:"kind,omitempty"`
 
 			// ServiceIDs The Service IDs to attach to the incident
 			ServiceIDs nullable.Nullable[[]string] `json:"service_ids,omitempty"`
@@ -70079,6 +72688,9 @@ type UpdatePlaybook struct {
 		Type UpdatePlaybookDataType `json:"type"`
 	} `json:"data"`
 }
+
+// UpdatePlaybookDataAttributesKind Whether the playbook body lives in Rootly (`internal_document`) or at an external link (`external_url`).
+type UpdatePlaybookDataAttributesKind string
 
 // UpdatePlaybookDataType defines model for UpdatePlaybook.Data.Type.
 type UpdatePlaybookDataType string
@@ -70136,6 +72748,124 @@ type UpdatePostMortemTemplateDataAttributesFormat string
 
 // UpdatePostMortemTemplateDataType defines model for UpdatePostMortemTemplate.Data.Type.
 type UpdatePostMortemTemplateDataType string
+
+// UpdateProblem defines model for update_problem.
+type UpdateProblem struct {
+	Data struct {
+		Attributes struct {
+			// CancellationReason The reason for cancelling the problem
+			CancellationReason nullable.Nullable[string] `json:"cancellation_reason,omitempty"`
+
+			// DeferralReason The reason and accepted risk for deferring the problem
+			DeferralReason nullable.Nullable[string] `json:"deferral_reason,omitempty"`
+
+			// Description The description of the problem
+			Description nullable.Nullable[string] `json:"description,omitempty"`
+
+			// DueDate The due date of the problem
+			DueDate nullable.Nullable[openapi_types.Date] `json:"due_date,omitempty"`
+
+			// ExitCriteria The exit criteria of the problem
+			ExitCriteria nullable.Nullable[string] `json:"exit_criteria,omitempty"`
+
+			// ExpectedStatus Optional optimistic-concurrency guard: the transition is rejected unless the problem is currently in this status.
+			ExpectedStatus nullable.Nullable[UpdateProblemDataAttributesExpectedStatus] `json:"expected_status,omitempty"`
+
+			// FormFieldSelections Custom (form) field selections for the problem
+			FormFieldSelections []map[string]interface{} `json:"form_field_selections,omitempty"`
+
+			// ImpactSoFar The impact observed so far
+			ImpactSoFar nullable.Nullable[string] `json:"impact_so_far,omitempty"`
+
+			// NextReviewAt The next review date for a deferred problem
+			NextReviewAt nullable.Nullable[string] `json:"next_review_at,omitempty"`
+
+			// OwnerGroupID ID of the group (team) that owns the problem
+			OwnerGroupID nullable.Nullable[string] `json:"owner_group_id,omitempty"`
+
+			// OwnerUserID ID of the user who owns the problem
+			OwnerUserID nullable.Nullable[int] `json:"owner_user_id,omitempty"`
+
+			// Priority The priority of the problem
+			Priority nullable.Nullable[UpdateProblemDataAttributesPriority] `json:"priority,omitempty"`
+
+			// ReReviewCadence Days between reviews for a deferred problem
+			ReReviewCadence nullable.Nullable[int] `json:"re_review_cadence,omitempty"`
+
+			// Resolution The resolution of the problem
+			Resolution nullable.Nullable[string] `json:"resolution,omitempty"`
+
+			// RootCause The root cause of the problem
+			RootCause nullable.Nullable[string] `json:"root_cause,omitempty"`
+
+			// Scope The scope of the problem
+			Scope nullable.Nullable[string] `json:"scope,omitempty"`
+
+			// Status Target status. Transitions run through the problem status workflow: gate fields required by the target status must be supplied in the same request. Other updatable attributes may accompany a status change and are applied atomically with it.
+			Status *UpdateProblemDataAttributesStatus `json:"status,omitempty"`
+
+			// Title The title of the problem
+			Title *string `json:"title,omitempty"`
+		} `json:"attributes"`
+
+		// ID Accepted for JSON:API client compatibility, but ignored. The resource to update is identified by the id in the path.
+		ID   *string               `json:"id,omitempty"`
+		Type UpdateProblemDataType `json:"type"`
+	} `json:"data"`
+}
+
+// UpdateProblemDataAttributesExpectedStatus Optional optimistic-concurrency guard: the transition is rejected unless the problem is currently in this status.
+type UpdateProblemDataAttributesExpectedStatus string
+
+// UpdateProblemDataAttributesPriority The priority of the problem
+type UpdateProblemDataAttributesPriority string
+
+// UpdateProblemDataAttributesStatus Target status. Transitions run through the problem status workflow: gate fields required by the target status must be supplied in the same request. Other updatable attributes may accompany a status change and are applied atomically with it.
+type UpdateProblemDataAttributesStatus string
+
+// UpdateProblemDataType defines model for UpdateProblem.Data.Type.
+type UpdateProblemDataType string
+
+// UpdateProblemActionItem defines model for update_problem_action_item.
+type UpdateProblemActionItem struct {
+	Data struct {
+		Attributes struct {
+			// AssignedToUserID ID of user you wish to assign this action item
+			AssignedToUserID nullable.Nullable[int] `json:"assigned_to_user_id,omitempty"`
+
+			// Description The description of the action item
+			Description nullable.Nullable[string] `json:"description,omitempty"`
+
+			// DueDate The due date of the action item
+			DueDate nullable.Nullable[string] `json:"due_date,omitempty"`
+
+			// JiraIssueURL The Jira issue URL.
+			JiraIssueURL nullable.Nullable[string] `json:"jira_issue_url,omitempty"`
+
+			// Priority The priority of the action item
+			Priority *UpdateProblemActionItemDataAttributesPriority `json:"priority,omitempty"`
+
+			// Status The status of the action item
+			Status *UpdateProblemActionItemDataAttributesStatus `json:"status,omitempty"`
+
+			// Summary The summary of the action item
+			Summary *string `json:"summary,omitempty"`
+		} `json:"attributes"`
+
+		// ID Accepted for JSON:API client compatibility, but ignored. The resource to update is identified by the id in the path.
+		ID   *string                         `json:"id,omitempty"`
+		Type UpdateProblemActionItemDataType `json:"type"`
+	} `json:"data"`
+}
+
+// UpdateProblemActionItemDataAttributesPriority The priority of the action item
+type UpdateProblemActionItemDataAttributesPriority string
+
+// UpdateProblemActionItemDataAttributesStatus The status of the action item
+type UpdateProblemActionItemDataAttributesStatus string
+
+// UpdateProblemActionItemDataType defines model for UpdateProblemActionItem.Data.Type.
+type UpdateProblemActionItemDataType string
 
 // UpdatePulse defines model for update_pulse.
 type UpdatePulse struct {
@@ -70378,9 +73108,12 @@ type UpdateRole struct {
 			IsEditable *bool `json:"is_editable,omitempty"`
 
 			// Name The role name.
-			Name                        *string                                               `json:"name,omitempty"`
-			PagingPermissions           []UpdateRoleDataAttributesPagingPermissions           `json:"paging_permissions,omitempty"`
-			PlaybooksPermissions        []UpdateRoleDataAttributesPlaybooksPermissions        `json:"playbooks_permissions,omitempty"`
+			Name                 *string                                        `json:"name,omitempty"`
+			PagingPermissions    []UpdateRoleDataAttributesPagingPermissions    `json:"paging_permissions,omitempty"`
+			PlaybooksPermissions []UpdateRoleDataAttributesPlaybooksPermissions `json:"playbooks_permissions,omitempty"`
+
+			// PrivateAgentPermissions Private Agent management permissions: create issues enrollment tokens, read views agent inventory and details, and delete revokes agent credentials. Create and delete can be used independently through the API; browser inventory requires read.
+			PrivateAgentPermissions     []UpdateRoleDataAttributesPrivateAgentPermissions     `json:"private_agent_permissions,omitempty"`
 			PrivateIncidentsPermissions []UpdateRoleDataAttributesPrivateIncidentsPermissions `json:"private_incidents_permissions,omitempty"`
 			RetrospectivePermissions    []UpdateRoleDataAttributesRetrospectivePermissions    `json:"retrospective_permissions,omitempty"`
 			RolesPermissions            []UpdateRoleDataAttributesRolesPermissions            `json:"roles_permissions,omitempty"`
@@ -70463,6 +73196,9 @@ type UpdateRoleDataAttributesPagingPermissions string
 // UpdateRoleDataAttributesPlaybooksPermissions defines model for UpdateRole.Data.Attributes.PlaybooksPermissions.
 type UpdateRoleDataAttributesPlaybooksPermissions string
 
+// UpdateRoleDataAttributesPrivateAgentPermissions defines model for UpdateRole.Data.Attributes.PrivateAgentPermissions.
+type UpdateRoleDataAttributesPrivateAgentPermissions string
+
 // UpdateRoleDataAttributesPrivateIncidentsPermissions defines model for UpdateRole.Data.Attributes.PrivateIncidentsPermissions.
 type UpdateRoleDataAttributesPrivateIncidentsPermissions string
 
@@ -70508,6 +73244,13 @@ type UpdateSchedule struct {
 		Attributes struct {
 			// AllTimeCoverage 24/7 coverage of the schedule
 			AllTimeCoverage nullable.Nullable[bool] `json:"all_time_coverage,omitempty"`
+
+			// BusinessHours Controls shadow paging on the schedule. Null disables shadow paging. start_time and end_time are HH:MM 24-hour format strings.
+			BusinessHours nullable.Nullable[struct {
+				EndTime         string `json:"end_time"`
+				IncludeWeekends bool   `json:"include_weekends"`
+				StartTime       string `json:"start_time"`
+			}] `json:"business_hours,omitempty"`
 
 			// Description The description of the schedule
 			Description nullable.Nullable[string] `json:"description,omitempty"`
@@ -71180,6 +73923,48 @@ type UpdateSLADataAttributesNotificationConfigurationsOffsetType string
 // UpdateSLADataType defines model for UpdateSLA.Data.Type.
 type UpdateSLADataType string
 
+// UpdateSlackCanvasTaskParams Update the selected channel canvas using Markdown. The connected Slack app must have Canvas permissions.
+type UpdateSlackCanvasTaskParams struct {
+	// Channel Slack channel containing the canvas. Channel IDs support Liquid variables.
+	Channel struct {
+		// ID Slack channel ID.
+		//
+		// Example: {{ incident.slack_channel_id }}
+		ID string `json:"id"`
+
+		// Name Channel display name.
+		//
+		// Example: incident-channel
+		Name string `json:"name"`
+	} `json:"channel"`
+
+	// Content The canvas content in Markdown. Supports Liquid variables.
+	Content string `json:"content"`
+
+	// Operation Append content or replace the selected table or entire canvas.
+	Operation *UpdateSlackCanvasTaskParamsOperation `json:"operation,omitempty"`
+
+	// RetryCount Number of times to retry on rate-limit (HTTP 429) responses (0-4). 0 disables retry.
+	//
+	// Example: 3
+	RetryCount *int `json:"retry_count,omitempty"`
+
+	// RetryWaitTime Seconds to wait before each retry (1-15). Retry-After header is honored when present and <= 90s, taking the larger of retry_wait_time and the header value.
+	//
+	// Example: 2
+	RetryWaitTime *int `json:"retry_wait_time,omitempty"`
+
+	// SectionName With replace, target the single table containing this label. Include the label in the replacement table. Blank replaces the entire canvas. Supports Liquid.
+	SectionName nullable.Nullable[string]            `json:"section_name,omitempty"`
+	TaskType    *UpdateSlackCanvasTaskParamsTaskType `json:"task_type,omitempty"`
+}
+
+// UpdateSlackCanvasTaskParamsOperation Append content or replace the selected table or entire canvas.
+type UpdateSlackCanvasTaskParamsOperation string
+
+// UpdateSlackCanvasTaskParamsTaskType defines model for UpdateSlackCanvasTaskParams.TaskType.
+type UpdateSlackCanvasTaskParamsTaskType string
+
 // UpdateSlackChannelTopicTaskParams defines model for update_slack_channel_topic_task_params.
 type UpdateSlackChannelTopicTaskParams struct {
 	Channel struct {
@@ -71391,6 +74176,26 @@ type UpdateStatusPageComponentGroup struct {
 // UpdateStatusPageComponentGroupDataType defines model for UpdateStatusPageComponentGroup.Data.Type.
 type UpdateStatusPageComponentGroupDataType string
 
+// UpdateStatusPageTeam defines model for update_status_page_team.
+type UpdateStatusPageTeam struct {
+	Data struct {
+		Attributes struct {
+			// PermissionLevel publish_only lets team members post status page updates and announcements. edit_and_publish also lets them edit the page, its components, templates, and subscribers
+			PermissionLevel *UpdateStatusPageTeamDataAttributesPermissionLevel `json:"permission_level,omitempty"`
+		} `json:"attributes"`
+
+		// ID Accepted for JSON:API client compatibility, but ignored. The resource to update is identified by the id in the path.
+		ID   *string                      `json:"id,omitempty"`
+		Type UpdateStatusPageTeamDataType `json:"type"`
+	} `json:"data"`
+}
+
+// UpdateStatusPageTeamDataAttributesPermissionLevel publish_only lets team members post status page updates and announcements. edit_and_publish also lets them edit the page, its components, templates, and subscribers
+type UpdateStatusPageTeamDataAttributesPermissionLevel string
+
+// UpdateStatusPageTeamDataType defines model for UpdateStatusPageTeam.Data.Type.
+type UpdateStatusPageTeamDataType string
+
 // UpdateStatusPageTemplate defines model for update_status_page_template.
 type UpdateStatusPageTemplate struct {
 	Data struct {
@@ -71562,6 +74367,15 @@ type UpdateTeam struct {
 			// PublicDescription The status page description of the team
 			PublicDescription nullable.Nullable[string] `json:"public_description,omitempty"`
 
+			// ScheduleOverridePolicy Who can create and update overrides for schedules owned by this team: `everyone` in the organization, only team `members`, or only team `admins`. Users still need override permission from their on-call role. Only available when the team-level schedule override policy feature is enabled for the organization. Requests that set it while that feature is disabled are rejected.
+			ScheduleOverridePolicy *UpdateTeamDataAttributesScheduleOverridePolicy `json:"schedule_override_policy,omitempty"`
+
+			// ScimGroupExternalID Link by the SCIM group's externalId from your identity provider instead of scim_group_id. Write-only. Rejected when it names a different SCIM group than scim_group_id.
+			ScimGroupExternalID nullable.Nullable[string] `json:"scim_group_external_id,omitempty"`
+
+			// ScimGroupID The SCIM group id linked to this team. Membership syncs from the SCIM group while the team keeps its own name. Set to null to unlink. Sending the current id is a no-op; to pin a name-linked group, unlink then link.
+			ScimGroupID nullable.Nullable[string] `json:"scim_group_id,omitempty"`
+
 			// ServiceNowCiSysID The Service Now CI sys id associated to this team
 			ServiceNowCiSysID nullable.Nullable[string] `json:"service_now_ci_sys_id,omitempty"`
 
@@ -71600,6 +74414,9 @@ type UpdateTeam struct {
 
 // UpdateTeamDataAttributesAutoAddMembersScope Visibility-scoped auto-add behavior. Only present when the `enable_scoped_incident_channel_auto_add` feature flag is on for the organization. When set, it overrides `auto_add_members_when_attached`.
 type UpdateTeamDataAttributesAutoAddMembersScope string
+
+// UpdateTeamDataAttributesScheduleOverridePolicy Who can create and update overrides for schedules owned by this team: `everyone` in the organization, only team `members`, or only team `admins`. Users still need override permission from their on-call role. Only available when the team-level schedule override policy feature is enabled for the organization. Requests that set it while that feature is disabled are rejected.
+type UpdateTeamDataAttributesScheduleOverridePolicy string
 
 // UpdateTeamDataType defines model for UpdateTeam.Data.Type.
 type UpdateTeamDataType string
@@ -71822,9 +74639,12 @@ type UpdateWorkflow struct {
 			// FailureNotificationMode Where failure notifications for this workflow are sent. `inherit` uses the account default channel, `custom` uses `failure_notification_channels`, `off` suppresses them.
 			FailureNotificationMode *UpdateWorkflowDataAttributesFailureNotificationMode `json:"failure_notification_mode,omitempty"`
 			FunctionalityIDs        []string                                             `json:"functionality_ids,omitempty"`
-			GroupIDs                []string                                             `json:"group_ids,omitempty"`
-			IncidentRoleIDs         []string                                             `json:"incident_role_ids,omitempty"`
-			IncidentTypeIDs         []string                                             `json:"incident_type_ids,omitempty"`
+
+			// GroupAssignmentIDs Owning team IDs. Requires team-scoped workflows.
+			GroupAssignmentIDs []string `json:"group_assignment_ids,omitempty"`
+			GroupIDs           []string `json:"group_ids,omitempty"`
+			IncidentRoleIDs    []string `json:"incident_role_ids,omitempty"`
+			IncidentTypeIDs    []string `json:"incident_type_ids,omitempty"`
 
 			// Locked Restricts workflow edits to admins when turned on. Only admins can set this field.
 			Locked *bool `json:"locked,omitempty"`
@@ -71843,8 +74663,11 @@ type UpdateWorkflow struct {
 
 			// RepeatEveryDuration Repeat workflow every duration
 			RepeatEveryDuration nullable.Nullable[string] `json:"repeat_every_duration,omitempty"`
-			ServiceIDs          []string                  `json:"service_ids,omitempty"`
-			SeverityIDs         []string                  `json:"severity_ids,omitempty"`
+
+			// RunOncePerResource When true, the workflow runs at most once per incident. Later triggers on the same incident create a canceled run instead. Manual runs and repeats are not affected. Only applies to incident workflows.
+			RunOncePerResource *bool    `json:"run_once_per_resource,omitempty"`
+			ServiceIDs         []string `json:"service_ids,omitempty"`
+			SeverityIDs        []string `json:"severity_ids,omitempty"`
 			// Deprecated: `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
 			Slug          nullable.Nullable[string]                     `json:"slug,omitempty"`
 			SubStatusIDs  []string                                      `json:"sub_status_ids,omitempty"`
@@ -72583,9 +75406,12 @@ type Workflow struct {
 	// FailureNotificationMode Where failure notifications for this workflow are sent. `inherit` uses the account default channel, `custom` uses `failure_notification_channels`, `off` suppresses them.
 	FailureNotificationMode *WorkflowFailureNotificationMode `json:"failure_notification_mode,omitempty"`
 	FunctionalityIDs        []string                         `json:"functionality_ids,omitempty"`
-	GroupIDs                []string                         `json:"group_ids,omitempty"`
-	IncidentRoleIDs         []string                         `json:"incident_role_ids,omitempty"`
-	IncidentTypeIDs         []string                         `json:"incident_type_ids,omitempty"`
+
+	// GroupAssignmentIDs Owning team IDs. Requires team-scoped workflows.
+	GroupAssignmentIDs []string `json:"group_assignment_ids,omitempty"`
+	GroupIDs           []string `json:"group_ids,omitempty"`
+	IncidentRoleIDs    []string `json:"incident_role_ids,omitempty"`
+	IncidentTypeIDs    []string `json:"incident_type_ids,omitempty"`
 
 	// Locked Restricts workflow edits to admins when turned on. Only admins can set this field.
 	Locked *bool `json:"locked,omitempty"`
@@ -72605,8 +75431,11 @@ type Workflow struct {
 	// RepeatEveryDuration Repeat workflow every duration
 	RepeatEveryDuration nullable.Nullable[string]             `json:"repeat_every_duration,omitempty"`
 	RepeatOn            nullable.Nullable[[]WorkflowRepeatOn] `json:"repeat_on,omitempty"`
-	ServiceIDs          []string                              `json:"service_ids,omitempty"`
-	SeverityIDs         []string                              `json:"severity_ids,omitempty"`
+
+	// RunOncePerResource When true, the workflow runs at most once per incident. Later triggers on the same incident create a canceled run instead. Manual runs and repeats are not affected. Only applies to incident workflows.
+	RunOncePerResource *bool    `json:"run_once_per_resource,omitempty"`
+	ServiceIDs         []string `json:"service_ids,omitempty"`
+	SeverityIDs        []string `json:"severity_ids,omitempty"`
 
 	// Slug The slug of the workflow
 	Slug          *string                 `json:"slug,omitempty"`
@@ -74599,6 +77428,12 @@ type ListIncidentsParamsSort string
 // ListIncidentsParamsInclude defines parameters for ListIncidents.
 type ListIncidentsParamsInclude string
 
+// CreateIncidentParams defines parameters for CreateIncident.
+type CreateIncidentParams struct {
+	// IdempotencyKey Optional client-generated key that makes creation safe to retry. Within 24 hours, a repeat request carrying the same key returns the incident created by the first request with status 200 instead of creating a duplicate. Keys are scoped to the team. Keys longer than 255 characters are rejected with 422.
+	IdempotencyKey *string `json:"Idempotency-Key,omitempty"`
+}
+
 // GetIncidentParams defines parameters for GetIncident.
 type GetIncidentParams struct {
 	// Include comma separated if needed. eg: sub_statuses,causes,subscribers
@@ -74915,6 +77750,12 @@ type ListIncidentPostMortemsParams struct {
 	FilterResolvedAtLt   *string `form:"filter[resolved_at][lt],omitempty" json:"filter[resolved_at][lt],omitempty"`
 	FilterResolvedAtLte  *string `form:"filter[resolved_at][lte],omitempty" json:"filter[resolved_at][lte],omitempty"`
 	Sort                 *string `form:"sort,omitempty" json:"sort,omitempty"`
+}
+
+// ListPrivateAgentsParams defines parameters for ListPrivateAgents.
+type ListPrivateAgentsParams struct {
+	PageNumber *int `form:"page[number],omitempty" json:"page[number],omitempty"`
+	PageSize   *int `form:"page[size],omitempty" json:"page[size],omitempty"`
 }
 
 // ListPulsesParams defines parameters for ListPulses.
@@ -75344,6 +78185,13 @@ type ListStatusPageComponentsParams struct {
 	PageSize   *int    `form:"page[size],omitempty" json:"page[size],omitempty"`
 }
 
+// ListStatusPageTeamsParams defines parameters for ListStatusPageTeams.
+type ListStatusPageTeamsParams struct {
+	Include    *string `form:"include,omitempty" json:"include,omitempty"`
+	PageNumber *int    `form:"page[number],omitempty" json:"page[number],omitempty"`
+	PageSize   *int    `form:"page[size],omitempty" json:"page[size],omitempty"`
+}
+
 // ListStatusPageTemplatesParams defines parameters for ListStatusPageTemplates.
 type ListStatusPageTemplatesParams struct {
 	Include    *string `form:"include,omitempty" json:"include,omitempty"`
@@ -75674,6 +78522,9 @@ type ListWorkflowTasksParams struct {
 // UpdateIncidentActionItemApplicationVndAPIPlusJSONRequestBody defines body for UpdateIncidentActionItem for application/vnd.api+json ContentType.
 type UpdateIncidentActionItemApplicationVndAPIPlusJSONRequestBody = UpdateIncidentActionItem
 
+// UpdateAlertConfigurationApplicationVndAPIPlusJSONRequestBody defines body for UpdateAlertConfiguration for application/vnd.api+json ContentType.
+type UpdateAlertConfigurationApplicationVndAPIPlusJSONRequestBody = UpdateAlertConfiguration
+
 // UpdateAlertEventApplicationVndAPIPlusJSONRequestBody defines body for UpdateAlertEvent for application/vnd.api+json ContentType.
 type UpdateAlertEventApplicationVndAPIPlusJSONRequestBody = UpdateAlertEvent
 
@@ -75688,12 +78539,6 @@ type CreateAlertGroupApplicationVndAPIPlusJSONRequestBody = NewAlertGroup
 
 // UpdateAlertGroupApplicationVndAPIPlusJSONRequestBody defines body for UpdateAlertGroup for application/vnd.api+json ContentType.
 type UpdateAlertGroupApplicationVndAPIPlusJSONRequestBody = UpdateAlertGroup
-
-// CreateAlertRetriggerRuleApplicationVndAPIPlusJSONRequestBody defines body for CreateAlertRetriggerRule for application/vnd.api+json ContentType.
-type CreateAlertRetriggerRuleApplicationVndAPIPlusJSONRequestBody = NewAlertRetriggerRule
-
-// UpdateAlertRetriggerRuleApplicationVndAPIPlusJSONRequestBody defines body for UpdateAlertRetriggerRule for application/vnd.api+json ContentType.
-type UpdateAlertRetriggerRuleApplicationVndAPIPlusJSONRequestBody = UpdateAlertRetriggerRule
 
 // CreateAlertRouteApplicationVndAPIPlusJSONRequestBody defines body for CreateAlertRoute for application/vnd.api+json ContentType.
 type CreateAlertRouteApplicationVndAPIPlusJSONRequestBody = NewAlertRoute
@@ -75731,6 +78576,9 @@ type CreateAlertEventApplicationVndAPIPlusJSONRequestBody = NewAlertEvent
 // UpdateAlertApplicationVndAPIPlusJSONRequestBody defines body for UpdateAlert for application/vnd.api+json ContentType.
 type UpdateAlertApplicationVndAPIPlusJSONRequestBody = UpdateAlert
 
+// AcknowledgeAlertApplicationVndAPIPlusJSONRequestBody defines body for AcknowledgeAlert for application/vnd.api+json ContentType.
+type AcknowledgeAlertApplicationVndAPIPlusJSONRequestBody = AcknowledgeAlert
+
 // EscalateAlertApplicationVndAPIPlusJSONRequestBody defines body for EscalateAlert for application/vnd.api+json ContentType.
 type EscalateAlertApplicationVndAPIPlusJSONRequestBody = EscalateAlert
 
@@ -75757,9 +78605,6 @@ type CreateAuthorizationApplicationVndAPIPlusJSONRequestBody = NewAuthorization
 
 // UpdateAuthorizationApplicationVndAPIPlusJSONRequestBody defines body for UpdateAuthorization for application/vnd.api+json ContentType.
 type UpdateAuthorizationApplicationVndAPIPlusJSONRequestBody = UpdateAuthorization
-
-// CreateBulkImportApplicationVndAPIPlusJSONRequestBody defines body for CreateBulkImport for application/vnd.api+json ContentType.
-type CreateBulkImportApplicationVndAPIPlusJSONRequestBody = NewBulkImport
 
 // CreateCatalogChecklistTemplateApplicationVndAPIPlusJSONRequestBody defines body for CreateCatalogChecklistTemplate for application/vnd.api+json ContentType.
 type CreateCatalogChecklistTemplateApplicationVndAPIPlusJSONRequestBody = NewCatalogChecklistTemplate
@@ -76182,6 +79027,9 @@ type UpdatePostmortemTemplateApplicationVndAPIPlusJSONRequestBody = UpdatePostMo
 // UpdateIncidentPostmortemApplicationVndAPIPlusJSONRequestBody defines body for UpdateIncidentPostmortem for application/vnd.api+json ContentType.
 type UpdateIncidentPostmortemApplicationVndAPIPlusJSONRequestBody = UpdateIncidentPostMortem
 
+// UpdatePrivateAgentApplicationVndAPIPlusJSONRequestBody defines body for UpdatePrivateAgent for application/vnd.api+json ContentType.
+type UpdatePrivateAgentApplicationVndAPIPlusJSONRequestBody = PrivateAgentUpdate
+
 // CreatePulseApplicationVndAPIPlusJSONRequestBody defines body for CreatePulse for application/vnd.api+json ContentType.
 type CreatePulseApplicationVndAPIPlusJSONRequestBody = NewPulse
 
@@ -76305,6 +79153,12 @@ type CreateStatusPageComponentGroupApplicationVndAPIPlusJSONRequestBody = NewSta
 // CreateStatusPageComponentApplicationVndAPIPlusJSONRequestBody defines body for CreateStatusPageComponent for application/vnd.api+json ContentType.
 type CreateStatusPageComponentApplicationVndAPIPlusJSONRequestBody = NewStatusPageComponent
 
+// CreateStatusPageTeamApplicationVndAPIPlusJSONRequestBody defines body for CreateStatusPageTeam for application/vnd.api+json ContentType.
+type CreateStatusPageTeamApplicationVndAPIPlusJSONRequestBody = NewStatusPageTeam
+
+// UpdateStatusPageTeamApplicationVndAPIPlusJSONRequestBody defines body for UpdateStatusPageTeam for application/vnd.api+json ContentType.
+type UpdateStatusPageTeamApplicationVndAPIPlusJSONRequestBody = UpdateStatusPageTeam
+
 // CreateStatusPageTemplateApplicationVndAPIPlusJSONRequestBody defines body for CreateStatusPageTemplate for application/vnd.api+json ContentType.
 type CreateStatusPageTemplateApplicationVndAPIPlusJSONRequestBody = StatusPageTemplate
 
@@ -76395,6 +79249,68 @@ type CreateWorkflowRunApplicationVndAPIPlusJSONRequestBody = NewWorkflowRun
 
 // CreateWorkflowTaskApplicationVndAPIPlusJSONRequestBody defines body for CreateWorkflowTask for application/vnd.api+json ContentType.
 type CreateWorkflowTaskApplicationVndAPIPlusJSONRequestBody = NewWorkflowTask
+
+// AsAcknowledgeAlertDataAttributesActor0 returns the union data inside the AcknowledgeAlert_Data_Attributes_Actor as a AcknowledgeAlertDataAttributesActor0
+func (t AcknowledgeAlert_Data_Attributes_Actor) AsAcknowledgeAlertDataAttributesActor0() (AcknowledgeAlertDataAttributesActor0, error) {
+	var body AcknowledgeAlertDataAttributesActor0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromAcknowledgeAlertDataAttributesActor0 overwrites any union data inside the AcknowledgeAlert_Data_Attributes_Actor as the provided AcknowledgeAlertDataAttributesActor0
+func (t *AcknowledgeAlert_Data_Attributes_Actor) FromAcknowledgeAlertDataAttributesActor0(v AcknowledgeAlertDataAttributesActor0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeAcknowledgeAlertDataAttributesActor0 performs a merge with any union data inside the AcknowledgeAlert_Data_Attributes_Actor, using the provided AcknowledgeAlertDataAttributesActor0
+func (t *AcknowledgeAlert_Data_Attributes_Actor) MergeAcknowledgeAlertDataAttributesActor0(v AcknowledgeAlertDataAttributesActor0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsAcknowledgeAlertDataAttributesActor1 returns the union data inside the AcknowledgeAlert_Data_Attributes_Actor as a AcknowledgeAlertDataAttributesActor1
+func (t AcknowledgeAlert_Data_Attributes_Actor) AsAcknowledgeAlertDataAttributesActor1() (AcknowledgeAlertDataAttributesActor1, error) {
+	var body AcknowledgeAlertDataAttributesActor1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromAcknowledgeAlertDataAttributesActor1 overwrites any union data inside the AcknowledgeAlert_Data_Attributes_Actor as the provided AcknowledgeAlertDataAttributesActor1
+func (t *AcknowledgeAlert_Data_Attributes_Actor) FromAcknowledgeAlertDataAttributesActor1(v AcknowledgeAlertDataAttributesActor1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeAcknowledgeAlertDataAttributesActor1 performs a merge with any union data inside the AcknowledgeAlert_Data_Attributes_Actor, using the provided AcknowledgeAlertDataAttributesActor1
+func (t *AcknowledgeAlert_Data_Attributes_Actor) MergeAcknowledgeAlertDataAttributesActor1(v AcknowledgeAlertDataAttributesActor1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t AcknowledgeAlert_Data_Attributes_Actor) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *AcknowledgeAlert_Data_Attributes_Actor) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
 
 // AsAddMicrosoftTeamsTabTaskParams0 returns the union data inside the AddMicrosoftTeamsTabTaskParams as a AddMicrosoftTeamsTabTaskParams0
 func (t AddMicrosoftTeamsTabTaskParams) AsAddMicrosoftTeamsTabTaskParams0() (AddMicrosoftTeamsTabTaskParams0, error) {
@@ -77510,6 +80426,68 @@ func (t DashboardPanel_Params_Datasets_GroupBy) MarshalJSON() ([]byte, error) {
 }
 
 func (t *DashboardPanel_Params_Datasets_GroupBy) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsEscalateAlertDataAttributesActor0 returns the union data inside the EscalateAlert_Data_Attributes_Actor as a EscalateAlertDataAttributesActor0
+func (t EscalateAlert_Data_Attributes_Actor) AsEscalateAlertDataAttributesActor0() (EscalateAlertDataAttributesActor0, error) {
+	var body EscalateAlertDataAttributesActor0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromEscalateAlertDataAttributesActor0 overwrites any union data inside the EscalateAlert_Data_Attributes_Actor as the provided EscalateAlertDataAttributesActor0
+func (t *EscalateAlert_Data_Attributes_Actor) FromEscalateAlertDataAttributesActor0(v EscalateAlertDataAttributesActor0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeEscalateAlertDataAttributesActor0 performs a merge with any union data inside the EscalateAlert_Data_Attributes_Actor, using the provided EscalateAlertDataAttributesActor0
+func (t *EscalateAlert_Data_Attributes_Actor) MergeEscalateAlertDataAttributesActor0(v EscalateAlertDataAttributesActor0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsEscalateAlertDataAttributesActor1 returns the union data inside the EscalateAlert_Data_Attributes_Actor as a EscalateAlertDataAttributesActor1
+func (t EscalateAlert_Data_Attributes_Actor) AsEscalateAlertDataAttributesActor1() (EscalateAlertDataAttributesActor1, error) {
+	var body EscalateAlertDataAttributesActor1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromEscalateAlertDataAttributesActor1 overwrites any union data inside the EscalateAlert_Data_Attributes_Actor as the provided EscalateAlertDataAttributesActor1
+func (t *EscalateAlert_Data_Attributes_Actor) FromEscalateAlertDataAttributesActor1(v EscalateAlertDataAttributesActor1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeEscalateAlertDataAttributesActor1 performs a merge with any union data inside the EscalateAlert_Data_Attributes_Actor, using the provided EscalateAlertDataAttributesActor1
+func (t *EscalateAlert_Data_Attributes_Actor) MergeEscalateAlertDataAttributesActor1(v EscalateAlertDataAttributesActor1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t EscalateAlert_Data_Attributes_Actor) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *EscalateAlert_Data_Attributes_Actor) UnmarshalJSON(b []byte) error {
 	err := t.union.UnmarshalJSON(b)
 	return err
 }
@@ -78716,6 +81694,68 @@ func (t MeetingRecordingDetail_Transcript) MarshalJSON() ([]byte, error) {
 }
 
 func (t *MeetingRecordingDetail_Transcript) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsNewAlertDataAttributesActor0 returns the union data inside the NewAlert_Data_Attributes_Actor as a NewAlertDataAttributesActor0
+func (t NewAlert_Data_Attributes_Actor) AsNewAlertDataAttributesActor0() (NewAlertDataAttributesActor0, error) {
+	var body NewAlertDataAttributesActor0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromNewAlertDataAttributesActor0 overwrites any union data inside the NewAlert_Data_Attributes_Actor as the provided NewAlertDataAttributesActor0
+func (t *NewAlert_Data_Attributes_Actor) FromNewAlertDataAttributesActor0(v NewAlertDataAttributesActor0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeNewAlertDataAttributesActor0 performs a merge with any union data inside the NewAlert_Data_Attributes_Actor, using the provided NewAlertDataAttributesActor0
+func (t *NewAlert_Data_Attributes_Actor) MergeNewAlertDataAttributesActor0(v NewAlertDataAttributesActor0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsNewAlertDataAttributesActor1 returns the union data inside the NewAlert_Data_Attributes_Actor as a NewAlertDataAttributesActor1
+func (t NewAlert_Data_Attributes_Actor) AsNewAlertDataAttributesActor1() (NewAlertDataAttributesActor1, error) {
+	var body NewAlertDataAttributesActor1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromNewAlertDataAttributesActor1 overwrites any union data inside the NewAlert_Data_Attributes_Actor as the provided NewAlertDataAttributesActor1
+func (t *NewAlert_Data_Attributes_Actor) FromNewAlertDataAttributesActor1(v NewAlertDataAttributesActor1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeNewAlertDataAttributesActor1 performs a merge with any union data inside the NewAlert_Data_Attributes_Actor, using the provided NewAlertDataAttributesActor1
+func (t *NewAlert_Data_Attributes_Actor) MergeNewAlertDataAttributesActor1(v NewAlertDataAttributesActor1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t NewAlert_Data_Attributes_Actor) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *NewAlert_Data_Attributes_Actor) UnmarshalJSON(b []byte) error {
 	err := t.union.UnmarshalJSON(b)
 	return err
 }
@@ -82841,6 +85881,32 @@ func (t *NewWorkflowTask_Data_Attributes_TaskParams) MergeRenameSlackChannelTask
 	return err
 }
 
+// AsRemoveFromSlackChannelTaskParams returns the union data inside the NewWorkflowTask_Data_Attributes_TaskParams as a RemoveFromSlackChannelTaskParams
+func (t NewWorkflowTask_Data_Attributes_TaskParams) AsRemoveFromSlackChannelTaskParams() (RemoveFromSlackChannelTaskParams, error) {
+	var body RemoveFromSlackChannelTaskParams
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromRemoveFromSlackChannelTaskParams overwrites any union data inside the NewWorkflowTask_Data_Attributes_TaskParams as the provided RemoveFromSlackChannelTaskParams
+func (t *NewWorkflowTask_Data_Attributes_TaskParams) FromRemoveFromSlackChannelTaskParams(v RemoveFromSlackChannelTaskParams) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeRemoveFromSlackChannelTaskParams performs a merge with any union data inside the NewWorkflowTask_Data_Attributes_TaskParams, using the provided RemoveFromSlackChannelTaskParams
+func (t *NewWorkflowTask_Data_Attributes_TaskParams) MergeRemoveFromSlackChannelTaskParams(v RemoveFromSlackChannelTaskParams) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
 // AsChangeSlackChannelPrivacyTaskParams returns the union data inside the NewWorkflowTask_Data_Attributes_TaskParams as a ChangeSlackChannelPrivacyTaskParams
 func (t NewWorkflowTask_Data_Attributes_TaskParams) AsChangeSlackChannelPrivacyTaskParams() (ChangeSlackChannelPrivacyTaskParams, error) {
 	var body ChangeSlackChannelPrivacyTaskParams
@@ -82961,6 +86027,32 @@ func (t *NewWorkflowTask_Data_Attributes_TaskParams) FromCreateSlackChannelTaskP
 
 // MergeCreateSlackChannelTaskParams performs a merge with any union data inside the NewWorkflowTask_Data_Attributes_TaskParams, using the provided CreateSlackChannelTaskParams
 func (t *NewWorkflowTask_Data_Attributes_TaskParams) MergeCreateSlackChannelTaskParams(v CreateSlackChannelTaskParams) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsCreateSlackCanvasTaskParams returns the union data inside the NewWorkflowTask_Data_Attributes_TaskParams as a CreateSlackCanvasTaskParams
+func (t NewWorkflowTask_Data_Attributes_TaskParams) AsCreateSlackCanvasTaskParams() (CreateSlackCanvasTaskParams, error) {
+	var body CreateSlackCanvasTaskParams
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromCreateSlackCanvasTaskParams overwrites any union data inside the NewWorkflowTask_Data_Attributes_TaskParams as the provided CreateSlackCanvasTaskParams
+func (t *NewWorkflowTask_Data_Attributes_TaskParams) FromCreateSlackCanvasTaskParams(v CreateSlackCanvasTaskParams) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeCreateSlackCanvasTaskParams performs a merge with any union data inside the NewWorkflowTask_Data_Attributes_TaskParams, using the provided CreateSlackCanvasTaskParams
+func (t *NewWorkflowTask_Data_Attributes_TaskParams) MergeCreateSlackCanvasTaskParams(v CreateSlackCanvasTaskParams) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -83491,6 +86583,32 @@ func (t *NewWorkflowTask_Data_Attributes_TaskParams) MergeUpdateSlackChannelTopi
 	return err
 }
 
+// AsUpdateSlackCanvasTaskParams returns the union data inside the NewWorkflowTask_Data_Attributes_TaskParams as a UpdateSlackCanvasTaskParams
+func (t NewWorkflowTask_Data_Attributes_TaskParams) AsUpdateSlackCanvasTaskParams() (UpdateSlackCanvasTaskParams, error) {
+	var body UpdateSlackCanvasTaskParams
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateSlackCanvasTaskParams overwrites any union data inside the NewWorkflowTask_Data_Attributes_TaskParams as the provided UpdateSlackCanvasTaskParams
+func (t *NewWorkflowTask_Data_Attributes_TaskParams) FromUpdateSlackCanvasTaskParams(v UpdateSlackCanvasTaskParams) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateSlackCanvasTaskParams performs a merge with any union data inside the NewWorkflowTask_Data_Attributes_TaskParams, using the provided UpdateSlackCanvasTaskParams
+func (t *NewWorkflowTask_Data_Attributes_TaskParams) MergeUpdateSlackCanvasTaskParams(v UpdateSlackCanvasTaskParams) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
 // AsUpdateStatusTaskParams returns the union data inside the NewWorkflowTask_Data_Attributes_TaskParams as a UpdateStatusTaskParams
 func (t NewWorkflowTask_Data_Attributes_TaskParams) AsUpdateStatusTaskParams() (UpdateStatusTaskParams, error) {
 	var body UpdateStatusTaskParams
@@ -84003,6 +87121,68 @@ func (t *PageVictorOpsOnCallRespondersTaskParams) UnmarshalJSON(b []byte) error 
 	return err
 }
 
+// AsResolveAlertDataAttributesActor0 returns the union data inside the ResolveAlert_Data_Attributes_Actor as a ResolveAlertDataAttributesActor0
+func (t ResolveAlert_Data_Attributes_Actor) AsResolveAlertDataAttributesActor0() (ResolveAlertDataAttributesActor0, error) {
+	var body ResolveAlertDataAttributesActor0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromResolveAlertDataAttributesActor0 overwrites any union data inside the ResolveAlert_Data_Attributes_Actor as the provided ResolveAlertDataAttributesActor0
+func (t *ResolveAlert_Data_Attributes_Actor) FromResolveAlertDataAttributesActor0(v ResolveAlertDataAttributesActor0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeResolveAlertDataAttributesActor0 performs a merge with any union data inside the ResolveAlert_Data_Attributes_Actor, using the provided ResolveAlertDataAttributesActor0
+func (t *ResolveAlert_Data_Attributes_Actor) MergeResolveAlertDataAttributesActor0(v ResolveAlertDataAttributesActor0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsResolveAlertDataAttributesActor1 returns the union data inside the ResolveAlert_Data_Attributes_Actor as a ResolveAlertDataAttributesActor1
+func (t ResolveAlert_Data_Attributes_Actor) AsResolveAlertDataAttributesActor1() (ResolveAlertDataAttributesActor1, error) {
+	var body ResolveAlertDataAttributesActor1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromResolveAlertDataAttributesActor1 overwrites any union data inside the ResolveAlert_Data_Attributes_Actor as the provided ResolveAlertDataAttributesActor1
+func (t *ResolveAlert_Data_Attributes_Actor) FromResolveAlertDataAttributesActor1(v ResolveAlertDataAttributesActor1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeResolveAlertDataAttributesActor1 performs a merge with any union data inside the ResolveAlert_Data_Attributes_Actor, using the provided ResolveAlertDataAttributesActor1
+func (t *ResolveAlert_Data_Attributes_Actor) MergeResolveAlertDataAttributesActor1(v ResolveAlertDataAttributesActor1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t ResolveAlert_Data_Attributes_Actor) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *ResolveAlert_Data_Attributes_Actor) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
 // AsRetrospectiveProcessRetrospectiveProcessMatchingCriteria0 returns the union data inside the RetrospectiveProcess_RetrospectiveProcessMatchingCriteria as a RetrospectiveProcessRetrospectiveProcessMatchingCriteria0
 func (t RetrospectiveProcess_RetrospectiveProcessMatchingCriteria) AsRetrospectiveProcessRetrospectiveProcessMatchingCriteria0() (RetrospectiveProcessRetrospectiveProcessMatchingCriteria0, error) {
 	var body RetrospectiveProcessRetrospectiveProcessMatchingCriteria0
@@ -84489,6 +87669,13 @@ func (t SendSlackBlocksTaskParams) MarshalJSON() ([]byte, error) {
 		}
 	}
 
+	if t.AllowCrossWorkflowThreading != nil {
+		object["allow_cross_workflow_threading"], err = json.Marshal(t.AllowCrossWorkflowThreading)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'allow_cross_workflow_threading': %w", err)
+		}
+	}
+
 	if t.Attachments != nil {
 		object["attachments"], err = json.Marshal(t.Attachments)
 		if err != nil {
@@ -84611,6 +87798,13 @@ func (t *SendSlackBlocksTaskParams) UnmarshalJSON(b []byte) error {
 	err = json.Unmarshal(b, &object)
 	if err != nil {
 		return err
+	}
+
+	if raw, found := object["allow_cross_workflow_threading"]; found {
+		err = json.Unmarshal(raw, &t.AllowCrossWorkflowThreading)
+		if err != nil {
+			return fmt.Errorf("error reading 'allow_cross_workflow_threading': %w", err)
+		}
 	}
 
 	if raw, found := object["attachments"]; found {
@@ -84826,6 +88020,13 @@ func (t SendSlackMessageTaskParams) MarshalJSON() ([]byte, error) {
 		}
 	}
 
+	if t.AllowCrossWorkflowThreading != nil {
+		object["allow_cross_workflow_threading"], err = json.Marshal(t.AllowCrossWorkflowThreading)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'allow_cross_workflow_threading': %w", err)
+		}
+	}
+
 	if t.BroadcastThreadReplyToChannel != nil {
 		object["broadcast_thread_reply_to_channel"], err = json.Marshal(t.BroadcastThreadReplyToChannel)
 		if err != nil {
@@ -84950,6 +88151,13 @@ func (t *SendSlackMessageTaskParams) UnmarshalJSON(b []byte) error {
 		}
 	}
 
+	if raw, found := object["allow_cross_workflow_threading"]; found {
+		err = json.Unmarshal(raw, &t.AllowCrossWorkflowThreading)
+		if err != nil {
+			return fmt.Errorf("error reading 'allow_cross_workflow_threading': %w", err)
+		}
+	}
+
 	if raw, found := object["broadcast_thread_reply_to_channel"]; found {
 		err = json.Unmarshal(raw, &t.BroadcastThreadReplyToChannel)
 		if err != nil {
@@ -85055,6 +88263,130 @@ func (t *SendSlackMessageTaskParams) UnmarshalJSON(b []byte) error {
 		}
 	}
 
+	return err
+}
+
+// AsSnoozeAlertDataAttributesActor0 returns the union data inside the SnoozeAlert_Data_Attributes_Actor as a SnoozeAlertDataAttributesActor0
+func (t SnoozeAlert_Data_Attributes_Actor) AsSnoozeAlertDataAttributesActor0() (SnoozeAlertDataAttributesActor0, error) {
+	var body SnoozeAlertDataAttributesActor0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromSnoozeAlertDataAttributesActor0 overwrites any union data inside the SnoozeAlert_Data_Attributes_Actor as the provided SnoozeAlertDataAttributesActor0
+func (t *SnoozeAlert_Data_Attributes_Actor) FromSnoozeAlertDataAttributesActor0(v SnoozeAlertDataAttributesActor0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeSnoozeAlertDataAttributesActor0 performs a merge with any union data inside the SnoozeAlert_Data_Attributes_Actor, using the provided SnoozeAlertDataAttributesActor0
+func (t *SnoozeAlert_Data_Attributes_Actor) MergeSnoozeAlertDataAttributesActor0(v SnoozeAlertDataAttributesActor0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsSnoozeAlertDataAttributesActor1 returns the union data inside the SnoozeAlert_Data_Attributes_Actor as a SnoozeAlertDataAttributesActor1
+func (t SnoozeAlert_Data_Attributes_Actor) AsSnoozeAlertDataAttributesActor1() (SnoozeAlertDataAttributesActor1, error) {
+	var body SnoozeAlertDataAttributesActor1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromSnoozeAlertDataAttributesActor1 overwrites any union data inside the SnoozeAlert_Data_Attributes_Actor as the provided SnoozeAlertDataAttributesActor1
+func (t *SnoozeAlert_Data_Attributes_Actor) FromSnoozeAlertDataAttributesActor1(v SnoozeAlertDataAttributesActor1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeSnoozeAlertDataAttributesActor1 performs a merge with any union data inside the SnoozeAlert_Data_Attributes_Actor, using the provided SnoozeAlertDataAttributesActor1
+func (t *SnoozeAlert_Data_Attributes_Actor) MergeSnoozeAlertDataAttributesActor1(v SnoozeAlertDataAttributesActor1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t SnoozeAlert_Data_Attributes_Actor) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *SnoozeAlert_Data_Attributes_Actor) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsUpdateAlertDataAttributesActor0 returns the union data inside the UpdateAlert_Data_Attributes_Actor as a UpdateAlertDataAttributesActor0
+func (t UpdateAlert_Data_Attributes_Actor) AsUpdateAlertDataAttributesActor0() (UpdateAlertDataAttributesActor0, error) {
+	var body UpdateAlertDataAttributesActor0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateAlertDataAttributesActor0 overwrites any union data inside the UpdateAlert_Data_Attributes_Actor as the provided UpdateAlertDataAttributesActor0
+func (t *UpdateAlert_Data_Attributes_Actor) FromUpdateAlertDataAttributesActor0(v UpdateAlertDataAttributesActor0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateAlertDataAttributesActor0 performs a merge with any union data inside the UpdateAlert_Data_Attributes_Actor, using the provided UpdateAlertDataAttributesActor0
+func (t *UpdateAlert_Data_Attributes_Actor) MergeUpdateAlertDataAttributesActor0(v UpdateAlertDataAttributesActor0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateAlertDataAttributesActor1 returns the union data inside the UpdateAlert_Data_Attributes_Actor as a UpdateAlertDataAttributesActor1
+func (t UpdateAlert_Data_Attributes_Actor) AsUpdateAlertDataAttributesActor1() (UpdateAlertDataAttributesActor1, error) {
+	var body UpdateAlertDataAttributesActor1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateAlertDataAttributesActor1 overwrites any union data inside the UpdateAlert_Data_Attributes_Actor as the provided UpdateAlertDataAttributesActor1
+func (t *UpdateAlert_Data_Attributes_Actor) FromUpdateAlertDataAttributesActor1(v UpdateAlertDataAttributesActor1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateAlertDataAttributesActor1 performs a merge with any union data inside the UpdateAlert_Data_Attributes_Actor, using the provided UpdateAlertDataAttributesActor1
+func (t *UpdateAlert_Data_Attributes_Actor) MergeUpdateAlertDataAttributesActor1(v UpdateAlertDataAttributesActor1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t UpdateAlert_Data_Attributes_Actor) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *UpdateAlert_Data_Attributes_Actor) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
 	return err
 }
 
@@ -89013,6 +92345,32 @@ func (t *UpdateWorkflowTask_Data_Attributes_TaskParams) MergeRenameSlackChannelT
 	return err
 }
 
+// AsRemoveFromSlackChannelTaskParams returns the union data inside the UpdateWorkflowTask_Data_Attributes_TaskParams as a RemoveFromSlackChannelTaskParams
+func (t UpdateWorkflowTask_Data_Attributes_TaskParams) AsRemoveFromSlackChannelTaskParams() (RemoveFromSlackChannelTaskParams, error) {
+	var body RemoveFromSlackChannelTaskParams
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromRemoveFromSlackChannelTaskParams overwrites any union data inside the UpdateWorkflowTask_Data_Attributes_TaskParams as the provided RemoveFromSlackChannelTaskParams
+func (t *UpdateWorkflowTask_Data_Attributes_TaskParams) FromRemoveFromSlackChannelTaskParams(v RemoveFromSlackChannelTaskParams) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeRemoveFromSlackChannelTaskParams performs a merge with any union data inside the UpdateWorkflowTask_Data_Attributes_TaskParams, using the provided RemoveFromSlackChannelTaskParams
+func (t *UpdateWorkflowTask_Data_Attributes_TaskParams) MergeRemoveFromSlackChannelTaskParams(v RemoveFromSlackChannelTaskParams) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
 // AsChangeSlackChannelPrivacyTaskParams returns the union data inside the UpdateWorkflowTask_Data_Attributes_TaskParams as a ChangeSlackChannelPrivacyTaskParams
 func (t UpdateWorkflowTask_Data_Attributes_TaskParams) AsChangeSlackChannelPrivacyTaskParams() (ChangeSlackChannelPrivacyTaskParams, error) {
 	var body ChangeSlackChannelPrivacyTaskParams
@@ -89133,6 +92491,32 @@ func (t *UpdateWorkflowTask_Data_Attributes_TaskParams) FromCreateSlackChannelTa
 
 // MergeCreateSlackChannelTaskParams performs a merge with any union data inside the UpdateWorkflowTask_Data_Attributes_TaskParams, using the provided CreateSlackChannelTaskParams
 func (t *UpdateWorkflowTask_Data_Attributes_TaskParams) MergeCreateSlackChannelTaskParams(v CreateSlackChannelTaskParams) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsCreateSlackCanvasTaskParams returns the union data inside the UpdateWorkflowTask_Data_Attributes_TaskParams as a CreateSlackCanvasTaskParams
+func (t UpdateWorkflowTask_Data_Attributes_TaskParams) AsCreateSlackCanvasTaskParams() (CreateSlackCanvasTaskParams, error) {
+	var body CreateSlackCanvasTaskParams
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromCreateSlackCanvasTaskParams overwrites any union data inside the UpdateWorkflowTask_Data_Attributes_TaskParams as the provided CreateSlackCanvasTaskParams
+func (t *UpdateWorkflowTask_Data_Attributes_TaskParams) FromCreateSlackCanvasTaskParams(v CreateSlackCanvasTaskParams) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeCreateSlackCanvasTaskParams performs a merge with any union data inside the UpdateWorkflowTask_Data_Attributes_TaskParams, using the provided CreateSlackCanvasTaskParams
+func (t *UpdateWorkflowTask_Data_Attributes_TaskParams) MergeCreateSlackCanvasTaskParams(v CreateSlackCanvasTaskParams) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -89653,6 +93037,32 @@ func (t *UpdateWorkflowTask_Data_Attributes_TaskParams) FromUpdateSlackChannelTo
 
 // MergeUpdateSlackChannelTopicTaskParams performs a merge with any union data inside the UpdateWorkflowTask_Data_Attributes_TaskParams, using the provided UpdateSlackChannelTopicTaskParams
 func (t *UpdateWorkflowTask_Data_Attributes_TaskParams) MergeUpdateSlackChannelTopicTaskParams(v UpdateSlackChannelTopicTaskParams) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateSlackCanvasTaskParams returns the union data inside the UpdateWorkflowTask_Data_Attributes_TaskParams as a UpdateSlackCanvasTaskParams
+func (t UpdateWorkflowTask_Data_Attributes_TaskParams) AsUpdateSlackCanvasTaskParams() (UpdateSlackCanvasTaskParams, error) {
+	var body UpdateSlackCanvasTaskParams
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateSlackCanvasTaskParams overwrites any union data inside the UpdateWorkflowTask_Data_Attributes_TaskParams as the provided UpdateSlackCanvasTaskParams
+func (t *UpdateWorkflowTask_Data_Attributes_TaskParams) FromUpdateSlackCanvasTaskParams(v UpdateSlackCanvasTaskParams) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateSlackCanvasTaskParams performs a merge with any union data inside the UpdateWorkflowTask_Data_Attributes_TaskParams, using the provided UpdateSlackCanvasTaskParams
+func (t *UpdateWorkflowTask_Data_Attributes_TaskParams) MergeUpdateSlackCanvasTaskParams(v UpdateSlackCanvasTaskParams) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -93080,6 +96490,32 @@ func (t *WorkflowTask_TaskParams) MergeRenameSlackChannelTaskParams(v RenameSlac
 	return err
 }
 
+// AsRemoveFromSlackChannelTaskParams returns the union data inside the WorkflowTask_TaskParams as a RemoveFromSlackChannelTaskParams
+func (t WorkflowTask_TaskParams) AsRemoveFromSlackChannelTaskParams() (RemoveFromSlackChannelTaskParams, error) {
+	var body RemoveFromSlackChannelTaskParams
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromRemoveFromSlackChannelTaskParams overwrites any union data inside the WorkflowTask_TaskParams as the provided RemoveFromSlackChannelTaskParams
+func (t *WorkflowTask_TaskParams) FromRemoveFromSlackChannelTaskParams(v RemoveFromSlackChannelTaskParams) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeRemoveFromSlackChannelTaskParams performs a merge with any union data inside the WorkflowTask_TaskParams, using the provided RemoveFromSlackChannelTaskParams
+func (t *WorkflowTask_TaskParams) MergeRemoveFromSlackChannelTaskParams(v RemoveFromSlackChannelTaskParams) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
 // AsChangeSlackChannelPrivacyTaskParams returns the union data inside the WorkflowTask_TaskParams as a ChangeSlackChannelPrivacyTaskParams
 func (t WorkflowTask_TaskParams) AsChangeSlackChannelPrivacyTaskParams() (ChangeSlackChannelPrivacyTaskParams, error) {
 	var body ChangeSlackChannelPrivacyTaskParams
@@ -93200,6 +96636,32 @@ func (t *WorkflowTask_TaskParams) FromCreateSlackChannelTaskParams(v CreateSlack
 
 // MergeCreateSlackChannelTaskParams performs a merge with any union data inside the WorkflowTask_TaskParams, using the provided CreateSlackChannelTaskParams
 func (t *WorkflowTask_TaskParams) MergeCreateSlackChannelTaskParams(v CreateSlackChannelTaskParams) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsCreateSlackCanvasTaskParams returns the union data inside the WorkflowTask_TaskParams as a CreateSlackCanvasTaskParams
+func (t WorkflowTask_TaskParams) AsCreateSlackCanvasTaskParams() (CreateSlackCanvasTaskParams, error) {
+	var body CreateSlackCanvasTaskParams
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromCreateSlackCanvasTaskParams overwrites any union data inside the WorkflowTask_TaskParams as the provided CreateSlackCanvasTaskParams
+func (t *WorkflowTask_TaskParams) FromCreateSlackCanvasTaskParams(v CreateSlackCanvasTaskParams) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeCreateSlackCanvasTaskParams performs a merge with any union data inside the WorkflowTask_TaskParams, using the provided CreateSlackCanvasTaskParams
+func (t *WorkflowTask_TaskParams) MergeCreateSlackCanvasTaskParams(v CreateSlackCanvasTaskParams) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -93720,6 +97182,32 @@ func (t *WorkflowTask_TaskParams) FromUpdateSlackChannelTopicTaskParams(v Update
 
 // MergeUpdateSlackChannelTopicTaskParams performs a merge with any union data inside the WorkflowTask_TaskParams, using the provided UpdateSlackChannelTopicTaskParams
 func (t *WorkflowTask_TaskParams) MergeUpdateSlackChannelTopicTaskParams(v UpdateSlackChannelTopicTaskParams) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateSlackCanvasTaskParams returns the union data inside the WorkflowTask_TaskParams as a UpdateSlackCanvasTaskParams
+func (t WorkflowTask_TaskParams) AsUpdateSlackCanvasTaskParams() (UpdateSlackCanvasTaskParams, error) {
+	var body UpdateSlackCanvasTaskParams
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateSlackCanvasTaskParams overwrites any union data inside the WorkflowTask_TaskParams as the provided UpdateSlackCanvasTaskParams
+func (t *WorkflowTask_TaskParams) FromUpdateSlackCanvasTaskParams(v UpdateSlackCanvasTaskParams) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateSlackCanvasTaskParams performs a merge with any union data inside the WorkflowTask_TaskParams, using the provided UpdateSlackCanvasTaskParams
+func (t *WorkflowTask_TaskParams) MergeUpdateSlackCanvasTaskParams(v UpdateSlackCanvasTaskParams) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -94863,6 +98351,25 @@ type ClientInterface interface {
 	// Corresponds with POST /v1/ai/chat/stream (the `StreamAiChat` operationId).
 	StreamAiChat(ctx context.Context, params *StreamAiChatParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
+	// GetAlertConfiguration Retrieves the team's alert configuration
+	//
+	// Corresponds with GET /v1/alert_configuration (the `GetAlertConfiguration` operationId).
+	GetAlertConfiguration(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// UpdateAlertConfigurationWithBody Updates the team's alert configuration
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with PUT /v1/alert_configuration (the `UpdateAlertConfiguration` operationId).
+	UpdateAlertConfigurationWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// UpdateAlertConfigurationWithApplicationVndAPIPlusJSONBody Updates the team's alert configuration
+	//
+	// Takes a body of the `application/vnd.api+json` content type.
+	//
+	// Corresponds with PUT /v1/alert_configuration (the `UpdateAlertConfiguration` operationId).
+	UpdateAlertConfigurationWithApplicationVndAPIPlusJSONBody(ctx context.Context, body UpdateAlertConfigurationApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
 	// ListAlertEventsFeed List alert events across alerts
 	//
 	// Returns a flat list of alert events across all alerts the requester can access. Designed for periodic polling: use `page[after]` with the `next_cursor` returned in the previous response to stream forward.
@@ -95011,49 +98518,6 @@ type ClientInterface interface {
 	//
 	// Corresponds with PATCH /v1/alert_groups/{id} (the `UpdateAlertGroup` operationId).
 	UpdateAlertGroupWithApplicationVndAPIPlusJSONBody(ctx context.Context, id ID, body UpdateAlertGroupApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// ListAlertRetriggerRules List alert re-trigger rules
-	//
-	// Corresponds with GET /v1/alert_retrigger_rules (the `ListAlertRetriggerRules` operationId).
-	ListAlertRetriggerRules(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateAlertRetriggerRuleWithBody Creates an alert re-trigger rule
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v1/alert_retrigger_rules (the `CreateAlertRetriggerRule` operationId).
-	CreateAlertRetriggerRuleWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateAlertRetriggerRuleWithApplicationVndAPIPlusJSONBody Creates an alert re-trigger rule
-	//
-	// Takes a body of the `application/vnd.api+json` content type.
-	//
-	// Corresponds with POST /v1/alert_retrigger_rules (the `CreateAlertRetriggerRule` operationId).
-	CreateAlertRetriggerRuleWithApplicationVndAPIPlusJSONBody(ctx context.Context, body CreateAlertRetriggerRuleApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// DeleteAlertRetriggerRule Deletes an alert re-trigger rule
-	//
-	// Corresponds with DELETE /v1/alert_retrigger_rules/{id} (the `DeleteAlertRetriggerRule` operationId).
-	DeleteAlertRetriggerRule(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetAlertRetriggerRule Retrieves an alert re-trigger rule
-	//
-	// Corresponds with GET /v1/alert_retrigger_rules/{id} (the `GetAlertRetriggerRule` operationId).
-	GetAlertRetriggerRule(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateAlertRetriggerRuleWithBody Updates an alert re-trigger rule
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with PUT /v1/alert_retrigger_rules/{id} (the `UpdateAlertRetriggerRule` operationId).
-	UpdateAlertRetriggerRuleWithBody(ctx context.Context, id ID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateAlertRetriggerRuleWithApplicationVndAPIPlusJSONBody Updates an alert re-trigger rule
-	//
-	// Takes a body of the `application/vnd.api+json` content type.
-	//
-	// Corresponds with PUT /v1/alert_retrigger_rules/{id} (the `UpdateAlertRetriggerRule` operationId).
-	UpdateAlertRetriggerRuleWithApplicationVndAPIPlusJSONBody(ctx context.Context, id ID, body UpdateAlertRetriggerRuleApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// ListAlertRoutes List alert routes
 	//
@@ -95423,12 +98887,23 @@ type ClientInterface interface {
 	// Corresponds with PATCH /v1/alerts/{id} (the `UpdateAlert` operationId).
 	UpdateAlertWithApplicationVndAPIPlusJSONBody(ctx context.Context, id ID, body UpdateAlertApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// AcknowledgeAlert Acknowledges an alert
+	// AcknowledgeAlertWithBody Acknowledges an alert
 	//
 	// Acknowledges a specific alert by id.
 	//
+	// Takes any type of body and a specified content type.
+	//
 	// Corresponds with POST /v1/alerts/{id}/acknowledge (the `AcknowledgeAlert` operationId).
-	AcknowledgeAlert(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error)
+	AcknowledgeAlertWithBody(ctx context.Context, id ID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// AcknowledgeAlertWithApplicationVndAPIPlusJSONBody Acknowledges an alert
+	//
+	// Acknowledges a specific alert by id.
+	//
+	// Takes a body of the `application/vnd.api+json` content type.
+	//
+	// Corresponds with POST /v1/alerts/{id}/acknowledge (the `AcknowledgeAlert` operationId).
+	AcknowledgeAlertWithApplicationVndAPIPlusJSONBody(ctx context.Context, id ID, body AcknowledgeAlertApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// EscalateAlertWithBody Escalates an alert
 	//
@@ -95707,36 +99182,6 @@ type ClientInterface interface {
 	//
 	// Corresponds with PUT /v1/authorizations/{id} (the `UpdateAuthorization` operationId).
 	UpdateAuthorizationWithApplicationVndAPIPlusJSONBody(ctx context.Context, id ID, body UpdateAuthorizationApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateBulkImportWithBody Create a bulk import
-	//
-	// Create a new bulk import for incidents. Requires global API key authentication.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v1/bulk_imports (the `CreateBulkImport` operationId).
-	CreateBulkImportWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateBulkImportWithApplicationVndAPIPlusJSONBody Create a bulk import
-	//
-	// Create a new bulk import for incidents. Requires global API key authentication.
-	//
-	// Takes a body of the `application/vnd.api+json` content type.
-	//
-	// Corresponds with POST /v1/bulk_imports (the `CreateBulkImport` operationId).
-	CreateBulkImportWithApplicationVndAPIPlusJSONBody(ctx context.Context, body CreateBulkImportApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetBulkImport Get bulk import status
-	//
-	// Retrieves the current status of a bulk import job.
-	//
-	// **Use this endpoint to:**
-	// - Poll for import progress
-	// - Check validation errors if status is `validation_failed`
-	// - Get final results when status is `completed` or `failed`
-	//
-	// Corresponds with GET /v1/bulk_imports/{id} (the `GetBulkImport` operationId).
-	GetBulkImport(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// ListCatalogChecklistTemplates List catalog checklist templates
 	//
@@ -98424,7 +101869,7 @@ type ClientInterface interface {
 	// Takes any type of body and a specified content type.
 	//
 	// Corresponds with POST /v1/incidents (the `CreateIncident` operationId).
-	CreateIncidentWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	CreateIncidentWithBody(ctx context.Context, params *CreateIncidentParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// CreateIncidentWithApplicationVndAPIPlusJSONBody Creates an incident
 	//
@@ -98433,7 +101878,7 @@ type ClientInterface interface {
 	// Takes a body of the `application/vnd.api+json` content type.
 	//
 	// Corresponds with POST /v1/incidents (the `CreateIncident` operationId).
-	CreateIncidentWithApplicationVndAPIPlusJSONBody(ctx context.Context, body CreateIncidentApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+	CreateIncidentWithApplicationVndAPIPlusJSONBody(ctx context.Context, params *CreateIncidentParams, body CreateIncidentApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// DeleteIncident Delete an incident
 	//
@@ -99473,6 +102918,52 @@ type ClientInterface interface {
 	// Corresponds with PUT /v1/post_mortems/{id} (the `UpdateIncidentPostmortem` operationId).
 	UpdateIncidentPostmortemWithApplicationVndAPIPlusJSONBody(ctx context.Context, id ID, body UpdateIncidentPostmortemApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
+	// ListPrivateAgents List private agents
+	//
+	// List this tenant's agents, including revoked and offline agents. Inventory pages omit provider snapshots to bound database and response costs; use Get private agent for provider inventory and last-reported health. Requires Private Agent management access plus the Private Agents and AI SRE features. Credentials and capability schemas are never returned.
+	//
+	// Corresponds with GET /v1/private_agents (the `ListPrivateAgents` operationId).
+	ListPrivateAgents(ctx context.Context, params *ListPrivateAgentsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// CreatePrivateAgentEnrollmentToken Create a one-time token for agent enrollment
+	//
+	// Issue a one-time token valid for 24 hours. No request body is required. Requires Private Agent management permission plus the Private Agents and AI SRE features. The agent uses this token for gRPC Enroll; the agent record is created on enrollment, not by this request. The plaintext is returned only here and is not recoverable. Repeated requests issue distinct tokens; this endpoint is not idempotent.
+	//
+	// Corresponds with POST /v1/private_agents/enrollment_tokens (the `CreatePrivateAgentEnrollmentToken` operationId).
+	CreatePrivateAgentEnrollmentToken(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetPrivateAgent Get private agent
+	//
+	// Return provider inventory and last-reported health for one agent. Requires Private Agent read permission plus the Private Agents and AI SRE features. Credentials and capability schemas are never returned.
+	//
+	// Corresponds with GET /v1/private_agents/{id} (the `GetPrivateAgent` operationId).
+	GetPrivateAgent(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// UpdatePrivateAgentWithBody Update private agent metadata
+	//
+	// Update routing metadata or pause tool execution without disconnecting the agent. The agent UUID and provider IDs remain the execution identities. Requires Private Agent update permission.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with PATCH /v1/private_agents/{id} (the `UpdatePrivateAgent` operationId).
+	UpdatePrivateAgentWithBody(ctx context.Context, id ID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// UpdatePrivateAgentWithApplicationVndAPIPlusJSONBody Update private agent metadata
+	//
+	// Update routing metadata or pause tool execution without disconnecting the agent. The agent UUID and provider IDs remain the execution identities. Requires Private Agent update permission.
+	//
+	// Takes a body of the `application/vnd.api+json` content type.
+	//
+	// Corresponds with PATCH /v1/private_agents/{id} (the `UpdatePrivateAgent` operationId).
+	UpdatePrivateAgentWithApplicationVndAPIPlusJSONBody(ctx context.Context, id ID, body UpdatePrivateAgentApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// RevokePrivateAgent Revoke private agent
+	//
+	// Invalidate access and refresh credentials and remove provider routing registrations. Requires Private Agent delete permission plus the Private Agents and AI SRE features. Retains the agent and invocation history. Repeated revocation is safe. An executing customer-side operation is not guaranteed to stop immediately. Use a new enrollment token to re-enroll a revoked installation.
+	//
+	// Corresponds with POST /v1/private_agents/{id}/revoke (the `RevokePrivateAgent` operationId).
+	RevokePrivateAgent(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error)
+
 	// ListPulses List pulses
 	//
 	// Corresponds with GET /v1/pulses (the `ListPulses` operationId).
@@ -100110,7 +103601,7 @@ type ClientInterface interface {
 
 	// CreateShiftCoverageRequestWithBody creates shift coverage requests
 	//
-	// Creates coverage requests for the shifts overlapping the requested time range. A range can span multiple consecutive shifts (e.g. across a handoff), so one or more coverage requests may be created; the response is always a list. A coverage request broadcasts to schedule members so someone can volunteer to cover the shift.
+	// Creates coverage requests for the shifts overlapping the requested time range. A range can span multiple consecutive shifts (e.g. across a handoff), so one or more coverage requests may be created; the response is always a list. A coverage request broadcasts to schedule members so someone can volunteer to cover the shift, or targets recipient_user_ids when targeted-shift-coverage is enabled.
 	//
 	// Takes any type of body and a specified content type.
 	//
@@ -100119,7 +103610,7 @@ type ClientInterface interface {
 
 	// CreateShiftCoverageRequestWithApplicationVndAPIPlusJSONBody creates shift coverage requests
 	//
-	// Creates coverage requests for the shifts overlapping the requested time range. A range can span multiple consecutive shifts (e.g. across a handoff), so one or more coverage requests may be created; the response is always a list. A coverage request broadcasts to schedule members so someone can volunteer to cover the shift.
+	// Creates coverage requests for the shifts overlapping the requested time range. A range can span multiple consecutive shifts (e.g. across a handoff), so one or more coverage requests may be created; the response is always a list. A coverage request broadcasts to schedule members so someone can volunteer to cover the shift, or targets recipient_user_ids when targeted-shift-coverage is enabled.
 	//
 	// Takes a body of the `application/vnd.api+json` content type.
 	//
@@ -100591,6 +104082,63 @@ type ClientInterface interface {
 	//
 	// Corresponds with POST /v1/status-pages/{status_page_id}/components (the `CreateStatusPageComponent` operationId).
 	CreateStatusPageComponentWithApplicationVndAPIPlusJSONBody(ctx context.Context, statusPageID string, body CreateStatusPageComponentApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// ListStatusPageTeams Lists the teams with access to a status page
+	//
+	// Lists the teams assigned to a status page, oldest first
+	//
+	// Corresponds with GET /v1/status-pages/{status_page_id}/teams (the `ListStatusPageTeams` operationId).
+	ListStatusPageTeams(ctx context.Context, statusPageID string, params *ListStatusPageTeamsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// CreateStatusPageTeamWithBody Grants a team access to a status page
+	//
+	// Assigns a team to a status page. Members of the team get the chosen permission level on that page in addition to their role. Requires an owner or admin role.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /v1/status-pages/{status_page_id}/teams (the `CreateStatusPageTeam` operationId).
+	CreateStatusPageTeamWithBody(ctx context.Context, statusPageID string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// CreateStatusPageTeamWithApplicationVndAPIPlusJSONBody Grants a team access to a status page
+	//
+	// Assigns a team to a status page. Members of the team get the chosen permission level on that page in addition to their role. Requires an owner or admin role.
+	//
+	// Takes a body of the `application/vnd.api+json` content type.
+	//
+	// Corresponds with POST /v1/status-pages/{status_page_id}/teams (the `CreateStatusPageTeam` operationId).
+	CreateStatusPageTeamWithApplicationVndAPIPlusJSONBody(ctx context.Context, statusPageID string, body CreateStatusPageTeamApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// DeleteStatusPageTeam Removes a team's access to a status page
+	//
+	// Removes a team from a status page. Its members lose the page access the assignment granted on their next request. Requires an owner or admin role.
+	//
+	// Corresponds with DELETE /v1/status-pages/{status_page_id}/teams/{id} (the `DeleteStatusPageTeam` operationId).
+	DeleteStatusPageTeam(ctx context.Context, statusPageID string, id ID, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetStatusPageTeam Retrieves a status page team assignment
+	//
+	// Retrieves a specific status page team assignment by id.
+	//
+	// Corresponds with GET /v1/status-pages/{status_page_id}/teams/{id} (the `GetStatusPageTeam` operationId).
+	GetStatusPageTeam(ctx context.Context, statusPageID string, id ID, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// UpdateStatusPageTeamWithBody Updates a status page team assignment
+	//
+	// Changes the permission level of a team on a status page. Requires an owner or admin role. To move the grant to another team, delete it and create a new one.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with PUT /v1/status-pages/{status_page_id}/teams/{id} (the `UpdateStatusPageTeam` operationId).
+	UpdateStatusPageTeamWithBody(ctx context.Context, statusPageID string, id ID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// UpdateStatusPageTeamWithApplicationVndAPIPlusJSONBody Updates a status page team assignment
+	//
+	// Changes the permission level of a team on a status page. Requires an owner or admin role. To move the grant to another team, delete it and create a new one.
+	//
+	// Takes a body of the `application/vnd.api+json` content type.
+	//
+	// Corresponds with PUT /v1/status-pages/{status_page_id}/teams/{id} (the `UpdateStatusPageTeam` operationId).
+	UpdateStatusPageTeamWithApplicationVndAPIPlusJSONBody(ctx context.Context, statusPageID string, id ID, body UpdateStatusPageTeamApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// ListStatusPageTemplates List status page templates
 	//
@@ -101576,6 +105124,55 @@ func (c *Client) StreamAiChat(ctx context.Context, params *StreamAiChatParams, r
 	return c.Client.Do(req)
 }
 
+// GetAlertConfiguration Retrieves the team's alert configuration
+//
+// Corresponds with GET /v1/alert_configuration (the `GetAlertConfiguration` operationId).
+func (c *Client) GetAlertConfiguration(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetAlertConfigurationRequest(c.Server)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// UpdateAlertConfigurationWithBody Updates the team's alert configuration
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with PUT /v1/alert_configuration (the `UpdateAlertConfiguration` operationId).
+func (c *Client) UpdateAlertConfigurationWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateAlertConfigurationRequestWithBody(c.Server, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// UpdateAlertConfigurationWithApplicationVndAPIPlusJSONBody Updates the team's alert configuration
+//
+// Takes a body of the `application/vnd.api+json` content type.
+//
+// Corresponds with PUT /v1/alert_configuration (the `UpdateAlertConfiguration` operationId).
+func (c *Client) UpdateAlertConfigurationWithApplicationVndAPIPlusJSONBody(ctx context.Context, body UpdateAlertConfigurationApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateAlertConfigurationRequestWithApplicationVndAPIPlusJSONBody(c.Server, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
 // ListAlertEventsFeed List alert events across alerts
 //
 // Returns a flat list of alert events across all alerts the requester can access. Designed for periodic polling: use `page[after]` with the `next_cursor` returned in the previous response to stream forward.
@@ -101905,119 +105502,6 @@ func (c *Client) UpdateAlertGroupWithBody(ctx context.Context, id ID, contentTyp
 // Corresponds with PATCH /v1/alert_groups/{id} (the `UpdateAlertGroup` operationId).
 func (c *Client) UpdateAlertGroupWithApplicationVndAPIPlusJSONBody(ctx context.Context, id ID, body UpdateAlertGroupApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewUpdateAlertGroupRequestWithApplicationVndAPIPlusJSONBody(c.Server, id, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// ListAlertRetriggerRules List alert re-trigger rules
-//
-// Corresponds with GET /v1/alert_retrigger_rules (the `ListAlertRetriggerRules` operationId).
-func (c *Client) ListAlertRetriggerRules(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewListAlertRetriggerRulesRequest(c.Server)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// CreateAlertRetriggerRuleWithBody Creates an alert re-trigger rule
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with POST /v1/alert_retrigger_rules (the `CreateAlertRetriggerRule` operationId).
-func (c *Client) CreateAlertRetriggerRuleWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateAlertRetriggerRuleRequestWithBody(c.Server, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// CreateAlertRetriggerRuleWithApplicationVndAPIPlusJSONBody Creates an alert re-trigger rule
-//
-// Takes a body of the `application/vnd.api+json` content type.
-//
-// Corresponds with POST /v1/alert_retrigger_rules (the `CreateAlertRetriggerRule` operationId).
-func (c *Client) CreateAlertRetriggerRuleWithApplicationVndAPIPlusJSONBody(ctx context.Context, body CreateAlertRetriggerRuleApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateAlertRetriggerRuleRequestWithApplicationVndAPIPlusJSONBody(c.Server, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// DeleteAlertRetriggerRule Deletes an alert re-trigger rule
-//
-// Corresponds with DELETE /v1/alert_retrigger_rules/{id} (the `DeleteAlertRetriggerRule` operationId).
-func (c *Client) DeleteAlertRetriggerRule(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewDeleteAlertRetriggerRuleRequest(c.Server, id)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// GetAlertRetriggerRule Retrieves an alert re-trigger rule
-//
-// Corresponds with GET /v1/alert_retrigger_rules/{id} (the `GetAlertRetriggerRule` operationId).
-func (c *Client) GetAlertRetriggerRule(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetAlertRetriggerRuleRequest(c.Server, id)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// UpdateAlertRetriggerRuleWithBody Updates an alert re-trigger rule
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with PUT /v1/alert_retrigger_rules/{id} (the `UpdateAlertRetriggerRule` operationId).
-func (c *Client) UpdateAlertRetriggerRuleWithBody(ctx context.Context, id ID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewUpdateAlertRetriggerRuleRequestWithBody(c.Server, id, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// UpdateAlertRetriggerRuleWithApplicationVndAPIPlusJSONBody Updates an alert re-trigger rule
-//
-// Takes a body of the `application/vnd.api+json` content type.
-//
-// Corresponds with PUT /v1/alert_retrigger_rules/{id} (the `UpdateAlertRetriggerRule` operationId).
-func (c *Client) UpdateAlertRetriggerRuleWithApplicationVndAPIPlusJSONBody(ctx context.Context, id ID, body UpdateAlertRetriggerRuleApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewUpdateAlertRetriggerRuleRequestWithApplicationVndAPIPlusJSONBody(c.Server, id, body)
 	if err != nil {
 		return nil, err
 	}
@@ -102796,13 +106280,34 @@ func (c *Client) UpdateAlertWithApplicationVndAPIPlusJSONBody(ctx context.Contex
 	return c.Client.Do(req)
 }
 
-// AcknowledgeAlert Acknowledges an alert
+// AcknowledgeAlertWithBody Acknowledges an alert
 //
 // Acknowledges a specific alert by id.
 //
+// Takes any type of body and a specified content type.
+//
 // Corresponds with POST /v1/alerts/{id}/acknowledge (the `AcknowledgeAlert` operationId).
-func (c *Client) AcknowledgeAlert(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewAcknowledgeAlertRequest(c.Server, id)
+func (c *Client) AcknowledgeAlertWithBody(ctx context.Context, id ID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewAcknowledgeAlertRequestWithBody(c.Server, id, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// AcknowledgeAlertWithApplicationVndAPIPlusJSONBody Acknowledges an alert
+//
+// Acknowledges a specific alert by id.
+//
+// Takes a body of the `application/vnd.api+json` content type.
+//
+// Corresponds with POST /v1/alerts/{id}/acknowledge (the `AcknowledgeAlert` operationId).
+func (c *Client) AcknowledgeAlertWithApplicationVndAPIPlusJSONBody(ctx context.Context, id ID, body AcknowledgeAlertApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewAcknowledgeAlertRequestWithApplicationVndAPIPlusJSONBody(c.Server, id, body)
 	if err != nil {
 		return nil, err
 	}
@@ -103351,66 +106856,6 @@ func (c *Client) UpdateAuthorizationWithBody(ctx context.Context, id ID, content
 // Corresponds with PUT /v1/authorizations/{id} (the `UpdateAuthorization` operationId).
 func (c *Client) UpdateAuthorizationWithApplicationVndAPIPlusJSONBody(ctx context.Context, id ID, body UpdateAuthorizationApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewUpdateAuthorizationRequestWithApplicationVndAPIPlusJSONBody(c.Server, id, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// CreateBulkImportWithBody Create a bulk import
-//
-// Create a new bulk import for incidents. Requires global API key authentication.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with POST /v1/bulk_imports (the `CreateBulkImport` operationId).
-func (c *Client) CreateBulkImportWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateBulkImportRequestWithBody(c.Server, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// CreateBulkImportWithApplicationVndAPIPlusJSONBody Create a bulk import
-//
-// Create a new bulk import for incidents. Requires global API key authentication.
-//
-// Takes a body of the `application/vnd.api+json` content type.
-//
-// Corresponds with POST /v1/bulk_imports (the `CreateBulkImport` operationId).
-func (c *Client) CreateBulkImportWithApplicationVndAPIPlusJSONBody(ctx context.Context, body CreateBulkImportApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateBulkImportRequestWithApplicationVndAPIPlusJSONBody(c.Server, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// GetBulkImport Get bulk import status
-//
-// Retrieves the current status of a bulk import job.
-//
-// **Use this endpoint to:**
-// - Poll for import progress
-// - Check validation errors if status is `validation_failed`
-// - Get final results when status is `completed` or `failed`
-//
-// Corresponds with GET /v1/bulk_imports/{id} (the `GetBulkImport` operationId).
-func (c *Client) GetBulkImport(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetBulkImportRequest(c.Server, id)
 	if err != nil {
 		return nil, err
 	}
@@ -109472,8 +112917,8 @@ func (c *Client) ListIncidents(ctx context.Context, params *ListIncidentsParams,
 // Takes any type of body and a specified content type.
 //
 // Corresponds with POST /v1/incidents (the `CreateIncident` operationId).
-func (c *Client) CreateIncidentWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateIncidentRequestWithBody(c.Server, contentType, body)
+func (c *Client) CreateIncidentWithBody(ctx context.Context, params *CreateIncidentParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateIncidentRequestWithBody(c.Server, params, contentType, body)
 	if err != nil {
 		return nil, err
 	}
@@ -109491,8 +112936,8 @@ func (c *Client) CreateIncidentWithBody(ctx context.Context, contentType string,
 // Takes a body of the `application/vnd.api+json` content type.
 //
 // Corresponds with POST /v1/incidents (the `CreateIncident` operationId).
-func (c *Client) CreateIncidentWithApplicationVndAPIPlusJSONBody(ctx context.Context, body CreateIncidentApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateIncidentRequestWithApplicationVndAPIPlusJSONBody(c.Server, body)
+func (c *Client) CreateIncidentWithApplicationVndAPIPlusJSONBody(ctx context.Context, params *CreateIncidentParams, body CreateIncidentApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateIncidentRequestWithApplicationVndAPIPlusJSONBody(c.Server, params, body)
 	if err != nil {
 		return nil, err
 	}
@@ -111858,6 +115303,112 @@ func (c *Client) UpdateIncidentPostmortemWithApplicationVndAPIPlusJSONBody(ctx c
 	return c.Client.Do(req)
 }
 
+// ListPrivateAgents List private agents
+//
+// List this tenant's agents, including revoked and offline agents. Inventory pages omit provider snapshots to bound database and response costs; use Get private agent for provider inventory and last-reported health. Requires Private Agent management access plus the Private Agents and AI SRE features. Credentials and capability schemas are never returned.
+//
+// Corresponds with GET /v1/private_agents (the `ListPrivateAgents` operationId).
+func (c *Client) ListPrivateAgents(ctx context.Context, params *ListPrivateAgentsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewListPrivateAgentsRequest(c.Server, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// CreatePrivateAgentEnrollmentToken Create a one-time token for agent enrollment
+//
+// Issue a one-time token valid for 24 hours. No request body is required. Requires Private Agent management permission plus the Private Agents and AI SRE features. The agent uses this token for gRPC Enroll; the agent record is created on enrollment, not by this request. The plaintext is returned only here and is not recoverable. Repeated requests issue distinct tokens; this endpoint is not idempotent.
+//
+// Corresponds with POST /v1/private_agents/enrollment_tokens (the `CreatePrivateAgentEnrollmentToken` operationId).
+func (c *Client) CreatePrivateAgentEnrollmentToken(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreatePrivateAgentEnrollmentTokenRequest(c.Server)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetPrivateAgent Get private agent
+//
+// Return provider inventory and last-reported health for one agent. Requires Private Agent read permission plus the Private Agents and AI SRE features. Credentials and capability schemas are never returned.
+//
+// Corresponds with GET /v1/private_agents/{id} (the `GetPrivateAgent` operationId).
+func (c *Client) GetPrivateAgent(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetPrivateAgentRequest(c.Server, id)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// UpdatePrivateAgentWithBody Update private agent metadata
+//
+// Update routing metadata or pause tool execution without disconnecting the agent. The agent UUID and provider IDs remain the execution identities. Requires Private Agent update permission.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with PATCH /v1/private_agents/{id} (the `UpdatePrivateAgent` operationId).
+func (c *Client) UpdatePrivateAgentWithBody(ctx context.Context, id ID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdatePrivateAgentRequestWithBody(c.Server, id, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// UpdatePrivateAgentWithApplicationVndAPIPlusJSONBody Update private agent metadata
+//
+// Update routing metadata or pause tool execution without disconnecting the agent. The agent UUID and provider IDs remain the execution identities. Requires Private Agent update permission.
+//
+// Takes a body of the `application/vnd.api+json` content type.
+//
+// Corresponds with PATCH /v1/private_agents/{id} (the `UpdatePrivateAgent` operationId).
+func (c *Client) UpdatePrivateAgentWithApplicationVndAPIPlusJSONBody(ctx context.Context, id ID, body UpdatePrivateAgentApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdatePrivateAgentRequestWithApplicationVndAPIPlusJSONBody(c.Server, id, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// RevokePrivateAgent Revoke private agent
+//
+// Invalidate access and refresh credentials and remove provider routing registrations. Requires Private Agent delete permission plus the Private Agents and AI SRE features. Retains the agent and invocation history. Repeated revocation is safe. An executing customer-side operation is not guaranteed to stop immediately. Use a new enrollment token to re-enroll a revoked installation.
+//
+// Corresponds with POST /v1/private_agents/{id}/revoke (the `RevokePrivateAgent` operationId).
+func (c *Client) RevokePrivateAgent(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewRevokePrivateAgentRequest(c.Server, id)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
 // ListPulses List pulses
 //
 // Corresponds with GET /v1/pulses (the `ListPulses` operationId).
@@ -113305,7 +116856,7 @@ func (c *Client) ListShiftCoverageRequests(ctx context.Context, scheduleID strin
 
 // CreateShiftCoverageRequestWithBody creates shift coverage requests
 //
-// Creates coverage requests for the shifts overlapping the requested time range. A range can span multiple consecutive shifts (e.g. across a handoff), so one or more coverage requests may be created; the response is always a list. A coverage request broadcasts to schedule members so someone can volunteer to cover the shift.
+// Creates coverage requests for the shifts overlapping the requested time range. A range can span multiple consecutive shifts (e.g. across a handoff), so one or more coverage requests may be created; the response is always a list. A coverage request broadcasts to schedule members so someone can volunteer to cover the shift, or targets recipient_user_ids when targeted-shift-coverage is enabled.
 //
 // Takes any type of body and a specified content type.
 //
@@ -113324,7 +116875,7 @@ func (c *Client) CreateShiftCoverageRequestWithBody(ctx context.Context, schedul
 
 // CreateShiftCoverageRequestWithApplicationVndAPIPlusJSONBody creates shift coverage requests
 //
-// Creates coverage requests for the shifts overlapping the requested time range. A range can span multiple consecutive shifts (e.g. across a handoff), so one or more coverage requests may be created; the response is always a list. A coverage request broadcasts to schedule members so someone can volunteer to cover the shift.
+// Creates coverage requests for the shifts overlapping the requested time range. A range can span multiple consecutive shifts (e.g. across a handoff), so one or more coverage requests may be created; the response is always a list. A coverage request broadcasts to schedule members so someone can volunteer to cover the shift, or targets recipient_user_ids when targeted-shift-coverage is enabled.
 //
 // Takes a body of the `application/vnd.api+json` content type.
 //
@@ -114397,6 +117948,133 @@ func (c *Client) CreateStatusPageComponentWithBody(ctx context.Context, statusPa
 // Corresponds with POST /v1/status-pages/{status_page_id}/components (the `CreateStatusPageComponent` operationId).
 func (c *Client) CreateStatusPageComponentWithApplicationVndAPIPlusJSONBody(ctx context.Context, statusPageID string, body CreateStatusPageComponentApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewCreateStatusPageComponentRequestWithApplicationVndAPIPlusJSONBody(c.Server, statusPageID, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// ListStatusPageTeams Lists the teams with access to a status page
+//
+// # Lists the teams assigned to a status page, oldest first
+//
+// Corresponds with GET /v1/status-pages/{status_page_id}/teams (the `ListStatusPageTeams` operationId).
+func (c *Client) ListStatusPageTeams(ctx context.Context, statusPageID string, params *ListStatusPageTeamsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewListStatusPageTeamsRequest(c.Server, statusPageID, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// CreateStatusPageTeamWithBody Grants a team access to a status page
+//
+// Assigns a team to a status page. Members of the team get the chosen permission level on that page in addition to their role. Requires an owner or admin role.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/status-pages/{status_page_id}/teams (the `CreateStatusPageTeam` operationId).
+func (c *Client) CreateStatusPageTeamWithBody(ctx context.Context, statusPageID string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateStatusPageTeamRequestWithBody(c.Server, statusPageID, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// CreateStatusPageTeamWithApplicationVndAPIPlusJSONBody Grants a team access to a status page
+//
+// Assigns a team to a status page. Members of the team get the chosen permission level on that page in addition to their role. Requires an owner or admin role.
+//
+// Takes a body of the `application/vnd.api+json` content type.
+//
+// Corresponds with POST /v1/status-pages/{status_page_id}/teams (the `CreateStatusPageTeam` operationId).
+func (c *Client) CreateStatusPageTeamWithApplicationVndAPIPlusJSONBody(ctx context.Context, statusPageID string, body CreateStatusPageTeamApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateStatusPageTeamRequestWithApplicationVndAPIPlusJSONBody(c.Server, statusPageID, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// DeleteStatusPageTeam Removes a team's access to a status page
+//
+// Removes a team from a status page. Its members lose the page access the assignment granted on their next request. Requires an owner or admin role.
+//
+// Corresponds with DELETE /v1/status-pages/{status_page_id}/teams/{id} (the `DeleteStatusPageTeam` operationId).
+func (c *Client) DeleteStatusPageTeam(ctx context.Context, statusPageID string, id ID, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewDeleteStatusPageTeamRequest(c.Server, statusPageID, id)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetStatusPageTeam Retrieves a status page team assignment
+//
+// Retrieves a specific status page team assignment by id.
+//
+// Corresponds with GET /v1/status-pages/{status_page_id}/teams/{id} (the `GetStatusPageTeam` operationId).
+func (c *Client) GetStatusPageTeam(ctx context.Context, statusPageID string, id ID, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetStatusPageTeamRequest(c.Server, statusPageID, id)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// UpdateStatusPageTeamWithBody Updates a status page team assignment
+//
+// Changes the permission level of a team on a status page. Requires an owner or admin role. To move the grant to another team, delete it and create a new one.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with PUT /v1/status-pages/{status_page_id}/teams/{id} (the `UpdateStatusPageTeam` operationId).
+func (c *Client) UpdateStatusPageTeamWithBody(ctx context.Context, statusPageID string, id ID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateStatusPageTeamRequestWithBody(c.Server, statusPageID, id, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// UpdateStatusPageTeamWithApplicationVndAPIPlusJSONBody Updates a status page team assignment
+//
+// Changes the permission level of a team on a status page. Requires an owner or admin role. To move the grant to another team, delete it and create a new one.
+//
+// Takes a body of the `application/vnd.api+json` content type.
+//
+// Corresponds with PUT /v1/status-pages/{status_page_id}/teams/{id} (the `UpdateStatusPageTeam` operationId).
+func (c *Client) UpdateStatusPageTeamWithApplicationVndAPIPlusJSONBody(ctx context.Context, statusPageID string, id ID, body UpdateStatusPageTeamApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateStatusPageTeamRequestWithApplicationVndAPIPlusJSONBody(c.Server, statusPageID, id, body)
 	if err != nil {
 		return nil, err
 	}
@@ -117156,6 +120834,73 @@ func NewStreamAiChatRequest(server string, params *StreamAiChatParams) (*http.Re
 	return req, nil
 }
 
+// NewGetAlertConfigurationRequest constructs an http.Request for the GetAlertConfiguration method
+func NewGetAlertConfigurationRequest(server string) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/alert_configuration")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewUpdateAlertConfigurationRequestWithApplicationVndAPIPlusJSONBody calls the generic UpdateAlertConfiguration builder with application/vnd.api+json body
+func NewUpdateAlertConfigurationRequestWithApplicationVndAPIPlusJSONBody(server string, body UpdateAlertConfigurationApplicationVndAPIPlusJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewUpdateAlertConfigurationRequestWithBody(server, "application/vnd.api+json", bodyReader)
+}
+
+// NewUpdateAlertConfigurationRequestWithBody constructs an http.Request for the UpdateAlertConfiguration method, with any body, and a specified content type
+func NewUpdateAlertConfigurationRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/alert_configuration")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPut, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
 // NewListAlertEventsFeedRequest constructs an http.Request for the ListAlertEventsFeed method
 func NewListAlertEventsFeedRequest(server string, params *ListAlertEventsFeedParams) (*http.Request, error) {
 	var err error
@@ -118166,188 +121911,6 @@ func NewUpdateAlertGroupRequestWithBody(server string, id ID, contentType string
 	}
 
 	req, err := http.NewRequest(http.MethodPatch, queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewListAlertRetriggerRulesRequest constructs an http.Request for the ListAlertRetriggerRules method
-func NewListAlertRetriggerRulesRequest(server string) (*http.Request, error) {
-	var err error
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/alert_retrigger_rules")
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewCreateAlertRetriggerRuleRequestWithApplicationVndAPIPlusJSONBody calls the generic CreateAlertRetriggerRule builder with application/vnd.api+json body
-func NewCreateAlertRetriggerRuleRequestWithApplicationVndAPIPlusJSONBody(server string, body CreateAlertRetriggerRuleApplicationVndAPIPlusJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewCreateAlertRetriggerRuleRequestWithBody(server, "application/vnd.api+json", bodyReader)
-}
-
-// NewCreateAlertRetriggerRuleRequestWithBody constructs an http.Request for the CreateAlertRetriggerRule method, with any body, and a specified content type
-func NewCreateAlertRetriggerRuleRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/alert_retrigger_rules")
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewDeleteAlertRetriggerRuleRequest constructs an http.Request for the DeleteAlertRetriggerRule method
-func NewDeleteAlertRetriggerRuleRequest(server string, id ID) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "id", id, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/alert_retrigger_rules/%s", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest(http.MethodDelete, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewGetAlertRetriggerRuleRequest constructs an http.Request for the GetAlertRetriggerRule method
-func NewGetAlertRetriggerRuleRequest(server string, id ID) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "id", id, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/alert_retrigger_rules/%s", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewUpdateAlertRetriggerRuleRequestWithApplicationVndAPIPlusJSONBody calls the generic UpdateAlertRetriggerRule builder with application/vnd.api+json body
-func NewUpdateAlertRetriggerRuleRequestWithApplicationVndAPIPlusJSONBody(server string, id ID, body UpdateAlertRetriggerRuleApplicationVndAPIPlusJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewUpdateAlertRetriggerRuleRequestWithBody(server, id, "application/vnd.api+json", bodyReader)
-}
-
-// NewUpdateAlertRetriggerRuleRequestWithBody constructs an http.Request for the UpdateAlertRetriggerRule method, with any body, and a specified content type
-func NewUpdateAlertRetriggerRuleRequestWithBody(server string, id ID, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "id", id, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/alert_retrigger_rules/%s", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest(http.MethodPut, queryURL.String(), body)
 	if err != nil {
 		return nil, err
 	}
@@ -120820,8 +124383,19 @@ func NewUpdateAlertRequestWithBody(server string, id ID, contentType string, bod
 	return req, nil
 }
 
-// NewAcknowledgeAlertRequest constructs an http.Request for the AcknowledgeAlert method
-func NewAcknowledgeAlertRequest(server string, id ID) (*http.Request, error) {
+// NewAcknowledgeAlertRequestWithApplicationVndAPIPlusJSONBody calls the generic AcknowledgeAlert builder with application/vnd.api+json body
+func NewAcknowledgeAlertRequestWithApplicationVndAPIPlusJSONBody(server string, id ID, body AcknowledgeAlertApplicationVndAPIPlusJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewAcknowledgeAlertRequestWithBody(server, id, "application/vnd.api+json", bodyReader)
+}
+
+// NewAcknowledgeAlertRequestWithBody constructs an http.Request for the AcknowledgeAlert method, with any body, and a specified content type
+func NewAcknowledgeAlertRequestWithBody(server string, id ID, contentType string, body io.Reader) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -120846,10 +124420,12 @@ func NewAcknowledgeAlertRequest(server string, id ID) (*http.Request, error) {
 		return nil, err
 	}
 
-	req, err := http.NewRequest(http.MethodPost, queryURL.String(), nil)
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
 	if err != nil {
 		return nil, err
 	}
+
+	req.Header.Add("Content-Type", contentType)
 
 	return req, nil
 }
@@ -122384,80 +125960,6 @@ func NewUpdateAuthorizationRequestWithBody(server string, id ID, contentType str
 	}
 
 	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewCreateBulkImportRequestWithApplicationVndAPIPlusJSONBody calls the generic CreateBulkImport builder with application/vnd.api+json body
-func NewCreateBulkImportRequestWithApplicationVndAPIPlusJSONBody(server string, body CreateBulkImportApplicationVndAPIPlusJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewCreateBulkImportRequestWithBody(server, "application/vnd.api+json", bodyReader)
-}
-
-// NewCreateBulkImportRequestWithBody constructs an http.Request for the CreateBulkImport method, with any body, and a specified content type
-func NewCreateBulkImportRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/bulk_imports")
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewGetBulkImportRequest constructs an http.Request for the GetBulkImport method
-func NewGetBulkImportRequest(server string, id ID) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "id", id, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/bulk_imports/%s", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
 
 	return req, nil
 }
@@ -140251,18 +143753,18 @@ func NewListIncidentsRequest(server string, params *ListIncidentsParams) (*http.
 }
 
 // NewCreateIncidentRequestWithApplicationVndAPIPlusJSONBody calls the generic CreateIncident builder with application/vnd.api+json body
-func NewCreateIncidentRequestWithApplicationVndAPIPlusJSONBody(server string, body CreateIncidentApplicationVndAPIPlusJSONRequestBody) (*http.Request, error) {
+func NewCreateIncidentRequestWithApplicationVndAPIPlusJSONBody(server string, params *CreateIncidentParams, body CreateIncidentApplicationVndAPIPlusJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
 	buf, err := json.Marshal(body)
 	if err != nil {
 		return nil, err
 	}
 	bodyReader = bytes.NewReader(buf)
-	return NewCreateIncidentRequestWithBody(server, "application/vnd.api+json", bodyReader)
+	return NewCreateIncidentRequestWithBody(server, params, "application/vnd.api+json", bodyReader)
 }
 
 // NewCreateIncidentRequestWithBody constructs an http.Request for the CreateIncident method, with any body, and a specified content type
-func NewCreateIncidentRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+func NewCreateIncidentRequestWithBody(server string, params *CreateIncidentParams, contentType string, body io.Reader) (*http.Request, error) {
 	var err error
 
 	serverURL, err := url.Parse(server)
@@ -140286,6 +143788,21 @@ func NewCreateIncidentRequestWithBody(server string, contentType string, body io
 	}
 
 	req.Header.Add("Content-Type", contentType)
+
+	if params != nil {
+
+		if params.IdempotencyKey != nil {
+			var headerParam0 string
+
+			headerParam0, err = runtime.StyleParamWithOptions("simple", false, "Idempotency-Key", *params.IdempotencyKey, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationHeader, Type: "string", Format: ""})
+			if err != nil {
+				return nil, err
+			}
+
+			req.Header.Set("Idempotency-Key", headerParam0)
+		}
+
+	}
 
 	return req, nil
 }
@@ -145740,6 +149257,214 @@ func NewUpdateIncidentPostmortemRequestWithBody(server string, id ID, contentTyp
 	}
 
 	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewListPrivateAgentsRequest constructs an http.Request for the ListPrivateAgents method
+func NewListPrivateAgentsRequest(server string, params *ListPrivateAgentsParams) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/private_agents")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.PageNumber != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "page[number]", *params.PageNumber, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.PageSize != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "page[size]", *params.PageSize, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewCreatePrivateAgentEnrollmentTokenRequest constructs an http.Request for the CreatePrivateAgentEnrollmentToken method
+func NewCreatePrivateAgentEnrollmentTokenRequest(server string) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/private_agents/enrollment_tokens")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewGetPrivateAgentRequest constructs an http.Request for the GetPrivateAgent method
+func NewGetPrivateAgentRequest(server string, id ID) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "id", id, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/private_agents/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewUpdatePrivateAgentRequestWithApplicationVndAPIPlusJSONBody calls the generic UpdatePrivateAgent builder with application/vnd.api+json body
+func NewUpdatePrivateAgentRequestWithApplicationVndAPIPlusJSONBody(server string, id ID, body UpdatePrivateAgentApplicationVndAPIPlusJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewUpdatePrivateAgentRequestWithBody(server, id, "application/vnd.api+json", bodyReader)
+}
+
+// NewUpdatePrivateAgentRequestWithBody constructs an http.Request for the UpdatePrivateAgent method, with any body, and a specified content type
+func NewUpdatePrivateAgentRequestWithBody(server string, id ID, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "id", id, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/private_agents/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPatch, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewRevokePrivateAgentRequest constructs an http.Request for the RevokePrivateAgent method
+func NewRevokePrivateAgentRequest(server string, id ID) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "id", id, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/private_agents/%s/revoke", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
 
 	return req, nil
 }
@@ -152996,6 +156721,274 @@ func NewCreateStatusPageComponentRequestWithBody(server string, statusPageID str
 	return req, nil
 }
 
+// NewListStatusPageTeamsRequest constructs an http.Request for the ListStatusPageTeams method
+func NewListStatusPageTeamsRequest(server string, statusPageID string, params *ListStatusPageTeamsParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "status_page_id", statusPageID, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/status-pages/%s/teams", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.Include != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "include", *params.Include, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.PageNumber != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "page[number]", *params.PageNumber, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.PageSize != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "page[size]", *params.PageSize, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewCreateStatusPageTeamRequestWithApplicationVndAPIPlusJSONBody calls the generic CreateStatusPageTeam builder with application/vnd.api+json body
+func NewCreateStatusPageTeamRequestWithApplicationVndAPIPlusJSONBody(server string, statusPageID string, body CreateStatusPageTeamApplicationVndAPIPlusJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewCreateStatusPageTeamRequestWithBody(server, statusPageID, "application/vnd.api+json", bodyReader)
+}
+
+// NewCreateStatusPageTeamRequestWithBody constructs an http.Request for the CreateStatusPageTeam method, with any body, and a specified content type
+func NewCreateStatusPageTeamRequestWithBody(server string, statusPageID string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "status_page_id", statusPageID, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/status-pages/%s/teams", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewDeleteStatusPageTeamRequest constructs an http.Request for the DeleteStatusPageTeam method
+func NewDeleteStatusPageTeamRequest(server string, statusPageID string, id ID) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "status_page_id", statusPageID, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "id", id, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/status-pages/%s/teams/%s", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodDelete, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewGetStatusPageTeamRequest constructs an http.Request for the GetStatusPageTeam method
+func NewGetStatusPageTeamRequest(server string, statusPageID string, id ID) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "status_page_id", statusPageID, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "id", id, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/status-pages/%s/teams/%s", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewUpdateStatusPageTeamRequestWithApplicationVndAPIPlusJSONBody calls the generic UpdateStatusPageTeam builder with application/vnd.api+json body
+func NewUpdateStatusPageTeamRequestWithApplicationVndAPIPlusJSONBody(server string, statusPageID string, id ID, body UpdateStatusPageTeamApplicationVndAPIPlusJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewUpdateStatusPageTeamRequestWithBody(server, statusPageID, id, "application/vnd.api+json", bodyReader)
+}
+
+// NewUpdateStatusPageTeamRequestWithBody constructs an http.Request for the UpdateStatusPageTeam method, with any body, and a specified content type
+func NewUpdateStatusPageTeamRequestWithBody(server string, statusPageID string, id ID, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "status_page_id", statusPageID, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "id", id, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/status-pages/%s/teams/%s", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPut, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
 // NewListStatusPageTemplatesRequest constructs an http.Request for the ListStatusPageTemplates method
 func NewListStatusPageTemplatesRequest(server string, statusPageID string, params *ListStatusPageTemplatesParams) (*http.Request, error) {
 	var err error
@@ -158296,6 +162289,27 @@ type ClientWithResponsesInterface interface {
 	// Corresponds with POST /v1/ai/chat/stream (the `StreamAiChat` operationId).
 	StreamAiChatWithResponse(ctx context.Context, params *StreamAiChatParams, reqEditors ...RequestEditorFn) (*StreamAiChatResponse, error)
 
+	// GetAlertConfigurationWithResponse Retrieves the team's alert configuration
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /v1/alert_configuration (the `GetAlertConfiguration` operationId).
+	GetAlertConfigurationWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*GetAlertConfigurationResponse, error)
+
+	// UpdateAlertConfigurationWithBodyWithResponse Updates the team's alert configuration
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with PUT /v1/alert_configuration (the `UpdateAlertConfiguration` operationId).
+	UpdateAlertConfigurationWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateAlertConfigurationResponse, error)
+
+	// UpdateAlertConfigurationWithApplicationVndAPIPlusJSONBodyWithResponse Updates the team's alert configuration
+	//
+	// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with PUT /v1/alert_configuration (the `UpdateAlertConfiguration` operationId).
+	UpdateAlertConfigurationWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, body UpdateAlertConfigurationApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateAlertConfigurationResponse, error)
+
 	// ListAlertEventsFeedWithResponse List alert events across alerts
 	//
 	// Returns a flat list of alert events across all alerts the requester can access. Designed for periodic polling: use `page[after]` with the `next_cursor` returned in the previous response to stream forward.
@@ -158462,55 +162476,6 @@ type ClientWithResponsesInterface interface {
 	//
 	// Corresponds with PATCH /v1/alert_groups/{id} (the `UpdateAlertGroup` operationId).
 	UpdateAlertGroupWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, id ID, body UpdateAlertGroupApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateAlertGroupResponse, error)
-
-	// ListAlertRetriggerRulesWithResponse List alert re-trigger rules
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/alert_retrigger_rules (the `ListAlertRetriggerRules` operationId).
-	ListAlertRetriggerRulesWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*ListAlertRetriggerRulesResponse, error)
-
-	// CreateAlertRetriggerRuleWithBodyWithResponse Creates an alert re-trigger rule
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/alert_retrigger_rules (the `CreateAlertRetriggerRule` operationId).
-	CreateAlertRetriggerRuleWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateAlertRetriggerRuleResponse, error)
-
-	// CreateAlertRetriggerRuleWithApplicationVndAPIPlusJSONBodyWithResponse Creates an alert re-trigger rule
-	//
-	// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/alert_retrigger_rules (the `CreateAlertRetriggerRule` operationId).
-	CreateAlertRetriggerRuleWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, body CreateAlertRetriggerRuleApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateAlertRetriggerRuleResponse, error)
-
-	// DeleteAlertRetriggerRuleWithResponse Deletes an alert re-trigger rule
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with DELETE /v1/alert_retrigger_rules/{id} (the `DeleteAlertRetriggerRule` operationId).
-	DeleteAlertRetriggerRuleWithResponse(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*DeleteAlertRetriggerRuleResponse, error)
-
-	// GetAlertRetriggerRuleWithResponse Retrieves an alert re-trigger rule
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/alert_retrigger_rules/{id} (the `GetAlertRetriggerRule` operationId).
-	GetAlertRetriggerRuleWithResponse(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*GetAlertRetriggerRuleResponse, error)
-
-	// UpdateAlertRetriggerRuleWithBodyWithResponse Updates an alert re-trigger rule
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PUT /v1/alert_retrigger_rules/{id} (the `UpdateAlertRetriggerRule` operationId).
-	UpdateAlertRetriggerRuleWithBodyWithResponse(ctx context.Context, id ID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateAlertRetriggerRuleResponse, error)
-
-	// UpdateAlertRetriggerRuleWithApplicationVndAPIPlusJSONBodyWithResponse Updates an alert re-trigger rule
-	//
-	// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PUT /v1/alert_retrigger_rules/{id} (the `UpdateAlertRetriggerRule` operationId).
-	UpdateAlertRetriggerRuleWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, id ID, body UpdateAlertRetriggerRuleApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateAlertRetriggerRuleResponse, error)
 
 	// ListAlertRoutesWithResponse List alert routes
 	//
@@ -158912,14 +162877,23 @@ type ClientWithResponsesInterface interface {
 	// Corresponds with PATCH /v1/alerts/{id} (the `UpdateAlert` operationId).
 	UpdateAlertWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, id ID, body UpdateAlertApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateAlertResponse, error)
 
-	// AcknowledgeAlertWithResponse Acknowledges an alert
+	// AcknowledgeAlertWithBodyWithResponse Acknowledges an alert
 	//
 	// Acknowledges a specific alert by id.
 	//
-	// Returns a wrapper object for the known response body format(s).
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
 	// Corresponds with POST /v1/alerts/{id}/acknowledge (the `AcknowledgeAlert` operationId).
-	AcknowledgeAlertWithResponse(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*AcknowledgeAlertResponse, error)
+	AcknowledgeAlertWithBodyWithResponse(ctx context.Context, id ID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*AcknowledgeAlertResponse, error)
+
+	// AcknowledgeAlertWithApplicationVndAPIPlusJSONBodyWithResponse Acknowledges an alert
+	//
+	// Acknowledges a specific alert by id.
+	//
+	// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/alerts/{id}/acknowledge (the `AcknowledgeAlert` operationId).
+	AcknowledgeAlertWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, id ID, body AcknowledgeAlertApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*AcknowledgeAlertResponse, error)
 
 	// EscalateAlertWithBodyWithResponse Escalates an alert
 	//
@@ -159216,38 +163190,6 @@ type ClientWithResponsesInterface interface {
 	//
 	// Corresponds with PUT /v1/authorizations/{id} (the `UpdateAuthorization` operationId).
 	UpdateAuthorizationWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, id ID, body UpdateAuthorizationApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateAuthorizationResponse, error)
-
-	// CreateBulkImportWithBodyWithResponse Create a bulk import
-	//
-	// Create a new bulk import for incidents. Requires global API key authentication.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/bulk_imports (the `CreateBulkImport` operationId).
-	CreateBulkImportWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateBulkImportResponse, error)
-
-	// CreateBulkImportWithApplicationVndAPIPlusJSONBodyWithResponse Create a bulk import
-	//
-	// Create a new bulk import for incidents. Requires global API key authentication.
-	//
-	// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/bulk_imports (the `CreateBulkImport` operationId).
-	CreateBulkImportWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, body CreateBulkImportApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateBulkImportResponse, error)
-
-	// GetBulkImportWithResponse Get bulk import status
-	//
-	// Retrieves the current status of a bulk import job.
-	//
-	// **Use this endpoint to:**
-	// - Poll for import progress
-	// - Check validation errors if status is `validation_failed`
-	// - Get final results when status is `completed` or `failed`
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/bulk_imports/{id} (the `GetBulkImport` operationId).
-	GetBulkImportWithResponse(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*GetBulkImportResponse, error)
 
 	// ListCatalogChecklistTemplatesWithResponse List catalog checklist templates
 	//
@@ -162229,7 +166171,7 @@ type ClientWithResponsesInterface interface {
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
 	// Corresponds with POST /v1/incidents (the `CreateIncident` operationId).
-	CreateIncidentWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateIncidentResponse, error)
+	CreateIncidentWithBodyWithResponse(ctx context.Context, params *CreateIncidentParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateIncidentResponse, error)
 
 	// CreateIncidentWithApplicationVndAPIPlusJSONBodyWithResponse Creates an incident
 	//
@@ -162238,7 +166180,7 @@ type ClientWithResponsesInterface interface {
 	// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
 	//
 	// Corresponds with POST /v1/incidents (the `CreateIncident` operationId).
-	CreateIncidentWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, body CreateIncidentApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateIncidentResponse, error)
+	CreateIncidentWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, params *CreateIncidentParams, body CreateIncidentApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateIncidentResponse, error)
 
 	// DeleteIncidentWithResponse Delete an incident
 	//
@@ -163390,6 +167332,60 @@ type ClientWithResponsesInterface interface {
 	// Corresponds with PUT /v1/post_mortems/{id} (the `UpdateIncidentPostmortem` operationId).
 	UpdateIncidentPostmortemWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, id ID, body UpdateIncidentPostmortemApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateIncidentPostmortemResponse, error)
 
+	// ListPrivateAgentsWithResponse List private agents
+	//
+	// List this tenant's agents, including revoked and offline agents. Inventory pages omit provider snapshots to bound database and response costs; use Get private agent for provider inventory and last-reported health. Requires Private Agent management access plus the Private Agents and AI SRE features. Credentials and capability schemas are never returned.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /v1/private_agents (the `ListPrivateAgents` operationId).
+	ListPrivateAgentsWithResponse(ctx context.Context, params *ListPrivateAgentsParams, reqEditors ...RequestEditorFn) (*ListPrivateAgentsResponse, error)
+
+	// CreatePrivateAgentEnrollmentTokenWithResponse Create a one-time token for agent enrollment
+	//
+	// Issue a one-time token valid for 24 hours. No request body is required. Requires Private Agent management permission plus the Private Agents and AI SRE features. The agent uses this token for gRPC Enroll; the agent record is created on enrollment, not by this request. The plaintext is returned only here and is not recoverable. Repeated requests issue distinct tokens; this endpoint is not idempotent.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/private_agents/enrollment_tokens (the `CreatePrivateAgentEnrollmentToken` operationId).
+	CreatePrivateAgentEnrollmentTokenWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*CreatePrivateAgentEnrollmentTokenResponse, error)
+
+	// GetPrivateAgentWithResponse Get private agent
+	//
+	// Return provider inventory and last-reported health for one agent. Requires Private Agent read permission plus the Private Agents and AI SRE features. Credentials and capability schemas are never returned.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /v1/private_agents/{id} (the `GetPrivateAgent` operationId).
+	GetPrivateAgentWithResponse(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*GetPrivateAgentResponse, error)
+
+	// UpdatePrivateAgentWithBodyWithResponse Update private agent metadata
+	//
+	// Update routing metadata or pause tool execution without disconnecting the agent. The agent UUID and provider IDs remain the execution identities. Requires Private Agent update permission.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with PATCH /v1/private_agents/{id} (the `UpdatePrivateAgent` operationId).
+	UpdatePrivateAgentWithBodyWithResponse(ctx context.Context, id ID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdatePrivateAgentResponse, error)
+
+	// UpdatePrivateAgentWithApplicationVndAPIPlusJSONBodyWithResponse Update private agent metadata
+	//
+	// Update routing metadata or pause tool execution without disconnecting the agent. The agent UUID and provider IDs remain the execution identities. Requires Private Agent update permission.
+	//
+	// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with PATCH /v1/private_agents/{id} (the `UpdatePrivateAgent` operationId).
+	UpdatePrivateAgentWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, id ID, body UpdatePrivateAgentApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdatePrivateAgentResponse, error)
+
+	// RevokePrivateAgentWithResponse Revoke private agent
+	//
+	// Invalidate access and refresh credentials and remove provider routing registrations. Requires Private Agent delete permission plus the Private Agents and AI SRE features. Retains the agent and invocation history. Repeated revocation is safe. An executing customer-side operation is not guaranteed to stop immediately. Use a new enrollment token to re-enroll a revoked installation.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/private_agents/{id}/revoke (the `RevokePrivateAgent` operationId).
+	RevokePrivateAgentWithResponse(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*RevokePrivateAgentResponse, error)
+
 	// ListPulsesWithResponse List pulses
 	//
 	// Returns a wrapper object for the known response body format(s).
@@ -164097,7 +168093,7 @@ type ClientWithResponsesInterface interface {
 
 	// CreateShiftCoverageRequestWithBodyWithResponse creates shift coverage requests
 	//
-	// Creates coverage requests for the shifts overlapping the requested time range. A range can span multiple consecutive shifts (e.g. across a handoff), so one or more coverage requests may be created; the response is always a list. A coverage request broadcasts to schedule members so someone can volunteer to cover the shift.
+	// Creates coverage requests for the shifts overlapping the requested time range. A range can span multiple consecutive shifts (e.g. across a handoff), so one or more coverage requests may be created; the response is always a list. A coverage request broadcasts to schedule members so someone can volunteer to cover the shift, or targets recipient_user_ids when targeted-shift-coverage is enabled.
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -164106,7 +168102,7 @@ type ClientWithResponsesInterface interface {
 
 	// CreateShiftCoverageRequestWithApplicationVndAPIPlusJSONBodyWithResponse creates shift coverage requests
 	//
-	// Creates coverage requests for the shifts overlapping the requested time range. A range can span multiple consecutive shifts (e.g. across a handoff), so one or more coverage requests may be created; the response is always a list. A coverage request broadcasts to schedule members so someone can volunteer to cover the shift.
+	// Creates coverage requests for the shifts overlapping the requested time range. A range can span multiple consecutive shifts (e.g. across a handoff), so one or more coverage requests may be created; the response is always a list. A coverage request broadcasts to schedule members so someone can volunteer to cover the shift, or targets recipient_user_ids when targeted-shift-coverage is enabled.
 	//
 	// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -164630,6 +168626,69 @@ type ClientWithResponsesInterface interface {
 	//
 	// Corresponds with POST /v1/status-pages/{status_page_id}/components (the `CreateStatusPageComponent` operationId).
 	CreateStatusPageComponentWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, statusPageID string, body CreateStatusPageComponentApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateStatusPageComponentResponse, error)
+
+	// ListStatusPageTeamsWithResponse Lists the teams with access to a status page
+	//
+	// Lists the teams assigned to a status page, oldest first
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /v1/status-pages/{status_page_id}/teams (the `ListStatusPageTeams` operationId).
+	ListStatusPageTeamsWithResponse(ctx context.Context, statusPageID string, params *ListStatusPageTeamsParams, reqEditors ...RequestEditorFn) (*ListStatusPageTeamsResponse, error)
+
+	// CreateStatusPageTeamWithBodyWithResponse Grants a team access to a status page
+	//
+	// Assigns a team to a status page. Members of the team get the chosen permission level on that page in addition to their role. Requires an owner or admin role.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/status-pages/{status_page_id}/teams (the `CreateStatusPageTeam` operationId).
+	CreateStatusPageTeamWithBodyWithResponse(ctx context.Context, statusPageID string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateStatusPageTeamResponse, error)
+
+	// CreateStatusPageTeamWithApplicationVndAPIPlusJSONBodyWithResponse Grants a team access to a status page
+	//
+	// Assigns a team to a status page. Members of the team get the chosen permission level on that page in addition to their role. Requires an owner or admin role.
+	//
+	// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/status-pages/{status_page_id}/teams (the `CreateStatusPageTeam` operationId).
+	CreateStatusPageTeamWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, statusPageID string, body CreateStatusPageTeamApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateStatusPageTeamResponse, error)
+
+	// DeleteStatusPageTeamWithResponse Removes a team's access to a status page
+	//
+	// Removes a team from a status page. Its members lose the page access the assignment granted on their next request. Requires an owner or admin role.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with DELETE /v1/status-pages/{status_page_id}/teams/{id} (the `DeleteStatusPageTeam` operationId).
+	DeleteStatusPageTeamWithResponse(ctx context.Context, statusPageID string, id ID, reqEditors ...RequestEditorFn) (*DeleteStatusPageTeamResponse, error)
+
+	// GetStatusPageTeamWithResponse Retrieves a status page team assignment
+	//
+	// Retrieves a specific status page team assignment by id.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /v1/status-pages/{status_page_id}/teams/{id} (the `GetStatusPageTeam` operationId).
+	GetStatusPageTeamWithResponse(ctx context.Context, statusPageID string, id ID, reqEditors ...RequestEditorFn) (*GetStatusPageTeamResponse, error)
+
+	// UpdateStatusPageTeamWithBodyWithResponse Updates a status page team assignment
+	//
+	// Changes the permission level of a team on a status page. Requires an owner or admin role. To move the grant to another team, delete it and create a new one.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with PUT /v1/status-pages/{status_page_id}/teams/{id} (the `UpdateStatusPageTeam` operationId).
+	UpdateStatusPageTeamWithBodyWithResponse(ctx context.Context, statusPageID string, id ID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateStatusPageTeamResponse, error)
+
+	// UpdateStatusPageTeamWithApplicationVndAPIPlusJSONBodyWithResponse Updates a status page team assignment
+	//
+	// Changes the permission level of a team on a status page. Requires an owner or admin role. To move the grant to another team, delete it and create a new one.
+	//
+	// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with PUT /v1/status-pages/{status_page_id}/teams/{id} (the `UpdateStatusPageTeam` operationId).
+	UpdateStatusPageTeamWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, statusPageID string, id ID, body UpdateStatusPageTeamApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateStatusPageTeamResponse, error)
 
 	// ListStatusPageTemplatesWithResponse List status page templates
 	//
@@ -165806,6 +169865,76 @@ func (r StreamAiChatResponse) ContentType() string {
 	return ""
 }
 
+type GetAlertConfigurationResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// ApplicationVndAPIJSON200 the response for an HTTP 200 `application/vnd.api+json` response
+	ApplicationVndAPIJSON200 *AlertConfigurationResponse
+	// ApplicationVndAPIJSON404 the response for an HTTP 404 `application/vnd.api+json` response
+	ApplicationVndAPIJSON404 *ErrorsList
+}
+
+// Status returns HTTPResponse.Status
+func (r GetAlertConfigurationResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetAlertConfigurationResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetAlertConfigurationResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type UpdateAlertConfigurationResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// ApplicationVndAPIJSON200 the response for an HTTP 200 `application/vnd.api+json` response
+	ApplicationVndAPIJSON200 *AlertConfigurationResponse
+	// ApplicationVndAPIJSON403 the response for an HTTP 403 `application/vnd.api+json` response
+	ApplicationVndAPIJSON403 *ErrorsList
+	// ApplicationVndAPIJSON404 the response for an HTTP 404 `application/vnd.api+json` response
+	ApplicationVndAPIJSON404 *ErrorsList
+	// ApplicationVndAPIJSON422 the response for an HTTP 422 `application/vnd.api+json` response
+	ApplicationVndAPIJSON422 *ErrorsList
+}
+
+// Status returns HTTPResponse.Status
+func (r UpdateAlertConfigurationResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r UpdateAlertConfigurationResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r UpdateAlertConfigurationResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
 type ListAlertEventsFeedResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
@@ -166260,161 +170389,6 @@ func (r UpdateAlertGroupResponse) StatusCode() int {
 
 // ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
 func (r UpdateAlertGroupResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type ListAlertRetriggerRulesResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// ApplicationVndAPIJSON200 the response for an HTTP 200 `application/vnd.api+json` response
-	ApplicationVndAPIJSON200 *AlertRetriggerRuleList
-}
-
-// Status returns HTTPResponse.Status
-func (r ListAlertRetriggerRulesResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r ListAlertRetriggerRulesResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r ListAlertRetriggerRulesResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type CreateAlertRetriggerRuleResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// ApplicationVndAPIJSON201 the response for an HTTP 201 `application/vnd.api+json` response
-	ApplicationVndAPIJSON201 *AlertRetriggerRuleResponse
-	// ApplicationVndAPIJSON422 the response for an HTTP 422 `application/vnd.api+json` response
-	ApplicationVndAPIJSON422 *ErrorsList
-}
-
-// Status returns HTTPResponse.Status
-func (r CreateAlertRetriggerRuleResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r CreateAlertRetriggerRuleResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r CreateAlertRetriggerRuleResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type DeleteAlertRetriggerRuleResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-}
-
-// Status returns HTTPResponse.Status
-func (r DeleteAlertRetriggerRuleResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r DeleteAlertRetriggerRuleResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r DeleteAlertRetriggerRuleResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type GetAlertRetriggerRuleResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// ApplicationVndAPIJSON200 the response for an HTTP 200 `application/vnd.api+json` response
-	ApplicationVndAPIJSON200 *AlertRetriggerRuleResponse
-}
-
-// Status returns HTTPResponse.Status
-func (r GetAlertRetriggerRuleResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r GetAlertRetriggerRuleResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r GetAlertRetriggerRuleResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type UpdateAlertRetriggerRuleResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// ApplicationVndAPIJSON200 the response for an HTTP 200 `application/vnd.api+json` response
-	ApplicationVndAPIJSON200 *AlertRetriggerRuleResponse
-}
-
-// Status returns HTTPResponse.Status
-func (r UpdateAlertRetriggerRuleResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r UpdateAlertRetriggerRuleResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r UpdateAlertRetriggerRuleResponse) ContentType() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Header.Get("Content-Type")
 	}
@@ -167372,8 +171346,12 @@ type AcknowledgeAlertResponse struct {
 	ApplicationVndAPIJSON200 *AlertResponse
 	// ApplicationVndAPIJSON400 the response for an HTTP 400 `application/vnd.api+json` response
 	ApplicationVndAPIJSON400 *ErrorsList
+	// ApplicationVndAPIJSON403 the response for an HTTP 403 `application/vnd.api+json` response
+	ApplicationVndAPIJSON403 *ErrorsList
 	// ApplicationVndAPIJSON404 the response for an HTTP 404 `application/vnd.api+json` response
 	ApplicationVndAPIJSON404 *ErrorsList
+	// ApplicationVndAPIJSON422 the response for an HTTP 422 `application/vnd.api+json` response
+	ApplicationVndAPIJSON422 *ErrorsList
 }
 
 // Status returns HTTPResponse.Status
@@ -167994,64 +171972,6 @@ func (r UpdateAuthorizationResponse) StatusCode() int {
 
 // ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
 func (r UpdateAuthorizationResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type CreateBulkImportResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-}
-
-// Status returns HTTPResponse.Status
-func (r CreateBulkImportResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r CreateBulkImportResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r CreateBulkImportResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type GetBulkImportResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-}
-
-// Status returns HTTPResponse.Status
-func (r GetBulkImportResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r GetBulkImportResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r GetBulkImportResponse) ContentType() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Header.Get("Content-Type")
 	}
@@ -176014,6 +179934,8 @@ func (r ListIncidentsResponse) ContentType() string {
 type CreateIncidentResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
+	// ApplicationVndAPIJSON200 the response for an HTTP 200 `application/vnd.api+json` response
+	ApplicationVndAPIJSON200 *IncidentResponse
 	// ApplicationVndAPIJSON201 the response for an HTTP 201 `application/vnd.api+json` response
 	ApplicationVndAPIJSON201 *IncidentResponse
 	// ApplicationVndAPIJSON401 the response for an HTTP 401 `application/vnd.api+json` response
@@ -179156,6 +183078,161 @@ func (r UpdateIncidentPostmortemResponse) ContentType() string {
 	return ""
 }
 
+type ListPrivateAgentsResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// ApplicationVndAPIJSON200 the response for an HTTP 200 `application/vnd.api+json` response
+	ApplicationVndAPIJSON200 *PrivateAgentList
+}
+
+// Status returns HTTPResponse.Status
+func (r ListPrivateAgentsResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r ListPrivateAgentsResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r ListPrivateAgentsResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type CreatePrivateAgentEnrollmentTokenResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// ApplicationVndAPIJSON201 the response for an HTTP 201 `application/vnd.api+json` response
+	ApplicationVndAPIJSON201 *PrivateAgentEnrollmentTokenResponse
+}
+
+// Status returns HTTPResponse.Status
+func (r CreatePrivateAgentEnrollmentTokenResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r CreatePrivateAgentEnrollmentTokenResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r CreatePrivateAgentEnrollmentTokenResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GetPrivateAgentResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// ApplicationVndAPIJSON200 the response for an HTTP 200 `application/vnd.api+json` response
+	ApplicationVndAPIJSON200 *PrivateAgentResponse
+}
+
+// Status returns HTTPResponse.Status
+func (r GetPrivateAgentResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetPrivateAgentResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetPrivateAgentResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type UpdatePrivateAgentResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// ApplicationVndAPIJSON409 the response for an HTTP 409 `application/vnd.api+json` response
+	ApplicationVndAPIJSON409 *ErrorsList
+}
+
+// Status returns HTTPResponse.Status
+func (r UpdatePrivateAgentResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r UpdatePrivateAgentResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r UpdatePrivateAgentResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type RevokePrivateAgentResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// ApplicationVndAPIJSON200 the response for an HTTP 200 `application/vnd.api+json` response
+	ApplicationVndAPIJSON200 *PrivateAgentResponse
+}
+
+// Status returns HTTPResponse.Status
+func (r RevokePrivateAgentResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r RevokePrivateAgentResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r RevokePrivateAgentResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
 type ListPulsesResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
@@ -180700,6 +184777,8 @@ type DeleteScheduleResponse struct {
 	ApplicationVndAPIJSON200 *ScheduleResponse
 	// ApplicationVndAPIJSON404 the response for an HTTP 404 `application/vnd.api+json` response
 	ApplicationVndAPIJSON404 *ErrorsList
+	// ApplicationVndAPIJSON422 the response for an HTTP 422 `application/vnd.api+json` response
+	ApplicationVndAPIJSON422 *ErrorsList
 }
 
 // Status returns HTTPResponse.Status
@@ -182119,6 +186198,8 @@ type UpdateIncidentStatusPageResponse struct {
 	ApplicationVndAPIJSON200 *IncidentStatusPageEventResponse
 	// ApplicationVndAPIJSON404 the response for an HTTP 404 `application/vnd.api+json` response
 	ApplicationVndAPIJSON404 *ErrorsList
+	// ApplicationVndAPIJSON422 the response for an HTTP 422 `application/vnd.api+json` response
+	ApplicationVndAPIJSON422 *ErrorsList
 }
 
 // Status returns HTTPResponse.Status
@@ -182510,6 +186591,173 @@ func (r CreateStatusPageComponentResponse) ContentType() string {
 	return ""
 }
 
+type ListStatusPageTeamsResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// ApplicationVndAPIJSON200 the response for an HTTP 200 `application/vnd.api+json` response
+	ApplicationVndAPIJSON200 *StatusPageTeamList
+}
+
+// Status returns HTTPResponse.Status
+func (r ListStatusPageTeamsResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r ListStatusPageTeamsResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r ListStatusPageTeamsResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type CreateStatusPageTeamResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// ApplicationVndAPIJSON201 the response for an HTTP 201 `application/vnd.api+json` response
+	ApplicationVndAPIJSON201 *StatusPageTeamResponse
+	// ApplicationVndAPIJSON401 the response for an HTTP 401 `application/vnd.api+json` response
+	ApplicationVndAPIJSON401 *ErrorsList
+	// ApplicationVndAPIJSON404 the response for an HTTP 404 `application/vnd.api+json` response
+	ApplicationVndAPIJSON404 *ErrorsList
+	// ApplicationVndAPIJSON422 the response for an HTTP 422 `application/vnd.api+json` response
+	ApplicationVndAPIJSON422 *ErrorsList
+}
+
+// Status returns HTTPResponse.Status
+func (r CreateStatusPageTeamResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r CreateStatusPageTeamResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r CreateStatusPageTeamResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type DeleteStatusPageTeamResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// ApplicationVndAPIJSON200 the response for an HTTP 200 `application/vnd.api+json` response
+	ApplicationVndAPIJSON200 *StatusPageTeamResponse
+	// ApplicationVndAPIJSON404 the response for an HTTP 404 `application/vnd.api+json` response
+	ApplicationVndAPIJSON404 *ErrorsList
+}
+
+// Status returns HTTPResponse.Status
+func (r DeleteStatusPageTeamResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r DeleteStatusPageTeamResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r DeleteStatusPageTeamResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GetStatusPageTeamResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// ApplicationVndAPIJSON200 the response for an HTTP 200 `application/vnd.api+json` response
+	ApplicationVndAPIJSON200 *StatusPageTeamResponse
+	// ApplicationVndAPIJSON404 the response for an HTTP 404 `application/vnd.api+json` response
+	ApplicationVndAPIJSON404 *ErrorsList
+}
+
+// Status returns HTTPResponse.Status
+func (r GetStatusPageTeamResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetStatusPageTeamResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetStatusPageTeamResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type UpdateStatusPageTeamResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// ApplicationVndAPIJSON200 the response for an HTTP 200 `application/vnd.api+json` response
+	ApplicationVndAPIJSON200 *StatusPageTeamResponse
+	// ApplicationVndAPIJSON404 the response for an HTTP 404 `application/vnd.api+json` response
+	ApplicationVndAPIJSON404 *ErrorsList
+}
+
+// Status returns HTTPResponse.Status
+func (r UpdateStatusPageTeamResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r UpdateStatusPageTeamResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r UpdateStatusPageTeamResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
 type ListStatusPageTemplatesResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
@@ -182845,6 +187093,8 @@ type CreateTeamResponse struct {
 	ApplicationVndAPIJSON201 *TeamResponse
 	// ApplicationVndAPIJSON401 the response for an HTTP 401 `application/vnd.api+json` response
 	ApplicationVndAPIJSON401 *ErrorsList
+	// ApplicationVndAPIJSON403 the response for an HTTP 403 `application/vnd.api+json` response
+	ApplicationVndAPIJSON403 *ErrorsList
 	// ApplicationVndAPIJSON422 the response for an HTTP 422 `application/vnd.api+json` response
 	ApplicationVndAPIJSON422 *ErrorsList
 }
@@ -182915,6 +187165,8 @@ type BulkUpsertGroupsResponse struct {
 	ApplicationVndAPIJSON200 *BulkUpsertTeamsPayload
 	// ApplicationVndAPIJSON401 the response for an HTTP 401 `application/vnd.api+json` response
 	ApplicationVndAPIJSON401 *ErrorsList
+	// ApplicationVndAPIJSON403 the response for an HTTP 403 `application/vnd.api+json` response
+	ApplicationVndAPIJSON403 *ErrorsList
 	// ApplicationVndAPIJSON422 the response for an HTTP 422 `application/vnd.api+json` response
 	ApplicationVndAPIJSON422 *BulkUpsertGroups422ApplicationVndAPIPlusJSONResponseBody
 }
@@ -183080,6 +187332,8 @@ type UpdateTeamResponse struct {
 	HTTPResponse *http.Response
 	// ApplicationVndAPIJSON200 the response for an HTTP 200 `application/vnd.api+json` response
 	ApplicationVndAPIJSON200 *TeamResponse
+	// ApplicationVndAPIJSON403 the response for an HTTP 403 `application/vnd.api+json` response
+	ApplicationVndAPIJSON403 *ErrorsList
 	// ApplicationVndAPIJSON404 the response for an HTTP 404 `application/vnd.api+json` response
 	ApplicationVndAPIJSON404 *ErrorsList
 }
@@ -185190,6 +189444,45 @@ func (c *ClientWithResponses) StreamAiChatWithResponse(ctx context.Context, para
 	return ParseStreamAiChatResponse(rsp)
 }
 
+// GetAlertConfigurationWithResponse Retrieves the team's alert configuration
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/alert_configuration (the `GetAlertConfiguration` operationId).
+func (c *ClientWithResponses) GetAlertConfigurationWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*GetAlertConfigurationResponse, error) {
+	rsp, err := c.GetAlertConfiguration(ctx, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetAlertConfigurationResponse(rsp)
+}
+
+// UpdateAlertConfigurationWithBodyWithResponse Updates the team's alert configuration
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PUT /v1/alert_configuration (the `UpdateAlertConfiguration` operationId).
+func (c *ClientWithResponses) UpdateAlertConfigurationWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateAlertConfigurationResponse, error) {
+	rsp, err := c.UpdateAlertConfigurationWithBody(ctx, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateAlertConfigurationResponse(rsp)
+}
+
+// UpdateAlertConfigurationWithApplicationVndAPIPlusJSONBodyWithResponse Updates the team's alert configuration
+//
+// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PUT /v1/alert_configuration (the `UpdateAlertConfiguration` operationId).
+func (c *ClientWithResponses) UpdateAlertConfigurationWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, body UpdateAlertConfigurationApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateAlertConfigurationResponse, error) {
+	rsp, err := c.UpdateAlertConfigurationWithApplicationVndAPIPlusJSONBody(ctx, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateAlertConfigurationResponse(rsp)
+}
+
 // ListAlertEventsFeedWithResponse List alert events across alerts
 //
 // Returns a flat list of alert events across all alerts the requester can access. Designed for periodic polling: use `page[after]` with the `next_cursor` returned in the previous response to stream forward.
@@ -185469,97 +189762,6 @@ func (c *ClientWithResponses) UpdateAlertGroupWithApplicationVndAPIPlusJSONBodyW
 		return nil, err
 	}
 	return ParseUpdateAlertGroupResponse(rsp)
-}
-
-// ListAlertRetriggerRulesWithResponse List alert re-trigger rules
-//
-// Returns a wrapper object for the known response body format(s).
-//
-// Corresponds with GET /v1/alert_retrigger_rules (the `ListAlertRetriggerRules` operationId).
-func (c *ClientWithResponses) ListAlertRetriggerRulesWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*ListAlertRetriggerRulesResponse, error) {
-	rsp, err := c.ListAlertRetriggerRules(ctx, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseListAlertRetriggerRulesResponse(rsp)
-}
-
-// CreateAlertRetriggerRuleWithBodyWithResponse Creates an alert re-trigger rule
-//
-// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-//
-// Corresponds with POST /v1/alert_retrigger_rules (the `CreateAlertRetriggerRule` operationId).
-func (c *ClientWithResponses) CreateAlertRetriggerRuleWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateAlertRetriggerRuleResponse, error) {
-	rsp, err := c.CreateAlertRetriggerRuleWithBody(ctx, contentType, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseCreateAlertRetriggerRuleResponse(rsp)
-}
-
-// CreateAlertRetriggerRuleWithApplicationVndAPIPlusJSONBodyWithResponse Creates an alert re-trigger rule
-//
-// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
-//
-// Corresponds with POST /v1/alert_retrigger_rules (the `CreateAlertRetriggerRule` operationId).
-func (c *ClientWithResponses) CreateAlertRetriggerRuleWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, body CreateAlertRetriggerRuleApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateAlertRetriggerRuleResponse, error) {
-	rsp, err := c.CreateAlertRetriggerRuleWithApplicationVndAPIPlusJSONBody(ctx, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseCreateAlertRetriggerRuleResponse(rsp)
-}
-
-// DeleteAlertRetriggerRuleWithResponse Deletes an alert re-trigger rule
-//
-// Returns a wrapper object for the known response body format(s).
-//
-// Corresponds with DELETE /v1/alert_retrigger_rules/{id} (the `DeleteAlertRetriggerRule` operationId).
-func (c *ClientWithResponses) DeleteAlertRetriggerRuleWithResponse(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*DeleteAlertRetriggerRuleResponse, error) {
-	rsp, err := c.DeleteAlertRetriggerRule(ctx, id, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseDeleteAlertRetriggerRuleResponse(rsp)
-}
-
-// GetAlertRetriggerRuleWithResponse Retrieves an alert re-trigger rule
-//
-// Returns a wrapper object for the known response body format(s).
-//
-// Corresponds with GET /v1/alert_retrigger_rules/{id} (the `GetAlertRetriggerRule` operationId).
-func (c *ClientWithResponses) GetAlertRetriggerRuleWithResponse(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*GetAlertRetriggerRuleResponse, error) {
-	rsp, err := c.GetAlertRetriggerRule(ctx, id, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseGetAlertRetriggerRuleResponse(rsp)
-}
-
-// UpdateAlertRetriggerRuleWithBodyWithResponse Updates an alert re-trigger rule
-//
-// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-//
-// Corresponds with PUT /v1/alert_retrigger_rules/{id} (the `UpdateAlertRetriggerRule` operationId).
-func (c *ClientWithResponses) UpdateAlertRetriggerRuleWithBodyWithResponse(ctx context.Context, id ID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateAlertRetriggerRuleResponse, error) {
-	rsp, err := c.UpdateAlertRetriggerRuleWithBody(ctx, id, contentType, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseUpdateAlertRetriggerRuleResponse(rsp)
-}
-
-// UpdateAlertRetriggerRuleWithApplicationVndAPIPlusJSONBodyWithResponse Updates an alert re-trigger rule
-//
-// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
-//
-// Corresponds with PUT /v1/alert_retrigger_rules/{id} (the `UpdateAlertRetriggerRule` operationId).
-func (c *ClientWithResponses) UpdateAlertRetriggerRuleWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, id ID, body UpdateAlertRetriggerRuleApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateAlertRetriggerRuleResponse, error) {
-	rsp, err := c.UpdateAlertRetriggerRuleWithApplicationVndAPIPlusJSONBody(ctx, id, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseUpdateAlertRetriggerRuleResponse(rsp)
 }
 
 // ListAlertRoutesWithResponse List alert routes
@@ -186202,15 +190404,30 @@ func (c *ClientWithResponses) UpdateAlertWithApplicationVndAPIPlusJSONBodyWithRe
 	return ParseUpdateAlertResponse(rsp)
 }
 
-// AcknowledgeAlertWithResponse Acknowledges an alert
+// AcknowledgeAlertWithBodyWithResponse Acknowledges an alert
 //
 // Acknowledges a specific alert by id.
 //
-// Returns a wrapper object for the known response body format(s).
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
 // Corresponds with POST /v1/alerts/{id}/acknowledge (the `AcknowledgeAlert` operationId).
-func (c *ClientWithResponses) AcknowledgeAlertWithResponse(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*AcknowledgeAlertResponse, error) {
-	rsp, err := c.AcknowledgeAlert(ctx, id, reqEditors...)
+func (c *ClientWithResponses) AcknowledgeAlertWithBodyWithResponse(ctx context.Context, id ID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*AcknowledgeAlertResponse, error) {
+	rsp, err := c.AcknowledgeAlertWithBody(ctx, id, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseAcknowledgeAlertResponse(rsp)
+}
+
+// AcknowledgeAlertWithApplicationVndAPIPlusJSONBodyWithResponse Acknowledges an alert
+//
+// Acknowledges a specific alert by id.
+//
+// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/alerts/{id}/acknowledge (the `AcknowledgeAlert` operationId).
+func (c *ClientWithResponses) AcknowledgeAlertWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, id ID, body AcknowledgeAlertApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*AcknowledgeAlertResponse, error) {
+	rsp, err := c.AcknowledgeAlertWithApplicationVndAPIPlusJSONBody(ctx, id, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -186673,56 +190890,6 @@ func (c *ClientWithResponses) UpdateAuthorizationWithApplicationVndAPIPlusJSONBo
 		return nil, err
 	}
 	return ParseUpdateAuthorizationResponse(rsp)
-}
-
-// CreateBulkImportWithBodyWithResponse Create a bulk import
-//
-// Create a new bulk import for incidents. Requires global API key authentication.
-//
-// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-//
-// Corresponds with POST /v1/bulk_imports (the `CreateBulkImport` operationId).
-func (c *ClientWithResponses) CreateBulkImportWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateBulkImportResponse, error) {
-	rsp, err := c.CreateBulkImportWithBody(ctx, contentType, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseCreateBulkImportResponse(rsp)
-}
-
-// CreateBulkImportWithApplicationVndAPIPlusJSONBodyWithResponse Create a bulk import
-//
-// Create a new bulk import for incidents. Requires global API key authentication.
-//
-// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
-//
-// Corresponds with POST /v1/bulk_imports (the `CreateBulkImport` operationId).
-func (c *ClientWithResponses) CreateBulkImportWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, body CreateBulkImportApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateBulkImportResponse, error) {
-	rsp, err := c.CreateBulkImportWithApplicationVndAPIPlusJSONBody(ctx, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseCreateBulkImportResponse(rsp)
-}
-
-// GetBulkImportWithResponse Get bulk import status
-//
-// Retrieves the current status of a bulk import job.
-//
-// **Use this endpoint to:**
-// - Poll for import progress
-// - Check validation errors if status is `validation_failed`
-// - Get final results when status is `completed` or `failed`
-//
-// Returns a wrapper object for the known response body format(s).
-//
-// Corresponds with GET /v1/bulk_imports/{id} (the `GetBulkImport` operationId).
-func (c *ClientWithResponses) GetBulkImportWithResponse(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*GetBulkImportResponse, error) {
-	rsp, err := c.GetBulkImport(ctx, id, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseGetBulkImportResponse(rsp)
 }
 
 // ListCatalogChecklistTemplatesWithResponse List catalog checklist templates
@@ -191732,8 +195899,8 @@ func (c *ClientWithResponses) ListIncidentsWithResponse(ctx context.Context, par
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
 // Corresponds with POST /v1/incidents (the `CreateIncident` operationId).
-func (c *ClientWithResponses) CreateIncidentWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateIncidentResponse, error) {
-	rsp, err := c.CreateIncidentWithBody(ctx, contentType, body, reqEditors...)
+func (c *ClientWithResponses) CreateIncidentWithBodyWithResponse(ctx context.Context, params *CreateIncidentParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateIncidentResponse, error) {
+	rsp, err := c.CreateIncidentWithBody(ctx, params, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -191747,8 +195914,8 @@ func (c *ClientWithResponses) CreateIncidentWithBodyWithResponse(ctx context.Con
 // Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
 //
 // Corresponds with POST /v1/incidents (the `CreateIncident` operationId).
-func (c *ClientWithResponses) CreateIncidentWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, body CreateIncidentApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateIncidentResponse, error) {
-	rsp, err := c.CreateIncidentWithApplicationVndAPIPlusJSONBody(ctx, body, reqEditors...)
+func (c *ClientWithResponses) CreateIncidentWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, params *CreateIncidentParams, body CreateIncidentApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateIncidentResponse, error) {
+	rsp, err := c.CreateIncidentWithApplicationVndAPIPlusJSONBody(ctx, params, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -193696,6 +197863,96 @@ func (c *ClientWithResponses) UpdateIncidentPostmortemWithApplicationVndAPIPlusJ
 	return ParseUpdateIncidentPostmortemResponse(rsp)
 }
 
+// ListPrivateAgentsWithResponse List private agents
+//
+// List this tenant's agents, including revoked and offline agents. Inventory pages omit provider snapshots to bound database and response costs; use Get private agent for provider inventory and last-reported health. Requires Private Agent management access plus the Private Agents and AI SRE features. Credentials and capability schemas are never returned.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/private_agents (the `ListPrivateAgents` operationId).
+func (c *ClientWithResponses) ListPrivateAgentsWithResponse(ctx context.Context, params *ListPrivateAgentsParams, reqEditors ...RequestEditorFn) (*ListPrivateAgentsResponse, error) {
+	rsp, err := c.ListPrivateAgents(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseListPrivateAgentsResponse(rsp)
+}
+
+// CreatePrivateAgentEnrollmentTokenWithResponse Create a one-time token for agent enrollment
+//
+// Issue a one-time token valid for 24 hours. No request body is required. Requires Private Agent management permission plus the Private Agents and AI SRE features. The agent uses this token for gRPC Enroll; the agent record is created on enrollment, not by this request. The plaintext is returned only here and is not recoverable. Repeated requests issue distinct tokens; this endpoint is not idempotent.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/private_agents/enrollment_tokens (the `CreatePrivateAgentEnrollmentToken` operationId).
+func (c *ClientWithResponses) CreatePrivateAgentEnrollmentTokenWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*CreatePrivateAgentEnrollmentTokenResponse, error) {
+	rsp, err := c.CreatePrivateAgentEnrollmentToken(ctx, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreatePrivateAgentEnrollmentTokenResponse(rsp)
+}
+
+// GetPrivateAgentWithResponse Get private agent
+//
+// Return provider inventory and last-reported health for one agent. Requires Private Agent read permission plus the Private Agents and AI SRE features. Credentials and capability schemas are never returned.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/private_agents/{id} (the `GetPrivateAgent` operationId).
+func (c *ClientWithResponses) GetPrivateAgentWithResponse(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*GetPrivateAgentResponse, error) {
+	rsp, err := c.GetPrivateAgent(ctx, id, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetPrivateAgentResponse(rsp)
+}
+
+// UpdatePrivateAgentWithBodyWithResponse Update private agent metadata
+//
+// Update routing metadata or pause tool execution without disconnecting the agent. The agent UUID and provider IDs remain the execution identities. Requires Private Agent update permission.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PATCH /v1/private_agents/{id} (the `UpdatePrivateAgent` operationId).
+func (c *ClientWithResponses) UpdatePrivateAgentWithBodyWithResponse(ctx context.Context, id ID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdatePrivateAgentResponse, error) {
+	rsp, err := c.UpdatePrivateAgentWithBody(ctx, id, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdatePrivateAgentResponse(rsp)
+}
+
+// UpdatePrivateAgentWithApplicationVndAPIPlusJSONBodyWithResponse Update private agent metadata
+//
+// Update routing metadata or pause tool execution without disconnecting the agent. The agent UUID and provider IDs remain the execution identities. Requires Private Agent update permission.
+//
+// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PATCH /v1/private_agents/{id} (the `UpdatePrivateAgent` operationId).
+func (c *ClientWithResponses) UpdatePrivateAgentWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, id ID, body UpdatePrivateAgentApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdatePrivateAgentResponse, error) {
+	rsp, err := c.UpdatePrivateAgentWithApplicationVndAPIPlusJSONBody(ctx, id, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdatePrivateAgentResponse(rsp)
+}
+
+// RevokePrivateAgentWithResponse Revoke private agent
+//
+// Invalidate access and refresh credentials and remove provider routing registrations. Requires Private Agent delete permission plus the Private Agents and AI SRE features. Retains the agent and invocation history. Repeated revocation is safe. An executing customer-side operation is not guaranteed to stop immediately. Use a new enrollment token to re-enroll a revoked installation.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/private_agents/{id}/revoke (the `RevokePrivateAgent` operationId).
+func (c *ClientWithResponses) RevokePrivateAgentWithResponse(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*RevokePrivateAgentResponse, error) {
+	rsp, err := c.RevokePrivateAgent(ctx, id, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseRevokePrivateAgentResponse(rsp)
+}
+
 // ListPulsesWithResponse List pulses
 //
 // Returns a wrapper object for the known response body format(s).
@@ -194889,7 +199146,7 @@ func (c *ClientWithResponses) ListShiftCoverageRequestsWithResponse(ctx context.
 
 // CreateShiftCoverageRequestWithBodyWithResponse creates shift coverage requests
 //
-// Creates coverage requests for the shifts overlapping the requested time range. A range can span multiple consecutive shifts (e.g. across a handoff), so one or more coverage requests may be created; the response is always a list. A coverage request broadcasts to schedule members so someone can volunteer to cover the shift.
+// Creates coverage requests for the shifts overlapping the requested time range. A range can span multiple consecutive shifts (e.g. across a handoff), so one or more coverage requests may be created; the response is always a list. A coverage request broadcasts to schedule members so someone can volunteer to cover the shift, or targets recipient_user_ids when targeted-shift-coverage is enabled.
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
@@ -194904,7 +199161,7 @@ func (c *ClientWithResponses) CreateShiftCoverageRequestWithBodyWithResponse(ctx
 
 // CreateShiftCoverageRequestWithApplicationVndAPIPlusJSONBodyWithResponse creates shift coverage requests
 //
-// Creates coverage requests for the shifts overlapping the requested time range. A range can span multiple consecutive shifts (e.g. across a handoff), so one or more coverage requests may be created; the response is always a list. A coverage request broadcasts to schedule members so someone can volunteer to cover the shift.
+// Creates coverage requests for the shifts overlapping the requested time range. A range can span multiple consecutive shifts (e.g. across a handoff), so one or more coverage requests may be created; the response is always a list. A coverage request broadcasts to schedule members so someone can volunteer to cover the shift, or targets recipient_user_ids when targeted-shift-coverage is enabled.
 //
 // Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
 //
@@ -195793,6 +200050,111 @@ func (c *ClientWithResponses) CreateStatusPageComponentWithApplicationVndAPIPlus
 		return nil, err
 	}
 	return ParseCreateStatusPageComponentResponse(rsp)
+}
+
+// ListStatusPageTeamsWithResponse Lists the teams with access to a status page
+//
+// # Lists the teams assigned to a status page, oldest first
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/status-pages/{status_page_id}/teams (the `ListStatusPageTeams` operationId).
+func (c *ClientWithResponses) ListStatusPageTeamsWithResponse(ctx context.Context, statusPageID string, params *ListStatusPageTeamsParams, reqEditors ...RequestEditorFn) (*ListStatusPageTeamsResponse, error) {
+	rsp, err := c.ListStatusPageTeams(ctx, statusPageID, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseListStatusPageTeamsResponse(rsp)
+}
+
+// CreateStatusPageTeamWithBodyWithResponse Grants a team access to a status page
+//
+// Assigns a team to a status page. Members of the team get the chosen permission level on that page in addition to their role. Requires an owner or admin role.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/status-pages/{status_page_id}/teams (the `CreateStatusPageTeam` operationId).
+func (c *ClientWithResponses) CreateStatusPageTeamWithBodyWithResponse(ctx context.Context, statusPageID string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateStatusPageTeamResponse, error) {
+	rsp, err := c.CreateStatusPageTeamWithBody(ctx, statusPageID, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateStatusPageTeamResponse(rsp)
+}
+
+// CreateStatusPageTeamWithApplicationVndAPIPlusJSONBodyWithResponse Grants a team access to a status page
+//
+// Assigns a team to a status page. Members of the team get the chosen permission level on that page in addition to their role. Requires an owner or admin role.
+//
+// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/status-pages/{status_page_id}/teams (the `CreateStatusPageTeam` operationId).
+func (c *ClientWithResponses) CreateStatusPageTeamWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, statusPageID string, body CreateStatusPageTeamApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateStatusPageTeamResponse, error) {
+	rsp, err := c.CreateStatusPageTeamWithApplicationVndAPIPlusJSONBody(ctx, statusPageID, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateStatusPageTeamResponse(rsp)
+}
+
+// DeleteStatusPageTeamWithResponse Removes a team's access to a status page
+//
+// Removes a team from a status page. Its members lose the page access the assignment granted on their next request. Requires an owner or admin role.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with DELETE /v1/status-pages/{status_page_id}/teams/{id} (the `DeleteStatusPageTeam` operationId).
+func (c *ClientWithResponses) DeleteStatusPageTeamWithResponse(ctx context.Context, statusPageID string, id ID, reqEditors ...RequestEditorFn) (*DeleteStatusPageTeamResponse, error) {
+	rsp, err := c.DeleteStatusPageTeam(ctx, statusPageID, id, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseDeleteStatusPageTeamResponse(rsp)
+}
+
+// GetStatusPageTeamWithResponse Retrieves a status page team assignment
+//
+// Retrieves a specific status page team assignment by id.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/status-pages/{status_page_id}/teams/{id} (the `GetStatusPageTeam` operationId).
+func (c *ClientWithResponses) GetStatusPageTeamWithResponse(ctx context.Context, statusPageID string, id ID, reqEditors ...RequestEditorFn) (*GetStatusPageTeamResponse, error) {
+	rsp, err := c.GetStatusPageTeam(ctx, statusPageID, id, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetStatusPageTeamResponse(rsp)
+}
+
+// UpdateStatusPageTeamWithBodyWithResponse Updates a status page team assignment
+//
+// Changes the permission level of a team on a status page. Requires an owner or admin role. To move the grant to another team, delete it and create a new one.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PUT /v1/status-pages/{status_page_id}/teams/{id} (the `UpdateStatusPageTeam` operationId).
+func (c *ClientWithResponses) UpdateStatusPageTeamWithBodyWithResponse(ctx context.Context, statusPageID string, id ID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateStatusPageTeamResponse, error) {
+	rsp, err := c.UpdateStatusPageTeamWithBody(ctx, statusPageID, id, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateStatusPageTeamResponse(rsp)
+}
+
+// UpdateStatusPageTeamWithApplicationVndAPIPlusJSONBodyWithResponse Updates a status page team assignment
+//
+// Changes the permission level of a team on a status page. Requires an owner or admin role. To move the grant to another team, delete it and create a new one.
+//
+// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PUT /v1/status-pages/{status_page_id}/teams/{id} (the `UpdateStatusPageTeam` operationId).
+func (c *ClientWithResponses) UpdateStatusPageTeamWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, statusPageID string, id ID, body UpdateStatusPageTeamApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateStatusPageTeamResponse, error) {
+	rsp, err := c.UpdateStatusPageTeamWithApplicationVndAPIPlusJSONBody(ctx, statusPageID, id, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateStatusPageTeamResponse(rsp)
 }
 
 // ListStatusPageTemplatesWithResponse List status page templates
@@ -197571,6 +201933,86 @@ func ParseStreamAiChatResponse(rsp *http.Response) (*StreamAiChatResponse, error
 	return response, nil
 }
 
+// ParseGetAlertConfigurationResponse parses an HTTP response from a GetAlertConfigurationWithResponse call
+func ParseGetAlertConfigurationResponse(rsp *http.Response) (*GetAlertConfigurationResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetAlertConfigurationResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest AlertConfigurationResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorsList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON404 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseUpdateAlertConfigurationResponse parses an HTTP response from a UpdateAlertConfigurationWithResponse call
+func ParseUpdateAlertConfigurationResponse(rsp *http.Response) (*UpdateAlertConfigurationResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &UpdateAlertConfigurationResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest AlertConfigurationResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest ErrorsList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorsList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest ErrorsList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON422 = &dest
+
+	}
+
+	return response, nil
+}
+
 // ParseListAlertEventsFeedResponse parses an HTTP response from a ListAlertEventsFeedWithResponse call
 func ParseListAlertEventsFeedResponse(rsp *http.Response) (*ListAlertEventsFeedResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
@@ -198023,133 +202465,6 @@ func ParseUpdateAlertGroupResponse(rsp *http.Response) (*UpdateAlertGroupRespons
 			return nil, err
 		}
 		response.ApplicationVndAPIJSON404 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseListAlertRetriggerRulesResponse parses an HTTP response from a ListAlertRetriggerRulesWithResponse call
-func ParseListAlertRetriggerRulesResponse(rsp *http.Response) (*ListAlertRetriggerRulesResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &ListAlertRetriggerRulesResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest AlertRetriggerRuleList
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.ApplicationVndAPIJSON200 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseCreateAlertRetriggerRuleResponse parses an HTTP response from a CreateAlertRetriggerRuleWithResponse call
-func ParseCreateAlertRetriggerRuleResponse(rsp *http.Response) (*CreateAlertRetriggerRuleResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &CreateAlertRetriggerRuleResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
-		var dest AlertRetriggerRuleResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.ApplicationVndAPIJSON201 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
-		var dest ErrorsList
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.ApplicationVndAPIJSON422 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseDeleteAlertRetriggerRuleResponse parses an HTTP response from a DeleteAlertRetriggerRuleWithResponse call
-func ParseDeleteAlertRetriggerRuleResponse(rsp *http.Response) (*DeleteAlertRetriggerRuleResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &DeleteAlertRetriggerRuleResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	return response, nil
-}
-
-// ParseGetAlertRetriggerRuleResponse parses an HTTP response from a GetAlertRetriggerRuleWithResponse call
-func ParseGetAlertRetriggerRuleResponse(rsp *http.Response) (*GetAlertRetriggerRuleResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &GetAlertRetriggerRuleResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest AlertRetriggerRuleResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.ApplicationVndAPIJSON200 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseUpdateAlertRetriggerRuleResponse parses an HTTP response from a UpdateAlertRetriggerRuleWithResponse call
-func ParseUpdateAlertRetriggerRuleResponse(rsp *http.Response) (*UpdateAlertRetriggerRuleResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &UpdateAlertRetriggerRuleResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest AlertRetriggerRuleResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.ApplicationVndAPIJSON200 = &dest
 
 	}
 
@@ -199161,12 +203476,26 @@ func ParseAcknowledgeAlertResponse(rsp *http.Response) (*AcknowledgeAlertRespons
 		}
 		response.ApplicationVndAPIJSON400 = &dest
 
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest ErrorsList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON403 = &dest
+
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
 		var dest ErrorsList
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.ApplicationVndAPIJSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest ErrorsList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON422 = &dest
 
 	}
 
@@ -199783,38 +204112,6 @@ func ParseUpdateAuthorizationResponse(rsp *http.Response) (*UpdateAuthorizationR
 		}
 		response.ApplicationVndAPIJSON404 = &dest
 
-	}
-
-	return response, nil
-}
-
-// ParseCreateBulkImportResponse parses an HTTP response from a CreateBulkImportWithResponse call
-func ParseCreateBulkImportResponse(rsp *http.Response) (*CreateBulkImportResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &CreateBulkImportResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	return response, nil
-}
-
-// ParseGetBulkImportResponse parses an HTTP response from a GetBulkImportWithResponse call
-func ParseGetBulkImportResponse(rsp *http.Response) (*GetBulkImportResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &GetBulkImportResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
 	}
 
 	return response, nil
@@ -207589,6 +211886,13 @@ func ParseCreateIncidentResponse(rsp *http.Response) (*CreateIncidentResponse, e
 	}
 
 	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest IncidentResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON200 = &dest
+
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
 		var dest IncidentResponse
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
@@ -210736,6 +215040,169 @@ func ParseUpdateIncidentPostmortemResponse(rsp *http.Response) (*UpdateIncidentP
 	return response, nil
 }
 
+// ParseListPrivateAgentsResponse parses an HTTP response from a ListPrivateAgentsWithResponse call
+func ParseListPrivateAgentsResponse(rsp *http.Response) (*ListPrivateAgentsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ListPrivateAgentsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest PrivateAgentList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON200 = &dest
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseCreatePrivateAgentEnrollmentTokenResponse parses an HTTP response from a CreatePrivateAgentEnrollmentTokenWithResponse call
+func ParseCreatePrivateAgentEnrollmentTokenResponse(rsp *http.Response) (*CreatePrivateAgentEnrollmentTokenResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CreatePrivateAgentEnrollmentTokenResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
+		var dest PrivateAgentEnrollmentTokenResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON201 = &dest
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseGetPrivateAgentResponse parses an HTTP response from a GetPrivateAgentWithResponse call
+func ParseGetPrivateAgentResponse(rsp *http.Response) (*GetPrivateAgentResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetPrivateAgentResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest PrivateAgentResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON200 = &dest
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseUpdatePrivateAgentResponse parses an HTTP response from a UpdatePrivateAgentWithResponse call
+func ParseUpdatePrivateAgentResponse(rsp *http.Response) (*UpdatePrivateAgentResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &UpdatePrivateAgentResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case rsp.StatusCode == 204:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest ErrorsList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON409 = &dest
+
+	case rsp.StatusCode == 422:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseRevokePrivateAgentResponse parses an HTTP response from a RevokePrivateAgentWithResponse call
+func ParseRevokePrivateAgentResponse(rsp *http.Response) (*RevokePrivateAgentResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &RevokePrivateAgentResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest PrivateAgentResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON200 = &dest
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
 // ParseListPulsesResponse parses an HTTP response from a ListPulsesWithResponse call
 func ParseListPulsesResponse(rsp *http.Response) (*ListPulsesResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
@@ -212266,6 +216733,13 @@ func ParseDeleteScheduleResponse(rsp *http.Response) (*DeleteScheduleResponse, e
 		}
 		response.ApplicationVndAPIJSON404 = &dest
 
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest ErrorsList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON422 = &dest
+
 	}
 
 	return response, nil
@@ -213685,6 +218159,13 @@ func ParseUpdateIncidentStatusPageResponse(rsp *http.Response) (*UpdateIncidentS
 		}
 		response.ApplicationVndAPIJSON404 = &dest
 
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest ErrorsList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON422 = &dest
+
 	}
 
 	return response, nil
@@ -214060,6 +218541,178 @@ func ParseCreateStatusPageComponentResponse(rsp *http.Response) (*CreateStatusPa
 	return response, nil
 }
 
+// ParseListStatusPageTeamsResponse parses an HTTP response from a ListStatusPageTeamsWithResponse call
+func ParseListStatusPageTeamsResponse(rsp *http.Response) (*ListStatusPageTeamsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ListStatusPageTeamsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest StatusPageTeamList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseCreateStatusPageTeamResponse parses an HTTP response from a CreateStatusPageTeamWithResponse call
+func ParseCreateStatusPageTeamResponse(rsp *http.Response) (*CreateStatusPageTeamResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CreateStatusPageTeamResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
+		var dest StatusPageTeamResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON201 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorsList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorsList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest ErrorsList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON422 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseDeleteStatusPageTeamResponse parses an HTTP response from a DeleteStatusPageTeamWithResponse call
+func ParseDeleteStatusPageTeamResponse(rsp *http.Response) (*DeleteStatusPageTeamResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &DeleteStatusPageTeamResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest StatusPageTeamResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorsList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON404 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetStatusPageTeamResponse parses an HTTP response from a GetStatusPageTeamWithResponse call
+func ParseGetStatusPageTeamResponse(rsp *http.Response) (*GetStatusPageTeamResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetStatusPageTeamResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest StatusPageTeamResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorsList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON404 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseUpdateStatusPageTeamResponse parses an HTTP response from a UpdateStatusPageTeamWithResponse call
+func ParseUpdateStatusPageTeamResponse(rsp *http.Response) (*UpdateStatusPageTeamResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &UpdateStatusPageTeamResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest StatusPageTeamResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorsList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON404 = &dest
+
+	}
+
+	return response, nil
+}
+
 // ParseListStatusPageTemplatesResponse parses an HTTP response from a ListStatusPageTemplatesWithResponse call
 func ParseListStatusPageTemplatesResponse(rsp *http.Response) (*ListStatusPageTemplatesResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
@@ -214411,6 +219064,13 @@ func ParseCreateTeamResponse(rsp *http.Response) (*CreateTeamResponse, error) {
 		}
 		response.ApplicationVndAPIJSON401 = &dest
 
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest ErrorsList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON403 = &dest
+
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
 		var dest ErrorsList
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
@@ -214490,6 +219150,13 @@ func ParseBulkUpsertGroupsResponse(rsp *http.Response) (*BulkUpsertGroupsRespons
 			return nil, err
 		}
 		response.ApplicationVndAPIJSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest ErrorsList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON403 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
 		var dest BulkUpsertGroups422ApplicationVndAPIPlusJSONResponseBody
@@ -214655,6 +219322,13 @@ func ParseUpdateTeamResponse(rsp *http.Response) (*UpdateTeamResponse, error) {
 			return nil, err
 		}
 		response.ApplicationVndAPIJSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest ErrorsList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON403 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
 		var dest ErrorsList
