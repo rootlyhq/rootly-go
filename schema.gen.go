@@ -1742,6 +1742,7 @@ const (
 	AlertEventActionAcknowledged            AlertEventAction = "acknowledged"
 	AlertEventActionAdded                   AlertEventAction = "added"
 	AlertEventActionAiSreDelegated          AlertEventAction = "ai_sre_delegated"
+	AlertEventActionAiSreRequested          AlertEventAction = "ai_sre_requested"
 	AlertEventActionAnswered                AlertEventAction = "answered"
 	AlertEventActionAttached                AlertEventAction = "attached"
 	AlertEventActionCallLifecycle           AlertEventAction = "call_lifecycle"
@@ -1788,6 +1789,8 @@ func (e AlertEventAction) Valid() bool {
 	case AlertEventActionAdded:
 		return true
 	case AlertEventActionAiSreDelegated:
+		return true
+	case AlertEventActionAiSreRequested:
 		return true
 	case AlertEventActionAnswered:
 		return true
@@ -2576,6 +2579,24 @@ func (e AlertRetriggerRuleResponseDataType) Valid() bool {
 	}
 }
 
+// Defines values for AlertRouteRulesAiSreProvider.
+const (
+	AlertRouteRulesAiSreProviderDevin  AlertRouteRulesAiSreProvider = "devin"
+	AlertRouteRulesAiSreProviderRootly AlertRouteRulesAiSreProvider = "rootly"
+)
+
+// Valid indicates whether the value is a known member of the AlertRouteRulesAiSreProvider enum.
+func (e AlertRouteRulesAiSreProvider) Valid() bool {
+	switch e {
+	case AlertRouteRulesAiSreProviderDevin:
+		return true
+	case AlertRouteRulesAiSreProviderRootly:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for AlertRouteRulesConditionGroupsConditionsConditionableType.
 const (
 	AlertRouteRulesConditionGroupsConditionsConditionableTypeAlertField AlertRouteRulesConditionGroupsConditionsConditionableType = "AlertField"
@@ -2696,6 +2717,24 @@ const (
 func (e AlertRouteResponseDataType) Valid() bool {
 	switch e {
 	case AlertRouteResponseDataTypeAlertRoutes:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AlertRoutingRuleAiSreProvider.
+const (
+	AlertRoutingRuleAiSreProviderDevin  AlertRoutingRuleAiSreProvider = "devin"
+	AlertRoutingRuleAiSreProviderRootly AlertRoutingRuleAiSreProvider = "rootly"
+)
+
+// Valid indicates whether the value is a known member of the AlertRoutingRuleAiSreProvider enum.
+func (e AlertRoutingRuleAiSreProvider) Valid() bool {
+	switch e {
+	case AlertRoutingRuleAiSreProviderDevin:
+		return true
+	case AlertRoutingRuleAiSreProviderRootly:
 		return true
 	default:
 		return false
@@ -3950,6 +3989,16 @@ const (
 	AuditItemTypeEscalationPolicyPath              AuditItemType = "EscalationPolicyPath"
 	AuditItemTypeExportJob                         AuditItemType = "ExportJob"
 	AuditItemTypeFormField                         AuditItemType = "FormField"
+	AuditItemTypeFormFieldSelection                AuditItemType = "FormFieldSelection"
+	AuditItemTypeFormFieldSelectionCatalogEntity   AuditItemType = "FormFieldSelectionCatalogEntity"
+	AuditItemTypeFormFieldSelectionCause           AuditItemType = "FormFieldSelectionCause"
+	AuditItemTypeFormFieldSelectionEnvironment     AuditItemType = "FormFieldSelectionEnvironment"
+	AuditItemTypeFormFieldSelectionFunctionality   AuditItemType = "FormFieldSelectionFunctionality"
+	AuditItemTypeFormFieldSelectionGroup           AuditItemType = "FormFieldSelectionGroup"
+	AuditItemTypeFormFieldSelectionIncidentType    AuditItemType = "FormFieldSelectionIncidentType"
+	AuditItemTypeFormFieldSelectionOption          AuditItemType = "FormFieldSelectionOption"
+	AuditItemTypeFormFieldSelectionService         AuditItemType = "FormFieldSelectionService"
+	AuditItemTypeFormFieldSelectionUser            AuditItemType = "FormFieldSelectionUser"
 	AuditItemTypeFunctionality                     AuditItemType = "Functionality"
 	AuditItemTypeGeniusWorkflow                    AuditItemType = "GeniusWorkflow"
 	AuditItemTypeGeniusWorkflowGroup               AuditItemType = "GeniusWorkflowGroup"
@@ -3989,6 +4038,10 @@ const (
 	AuditItemTypeOnCallRole                        AuditItemType = "OnCallRole"
 	AuditItemTypePlaybook                          AuditItemType = "Playbook"
 	AuditItemTypePlaybookTask                      AuditItemType = "PlaybookTask"
+	AuditItemTypeProblem                           AuditItemType = "Problem"
+	AuditItemTypeProblemActionItem                 AuditItemType = "ProblemActionItem"
+	AuditItemTypeProblemLink                       AuditItemType = "ProblemLink"
+	AuditItemTypeProblemRoleAssignment             AuditItemType = "ProblemRoleAssignment"
 	AuditItemTypeRole                              AuditItemType = "Role"
 	AuditItemTypeSchedule                          AuditItemType = "Schedule"
 	AuditItemTypeSecret                            AuditItemType = "Secret"
@@ -4044,6 +4097,26 @@ func (e AuditItemType) Valid() bool {
 	case AuditItemTypeExportJob:
 		return true
 	case AuditItemTypeFormField:
+		return true
+	case AuditItemTypeFormFieldSelection:
+		return true
+	case AuditItemTypeFormFieldSelectionCatalogEntity:
+		return true
+	case AuditItemTypeFormFieldSelectionCause:
+		return true
+	case AuditItemTypeFormFieldSelectionEnvironment:
+		return true
+	case AuditItemTypeFormFieldSelectionFunctionality:
+		return true
+	case AuditItemTypeFormFieldSelectionGroup:
+		return true
+	case AuditItemTypeFormFieldSelectionIncidentType:
+		return true
+	case AuditItemTypeFormFieldSelectionOption:
+		return true
+	case AuditItemTypeFormFieldSelectionService:
+		return true
+	case AuditItemTypeFormFieldSelectionUser:
 		return true
 	case AuditItemTypeFunctionality:
 		return true
@@ -4122,6 +4195,14 @@ func (e AuditItemType) Valid() bool {
 	case AuditItemTypePlaybook:
 		return true
 	case AuditItemTypePlaybookTask:
+		return true
+	case AuditItemTypeProblem:
+		return true
+	case AuditItemTypeProblemActionItem:
+		return true
+	case AuditItemTypeProblemLink:
+		return true
+	case AuditItemTypeProblemRoleAssignment:
 		return true
 	case AuditItemTypeRole:
 		return true
@@ -8539,6 +8620,7 @@ func (e EscalationPolicyLevelNotificationTargetParamsTeamMembers) Valid() bool {
 
 // Defines values for EscalationPolicyLevelNotificationTargetParamsType.
 const (
+	EscalationPolicyLevelNotificationTargetParamsTypeAiSre                 EscalationPolicyLevelNotificationTargetParamsType = "ai_sre"
 	EscalationPolicyLevelNotificationTargetParamsTypeMicrosoftTeamsChannel EscalationPolicyLevelNotificationTargetParamsType = "microsoft_teams_channel"
 	EscalationPolicyLevelNotificationTargetParamsTypeSchedule              EscalationPolicyLevelNotificationTargetParamsType = "schedule"
 	EscalationPolicyLevelNotificationTargetParamsTypeService               EscalationPolicyLevelNotificationTargetParamsType = "service"
@@ -8550,6 +8632,8 @@ const (
 // Valid indicates whether the value is a known member of the EscalationPolicyLevelNotificationTargetParamsType enum.
 func (e EscalationPolicyLevelNotificationTargetParamsType) Valid() bool {
 	switch e {
+	case EscalationPolicyLevelNotificationTargetParamsTypeAiSre:
+		return true
 	case EscalationPolicyLevelNotificationTargetParamsTypeMicrosoftTeamsChannel:
 		return true
 	case EscalationPolicyLevelNotificationTargetParamsTypeSchedule:
@@ -16136,6 +16220,21 @@ func (e NewAlertRetriggerRuleDataType) Valid() bool {
 	}
 }
 
+// Defines values for NewAlertRouteDataAttributesRulesAiSreProvider.
+const (
+	NewAlertRouteDataAttributesRulesAiSreProviderRootly NewAlertRouteDataAttributesRulesAiSreProvider = "rootly"
+)
+
+// Valid indicates whether the value is a known member of the NewAlertRouteDataAttributesRulesAiSreProvider enum.
+func (e NewAlertRouteDataAttributesRulesAiSreProvider) Valid() bool {
+	switch e {
+	case NewAlertRouteDataAttributesRulesAiSreProviderRootly:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for NewAlertRouteDataAttributesRulesConditionGroupsConditionsConditionableType.
 const (
 	NewAlertRouteDataAttributesRulesConditionGroupsConditionsConditionableTypeAlertField NewAlertRouteDataAttributesRulesConditionGroupsConditionsConditionableType = "AlertField"
@@ -16241,6 +16340,21 @@ const (
 func (e NewAlertRouteDataType) Valid() bool {
 	switch e {
 	case NewAlertRouteDataTypeAlertRoutes:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for NewAlertRoutingRuleDataAttributesAiSreProvider.
+const (
+	NewAlertRoutingRuleDataAttributesAiSreProviderRootly NewAlertRoutingRuleDataAttributesAiSreProvider = "rootly"
+)
+
+// Valid indicates whether the value is a known member of the NewAlertRoutingRuleDataAttributesAiSreProvider enum.
+func (e NewAlertRoutingRuleDataAttributesAiSreProvider) Valid() bool {
+	switch e {
+	case NewAlertRoutingRuleDataAttributesAiSreProviderRootly:
 		return true
 	default:
 		return false
@@ -18892,6 +19006,7 @@ func (e NewEscalationPolicyLevelDataAttributesNotificationTargetParamsTeamMember
 
 // Defines values for NewEscalationPolicyLevelDataAttributesNotificationTargetParamsType.
 const (
+	NewEscalationPolicyLevelDataAttributesNotificationTargetParamsTypeAiSre                 NewEscalationPolicyLevelDataAttributesNotificationTargetParamsType = "ai_sre"
 	NewEscalationPolicyLevelDataAttributesNotificationTargetParamsTypeMicrosoftTeamsChannel NewEscalationPolicyLevelDataAttributesNotificationTargetParamsType = "microsoft_teams_channel"
 	NewEscalationPolicyLevelDataAttributesNotificationTargetParamsTypeSchedule              NewEscalationPolicyLevelDataAttributesNotificationTargetParamsType = "schedule"
 	NewEscalationPolicyLevelDataAttributesNotificationTargetParamsTypeService               NewEscalationPolicyLevelDataAttributesNotificationTargetParamsType = "service"
@@ -18903,6 +19018,8 @@ const (
 // Valid indicates whether the value is a known member of the NewEscalationPolicyLevelDataAttributesNotificationTargetParamsType enum.
 func (e NewEscalationPolicyLevelDataAttributesNotificationTargetParamsType) Valid() bool {
 	switch e {
+	case NewEscalationPolicyLevelDataAttributesNotificationTargetParamsTypeAiSre:
+		return true
 	case NewEscalationPolicyLevelDataAttributesNotificationTargetParamsTypeMicrosoftTeamsChannel:
 		return true
 	case NewEscalationPolicyLevelDataAttributesNotificationTargetParamsTypeSchedule:
@@ -26519,6 +26636,27 @@ func (e NewStatusPageDataAttributesAuthenticationMethod) Valid() bool {
 	}
 }
 
+// Defines values for NewStatusPageDataAttributesPublicationStatus.
+const (
+	NewStatusPageDataAttributesPublicationStatusActive      NewStatusPageDataAttributesPublicationStatus = "active"
+	NewStatusPageDataAttributesPublicationStatusDraft       NewStatusPageDataAttributesPublicationStatus = "draft"
+	NewStatusPageDataAttributesPublicationStatusUnpublished NewStatusPageDataAttributesPublicationStatus = "unpublished"
+)
+
+// Valid indicates whether the value is a known member of the NewStatusPageDataAttributesPublicationStatus enum.
+func (e NewStatusPageDataAttributesPublicationStatus) Valid() bool {
+	switch e {
+	case NewStatusPageDataAttributesPublicationStatusActive:
+		return true
+	case NewStatusPageDataAttributesPublicationStatusDraft:
+		return true
+	case NewStatusPageDataAttributesPublicationStatusUnpublished:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for NewStatusPageDataAttributesSamlNameIdentifierFormat.
 const (
 	NewStatusPageDataAttributesSamlNameIdentifierFormatUrnOasisNamesTcSAML11NameidFormatEmailAddress NewStatusPageDataAttributesSamlNameIdentifierFormat = "urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress"
@@ -28415,6 +28553,21 @@ const (
 func (e PageVictorOpsOnCallRespondersTaskParamsTaskType) Valid() bool {
 	switch e {
 	case PageVictorOpsOnCallRespondersTaskParamsTaskTypePageVictorOpsOnCallResponders:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PatchAlertRouteDataAttributesRulesAiSreProvider.
+const (
+	PatchAlertRouteDataAttributesRulesAiSreProviderRootly PatchAlertRouteDataAttributesRulesAiSreProvider = "rootly"
+)
+
+// Valid indicates whether the value is a known member of the PatchAlertRouteDataAttributesRulesAiSreProvider enum.
+func (e PatchAlertRouteDataAttributesRulesAiSreProvider) Valid() bool {
+	switch e {
+	case PatchAlertRouteDataAttributesRulesAiSreProviderRootly:
 		return true
 	default:
 		return false
@@ -32600,6 +32753,27 @@ func (e StatusPageAuthenticationMethod) Valid() bool {
 	}
 }
 
+// Defines values for StatusPagePublicationStatus.
+const (
+	StatusPagePublicationStatusActive      StatusPagePublicationStatus = "active"
+	StatusPagePublicationStatusDraft       StatusPagePublicationStatus = "draft"
+	StatusPagePublicationStatusUnpublished StatusPagePublicationStatus = "unpublished"
+)
+
+// Valid indicates whether the value is a known member of the StatusPagePublicationStatus enum.
+func (e StatusPagePublicationStatus) Valid() bool {
+	switch e {
+	case StatusPagePublicationStatusActive:
+		return true
+	case StatusPagePublicationStatusDraft:
+		return true
+	case StatusPagePublicationStatusUnpublished:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for StatusPageSamlNameIdentifierFormat.
 const (
 	StatusPageSamlNameIdentifierFormatUrnOasisNamesTcSAML11NameidFormatEmailAddress StatusPageSamlNameIdentifierFormat = "urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress"
@@ -34082,6 +34256,21 @@ func (e UpdateAlertRetriggerRuleDataType) Valid() bool {
 	}
 }
 
+// Defines values for UpdateAlertRouteDataAttributesRulesAiSreProvider.
+const (
+	UpdateAlertRouteDataAttributesRulesAiSreProviderRootly UpdateAlertRouteDataAttributesRulesAiSreProvider = "rootly"
+)
+
+// Valid indicates whether the value is a known member of the UpdateAlertRouteDataAttributesRulesAiSreProvider enum.
+func (e UpdateAlertRouteDataAttributesRulesAiSreProvider) Valid() bool {
+	switch e {
+	case UpdateAlertRouteDataAttributesRulesAiSreProviderRootly:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for UpdateAlertRouteDataAttributesRulesConditionGroupsConditionsConditionableType.
 const (
 	UpdateAlertRouteDataAttributesRulesConditionGroupsConditionsConditionableTypeAlertField UpdateAlertRouteDataAttributesRulesConditionGroupsConditionsConditionableType = "AlertField"
@@ -34187,6 +34376,21 @@ const (
 func (e UpdateAlertRouteDataType) Valid() bool {
 	switch e {
 	case UpdateAlertRouteDataTypeAlertRoutes:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateAlertRoutingRuleDataAttributesAiSreProvider.
+const (
+	UpdateAlertRoutingRuleDataAttributesAiSreProviderRootly UpdateAlertRoutingRuleDataAttributesAiSreProvider = "rootly"
+)
+
+// Valid indicates whether the value is a known member of the UpdateAlertRoutingRuleDataAttributesAiSreProvider enum.
+func (e UpdateAlertRoutingRuleDataAttributesAiSreProvider) Valid() bool {
+	switch e {
+	case UpdateAlertRoutingRuleDataAttributesAiSreProviderRootly:
 		return true
 	default:
 		return false
@@ -36817,6 +37021,7 @@ func (e UpdateEscalationPolicyLevelDataAttributesNotificationTargetParamsTeamMem
 
 // Defines values for UpdateEscalationPolicyLevelDataAttributesNotificationTargetParamsType.
 const (
+	UpdateEscalationPolicyLevelDataAttributesNotificationTargetParamsTypeAiSre                 UpdateEscalationPolicyLevelDataAttributesNotificationTargetParamsType = "ai_sre"
 	UpdateEscalationPolicyLevelDataAttributesNotificationTargetParamsTypeMicrosoftTeamsChannel UpdateEscalationPolicyLevelDataAttributesNotificationTargetParamsType = "microsoft_teams_channel"
 	UpdateEscalationPolicyLevelDataAttributesNotificationTargetParamsTypeSchedule              UpdateEscalationPolicyLevelDataAttributesNotificationTargetParamsType = "schedule"
 	UpdateEscalationPolicyLevelDataAttributesNotificationTargetParamsTypeService               UpdateEscalationPolicyLevelDataAttributesNotificationTargetParamsType = "service"
@@ -36828,6 +37033,8 @@ const (
 // Valid indicates whether the value is a known member of the UpdateEscalationPolicyLevelDataAttributesNotificationTargetParamsType enum.
 func (e UpdateEscalationPolicyLevelDataAttributesNotificationTargetParamsType) Valid() bool {
 	switch e {
+	case UpdateEscalationPolicyLevelDataAttributesNotificationTargetParamsTypeAiSre:
+		return true
 	case UpdateEscalationPolicyLevelDataAttributesNotificationTargetParamsTypeMicrosoftTeamsChannel:
 		return true
 	case UpdateEscalationPolicyLevelDataAttributesNotificationTargetParamsTypeSchedule:
@@ -45131,6 +45338,27 @@ func (e UpdateStatusPageDataAttributesAuthenticationMethod) Valid() bool {
 	}
 }
 
+// Defines values for UpdateStatusPageDataAttributesPublicationStatus.
+const (
+	UpdateStatusPageDataAttributesPublicationStatusActive      UpdateStatusPageDataAttributesPublicationStatus = "active"
+	UpdateStatusPageDataAttributesPublicationStatusDraft       UpdateStatusPageDataAttributesPublicationStatus = "draft"
+	UpdateStatusPageDataAttributesPublicationStatusUnpublished UpdateStatusPageDataAttributesPublicationStatus = "unpublished"
+)
+
+// Valid indicates whether the value is a known member of the UpdateStatusPageDataAttributesPublicationStatus enum.
+func (e UpdateStatusPageDataAttributesPublicationStatus) Valid() bool {
+	switch e {
+	case UpdateStatusPageDataAttributesPublicationStatusActive:
+		return true
+	case UpdateStatusPageDataAttributesPublicationStatusDraft:
+		return true
+	case UpdateStatusPageDataAttributesPublicationStatusUnpublished:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for UpdateStatusPageDataAttributesSamlNameIdentifierFormat.
 const (
 	UpdateStatusPageDataAttributesSamlNameIdentifierFormatUrnOasisNamesTcSAML11NameidFormatEmailAddress UpdateStatusPageDataAttributesSamlNameIdentifierFormat = "urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress"
@@ -47039,6 +47267,7 @@ const (
 	ListAlertEventsFeedParamsFilterActionAcknowledged            ListAlertEventsFeedParamsFilterAction = "acknowledged"
 	ListAlertEventsFeedParamsFilterActionAdded                   ListAlertEventsFeedParamsFilterAction = "added"
 	ListAlertEventsFeedParamsFilterActionAiSreDelegated          ListAlertEventsFeedParamsFilterAction = "ai_sre_delegated"
+	ListAlertEventsFeedParamsFilterActionAiSreRequested          ListAlertEventsFeedParamsFilterAction = "ai_sre_requested"
 	ListAlertEventsFeedParamsFilterActionAnswered                ListAlertEventsFeedParamsFilterAction = "answered"
 	ListAlertEventsFeedParamsFilterActionAttached                ListAlertEventsFeedParamsFilterAction = "attached"
 	ListAlertEventsFeedParamsFilterActionCallLifecycle           ListAlertEventsFeedParamsFilterAction = "call_lifecycle"
@@ -47085,6 +47314,8 @@ func (e ListAlertEventsFeedParamsFilterAction) Valid() bool {
 	case ListAlertEventsFeedParamsFilterActionAdded:
 		return true
 	case ListAlertEventsFeedParamsFilterActionAiSreDelegated:
+		return true
+	case ListAlertEventsFeedParamsFilterActionAiSreRequested:
 		return true
 	case ListAlertEventsFeedParamsFilterActionAnswered:
 		return true
@@ -50235,6 +50466,8 @@ type AlertRoute struct {
 	Name          string               `json:"name"`
 	OwningTeamIDs []openapi_types.UUID `json:"owning_team_ids,omitempty"`
 	Rules         []struct {
+		// AiSreProvider AI SRE provider that investigates alerts matching this rule. Null disables AI SRE for the rule
+		AiSreProvider   nullable.Nullable[AlertRouteRulesAiSreProvider] `json:"ai_sre_provider,omitempty"`
 		ConditionGroups []struct {
 			Conditions []struct {
 				// AlertUrgencyIDs The Alert Urgency IDs to check in the condition
@@ -50277,6 +50510,9 @@ type AlertRoute struct {
 		Position *int `json:"position,omitempty"`
 	} `json:"rules,omitempty"`
 }
+
+// AlertRouteRulesAiSreProvider AI SRE provider that investigates alerts matching this rule. Null disables AI SRE for the rule
+type AlertRouteRulesAiSreProvider string
 
 // AlertRouteRulesConditionGroupsConditionsConditionableType The type of the conditionable
 type AlertRouteRulesConditionGroupsConditionsConditionableType string
@@ -50322,6 +50558,9 @@ type AlertRouteResponseDataType string
 
 // AlertRoutingRule defines model for alert_routing_rule.
 type AlertRoutingRule struct {
+	// AiSreProvider AI SRE provider that investigates alerts matching this rule. Null disables AI SRE for the rule
+	AiSreProvider nullable.Nullable[AlertRoutingRuleAiSreProvider] `json:"ai_sre_provider,omitempty"`
+
 	// AlertsSourceID The ID of the alerts source
 	AlertsSourceID openapi_types.UUID `json:"alerts_source_id"`
 
@@ -50418,6 +50657,9 @@ type AlertRoutingRule struct {
 	// UpdatedAt Date of last update
 	UpdatedAt string `json:"updated_at"`
 }
+
+// AlertRoutingRuleAiSreProvider AI SRE provider that investigates alerts matching this rule. Null disables AI SRE for the rule
+type AlertRoutingRuleAiSreProvider string
 
 // AlertRoutingRuleConditionGroupsConditionsPropertyFieldConditionType The condition type of the property field
 type AlertRoutingRuleConditionGroupsConditionsPropertyFieldConditionType string
@@ -55293,7 +55535,7 @@ type EscalationPolicyLevel struct {
 
 	// NotificationTargetParams Escalation level's notification targets
 	NotificationTargetParams []nullable.Nullable[struct {
-		// ID The ID of notification target
+		// ID The ID of notification target. If ai_sre, then the AI SRE provider (eg. rootly). New ai_sre targets accept only rootly. A provider already saved on the level (rootly, devin) may be sent back unchanged. Repeated ai_sre providers are saved once.
 		ID string `json:"id"`
 
 		// TeamMembers For targets with type=team, controls whether to notify admins, all team members, or escalate to team EP.
@@ -59313,6 +59555,8 @@ type NewAlertRoute struct {
 			Name          string               `json:"name"`
 			OwningTeamIDs []openapi_types.UUID `json:"owning_team_ids,omitempty"`
 			Rules         []struct {
+				// AiSreProvider AI SRE provider for matching alerts. Null disables it. A value listed in x-retained-enum that is already saved on the rule may be sent back unchanged
+				AiSreProvider   nullable.Nullable[NewAlertRouteDataAttributesRulesAiSreProvider] `json:"ai_sre_provider,omitempty"`
 				ConditionGroups []struct {
 					Conditions []struct {
 						// AlertUrgencyIDs The Alert Urgency IDs to check in the condition
@@ -59359,6 +59603,9 @@ type NewAlertRoute struct {
 	} `json:"data,omitempty"`
 }
 
+// NewAlertRouteDataAttributesRulesAiSreProvider AI SRE provider for matching alerts. Null disables it. A value listed in x-retained-enum that is already saved on the rule may be sent back unchanged
+type NewAlertRouteDataAttributesRulesAiSreProvider string
+
 // NewAlertRouteDataAttributesRulesConditionGroupsConditionsConditionableType The type of the conditionable
 type NewAlertRouteDataAttributesRulesConditionGroupsConditionsConditionableType string
 
@@ -59378,6 +59625,9 @@ type NewAlertRouteDataType string
 type NewAlertRoutingRule struct {
 	Data struct {
 		Attributes struct {
+			// AiSreProvider AI SRE provider for matching alerts. Null disables it. A value listed in x-retained-enum that is already saved on the rule may be sent back unchanged
+			AiSreProvider nullable.Nullable[NewAlertRoutingRuleDataAttributesAiSreProvider] `json:"ai_sre_provider,omitempty"`
+
 			// AlertsSourceID The ID of the alerts source
 			AlertsSourceID openapi_types.UUID `json:"alerts_source_id"`
 
@@ -59422,6 +59672,9 @@ type NewAlertRoutingRule struct {
 		Type NewAlertRoutingRuleDataType `json:"type"`
 	} `json:"data"`
 }
+
+// NewAlertRoutingRuleDataAttributesAiSreProvider AI SRE provider for matching alerts. Null disables it. A value listed in x-retained-enum that is already saved on the rule may be sent back unchanged
+type NewAlertRoutingRuleDataAttributesAiSreProvider string
 
 // NewAlertRoutingRuleDataAttributesConditionType The type of condition for the alert routing rule
 type NewAlertRoutingRuleDataAttributesConditionType string
@@ -60563,7 +60816,7 @@ type NewEscalationPolicyLevel struct {
 
 			// NotificationTargetParams Escalation level's notification targets
 			NotificationTargetParams []nullable.Nullable[struct {
-				// ID The ID of notification target. If Slack channel, then id of the slack channel (eg. C06Q2JK7RQW). If Microsoft Teams channel, then the Rootly channel UUID.
+				// ID The ID of notification target. If Slack channel, then id of the slack channel (eg. C06Q2JK7RQW). If Microsoft Teams channel, then the Rootly channel UUID. If ai_sre, then the AI SRE provider (eg. rootly). New ai_sre targets accept only rootly. A provider already saved on the level (rootly, devin) may be sent back unchanged. Repeated ai_sre providers are saved once.
 				ID string `json:"id"`
 
 				// TeamMembers For targets with type=team, controls whether to notify admins, all team members, or escalate to team EP.
@@ -63523,7 +63776,8 @@ type NewStatusPage struct {
 			// Description The description of the status page
 			Description nullable.Nullable[string] `json:"description,omitempty"`
 
-			// Enabled Enabled / Disable the status page
+			// Enabled Deprecated. Use publication_status instead. True only when the status page is active.
+			// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
 			Enabled nullable.Nullable[bool] `json:"enabled,omitempty"`
 
 			// ExternalDomainNames External domain names attached to the status page
@@ -63552,6 +63806,9 @@ type NewStatusPage struct {
 
 			// PublicTitle The public title of the status page
 			PublicTitle nullable.Nullable[string] `json:"public_title,omitempty"`
+
+			// PublicationStatus Publication status of the status page. Draft pages have never been published, active pages are live, and unpublished pages were taken down.
+			PublicationStatus nullable.Nullable[NewStatusPageDataAttributesPublicationStatus] `json:"publication_status,omitempty"`
 
 			// SamlIdpCert SAML IdP certificate
 			SamlIdpCert nullable.Nullable[string] `json:"saml_idp_cert,omitempty"`
@@ -63603,6 +63860,9 @@ type NewStatusPage struct {
 
 // NewStatusPageDataAttributesAuthenticationMethod Authentication method
 type NewStatusPageDataAttributesAuthenticationMethod string
+
+// NewStatusPageDataAttributesPublicationStatus Publication status of the status page. Draft pages have never been published, active pages are live, and unpublished pages were taken down.
+type NewStatusPageDataAttributesPublicationStatus string
 
 // NewStatusPageDataAttributesSamlNameIdentifierFormat SAML name identifier format
 type NewStatusPageDataAttributesSamlNameIdentifierFormat string
@@ -65049,7 +65309,10 @@ type PatchAlertRoute struct {
 			Rules         []struct {
 				// UnderscoreDestroy Set to true to delete this rule. When true, only the id field is required.
 				UnderscoreDestroy *bool `json:"_destroy,omitempty"`
-				ConditionGroups   []struct {
+
+				// AiSreProvider AI SRE provider for matching alerts. Null disables it. A value listed in x-retained-enum that is already saved on the rule may be sent back unchanged
+				AiSreProvider   nullable.Nullable[PatchAlertRouteDataAttributesRulesAiSreProvider] `json:"ai_sre_provider,omitempty"`
+				ConditionGroups []struct {
 					// UnderscoreDestroy Set to true to delete this condition group
 					UnderscoreDestroy *bool `json:"_destroy,omitempty"`
 					Conditions        []struct {
@@ -65117,6 +65380,9 @@ type PatchAlertRoute struct {
 		Type PatchAlertRouteDataType `json:"type"`
 	} `json:"data"`
 }
+
+// PatchAlertRouteDataAttributesRulesAiSreProvider AI SRE provider for matching alerts. Null disables it. A value listed in x-retained-enum that is already saved on the rule may be sent back unchanged
+type PatchAlertRouteDataAttributesRulesAiSreProvider string
 
 // PatchAlertRouteDataAttributesRulesConditionGroupsConditionsConditionableType The type of the conditionable
 type PatchAlertRouteDataAttributesRulesConditionGroupsConditionsConditionableType string
@@ -68290,7 +68556,8 @@ type StatusPage struct {
 	// Description The description of the status page
 	Description nullable.Nullable[string] `json:"description,omitempty"`
 
-	// Enabled Enabled / Disable the status page
+	// Enabled Deprecated. Use publication_status instead. True only when the status page is active.
+	// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
 	Enabled nullable.Nullable[bool] `json:"enabled,omitempty"`
 
 	// ExternalDomainNames External domain names attached to the status page
@@ -68319,6 +68586,9 @@ type StatusPage struct {
 
 	// PublicTitle The public title of the status page
 	PublicTitle nullable.Nullable[string] `json:"public_title,omitempty"`
+
+	// PublicationStatus Publication status of the status page. Draft pages have never been published, active pages are live, and unpublished pages were taken down.
+	PublicationStatus nullable.Nullable[StatusPagePublicationStatus] `json:"publication_status,omitempty"`
 
 	// SamlIdpCert SAML IdP certificate
 	SamlIdpCert nullable.Nullable[string] `json:"saml_idp_cert,omitempty"`
@@ -68374,6 +68644,9 @@ type StatusPage struct {
 
 // StatusPageAuthenticationMethod Authentication method
 type StatusPageAuthenticationMethod string
+
+// StatusPagePublicationStatus Publication status of the status page. Draft pages have never been published, active pages are live, and unpublished pages were taken down.
+type StatusPagePublicationStatus string
 
 // StatusPageSamlNameIdentifierFormat SAML name identifier format
 type StatusPageSamlNameIdentifierFormat string
@@ -69484,6 +69757,8 @@ type UpdateAlertRoute struct {
 			Name          *string              `json:"name,omitempty"`
 			OwningTeamIDs []openapi_types.UUID `json:"owning_team_ids,omitempty"`
 			Rules         []struct {
+				// AiSreProvider AI SRE provider for matching alerts. Null disables it. A value listed in x-retained-enum that is already saved on the rule may be sent back unchanged
+				AiSreProvider   nullable.Nullable[UpdateAlertRouteDataAttributesRulesAiSreProvider] `json:"ai_sre_provider,omitempty"`
 				ConditionGroups []struct {
 					Conditions []struct {
 						// AlertUrgencyIDs The Alert Urgency IDs to check in the condition
@@ -69533,6 +69808,9 @@ type UpdateAlertRoute struct {
 	} `json:"data"`
 }
 
+// UpdateAlertRouteDataAttributesRulesAiSreProvider AI SRE provider for matching alerts. Null disables it. A value listed in x-retained-enum that is already saved on the rule may be sent back unchanged
+type UpdateAlertRouteDataAttributesRulesAiSreProvider string
+
 // UpdateAlertRouteDataAttributesRulesConditionGroupsConditionsConditionableType The type of the conditionable
 type UpdateAlertRouteDataAttributesRulesConditionGroupsConditionsConditionableType string
 
@@ -69552,6 +69830,9 @@ type UpdateAlertRouteDataType string
 type UpdateAlertRoutingRule struct {
 	Data struct {
 		Attributes struct {
+			// AiSreProvider AI SRE provider for matching alerts. Null disables it. A value listed in x-retained-enum that is already saved on the rule may be sent back unchanged
+			AiSreProvider nullable.Nullable[UpdateAlertRoutingRuleDataAttributesAiSreProvider] `json:"ai_sre_provider,omitempty"`
+
 			// AlertsSourceID The ID of the alerts source
 			AlertsSourceID *openapi_types.UUID `json:"alerts_source_id,omitempty"`
 
@@ -69602,6 +69883,9 @@ type UpdateAlertRoutingRule struct {
 		Type UpdateAlertRoutingRuleDataType `json:"type"`
 	} `json:"data"`
 }
+
+// UpdateAlertRoutingRuleDataAttributesAiSreProvider AI SRE provider for matching alerts. Null disables it. A value listed in x-retained-enum that is already saved on the rule may be sent back unchanged
+type UpdateAlertRoutingRuleDataAttributesAiSreProvider string
 
 // UpdateAlertRoutingRuleDataAttributesConditionType The type of condition for the alert routing rule
 type UpdateAlertRoutingRuleDataAttributesConditionType string
@@ -70903,7 +71187,7 @@ type UpdateEscalationPolicyLevel struct {
 
 			// NotificationTargetParams Escalation level's notification targets
 			NotificationTargetParams []nullable.Nullable[struct {
-				// ID The ID of notification target
+				// ID The ID of notification target. If ai_sre, then the AI SRE provider (eg. rootly). New ai_sre targets accept only rootly. A provider already saved on the level (rootly, devin) may be sent back unchanged. Repeated ai_sre providers are saved once.
 				ID string `json:"id"`
 
 				// TeamMembers For targets with type=team, controls whether to notify admins, all team members, or escalate to team EP.
@@ -74755,7 +75039,8 @@ type UpdateStatusPage struct {
 			// Description The description of the status page
 			Description nullable.Nullable[string] `json:"description,omitempty"`
 
-			// Enabled Enabled / Disable the status page
+			// Enabled Deprecated. Use publication_status instead. True only when the status page is active.
+			// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
 			Enabled nullable.Nullable[bool] `json:"enabled,omitempty"`
 
 			// ExternalDomainNames External domain names attached to the status page
@@ -74784,6 +75069,9 @@ type UpdateStatusPage struct {
 
 			// PublicTitle The public title of the status page
 			PublicTitle nullable.Nullable[string] `json:"public_title,omitempty"`
+
+			// PublicationStatus Publication status of the status page. Draft pages have never been published, active pages are live, and unpublished pages were taken down.
+			PublicationStatus nullable.Nullable[UpdateStatusPageDataAttributesPublicationStatus] `json:"publication_status,omitempty"`
 
 			// SamlIdpCert SAML IdP certificate
 			SamlIdpCert nullable.Nullable[string] `json:"saml_idp_cert,omitempty"`
@@ -74838,6 +75126,9 @@ type UpdateStatusPage struct {
 
 // UpdateStatusPageDataAttributesAuthenticationMethod Authentication method
 type UpdateStatusPageDataAttributesAuthenticationMethod string
+
+// UpdateStatusPageDataAttributesPublicationStatus Publication status of the status page. Draft pages have never been published, active pages are live, and unpublished pages were taken down.
+type UpdateStatusPageDataAttributesPublicationStatus string
 
 // UpdateStatusPageDataAttributesSamlNameIdentifierFormat SAML name identifier format
 type UpdateStatusPageDataAttributesSamlNameIdentifierFormat string

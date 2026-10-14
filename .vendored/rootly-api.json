@@ -666,6 +666,7 @@
                 "level_skipped",
                 "team_attached_from_payload",
                 "user_paged",
+                "ai_sre_requested",
                 "ai_sre_delegated",
                 "emailed",
                 "slacked",
@@ -41622,6 +41623,7 @@
               "level_skipped",
               "team_attached_from_payload",
               "user_paged",
+              "ai_sre_requested",
               "ai_sre_delegated",
               "emailed",
               "slacked",
@@ -43327,6 +43329,18 @@
                           "description": "Whether this is a fallback rule",
                           "default": false
                         },
+                        "ai_sre_provider": {
+                          "type": "string",
+                          "enum": [
+                            "rootly"
+                          ],
+                          "nullable": true,
+                          "x-retained-enum": [
+                            "rootly",
+                            "devin"
+                          ],
+                          "description": "AI SRE provider for matching alerts. Null disables it. A value listed in x-retained-enum that is already saved on the rule may be sent back unchanged"
+                        },
                         "destinations": {
                           "type": "array",
                           "items": {
@@ -43525,6 +43539,18 @@
                           "type": "boolean",
                           "description": "Whether this is a fallback rule",
                           "default": false
+                        },
+                        "ai_sre_provider": {
+                          "type": "string",
+                          "enum": [
+                            "rootly"
+                          ],
+                          "nullable": true,
+                          "x-retained-enum": [
+                            "rootly",
+                            "devin"
+                          ],
+                          "description": "AI SRE provider for matching alerts. Null disables it. A value listed in x-retained-enum that is already saved on the rule may be sent back unchanged"
                         },
                         "destinations": {
                           "type": "array",
@@ -43737,6 +43763,18 @@
                           "description": "Whether this is a fallback rule",
                           "default": false
                         },
+                        "ai_sre_provider": {
+                          "type": "string",
+                          "enum": [
+                            "rootly"
+                          ],
+                          "nullable": true,
+                          "x-retained-enum": [
+                            "rootly",
+                            "devin"
+                          ],
+                          "description": "AI SRE provider for matching alerts. Null disables it. A value listed in x-retained-enum that is already saved on the rule may be sent back unchanged"
+                        },
                         "destinations": {
                           "type": "array",
                           "items": {
@@ -43933,6 +43971,15 @@
                   "type": "boolean",
                   "description": "Whether this is a fallback rule",
                   "default": false
+                },
+                "ai_sre_provider": {
+                  "type": "string",
+                  "enum": [
+                    "rootly",
+                    "devin"
+                  ],
+                  "nullable": true,
+                  "description": "AI SRE provider that investigates alerts matching this rule. Null disables AI SRE for the rule"
                 },
                 "destinations": {
                   "type": "array",
@@ -44183,6 +44230,18 @@
                     "type": "boolean",
                     "description": "Whether the alert routing rule is enabled"
                   },
+                  "ai_sre_provider": {
+                    "type": "string",
+                    "enum": [
+                      "rootly"
+                    ],
+                    "nullable": true,
+                    "x-retained-enum": [
+                      "rootly",
+                      "devin"
+                    ],
+                    "description": "AI SRE provider for matching alerts. Null disables it. A value listed in x-retained-enum that is already saved on the rule may be sent back unchanged"
+                  },
                   "owning_team_ids": {
                     "type": "array",
                     "description": "The IDs of the teams which own the alert routing rule. If the user doesn't have Alert Routing Create Permission in On-Call Roles, then this field is required and can contain Team IDs the user is an admin of.",
@@ -44332,6 +44391,18 @@
                     "type": "boolean",
                     "description": "Whether the alert routing rule is enabled"
                   },
+                  "ai_sre_provider": {
+                    "type": "string",
+                    "enum": [
+                      "rootly"
+                    ],
+                    "nullable": true,
+                    "x-retained-enum": [
+                      "rootly",
+                      "devin"
+                    ],
+                    "description": "AI SRE provider for matching alerts. Null disables it. A value listed in x-retained-enum that is already saved on the rule may be sent back unchanged"
+                  },
                   "alerts_source_id": {
                     "type": "string",
                     "format": "uuid",
@@ -44456,6 +44527,15 @@
           "enabled": {
             "type": "boolean",
             "description": "Whether the alert routing rule is enabled"
+          },
+          "ai_sre_provider": {
+            "type": "string",
+            "enum": [
+              "rootly",
+              "devin"
+            ],
+            "nullable": true,
+            "description": "AI SRE provider that investigates alerts matching this rule. Null disables AI SRE for the rule"
           },
           "alerts_source_id": {
             "type": "string",
@@ -46914,6 +46994,20 @@
               "OnCallRole",
               "Playbook",
               "PlaybookTask",
+              "Problem",
+              "ProblemActionItem",
+              "ProblemLink",
+              "ProblemRoleAssignment",
+              "FormFieldSelection",
+              "FormFieldSelectionCatalogEntity",
+              "FormFieldSelectionCause",
+              "FormFieldSelectionEnvironment",
+              "FormFieldSelectionFunctionality",
+              "FormFieldSelectionGroup",
+              "FormFieldSelectionIncidentType",
+              "FormFieldSelectionOption",
+              "FormFieldSelectionService",
+              "FormFieldSelectionUser",
               "Role",
               "Schedule",
               "Secret",
@@ -62741,7 +62835,7 @@
                       "properties": {
                         "id": {
                           "type": "string",
-                          "description": "The ID of notification target. If Slack channel, then id of the slack channel (eg. C06Q2JK7RQW). If Microsoft Teams channel, then the Rootly channel UUID."
+                          "description": "The ID of notification target. If Slack channel, then id of the slack channel (eg. C06Q2JK7RQW). If Microsoft Teams channel, then the Rootly channel UUID. If ai_sre, then the AI SRE provider (eg. rootly). New ai_sre targets accept only rootly. A provider already saved on the level (rootly, devin) may be sent back unchanged. Repeated ai_sre providers are saved once."
                         },
                         "type": {
                           "type": "string",
@@ -62752,7 +62846,8 @@
                             "schedule",
                             "slack_channel",
                             "microsoft_teams_channel",
-                            "service"
+                            "service",
+                            "ai_sre"
                           ]
                         },
                         "team_members": {
@@ -62882,7 +62977,7 @@
                       "properties": {
                         "id": {
                           "type": "string",
-                          "description": "The ID of notification target"
+                          "description": "The ID of notification target. If ai_sre, then the AI SRE provider (eg. rootly). New ai_sre targets accept only rootly. A provider already saved on the level (rootly, devin) may be sent back unchanged. Repeated ai_sre providers are saved once."
                         },
                         "type": {
                           "type": "string",
@@ -62893,7 +62988,8 @@
                             "schedule",
                             "slack_channel",
                             "microsoft_teams_channel",
-                            "service"
+                            "service",
+                            "ai_sre"
                           ]
                         },
                         "team_members": {
@@ -63015,7 +63111,7 @@
               "properties": {
                 "id": {
                   "type": "string",
-                  "description": "The ID of notification target"
+                  "description": "The ID of notification target. If ai_sre, then the AI SRE provider (eg. rootly). New ai_sre targets accept only rootly. A provider already saved on the level (rootly, devin) may be sent back unchanged. Repeated ai_sre providers are saved once."
                 },
                 "type": {
                   "type": "string",
@@ -63026,7 +63122,8 @@
                     "schedule",
                     "slack_channel",
                     "microsoft_teams_channel",
-                    "service"
+                    "service",
+                    "ai_sre"
                   ]
                 },
                 "team_members": {
@@ -103039,7 +103136,18 @@
                   },
                   "enabled": {
                     "type": "boolean",
-                    "description": "Enabled / Disable the status page",
+                    "description": "Deprecated. Use publication_status instead. True only when the status page is active.",
+                    "nullable": true,
+                    "deprecated": true
+                  },
+                  "publication_status": {
+                    "type": "string",
+                    "description": "Publication status of the status page. Draft pages have never been published, active pages are live, and unpublished pages were taken down.",
+                    "enum": [
+                      "draft",
+                      "active",
+                      "unpublished"
+                    ],
                     "nullable": true
                   }
                 },
@@ -103262,7 +103370,18 @@
                   },
                   "enabled": {
                     "type": "boolean",
-                    "description": "Enabled / Disable the status page",
+                    "description": "Deprecated. Use publication_status instead. True only when the status page is active.",
+                    "nullable": true,
+                    "deprecated": true
+                  },
+                  "publication_status": {
+                    "type": "string",
+                    "description": "Publication status of the status page. Draft pages have never been published, active pages are live, and unpublished pages were taken down.",
+                    "enum": [
+                      "draft",
+                      "active",
+                      "unpublished"
+                    ],
                     "nullable": true
                   }
                 },
@@ -103478,7 +103597,18 @@
           },
           "enabled": {
             "type": "boolean",
-            "description": "Enabled / Disable the status page",
+            "description": "Deprecated. Use publication_status instead. True only when the status page is active.",
+            "nullable": true,
+            "deprecated": true
+          },
+          "publication_status": {
+            "type": "string",
+            "description": "Publication status of the status page. Draft pages have never been published, active pages are live, and unpublished pages were taken down.",
+            "enum": [
+              "draft",
+              "active",
+              "unpublished"
+            ],
             "nullable": true
           },
           "created_at": {
