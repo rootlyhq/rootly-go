@@ -138,6 +138,6 @@
     }
   },
   "constraints": {
-    "golang": "1.25"
+    "golang": "1.27"
   }
 }
