@@ -93,7 +93,7 @@ func walkDeprecatedFields(expr ast.Expr, jsonPath, marker string, failures *[]st
 			walkDeprecatedFields(field.Type, fieldJsonPath, marker, failures)
 		}
 	case *ast.ArrayType:
-		walkDeprecatedFields(t.Elt, jsonPath, marker, failures)
+		walkDeprecatedFields(t.Elt, jsonPath+"/items", marker, failures)
 	case *ast.StarExpr:
 		walkDeprecatedFields(t.X, jsonPath, marker, failures)
 	}
