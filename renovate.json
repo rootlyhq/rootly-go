@@ -134,7 +134,8 @@
       "prBodyDefinitions": {
         "Update": "",
         "Change": "Updated OpenAPI spec"
-      }
+      },
+      "semanticCommitType": "feat"
     }
   },
   "constraints": {
