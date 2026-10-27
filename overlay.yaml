@@ -1274,6 +1274,15 @@ actions:
   - target: $.components.schemas.*.properties.data.properties.attributes.properties.retrigger_timeout_minutes.enum
     remove: true
 
+  # the `oneOf` includes `enum: [null]`, which generates invalid Go, so model `max_credits_per_run` as `nullable.Nullable[float32]`, as in the `ai_automation` response schema; the API still validates the allowed values
+  - target: $.components.schemas.*.properties.data.properties.attributes.properties.max_credits_per_run.oneOf
+    remove: true
+
+  - target: $.components.schemas.*.properties.data.properties.attributes.properties.max_credits_per_run
+    update:
+      type: number
+      nullable: true
+
   # slug deprecations
   - target: $.components.schemas.new_alert_field.properties.data.properties.attributes.properties.slug
     update:
@@ -1584,3 +1593,51 @@ actions:
     update:
       description: ""
       x-deprecated-reason: "`slug` is derived from `name` and `kind`; any submitted value is ignored. This property will be removed from the request schema in a future version."
+
+  # alert route rule `enabled` deprecations
+  - target: $.components.schemas.alert_route.properties.rules.items.properties.enabled
+    update:
+      description: ""
+      x-deprecated-reason: "Ignored under advanced routing (rules always evaluate) - disable the alert route instead. Still honoured on legacy routing."
+
+  - target: $.components.schemas.new_alert_route.properties.data.properties.attributes.properties.rules.items.properties.enabled
+    update:
+      description: ""
+      x-deprecated-reason: "Ignored under advanced routing (rules always evaluate) - disable the alert route instead. Still honoured on legacy routing."
+
+  - target: $.components.schemas.patch_alert_route.properties.data.properties.attributes.properties.rules.items.properties.enabled
+    update:
+      description: ""
+      x-deprecated-reason: "Ignored under advanced routing (rules always evaluate) - disable the alert route instead. Still honoured on legacy routing."
+
+  - target: $.components.schemas.update_alert_route.properties.data.properties.attributes.properties.rules.items.properties.enabled
+    update:
+      description: ""
+      x-deprecated-reason: "Ignored under advanced routing (rules always evaluate) - disable the alert route instead. Still honoured on legacy routing."
+
+  # on-call role `system_role` deprecations
+  - target: $.components.schemas.new_on_call_role.properties.data.properties.attributes.properties.system_role
+    update:
+      description: ""
+      x-deprecated-reason: "Set by the server: new roles are `custom` and a role keeps its kind. Any submitted value is ignored. This property will be removed from the request schema in a future version."
+
+  - target: $.components.schemas.update_on_call_role.properties.data.properties.attributes.properties.system_role
+    update:
+      description: ""
+      x-deprecated-reason: "Set by the server: new roles are `custom` and a role keeps its kind. Any submitted value is ignored. This property will be removed from the request schema in a future version."
+
+  # status page `enabled` deprecations
+  - target: $.components.schemas.new_status_page.properties.data.properties.attributes.properties.enabled
+    update:
+      description: ""
+      x-deprecated-reason: "Use publication_status instead. True only when the status page is active."
+
+  - target: $.components.schemas.status_page.properties.enabled
+    update:
+      description: ""
+      x-deprecated-reason: "Use publication_status instead. True only when the status page is active."
+
+  - target: $.components.schemas.update_status_page.properties.data.properties.attributes.properties.enabled
+    update:
+      description: ""
+      x-deprecated-reason: "Use publication_status instead. True only when the status page is active."
