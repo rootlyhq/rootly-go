@@ -28949,27 +28949,6 @@ func (e NewScheduleRotationDataAttributesActiveDays) Valid() bool {
 	}
 }
 
-// Defines values for NewScheduleRotationDataAttributesActiveTimeType.
-const (
-	NewScheduleRotationDataAttributesActiveTimeTypeAllDay   NewScheduleRotationDataAttributesActiveTimeType = "all_day"
-	NewScheduleRotationDataAttributesActiveTimeTypeCustom   NewScheduleRotationDataAttributesActiveTimeType = "custom"
-	NewScheduleRotationDataAttributesActiveTimeTypeSameTime NewScheduleRotationDataAttributesActiveTimeType = "same_time"
-)
-
-// Valid indicates whether the value is a known member of the NewScheduleRotationDataAttributesActiveTimeType enum.
-func (e NewScheduleRotationDataAttributesActiveTimeType) Valid() bool {
-	switch e {
-	case NewScheduleRotationDataAttributesActiveTimeTypeAllDay:
-		return true
-	case NewScheduleRotationDataAttributesActiveTimeTypeCustom:
-		return true
-	case NewScheduleRotationDataAttributesActiveTimeTypeSameTime:
-		return true
-	default:
-		return false
-	}
-}
-
 // Defines values for NewScheduleRotationDataAttributesScheduleRotationMembersMemberType.
 const (
 	NewScheduleRotationDataAttributesScheduleRotationMembersMemberTypeSchedule NewScheduleRotationDataAttributesScheduleRotationMembersMemberType = "Schedule"
@@ -35183,27 +35162,6 @@ func (e ScheduleRotationActiveDays) Valid() bool {
 	case ScheduleRotationActiveDaysU:
 		return true
 	case ScheduleRotationActiveDaysW:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for ScheduleRotationActiveTimeType.
-const (
-	ScheduleRotationActiveTimeTypeAllDay   ScheduleRotationActiveTimeType = "all_day"
-	ScheduleRotationActiveTimeTypeCustom   ScheduleRotationActiveTimeType = "custom"
-	ScheduleRotationActiveTimeTypeSameTime ScheduleRotationActiveTimeType = "same_time"
-)
-
-// Valid indicates whether the value is a known member of the ScheduleRotationActiveTimeType enum.
-func (e ScheduleRotationActiveTimeType) Valid() bool {
-	switch e {
-	case ScheduleRotationActiveTimeTypeAllDay:
-		return true
-	case ScheduleRotationActiveTimeTypeCustom:
-		return true
-	case ScheduleRotationActiveTimeTypeSameTime:
 		return true
 	default:
 		return false
@@ -48896,27 +48854,6 @@ func (e UpdateScheduleRotationDataAttributesActiveDays) Valid() bool {
 	case UpdateScheduleRotationDataAttributesActiveDaysU:
 		return true
 	case UpdateScheduleRotationDataAttributesActiveDaysW:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for UpdateScheduleRotationDataAttributesActiveTimeType.
-const (
-	UpdateScheduleRotationDataAttributesActiveTimeTypeAllDay   UpdateScheduleRotationDataAttributesActiveTimeType = "all_day"
-	UpdateScheduleRotationDataAttributesActiveTimeTypeCustom   UpdateScheduleRotationDataAttributesActiveTimeType = "custom"
-	UpdateScheduleRotationDataAttributesActiveTimeTypeSameTime UpdateScheduleRotationDataAttributesActiveTimeType = "same_time"
-)
-
-// Valid indicates whether the value is a known member of the UpdateScheduleRotationDataAttributesActiveTimeType enum.
-func (e UpdateScheduleRotationDataAttributesActiveTimeType) Valid() bool {
-	switch e {
-	case UpdateScheduleRotationDataAttributesActiveTimeTypeAllDay:
-		return true
-	case UpdateScheduleRotationDataAttributesActiveTimeTypeCustom:
-		return true
-	case UpdateScheduleRotationDataAttributesActiveTimeTypeSameTime:
 		return true
 	default:
 		return false
@@ -69668,7 +69605,7 @@ type NewScheduleRotation struct {
 			} `json:"active_time_attributes,omitempty"`
 
 			// ActiveTimeType Schedule rotation active time type
-			ActiveTimeType *NewScheduleRotationDataAttributesActiveTimeType `json:"active_time_type,omitempty"`
+			ActiveTimeType *string `json:"active_time_type,omitempty"`
 
 			// EndTime RFC3339 date-time when rotation ends. Shifts will only be created before this time.
 			EndTime nullable.Nullable[time.Time] `json:"end_time,omitempty"`
@@ -69707,9 +69644,6 @@ type NewScheduleRotation struct {
 
 // NewScheduleRotationDataAttributesActiveDays Schedule rotation active days
 type NewScheduleRotationDataAttributesActiveDays string
-
-// NewScheduleRotationDataAttributesActiveTimeType Schedule rotation active time type
-type NewScheduleRotationDataAttributesActiveTimeType string
 
 // NewScheduleRotationDataAttributesScheduleRotationMembersMemberType Type of member
 type NewScheduleRotationDataAttributesScheduleRotationMembersMemberType string
@@ -73925,7 +73859,7 @@ type ScheduleRotation struct {
 	} `json:"active_time_attributes,omitempty"`
 
 	// ActiveTimeType Schedule rotation active time type
-	ActiveTimeType *ScheduleRotationActiveTimeType `json:"active_time_type,omitempty"`
+	ActiveTimeType *string `json:"active_time_type,omitempty"`
 
 	// EndTime RFC3339 date-time when rotation ends. Shifts will only be created before this time.
 	EndTime nullable.Nullable[time.Time] `json:"end_time,omitempty"`
@@ -73952,9 +73886,6 @@ type ScheduleRotation struct {
 
 // ScheduleRotationActiveDays Schedule rotation active days
 type ScheduleRotationActiveDays string
-
-// ScheduleRotationActiveTimeType Schedule rotation active time type
-type ScheduleRotationActiveTimeType string
 
 // ScheduleRotationScheduleRotationableAttributes0 defines model for ScheduleRotation.ScheduleRotationableAttributes.0.
 type ScheduleRotationScheduleRotationableAttributes0 struct {
@@ -81697,7 +81628,7 @@ type UpdateScheduleRotation struct {
 			} `json:"active_time_attributes,omitempty"`
 
 			// ActiveTimeType Schedule rotation active time type
-			ActiveTimeType *UpdateScheduleRotationDataAttributesActiveTimeType `json:"active_time_type,omitempty"`
+			ActiveTimeType *string `json:"active_time_type,omitempty"`
 
 			// EndTime RFC3339 date-time when rotation ends. Shifts will only be created before this time.
 			EndTime nullable.Nullable[time.Time] `json:"end_time,omitempty"`
@@ -81739,9 +81670,6 @@ type UpdateScheduleRotation struct {
 
 // UpdateScheduleRotationDataAttributesActiveDays Schedule rotation active days
 type UpdateScheduleRotationDataAttributesActiveDays string
-
-// UpdateScheduleRotationDataAttributesActiveTimeType Schedule rotation active time type
-type UpdateScheduleRotationDataAttributesActiveTimeType string
 
 // UpdateScheduleRotationDataAttributesScheduleRotationMembersMemberType Type of member
 type UpdateScheduleRotationDataAttributesScheduleRotationMembersMemberType string

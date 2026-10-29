@@ -1274,6 +1274,26 @@ actions:
   - target: $.components.schemas.*.properties.data.properties.attributes.properties.retrigger_timeout_minutes.enum
     remove: true
 
+  # keep `active_time_type` as `*string`; the API still validates the allowed values
+  - target: $.components.schemas.*.properties.data.properties.attributes.properties.active_time_type.enum
+    remove: true
+
+  - target: $.components.schemas.schedule_rotation.properties.active_time_type.enum
+    remove: true
+
+  # the API still validates the status page `slug` format and length
+  - target: $.components.schemas.new_status_page.properties.data.properties.attributes.properties.slug.maxLength
+    remove: true
+
+  - target: $.components.schemas.new_status_page.properties.data.properties.attributes.properties.slug.pattern
+    remove: true
+
+  - target: $.components.schemas.update_status_page.properties.data.properties.attributes.properties.slug.maxLength
+    remove: true
+
+  - target: $.components.schemas.update_status_page.properties.data.properties.attributes.properties.slug.pattern
+    remove: true
+
   # the `oneOf` includes `enum: [null]`, which generates invalid Go, so model `max_credits_per_run` as `nullable.Nullable[float32]`, as in the `ai_automation` response schema; the API still validates the allowed values
   - target: $.components.schemas.*.properties.data.properties.attributes.properties.max_credits_per_run.oneOf
     remove: true
