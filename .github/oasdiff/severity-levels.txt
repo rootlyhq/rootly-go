@@ -1,1 +1,3 @@
 request-property-one-of-removed info
+response-property-enum-value-added info
+response-property-one-of-added info
