@@ -654,10 +654,6 @@ actions:
         - data
         x-deprecated-reason: The incident bulk import API is no longer served by the Rootly API. This will be removed in a future version.
 
-  # not exposing the AI Skills and AI Automations endpoints for now
-  - target: $.paths.*[?(@.tags[0] == "AISkills" || @.tags[0] == "AIAutomations")]
-    remove: true
-
   - target: $.paths.*.parameters[?(@.name == "id")].schema.anyOf
     remove: true
 
