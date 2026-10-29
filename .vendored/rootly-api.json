@@ -111567,6 +111567,12 @@
                     },
                     "description": "Optional. Notify selected active schedule members for every covered shift when targeted-shift-coverage is enabled. Recipients must be eligible for each shift. Omitted, empty, or flag-disabled selections broadcast.",
                     "nullable": false
+                  },
+                  "widen_after_minutes": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "description": "Optional. Widen a targeted coverage request to the rest of the schedule after this many minutes. Requires recipient_user_ids and the coverage-widening flag; widening must occur before the shift starts.",
+                    "nullable": false
                   }
                 },
                 "additionalProperties": false,
@@ -111620,6 +111626,26 @@
             "type": "string",
             "description": "End datetime of the coverage request",
             "nullable": false
+          },
+          "recipient_user_ids": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            },
+            "description": "IDs of the initially notified coverage recipients",
+            "nullable": false
+          },
+          "widen_at": {
+            "type": "string",
+            "description": "Time the targeted request is eligible to widen",
+            "format": "date-time",
+            "nullable": true
+          },
+          "widened_at": {
+            "type": "string",
+            "description": "Time the request was widened to the rest of the schedule",
+            "format": "date-time",
+            "nullable": true
           },
           "created_at": {
             "type": "string",

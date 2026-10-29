@@ -69973,6 +69973,9 @@ type NewShiftCoverageRequest struct {
 
 			// UserID Optional. Restrict coverage to shifts assigned to this user. When omitted, every shift overlapping the time range is covered.
 			UserID *int `json:"user_id,omitempty"`
+
+			// WidenAfterMinutes Optional. Widen a targeted coverage request to the rest of the schedule after this many minutes. Requires recipient_user_ids and the coverage-widening flag; widening must occur before the shift starts.
+			WidenAfterMinutes *int `json:"widen_after_minutes,omitempty"`
 		} `json:"attributes"`
 		Type NewShiftCoverageRequestDataType `json:"type"`
 	} `json:"data"`
@@ -74749,6 +74752,9 @@ type ShiftCoverageRequest struct {
 	// OriginalShiftUserID ID of the user whose shift is being covered
 	OriginalShiftUserID int `json:"original_shift_user_id"`
 
+	// RecipientUserIDs IDs of the initially notified coverage recipients
+	RecipientUserIDs []int `json:"recipient_user_ids,omitempty"`
+
 	// Schedule Schedule metadata
 	Schedule *ScheduleResponse `json:"schedule,omitempty"`
 
@@ -74766,6 +74772,12 @@ type ShiftCoverageRequest struct {
 
 	// UpdatedAt Date of last update
 	UpdatedAt *string `json:"updated_at,omitempty"`
+
+	// WidenAt Time the targeted request is eligible to widen
+	WidenAt nullable.Nullable[time.Time] `json:"widen_at,omitempty"`
+
+	// WidenedAt Time the request was widened to the rest of the schedule
+	WidenedAt nullable.Nullable[time.Time] `json:"widened_at,omitempty"`
 }
 
 // ShiftCoverageRequestList defines model for shift_coverage_request_list.
