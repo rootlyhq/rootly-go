@@ -1436,105 +1436,6 @@
         }
       }
     },
-    "/v1/ai_connector_audit_events": {
-      "get": {
-        "summary": "List AI connector audit events",
-        "tags": [
-          "AI Connector Audit Events"
-        ],
-        "description": "Lists AI tool calls made through connectors and connector connection events. Responses and credentials are never included.",
-        "security": [
-          {
-            "bearer_auth": []
-          }
-        ],
-        "parameters": [
-          {
-            "name": "filter[connector_id]",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "filter[event_type]",
-            "in": "query",
-            "required": false,
-            "description": "calls, connection, or one of: call, connected, reconnected, edited, disconnected",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "filter[outcome]",
-            "in": "query",
-            "required": false,
-            "description": "failed, or one of: success, authentication_failed, permission_denied, rate_limited, timeout, not_found, invalid_request, connector_error",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "filter[trigger]",
-            "in": "query",
-            "required": false,
-            "description": "slack_chat, web_chat, api_chat, mobile_chat, google_chat, microsoft_teams_chat, ai_sre_investigation, workflow, automation, proactive, web, other",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "filter[user_id]",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "type": "integer"
-            }
-          },
-          {
-            "name": "filter[occurred_after]",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "filter[occurred_before]",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "page[number]",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "type": "integer"
-            }
-          },
-          {
-            "name": "page[size]",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "audit events"
-          },
-          "400": {
-            "description": "invalid timestamp filter"
-          }
-        }
-      }
-    },
     "/v1/ai_skills/grantable_tools": {
       "get": {
         "summary": "Lists grantable AI Skill tools",
@@ -2068,6 +1969,177 @@
           },
           "404": {
             "description": "read scope does not permit deleting AI skills",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors_list"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/ai_tool_call_events": {
+      "get": {
+        "summary": "Lists AI tool call events",
+        "description": "Returns audit events for AI tool calls and connector calls.",
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "tags": [
+          "AIToolCallEvents"
+        ],
+        "operationId": "listAiToolCallEvents",
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "query",
+            "required": false,
+            "style": "deepObject",
+            "explode": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "connector_id": {
+                  "type": "string"
+                },
+                "outcome": {
+                  "type": "string"
+                },
+                "risk_class": {
+                  "type": "string"
+                },
+                "surface": {
+                  "type": "string"
+                },
+                "user_id": {
+                  "type": "string"
+                },
+                "occurred_after": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "occurred_before": {
+                  "type": "string",
+                  "format": "date-time"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "AI tool call events returned",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "type": {
+                            "type": "string",
+                            "enum": [
+                              "ai_tool_call_events"
+                            ]
+                          },
+                          "attributes": {
+                            "type": "object",
+                            "properties": {
+                              "remote_mcp_source_id": {
+                                "type": "string",
+                                "nullable": true
+                              },
+                              "provider_type": {
+                                "type": "string",
+                                "nullable": true
+                              },
+                              "tool_name": {
+                                "type": "string"
+                              },
+                              "user_id": {
+                                "type": "integer",
+                                "nullable": true
+                              },
+                              "user_name": {
+                                "type": "string",
+                                "nullable": true
+                              },
+                              "user_email": {
+                                "type": "string",
+                                "nullable": true
+                              },
+                              "connection_name": {
+                                "type": "string",
+                                "nullable": true
+                              },
+                              "automatic": {
+                                "type": "boolean"
+                              },
+                              "trigger_record_type": {
+                                "type": "string",
+                                "nullable": true
+                              },
+                              "trigger_record_id": {
+                                "type": "string",
+                                "nullable": true
+                              },
+                              "surface": {
+                                "type": "string"
+                              },
+                              "risk_class": {
+                                "type": "string"
+                              },
+                              "outcome": {
+                                "type": "string"
+                              },
+                              "duration_ms": {
+                                "type": "integer",
+                                "nullable": true
+                              },
+                              "occurred_at": {
+                                "type": "string",
+                                "format": "date-time"
+                              },
+                              "ai_session_id": {
+                                "type": "string",
+                                "nullable": true
+                              },
+                              "ai_automation_run_id": {
+                                "type": "string",
+                                "nullable": true
+                              },
+                              "argument_keys": {
+                                "type": "array",
+                                "items": {
+                                  "type": "string"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "meta": {
+                      "type": "object",
+                      "additionalProperties": true
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "filter timestamps must be valid",
             "content": {
               "application/vnd.api+json": {
                 "schema": {
@@ -7732,6 +7804,16 @@
               }
             }
           },
+          "422": {
+            "description": "catalog_entity is used by an alert route",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors_list"
+                }
+              }
+            }
+          },
           "404": {
             "description": "resource not found",
             "content": {
@@ -8955,6 +9037,16 @@
               "application/vnd.api+json": {
                 "schema": {
                   "$ref": "#/components/schemas/catalog_response"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "catalog is used by an alert route",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors_list"
                 }
               }
             }
@@ -11756,7 +11848,7 @@
         "tags": [
           "DashboardPanels"
         ],
-        "description": "Creates a new dashboard panel from provided data",
+        "description": "Creates a new dashboard panel from provided data. OAuth tokens need the `ir.dashboards:write` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`).",
         "operationId": "createDashboardPanel",
         "parameters": [],
         "responses": {
@@ -11812,7 +11904,7 @@
         "tags": [
           "DashboardPanels"
         ],
-        "description": "List dashboard panels",
+        "description": "List dashboard panels. OAuth tokens need the `ir.dashboards:read` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`).",
         "operationId": "listDashboardPanels",
         "parameters": [
           {
@@ -11875,7 +11967,7 @@
         "tags": [
           "DashboardPanels"
         ],
-        "description": "Duplicates a dashboard panel",
+        "description": "Duplicates a dashboard panel. OAuth tokens need the `ir.dashboards:write` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`).",
         "operationId": "duplicateDashboardPanel",
         "responses": {
           "201": {
@@ -11922,7 +12014,7 @@
         "tags": [
           "DashboardPanels"
         ],
-        "description": "Retrieves a specific dashboard panel by id",
+        "description": "Retrieves a specific dashboard panel by id. OAuth tokens need the `ir.dashboards:read` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`).",
         "operationId": "getDashboardPanel",
         "parameters": [
           {
@@ -11976,7 +12068,7 @@
         "tags": [
           "DashboardPanels"
         ],
-        "description": "Update a specific dashboard panel by id",
+        "description": "Update a specific dashboard panel by id. OAuth tokens need the `ir.dashboards:write` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`).",
         "operationId": "updateDashboardPanel",
         "parameters": [],
         "responses": {
@@ -12012,7 +12104,7 @@
         "tags": [
           "DashboardPanels"
         ],
-        "description": "Delete a specific dashboard panel by id",
+        "description": "Delete a specific dashboard panel by id. OAuth tokens need the `ir.dashboards:write` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`).",
         "operationId": "deleteDashboardPanel",
         "responses": {
           "200": {
@@ -12039,7 +12131,7 @@
         "tags": [
           "Dashboards"
         ],
-        "description": "Creates a new dashboard from provided data",
+        "description": "Creates a new dashboard from provided data. OAuth tokens need the `ir.dashboards:write` scope.",
         "operationId": "createDashboard",
         "parameters": [],
         "responses": {
@@ -12095,7 +12187,7 @@
         "tags": [
           "Dashboards"
         ],
-        "description": "List dashboards",
+        "description": "List dashboards. OAuth tokens need the `ir.dashboards:read` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`).",
         "operationId": "listDashboards",
         "parameters": [
           {
@@ -12173,7 +12265,7 @@
         "tags": [
           "Dashboards"
         ],
-        "description": "Duplicates a dashboard",
+        "description": "Duplicates a dashboard. OAuth tokens need the `ir.dashboards:write` scope.",
         "operationId": "duplicateDashboard",
         "responses": {
           "201": {
@@ -12231,7 +12323,7 @@
         "tags": [
           "Dashboards"
         ],
-        "description": "Sets dashboard to user default",
+        "description": "Sets dashboard to user default. OAuth tokens need the `ir.dashboards:write` scope.",
         "operationId": "setDefaultDashboard",
         "responses": {
           "200": {
@@ -12289,7 +12381,7 @@
         "tags": [
           "Dashboards"
         ],
-        "description": "Retrieves a specific dashboard by id",
+        "description": "Retrieves a specific dashboard by id. OAuth tokens need the `ir.dashboards:read` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`).",
         "operationId": "getDashboard",
         "parameters": [
           {
@@ -12338,7 +12430,7 @@
         "tags": [
           "Dashboards"
         ],
-        "description": "Update a specific dashboard by id",
+        "description": "Update a specific dashboard by id. OAuth tokens need the `ir.dashboards:write` scope.",
         "operationId": "updateDashboard",
         "parameters": [],
         "responses": {
@@ -12384,7 +12476,7 @@
         "tags": [
           "Dashboards"
         ],
-        "description": "Delete a specific dashboard by id",
+        "description": "Delete a specific dashboard by id. OAuth tokens need the `ir.dashboards:write` scope.",
         "operationId": "deleteDashboard",
         "responses": {
           "200": {
@@ -15059,6 +15151,263 @@
               "application/vnd.api+json": {
                 "schema": {
                   "$ref": "#/components/schemas/form_field_option_response"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "resource not found",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors_list"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/form_field_placements/{form_field_placement_id}/condition_groups": {
+      "parameters": [
+        {
+          "name": "form_field_placement_id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "post": {
+        "summary": "Creates a Form Field Placement Condition Group",
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "tags": [
+          "FormFieldPlacementConditionGroups"
+        ],
+        "description": "Creates a new form_field_placement_condition_group. Add conditions to it by creating form_field_placement_conditions with its condition_group_id.",
+        "operationId": "createFormFieldPlacementConditionGroup",
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": "form_field_placement_condition_group created",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/form_field_placement_condition_group_response"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "invalid request",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors_list"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "responds with unauthorized for invalid token",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors_list"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/vnd.api+json": {
+              "schema": {
+                "$ref": "#/components/schemas/new_form_field_placement_condition_group"
+              }
+            }
+          },
+          "required": true
+        }
+      },
+      "get": {
+        "summary": "List Form Field Placement Condition Groups",
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "tags": [
+          "FormFieldPlacementConditionGroups"
+        ],
+        "description": "List form_field_placement_condition_groups, each with its conditions",
+        "operationId": "listFormFieldPlacementConditionGroups",
+        "parameters": [
+          {
+            "name": "page[number]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "page[size]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "filter[group_type]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/form_field_placement_condition_group_list"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/form_field_placement_condition_groups/{id}": {
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "get": {
+        "summary": "Retrieves a Form Field Placement Condition Group",
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "tags": [
+          "FormFieldPlacementConditionGroups"
+        ],
+        "description": "Retrieves a specific form_field_placement_condition_group by id, with its conditions",
+        "operationId": "getFormFieldPlacementConditionGroup",
+        "responses": {
+          "200": {
+            "description": "form_field_placement_condition_group found",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/form_field_placement_condition_group_response"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "resource not found",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors_list"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "summary": "Update a Form Field Placement Condition Group",
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "tags": [
+          "FormFieldPlacementConditionGroups"
+        ],
+        "description": "Update a specific form_field_placement_condition_group by id",
+        "operationId": "updateFormFieldPlacementConditionGroup",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "form_field_placement_condition_group updated",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/form_field_placement_condition_group_response"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "resource not found",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors_list"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/vnd.api+json": {
+              "schema": {
+                "$ref": "#/components/schemas/update_form_field_placement_condition_group"
+              }
+            }
+          },
+          "required": true
+        }
+      },
+      "delete": {
+        "summary": "Delete a Form Field Placement Condition Group",
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "tags": [
+          "FormFieldPlacementConditionGroups"
+        ],
+        "description": "Delete a specific form_field_placement_condition_group by id, along with its conditions",
+        "operationId": "deleteFormFieldPlacementConditionGroup",
+        "responses": {
+          "200": {
+            "description": "form_field_placement_condition_group deleted",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/form_field_placement_condition_group_response"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "condition groups are not enabled",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors_list"
                 }
               }
             }
@@ -27800,6 +28149,344 @@
             }
           },
           "required": true
+        }
+      }
+    },
+    "/v1/investigations": {
+      "get": {
+        "summary": "Lists AI SRE investigations",
+        "description": "Investigations on alerts and incidents the caller can read, newest first.",
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "tags": [
+          "Investigations"
+        ],
+        "operationId": "ListInvestigations",
+        "parameters": [
+          {
+            "name": "filter[alert_id]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "filter[incident_id]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "filter[status]",
+            "in": "query",
+            "required": false,
+            "description": "Comma-separated statuses.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[outcome]",
+            "in": "query",
+            "required": false,
+            "description": "Comma-separated outcomes.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page[number]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "page[size]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "filters by alert",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/investigation_list"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "rejects unknown statuses",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors_list"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "AI SRE is disabled for the team",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors_list"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Starts an AI SRE investigation",
+        "description": "Starts an investigation on an alert or incident you can update, or returns the one already running.",
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "tags": [
+          "Investigations"
+        ],
+        "operationId": "CreateInvestigation",
+        "parameters": [],
+        "responses": {
+          "202": {
+            "description": "reruns a finished investigation",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/investigation"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "rerun is unavailable while the latest investigation is running",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors_list"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "read-only tokens cannot start investigations",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors_list"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "alerts on another team are not found",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors_list"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "rejects both an alert and an incident",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors_list"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/vnd.api+json": {
+              "schema": {
+                "$ref": "#/components/schemas/new_investigation"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/investigations/{id}": {
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "required": true
+        }
+      ],
+      "get": {
+        "summary": "Retrieves an AI SRE investigation",
+        "description": "The verdict, hypotheses, evidence, causal chain and open questions.",
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "tags": [
+          "Investigations"
+        ],
+        "operationId": "GetInvestigation",
+        "responses": {
+          "200": {
+            "description": "returns the report's open questions",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/investigation"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "other teams' investigations are not found",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors_list"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/investigations/{id}/progress": {
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "required": true
+        },
+        {
+          "name": "after",
+          "in": "query",
+          "required": false,
+          "description": "next_cursor from the previous call.",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "get": {
+        "summary": "Retrieves AI SRE investigation progress",
+        "description": "Returns immediately with steps and tool calls recorded after the cursor. Poll with after=next_cursor until done is true.",
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "tags": [
+          "Investigations"
+        ],
+        "operationId": "GetInvestigationProgress",
+        "responses": {
+          "200": {
+            "description": "returns progress since the start",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/investigation_progress"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "rejects a malformed cursor",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors_list"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/investigations/{id}/cancel": {
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "required": true
+        }
+      ],
+      "post": {
+        "summary": "Cancels an AI SRE investigation",
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "tags": [
+          "Investigations"
+        ],
+        "operationId": "CancelInvestigation",
+        "responses": {
+          "200": {
+            "description": "cancels a running investigation",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/investigation"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "finished investigations cannot be cancelled",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors_list"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "read-only tokens cannot cancel",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors_list"
+                }
+              }
+            }
+          }
         }
       }
     },
@@ -41233,6 +41920,109 @@
         }
       }
     },
+    "/v1/users/me/notification_settings": {
+      "get": {
+        "summary": "Retrieves the current user's notification settings",
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "tags": [
+          "Users"
+        ],
+        "description": "Retrieves the authenticated user's notification settings, including the current mute state.",
+        "operationId": "getCurrentUserNotificationSettings",
+        "responses": {
+          "200": {
+            "description": "user is not muted",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/user_notification_settings_response"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "responds with unauthorized for invalid token",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors_list"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "summary": "Updates the current user's notification settings",
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "tags": [
+          "Users"
+        ],
+        "description": "Sets, replaces, or clears the authenticated user's notification mute. Muting suppresses alert notifications on every channel until mute_until.",
+        "operationId": "updateCurrentUserNotificationSettings",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "mute cleared with zero",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/user_notification_settings_response"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "mute_until is not a future timestamp",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors_list"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "relationships are unsupported",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors_list"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "responds with unauthorized for invalid token",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors_list"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/vnd.api+json": {
+              "schema": {
+                "$ref": "#/components/schemas/update_user_notification_settings"
+              }
+            }
+          },
+          "required": true
+        }
+      }
+    },
     "/v1/users/{user_id}/phone_numbers": {
       "parameters": [
         {
@@ -44542,6 +45332,16 @@
               "format": "uuid"
             }
           },
+          "allowed_tool_keys": {
+            "type": "array",
+            "nullable": true,
+            "minItems": 1,
+            "maxItems": 500,
+            "items": {
+              "type": "string"
+            },
+            "description": "null inherits all tools allowed by the team; otherwise the automation can use only these tool keys."
+          },
           "limits_enabled": {
             "type": "boolean",
             "description": "Stored limit values are returned even when false and apply only when this is true."
@@ -44676,7 +45476,7 @@
       },
       "ai_automation_slack_channels": {
         "type": "object",
-        "description": "Channels Rootly has synced from the team's connected Slack workspace; any returned slack_channel_id is accepted as destination_slack_channel_id. When filter[search] is set, exact channel-name matches come first. When Slack channel user filtering is enabled, personal keys and OAuth tokens only see, and can only set new, channels the user can access in Slack; an update may resend the automation's current channel unchanged.",
+        "description": "Channels Rootly has synced from the team's connected Slack workspace; any returned slack_channel_id is accepted as destination_slack_channel_id. When filter[search] is set, exact channel-name matches come first. When Slack channel user filtering is enabled, personal keys and OAuth tokens only see, and can only set new, channels the user can access in Slack; an update may resend the automation's current channel unchanged. Liquid destinations resolvable without run context use the same acting-user check at save time. Incident/alert-dependent expressions are checked against the automation owner at runtime; every Liquid destination is verified again before delivery.",
         "properties": {
           "data": {
             "type": "array",
@@ -45849,7 +46649,7 @@
                   "destination_slack_channel_id": {
                     "type": "string",
                     "nullable": true,
-                    "description": "Slack channel ID (e.g. C0123ABCD) or channel name (optional leading #) of a channel Rootly has already synced from the team's connected Slack workspace; names are matched case-insensitively and resolved to the channel ID on write. Channels created very recently may not be synced yet and are rejected until they are. Setting a channel sets destination_kind to slack_channel when destination_kind is omitted; sending a new channel with any other destination_kind is rejected. null is ignored on write; to stop posting to Slack, change destination_kind instead. When Slack channel user filtering is enabled, personal keys and OAuth tokens only see, and can only set new, channels the user can access in Slack; an update may resend the automation's current channel unchanged."
+                    "description": "Slack channel ID (e.g. C0123ABCD), channel name (optional leading #), or Liquid expression. Liquid is stored verbatim and rendered with the run's incident/alert context, for example {{ incident.slack_channel_id }}, {{ alert.data.slack_channel_id }}, or {{ alert.incidents.first.slack_channel_id }}. Liquid must render a channel ID or synced channel name; names are resolved from Rootly's synced Slack channel records. The rendered channel is verified and checked against the automation owner's Slack permissions at runtime; empty, invalid, unavailable, or unauthorized results fail the run. Static channels must be channels Rootly has already synced from the team's connected Slack workspace; names are matched case-insensitively and resolved to the channel ID on write. Channels created very recently may not be synced yet and are rejected until they are. Setting a channel sets destination_kind to slack_channel when destination_kind is omitted; sending a new channel with any other destination_kind is rejected. null is ignored on write; to stop posting to Slack, change destination_kind instead. When Slack channel user filtering is enabled, personal keys and OAuth tokens only see, and can only set new, channels the user can access in Slack; an update may resend the automation's current channel unchanged. Liquid destinations resolvable without run context use the same acting-user check at save time. Incident/alert-dependent expressions are checked against the automation owner at runtime; every Liquid destination is verified again before delivery."
                   },
                   "skill_ids": {
                     "type": "array",
@@ -45858,6 +46658,16 @@
                       "type": "string",
                       "format": "uuid"
                     }
+                  },
+                  "allowed_tool_keys": {
+                    "type": "array",
+                    "nullable": true,
+                    "minItems": 1,
+                    "maxItems": 500,
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "null inherits all tools allowed by the team; otherwise the automation can use only these tool keys."
                   },
                   "limits_enabled": {
                     "type": "boolean",
@@ -46343,7 +47153,7 @@
                   "destination_slack_channel_id": {
                     "type": "string",
                     "nullable": true,
-                    "description": "Slack channel ID (e.g. C0123ABCD) or channel name (optional leading #) of a channel Rootly has already synced from the team's connected Slack workspace; names are matched case-insensitively and resolved to the channel ID on write. Channels created very recently may not be synced yet and are rejected until they are. Setting a channel sets destination_kind to slack_channel when destination_kind is omitted; sending a new channel with any other destination_kind is rejected. null is ignored on write; to stop posting to Slack, change destination_kind instead. When Slack channel user filtering is enabled, personal keys and OAuth tokens only see, and can only set new, channels the user can access in Slack; an update may resend the automation's current channel unchanged."
+                    "description": "Slack channel ID (e.g. C0123ABCD), channel name (optional leading #), or Liquid expression. Liquid is stored verbatim and rendered with the run's incident/alert context, for example {{ incident.slack_channel_id }}, {{ alert.data.slack_channel_id }}, or {{ alert.incidents.first.slack_channel_id }}. Liquid must render a channel ID or synced channel name; names are resolved from Rootly's synced Slack channel records. The rendered channel is verified and checked against the automation owner's Slack permissions at runtime; empty, invalid, unavailable, or unauthorized results fail the run. Static channels must be channels Rootly has already synced from the team's connected Slack workspace; names are matched case-insensitively and resolved to the channel ID on write. Channels created very recently may not be synced yet and are rejected until they are. Setting a channel sets destination_kind to slack_channel when destination_kind is omitted; sending a new channel with any other destination_kind is rejected. null is ignored on write; to stop posting to Slack, change destination_kind instead. When Slack channel user filtering is enabled, personal keys and OAuth tokens only see, and can only set new, channels the user can access in Slack; an update may resend the automation's current channel unchanged. Liquid destinations resolvable without run context use the same acting-user check at save time. Incident/alert-dependent expressions are checked against the automation owner at runtime; every Liquid destination is verified again before delivery."
                   },
                   "skill_ids": {
                     "type": "array",
@@ -46352,6 +47162,16 @@
                       "type": "string",
                       "format": "uuid"
                     }
+                  },
+                  "allowed_tool_keys": {
+                    "type": "array",
+                    "nullable": true,
+                    "minItems": 1,
+                    "maxItems": 500,
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "null inherits all tools allowed by the team; otherwise the automation can use only these tool keys."
                   },
                   "limits_enabled": {
                     "type": "boolean",
@@ -46662,6 +47482,755 @@
                   }
                 },
                 "additionalProperties": false
+              }
+            },
+            "required": [
+              "type",
+              "attributes"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "data"
+        ],
+        "additionalProperties": false
+      },
+      "investigation": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "format": "uuid"
+              },
+              "type": {
+                "type": "string",
+                "enum": [
+                  "investigations"
+                ]
+              },
+              "attributes": {
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "type": "string",
+                    "enum": [
+                      "pending",
+                      "running",
+                      "completed",
+                      "failed",
+                      "cancelled"
+                    ]
+                  },
+                  "outcome": {
+                    "type": "string",
+                    "nullable": true,
+                    "enum": [
+                      "root_cause_identified",
+                      "best_effort",
+                      "inconclusive",
+                      "blocked",
+                      "could_not_investigate",
+                      null
+                    ]
+                  },
+                  "confidence": {
+                    "type": "integer",
+                    "nullable": true
+                  },
+                  "trigger_source": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "alert_id": {
+                    "type": "string",
+                    "format": "uuid",
+                    "nullable": true
+                  },
+                  "incident_id": {
+                    "type": "string",
+                    "format": "uuid",
+                    "nullable": true
+                  },
+                  "url": {
+                    "type": "string",
+                    "description": "The investigation tab on the alert or incident page."
+                  },
+                  "started_at": {
+                    "type": "string",
+                    "format": "date-time",
+                    "nullable": true
+                  },
+                  "finished_at": {
+                    "type": "string",
+                    "format": "date-time",
+                    "nullable": true
+                  },
+                  "created_at": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "summary": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "root_cause": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "review_status": {
+                    "type": "object",
+                    "nullable": true,
+                    "description": "Set when the final review failed and the verdict rests on an earlier review round.",
+                    "properties": {
+                      "kind": {
+                        "type": "string",
+                        "enum": [
+                          "retained_prior_review"
+                        ]
+                      },
+                      "message": {
+                        "type": "string"
+                      },
+                      "final_review_failed": {
+                        "type": "string",
+                        "nullable": true
+                      },
+                      "retained_review_round": {
+                        "type": "integer",
+                        "nullable": true
+                      },
+                      "retained_decision": {
+                        "type": "string",
+                        "nullable": true,
+                        "enum": [
+                          "accept",
+                          "upgrade",
+                          null
+                        ]
+                      },
+                      "retained_kind": {
+                        "type": "string",
+                        "nullable": true
+                      }
+                    }
+                  },
+                  "hypotheses": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string",
+                          "format": "uuid"
+                        },
+                        "claim": {
+                          "type": "string"
+                        },
+                        "summary": {
+                          "type": "string",
+                          "nullable": true
+                        },
+                        "category": {
+                          "type": "string",
+                          "nullable": true
+                        },
+                        "confidence": {
+                          "type": "integer"
+                        },
+                        "verdict": {
+                          "type": "string",
+                          "enum": [
+                            "confirmed",
+                            "refuted",
+                            "investigating",
+                            "inconclusive"
+                          ]
+                        }
+                      }
+                    }
+                  },
+                  "evidence": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "title": {
+                          "type": "string"
+                        },
+                        "detail": {
+                          "type": "string"
+                        },
+                        "source": {
+                          "type": "string"
+                        },
+                        "url": {
+                          "type": "string"
+                        },
+                        "weight": {
+                          "type": "string",
+                          "enum": [
+                            "decisive",
+                            "supporting"
+                          ]
+                        }
+                      }
+                    }
+                  },
+                  "causal_chain": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "edge": {
+                          "type": "string"
+                        },
+                        "at": {
+                          "type": "string",
+                          "format": "date-time"
+                        },
+                        "evidence": {
+                          "type": "string"
+                        },
+                        "status": {
+                          "type": "string",
+                          "enum": [
+                            "confirmed",
+                            "likely",
+                            "refuted"
+                          ]
+                        }
+                      }
+                    }
+                  },
+                  "open_questions": {
+                    "type": "array",
+                    "description": "What the investigation could not verify.",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "key": {
+                          "type": "string"
+                        },
+                        "question": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "key",
+                        "question"
+                      ]
+                    }
+                  }
+                },
+                "required": [
+                  "status",
+                  "url",
+                  "created_at"
+                ]
+              }
+            },
+            "required": [
+              "id",
+              "type",
+              "attributes"
+            ]
+          }
+        },
+        "required": [
+          "data"
+        ]
+      },
+      "investigation_list": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "investigations"
+                  ]
+                },
+                "attributes": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "enum": [
+                        "pending",
+                        "running",
+                        "completed",
+                        "failed",
+                        "cancelled"
+                      ]
+                    },
+                    "outcome": {
+                      "type": "string",
+                      "nullable": true,
+                      "enum": [
+                        "root_cause_identified",
+                        "best_effort",
+                        "inconclusive",
+                        "blocked",
+                        "could_not_investigate",
+                        null
+                      ]
+                    },
+                    "confidence": {
+                      "type": "integer",
+                      "nullable": true
+                    },
+                    "trigger_source": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "alert_id": {
+                      "type": "string",
+                      "format": "uuid",
+                      "nullable": true
+                    },
+                    "incident_id": {
+                      "type": "string",
+                      "format": "uuid",
+                      "nullable": true
+                    },
+                    "url": {
+                      "type": "string",
+                      "description": "The investigation tab on the alert or incident page."
+                    },
+                    "started_at": {
+                      "type": "string",
+                      "format": "date-time",
+                      "nullable": true
+                    },
+                    "finished_at": {
+                      "type": "string",
+                      "format": "date-time",
+                      "nullable": true
+                    },
+                    "created_at": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "summary": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "root_cause": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "review_status": {
+                      "type": "object",
+                      "nullable": true,
+                      "description": "Set when the final review failed and the verdict rests on an earlier review round.",
+                      "properties": {
+                        "kind": {
+                          "type": "string",
+                          "enum": [
+                            "retained_prior_review"
+                          ]
+                        },
+                        "message": {
+                          "type": "string"
+                        },
+                        "final_review_failed": {
+                          "type": "string",
+                          "nullable": true
+                        },
+                        "retained_review_round": {
+                          "type": "integer",
+                          "nullable": true
+                        },
+                        "retained_decision": {
+                          "type": "string",
+                          "nullable": true,
+                          "enum": [
+                            "accept",
+                            "upgrade",
+                            null
+                          ]
+                        },
+                        "retained_kind": {
+                          "type": "string",
+                          "nullable": true
+                        }
+                      }
+                    },
+                    "hypotheses": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "format": "uuid"
+                          },
+                          "claim": {
+                            "type": "string"
+                          },
+                          "summary": {
+                            "type": "string",
+                            "nullable": true
+                          },
+                          "category": {
+                            "type": "string",
+                            "nullable": true
+                          },
+                          "confidence": {
+                            "type": "integer"
+                          },
+                          "verdict": {
+                            "type": "string",
+                            "enum": [
+                              "confirmed",
+                              "refuted",
+                              "investigating",
+                              "inconclusive"
+                            ]
+                          }
+                        }
+                      }
+                    },
+                    "evidence": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "title": {
+                            "type": "string"
+                          },
+                          "detail": {
+                            "type": "string"
+                          },
+                          "source": {
+                            "type": "string"
+                          },
+                          "url": {
+                            "type": "string"
+                          },
+                          "weight": {
+                            "type": "string",
+                            "enum": [
+                              "decisive",
+                              "supporting"
+                            ]
+                          }
+                        }
+                      }
+                    },
+                    "causal_chain": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "edge": {
+                            "type": "string"
+                          },
+                          "at": {
+                            "type": "string",
+                            "format": "date-time"
+                          },
+                          "evidence": {
+                            "type": "string"
+                          },
+                          "status": {
+                            "type": "string",
+                            "enum": [
+                              "confirmed",
+                              "likely",
+                              "refuted"
+                            ]
+                          }
+                        }
+                      }
+                    },
+                    "open_questions": {
+                      "type": "array",
+                      "description": "What the investigation could not verify.",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "key": {
+                            "type": "string"
+                          },
+                          "question": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "key",
+                          "question"
+                        ]
+                      }
+                    }
+                  },
+                  "required": [
+                    "status",
+                    "url",
+                    "created_at"
+                  ]
+                }
+              },
+              "required": [
+                "id",
+                "type",
+                "attributes"
+              ]
+            }
+          },
+          "meta": {
+            "$ref": "#/components/schemas/meta"
+          }
+        },
+        "required": [
+          "data",
+          "meta"
+        ]
+      },
+      "investigation_progress": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "format": "uuid"
+              },
+              "type": {
+                "type": "string",
+                "enum": [
+                  "investigation_progress"
+                ]
+              },
+              "attributes": {
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "type": "string",
+                    "enum": [
+                      "pending",
+                      "running",
+                      "completed",
+                      "failed",
+                      "cancelled"
+                    ]
+                  },
+                  "outcome": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "done": {
+                    "type": "boolean",
+                    "description": "True once the investigation has finished; stop polling."
+                  },
+                  "phases": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string",
+                          "format": "uuid"
+                        },
+                        "phase": {
+                          "type": "string"
+                        },
+                        "label": {
+                          "type": "string"
+                        },
+                        "status": {
+                          "type": "string"
+                        },
+                        "started_at": {
+                          "type": "string",
+                          "format": "date-time",
+                          "nullable": true
+                        },
+                        "finished_at": {
+                          "type": "string",
+                          "format": "date-time",
+                          "nullable": true
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "phase",
+                        "label",
+                        "status"
+                      ]
+                    }
+                  },
+                  "open_questions": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "key": {
+                          "type": "string"
+                        },
+                        "question": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "key",
+                        "question"
+                      ]
+                    }
+                  },
+                  "entries": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "cursor": {
+                          "type": "string"
+                        },
+                        "at": {
+                          "type": "string",
+                          "format": "date-time"
+                        },
+                        "kind": {
+                          "type": "string",
+                          "enum": [
+                            "step",
+                            "tool"
+                          ]
+                        },
+                        "phase": {
+                          "type": "string"
+                        },
+                        "phase_label": {
+                          "type": "string"
+                        },
+                        "title": {
+                          "type": "string"
+                        },
+                        "tool": {
+                          "type": "string"
+                        },
+                        "sentence": {
+                          "type": "string"
+                        },
+                        "outcome": {
+                          "type": "string"
+                        },
+                        "error_type": {
+                          "type": "string"
+                        },
+                        "error_label": {
+                          "type": "string"
+                        },
+                        "rows_returned": {
+                          "type": "integer"
+                        },
+                        "duration_ms": {
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "cursor",
+                        "at",
+                        "kind"
+                      ]
+                    }
+                  },
+                  "has_more": {
+                    "type": "boolean",
+                    "description": "More entries are ready; call again with after=next_cursor without waiting."
+                  },
+                  "next_cursor": {
+                    "type": "string",
+                    "nullable": true,
+                    "description": "Pass as `after` on the next call."
+                  }
+                },
+                "required": [
+                  "status",
+                  "done",
+                  "phases",
+                  "open_questions",
+                  "entries",
+                  "has_more",
+                  "next_cursor"
+                ]
+              }
+            },
+            "required": [
+              "id",
+              "type",
+              "attributes"
+            ]
+          }
+        },
+        "required": [
+          "data"
+        ]
+      },
+      "new_investigation": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "investigations"
+                ]
+              },
+              "attributes": {
+                "type": "object",
+                "description": "Give exactly one of alert_id or incident_id.",
+                "oneOf": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "alert_id": {
+                        "type": "string",
+                        "format": "uuid"
+                      },
+                      "rerun": {
+                        "type": "boolean",
+                        "description": "Start a fresh run. Returns 409 rerun_unavailable while the latest investigation is still running or rerun is off for the team."
+                      }
+                    },
+                    "required": [
+                      "alert_id"
+                    ],
+                    "additionalProperties": false
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "incident_id": {
+                        "type": "string",
+                        "format": "uuid"
+                      },
+                      "rerun": {
+                        "type": "boolean",
+                        "description": "Start a fresh run. Returns 409 rerun_unavailable while the latest investigation is still running or rerun is off for the team."
+                      }
+                    },
+                    "required": [
+                      "incident_id"
+                    ],
+                    "additionalProperties": false
+                  }
+                ]
               }
             },
             "required": [
@@ -49882,6 +51451,7 @@
                                   "Group",
                                   "Functionality",
                                   "EscalationPolicy",
+                                  "CatalogEntity",
                                   "dynamic"
                                 ],
                                 "description": "The type of the target. `dynamic` pages the escalation policy of the catalog entity matched from the alert, takes catalog_type, catalog_id and match_keys instead of target_id, and is only available when dynamic alert routing is enabled for the organization. Please contact support if you encounter issues using `Functionality` as a target type."
@@ -50181,6 +51751,7 @@
                                   "Group",
                                   "Functionality",
                                   "EscalationPolicy",
+                                  "CatalogEntity",
                                   "dynamic"
                                 ],
                                 "description": "The type of the target. `dynamic` pages the escalation policy of the catalog entity matched from the alert, takes catalog_type, catalog_id and match_keys instead of target_id, and is only available when dynamic alert routing is enabled for the organization. Please contact support if you encounter issues using `Functionality` as a target type."
@@ -50501,6 +52072,7 @@
                                   "Group",
                                   "Functionality",
                                   "EscalationPolicy",
+                                  "CatalogEntity",
                                   "dynamic"
                                 ],
                                 "description": "The type of the target. `dynamic` pages the escalation policy of the catalog entity matched from the alert, takes catalog_type, catalog_id and match_keys instead of target_id, and is only available when dynamic alert routing is enabled for the organization. Please contact support if you encounter issues using `Functionality` as a target type."
@@ -50791,6 +52363,7 @@
                           "Group",
                           "Functionality",
                           "EscalationPolicy",
+                          "CatalogEntity",
                           "dynamic"
                         ],
                         "description": "The type of the target. `dynamic` pages the escalation policy of the catalog entity matched from the alert, takes catalog_type, catalog_id and match_keys instead of target_id, and is only available when dynamic alert routing is enabled for the organization. Please contact support if you encounter issues using `Functionality` as a target type."
@@ -51214,7 +52787,8 @@
                           "Service",
                           "Group",
                           "Functionality",
-                          "EscalationPolicy"
+                          "EscalationPolicy",
+                          "CatalogEntity"
                         ]
                       },
                       "target_id": {
@@ -51377,7 +52951,8 @@
                           "Service",
                           "Group",
                           "Functionality",
-                          "EscalationPolicy"
+                          "EscalationPolicy",
+                          "CatalogEntity"
                         ]
                       },
                       "target_id": {
@@ -51506,7 +53081,8 @@
                   "Service",
                   "Group",
                   "Functionality",
-                  "EscalationPolicy"
+                  "EscalationPolicy",
+                  "CatalogEntity"
                 ]
               },
               "target_id": {
@@ -51762,7 +53338,8 @@
               "Service",
               "Group",
               "Functionality",
-              "EscalationPolicy"
+              "EscalationPolicy",
+              "CatalogEntity"
             ]
           },
           "target_id": {
@@ -58420,8 +59997,28 @@
                             "severity",
                             "functionality",
                             "group",
-                            "incident_type"
+                            "incident_type",
+                            "form_field"
                           ]
+                        },
+                        "form_field_id": {
+                          "type": "string",
+                          "description": "ID of the custom field. Required when property_type is form_field",
+                          "nullable": true
+                        },
+                        "properties": {
+                          "type": "array",
+                          "description": "Selected values as objects with an id. For form_field conditions, the custom field option IDs",
+                          "nullable": true,
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "string"
+                              }
+                            },
+                            "additionalProperties": false
+                          }
                         },
                         "service_ids": {
                           "type": "array",
@@ -58602,8 +60199,28 @@
                             "severity",
                             "functionality",
                             "group",
-                            "incident_type"
+                            "incident_type",
+                            "form_field"
                           ]
+                        },
+                        "form_field_id": {
+                          "type": "string",
+                          "description": "ID of the custom field. Required when property_type is form_field",
+                          "nullable": true
+                        },
+                        "properties": {
+                          "type": "array",
+                          "description": "Selected values as objects with an id. For form_field conditions, the custom field option IDs",
+                          "nullable": true,
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "string"
+                              }
+                            },
+                            "additionalProperties": false
+                          }
                         },
                         "service_ids": {
                           "type": "array",
@@ -58757,8 +60374,31 @@
                     "severity",
                     "functionality",
                     "group",
-                    "incident_type"
+                    "incident_type",
+                    "form_field"
                   ]
+                },
+                "form_field_id": {
+                  "type": "string",
+                  "description": "ID of the custom field. Required when property_type is form_field",
+                  "nullable": true
+                },
+                "properties": {
+                  "type": "array",
+                  "description": "Selected values as objects with an id. For form_field conditions, the custom field option IDs",
+                  "nullable": true,
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string",
+                        "nullable": true
+                      }
+                    }
+                  }
                 },
                 "service_ids": {
                   "type": "array",
@@ -64952,6 +66592,11 @@
                           ],
                           "default": "match-all-rules"
                         },
+                        "skip_escalation": {
+                          "type": "boolean",
+                          "description": "When this quiet rule matches, page only the first level that has responders, once, without escalating to later levels or repeating. Ignored for audible rules. Only available when skipping escalation for quiet alerts is enabled for the organization.",
+                          "default": false
+                        },
                         "conditions": {
                           "type": "array",
                           "minItems": 1,
@@ -65623,6 +67268,11 @@
                       "quiet"
                     ],
                     "default": "audible"
+                  },
+                  "notification_type_fallback_skip_escalation": {
+                    "type": "boolean",
+                    "description": "When the fallback pages quiet, page only the first level that has responders, once, without escalating to later levels or repeating. Reset to false whenever the fallback is audible. Only available when skipping escalation for quiet alerts is enabled for the organization.",
+                    "default": false
                   },
                   "time_restriction_time_zone": {
                     "type": "string",
@@ -66794,6 +68444,11 @@
                           ],
                           "default": "match-all-rules"
                         },
+                        "skip_escalation": {
+                          "type": "boolean",
+                          "description": "When this quiet rule matches, page only the first level that has responders, once, without escalating to later levels or repeating. Ignored for audible rules. Only available when skipping escalation for quiet alerts is enabled for the organization.",
+                          "default": false
+                        },
                         "conditions": {
                           "type": "array",
                           "minItems": 1,
@@ -67465,6 +69120,11 @@
                       "quiet"
                     ],
                     "default": "audible"
+                  },
+                  "notification_type_fallback_skip_escalation": {
+                    "type": "boolean",
+                    "description": "When the fallback pages quiet, page only the first level that has responders, once, without escalating to later levels or repeating. Reset to false whenever the fallback is audible. Only available when skipping escalation for quiet alerts is enabled for the organization.",
+                    "default": false
                   },
                   "time_restriction_time_zone": {
                     "type": "string",
@@ -68599,6 +70259,11 @@
                   ],
                   "default": "match-all-rules"
                 },
+                "skip_escalation": {
+                  "type": "boolean",
+                  "description": "When this quiet rule matches, page only the first level that has responders, once, without escalating to later levels or repeating. Ignored for audible rules. Only available when skipping escalation for quiet alerts is enabled for the organization.",
+                  "default": false
+                },
                 "conditions": {
                   "type": "array",
                   "minItems": 1,
@@ -69271,6 +70936,11 @@
             ],
             "default": "audible"
           },
+          "notification_type_fallback_skip_escalation": {
+            "type": "boolean",
+            "description": "When the fallback pages quiet, page only the first level that has responders, once, without escalating to later levels or repeating. Reset to false whenever the fallback is audible. Only available when skipping escalation for quiet alerts is enabled for the organization.",
+            "default": false
+          },
           "time_restriction_time_zone": {
             "type": "string",
             "description": "Time zone used for time restrictions.",
@@ -69811,7 +71481,7 @@
                   },
                   "notification_target_params": {
                     "type": "array",
-                    "description": "Escalation level's notification targets",
+                    "description": "Escalation level's notification targets. Must include at least one target other than ai_sre.",
                     "items": {
                       "type": "object",
                       "properties": {
@@ -69953,7 +71623,7 @@
                   },
                   "notification_target_params": {
                     "type": "array",
-                    "description": "Escalation level's notification targets",
+                    "description": "Escalation level's notification targets. Must include at least one target other than ai_sre.",
                     "items": {
                       "type": "object",
                       "properties": {
@@ -70087,7 +71757,7 @@
           },
           "notification_target_params": {
             "type": "array",
-            "description": "Escalation level's notification targets",
+            "description": "Escalation level's notification targets.",
             "items": {
               "type": "object",
               "properties": {
@@ -70483,6 +72153,290 @@
           "meta"
         ]
       },
+      "new_form_field_placement_condition_group": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "form_field_placement_condition_groups"
+                ]
+              },
+              "attributes": {
+                "type": "object",
+                "properties": {
+                  "group_type": {
+                    "type": "string",
+                    "description": "Whether the group's conditions control the field's placement (visibility) or requiredness. Cannot be changed after creation.",
+                    "enum": [
+                      "placement",
+                      "required"
+                    ]
+                  },
+                  "group_operator": {
+                    "type": "string",
+                    "description": "Logical operator used to combine the conditions inside this group.",
+                    "enum": [
+                      "and",
+                      "or"
+                    ]
+                  },
+                  "position": {
+                    "type": "integer",
+                    "description": "The position of the group among groups of the same group_type."
+                  }
+                },
+                "additionalProperties": false,
+                "required": [
+                  "group_type",
+                  "group_operator"
+                ]
+              }
+            },
+            "additionalProperties": false,
+            "required": [
+              "type",
+              "attributes"
+            ]
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "data"
+        ]
+      },
+      "update_form_field_placement_condition_group": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Accepted for JSON:API client compatibility, but ignored. The resource to update is identified by the id in the path."
+              },
+              "type": {
+                "type": "string",
+                "enum": [
+                  "form_field_placement_condition_groups"
+                ]
+              },
+              "attributes": {
+                "type": "object",
+                "properties": {
+                  "group_operator": {
+                    "type": "string",
+                    "description": "Logical operator used to combine the conditions inside this group.",
+                    "enum": [
+                      "and",
+                      "or"
+                    ]
+                  },
+                  "position": {
+                    "type": "integer",
+                    "description": "The position of the group among groups of the same group_type."
+                  }
+                },
+                "additionalProperties": false
+              }
+            },
+            "additionalProperties": false,
+            "required": [
+              "type",
+              "attributes"
+            ]
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "data"
+        ]
+      },
+      "form_field_placement_condition_group": {
+        "type": "object",
+        "properties": {
+          "form_field_placement_id": {
+            "type": "string",
+            "description": "The form field placement this group belongs to."
+          },
+          "group_type": {
+            "type": "string",
+            "description": "Whether the group's conditions control the field's placement (visibility) or requiredness. Cannot be changed after creation.",
+            "enum": [
+              "placement",
+              "required"
+            ]
+          },
+          "group_operator": {
+            "type": "string",
+            "description": "Logical operator used to combine the conditions inside this group.",
+            "enum": [
+              "and",
+              "or"
+            ]
+          },
+          "position": {
+            "type": "integer",
+            "description": "The position of the group among groups of the same group_type."
+          },
+          "conditions": {
+            "type": "array",
+            "description": "The conditions in this group, ordered by position. Manage them through the form field placement conditions endpoints.",
+            "readOnly": true,
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "description": "The condition ID."
+                },
+                "condition_group_id": {
+                  "type": "string",
+                  "description": "The condition group ID."
+                },
+                "conditioned": {
+                  "type": "string",
+                  "description": "Whether the condition applies to placement or requiredness."
+                },
+                "position": {
+                  "type": "integer",
+                  "description": "The condition position."
+                },
+                "form_field_id": {
+                  "type": "string",
+                  "description": "The condition field."
+                },
+                "comparison": {
+                  "type": "string",
+                  "description": "The condition comparison."
+                },
+                "values": {
+                  "type": "array",
+                  "description": "The values for comparison.",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "required": [
+          "form_field_placement_id",
+          "group_type",
+          "group_operator",
+          "position",
+          "conditions"
+        ]
+      },
+      "form_field_placement_condition_group_response": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Unique ID of the condition group"
+              },
+              "type": {
+                "type": "string",
+                "enum": [
+                  "form_field_placement_condition_groups"
+                ]
+              },
+              "attributes": {
+                "type": "object",
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/form_field_placement_condition_group"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "id",
+              "type",
+              "attributes"
+            ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
+          }
+        },
+        "required": [
+          "data"
+        ]
+      },
+      "form_field_placement_condition_group_list": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "description": "Unique ID of the condition group"
+                },
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "form_field_placement_condition_groups"
+                  ]
+                },
+                "attributes": {
+                  "type": "object",
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/form_field_placement_condition_group"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "id",
+                "type",
+                "attributes"
+              ]
+            }
+          },
+          "links": {
+            "type": "object",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/links"
+              }
+            ]
+          },
+          "meta": {
+            "type": "object",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/meta"
+              }
+            ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
+          }
+        },
+        "required": [
+          "data",
+          "links",
+          "meta"
+        ]
+      },
       "new_form_field_placement_condition": {
         "type": "object",
         "properties": {
@@ -70505,6 +72459,10 @@
                       "placement",
                       "required"
                     ]
+                  },
+                  "condition_group_id": {
+                    "type": "string",
+                    "description": "The group to add the condition to. Must be on the same placement and match `conditioned`. If omitted on create, the condition gets its own group."
                   },
                   "position": {
                     "type": "integer",
@@ -70581,6 +72539,10 @@
                       "required"
                     ]
                   },
+                  "condition_group_id": {
+                    "type": "string",
+                    "description": "The group to move the condition to. Must be on the same placement and match `conditioned`. If omitted, the condition stays in its current group."
+                  },
                   "position": {
                     "type": "integer",
                     "description": "The condition position."
@@ -70629,6 +72591,11 @@
           "form_field_placement_id": {
             "type": "string",
             "description": "The form field placement this condition applies."
+          },
+          "condition_group_id": {
+            "type": "string",
+            "description": "The condition group this condition belongs to.",
+            "nullable": true
           },
           "conditioned": {
             "type": "string",
@@ -73659,6 +75626,67 @@
                 }
               }
             }
+          }
+        },
+        "required": [
+          "summary",
+          "status",
+          "priority"
+        ]
+      },
+      "add_problem_action_item_task_params": {
+        "type": "object",
+        "properties": {
+          "task_type": {
+            "type": "string",
+            "enum": [
+              "add_problem_action_item"
+            ]
+          },
+          "summary": {
+            "type": "string",
+            "description": "The action item summary. Supports Liquid."
+          },
+          "description": {
+            "type": "string",
+            "description": "The action item description. Supports Liquid.",
+            "nullable": true
+          },
+          "status": {
+            "type": "string",
+            "description": "The action item status",
+            "enum": [
+              "open",
+              "in_progress",
+              "cancelled",
+              "done"
+            ]
+          },
+          "priority": {
+            "type": "string",
+            "description": "The action item priority",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "assigned_to_user": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              }
+            },
+            "description": "The user this action item is assigned to. The id supports Liquid."
+          },
+          "due_date": {
+            "type": "string",
+            "description": "The action item due date (YYYY-MM-DD). Supports Liquid.",
+            "nullable": true
           }
         },
         "required": [
@@ -82682,6 +84710,9 @@
                         "$ref": "#/components/schemas/add_action_item_task_params"
                       },
                       {
+                        "$ref": "#/components/schemas/add_problem_action_item_task_params"
+                      },
+                      {
                         "$ref": "#/components/schemas/update_action_item_task_params"
                       },
                       {
@@ -83197,6 +85228,9 @@
                         "$ref": "#/components/schemas/add_action_item_task_params"
                       },
                       {
+                        "$ref": "#/components/schemas/add_problem_action_item_task_params"
+                      },
+                      {
                         "$ref": "#/components/schemas/update_action_item_task_params"
                       },
                       {
@@ -83678,6 +85712,9 @@
             "oneOf": [
               {
                 "$ref": "#/components/schemas/add_action_item_task_params"
+              },
+              {
+                "$ref": "#/components/schemas/add_problem_action_item_task_params"
               },
               {
                 "$ref": "#/components/schemas/update_action_item_task_params"
@@ -98224,16 +100261,6 @@
                   "system_role": {
                     "type": "string",
                     "description": "Deprecated. Set by the server: new roles are `custom` and a role keeps its kind. Any submitted value is ignored. This property will be removed from the request schema in a future version.",
-                    "items": {
-                      "type": "string",
-                      "enum": [
-                        "admin",
-                        "user",
-                        "custom",
-                        "observer",
-                        "no_access"
-                      ]
-                    },
                     "default": "custom",
                     "deprecated": true
                   },
@@ -98579,16 +100606,6 @@
                   "system_role": {
                     "type": "string",
                     "description": "Deprecated. Set by the server: new roles are `custom` and a role keeps its kind. Any submitted value is ignored. This property will be removed from the request schema in a future version.",
-                    "items": {
-                      "type": "string",
-                      "enum": [
-                        "admin",
-                        "user",
-                        "custom",
-                        "observer",
-                        "no_access"
-                      ]
-                    },
                     "default": "custom",
                     "deprecated": true
                   },
@@ -98914,16 +100931,13 @@
           "system_role": {
             "type": "string",
             "description": "The kind of role",
-            "items": {
-              "type": "string",
-              "enum": [
-                "admin",
-                "user",
-                "custom",
-                "observer",
-                "no_access"
-              ]
-            },
+            "enum": [
+              "admin",
+              "user",
+              "custom",
+              "observer",
+              "no_access"
+            ],
             "default": "custom"
           },
           "alert_sources_permissions": {
@@ -105883,16 +107897,13 @@
                   },
                   "active_time_type": {
                     "type": "string",
-                    "items": {
-                      "type": "string",
-                      "description": "Schedule rotation active time type",
-                      "enum": [
-                        "all_day",
-                        "same_time",
-                        "custom"
-                      ],
-                      "default": "all_day"
-                    }
+                    "description": "Schedule rotation active time type",
+                    "enum": [
+                      "all_day",
+                      "same_time",
+                      "custom"
+                    ],
+                    "default": "all_day"
                   },
                   "active_time_attributes": {
                     "type": "array",
@@ -106147,16 +108158,13 @@
                   },
                   "active_time_type": {
                     "type": "string",
-                    "items": {
-                      "type": "string",
-                      "description": "Schedule rotation active time type",
-                      "enum": [
-                        "all_day",
-                        "same_time",
-                        "custom"
-                      ],
-                      "default": "all_day"
-                    }
+                    "description": "Schedule rotation active time type",
+                    "enum": [
+                      "all_day",
+                      "same_time",
+                      "custom"
+                    ],
+                    "default": "all_day"
                   },
                   "active_time_attributes": {
                     "type": "array",
@@ -106397,16 +108405,13 @@
           },
           "active_time_type": {
             "type": "string",
-            "items": {
-              "type": "string",
-              "description": "Schedule rotation active time type",
-              "enum": [
-                "all_day",
-                "same_time",
-                "custom"
-              ],
-              "default": "all_day"
-            }
+            "description": "Schedule rotation active time type",
+            "enum": [
+              "all_day",
+              "same_time",
+              "custom"
+            ],
+            "default": "all_day"
           },
           "active_time_attributes": {
             "type": "array",
@@ -113616,6 +115621,111 @@
           "data",
           "links",
           "meta"
+        ]
+      },
+      "update_user_notification_settings": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Accepted for JSON:API client compatibility, but ignored. The settings always belong to the authenticated user."
+              },
+              "type": {
+                "type": "string",
+                "enum": [
+                  "user_notification_settings"
+                ]
+              },
+              "attributes": {
+                "type": "object",
+                "properties": {
+                  "mute_until": {
+                    "type": "integer",
+                    "nullable": true,
+                    "description": "Unix epoch seconds (UTC) until which all of the authenticated user's alert notifications are muted. Must be in the future and at most one year away. Sending a new value while a mute is active replaces the existing mute. Send null (or 0) to clear the mute."
+                  }
+                },
+                "additionalProperties": false,
+                "required": [
+                  "mute_until"
+                ]
+              }
+            },
+            "additionalProperties": false,
+            "required": [
+              "type",
+              "attributes"
+            ]
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "data"
+        ]
+      },
+      "user_notification_settings": {
+        "type": "object",
+        "properties": {
+          "mute_until": {
+            "type": "integer",
+            "nullable": true,
+            "description": "Unix epoch seconds (UTC) until which the user's alert notifications are muted. Null when no mute is set."
+          },
+          "mute_until_at": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true,
+            "description": "The same mute expiry as an ISO 8601 timestamp. Null when no mute is set."
+          },
+          "muted": {
+            "type": "boolean",
+            "description": "Whether the user's alert notifications are currently muted."
+          }
+        }
+      },
+      "user_notification_settings_response": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "ID of the authenticated user the settings belong to"
+              },
+              "type": {
+                "type": "string",
+                "enum": [
+                  "user_notification_settings"
+                ]
+              },
+              "attributes": {
+                "type": "object",
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/user_notification_settings"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "id",
+              "type",
+              "attributes"
+            ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
+          }
+        },
+        "required": [
+          "data"
         ]
       },
       "new_user_phone_number": {

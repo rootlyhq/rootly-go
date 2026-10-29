@@ -1130,6 +1130,66 @@ func (e AddMicrosoftTeamsTabTaskParamsTaskType) Valid() bool {
 	}
 }
 
+// Defines values for AddProblemActionItemTaskParamsPriority.
+const (
+	AddProblemActionItemTaskParamsPriorityHigh   AddProblemActionItemTaskParamsPriority = "high"
+	AddProblemActionItemTaskParamsPriorityLow    AddProblemActionItemTaskParamsPriority = "low"
+	AddProblemActionItemTaskParamsPriorityMedium AddProblemActionItemTaskParamsPriority = "medium"
+)
+
+// Valid indicates whether the value is a known member of the AddProblemActionItemTaskParamsPriority enum.
+func (e AddProblemActionItemTaskParamsPriority) Valid() bool {
+	switch e {
+	case AddProblemActionItemTaskParamsPriorityHigh:
+		return true
+	case AddProblemActionItemTaskParamsPriorityLow:
+		return true
+	case AddProblemActionItemTaskParamsPriorityMedium:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AddProblemActionItemTaskParamsStatus.
+const (
+	AddProblemActionItemTaskParamsStatusCancelled  AddProblemActionItemTaskParamsStatus = "cancelled"
+	AddProblemActionItemTaskParamsStatusDone       AddProblemActionItemTaskParamsStatus = "done"
+	AddProblemActionItemTaskParamsStatusInProgress AddProblemActionItemTaskParamsStatus = "in_progress"
+	AddProblemActionItemTaskParamsStatusOpen       AddProblemActionItemTaskParamsStatus = "open"
+)
+
+// Valid indicates whether the value is a known member of the AddProblemActionItemTaskParamsStatus enum.
+func (e AddProblemActionItemTaskParamsStatus) Valid() bool {
+	switch e {
+	case AddProblemActionItemTaskParamsStatusCancelled:
+		return true
+	case AddProblemActionItemTaskParamsStatusDone:
+		return true
+	case AddProblemActionItemTaskParamsStatusInProgress:
+		return true
+	case AddProblemActionItemTaskParamsStatusOpen:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AddProblemActionItemTaskParamsTaskType.
+const (
+	AddProblemActionItemTaskParamsTaskTypeAddProblemActionItem AddProblemActionItemTaskParamsTaskType = "add_problem_action_item"
+)
+
+// Valid indicates whether the value is a known member of the AddProblemActionItemTaskParamsTaskType enum.
+func (e AddProblemActionItemTaskParamsTaskType) Valid() bool {
+	switch e {
+	case AddProblemActionItemTaskParamsTaskTypeAddProblemActionItem:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for AddRoleTaskParamsTaskType.
 const (
 	AddRoleTaskParamsTaskTypeAddRole AddRoleTaskParamsTaskType = "add_role"
@@ -4207,6 +4267,7 @@ func (e AlertRouteRulesDestinationsMatchKeysSourceKind) Valid() bool {
 
 // Defines values for AlertRouteRulesDestinationsTargetType.
 const (
+	AlertRouteRulesDestinationsTargetTypeCatalogEntity    AlertRouteRulesDestinationsTargetType = "CatalogEntity"
 	AlertRouteRulesDestinationsTargetTypeDynamic          AlertRouteRulesDestinationsTargetType = "dynamic"
 	AlertRouteRulesDestinationsTargetTypeEscalationPolicy AlertRouteRulesDestinationsTargetType = "EscalationPolicy"
 	AlertRouteRulesDestinationsTargetTypeFunctionality    AlertRouteRulesDestinationsTargetType = "Functionality"
@@ -4217,6 +4278,8 @@ const (
 // Valid indicates whether the value is a known member of the AlertRouteRulesDestinationsTargetType enum.
 func (e AlertRouteRulesDestinationsTargetType) Valid() bool {
 	switch e {
+	case AlertRouteRulesDestinationsTargetTypeCatalogEntity:
+		return true
 	case AlertRouteRulesDestinationsTargetTypeDynamic:
 		return true
 	case AlertRouteRulesDestinationsTargetTypeEscalationPolicy:
@@ -4408,6 +4471,7 @@ func (e AlertRoutingRuleConditionsPropertyFieldType) Valid() bool {
 
 // Defines values for AlertRoutingRuleDestinationTargetType.
 const (
+	AlertRoutingRuleDestinationTargetTypeCatalogEntity    AlertRoutingRuleDestinationTargetType = "CatalogEntity"
 	AlertRoutingRuleDestinationTargetTypeEscalationPolicy AlertRoutingRuleDestinationTargetType = "EscalationPolicy"
 	AlertRoutingRuleDestinationTargetTypeFunctionality    AlertRoutingRuleDestinationTargetType = "Functionality"
 	AlertRoutingRuleDestinationTargetTypeGroup            AlertRoutingRuleDestinationTargetType = "Group"
@@ -4417,6 +4481,8 @@ const (
 // Valid indicates whether the value is a known member of the AlertRoutingRuleDestinationTargetType enum.
 func (e AlertRoutingRuleDestinationTargetType) Valid() bool {
 	switch e {
+	case AlertRoutingRuleDestinationTargetTypeCatalogEntity:
+		return true
 	case AlertRoutingRuleDestinationTargetTypeEscalationPolicy:
 		return true
 	case AlertRoutingRuleDestinationTargetTypeFunctionality:
@@ -4516,6 +4582,7 @@ func (e AlertRoutingRuleResponseDataType) Valid() bool {
 
 // Defines values for AlertRoutingRuleTargetTargetType.
 const (
+	AlertRoutingRuleTargetTargetTypeCatalogEntity    AlertRoutingRuleTargetTargetType = "CatalogEntity"
 	AlertRoutingRuleTargetTargetTypeEscalationPolicy AlertRoutingRuleTargetTargetType = "EscalationPolicy"
 	AlertRoutingRuleTargetTargetTypeFunctionality    AlertRoutingRuleTargetTargetType = "Functionality"
 	AlertRoutingRuleTargetTargetTypeGroup            AlertRoutingRuleTargetTargetType = "Group"
@@ -4525,6 +4592,8 @@ const (
 // Valid indicates whether the value is a known member of the AlertRoutingRuleTargetTargetType enum.
 func (e AlertRoutingRuleTargetTargetType) Valid() bool {
 	switch e {
+	case AlertRoutingRuleTargetTargetTypeCatalogEntity:
+		return true
 	case AlertRoutingRuleTargetTargetTypeEscalationPolicy:
 		return true
 	case AlertRoutingRuleTargetTargetTypeFunctionality:
@@ -6979,6 +7048,7 @@ func (e ChangeSlackChannelPrivacyTaskParamsTaskType) Valid() bool {
 
 // Defines values for CommunicationsGroupCommunicationGroupConditionsPropertyType.
 const (
+	CommunicationsGroupCommunicationGroupConditionsPropertyTypeFormField     CommunicationsGroupCommunicationGroupConditionsPropertyType = "form_field"
 	CommunicationsGroupCommunicationGroupConditionsPropertyTypeFunctionality CommunicationsGroupCommunicationGroupConditionsPropertyType = "functionality"
 	CommunicationsGroupCommunicationGroupConditionsPropertyTypeGroup         CommunicationsGroupCommunicationGroupConditionsPropertyType = "group"
 	CommunicationsGroupCommunicationGroupConditionsPropertyTypeIncidentType  CommunicationsGroupCommunicationGroupConditionsPropertyType = "incident_type"
@@ -6989,6 +7059,8 @@ const (
 // Valid indicates whether the value is a known member of the CommunicationsGroupCommunicationGroupConditionsPropertyType enum.
 func (e CommunicationsGroupCommunicationGroupConditionsPropertyType) Valid() bool {
 	switch e {
+	case CommunicationsGroupCommunicationGroupConditionsPropertyTypeFormField:
+		return true
 	case CommunicationsGroupCommunicationGroupConditionsPropertyTypeFunctionality:
 		return true
 	case CommunicationsGroupCommunicationGroupConditionsPropertyTypeGroup:
@@ -14345,6 +14417,72 @@ func (e FormFieldPlacementConditionConditioned) Valid() bool {
 	}
 }
 
+// Defines values for FormFieldPlacementConditionGroupGroupOperator.
+const (
+	FormFieldPlacementConditionGroupGroupOperatorAnd FormFieldPlacementConditionGroupGroupOperator = "and"
+	FormFieldPlacementConditionGroupGroupOperatorOr  FormFieldPlacementConditionGroupGroupOperator = "or"
+)
+
+// Valid indicates whether the value is a known member of the FormFieldPlacementConditionGroupGroupOperator enum.
+func (e FormFieldPlacementConditionGroupGroupOperator) Valid() bool {
+	switch e {
+	case FormFieldPlacementConditionGroupGroupOperatorAnd:
+		return true
+	case FormFieldPlacementConditionGroupGroupOperatorOr:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for FormFieldPlacementConditionGroupGroupType.
+const (
+	FormFieldPlacementConditionGroupGroupTypePlacement FormFieldPlacementConditionGroupGroupType = "placement"
+	FormFieldPlacementConditionGroupGroupTypeRequired  FormFieldPlacementConditionGroupGroupType = "required"
+)
+
+// Valid indicates whether the value is a known member of the FormFieldPlacementConditionGroupGroupType enum.
+func (e FormFieldPlacementConditionGroupGroupType) Valid() bool {
+	switch e {
+	case FormFieldPlacementConditionGroupGroupTypePlacement:
+		return true
+	case FormFieldPlacementConditionGroupGroupTypeRequired:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for FormFieldPlacementConditionGroupListDataType.
+const (
+	FormFieldPlacementConditionGroupListDataTypeFormFieldPlacementConditionGroups FormFieldPlacementConditionGroupListDataType = "form_field_placement_condition_groups"
+)
+
+// Valid indicates whether the value is a known member of the FormFieldPlacementConditionGroupListDataType enum.
+func (e FormFieldPlacementConditionGroupListDataType) Valid() bool {
+	switch e {
+	case FormFieldPlacementConditionGroupListDataTypeFormFieldPlacementConditionGroups:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for FormFieldPlacementConditionGroupResponseDataType.
+const (
+	FormFieldPlacementConditionGroupResponseDataTypeFormFieldPlacementConditionGroups FormFieldPlacementConditionGroupResponseDataType = "form_field_placement_condition_groups"
+)
+
+// Valid indicates whether the value is a known member of the FormFieldPlacementConditionGroupResponseDataType enum.
+func (e FormFieldPlacementConditionGroupResponseDataType) Valid() bool {
+	switch e {
+	case FormFieldPlacementConditionGroupResponseDataTypeFormFieldPlacementConditionGroups:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for FormFieldPlacementConditionListDataType.
 const (
 	FormFieldPlacementConditionListDataTypeFormFieldPlacementConditions FormFieldPlacementConditionListDataType = "form_field_placement_conditions"
@@ -16727,6 +16865,408 @@ func (e IncidentTypeResponseDataType) Valid() bool {
 	}
 }
 
+// Defines values for InvestigationDataAttributesCausalChainStatus.
+const (
+	InvestigationDataAttributesCausalChainStatusConfirmed InvestigationDataAttributesCausalChainStatus = "confirmed"
+	InvestigationDataAttributesCausalChainStatusLikely    InvestigationDataAttributesCausalChainStatus = "likely"
+	InvestigationDataAttributesCausalChainStatusRefuted   InvestigationDataAttributesCausalChainStatus = "refuted"
+)
+
+// Valid indicates whether the value is a known member of the InvestigationDataAttributesCausalChainStatus enum.
+func (e InvestigationDataAttributesCausalChainStatus) Valid() bool {
+	switch e {
+	case InvestigationDataAttributesCausalChainStatusConfirmed:
+		return true
+	case InvestigationDataAttributesCausalChainStatusLikely:
+		return true
+	case InvestigationDataAttributesCausalChainStatusRefuted:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for InvestigationDataAttributesEvidenceWeight.
+const (
+	InvestigationDataAttributesEvidenceWeightDecisive   InvestigationDataAttributesEvidenceWeight = "decisive"
+	InvestigationDataAttributesEvidenceWeightSupporting InvestigationDataAttributesEvidenceWeight = "supporting"
+)
+
+// Valid indicates whether the value is a known member of the InvestigationDataAttributesEvidenceWeight enum.
+func (e InvestigationDataAttributesEvidenceWeight) Valid() bool {
+	switch e {
+	case InvestigationDataAttributesEvidenceWeightDecisive:
+		return true
+	case InvestigationDataAttributesEvidenceWeightSupporting:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for InvestigationDataAttributesHypothesesVerdict.
+const (
+	InvestigationDataAttributesHypothesesVerdictConfirmed     InvestigationDataAttributesHypothesesVerdict = "confirmed"
+	InvestigationDataAttributesHypothesesVerdictInconclusive  InvestigationDataAttributesHypothesesVerdict = "inconclusive"
+	InvestigationDataAttributesHypothesesVerdictInvestigating InvestigationDataAttributesHypothesesVerdict = "investigating"
+	InvestigationDataAttributesHypothesesVerdictRefuted       InvestigationDataAttributesHypothesesVerdict = "refuted"
+)
+
+// Valid indicates whether the value is a known member of the InvestigationDataAttributesHypothesesVerdict enum.
+func (e InvestigationDataAttributesHypothesesVerdict) Valid() bool {
+	switch e {
+	case InvestigationDataAttributesHypothesesVerdictConfirmed:
+		return true
+	case InvestigationDataAttributesHypothesesVerdictInconclusive:
+		return true
+	case InvestigationDataAttributesHypothesesVerdictInvestigating:
+		return true
+	case InvestigationDataAttributesHypothesesVerdictRefuted:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for InvestigationDataAttributesOutcome.
+const (
+	InvestigationDataAttributesOutcomeBestEffort          InvestigationDataAttributesOutcome = "best_effort"
+	InvestigationDataAttributesOutcomeBlocked             InvestigationDataAttributesOutcome = "blocked"
+	InvestigationDataAttributesOutcomeCouldNotInvestigate InvestigationDataAttributesOutcome = "could_not_investigate"
+	InvestigationDataAttributesOutcomeInconclusive        InvestigationDataAttributesOutcome = "inconclusive"
+	InvestigationDataAttributesOutcomeLessThanNil         InvestigationDataAttributesOutcome = "<nil>"
+	InvestigationDataAttributesOutcomeRootCauseIdentified InvestigationDataAttributesOutcome = "root_cause_identified"
+)
+
+// Valid indicates whether the value is a known member of the InvestigationDataAttributesOutcome enum.
+func (e InvestigationDataAttributesOutcome) Valid() bool {
+	switch e {
+	case InvestigationDataAttributesOutcomeBestEffort:
+		return true
+	case InvestigationDataAttributesOutcomeBlocked:
+		return true
+	case InvestigationDataAttributesOutcomeCouldNotInvestigate:
+		return true
+	case InvestigationDataAttributesOutcomeInconclusive:
+		return true
+	case InvestigationDataAttributesOutcomeLessThanNil:
+		return true
+	case InvestigationDataAttributesOutcomeRootCauseIdentified:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for InvestigationDataAttributesReviewStatusKind.
+const (
+	InvestigationDataAttributesReviewStatusKindRetainedPriorReview InvestigationDataAttributesReviewStatusKind = "retained_prior_review"
+)
+
+// Valid indicates whether the value is a known member of the InvestigationDataAttributesReviewStatusKind enum.
+func (e InvestigationDataAttributesReviewStatusKind) Valid() bool {
+	switch e {
+	case InvestigationDataAttributesReviewStatusKindRetainedPriorReview:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for InvestigationDataAttributesReviewStatusRetainedDecision.
+const (
+	InvestigationDataAttributesReviewStatusRetainedDecisionAccept      InvestigationDataAttributesReviewStatusRetainedDecision = "accept"
+	InvestigationDataAttributesReviewStatusRetainedDecisionLessThanNil InvestigationDataAttributesReviewStatusRetainedDecision = "<nil>"
+	InvestigationDataAttributesReviewStatusRetainedDecisionUpgrade     InvestigationDataAttributesReviewStatusRetainedDecision = "upgrade"
+)
+
+// Valid indicates whether the value is a known member of the InvestigationDataAttributesReviewStatusRetainedDecision enum.
+func (e InvestigationDataAttributesReviewStatusRetainedDecision) Valid() bool {
+	switch e {
+	case InvestigationDataAttributesReviewStatusRetainedDecisionAccept:
+		return true
+	case InvestigationDataAttributesReviewStatusRetainedDecisionLessThanNil:
+		return true
+	case InvestigationDataAttributesReviewStatusRetainedDecisionUpgrade:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for InvestigationDataAttributesStatus.
+const (
+	InvestigationDataAttributesStatusCancelled InvestigationDataAttributesStatus = "cancelled"
+	InvestigationDataAttributesStatusCompleted InvestigationDataAttributesStatus = "completed"
+	InvestigationDataAttributesStatusFailed    InvestigationDataAttributesStatus = "failed"
+	InvestigationDataAttributesStatusPending   InvestigationDataAttributesStatus = "pending"
+	InvestigationDataAttributesStatusRunning   InvestigationDataAttributesStatus = "running"
+)
+
+// Valid indicates whether the value is a known member of the InvestigationDataAttributesStatus enum.
+func (e InvestigationDataAttributesStatus) Valid() bool {
+	switch e {
+	case InvestigationDataAttributesStatusCancelled:
+		return true
+	case InvestigationDataAttributesStatusCompleted:
+		return true
+	case InvestigationDataAttributesStatusFailed:
+		return true
+	case InvestigationDataAttributesStatusPending:
+		return true
+	case InvestigationDataAttributesStatusRunning:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for InvestigationDataType.
+const (
+	InvestigationDataTypeInvestigations InvestigationDataType = "investigations"
+)
+
+// Valid indicates whether the value is a known member of the InvestigationDataType enum.
+func (e InvestigationDataType) Valid() bool {
+	switch e {
+	case InvestigationDataTypeInvestigations:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for InvestigationListDataAttributesCausalChainStatus.
+const (
+	InvestigationListDataAttributesCausalChainStatusConfirmed InvestigationListDataAttributesCausalChainStatus = "confirmed"
+	InvestigationListDataAttributesCausalChainStatusLikely    InvestigationListDataAttributesCausalChainStatus = "likely"
+	InvestigationListDataAttributesCausalChainStatusRefuted   InvestigationListDataAttributesCausalChainStatus = "refuted"
+)
+
+// Valid indicates whether the value is a known member of the InvestigationListDataAttributesCausalChainStatus enum.
+func (e InvestigationListDataAttributesCausalChainStatus) Valid() bool {
+	switch e {
+	case InvestigationListDataAttributesCausalChainStatusConfirmed:
+		return true
+	case InvestigationListDataAttributesCausalChainStatusLikely:
+		return true
+	case InvestigationListDataAttributesCausalChainStatusRefuted:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for InvestigationListDataAttributesEvidenceWeight.
+const (
+	InvestigationListDataAttributesEvidenceWeightDecisive   InvestigationListDataAttributesEvidenceWeight = "decisive"
+	InvestigationListDataAttributesEvidenceWeightSupporting InvestigationListDataAttributesEvidenceWeight = "supporting"
+)
+
+// Valid indicates whether the value is a known member of the InvestigationListDataAttributesEvidenceWeight enum.
+func (e InvestigationListDataAttributesEvidenceWeight) Valid() bool {
+	switch e {
+	case InvestigationListDataAttributesEvidenceWeightDecisive:
+		return true
+	case InvestigationListDataAttributesEvidenceWeightSupporting:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for InvestigationListDataAttributesHypothesesVerdict.
+const (
+	InvestigationListDataAttributesHypothesesVerdictConfirmed     InvestigationListDataAttributesHypothesesVerdict = "confirmed"
+	InvestigationListDataAttributesHypothesesVerdictInconclusive  InvestigationListDataAttributesHypothesesVerdict = "inconclusive"
+	InvestigationListDataAttributesHypothesesVerdictInvestigating InvestigationListDataAttributesHypothesesVerdict = "investigating"
+	InvestigationListDataAttributesHypothesesVerdictRefuted       InvestigationListDataAttributesHypothesesVerdict = "refuted"
+)
+
+// Valid indicates whether the value is a known member of the InvestigationListDataAttributesHypothesesVerdict enum.
+func (e InvestigationListDataAttributesHypothesesVerdict) Valid() bool {
+	switch e {
+	case InvestigationListDataAttributesHypothesesVerdictConfirmed:
+		return true
+	case InvestigationListDataAttributesHypothesesVerdictInconclusive:
+		return true
+	case InvestigationListDataAttributesHypothesesVerdictInvestigating:
+		return true
+	case InvestigationListDataAttributesHypothesesVerdictRefuted:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for InvestigationListDataAttributesOutcome.
+const (
+	InvestigationListDataAttributesOutcomeBestEffort          InvestigationListDataAttributesOutcome = "best_effort"
+	InvestigationListDataAttributesOutcomeBlocked             InvestigationListDataAttributesOutcome = "blocked"
+	InvestigationListDataAttributesOutcomeCouldNotInvestigate InvestigationListDataAttributesOutcome = "could_not_investigate"
+	InvestigationListDataAttributesOutcomeInconclusive        InvestigationListDataAttributesOutcome = "inconclusive"
+	InvestigationListDataAttributesOutcomeLessThanNil         InvestigationListDataAttributesOutcome = "<nil>"
+	InvestigationListDataAttributesOutcomeRootCauseIdentified InvestigationListDataAttributesOutcome = "root_cause_identified"
+)
+
+// Valid indicates whether the value is a known member of the InvestigationListDataAttributesOutcome enum.
+func (e InvestigationListDataAttributesOutcome) Valid() bool {
+	switch e {
+	case InvestigationListDataAttributesOutcomeBestEffort:
+		return true
+	case InvestigationListDataAttributesOutcomeBlocked:
+		return true
+	case InvestigationListDataAttributesOutcomeCouldNotInvestigate:
+		return true
+	case InvestigationListDataAttributesOutcomeInconclusive:
+		return true
+	case InvestigationListDataAttributesOutcomeLessThanNil:
+		return true
+	case InvestigationListDataAttributesOutcomeRootCauseIdentified:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for InvestigationListDataAttributesReviewStatusKind.
+const (
+	InvestigationListDataAttributesReviewStatusKindRetainedPriorReview InvestigationListDataAttributesReviewStatusKind = "retained_prior_review"
+)
+
+// Valid indicates whether the value is a known member of the InvestigationListDataAttributesReviewStatusKind enum.
+func (e InvestigationListDataAttributesReviewStatusKind) Valid() bool {
+	switch e {
+	case InvestigationListDataAttributesReviewStatusKindRetainedPriorReview:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for InvestigationListDataAttributesReviewStatusRetainedDecision.
+const (
+	InvestigationListDataAttributesReviewStatusRetainedDecisionAccept      InvestigationListDataAttributesReviewStatusRetainedDecision = "accept"
+	InvestigationListDataAttributesReviewStatusRetainedDecisionLessThanNil InvestigationListDataAttributesReviewStatusRetainedDecision = "<nil>"
+	InvestigationListDataAttributesReviewStatusRetainedDecisionUpgrade     InvestigationListDataAttributesReviewStatusRetainedDecision = "upgrade"
+)
+
+// Valid indicates whether the value is a known member of the InvestigationListDataAttributesReviewStatusRetainedDecision enum.
+func (e InvestigationListDataAttributesReviewStatusRetainedDecision) Valid() bool {
+	switch e {
+	case InvestigationListDataAttributesReviewStatusRetainedDecisionAccept:
+		return true
+	case InvestigationListDataAttributesReviewStatusRetainedDecisionLessThanNil:
+		return true
+	case InvestigationListDataAttributesReviewStatusRetainedDecisionUpgrade:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for InvestigationListDataAttributesStatus.
+const (
+	InvestigationListDataAttributesStatusCancelled InvestigationListDataAttributesStatus = "cancelled"
+	InvestigationListDataAttributesStatusCompleted InvestigationListDataAttributesStatus = "completed"
+	InvestigationListDataAttributesStatusFailed    InvestigationListDataAttributesStatus = "failed"
+	InvestigationListDataAttributesStatusPending   InvestigationListDataAttributesStatus = "pending"
+	InvestigationListDataAttributesStatusRunning   InvestigationListDataAttributesStatus = "running"
+)
+
+// Valid indicates whether the value is a known member of the InvestigationListDataAttributesStatus enum.
+func (e InvestigationListDataAttributesStatus) Valid() bool {
+	switch e {
+	case InvestigationListDataAttributesStatusCancelled:
+		return true
+	case InvestigationListDataAttributesStatusCompleted:
+		return true
+	case InvestigationListDataAttributesStatusFailed:
+		return true
+	case InvestigationListDataAttributesStatusPending:
+		return true
+	case InvestigationListDataAttributesStatusRunning:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for InvestigationListDataType.
+const (
+	InvestigationListDataTypeInvestigations InvestigationListDataType = "investigations"
+)
+
+// Valid indicates whether the value is a known member of the InvestigationListDataType enum.
+func (e InvestigationListDataType) Valid() bool {
+	switch e {
+	case InvestigationListDataTypeInvestigations:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for InvestigationProgressDataAttributesEntriesKind.
+const (
+	InvestigationProgressDataAttributesEntriesKindStep InvestigationProgressDataAttributesEntriesKind = "step"
+	InvestigationProgressDataAttributesEntriesKindTool InvestigationProgressDataAttributesEntriesKind = "tool"
+)
+
+// Valid indicates whether the value is a known member of the InvestigationProgressDataAttributesEntriesKind enum.
+func (e InvestigationProgressDataAttributesEntriesKind) Valid() bool {
+	switch e {
+	case InvestigationProgressDataAttributesEntriesKindStep:
+		return true
+	case InvestigationProgressDataAttributesEntriesKindTool:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for InvestigationProgressDataAttributesStatus.
+const (
+	InvestigationProgressDataAttributesStatusCancelled InvestigationProgressDataAttributesStatus = "cancelled"
+	InvestigationProgressDataAttributesStatusCompleted InvestigationProgressDataAttributesStatus = "completed"
+	InvestigationProgressDataAttributesStatusFailed    InvestigationProgressDataAttributesStatus = "failed"
+	InvestigationProgressDataAttributesStatusPending   InvestigationProgressDataAttributesStatus = "pending"
+	InvestigationProgressDataAttributesStatusRunning   InvestigationProgressDataAttributesStatus = "running"
+)
+
+// Valid indicates whether the value is a known member of the InvestigationProgressDataAttributesStatus enum.
+func (e InvestigationProgressDataAttributesStatus) Valid() bool {
+	switch e {
+	case InvestigationProgressDataAttributesStatusCancelled:
+		return true
+	case InvestigationProgressDataAttributesStatusCompleted:
+		return true
+	case InvestigationProgressDataAttributesStatusFailed:
+		return true
+	case InvestigationProgressDataAttributesStatusPending:
+		return true
+	case InvestigationProgressDataAttributesStatusRunning:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for InvestigationProgressDataType.
+const (
+	InvestigationProgressDataTypeInvestigationProgress InvestigationProgressDataType = "investigation_progress"
+)
+
+// Valid indicates whether the value is a known member of the InvestigationProgressDataType enum.
+func (e InvestigationProgressDataType) Valid() bool {
+	switch e {
+	case InvestigationProgressDataTypeInvestigationProgress:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for InviteToGoogleChatSpaceTaskParamsTaskType.
 const (
 	InviteToGoogleChatSpaceTaskParamsTaskTypeInviteToGoogleChatSpace InviteToGoogleChatSpaceTaskParamsTaskType = "invite_to_google_chat_space"
@@ -18517,6 +19057,7 @@ func (e NewAlertRouteDataAttributesRulesDestinationsMatchKeysSourceKind) Valid()
 
 // Defines values for NewAlertRouteDataAttributesRulesDestinationsTargetType.
 const (
+	NewAlertRouteDataAttributesRulesDestinationsTargetTypeCatalogEntity    NewAlertRouteDataAttributesRulesDestinationsTargetType = "CatalogEntity"
 	NewAlertRouteDataAttributesRulesDestinationsTargetTypeDynamic          NewAlertRouteDataAttributesRulesDestinationsTargetType = "dynamic"
 	NewAlertRouteDataAttributesRulesDestinationsTargetTypeEscalationPolicy NewAlertRouteDataAttributesRulesDestinationsTargetType = "EscalationPolicy"
 	NewAlertRouteDataAttributesRulesDestinationsTargetTypeFunctionality    NewAlertRouteDataAttributesRulesDestinationsTargetType = "Functionality"
@@ -18527,6 +19068,8 @@ const (
 // Valid indicates whether the value is a known member of the NewAlertRouteDataAttributesRulesDestinationsTargetType enum.
 func (e NewAlertRouteDataAttributesRulesDestinationsTargetType) Valid() bool {
 	switch e {
+	case NewAlertRouteDataAttributesRulesDestinationsTargetTypeCatalogEntity:
+		return true
 	case NewAlertRouteDataAttributesRulesDestinationsTargetTypeDynamic:
 		return true
 	case NewAlertRouteDataAttributesRulesDestinationsTargetTypeEscalationPolicy:
@@ -18646,6 +19189,7 @@ func (e NewAlertRoutingRuleDataAttributesConditionsPropertyFieldType) Valid() bo
 
 // Defines values for NewAlertRoutingRuleDataAttributesDestinationTargetType.
 const (
+	NewAlertRoutingRuleDataAttributesDestinationTargetTypeCatalogEntity    NewAlertRoutingRuleDataAttributesDestinationTargetType = "CatalogEntity"
 	NewAlertRoutingRuleDataAttributesDestinationTargetTypeEscalationPolicy NewAlertRoutingRuleDataAttributesDestinationTargetType = "EscalationPolicy"
 	NewAlertRoutingRuleDataAttributesDestinationTargetTypeFunctionality    NewAlertRoutingRuleDataAttributesDestinationTargetType = "Functionality"
 	NewAlertRoutingRuleDataAttributesDestinationTargetTypeGroup            NewAlertRoutingRuleDataAttributesDestinationTargetType = "Group"
@@ -18655,6 +19199,8 @@ const (
 // Valid indicates whether the value is a known member of the NewAlertRoutingRuleDataAttributesDestinationTargetType enum.
 func (e NewAlertRoutingRuleDataAttributesDestinationTargetType) Valid() bool {
 	switch e {
+	case NewAlertRoutingRuleDataAttributesDestinationTargetTypeCatalogEntity:
+		return true
 	case NewAlertRoutingRuleDataAttributesDestinationTargetTypeEscalationPolicy:
 		return true
 	case NewAlertRoutingRuleDataAttributesDestinationTargetTypeFunctionality:
@@ -19579,6 +20125,7 @@ func (e NewCauseDataType) Valid() bool {
 
 // Defines values for NewCommunicationsGroupDataAttributesCommunicationGroupConditionsPropertyType.
 const (
+	NewCommunicationsGroupDataAttributesCommunicationGroupConditionsPropertyTypeFormField     NewCommunicationsGroupDataAttributesCommunicationGroupConditionsPropertyType = "form_field"
 	NewCommunicationsGroupDataAttributesCommunicationGroupConditionsPropertyTypeFunctionality NewCommunicationsGroupDataAttributesCommunicationGroupConditionsPropertyType = "functionality"
 	NewCommunicationsGroupDataAttributesCommunicationGroupConditionsPropertyTypeGroup         NewCommunicationsGroupDataAttributesCommunicationGroupConditionsPropertyType = "group"
 	NewCommunicationsGroupDataAttributesCommunicationGroupConditionsPropertyTypeIncidentType  NewCommunicationsGroupDataAttributesCommunicationGroupConditionsPropertyType = "incident_type"
@@ -19589,6 +20136,8 @@ const (
 // Valid indicates whether the value is a known member of the NewCommunicationsGroupDataAttributesCommunicationGroupConditionsPropertyType enum.
 func (e NewCommunicationsGroupDataAttributesCommunicationGroupConditionsPropertyType) Valid() bool {
 	switch e {
+	case NewCommunicationsGroupDataAttributesCommunicationGroupConditionsPropertyTypeFormField:
+		return true
 	case NewCommunicationsGroupDataAttributesCommunicationGroupConditionsPropertyTypeFunctionality:
 		return true
 	case NewCommunicationsGroupDataAttributesCommunicationGroupConditionsPropertyTypeGroup:
@@ -25343,6 +25892,57 @@ func (e NewFormFieldPlacementConditionDataType) Valid() bool {
 	}
 }
 
+// Defines values for NewFormFieldPlacementConditionGroupDataAttributesGroupOperator.
+const (
+	NewFormFieldPlacementConditionGroupDataAttributesGroupOperatorAnd NewFormFieldPlacementConditionGroupDataAttributesGroupOperator = "and"
+	NewFormFieldPlacementConditionGroupDataAttributesGroupOperatorOr  NewFormFieldPlacementConditionGroupDataAttributesGroupOperator = "or"
+)
+
+// Valid indicates whether the value is a known member of the NewFormFieldPlacementConditionGroupDataAttributesGroupOperator enum.
+func (e NewFormFieldPlacementConditionGroupDataAttributesGroupOperator) Valid() bool {
+	switch e {
+	case NewFormFieldPlacementConditionGroupDataAttributesGroupOperatorAnd:
+		return true
+	case NewFormFieldPlacementConditionGroupDataAttributesGroupOperatorOr:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for NewFormFieldPlacementConditionGroupDataAttributesGroupType.
+const (
+	NewFormFieldPlacementConditionGroupDataAttributesGroupTypePlacement NewFormFieldPlacementConditionGroupDataAttributesGroupType = "placement"
+	NewFormFieldPlacementConditionGroupDataAttributesGroupTypeRequired  NewFormFieldPlacementConditionGroupDataAttributesGroupType = "required"
+)
+
+// Valid indicates whether the value is a known member of the NewFormFieldPlacementConditionGroupDataAttributesGroupType enum.
+func (e NewFormFieldPlacementConditionGroupDataAttributesGroupType) Valid() bool {
+	switch e {
+	case NewFormFieldPlacementConditionGroupDataAttributesGroupTypePlacement:
+		return true
+	case NewFormFieldPlacementConditionGroupDataAttributesGroupTypeRequired:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for NewFormFieldPlacementConditionGroupDataType.
+const (
+	NewFormFieldPlacementConditionGroupDataTypeFormFieldPlacementConditionGroups NewFormFieldPlacementConditionGroupDataType = "form_field_placement_condition_groups"
+)
+
+// Valid indicates whether the value is a known member of the NewFormFieldPlacementConditionGroupDataType enum.
+func (e NewFormFieldPlacementConditionGroupDataType) Valid() bool {
+	switch e {
+	case NewFormFieldPlacementConditionGroupDataTypeFormFieldPlacementConditionGroups:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for NewFormFieldPositionDataAttributesForm.
 const (
 	NewFormFieldPositionDataAttributesFormGoogleChatActionItemForm         NewFormFieldPositionDataAttributesForm = "google_chat_action_item_form"
@@ -26267,6 +26867,21 @@ const (
 func (e NewIncidentTypeDataType) Valid() bool {
 	switch e {
 	case NewIncidentTypeDataTypeIncidentTypes:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for NewInvestigationDataType.
+const (
+	NewInvestigationDataTypeInvestigations NewInvestigationDataType = "investigations"
+)
+
+// Valid indicates whether the value is a known member of the NewInvestigationDataType enum.
+func (e NewInvestigationDataType) Valid() bool {
+	switch e {
+	case NewInvestigationDataTypeInvestigations:
 		return true
 	default:
 		return false
@@ -28328,6 +28943,27 @@ func (e NewScheduleRotationDataAttributesActiveDays) Valid() bool {
 	case NewScheduleRotationDataAttributesActiveDaysU:
 		return true
 	case NewScheduleRotationDataAttributesActiveDaysW:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for NewScheduleRotationDataAttributesActiveTimeType.
+const (
+	NewScheduleRotationDataAttributesActiveTimeTypeAllDay   NewScheduleRotationDataAttributesActiveTimeType = "all_day"
+	NewScheduleRotationDataAttributesActiveTimeTypeCustom   NewScheduleRotationDataAttributesActiveTimeType = "custom"
+	NewScheduleRotationDataAttributesActiveTimeTypeSameTime NewScheduleRotationDataAttributesActiveTimeType = "same_time"
+)
+
+// Valid indicates whether the value is a known member of the NewScheduleRotationDataAttributesActiveTimeType enum.
+func (e NewScheduleRotationDataAttributesActiveTimeType) Valid() bool {
+	switch e {
+	case NewScheduleRotationDataAttributesActiveTimeTypeAllDay:
+		return true
+	case NewScheduleRotationDataAttributesActiveTimeTypeCustom:
+		return true
+	case NewScheduleRotationDataAttributesActiveTimeTypeSameTime:
 		return true
 	default:
 		return false
@@ -30521,6 +31157,33 @@ func (e OnCallRoleServicesPermissions) Valid() bool {
 	}
 }
 
+// Defines values for OnCallRoleSystemRole.
+const (
+	OnCallRoleSystemRoleAdmin    OnCallRoleSystemRole = "admin"
+	OnCallRoleSystemRoleCustom   OnCallRoleSystemRole = "custom"
+	OnCallRoleSystemRoleNoAccess OnCallRoleSystemRole = "no_access"
+	OnCallRoleSystemRoleObserver OnCallRoleSystemRole = "observer"
+	OnCallRoleSystemRoleUser     OnCallRoleSystemRole = "user"
+)
+
+// Valid indicates whether the value is a known member of the OnCallRoleSystemRole enum.
+func (e OnCallRoleSystemRole) Valid() bool {
+	switch e {
+	case OnCallRoleSystemRoleAdmin:
+		return true
+	case OnCallRoleSystemRoleCustom:
+		return true
+	case OnCallRoleSystemRoleNoAccess:
+		return true
+	case OnCallRoleSystemRoleObserver:
+		return true
+	case OnCallRoleSystemRoleUser:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for OnCallRoleWebhooksPermissions.
 const (
 	OnCallRoleWebhooksPermissionsCreate OnCallRoleWebhooksPermissions = "create"
@@ -31060,6 +31723,7 @@ func (e PatchAlertRouteDataAttributesRulesDestinationsMatchKeysSourceKind) Valid
 
 // Defines values for PatchAlertRouteDataAttributesRulesDestinationsTargetType.
 const (
+	PatchAlertRouteDataAttributesRulesDestinationsTargetTypeCatalogEntity    PatchAlertRouteDataAttributesRulesDestinationsTargetType = "CatalogEntity"
 	PatchAlertRouteDataAttributesRulesDestinationsTargetTypeDynamic          PatchAlertRouteDataAttributesRulesDestinationsTargetType = "dynamic"
 	PatchAlertRouteDataAttributesRulesDestinationsTargetTypeEscalationPolicy PatchAlertRouteDataAttributesRulesDestinationsTargetType = "EscalationPolicy"
 	PatchAlertRouteDataAttributesRulesDestinationsTargetTypeFunctionality    PatchAlertRouteDataAttributesRulesDestinationsTargetType = "Functionality"
@@ -31070,6 +31734,8 @@ const (
 // Valid indicates whether the value is a known member of the PatchAlertRouteDataAttributesRulesDestinationsTargetType enum.
 func (e PatchAlertRouteDataAttributesRulesDestinationsTargetType) Valid() bool {
 	switch e {
+	case PatchAlertRouteDataAttributesRulesDestinationsTargetTypeCatalogEntity:
+		return true
 	case PatchAlertRouteDataAttributesRulesDestinationsTargetTypeDynamic:
 		return true
 	case PatchAlertRouteDataAttributesRulesDestinationsTargetTypeEscalationPolicy:
@@ -34523,6 +35189,27 @@ func (e ScheduleRotationActiveDays) Valid() bool {
 	}
 }
 
+// Defines values for ScheduleRotationActiveTimeType.
+const (
+	ScheduleRotationActiveTimeTypeAllDay   ScheduleRotationActiveTimeType = "all_day"
+	ScheduleRotationActiveTimeTypeCustom   ScheduleRotationActiveTimeType = "custom"
+	ScheduleRotationActiveTimeTypeSameTime ScheduleRotationActiveTimeType = "same_time"
+)
+
+// Valid indicates whether the value is a known member of the ScheduleRotationActiveTimeType enum.
+func (e ScheduleRotationActiveTimeType) Valid() bool {
+	switch e {
+	case ScheduleRotationActiveTimeTypeAllDay:
+		return true
+	case ScheduleRotationActiveTimeTypeCustom:
+		return true
+	case ScheduleRotationActiveTimeTypeSameTime:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for ScheduleRotationScheduleRotationableAttributes1HandoffDay.
 const (
 	ScheduleRotationScheduleRotationableAttributes1HandoffDayF ScheduleRotationScheduleRotationableAttributes1HandoffDay = "F"
@@ -37699,6 +38386,7 @@ func (e UpdateAlertRouteDataAttributesRulesDestinationsMatchKeysSourceKind) Vali
 
 // Defines values for UpdateAlertRouteDataAttributesRulesDestinationsTargetType.
 const (
+	UpdateAlertRouteDataAttributesRulesDestinationsTargetTypeCatalogEntity    UpdateAlertRouteDataAttributesRulesDestinationsTargetType = "CatalogEntity"
 	UpdateAlertRouteDataAttributesRulesDestinationsTargetTypeDynamic          UpdateAlertRouteDataAttributesRulesDestinationsTargetType = "dynamic"
 	UpdateAlertRouteDataAttributesRulesDestinationsTargetTypeEscalationPolicy UpdateAlertRouteDataAttributesRulesDestinationsTargetType = "EscalationPolicy"
 	UpdateAlertRouteDataAttributesRulesDestinationsTargetTypeFunctionality    UpdateAlertRouteDataAttributesRulesDestinationsTargetType = "Functionality"
@@ -37709,6 +38397,8 @@ const (
 // Valid indicates whether the value is a known member of the UpdateAlertRouteDataAttributesRulesDestinationsTargetType enum.
 func (e UpdateAlertRouteDataAttributesRulesDestinationsTargetType) Valid() bool {
 	switch e {
+	case UpdateAlertRouteDataAttributesRulesDestinationsTargetTypeCatalogEntity:
+		return true
 	case UpdateAlertRouteDataAttributesRulesDestinationsTargetTypeDynamic:
 		return true
 	case UpdateAlertRouteDataAttributesRulesDestinationsTargetTypeEscalationPolicy:
@@ -37828,6 +38518,7 @@ func (e UpdateAlertRoutingRuleDataAttributesConditionsPropertyFieldType) Valid()
 
 // Defines values for UpdateAlertRoutingRuleDataAttributesDestinationTargetType.
 const (
+	UpdateAlertRoutingRuleDataAttributesDestinationTargetTypeCatalogEntity    UpdateAlertRoutingRuleDataAttributesDestinationTargetType = "CatalogEntity"
 	UpdateAlertRoutingRuleDataAttributesDestinationTargetTypeEscalationPolicy UpdateAlertRoutingRuleDataAttributesDestinationTargetType = "EscalationPolicy"
 	UpdateAlertRoutingRuleDataAttributesDestinationTargetTypeFunctionality    UpdateAlertRoutingRuleDataAttributesDestinationTargetType = "Functionality"
 	UpdateAlertRoutingRuleDataAttributesDestinationTargetTypeGroup            UpdateAlertRoutingRuleDataAttributesDestinationTargetType = "Group"
@@ -37837,6 +38528,8 @@ const (
 // Valid indicates whether the value is a known member of the UpdateAlertRoutingRuleDataAttributesDestinationTargetType enum.
 func (e UpdateAlertRoutingRuleDataAttributesDestinationTargetType) Valid() bool {
 	switch e {
+	case UpdateAlertRoutingRuleDataAttributesDestinationTargetTypeCatalogEntity:
+		return true
 	case UpdateAlertRoutingRuleDataAttributesDestinationTargetTypeEscalationPolicy:
 		return true
 	case UpdateAlertRoutingRuleDataAttributesDestinationTargetTypeFunctionality:
@@ -38737,6 +39430,7 @@ func (e UpdateCodaPageTaskParamsTaskType) Valid() bool {
 
 // Defines values for UpdateCommunicationsGroupDataAttributesCommunicationGroupConditionsPropertyType.
 const (
+	UpdateCommunicationsGroupDataAttributesCommunicationGroupConditionsPropertyTypeFormField     UpdateCommunicationsGroupDataAttributesCommunicationGroupConditionsPropertyType = "form_field"
 	UpdateCommunicationsGroupDataAttributesCommunicationGroupConditionsPropertyTypeFunctionality UpdateCommunicationsGroupDataAttributesCommunicationGroupConditionsPropertyType = "functionality"
 	UpdateCommunicationsGroupDataAttributesCommunicationGroupConditionsPropertyTypeGroup         UpdateCommunicationsGroupDataAttributesCommunicationGroupConditionsPropertyType = "group"
 	UpdateCommunicationsGroupDataAttributesCommunicationGroupConditionsPropertyTypeIncidentType  UpdateCommunicationsGroupDataAttributesCommunicationGroupConditionsPropertyType = "incident_type"
@@ -38747,6 +39441,8 @@ const (
 // Valid indicates whether the value is a known member of the UpdateCommunicationsGroupDataAttributesCommunicationGroupConditionsPropertyType enum.
 func (e UpdateCommunicationsGroupDataAttributesCommunicationGroupConditionsPropertyType) Valid() bool {
 	switch e {
+	case UpdateCommunicationsGroupDataAttributesCommunicationGroupConditionsPropertyTypeFormField:
+		return true
 	case UpdateCommunicationsGroupDataAttributesCommunicationGroupConditionsPropertyTypeFunctionality:
 		return true
 	case UpdateCommunicationsGroupDataAttributesCommunicationGroupConditionsPropertyTypeGroup:
@@ -44549,6 +45245,39 @@ func (e UpdateFormFieldPlacementConditionDataType) Valid() bool {
 	}
 }
 
+// Defines values for UpdateFormFieldPlacementConditionGroupDataAttributesGroupOperator.
+const (
+	UpdateFormFieldPlacementConditionGroupDataAttributesGroupOperatorAnd UpdateFormFieldPlacementConditionGroupDataAttributesGroupOperator = "and"
+	UpdateFormFieldPlacementConditionGroupDataAttributesGroupOperatorOr  UpdateFormFieldPlacementConditionGroupDataAttributesGroupOperator = "or"
+)
+
+// Valid indicates whether the value is a known member of the UpdateFormFieldPlacementConditionGroupDataAttributesGroupOperator enum.
+func (e UpdateFormFieldPlacementConditionGroupDataAttributesGroupOperator) Valid() bool {
+	switch e {
+	case UpdateFormFieldPlacementConditionGroupDataAttributesGroupOperatorAnd:
+		return true
+	case UpdateFormFieldPlacementConditionGroupDataAttributesGroupOperatorOr:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateFormFieldPlacementConditionGroupDataType.
+const (
+	UpdateFormFieldPlacementConditionGroupDataTypeFormFieldPlacementConditionGroups UpdateFormFieldPlacementConditionGroupDataType = "form_field_placement_condition_groups"
+)
+
+// Valid indicates whether the value is a known member of the UpdateFormFieldPlacementConditionGroupDataType enum.
+func (e UpdateFormFieldPlacementConditionGroupDataType) Valid() bool {
+	switch e {
+	case UpdateFormFieldPlacementConditionGroupDataTypeFormFieldPlacementConditionGroups:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for UpdateFormFieldPositionDataAttributesForm.
 const (
 	UpdateFormFieldPositionDataAttributesFormGoogleChatActionItemForm         UpdateFormFieldPositionDataAttributesForm = "google_chat_action_item_form"
@@ -48173,6 +48902,27 @@ func (e UpdateScheduleRotationDataAttributesActiveDays) Valid() bool {
 	}
 }
 
+// Defines values for UpdateScheduleRotationDataAttributesActiveTimeType.
+const (
+	UpdateScheduleRotationDataAttributesActiveTimeTypeAllDay   UpdateScheduleRotationDataAttributesActiveTimeType = "all_day"
+	UpdateScheduleRotationDataAttributesActiveTimeTypeCustom   UpdateScheduleRotationDataAttributesActiveTimeType = "custom"
+	UpdateScheduleRotationDataAttributesActiveTimeTypeSameTime UpdateScheduleRotationDataAttributesActiveTimeType = "same_time"
+)
+
+// Valid indicates whether the value is a known member of the UpdateScheduleRotationDataAttributesActiveTimeType enum.
+func (e UpdateScheduleRotationDataAttributesActiveTimeType) Valid() bool {
+	switch e {
+	case UpdateScheduleRotationDataAttributesActiveTimeTypeAllDay:
+		return true
+	case UpdateScheduleRotationDataAttributesActiveTimeTypeCustom:
+		return true
+	case UpdateScheduleRotationDataAttributesActiveTimeTypeSameTime:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for UpdateScheduleRotationDataAttributesScheduleRotationMembersMemberType.
 const (
 	UpdateScheduleRotationDataAttributesScheduleRotationMembersMemberTypeSchedule UpdateScheduleRotationDataAttributesScheduleRotationMembersMemberType = "Schedule"
@@ -49337,6 +50087,21 @@ func (e UpdateUserNotificationRuleDataType) Valid() bool {
 	}
 }
 
+// Defines values for UpdateUserNotificationSettingsDataType.
+const (
+	UpdateUserNotificationSettingsDataTypeUserNotificationSettings UpdateUserNotificationSettingsDataType = "user_notification_settings"
+)
+
+// Valid indicates whether the value is a known member of the UpdateUserNotificationSettingsDataType enum.
+func (e UpdateUserNotificationSettingsDataType) Valid() bool {
+	switch e {
+	case UpdateUserNotificationSettingsDataTypeUserNotificationSettings:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for UpdateUserPhoneNumberDataType.
 const (
 	UpdateUserPhoneNumberDataTypeUserPhoneNumbers UpdateUserPhoneNumberDataType = "user_phone_numbers"
@@ -49916,6 +50681,21 @@ const (
 func (e UserNotificationRuleResponseDataType) Valid() bool {
 	switch e {
 	case UserNotificationRuleResponseDataTypeUserNotificationRules:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UserNotificationSettingsResponseDataType.
+const (
+	UserNotificationSettingsResponseDataTypeUserNotificationSettings UserNotificationSettingsResponseDataType = "user_notification_settings"
+)
+
+// Valid indicates whether the value is a known member of the UserNotificationSettingsResponseDataType enum.
+func (e UserNotificationSettingsResponseDataType) Valid() bool {
+	switch e {
+	case UserNotificationSettingsResponseDataTypeUserNotificationSettings:
 		return true
 	default:
 		return false
@@ -50732,6 +51512,21 @@ func (e StreamAiChatParamsDecision) Valid() bool {
 	case StreamAiChatParamsDecisionCancel:
 		return true
 	case StreamAiChatParamsDecisionConfirm:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for ListAiToolCallEvents200ApplicationVndAPIPlusJSONResponseBodyDataType.
+const (
+	ListAiToolCallEvents200ApplicationVndAPIPlusJSONResponseBodyDataTypeAiToolCallEvents ListAiToolCallEvents200ApplicationVndAPIPlusJSONResponseBodyDataType = "ai_tool_call_events"
+)
+
+// Valid indicates whether the value is a known member of the ListAiToolCallEvents200ApplicationVndAPIPlusJSONResponseBodyDataType enum.
+func (e ListAiToolCallEvents200ApplicationVndAPIPlusJSONResponseBodyDataType) Valid() bool {
+	switch e {
+	case ListAiToolCallEvents200ApplicationVndAPIPlusJSONResponseBodyDataTypeAiToolCallEvents:
 		return true
 	default:
 		return false
@@ -53158,6 +53953,40 @@ type AddMicrosoftTeamsTabTaskParams1 struct {
 	PlaybookID string `json:"playbook_id"`
 }
 
+// AddProblemActionItemTaskParams defines model for add_problem_action_item_task_params.
+type AddProblemActionItemTaskParams struct {
+	// AssignedToUser The user this action item is assigned to. The id supports Liquid.
+	AssignedToUser *struct {
+		ID   *string `json:"id,omitempty"`
+		Name *string `json:"name,omitempty"`
+	} `json:"assigned_to_user,omitempty"`
+
+	// Description The action item description. Supports Liquid.
+	Description nullable.Nullable[string] `json:"description,omitempty"`
+
+	// DueDate The action item due date (YYYY-MM-DD). Supports Liquid.
+	DueDate nullable.Nullable[string] `json:"due_date,omitempty"`
+
+	// Priority The action item priority
+	Priority AddProblemActionItemTaskParamsPriority `json:"priority"`
+
+	// Status The action item status
+	Status AddProblemActionItemTaskParamsStatus `json:"status"`
+
+	// Summary The action item summary. Supports Liquid.
+	Summary  string                                  `json:"summary"`
+	TaskType *AddProblemActionItemTaskParamsTaskType `json:"task_type,omitempty"`
+}
+
+// AddProblemActionItemTaskParamsPriority The action item priority
+type AddProblemActionItemTaskParamsPriority string
+
+// AddProblemActionItemTaskParamsStatus The action item status
+type AddProblemActionItemTaskParamsStatus string
+
+// AddProblemActionItemTaskParamsTaskType defines model for AddProblemActionItemTaskParams.TaskType.
+type AddProblemActionItemTaskParamsTaskType string
+
 // AddRoleTaskParams defines model for add_role_task_params.
 type AddRoleTaskParams struct {
 	// AssignedToUser  The user this role is assigned to
@@ -53281,6 +54110,9 @@ type AiAutomationDataType string
 
 // AiAutomationAttributes defines model for ai_automation_attributes.
 type AiAutomationAttributes struct {
+	// AllowedToolKeys null inherits all tools allowed by the team; otherwise the automation can use only these tool keys.
+	AllowedToolKeys nullable.Nullable[[]string] `json:"allowed_tool_keys,omitempty"`
+
 	// Conditions Legacy view of incident trigger conditions. {} when event_name is null. Empty object means no conditions. Groups in any are ORed; clauses in all are ANDed.
 	//
 	// Example: {"any":[{"all":[{"field":"status","operator":"eq","value":"started"}]}]}
@@ -53489,7 +54321,7 @@ type AiAutomationRunList_Meta struct {
 	AdditionalProperties map[string]interface{}    `json:"-"`
 }
 
-// AiAutomationSlackChannels Channels Rootly has synced from the team's connected Slack workspace; any returned slack_channel_id is accepted as destination_slack_channel_id. When filter[search] is set, exact channel-name matches come first. When Slack channel user filtering is enabled, personal keys and OAuth tokens only see, and can only set new, channels the user can access in Slack; an update may resend the automation's current channel unchanged.
+// AiAutomationSlackChannels Channels Rootly has synced from the team's connected Slack workspace; any returned slack_channel_id is accepted as destination_slack_channel_id. When filter[search] is set, exact channel-name matches come first. When Slack channel user filtering is enabled, personal keys and OAuth tokens only see, and can only set new, channels the user can access in Slack; an update may resend the automation's current channel unchanged. Liquid destinations resolvable without run context use the same acting-user check at save time. Incident/alert-dependent expressions are checked against the automation owner at runtime; every Liquid destination is verified again before delivery.
 type AiAutomationSlackChannels struct {
 	Data []struct {
 		Attributes struct {
@@ -57361,6 +58193,9 @@ type CommunicationsGroup struct {
 
 	// CommunicationGroupConditions Group conditions attributes
 	CommunicationGroupConditions nullable.Nullable[[]struct {
+		// FormFieldID ID of the custom field. Required when property_type is form_field
+		FormFieldID nullable.Nullable[string] `json:"form_field_id,omitempty"`
+
 		// FunctionalityIDs Array of functionality IDs
 		FunctionalityIDs nullable.Nullable[[]string] `json:"functionality_ids,omitempty"`
 
@@ -57369,6 +58204,12 @@ type CommunicationsGroup struct {
 
 		// IncidentTypeIDs Array of incident type IDs
 		IncidentTypeIDs nullable.Nullable[[]string] `json:"incident_type_ids,omitempty"`
+
+		// Properties Selected values as objects with an id. For form_field conditions, the custom field option IDs
+		Properties nullable.Nullable[[]struct {
+			ID   *string                   `json:"id,omitempty"`
+			Name nullable.Nullable[string] `json:"name,omitempty"`
+		}] `json:"properties,omitempty"`
 
 		// PropertyType Property type
 		PropertyType *CommunicationsGroupCommunicationGroupConditionsPropertyType `json:"property_type,omitempty"`
@@ -60088,7 +60929,7 @@ type EscalationPolicyLevel struct {
 	// EscalationPolicyPathID The ID of the dynamic escalation policy path the level will belong to. If nothing is specified it will add the level to your default path.
 	EscalationPolicyPathID nullable.Nullable[string] `json:"escalation_policy_path_id,omitempty"`
 
-	// NotificationTargetParams Escalation level's notification targets
+	// NotificationTargetParams Escalation level's notification targets.
 	NotificationTargetParams []nullable.Nullable[struct {
 		// ID The ID of notification target. If ai_sre, then the AI SRE provider (eg. rootly). New ai_sre targets accept only rootly. A provider already saved on the level (rootly, devin) may be sent back unchanged. Repeated ai_sre providers are saved once.
 		ID string `json:"id"`
@@ -60216,6 +61057,9 @@ type EscalationPolicyPath struct {
 	// NotificationTypeFallback Paged when no notification type rule matches. Considered only when notification_type_rules are present — the path's notification_type is aligned to it; without rules it is aligned to notification_type instead. Only available when notification type conditions are enabled for the team.
 	NotificationTypeFallback *EscalationPolicyPathNotificationTypeFallback `json:"notification_type_fallback,omitempty"`
 
+	// NotificationTypeFallbackSkipEscalation When the fallback pages quiet, page only the first level that has responders, once, without escalating to later levels or repeating. Reset to false whenever the fallback is audible. Only available when skipping escalation for quiet alerts is enabled for the organization.
+	NotificationTypeFallbackSkipEscalation *bool `json:"notification_type_fallback_skip_escalation,omitempty"`
+
 	// NotificationTypeRules Rules deciding whether an alert pages audible or quiet, evaluated in order — the first matching rule's notification_type wins, otherwise notification_type_fallback applies. When present, the path's notification_type is aligned to notification_type_fallback. Only available when notification type conditions are enabled for the team.
 	NotificationTypeRules []struct {
 		// Conditions Conditions combined per match_mode, at least one per rule. A deferral_window condition matches when the alert falls inside its time blocks.
@@ -60226,6 +61070,9 @@ type EscalationPolicyPath struct {
 
 		// NotificationType Outcome when this rule matches
 		NotificationType *EscalationPolicyPathNotificationTypeRulesNotificationType `json:"notification_type,omitempty"`
+
+		// SkipEscalation When this quiet rule matches, page only the first level that has responders, once, without escalating to later levels or repeating. Ignored for audible rules. Only available when skipping escalation for quiet alerts is enabled for the organization.
+		SkipEscalation *bool `json:"skip_escalation,omitempty"`
 	} `json:"notification_type_rules,omitempty"`
 
 	// PathType The type of escalation path
@@ -60856,6 +61703,9 @@ type FormFieldPlacementCondition struct {
 	// Comparison The condition comparison.
 	Comparison FormFieldPlacementConditionComparison `json:"comparison"`
 
+	// ConditionGroupID The condition group this condition belongs to.
+	ConditionGroupID nullable.Nullable[string] `json:"condition_group_id,omitempty"`
+
 	// Conditioned The resource or attribute the condition applies.
 	Conditioned FormFieldPlacementConditionConditioned `json:"conditioned"`
 
@@ -60877,6 +61727,83 @@ type FormFieldPlacementConditionComparison string
 
 // FormFieldPlacementConditionConditioned The resource or attribute the condition applies.
 type FormFieldPlacementConditionConditioned string
+
+// FormFieldPlacementConditionGroup defines model for form_field_placement_condition_group.
+type FormFieldPlacementConditionGroup struct {
+	// Conditions The conditions in this group, ordered by position. Manage them through the form field placement conditions endpoints.
+	Conditions []struct {
+		// Comparison The condition comparison.
+		Comparison *string `json:"comparison,omitempty"`
+
+		// ConditionGroupID The condition group ID.
+		ConditionGroupID *string `json:"condition_group_id,omitempty"`
+
+		// Conditioned Whether the condition applies to placement or requiredness.
+		Conditioned *string `json:"conditioned,omitempty"`
+
+		// FormFieldID The condition field.
+		FormFieldID *string `json:"form_field_id,omitempty"`
+
+		// ID The condition ID.
+		ID *string `json:"id,omitempty"`
+
+		// Position The condition position.
+		Position *int `json:"position,omitempty"`
+
+		// Values The values for comparison.
+		Values []string `json:"values,omitempty"`
+	} `json:"conditions,omitempty"`
+
+	// FormFieldPlacementID The form field placement this group belongs to.
+	FormFieldPlacementID string `json:"form_field_placement_id"`
+
+	// GroupOperator Logical operator used to combine the conditions inside this group.
+	GroupOperator FormFieldPlacementConditionGroupGroupOperator `json:"group_operator"`
+
+	// GroupType Whether the group's conditions control the field's placement (visibility) or requiredness. Cannot be changed after creation.
+	GroupType FormFieldPlacementConditionGroupGroupType `json:"group_type"`
+
+	// Position The position of the group among groups of the same group_type.
+	Position int `json:"position"`
+}
+
+// FormFieldPlacementConditionGroupGroupOperator Logical operator used to combine the conditions inside this group.
+type FormFieldPlacementConditionGroupGroupOperator string
+
+// FormFieldPlacementConditionGroupGroupType Whether the group's conditions control the field's placement (visibility) or requiredness. Cannot be changed after creation.
+type FormFieldPlacementConditionGroupGroupType string
+
+// FormFieldPlacementConditionGroupList defines model for form_field_placement_condition_group_list.
+type FormFieldPlacementConditionGroupList struct {
+	Data []struct {
+		Attributes FormFieldPlacementConditionGroup `json:"attributes"`
+
+		// ID Unique ID of the condition group
+		ID   string                                       `json:"id"`
+		Type FormFieldPlacementConditionGroupListDataType `json:"type"`
+	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+	Links    Links                     `json:"links"`
+	Meta     Meta                      `json:"meta"`
+}
+
+// FormFieldPlacementConditionGroupListDataType defines model for FormFieldPlacementConditionGroupList.Data.Type.
+type FormFieldPlacementConditionGroupListDataType string
+
+// FormFieldPlacementConditionGroupResponse defines model for form_field_placement_condition_group_response.
+type FormFieldPlacementConditionGroupResponse struct {
+	Data struct {
+		Attributes FormFieldPlacementConditionGroup `json:"attributes"`
+
+		// ID Unique ID of the condition group
+		ID   string                                           `json:"id"`
+		Type FormFieldPlacementConditionGroupResponseDataType `json:"type"`
+	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+}
+
+// FormFieldPlacementConditionGroupResponseDataType defines model for FormFieldPlacementConditionGroupResponse.Data.Type.
+type FormFieldPlacementConditionGroupResponseDataType string
 
 // FormFieldPlacementConditionList defines model for form_field_placement_condition_list.
 type FormFieldPlacementConditionList struct {
@@ -63142,6 +64069,233 @@ type IncidentsChartResponse struct {
 	Data map[string]interface{} `json:"data"`
 }
 
+// Investigation defines model for investigation.
+type Investigation struct {
+	Data struct {
+		Attributes struct {
+			AlertID     nullable.Nullable[openapi_types.UUID] `json:"alert_id,omitempty"`
+			CausalChain []struct {
+				At       *time.Time                                    `json:"at,omitempty"`
+				Edge     *string                                       `json:"edge,omitempty"`
+				Evidence *string                                       `json:"evidence,omitempty"`
+				Status   *InvestigationDataAttributesCausalChainStatus `json:"status,omitempty"`
+			} `json:"causal_chain,omitempty"`
+			Confidence nullable.Nullable[int] `json:"confidence,omitempty"`
+			CreatedAt  time.Time              `json:"created_at"`
+			Evidence   []struct {
+				Detail *string                                    `json:"detail,omitempty"`
+				Source *string                                    `json:"source,omitempty"`
+				Title  *string                                    `json:"title,omitempty"`
+				URL    *string                                    `json:"url,omitempty"`
+				Weight *InvestigationDataAttributesEvidenceWeight `json:"weight,omitempty"`
+			} `json:"evidence,omitempty"`
+			FinishedAt nullable.Nullable[time.Time] `json:"finished_at,omitempty"`
+			Hypotheses []struct {
+				Category   nullable.Nullable[string]                     `json:"category,omitempty"`
+				Claim      *string                                       `json:"claim,omitempty"`
+				Confidence *int                                          `json:"confidence,omitempty"`
+				ID         *openapi_types.UUID                           `json:"id,omitempty"`
+				Summary    nullable.Nullable[string]                     `json:"summary,omitempty"`
+				Verdict    *InvestigationDataAttributesHypothesesVerdict `json:"verdict,omitempty"`
+			} `json:"hypotheses,omitempty"`
+			IncidentID nullable.Nullable[openapi_types.UUID] `json:"incident_id,omitempty"`
+
+			// OpenQuestions What the investigation could not verify.
+			OpenQuestions []struct {
+				Key      string `json:"key"`
+				Question string `json:"question"`
+			} `json:"open_questions,omitempty"`
+			Outcome nullable.Nullable[InvestigationDataAttributesOutcome] `json:"outcome,omitempty"`
+
+			// ReviewStatus Set when the final review failed and the verdict rests on an earlier review round.
+			ReviewStatus nullable.Nullable[struct {
+				FinalReviewFailed   nullable.Nullable[string]                                                  `json:"final_review_failed,omitempty"`
+				Kind                *InvestigationDataAttributesReviewStatusKind                               `json:"kind,omitempty"`
+				Message             *string                                                                    `json:"message,omitempty"`
+				RetainedDecision    nullable.Nullable[InvestigationDataAttributesReviewStatusRetainedDecision] `json:"retained_decision,omitempty"`
+				RetainedKind        nullable.Nullable[string]                                                  `json:"retained_kind,omitempty"`
+				RetainedReviewRound nullable.Nullable[int]                                                     `json:"retained_review_round,omitempty"`
+			}] `json:"review_status,omitempty"`
+			RootCause     nullable.Nullable[string]         `json:"root_cause,omitempty"`
+			StartedAt     nullable.Nullable[time.Time]      `json:"started_at,omitempty"`
+			Status        InvestigationDataAttributesStatus `json:"status"`
+			Summary       nullable.Nullable[string]         `json:"summary,omitempty"`
+			TriggerSource nullable.Nullable[string]         `json:"trigger_source,omitempty"`
+
+			// URL The investigation tab on the alert or incident page.
+			URL string `json:"url"`
+		} `json:"attributes"`
+		ID   openapi_types.UUID    `json:"id"`
+		Type InvestigationDataType `json:"type"`
+	} `json:"data"`
+}
+
+// InvestigationDataAttributesCausalChainStatus defines model for Investigation.Data.Attributes.CausalChain.Status.
+type InvestigationDataAttributesCausalChainStatus string
+
+// InvestigationDataAttributesEvidenceWeight defines model for Investigation.Data.Attributes.Evidence.Weight.
+type InvestigationDataAttributesEvidenceWeight string
+
+// InvestigationDataAttributesHypothesesVerdict defines model for Investigation.Data.Attributes.Hypotheses.Verdict.
+type InvestigationDataAttributesHypothesesVerdict string
+
+// InvestigationDataAttributesOutcome defines model for Investigation.Data.Attributes.Outcome.
+type InvestigationDataAttributesOutcome string
+
+// InvestigationDataAttributesReviewStatusKind defines model for Investigation.Data.Attributes.ReviewStatus.Kind.
+type InvestigationDataAttributesReviewStatusKind string
+
+// InvestigationDataAttributesReviewStatusRetainedDecision defines model for Investigation.Data.Attributes.ReviewStatus.RetainedDecision.
+type InvestigationDataAttributesReviewStatusRetainedDecision string
+
+// InvestigationDataAttributesStatus defines model for Investigation.Data.Attributes.Status.
+type InvestigationDataAttributesStatus string
+
+// InvestigationDataType defines model for Investigation.Data.Type.
+type InvestigationDataType string
+
+// InvestigationList defines model for investigation_list.
+type InvestigationList struct {
+	Data []struct {
+		Attributes struct {
+			AlertID     nullable.Nullable[openapi_types.UUID] `json:"alert_id,omitempty"`
+			CausalChain []struct {
+				At       *time.Time                                        `json:"at,omitempty"`
+				Edge     *string                                           `json:"edge,omitempty"`
+				Evidence *string                                           `json:"evidence,omitempty"`
+				Status   *InvestigationListDataAttributesCausalChainStatus `json:"status,omitempty"`
+			} `json:"causal_chain,omitempty"`
+			Confidence nullable.Nullable[int] `json:"confidence,omitempty"`
+			CreatedAt  time.Time              `json:"created_at"`
+			Evidence   []struct {
+				Detail *string                                        `json:"detail,omitempty"`
+				Source *string                                        `json:"source,omitempty"`
+				Title  *string                                        `json:"title,omitempty"`
+				URL    *string                                        `json:"url,omitempty"`
+				Weight *InvestigationListDataAttributesEvidenceWeight `json:"weight,omitempty"`
+			} `json:"evidence,omitempty"`
+			FinishedAt nullable.Nullable[time.Time] `json:"finished_at,omitempty"`
+			Hypotheses []struct {
+				Category   nullable.Nullable[string]                         `json:"category,omitempty"`
+				Claim      *string                                           `json:"claim,omitempty"`
+				Confidence *int                                              `json:"confidence,omitempty"`
+				ID         *openapi_types.UUID                               `json:"id,omitempty"`
+				Summary    nullable.Nullable[string]                         `json:"summary,omitempty"`
+				Verdict    *InvestigationListDataAttributesHypothesesVerdict `json:"verdict,omitempty"`
+			} `json:"hypotheses,omitempty"`
+			IncidentID nullable.Nullable[openapi_types.UUID] `json:"incident_id,omitempty"`
+
+			// OpenQuestions What the investigation could not verify.
+			OpenQuestions []struct {
+				Key      string `json:"key"`
+				Question string `json:"question"`
+			} `json:"open_questions,omitempty"`
+			Outcome nullable.Nullable[InvestigationListDataAttributesOutcome] `json:"outcome,omitempty"`
+
+			// ReviewStatus Set when the final review failed and the verdict rests on an earlier review round.
+			ReviewStatus nullable.Nullable[struct {
+				FinalReviewFailed   nullable.Nullable[string]                                                      `json:"final_review_failed,omitempty"`
+				Kind                *InvestigationListDataAttributesReviewStatusKind                               `json:"kind,omitempty"`
+				Message             *string                                                                        `json:"message,omitempty"`
+				RetainedDecision    nullable.Nullable[InvestigationListDataAttributesReviewStatusRetainedDecision] `json:"retained_decision,omitempty"`
+				RetainedKind        nullable.Nullable[string]                                                      `json:"retained_kind,omitempty"`
+				RetainedReviewRound nullable.Nullable[int]                                                         `json:"retained_review_round,omitempty"`
+			}] `json:"review_status,omitempty"`
+			RootCause     nullable.Nullable[string]             `json:"root_cause,omitempty"`
+			StartedAt     nullable.Nullable[time.Time]          `json:"started_at,omitempty"`
+			Status        InvestigationListDataAttributesStatus `json:"status"`
+			Summary       nullable.Nullable[string]             `json:"summary,omitempty"`
+			TriggerSource nullable.Nullable[string]             `json:"trigger_source,omitempty"`
+
+			// URL The investigation tab on the alert or incident page.
+			URL string `json:"url"`
+		} `json:"attributes"`
+		ID   openapi_types.UUID        `json:"id"`
+		Type InvestigationListDataType `json:"type"`
+	} `json:"data"`
+	Meta Meta `json:"meta"`
+}
+
+// InvestigationListDataAttributesCausalChainStatus defines model for InvestigationList.Data.Attributes.CausalChain.Status.
+type InvestigationListDataAttributesCausalChainStatus string
+
+// InvestigationListDataAttributesEvidenceWeight defines model for InvestigationList.Data.Attributes.Evidence.Weight.
+type InvestigationListDataAttributesEvidenceWeight string
+
+// InvestigationListDataAttributesHypothesesVerdict defines model for InvestigationList.Data.Attributes.Hypotheses.Verdict.
+type InvestigationListDataAttributesHypothesesVerdict string
+
+// InvestigationListDataAttributesOutcome defines model for InvestigationList.Data.Attributes.Outcome.
+type InvestigationListDataAttributesOutcome string
+
+// InvestigationListDataAttributesReviewStatusKind defines model for InvestigationList.Data.Attributes.ReviewStatus.Kind.
+type InvestigationListDataAttributesReviewStatusKind string
+
+// InvestigationListDataAttributesReviewStatusRetainedDecision defines model for InvestigationList.Data.Attributes.ReviewStatus.RetainedDecision.
+type InvestigationListDataAttributesReviewStatusRetainedDecision string
+
+// InvestigationListDataAttributesStatus defines model for InvestigationList.Data.Attributes.Status.
+type InvestigationListDataAttributesStatus string
+
+// InvestigationListDataType defines model for InvestigationList.Data.Type.
+type InvestigationListDataType string
+
+// InvestigationProgress defines model for investigation_progress.
+type InvestigationProgress struct {
+	Data struct {
+		Attributes struct {
+			// Done True once the investigation has finished; stop polling.
+			Done    bool `json:"done"`
+			Entries []struct {
+				At           time.Time                                      `json:"at"`
+				Cursor       string                                         `json:"cursor"`
+				DurationMs   *int                                           `json:"duration_ms,omitempty"`
+				ErrorLabel   *string                                        `json:"error_label,omitempty"`
+				ErrorType    *string                                        `json:"error_type,omitempty"`
+				Kind         InvestigationProgressDataAttributesEntriesKind `json:"kind"`
+				Outcome      *string                                        `json:"outcome,omitempty"`
+				Phase        *string                                        `json:"phase,omitempty"`
+				PhaseLabel   *string                                        `json:"phase_label,omitempty"`
+				RowsReturned *int                                           `json:"rows_returned,omitempty"`
+				Sentence     *string                                        `json:"sentence,omitempty"`
+				Title        *string                                        `json:"title,omitempty"`
+				Tool         *string                                        `json:"tool,omitempty"`
+			} `json:"entries"`
+
+			// HasMore More entries are ready; call again with after=next_cursor without waiting.
+			HasMore bool `json:"has_more"`
+
+			// NextCursor Pass as `after` on the next call.
+			NextCursor    nullable.Nullable[string] `json:"next_cursor"`
+			OpenQuestions []struct {
+				Key      string `json:"key"`
+				Question string `json:"question"`
+			} `json:"open_questions"`
+			Outcome nullable.Nullable[string] `json:"outcome,omitempty"`
+			Phases  []struct {
+				FinishedAt nullable.Nullable[time.Time] `json:"finished_at,omitempty"`
+				ID         openapi_types.UUID           `json:"id"`
+				Label      string                       `json:"label"`
+				Phase      string                       `json:"phase"`
+				StartedAt  nullable.Nullable[time.Time] `json:"started_at,omitempty"`
+				Status     string                       `json:"status"`
+			} `json:"phases"`
+			Status InvestigationProgressDataAttributesStatus `json:"status"`
+		} `json:"attributes"`
+		ID   openapi_types.UUID            `json:"id"`
+		Type InvestigationProgressDataType `json:"type"`
+	} `json:"data"`
+}
+
+// InvestigationProgressDataAttributesEntriesKind defines model for InvestigationProgress.Data.Attributes.Entries.Kind.
+type InvestigationProgressDataAttributesEntriesKind string
+
+// InvestigationProgressDataAttributesStatus defines model for InvestigationProgress.Data.Attributes.Status.
+type InvestigationProgressDataAttributesStatus string
+
+// InvestigationProgressDataType defines model for InvestigationProgress.Data.Type.
+type InvestigationProgressDataType string
+
 // InviteToGoogleChatSpaceTaskParams defines model for invite_to_google_chat_space_task_params.
 type InviteToGoogleChatSpaceTaskParams struct {
 	// Emails Comma separated list of emails to invite
@@ -63836,6 +64990,9 @@ type NewAiAutomation struct {
 	Data struct {
 		// Attributes Read-only attributes are ignored on write.
 		Attributes struct {
+			// AllowedToolKeys null inherits all tools allowed by the team; otherwise the automation can use only these tool keys.
+			AllowedToolKeys nullable.Nullable[[]string] `json:"allowed_tool_keys,omitempty"`
+
 			// Conditions Read-only; send triggers to change how the automation is triggered. Accepted on update only when unchanged from GET.
 			//
 			// Example: {"any":[{"all":[{"field":"status","operator":"eq","value":"started"}]}]}
@@ -63863,7 +65020,7 @@ type NewAiAutomation struct {
 			// DestinationKind slack_channel requires destination_slack_channel_id. incident_timeline is only valid for event automations triggered by incident events. Defaults to none when omitted, or slack_channel when destination_slack_channel_id is provided.
 			DestinationKind *NewAiAutomationDataAttributesDestinationKind `json:"destination_kind,omitempty"`
 
-			// DestinationSlackChannelID Slack channel ID (e.g. C0123ABCD) or channel name (optional leading #) of a channel Rootly has already synced from the team's connected Slack workspace; names are matched case-insensitively and resolved to the channel ID on write. Channels created very recently may not be synced yet and are rejected until they are. Setting a channel sets destination_kind to slack_channel when destination_kind is omitted; sending a new channel with any other destination_kind is rejected. null is ignored on write; to stop posting to Slack, change destination_kind instead. When Slack channel user filtering is enabled, personal keys and OAuth tokens only see, and can only set new, channels the user can access in Slack; an update may resend the automation's current channel unchanged.
+			// DestinationSlackChannelID Slack channel ID (e.g. C0123ABCD), channel name (optional leading #), or Liquid expression. Liquid is stored verbatim and rendered with the run's incident/alert context, for example {{ incident.slack_channel_id }}, {{ alert.data.slack_channel_id }}, or {{ alert.incidents.first.slack_channel_id }}. Liquid must render a channel ID or synced channel name; names are resolved from Rootly's synced Slack channel records. The rendered channel is verified and checked against the automation owner's Slack permissions at runtime; empty, invalid, unavailable, or unauthorized results fail the run. Static channels must be channels Rootly has already synced from the team's connected Slack workspace; names are matched case-insensitively and resolved to the channel ID on write. Channels created very recently may not be synced yet and are rejected until they are. Setting a channel sets destination_kind to slack_channel when destination_kind is omitted; sending a new channel with any other destination_kind is rejected. null is ignored on write; to stop posting to Slack, change destination_kind instead. When Slack channel user filtering is enabled, personal keys and OAuth tokens only see, and can only set new, channels the user can access in Slack; an update may resend the automation's current channel unchanged. Liquid destinations resolvable without run context use the same acting-user check at save time. Incident/alert-dependent expressions are checked against the automation owner at runtime; every Liquid destination is verified again before delivery.
 			DestinationSlackChannelID nullable.Nullable[string] `json:"destination_slack_channel_id,omitempty"`
 
 			// DestinationSlackChannelName Ignored on write.
@@ -65306,6 +66463,9 @@ type NewCommunicationsGroup struct {
 
 			// CommunicationGroupConditions Group conditions attributes
 			CommunicationGroupConditions nullable.Nullable[[]struct {
+				// FormFieldID ID of the custom field. Required when property_type is form_field
+				FormFieldID nullable.Nullable[string] `json:"form_field_id,omitempty"`
+
 				// FunctionalityIDs Array of functionality IDs
 				FunctionalityIDs nullable.Nullable[[]string] `json:"functionality_ids,omitempty"`
 
@@ -65314,6 +66474,11 @@ type NewCommunicationsGroup struct {
 
 				// IncidentTypeIDs Array of incident type IDs
 				IncidentTypeIDs nullable.Nullable[[]string] `json:"incident_type_ids,omitempty"`
+
+				// Properties Selected values as objects with an id. For form_field conditions, the custom field option IDs
+				Properties nullable.Nullable[[]struct {
+					ID *string `json:"id,omitempty"`
+				}] `json:"properties,omitempty"`
 
 				// PropertyType Property type
 				PropertyType *NewCommunicationsGroupDataAttributesCommunicationGroupConditionsPropertyType `json:"property_type,omitempty"`
@@ -65839,7 +67004,7 @@ type NewEscalationPolicyLevel struct {
 			// EscalationPolicyPathID The ID of the dynamic escalation policy path the level will belong to. If nothing is specified it will add the level to your default path.
 			EscalationPolicyPathID nullable.Nullable[string] `json:"escalation_policy_path_id,omitempty"`
 
-			// NotificationTargetParams Escalation level's notification targets
+			// NotificationTargetParams Escalation level's notification targets. Must include at least one target other than ai_sre.
 			NotificationTargetParams []nullable.Nullable[struct {
 				// ID The ID of notification target. If Slack channel, then id of the slack channel (eg. C06Q2JK7RQW). If Microsoft Teams channel, then the Rootly channel UUID. If ai_sre, then the AI SRE provider (eg. rootly). New ai_sre targets accept only rootly. A provider already saved on the level (rootly, devin) may be sent back unchanged. Repeated ai_sre providers are saved once.
 				ID string `json:"id"`
@@ -65921,6 +67086,9 @@ type NewEscalationPolicyPath struct {
 			// NotificationTypeFallback Paged when no notification type rule matches. Considered only when notification_type_rules are present — the path's notification_type is aligned to it; without rules it is aligned to notification_type instead. Only available when notification type conditions are enabled for the team.
 			NotificationTypeFallback *NewEscalationPolicyPathDataAttributesNotificationTypeFallback `json:"notification_type_fallback,omitempty"`
 
+			// NotificationTypeFallbackSkipEscalation When the fallback pages quiet, page only the first level that has responders, once, without escalating to later levels or repeating. Reset to false whenever the fallback is audible. Only available when skipping escalation for quiet alerts is enabled for the organization.
+			NotificationTypeFallbackSkipEscalation *bool `json:"notification_type_fallback_skip_escalation,omitempty"`
+
 			// NotificationTypeRules Rules deciding whether an alert pages audible or quiet, evaluated in order — the first matching rule's notification_type wins, otherwise notification_type_fallback applies. When present, the path's notification_type is aligned to notification_type_fallback. Only available when notification type conditions are enabled for the team.
 			NotificationTypeRules []struct {
 				// Conditions Conditions combined per match_mode, at least one per rule. A deferral_window condition matches when the alert falls inside its time blocks.
@@ -65931,6 +67099,9 @@ type NewEscalationPolicyPath struct {
 
 				// NotificationType Outcome when this rule matches
 				NotificationType *NewEscalationPolicyPathDataAttributesNotificationTypeRulesNotificationType `json:"notification_type,omitempty"`
+
+				// SkipEscalation When this quiet rule matches, page only the first level that has responders, once, without escalating to later levels or repeating. Ignored for audible rules. Only available when skipping escalation for quiet alerts is enabled for the organization.
+				SkipEscalation *bool `json:"skip_escalation,omitempty"`
 			} `json:"notification_type_rules,omitempty"`
 
 			// PathType The type of escalation path to create
@@ -66482,6 +67653,9 @@ type NewFormFieldPlacementCondition struct {
 			// Comparison The condition comparison.
 			Comparison NewFormFieldPlacementConditionDataAttributesComparison `json:"comparison"`
 
+			// ConditionGroupID The group to add the condition to. Must be on the same placement and match `conditioned`. If omitted on create, the condition gets its own group.
+			ConditionGroupID *string `json:"condition_group_id,omitempty"`
+
 			// Conditioned The resource or attribute the condition applies.
 			Conditioned NewFormFieldPlacementConditionDataAttributesConditioned `json:"conditioned"`
 
@@ -66506,6 +67680,32 @@ type NewFormFieldPlacementConditionDataAttributesConditioned string
 
 // NewFormFieldPlacementConditionDataType defines model for NewFormFieldPlacementCondition.Data.Type.
 type NewFormFieldPlacementConditionDataType string
+
+// NewFormFieldPlacementConditionGroup defines model for new_form_field_placement_condition_group.
+type NewFormFieldPlacementConditionGroup struct {
+	Data struct {
+		Attributes struct {
+			// GroupOperator Logical operator used to combine the conditions inside this group.
+			GroupOperator NewFormFieldPlacementConditionGroupDataAttributesGroupOperator `json:"group_operator"`
+
+			// GroupType Whether the group's conditions control the field's placement (visibility) or requiredness. Cannot be changed after creation.
+			GroupType NewFormFieldPlacementConditionGroupDataAttributesGroupType `json:"group_type"`
+
+			// Position The position of the group among groups of the same group_type.
+			Position *int `json:"position,omitempty"`
+		} `json:"attributes"`
+		Type NewFormFieldPlacementConditionGroupDataType `json:"type"`
+	} `json:"data"`
+}
+
+// NewFormFieldPlacementConditionGroupDataAttributesGroupOperator Logical operator used to combine the conditions inside this group.
+type NewFormFieldPlacementConditionGroupDataAttributesGroupOperator string
+
+// NewFormFieldPlacementConditionGroupDataAttributesGroupType Whether the group's conditions control the field's placement (visibility) or requiredness. Cannot be changed after creation.
+type NewFormFieldPlacementConditionGroupDataAttributesGroupType string
+
+// NewFormFieldPlacementConditionGroupDataType defines model for NewFormFieldPlacementConditionGroup.Data.Type.
+type NewFormFieldPlacementConditionGroupDataType string
 
 // NewFormFieldPosition defines model for new_form_field_position.
 type NewFormFieldPosition struct {
@@ -67383,6 +68583,39 @@ type NewIncidentType struct {
 
 // NewIncidentTypeDataType defines model for NewIncidentType.Data.Type.
 type NewIncidentTypeDataType string
+
+// NewInvestigation defines model for new_investigation.
+type NewInvestigation struct {
+	Data struct {
+		// Attributes Give exactly one of alert_id or incident_id.
+		Attributes NewInvestigation_Data_Attributes `json:"attributes"`
+		Type       NewInvestigationDataType         `json:"type"`
+	} `json:"data"`
+}
+
+// NewInvestigationDataAttributes0 defines model for NewInvestigation.Data.Attributes.0.
+type NewInvestigationDataAttributes0 struct {
+	AlertID openapi_types.UUID `json:"alert_id"`
+
+	// Rerun Start a fresh run. Returns 409 rerun_unavailable while the latest investigation is still running or rerun is off for the team.
+	Rerun *bool `json:"rerun,omitempty"`
+}
+
+// NewInvestigationDataAttributes1 defines model for NewInvestigation.Data.Attributes.1.
+type NewInvestigationDataAttributes1 struct {
+	IncidentID openapi_types.UUID `json:"incident_id"`
+
+	// Rerun Start a fresh run. Returns 409 rerun_unavailable while the latest investigation is still running or rerun is off for the team.
+	Rerun *bool `json:"rerun,omitempty"`
+}
+
+// NewInvestigation_Data_Attributes Give exactly one of alert_id or incident_id.
+type NewInvestigation_Data_Attributes struct {
+	union json.RawMessage
+}
+
+// NewInvestigationDataType defines model for NewInvestigation.Data.Type.
+type NewInvestigationDataType string
 
 // NewLiveCallRouter defines model for new_live_call_router.
 type NewLiveCallRouter struct {
@@ -68358,7 +69591,9 @@ type NewScheduleRotation struct {
 				// StartTime Start time for schedule rotation active time
 				StartTime string `json:"start_time"`
 			} `json:"active_time_attributes,omitempty"`
-			ActiveTimeType *string `json:"active_time_type,omitempty"`
+
+			// ActiveTimeType Schedule rotation active time type
+			ActiveTimeType *NewScheduleRotationDataAttributesActiveTimeType `json:"active_time_type,omitempty"`
 
 			// EndTime RFC3339 date-time when rotation ends. Shifts will only be created before this time.
 			EndTime nullable.Nullable[time.Time] `json:"end_time,omitempty"`
@@ -68397,6 +69632,9 @@ type NewScheduleRotation struct {
 
 // NewScheduleRotationDataAttributesActiveDays Schedule rotation active days
 type NewScheduleRotationDataAttributesActiveDays string
+
+// NewScheduleRotationDataAttributesActiveTimeType Schedule rotation active time type
+type NewScheduleRotationDataAttributesActiveTimeType string
 
 // NewScheduleRotationDataAttributesScheduleRotationMembersMemberType Type of member
 type NewScheduleRotationDataAttributesScheduleRotationMembersMemberType string
@@ -69921,7 +71159,7 @@ type OnCallRole struct {
 	Slug *string `json:"slug,omitempty"`
 
 	// SystemRole The kind of role
-	SystemRole           *string                          `json:"system_role,omitempty"`
+	SystemRole           *OnCallRoleSystemRole            `json:"system_role,omitempty"`
 	UpdatedAt            string                           `json:"updated_at"`
 	WebhooksPermissions  []OnCallRoleWebhooksPermissions  `json:"webhooks_permissions,omitempty"`
 	WorkflowsPermissions []OnCallRoleWorkflowsPermissions `json:"workflows_permissions,omitempty"`
@@ -69995,6 +71233,9 @@ type OnCallRoleSchedulesPermissions string
 
 // OnCallRoleServicesPermissions defines model for OnCallRole.ServicesPermissions.
 type OnCallRoleServicesPermissions string
+
+// OnCallRoleSystemRole The kind of role
+type OnCallRoleSystemRole string
 
 // OnCallRoleWebhooksPermissions defines model for OnCallRole.WebhooksPermissions.
 type OnCallRoleWebhooksPermissions string
@@ -72607,7 +73848,9 @@ type ScheduleRotation struct {
 		// StartTime Start time for schedule rotation active time
 		StartTime string `json:"start_time"`
 	} `json:"active_time_attributes,omitempty"`
-	ActiveTimeType *string `json:"active_time_type,omitempty"`
+
+	// ActiveTimeType Schedule rotation active time type
+	ActiveTimeType *ScheduleRotationActiveTimeType `json:"active_time_type,omitempty"`
 
 	// EndTime RFC3339 date-time when rotation ends. Shifts will only be created before this time.
 	EndTime nullable.Nullable[time.Time] `json:"end_time,omitempty"`
@@ -72634,6 +73877,9 @@ type ScheduleRotation struct {
 
 // ScheduleRotationActiveDays Schedule rotation active days
 type ScheduleRotationActiveDays string
+
+// ScheduleRotationActiveTimeType Schedule rotation active time type
+type ScheduleRotationActiveTimeType string
 
 // ScheduleRotationScheduleRotationableAttributes0 defines model for ScheduleRotation.ScheduleRotationableAttributes.0.
 type ScheduleRotationScheduleRotationableAttributes0 struct {
@@ -74812,6 +76058,9 @@ type UpdateAiAutomation struct {
 	Data struct {
 		// Attributes Read-only attributes are ignored on write.
 		Attributes struct {
+			// AllowedToolKeys null inherits all tools allowed by the team; otherwise the automation can use only these tool keys.
+			AllowedToolKeys nullable.Nullable[[]string] `json:"allowed_tool_keys,omitempty"`
+
 			// Conditions Read-only; send triggers to change how the automation is triggered. Accepted on update only when unchanged from GET.
 			//
 			// Example: {"any":[{"all":[{"field":"status","operator":"eq","value":"started"}]}]}
@@ -74839,7 +76088,7 @@ type UpdateAiAutomation struct {
 			// DestinationKind slack_channel requires destination_slack_channel_id. incident_timeline is only valid for event automations triggered by incident events.
 			DestinationKind *UpdateAiAutomationDataAttributesDestinationKind `json:"destination_kind,omitempty"`
 
-			// DestinationSlackChannelID Slack channel ID (e.g. C0123ABCD) or channel name (optional leading #) of a channel Rootly has already synced from the team's connected Slack workspace; names are matched case-insensitively and resolved to the channel ID on write. Channels created very recently may not be synced yet and are rejected until they are. Setting a channel sets destination_kind to slack_channel when destination_kind is omitted; sending a new channel with any other destination_kind is rejected. null is ignored on write; to stop posting to Slack, change destination_kind instead. When Slack channel user filtering is enabled, personal keys and OAuth tokens only see, and can only set new, channels the user can access in Slack; an update may resend the automation's current channel unchanged.
+			// DestinationSlackChannelID Slack channel ID (e.g. C0123ABCD), channel name (optional leading #), or Liquid expression. Liquid is stored verbatim and rendered with the run's incident/alert context, for example {{ incident.slack_channel_id }}, {{ alert.data.slack_channel_id }}, or {{ alert.incidents.first.slack_channel_id }}. Liquid must render a channel ID or synced channel name; names are resolved from Rootly's synced Slack channel records. The rendered channel is verified and checked against the automation owner's Slack permissions at runtime; empty, invalid, unavailable, or unauthorized results fail the run. Static channels must be channels Rootly has already synced from the team's connected Slack workspace; names are matched case-insensitively and resolved to the channel ID on write. Channels created very recently may not be synced yet and are rejected until they are. Setting a channel sets destination_kind to slack_channel when destination_kind is omitted; sending a new channel with any other destination_kind is rejected. null is ignored on write; to stop posting to Slack, change destination_kind instead. When Slack channel user filtering is enabled, personal keys and OAuth tokens only see, and can only set new, channels the user can access in Slack; an update may resend the automation's current channel unchanged. Liquid destinations resolvable without run context use the same acting-user check at save time. Incident/alert-dependent expressions are checked against the automation owner at runtime; every Liquid destination is verified again before delivery.
 			DestinationSlackChannelID nullable.Nullable[string] `json:"destination_slack_channel_id,omitempty"`
 
 			// DestinationSlackChannelName Ignored on write.
@@ -76422,6 +77671,9 @@ type UpdateCommunicationsGroup struct {
 
 			// CommunicationGroupConditions Group conditions attributes
 			CommunicationGroupConditions nullable.Nullable[[]struct {
+				// FormFieldID ID of the custom field. Required when property_type is form_field
+				FormFieldID nullable.Nullable[string] `json:"form_field_id,omitempty"`
+
 				// FunctionalityIDs Array of functionality IDs
 				FunctionalityIDs nullable.Nullable[[]string] `json:"functionality_ids,omitempty"`
 
@@ -76433,6 +77685,11 @@ type UpdateCommunicationsGroup struct {
 
 				// IncidentTypeIDs Array of incident type IDs
 				IncidentTypeIDs nullable.Nullable[[]string] `json:"incident_type_ids,omitempty"`
+
+				// Properties Selected values as objects with an id. For form_field conditions, the custom field option IDs
+				Properties nullable.Nullable[[]struct {
+					ID *string `json:"id,omitempty"`
+				}] `json:"properties,omitempty"`
 
 				// PropertyType Property type
 				PropertyType *UpdateCommunicationsGroupDataAttributesCommunicationGroupConditionsPropertyType `json:"property_type,omitempty"`
@@ -77044,7 +78301,7 @@ type UpdateEscalationPolicyLevel struct {
 			// EscalationPolicyPathID The ID of the dynamic escalation policy path the level will belong to. If nothing is specified it will add the level to your default path.
 			EscalationPolicyPathID nullable.Nullable[string] `json:"escalation_policy_path_id,omitempty"`
 
-			// NotificationTargetParams Escalation level's notification targets
+			// NotificationTargetParams Escalation level's notification targets. Must include at least one target other than ai_sre.
 			NotificationTargetParams []nullable.Nullable[struct {
 				// ID The ID of notification target. If ai_sre, then the AI SRE provider (eg. rootly). New ai_sre targets accept only rootly. A provider already saved on the level (rootly, devin) may be sent back unchanged. Repeated ai_sre providers are saved once.
 				ID string `json:"id"`
@@ -77129,6 +78386,9 @@ type UpdateEscalationPolicyPath struct {
 			// NotificationTypeFallback Paged when no notification type rule matches. Considered only when notification_type_rules are present — the path's notification_type is aligned to it; without rules it is aligned to notification_type instead. Only available when notification type conditions are enabled for the team.
 			NotificationTypeFallback *UpdateEscalationPolicyPathDataAttributesNotificationTypeFallback `json:"notification_type_fallback,omitempty"`
 
+			// NotificationTypeFallbackSkipEscalation When the fallback pages quiet, page only the first level that has responders, once, without escalating to later levels or repeating. Reset to false whenever the fallback is audible. Only available when skipping escalation for quiet alerts is enabled for the organization.
+			NotificationTypeFallbackSkipEscalation *bool `json:"notification_type_fallback_skip_escalation,omitempty"`
+
 			// NotificationTypeRules Rules deciding whether an alert pages audible or quiet, evaluated in order — the first matching rule's notification_type wins, otherwise notification_type_fallback applies. When present, the path's notification_type is aligned to notification_type_fallback. Only available when notification type conditions are enabled for the team.
 			NotificationTypeRules []struct {
 				// Conditions Conditions combined per match_mode, at least one per rule. A deferral_window condition matches when the alert falls inside its time blocks.
@@ -77139,6 +78399,9 @@ type UpdateEscalationPolicyPath struct {
 
 				// NotificationType Outcome when this rule matches
 				NotificationType *UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesNotificationType `json:"notification_type,omitempty"`
+
+				// SkipEscalation When this quiet rule matches, page only the first level that has responders, once, without escalating to later levels or repeating. Ignored for audible rules. Only available when skipping escalation for quiet alerts is enabled for the organization.
+				SkipEscalation *bool `json:"skip_escalation,omitempty"`
 			} `json:"notification_type_rules,omitempty"`
 
 			// PathType The type of escalation path. Cannot be changed after creation.
@@ -77699,6 +78962,9 @@ type UpdateFormFieldPlacementCondition struct {
 			// Comparison The condition comparison.
 			Comparison *UpdateFormFieldPlacementConditionDataAttributesComparison `json:"comparison,omitempty"`
 
+			// ConditionGroupID The group to move the condition to. Must be on the same placement and match `conditioned`. If omitted, the condition stays in its current group.
+			ConditionGroupID *string `json:"condition_group_id,omitempty"`
+
 			// Conditioned The resource or attribute the condition applies.
 			Conditioned *UpdateFormFieldPlacementConditionDataAttributesConditioned `json:"conditioned,omitempty"`
 
@@ -77726,6 +78992,29 @@ type UpdateFormFieldPlacementConditionDataAttributesConditioned string
 
 // UpdateFormFieldPlacementConditionDataType defines model for UpdateFormFieldPlacementCondition.Data.Type.
 type UpdateFormFieldPlacementConditionDataType string
+
+// UpdateFormFieldPlacementConditionGroup defines model for update_form_field_placement_condition_group.
+type UpdateFormFieldPlacementConditionGroup struct {
+	Data struct {
+		Attributes struct {
+			// GroupOperator Logical operator used to combine the conditions inside this group.
+			GroupOperator *UpdateFormFieldPlacementConditionGroupDataAttributesGroupOperator `json:"group_operator,omitempty"`
+
+			// Position The position of the group among groups of the same group_type.
+			Position *int `json:"position,omitempty"`
+		} `json:"attributes"`
+
+		// ID Accepted for JSON:API client compatibility, but ignored. The resource to update is identified by the id in the path.
+		ID   *string                                        `json:"id,omitempty"`
+		Type UpdateFormFieldPlacementConditionGroupDataType `json:"type"`
+	} `json:"data"`
+}
+
+// UpdateFormFieldPlacementConditionGroupDataAttributesGroupOperator Logical operator used to combine the conditions inside this group.
+type UpdateFormFieldPlacementConditionGroupDataAttributesGroupOperator string
+
+// UpdateFormFieldPlacementConditionGroupDataType defines model for UpdateFormFieldPlacementConditionGroup.Data.Type.
+type UpdateFormFieldPlacementConditionGroupDataType string
 
 // UpdateFormFieldPosition defines model for update_form_field_position.
 type UpdateFormFieldPosition struct {
@@ -80331,7 +81620,9 @@ type UpdateScheduleRotation struct {
 				// StartTime Start time for schedule rotation active time
 				StartTime string `json:"start_time"`
 			} `json:"active_time_attributes,omitempty"`
-			ActiveTimeType *string `json:"active_time_type,omitempty"`
+
+			// ActiveTimeType Schedule rotation active time type
+			ActiveTimeType *UpdateScheduleRotationDataAttributesActiveTimeType `json:"active_time_type,omitempty"`
 
 			// EndTime RFC3339 date-time when rotation ends. Shifts will only be created before this time.
 			EndTime nullable.Nullable[time.Time] `json:"end_time,omitempty"`
@@ -80373,6 +81664,9 @@ type UpdateScheduleRotation struct {
 
 // UpdateScheduleRotationDataAttributesActiveDays Schedule rotation active days
 type UpdateScheduleRotationDataAttributesActiveDays string
+
+// UpdateScheduleRotationDataAttributesActiveTimeType Schedule rotation active time type
+type UpdateScheduleRotationDataAttributesActiveTimeType string
 
 // UpdateScheduleRotationDataAttributesScheduleRotationMembersMemberType Type of member
 type UpdateScheduleRotationDataAttributesScheduleRotationMembersMemberType string
@@ -81559,6 +82853,23 @@ type UpdateUserNotificationRuleDataAttributesEnabledContactTypes string
 // UpdateUserNotificationRuleDataType defines model for UpdateUserNotificationRule.Data.Type.
 type UpdateUserNotificationRuleDataType string
 
+// UpdateUserNotificationSettings defines model for update_user_notification_settings.
+type UpdateUserNotificationSettings struct {
+	Data struct {
+		Attributes struct {
+			// MuteUntil Unix epoch seconds (UTC) until which all of the authenticated user's alert notifications are muted. Must be in the future and at most one year away. Sending a new value while a mute is active replaces the existing mute. Send null (or 0) to clear the mute.
+			MuteUntil nullable.Nullable[int] `json:"mute_until"`
+		} `json:"attributes"`
+
+		// ID Accepted for JSON:API client compatibility, but ignored. The settings always belong to the authenticated user.
+		ID   *string                                `json:"id,omitempty"`
+		Type UpdateUserNotificationSettingsDataType `json:"type"`
+	} `json:"data"`
+}
+
+// UpdateUserNotificationSettingsDataType defines model for UpdateUserNotificationSettings.Data.Type.
+type UpdateUserNotificationSettingsDataType string
+
 // UpdateUserPhoneNumber defines model for update_user_phone_number.
 type UpdateUserPhoneNumber struct {
 	Data struct {
@@ -82112,6 +83423,33 @@ type UserNotificationRuleResponse struct {
 
 // UserNotificationRuleResponseDataType defines model for UserNotificationRuleResponse.Data.Type.
 type UserNotificationRuleResponseDataType string
+
+// UserNotificationSettings defines model for user_notification_settings.
+type UserNotificationSettings struct {
+	// MuteUntil Unix epoch seconds (UTC) until which the user's alert notifications are muted. Null when no mute is set.
+	MuteUntil nullable.Nullable[int] `json:"mute_until,omitempty"`
+
+	// MuteUntilAt The same mute expiry as an ISO 8601 timestamp. Null when no mute is set.
+	MuteUntilAt nullable.Nullable[time.Time] `json:"mute_until_at,omitempty"`
+
+	// Muted Whether the user's alert notifications are currently muted.
+	Muted *bool `json:"muted,omitempty"`
+}
+
+// UserNotificationSettingsResponse defines model for user_notification_settings_response.
+type UserNotificationSettingsResponse struct {
+	Data struct {
+		Attributes UserNotificationSettings `json:"attributes"`
+
+		// ID ID of the authenticated user the settings belong to
+		ID   string                                   `json:"id"`
+		Type UserNotificationSettingsResponseDataType `json:"type"`
+	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+}
+
+// UserNotificationSettingsResponseDataType defines model for UserNotificationSettingsResponse.Data.Type.
+type UserNotificationSettingsResponseDataType string
 
 // UserPhoneNumber defines model for user_phone_number.
 type UserPhoneNumber struct {
@@ -82963,24 +84301,21 @@ type StreamAiChatParams struct {
 // StreamAiChatParamsDecision defines parameters for StreamAiChat.
 type StreamAiChatParamsDecision string
 
-// GetV1AiConnectorAuditEventsParams defines parameters for GetV1AiConnectorAuditEvents.
-type GetV1AiConnectorAuditEventsParams struct {
-	FilterConnectorID *string `form:"filter[connector_id],omitempty" json:"filter[connector_id],omitempty"`
-
-	// FilterEventType calls, connection, or one of: call, connected, reconnected, edited, disconnected
-	FilterEventType *string `form:"filter[event_type],omitempty" json:"filter[event_type],omitempty"`
-
-	// FilterOutcome failed, or one of: success, authentication_failed, permission_denied, rate_limited, timeout, not_found, invalid_request, connector_error
-	FilterOutcome *string `form:"filter[outcome],omitempty" json:"filter[outcome],omitempty"`
-
-	// FilterTrigger slack_chat, web_chat, api_chat, mobile_chat, google_chat, microsoft_teams_chat, ai_sre_investigation, workflow, automation, proactive, web, other
-	FilterTrigger        *string `form:"filter[trigger],omitempty" json:"filter[trigger],omitempty"`
-	FilterUserID         *int    `form:"filter[user_id],omitempty" json:"filter[user_id],omitempty"`
-	FilterOccurredAfter  *string `form:"filter[occurred_after],omitempty" json:"filter[occurred_after],omitempty"`
-	FilterOccurredBefore *string `form:"filter[occurred_before],omitempty" json:"filter[occurred_before],omitempty"`
-	PageNumber           *int    `form:"page[number],omitempty" json:"page[number],omitempty"`
-	PageSize             *int    `form:"page[size],omitempty" json:"page[size],omitempty"`
+// ListAiToolCallEventsParams defines parameters for ListAiToolCallEvents.
+type ListAiToolCallEventsParams struct {
+	Filter *struct {
+		ConnectorID    *string    `json:"connector_id,omitempty"`
+		OccurredAfter  *time.Time `json:"occurred_after,omitempty"`
+		OccurredBefore *time.Time `json:"occurred_before,omitempty"`
+		Outcome        *string    `json:"outcome,omitempty"`
+		RiskClass      *string    `json:"risk_class,omitempty"`
+		Surface        *string    `json:"surface,omitempty"`
+		UserID         *string    `json:"user_id,omitempty"`
+	} `json:"filter,omitempty"`
 }
+
+// ListAiToolCallEvents200ApplicationVndAPIPlusJSONResponseBodyDataType defines parameters for ListAiToolCallEvents.
+type ListAiToolCallEvents200ApplicationVndAPIPlusJSONResponseBodyDataType string
 
 // ListAlertEventsFeedParams defines parameters for ListAlertEventsFeed.
 type ListAlertEventsFeedParams struct {
@@ -84003,6 +85338,13 @@ type ListIncidentEventServicesParams struct {
 	PageSize   *int    `form:"page[size],omitempty" json:"page[size],omitempty"`
 }
 
+// ListFormFieldPlacementConditionGroupsParams defines parameters for ListFormFieldPlacementConditionGroups.
+type ListFormFieldPlacementConditionGroupsParams struct {
+	PageNumber      *int    `form:"page[number],omitempty" json:"page[number],omitempty"`
+	PageSize        *int    `form:"page[size],omitempty" json:"page[size],omitempty"`
+	FilterGroupType *string `form:"filter[group_type],omitempty" json:"filter[group_type],omitempty"`
+}
+
 // ListFormFieldPlacementConditionsParams defines parameters for ListFormFieldPlacementConditions.
 type ListFormFieldPlacementConditionsParams struct {
 	Include           *string `form:"include,omitempty" json:"include,omitempty"`
@@ -84613,6 +85955,26 @@ type ListIncidentSubStatusesParamsInclude string
 
 // ListIncidentSubStatusesParamsSort defines parameters for ListIncidentSubStatuses.
 type ListIncidentSubStatusesParamsSort string
+
+// ListInvestigationsParams defines parameters for ListInvestigations.
+type ListInvestigationsParams struct {
+	FilterAlertID    *openapi_types.UUID `form:"filter[alert_id],omitempty" json:"filter[alert_id],omitempty"`
+	FilterIncidentID *openapi_types.UUID `form:"filter[incident_id],omitempty" json:"filter[incident_id],omitempty"`
+
+	// FilterStatus Comma-separated statuses.
+	FilterStatus *string `form:"filter[status],omitempty" json:"filter[status],omitempty"`
+
+	// FilterOutcome Comma-separated outcomes.
+	FilterOutcome *string `form:"filter[outcome],omitempty" json:"filter[outcome],omitempty"`
+	PageNumber    *int    `form:"page[number],omitempty" json:"page[number],omitempty"`
+	PageSize      *int    `form:"page[size],omitempty" json:"page[size],omitempty"`
+}
+
+// GetInvestigationProgressParams defines parameters for GetInvestigationProgress.
+type GetInvestigationProgressParams struct {
+	// After next_cursor from the previous call.
+	After *string `form:"after,omitempty" json:"after,omitempty"`
+}
 
 // ListLiveCallRoutersParams defines parameters for ListLiveCallRouters.
 type ListLiveCallRoutersParams struct {
@@ -85956,8 +87318,14 @@ type UpdateIncidentFeedbackApplicationVndAPIPlusJSONRequestBody = UpdateIncident
 // UpdateFormFieldOptionApplicationVndAPIPlusJSONRequestBody defines body for UpdateFormFieldOption for application/vnd.api+json ContentType.
 type UpdateFormFieldOptionApplicationVndAPIPlusJSONRequestBody = UpdateFormFieldOption
 
+// UpdateFormFieldPlacementConditionGroupApplicationVndAPIPlusJSONRequestBody defines body for UpdateFormFieldPlacementConditionGroup for application/vnd.api+json ContentType.
+type UpdateFormFieldPlacementConditionGroupApplicationVndAPIPlusJSONRequestBody = UpdateFormFieldPlacementConditionGroup
+
 // UpdateFormFieldPlacementConditionApplicationVndAPIPlusJSONRequestBody defines body for UpdateFormFieldPlacementCondition for application/vnd.api+json ContentType.
 type UpdateFormFieldPlacementConditionApplicationVndAPIPlusJSONRequestBody = UpdateFormFieldPlacementCondition
+
+// CreateFormFieldPlacementConditionGroupApplicationVndAPIPlusJSONRequestBody defines body for CreateFormFieldPlacementConditionGroup for application/vnd.api+json ContentType.
+type CreateFormFieldPlacementConditionGroupApplicationVndAPIPlusJSONRequestBody = NewFormFieldPlacementConditionGroup
 
 // CreateFormFieldPlacementConditionApplicationVndAPIPlusJSONRequestBody defines body for CreateFormFieldPlacementCondition for application/vnd.api+json ContentType.
 type CreateFormFieldPlacementConditionApplicationVndAPIPlusJSONRequestBody = NewFormFieldPlacementCondition
@@ -86139,6 +87507,9 @@ type CreateIncidentStatusPageApplicationVndAPIPlusJSONRequestBody = NewIncidentS
 
 // CreateIncidentSubStatusApplicationVndAPIPlusJSONRequestBody defines body for CreateIncidentSubStatus for application/vnd.api+json ContentType.
 type CreateIncidentSubStatusApplicationVndAPIPlusJSONRequestBody = NewIncidentSubStatus
+
+// CreateInvestigationApplicationVndAPIPlusJSONRequestBody defines body for CreateInvestigation for application/vnd.api+json ContentType.
+type CreateInvestigationApplicationVndAPIPlusJSONRequestBody = NewInvestigation
 
 // PatchIPAllowlistApplicationVndAPIPlusJSONRequestBody defines body for PatchIPAllowlist for application/vnd.api+json ContentType.
 type PatchIPAllowlistApplicationVndAPIPlusJSONRequestBody = UpdateIPAllowlist
@@ -86358,6 +87729,9 @@ type UpdateTeamApplicationVndAPIPlusJSONRequestBody = UpdateTeam
 
 // UpdateStatusPageTemplateApplicationVndAPIPlusJSONRequestBody defines body for UpdateStatusPageTemplate for application/vnd.api+json ContentType.
 type UpdateStatusPageTemplateApplicationVndAPIPlusJSONRequestBody = StatusPageTemplate
+
+// UpdateCurrentUserNotificationSettingsApplicationVndAPIPlusJSONRequestBody defines body for UpdateCurrentUserNotificationSettings for application/vnd.api+json ContentType.
+type UpdateCurrentUserNotificationSettingsApplicationVndAPIPlusJSONRequestBody = UpdateUserNotificationSettings
 
 // UpdateUserApplicationVndAPIPlusJSONRequestBody defines body for UpdateUser for application/vnd.api+json ContentType.
 type UpdateUserApplicationVndAPIPlusJSONRequestBody = UpdateUser
@@ -90785,6 +92159,68 @@ func (t *NewIncidentActionItem_Data_Attributes_FormFieldSelections_Value) Unmars
 	return err
 }
 
+// AsNewInvestigationDataAttributes0 returns the union data inside the NewInvestigation_Data_Attributes as a NewInvestigationDataAttributes0
+func (t NewInvestigation_Data_Attributes) AsNewInvestigationDataAttributes0() (NewInvestigationDataAttributes0, error) {
+	var body NewInvestigationDataAttributes0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromNewInvestigationDataAttributes0 overwrites any union data inside the NewInvestigation_Data_Attributes as the provided NewInvestigationDataAttributes0
+func (t *NewInvestigation_Data_Attributes) FromNewInvestigationDataAttributes0(v NewInvestigationDataAttributes0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeNewInvestigationDataAttributes0 performs a merge with any union data inside the NewInvestigation_Data_Attributes, using the provided NewInvestigationDataAttributes0
+func (t *NewInvestigation_Data_Attributes) MergeNewInvestigationDataAttributes0(v NewInvestigationDataAttributes0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsNewInvestigationDataAttributes1 returns the union data inside the NewInvestigation_Data_Attributes as a NewInvestigationDataAttributes1
+func (t NewInvestigation_Data_Attributes) AsNewInvestigationDataAttributes1() (NewInvestigationDataAttributes1, error) {
+	var body NewInvestigationDataAttributes1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromNewInvestigationDataAttributes1 overwrites any union data inside the NewInvestigation_Data_Attributes as the provided NewInvestigationDataAttributes1
+func (t *NewInvestigation_Data_Attributes) FromNewInvestigationDataAttributes1(v NewInvestigationDataAttributes1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeNewInvestigationDataAttributes1 performs a merge with any union data inside the NewInvestigation_Data_Attributes, using the provided NewInvestigationDataAttributes1
+func (t *NewInvestigation_Data_Attributes) MergeNewInvestigationDataAttributes1(v NewInvestigationDataAttributes1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t NewInvestigation_Data_Attributes) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *NewInvestigation_Data_Attributes) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
 // AsNewProblemDataAttributesFormFieldSelectionsValue0 returns the union data inside the NewProblem_Data_Attributes_FormFieldSelections_Value as a NewProblemDataAttributesFormFieldSelectionsValue0
 func (t NewProblem_Data_Attributes_FormFieldSelections_Value) AsNewProblemDataAttributesFormFieldSelectionsValue0() (NewProblemDataAttributesFormFieldSelectionsValue0, error) {
 	var body NewProblemDataAttributesFormFieldSelectionsValue0
@@ -91440,6 +92876,32 @@ func (t *NewWorkflowTask_Data_Attributes_TaskParams) FromAddActionItemTaskParams
 
 // MergeAddActionItemTaskParams performs a merge with any union data inside the NewWorkflowTask_Data_Attributes_TaskParams, using the provided AddActionItemTaskParams
 func (t *NewWorkflowTask_Data_Attributes_TaskParams) MergeAddActionItemTaskParams(v AddActionItemTaskParams) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsAddProblemActionItemTaskParams returns the union data inside the NewWorkflowTask_Data_Attributes_TaskParams as a AddProblemActionItemTaskParams
+func (t NewWorkflowTask_Data_Attributes_TaskParams) AsAddProblemActionItemTaskParams() (AddProblemActionItemTaskParams, error) {
+	var body AddProblemActionItemTaskParams
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromAddProblemActionItemTaskParams overwrites any union data inside the NewWorkflowTask_Data_Attributes_TaskParams as the provided AddProblemActionItemTaskParams
+func (t *NewWorkflowTask_Data_Attributes_TaskParams) FromAddProblemActionItemTaskParams(v AddProblemActionItemTaskParams) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeAddProblemActionItemTaskParams performs a merge with any union data inside the NewWorkflowTask_Data_Attributes_TaskParams, using the provided AddProblemActionItemTaskParams
+func (t *NewWorkflowTask_Data_Attributes_TaskParams) MergeAddProblemActionItemTaskParams(v AddProblemActionItemTaskParams) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -98716,6 +100178,32 @@ func (t *UpdateWorkflowTask_Data_Attributes_TaskParams) MergeAddActionItemTaskPa
 	return err
 }
 
+// AsAddProblemActionItemTaskParams returns the union data inside the UpdateWorkflowTask_Data_Attributes_TaskParams as a AddProblemActionItemTaskParams
+func (t UpdateWorkflowTask_Data_Attributes_TaskParams) AsAddProblemActionItemTaskParams() (AddProblemActionItemTaskParams, error) {
+	var body AddProblemActionItemTaskParams
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromAddProblemActionItemTaskParams overwrites any union data inside the UpdateWorkflowTask_Data_Attributes_TaskParams as the provided AddProblemActionItemTaskParams
+func (t *UpdateWorkflowTask_Data_Attributes_TaskParams) FromAddProblemActionItemTaskParams(v AddProblemActionItemTaskParams) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeAddProblemActionItemTaskParams performs a merge with any union data inside the UpdateWorkflowTask_Data_Attributes_TaskParams, using the provided AddProblemActionItemTaskParams
+func (t *UpdateWorkflowTask_Data_Attributes_TaskParams) MergeAddProblemActionItemTaskParams(v AddProblemActionItemTaskParams) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
 // AsUpdateActionItemTaskParams returns the union data inside the UpdateWorkflowTask_Data_Attributes_TaskParams as a UpdateActionItemTaskParams
 func (t UpdateWorkflowTask_Data_Attributes_TaskParams) AsUpdateActionItemTaskParams() (UpdateActionItemTaskParams, error) {
 	var body UpdateActionItemTaskParams
@@ -102877,6 +104365,32 @@ func (t *WorkflowTask_TaskParams) FromAddActionItemTaskParams(v AddActionItemTas
 
 // MergeAddActionItemTaskParams performs a merge with any union data inside the WorkflowTask_TaskParams, using the provided AddActionItemTaskParams
 func (t *WorkflowTask_TaskParams) MergeAddActionItemTaskParams(v AddActionItemTaskParams) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsAddProblemActionItemTaskParams returns the union data inside the WorkflowTask_TaskParams as a AddProblemActionItemTaskParams
+func (t WorkflowTask_TaskParams) AsAddProblemActionItemTaskParams() (AddProblemActionItemTaskParams, error) {
+	var body AddProblemActionItemTaskParams
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromAddProblemActionItemTaskParams overwrites any union data inside the WorkflowTask_TaskParams as the provided AddProblemActionItemTaskParams
+func (t *WorkflowTask_TaskParams) FromAddProblemActionItemTaskParams(v AddProblemActionItemTaskParams) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeAddProblemActionItemTaskParams performs a merge with any union data inside the WorkflowTask_TaskParams, using the provided AddProblemActionItemTaskParams
+func (t *WorkflowTask_TaskParams) MergeAddProblemActionItemTaskParams(v AddProblemActionItemTaskParams) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -107607,12 +109121,12 @@ type ClientInterface interface {
 	// Corresponds with POST /v1/ai/chat/stream (the `StreamAiChat` operationId).
 	StreamAiChat(ctx context.Context, params *StreamAiChatParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// GetV1AiConnectorAuditEvents List AI connector audit events
+	// ListAiToolCallEvents Lists AI tool call events
 	//
-	// Lists AI tool calls made through connectors and connector connection events. Responses and credentials are never included.
+	// Returns audit events for AI tool calls and connector calls.
 	//
-	// Corresponds with GET /v1/ai_connector_audit_events (the `GetV1AiConnectorAuditEvents` operationId).
-	GetV1AiConnectorAuditEvents(ctx context.Context, params *GetV1AiConnectorAuditEventsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// Corresponds with GET /v1/ai_tool_call_events (the `ListAiToolCallEvents` operationId).
+	ListAiToolCallEvents(ctx context.Context, params *ListAiToolCallEventsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// GetAlertConfiguration Retrieves the team's alert configuration
 	//
@@ -109410,21 +110924,21 @@ type ClientInterface interface {
 
 	// DeleteDashboardPanel Delete a dashboard panel
 	//
-	// Delete a specific dashboard panel by id.
+	// Delete a specific dashboard panel by id. OAuth tokens need the `ir.dashboards:write` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`).
 	//
 	// Corresponds with DELETE /v1/dashboard_panels/{id} (the `DeleteDashboardPanel` operationId).
 	DeleteDashboardPanel(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// GetDashboardPanel Retrieves a dashboard panel
 	//
-	// Retrieves a specific dashboard panel by id.
+	// Retrieves a specific dashboard panel by id. OAuth tokens need the `ir.dashboards:read` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`).
 	//
 	// Corresponds with GET /v1/dashboard_panels/{id} (the `GetDashboardPanel` operationId).
 	GetDashboardPanel(ctx context.Context, id ID, params *GetDashboardPanelParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// UpdateDashboardPanelWithBody Update a dashboard panel
 	//
-	// Update a specific dashboard panel by id.
+	// Update a specific dashboard panel by id. OAuth tokens need the `ir.dashboards:write` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`).
 	//
 	// Takes any type of body and a specified content type.
 	//
@@ -109433,7 +110947,7 @@ type ClientInterface interface {
 
 	// UpdateDashboardPanelWithApplicationVndAPIPlusJSONBody Update a dashboard panel
 	//
-	// Update a specific dashboard panel by id.
+	// Update a specific dashboard panel by id. OAuth tokens need the `ir.dashboards:write` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`).
 	//
 	// Takes a body of the `application/vnd.api+json` content type.
 	//
@@ -109442,17 +110956,21 @@ type ClientInterface interface {
 
 	// DuplicateDashboardPanel Duplicates a dashboard panel
 	//
+	// Duplicates a dashboard panel. OAuth tokens need the `ir.dashboards:write` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`).
+	//
 	// Corresponds with POST /v1/dashboard_panels/{id}/duplicate (the `DuplicateDashboardPanel` operationId).
 	DuplicateDashboardPanel(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// ListDashboards List dashboards
+	//
+	// List dashboards. OAuth tokens need the `ir.dashboards:read` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`).
 	//
 	// Corresponds with GET /v1/dashboards (the `ListDashboards` operationId).
 	ListDashboards(ctx context.Context, params *ListDashboardsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// CreateDashboardWithBody Creates a dashboard
 	//
-	// Creates a new dashboard from provided data.
+	// Creates a new dashboard from provided data. OAuth tokens need the `ir.dashboards:write` scope.
 	//
 	// Takes any type of body and a specified content type.
 	//
@@ -109461,7 +110979,7 @@ type ClientInterface interface {
 
 	// CreateDashboardWithApplicationVndAPIPlusJSONBody Creates a dashboard
 	//
-	// Creates a new dashboard from provided data.
+	// Creates a new dashboard from provided data. OAuth tokens need the `ir.dashboards:write` scope.
 	//
 	// Takes a body of the `application/vnd.api+json` content type.
 	//
@@ -109470,12 +110988,14 @@ type ClientInterface interface {
 
 	// ListDashboardPanels List dashboard panels
 	//
+	// List dashboard panels. OAuth tokens need the `ir.dashboards:read` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`).
+	//
 	// Corresponds with GET /v1/dashboards/{dashboard_id}/panels (the `ListDashboardPanels` operationId).
 	ListDashboardPanels(ctx context.Context, dashboardID string, params *ListDashboardPanelsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// CreateDashboardPanelWithBody Creates a dashboard panel
 	//
-	// Creates a new dashboard panel from provided data.
+	// Creates a new dashboard panel from provided data. OAuth tokens need the `ir.dashboards:write` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`).
 	//
 	// Takes any type of body and a specified content type.
 	//
@@ -109484,7 +111004,7 @@ type ClientInterface interface {
 
 	// CreateDashboardPanelWithApplicationVndAPIPlusJSONBody Creates a dashboard panel
 	//
-	// Creates a new dashboard panel from provided data.
+	// Creates a new dashboard panel from provided data. OAuth tokens need the `ir.dashboards:write` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`).
 	//
 	// Takes a body of the `application/vnd.api+json` content type.
 	//
@@ -109493,21 +111013,21 @@ type ClientInterface interface {
 
 	// DeleteDashboard Delete a dashboard
 	//
-	// Delete a specific dashboard by id.
+	// Delete a specific dashboard by id. OAuth tokens need the `ir.dashboards:write` scope.
 	//
 	// Corresponds with DELETE /v1/dashboards/{id} (the `DeleteDashboard` operationId).
 	DeleteDashboard(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// GetDashboard Retrieves a dashboard
 	//
-	// Retrieves a specific dashboard by id.
+	// Retrieves a specific dashboard by id. OAuth tokens need the `ir.dashboards:read` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`).
 	//
 	// Corresponds with GET /v1/dashboards/{id} (the `GetDashboard` operationId).
 	GetDashboard(ctx context.Context, id ID, params *GetDashboardParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// UpdateDashboardWithBody Update a dashboard
 	//
-	// Update a specific dashboard by id.
+	// Update a specific dashboard by id. OAuth tokens need the `ir.dashboards:write` scope.
 	//
 	// Takes any type of body and a specified content type.
 	//
@@ -109516,7 +111036,7 @@ type ClientInterface interface {
 
 	// UpdateDashboardWithApplicationVndAPIPlusJSONBody Update a dashboard
 	//
-	// Update a specific dashboard by id.
+	// Update a specific dashboard by id. OAuth tokens need the `ir.dashboards:write` scope.
 	//
 	// Takes a body of the `application/vnd.api+json` content type.
 	//
@@ -109525,10 +111045,14 @@ type ClientInterface interface {
 
 	// DuplicateDashboard Duplicates a dashboard
 	//
+	// Duplicates a dashboard. OAuth tokens need the `ir.dashboards:write` scope.
+	//
 	// Corresponds with POST /v1/dashboards/{id}/duplicate (the `DuplicateDashboard` operationId).
 	DuplicateDashboard(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// SetDefaultDashboard Sets dashboard to user default
+	//
+	// Sets dashboard to user default. OAuth tokens need the `ir.dashboards:write` scope.
 	//
 	// Corresponds with POST /v1/dashboards/{id}/set_default (the `SetDefaultDashboard` operationId).
 	SetDefaultDashboard(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -110108,6 +111632,38 @@ type ClientInterface interface {
 	// Corresponds with PUT /v1/form_field_options/{id} (the `UpdateFormFieldOption` operationId).
 	UpdateFormFieldOptionWithApplicationVndAPIPlusJSONBody(ctx context.Context, id ID, body UpdateFormFieldOptionApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
+	// DeleteFormFieldPlacementConditionGroup Delete a Form Field Placement Condition Group
+	//
+	// Delete a specific form_field_placement_condition_group by id, along with its conditions
+	//
+	// Corresponds with DELETE /v1/form_field_placement_condition_groups/{id} (the `DeleteFormFieldPlacementConditionGroup` operationId).
+	DeleteFormFieldPlacementConditionGroup(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetFormFieldPlacementConditionGroup Retrieves a Form Field Placement Condition Group
+	//
+	// Retrieves a specific form_field_placement_condition_group by id, with its conditions
+	//
+	// Corresponds with GET /v1/form_field_placement_condition_groups/{id} (the `GetFormFieldPlacementConditionGroup` operationId).
+	GetFormFieldPlacementConditionGroup(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// UpdateFormFieldPlacementConditionGroupWithBody Update a Form Field Placement Condition Group
+	//
+	// Update a specific form_field_placement_condition_group by id.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with PUT /v1/form_field_placement_condition_groups/{id} (the `UpdateFormFieldPlacementConditionGroup` operationId).
+	UpdateFormFieldPlacementConditionGroupWithBody(ctx context.Context, id ID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// UpdateFormFieldPlacementConditionGroupWithApplicationVndAPIPlusJSONBody Update a Form Field Placement Condition Group
+	//
+	// Update a specific form_field_placement_condition_group by id.
+	//
+	// Takes a body of the `application/vnd.api+json` content type.
+	//
+	// Corresponds with PUT /v1/form_field_placement_condition_groups/{id} (the `UpdateFormFieldPlacementConditionGroup` operationId).
+	UpdateFormFieldPlacementConditionGroupWithApplicationVndAPIPlusJSONBody(ctx context.Context, id ID, body UpdateFormFieldPlacementConditionGroupApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
 	// DeleteFormFieldPlacementCondition Delete a Form Set Condition
 	//
 	// Delete a specific form_field_placement_condition by id.
@@ -110139,6 +111695,31 @@ type ClientInterface interface {
 	//
 	// Corresponds with PUT /v1/form_field_placement_conditions/{id} (the `UpdateFormFieldPlacementCondition` operationId).
 	UpdateFormFieldPlacementConditionWithApplicationVndAPIPlusJSONBody(ctx context.Context, id ID, body UpdateFormFieldPlacementConditionApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// ListFormFieldPlacementConditionGroups List Form Field Placement Condition Groups
+	//
+	// List form_field_placement_condition_groups, each with its conditions
+	//
+	// Corresponds with GET /v1/form_field_placements/{form_field_placement_id}/condition_groups (the `ListFormFieldPlacementConditionGroups` operationId).
+	ListFormFieldPlacementConditionGroups(ctx context.Context, formFieldPlacementID string, params *ListFormFieldPlacementConditionGroupsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// CreateFormFieldPlacementConditionGroupWithBody Creates a Form Field Placement Condition Group
+	//
+	// Creates a new form_field_placement_condition_group. Add conditions to it by creating form_field_placement_conditions with its condition_group_id.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /v1/form_field_placements/{form_field_placement_id}/condition_groups (the `CreateFormFieldPlacementConditionGroup` operationId).
+	CreateFormFieldPlacementConditionGroupWithBody(ctx context.Context, formFieldPlacementID string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// CreateFormFieldPlacementConditionGroupWithApplicationVndAPIPlusJSONBody Creates a Form Field Placement Condition Group
+	//
+	// Creates a new form_field_placement_condition_group. Add conditions to it by creating form_field_placement_conditions with its condition_group_id.
+	//
+	// Takes a body of the `application/vnd.api+json` content type.
+	//
+	// Corresponds with POST /v1/form_field_placements/{form_field_placement_id}/condition_groups (the `CreateFormFieldPlacementConditionGroup` operationId).
+	CreateFormFieldPlacementConditionGroupWithApplicationVndAPIPlusJSONBody(ctx context.Context, formFieldPlacementID string, body CreateFormFieldPlacementConditionGroupApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// ListFormFieldPlacementConditions List Form Set Conditions
 	//
@@ -111669,6 +113250,50 @@ type ClientInterface interface {
 	//
 	// Corresponds with POST /v1/incidents/{incident_id}/sub_statuses (the `CreateIncidentSubStatus` operationId).
 	CreateIncidentSubStatusWithApplicationVndAPIPlusJSONBody(ctx context.Context, incidentID string, body CreateIncidentSubStatusApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// ListInvestigations Lists AI SRE investigations
+	//
+	// Investigations on alerts and incidents the caller can read, newest first.
+	//
+	// Corresponds with GET /v1/investigations (the `ListInvestigations` operationId).
+	ListInvestigations(ctx context.Context, params *ListInvestigationsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// CreateInvestigationWithBody Starts an AI SRE investigation
+	//
+	// Starts an investigation on an alert or incident you can update, or returns the one already running.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /v1/investigations (the `CreateInvestigation` operationId).
+	CreateInvestigationWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// CreateInvestigationWithApplicationVndAPIPlusJSONBody Starts an AI SRE investigation
+	//
+	// Starts an investigation on an alert or incident you can update, or returns the one already running.
+	//
+	// Takes a body of the `application/vnd.api+json` content type.
+	//
+	// Corresponds with POST /v1/investigations (the `CreateInvestigation` operationId).
+	CreateInvestigationWithApplicationVndAPIPlusJSONBody(ctx context.Context, body CreateInvestigationApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetInvestigation Retrieves an AI SRE investigation
+	//
+	// The verdict, hypotheses, evidence, causal chain and open questions.
+	//
+	// Corresponds with GET /v1/investigations/{id} (the `GetInvestigation` operationId).
+	GetInvestigation(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// CancelInvestigation Cancels an AI SRE investigation
+	//
+	// Corresponds with POST /v1/investigations/{id}/cancel (the `CancelInvestigation` operationId).
+	CancelInvestigation(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetInvestigationProgress Retrieves AI SRE investigation progress
+	//
+	// Returns immediately with steps and tool calls recorded after the cursor. Poll with after=next_cursor until done is true.
+	//
+	// Corresponds with GET /v1/investigations/{id}/progress (the `GetInvestigationProgress` operationId).
+	GetInvestigationProgress(ctx context.Context, id ID, params *GetInvestigationProgressParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// GetIPAllowlist Retrieves the organization's browser IP allowlist
 	//
@@ -113803,6 +115428,31 @@ type ClientInterface interface {
 	// Corresponds with GET /v1/users/me (the `GetCurrentUser` operationId).
 	GetCurrentUser(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error)
 
+	// GetCurrentUserNotificationSettings Retrieves the current user's notification settings
+	//
+	// Retrieves the authenticated user's notification settings, including the current mute state.
+	//
+	// Corresponds with GET /v1/users/me/notification_settings (the `GetCurrentUserNotificationSettings` operationId).
+	GetCurrentUserNotificationSettings(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// UpdateCurrentUserNotificationSettingsWithBody Updates the current user's notification settings
+	//
+	// Sets, replaces, or clears the authenticated user's notification mute. Muting suppresses alert notifications on every channel until mute_until.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with PATCH /v1/users/me/notification_settings (the `UpdateCurrentUserNotificationSettings` operationId).
+	UpdateCurrentUserNotificationSettingsWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// UpdateCurrentUserNotificationSettingsWithApplicationVndAPIPlusJSONBody Updates the current user's notification settings
+	//
+	// Sets, replaces, or clears the authenticated user's notification mute. Muting suppresses alert notifications on every channel until mute_until.
+	//
+	// Takes a body of the `application/vnd.api+json` content type.
+	//
+	// Corresponds with PATCH /v1/users/me/notification_settings (the `UpdateCurrentUserNotificationSettings` operationId).
+	UpdateCurrentUserNotificationSettingsWithApplicationVndAPIPlusJSONBody(ctx context.Context, body UpdateCurrentUserNotificationSettingsApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
 	// DeleteUser Delete an user
 	//
 	// Delete a specific user by id.
@@ -114589,13 +116239,13 @@ func (c *Client) StreamAiChat(ctx context.Context, params *StreamAiChatParams, r
 	return c.Client.Do(req)
 }
 
-// GetV1AiConnectorAuditEvents List AI connector audit events
+// ListAiToolCallEvents Lists AI tool call events
 //
-// Lists AI tool calls made through connectors and connector connection events. Responses and credentials are never included.
+// Returns audit events for AI tool calls and connector calls.
 //
-// Corresponds with GET /v1/ai_connector_audit_events (the `GetV1AiConnectorAuditEvents` operationId).
-func (c *Client) GetV1AiConnectorAuditEvents(ctx context.Context, params *GetV1AiConnectorAuditEventsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetV1AiConnectorAuditEventsRequest(c.Server, params)
+// Corresponds with GET /v1/ai_tool_call_events (the `ListAiToolCallEvents` operationId).
+func (c *Client) ListAiToolCallEvents(ctx context.Context, params *ListAiToolCallEventsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewListAiToolCallEventsRequest(c.Server, params)
 	if err != nil {
 		return nil, err
 	}
@@ -118471,7 +120121,7 @@ func (c *Client) UpdateCustomFormWithApplicationVndAPIPlusJSONBody(ctx context.C
 
 // DeleteDashboardPanel Delete a dashboard panel
 //
-// Delete a specific dashboard panel by id.
+// Delete a specific dashboard panel by id. OAuth tokens need the `ir.dashboards:write` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`).
 //
 // Corresponds with DELETE /v1/dashboard_panels/{id} (the `DeleteDashboardPanel` operationId).
 func (c *Client) DeleteDashboardPanel(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error) {
@@ -118488,7 +120138,7 @@ func (c *Client) DeleteDashboardPanel(ctx context.Context, id ID, reqEditors ...
 
 // GetDashboardPanel Retrieves a dashboard panel
 //
-// Retrieves a specific dashboard panel by id.
+// Retrieves a specific dashboard panel by id. OAuth tokens need the `ir.dashboards:read` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`).
 //
 // Corresponds with GET /v1/dashboard_panels/{id} (the `GetDashboardPanel` operationId).
 func (c *Client) GetDashboardPanel(ctx context.Context, id ID, params *GetDashboardPanelParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
@@ -118505,7 +120155,7 @@ func (c *Client) GetDashboardPanel(ctx context.Context, id ID, params *GetDashbo
 
 // UpdateDashboardPanelWithBody Update a dashboard panel
 //
-// Update a specific dashboard panel by id.
+// Update a specific dashboard panel by id. OAuth tokens need the `ir.dashboards:write` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`).
 //
 // Takes any type of body and a specified content type.
 //
@@ -118524,7 +120174,7 @@ func (c *Client) UpdateDashboardPanelWithBody(ctx context.Context, id ID, conten
 
 // UpdateDashboardPanelWithApplicationVndAPIPlusJSONBody Update a dashboard panel
 //
-// Update a specific dashboard panel by id.
+// Update a specific dashboard panel by id. OAuth tokens need the `ir.dashboards:write` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`).
 //
 // Takes a body of the `application/vnd.api+json` content type.
 //
@@ -118543,6 +120193,8 @@ func (c *Client) UpdateDashboardPanelWithApplicationVndAPIPlusJSONBody(ctx conte
 
 // DuplicateDashboardPanel Duplicates a dashboard panel
 //
+// Duplicates a dashboard panel. OAuth tokens need the `ir.dashboards:write` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`).
+//
 // Corresponds with POST /v1/dashboard_panels/{id}/duplicate (the `DuplicateDashboardPanel` operationId).
 func (c *Client) DuplicateDashboardPanel(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewDuplicateDashboardPanelRequest(c.Server, id)
@@ -118557,6 +120209,8 @@ func (c *Client) DuplicateDashboardPanel(ctx context.Context, id ID, reqEditors 
 }
 
 // ListDashboards List dashboards
+//
+// List dashboards. OAuth tokens need the `ir.dashboards:read` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`).
 //
 // Corresponds with GET /v1/dashboards (the `ListDashboards` operationId).
 func (c *Client) ListDashboards(ctx context.Context, params *ListDashboardsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
@@ -118573,7 +120227,7 @@ func (c *Client) ListDashboards(ctx context.Context, params *ListDashboardsParam
 
 // CreateDashboardWithBody Creates a dashboard
 //
-// Creates a new dashboard from provided data.
+// Creates a new dashboard from provided data. OAuth tokens need the `ir.dashboards:write` scope.
 //
 // Takes any type of body and a specified content type.
 //
@@ -118592,7 +120246,7 @@ func (c *Client) CreateDashboardWithBody(ctx context.Context, contentType string
 
 // CreateDashboardWithApplicationVndAPIPlusJSONBody Creates a dashboard
 //
-// Creates a new dashboard from provided data.
+// Creates a new dashboard from provided data. OAuth tokens need the `ir.dashboards:write` scope.
 //
 // Takes a body of the `application/vnd.api+json` content type.
 //
@@ -118611,6 +120265,8 @@ func (c *Client) CreateDashboardWithApplicationVndAPIPlusJSONBody(ctx context.Co
 
 // ListDashboardPanels List dashboard panels
 //
+// List dashboard panels. OAuth tokens need the `ir.dashboards:read` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`).
+//
 // Corresponds with GET /v1/dashboards/{dashboard_id}/panels (the `ListDashboardPanels` operationId).
 func (c *Client) ListDashboardPanels(ctx context.Context, dashboardID string, params *ListDashboardPanelsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewListDashboardPanelsRequest(c.Server, dashboardID, params)
@@ -118626,7 +120282,7 @@ func (c *Client) ListDashboardPanels(ctx context.Context, dashboardID string, pa
 
 // CreateDashboardPanelWithBody Creates a dashboard panel
 //
-// Creates a new dashboard panel from provided data.
+// Creates a new dashboard panel from provided data. OAuth tokens need the `ir.dashboards:write` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`).
 //
 // Takes any type of body and a specified content type.
 //
@@ -118645,7 +120301,7 @@ func (c *Client) CreateDashboardPanelWithBody(ctx context.Context, dashboardID s
 
 // CreateDashboardPanelWithApplicationVndAPIPlusJSONBody Creates a dashboard panel
 //
-// Creates a new dashboard panel from provided data.
+// Creates a new dashboard panel from provided data. OAuth tokens need the `ir.dashboards:write` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`).
 //
 // Takes a body of the `application/vnd.api+json` content type.
 //
@@ -118664,7 +120320,7 @@ func (c *Client) CreateDashboardPanelWithApplicationVndAPIPlusJSONBody(ctx conte
 
 // DeleteDashboard Delete a dashboard
 //
-// Delete a specific dashboard by id.
+// Delete a specific dashboard by id. OAuth tokens need the `ir.dashboards:write` scope.
 //
 // Corresponds with DELETE /v1/dashboards/{id} (the `DeleteDashboard` operationId).
 func (c *Client) DeleteDashboard(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error) {
@@ -118681,7 +120337,7 @@ func (c *Client) DeleteDashboard(ctx context.Context, id ID, reqEditors ...Reque
 
 // GetDashboard Retrieves a dashboard
 //
-// Retrieves a specific dashboard by id.
+// Retrieves a specific dashboard by id. OAuth tokens need the `ir.dashboards:read` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`).
 //
 // Corresponds with GET /v1/dashboards/{id} (the `GetDashboard` operationId).
 func (c *Client) GetDashboard(ctx context.Context, id ID, params *GetDashboardParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
@@ -118698,7 +120354,7 @@ func (c *Client) GetDashboard(ctx context.Context, id ID, params *GetDashboardPa
 
 // UpdateDashboardWithBody Update a dashboard
 //
-// Update a specific dashboard by id.
+// Update a specific dashboard by id. OAuth tokens need the `ir.dashboards:write` scope.
 //
 // Takes any type of body and a specified content type.
 //
@@ -118717,7 +120373,7 @@ func (c *Client) UpdateDashboardWithBody(ctx context.Context, id ID, contentType
 
 // UpdateDashboardWithApplicationVndAPIPlusJSONBody Update a dashboard
 //
-// Update a specific dashboard by id.
+// Update a specific dashboard by id. OAuth tokens need the `ir.dashboards:write` scope.
 //
 // Takes a body of the `application/vnd.api+json` content type.
 //
@@ -118736,6 +120392,8 @@ func (c *Client) UpdateDashboardWithApplicationVndAPIPlusJSONBody(ctx context.Co
 
 // DuplicateDashboard Duplicates a dashboard
 //
+// Duplicates a dashboard. OAuth tokens need the `ir.dashboards:write` scope.
+//
 // Corresponds with POST /v1/dashboards/{id}/duplicate (the `DuplicateDashboard` operationId).
 func (c *Client) DuplicateDashboard(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewDuplicateDashboardRequest(c.Server, id)
@@ -118750,6 +120408,8 @@ func (c *Client) DuplicateDashboard(ctx context.Context, id ID, reqEditors ...Re
 }
 
 // SetDefaultDashboard Sets dashboard to user default
+//
+// Sets dashboard to user default. OAuth tokens need the `ir.dashboards:write` scope.
 //
 // Corresponds with POST /v1/dashboards/{id}/set_default (the `SetDefaultDashboard` operationId).
 func (c *Client) SetDefaultDashboard(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error) {
@@ -120089,6 +121749,78 @@ func (c *Client) UpdateFormFieldOptionWithApplicationVndAPIPlusJSONBody(ctx cont
 	return c.Client.Do(req)
 }
 
+// DeleteFormFieldPlacementConditionGroup Delete a Form Field Placement Condition Group
+//
+// Delete a specific form_field_placement_condition_group by id, along with its conditions
+//
+// Corresponds with DELETE /v1/form_field_placement_condition_groups/{id} (the `DeleteFormFieldPlacementConditionGroup` operationId).
+func (c *Client) DeleteFormFieldPlacementConditionGroup(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewDeleteFormFieldPlacementConditionGroupRequest(c.Server, id)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetFormFieldPlacementConditionGroup Retrieves a Form Field Placement Condition Group
+//
+// Retrieves a specific form_field_placement_condition_group by id, with its conditions
+//
+// Corresponds with GET /v1/form_field_placement_condition_groups/{id} (the `GetFormFieldPlacementConditionGroup` operationId).
+func (c *Client) GetFormFieldPlacementConditionGroup(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetFormFieldPlacementConditionGroupRequest(c.Server, id)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// UpdateFormFieldPlacementConditionGroupWithBody Update a Form Field Placement Condition Group
+//
+// Update a specific form_field_placement_condition_group by id.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with PUT /v1/form_field_placement_condition_groups/{id} (the `UpdateFormFieldPlacementConditionGroup` operationId).
+func (c *Client) UpdateFormFieldPlacementConditionGroupWithBody(ctx context.Context, id ID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateFormFieldPlacementConditionGroupRequestWithBody(c.Server, id, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// UpdateFormFieldPlacementConditionGroupWithApplicationVndAPIPlusJSONBody Update a Form Field Placement Condition Group
+//
+// Update a specific form_field_placement_condition_group by id.
+//
+// Takes a body of the `application/vnd.api+json` content type.
+//
+// Corresponds with PUT /v1/form_field_placement_condition_groups/{id} (the `UpdateFormFieldPlacementConditionGroup` operationId).
+func (c *Client) UpdateFormFieldPlacementConditionGroupWithApplicationVndAPIPlusJSONBody(ctx context.Context, id ID, body UpdateFormFieldPlacementConditionGroupApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateFormFieldPlacementConditionGroupRequestWithApplicationVndAPIPlusJSONBody(c.Server, id, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
 // DeleteFormFieldPlacementCondition Delete a Form Set Condition
 //
 // Delete a specific form_field_placement_condition by id.
@@ -120151,6 +121883,61 @@ func (c *Client) UpdateFormFieldPlacementConditionWithBody(ctx context.Context, 
 // Corresponds with PUT /v1/form_field_placement_conditions/{id} (the `UpdateFormFieldPlacementCondition` operationId).
 func (c *Client) UpdateFormFieldPlacementConditionWithApplicationVndAPIPlusJSONBody(ctx context.Context, id ID, body UpdateFormFieldPlacementConditionApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewUpdateFormFieldPlacementConditionRequestWithApplicationVndAPIPlusJSONBody(c.Server, id, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// ListFormFieldPlacementConditionGroups List Form Field Placement Condition Groups
+//
+// List form_field_placement_condition_groups, each with its conditions
+//
+// Corresponds with GET /v1/form_field_placements/{form_field_placement_id}/condition_groups (the `ListFormFieldPlacementConditionGroups` operationId).
+func (c *Client) ListFormFieldPlacementConditionGroups(ctx context.Context, formFieldPlacementID string, params *ListFormFieldPlacementConditionGroupsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewListFormFieldPlacementConditionGroupsRequest(c.Server, formFieldPlacementID, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// CreateFormFieldPlacementConditionGroupWithBody Creates a Form Field Placement Condition Group
+//
+// Creates a new form_field_placement_condition_group. Add conditions to it by creating form_field_placement_conditions with its condition_group_id.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/form_field_placements/{form_field_placement_id}/condition_groups (the `CreateFormFieldPlacementConditionGroup` operationId).
+func (c *Client) CreateFormFieldPlacementConditionGroupWithBody(ctx context.Context, formFieldPlacementID string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateFormFieldPlacementConditionGroupRequestWithBody(c.Server, formFieldPlacementID, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// CreateFormFieldPlacementConditionGroupWithApplicationVndAPIPlusJSONBody Creates a Form Field Placement Condition Group
+//
+// Creates a new form_field_placement_condition_group. Add conditions to it by creating form_field_placement_conditions with its condition_group_id.
+//
+// Takes a body of the `application/vnd.api+json` content type.
+//
+// Corresponds with POST /v1/form_field_placements/{form_field_placement_id}/condition_groups (the `CreateFormFieldPlacementConditionGroup` operationId).
+func (c *Client) CreateFormFieldPlacementConditionGroupWithApplicationVndAPIPlusJSONBody(ctx context.Context, formFieldPlacementID string, body CreateFormFieldPlacementConditionGroupApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateFormFieldPlacementConditionGroupRequestWithApplicationVndAPIPlusJSONBody(c.Server, formFieldPlacementID, body)
 	if err != nil {
 		return nil, err
 	}
@@ -123574,6 +125361,110 @@ func (c *Client) CreateIncidentSubStatusWithBody(ctx context.Context, incidentID
 // Corresponds with POST /v1/incidents/{incident_id}/sub_statuses (the `CreateIncidentSubStatus` operationId).
 func (c *Client) CreateIncidentSubStatusWithApplicationVndAPIPlusJSONBody(ctx context.Context, incidentID string, body CreateIncidentSubStatusApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewCreateIncidentSubStatusRequestWithApplicationVndAPIPlusJSONBody(c.Server, incidentID, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// ListInvestigations Lists AI SRE investigations
+//
+// Investigations on alerts and incidents the caller can read, newest first.
+//
+// Corresponds with GET /v1/investigations (the `ListInvestigations` operationId).
+func (c *Client) ListInvestigations(ctx context.Context, params *ListInvestigationsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewListInvestigationsRequest(c.Server, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// CreateInvestigationWithBody Starts an AI SRE investigation
+//
+// Starts an investigation on an alert or incident you can update, or returns the one already running.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/investigations (the `CreateInvestigation` operationId).
+func (c *Client) CreateInvestigationWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateInvestigationRequestWithBody(c.Server, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// CreateInvestigationWithApplicationVndAPIPlusJSONBody Starts an AI SRE investigation
+//
+// Starts an investigation on an alert or incident you can update, or returns the one already running.
+//
+// Takes a body of the `application/vnd.api+json` content type.
+//
+// Corresponds with POST /v1/investigations (the `CreateInvestigation` operationId).
+func (c *Client) CreateInvestigationWithApplicationVndAPIPlusJSONBody(ctx context.Context, body CreateInvestigationApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateInvestigationRequestWithApplicationVndAPIPlusJSONBody(c.Server, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetInvestigation Retrieves an AI SRE investigation
+//
+// The verdict, hypotheses, evidence, causal chain and open questions.
+//
+// Corresponds with GET /v1/investigations/{id} (the `GetInvestigation` operationId).
+func (c *Client) GetInvestigation(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetInvestigationRequest(c.Server, id)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// CancelInvestigation Cancels an AI SRE investigation
+//
+// Corresponds with POST /v1/investigations/{id}/cancel (the `CancelInvestigation` operationId).
+func (c *Client) CancelInvestigation(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCancelInvestigationRequest(c.Server, id)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetInvestigationProgress Retrieves AI SRE investigation progress
+//
+// Returns immediately with steps and tool calls recorded after the cursor. Poll with after=next_cursor until done is true.
+//
+// Corresponds with GET /v1/investigations/{id}/progress (the `GetInvestigationProgress` operationId).
+func (c *Client) GetInvestigationProgress(ctx context.Context, id ID, params *GetInvestigationProgressParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetInvestigationProgressRequest(c.Server, id, params)
 	if err != nil {
 		return nil, err
 	}
@@ -128467,6 +130358,61 @@ func (c *Client) GetCurrentUser(ctx context.Context, reqEditors ...RequestEditor
 	return c.Client.Do(req)
 }
 
+// GetCurrentUserNotificationSettings Retrieves the current user's notification settings
+//
+// Retrieves the authenticated user's notification settings, including the current mute state.
+//
+// Corresponds with GET /v1/users/me/notification_settings (the `GetCurrentUserNotificationSettings` operationId).
+func (c *Client) GetCurrentUserNotificationSettings(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetCurrentUserNotificationSettingsRequest(c.Server)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// UpdateCurrentUserNotificationSettingsWithBody Updates the current user's notification settings
+//
+// Sets, replaces, or clears the authenticated user's notification mute. Muting suppresses alert notifications on every channel until mute_until.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with PATCH /v1/users/me/notification_settings (the `UpdateCurrentUserNotificationSettings` operationId).
+func (c *Client) UpdateCurrentUserNotificationSettingsWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateCurrentUserNotificationSettingsRequestWithBody(c.Server, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// UpdateCurrentUserNotificationSettingsWithApplicationVndAPIPlusJSONBody Updates the current user's notification settings
+//
+// Sets, replaces, or clears the authenticated user's notification mute. Muting suppresses alert notifications on every channel until mute_until.
+//
+// Takes a body of the `application/vnd.api+json` content type.
+//
+// Corresponds with PATCH /v1/users/me/notification_settings (the `UpdateCurrentUserNotificationSettings` operationId).
+func (c *Client) UpdateCurrentUserNotificationSettingsWithApplicationVndAPIPlusJSONBody(ctx context.Context, body UpdateCurrentUserNotificationSettingsApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateCurrentUserNotificationSettingsRequestWithApplicationVndAPIPlusJSONBody(c.Server, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
 // DeleteUser Delete an user
 //
 // Delete a specific user by id.
@@ -130826,8 +132772,8 @@ func NewStreamAiChatRequest(server string, params *StreamAiChatParams) (*http.Re
 	return req, nil
 }
 
-// NewGetV1AiConnectorAuditEventsRequest constructs an http.Request for the GetV1AiConnectorAuditEvents method
-func NewGetV1AiConnectorAuditEventsRequest(server string, params *GetV1AiConnectorAuditEventsParams) (*http.Request, error) {
+// NewListAiToolCallEventsRequest constructs an http.Request for the ListAiToolCallEvents method
+func NewListAiToolCallEventsRequest(server string, params *ListAiToolCallEventsParams) (*http.Request, error) {
 	var err error
 
 	serverURL, err := url.Parse(server)
@@ -130835,7 +132781,7 @@ func NewGetV1AiConnectorAuditEventsRequest(server string, params *GetV1AiConnect
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/v1/ai_connector_audit_events")
+	operationPath := fmt.Sprintf("/v1/ai_tool_call_events")
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -130854,105 +132800,9 @@ func NewGetV1AiConnectorAuditEventsRequest(server string, params *GetV1AiConnect
 		// per the OpenAPI spec (e.g. "color=blue,black,brown").
 		var rawQueryFragments []string
 
-		if params.FilterConnectorID != nil {
+		if params.Filter != nil {
 
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[connector_id]", *params.FilterConnectorID, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.FilterEventType != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[event_type]", *params.FilterEventType, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.FilterOutcome != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[outcome]", *params.FilterOutcome, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.FilterTrigger != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[trigger]", *params.FilterTrigger, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.FilterUserID != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[user_id]", *params.FilterUserID, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.FilterOccurredAfter != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[occurred_after]", *params.FilterOccurredAfter, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.FilterOccurredBefore != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[occurred_before]", *params.FilterOccurredBefore, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.PageNumber != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "page[number]", *params.PageNumber, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.PageSize != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "page[size]", *params.PageSize, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: ""}); err != nil {
+			if queryFrag, err := runtime.StyleParamWithOptions("deepObject", true, "filter", *params.Filter, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "object", Format: ""}); err != nil {
 				return nil, err
 			} else {
 				for _, qp := range strings.Split(queryFrag, "&") {
@@ -145829,6 +147679,121 @@ func NewUpdateFormFieldOptionRequestWithBody(server string, id ID, contentType s
 	return req, nil
 }
 
+// NewDeleteFormFieldPlacementConditionGroupRequest constructs an http.Request for the DeleteFormFieldPlacementConditionGroup method
+func NewDeleteFormFieldPlacementConditionGroupRequest(server string, id ID) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "id", id, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/form_field_placement_condition_groups/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodDelete, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewGetFormFieldPlacementConditionGroupRequest constructs an http.Request for the GetFormFieldPlacementConditionGroup method
+func NewGetFormFieldPlacementConditionGroupRequest(server string, id ID) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "id", id, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/form_field_placement_condition_groups/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewUpdateFormFieldPlacementConditionGroupRequestWithApplicationVndAPIPlusJSONBody calls the generic UpdateFormFieldPlacementConditionGroup builder with application/vnd.api+json body
+func NewUpdateFormFieldPlacementConditionGroupRequestWithApplicationVndAPIPlusJSONBody(server string, id ID, body UpdateFormFieldPlacementConditionGroupApplicationVndAPIPlusJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewUpdateFormFieldPlacementConditionGroupRequestWithBody(server, id, "application/vnd.api+json", bodyReader)
+}
+
+// NewUpdateFormFieldPlacementConditionGroupRequestWithBody constructs an http.Request for the UpdateFormFieldPlacementConditionGroup method, with any body, and a specified content type
+func NewUpdateFormFieldPlacementConditionGroupRequestWithBody(server string, id ID, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "id", id, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/form_field_placement_condition_groups/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPut, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
 // NewDeleteFormFieldPlacementConditionRequest constructs an http.Request for the DeleteFormFieldPlacementCondition method
 func NewDeleteFormFieldPlacementConditionRequest(server string, id ID) (*http.Request, error) {
 	var err error
@@ -145935,6 +147900,138 @@ func NewUpdateFormFieldPlacementConditionRequestWithBody(server string, id ID, c
 	}
 
 	req, err := http.NewRequest(http.MethodPut, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewListFormFieldPlacementConditionGroupsRequest constructs an http.Request for the ListFormFieldPlacementConditionGroups method
+func NewListFormFieldPlacementConditionGroupsRequest(server string, formFieldPlacementID string, params *ListFormFieldPlacementConditionGroupsParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "form_field_placement_id", formFieldPlacementID, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/form_field_placements/%s/condition_groups", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.PageNumber != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "page[number]", *params.PageNumber, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.PageSize != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "page[size]", *params.PageSize, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterGroupType != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[group_type]", *params.FilterGroupType, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewCreateFormFieldPlacementConditionGroupRequestWithApplicationVndAPIPlusJSONBody calls the generic CreateFormFieldPlacementConditionGroup builder with application/vnd.api+json body
+func NewCreateFormFieldPlacementConditionGroupRequestWithApplicationVndAPIPlusJSONBody(server string, formFieldPlacementID string, body CreateFormFieldPlacementConditionGroupApplicationVndAPIPlusJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewCreateFormFieldPlacementConditionGroupRequestWithBody(server, formFieldPlacementID, "application/vnd.api+json", bodyReader)
+}
+
+// NewCreateFormFieldPlacementConditionGroupRequestWithBody constructs an http.Request for the CreateFormFieldPlacementConditionGroup method, with any body, and a specified content type
+func NewCreateFormFieldPlacementConditionGroupRequestWithBody(server string, formFieldPlacementID string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "form_field_placement_id", formFieldPlacementID, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/form_field_placements/%s/condition_groups", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
 	if err != nil {
 		return nil, err
 	}
@@ -156217,6 +158314,289 @@ func NewCreateIncidentSubStatusRequestWithBody(server string, incidentID string,
 	}
 
 	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewListInvestigationsRequest constructs an http.Request for the ListInvestigations method
+func NewListInvestigationsRequest(server string, params *ListInvestigationsParams) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/investigations")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.FilterAlertID != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[alert_id]", *params.FilterAlertID, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: "uuid"}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterIncidentID != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[incident_id]", *params.FilterIncidentID, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: "uuid"}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterStatus != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[status]", *params.FilterStatus, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterOutcome != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[outcome]", *params.FilterOutcome, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.PageNumber != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "page[number]", *params.PageNumber, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.PageSize != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "page[size]", *params.PageSize, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewCreateInvestigationRequestWithApplicationVndAPIPlusJSONBody calls the generic CreateInvestigation builder with application/vnd.api+json body
+func NewCreateInvestigationRequestWithApplicationVndAPIPlusJSONBody(server string, body CreateInvestigationApplicationVndAPIPlusJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewCreateInvestigationRequestWithBody(server, "application/vnd.api+json", bodyReader)
+}
+
+// NewCreateInvestigationRequestWithBody constructs an http.Request for the CreateInvestigation method, with any body, and a specified content type
+func NewCreateInvestigationRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/investigations")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewGetInvestigationRequest constructs an http.Request for the GetInvestigation method
+func NewGetInvestigationRequest(server string, id ID) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "id", id, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/investigations/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewCancelInvestigationRequest constructs an http.Request for the CancelInvestigation method
+func NewCancelInvestigationRequest(server string, id ID) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "id", id, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/investigations/%s/cancel", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewGetInvestigationProgressRequest constructs an http.Request for the GetInvestigationProgress method
+func NewGetInvestigationProgressRequest(server string, id ID, params *GetInvestigationProgressParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "id", id, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/investigations/%s/progress", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.After != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "after", *params.After, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
 
 	return req, nil
 }
@@ -169843,6 +172223,73 @@ func NewGetCurrentUserRequest(server string) (*http.Request, error) {
 	return req, nil
 }
 
+// NewGetCurrentUserNotificationSettingsRequest constructs an http.Request for the GetCurrentUserNotificationSettings method
+func NewGetCurrentUserNotificationSettingsRequest(server string) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/users/me/notification_settings")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewUpdateCurrentUserNotificationSettingsRequestWithApplicationVndAPIPlusJSONBody calls the generic UpdateCurrentUserNotificationSettings builder with application/vnd.api+json body
+func NewUpdateCurrentUserNotificationSettingsRequestWithApplicationVndAPIPlusJSONBody(server string, body UpdateCurrentUserNotificationSettingsApplicationVndAPIPlusJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewUpdateCurrentUserNotificationSettingsRequestWithBody(server, "application/vnd.api+json", bodyReader)
+}
+
+// NewUpdateCurrentUserNotificationSettingsRequestWithBody constructs an http.Request for the UpdateCurrentUserNotificationSettings method, with any body, and a specified content type
+func NewUpdateCurrentUserNotificationSettingsRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/users/me/notification_settings")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPatch, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
 // NewDeleteUserRequest constructs an http.Request for the DeleteUser method
 func NewDeleteUserRequest(server string, id ID) (*http.Request, error) {
 	var err error
@@ -173190,14 +175637,14 @@ type ClientWithResponsesInterface interface {
 	// Corresponds with POST /v1/ai/chat/stream (the `StreamAiChat` operationId).
 	StreamAiChatWithResponse(ctx context.Context, params *StreamAiChatParams, reqEditors ...RequestEditorFn) (*StreamAiChatResponse, error)
 
-	// GetV1AiConnectorAuditEventsWithResponse List AI connector audit events
+	// ListAiToolCallEventsWithResponse Lists AI tool call events
 	//
-	// Lists AI tool calls made through connectors and connector connection events. Responses and credentials are never included.
+	// Returns audit events for AI tool calls and connector calls.
 	//
 	// Returns a wrapper object for the known response body format(s).
 	//
-	// Corresponds with GET /v1/ai_connector_audit_events (the `GetV1AiConnectorAuditEvents` operationId).
-	GetV1AiConnectorAuditEventsWithResponse(ctx context.Context, params *GetV1AiConnectorAuditEventsParams, reqEditors ...RequestEditorFn) (*GetV1AiConnectorAuditEventsResponse, error)
+	// Corresponds with GET /v1/ai_tool_call_events (the `ListAiToolCallEvents` operationId).
+	ListAiToolCallEventsWithResponse(ctx context.Context, params *ListAiToolCallEventsParams, reqEditors ...RequestEditorFn) (*ListAiToolCallEventsResponse, error)
 
 	// GetAlertConfigurationWithResponse Retrieves the team's alert configuration
 	//
@@ -175167,7 +177614,7 @@ type ClientWithResponsesInterface interface {
 
 	// DeleteDashboardPanelWithResponse Delete a dashboard panel
 	//
-	// Delete a specific dashboard panel by id.
+	// Delete a specific dashboard panel by id. OAuth tokens need the `ir.dashboards:write` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`).
 	//
 	// Returns a wrapper object for the known response body format(s).
 	//
@@ -175176,7 +177623,7 @@ type ClientWithResponsesInterface interface {
 
 	// GetDashboardPanelWithResponse Retrieves a dashboard panel
 	//
-	// Retrieves a specific dashboard panel by id.
+	// Retrieves a specific dashboard panel by id. OAuth tokens need the `ir.dashboards:read` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`).
 	//
 	// Returns a wrapper object for the known response body format(s).
 	//
@@ -175185,7 +177632,7 @@ type ClientWithResponsesInterface interface {
 
 	// UpdateDashboardPanelWithBodyWithResponse Update a dashboard panel
 	//
-	// Update a specific dashboard panel by id.
+	// Update a specific dashboard panel by id. OAuth tokens need the `ir.dashboards:write` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`).
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -175194,7 +177641,7 @@ type ClientWithResponsesInterface interface {
 
 	// UpdateDashboardPanelWithApplicationVndAPIPlusJSONBodyWithResponse Update a dashboard panel
 	//
-	// Update a specific dashboard panel by id.
+	// Update a specific dashboard panel by id. OAuth tokens need the `ir.dashboards:write` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`).
 	//
 	// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -175203,12 +177650,16 @@ type ClientWithResponsesInterface interface {
 
 	// DuplicateDashboardPanelWithResponse Duplicates a dashboard panel
 	//
+	// Duplicates a dashboard panel. OAuth tokens need the `ir.dashboards:write` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`).
+	//
 	// Returns a wrapper object for the known response body format(s).
 	//
 	// Corresponds with POST /v1/dashboard_panels/{id}/duplicate (the `DuplicateDashboardPanel` operationId).
 	DuplicateDashboardPanelWithResponse(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*DuplicateDashboardPanelResponse, error)
 
 	// ListDashboardsWithResponse List dashboards
+	//
+	// List dashboards. OAuth tokens need the `ir.dashboards:read` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`).
 	//
 	// Returns a wrapper object for the known response body format(s).
 	//
@@ -175217,7 +177668,7 @@ type ClientWithResponsesInterface interface {
 
 	// CreateDashboardWithBodyWithResponse Creates a dashboard
 	//
-	// Creates a new dashboard from provided data.
+	// Creates a new dashboard from provided data. OAuth tokens need the `ir.dashboards:write` scope.
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -175226,7 +177677,7 @@ type ClientWithResponsesInterface interface {
 
 	// CreateDashboardWithApplicationVndAPIPlusJSONBodyWithResponse Creates a dashboard
 	//
-	// Creates a new dashboard from provided data.
+	// Creates a new dashboard from provided data. OAuth tokens need the `ir.dashboards:write` scope.
 	//
 	// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -175235,6 +177686,8 @@ type ClientWithResponsesInterface interface {
 
 	// ListDashboardPanelsWithResponse List dashboard panels
 	//
+	// List dashboard panels. OAuth tokens need the `ir.dashboards:read` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`).
+	//
 	// Returns a wrapper object for the known response body format(s).
 	//
 	// Corresponds with GET /v1/dashboards/{dashboard_id}/panels (the `ListDashboardPanels` operationId).
@@ -175242,7 +177695,7 @@ type ClientWithResponsesInterface interface {
 
 	// CreateDashboardPanelWithBodyWithResponse Creates a dashboard panel
 	//
-	// Creates a new dashboard panel from provided data.
+	// Creates a new dashboard panel from provided data. OAuth tokens need the `ir.dashboards:write` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`).
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -175251,7 +177704,7 @@ type ClientWithResponsesInterface interface {
 
 	// CreateDashboardPanelWithApplicationVndAPIPlusJSONBodyWithResponse Creates a dashboard panel
 	//
-	// Creates a new dashboard panel from provided data.
+	// Creates a new dashboard panel from provided data. OAuth tokens need the `ir.dashboards:write` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`).
 	//
 	// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -175260,7 +177713,7 @@ type ClientWithResponsesInterface interface {
 
 	// DeleteDashboardWithResponse Delete a dashboard
 	//
-	// Delete a specific dashboard by id.
+	// Delete a specific dashboard by id. OAuth tokens need the `ir.dashboards:write` scope.
 	//
 	// Returns a wrapper object for the known response body format(s).
 	//
@@ -175269,7 +177722,7 @@ type ClientWithResponsesInterface interface {
 
 	// GetDashboardWithResponse Retrieves a dashboard
 	//
-	// Retrieves a specific dashboard by id.
+	// Retrieves a specific dashboard by id. OAuth tokens need the `ir.dashboards:read` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`).
 	//
 	// Returns a wrapper object for the known response body format(s).
 	//
@@ -175278,7 +177731,7 @@ type ClientWithResponsesInterface interface {
 
 	// UpdateDashboardWithBodyWithResponse Update a dashboard
 	//
-	// Update a specific dashboard by id.
+	// Update a specific dashboard by id. OAuth tokens need the `ir.dashboards:write` scope.
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -175287,7 +177740,7 @@ type ClientWithResponsesInterface interface {
 
 	// UpdateDashboardWithApplicationVndAPIPlusJSONBodyWithResponse Update a dashboard
 	//
-	// Update a specific dashboard by id.
+	// Update a specific dashboard by id. OAuth tokens need the `ir.dashboards:write` scope.
 	//
 	// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -175296,12 +177749,16 @@ type ClientWithResponsesInterface interface {
 
 	// DuplicateDashboardWithResponse Duplicates a dashboard
 	//
+	// Duplicates a dashboard. OAuth tokens need the `ir.dashboards:write` scope.
+	//
 	// Returns a wrapper object for the known response body format(s).
 	//
 	// Corresponds with POST /v1/dashboards/{id}/duplicate (the `DuplicateDashboard` operationId).
 	DuplicateDashboardWithResponse(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*DuplicateDashboardResponse, error)
 
 	// SetDefaultDashboardWithResponse Sets dashboard to user default
+	//
+	// Sets dashboard to user default. OAuth tokens need the `ir.dashboards:write` scope.
 	//
 	// Returns a wrapper object for the known response body format(s).
 	//
@@ -175945,6 +178402,42 @@ type ClientWithResponsesInterface interface {
 	// Corresponds with PUT /v1/form_field_options/{id} (the `UpdateFormFieldOption` operationId).
 	UpdateFormFieldOptionWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, id ID, body UpdateFormFieldOptionApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateFormFieldOptionResponse, error)
 
+	// DeleteFormFieldPlacementConditionGroupWithResponse Delete a Form Field Placement Condition Group
+	//
+	// Delete a specific form_field_placement_condition_group by id, along with its conditions
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with DELETE /v1/form_field_placement_condition_groups/{id} (the `DeleteFormFieldPlacementConditionGroup` operationId).
+	DeleteFormFieldPlacementConditionGroupWithResponse(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*DeleteFormFieldPlacementConditionGroupResponse, error)
+
+	// GetFormFieldPlacementConditionGroupWithResponse Retrieves a Form Field Placement Condition Group
+	//
+	// Retrieves a specific form_field_placement_condition_group by id, with its conditions
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /v1/form_field_placement_condition_groups/{id} (the `GetFormFieldPlacementConditionGroup` operationId).
+	GetFormFieldPlacementConditionGroupWithResponse(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*GetFormFieldPlacementConditionGroupResponse, error)
+
+	// UpdateFormFieldPlacementConditionGroupWithBodyWithResponse Update a Form Field Placement Condition Group
+	//
+	// Update a specific form_field_placement_condition_group by id.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with PUT /v1/form_field_placement_condition_groups/{id} (the `UpdateFormFieldPlacementConditionGroup` operationId).
+	UpdateFormFieldPlacementConditionGroupWithBodyWithResponse(ctx context.Context, id ID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateFormFieldPlacementConditionGroupResponse, error)
+
+	// UpdateFormFieldPlacementConditionGroupWithApplicationVndAPIPlusJSONBodyWithResponse Update a Form Field Placement Condition Group
+	//
+	// Update a specific form_field_placement_condition_group by id.
+	//
+	// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with PUT /v1/form_field_placement_condition_groups/{id} (the `UpdateFormFieldPlacementConditionGroup` operationId).
+	UpdateFormFieldPlacementConditionGroupWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, id ID, body UpdateFormFieldPlacementConditionGroupApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateFormFieldPlacementConditionGroupResponse, error)
+
 	// DeleteFormFieldPlacementConditionWithResponse Delete a Form Set Condition
 	//
 	// Delete a specific form_field_placement_condition by id.
@@ -175980,6 +178473,33 @@ type ClientWithResponsesInterface interface {
 	//
 	// Corresponds with PUT /v1/form_field_placement_conditions/{id} (the `UpdateFormFieldPlacementCondition` operationId).
 	UpdateFormFieldPlacementConditionWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, id ID, body UpdateFormFieldPlacementConditionApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateFormFieldPlacementConditionResponse, error)
+
+	// ListFormFieldPlacementConditionGroupsWithResponse List Form Field Placement Condition Groups
+	//
+	// List form_field_placement_condition_groups, each with its conditions
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /v1/form_field_placements/{form_field_placement_id}/condition_groups (the `ListFormFieldPlacementConditionGroups` operationId).
+	ListFormFieldPlacementConditionGroupsWithResponse(ctx context.Context, formFieldPlacementID string, params *ListFormFieldPlacementConditionGroupsParams, reqEditors ...RequestEditorFn) (*ListFormFieldPlacementConditionGroupsResponse, error)
+
+	// CreateFormFieldPlacementConditionGroupWithBodyWithResponse Creates a Form Field Placement Condition Group
+	//
+	// Creates a new form_field_placement_condition_group. Add conditions to it by creating form_field_placement_conditions with its condition_group_id.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/form_field_placements/{form_field_placement_id}/condition_groups (the `CreateFormFieldPlacementConditionGroup` operationId).
+	CreateFormFieldPlacementConditionGroupWithBodyWithResponse(ctx context.Context, formFieldPlacementID string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateFormFieldPlacementConditionGroupResponse, error)
+
+	// CreateFormFieldPlacementConditionGroupWithApplicationVndAPIPlusJSONBodyWithResponse Creates a Form Field Placement Condition Group
+	//
+	// Creates a new form_field_placement_condition_group. Add conditions to it by creating form_field_placement_conditions with its condition_group_id.
+	//
+	// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/form_field_placements/{form_field_placement_id}/condition_groups (the `CreateFormFieldPlacementConditionGroup` operationId).
+	CreateFormFieldPlacementConditionGroupWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, formFieldPlacementID string, body CreateFormFieldPlacementConditionGroupApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateFormFieldPlacementConditionGroupResponse, error)
 
 	// ListFormFieldPlacementConditionsWithResponse List Form Set Conditions
 	//
@@ -177654,6 +180174,58 @@ type ClientWithResponsesInterface interface {
 	//
 	// Corresponds with POST /v1/incidents/{incident_id}/sub_statuses (the `CreateIncidentSubStatus` operationId).
 	CreateIncidentSubStatusWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, incidentID string, body CreateIncidentSubStatusApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateIncidentSubStatusResponse, error)
+
+	// ListInvestigationsWithResponse Lists AI SRE investigations
+	//
+	// Investigations on alerts and incidents the caller can read, newest first.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /v1/investigations (the `ListInvestigations` operationId).
+	ListInvestigationsWithResponse(ctx context.Context, params *ListInvestigationsParams, reqEditors ...RequestEditorFn) (*ListInvestigationsResponse, error)
+
+	// CreateInvestigationWithBodyWithResponse Starts an AI SRE investigation
+	//
+	// Starts an investigation on an alert or incident you can update, or returns the one already running.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/investigations (the `CreateInvestigation` operationId).
+	CreateInvestigationWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateInvestigationResponse, error)
+
+	// CreateInvestigationWithApplicationVndAPIPlusJSONBodyWithResponse Starts an AI SRE investigation
+	//
+	// Starts an investigation on an alert or incident you can update, or returns the one already running.
+	//
+	// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/investigations (the `CreateInvestigation` operationId).
+	CreateInvestigationWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, body CreateInvestigationApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateInvestigationResponse, error)
+
+	// GetInvestigationWithResponse Retrieves an AI SRE investigation
+	//
+	// The verdict, hypotheses, evidence, causal chain and open questions.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /v1/investigations/{id} (the `GetInvestigation` operationId).
+	GetInvestigationWithResponse(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*GetInvestigationResponse, error)
+
+	// CancelInvestigationWithResponse Cancels an AI SRE investigation
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/investigations/{id}/cancel (the `CancelInvestigation` operationId).
+	CancelInvestigationWithResponse(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*CancelInvestigationResponse, error)
+
+	// GetInvestigationProgressWithResponse Retrieves AI SRE investigation progress
+	//
+	// Returns immediately with steps and tool calls recorded after the cursor. Poll with after=next_cursor until done is true.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /v1/investigations/{id}/progress (the `GetInvestigationProgress` operationId).
+	GetInvestigationProgressWithResponse(ctx context.Context, id ID, params *GetInvestigationProgressParams, reqEditors ...RequestEditorFn) (*GetInvestigationProgressResponse, error)
 
 	// GetIPAllowlistWithResponse Retrieves the organization's browser IP allowlist
 	//
@@ -180046,6 +182618,33 @@ type ClientWithResponsesInterface interface {
 	// Corresponds with GET /v1/users/me (the `GetCurrentUser` operationId).
 	GetCurrentUserWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*GetCurrentUserResponse, error)
 
+	// GetCurrentUserNotificationSettingsWithResponse Retrieves the current user's notification settings
+	//
+	// Retrieves the authenticated user's notification settings, including the current mute state.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /v1/users/me/notification_settings (the `GetCurrentUserNotificationSettings` operationId).
+	GetCurrentUserNotificationSettingsWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*GetCurrentUserNotificationSettingsResponse, error)
+
+	// UpdateCurrentUserNotificationSettingsWithBodyWithResponse Updates the current user's notification settings
+	//
+	// Sets, replaces, or clears the authenticated user's notification mute. Muting suppresses alert notifications on every channel until mute_until.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with PATCH /v1/users/me/notification_settings (the `UpdateCurrentUserNotificationSettings` operationId).
+	UpdateCurrentUserNotificationSettingsWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateCurrentUserNotificationSettingsResponse, error)
+
+	// UpdateCurrentUserNotificationSettingsWithApplicationVndAPIPlusJSONBodyWithResponse Updates the current user's notification settings
+	//
+	// Sets, replaces, or clears the authenticated user's notification mute. Muting suppresses alert notifications on every channel until mute_until.
+	//
+	// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with PATCH /v1/users/me/notification_settings (the `UpdateCurrentUserNotificationSettings` operationId).
+	UpdateCurrentUserNotificationSettingsWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, body UpdateCurrentUserNotificationSettingsApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateCurrentUserNotificationSettingsResponse, error)
+
 	// DeleteUserWithResponse Delete an user
 	//
 	// Delete a specific user by id.
@@ -181020,13 +183619,43 @@ func (r StreamAiChatResponse) ContentType() string {
 	return ""
 }
 
-type GetV1AiConnectorAuditEventsResponse struct {
+type ListAiToolCallEventsResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
+	// ApplicationVndAPIJSON200 the response for an HTTP 200 `application/vnd.api+json` response
+	ApplicationVndAPIJSON200 *struct {
+		Data []struct {
+			Attributes *struct {
+				AiAutomationRunID nullable.Nullable[string] `json:"ai_automation_run_id,omitempty"`
+				AiSessionID       nullable.Nullable[string] `json:"ai_session_id,omitempty"`
+				ArgumentKeys      []string                  `json:"argument_keys,omitempty"`
+				Automatic         *bool                     `json:"automatic,omitempty"`
+				ConnectionName    nullable.Nullable[string] `json:"connection_name,omitempty"`
+				DurationMs        nullable.Nullable[int]    `json:"duration_ms,omitempty"`
+				OccurredAt        *time.Time                `json:"occurred_at,omitempty"`
+				Outcome           *string                   `json:"outcome,omitempty"`
+				ProviderType      nullable.Nullable[string] `json:"provider_type,omitempty"`
+				RemoteMcpSourceID nullable.Nullable[string] `json:"remote_mcp_source_id,omitempty"`
+				RiskClass         *string                   `json:"risk_class,omitempty"`
+				Surface           *string                   `json:"surface,omitempty"`
+				ToolName          *string                   `json:"tool_name,omitempty"`
+				TriggerRecordID   nullable.Nullable[string] `json:"trigger_record_id,omitempty"`
+				TriggerRecordType nullable.Nullable[string] `json:"trigger_record_type,omitempty"`
+				UserEmail         nullable.Nullable[string] `json:"user_email,omitempty"`
+				UserID            nullable.Nullable[int]    `json:"user_id,omitempty"`
+				UserName          nullable.Nullable[string] `json:"user_name,omitempty"`
+			} `json:"attributes,omitempty"`
+			ID   *string                                                               `json:"id,omitempty"`
+			Type *ListAiToolCallEvents200ApplicationVndAPIPlusJSONResponseBodyDataType `json:"type,omitempty"`
+		} `json:"data,omitempty"`
+		Meta map[string]interface{} `json:"meta,omitempty"`
+	}
+	// ApplicationVndAPIJSON400 the response for an HTTP 400 `application/vnd.api+json` response
+	ApplicationVndAPIJSON400 *ErrorsList
 }
 
 // Status returns HTTPResponse.Status
-func (r GetV1AiConnectorAuditEventsResponse) Status() string {
+func (r ListAiToolCallEventsResponse) Status() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Status
 	}
@@ -181034,7 +183663,7 @@ func (r GetV1AiConnectorAuditEventsResponse) Status() string {
 }
 
 // StatusCode returns HTTPResponse.StatusCode
-func (r GetV1AiConnectorAuditEventsResponse) StatusCode() int {
+func (r ListAiToolCallEventsResponse) StatusCode() int {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.StatusCode
 	}
@@ -181042,7 +183671,7 @@ func (r GetV1AiConnectorAuditEventsResponse) StatusCode() int {
 }
 
 // ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r GetV1AiConnectorAuditEventsResponse) ContentType() string {
+func (r ListAiToolCallEventsResponse) ContentType() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Header.Get("Content-Type")
 	}
@@ -183652,6 +186281,8 @@ type DeleteCatalogEntityResponse struct {
 	ApplicationVndAPIJSON200 *CatalogEntityResponse
 	// ApplicationVndAPIJSON404 the response for an HTTP 404 `application/vnd.api+json` response
 	ApplicationVndAPIJSON404 *ErrorsList
+	// ApplicationVndAPIJSON422 the response for an HTTP 422 `application/vnd.api+json` response
+	ApplicationVndAPIJSON422 *ErrorsList
 }
 
 // Status returns HTTPResponse.Status
@@ -184263,6 +186894,8 @@ type DeleteCatalogResponse struct {
 	ApplicationVndAPIJSON200 *CatalogResponse
 	// ApplicationVndAPIJSON404 the response for an HTTP 404 `application/vnd.api+json` response
 	ApplicationVndAPIJSON404 *ErrorsList
+	// ApplicationVndAPIJSON422 the response for an HTTP 422 `application/vnd.api+json` response
+	ApplicationVndAPIJSON422 *ErrorsList
 }
 
 // Status returns HTTPResponse.Status
@@ -188069,6 +190702,107 @@ func (r UpdateFormFieldOptionResponse) ContentType() string {
 	return ""
 }
 
+type DeleteFormFieldPlacementConditionGroupResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// ApplicationVndAPIJSON200 the response for an HTTP 200 `application/vnd.api+json` response
+	ApplicationVndAPIJSON200 *FormFieldPlacementConditionGroupResponse
+	// ApplicationVndAPIJSON404 the response for an HTTP 404 `application/vnd.api+json` response
+	ApplicationVndAPIJSON404 *ErrorsList
+	// ApplicationVndAPIJSON422 the response for an HTTP 422 `application/vnd.api+json` response
+	ApplicationVndAPIJSON422 *ErrorsList
+}
+
+// Status returns HTTPResponse.Status
+func (r DeleteFormFieldPlacementConditionGroupResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r DeleteFormFieldPlacementConditionGroupResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r DeleteFormFieldPlacementConditionGroupResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GetFormFieldPlacementConditionGroupResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// ApplicationVndAPIJSON200 the response for an HTTP 200 `application/vnd.api+json` response
+	ApplicationVndAPIJSON200 *FormFieldPlacementConditionGroupResponse
+	// ApplicationVndAPIJSON404 the response for an HTTP 404 `application/vnd.api+json` response
+	ApplicationVndAPIJSON404 *ErrorsList
+}
+
+// Status returns HTTPResponse.Status
+func (r GetFormFieldPlacementConditionGroupResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetFormFieldPlacementConditionGroupResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetFormFieldPlacementConditionGroupResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type UpdateFormFieldPlacementConditionGroupResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// ApplicationVndAPIJSON200 the response for an HTTP 200 `application/vnd.api+json` response
+	ApplicationVndAPIJSON200 *FormFieldPlacementConditionGroupResponse
+	// ApplicationVndAPIJSON404 the response for an HTTP 404 `application/vnd.api+json` response
+	ApplicationVndAPIJSON404 *ErrorsList
+}
+
+// Status returns HTTPResponse.Status
+func (r UpdateFormFieldPlacementConditionGroupResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r UpdateFormFieldPlacementConditionGroupResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r UpdateFormFieldPlacementConditionGroupResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
 type DeleteFormFieldPlacementConditionResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
@@ -188162,6 +190896,72 @@ func (r UpdateFormFieldPlacementConditionResponse) StatusCode() int {
 
 // ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
 func (r UpdateFormFieldPlacementConditionResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type ListFormFieldPlacementConditionGroupsResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// ApplicationVndAPIJSON200 the response for an HTTP 200 `application/vnd.api+json` response
+	ApplicationVndAPIJSON200 *FormFieldPlacementConditionGroupList
+}
+
+// Status returns HTTPResponse.Status
+func (r ListFormFieldPlacementConditionGroupsResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r ListFormFieldPlacementConditionGroupsResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r ListFormFieldPlacementConditionGroupsResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type CreateFormFieldPlacementConditionGroupResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// ApplicationVndAPIJSON201 the response for an HTTP 201 `application/vnd.api+json` response
+	ApplicationVndAPIJSON201 *FormFieldPlacementConditionGroupResponse
+	// ApplicationVndAPIJSON401 the response for an HTTP 401 `application/vnd.api+json` response
+	ApplicationVndAPIJSON401 *ErrorsList
+	// ApplicationVndAPIJSON422 the response for an HTTP 422 `application/vnd.api+json` response
+	ApplicationVndAPIJSON422 *ErrorsList
+}
+
+// Status returns HTTPResponse.Status
+func (r CreateFormFieldPlacementConditionGroupResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r CreateFormFieldPlacementConditionGroupResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r CreateFormFieldPlacementConditionGroupResponse) ContentType() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Header.Get("Content-Type")
 	}
@@ -192491,6 +195291,181 @@ func (r CreateIncidentSubStatusResponse) StatusCode() int {
 
 // ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
 func (r CreateIncidentSubStatusResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type ListInvestigationsResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// ApplicationVndAPIJSON200 the response for an HTTP 200 `application/vnd.api+json` response
+	ApplicationVndAPIJSON200 *InvestigationList
+	// ApplicationVndAPIJSON403 the response for an HTTP 403 `application/vnd.api+json` response
+	ApplicationVndAPIJSON403 *ErrorsList
+	// ApplicationVndAPIJSON422 the response for an HTTP 422 `application/vnd.api+json` response
+	ApplicationVndAPIJSON422 *ErrorsList
+}
+
+// Status returns HTTPResponse.Status
+func (r ListInvestigationsResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r ListInvestigationsResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r ListInvestigationsResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type CreateInvestigationResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// ApplicationVndAPIJSON202 the response for an HTTP 202 `application/vnd.api+json` response
+	ApplicationVndAPIJSON202 *Investigation
+	// ApplicationVndAPIJSON403 the response for an HTTP 403 `application/vnd.api+json` response
+	ApplicationVndAPIJSON403 *ErrorsList
+	// ApplicationVndAPIJSON404 the response for an HTTP 404 `application/vnd.api+json` response
+	ApplicationVndAPIJSON404 *ErrorsList
+	// ApplicationVndAPIJSON409 the response for an HTTP 409 `application/vnd.api+json` response
+	ApplicationVndAPIJSON409 *ErrorsList
+	// ApplicationVndAPIJSON422 the response for an HTTP 422 `application/vnd.api+json` response
+	ApplicationVndAPIJSON422 *ErrorsList
+}
+
+// Status returns HTTPResponse.Status
+func (r CreateInvestigationResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r CreateInvestigationResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r CreateInvestigationResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GetInvestigationResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// ApplicationVndAPIJSON200 the response for an HTTP 200 `application/vnd.api+json` response
+	ApplicationVndAPIJSON200 *Investigation
+	// ApplicationVndAPIJSON404 the response for an HTTP 404 `application/vnd.api+json` response
+	ApplicationVndAPIJSON404 *ErrorsList
+}
+
+// Status returns HTTPResponse.Status
+func (r GetInvestigationResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetInvestigationResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetInvestigationResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type CancelInvestigationResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// ApplicationVndAPIJSON200 the response for an HTTP 200 `application/vnd.api+json` response
+	ApplicationVndAPIJSON200 *Investigation
+	// ApplicationVndAPIJSON403 the response for an HTTP 403 `application/vnd.api+json` response
+	ApplicationVndAPIJSON403 *ErrorsList
+	// ApplicationVndAPIJSON409 the response for an HTTP 409 `application/vnd.api+json` response
+	ApplicationVndAPIJSON409 *ErrorsList
+}
+
+// Status returns HTTPResponse.Status
+func (r CancelInvestigationResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r CancelInvestigationResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r CancelInvestigationResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GetInvestigationProgressResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// ApplicationVndAPIJSON200 the response for an HTTP 200 `application/vnd.api+json` response
+	ApplicationVndAPIJSON200 *InvestigationProgress
+	// ApplicationVndAPIJSON400 the response for an HTTP 400 `application/vnd.api+json` response
+	ApplicationVndAPIJSON400 *ErrorsList
+}
+
+// Status returns HTTPResponse.Status
+func (r GetInvestigationProgressResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetInvestigationProgressResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetInvestigationProgressResponse) ContentType() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Header.Get("Content-Type")
 	}
@@ -199310,6 +202285,76 @@ func (r GetCurrentUserResponse) ContentType() string {
 	return ""
 }
 
+type GetCurrentUserNotificationSettingsResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// ApplicationVndAPIJSON200 the response for an HTTP 200 `application/vnd.api+json` response
+	ApplicationVndAPIJSON200 *UserNotificationSettingsResponse
+	// ApplicationVndAPIJSON401 the response for an HTTP 401 `application/vnd.api+json` response
+	ApplicationVndAPIJSON401 *ErrorsList
+}
+
+// Status returns HTTPResponse.Status
+func (r GetCurrentUserNotificationSettingsResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetCurrentUserNotificationSettingsResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetCurrentUserNotificationSettingsResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type UpdateCurrentUserNotificationSettingsResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// ApplicationVndAPIJSON200 the response for an HTTP 200 `application/vnd.api+json` response
+	ApplicationVndAPIJSON200 *UserNotificationSettingsResponse
+	// ApplicationVndAPIJSON400 the response for an HTTP 400 `application/vnd.api+json` response
+	ApplicationVndAPIJSON400 *ErrorsList
+	// ApplicationVndAPIJSON401 the response for an HTTP 401 `application/vnd.api+json` response
+	ApplicationVndAPIJSON401 *ErrorsList
+	// ApplicationVndAPIJSON422 the response for an HTTP 422 `application/vnd.api+json` response
+	ApplicationVndAPIJSON422 *ErrorsList
+}
+
+// Status returns HTTPResponse.Status
+func (r UpdateCurrentUserNotificationSettingsResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r UpdateCurrentUserNotificationSettingsResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r UpdateCurrentUserNotificationSettingsResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
 type DeleteUserResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
@@ -201239,19 +204284,19 @@ func (c *ClientWithResponses) StreamAiChatWithResponse(ctx context.Context, para
 	return ParseStreamAiChatResponse(rsp)
 }
 
-// GetV1AiConnectorAuditEventsWithResponse List AI connector audit events
+// ListAiToolCallEventsWithResponse Lists AI tool call events
 //
-// Lists AI tool calls made through connectors and connector connection events. Responses and credentials are never included.
+// Returns audit events for AI tool calls and connector calls.
 //
 // Returns a wrapper object for the known response body format(s).
 //
-// Corresponds with GET /v1/ai_connector_audit_events (the `GetV1AiConnectorAuditEvents` operationId).
-func (c *ClientWithResponses) GetV1AiConnectorAuditEventsWithResponse(ctx context.Context, params *GetV1AiConnectorAuditEventsParams, reqEditors ...RequestEditorFn) (*GetV1AiConnectorAuditEventsResponse, error) {
-	rsp, err := c.GetV1AiConnectorAuditEvents(ctx, params, reqEditors...)
+// Corresponds with GET /v1/ai_tool_call_events (the `ListAiToolCallEvents` operationId).
+func (c *ClientWithResponses) ListAiToolCallEventsWithResponse(ctx context.Context, params *ListAiToolCallEventsParams, reqEditors ...RequestEditorFn) (*ListAiToolCallEventsResponse, error) {
+	rsp, err := c.ListAiToolCallEvents(ctx, params, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseGetV1AiConnectorAuditEventsResponse(rsp)
+	return ParseListAiToolCallEventsResponse(rsp)
 }
 
 // GetAlertConfigurationWithResponse Retrieves the team's alert configuration
@@ -204473,7 +207518,7 @@ func (c *ClientWithResponses) UpdateCustomFormWithApplicationVndAPIPlusJSONBodyW
 
 // DeleteDashboardPanelWithResponse Delete a dashboard panel
 //
-// Delete a specific dashboard panel by id.
+// Delete a specific dashboard panel by id. OAuth tokens need the `ir.dashboards:write` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`).
 //
 // Returns a wrapper object for the known response body format(s).
 //
@@ -204488,7 +207533,7 @@ func (c *ClientWithResponses) DeleteDashboardPanelWithResponse(ctx context.Conte
 
 // GetDashboardPanelWithResponse Retrieves a dashboard panel
 //
-// Retrieves a specific dashboard panel by id.
+// Retrieves a specific dashboard panel by id. OAuth tokens need the `ir.dashboards:read` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`).
 //
 // Returns a wrapper object for the known response body format(s).
 //
@@ -204503,7 +207548,7 @@ func (c *ClientWithResponses) GetDashboardPanelWithResponse(ctx context.Context,
 
 // UpdateDashboardPanelWithBodyWithResponse Update a dashboard panel
 //
-// Update a specific dashboard panel by id.
+// Update a specific dashboard panel by id. OAuth tokens need the `ir.dashboards:write` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`).
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
@@ -204518,7 +207563,7 @@ func (c *ClientWithResponses) UpdateDashboardPanelWithBodyWithResponse(ctx conte
 
 // UpdateDashboardPanelWithApplicationVndAPIPlusJSONBodyWithResponse Update a dashboard panel
 //
-// Update a specific dashboard panel by id.
+// Update a specific dashboard panel by id. OAuth tokens need the `ir.dashboards:write` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`).
 //
 // Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
 //
@@ -204533,6 +207578,8 @@ func (c *ClientWithResponses) UpdateDashboardPanelWithApplicationVndAPIPlusJSONB
 
 // DuplicateDashboardPanelWithResponse Duplicates a dashboard panel
 //
+// Duplicates a dashboard panel. OAuth tokens need the `ir.dashboards:write` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`).
+//
 // Returns a wrapper object for the known response body format(s).
 //
 // Corresponds with POST /v1/dashboard_panels/{id}/duplicate (the `DuplicateDashboardPanel` operationId).
@@ -204545,6 +207592,8 @@ func (c *ClientWithResponses) DuplicateDashboardPanelWithResponse(ctx context.Co
 }
 
 // ListDashboardsWithResponse List dashboards
+//
+// List dashboards. OAuth tokens need the `ir.dashboards:read` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`).
 //
 // Returns a wrapper object for the known response body format(s).
 //
@@ -204559,7 +207608,7 @@ func (c *ClientWithResponses) ListDashboardsWithResponse(ctx context.Context, pa
 
 // CreateDashboardWithBodyWithResponse Creates a dashboard
 //
-// Creates a new dashboard from provided data.
+// Creates a new dashboard from provided data. OAuth tokens need the `ir.dashboards:write` scope.
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
@@ -204574,7 +207623,7 @@ func (c *ClientWithResponses) CreateDashboardWithBodyWithResponse(ctx context.Co
 
 // CreateDashboardWithApplicationVndAPIPlusJSONBodyWithResponse Creates a dashboard
 //
-// Creates a new dashboard from provided data.
+// Creates a new dashboard from provided data. OAuth tokens need the `ir.dashboards:write` scope.
 //
 // Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
 //
@@ -204589,6 +207638,8 @@ func (c *ClientWithResponses) CreateDashboardWithApplicationVndAPIPlusJSONBodyWi
 
 // ListDashboardPanelsWithResponse List dashboard panels
 //
+// List dashboard panels. OAuth tokens need the `ir.dashboards:read` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`).
+//
 // Returns a wrapper object for the known response body format(s).
 //
 // Corresponds with GET /v1/dashboards/{dashboard_id}/panels (the `ListDashboardPanels` operationId).
@@ -204602,7 +207653,7 @@ func (c *ClientWithResponses) ListDashboardPanelsWithResponse(ctx context.Contex
 
 // CreateDashboardPanelWithBodyWithResponse Creates a dashboard panel
 //
-// Creates a new dashboard panel from provided data.
+// Creates a new dashboard panel from provided data. OAuth tokens need the `ir.dashboards:write` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`).
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
@@ -204617,7 +207668,7 @@ func (c *ClientWithResponses) CreateDashboardPanelWithBodyWithResponse(ctx conte
 
 // CreateDashboardPanelWithApplicationVndAPIPlusJSONBodyWithResponse Creates a dashboard panel
 //
-// Creates a new dashboard panel from provided data.
+// Creates a new dashboard panel from provided data. OAuth tokens need the `ir.dashboards:write` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`).
 //
 // Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
 //
@@ -204632,7 +207683,7 @@ func (c *ClientWithResponses) CreateDashboardPanelWithApplicationVndAPIPlusJSONB
 
 // DeleteDashboardWithResponse Delete a dashboard
 //
-// Delete a specific dashboard by id.
+// Delete a specific dashboard by id. OAuth tokens need the `ir.dashboards:write` scope.
 //
 // Returns a wrapper object for the known response body format(s).
 //
@@ -204647,7 +207698,7 @@ func (c *ClientWithResponses) DeleteDashboardWithResponse(ctx context.Context, i
 
 // GetDashboardWithResponse Retrieves a dashboard
 //
-// Retrieves a specific dashboard by id.
+// Retrieves a specific dashboard by id. OAuth tokens need the `ir.dashboards:read` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`).
 //
 // Returns a wrapper object for the known response body format(s).
 //
@@ -204662,7 +207713,7 @@ func (c *ClientWithResponses) GetDashboardWithResponse(ctx context.Context, id I
 
 // UpdateDashboardWithBodyWithResponse Update a dashboard
 //
-// Update a specific dashboard by id.
+// Update a specific dashboard by id. OAuth tokens need the `ir.dashboards:write` scope.
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
@@ -204677,7 +207728,7 @@ func (c *ClientWithResponses) UpdateDashboardWithBodyWithResponse(ctx context.Co
 
 // UpdateDashboardWithApplicationVndAPIPlusJSONBodyWithResponse Update a dashboard
 //
-// Update a specific dashboard by id.
+// Update a specific dashboard by id. OAuth tokens need the `ir.dashboards:write` scope.
 //
 // Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
 //
@@ -204692,6 +207743,8 @@ func (c *ClientWithResponses) UpdateDashboardWithApplicationVndAPIPlusJSONBodyWi
 
 // DuplicateDashboardWithResponse Duplicates a dashboard
 //
+// Duplicates a dashboard. OAuth tokens need the `ir.dashboards:write` scope.
+//
 // Returns a wrapper object for the known response body format(s).
 //
 // Corresponds with POST /v1/dashboards/{id}/duplicate (the `DuplicateDashboard` operationId).
@@ -204704,6 +207757,8 @@ func (c *ClientWithResponses) DuplicateDashboardWithResponse(ctx context.Context
 }
 
 // SetDefaultDashboardWithResponse Sets dashboard to user default
+//
+// Sets dashboard to user default. OAuth tokens need the `ir.dashboards:write` scope.
 //
 // Returns a wrapper object for the known response body format(s).
 //
@@ -205803,6 +208858,66 @@ func (c *ClientWithResponses) UpdateFormFieldOptionWithApplicationVndAPIPlusJSON
 	return ParseUpdateFormFieldOptionResponse(rsp)
 }
 
+// DeleteFormFieldPlacementConditionGroupWithResponse Delete a Form Field Placement Condition Group
+//
+// Delete a specific form_field_placement_condition_group by id, along with its conditions
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with DELETE /v1/form_field_placement_condition_groups/{id} (the `DeleteFormFieldPlacementConditionGroup` operationId).
+func (c *ClientWithResponses) DeleteFormFieldPlacementConditionGroupWithResponse(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*DeleteFormFieldPlacementConditionGroupResponse, error) {
+	rsp, err := c.DeleteFormFieldPlacementConditionGroup(ctx, id, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseDeleteFormFieldPlacementConditionGroupResponse(rsp)
+}
+
+// GetFormFieldPlacementConditionGroupWithResponse Retrieves a Form Field Placement Condition Group
+//
+// Retrieves a specific form_field_placement_condition_group by id, with its conditions
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/form_field_placement_condition_groups/{id} (the `GetFormFieldPlacementConditionGroup` operationId).
+func (c *ClientWithResponses) GetFormFieldPlacementConditionGroupWithResponse(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*GetFormFieldPlacementConditionGroupResponse, error) {
+	rsp, err := c.GetFormFieldPlacementConditionGroup(ctx, id, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetFormFieldPlacementConditionGroupResponse(rsp)
+}
+
+// UpdateFormFieldPlacementConditionGroupWithBodyWithResponse Update a Form Field Placement Condition Group
+//
+// Update a specific form_field_placement_condition_group by id.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PUT /v1/form_field_placement_condition_groups/{id} (the `UpdateFormFieldPlacementConditionGroup` operationId).
+func (c *ClientWithResponses) UpdateFormFieldPlacementConditionGroupWithBodyWithResponse(ctx context.Context, id ID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateFormFieldPlacementConditionGroupResponse, error) {
+	rsp, err := c.UpdateFormFieldPlacementConditionGroupWithBody(ctx, id, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateFormFieldPlacementConditionGroupResponse(rsp)
+}
+
+// UpdateFormFieldPlacementConditionGroupWithApplicationVndAPIPlusJSONBodyWithResponse Update a Form Field Placement Condition Group
+//
+// Update a specific form_field_placement_condition_group by id.
+//
+// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PUT /v1/form_field_placement_condition_groups/{id} (the `UpdateFormFieldPlacementConditionGroup` operationId).
+func (c *ClientWithResponses) UpdateFormFieldPlacementConditionGroupWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, id ID, body UpdateFormFieldPlacementConditionGroupApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateFormFieldPlacementConditionGroupResponse, error) {
+	rsp, err := c.UpdateFormFieldPlacementConditionGroupWithApplicationVndAPIPlusJSONBody(ctx, id, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateFormFieldPlacementConditionGroupResponse(rsp)
+}
+
 // DeleteFormFieldPlacementConditionWithResponse Delete a Form Set Condition
 //
 // Delete a specific form_field_placement_condition by id.
@@ -205861,6 +208976,51 @@ func (c *ClientWithResponses) UpdateFormFieldPlacementConditionWithApplicationVn
 		return nil, err
 	}
 	return ParseUpdateFormFieldPlacementConditionResponse(rsp)
+}
+
+// ListFormFieldPlacementConditionGroupsWithResponse List Form Field Placement Condition Groups
+//
+// List form_field_placement_condition_groups, each with its conditions
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/form_field_placements/{form_field_placement_id}/condition_groups (the `ListFormFieldPlacementConditionGroups` operationId).
+func (c *ClientWithResponses) ListFormFieldPlacementConditionGroupsWithResponse(ctx context.Context, formFieldPlacementID string, params *ListFormFieldPlacementConditionGroupsParams, reqEditors ...RequestEditorFn) (*ListFormFieldPlacementConditionGroupsResponse, error) {
+	rsp, err := c.ListFormFieldPlacementConditionGroups(ctx, formFieldPlacementID, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseListFormFieldPlacementConditionGroupsResponse(rsp)
+}
+
+// CreateFormFieldPlacementConditionGroupWithBodyWithResponse Creates a Form Field Placement Condition Group
+//
+// Creates a new form_field_placement_condition_group. Add conditions to it by creating form_field_placement_conditions with its condition_group_id.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/form_field_placements/{form_field_placement_id}/condition_groups (the `CreateFormFieldPlacementConditionGroup` operationId).
+func (c *ClientWithResponses) CreateFormFieldPlacementConditionGroupWithBodyWithResponse(ctx context.Context, formFieldPlacementID string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateFormFieldPlacementConditionGroupResponse, error) {
+	rsp, err := c.CreateFormFieldPlacementConditionGroupWithBody(ctx, formFieldPlacementID, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateFormFieldPlacementConditionGroupResponse(rsp)
+}
+
+// CreateFormFieldPlacementConditionGroupWithApplicationVndAPIPlusJSONBodyWithResponse Creates a Form Field Placement Condition Group
+//
+// Creates a new form_field_placement_condition_group. Add conditions to it by creating form_field_placement_conditions with its condition_group_id.
+//
+// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/form_field_placements/{form_field_placement_id}/condition_groups (the `CreateFormFieldPlacementConditionGroup` operationId).
+func (c *ClientWithResponses) CreateFormFieldPlacementConditionGroupWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, formFieldPlacementID string, body CreateFormFieldPlacementConditionGroupApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateFormFieldPlacementConditionGroupResponse, error) {
+	rsp, err := c.CreateFormFieldPlacementConditionGroupWithApplicationVndAPIPlusJSONBody(ctx, formFieldPlacementID, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateFormFieldPlacementConditionGroupResponse(rsp)
 }
 
 // ListFormFieldPlacementConditionsWithResponse List Form Set Conditions
@@ -208673,6 +211833,94 @@ func (c *ClientWithResponses) CreateIncidentSubStatusWithApplicationVndAPIPlusJS
 		return nil, err
 	}
 	return ParseCreateIncidentSubStatusResponse(rsp)
+}
+
+// ListInvestigationsWithResponse Lists AI SRE investigations
+//
+// Investigations on alerts and incidents the caller can read, newest first.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/investigations (the `ListInvestigations` operationId).
+func (c *ClientWithResponses) ListInvestigationsWithResponse(ctx context.Context, params *ListInvestigationsParams, reqEditors ...RequestEditorFn) (*ListInvestigationsResponse, error) {
+	rsp, err := c.ListInvestigations(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseListInvestigationsResponse(rsp)
+}
+
+// CreateInvestigationWithBodyWithResponse Starts an AI SRE investigation
+//
+// Starts an investigation on an alert or incident you can update, or returns the one already running.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/investigations (the `CreateInvestigation` operationId).
+func (c *ClientWithResponses) CreateInvestigationWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateInvestigationResponse, error) {
+	rsp, err := c.CreateInvestigationWithBody(ctx, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateInvestigationResponse(rsp)
+}
+
+// CreateInvestigationWithApplicationVndAPIPlusJSONBodyWithResponse Starts an AI SRE investigation
+//
+// Starts an investigation on an alert or incident you can update, or returns the one already running.
+//
+// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/investigations (the `CreateInvestigation` operationId).
+func (c *ClientWithResponses) CreateInvestigationWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, body CreateInvestigationApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateInvestigationResponse, error) {
+	rsp, err := c.CreateInvestigationWithApplicationVndAPIPlusJSONBody(ctx, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateInvestigationResponse(rsp)
+}
+
+// GetInvestigationWithResponse Retrieves an AI SRE investigation
+//
+// The verdict, hypotheses, evidence, causal chain and open questions.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/investigations/{id} (the `GetInvestigation` operationId).
+func (c *ClientWithResponses) GetInvestigationWithResponse(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*GetInvestigationResponse, error) {
+	rsp, err := c.GetInvestigation(ctx, id, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetInvestigationResponse(rsp)
+}
+
+// CancelInvestigationWithResponse Cancels an AI SRE investigation
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/investigations/{id}/cancel (the `CancelInvestigation` operationId).
+func (c *ClientWithResponses) CancelInvestigationWithResponse(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*CancelInvestigationResponse, error) {
+	rsp, err := c.CancelInvestigation(ctx, id, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCancelInvestigationResponse(rsp)
+}
+
+// GetInvestigationProgressWithResponse Retrieves AI SRE investigation progress
+//
+// Returns immediately with steps and tool calls recorded after the cursor. Poll with after=next_cursor until done is true.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/investigations/{id}/progress (the `GetInvestigationProgress` operationId).
+func (c *ClientWithResponses) GetInvestigationProgressWithResponse(ctx context.Context, id ID, params *GetInvestigationProgressParams, reqEditors ...RequestEditorFn) (*GetInvestigationProgressResponse, error) {
+	rsp, err := c.GetInvestigationProgress(ctx, id, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetInvestigationProgressResponse(rsp)
 }
 
 // GetIPAllowlistWithResponse Retrieves the organization's browser IP allowlist
@@ -212716,6 +215964,51 @@ func (c *ClientWithResponses) GetCurrentUserWithResponse(ctx context.Context, re
 	return ParseGetCurrentUserResponse(rsp)
 }
 
+// GetCurrentUserNotificationSettingsWithResponse Retrieves the current user's notification settings
+//
+// Retrieves the authenticated user's notification settings, including the current mute state.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/users/me/notification_settings (the `GetCurrentUserNotificationSettings` operationId).
+func (c *ClientWithResponses) GetCurrentUserNotificationSettingsWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*GetCurrentUserNotificationSettingsResponse, error) {
+	rsp, err := c.GetCurrentUserNotificationSettings(ctx, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetCurrentUserNotificationSettingsResponse(rsp)
+}
+
+// UpdateCurrentUserNotificationSettingsWithBodyWithResponse Updates the current user's notification settings
+//
+// Sets, replaces, or clears the authenticated user's notification mute. Muting suppresses alert notifications on every channel until mute_until.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PATCH /v1/users/me/notification_settings (the `UpdateCurrentUserNotificationSettings` operationId).
+func (c *ClientWithResponses) UpdateCurrentUserNotificationSettingsWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateCurrentUserNotificationSettingsResponse, error) {
+	rsp, err := c.UpdateCurrentUserNotificationSettingsWithBody(ctx, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateCurrentUserNotificationSettingsResponse(rsp)
+}
+
+// UpdateCurrentUserNotificationSettingsWithApplicationVndAPIPlusJSONBodyWithResponse Updates the current user's notification settings
+//
+// Sets, replaces, or clears the authenticated user's notification mute. Muting suppresses alert notifications on every channel until mute_until.
+//
+// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PATCH /v1/users/me/notification_settings (the `UpdateCurrentUserNotificationSettings` operationId).
+func (c *ClientWithResponses) UpdateCurrentUserNotificationSettingsWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, body UpdateCurrentUserNotificationSettingsApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateCurrentUserNotificationSettingsResponse, error) {
+	rsp, err := c.UpdateCurrentUserNotificationSettingsWithApplicationVndAPIPlusJSONBody(ctx, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateCurrentUserNotificationSettingsResponse(rsp)
+}
+
 // DeleteUserWithResponse Delete an user
 //
 // Delete a specific user by id.
@@ -214127,17 +217420,60 @@ func ParseStreamAiChatResponse(rsp *http.Response) (*StreamAiChatResponse, error
 	return response, nil
 }
 
-// ParseGetV1AiConnectorAuditEventsResponse parses an HTTP response from a GetV1AiConnectorAuditEventsWithResponse call
-func ParseGetV1AiConnectorAuditEventsResponse(rsp *http.Response) (*GetV1AiConnectorAuditEventsResponse, error) {
+// ParseListAiToolCallEventsResponse parses an HTTP response from a ListAiToolCallEventsWithResponse call
+func ParseListAiToolCallEventsResponse(rsp *http.Response) (*ListAiToolCallEventsResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
 	}
 
-	response := &GetV1AiConnectorAuditEventsResponse{
+	response := &ListAiToolCallEventsResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Data []struct {
+				Attributes *struct {
+					AiAutomationRunID nullable.Nullable[string] `json:"ai_automation_run_id,omitempty"`
+					AiSessionID       nullable.Nullable[string] `json:"ai_session_id,omitempty"`
+					ArgumentKeys      []string                  `json:"argument_keys,omitempty"`
+					Automatic         *bool                     `json:"automatic,omitempty"`
+					ConnectionName    nullable.Nullable[string] `json:"connection_name,omitempty"`
+					DurationMs        nullable.Nullable[int]    `json:"duration_ms,omitempty"`
+					OccurredAt        *time.Time                `json:"occurred_at,omitempty"`
+					Outcome           *string                   `json:"outcome,omitempty"`
+					ProviderType      nullable.Nullable[string] `json:"provider_type,omitempty"`
+					RemoteMcpSourceID nullable.Nullable[string] `json:"remote_mcp_source_id,omitempty"`
+					RiskClass         *string                   `json:"risk_class,omitempty"`
+					Surface           *string                   `json:"surface,omitempty"`
+					ToolName          *string                   `json:"tool_name,omitempty"`
+					TriggerRecordID   nullable.Nullable[string] `json:"trigger_record_id,omitempty"`
+					TriggerRecordType nullable.Nullable[string] `json:"trigger_record_type,omitempty"`
+					UserEmail         nullable.Nullable[string] `json:"user_email,omitempty"`
+					UserID            nullable.Nullable[int]    `json:"user_id,omitempty"`
+					UserName          nullable.Nullable[string] `json:"user_name,omitempty"`
+				} `json:"attributes,omitempty"`
+				ID   *string                                                               `json:"id,omitempty"`
+				Type *ListAiToolCallEvents200ApplicationVndAPIPlusJSONResponseBodyDataType `json:"type,omitempty"`
+			} `json:"data,omitempty"`
+			Meta map[string]interface{} `json:"meta,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorsList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON400 = &dest
+
 	}
 
 	return response, nil
@@ -216802,6 +220138,13 @@ func ParseDeleteCatalogEntityResponse(rsp *http.Response) (*DeleteCatalogEntityR
 		}
 		response.ApplicationVndAPIJSON404 = &dest
 
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest ErrorsList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON422 = &dest
+
 	}
 
 	return response, nil
@@ -217363,6 +220706,13 @@ func ParseDeleteCatalogResponse(rsp *http.Response) (*DeleteCatalogResponse, err
 			return nil, err
 		}
 		response.ApplicationVndAPIJSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest ErrorsList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON422 = &dest
 
 	}
 
@@ -221005,6 +224355,112 @@ func ParseUpdateFormFieldOptionResponse(rsp *http.Response) (*UpdateFormFieldOpt
 	return response, nil
 }
 
+// ParseDeleteFormFieldPlacementConditionGroupResponse parses an HTTP response from a DeleteFormFieldPlacementConditionGroupWithResponse call
+func ParseDeleteFormFieldPlacementConditionGroupResponse(rsp *http.Response) (*DeleteFormFieldPlacementConditionGroupResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &DeleteFormFieldPlacementConditionGroupResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest FormFieldPlacementConditionGroupResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorsList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest ErrorsList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON422 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetFormFieldPlacementConditionGroupResponse parses an HTTP response from a GetFormFieldPlacementConditionGroupWithResponse call
+func ParseGetFormFieldPlacementConditionGroupResponse(rsp *http.Response) (*GetFormFieldPlacementConditionGroupResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetFormFieldPlacementConditionGroupResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest FormFieldPlacementConditionGroupResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorsList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON404 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseUpdateFormFieldPlacementConditionGroupResponse parses an HTTP response from a UpdateFormFieldPlacementConditionGroupWithResponse call
+func ParseUpdateFormFieldPlacementConditionGroupResponse(rsp *http.Response) (*UpdateFormFieldPlacementConditionGroupResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &UpdateFormFieldPlacementConditionGroupResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest FormFieldPlacementConditionGroupResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorsList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON404 = &dest
+
+	}
+
+	return response, nil
+}
+
 // ParseDeleteFormFieldPlacementConditionResponse parses an HTTP response from a DeleteFormFieldPlacementConditionWithResponse call
 func ParseDeleteFormFieldPlacementConditionResponse(rsp *http.Response) (*DeleteFormFieldPlacementConditionResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
@@ -221098,6 +224554,72 @@ func ParseUpdateFormFieldPlacementConditionResponse(rsp *http.Response) (*Update
 			return nil, err
 		}
 		response.ApplicationVndAPIJSON404 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseListFormFieldPlacementConditionGroupsResponse parses an HTTP response from a ListFormFieldPlacementConditionGroupsWithResponse call
+func ParseListFormFieldPlacementConditionGroupsResponse(rsp *http.Response) (*ListFormFieldPlacementConditionGroupsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ListFormFieldPlacementConditionGroupsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest FormFieldPlacementConditionGroupList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseCreateFormFieldPlacementConditionGroupResponse parses an HTTP response from a CreateFormFieldPlacementConditionGroupWithResponse call
+func ParseCreateFormFieldPlacementConditionGroupResponse(rsp *http.Response) (*CreateFormFieldPlacementConditionGroupResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CreateFormFieldPlacementConditionGroupResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
+		var dest FormFieldPlacementConditionGroupResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON201 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorsList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest ErrorsList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON422 = &dest
 
 	}
 
@@ -225460,6 +228982,206 @@ func ParseCreateIncidentSubStatusResponse(rsp *http.Response) (*CreateIncidentSu
 			return nil, err
 		}
 		response.ApplicationVndAPIJSON401 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseListInvestigationsResponse parses an HTTP response from a ListInvestigationsWithResponse call
+func ParseListInvestigationsResponse(rsp *http.Response) (*ListInvestigationsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ListInvestigationsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest InvestigationList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest ErrorsList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest ErrorsList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON422 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseCreateInvestigationResponse parses an HTTP response from a CreateInvestigationWithResponse call
+func ParseCreateInvestigationResponse(rsp *http.Response) (*CreateInvestigationResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CreateInvestigationResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 202:
+		var dest Investigation
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON202 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest ErrorsList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorsList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest ErrorsList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON409 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest ErrorsList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON422 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetInvestigationResponse parses an HTTP response from a GetInvestigationWithResponse call
+func ParseGetInvestigationResponse(rsp *http.Response) (*GetInvestigationResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetInvestigationResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest Investigation
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorsList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON404 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseCancelInvestigationResponse parses an HTTP response from a CancelInvestigationWithResponse call
+func ParseCancelInvestigationResponse(rsp *http.Response) (*CancelInvestigationResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CancelInvestigationResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest Investigation
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest ErrorsList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest ErrorsList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON409 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetInvestigationProgressResponse parses an HTTP response from a GetInvestigationProgressWithResponse call
+func ParseGetInvestigationProgressResponse(rsp *http.Response) (*GetInvestigationProgressResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetInvestigationProgressResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest InvestigationProgress
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorsList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON400 = &dest
 
 	}
 
@@ -232415,6 +236137,86 @@ func ParseGetCurrentUserResponse(rsp *http.Response) (*GetCurrentUserResponse, e
 			return nil, err
 		}
 		response.ApplicationVndAPIJSON401 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetCurrentUserNotificationSettingsResponse parses an HTTP response from a GetCurrentUserNotificationSettingsWithResponse call
+func ParseGetCurrentUserNotificationSettingsResponse(rsp *http.Response) (*GetCurrentUserNotificationSettingsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetCurrentUserNotificationSettingsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest UserNotificationSettingsResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorsList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON401 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseUpdateCurrentUserNotificationSettingsResponse parses an HTTP response from a UpdateCurrentUserNotificationSettingsWithResponse call
+func ParseUpdateCurrentUserNotificationSettingsResponse(rsp *http.Response) (*UpdateCurrentUserNotificationSettingsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &UpdateCurrentUserNotificationSettingsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest UserNotificationSettingsResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorsList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorsList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest ErrorsList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON422 = &dest
 
 	}
 
