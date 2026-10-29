@@ -23,6 +23,17 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
+  go-proxy:
+    needs: release-please
+    if: needs.release-please.outputs.release_created == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      # the Go module proxy (and so pkg.go.dev and `go get @latest`) only picks up a new tag when it's first requested
+      - name: Fetch release from the Go module proxy
+        env:
+          TAG: ${{ needs.release-please.outputs.tag_name }}
+        run: curl -fsS "https://proxy.golang.org/github.com/${GITHUB_REPOSITORY}/@v/${TAG}.info"
+
   openapi-diff:
     needs: release-please
     if: needs.release-please.outputs.release_created == 'true'
