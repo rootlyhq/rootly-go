@@ -1,25 +1,42 @@
-name: Release Drafter
+name: Release Please
 
 on:
   push:
     branches:
       - master
-  workflow_dispatch: {}
 
 permissions:
   contents: read
 
 jobs:
-  update_release_draft:
+  release-please:
     permissions:
       contents: write
       pull-requests: write
     runs-on: ubuntu-latest
+    outputs:
+      release_created: ${{ steps.release.outputs.release_created }}
+      tag_name: ${{ steps.release.outputs.tag_name }}
+    steps:
+      - uses: googleapis/release-please-action@45996ed1f6d02564a971a2fa1b5860e934307cf7 # v5.0.0
+        id: release
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+  openapi-diff:
+    needs: release-please
+    if: needs.release-please.outputs.release_created == 'true'
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    env:
+      TAG: ${{ needs.release-please.outputs.tag_name }}
     steps:
       - name: Checkout Repository
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           fetch-depth: 0
+          ref: ${{ needs.release-please.outputs.tag_name }}
 
       - name: Install oasdiff
         env:
@@ -37,22 +54,22 @@ jobs:
             "https://github.com/speakeasy-api/openapi/releases/download/${SPEAKEASY_OPENAPI_VERSION}/openapi_Linux_x86_64.tar.gz"
           tar -xzf /tmp/openapi.tar.gz -C /usr/local/bin openapi
 
-      - name: Generate OpenAPI diff since last release
+      - name: Generate OpenAPI diff since previous release
         run: |
-          LATEST_TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "")
-          if [ -n "$LATEST_TAG" ]; then
-            git show "${LATEST_TAG}:overlay.yaml" > /tmp/base-overlay.yaml 2>/dev/null || cp overlay.yaml /tmp/base-overlay.yaml
-            if git show "${LATEST_TAG}:.vendored/rootly-api.json" > /tmp/base-swagger.json 2>/dev/null || \
-               git show "${LATEST_TAG}:.vendored/rootly-api/swagger.json" > /tmp/base-swagger.json 2>/dev/null; then
+          PREVIOUS_TAG=$(git describe --tags --abbrev=0 "${TAG}^" 2>/dev/null || echo "")
+          if [ -n "$PREVIOUS_TAG" ]; then
+            git show "${PREVIOUS_TAG}:overlay.yaml" > /tmp/base-overlay.yaml 2>/dev/null || cp overlay.yaml /tmp/base-overlay.yaml
+            if git show "${PREVIOUS_TAG}:.vendored/rootly-api.json" > /tmp/base-swagger.json 2>/dev/null || \
+               git show "${PREVIOUS_TAG}:.vendored/rootly-api/swagger.json" > /tmp/base-swagger.json 2>/dev/null; then
               openapi overlay apply /tmp/base-overlay.yaml /tmp/base-swagger.json > /tmp/base-overlay-applied.json
-              openapi overlay apply overlay.yaml .vendored/rootly-api.json > /tmp/pr-overlay-applied.json
-              CHANGELOG=$(oasdiff changelog --format markdown /tmp/base-overlay-applied.json /tmp/pr-overlay-applied.json || true)
+              openapi overlay apply overlay.yaml .vendored/rootly-api.json > /tmp/release-overlay-applied.json
+              CHANGELOG=$(oasdiff changelog --format markdown /tmp/base-overlay-applied.json /tmp/release-overlay-applied.json --severity-levels .github/oasdiff/severity-levels.txt || true)
               if [ -z "$CHANGELOG" ] || echo "$CHANGELOG" | grep -q "No changes detected"; then
                 SUMMARY="_No API changes detected._"
                 echo "OPENAPI_HAS_CHANGES=false" >> "$GITHUB_ENV"
               else
                 CHANGE_COUNT=$(echo "$CHANGELOG" | grep -c '^- ' || echo 0)
-                BREAKING_OUTPUT=$(oasdiff breaking --format text /tmp/base-overlay-applied.json /tmp/pr-overlay-applied.json 2>/dev/null || true)
+                BREAKING_OUTPUT=$(oasdiff breaking --format text /tmp/base-overlay-applied.json /tmp/release-overlay-applied.json --severity-levels .github/oasdiff/severity-levels.txt 2>/dev/null || true)
                 BREAKING_COUNT=$(echo "$BREAKING_OUTPUT" | grep -c '^error' || echo 0)
                 WARNING_COUNT=$(echo "$BREAKING_OUTPUT" | grep -c '^warning' || echo 0)
                 COUNTS="${CHANGE_COUNT} API change(s)"
@@ -65,13 +82,13 @@ jobs:
                 fi
                 SUMMARY="This release includes ${COUNTS}, via [\`oasdiff\`](https://github.com/oasdiff/oasdiff). The full changelog [can be found attached to this release](<!-- ASSET_URL -->)."
                 if [ "$BREAKING_COUNT" -gt 0 ] || [ "$WARNING_COUNT" -gt 0 ]; then
-                  BREAKING_MD=$(oasdiff breaking --format markdown /tmp/base-overlay-applied.json /tmp/pr-overlay-applied.json 2>/dev/null || true)
+                  BREAKING_MD=$(oasdiff breaking --format markdown /tmp/base-overlay-applied.json /tmp/release-overlay-applied.json --severity-levels .github/oasdiff/severity-levels.txt 2>/dev/null || true)
                   SUMMARY=$(printf '%s\n\n<details>\n<summary>Breaking and potentially breaking changes</summary>\n\n%s\n\n</details>' "$SUMMARY" "$BREAKING_MD")
                 fi
                 echo "OPENAPI_HAS_CHANGES=true" >> "$GITHUB_ENV"
               fi
             else
-              SUMMARY="_No previous spec found for tag \`${LATEST_TAG}\`._"
+              SUMMARY="_No previous spec found for tag \`${PREVIOUS_TAG}\`._"
               echo "OPENAPI_HAS_CHANGES=false" >> "$GITHUB_ENV"
             fi
           else
@@ -81,46 +98,28 @@ jobs:
           echo "$SUMMARY" > /tmp/openapi-summary.txt
           echo "${CHANGELOG:-}" > /tmp/openapi-diff.md
 
-      - id: release_drafter
-        uses: release-drafter/release-drafter@978bb0b30c5ee8cdd332ced253758157150d43f0 # v7.10.0
-        with:
-          name: next
-          tag: next
-          version: next
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Inject OpenAPI diff into release body
+      - name: Add OpenAPI diff to release
         uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
         with:
           script: |
             const fs = require('fs');
-            const releaseId = ${{ steps.release_drafter.outputs.id }};
-            const hasChanges = '${{ env.OPENAPI_HAS_CHANGES }}' === 'true';
+            const hasChanges = process.env.OPENAPI_HAS_CHANGES === 'true';
             const summary = fs.readFileSync('/tmp/openapi-summary.txt', 'utf8').trim();
+
+            const { data: release } = await github.rest.repos.getReleaseByTag({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              tag: process.env.TAG,
+            });
 
             let inlineContent = summary;
 
             if (hasChanges) {
-              const { data: assets } = await github.rest.repos.listReleaseAssets({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                release_id: releaseId,
-              });
-              const existing = assets.find(a => a.name === 'openapi-diff.md');
-              if (existing) {
-                await github.rest.repos.deleteReleaseAsset({
-                  owner: context.repo.owner,
-                  repo: context.repo.repo,
-                  asset_id: existing.id,
-                });
-              }
-
               const diff = fs.readFileSync('/tmp/openapi-diff.md', 'utf8');
               const { data: asset } = await github.rest.repos.uploadReleaseAsset({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
-                release_id: releaseId,
+                release_id: release.id,
                 name: 'openapi-diff.md',
                 data: diff,
               });
@@ -128,23 +127,18 @@ jobs:
               inlineContent = summary.replace('<!-- ASSET_URL -->', asset.browser_download_url);
             }
 
-            const { data: release } = await github.rest.repos.getRelease({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              release_id: releaseId,
-            });
-
             // GitHub's release body limit is 125,000 characters
             const GITHUB_BODY_LIMIT = 125000;
-            let newBody = release.body.replace('<!-- OPENAPI_DIFF -->', inlineContent);
+            const heading = '\n\n## OpenAPI spec\n\n';
+            let newBody = release.body + heading + inlineContent;
             if (newBody.length > GITHUB_BODY_LIMIT) {
               const fallback = inlineContent.replace(/<details>[\s\S]*<\/details>/, '_Breaking and potentially breaking changes omitted — see attached `openapi-diff.md` for details._');
-              newBody = release.body.replace('<!-- OPENAPI_DIFF -->', fallback);
+              newBody = release.body + heading + fallback;
             }
 
             await github.rest.repos.updateRelease({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              release_id: releaseId,
+              release_id: release.id,
               body: newBody,
             });
