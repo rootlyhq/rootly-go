@@ -2,10 +2,12 @@ package rootly
 
 import (
 	"context"
+	"errors"
 	"net/http"
 	"net/http/httptest"
 	"strings"
 	"testing"
+	"time"
 )
 
 func TestStreamAiChatEvents(t *testing.T) {
@@ -92,9 +94,11 @@ func TestStreamAiChatEvents_StopsEarly(t *testing.T) {
 }
 
 func TestStreamAiChatEvents_ErrorStatus(t *testing.T) {
+	const body = `{"errors":[{"title":"rate limited","status":"429"}]}`
 	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, _ *http.Request) {
-		w.WriteHeader(http.StatusUnprocessableEntity)
-		_, _ = w.Write([]byte(`{"errors":[{"title":"message is required","status":"422"}]}`))
+		w.Header().Set("Retry-After", "17")
+		w.WriteHeader(http.StatusTooManyRequests)
+		_, _ = w.Write([]byte(body))
 	}))
 	defer server.Close()
 
@@ -107,8 +111,68 @@ func TestStreamAiChatEvents_ErrorStatus(t *testing.T) {
 	if err == nil {
 		t.Fatal("expected an error")
 	}
-	if !strings.Contains(err.Error(), "422") || !strings.Contains(err.Error(), "message is required") {
-		t.Errorf("error = %q, want it to contain the status and body", err)
+	var statusErr *AiChatStreamStatusError
+	if !errors.As(err, &statusErr) {
+		t.Fatalf("error type = %T, want *AiChatStreamStatusError", err)
+	}
+	if statusErr.StatusCode != http.StatusTooManyRequests {
+		t.Errorf("StatusCode = %d, want %d", statusErr.StatusCode, http.StatusTooManyRequests)
+	}
+	if got := statusErr.Header.Get("Retry-After"); got != "17" {
+		t.Errorf("Retry-After = %q, want %q", got, "17")
+	}
+	if got := string(statusErr.Body); got != body {
+		t.Errorf("Body = %q, want %q", got, body)
+	}
+	if got, want := err.Error(), "unexpected status 429 Too Many Requests: "+body; got != want {
+		t.Errorf("Error() = %q, want %q", got, want)
+	}
+	if got, ok := statusErr.RetryAfter(); !ok || got != 17*time.Second {
+		t.Errorf("RetryAfter() = %v, %v, want 17s, true", got, ok)
+	}
+}
+
+func TestAiChatStreamStatusError_RetryAfter(t *testing.T) {
+	futureDate := time.Now().Add(30 * time.Second).UTC().Format(http.TimeFormat)
+	pastDate := time.Now().Add(-time.Minute).UTC().Format(http.TimeFormat)
+
+	tests := []struct {
+		name      string
+		value     string
+		want      time.Duration
+		wantOK    bool
+		minimum   time.Duration
+		maximum   time.Duration
+		setHeader bool
+	}{
+		{name: "seconds", value: "17", want: 17 * time.Second, wantOK: true, setHeader: true},
+		{name: "HTTP-date", value: futureDate, wantOK: true, minimum: 28 * time.Second, maximum: 30 * time.Second, setHeader: true},
+		{name: "past date", value: pastDate, want: 0, wantOK: true, setHeader: true},
+		{name: "missing", wantOK: false},
+		{name: "garbage", value: "not a date", wantOK: false, setHeader: true},
+		{name: "signed seconds", value: "+17", wantOK: false, setHeader: true},
+	}
+
+	for _, test := range tests {
+		t.Run(test.name, func(t *testing.T) {
+			statusErr := &AiChatStreamStatusError{Header: make(http.Header)}
+			if test.setHeader {
+				statusErr.Header.Set("Retry-After", test.value)
+			}
+			got, ok := statusErr.RetryAfter()
+			if ok != test.wantOK {
+				t.Fatalf("RetryAfter() ok = %v, want %v", ok, test.wantOK)
+			}
+			if test.name == "HTTP-date" {
+				if got < test.minimum || got > test.maximum {
+					t.Errorf("RetryAfter() = %v, want between %v and %v", got, test.minimum, test.maximum)
+				}
+				return
+			}
+			if got != test.want {
+				t.Errorf("RetryAfter() = %v, want %v", got, test.want)
+			}
+		})
 	}
 }
 
