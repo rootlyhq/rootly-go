@@ -3,6 +3,7 @@ package rootly
 import (
 	"context"
 	"errors"
+	"fmt"
 	"net/http"
 	"net/http/httptest"
 	"strings"
@@ -130,8 +131,12 @@ func TestStreamAiChatEvents_ErrorStatus(t *testing.T) {
 
 func TestStreamAiChatEvents_RetryAfter(t *testing.T) {
 	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, _ *http.Request) {
+		w.Header().Set("Content-Type", "application/json")
 		w.Header().Set("Retry-After", "30")
+		w.Header().Set("X-RateLimit-Limit", "60")
+		w.Header().Set("X-RateLimit-Remaining", "0")
 		w.WriteHeader(http.StatusTooManyRequests)
+		_, _ = w.Write([]byte(`{"errors":[{"title":"AI chat rate limit exceeded. Maximum 60 requests per minute.","status":"429"}]}`))
 	}))
 	defer server.Close()
 
@@ -141,16 +146,51 @@ func TestStreamAiChatEvents_RetryAfter(t *testing.T) {
 	}
 
 	_, err = client.StreamAiChatEvents(context.Background(), &StreamAiChatParams{})
+	if err == nil {
+		t.Fatal("expected an error")
+	}
+	err = fmt.Errorf("stream: %w", err)
 
 	var statusErr *AiChatStreamStatusError
 	if !errors.As(err, &statusErr) {
-		t.Fatalf("error = %v, want *AiChatStreamStatusError", err)
+		t.Fatalf("errors.As(%v) = false, want *AiChatStreamStatusError", err)
 	}
 	if statusErr.StatusCode != http.StatusTooManyRequests {
 		t.Errorf("StatusCode = %d, want %d", statusErr.StatusCode, http.StatusTooManyRequests)
 	}
 	if got, ok := statusErr.RetryAfter(); !ok || got != 30*time.Second {
 		t.Errorf("RetryAfter() = %v, %v, want 30s, true", got, ok)
+	}
+	if got := statusErr.Header.Get("X-RateLimit-Remaining"); got != "0" {
+		t.Errorf("X-RateLimit-Remaining = %q, want %q", got, "0")
+	}
+	if !strings.Contains(statusErr.Error(), "429 Too Many Requests") || !strings.Contains(statusErr.Error(), "AI chat rate limit exceeded") {
+		t.Errorf("Error() = %q, want status and rate-limit message", statusErr.Error())
+	}
+}
+
+func TestStreamAiChatEvents_RetryAfterDate(t *testing.T) {
+	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, _ *http.Request) {
+		w.Header().Set("Retry-After", time.Now().Add(90*time.Second).UTC().Format(http.TimeFormat))
+		w.WriteHeader(http.StatusServiceUnavailable)
+	}))
+	defer server.Close()
+
+	client, err := NewClient(server.URL)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	_, err = client.StreamAiChatEvents(context.Background(), &StreamAiChatParams{})
+	var statusErr *AiChatStreamStatusError
+	if !errors.As(err, &statusErr) {
+		t.Fatalf("error = %v, want *AiChatStreamStatusError", err)
+	}
+	if statusErr.StatusCode != http.StatusServiceUnavailable {
+		t.Errorf("StatusCode = %d, want %d", statusErr.StatusCode, http.StatusServiceUnavailable)
+	}
+	if got, ok := statusErr.RetryAfter(); !ok || got <= 0 || got > 90*time.Second {
+		t.Errorf("RetryAfter() = %v, %v, want > 0 and <= 90s, true", got, ok)
 	}
 }
 
@@ -163,8 +203,11 @@ func TestAiChatStreamStatusError_RetryAfter(t *testing.T) {
 	}{
 		{name: "absent"},
 		{name: "seconds", header: "120", want: 2 * time.Minute, wantOK: true},
+		{name: "zero", header: "0", want: 0, wantOK: true},
+		{name: "whitespace", header: " 45 ", want: 45 * time.Second, wantOK: true},
 		{name: "date in the past", header: "Wed, 21 Oct 2015 07:28:00 GMT", want: 0, wantOK: true},
 		{name: "negative", header: "-1"},
+		{name: "overflow", header: "9300000000"},
 		{name: "invalid", header: "soon"},
 	}
 
@@ -191,6 +234,42 @@ func TestAiChatStreamStatusError_RetryAfter(t *testing.T) {
 			t.Errorf("RetryAfter() = %v, %v, want about 1h, true", got, ok)
 		}
 	})
+}
+
+func TestAiChatStreamStatusError_Error(t *testing.T) {
+	tests := []struct {
+		name       string
+		statusCode int
+		body       string
+		want       string
+	}{
+		{
+			name:       "status and body",
+			statusCode: 422,
+			body:       `{"errors":[]}`,
+			want:       `unexpected status 422 Unprocessable Entity: {"errors":[]}`,
+		},
+		{
+			name:       "unknown status and trimmed body",
+			statusCode: 599,
+			body:       " oops\n",
+			want:       "unexpected status 599: oops",
+		},
+		{
+			name:       "empty body",
+			statusCode: 502,
+			want:       "unexpected status 502 Bad Gateway",
+		},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			e := &AiChatStreamStatusError{StatusCode: tt.statusCode, Body: []byte(tt.body)}
+			if got := e.Error(); got != tt.want {
+				t.Errorf("Error() = %q, want %q", got, tt.want)
+			}
+		})
+	}
 }
 
 func TestReadAiChatStreamEvents_MultiLineData(t *testing.T) {

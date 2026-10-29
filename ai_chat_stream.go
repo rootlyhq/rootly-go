@@ -4,9 +4,9 @@ import (
 	"bufio"
 	"context"
 	"encoding/json"
-	"fmt"
 	"io"
 	"iter"
+	"math"
 	"net/http"
 	"strconv"
 	"strings"
@@ -108,16 +108,24 @@ type AiChatStreamStatusError struct {
 }
 
 func (e *AiChatStreamStatusError) Error() string {
-	return fmt.Sprintf("unexpected status %d %s: %s", e.StatusCode, http.StatusText(e.StatusCode), strings.TrimSpace(string(e.Body)))
+	status := strconv.Itoa(e.StatusCode)
+	if text := http.StatusText(e.StatusCode); text != "" {
+		status += " " + text
+	}
+	body := strings.TrimSpace(string(e.Body))
+	if body == "" {
+		return "unexpected status " + status
+	}
+	return "unexpected status " + status + ": " + body
 }
 
-// RetryAfter returns how long to wait before retrying, from the `Retry-After` header, or `false` if it is absent or invalid.
+// RetryAfter returns how long to wait before retrying, from the `Retry-After` header, or `false` if it is absent or invalid. Negative or overflowing values are invalid.
 func (e *AiChatStreamStatusError) RetryAfter() (time.Duration, bool) {
-	value := e.Header.Get("Retry-After")
+	value := strings.TrimSpace(e.Header.Get("Retry-After"))
 	if value == "" {
 		return 0, false
 	}
-	if seconds, err := strconv.Atoi(value); err == nil && seconds >= 0 {
+	if seconds, err := strconv.ParseInt(value, 10, 64); err == nil && seconds >= 0 && seconds <= math.MaxInt64/int64(time.Second) {
 		return time.Duration(seconds) * time.Second, true
 	}
 	if date, err := http.ParseTime(value); err == nil {
