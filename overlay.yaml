@@ -1281,6 +1281,10 @@ actions:
   - target: $.components.schemas.schedule_rotation.properties.active_time_type.enum
     remove: true
 
+  # keep `system_role` as `*string`
+  - target: $.components.schemas.on_call_role.properties.system_role.enum
+    remove: true
+
   # the API still validates the status page `slug` format and length
   - target: $.components.schemas.new_status_page.properties.data.properties.attributes.properties.slug.maxLength
     remove: true

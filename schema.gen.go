@@ -31136,33 +31136,6 @@ func (e OnCallRoleServicesPermissions) Valid() bool {
 	}
 }
 
-// Defines values for OnCallRoleSystemRole.
-const (
-	OnCallRoleSystemRoleAdmin    OnCallRoleSystemRole = "admin"
-	OnCallRoleSystemRoleCustom   OnCallRoleSystemRole = "custom"
-	OnCallRoleSystemRoleNoAccess OnCallRoleSystemRole = "no_access"
-	OnCallRoleSystemRoleObserver OnCallRoleSystemRole = "observer"
-	OnCallRoleSystemRoleUser     OnCallRoleSystemRole = "user"
-)
-
-// Valid indicates whether the value is a known member of the OnCallRoleSystemRole enum.
-func (e OnCallRoleSystemRole) Valid() bool {
-	switch e {
-	case OnCallRoleSystemRoleAdmin:
-		return true
-	case OnCallRoleSystemRoleCustom:
-		return true
-	case OnCallRoleSystemRoleNoAccess:
-		return true
-	case OnCallRoleSystemRoleObserver:
-		return true
-	case OnCallRoleSystemRoleUser:
-		return true
-	default:
-		return false
-	}
-}
-
 // Defines values for OnCallRoleWebhooksPermissions.
 const (
 	OnCallRoleWebhooksPermissionsCreate OnCallRoleWebhooksPermissions = "create"
@@ -71168,7 +71141,7 @@ type OnCallRole struct {
 	Slug *string `json:"slug,omitempty"`
 
 	// SystemRole The kind of role
-	SystemRole           *OnCallRoleSystemRole            `json:"system_role,omitempty"`
+	SystemRole           *string                          `json:"system_role,omitempty"`
 	UpdatedAt            string                           `json:"updated_at"`
 	WebhooksPermissions  []OnCallRoleWebhooksPermissions  `json:"webhooks_permissions,omitempty"`
 	WorkflowsPermissions []OnCallRoleWorkflowsPermissions `json:"workflows_permissions,omitempty"`
@@ -71242,9 +71215,6 @@ type OnCallRoleSchedulesPermissions string
 
 // OnCallRoleServicesPermissions defines model for OnCallRole.ServicesPermissions.
 type OnCallRoleServicesPermissions string
-
-// OnCallRoleSystemRole The kind of role
-type OnCallRoleSystemRole string
 
 // OnCallRoleWebhooksPermissions defines model for OnCallRole.WebhooksPermissions.
 type OnCallRoleWebhooksPermissions string
