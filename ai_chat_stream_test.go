@@ -2,10 +2,12 @@ package rootly
 
 import (
 	"context"
+	"errors"
 	"net/http"
 	"net/http/httptest"
 	"strings"
 	"testing"
+	"time"
 )
 
 func TestStreamAiChatEvents(t *testing.T) {
@@ -110,6 +112,85 @@ func TestStreamAiChatEvents_ErrorStatus(t *testing.T) {
 	if !strings.Contains(err.Error(), "422") || !strings.Contains(err.Error(), "message is required") {
 		t.Errorf("error = %q, want it to contain the status and body", err)
 	}
+
+	var statusErr *AiChatStreamStatusError
+	if !errors.As(err, &statusErr) {
+		t.Fatalf("error = %T, want *AiChatStreamStatusError", err)
+	}
+	if statusErr.StatusCode != http.StatusUnprocessableEntity {
+		t.Errorf("StatusCode = %d, want %d", statusErr.StatusCode, http.StatusUnprocessableEntity)
+	}
+	if !strings.Contains(string(statusErr.Body), "message is required") {
+		t.Errorf("Body = %q, want it to contain the error", statusErr.Body)
+	}
+	if _, ok := statusErr.RetryAfter(); ok {
+		t.Error("RetryAfter() ok = true, want false without a Retry-After header")
+	}
+}
+
+func TestStreamAiChatEvents_RetryAfter(t *testing.T) {
+	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, _ *http.Request) {
+		w.Header().Set("Retry-After", "30")
+		w.WriteHeader(http.StatusTooManyRequests)
+	}))
+	defer server.Close()
+
+	client, err := NewClient(server.URL)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	_, err = client.StreamAiChatEvents(context.Background(), &StreamAiChatParams{})
+
+	var statusErr *AiChatStreamStatusError
+	if !errors.As(err, &statusErr) {
+		t.Fatalf("error = %v, want *AiChatStreamStatusError", err)
+	}
+	if statusErr.StatusCode != http.StatusTooManyRequests {
+		t.Errorf("StatusCode = %d, want %d", statusErr.StatusCode, http.StatusTooManyRequests)
+	}
+	if got, ok := statusErr.RetryAfter(); !ok || got != 30*time.Second {
+		t.Errorf("RetryAfter() = %v, %v, want 30s, true", got, ok)
+	}
+}
+
+func TestAiChatStreamStatusError_RetryAfter(t *testing.T) {
+	tests := []struct {
+		name   string
+		header string
+		want   time.Duration
+		wantOK bool
+	}{
+		{name: "absent"},
+		{name: "seconds", header: "120", want: 2 * time.Minute, wantOK: true},
+		{name: "date in the past", header: "Wed, 21 Oct 2015 07:28:00 GMT", want: 0, wantOK: true},
+		{name: "negative", header: "-1"},
+		{name: "invalid", header: "soon"},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			e := &AiChatStreamStatusError{Header: http.Header{}}
+			if tt.header != "" {
+				e.Header.Set("Retry-After", tt.header)
+			}
+
+			got, ok := e.RetryAfter()
+			if got != tt.want || ok != tt.wantOK {
+				t.Errorf("RetryAfter() = %v, %v, want %v, %v", got, ok, tt.want, tt.wantOK)
+			}
+		})
+	}
+
+	t.Run("date in the future", func(t *testing.T) {
+		e := &AiChatStreamStatusError{Header: http.Header{}}
+		e.Header.Set("Retry-After", time.Now().Add(time.Hour).UTC().Format(http.TimeFormat))
+
+		got, ok := e.RetryAfter()
+		if !ok || got <= 59*time.Minute || got > time.Hour {
+			t.Errorf("RetryAfter() = %v, %v, want about 1h, true", got, ok)
+		}
+	})
 }
 
 func TestReadAiChatStreamEvents_MultiLineData(t *testing.T) {
