@@ -84451,12 +84451,6 @@ type ListAlertRoutesParams struct {
 	Sort            *string `form:"sort,omitempty" json:"sort,omitempty"`
 }
 
-// GetAlertRouteParams defines parameters for GetAlertRoute.
-type GetAlertRouteParams struct {
-	// ShowNestedIDs Include the IDs of nested destinations, condition groups and conditions, for referencing them in PATCH updates or deletions
-	ShowNestedIDs *bool `form:"show_nested_ids,omitempty" json:"show_nested_ids,omitempty"`
-}
-
 // ListAlertRoutingRulesParams defines parameters for ListAlertRoutingRules.
 type ListAlertRoutingRulesParams struct {
 	Include            *string `form:"include,omitempty" json:"include,omitempty"`
@@ -109740,7 +109734,7 @@ type ClientInterface interface {
 	// Example: `GET /v1/alert_routes/{id}?show_nested_ids=true`
 	//
 	// Corresponds with GET /v1/alert_routes/{id} (the `GetAlertRoute` operationId).
-	GetAlertRoute(ctx context.Context, id ID, params *GetAlertRouteParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+	GetAlertRoute(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// PatchAlertRouteWithBody Update an alert route
 	//
@@ -117750,8 +117744,8 @@ func (c *Client) DeleteAlertRoute(ctx context.Context, id ID, reqEditors ...Requ
 // Example: `GET /v1/alert_routes/{id}?show_nested_ids=true`
 //
 // Corresponds with GET /v1/alert_routes/{id} (the `GetAlertRoute` operationId).
-func (c *Client) GetAlertRoute(ctx context.Context, id ID, params *GetAlertRouteParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetAlertRouteRequest(c.Server, id, params)
+func (c *Client) GetAlertRoute(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetAlertRouteRequest(c.Server, id)
 	if err != nil {
 		return nil, err
 	}
@@ -136549,7 +136543,7 @@ func NewDeleteAlertRouteRequest(server string, id ID) (*http.Request, error) {
 }
 
 // NewGetAlertRouteRequest constructs an http.Request for the GetAlertRoute method
-func NewGetAlertRouteRequest(server string, id ID, params *GetAlertRouteParams) (*http.Request, error) {
+func NewGetAlertRouteRequest(server string, id ID) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -136572,33 +136566,6 @@ func NewGetAlertRouteRequest(server string, id ID, params *GetAlertRouteParams) 
 	queryURL, err := serverURL.Parse(operationPath)
 	if err != nil {
 		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if params.ShowNestedIDs != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "show_nested_ids", *params.ShowNestedIDs, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "boolean", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
 	}
 
 	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
@@ -178427,7 +178394,7 @@ type ClientWithResponsesInterface interface {
 	// Returns a wrapper object for the known response body format(s).
 	//
 	// Corresponds with GET /v1/alert_routes/{id} (the `GetAlertRoute` operationId).
-	GetAlertRouteWithResponse(ctx context.Context, id ID, params *GetAlertRouteParams, reqEditors ...RequestEditorFn) (*GetAlertRouteResponse, error)
+	GetAlertRouteWithResponse(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*GetAlertRouteResponse, error)
 
 	// PatchAlertRouteWithBodyWithResponse Update an alert route
 	//
@@ -208538,8 +208505,8 @@ func (c *ClientWithResponses) DeleteAlertRouteWithResponse(ctx context.Context, 
 // Returns a wrapper object for the known response body format(s).
 //
 // Corresponds with GET /v1/alert_routes/{id} (the `GetAlertRoute` operationId).
-func (c *ClientWithResponses) GetAlertRouteWithResponse(ctx context.Context, id ID, params *GetAlertRouteParams, reqEditors ...RequestEditorFn) (*GetAlertRouteResponse, error) {
-	rsp, err := c.GetAlertRoute(ctx, id, params, reqEditors...)
+func (c *ClientWithResponses) GetAlertRouteWithResponse(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*GetAlertRouteResponse, error) {
+	rsp, err := c.GetAlertRoute(ctx, id, reqEditors...)
 	if err != nil {
 		return nil, err
 	}

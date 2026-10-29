@@ -654,6 +654,10 @@ actions:
         - data
         x-deprecated-reason: The incident bulk import API is no longer served by the Rootly API. This will be removed in a future version.
 
+  # not exposing `show_nested_ids` for now, as adding the first query parameter changes the `GetAlertRoute` signature
+  - target: $.paths['/v1/alert_routes/{id}'].get.parameters[?(@.name == "show_nested_ids")]
+    remove: true
+
   - target: $.paths.*.parameters[?(@.name == "id")].schema.anyOf
     remove: true
 
