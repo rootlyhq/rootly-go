@@ -4,11 +4,13 @@ import (
 	"bufio"
 	"context"
 	"encoding/json"
-	"fmt"
 	"io"
 	"iter"
+	"math"
 	"net/http"
+	"strconv"
 	"strings"
+	"time"
 )
 
 // AI chat stream event types sent by StreamAiChat.
@@ -97,9 +99,44 @@ type AiChatStreamDone struct {
 	Status string `json:"status"`
 }
 
+// AiChatStreamStatusError is returned by StreamAiChatEvents when the API responds with a non-2xx status, such as 401, 403 or 429.
+type AiChatStreamStatusError struct {
+	StatusCode int
+	Header     http.Header
+	// Body is the response body, usually a JSON:API `errors` document.
+	Body []byte
+}
+
+func (e *AiChatStreamStatusError) Error() string {
+	status := strconv.Itoa(e.StatusCode)
+	if text := http.StatusText(e.StatusCode); text != "" {
+		status += " " + text
+	}
+	body := strings.TrimSpace(string(e.Body))
+	if body == "" {
+		return "unexpected status " + status
+	}
+	return "unexpected status " + status + ": " + body
+}
+
+// RetryAfter returns how long to wait before retrying, from the `Retry-After` header, or `false` if it is absent or invalid. Negative or overflowing values are invalid.
+func (e *AiChatStreamStatusError) RetryAfter() (time.Duration, bool) {
+	value := strings.TrimSpace(e.Header.Get("Retry-After"))
+	if value == "" {
+		return 0, false
+	}
+	if seconds, err := strconv.ParseInt(value, 10, 64); err == nil && seconds >= 0 && seconds <= math.MaxInt64/int64(time.Second) {
+		return time.Duration(seconds) * time.Second, true
+	}
+	if date, err := http.ParseTime(value); err == nil {
+		return max(time.Until(date), 0), true
+	}
+	return 0, false
+}
+
 // StreamAiChatEvents calls StreamAiChat and returns an iterator over the Server-Sent Events in the response, as they arrive.
 //
-// A non-2xx response is returned as an error. The iterator closes the response body once iteration stops.
+// A non-2xx response is returned as an *AiChatStreamStatusError. The iterator closes the response body once iteration stops.
 func (c *Client) StreamAiChatEvents(ctx context.Context, params *StreamAiChatParams, reqEditors ...RequestEditorFn) (iter.Seq2[AiChatStreamEvent, error], error) {
 	reqEditors = append(reqEditors, func(_ context.Context, req *http.Request) error {
 		req.Header.Set("Accept", "text/event-stream")
@@ -114,7 +151,7 @@ func (c *Client) StreamAiChatEvents(ctx context.Context, params *StreamAiChatPar
 	if rsp.StatusCode < 200 || rsp.StatusCode > 299 {
 		defer func() { _ = rsp.Body.Close() }()
 		body, _ := io.ReadAll(rsp.Body)
-		return nil, fmt.Errorf("unexpected status %s: %s", rsp.Status, strings.TrimSpace(string(body)))
+		return nil, &AiChatStreamStatusError{StatusCode: rsp.StatusCode, Header: rsp.Header, Body: body}
 	}
 
 	return func(yield func(AiChatStreamEvent, error) bool) {
