@@ -1289,6 +1289,10 @@ actions:
   - target: $.components.schemas.on_call_role.properties.system_role.enum
     remove: true
 
+  # keep status page template `update_status` as `*string` in responses
+  - target: $.components.schemas.status_page_template.properties.update_status.enum
+    remove: true
+
   # the API still validates the status page `slug` format and length
   - target: $.components.schemas.new_status_page.properties.data.properties.attributes.properties.slug.maxLength
     remove: true

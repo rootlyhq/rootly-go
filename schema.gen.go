@@ -2702,108 +2702,6 @@ func (e AiSkillSource) Valid() bool {
 	}
 }
 
-// Defines values for AiSkillToolGrants0Access.
-const (
-	AiSkillToolGrants0AccessRead AiSkillToolGrants0Access = "read"
-)
-
-// Valid indicates whether the value is a known member of the AiSkillToolGrants0Access enum.
-func (e AiSkillToolGrants0Access) Valid() bool {
-	switch e {
-	case AiSkillToolGrants0AccessRead:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for AiSkillToolGrants0ToolKey.
-const (
-	AiSkillToolGrants0ToolKeyFetchURL AiSkillToolGrants0ToolKey = "fetch_url"
-)
-
-// Valid indicates whether the value is a known member of the AiSkillToolGrants0ToolKey enum.
-func (e AiSkillToolGrants0ToolKey) Valid() bool {
-	switch e {
-	case AiSkillToolGrants0ToolKeyFetchURL:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for AiSkillToolGrants1Access.
-const (
-	AiSkillToolGrants1AccessRead  AiSkillToolGrants1Access = "read"
-	AiSkillToolGrants1AccessWrite AiSkillToolGrants1Access = "write"
-)
-
-// Valid indicates whether the value is a known member of the AiSkillToolGrants1Access enum.
-func (e AiSkillToolGrants1Access) Valid() bool {
-	switch e {
-	case AiSkillToolGrants1AccessRead:
-		return true
-	case AiSkillToolGrants1AccessWrite:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for AiSkillGrantableToolsDataAttributesAccess.
-const (
-	AiSkillGrantableToolsDataAttributesAccessRead  AiSkillGrantableToolsDataAttributesAccess = "read"
-	AiSkillGrantableToolsDataAttributesAccessWrite AiSkillGrantableToolsDataAttributesAccess = "write"
-)
-
-// Valid indicates whether the value is a known member of the AiSkillGrantableToolsDataAttributesAccess enum.
-func (e AiSkillGrantableToolsDataAttributesAccess) Valid() bool {
-	switch e {
-	case AiSkillGrantableToolsDataAttributesAccessRead:
-		return true
-	case AiSkillGrantableToolsDataAttributesAccessWrite:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for AiSkillGrantableToolsDataAttributesPinnableParamsType.
-const (
-	AiSkillGrantableToolsDataAttributesPinnableParamsTypeBoolean AiSkillGrantableToolsDataAttributesPinnableParamsType = "boolean"
-	AiSkillGrantableToolsDataAttributesPinnableParamsTypeInteger AiSkillGrantableToolsDataAttributesPinnableParamsType = "integer"
-	AiSkillGrantableToolsDataAttributesPinnableParamsTypeString  AiSkillGrantableToolsDataAttributesPinnableParamsType = "string"
-)
-
-// Valid indicates whether the value is a known member of the AiSkillGrantableToolsDataAttributesPinnableParamsType enum.
-func (e AiSkillGrantableToolsDataAttributesPinnableParamsType) Valid() bool {
-	switch e {
-	case AiSkillGrantableToolsDataAttributesPinnableParamsTypeBoolean:
-		return true
-	case AiSkillGrantableToolsDataAttributesPinnableParamsTypeInteger:
-		return true
-	case AiSkillGrantableToolsDataAttributesPinnableParamsTypeString:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for AiSkillGrantableToolsDataType.
-const (
-	AiSkillGrantableToolsDataTypeAiSkillGrantableTools AiSkillGrantableToolsDataType = "ai_skill_grantable_tools"
-)
-
-// Valid indicates whether the value is a known member of the AiSkillGrantableToolsDataType enum.
-func (e AiSkillGrantableToolsDataType) Valid() bool {
-	switch e {
-	case AiSkillGrantableToolsDataTypeAiSkillGrantableTools:
-		return true
-	default:
-		return false
-	}
-}
-
 // Defines values for AiSkillListDataType.
 const (
 	AiSkillListDataTypeAiSkills AiSkillListDataType = "ai_skills"
@@ -2828,54 +2726,6 @@ const (
 func (e AiSkillResponseDataType) Valid() bool {
 	switch e {
 	case AiSkillResponseDataTypeAiSkills:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for AiSkillVersionToolGrants0Access.
-const (
-	AiSkillVersionToolGrants0AccessRead AiSkillVersionToolGrants0Access = "read"
-)
-
-// Valid indicates whether the value is a known member of the AiSkillVersionToolGrants0Access enum.
-func (e AiSkillVersionToolGrants0Access) Valid() bool {
-	switch e {
-	case AiSkillVersionToolGrants0AccessRead:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for AiSkillVersionToolGrants0ToolKey.
-const (
-	AiSkillVersionToolGrants0ToolKeyFetchURL AiSkillVersionToolGrants0ToolKey = "fetch_url"
-)
-
-// Valid indicates whether the value is a known member of the AiSkillVersionToolGrants0ToolKey enum.
-func (e AiSkillVersionToolGrants0ToolKey) Valid() bool {
-	switch e {
-	case AiSkillVersionToolGrants0ToolKeyFetchURL:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for AiSkillVersionToolGrants1Access.
-const (
-	AiSkillVersionToolGrants1AccessRead  AiSkillVersionToolGrants1Access = "read"
-	AiSkillVersionToolGrants1AccessWrite AiSkillVersionToolGrants1Access = "write"
-)
-
-// Valid indicates whether the value is a known member of the AiSkillVersionToolGrants1Access enum.
-func (e AiSkillVersionToolGrants1Access) Valid() bool {
-	switch e {
-	case AiSkillVersionToolGrants1AccessRead:
-		return true
-	case AiSkillVersionToolGrants1AccessWrite:
 		return true
 	default:
 		return false
@@ -18239,54 +18089,6 @@ func (e NewAiSkillDataAttributesSource) Valid() bool {
 	}
 }
 
-// Defines values for NewAiSkillDataAttributesToolGrants0Access.
-const (
-	NewAiSkillDataAttributesToolGrants0AccessRead NewAiSkillDataAttributesToolGrants0Access = "read"
-)
-
-// Valid indicates whether the value is a known member of the NewAiSkillDataAttributesToolGrants0Access enum.
-func (e NewAiSkillDataAttributesToolGrants0Access) Valid() bool {
-	switch e {
-	case NewAiSkillDataAttributesToolGrants0AccessRead:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for NewAiSkillDataAttributesToolGrants0ToolKey.
-const (
-	NewAiSkillDataAttributesToolGrants0ToolKeyFetchURL NewAiSkillDataAttributesToolGrants0ToolKey = "fetch_url"
-)
-
-// Valid indicates whether the value is a known member of the NewAiSkillDataAttributesToolGrants0ToolKey enum.
-func (e NewAiSkillDataAttributesToolGrants0ToolKey) Valid() bool {
-	switch e {
-	case NewAiSkillDataAttributesToolGrants0ToolKeyFetchURL:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for NewAiSkillDataAttributesToolGrants1Access.
-const (
-	NewAiSkillDataAttributesToolGrants1AccessRead  NewAiSkillDataAttributesToolGrants1Access = "read"
-	NewAiSkillDataAttributesToolGrants1AccessWrite NewAiSkillDataAttributesToolGrants1Access = "write"
-)
-
-// Valid indicates whether the value is a known member of the NewAiSkillDataAttributesToolGrants1Access enum.
-func (e NewAiSkillDataAttributesToolGrants1Access) Valid() bool {
-	switch e {
-	case NewAiSkillDataAttributesToolGrants1AccessRead:
-		return true
-	case NewAiSkillDataAttributesToolGrants1AccessWrite:
-		return true
-	default:
-		return false
-	}
-}
-
 // Defines values for NewAiSkillDataType.
 const (
 	NewAiSkillDataTypeAiSkills NewAiSkillDataType = "ai_skills"
@@ -29815,18 +29617,23 @@ func (e NewStatusPageTemplateDataAttributesKind) Valid() bool {
 
 // Defines values for NewStatusPageTemplateDataAttributesUpdateStatus.
 const (
+	NewStatusPageTemplateDataAttributesUpdateStatusCancelled     NewStatusPageTemplateDataAttributesUpdateStatus = "cancelled"
 	NewStatusPageTemplateDataAttributesUpdateStatusCompleted     NewStatusPageTemplateDataAttributesUpdateStatus = "completed"
 	NewStatusPageTemplateDataAttributesUpdateStatusIdentified    NewStatusPageTemplateDataAttributesUpdateStatus = "identified"
 	NewStatusPageTemplateDataAttributesUpdateStatusInProgress    NewStatusPageTemplateDataAttributesUpdateStatus = "in_progress"
 	NewStatusPageTemplateDataAttributesUpdateStatusInvestigating NewStatusPageTemplateDataAttributesUpdateStatus = "investigating"
 	NewStatusPageTemplateDataAttributesUpdateStatusMonitoring    NewStatusPageTemplateDataAttributesUpdateStatus = "monitoring"
+	NewStatusPageTemplateDataAttributesUpdateStatusPlanning      NewStatusPageTemplateDataAttributesUpdateStatus = "planning"
 	NewStatusPageTemplateDataAttributesUpdateStatusResolved      NewStatusPageTemplateDataAttributesUpdateStatus = "resolved"
 	NewStatusPageTemplateDataAttributesUpdateStatusScheduled     NewStatusPageTemplateDataAttributesUpdateStatus = "scheduled"
+	NewStatusPageTemplateDataAttributesUpdateStatusVerifying     NewStatusPageTemplateDataAttributesUpdateStatus = "verifying"
 )
 
 // Valid indicates whether the value is a known member of the NewStatusPageTemplateDataAttributesUpdateStatus enum.
 func (e NewStatusPageTemplateDataAttributesUpdateStatus) Valid() bool {
 	switch e {
+	case NewStatusPageTemplateDataAttributesUpdateStatusCancelled:
+		return true
 	case NewStatusPageTemplateDataAttributesUpdateStatusCompleted:
 		return true
 	case NewStatusPageTemplateDataAttributesUpdateStatusIdentified:
@@ -29837,9 +29644,13 @@ func (e NewStatusPageTemplateDataAttributesUpdateStatus) Valid() bool {
 		return true
 	case NewStatusPageTemplateDataAttributesUpdateStatusMonitoring:
 		return true
+	case NewStatusPageTemplateDataAttributesUpdateStatusPlanning:
+		return true
 	case NewStatusPageTemplateDataAttributesUpdateStatusResolved:
 		return true
 	case NewStatusPageTemplateDataAttributesUpdateStatusScheduled:
+		return true
+	case NewStatusPageTemplateDataAttributesUpdateStatusVerifying:
 		return true
 	default:
 		return false
@@ -37421,54 +37232,6 @@ func (e UpdateAiSkillDataAttributesSource) Valid() bool {
 	case UpdateAiSkillDataAttributesSourceCustom:
 		return true
 	case UpdateAiSkillDataAttributesSourceGallery:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for UpdateAiSkillDataAttributesToolGrants0Access.
-const (
-	UpdateAiSkillDataAttributesToolGrants0AccessRead UpdateAiSkillDataAttributesToolGrants0Access = "read"
-)
-
-// Valid indicates whether the value is a known member of the UpdateAiSkillDataAttributesToolGrants0Access enum.
-func (e UpdateAiSkillDataAttributesToolGrants0Access) Valid() bool {
-	switch e {
-	case UpdateAiSkillDataAttributesToolGrants0AccessRead:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for UpdateAiSkillDataAttributesToolGrants0ToolKey.
-const (
-	UpdateAiSkillDataAttributesToolGrants0ToolKeyFetchURL UpdateAiSkillDataAttributesToolGrants0ToolKey = "fetch_url"
-)
-
-// Valid indicates whether the value is a known member of the UpdateAiSkillDataAttributesToolGrants0ToolKey enum.
-func (e UpdateAiSkillDataAttributesToolGrants0ToolKey) Valid() bool {
-	switch e {
-	case UpdateAiSkillDataAttributesToolGrants0ToolKeyFetchURL:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for UpdateAiSkillDataAttributesToolGrants1Access.
-const (
-	UpdateAiSkillDataAttributesToolGrants1AccessRead  UpdateAiSkillDataAttributesToolGrants1Access = "read"
-	UpdateAiSkillDataAttributesToolGrants1AccessWrite UpdateAiSkillDataAttributesToolGrants1Access = "write"
-)
-
-// Valid indicates whether the value is a known member of the UpdateAiSkillDataAttributesToolGrants1Access enum.
-func (e UpdateAiSkillDataAttributesToolGrants1Access) Valid() bool {
-	switch e {
-	case UpdateAiSkillDataAttributesToolGrants1AccessRead:
-		return true
-	case UpdateAiSkillDataAttributesToolGrants1AccessWrite:
 		return true
 	default:
 		return false
@@ -49735,18 +49498,23 @@ func (e UpdateStatusPageTemplateDataAttributesKind) Valid() bool {
 
 // Defines values for UpdateStatusPageTemplateDataAttributesUpdateStatus.
 const (
+	UpdateStatusPageTemplateDataAttributesUpdateStatusCancelled     UpdateStatusPageTemplateDataAttributesUpdateStatus = "cancelled"
 	UpdateStatusPageTemplateDataAttributesUpdateStatusCompleted     UpdateStatusPageTemplateDataAttributesUpdateStatus = "completed"
 	UpdateStatusPageTemplateDataAttributesUpdateStatusIdentified    UpdateStatusPageTemplateDataAttributesUpdateStatus = "identified"
 	UpdateStatusPageTemplateDataAttributesUpdateStatusInProgress    UpdateStatusPageTemplateDataAttributesUpdateStatus = "in_progress"
 	UpdateStatusPageTemplateDataAttributesUpdateStatusInvestigating UpdateStatusPageTemplateDataAttributesUpdateStatus = "investigating"
 	UpdateStatusPageTemplateDataAttributesUpdateStatusMonitoring    UpdateStatusPageTemplateDataAttributesUpdateStatus = "monitoring"
+	UpdateStatusPageTemplateDataAttributesUpdateStatusPlanning      UpdateStatusPageTemplateDataAttributesUpdateStatus = "planning"
 	UpdateStatusPageTemplateDataAttributesUpdateStatusResolved      UpdateStatusPageTemplateDataAttributesUpdateStatus = "resolved"
 	UpdateStatusPageTemplateDataAttributesUpdateStatusScheduled     UpdateStatusPageTemplateDataAttributesUpdateStatus = "scheduled"
+	UpdateStatusPageTemplateDataAttributesUpdateStatusVerifying     UpdateStatusPageTemplateDataAttributesUpdateStatus = "verifying"
 )
 
 // Valid indicates whether the value is a known member of the UpdateStatusPageTemplateDataAttributesUpdateStatus enum.
 func (e UpdateStatusPageTemplateDataAttributesUpdateStatus) Valid() bool {
 	switch e {
+	case UpdateStatusPageTemplateDataAttributesUpdateStatusCancelled:
+		return true
 	case UpdateStatusPageTemplateDataAttributesUpdateStatusCompleted:
 		return true
 	case UpdateStatusPageTemplateDataAttributesUpdateStatusIdentified:
@@ -49757,9 +49525,13 @@ func (e UpdateStatusPageTemplateDataAttributesUpdateStatus) Valid() bool {
 		return true
 	case UpdateStatusPageTemplateDataAttributesUpdateStatusMonitoring:
 		return true
+	case UpdateStatusPageTemplateDataAttributesUpdateStatusPlanning:
+		return true
 	case UpdateStatusPageTemplateDataAttributesUpdateStatusResolved:
 		return true
 	case UpdateStatusPageTemplateDataAttributesUpdateStatusScheduled:
+		return true
+	case UpdateStatusPageTemplateDataAttributesUpdateStatusVerifying:
 		return true
 	default:
 		return false
@@ -54095,7 +53867,7 @@ type AiAutomationDataType string
 
 // AiAutomationAttributes defines model for ai_automation_attributes.
 type AiAutomationAttributes struct {
-	// AllowedToolKeys null inherits all tools allowed by the team; otherwise the automation can use only these tool keys.
+	// AllowedToolKeys Tool keys are stable identifiers; connector tools use mcp:<lineage_root_id>:<tool_name> or private_connect:<agent_id>:<provider_id>:<capability>. null inherits all tools allowed by the team; otherwise the automation can use only these tool keys.
 	AllowedToolKeys nullable.Nullable[[]string] `json:"allowed_tool_keys,omitempty"`
 
 	// Conditions Legacy view of incident trigger conditions. {} when event_name is null. Empty object means no conditions. Groups in any are ORed; clauses in all are ANDed.
@@ -54691,6 +54463,9 @@ type AiChatSessionMessageList struct {
 
 	// Pinned Whether the session is pinned
 	Pinned *bool `json:"pinned,omitempty"`
+
+	// Title Session title (user-supplied, generated, or placeholder)
+	Title string `json:"title"`
 }
 
 // AiChatSessionTitle defines model for ai_chat_session_title.
@@ -54731,7 +54506,6 @@ type AiSkill struct {
 	Source                *AiSkillSource            `json:"source,omitempty"`
 	SourceTemplateKey     nullable.Nullable[string] `json:"source_template_key,omitempty"`
 	SourceTemplateVersion nullable.Nullable[int]    `json:"source_template_version,omitempty"`
-	ToolGrants            []AiSkill_ToolGrants_Item `json:"tool_grants,omitempty"`
 	UpdatedAt             *time.Time                `json:"updated_at,omitempty"`
 }
 
@@ -54740,109 +54514,6 @@ type AiSkillInvocableBy string
 
 // AiSkillSource defines model for AiSkill.Source.
 type AiSkillSource string
-
-// AiSkillToolGrants0 defines model for AiSkill.ToolGrants.0.
-type AiSkillToolGrants0 struct {
-	// Access Fetch URL grants use read access, which is the default when omitted or null.
-	Access nullable.Nullable[AiSkillToolGrants0Access] `json:"access"`
-
-	// PinnedParams Domains this Skill may fetch, limited to domains covered by the team's Web access allowlist.
-	PinnedParams struct {
-		Domains []string `json:"domains"`
-	} `json:"pinned_params"`
-	ToolKey AiSkillToolGrants0ToolKey `json:"tool_key"`
-}
-
-// AiSkillToolGrants0Access Fetch URL grants use read access, which is the default when omitted or null.
-type AiSkillToolGrants0Access string
-
-// AiSkillToolGrants0ToolKey defines model for AiSkill.ToolGrants.0.ToolKey.
-type AiSkillToolGrants0ToolKey string
-
-// AiSkillToolGrants1 defines model for AiSkill.ToolGrants.1.
-type AiSkillToolGrants1 struct {
-	// Access Defaults to the tool's access classification (read or write) when omitted or null.
-	Access nullable.Nullable[AiSkillToolGrants1Access] `json:"access"`
-
-	// PinnedParams For fetch_url read grants, pinned_params contains Web access domains. For other tools, pinned parameters apply only to write access. String values must match the identifier pattern `^[A-Za-z0-9_.:-]{1,64}$`. Each value is a single string, integer, boolean or null; an array is accepted only when it resends an existing stored value unchanged.
-	PinnedParams nullable.Nullable[map[string]AiSkill_ToolGrants_1_PinnedParams_AdditionalProperties] `json:"pinned_params"`
-	ToolKey      string                                                                               `json:"tool_key"`
-}
-
-// AiSkillToolGrants1Access Defaults to the tool's access classification (read or write) when omitted or null.
-type AiSkillToolGrants1Access string
-
-// AiSkillToolGrants1PinnedParams0 defines model for AiSkill.ToolGrants.1.PinnedParams.0.
-type AiSkillToolGrants1PinnedParams0 struct {
-	union json.RawMessage
-}
-
-// AiSkillToolGrants1PinnedParams00 defines model for AiSkill.ToolGrants.1.PinnedParams.0.0.
-type AiSkillToolGrants1PinnedParams00 = string
-
-// AiSkillToolGrants1PinnedParams01 defines model for AiSkill.ToolGrants.1.PinnedParams.0.1.
-type AiSkillToolGrants1PinnedParams01 = int
-
-// AiSkillToolGrants1PinnedParams02 defines model for AiSkill.ToolGrants.1.PinnedParams.0.2.
-type AiSkillToolGrants1PinnedParams02 = bool
-
-// AiSkillToolGrants1PinnedParams1 defines model for AiSkill.ToolGrants.1.PinnedParams.1.
-type AiSkillToolGrants1PinnedParams1 = []AiSkill_ToolGrants_1_PinnedParams_1_Item
-
-// AiSkillToolGrants1PinnedParams10 defines model for AiSkill.ToolGrants.1.PinnedParams.1.0.
-type AiSkillToolGrants1PinnedParams10 = string
-
-// AiSkillToolGrants1PinnedParams11 defines model for AiSkill.ToolGrants.1.PinnedParams.1.1.
-type AiSkillToolGrants1PinnedParams11 = int
-
-// AiSkillToolGrants1PinnedParams12 defines model for AiSkill.ToolGrants.1.PinnedParams.1.2.
-type AiSkillToolGrants1PinnedParams12 = bool
-
-// AiSkill_ToolGrants_1_PinnedParams_1_Item defines model for AiSkill.ToolGrants.1.PinnedParams.1.Item.
-type AiSkill_ToolGrants_1_PinnedParams_1_Item struct {
-	union json.RawMessage
-}
-
-// AiSkill_ToolGrants_1_PinnedParams_AdditionalProperties defines model for AiSkill.ToolGrants.1.pinned_params.AdditionalProperties.
-type AiSkill_ToolGrants_1_PinnedParams_AdditionalProperties struct {
-	union json.RawMessage
-}
-
-// AiSkill_ToolGrants_Item defines model for ai_skill.tool_grants.Item.
-type AiSkill_ToolGrants_Item struct {
-	union json.RawMessage
-}
-
-// AiSkillGrantableTools defines model for ai_skill_grantable_tools.
-type AiSkillGrantableTools struct {
-	Data []struct {
-		Attributes struct {
-			Access         AiSkillGrantableToolsDataAttributesAccess `json:"access"`
-			Category       string                                    `json:"category"`
-			Connector      bool                                      `json:"connector"`
-			Grantable      bool                                      `json:"grantable"`
-			Label          string                                    `json:"label"`
-			Pinnable       bool                                      `json:"pinnable"`
-			PinnableParams []struct {
-				Enum nullable.Nullable[[]string]                           `json:"enum"`
-				Name string                                                `json:"name"`
-				Type AiSkillGrantableToolsDataAttributesPinnableParamsType `json:"type"`
-			} `json:"pinnable_params"`
-			ToolKey string `json:"tool_key"`
-		} `json:"attributes"`
-		ID   string                        `json:"id"`
-		Type AiSkillGrantableToolsDataType `json:"type"`
-	} `json:"data"`
-}
-
-// AiSkillGrantableToolsDataAttributesAccess defines model for AiSkillGrantableTools.Data.Attributes.Access.
-type AiSkillGrantableToolsDataAttributesAccess string
-
-// AiSkillGrantableToolsDataAttributesPinnableParamsType defines model for AiSkillGrantableTools.Data.Attributes.PinnableParams.Type.
-type AiSkillGrantableToolsDataAttributesPinnableParamsType string
-
-// AiSkillGrantableToolsDataType defines model for AiSkillGrantableTools.Data.Type.
-type AiSkillGrantableToolsDataType string
 
 // AiSkillList defines model for ai_skill_list.
 type AiSkillList struct {
@@ -54873,86 +54544,13 @@ type AiSkillResponseDataType string
 
 // AiSkillVersion defines model for ai_skill_version.
 type AiSkillVersion struct {
-	Body            *string                          `json:"body,omitempty"`
-	CreatedAt       *time.Time                       `json:"created_at,omitempty"`
-	CreatedByUserID nullable.Nullable[int]           `json:"created_by_user_id,omitempty"`
-	Description     *string                          `json:"description,omitempty"`
-	Name            *string                          `json:"name,omitempty"`
-	SkillID         *string                          `json:"skill_id,omitempty"`
-	ToolGrants      []AiSkillVersion_ToolGrants_Item `json:"tool_grants,omitempty"`
-	Version         *int                             `json:"version,omitempty"`
-}
-
-// AiSkillVersionToolGrants0 defines model for AiSkillVersion.ToolGrants.0.
-type AiSkillVersionToolGrants0 struct {
-	// Access Fetch URL grants use read access, which is the default when omitted or null.
-	Access nullable.Nullable[AiSkillVersionToolGrants0Access] `json:"access"`
-
-	// PinnedParams Domains this Skill may fetch, limited to domains covered by the team's Web access allowlist.
-	PinnedParams struct {
-		Domains []string `json:"domains"`
-	} `json:"pinned_params"`
-	ToolKey AiSkillVersionToolGrants0ToolKey `json:"tool_key"`
-}
-
-// AiSkillVersionToolGrants0Access Fetch URL grants use read access, which is the default when omitted or null.
-type AiSkillVersionToolGrants0Access string
-
-// AiSkillVersionToolGrants0ToolKey defines model for AiSkillVersion.ToolGrants.0.ToolKey.
-type AiSkillVersionToolGrants0ToolKey string
-
-// AiSkillVersionToolGrants1 defines model for AiSkillVersion.ToolGrants.1.
-type AiSkillVersionToolGrants1 struct {
-	// Access Defaults to the tool's access classification (read or write) when omitted or null.
-	Access nullable.Nullable[AiSkillVersionToolGrants1Access] `json:"access"`
-
-	// PinnedParams For fetch_url read grants, pinned_params contains Web access domains. For other tools, pinned parameters apply only to write access. String values must match the identifier pattern `^[A-Za-z0-9_.:-]{1,64}$`. Each value is a single string, integer, boolean or null; an array is accepted only when it resends an existing stored value unchanged.
-	PinnedParams nullable.Nullable[map[string]AiSkillVersion_ToolGrants_1_PinnedParams_AdditionalProperties] `json:"pinned_params"`
-	ToolKey      string                                                                                      `json:"tool_key"`
-}
-
-// AiSkillVersionToolGrants1Access Defaults to the tool's access classification (read or write) when omitted or null.
-type AiSkillVersionToolGrants1Access string
-
-// AiSkillVersionToolGrants1PinnedParams0 defines model for AiSkillVersion.ToolGrants.1.PinnedParams.0.
-type AiSkillVersionToolGrants1PinnedParams0 struct {
-	union json.RawMessage
-}
-
-// AiSkillVersionToolGrants1PinnedParams00 defines model for AiSkillVersion.ToolGrants.1.PinnedParams.0.0.
-type AiSkillVersionToolGrants1PinnedParams00 = string
-
-// AiSkillVersionToolGrants1PinnedParams01 defines model for AiSkillVersion.ToolGrants.1.PinnedParams.0.1.
-type AiSkillVersionToolGrants1PinnedParams01 = int
-
-// AiSkillVersionToolGrants1PinnedParams02 defines model for AiSkillVersion.ToolGrants.1.PinnedParams.0.2.
-type AiSkillVersionToolGrants1PinnedParams02 = bool
-
-// AiSkillVersionToolGrants1PinnedParams1 defines model for AiSkillVersion.ToolGrants.1.PinnedParams.1.
-type AiSkillVersionToolGrants1PinnedParams1 = []AiSkillVersion_ToolGrants_1_PinnedParams_1_Item
-
-// AiSkillVersionToolGrants1PinnedParams10 defines model for AiSkillVersion.ToolGrants.1.PinnedParams.1.0.
-type AiSkillVersionToolGrants1PinnedParams10 = string
-
-// AiSkillVersionToolGrants1PinnedParams11 defines model for AiSkillVersion.ToolGrants.1.PinnedParams.1.1.
-type AiSkillVersionToolGrants1PinnedParams11 = int
-
-// AiSkillVersionToolGrants1PinnedParams12 defines model for AiSkillVersion.ToolGrants.1.PinnedParams.1.2.
-type AiSkillVersionToolGrants1PinnedParams12 = bool
-
-// AiSkillVersion_ToolGrants_1_PinnedParams_1_Item defines model for AiSkillVersion.ToolGrants.1.PinnedParams.1.Item.
-type AiSkillVersion_ToolGrants_1_PinnedParams_1_Item struct {
-	union json.RawMessage
-}
-
-// AiSkillVersion_ToolGrants_1_PinnedParams_AdditionalProperties defines model for AiSkillVersion.ToolGrants.1.pinned_params.AdditionalProperties.
-type AiSkillVersion_ToolGrants_1_PinnedParams_AdditionalProperties struct {
-	union json.RawMessage
-}
-
-// AiSkillVersion_ToolGrants_Item defines model for ai_skill_version.tool_grants.Item.
-type AiSkillVersion_ToolGrants_Item struct {
-	union json.RawMessage
+	Body            *string                `json:"body,omitempty"`
+	CreatedAt       *time.Time             `json:"created_at,omitempty"`
+	CreatedByUserID nullable.Nullable[int] `json:"created_by_user_id,omitempty"`
+	Description     *string                `json:"description,omitempty"`
+	Name            *string                `json:"name,omitempty"`
+	SkillID         *string                `json:"skill_id,omitempty"`
+	Version         *int                   `json:"version,omitempty"`
 }
 
 // AiSkillVersionList defines model for ai_skill_version_list.
@@ -60161,7 +59759,7 @@ type CurrentUser struct {
 	// Email The email of the user
 	Email string `json:"email"`
 
-	// FeatureFlags Server-evaluated flags for the calling credential. `ai-native-home` indicates whether the AI-native home is available. `ai-skills` is true only when the organization has AI Skills enabled, the credential is not a group API key, and its role or OAuth scopes allow reading the resource; a true value means `GET /v1/ai_skills` is expected to succeed. `ai-automations` is true only when the organization has AI Automations enabled, the credential is not a group API key, and its role or OAuth scopes allow reading the resource; a true value means `GET /v1/ai_automations` is expected to succeed. May be absent; treat a missing object or key as unknown, not false.
+	// FeatureFlags Server-evaluated flags for the calling credential. `ai-native-home` indicates whether the AI-native home is available. `ai-skills` is true only when the organization has AI Skills enabled, the credential is not a group API key, and its role or OAuth scopes allow reading the resource; a true value means `GET /v1/ai_skills` is expected to succeed. `ai-automations` is true only when the organization has AI Automations enabled, the credential is not a group API key, and its role or OAuth scopes allow reading the resource; a true value means `GET /v1/ai_automations` is expected to succeed. `ai-chat` is true when the organization can use the `/v1/ai/chat` endpoints (feature rollout, `config_ai_api_chat_enabled`, and the AI assistant are all on) and, for OAuth tokens, the token has `ai.chat:write` or an AI meta scope; a true value means `POST /v1/ai/chat` is expected to pass these gates. May be absent; treat a missing object or key as unknown, not false.
 	FeatureFlags map[string]bool `json:"feature_flags,omitempty"`
 
 	// FirstName First name of the user
@@ -64975,7 +64573,7 @@ type NewAiAutomation struct {
 	Data struct {
 		// Attributes Read-only attributes are ignored on write.
 		Attributes struct {
-			// AllowedToolKeys null inherits all tools allowed by the team; otherwise the automation can use only these tool keys.
+			// AllowedToolKeys Tool keys are stable identifiers; connector tools use mcp:<lineage_root_id>:<tool_name> or private_connect:<agent_id>:<provider_id>:<capability>. null inherits all tools allowed by the team; otherwise the automation can use only these tool keys.
 			AllowedToolKeys nullable.Nullable[[]string] `json:"allowed_tool_keys,omitempty"`
 
 			// Conditions Read-only; send triggers to change how the automation is triggered. Accepted on update only when unchanged from GET.
@@ -65194,7 +64792,7 @@ type NewAiAutomationRun struct {
 // NewAiAutomationRunDataType defines model for NewAiAutomationRun.Data.Type.
 type NewAiAutomationRunDataType string
 
-// NewAiSkill Create a skill. New skills are disabled unless enabled is explicitly true. Supplying tool_grants replaces the editable grant list; grants on tools the caller cannot see are kept. fetch_url read grants use pinned domains; other pinned parameters apply only to write access. Read-only attributes are ignored on write.
+// NewAiSkill Create a skill. New skills are disabled unless enabled is explicitly true. Read-only attributes are ignored on write.
 type NewAiSkill struct {
 	Data struct {
 		Attributes struct {
@@ -65231,9 +64829,6 @@ type NewAiSkill struct {
 			// SourceTemplateVersion Ignored on write.
 			SourceTemplateVersion nullable.Nullable[int] `json:"source_template_version,omitempty"`
 
-			// ToolGrants Replaces the editable grant list. Grants on tools the caller cannot see are kept.
-			ToolGrants []NewAiSkill_Data_Attributes_ToolGrants_Item `json:"tool_grants,omitempty"`
-
 			// UpdatedAt Ignored on write.
 			UpdatedAt *time.Time `json:"updated_at,omitempty"`
 		} `json:"attributes"`
@@ -65246,78 +64841,6 @@ type NewAiSkillDataAttributesInvocableBy string
 
 // NewAiSkillDataAttributesSource Ignored on write.
 type NewAiSkillDataAttributesSource string
-
-// NewAiSkillDataAttributesToolGrants0 defines model for NewAiSkill.Data.Attributes.ToolGrants.0.
-type NewAiSkillDataAttributesToolGrants0 struct {
-	// Access Fetch URL grants use read access, which is the default when omitted or null.
-	Access nullable.Nullable[NewAiSkillDataAttributesToolGrants0Access] `json:"access,omitempty"`
-
-	// PinnedParams Domains this Skill may fetch, limited to domains covered by the team's Web access allowlist.
-	PinnedParams struct {
-		Domains []string `json:"domains"`
-	} `json:"pinned_params"`
-	ToolKey NewAiSkillDataAttributesToolGrants0ToolKey `json:"tool_key"`
-}
-
-// NewAiSkillDataAttributesToolGrants0Access Fetch URL grants use read access, which is the default when omitted or null.
-type NewAiSkillDataAttributesToolGrants0Access string
-
-// NewAiSkillDataAttributesToolGrants0ToolKey defines model for NewAiSkill.Data.Attributes.ToolGrants.0.ToolKey.
-type NewAiSkillDataAttributesToolGrants0ToolKey string
-
-// NewAiSkillDataAttributesToolGrants1 defines model for NewAiSkill.Data.Attributes.ToolGrants.1.
-type NewAiSkillDataAttributesToolGrants1 struct {
-	// Access Defaults to the tool's access classification (read or write) when omitted or null.
-	Access nullable.Nullable[NewAiSkillDataAttributesToolGrants1Access] `json:"access,omitempty"`
-
-	// PinnedParams For fetch_url read grants, pinned_params contains Web access domains. For other tools, pinned parameters apply only to write access. String values must match the identifier pattern `^[A-Za-z0-9_.:-]{1,64}$`. Each value is a single string, integer, boolean or null; an array is accepted only when it resends an existing stored value unchanged.
-	PinnedParams nullable.Nullable[map[string]NewAiSkill_Data_Attributes_ToolGrants_1_PinnedParams_AdditionalProperties] `json:"pinned_params,omitempty"`
-	ToolKey      string                                                                                                  `json:"tool_key"`
-}
-
-// NewAiSkillDataAttributesToolGrants1Access Defaults to the tool's access classification (read or write) when omitted or null.
-type NewAiSkillDataAttributesToolGrants1Access string
-
-// NewAiSkillDataAttributesToolGrants1PinnedParams0 defines model for NewAiSkill.Data.Attributes.ToolGrants.1.PinnedParams.0.
-type NewAiSkillDataAttributesToolGrants1PinnedParams0 struct {
-	union json.RawMessage
-}
-
-// NewAiSkillDataAttributesToolGrants1PinnedParams00 defines model for NewAiSkill.Data.Attributes.ToolGrants.1.PinnedParams.0.0.
-type NewAiSkillDataAttributesToolGrants1PinnedParams00 = string
-
-// NewAiSkillDataAttributesToolGrants1PinnedParams01 defines model for NewAiSkill.Data.Attributes.ToolGrants.1.PinnedParams.0.1.
-type NewAiSkillDataAttributesToolGrants1PinnedParams01 = int
-
-// NewAiSkillDataAttributesToolGrants1PinnedParams02 defines model for NewAiSkill.Data.Attributes.ToolGrants.1.PinnedParams.0.2.
-type NewAiSkillDataAttributesToolGrants1PinnedParams02 = bool
-
-// NewAiSkillDataAttributesToolGrants1PinnedParams1 defines model for NewAiSkill.Data.Attributes.ToolGrants.1.PinnedParams.1.
-type NewAiSkillDataAttributesToolGrants1PinnedParams1 = []NewAiSkill_Data_Attributes_ToolGrants_1_PinnedParams_1_Item
-
-// NewAiSkillDataAttributesToolGrants1PinnedParams10 defines model for NewAiSkill.Data.Attributes.ToolGrants.1.PinnedParams.1.0.
-type NewAiSkillDataAttributesToolGrants1PinnedParams10 = string
-
-// NewAiSkillDataAttributesToolGrants1PinnedParams11 defines model for NewAiSkill.Data.Attributes.ToolGrants.1.PinnedParams.1.1.
-type NewAiSkillDataAttributesToolGrants1PinnedParams11 = int
-
-// NewAiSkillDataAttributesToolGrants1PinnedParams12 defines model for NewAiSkill.Data.Attributes.ToolGrants.1.PinnedParams.1.2.
-type NewAiSkillDataAttributesToolGrants1PinnedParams12 = bool
-
-// NewAiSkill_Data_Attributes_ToolGrants_1_PinnedParams_1_Item defines model for NewAiSkill.Data.Attributes.ToolGrants.1.PinnedParams.1.Item.
-type NewAiSkill_Data_Attributes_ToolGrants_1_PinnedParams_1_Item struct {
-	union json.RawMessage
-}
-
-// NewAiSkill_Data_Attributes_ToolGrants_1_PinnedParams_AdditionalProperties defines model for NewAiSkill.Data.Attributes.ToolGrants.1.PinnedParams.AdditionalProperties.
-type NewAiSkill_Data_Attributes_ToolGrants_1_PinnedParams_AdditionalProperties struct {
-	union json.RawMessage
-}
-
-// NewAiSkill_Data_Attributes_ToolGrants_Item defines model for NewAiSkill.Data.Attributes.tool_grants.Item.
-type NewAiSkill_Data_Attributes_ToolGrants_Item struct {
-	union json.RawMessage
-}
 
 // NewAiSkillDataType defines model for NewAiSkill.Data.Type.
 type NewAiSkillDataType string
@@ -69973,6 +69496,9 @@ type NewShiftCoverageRequest struct {
 
 			// UserID Optional. Restrict coverage to shifts assigned to this user. When omitted, every shift overlapping the time range is covered.
 			UserID *int `json:"user_id,omitempty"`
+
+			// WidenAfterMinutes Optional. Widen a targeted coverage request to the rest of the schedule after this many minutes. Requires recipient_user_ids and the coverage-widening flag; widening must occur before the shift starts.
+			WidenAfterMinutes *int `json:"widen_after_minutes,omitempty"`
 		} `json:"attributes"`
 		Type NewShiftCoverageRequestDataType `json:"type"`
 	} `json:"data"`
@@ -70331,7 +69857,7 @@ type NewStatusPageTemplate struct {
 			// Title Title of the template
 			Title string `json:"title"`
 
-			// UpdateStatus Status of the event the template will populate
+			// UpdateStatus Status of the event the template will populate. Allowed values depend on the team's feature flags
 			UpdateStatus nullable.Nullable[NewStatusPageTemplateDataAttributesUpdateStatus] `json:"update_status,omitempty"`
 
 			// UpdateTitle Title that will be used for the status page update
@@ -70344,7 +69870,7 @@ type NewStatusPageTemplate struct {
 // NewStatusPageTemplateDataAttributesKind The kind of the status page template
 type NewStatusPageTemplateDataAttributesKind string
 
-// NewStatusPageTemplateDataAttributesUpdateStatus Status of the event the template will populate
+// NewStatusPageTemplateDataAttributesUpdateStatus Status of the event the template will populate. Allowed values depend on the team's feature flags
 type NewStatusPageTemplateDataAttributesUpdateStatus string
 
 // NewStatusPageTemplateDataType defines model for NewStatusPageTemplate.Data.Type.
@@ -74749,6 +74275,9 @@ type ShiftCoverageRequest struct {
 	// OriginalShiftUserID ID of the user whose shift is being covered
 	OriginalShiftUserID int `json:"original_shift_user_id"`
 
+	// RecipientUserIDs IDs of the initially notified coverage recipients
+	RecipientUserIDs []int `json:"recipient_user_ids,omitempty"`
+
 	// Schedule Schedule metadata
 	Schedule *ScheduleResponse `json:"schedule,omitempty"`
 
@@ -74766,6 +74295,12 @@ type ShiftCoverageRequest struct {
 
 	// UpdatedAt Date of last update
 	UpdatedAt *string `json:"updated_at,omitempty"`
+
+	// WidenAt Time the targeted request is eligible to widen
+	WidenAt nullable.Nullable[time.Time] `json:"widen_at,omitempty"`
+
+	// WidenedAt Time the request was widened to the rest of the schedule
+	WidenedAt nullable.Nullable[time.Time] `json:"widened_at,omitempty"`
 }
 
 // ShiftCoverageRequestList defines model for shift_coverage_request_list.
@@ -75618,7 +75153,7 @@ type StatusPageTemplate struct {
 	// Title Title of the template
 	Title string `json:"title"`
 
-	// UpdateStatus Status of the event the template will populate
+	// UpdateStatus Status of the event the template will populate. Allowed values depend on the team's feature flags
 	UpdateStatus nullable.Nullable[string] `json:"update_status,omitempty"`
 
 	// UpdateTitle Title that will be used for the status page update
@@ -76034,7 +75569,7 @@ type UpdateAiAutomation struct {
 	Data struct {
 		// Attributes Read-only attributes are ignored on write.
 		Attributes struct {
-			// AllowedToolKeys null inherits all tools allowed by the team; otherwise the automation can use only these tool keys.
+			// AllowedToolKeys Tool keys are stable identifiers; connector tools use mcp:<lineage_root_id>:<tool_name> or private_connect:<agent_id>:<provider_id>:<capability>. null inherits all tools allowed by the team; otherwise the automation can use only these tool keys.
 			AllowedToolKeys nullable.Nullable[[]string] `json:"allowed_tool_keys,omitempty"`
 
 			// Conditions Read-only; send triggers to change how the automation is triggered. Accepted on update only when unchanged from GET.
@@ -76252,7 +75787,7 @@ type UpdateAiChatSession struct {
 	Title nullable.Nullable[string] `json:"title,omitempty"`
 }
 
-// UpdateAiSkill Update only supplied attributes. Supplying tool_grants replaces the editable grant list; grants on tools the caller cannot see are kept. fetch_url read grants use pinned domains; other pinned parameters apply only to write access. Read-only attributes are ignored on write.
+// UpdateAiSkill Update only supplied attributes. Read-only attributes are ignored on write.
 type UpdateAiSkill struct {
 	Data struct {
 		Attributes struct {
@@ -76287,9 +75822,6 @@ type UpdateAiSkill struct {
 			// SourceTemplateVersion Ignored on write.
 			SourceTemplateVersion nullable.Nullable[int] `json:"source_template_version,omitempty"`
 
-			// ToolGrants Replaces the editable grant list. Grants on tools the caller cannot see are kept.
-			ToolGrants []UpdateAiSkill_Data_Attributes_ToolGrants_Item `json:"tool_grants,omitempty"`
-
 			// UpdatedAt Ignored on write.
 			UpdatedAt *time.Time `json:"updated_at,omitempty"`
 		} `json:"attributes"`
@@ -76305,78 +75837,6 @@ type UpdateAiSkillDataAttributesInvocableBy string
 
 // UpdateAiSkillDataAttributesSource Ignored on write.
 type UpdateAiSkillDataAttributesSource string
-
-// UpdateAiSkillDataAttributesToolGrants0 defines model for UpdateAiSkill.Data.Attributes.ToolGrants.0.
-type UpdateAiSkillDataAttributesToolGrants0 struct {
-	// Access Fetch URL grants use read access, which is the default when omitted or null.
-	Access nullable.Nullable[UpdateAiSkillDataAttributesToolGrants0Access] `json:"access,omitempty"`
-
-	// PinnedParams Domains this Skill may fetch, limited to domains covered by the team's Web access allowlist.
-	PinnedParams struct {
-		Domains []string `json:"domains"`
-	} `json:"pinned_params"`
-	ToolKey UpdateAiSkillDataAttributesToolGrants0ToolKey `json:"tool_key"`
-}
-
-// UpdateAiSkillDataAttributesToolGrants0Access Fetch URL grants use read access, which is the default when omitted or null.
-type UpdateAiSkillDataAttributesToolGrants0Access string
-
-// UpdateAiSkillDataAttributesToolGrants0ToolKey defines model for UpdateAiSkill.Data.Attributes.ToolGrants.0.ToolKey.
-type UpdateAiSkillDataAttributesToolGrants0ToolKey string
-
-// UpdateAiSkillDataAttributesToolGrants1 defines model for UpdateAiSkill.Data.Attributes.ToolGrants.1.
-type UpdateAiSkillDataAttributesToolGrants1 struct {
-	// Access Defaults to the tool's access classification (read or write) when omitted or null.
-	Access nullable.Nullable[UpdateAiSkillDataAttributesToolGrants1Access] `json:"access,omitempty"`
-
-	// PinnedParams For fetch_url read grants, pinned_params contains Web access domains. For other tools, pinned parameters apply only to write access. String values must match the identifier pattern `^[A-Za-z0-9_.:-]{1,64}$`. Each value is a single string, integer, boolean or null; an array is accepted only when it resends an existing stored value unchanged.
-	PinnedParams nullable.Nullable[map[string]UpdateAiSkill_Data_Attributes_ToolGrants_1_PinnedParams_AdditionalProperties] `json:"pinned_params,omitempty"`
-	ToolKey      string                                                                                                     `json:"tool_key"`
-}
-
-// UpdateAiSkillDataAttributesToolGrants1Access Defaults to the tool's access classification (read or write) when omitted or null.
-type UpdateAiSkillDataAttributesToolGrants1Access string
-
-// UpdateAiSkillDataAttributesToolGrants1PinnedParams0 defines model for UpdateAiSkill.Data.Attributes.ToolGrants.1.PinnedParams.0.
-type UpdateAiSkillDataAttributesToolGrants1PinnedParams0 struct {
-	union json.RawMessage
-}
-
-// UpdateAiSkillDataAttributesToolGrants1PinnedParams00 defines model for UpdateAiSkill.Data.Attributes.ToolGrants.1.PinnedParams.0.0.
-type UpdateAiSkillDataAttributesToolGrants1PinnedParams00 = string
-
-// UpdateAiSkillDataAttributesToolGrants1PinnedParams01 defines model for UpdateAiSkill.Data.Attributes.ToolGrants.1.PinnedParams.0.1.
-type UpdateAiSkillDataAttributesToolGrants1PinnedParams01 = int
-
-// UpdateAiSkillDataAttributesToolGrants1PinnedParams02 defines model for UpdateAiSkill.Data.Attributes.ToolGrants.1.PinnedParams.0.2.
-type UpdateAiSkillDataAttributesToolGrants1PinnedParams02 = bool
-
-// UpdateAiSkillDataAttributesToolGrants1PinnedParams1 defines model for UpdateAiSkill.Data.Attributes.ToolGrants.1.PinnedParams.1.
-type UpdateAiSkillDataAttributesToolGrants1PinnedParams1 = []UpdateAiSkill_Data_Attributes_ToolGrants_1_PinnedParams_1_Item
-
-// UpdateAiSkillDataAttributesToolGrants1PinnedParams10 defines model for UpdateAiSkill.Data.Attributes.ToolGrants.1.PinnedParams.1.0.
-type UpdateAiSkillDataAttributesToolGrants1PinnedParams10 = string
-
-// UpdateAiSkillDataAttributesToolGrants1PinnedParams11 defines model for UpdateAiSkill.Data.Attributes.ToolGrants.1.PinnedParams.1.1.
-type UpdateAiSkillDataAttributesToolGrants1PinnedParams11 = int
-
-// UpdateAiSkillDataAttributesToolGrants1PinnedParams12 defines model for UpdateAiSkill.Data.Attributes.ToolGrants.1.PinnedParams.1.2.
-type UpdateAiSkillDataAttributesToolGrants1PinnedParams12 = bool
-
-// UpdateAiSkill_Data_Attributes_ToolGrants_1_PinnedParams_1_Item defines model for UpdateAiSkill.Data.Attributes.ToolGrants.1.PinnedParams.1.Item.
-type UpdateAiSkill_Data_Attributes_ToolGrants_1_PinnedParams_1_Item struct {
-	union json.RawMessage
-}
-
-// UpdateAiSkill_Data_Attributes_ToolGrants_1_PinnedParams_AdditionalProperties defines model for UpdateAiSkill.Data.Attributes.ToolGrants.1.PinnedParams.AdditionalProperties.
-type UpdateAiSkill_Data_Attributes_ToolGrants_1_PinnedParams_AdditionalProperties struct {
-	union json.RawMessage
-}
-
-// UpdateAiSkill_Data_Attributes_ToolGrants_Item defines model for UpdateAiSkill.Data.Attributes.tool_grants.Item.
-type UpdateAiSkill_Data_Attributes_ToolGrants_Item struct {
-	union json.RawMessage
-}
 
 // UpdateAiSkillDataType defines model for UpdateAiSkill.Data.Type.
 type UpdateAiSkillDataType string
@@ -80130,7 +79590,10 @@ type UpdateIncidentSubStatusDataType string
 
 // UpdateIncidentTaskParams defines model for update_incident_task_params.
 type UpdateIncidentTaskParams struct {
-	AcknowledgedAt     nullable.Nullable[string]                   `json:"acknowledged_at,omitempty"`
+	AcknowledgedAt nullable.Nullable[string] `json:"acknowledged_at,omitempty"`
+
+	// AppendAssociations When true, the configured services, functionalities, environments, groups and incident types are added to the incident's existing ones instead of replacing them
+	AppendAssociations *bool                                       `json:"append_associations,omitempty"`
 	AttributeToQueryBy *UpdateIncidentTaskParamsAttributeToQueryBy `json:"attribute_to_query_by,omitempty"`
 
 	// CustomFieldsMapping Custom field mappings. Can contain liquid markup and need to be valid JSON. Use 'services', 'functionalities', or 'groups' keys with arrays of names/slugs for name/slug lookup
@@ -82495,7 +81958,7 @@ type UpdateStatusPageTemplate struct {
 			// Title Title of the template
 			Title string `json:"title"`
 
-			// UpdateStatus Status of the event the template will populate
+			// UpdateStatus Status of the event the template will populate. Allowed values depend on the team's feature flags
 			UpdateStatus nullable.Nullable[UpdateStatusPageTemplateDataAttributesUpdateStatus] `json:"update_status,omitempty"`
 
 			// UpdateTitle Title that will be used for the status page update
@@ -82511,7 +81974,7 @@ type UpdateStatusPageTemplate struct {
 // UpdateStatusPageTemplateDataAttributesKind The kind of the status page template
 type UpdateStatusPageTemplateDataAttributesKind string
 
-// UpdateStatusPageTemplateDataAttributesUpdateStatus Status of the event the template will populate
+// UpdateStatusPageTemplateDataAttributesUpdateStatus Status of the event the template will populate. Allowed values depend on the team's feature flags
 type UpdateStatusPageTemplateDataAttributesUpdateStatus string
 
 // UpdateStatusPageTemplateDataType defines model for UpdateStatusPageTemplate.Data.Type.
@@ -84354,15 +83817,21 @@ type ListAISkillsParamsSort string
 
 // ListAiToolCallEventsParams defines parameters for ListAiToolCallEvents.
 type ListAiToolCallEventsParams struct {
-	Filter *struct {
-		ConnectorID    *string    `json:"connector_id,omitempty"`
-		OccurredAfter  *time.Time `json:"occurred_after,omitempty"`
-		OccurredBefore *time.Time `json:"occurred_before,omitempty"`
-		Outcome        *string    `json:"outcome,omitempty"`
-		RiskClass      *string    `json:"risk_class,omitempty"`
-		Surface        *string    `json:"surface,omitempty"`
-		UserID         *string    `json:"user_id,omitempty"`
-	} `json:"filter,omitempty"`
+	PageNumber *int `form:"page[number],omitempty" json:"page[number],omitempty"`
+
+	// PageSize Number of events per page (defaults to 50, max 1000)
+	PageSize          *int    `form:"page[size],omitempty" json:"page[size],omitempty"`
+	FilterConnectorID *string `form:"filter[connector_id],omitempty" json:"filter[connector_id],omitempty"`
+	FilterOutcome     *string `form:"filter[outcome],omitempty" json:"filter[outcome],omitempty"`
+	FilterRiskClass   *string `form:"filter[risk_class],omitempty" json:"filter[risk_class],omitempty"`
+	FilterSurface     *string `form:"filter[surface],omitempty" json:"filter[surface],omitempty"`
+	FilterUserID      *int    `form:"filter[user_id],omitempty" json:"filter[user_id],omitempty"`
+
+	// FilterOccurredAfter Occurred at or after (ISO 8601)
+	FilterOccurredAfter *time.Time `form:"filter[occurred_after],omitempty" json:"filter[occurred_after],omitempty"`
+
+	// FilterOccurredBefore Occurred at or before (ISO 8601)
+	FilterOccurredBefore *time.Time `form:"filter[occurred_before],omitempty" json:"filter[occurred_before],omitempty"`
 }
 
 // ListAiToolCallEvents200ApplicationVndAPIPlusJSONResponseBodyDataType defines parameters for ListAiToolCallEvents.
@@ -88436,606 +87905,6 @@ func (t *AiAutomationAttributes_Conditions_Any_All_Value) UnmarshalJSON(b []byte
 	return err
 }
 
-// AsAiSkillToolGrants1PinnedParams00 returns the union data inside the AiSkillToolGrants1PinnedParams0 as a AiSkillToolGrants1PinnedParams00
-func (t AiSkillToolGrants1PinnedParams0) AsAiSkillToolGrants1PinnedParams00() (AiSkillToolGrants1PinnedParams00, error) {
-	var body AiSkillToolGrants1PinnedParams00
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromAiSkillToolGrants1PinnedParams00 overwrites any union data inside the AiSkillToolGrants1PinnedParams0 as the provided AiSkillToolGrants1PinnedParams00
-func (t *AiSkillToolGrants1PinnedParams0) FromAiSkillToolGrants1PinnedParams00(v AiSkillToolGrants1PinnedParams00) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeAiSkillToolGrants1PinnedParams00 performs a merge with any union data inside the AiSkillToolGrants1PinnedParams0, using the provided AiSkillToolGrants1PinnedParams00
-func (t *AiSkillToolGrants1PinnedParams0) MergeAiSkillToolGrants1PinnedParams00(v AiSkillToolGrants1PinnedParams00) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsAiSkillToolGrants1PinnedParams01 returns the union data inside the AiSkillToolGrants1PinnedParams0 as a AiSkillToolGrants1PinnedParams01
-func (t AiSkillToolGrants1PinnedParams0) AsAiSkillToolGrants1PinnedParams01() (AiSkillToolGrants1PinnedParams01, error) {
-	var body AiSkillToolGrants1PinnedParams01
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromAiSkillToolGrants1PinnedParams01 overwrites any union data inside the AiSkillToolGrants1PinnedParams0 as the provided AiSkillToolGrants1PinnedParams01
-func (t *AiSkillToolGrants1PinnedParams0) FromAiSkillToolGrants1PinnedParams01(v AiSkillToolGrants1PinnedParams01) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeAiSkillToolGrants1PinnedParams01 performs a merge with any union data inside the AiSkillToolGrants1PinnedParams0, using the provided AiSkillToolGrants1PinnedParams01
-func (t *AiSkillToolGrants1PinnedParams0) MergeAiSkillToolGrants1PinnedParams01(v AiSkillToolGrants1PinnedParams01) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsAiSkillToolGrants1PinnedParams02 returns the union data inside the AiSkillToolGrants1PinnedParams0 as a AiSkillToolGrants1PinnedParams02
-func (t AiSkillToolGrants1PinnedParams0) AsAiSkillToolGrants1PinnedParams02() (AiSkillToolGrants1PinnedParams02, error) {
-	var body AiSkillToolGrants1PinnedParams02
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromAiSkillToolGrants1PinnedParams02 overwrites any union data inside the AiSkillToolGrants1PinnedParams0 as the provided AiSkillToolGrants1PinnedParams02
-func (t *AiSkillToolGrants1PinnedParams0) FromAiSkillToolGrants1PinnedParams02(v AiSkillToolGrants1PinnedParams02) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeAiSkillToolGrants1PinnedParams02 performs a merge with any union data inside the AiSkillToolGrants1PinnedParams0, using the provided AiSkillToolGrants1PinnedParams02
-func (t *AiSkillToolGrants1PinnedParams0) MergeAiSkillToolGrants1PinnedParams02(v AiSkillToolGrants1PinnedParams02) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t AiSkillToolGrants1PinnedParams0) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *AiSkillToolGrants1PinnedParams0) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsAiSkillToolGrants1PinnedParams10 returns the union data inside the AiSkill_ToolGrants_1_PinnedParams_1_Item as a AiSkillToolGrants1PinnedParams10
-func (t AiSkill_ToolGrants_1_PinnedParams_1_Item) AsAiSkillToolGrants1PinnedParams10() (AiSkillToolGrants1PinnedParams10, error) {
-	var body AiSkillToolGrants1PinnedParams10
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromAiSkillToolGrants1PinnedParams10 overwrites any union data inside the AiSkill_ToolGrants_1_PinnedParams_1_Item as the provided AiSkillToolGrants1PinnedParams10
-func (t *AiSkill_ToolGrants_1_PinnedParams_1_Item) FromAiSkillToolGrants1PinnedParams10(v AiSkillToolGrants1PinnedParams10) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeAiSkillToolGrants1PinnedParams10 performs a merge with any union data inside the AiSkill_ToolGrants_1_PinnedParams_1_Item, using the provided AiSkillToolGrants1PinnedParams10
-func (t *AiSkill_ToolGrants_1_PinnedParams_1_Item) MergeAiSkillToolGrants1PinnedParams10(v AiSkillToolGrants1PinnedParams10) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsAiSkillToolGrants1PinnedParams11 returns the union data inside the AiSkill_ToolGrants_1_PinnedParams_1_Item as a AiSkillToolGrants1PinnedParams11
-func (t AiSkill_ToolGrants_1_PinnedParams_1_Item) AsAiSkillToolGrants1PinnedParams11() (AiSkillToolGrants1PinnedParams11, error) {
-	var body AiSkillToolGrants1PinnedParams11
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromAiSkillToolGrants1PinnedParams11 overwrites any union data inside the AiSkill_ToolGrants_1_PinnedParams_1_Item as the provided AiSkillToolGrants1PinnedParams11
-func (t *AiSkill_ToolGrants_1_PinnedParams_1_Item) FromAiSkillToolGrants1PinnedParams11(v AiSkillToolGrants1PinnedParams11) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeAiSkillToolGrants1PinnedParams11 performs a merge with any union data inside the AiSkill_ToolGrants_1_PinnedParams_1_Item, using the provided AiSkillToolGrants1PinnedParams11
-func (t *AiSkill_ToolGrants_1_PinnedParams_1_Item) MergeAiSkillToolGrants1PinnedParams11(v AiSkillToolGrants1PinnedParams11) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsAiSkillToolGrants1PinnedParams12 returns the union data inside the AiSkill_ToolGrants_1_PinnedParams_1_Item as a AiSkillToolGrants1PinnedParams12
-func (t AiSkill_ToolGrants_1_PinnedParams_1_Item) AsAiSkillToolGrants1PinnedParams12() (AiSkillToolGrants1PinnedParams12, error) {
-	var body AiSkillToolGrants1PinnedParams12
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromAiSkillToolGrants1PinnedParams12 overwrites any union data inside the AiSkill_ToolGrants_1_PinnedParams_1_Item as the provided AiSkillToolGrants1PinnedParams12
-func (t *AiSkill_ToolGrants_1_PinnedParams_1_Item) FromAiSkillToolGrants1PinnedParams12(v AiSkillToolGrants1PinnedParams12) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeAiSkillToolGrants1PinnedParams12 performs a merge with any union data inside the AiSkill_ToolGrants_1_PinnedParams_1_Item, using the provided AiSkillToolGrants1PinnedParams12
-func (t *AiSkill_ToolGrants_1_PinnedParams_1_Item) MergeAiSkillToolGrants1PinnedParams12(v AiSkillToolGrants1PinnedParams12) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t AiSkill_ToolGrants_1_PinnedParams_1_Item) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *AiSkill_ToolGrants_1_PinnedParams_1_Item) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsAiSkillToolGrants1PinnedParams0 returns the union data inside the AiSkill_ToolGrants_1_PinnedParams_AdditionalProperties as a AiSkillToolGrants1PinnedParams0
-func (t AiSkill_ToolGrants_1_PinnedParams_AdditionalProperties) AsAiSkillToolGrants1PinnedParams0() (AiSkillToolGrants1PinnedParams0, error) {
-	var body AiSkillToolGrants1PinnedParams0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromAiSkillToolGrants1PinnedParams0 overwrites any union data inside the AiSkill_ToolGrants_1_PinnedParams_AdditionalProperties as the provided AiSkillToolGrants1PinnedParams0
-func (t *AiSkill_ToolGrants_1_PinnedParams_AdditionalProperties) FromAiSkillToolGrants1PinnedParams0(v AiSkillToolGrants1PinnedParams0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeAiSkillToolGrants1PinnedParams0 performs a merge with any union data inside the AiSkill_ToolGrants_1_PinnedParams_AdditionalProperties, using the provided AiSkillToolGrants1PinnedParams0
-func (t *AiSkill_ToolGrants_1_PinnedParams_AdditionalProperties) MergeAiSkillToolGrants1PinnedParams0(v AiSkillToolGrants1PinnedParams0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsAiSkillToolGrants1PinnedParams1 returns the union data inside the AiSkill_ToolGrants_1_PinnedParams_AdditionalProperties as a AiSkillToolGrants1PinnedParams1
-func (t AiSkill_ToolGrants_1_PinnedParams_AdditionalProperties) AsAiSkillToolGrants1PinnedParams1() (AiSkillToolGrants1PinnedParams1, error) {
-	var body AiSkillToolGrants1PinnedParams1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromAiSkillToolGrants1PinnedParams1 overwrites any union data inside the AiSkill_ToolGrants_1_PinnedParams_AdditionalProperties as the provided AiSkillToolGrants1PinnedParams1
-func (t *AiSkill_ToolGrants_1_PinnedParams_AdditionalProperties) FromAiSkillToolGrants1PinnedParams1(v AiSkillToolGrants1PinnedParams1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeAiSkillToolGrants1PinnedParams1 performs a merge with any union data inside the AiSkill_ToolGrants_1_PinnedParams_AdditionalProperties, using the provided AiSkillToolGrants1PinnedParams1
-func (t *AiSkill_ToolGrants_1_PinnedParams_AdditionalProperties) MergeAiSkillToolGrants1PinnedParams1(v AiSkillToolGrants1PinnedParams1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t AiSkill_ToolGrants_1_PinnedParams_AdditionalProperties) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *AiSkill_ToolGrants_1_PinnedParams_AdditionalProperties) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsAiSkillToolGrants0 returns the union data inside the AiSkill_ToolGrants_Item as a AiSkillToolGrants0
-func (t AiSkill_ToolGrants_Item) AsAiSkillToolGrants0() (AiSkillToolGrants0, error) {
-	var body AiSkillToolGrants0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromAiSkillToolGrants0 overwrites any union data inside the AiSkill_ToolGrants_Item as the provided AiSkillToolGrants0
-func (t *AiSkill_ToolGrants_Item) FromAiSkillToolGrants0(v AiSkillToolGrants0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeAiSkillToolGrants0 performs a merge with any union data inside the AiSkill_ToolGrants_Item, using the provided AiSkillToolGrants0
-func (t *AiSkill_ToolGrants_Item) MergeAiSkillToolGrants0(v AiSkillToolGrants0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsAiSkillToolGrants1 returns the union data inside the AiSkill_ToolGrants_Item as a AiSkillToolGrants1
-func (t AiSkill_ToolGrants_Item) AsAiSkillToolGrants1() (AiSkillToolGrants1, error) {
-	var body AiSkillToolGrants1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromAiSkillToolGrants1 overwrites any union data inside the AiSkill_ToolGrants_Item as the provided AiSkillToolGrants1
-func (t *AiSkill_ToolGrants_Item) FromAiSkillToolGrants1(v AiSkillToolGrants1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeAiSkillToolGrants1 performs a merge with any union data inside the AiSkill_ToolGrants_Item, using the provided AiSkillToolGrants1
-func (t *AiSkill_ToolGrants_Item) MergeAiSkillToolGrants1(v AiSkillToolGrants1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t AiSkill_ToolGrants_Item) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *AiSkill_ToolGrants_Item) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsAiSkillVersionToolGrants1PinnedParams00 returns the union data inside the AiSkillVersionToolGrants1PinnedParams0 as a AiSkillVersionToolGrants1PinnedParams00
-func (t AiSkillVersionToolGrants1PinnedParams0) AsAiSkillVersionToolGrants1PinnedParams00() (AiSkillVersionToolGrants1PinnedParams00, error) {
-	var body AiSkillVersionToolGrants1PinnedParams00
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromAiSkillVersionToolGrants1PinnedParams00 overwrites any union data inside the AiSkillVersionToolGrants1PinnedParams0 as the provided AiSkillVersionToolGrants1PinnedParams00
-func (t *AiSkillVersionToolGrants1PinnedParams0) FromAiSkillVersionToolGrants1PinnedParams00(v AiSkillVersionToolGrants1PinnedParams00) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeAiSkillVersionToolGrants1PinnedParams00 performs a merge with any union data inside the AiSkillVersionToolGrants1PinnedParams0, using the provided AiSkillVersionToolGrants1PinnedParams00
-func (t *AiSkillVersionToolGrants1PinnedParams0) MergeAiSkillVersionToolGrants1PinnedParams00(v AiSkillVersionToolGrants1PinnedParams00) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsAiSkillVersionToolGrants1PinnedParams01 returns the union data inside the AiSkillVersionToolGrants1PinnedParams0 as a AiSkillVersionToolGrants1PinnedParams01
-func (t AiSkillVersionToolGrants1PinnedParams0) AsAiSkillVersionToolGrants1PinnedParams01() (AiSkillVersionToolGrants1PinnedParams01, error) {
-	var body AiSkillVersionToolGrants1PinnedParams01
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromAiSkillVersionToolGrants1PinnedParams01 overwrites any union data inside the AiSkillVersionToolGrants1PinnedParams0 as the provided AiSkillVersionToolGrants1PinnedParams01
-func (t *AiSkillVersionToolGrants1PinnedParams0) FromAiSkillVersionToolGrants1PinnedParams01(v AiSkillVersionToolGrants1PinnedParams01) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeAiSkillVersionToolGrants1PinnedParams01 performs a merge with any union data inside the AiSkillVersionToolGrants1PinnedParams0, using the provided AiSkillVersionToolGrants1PinnedParams01
-func (t *AiSkillVersionToolGrants1PinnedParams0) MergeAiSkillVersionToolGrants1PinnedParams01(v AiSkillVersionToolGrants1PinnedParams01) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsAiSkillVersionToolGrants1PinnedParams02 returns the union data inside the AiSkillVersionToolGrants1PinnedParams0 as a AiSkillVersionToolGrants1PinnedParams02
-func (t AiSkillVersionToolGrants1PinnedParams0) AsAiSkillVersionToolGrants1PinnedParams02() (AiSkillVersionToolGrants1PinnedParams02, error) {
-	var body AiSkillVersionToolGrants1PinnedParams02
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromAiSkillVersionToolGrants1PinnedParams02 overwrites any union data inside the AiSkillVersionToolGrants1PinnedParams0 as the provided AiSkillVersionToolGrants1PinnedParams02
-func (t *AiSkillVersionToolGrants1PinnedParams0) FromAiSkillVersionToolGrants1PinnedParams02(v AiSkillVersionToolGrants1PinnedParams02) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeAiSkillVersionToolGrants1PinnedParams02 performs a merge with any union data inside the AiSkillVersionToolGrants1PinnedParams0, using the provided AiSkillVersionToolGrants1PinnedParams02
-func (t *AiSkillVersionToolGrants1PinnedParams0) MergeAiSkillVersionToolGrants1PinnedParams02(v AiSkillVersionToolGrants1PinnedParams02) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t AiSkillVersionToolGrants1PinnedParams0) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *AiSkillVersionToolGrants1PinnedParams0) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsAiSkillVersionToolGrants1PinnedParams10 returns the union data inside the AiSkillVersion_ToolGrants_1_PinnedParams_1_Item as a AiSkillVersionToolGrants1PinnedParams10
-func (t AiSkillVersion_ToolGrants_1_PinnedParams_1_Item) AsAiSkillVersionToolGrants1PinnedParams10() (AiSkillVersionToolGrants1PinnedParams10, error) {
-	var body AiSkillVersionToolGrants1PinnedParams10
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromAiSkillVersionToolGrants1PinnedParams10 overwrites any union data inside the AiSkillVersion_ToolGrants_1_PinnedParams_1_Item as the provided AiSkillVersionToolGrants1PinnedParams10
-func (t *AiSkillVersion_ToolGrants_1_PinnedParams_1_Item) FromAiSkillVersionToolGrants1PinnedParams10(v AiSkillVersionToolGrants1PinnedParams10) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeAiSkillVersionToolGrants1PinnedParams10 performs a merge with any union data inside the AiSkillVersion_ToolGrants_1_PinnedParams_1_Item, using the provided AiSkillVersionToolGrants1PinnedParams10
-func (t *AiSkillVersion_ToolGrants_1_PinnedParams_1_Item) MergeAiSkillVersionToolGrants1PinnedParams10(v AiSkillVersionToolGrants1PinnedParams10) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsAiSkillVersionToolGrants1PinnedParams11 returns the union data inside the AiSkillVersion_ToolGrants_1_PinnedParams_1_Item as a AiSkillVersionToolGrants1PinnedParams11
-func (t AiSkillVersion_ToolGrants_1_PinnedParams_1_Item) AsAiSkillVersionToolGrants1PinnedParams11() (AiSkillVersionToolGrants1PinnedParams11, error) {
-	var body AiSkillVersionToolGrants1PinnedParams11
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromAiSkillVersionToolGrants1PinnedParams11 overwrites any union data inside the AiSkillVersion_ToolGrants_1_PinnedParams_1_Item as the provided AiSkillVersionToolGrants1PinnedParams11
-func (t *AiSkillVersion_ToolGrants_1_PinnedParams_1_Item) FromAiSkillVersionToolGrants1PinnedParams11(v AiSkillVersionToolGrants1PinnedParams11) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeAiSkillVersionToolGrants1PinnedParams11 performs a merge with any union data inside the AiSkillVersion_ToolGrants_1_PinnedParams_1_Item, using the provided AiSkillVersionToolGrants1PinnedParams11
-func (t *AiSkillVersion_ToolGrants_1_PinnedParams_1_Item) MergeAiSkillVersionToolGrants1PinnedParams11(v AiSkillVersionToolGrants1PinnedParams11) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsAiSkillVersionToolGrants1PinnedParams12 returns the union data inside the AiSkillVersion_ToolGrants_1_PinnedParams_1_Item as a AiSkillVersionToolGrants1PinnedParams12
-func (t AiSkillVersion_ToolGrants_1_PinnedParams_1_Item) AsAiSkillVersionToolGrants1PinnedParams12() (AiSkillVersionToolGrants1PinnedParams12, error) {
-	var body AiSkillVersionToolGrants1PinnedParams12
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromAiSkillVersionToolGrants1PinnedParams12 overwrites any union data inside the AiSkillVersion_ToolGrants_1_PinnedParams_1_Item as the provided AiSkillVersionToolGrants1PinnedParams12
-func (t *AiSkillVersion_ToolGrants_1_PinnedParams_1_Item) FromAiSkillVersionToolGrants1PinnedParams12(v AiSkillVersionToolGrants1PinnedParams12) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeAiSkillVersionToolGrants1PinnedParams12 performs a merge with any union data inside the AiSkillVersion_ToolGrants_1_PinnedParams_1_Item, using the provided AiSkillVersionToolGrants1PinnedParams12
-func (t *AiSkillVersion_ToolGrants_1_PinnedParams_1_Item) MergeAiSkillVersionToolGrants1PinnedParams12(v AiSkillVersionToolGrants1PinnedParams12) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t AiSkillVersion_ToolGrants_1_PinnedParams_1_Item) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *AiSkillVersion_ToolGrants_1_PinnedParams_1_Item) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsAiSkillVersionToolGrants1PinnedParams0 returns the union data inside the AiSkillVersion_ToolGrants_1_PinnedParams_AdditionalProperties as a AiSkillVersionToolGrants1PinnedParams0
-func (t AiSkillVersion_ToolGrants_1_PinnedParams_AdditionalProperties) AsAiSkillVersionToolGrants1PinnedParams0() (AiSkillVersionToolGrants1PinnedParams0, error) {
-	var body AiSkillVersionToolGrants1PinnedParams0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromAiSkillVersionToolGrants1PinnedParams0 overwrites any union data inside the AiSkillVersion_ToolGrants_1_PinnedParams_AdditionalProperties as the provided AiSkillVersionToolGrants1PinnedParams0
-func (t *AiSkillVersion_ToolGrants_1_PinnedParams_AdditionalProperties) FromAiSkillVersionToolGrants1PinnedParams0(v AiSkillVersionToolGrants1PinnedParams0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeAiSkillVersionToolGrants1PinnedParams0 performs a merge with any union data inside the AiSkillVersion_ToolGrants_1_PinnedParams_AdditionalProperties, using the provided AiSkillVersionToolGrants1PinnedParams0
-func (t *AiSkillVersion_ToolGrants_1_PinnedParams_AdditionalProperties) MergeAiSkillVersionToolGrants1PinnedParams0(v AiSkillVersionToolGrants1PinnedParams0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsAiSkillVersionToolGrants1PinnedParams1 returns the union data inside the AiSkillVersion_ToolGrants_1_PinnedParams_AdditionalProperties as a AiSkillVersionToolGrants1PinnedParams1
-func (t AiSkillVersion_ToolGrants_1_PinnedParams_AdditionalProperties) AsAiSkillVersionToolGrants1PinnedParams1() (AiSkillVersionToolGrants1PinnedParams1, error) {
-	var body AiSkillVersionToolGrants1PinnedParams1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromAiSkillVersionToolGrants1PinnedParams1 overwrites any union data inside the AiSkillVersion_ToolGrants_1_PinnedParams_AdditionalProperties as the provided AiSkillVersionToolGrants1PinnedParams1
-func (t *AiSkillVersion_ToolGrants_1_PinnedParams_AdditionalProperties) FromAiSkillVersionToolGrants1PinnedParams1(v AiSkillVersionToolGrants1PinnedParams1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeAiSkillVersionToolGrants1PinnedParams1 performs a merge with any union data inside the AiSkillVersion_ToolGrants_1_PinnedParams_AdditionalProperties, using the provided AiSkillVersionToolGrants1PinnedParams1
-func (t *AiSkillVersion_ToolGrants_1_PinnedParams_AdditionalProperties) MergeAiSkillVersionToolGrants1PinnedParams1(v AiSkillVersionToolGrants1PinnedParams1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t AiSkillVersion_ToolGrants_1_PinnedParams_AdditionalProperties) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *AiSkillVersion_ToolGrants_1_PinnedParams_AdditionalProperties) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsAiSkillVersionToolGrants0 returns the union data inside the AiSkillVersion_ToolGrants_Item as a AiSkillVersionToolGrants0
-func (t AiSkillVersion_ToolGrants_Item) AsAiSkillVersionToolGrants0() (AiSkillVersionToolGrants0, error) {
-	var body AiSkillVersionToolGrants0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromAiSkillVersionToolGrants0 overwrites any union data inside the AiSkillVersion_ToolGrants_Item as the provided AiSkillVersionToolGrants0
-func (t *AiSkillVersion_ToolGrants_Item) FromAiSkillVersionToolGrants0(v AiSkillVersionToolGrants0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeAiSkillVersionToolGrants0 performs a merge with any union data inside the AiSkillVersion_ToolGrants_Item, using the provided AiSkillVersionToolGrants0
-func (t *AiSkillVersion_ToolGrants_Item) MergeAiSkillVersionToolGrants0(v AiSkillVersionToolGrants0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsAiSkillVersionToolGrants1 returns the union data inside the AiSkillVersion_ToolGrants_Item as a AiSkillVersionToolGrants1
-func (t AiSkillVersion_ToolGrants_Item) AsAiSkillVersionToolGrants1() (AiSkillVersionToolGrants1, error) {
-	var body AiSkillVersionToolGrants1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromAiSkillVersionToolGrants1 overwrites any union data inside the AiSkillVersion_ToolGrants_Item as the provided AiSkillVersionToolGrants1
-func (t *AiSkillVersion_ToolGrants_Item) FromAiSkillVersionToolGrants1(v AiSkillVersionToolGrants1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeAiSkillVersionToolGrants1 performs a merge with any union data inside the AiSkillVersion_ToolGrants_Item, using the provided AiSkillVersionToolGrants1
-func (t *AiSkillVersion_ToolGrants_Item) MergeAiSkillVersionToolGrants1(v AiSkillVersionToolGrants1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t AiSkillVersion_ToolGrants_Item) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *AiSkillVersion_ToolGrants_Item) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
 // AsAlertLabelsValue0 returns the union data inside the Alert_Labels_Value as a AlertLabelsValue0
 func (t Alert_Labels_Value) AsAlertLabelsValue0() (AlertLabelsValue0, error) {
 	var body AlertLabelsValue0
@@ -91152,306 +90021,6 @@ func (t NewAiAutomation_Data_Attributes_Conditions_Any_All_Value) MarshalJSON() 
 }
 
 func (t *NewAiAutomation_Data_Attributes_Conditions_Any_All_Value) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsNewAiSkillDataAttributesToolGrants1PinnedParams00 returns the union data inside the NewAiSkillDataAttributesToolGrants1PinnedParams0 as a NewAiSkillDataAttributesToolGrants1PinnedParams00
-func (t NewAiSkillDataAttributesToolGrants1PinnedParams0) AsNewAiSkillDataAttributesToolGrants1PinnedParams00() (NewAiSkillDataAttributesToolGrants1PinnedParams00, error) {
-	var body NewAiSkillDataAttributesToolGrants1PinnedParams00
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromNewAiSkillDataAttributesToolGrants1PinnedParams00 overwrites any union data inside the NewAiSkillDataAttributesToolGrants1PinnedParams0 as the provided NewAiSkillDataAttributesToolGrants1PinnedParams00
-func (t *NewAiSkillDataAttributesToolGrants1PinnedParams0) FromNewAiSkillDataAttributesToolGrants1PinnedParams00(v NewAiSkillDataAttributesToolGrants1PinnedParams00) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeNewAiSkillDataAttributesToolGrants1PinnedParams00 performs a merge with any union data inside the NewAiSkillDataAttributesToolGrants1PinnedParams0, using the provided NewAiSkillDataAttributesToolGrants1PinnedParams00
-func (t *NewAiSkillDataAttributesToolGrants1PinnedParams0) MergeNewAiSkillDataAttributesToolGrants1PinnedParams00(v NewAiSkillDataAttributesToolGrants1PinnedParams00) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsNewAiSkillDataAttributesToolGrants1PinnedParams01 returns the union data inside the NewAiSkillDataAttributesToolGrants1PinnedParams0 as a NewAiSkillDataAttributesToolGrants1PinnedParams01
-func (t NewAiSkillDataAttributesToolGrants1PinnedParams0) AsNewAiSkillDataAttributesToolGrants1PinnedParams01() (NewAiSkillDataAttributesToolGrants1PinnedParams01, error) {
-	var body NewAiSkillDataAttributesToolGrants1PinnedParams01
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromNewAiSkillDataAttributesToolGrants1PinnedParams01 overwrites any union data inside the NewAiSkillDataAttributesToolGrants1PinnedParams0 as the provided NewAiSkillDataAttributesToolGrants1PinnedParams01
-func (t *NewAiSkillDataAttributesToolGrants1PinnedParams0) FromNewAiSkillDataAttributesToolGrants1PinnedParams01(v NewAiSkillDataAttributesToolGrants1PinnedParams01) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeNewAiSkillDataAttributesToolGrants1PinnedParams01 performs a merge with any union data inside the NewAiSkillDataAttributesToolGrants1PinnedParams0, using the provided NewAiSkillDataAttributesToolGrants1PinnedParams01
-func (t *NewAiSkillDataAttributesToolGrants1PinnedParams0) MergeNewAiSkillDataAttributesToolGrants1PinnedParams01(v NewAiSkillDataAttributesToolGrants1PinnedParams01) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsNewAiSkillDataAttributesToolGrants1PinnedParams02 returns the union data inside the NewAiSkillDataAttributesToolGrants1PinnedParams0 as a NewAiSkillDataAttributesToolGrants1PinnedParams02
-func (t NewAiSkillDataAttributesToolGrants1PinnedParams0) AsNewAiSkillDataAttributesToolGrants1PinnedParams02() (NewAiSkillDataAttributesToolGrants1PinnedParams02, error) {
-	var body NewAiSkillDataAttributesToolGrants1PinnedParams02
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromNewAiSkillDataAttributesToolGrants1PinnedParams02 overwrites any union data inside the NewAiSkillDataAttributesToolGrants1PinnedParams0 as the provided NewAiSkillDataAttributesToolGrants1PinnedParams02
-func (t *NewAiSkillDataAttributesToolGrants1PinnedParams0) FromNewAiSkillDataAttributesToolGrants1PinnedParams02(v NewAiSkillDataAttributesToolGrants1PinnedParams02) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeNewAiSkillDataAttributesToolGrants1PinnedParams02 performs a merge with any union data inside the NewAiSkillDataAttributesToolGrants1PinnedParams0, using the provided NewAiSkillDataAttributesToolGrants1PinnedParams02
-func (t *NewAiSkillDataAttributesToolGrants1PinnedParams0) MergeNewAiSkillDataAttributesToolGrants1PinnedParams02(v NewAiSkillDataAttributesToolGrants1PinnedParams02) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t NewAiSkillDataAttributesToolGrants1PinnedParams0) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *NewAiSkillDataAttributesToolGrants1PinnedParams0) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsNewAiSkillDataAttributesToolGrants1PinnedParams10 returns the union data inside the NewAiSkill_Data_Attributes_ToolGrants_1_PinnedParams_1_Item as a NewAiSkillDataAttributesToolGrants1PinnedParams10
-func (t NewAiSkill_Data_Attributes_ToolGrants_1_PinnedParams_1_Item) AsNewAiSkillDataAttributesToolGrants1PinnedParams10() (NewAiSkillDataAttributesToolGrants1PinnedParams10, error) {
-	var body NewAiSkillDataAttributesToolGrants1PinnedParams10
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromNewAiSkillDataAttributesToolGrants1PinnedParams10 overwrites any union data inside the NewAiSkill_Data_Attributes_ToolGrants_1_PinnedParams_1_Item as the provided NewAiSkillDataAttributesToolGrants1PinnedParams10
-func (t *NewAiSkill_Data_Attributes_ToolGrants_1_PinnedParams_1_Item) FromNewAiSkillDataAttributesToolGrants1PinnedParams10(v NewAiSkillDataAttributesToolGrants1PinnedParams10) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeNewAiSkillDataAttributesToolGrants1PinnedParams10 performs a merge with any union data inside the NewAiSkill_Data_Attributes_ToolGrants_1_PinnedParams_1_Item, using the provided NewAiSkillDataAttributesToolGrants1PinnedParams10
-func (t *NewAiSkill_Data_Attributes_ToolGrants_1_PinnedParams_1_Item) MergeNewAiSkillDataAttributesToolGrants1PinnedParams10(v NewAiSkillDataAttributesToolGrants1PinnedParams10) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsNewAiSkillDataAttributesToolGrants1PinnedParams11 returns the union data inside the NewAiSkill_Data_Attributes_ToolGrants_1_PinnedParams_1_Item as a NewAiSkillDataAttributesToolGrants1PinnedParams11
-func (t NewAiSkill_Data_Attributes_ToolGrants_1_PinnedParams_1_Item) AsNewAiSkillDataAttributesToolGrants1PinnedParams11() (NewAiSkillDataAttributesToolGrants1PinnedParams11, error) {
-	var body NewAiSkillDataAttributesToolGrants1PinnedParams11
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromNewAiSkillDataAttributesToolGrants1PinnedParams11 overwrites any union data inside the NewAiSkill_Data_Attributes_ToolGrants_1_PinnedParams_1_Item as the provided NewAiSkillDataAttributesToolGrants1PinnedParams11
-func (t *NewAiSkill_Data_Attributes_ToolGrants_1_PinnedParams_1_Item) FromNewAiSkillDataAttributesToolGrants1PinnedParams11(v NewAiSkillDataAttributesToolGrants1PinnedParams11) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeNewAiSkillDataAttributesToolGrants1PinnedParams11 performs a merge with any union data inside the NewAiSkill_Data_Attributes_ToolGrants_1_PinnedParams_1_Item, using the provided NewAiSkillDataAttributesToolGrants1PinnedParams11
-func (t *NewAiSkill_Data_Attributes_ToolGrants_1_PinnedParams_1_Item) MergeNewAiSkillDataAttributesToolGrants1PinnedParams11(v NewAiSkillDataAttributesToolGrants1PinnedParams11) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsNewAiSkillDataAttributesToolGrants1PinnedParams12 returns the union data inside the NewAiSkill_Data_Attributes_ToolGrants_1_PinnedParams_1_Item as a NewAiSkillDataAttributesToolGrants1PinnedParams12
-func (t NewAiSkill_Data_Attributes_ToolGrants_1_PinnedParams_1_Item) AsNewAiSkillDataAttributesToolGrants1PinnedParams12() (NewAiSkillDataAttributesToolGrants1PinnedParams12, error) {
-	var body NewAiSkillDataAttributesToolGrants1PinnedParams12
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromNewAiSkillDataAttributesToolGrants1PinnedParams12 overwrites any union data inside the NewAiSkill_Data_Attributes_ToolGrants_1_PinnedParams_1_Item as the provided NewAiSkillDataAttributesToolGrants1PinnedParams12
-func (t *NewAiSkill_Data_Attributes_ToolGrants_1_PinnedParams_1_Item) FromNewAiSkillDataAttributesToolGrants1PinnedParams12(v NewAiSkillDataAttributesToolGrants1PinnedParams12) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeNewAiSkillDataAttributesToolGrants1PinnedParams12 performs a merge with any union data inside the NewAiSkill_Data_Attributes_ToolGrants_1_PinnedParams_1_Item, using the provided NewAiSkillDataAttributesToolGrants1PinnedParams12
-func (t *NewAiSkill_Data_Attributes_ToolGrants_1_PinnedParams_1_Item) MergeNewAiSkillDataAttributesToolGrants1PinnedParams12(v NewAiSkillDataAttributesToolGrants1PinnedParams12) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t NewAiSkill_Data_Attributes_ToolGrants_1_PinnedParams_1_Item) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *NewAiSkill_Data_Attributes_ToolGrants_1_PinnedParams_1_Item) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsNewAiSkillDataAttributesToolGrants1PinnedParams0 returns the union data inside the NewAiSkill_Data_Attributes_ToolGrants_1_PinnedParams_AdditionalProperties as a NewAiSkillDataAttributesToolGrants1PinnedParams0
-func (t NewAiSkill_Data_Attributes_ToolGrants_1_PinnedParams_AdditionalProperties) AsNewAiSkillDataAttributesToolGrants1PinnedParams0() (NewAiSkillDataAttributesToolGrants1PinnedParams0, error) {
-	var body NewAiSkillDataAttributesToolGrants1PinnedParams0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromNewAiSkillDataAttributesToolGrants1PinnedParams0 overwrites any union data inside the NewAiSkill_Data_Attributes_ToolGrants_1_PinnedParams_AdditionalProperties as the provided NewAiSkillDataAttributesToolGrants1PinnedParams0
-func (t *NewAiSkill_Data_Attributes_ToolGrants_1_PinnedParams_AdditionalProperties) FromNewAiSkillDataAttributesToolGrants1PinnedParams0(v NewAiSkillDataAttributesToolGrants1PinnedParams0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeNewAiSkillDataAttributesToolGrants1PinnedParams0 performs a merge with any union data inside the NewAiSkill_Data_Attributes_ToolGrants_1_PinnedParams_AdditionalProperties, using the provided NewAiSkillDataAttributesToolGrants1PinnedParams0
-func (t *NewAiSkill_Data_Attributes_ToolGrants_1_PinnedParams_AdditionalProperties) MergeNewAiSkillDataAttributesToolGrants1PinnedParams0(v NewAiSkillDataAttributesToolGrants1PinnedParams0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsNewAiSkillDataAttributesToolGrants1PinnedParams1 returns the union data inside the NewAiSkill_Data_Attributes_ToolGrants_1_PinnedParams_AdditionalProperties as a NewAiSkillDataAttributesToolGrants1PinnedParams1
-func (t NewAiSkill_Data_Attributes_ToolGrants_1_PinnedParams_AdditionalProperties) AsNewAiSkillDataAttributesToolGrants1PinnedParams1() (NewAiSkillDataAttributesToolGrants1PinnedParams1, error) {
-	var body NewAiSkillDataAttributesToolGrants1PinnedParams1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromNewAiSkillDataAttributesToolGrants1PinnedParams1 overwrites any union data inside the NewAiSkill_Data_Attributes_ToolGrants_1_PinnedParams_AdditionalProperties as the provided NewAiSkillDataAttributesToolGrants1PinnedParams1
-func (t *NewAiSkill_Data_Attributes_ToolGrants_1_PinnedParams_AdditionalProperties) FromNewAiSkillDataAttributesToolGrants1PinnedParams1(v NewAiSkillDataAttributesToolGrants1PinnedParams1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeNewAiSkillDataAttributesToolGrants1PinnedParams1 performs a merge with any union data inside the NewAiSkill_Data_Attributes_ToolGrants_1_PinnedParams_AdditionalProperties, using the provided NewAiSkillDataAttributesToolGrants1PinnedParams1
-func (t *NewAiSkill_Data_Attributes_ToolGrants_1_PinnedParams_AdditionalProperties) MergeNewAiSkillDataAttributesToolGrants1PinnedParams1(v NewAiSkillDataAttributesToolGrants1PinnedParams1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t NewAiSkill_Data_Attributes_ToolGrants_1_PinnedParams_AdditionalProperties) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *NewAiSkill_Data_Attributes_ToolGrants_1_PinnedParams_AdditionalProperties) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsNewAiSkillDataAttributesToolGrants0 returns the union data inside the NewAiSkill_Data_Attributes_ToolGrants_Item as a NewAiSkillDataAttributesToolGrants0
-func (t NewAiSkill_Data_Attributes_ToolGrants_Item) AsNewAiSkillDataAttributesToolGrants0() (NewAiSkillDataAttributesToolGrants0, error) {
-	var body NewAiSkillDataAttributesToolGrants0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromNewAiSkillDataAttributesToolGrants0 overwrites any union data inside the NewAiSkill_Data_Attributes_ToolGrants_Item as the provided NewAiSkillDataAttributesToolGrants0
-func (t *NewAiSkill_Data_Attributes_ToolGrants_Item) FromNewAiSkillDataAttributesToolGrants0(v NewAiSkillDataAttributesToolGrants0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeNewAiSkillDataAttributesToolGrants0 performs a merge with any union data inside the NewAiSkill_Data_Attributes_ToolGrants_Item, using the provided NewAiSkillDataAttributesToolGrants0
-func (t *NewAiSkill_Data_Attributes_ToolGrants_Item) MergeNewAiSkillDataAttributesToolGrants0(v NewAiSkillDataAttributesToolGrants0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsNewAiSkillDataAttributesToolGrants1 returns the union data inside the NewAiSkill_Data_Attributes_ToolGrants_Item as a NewAiSkillDataAttributesToolGrants1
-func (t NewAiSkill_Data_Attributes_ToolGrants_Item) AsNewAiSkillDataAttributesToolGrants1() (NewAiSkillDataAttributesToolGrants1, error) {
-	var body NewAiSkillDataAttributesToolGrants1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromNewAiSkillDataAttributesToolGrants1 overwrites any union data inside the NewAiSkill_Data_Attributes_ToolGrants_Item as the provided NewAiSkillDataAttributesToolGrants1
-func (t *NewAiSkill_Data_Attributes_ToolGrants_Item) FromNewAiSkillDataAttributesToolGrants1(v NewAiSkillDataAttributesToolGrants1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeNewAiSkillDataAttributesToolGrants1 performs a merge with any union data inside the NewAiSkill_Data_Attributes_ToolGrants_Item, using the provided NewAiSkillDataAttributesToolGrants1
-func (t *NewAiSkill_Data_Attributes_ToolGrants_Item) MergeNewAiSkillDataAttributesToolGrants1(v NewAiSkillDataAttributesToolGrants1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t NewAiSkill_Data_Attributes_ToolGrants_Item) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *NewAiSkill_Data_Attributes_ToolGrants_Item) UnmarshalJSON(b []byte) error {
 	err := t.union.UnmarshalJSON(b)
 	return err
 }
@@ -98408,306 +96977,6 @@ func (t UpdateAiAutomation_Data_Attributes_Conditions_Any_All_Value) MarshalJSON
 }
 
 func (t *UpdateAiAutomation_Data_Attributes_Conditions_Any_All_Value) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsUpdateAiSkillDataAttributesToolGrants1PinnedParams00 returns the union data inside the UpdateAiSkillDataAttributesToolGrants1PinnedParams0 as a UpdateAiSkillDataAttributesToolGrants1PinnedParams00
-func (t UpdateAiSkillDataAttributesToolGrants1PinnedParams0) AsUpdateAiSkillDataAttributesToolGrants1PinnedParams00() (UpdateAiSkillDataAttributesToolGrants1PinnedParams00, error) {
-	var body UpdateAiSkillDataAttributesToolGrants1PinnedParams00
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUpdateAiSkillDataAttributesToolGrants1PinnedParams00 overwrites any union data inside the UpdateAiSkillDataAttributesToolGrants1PinnedParams0 as the provided UpdateAiSkillDataAttributesToolGrants1PinnedParams00
-func (t *UpdateAiSkillDataAttributesToolGrants1PinnedParams0) FromUpdateAiSkillDataAttributesToolGrants1PinnedParams00(v UpdateAiSkillDataAttributesToolGrants1PinnedParams00) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUpdateAiSkillDataAttributesToolGrants1PinnedParams00 performs a merge with any union data inside the UpdateAiSkillDataAttributesToolGrants1PinnedParams0, using the provided UpdateAiSkillDataAttributesToolGrants1PinnedParams00
-func (t *UpdateAiSkillDataAttributesToolGrants1PinnedParams0) MergeUpdateAiSkillDataAttributesToolGrants1PinnedParams00(v UpdateAiSkillDataAttributesToolGrants1PinnedParams00) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUpdateAiSkillDataAttributesToolGrants1PinnedParams01 returns the union data inside the UpdateAiSkillDataAttributesToolGrants1PinnedParams0 as a UpdateAiSkillDataAttributesToolGrants1PinnedParams01
-func (t UpdateAiSkillDataAttributesToolGrants1PinnedParams0) AsUpdateAiSkillDataAttributesToolGrants1PinnedParams01() (UpdateAiSkillDataAttributesToolGrants1PinnedParams01, error) {
-	var body UpdateAiSkillDataAttributesToolGrants1PinnedParams01
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUpdateAiSkillDataAttributesToolGrants1PinnedParams01 overwrites any union data inside the UpdateAiSkillDataAttributesToolGrants1PinnedParams0 as the provided UpdateAiSkillDataAttributesToolGrants1PinnedParams01
-func (t *UpdateAiSkillDataAttributesToolGrants1PinnedParams0) FromUpdateAiSkillDataAttributesToolGrants1PinnedParams01(v UpdateAiSkillDataAttributesToolGrants1PinnedParams01) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUpdateAiSkillDataAttributesToolGrants1PinnedParams01 performs a merge with any union data inside the UpdateAiSkillDataAttributesToolGrants1PinnedParams0, using the provided UpdateAiSkillDataAttributesToolGrants1PinnedParams01
-func (t *UpdateAiSkillDataAttributesToolGrants1PinnedParams0) MergeUpdateAiSkillDataAttributesToolGrants1PinnedParams01(v UpdateAiSkillDataAttributesToolGrants1PinnedParams01) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUpdateAiSkillDataAttributesToolGrants1PinnedParams02 returns the union data inside the UpdateAiSkillDataAttributesToolGrants1PinnedParams0 as a UpdateAiSkillDataAttributesToolGrants1PinnedParams02
-func (t UpdateAiSkillDataAttributesToolGrants1PinnedParams0) AsUpdateAiSkillDataAttributesToolGrants1PinnedParams02() (UpdateAiSkillDataAttributesToolGrants1PinnedParams02, error) {
-	var body UpdateAiSkillDataAttributesToolGrants1PinnedParams02
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUpdateAiSkillDataAttributesToolGrants1PinnedParams02 overwrites any union data inside the UpdateAiSkillDataAttributesToolGrants1PinnedParams0 as the provided UpdateAiSkillDataAttributesToolGrants1PinnedParams02
-func (t *UpdateAiSkillDataAttributesToolGrants1PinnedParams0) FromUpdateAiSkillDataAttributesToolGrants1PinnedParams02(v UpdateAiSkillDataAttributesToolGrants1PinnedParams02) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUpdateAiSkillDataAttributesToolGrants1PinnedParams02 performs a merge with any union data inside the UpdateAiSkillDataAttributesToolGrants1PinnedParams0, using the provided UpdateAiSkillDataAttributesToolGrants1PinnedParams02
-func (t *UpdateAiSkillDataAttributesToolGrants1PinnedParams0) MergeUpdateAiSkillDataAttributesToolGrants1PinnedParams02(v UpdateAiSkillDataAttributesToolGrants1PinnedParams02) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t UpdateAiSkillDataAttributesToolGrants1PinnedParams0) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *UpdateAiSkillDataAttributesToolGrants1PinnedParams0) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsUpdateAiSkillDataAttributesToolGrants1PinnedParams10 returns the union data inside the UpdateAiSkill_Data_Attributes_ToolGrants_1_PinnedParams_1_Item as a UpdateAiSkillDataAttributesToolGrants1PinnedParams10
-func (t UpdateAiSkill_Data_Attributes_ToolGrants_1_PinnedParams_1_Item) AsUpdateAiSkillDataAttributesToolGrants1PinnedParams10() (UpdateAiSkillDataAttributesToolGrants1PinnedParams10, error) {
-	var body UpdateAiSkillDataAttributesToolGrants1PinnedParams10
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUpdateAiSkillDataAttributesToolGrants1PinnedParams10 overwrites any union data inside the UpdateAiSkill_Data_Attributes_ToolGrants_1_PinnedParams_1_Item as the provided UpdateAiSkillDataAttributesToolGrants1PinnedParams10
-func (t *UpdateAiSkill_Data_Attributes_ToolGrants_1_PinnedParams_1_Item) FromUpdateAiSkillDataAttributesToolGrants1PinnedParams10(v UpdateAiSkillDataAttributesToolGrants1PinnedParams10) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUpdateAiSkillDataAttributesToolGrants1PinnedParams10 performs a merge with any union data inside the UpdateAiSkill_Data_Attributes_ToolGrants_1_PinnedParams_1_Item, using the provided UpdateAiSkillDataAttributesToolGrants1PinnedParams10
-func (t *UpdateAiSkill_Data_Attributes_ToolGrants_1_PinnedParams_1_Item) MergeUpdateAiSkillDataAttributesToolGrants1PinnedParams10(v UpdateAiSkillDataAttributesToolGrants1PinnedParams10) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUpdateAiSkillDataAttributesToolGrants1PinnedParams11 returns the union data inside the UpdateAiSkill_Data_Attributes_ToolGrants_1_PinnedParams_1_Item as a UpdateAiSkillDataAttributesToolGrants1PinnedParams11
-func (t UpdateAiSkill_Data_Attributes_ToolGrants_1_PinnedParams_1_Item) AsUpdateAiSkillDataAttributesToolGrants1PinnedParams11() (UpdateAiSkillDataAttributesToolGrants1PinnedParams11, error) {
-	var body UpdateAiSkillDataAttributesToolGrants1PinnedParams11
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUpdateAiSkillDataAttributesToolGrants1PinnedParams11 overwrites any union data inside the UpdateAiSkill_Data_Attributes_ToolGrants_1_PinnedParams_1_Item as the provided UpdateAiSkillDataAttributesToolGrants1PinnedParams11
-func (t *UpdateAiSkill_Data_Attributes_ToolGrants_1_PinnedParams_1_Item) FromUpdateAiSkillDataAttributesToolGrants1PinnedParams11(v UpdateAiSkillDataAttributesToolGrants1PinnedParams11) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUpdateAiSkillDataAttributesToolGrants1PinnedParams11 performs a merge with any union data inside the UpdateAiSkill_Data_Attributes_ToolGrants_1_PinnedParams_1_Item, using the provided UpdateAiSkillDataAttributesToolGrants1PinnedParams11
-func (t *UpdateAiSkill_Data_Attributes_ToolGrants_1_PinnedParams_1_Item) MergeUpdateAiSkillDataAttributesToolGrants1PinnedParams11(v UpdateAiSkillDataAttributesToolGrants1PinnedParams11) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUpdateAiSkillDataAttributesToolGrants1PinnedParams12 returns the union data inside the UpdateAiSkill_Data_Attributes_ToolGrants_1_PinnedParams_1_Item as a UpdateAiSkillDataAttributesToolGrants1PinnedParams12
-func (t UpdateAiSkill_Data_Attributes_ToolGrants_1_PinnedParams_1_Item) AsUpdateAiSkillDataAttributesToolGrants1PinnedParams12() (UpdateAiSkillDataAttributesToolGrants1PinnedParams12, error) {
-	var body UpdateAiSkillDataAttributesToolGrants1PinnedParams12
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUpdateAiSkillDataAttributesToolGrants1PinnedParams12 overwrites any union data inside the UpdateAiSkill_Data_Attributes_ToolGrants_1_PinnedParams_1_Item as the provided UpdateAiSkillDataAttributesToolGrants1PinnedParams12
-func (t *UpdateAiSkill_Data_Attributes_ToolGrants_1_PinnedParams_1_Item) FromUpdateAiSkillDataAttributesToolGrants1PinnedParams12(v UpdateAiSkillDataAttributesToolGrants1PinnedParams12) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUpdateAiSkillDataAttributesToolGrants1PinnedParams12 performs a merge with any union data inside the UpdateAiSkill_Data_Attributes_ToolGrants_1_PinnedParams_1_Item, using the provided UpdateAiSkillDataAttributesToolGrants1PinnedParams12
-func (t *UpdateAiSkill_Data_Attributes_ToolGrants_1_PinnedParams_1_Item) MergeUpdateAiSkillDataAttributesToolGrants1PinnedParams12(v UpdateAiSkillDataAttributesToolGrants1PinnedParams12) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t UpdateAiSkill_Data_Attributes_ToolGrants_1_PinnedParams_1_Item) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *UpdateAiSkill_Data_Attributes_ToolGrants_1_PinnedParams_1_Item) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsUpdateAiSkillDataAttributesToolGrants1PinnedParams0 returns the union data inside the UpdateAiSkill_Data_Attributes_ToolGrants_1_PinnedParams_AdditionalProperties as a UpdateAiSkillDataAttributesToolGrants1PinnedParams0
-func (t UpdateAiSkill_Data_Attributes_ToolGrants_1_PinnedParams_AdditionalProperties) AsUpdateAiSkillDataAttributesToolGrants1PinnedParams0() (UpdateAiSkillDataAttributesToolGrants1PinnedParams0, error) {
-	var body UpdateAiSkillDataAttributesToolGrants1PinnedParams0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUpdateAiSkillDataAttributesToolGrants1PinnedParams0 overwrites any union data inside the UpdateAiSkill_Data_Attributes_ToolGrants_1_PinnedParams_AdditionalProperties as the provided UpdateAiSkillDataAttributesToolGrants1PinnedParams0
-func (t *UpdateAiSkill_Data_Attributes_ToolGrants_1_PinnedParams_AdditionalProperties) FromUpdateAiSkillDataAttributesToolGrants1PinnedParams0(v UpdateAiSkillDataAttributesToolGrants1PinnedParams0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUpdateAiSkillDataAttributesToolGrants1PinnedParams0 performs a merge with any union data inside the UpdateAiSkill_Data_Attributes_ToolGrants_1_PinnedParams_AdditionalProperties, using the provided UpdateAiSkillDataAttributesToolGrants1PinnedParams0
-func (t *UpdateAiSkill_Data_Attributes_ToolGrants_1_PinnedParams_AdditionalProperties) MergeUpdateAiSkillDataAttributesToolGrants1PinnedParams0(v UpdateAiSkillDataAttributesToolGrants1PinnedParams0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUpdateAiSkillDataAttributesToolGrants1PinnedParams1 returns the union data inside the UpdateAiSkill_Data_Attributes_ToolGrants_1_PinnedParams_AdditionalProperties as a UpdateAiSkillDataAttributesToolGrants1PinnedParams1
-func (t UpdateAiSkill_Data_Attributes_ToolGrants_1_PinnedParams_AdditionalProperties) AsUpdateAiSkillDataAttributesToolGrants1PinnedParams1() (UpdateAiSkillDataAttributesToolGrants1PinnedParams1, error) {
-	var body UpdateAiSkillDataAttributesToolGrants1PinnedParams1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUpdateAiSkillDataAttributesToolGrants1PinnedParams1 overwrites any union data inside the UpdateAiSkill_Data_Attributes_ToolGrants_1_PinnedParams_AdditionalProperties as the provided UpdateAiSkillDataAttributesToolGrants1PinnedParams1
-func (t *UpdateAiSkill_Data_Attributes_ToolGrants_1_PinnedParams_AdditionalProperties) FromUpdateAiSkillDataAttributesToolGrants1PinnedParams1(v UpdateAiSkillDataAttributesToolGrants1PinnedParams1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUpdateAiSkillDataAttributesToolGrants1PinnedParams1 performs a merge with any union data inside the UpdateAiSkill_Data_Attributes_ToolGrants_1_PinnedParams_AdditionalProperties, using the provided UpdateAiSkillDataAttributesToolGrants1PinnedParams1
-func (t *UpdateAiSkill_Data_Attributes_ToolGrants_1_PinnedParams_AdditionalProperties) MergeUpdateAiSkillDataAttributesToolGrants1PinnedParams1(v UpdateAiSkillDataAttributesToolGrants1PinnedParams1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t UpdateAiSkill_Data_Attributes_ToolGrants_1_PinnedParams_AdditionalProperties) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *UpdateAiSkill_Data_Attributes_ToolGrants_1_PinnedParams_AdditionalProperties) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsUpdateAiSkillDataAttributesToolGrants0 returns the union data inside the UpdateAiSkill_Data_Attributes_ToolGrants_Item as a UpdateAiSkillDataAttributesToolGrants0
-func (t UpdateAiSkill_Data_Attributes_ToolGrants_Item) AsUpdateAiSkillDataAttributesToolGrants0() (UpdateAiSkillDataAttributesToolGrants0, error) {
-	var body UpdateAiSkillDataAttributesToolGrants0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUpdateAiSkillDataAttributesToolGrants0 overwrites any union data inside the UpdateAiSkill_Data_Attributes_ToolGrants_Item as the provided UpdateAiSkillDataAttributesToolGrants0
-func (t *UpdateAiSkill_Data_Attributes_ToolGrants_Item) FromUpdateAiSkillDataAttributesToolGrants0(v UpdateAiSkillDataAttributesToolGrants0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUpdateAiSkillDataAttributesToolGrants0 performs a merge with any union data inside the UpdateAiSkill_Data_Attributes_ToolGrants_Item, using the provided UpdateAiSkillDataAttributesToolGrants0
-func (t *UpdateAiSkill_Data_Attributes_ToolGrants_Item) MergeUpdateAiSkillDataAttributesToolGrants0(v UpdateAiSkillDataAttributesToolGrants0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUpdateAiSkillDataAttributesToolGrants1 returns the union data inside the UpdateAiSkill_Data_Attributes_ToolGrants_Item as a UpdateAiSkillDataAttributesToolGrants1
-func (t UpdateAiSkill_Data_Attributes_ToolGrants_Item) AsUpdateAiSkillDataAttributesToolGrants1() (UpdateAiSkillDataAttributesToolGrants1, error) {
-	var body UpdateAiSkillDataAttributesToolGrants1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUpdateAiSkillDataAttributesToolGrants1 overwrites any union data inside the UpdateAiSkill_Data_Attributes_ToolGrants_Item as the provided UpdateAiSkillDataAttributesToolGrants1
-func (t *UpdateAiSkill_Data_Attributes_ToolGrants_Item) FromUpdateAiSkillDataAttributesToolGrants1(v UpdateAiSkillDataAttributesToolGrants1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUpdateAiSkillDataAttributesToolGrants1 performs a merge with any union data inside the UpdateAiSkill_Data_Attributes_ToolGrants_Item, using the provided UpdateAiSkillDataAttributesToolGrants1
-func (t *UpdateAiSkill_Data_Attributes_ToolGrants_Item) MergeUpdateAiSkillDataAttributesToolGrants1(v UpdateAiSkillDataAttributesToolGrants1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t UpdateAiSkill_Data_Attributes_ToolGrants_Item) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *UpdateAiSkill_Data_Attributes_ToolGrants_Item) UnmarshalJSON(b []byte) error {
 	err := t.union.UnmarshalJSON(b)
 	return err
 }
@@ -109139,7 +107408,7 @@ type ClientInterface interface {
 
 	// CreateAiChat Send AI chat message
 	//
-	// Send a message to the AI assistant and receive a synchronous reply. Optionally bind the conversation to an incident or alert for context-aware responses. For eligible unbound home chat, `checkpoint_id` and `decision` confirm or cancel approval-gated writes. Responses include `confirmation` for a pending write and `checkpoint_resolved` after resume. If an action-item write needs required fields the model did not supply, no checkpoint is created and the turn completes with a plain reply linking to that incident's action-item form in the Rootly web app. The synchronous response has no `confirmation` key; only `confirmation` responses are resumable. Requires `ai.chat:write` OAuth scope or an API key.
+	// Send a message to the AI assistant and receive a synchronous reply. Optionally bind the conversation to an incident or alert for context-aware responses. For eligible unbound home chat, `checkpoint_id` and `decision` confirm or cancel approval-gated writes. Responses include `confirmation` for a pending write and `checkpoint_resolved` after resume. If an action-item write needs required fields the model did not supply, no checkpoint is created and the turn completes with a plain reply linking to that incident's action-item form in the Rootly web app. The synchronous response has no `confirmation` key; only `confirmation` responses are resumable. Limited to 60 requests per minute per credential. Rate-limit responses include `Retry-After` and `X-RateLimit-*` headers. Requires `ai.chat:write` OAuth scope or an API key.
 	//
 	// Corresponds with POST /v1/ai/chat (the `CreateAiChat` operationId).
 	CreateAiChat(ctx context.Context, params *CreateAiChatParams, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -109178,14 +107447,14 @@ type ClientInterface interface {
 
 	// ListAiChatSessionMessages List AI chat session messages
 	//
-	// Returns the user and assistant message history for a session, paginated and chronologically ordered. Internal tool messages are filtered out. Assistant messages may include a `skill` object with `id`, `name`, `slug`, and `version` for the AI Skill loaded during that turn. The response also carries the session's current `pinned`, `archived`, and `last_active_at` state. Requires `ai.chat:read` OAuth scope or an API key.
+	// Returns the user and assistant message history for a session, paginated and chronologically ordered. Internal tool messages are filtered out. Assistant messages may include a `skill` object with `id`, `name`, `slug`, and `version` for the AI Skill loaded during that turn. The response also carries the session's current `title`, `pinned`, `archived`, and `last_active_at` state. Requires `ai.chat:read` OAuth scope or an API key.
 	//
 	// Corresponds with GET /v1/ai/chat/sessions/{session_id}/messages (the `ListAiChatSessionMessages` operationId).
 	ListAiChatSessionMessages(ctx context.Context, sessionID openapi_types.UUID, params *ListAiChatSessionMessagesParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// StreamAiChat Stream AI chat response (SSE)
 	//
-	// Send a message and receive the AI response as a Server-Sent Events stream. Optionally bind to an incident or alert for context. For eligible unbound home chat, `checkpoint_id` and `decision` confirm or cancel approval-gated writes. Events include `confirmation_required` for pending writes and `checkpoint_resolved` before replay. If an action-item write needs required fields the model did not supply, no checkpoint is created and the turn completes with a plain reply linking to that incident's action-item form in the Rootly web app. The stream emits `done` with `status: complete` and no `confirmation_required` event; only `confirmation_required` events are resumable. `status` events carry a short progress line (`{status}`) such as the running tool's title or its progress message; they never include tool arguments or results. `skill_loaded` events carry `{skill: {id, name, slug, version}}` when an AI Skill is loaded. Requires `ai.chat:write` OAuth scope or an API key.
+	// Send a message and receive the AI response as a Server-Sent Events stream. Optionally bind to an incident or alert for context. For eligible unbound home chat, `checkpoint_id` and `decision` confirm or cancel approval-gated writes. Events include `confirmation_required` for pending writes and `checkpoint_resolved` before replay. If an action-item write needs required fields the model did not supply, no checkpoint is created and the turn completes with a plain reply linking to that incident's action-item form in the Rootly web app. The stream emits `done` with `status: complete` and no `confirmation_required` event; only `confirmation_required` events are resumable. `status` events carry a short progress line (`{status}`) such as the running tool's title or its progress message; they never include tool arguments or results. `skill_loaded` events carry `{skill: {id, name, slug, version}}` when an AI Skill is loaded. Limited to 60 requests per minute per credential. Rate-limit responses include `Retry-After` and `X-RateLimit-*` headers. Requires `ai.chat:write` OAuth scope or an API key.
 	//
 	// Corresponds with POST /v1/ai/chat/stream (the `StreamAiChat` operationId).
 	StreamAiChat(ctx context.Context, params *StreamAiChatParams, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -109367,13 +107636,6 @@ type ClientInterface interface {
 	//
 	// Corresponds with POST /v1/ai_skills (the `CreateAISkill` operationId).
 	CreateAISkillWithApplicationVndAPIPlusJSONBody(ctx context.Context, body CreateAISkillApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// ListAISkillGrantableTools Lists grantable AI Skill tools
-	//
-	// Requires OAuth scope `ai.skills:read`.
-	//
-	// Corresponds with GET /v1/ai_skills/grantable_tools (the `ListAISkillGrantableTools` operationId).
-	ListAISkillGrantableTools(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// ListAISkillVersions Lists AI skill versions
 	//
@@ -116436,7 +114698,7 @@ func (c *Client) UpdateIncidentActionItemWithApplicationVndAPIPlusJSONBody(ctx c
 
 // CreateAiChat Send AI chat message
 //
-// Send a message to the AI assistant and receive a synchronous reply. Optionally bind the conversation to an incident or alert for context-aware responses. For eligible unbound home chat, `checkpoint_id` and `decision` confirm or cancel approval-gated writes. Responses include `confirmation` for a pending write and `checkpoint_resolved` after resume. If an action-item write needs required fields the model did not supply, no checkpoint is created and the turn completes with a plain reply linking to that incident's action-item form in the Rootly web app. The synchronous response has no `confirmation` key; only `confirmation` responses are resumable. Requires `ai.chat:write` OAuth scope or an API key.
+// Send a message to the AI assistant and receive a synchronous reply. Optionally bind the conversation to an incident or alert for context-aware responses. For eligible unbound home chat, `checkpoint_id` and `decision` confirm or cancel approval-gated writes. Responses include `confirmation` for a pending write and `checkpoint_resolved` after resume. If an action-item write needs required fields the model did not supply, no checkpoint is created and the turn completes with a plain reply linking to that incident's action-item form in the Rootly web app. The synchronous response has no `confirmation` key; only `confirmation` responses are resumable. Limited to 60 requests per minute per credential. Rate-limit responses include `Retry-After` and `X-RateLimit-*` headers. Requires `ai.chat:write` OAuth scope or an API key.
 //
 // Corresponds with POST /v1/ai/chat (the `CreateAiChat` operationId).
 func (c *Client) CreateAiChat(ctx context.Context, params *CreateAiChatParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
@@ -116525,7 +114787,7 @@ func (c *Client) UpdateAiChatSessionWithApplicationVndAPIPlusJSONBody(ctx contex
 
 // ListAiChatSessionMessages List AI chat session messages
 //
-// Returns the user and assistant message history for a session, paginated and chronologically ordered. Internal tool messages are filtered out. Assistant messages may include a `skill` object with `id`, `name`, `slug`, and `version` for the AI Skill loaded during that turn. The response also carries the session's current `pinned`, `archived`, and `last_active_at` state. Requires `ai.chat:read` OAuth scope or an API key.
+// Returns the user and assistant message history for a session, paginated and chronologically ordered. Internal tool messages are filtered out. Assistant messages may include a `skill` object with `id`, `name`, `slug`, and `version` for the AI Skill loaded during that turn. The response also carries the session's current `title`, `pinned`, `archived`, and `last_active_at` state. Requires `ai.chat:read` OAuth scope or an API key.
 //
 // Corresponds with GET /v1/ai/chat/sessions/{session_id}/messages (the `ListAiChatSessionMessages` operationId).
 func (c *Client) ListAiChatSessionMessages(ctx context.Context, sessionID openapi_types.UUID, params *ListAiChatSessionMessagesParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
@@ -116542,7 +114804,7 @@ func (c *Client) ListAiChatSessionMessages(ctx context.Context, sessionID openap
 
 // StreamAiChat Stream AI chat response (SSE)
 //
-// Send a message and receive the AI response as a Server-Sent Events stream. Optionally bind to an incident or alert for context. For eligible unbound home chat, `checkpoint_id` and `decision` confirm or cancel approval-gated writes. Events include `confirmation_required` for pending writes and `checkpoint_resolved` before replay. If an action-item write needs required fields the model did not supply, no checkpoint is created and the turn completes with a plain reply linking to that incident's action-item form in the Rootly web app. The stream emits `done` with `status: complete` and no `confirmation_required` event; only `confirmation_required` events are resumable. `status` events carry a short progress line (`{status}`) such as the running tool's title or its progress message; they never include tool arguments or results. `skill_loaded` events carry `{skill: {id, name, slug, version}}` when an AI Skill is loaded. Requires `ai.chat:write` OAuth scope or an API key.
+// Send a message and receive the AI response as a Server-Sent Events stream. Optionally bind to an incident or alert for context. For eligible unbound home chat, `checkpoint_id` and `decision` confirm or cancel approval-gated writes. Events include `confirmation_required` for pending writes and `checkpoint_resolved` before replay. If an action-item write needs required fields the model did not supply, no checkpoint is created and the turn completes with a plain reply linking to that incident's action-item form in the Rootly web app. The stream emits `done` with `status: complete` and no `confirmation_required` event; only `confirmation_required` events are resumable. `status` events carry a short progress line (`{status}`) such as the running tool's title or its progress message; they never include tool arguments or results. `skill_loaded` events carry `{skill: {id, name, slug, version}}` when an AI Skill is loaded. Limited to 60 requests per minute per credential. Rate-limit responses include `Retry-After` and `X-RateLimit-*` headers. Requires `ai.chat:write` OAuth scope or an API key.
 //
 // Corresponds with POST /v1/ai/chat/stream (the `StreamAiChat` operationId).
 func (c *Client) StreamAiChat(ctx context.Context, params *StreamAiChatParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
@@ -116945,23 +115207,6 @@ func (c *Client) CreateAISkillWithBody(ctx context.Context, contentType string, 
 // Corresponds with POST /v1/ai_skills (the `CreateAISkill` operationId).
 func (c *Client) CreateAISkillWithApplicationVndAPIPlusJSONBody(ctx context.Context, body CreateAISkillApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewCreateAISkillRequestWithApplicationVndAPIPlusJSONBody(c.Server, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// ListAISkillGrantableTools Lists grantable AI Skill tools
-//
-// Requires OAuth scope `ai.skills:read`.
-//
-// Corresponds with GET /v1/ai_skills/grantable_tools (the `ListAISkillGrantableTools` operationId).
-func (c *Client) ListAISkillGrantableTools(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewListAISkillGrantableToolsRequest(c.Server)
 	if err != nil {
 		return nil, err
 	}
@@ -134684,33 +132929,6 @@ func NewCreateAISkillRequestWithBody(server string, contentType string, body io.
 	return req, nil
 }
 
-// NewListAISkillGrantableToolsRequest constructs an http.Request for the ListAISkillGrantableTools method
-func NewListAISkillGrantableToolsRequest(server string) (*http.Request, error) {
-	var err error
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/ai_skills/grantable_tools")
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
 // NewListAISkillVersionsRequest constructs an http.Request for the ListAISkillVersions method
 func NewListAISkillVersionsRequest(server string, aiSkillID string) (*http.Request, error) {
 	var err error
@@ -134976,9 +133194,105 @@ func NewListAiToolCallEventsRequest(server string, params *ListAiToolCallEventsP
 		// per the OpenAPI spec (e.g. "color=blue,black,brown").
 		var rawQueryFragments []string
 
-		if params.Filter != nil {
+		if params.PageNumber != nil {
 
-			if queryFrag, err := runtime.StyleParamWithOptions("deepObject", true, "filter", *params.Filter, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "object", Format: ""}); err != nil {
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "page[number]", *params.PageNumber, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.PageSize != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "page[size]", *params.PageSize, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterConnectorID != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[connector_id]", *params.FilterConnectorID, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterOutcome != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[outcome]", *params.FilterOutcome, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterRiskClass != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[risk_class]", *params.FilterRiskClass, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSurface != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[surface]", *params.FilterSurface, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterUserID != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[user_id]", *params.FilterUserID, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterOccurredAfter != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[occurred_after]", *params.FilterOccurredAfter, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: "date-time"}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterOccurredBefore != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[occurred_before]", *params.FilterOccurredBefore, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: "date-time"}); err != nil {
 				return nil, err
 			} else {
 				for _, qp := range strings.Split(queryFrag, "&") {
@@ -177725,7 +176039,7 @@ type ClientWithResponsesInterface interface {
 
 	// CreateAiChatWithResponse Send AI chat message
 	//
-	// Send a message to the AI assistant and receive a synchronous reply. Optionally bind the conversation to an incident or alert for context-aware responses. For eligible unbound home chat, `checkpoint_id` and `decision` confirm or cancel approval-gated writes. Responses include `confirmation` for a pending write and `checkpoint_resolved` after resume. If an action-item write needs required fields the model did not supply, no checkpoint is created and the turn completes with a plain reply linking to that incident's action-item form in the Rootly web app. The synchronous response has no `confirmation` key; only `confirmation` responses are resumable. Requires `ai.chat:write` OAuth scope or an API key.
+	// Send a message to the AI assistant and receive a synchronous reply. Optionally bind the conversation to an incident or alert for context-aware responses. For eligible unbound home chat, `checkpoint_id` and `decision` confirm or cancel approval-gated writes. Responses include `confirmation` for a pending write and `checkpoint_resolved` after resume. If an action-item write needs required fields the model did not supply, no checkpoint is created and the turn completes with a plain reply linking to that incident's action-item form in the Rootly web app. The synchronous response has no `confirmation` key; only `confirmation` responses are resumable. Limited to 60 requests per minute per credential. Rate-limit responses include `Retry-After` and `X-RateLimit-*` headers. Requires `ai.chat:write` OAuth scope or an API key.
 	//
 	// Returns a wrapper object for the known response body format(s).
 	//
@@ -177770,7 +176084,7 @@ type ClientWithResponsesInterface interface {
 
 	// ListAiChatSessionMessagesWithResponse List AI chat session messages
 	//
-	// Returns the user and assistant message history for a session, paginated and chronologically ordered. Internal tool messages are filtered out. Assistant messages may include a `skill` object with `id`, `name`, `slug`, and `version` for the AI Skill loaded during that turn. The response also carries the session's current `pinned`, `archived`, and `last_active_at` state. Requires `ai.chat:read` OAuth scope or an API key.
+	// Returns the user and assistant message history for a session, paginated and chronologically ordered. Internal tool messages are filtered out. Assistant messages may include a `skill` object with `id`, `name`, `slug`, and `version` for the AI Skill loaded during that turn. The response also carries the session's current `title`, `pinned`, `archived`, and `last_active_at` state. Requires `ai.chat:read` OAuth scope or an API key.
 	//
 	// Returns a wrapper object for the known response body format(s).
 	//
@@ -177779,7 +176093,7 @@ type ClientWithResponsesInterface interface {
 
 	// StreamAiChatWithResponse Stream AI chat response (SSE)
 	//
-	// Send a message and receive the AI response as a Server-Sent Events stream. Optionally bind to an incident or alert for context. For eligible unbound home chat, `checkpoint_id` and `decision` confirm or cancel approval-gated writes. Events include `confirmation_required` for pending writes and `checkpoint_resolved` before replay. If an action-item write needs required fields the model did not supply, no checkpoint is created and the turn completes with a plain reply linking to that incident's action-item form in the Rootly web app. The stream emits `done` with `status: complete` and no `confirmation_required` event; only `confirmation_required` events are resumable. `status` events carry a short progress line (`{status}`) such as the running tool's title or its progress message; they never include tool arguments or results. `skill_loaded` events carry `{skill: {id, name, slug, version}}` when an AI Skill is loaded. Requires `ai.chat:write` OAuth scope or an API key.
+	// Send a message and receive the AI response as a Server-Sent Events stream. Optionally bind to an incident or alert for context. For eligible unbound home chat, `checkpoint_id` and `decision` confirm or cancel approval-gated writes. Events include `confirmation_required` for pending writes and `checkpoint_resolved` before replay. If an action-item write needs required fields the model did not supply, no checkpoint is created and the turn completes with a plain reply linking to that incident's action-item form in the Rootly web app. The stream emits `done` with `status: complete` and no `confirmation_required` event; only `confirmation_required` events are resumable. `status` events carry a short progress line (`{status}`) such as the running tool's title or its progress message; they never include tool arguments or results. `skill_loaded` events carry `{skill: {id, name, slug, version}}` when an AI Skill is loaded. Limited to 60 requests per minute per credential. Rate-limit responses include `Retry-After` and `X-RateLimit-*` headers. Requires `ai.chat:write` OAuth scope or an API key.
 	//
 	// Returns a wrapper object for the known response body format(s).
 	//
@@ -177983,15 +176297,6 @@ type ClientWithResponsesInterface interface {
 	//
 	// Corresponds with POST /v1/ai_skills (the `CreateAISkill` operationId).
 	CreateAISkillWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, body CreateAISkillApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateAISkillResponse, error)
-
-	// ListAISkillGrantableToolsWithResponse Lists grantable AI Skill tools
-	//
-	// Requires OAuth scope `ai.skills:read`.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/ai_skills/grantable_tools (the `ListAISkillGrantableTools` operationId).
-	ListAISkillGrantableToolsWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*ListAISkillGrantableToolsResponse, error)
 
 	// ListAISkillVersionsWithResponse Lists AI skill versions
 	//
@@ -185847,6 +184152,23 @@ func (r UpdateIncidentActionItemResponse) ContentType() string {
 	return ""
 }
 
+// CreateAiChatResponse200Headers the declared response headers of an HTTP 200 response for CreateAiChat
+type CreateAiChatResponse200Headers struct {
+	XRateLimitLimit     *string
+	XRateLimitRemaining *string
+	XRateLimitReset     *string
+	XRateLimitUsed      *string
+}
+
+// CreateAiChatResponse429Headers the declared response headers of an HTTP 429 response for CreateAiChat
+type CreateAiChatResponse429Headers struct {
+	RetryAfter          *int
+	XRateLimitLimit     *string
+	XRateLimitRemaining *string
+	XRateLimitReset     *string
+	XRateLimitUsed      *string
+}
+
 type CreateAiChatResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
@@ -185858,8 +184180,14 @@ type CreateAiChatResponse struct {
 	ApplicationVndAPIJSON404 *AiChatErrorResponse
 	// ApplicationVndAPIJSON422 the response for an HTTP 422 `application/vnd.api+json` response
 	ApplicationVndAPIJSON422 *AiChatErrorResponse
+	// ApplicationVndAPIJSON429 the response for an HTTP 429 `application/vnd.api+json` response
+	ApplicationVndAPIJSON429 *AiChatErrorResponse
 	// ApplicationVndAPIJSON500 the response for an HTTP 500 `application/vnd.api+json` response
 	ApplicationVndAPIJSON500 *AiChatErrorResponse
+	// Headers200 the parsed response headers for an HTTP 200 response
+	Headers200 *CreateAiChatResponse200Headers
+	// Headers429 the parsed response headers for an HTTP 429 response
+	Headers429 *CreateAiChatResponse429Headers
 }
 
 // Status returns HTTPResponse.Status
@@ -186018,9 +184346,30 @@ func (r ListAiChatSessionMessagesResponse) ContentType() string {
 	return ""
 }
 
+// StreamAiChatResponse200Headers the declared response headers of an HTTP 200 response for StreamAiChat
+type StreamAiChatResponse200Headers struct {
+	XRateLimitLimit     *string
+	XRateLimitRemaining *string
+	XRateLimitReset     *string
+	XRateLimitUsed      *string
+}
+
+// StreamAiChatResponse429Headers the declared response headers of an HTTP 429 response for StreamAiChat
+type StreamAiChatResponse429Headers struct {
+	RetryAfter          *int
+	XRateLimitLimit     *string
+	XRateLimitRemaining *string
+	XRateLimitReset     *string
+	XRateLimitUsed      *string
+}
+
 type StreamAiChatResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
+	// Headers200 the parsed response headers for an HTTP 200 response
+	Headers200 *StreamAiChatResponse200Headers
+	// Headers429 the parsed response headers for an HTTP 429 response
+	Headers429 *StreamAiChatResponse429Headers
 }
 
 // Status returns HTTPResponse.Status
@@ -186603,41 +184952,6 @@ func (r CreateAISkillResponse) StatusCode() int {
 
 // ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
 func (r CreateAISkillResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type ListAISkillGrantableToolsResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// ApplicationVndAPIJSON200 the response for an HTTP 200 `application/vnd.api+json` response
-	ApplicationVndAPIJSON200 *AiSkillGrantableTools
-	// ApplicationVndAPIJSON403 the response for an HTTP 403 `application/vnd.api+json` response
-	ApplicationVndAPIJSON403 *ErrorsList
-	// ApplicationVndAPIJSON404 the response for an HTTP 404 `application/vnd.api+json` response
-	ApplicationVndAPIJSON404 *ErrorsList
-}
-
-// Status returns HTTPResponse.Status
-func (r ListAISkillGrantableToolsResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r ListAISkillGrantableToolsResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r ListAISkillGrantableToolsResponse) ContentType() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Header.Get("Content-Type")
 	}
@@ -207406,7 +205720,7 @@ func (c *ClientWithResponses) UpdateIncidentActionItemWithApplicationVndAPIPlusJ
 
 // CreateAiChatWithResponse Send AI chat message
 //
-// Send a message to the AI assistant and receive a synchronous reply. Optionally bind the conversation to an incident or alert for context-aware responses. For eligible unbound home chat, `checkpoint_id` and `decision` confirm or cancel approval-gated writes. Responses include `confirmation` for a pending write and `checkpoint_resolved` after resume. If an action-item write needs required fields the model did not supply, no checkpoint is created and the turn completes with a plain reply linking to that incident's action-item form in the Rootly web app. The synchronous response has no `confirmation` key; only `confirmation` responses are resumable. Requires `ai.chat:write` OAuth scope or an API key.
+// Send a message to the AI assistant and receive a synchronous reply. Optionally bind the conversation to an incident or alert for context-aware responses. For eligible unbound home chat, `checkpoint_id` and `decision` confirm or cancel approval-gated writes. Responses include `confirmation` for a pending write and `checkpoint_resolved` after resume. If an action-item write needs required fields the model did not supply, no checkpoint is created and the turn completes with a plain reply linking to that incident's action-item form in the Rootly web app. The synchronous response has no `confirmation` key; only `confirmation` responses are resumable. Limited to 60 requests per minute per credential. Rate-limit responses include `Retry-After` and `X-RateLimit-*` headers. Requires `ai.chat:write` OAuth scope or an API key.
 //
 // Returns a wrapper object for the known response body format(s).
 //
@@ -207481,7 +205795,7 @@ func (c *ClientWithResponses) UpdateAiChatSessionWithApplicationVndAPIPlusJSONBo
 
 // ListAiChatSessionMessagesWithResponse List AI chat session messages
 //
-// Returns the user and assistant message history for a session, paginated and chronologically ordered. Internal tool messages are filtered out. Assistant messages may include a `skill` object with `id`, `name`, `slug`, and `version` for the AI Skill loaded during that turn. The response also carries the session's current `pinned`, `archived`, and `last_active_at` state. Requires `ai.chat:read` OAuth scope or an API key.
+// Returns the user and assistant message history for a session, paginated and chronologically ordered. Internal tool messages are filtered out. Assistant messages may include a `skill` object with `id`, `name`, `slug`, and `version` for the AI Skill loaded during that turn. The response also carries the session's current `title`, `pinned`, `archived`, and `last_active_at` state. Requires `ai.chat:read` OAuth scope or an API key.
 //
 // Returns a wrapper object for the known response body format(s).
 //
@@ -207496,7 +205810,7 @@ func (c *ClientWithResponses) ListAiChatSessionMessagesWithResponse(ctx context.
 
 // StreamAiChatWithResponse Stream AI chat response (SSE)
 //
-// Send a message and receive the AI response as a Server-Sent Events stream. Optionally bind to an incident or alert for context. For eligible unbound home chat, `checkpoint_id` and `decision` confirm or cancel approval-gated writes. Events include `confirmation_required` for pending writes and `checkpoint_resolved` before replay. If an action-item write needs required fields the model did not supply, no checkpoint is created and the turn completes with a plain reply linking to that incident's action-item form in the Rootly web app. The stream emits `done` with `status: complete` and no `confirmation_required` event; only `confirmation_required` events are resumable. `status` events carry a short progress line (`{status}`) such as the running tool's title or its progress message; they never include tool arguments or results. `skill_loaded` events carry `{skill: {id, name, slug, version}}` when an AI Skill is loaded. Requires `ai.chat:write` OAuth scope or an API key.
+// Send a message and receive the AI response as a Server-Sent Events stream. Optionally bind to an incident or alert for context. For eligible unbound home chat, `checkpoint_id` and `decision` confirm or cancel approval-gated writes. Events include `confirmation_required` for pending writes and `checkpoint_resolved` before replay. If an action-item write needs required fields the model did not supply, no checkpoint is created and the turn completes with a plain reply linking to that incident's action-item form in the Rootly web app. The stream emits `done` with `status: complete` and no `confirmation_required` event; only `confirmation_required` events are resumable. `status` events carry a short progress line (`{status}`) such as the running tool's title or its progress message; they never include tool arguments or results. `skill_loaded` events carry `{skill: {id, name, slug, version}}` when an AI Skill is loaded. Limited to 60 requests per minute per credential. Rate-limit responses include `Retry-After` and `X-RateLimit-*` headers. Requires `ai.chat:write` OAuth scope or an API key.
 //
 // Returns a wrapper object for the known response body format(s).
 //
@@ -207837,21 +206151,6 @@ func (c *ClientWithResponses) CreateAISkillWithApplicationVndAPIPlusJSONBodyWith
 		return nil, err
 	}
 	return ParseCreateAISkillResponse(rsp)
-}
-
-// ListAISkillGrantableToolsWithResponse Lists grantable AI Skill tools
-//
-// Requires OAuth scope `ai.skills:read`.
-//
-// Returns a wrapper object for the known response body format(s).
-//
-// Corresponds with GET /v1/ai_skills/grantable_tools (the `ListAISkillGrantableTools` operationId).
-func (c *ClientWithResponses) ListAISkillGrantableToolsWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*ListAISkillGrantableToolsResponse, error) {
-	rsp, err := c.ListAISkillGrantableTools(ctx, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseListAISkillGrantableToolsResponse(rsp)
 }
 
 // ListAISkillVersionsWithResponse Lists AI skill versions
@@ -220950,6 +219249,13 @@ func ParseCreateAiChatResponse(rsp *http.Response) (*CreateAiChatResponse, error
 		}
 		response.ApplicationVndAPIJSON422 = &dest
 
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest AiChatErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON429 = &dest
+
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
 		var dest AiChatErrorResponse
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
@@ -220957,6 +219263,78 @@ func ParseCreateAiChatResponse(rsp *http.Response) (*CreateAiChatResponse, error
 		}
 		response.ApplicationVndAPIJSON500 = &dest
 
+	}
+
+	switch {
+	case rsp.StatusCode == 200:
+		var headers CreateAiChatResponse200Headers
+		if values := rsp.Header.Values("X-RateLimit-Limit"); len(values) > 0 {
+			var value string
+			if err := runtime.BindStyledParameterWithOptions("simple", "X-RateLimit-Limit", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			}
+			headers.XRateLimitLimit = &value
+		}
+		if values := rsp.Header.Values("X-RateLimit-Remaining"); len(values) > 0 {
+			var value string
+			if err := runtime.BindStyledParameterWithOptions("simple", "X-RateLimit-Remaining", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			}
+			headers.XRateLimitRemaining = &value
+		}
+		if values := rsp.Header.Values("X-RateLimit-Reset"); len(values) > 0 {
+			var value string
+			if err := runtime.BindStyledParameterWithOptions("simple", "X-RateLimit-Reset", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			}
+			headers.XRateLimitReset = &value
+		}
+		if values := rsp.Header.Values("X-RateLimit-Used"); len(values) > 0 {
+			var value string
+			if err := runtime.BindStyledParameterWithOptions("simple", "X-RateLimit-Used", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			}
+			headers.XRateLimitUsed = &value
+		}
+		response.Headers200 = &headers
+	case rsp.StatusCode == 429:
+		var headers CreateAiChatResponse429Headers
+		if values := rsp.Header.Values("Retry-After"); len(values) > 0 {
+			var value int
+			if err := runtime.BindStyledParameterWithOptions("simple", "Retry-After", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "integer", Format: ""}); err != nil {
+				return nil, err
+			}
+			headers.RetryAfter = &value
+		}
+		if values := rsp.Header.Values("X-RateLimit-Limit"); len(values) > 0 {
+			var value string
+			if err := runtime.BindStyledParameterWithOptions("simple", "X-RateLimit-Limit", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			}
+			headers.XRateLimitLimit = &value
+		}
+		if values := rsp.Header.Values("X-RateLimit-Remaining"); len(values) > 0 {
+			var value string
+			if err := runtime.BindStyledParameterWithOptions("simple", "X-RateLimit-Remaining", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			}
+			headers.XRateLimitRemaining = &value
+		}
+		if values := rsp.Header.Values("X-RateLimit-Reset"); len(values) > 0 {
+			var value string
+			if err := runtime.BindStyledParameterWithOptions("simple", "X-RateLimit-Reset", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			}
+			headers.XRateLimitReset = &value
+		}
+		if values := rsp.Header.Values("X-RateLimit-Used"); len(values) > 0 {
+			var value string
+			if err := runtime.BindStyledParameterWithOptions("simple", "X-RateLimit-Used", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			}
+			headers.XRateLimitUsed = &value
+		}
+		response.Headers429 = &headers
 	}
 
 	return response, nil
@@ -221105,6 +219483,78 @@ func ParseStreamAiChatResponse(rsp *http.Response) (*StreamAiChatResponse, error
 	response := &StreamAiChatResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
+	}
+
+	switch {
+	case rsp.StatusCode == 200:
+		var headers StreamAiChatResponse200Headers
+		if values := rsp.Header.Values("X-RateLimit-Limit"); len(values) > 0 {
+			var value string
+			if err := runtime.BindStyledParameterWithOptions("simple", "X-RateLimit-Limit", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			}
+			headers.XRateLimitLimit = &value
+		}
+		if values := rsp.Header.Values("X-RateLimit-Remaining"); len(values) > 0 {
+			var value string
+			if err := runtime.BindStyledParameterWithOptions("simple", "X-RateLimit-Remaining", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			}
+			headers.XRateLimitRemaining = &value
+		}
+		if values := rsp.Header.Values("X-RateLimit-Reset"); len(values) > 0 {
+			var value string
+			if err := runtime.BindStyledParameterWithOptions("simple", "X-RateLimit-Reset", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			}
+			headers.XRateLimitReset = &value
+		}
+		if values := rsp.Header.Values("X-RateLimit-Used"); len(values) > 0 {
+			var value string
+			if err := runtime.BindStyledParameterWithOptions("simple", "X-RateLimit-Used", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			}
+			headers.XRateLimitUsed = &value
+		}
+		response.Headers200 = &headers
+	case rsp.StatusCode == 429:
+		var headers StreamAiChatResponse429Headers
+		if values := rsp.Header.Values("Retry-After"); len(values) > 0 {
+			var value int
+			if err := runtime.BindStyledParameterWithOptions("simple", "Retry-After", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "integer", Format: ""}); err != nil {
+				return nil, err
+			}
+			headers.RetryAfter = &value
+		}
+		if values := rsp.Header.Values("X-RateLimit-Limit"); len(values) > 0 {
+			var value string
+			if err := runtime.BindStyledParameterWithOptions("simple", "X-RateLimit-Limit", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			}
+			headers.XRateLimitLimit = &value
+		}
+		if values := rsp.Header.Values("X-RateLimit-Remaining"); len(values) > 0 {
+			var value string
+			if err := runtime.BindStyledParameterWithOptions("simple", "X-RateLimit-Remaining", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			}
+			headers.XRateLimitRemaining = &value
+		}
+		if values := rsp.Header.Values("X-RateLimit-Reset"); len(values) > 0 {
+			var value string
+			if err := runtime.BindStyledParameterWithOptions("simple", "X-RateLimit-Reset", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			}
+			headers.XRateLimitReset = &value
+		}
+		if values := rsp.Header.Values("X-RateLimit-Used"); len(values) > 0 {
+			var value string
+			if err := runtime.BindStyledParameterWithOptions("simple", "X-RateLimit-Used", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			}
+			headers.XRateLimitUsed = &value
+		}
+		response.Headers429 = &headers
 	}
 
 	return response, nil
@@ -221724,46 +220174,6 @@ func ParseCreateAISkillResponse(rsp *http.Response) (*CreateAISkillResponse, err
 			return nil, err
 		}
 		response.ApplicationVndAPIJSON422 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseListAISkillGrantableToolsResponse parses an HTTP response from a ListAISkillGrantableToolsWithResponse call
-func ParseListAISkillGrantableToolsResponse(rsp *http.Response) (*ListAISkillGrantableToolsResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &ListAISkillGrantableToolsResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest AiSkillGrantableTools
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.ApplicationVndAPIJSON200 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest ErrorsList
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.ApplicationVndAPIJSON403 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
-		var dest ErrorsList
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.ApplicationVndAPIJSON404 = &dest
 
 	}
 
