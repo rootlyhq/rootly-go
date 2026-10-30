@@ -1415,7 +1415,7 @@
         "tags": [
           "AI Chat"
         ],
-        "description": "Returns the user and assistant message history for a session, paginated and chronologically ordered. Internal tool messages are filtered out. Assistant messages may include a `skill` object with `id`, `name`, `slug`, and `version` for the AI Skill loaded during that turn. The response also carries the session's current `pinned`, `archived`, and `last_active_at` state. Requires `ai.chat:read` OAuth scope or an API key.",
+        "description": "Returns the user and assistant message history for a session, paginated and chronologically ordered. Internal tool messages are filtered out. Assistant messages may include a `skill` object with `id`, `name`, `slug`, and `version` for the AI Skill loaded during that turn. The response also carries the session's current `title`, `pinned`, `archived`, and `last_active_at` state. Requires `ai.chat:read` OAuth scope or an API key.",
         "operationId": "listAiChatSessionMessages",
         "parameters": [
           {
@@ -1576,53 +1576,6 @@
         }
       }
     },
-    "/v1/ai_skills/grantable_tools": {
-      "get": {
-        "summary": "Lists grantable AI Skill tools",
-        "description": "Requires OAuth scope `ai.skills:read`.",
-        "security": [
-          {
-            "bearer_auth": []
-          }
-        ],
-        "tags": [
-          "AISkills"
-        ],
-        "operationId": "ListAISkillGrantableTools",
-        "responses": {
-          "200": {
-            "description": "AI Skills read scope permits access",
-            "content": {
-              "application/vnd.api+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ai_skill_grantable_tools"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "AI Skills and AI Automations are disabled",
-            "content": {
-              "application/vnd.api+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/errors_list"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "AI Automations read scope does not permit access",
-            "content": {
-              "application/vnd.api+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/errors_list"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
     "/v1/ai_skills/{ai_skill_id}/versions": {
       "parameters": [
         {
@@ -1705,7 +1658,7 @@
         "operationId": "GetAISkillVersion",
         "responses": {
           "200": {
-            "description": "legacy string grants are skipped",
+            "description": "skill versions have no tool grants field",
             "content": {
               "application/vnd.api+json": {
                 "schema": {
@@ -1883,7 +1836,7 @@
         "parameters": [],
         "responses": {
           "201": {
-            "description": "write scope validates grants against member RBAC",
+            "description": "write scope permits creation",
             "content": {
               "application/vnd.api+json": {
                 "schema": {
@@ -1903,7 +1856,7 @@
             }
           },
           "422": {
-            "description": "write scope does not bypass member tool permissions",
+            "description": "tool grants are no longer accepted on AI Skills",
             "content": {
               "application/vnd.api+json": {
                 "schema": {
@@ -1997,7 +1950,7 @@
         "parameters": [],
         "responses": {
           "200": {
-            "description": "a repository grant round trip with an allowed change preserves hidden grants",
+            "description": "write scope permits updates",
             "content": {
               "application/vnd.api+json": {
                 "schema": {
@@ -2007,7 +1960,7 @@
             }
           },
           "422": {
-            "description": "dropping an editable repository grant is rejected",
+            "description": "owners from other organizations are rejected on update",
             "content": {
               "application/vnd.api+json": {
                 "schema": {
@@ -43889,6 +43842,10 @@
           "meta": {
             "type": "object"
           },
+          "title": {
+            "type": "string",
+            "description": "Session title (user-supplied, generated, or placeholder)"
+          },
           "pinned": {
             "type": "boolean",
             "description": "Whether the session is pinned"
@@ -43904,7 +43861,8 @@
           }
         },
         "required": [
-          "messages"
+          "messages",
+          "title"
         ]
       },
       "ai_chat_session": {
@@ -44125,111 +44083,6 @@
           "errors"
         ]
       },
-      "ai_skill_grantable_tools": {
-        "type": "object",
-        "properties": {
-          "data": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "type": {
-                  "type": "string",
-                  "enum": [
-                    "ai_skill_grantable_tools"
-                  ]
-                },
-                "attributes": {
-                  "type": "object",
-                  "properties": {
-                    "tool_key": {
-                      "type": "string"
-                    },
-                    "label": {
-                      "type": "string"
-                    },
-                    "category": {
-                      "type": "string"
-                    },
-                    "connector": {
-                      "type": "boolean"
-                    },
-                    "access": {
-                      "type": "string",
-                      "enum": [
-                        "read",
-                        "write"
-                      ]
-                    },
-                    "grantable": {
-                      "type": "boolean"
-                    },
-                    "pinnable": {
-                      "type": "boolean"
-                    },
-                    "pinnable_params": {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "properties": {
-                          "name": {
-                            "type": "string"
-                          },
-                          "type": {
-                            "type": "string",
-                            "enum": [
-                              "boolean",
-                              "integer",
-                              "string"
-                            ]
-                          },
-                          "enum": {
-                            "type": "array",
-                            "items": {
-                              "type": "string"
-                            },
-                            "nullable": true
-                          }
-                        },
-                        "required": [
-                          "name",
-                          "type",
-                          "enum"
-                        ],
-                        "additionalProperties": false
-                      }
-                    }
-                  },
-                  "required": [
-                    "tool_key",
-                    "label",
-                    "category",
-                    "connector",
-                    "access",
-                    "grantable",
-                    "pinnable",
-                    "pinnable_params"
-                  ],
-                  "additionalProperties": false
-                }
-              },
-              "required": [
-                "id",
-                "type",
-                "attributes"
-              ],
-              "additionalProperties": false
-            }
-          }
-        },
-        "required": [
-          "data"
-        ],
-        "additionalProperties": false
-      },
       "ai_skill": {
         "type": "object",
         "properties": {
@@ -44279,128 +44132,6 @@
             "type": "integer",
             "nullable": true
           },
-          "tool_grants": {
-            "type": "array",
-            "items": {
-              "oneOf": [
-                {
-                  "type": "object",
-                  "properties": {
-                    "tool_key": {
-                      "type": "string",
-                      "enum": [
-                        "fetch_url"
-                      ]
-                    },
-                    "access": {
-                      "type": "string",
-                      "enum": [
-                        "read"
-                      ],
-                      "nullable": true,
-                      "description": "Fetch URL grants use read access, which is the default when omitted or null."
-                    },
-                    "pinned_params": {
-                      "type": "object",
-                      "nullable": false,
-                      "description": "Domains this Skill may fetch, limited to domains covered by the team's Web access allowlist.",
-                      "properties": {
-                        "domains": {
-                          "type": "array",
-                          "minItems": 1,
-                          "maxItems": 20,
-                          "items": {
-                            "type": "string",
-                            "description": "A hostname or wildcard domain pattern."
-                          }
-                        }
-                      },
-                      "required": [
-                        "domains"
-                      ],
-                      "additionalProperties": false
-                    }
-                  },
-                  "required": [
-                    "tool_key",
-                    "access",
-                    "pinned_params"
-                  ],
-                  "additionalProperties": false
-                },
-                {
-                  "type": "object",
-                  "properties": {
-                    "tool_key": {
-                      "type": "string",
-                      "not": {
-                        "enum": [
-                          "fetch_url"
-                        ]
-                      }
-                    },
-                    "access": {
-                      "type": "string",
-                      "enum": [
-                        "read",
-                        "write"
-                      ],
-                      "nullable": true,
-                      "description": "Defaults to the tool's access classification (read or write) when omitted or null."
-                    },
-                    "pinned_params": {
-                      "type": "object",
-                      "nullable": true,
-                      "description": "For fetch_url read grants, pinned_params contains Web access domains. For other tools, pinned parameters apply only to write access. String values must match the identifier pattern `^[A-Za-z0-9_.:-]{1,64}$`. Each value is a single string, integer, boolean or null; an array is accepted only when it resends an existing stored value unchanged.",
-                      "additionalProperties": {
-                        "oneOf": [
-                          {
-                            "oneOf": [
-                              {
-                                "type": "string",
-                                "pattern": "^[A-Za-z0-9_.:-]{1,64}$",
-                                "nullable": true
-                              },
-                              {
-                                "type": "integer"
-                              },
-                              {
-                                "type": "boolean"
-                              }
-                            ]
-                          },
-                          {
-                            "type": "array",
-                            "items": {
-                              "oneOf": [
-                                {
-                                  "type": "string",
-                                  "pattern": "^[A-Za-z0-9_.:-]{1,64}$",
-                                  "nullable": true
-                                },
-                                {
-                                  "type": "integer"
-                                },
-                                {
-                                  "type": "boolean"
-                                }
-                              ]
-                            }
-                          }
-                        ]
-                      }
-                    }
-                  },
-                  "required": [
-                    "tool_key",
-                    "access",
-                    "pinned_params"
-                  ],
-                  "additionalProperties": false
-                }
-              ]
-            }
-          },
           "owner_user_id": {
             "type": "integer",
             "nullable": true,
@@ -44422,7 +44153,7 @@
       },
       "new_ai_skill": {
         "type": "object",
-        "description": "Create a skill. New skills are disabled unless enabled is explicitly true. Supplying tool_grants replaces the editable grant list; grants on tools the caller cannot see are kept. fetch_url read grants use pinned domains; other pinned parameters apply only to write access. Read-only attributes are ignored on write.",
+        "description": "Create a skill. New skills are disabled unless enabled is explicitly true. Read-only attributes are ignored on write.",
         "properties": {
           "data": {
             "type": "object",
@@ -44469,126 +44200,6 @@
                     "type": "integer",
                     "nullable": true,
                     "description": "Must be a user in this organization. On create, null or omission defaults to the caller; on update, null or an unset owner falls back to the caller, while omission preserves an existing owner."
-                  },
-                  "tool_grants": {
-                    "type": "array",
-                    "description": "Replaces the editable grant list. Grants on tools the caller cannot see are kept.",
-                    "items": {
-                      "oneOf": [
-                        {
-                          "type": "object",
-                          "properties": {
-                            "tool_key": {
-                              "type": "string",
-                              "enum": [
-                                "fetch_url"
-                              ]
-                            },
-                            "access": {
-                              "type": "string",
-                              "enum": [
-                                "read"
-                              ],
-                              "nullable": true,
-                              "description": "Fetch URL grants use read access, which is the default when omitted or null."
-                            },
-                            "pinned_params": {
-                              "type": "object",
-                              "nullable": false,
-                              "description": "Domains this Skill may fetch, limited to domains covered by the team's Web access allowlist.",
-                              "properties": {
-                                "domains": {
-                                  "type": "array",
-                                  "minItems": 1,
-                                  "maxItems": 20,
-                                  "items": {
-                                    "type": "string",
-                                    "description": "A hostname or wildcard domain pattern."
-                                  }
-                                }
-                              },
-                              "required": [
-                                "domains"
-                              ],
-                              "additionalProperties": false
-                            }
-                          },
-                          "required": [
-                            "tool_key",
-                            "pinned_params"
-                          ],
-                          "additionalProperties": false
-                        },
-                        {
-                          "type": "object",
-                          "properties": {
-                            "tool_key": {
-                              "type": "string",
-                              "not": {
-                                "enum": [
-                                  "fetch_url"
-                                ]
-                              }
-                            },
-                            "access": {
-                              "type": "string",
-                              "enum": [
-                                "read",
-                                "write"
-                              ],
-                              "nullable": true,
-                              "description": "Defaults to the tool's access classification (read or write) when omitted or null."
-                            },
-                            "pinned_params": {
-                              "type": "object",
-                              "nullable": true,
-                              "description": "For fetch_url read grants, pinned_params contains Web access domains. For other tools, pinned parameters apply only to write access. String values must match the identifier pattern `^[A-Za-z0-9_.:-]{1,64}$`. Each value is a single string, integer, boolean or null; an array is accepted only when it resends an existing stored value unchanged.",
-                              "additionalProperties": {
-                                "oneOf": [
-                                  {
-                                    "oneOf": [
-                                      {
-                                        "type": "string",
-                                        "pattern": "^[A-Za-z0-9_.:-]{1,64}$",
-                                        "nullable": true
-                                      },
-                                      {
-                                        "type": "integer"
-                                      },
-                                      {
-                                        "type": "boolean"
-                                      }
-                                    ]
-                                  },
-                                  {
-                                    "type": "array",
-                                    "items": {
-                                      "oneOf": [
-                                        {
-                                          "type": "string",
-                                          "pattern": "^[A-Za-z0-9_.:-]{1,64}$",
-                                          "nullable": true
-                                        },
-                                        {
-                                          "type": "integer"
-                                        },
-                                        {
-                                          "type": "boolean"
-                                        }
-                                      ]
-                                    }
-                                  }
-                                ]
-                              }
-                            }
-                          },
-                          "required": [
-                            "tool_key"
-                          ],
-                          "additionalProperties": false
-                        }
-                      ]
-                    }
                   },
                   "id": {
                     "type": "string",
@@ -44663,7 +44274,7 @@
       },
       "update_ai_skill": {
         "type": "object",
-        "description": "Update only supplied attributes. Supplying tool_grants replaces the editable grant list; grants on tools the caller cannot see are kept. fetch_url read grants use pinned domains; other pinned parameters apply only to write access. Read-only attributes are ignored on write.",
+        "description": "Update only supplied attributes. Read-only attributes are ignored on write.",
         "properties": {
           "data": {
             "type": "object",
@@ -44712,126 +44323,6 @@
                     "type": "integer",
                     "nullable": true,
                     "description": "Must be a user in this organization. On create, null or omission defaults to the caller; on update, null or an unset owner falls back to the caller, while omission preserves an existing owner."
-                  },
-                  "tool_grants": {
-                    "type": "array",
-                    "description": "Replaces the editable grant list. Grants on tools the caller cannot see are kept.",
-                    "items": {
-                      "oneOf": [
-                        {
-                          "type": "object",
-                          "properties": {
-                            "tool_key": {
-                              "type": "string",
-                              "enum": [
-                                "fetch_url"
-                              ]
-                            },
-                            "access": {
-                              "type": "string",
-                              "enum": [
-                                "read"
-                              ],
-                              "nullable": true,
-                              "description": "Fetch URL grants use read access, which is the default when omitted or null."
-                            },
-                            "pinned_params": {
-                              "type": "object",
-                              "nullable": false,
-                              "description": "Domains this Skill may fetch, limited to domains covered by the team's Web access allowlist.",
-                              "properties": {
-                                "domains": {
-                                  "type": "array",
-                                  "minItems": 1,
-                                  "maxItems": 20,
-                                  "items": {
-                                    "type": "string",
-                                    "description": "A hostname or wildcard domain pattern."
-                                  }
-                                }
-                              },
-                              "required": [
-                                "domains"
-                              ],
-                              "additionalProperties": false
-                            }
-                          },
-                          "required": [
-                            "tool_key",
-                            "pinned_params"
-                          ],
-                          "additionalProperties": false
-                        },
-                        {
-                          "type": "object",
-                          "properties": {
-                            "tool_key": {
-                              "type": "string",
-                              "not": {
-                                "enum": [
-                                  "fetch_url"
-                                ]
-                              }
-                            },
-                            "access": {
-                              "type": "string",
-                              "enum": [
-                                "read",
-                                "write"
-                              ],
-                              "nullable": true,
-                              "description": "Defaults to the tool's access classification (read or write) when omitted or null."
-                            },
-                            "pinned_params": {
-                              "type": "object",
-                              "nullable": true,
-                              "description": "For fetch_url read grants, pinned_params contains Web access domains. For other tools, pinned parameters apply only to write access. String values must match the identifier pattern `^[A-Za-z0-9_.:-]{1,64}$`. Each value is a single string, integer, boolean or null; an array is accepted only when it resends an existing stored value unchanged.",
-                              "additionalProperties": {
-                                "oneOf": [
-                                  {
-                                    "oneOf": [
-                                      {
-                                        "type": "string",
-                                        "pattern": "^[A-Za-z0-9_.:-]{1,64}$",
-                                        "nullable": true
-                                      },
-                                      {
-                                        "type": "integer"
-                                      },
-                                      {
-                                        "type": "boolean"
-                                      }
-                                    ]
-                                  },
-                                  {
-                                    "type": "array",
-                                    "items": {
-                                      "oneOf": [
-                                        {
-                                          "type": "string",
-                                          "pattern": "^[A-Za-z0-9_.:-]{1,64}$",
-                                          "nullable": true
-                                        },
-                                        {
-                                          "type": "integer"
-                                        },
-                                        {
-                                          "type": "boolean"
-                                        }
-                                      ]
-                                    }
-                                  }
-                                ]
-                              }
-                            }
-                          },
-                          "required": [
-                            "tool_key"
-                          ],
-                          "additionalProperties": false
-                        }
-                      ]
-                    }
                   },
                   "id": {
                     "type": "string",
@@ -44995,128 +44486,6 @@
           },
           "body": {
             "type": "string"
-          },
-          "tool_grants": {
-            "type": "array",
-            "items": {
-              "oneOf": [
-                {
-                  "type": "object",
-                  "properties": {
-                    "tool_key": {
-                      "type": "string",
-                      "enum": [
-                        "fetch_url"
-                      ]
-                    },
-                    "access": {
-                      "type": "string",
-                      "enum": [
-                        "read"
-                      ],
-                      "nullable": true,
-                      "description": "Fetch URL grants use read access, which is the default when omitted or null."
-                    },
-                    "pinned_params": {
-                      "type": "object",
-                      "nullable": false,
-                      "description": "Domains this Skill may fetch, limited to domains covered by the team's Web access allowlist.",
-                      "properties": {
-                        "domains": {
-                          "type": "array",
-                          "minItems": 1,
-                          "maxItems": 20,
-                          "items": {
-                            "type": "string",
-                            "description": "A hostname or wildcard domain pattern."
-                          }
-                        }
-                      },
-                      "required": [
-                        "domains"
-                      ],
-                      "additionalProperties": false
-                    }
-                  },
-                  "required": [
-                    "tool_key",
-                    "access",
-                    "pinned_params"
-                  ],
-                  "additionalProperties": false
-                },
-                {
-                  "type": "object",
-                  "properties": {
-                    "tool_key": {
-                      "type": "string",
-                      "not": {
-                        "enum": [
-                          "fetch_url"
-                        ]
-                      }
-                    },
-                    "access": {
-                      "type": "string",
-                      "enum": [
-                        "read",
-                        "write"
-                      ],
-                      "nullable": true,
-                      "description": "Defaults to the tool's access classification (read or write) when omitted or null."
-                    },
-                    "pinned_params": {
-                      "type": "object",
-                      "nullable": true,
-                      "description": "For fetch_url read grants, pinned_params contains Web access domains. For other tools, pinned parameters apply only to write access. String values must match the identifier pattern `^[A-Za-z0-9_.:-]{1,64}$`. Each value is a single string, integer, boolean or null; an array is accepted only when it resends an existing stored value unchanged.",
-                      "additionalProperties": {
-                        "oneOf": [
-                          {
-                            "oneOf": [
-                              {
-                                "type": "string",
-                                "pattern": "^[A-Za-z0-9_.:-]{1,64}$",
-                                "nullable": true
-                              },
-                              {
-                                "type": "integer"
-                              },
-                              {
-                                "type": "boolean"
-                              }
-                            ]
-                          },
-                          {
-                            "type": "array",
-                            "items": {
-                              "oneOf": [
-                                {
-                                  "type": "string",
-                                  "pattern": "^[A-Za-z0-9_.:-]{1,64}$",
-                                  "nullable": true
-                                },
-                                {
-                                  "type": "integer"
-                                },
-                                {
-                                  "type": "boolean"
-                                }
-                              ]
-                            }
-                          }
-                        ]
-                      }
-                    }
-                  },
-                  "required": [
-                    "tool_key",
-                    "access",
-                    "pinned_params"
-                  ],
-                  "additionalProperties": false
-                }
-              ]
-            }
           },
           "created_by_user_id": {
             "type": "integer",
