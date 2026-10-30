@@ -108499,7 +108499,7 @@ type ClientInterface interface {
 	//
 	// Rotate an API key's token. Issues a new secret token and returns it — **the new token is only shown once**, so store it securely.
 	//
-	// **Self-only:** You can only rotate the API key that was used to authenticate this request. Attempting to rotate a different key returns `403 Forbidden`.
+	// **Self-only:** You can only rotate the API key that was used to authenticate this request. Attempting to rotate a different key returns `404 Not Found` when the authenticating key is not authorized to manage it, or `403 Forbidden` when it is.
 	//
 	// **Grace period:** When enabled for your organization, the previous token remains valid after rotation, giving you time to deploy the new token without downtime. Pass `grace_period_minutes` (integer, 0–1440, default 30) to control how long the old token stays valid. Set to 0 to immediately invalidate the old token. The `grace_period_ends_at` field in the response confirms the exact time the old token will stop working.
 	//
@@ -108520,7 +108520,7 @@ type ClientInterface interface {
 	//
 	// Rotate an API key's token. Issues a new secret token and returns it — **the new token is only shown once**, so store it securely.
 	//
-	// **Self-only:** You can only rotate the API key that was used to authenticate this request. Attempting to rotate a different key returns `403 Forbidden`.
+	// **Self-only:** You can only rotate the API key that was used to authenticate this request. Attempting to rotate a different key returns `404 Not Found` when the authenticating key is not authorized to manage it, or `403 Forbidden` when it is.
 	//
 	// **Grace period:** When enabled for your organization, the previous token remains valid after rotation, giving you time to deploy the new token without downtime. Pass `grace_period_minutes` (integer, 0–1440, default 30) to control how long the old token stays valid. Set to 0 to immediately invalidate the old token. The `grace_period_ends_at` field in the response confirms the exact time the old token will stop working.
 	//
@@ -117042,7 +117042,7 @@ func (c *Client) UpdateAPIKeyWithApplicationVndAPIPlusJSONBody(ctx context.Conte
 //
 // Rotate an API key's token. Issues a new secret token and returns it — **the new token is only shown once**, so store it securely.
 //
-// **Self-only:** You can only rotate the API key that was used to authenticate this request. Attempting to rotate a different key returns `403 Forbidden`.
+// **Self-only:** You can only rotate the API key that was used to authenticate this request. Attempting to rotate a different key returns `404 Not Found` when the authenticating key is not authorized to manage it, or `403 Forbidden` when it is.
 //
 // **Grace period:** When enabled for your organization, the previous token remains valid after rotation, giving you time to deploy the new token without downtime. Pass `grace_period_minutes` (integer, 0–1440, default 30) to control how long the old token stays valid. Set to 0 to immediately invalidate the old token. The `grace_period_ends_at` field in the response confirms the exact time the old token will stop working.
 //
@@ -117073,7 +117073,7 @@ func (c *Client) RotateAPIKeyWithBody(ctx context.Context, id ID, contentType st
 //
 // Rotate an API key's token. Issues a new secret token and returns it — **the new token is only shown once**, so store it securely.
 //
-// **Self-only:** You can only rotate the API key that was used to authenticate this request. Attempting to rotate a different key returns `403 Forbidden`.
+// **Self-only:** You can only rotate the API key that was used to authenticate this request. Attempting to rotate a different key returns `404 Not Found` when the authenticating key is not authorized to manage it, or `403 Forbidden` when it is.
 //
 // **Grace period:** When enabled for your organization, the previous token remains valid after rotation, giving you time to deploy the new token without downtime. Pass `grace_period_minutes` (integer, 0–1440, default 30) to control how long the old token stays valid. Set to 0 to immediately invalidate the old token. The `grace_period_ends_at` field in the response confirms the exact time the old token will stop working.
 //
@@ -177238,7 +177238,7 @@ type ClientWithResponsesInterface interface {
 	//
 	// Rotate an API key's token. Issues a new secret token and returns it — **the new token is only shown once**, so store it securely.
 	//
-	// **Self-only:** You can only rotate the API key that was used to authenticate this request. Attempting to rotate a different key returns `403 Forbidden`.
+	// **Self-only:** You can only rotate the API key that was used to authenticate this request. Attempting to rotate a different key returns `404 Not Found` when the authenticating key is not authorized to manage it, or `403 Forbidden` when it is.
 	//
 	// **Grace period:** When enabled for your organization, the previous token remains valid after rotation, giving you time to deploy the new token without downtime. Pass `grace_period_minutes` (integer, 0–1440, default 30) to control how long the old token stays valid. Set to 0 to immediately invalidate the old token. The `grace_period_ends_at` field in the response confirms the exact time the old token will stop working.
 	//
@@ -177259,7 +177259,7 @@ type ClientWithResponsesInterface interface {
 	//
 	// Rotate an API key's token. Issues a new secret token and returns it — **the new token is only shown once**, so store it securely.
 	//
-	// **Self-only:** You can only rotate the API key that was used to authenticate this request. Attempting to rotate a different key returns `403 Forbidden`.
+	// **Self-only:** You can only rotate the API key that was used to authenticate this request. Attempting to rotate a different key returns `404 Not Found` when the authenticating key is not authorized to manage it, or `403 Forbidden` when it is.
 	//
 	// **Grace period:** When enabled for your organization, the previous token remains valid after rotation, giving you time to deploy the new token without downtime. Pass `grace_period_minutes` (integer, 0–1440, default 30) to control how long the old token stays valid. Set to 0 to immediately invalidate the old token. The `grace_period_ends_at` field in the response confirms the exact time the old token will stop working.
 	//
@@ -207673,7 +207673,7 @@ func (c *ClientWithResponses) UpdateAPIKeyWithApplicationVndAPIPlusJSONBodyWithR
 //
 // Rotate an API key's token. Issues a new secret token and returns it — **the new token is only shown once**, so store it securely.
 //
-// **Self-only:** You can only rotate the API key that was used to authenticate this request. Attempting to rotate a different key returns `403 Forbidden`.
+// **Self-only:** You can only rotate the API key that was used to authenticate this request. Attempting to rotate a different key returns `404 Not Found` when the authenticating key is not authorized to manage it, or `403 Forbidden` when it is.
 //
 // **Grace period:** When enabled for your organization, the previous token remains valid after rotation, giving you time to deploy the new token without downtime. Pass `grace_period_minutes` (integer, 0–1440, default 30) to control how long the old token stays valid. Set to 0 to immediately invalidate the old token. The `grace_period_ends_at` field in the response confirms the exact time the old token will stop working.
 //
@@ -207700,7 +207700,7 @@ func (c *ClientWithResponses) RotateAPIKeyWithBodyWithResponse(ctx context.Conte
 //
 // Rotate an API key's token. Issues a new secret token and returns it — **the new token is only shown once**, so store it securely.
 //
-// **Self-only:** You can only rotate the API key that was used to authenticate this request. Attempting to rotate a different key returns `403 Forbidden`.
+// **Self-only:** You can only rotate the API key that was used to authenticate this request. Attempting to rotate a different key returns `404 Not Found` when the authenticating key is not authorized to manage it, or `403 Forbidden` when it is.
 //
 // **Grace period:** When enabled for your organization, the previous token remains valid after rotation, giving you time to deploy the new token without downtime. Pass `grace_period_minutes` (integer, 0–1440, default 30) to control how long the old token stays valid. Set to 0 to immediately invalidate the old token. The `grace_period_ends_at` field in the response confirms the exact time the old token will stop working.
 //
