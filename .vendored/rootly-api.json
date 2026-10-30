@@ -945,7 +945,7 @@
         "tags": [
           "AI Chat"
         ],
-        "description": "Send a message to the AI assistant and receive a synchronous reply. Optionally bind the conversation to an incident or alert for context-aware responses. For eligible unbound home chat, `checkpoint_id` and `decision` confirm or cancel approval-gated writes. Responses include `confirmation` for a pending write and `checkpoint_resolved` after resume. If an action-item write needs required fields the model did not supply, no checkpoint is created and the turn completes with a plain reply linking to that incident's action-item form in the Rootly web app. The synchronous response has no `confirmation` key; only `confirmation` responses are resumable. Requires `ai.chat:write` OAuth scope or an API key.",
+        "description": "Send a message to the AI assistant and receive a synchronous reply. Optionally bind the conversation to an incident or alert for context-aware responses. For eligible unbound home chat, `checkpoint_id` and `decision` confirm or cancel approval-gated writes. Responses include `confirmation` for a pending write and `checkpoint_resolved` after resume. If an action-item write needs required fields the model did not supply, no checkpoint is created and the turn completes with a plain reply linking to that incident's action-item form in the Rootly web app. The synchronous response has no `confirmation` key; only `confirmation` responses are resumable. Limited to 60 requests per minute per credential. Rate-limit responses include `Retry-After` and `X-RateLimit-*` headers. Requires `ai.chat:write` OAuth scope or an API key.",
         "operationId": "createAiChat",
         "parameters": [
           {
@@ -1014,10 +1014,80 @@
         "responses": {
           "200": {
             "description": "AI chat response",
+            "headers": {
+              "X-RateLimit-Limit": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Request limit and window duration"
+              },
+              "X-RateLimit-Remaining": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Requests remaining in the current window"
+              },
+              "X-RateLimit-Used": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Requests used in the current window"
+              },
+              "X-RateLimit-Reset": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Unix timestamp when the current window resets"
+              }
+            },
             "content": {
               "application/vnd.api+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ai_chat_response"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "AI chat rate limit exceeded",
+            "headers": {
+              "Retry-After": {
+                "schema": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 60
+                },
+                "description": "Seconds until the current rate-limit window resets"
+              },
+              "X-RateLimit-Limit": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Request limit and window duration"
+              },
+              "X-RateLimit-Remaining": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Requests remaining in the current window"
+              },
+              "X-RateLimit-Used": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Requests used in the current window"
+              },
+              "X-RateLimit-Reset": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Unix timestamp when the current window resets"
+              }
+            },
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ai_chat_error_response"
                 }
               }
             }
@@ -1076,7 +1146,7 @@
         "tags": [
           "AI Chat"
         ],
-        "description": "Send a message and receive the AI response as a Server-Sent Events stream. Optionally bind to an incident or alert for context. For eligible unbound home chat, `checkpoint_id` and `decision` confirm or cancel approval-gated writes. Events include `confirmation_required` for pending writes and `checkpoint_resolved` before replay. If an action-item write needs required fields the model did not supply, no checkpoint is created and the turn completes with a plain reply linking to that incident's action-item form in the Rootly web app. The stream emits `done` with `status: complete` and no `confirmation_required` event; only `confirmation_required` events are resumable. `status` events carry a short progress line (`{status}`) such as the running tool's title or its progress message; they never include tool arguments or results. `skill_loaded` events carry `{skill: {id, name, slug, version}}` when an AI Skill is loaded. Requires `ai.chat:write` OAuth scope or an API key.",
+        "description": "Send a message and receive the AI response as a Server-Sent Events stream. Optionally bind to an incident or alert for context. For eligible unbound home chat, `checkpoint_id` and `decision` confirm or cancel approval-gated writes. Events include `confirmation_required` for pending writes and `checkpoint_resolved` before replay. If an action-item write needs required fields the model did not supply, no checkpoint is created and the turn completes with a plain reply linking to that incident's action-item form in the Rootly web app. The stream emits `done` with `status: complete` and no `confirmation_required` event; only `confirmation_required` events are resumable. `status` events carry a short progress line (`{status}`) such as the running tool's title or its progress message; they never include tool arguments or results. `skill_loaded` events carry `{skill: {id, name, slug, version}}` when an AI Skill is loaded. Limited to 60 requests per minute per credential. Rate-limit responses include `Retry-After` and `X-RateLimit-*` headers. Requires `ai.chat:write` OAuth scope or an API key.",
         "operationId": "streamAiChat",
         "parameters": [
           {
@@ -1144,7 +1214,77 @@
         ],
         "responses": {
           "200": {
-            "description": "SSE event stream"
+            "description": "SSE event stream",
+            "headers": {
+              "X-RateLimit-Limit": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Request limit and window duration"
+              },
+              "X-RateLimit-Remaining": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Requests remaining in the current window"
+              },
+              "X-RateLimit-Used": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Requests used in the current window"
+              },
+              "X-RateLimit-Reset": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Unix timestamp when the current window resets"
+              }
+            }
+          },
+          "429": {
+            "description": "AI chat rate limit exceeded",
+            "headers": {
+              "Retry-After": {
+                "schema": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 60
+                },
+                "description": "Seconds until the current rate-limit window resets"
+              },
+              "X-RateLimit-Limit": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Request limit and window duration"
+              },
+              "X-RateLimit-Remaining": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Requests remaining in the current window"
+              },
+              "X-RateLimit-Used": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Requests used in the current window"
+              },
+              "X-RateLimit-Reset": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Unix timestamp when the current window resets"
+              }
+            },
+            "content": {
+              "text/event-stream": {
+                "schema": {
+                  "$ref": "#/components/schemas/ai_chat_error_response"
+                }
+              }
+            }
           },
           "403": {
             "description": "AI chat not enabled or home-chat caller is ineligible",
@@ -1995,39 +2135,81 @@
         "operationId": "listAiToolCallEvents",
         "parameters": [
           {
-            "name": "filter",
+            "name": "page[number]",
             "in": "query",
             "required": false,
-            "style": "deepObject",
-            "explode": true,
             "schema": {
-              "type": "object",
-              "properties": {
-                "connector_id": {
-                  "type": "string"
-                },
-                "outcome": {
-                  "type": "string"
-                },
-                "risk_class": {
-                  "type": "string"
-                },
-                "surface": {
-                  "type": "string"
-                },
-                "user_id": {
-                  "type": "string"
-                },
-                "occurred_after": {
-                  "type": "string",
-                  "format": "date-time"
-                },
-                "occurred_before": {
-                  "type": "string",
-                  "format": "date-time"
-                }
-              }
+              "type": "integer"
             }
+          },
+          {
+            "name": "page[size]",
+            "in": "query",
+            "description": "Number of events per page (defaults to 50, max 1000)",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "filter[connector_id]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[outcome]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[risk_class]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[surface]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[user_id]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "filter[occurred_after]",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "required": false,
+            "description": "Occurred at or after (ISO 8601)"
+          },
+          {
+            "name": "filter[occurred_before]",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "required": false,
+            "description": "Occurred at or before (ISO 8601)"
           }
         ],
         "responses": {
@@ -45340,7 +45522,7 @@
             "items": {
               "type": "string"
             },
-            "description": "null inherits all tools allowed by the team; otherwise the automation can use only these tool keys."
+            "description": "Tool keys are stable identifiers; connector tools use mcp:<lineage_root_id>:<tool_name> or private_connect:<agent_id>:<provider_id>:<capability>. null inherits all tools allowed by the team; otherwise the automation can use only these tool keys."
           },
           "limits_enabled": {
             "type": "boolean",
@@ -46667,7 +46849,7 @@
                     "items": {
                       "type": "string"
                     },
-                    "description": "null inherits all tools allowed by the team; otherwise the automation can use only these tool keys."
+                    "description": "Tool keys are stable identifiers; connector tools use mcp:<lineage_root_id>:<tool_name> or private_connect:<agent_id>:<provider_id>:<capability>. null inherits all tools allowed by the team; otherwise the automation can use only these tool keys."
                   },
                   "limits_enabled": {
                     "type": "boolean",
@@ -47171,7 +47353,7 @@
                     "items": {
                       "type": "string"
                     },
-                    "description": "null inherits all tools allowed by the team; otherwise the automation can use only these tool keys."
+                    "description": "Tool keys are stable identifiers; connector tools use mcp:<lineage_root_id>:<tool_name> or private_connect:<agent_id>:<provider_id>:<capability>. null inherits all tools allowed by the team; otherwise the automation can use only these tool keys."
                   },
                   "limits_enabled": {
                     "type": "boolean",
@@ -83331,6 +83513,11 @@
           "private": {
             "type": "boolean"
           },
+          "append_associations": {
+            "type": "boolean",
+            "default": false,
+            "description": "When true, the configured services, functionalities, environments, groups and incident types are added to the incident's existing ones instead of replacing them"
+          },
           "custom_fields_mapping": {
             "type": "string",
             "description": "Custom field mappings. Can contain liquid markup and need to be valid JSON. Use 'services', 'functionalities', or 'groups' keys with arrays of names/slugs for name/slug lookup",
@@ -112894,15 +113081,18 @@
                   },
                   "update_status": {
                     "type": "string",
-                    "description": "Status of the event the template will populate",
+                    "description": "Status of the event the template will populate. Allowed values depend on the team's feature flags",
                     "enum": [
                       "investigating",
                       "identified",
                       "monitoring",
                       "resolved",
+                      "planning",
                       "scheduled",
                       "in_progress",
-                      "completed"
+                      "verifying",
+                      "completed",
+                      "cancelled"
                     ],
                     "nullable": true
                   },
@@ -112983,15 +113173,18 @@
                   },
                   "update_status": {
                     "type": "string",
-                    "description": "Status of the event the template will populate",
+                    "description": "Status of the event the template will populate. Allowed values depend on the team's feature flags",
                     "enum": [
                       "investigating",
                       "identified",
                       "monitoring",
                       "resolved",
+                      "planning",
                       "scheduled",
                       "in_progress",
-                      "completed"
+                      "verifying",
+                      "completed",
+                      "cancelled"
                     ],
                     "nullable": true
                   },
@@ -113059,7 +113252,19 @@
           },
           "update_status": {
             "type": "string",
-            "description": "Status of the event the template will populate",
+            "description": "Status of the event the template will populate. Allowed values depend on the team's feature flags",
+            "enum": [
+              "investigating",
+              "identified",
+              "monitoring",
+              "resolved",
+              "planning",
+              "scheduled",
+              "in_progress",
+              "verifying",
+              "completed",
+              "cancelled"
+            ],
             "nullable": true
           },
           "kind": {
@@ -116267,7 +116472,7 @@
                 "additionalProperties": {
                   "type": "boolean"
                 },
-                "description": "Server-evaluated flags for the calling credential. `ai-native-home` indicates whether the AI-native home is available. `ai-skills` is true only when the organization has AI Skills enabled, the credential is not a group API key, and its role or OAuth scopes allow reading the resource; a true value means `GET /v1/ai_skills` is expected to succeed. `ai-automations` is true only when the organization has AI Automations enabled, the credential is not a group API key, and its role or OAuth scopes allow reading the resource; a true value means `GET /v1/ai_automations` is expected to succeed. May be absent; treat a missing object or key as unknown, not false."
+                "description": "Server-evaluated flags for the calling credential. `ai-native-home` indicates whether the AI-native home is available. `ai-skills` is true only when the organization has AI Skills enabled, the credential is not a group API key, and its role or OAuth scopes allow reading the resource; a true value means `GET /v1/ai_skills` is expected to succeed. `ai-automations` is true only when the organization has AI Automations enabled, the credential is not a group API key, and its role or OAuth scopes allow reading the resource; a true value means `GET /v1/ai_automations` is expected to succeed. `ai-chat` is true when the organization can use the `/v1/ai/chat` endpoints (feature rollout, `config_ai_api_chat_enabled`, and the AI assistant are all on) and, for OAuth tokens, the token has `ai.chat:write` or an AI meta scope; a true value means `POST /v1/ai/chat` is expected to pass these gates. May be absent; treat a missing object or key as unknown, not false."
               },
               "abilities": {
                 "type": "object",

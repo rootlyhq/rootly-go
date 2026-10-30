@@ -29815,18 +29815,23 @@ func (e NewStatusPageTemplateDataAttributesKind) Valid() bool {
 
 // Defines values for NewStatusPageTemplateDataAttributesUpdateStatus.
 const (
+	NewStatusPageTemplateDataAttributesUpdateStatusCancelled     NewStatusPageTemplateDataAttributesUpdateStatus = "cancelled"
 	NewStatusPageTemplateDataAttributesUpdateStatusCompleted     NewStatusPageTemplateDataAttributesUpdateStatus = "completed"
 	NewStatusPageTemplateDataAttributesUpdateStatusIdentified    NewStatusPageTemplateDataAttributesUpdateStatus = "identified"
 	NewStatusPageTemplateDataAttributesUpdateStatusInProgress    NewStatusPageTemplateDataAttributesUpdateStatus = "in_progress"
 	NewStatusPageTemplateDataAttributesUpdateStatusInvestigating NewStatusPageTemplateDataAttributesUpdateStatus = "investigating"
 	NewStatusPageTemplateDataAttributesUpdateStatusMonitoring    NewStatusPageTemplateDataAttributesUpdateStatus = "monitoring"
+	NewStatusPageTemplateDataAttributesUpdateStatusPlanning      NewStatusPageTemplateDataAttributesUpdateStatus = "planning"
 	NewStatusPageTemplateDataAttributesUpdateStatusResolved      NewStatusPageTemplateDataAttributesUpdateStatus = "resolved"
 	NewStatusPageTemplateDataAttributesUpdateStatusScheduled     NewStatusPageTemplateDataAttributesUpdateStatus = "scheduled"
+	NewStatusPageTemplateDataAttributesUpdateStatusVerifying     NewStatusPageTemplateDataAttributesUpdateStatus = "verifying"
 )
 
 // Valid indicates whether the value is a known member of the NewStatusPageTemplateDataAttributesUpdateStatus enum.
 func (e NewStatusPageTemplateDataAttributesUpdateStatus) Valid() bool {
 	switch e {
+	case NewStatusPageTemplateDataAttributesUpdateStatusCancelled:
+		return true
 	case NewStatusPageTemplateDataAttributesUpdateStatusCompleted:
 		return true
 	case NewStatusPageTemplateDataAttributesUpdateStatusIdentified:
@@ -29837,9 +29842,13 @@ func (e NewStatusPageTemplateDataAttributesUpdateStatus) Valid() bool {
 		return true
 	case NewStatusPageTemplateDataAttributesUpdateStatusMonitoring:
 		return true
+	case NewStatusPageTemplateDataAttributesUpdateStatusPlanning:
+		return true
 	case NewStatusPageTemplateDataAttributesUpdateStatusResolved:
 		return true
 	case NewStatusPageTemplateDataAttributesUpdateStatusScheduled:
+		return true
+	case NewStatusPageTemplateDataAttributesUpdateStatusVerifying:
 		return true
 	default:
 		return false
@@ -49735,18 +49744,23 @@ func (e UpdateStatusPageTemplateDataAttributesKind) Valid() bool {
 
 // Defines values for UpdateStatusPageTemplateDataAttributesUpdateStatus.
 const (
+	UpdateStatusPageTemplateDataAttributesUpdateStatusCancelled     UpdateStatusPageTemplateDataAttributesUpdateStatus = "cancelled"
 	UpdateStatusPageTemplateDataAttributesUpdateStatusCompleted     UpdateStatusPageTemplateDataAttributesUpdateStatus = "completed"
 	UpdateStatusPageTemplateDataAttributesUpdateStatusIdentified    UpdateStatusPageTemplateDataAttributesUpdateStatus = "identified"
 	UpdateStatusPageTemplateDataAttributesUpdateStatusInProgress    UpdateStatusPageTemplateDataAttributesUpdateStatus = "in_progress"
 	UpdateStatusPageTemplateDataAttributesUpdateStatusInvestigating UpdateStatusPageTemplateDataAttributesUpdateStatus = "investigating"
 	UpdateStatusPageTemplateDataAttributesUpdateStatusMonitoring    UpdateStatusPageTemplateDataAttributesUpdateStatus = "monitoring"
+	UpdateStatusPageTemplateDataAttributesUpdateStatusPlanning      UpdateStatusPageTemplateDataAttributesUpdateStatus = "planning"
 	UpdateStatusPageTemplateDataAttributesUpdateStatusResolved      UpdateStatusPageTemplateDataAttributesUpdateStatus = "resolved"
 	UpdateStatusPageTemplateDataAttributesUpdateStatusScheduled     UpdateStatusPageTemplateDataAttributesUpdateStatus = "scheduled"
+	UpdateStatusPageTemplateDataAttributesUpdateStatusVerifying     UpdateStatusPageTemplateDataAttributesUpdateStatus = "verifying"
 )
 
 // Valid indicates whether the value is a known member of the UpdateStatusPageTemplateDataAttributesUpdateStatus enum.
 func (e UpdateStatusPageTemplateDataAttributesUpdateStatus) Valid() bool {
 	switch e {
+	case UpdateStatusPageTemplateDataAttributesUpdateStatusCancelled:
+		return true
 	case UpdateStatusPageTemplateDataAttributesUpdateStatusCompleted:
 		return true
 	case UpdateStatusPageTemplateDataAttributesUpdateStatusIdentified:
@@ -49757,9 +49771,13 @@ func (e UpdateStatusPageTemplateDataAttributesUpdateStatus) Valid() bool {
 		return true
 	case UpdateStatusPageTemplateDataAttributesUpdateStatusMonitoring:
 		return true
+	case UpdateStatusPageTemplateDataAttributesUpdateStatusPlanning:
+		return true
 	case UpdateStatusPageTemplateDataAttributesUpdateStatusResolved:
 		return true
 	case UpdateStatusPageTemplateDataAttributesUpdateStatusScheduled:
+		return true
+	case UpdateStatusPageTemplateDataAttributesUpdateStatusVerifying:
 		return true
 	default:
 		return false
@@ -54095,7 +54113,7 @@ type AiAutomationDataType string
 
 // AiAutomationAttributes defines model for ai_automation_attributes.
 type AiAutomationAttributes struct {
-	// AllowedToolKeys null inherits all tools allowed by the team; otherwise the automation can use only these tool keys.
+	// AllowedToolKeys Tool keys are stable identifiers; connector tools use mcp:<lineage_root_id>:<tool_name> or private_connect:<agent_id>:<provider_id>:<capability>. null inherits all tools allowed by the team; otherwise the automation can use only these tool keys.
 	AllowedToolKeys nullable.Nullable[[]string] `json:"allowed_tool_keys,omitempty"`
 
 	// Conditions Legacy view of incident trigger conditions. {} when event_name is null. Empty object means no conditions. Groups in any are ORed; clauses in all are ANDed.
@@ -60161,7 +60179,7 @@ type CurrentUser struct {
 	// Email The email of the user
 	Email string `json:"email"`
 
-	// FeatureFlags Server-evaluated flags for the calling credential. `ai-native-home` indicates whether the AI-native home is available. `ai-skills` is true only when the organization has AI Skills enabled, the credential is not a group API key, and its role or OAuth scopes allow reading the resource; a true value means `GET /v1/ai_skills` is expected to succeed. `ai-automations` is true only when the organization has AI Automations enabled, the credential is not a group API key, and its role or OAuth scopes allow reading the resource; a true value means `GET /v1/ai_automations` is expected to succeed. May be absent; treat a missing object or key as unknown, not false.
+	// FeatureFlags Server-evaluated flags for the calling credential. `ai-native-home` indicates whether the AI-native home is available. `ai-skills` is true only when the organization has AI Skills enabled, the credential is not a group API key, and its role or OAuth scopes allow reading the resource; a true value means `GET /v1/ai_skills` is expected to succeed. `ai-automations` is true only when the organization has AI Automations enabled, the credential is not a group API key, and its role or OAuth scopes allow reading the resource; a true value means `GET /v1/ai_automations` is expected to succeed. `ai-chat` is true when the organization can use the `/v1/ai/chat` endpoints (feature rollout, `config_ai_api_chat_enabled`, and the AI assistant are all on) and, for OAuth tokens, the token has `ai.chat:write` or an AI meta scope; a true value means `POST /v1/ai/chat` is expected to pass these gates. May be absent; treat a missing object or key as unknown, not false.
 	FeatureFlags map[string]bool `json:"feature_flags,omitempty"`
 
 	// FirstName First name of the user
@@ -64975,7 +64993,7 @@ type NewAiAutomation struct {
 	Data struct {
 		// Attributes Read-only attributes are ignored on write.
 		Attributes struct {
-			// AllowedToolKeys null inherits all tools allowed by the team; otherwise the automation can use only these tool keys.
+			// AllowedToolKeys Tool keys are stable identifiers; connector tools use mcp:<lineage_root_id>:<tool_name> or private_connect:<agent_id>:<provider_id>:<capability>. null inherits all tools allowed by the team; otherwise the automation can use only these tool keys.
 			AllowedToolKeys nullable.Nullable[[]string] `json:"allowed_tool_keys,omitempty"`
 
 			// Conditions Read-only; send triggers to change how the automation is triggered. Accepted on update only when unchanged from GET.
@@ -70334,7 +70352,7 @@ type NewStatusPageTemplate struct {
 			// Title Title of the template
 			Title string `json:"title"`
 
-			// UpdateStatus Status of the event the template will populate
+			// UpdateStatus Status of the event the template will populate. Allowed values depend on the team's feature flags
 			UpdateStatus nullable.Nullable[NewStatusPageTemplateDataAttributesUpdateStatus] `json:"update_status,omitempty"`
 
 			// UpdateTitle Title that will be used for the status page update
@@ -70347,7 +70365,7 @@ type NewStatusPageTemplate struct {
 // NewStatusPageTemplateDataAttributesKind The kind of the status page template
 type NewStatusPageTemplateDataAttributesKind string
 
-// NewStatusPageTemplateDataAttributesUpdateStatus Status of the event the template will populate
+// NewStatusPageTemplateDataAttributesUpdateStatus Status of the event the template will populate. Allowed values depend on the team's feature flags
 type NewStatusPageTemplateDataAttributesUpdateStatus string
 
 // NewStatusPageTemplateDataType defines model for NewStatusPageTemplate.Data.Type.
@@ -75630,7 +75648,7 @@ type StatusPageTemplate struct {
 	// Title Title of the template
 	Title string `json:"title"`
 
-	// UpdateStatus Status of the event the template will populate
+	// UpdateStatus Status of the event the template will populate. Allowed values depend on the team's feature flags
 	UpdateStatus nullable.Nullable[string] `json:"update_status,omitempty"`
 
 	// UpdateTitle Title that will be used for the status page update
@@ -76046,7 +76064,7 @@ type UpdateAiAutomation struct {
 	Data struct {
 		// Attributes Read-only attributes are ignored on write.
 		Attributes struct {
-			// AllowedToolKeys null inherits all tools allowed by the team; otherwise the automation can use only these tool keys.
+			// AllowedToolKeys Tool keys are stable identifiers; connector tools use mcp:<lineage_root_id>:<tool_name> or private_connect:<agent_id>:<provider_id>:<capability>. null inherits all tools allowed by the team; otherwise the automation can use only these tool keys.
 			AllowedToolKeys nullable.Nullable[[]string] `json:"allowed_tool_keys,omitempty"`
 
 			// Conditions Read-only; send triggers to change how the automation is triggered. Accepted on update only when unchanged from GET.
@@ -80142,7 +80160,10 @@ type UpdateIncidentSubStatusDataType string
 
 // UpdateIncidentTaskParams defines model for update_incident_task_params.
 type UpdateIncidentTaskParams struct {
-	AcknowledgedAt     nullable.Nullable[string]                   `json:"acknowledged_at,omitempty"`
+	AcknowledgedAt nullable.Nullable[string] `json:"acknowledged_at,omitempty"`
+
+	// AppendAssociations When true, the configured services, functionalities, environments, groups and incident types are added to the incident's existing ones instead of replacing them
+	AppendAssociations *bool                                       `json:"append_associations,omitempty"`
 	AttributeToQueryBy *UpdateIncidentTaskParamsAttributeToQueryBy `json:"attribute_to_query_by,omitempty"`
 
 	// CustomFieldsMapping Custom field mappings. Can contain liquid markup and need to be valid JSON. Use 'services', 'functionalities', or 'groups' keys with arrays of names/slugs for name/slug lookup
@@ -82507,7 +82528,7 @@ type UpdateStatusPageTemplate struct {
 			// Title Title of the template
 			Title string `json:"title"`
 
-			// UpdateStatus Status of the event the template will populate
+			// UpdateStatus Status of the event the template will populate. Allowed values depend on the team's feature flags
 			UpdateStatus nullable.Nullable[UpdateStatusPageTemplateDataAttributesUpdateStatus] `json:"update_status,omitempty"`
 
 			// UpdateTitle Title that will be used for the status page update
@@ -82523,7 +82544,7 @@ type UpdateStatusPageTemplate struct {
 // UpdateStatusPageTemplateDataAttributesKind The kind of the status page template
 type UpdateStatusPageTemplateDataAttributesKind string
 
-// UpdateStatusPageTemplateDataAttributesUpdateStatus Status of the event the template will populate
+// UpdateStatusPageTemplateDataAttributesUpdateStatus Status of the event the template will populate. Allowed values depend on the team's feature flags
 type UpdateStatusPageTemplateDataAttributesUpdateStatus string
 
 // UpdateStatusPageTemplateDataType defines model for UpdateStatusPageTemplate.Data.Type.
@@ -84366,15 +84387,21 @@ type ListAISkillsParamsSort string
 
 // ListAiToolCallEventsParams defines parameters for ListAiToolCallEvents.
 type ListAiToolCallEventsParams struct {
-	Filter *struct {
-		ConnectorID    *string    `json:"connector_id,omitempty"`
-		OccurredAfter  *time.Time `json:"occurred_after,omitempty"`
-		OccurredBefore *time.Time `json:"occurred_before,omitempty"`
-		Outcome        *string    `json:"outcome,omitempty"`
-		RiskClass      *string    `json:"risk_class,omitempty"`
-		Surface        *string    `json:"surface,omitempty"`
-		UserID         *string    `json:"user_id,omitempty"`
-	} `json:"filter,omitempty"`
+	PageNumber *int `form:"page[number],omitempty" json:"page[number],omitempty"`
+
+	// PageSize Number of events per page (defaults to 50, max 1000)
+	PageSize          *int    `form:"page[size],omitempty" json:"page[size],omitempty"`
+	FilterConnectorID *string `form:"filter[connector_id],omitempty" json:"filter[connector_id],omitempty"`
+	FilterOutcome     *string `form:"filter[outcome],omitempty" json:"filter[outcome],omitempty"`
+	FilterRiskClass   *string `form:"filter[risk_class],omitempty" json:"filter[risk_class],omitempty"`
+	FilterSurface     *string `form:"filter[surface],omitempty" json:"filter[surface],omitempty"`
+	FilterUserID      *int    `form:"filter[user_id],omitempty" json:"filter[user_id],omitempty"`
+
+	// FilterOccurredAfter Occurred at or after (ISO 8601)
+	FilterOccurredAfter *time.Time `form:"filter[occurred_after],omitempty" json:"filter[occurred_after],omitempty"`
+
+	// FilterOccurredBefore Occurred at or before (ISO 8601)
+	FilterOccurredBefore *time.Time `form:"filter[occurred_before],omitempty" json:"filter[occurred_before],omitempty"`
 }
 
 // ListAiToolCallEvents200ApplicationVndAPIPlusJSONResponseBodyDataType defines parameters for ListAiToolCallEvents.
@@ -109151,7 +109178,7 @@ type ClientInterface interface {
 
 	// CreateAiChat Send AI chat message
 	//
-	// Send a message to the AI assistant and receive a synchronous reply. Optionally bind the conversation to an incident or alert for context-aware responses. For eligible unbound home chat, `checkpoint_id` and `decision` confirm or cancel approval-gated writes. Responses include `confirmation` for a pending write and `checkpoint_resolved` after resume. If an action-item write needs required fields the model did not supply, no checkpoint is created and the turn completes with a plain reply linking to that incident's action-item form in the Rootly web app. The synchronous response has no `confirmation` key; only `confirmation` responses are resumable. Requires `ai.chat:write` OAuth scope or an API key.
+	// Send a message to the AI assistant and receive a synchronous reply. Optionally bind the conversation to an incident or alert for context-aware responses. For eligible unbound home chat, `checkpoint_id` and `decision` confirm or cancel approval-gated writes. Responses include `confirmation` for a pending write and `checkpoint_resolved` after resume. If an action-item write needs required fields the model did not supply, no checkpoint is created and the turn completes with a plain reply linking to that incident's action-item form in the Rootly web app. The synchronous response has no `confirmation` key; only `confirmation` responses are resumable. Limited to 60 requests per minute per credential. Rate-limit responses include `Retry-After` and `X-RateLimit-*` headers. Requires `ai.chat:write` OAuth scope or an API key.
 	//
 	// Corresponds with POST /v1/ai/chat (the `CreateAiChat` operationId).
 	CreateAiChat(ctx context.Context, params *CreateAiChatParams, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -109197,7 +109224,7 @@ type ClientInterface interface {
 
 	// StreamAiChat Stream AI chat response (SSE)
 	//
-	// Send a message and receive the AI response as a Server-Sent Events stream. Optionally bind to an incident or alert for context. For eligible unbound home chat, `checkpoint_id` and `decision` confirm or cancel approval-gated writes. Events include `confirmation_required` for pending writes and `checkpoint_resolved` before replay. If an action-item write needs required fields the model did not supply, no checkpoint is created and the turn completes with a plain reply linking to that incident's action-item form in the Rootly web app. The stream emits `done` with `status: complete` and no `confirmation_required` event; only `confirmation_required` events are resumable. `status` events carry a short progress line (`{status}`) such as the running tool's title or its progress message; they never include tool arguments or results. `skill_loaded` events carry `{skill: {id, name, slug, version}}` when an AI Skill is loaded. Requires `ai.chat:write` OAuth scope or an API key.
+	// Send a message and receive the AI response as a Server-Sent Events stream. Optionally bind to an incident or alert for context. For eligible unbound home chat, `checkpoint_id` and `decision` confirm or cancel approval-gated writes. Events include `confirmation_required` for pending writes and `checkpoint_resolved` before replay. If an action-item write needs required fields the model did not supply, no checkpoint is created and the turn completes with a plain reply linking to that incident's action-item form in the Rootly web app. The stream emits `done` with `status: complete` and no `confirmation_required` event; only `confirmation_required` events are resumable. `status` events carry a short progress line (`{status}`) such as the running tool's title or its progress message; they never include tool arguments or results. `skill_loaded` events carry `{skill: {id, name, slug, version}}` when an AI Skill is loaded. Limited to 60 requests per minute per credential. Rate-limit responses include `Retry-After` and `X-RateLimit-*` headers. Requires `ai.chat:write` OAuth scope or an API key.
 	//
 	// Corresponds with POST /v1/ai/chat/stream (the `StreamAiChat` operationId).
 	StreamAiChat(ctx context.Context, params *StreamAiChatParams, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -116448,7 +116475,7 @@ func (c *Client) UpdateIncidentActionItemWithApplicationVndAPIPlusJSONBody(ctx c
 
 // CreateAiChat Send AI chat message
 //
-// Send a message to the AI assistant and receive a synchronous reply. Optionally bind the conversation to an incident or alert for context-aware responses. For eligible unbound home chat, `checkpoint_id` and `decision` confirm or cancel approval-gated writes. Responses include `confirmation` for a pending write and `checkpoint_resolved` after resume. If an action-item write needs required fields the model did not supply, no checkpoint is created and the turn completes with a plain reply linking to that incident's action-item form in the Rootly web app. The synchronous response has no `confirmation` key; only `confirmation` responses are resumable. Requires `ai.chat:write` OAuth scope or an API key.
+// Send a message to the AI assistant and receive a synchronous reply. Optionally bind the conversation to an incident or alert for context-aware responses. For eligible unbound home chat, `checkpoint_id` and `decision` confirm or cancel approval-gated writes. Responses include `confirmation` for a pending write and `checkpoint_resolved` after resume. If an action-item write needs required fields the model did not supply, no checkpoint is created and the turn completes with a plain reply linking to that incident's action-item form in the Rootly web app. The synchronous response has no `confirmation` key; only `confirmation` responses are resumable. Limited to 60 requests per minute per credential. Rate-limit responses include `Retry-After` and `X-RateLimit-*` headers. Requires `ai.chat:write` OAuth scope or an API key.
 //
 // Corresponds with POST /v1/ai/chat (the `CreateAiChat` operationId).
 func (c *Client) CreateAiChat(ctx context.Context, params *CreateAiChatParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
@@ -116554,7 +116581,7 @@ func (c *Client) ListAiChatSessionMessages(ctx context.Context, sessionID openap
 
 // StreamAiChat Stream AI chat response (SSE)
 //
-// Send a message and receive the AI response as a Server-Sent Events stream. Optionally bind to an incident or alert for context. For eligible unbound home chat, `checkpoint_id` and `decision` confirm or cancel approval-gated writes. Events include `confirmation_required` for pending writes and `checkpoint_resolved` before replay. If an action-item write needs required fields the model did not supply, no checkpoint is created and the turn completes with a plain reply linking to that incident's action-item form in the Rootly web app. The stream emits `done` with `status: complete` and no `confirmation_required` event; only `confirmation_required` events are resumable. `status` events carry a short progress line (`{status}`) such as the running tool's title or its progress message; they never include tool arguments or results. `skill_loaded` events carry `{skill: {id, name, slug, version}}` when an AI Skill is loaded. Requires `ai.chat:write` OAuth scope or an API key.
+// Send a message and receive the AI response as a Server-Sent Events stream. Optionally bind to an incident or alert for context. For eligible unbound home chat, `checkpoint_id` and `decision` confirm or cancel approval-gated writes. Events include `confirmation_required` for pending writes and `checkpoint_resolved` before replay. If an action-item write needs required fields the model did not supply, no checkpoint is created and the turn completes with a plain reply linking to that incident's action-item form in the Rootly web app. The stream emits `done` with `status: complete` and no `confirmation_required` event; only `confirmation_required` events are resumable. `status` events carry a short progress line (`{status}`) such as the running tool's title or its progress message; they never include tool arguments or results. `skill_loaded` events carry `{skill: {id, name, slug, version}}` when an AI Skill is loaded. Limited to 60 requests per minute per credential. Rate-limit responses include `Retry-After` and `X-RateLimit-*` headers. Requires `ai.chat:write` OAuth scope or an API key.
 //
 // Corresponds with POST /v1/ai/chat/stream (the `StreamAiChat` operationId).
 func (c *Client) StreamAiChat(ctx context.Context, params *StreamAiChatParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
@@ -134988,9 +135015,105 @@ func NewListAiToolCallEventsRequest(server string, params *ListAiToolCallEventsP
 		// per the OpenAPI spec (e.g. "color=blue,black,brown").
 		var rawQueryFragments []string
 
-		if params.Filter != nil {
+		if params.PageNumber != nil {
 
-			if queryFrag, err := runtime.StyleParamWithOptions("deepObject", true, "filter", *params.Filter, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "object", Format: ""}); err != nil {
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "page[number]", *params.PageNumber, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.PageSize != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "page[size]", *params.PageSize, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterConnectorID != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[connector_id]", *params.FilterConnectorID, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterOutcome != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[outcome]", *params.FilterOutcome, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterRiskClass != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[risk_class]", *params.FilterRiskClass, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterSurface != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[surface]", *params.FilterSurface, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterUserID != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[user_id]", *params.FilterUserID, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterOccurredAfter != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[occurred_after]", *params.FilterOccurredAfter, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: "date-time"}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterOccurredBefore != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[occurred_before]", *params.FilterOccurredBefore, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: "date-time"}); err != nil {
 				return nil, err
 			} else {
 				for _, qp := range strings.Split(queryFrag, "&") {
@@ -177737,7 +177860,7 @@ type ClientWithResponsesInterface interface {
 
 	// CreateAiChatWithResponse Send AI chat message
 	//
-	// Send a message to the AI assistant and receive a synchronous reply. Optionally bind the conversation to an incident or alert for context-aware responses. For eligible unbound home chat, `checkpoint_id` and `decision` confirm or cancel approval-gated writes. Responses include `confirmation` for a pending write and `checkpoint_resolved` after resume. If an action-item write needs required fields the model did not supply, no checkpoint is created and the turn completes with a plain reply linking to that incident's action-item form in the Rootly web app. The synchronous response has no `confirmation` key; only `confirmation` responses are resumable. Requires `ai.chat:write` OAuth scope or an API key.
+	// Send a message to the AI assistant and receive a synchronous reply. Optionally bind the conversation to an incident or alert for context-aware responses. For eligible unbound home chat, `checkpoint_id` and `decision` confirm or cancel approval-gated writes. Responses include `confirmation` for a pending write and `checkpoint_resolved` after resume. If an action-item write needs required fields the model did not supply, no checkpoint is created and the turn completes with a plain reply linking to that incident's action-item form in the Rootly web app. The synchronous response has no `confirmation` key; only `confirmation` responses are resumable. Limited to 60 requests per minute per credential. Rate-limit responses include `Retry-After` and `X-RateLimit-*` headers. Requires `ai.chat:write` OAuth scope or an API key.
 	//
 	// Returns a wrapper object for the known response body format(s).
 	//
@@ -177791,7 +177914,7 @@ type ClientWithResponsesInterface interface {
 
 	// StreamAiChatWithResponse Stream AI chat response (SSE)
 	//
-	// Send a message and receive the AI response as a Server-Sent Events stream. Optionally bind to an incident or alert for context. For eligible unbound home chat, `checkpoint_id` and `decision` confirm or cancel approval-gated writes. Events include `confirmation_required` for pending writes and `checkpoint_resolved` before replay. If an action-item write needs required fields the model did not supply, no checkpoint is created and the turn completes with a plain reply linking to that incident's action-item form in the Rootly web app. The stream emits `done` with `status: complete` and no `confirmation_required` event; only `confirmation_required` events are resumable. `status` events carry a short progress line (`{status}`) such as the running tool's title or its progress message; they never include tool arguments or results. `skill_loaded` events carry `{skill: {id, name, slug, version}}` when an AI Skill is loaded. Requires `ai.chat:write` OAuth scope or an API key.
+	// Send a message and receive the AI response as a Server-Sent Events stream. Optionally bind to an incident or alert for context. For eligible unbound home chat, `checkpoint_id` and `decision` confirm or cancel approval-gated writes. Events include `confirmation_required` for pending writes and `checkpoint_resolved` before replay. If an action-item write needs required fields the model did not supply, no checkpoint is created and the turn completes with a plain reply linking to that incident's action-item form in the Rootly web app. The stream emits `done` with `status: complete` and no `confirmation_required` event; only `confirmation_required` events are resumable. `status` events carry a short progress line (`{status}`) such as the running tool's title or its progress message; they never include tool arguments or results. `skill_loaded` events carry `{skill: {id, name, slug, version}}` when an AI Skill is loaded. Limited to 60 requests per minute per credential. Rate-limit responses include `Retry-After` and `X-RateLimit-*` headers. Requires `ai.chat:write` OAuth scope or an API key.
 	//
 	// Returns a wrapper object for the known response body format(s).
 	//
@@ -185859,6 +185982,23 @@ func (r UpdateIncidentActionItemResponse) ContentType() string {
 	return ""
 }
 
+// CreateAiChatResponse200Headers the declared response headers of an HTTP 200 response for CreateAiChat
+type CreateAiChatResponse200Headers struct {
+	XRateLimitLimit     *string
+	XRateLimitRemaining *string
+	XRateLimitReset     *string
+	XRateLimitUsed      *string
+}
+
+// CreateAiChatResponse429Headers the declared response headers of an HTTP 429 response for CreateAiChat
+type CreateAiChatResponse429Headers struct {
+	RetryAfter          *int
+	XRateLimitLimit     *string
+	XRateLimitRemaining *string
+	XRateLimitReset     *string
+	XRateLimitUsed      *string
+}
+
 type CreateAiChatResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
@@ -185870,8 +186010,14 @@ type CreateAiChatResponse struct {
 	ApplicationVndAPIJSON404 *AiChatErrorResponse
 	// ApplicationVndAPIJSON422 the response for an HTTP 422 `application/vnd.api+json` response
 	ApplicationVndAPIJSON422 *AiChatErrorResponse
+	// ApplicationVndAPIJSON429 the response for an HTTP 429 `application/vnd.api+json` response
+	ApplicationVndAPIJSON429 *AiChatErrorResponse
 	// ApplicationVndAPIJSON500 the response for an HTTP 500 `application/vnd.api+json` response
 	ApplicationVndAPIJSON500 *AiChatErrorResponse
+	// Headers200 the parsed response headers for an HTTP 200 response
+	Headers200 *CreateAiChatResponse200Headers
+	// Headers429 the parsed response headers for an HTTP 429 response
+	Headers429 *CreateAiChatResponse429Headers
 }
 
 // Status returns HTTPResponse.Status
@@ -186030,9 +186176,30 @@ func (r ListAiChatSessionMessagesResponse) ContentType() string {
 	return ""
 }
 
+// StreamAiChatResponse200Headers the declared response headers of an HTTP 200 response for StreamAiChat
+type StreamAiChatResponse200Headers struct {
+	XRateLimitLimit     *string
+	XRateLimitRemaining *string
+	XRateLimitReset     *string
+	XRateLimitUsed      *string
+}
+
+// StreamAiChatResponse429Headers the declared response headers of an HTTP 429 response for StreamAiChat
+type StreamAiChatResponse429Headers struct {
+	RetryAfter          *int
+	XRateLimitLimit     *string
+	XRateLimitRemaining *string
+	XRateLimitReset     *string
+	XRateLimitUsed      *string
+}
+
 type StreamAiChatResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
+	// Headers200 the parsed response headers for an HTTP 200 response
+	Headers200 *StreamAiChatResponse200Headers
+	// Headers429 the parsed response headers for an HTTP 429 response
+	Headers429 *StreamAiChatResponse429Headers
 }
 
 // Status returns HTTPResponse.Status
@@ -207418,7 +207585,7 @@ func (c *ClientWithResponses) UpdateIncidentActionItemWithApplicationVndAPIPlusJ
 
 // CreateAiChatWithResponse Send AI chat message
 //
-// Send a message to the AI assistant and receive a synchronous reply. Optionally bind the conversation to an incident or alert for context-aware responses. For eligible unbound home chat, `checkpoint_id` and `decision` confirm or cancel approval-gated writes. Responses include `confirmation` for a pending write and `checkpoint_resolved` after resume. If an action-item write needs required fields the model did not supply, no checkpoint is created and the turn completes with a plain reply linking to that incident's action-item form in the Rootly web app. The synchronous response has no `confirmation` key; only `confirmation` responses are resumable. Requires `ai.chat:write` OAuth scope or an API key.
+// Send a message to the AI assistant and receive a synchronous reply. Optionally bind the conversation to an incident or alert for context-aware responses. For eligible unbound home chat, `checkpoint_id` and `decision` confirm or cancel approval-gated writes. Responses include `confirmation` for a pending write and `checkpoint_resolved` after resume. If an action-item write needs required fields the model did not supply, no checkpoint is created and the turn completes with a plain reply linking to that incident's action-item form in the Rootly web app. The synchronous response has no `confirmation` key; only `confirmation` responses are resumable. Limited to 60 requests per minute per credential. Rate-limit responses include `Retry-After` and `X-RateLimit-*` headers. Requires `ai.chat:write` OAuth scope or an API key.
 //
 // Returns a wrapper object for the known response body format(s).
 //
@@ -207508,7 +207675,7 @@ func (c *ClientWithResponses) ListAiChatSessionMessagesWithResponse(ctx context.
 
 // StreamAiChatWithResponse Stream AI chat response (SSE)
 //
-// Send a message and receive the AI response as a Server-Sent Events stream. Optionally bind to an incident or alert for context. For eligible unbound home chat, `checkpoint_id` and `decision` confirm or cancel approval-gated writes. Events include `confirmation_required` for pending writes and `checkpoint_resolved` before replay. If an action-item write needs required fields the model did not supply, no checkpoint is created and the turn completes with a plain reply linking to that incident's action-item form in the Rootly web app. The stream emits `done` with `status: complete` and no `confirmation_required` event; only `confirmation_required` events are resumable. `status` events carry a short progress line (`{status}`) such as the running tool's title or its progress message; they never include tool arguments or results. `skill_loaded` events carry `{skill: {id, name, slug, version}}` when an AI Skill is loaded. Requires `ai.chat:write` OAuth scope or an API key.
+// Send a message and receive the AI response as a Server-Sent Events stream. Optionally bind to an incident or alert for context. For eligible unbound home chat, `checkpoint_id` and `decision` confirm or cancel approval-gated writes. Events include `confirmation_required` for pending writes and `checkpoint_resolved` before replay. If an action-item write needs required fields the model did not supply, no checkpoint is created and the turn completes with a plain reply linking to that incident's action-item form in the Rootly web app. The stream emits `done` with `status: complete` and no `confirmation_required` event; only `confirmation_required` events are resumable. `status` events carry a short progress line (`{status}`) such as the running tool's title or its progress message; they never include tool arguments or results. `skill_loaded` events carry `{skill: {id, name, slug, version}}` when an AI Skill is loaded. Limited to 60 requests per minute per credential. Rate-limit responses include `Retry-After` and `X-RateLimit-*` headers. Requires `ai.chat:write` OAuth scope or an API key.
 //
 // Returns a wrapper object for the known response body format(s).
 //
@@ -220962,6 +221129,13 @@ func ParseCreateAiChatResponse(rsp *http.Response) (*CreateAiChatResponse, error
 		}
 		response.ApplicationVndAPIJSON422 = &dest
 
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest AiChatErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON429 = &dest
+
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
 		var dest AiChatErrorResponse
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
@@ -220969,6 +221143,78 @@ func ParseCreateAiChatResponse(rsp *http.Response) (*CreateAiChatResponse, error
 		}
 		response.ApplicationVndAPIJSON500 = &dest
 
+	}
+
+	switch {
+	case rsp.StatusCode == 200:
+		var headers CreateAiChatResponse200Headers
+		if values := rsp.Header.Values("X-RateLimit-Limit"); len(values) > 0 {
+			var value string
+			if err := runtime.BindStyledParameterWithOptions("simple", "X-RateLimit-Limit", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			}
+			headers.XRateLimitLimit = &value
+		}
+		if values := rsp.Header.Values("X-RateLimit-Remaining"); len(values) > 0 {
+			var value string
+			if err := runtime.BindStyledParameterWithOptions("simple", "X-RateLimit-Remaining", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			}
+			headers.XRateLimitRemaining = &value
+		}
+		if values := rsp.Header.Values("X-RateLimit-Reset"); len(values) > 0 {
+			var value string
+			if err := runtime.BindStyledParameterWithOptions("simple", "X-RateLimit-Reset", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			}
+			headers.XRateLimitReset = &value
+		}
+		if values := rsp.Header.Values("X-RateLimit-Used"); len(values) > 0 {
+			var value string
+			if err := runtime.BindStyledParameterWithOptions("simple", "X-RateLimit-Used", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			}
+			headers.XRateLimitUsed = &value
+		}
+		response.Headers200 = &headers
+	case rsp.StatusCode == 429:
+		var headers CreateAiChatResponse429Headers
+		if values := rsp.Header.Values("Retry-After"); len(values) > 0 {
+			var value int
+			if err := runtime.BindStyledParameterWithOptions("simple", "Retry-After", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "integer", Format: ""}); err != nil {
+				return nil, err
+			}
+			headers.RetryAfter = &value
+		}
+		if values := rsp.Header.Values("X-RateLimit-Limit"); len(values) > 0 {
+			var value string
+			if err := runtime.BindStyledParameterWithOptions("simple", "X-RateLimit-Limit", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			}
+			headers.XRateLimitLimit = &value
+		}
+		if values := rsp.Header.Values("X-RateLimit-Remaining"); len(values) > 0 {
+			var value string
+			if err := runtime.BindStyledParameterWithOptions("simple", "X-RateLimit-Remaining", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			}
+			headers.XRateLimitRemaining = &value
+		}
+		if values := rsp.Header.Values("X-RateLimit-Reset"); len(values) > 0 {
+			var value string
+			if err := runtime.BindStyledParameterWithOptions("simple", "X-RateLimit-Reset", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			}
+			headers.XRateLimitReset = &value
+		}
+		if values := rsp.Header.Values("X-RateLimit-Used"); len(values) > 0 {
+			var value string
+			if err := runtime.BindStyledParameterWithOptions("simple", "X-RateLimit-Used", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			}
+			headers.XRateLimitUsed = &value
+		}
+		response.Headers429 = &headers
 	}
 
 	return response, nil
@@ -221117,6 +221363,78 @@ func ParseStreamAiChatResponse(rsp *http.Response) (*StreamAiChatResponse, error
 	response := &StreamAiChatResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
+	}
+
+	switch {
+	case rsp.StatusCode == 200:
+		var headers StreamAiChatResponse200Headers
+		if values := rsp.Header.Values("X-RateLimit-Limit"); len(values) > 0 {
+			var value string
+			if err := runtime.BindStyledParameterWithOptions("simple", "X-RateLimit-Limit", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			}
+			headers.XRateLimitLimit = &value
+		}
+		if values := rsp.Header.Values("X-RateLimit-Remaining"); len(values) > 0 {
+			var value string
+			if err := runtime.BindStyledParameterWithOptions("simple", "X-RateLimit-Remaining", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			}
+			headers.XRateLimitRemaining = &value
+		}
+		if values := rsp.Header.Values("X-RateLimit-Reset"); len(values) > 0 {
+			var value string
+			if err := runtime.BindStyledParameterWithOptions("simple", "X-RateLimit-Reset", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			}
+			headers.XRateLimitReset = &value
+		}
+		if values := rsp.Header.Values("X-RateLimit-Used"); len(values) > 0 {
+			var value string
+			if err := runtime.BindStyledParameterWithOptions("simple", "X-RateLimit-Used", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			}
+			headers.XRateLimitUsed = &value
+		}
+		response.Headers200 = &headers
+	case rsp.StatusCode == 429:
+		var headers StreamAiChatResponse429Headers
+		if values := rsp.Header.Values("Retry-After"); len(values) > 0 {
+			var value int
+			if err := runtime.BindStyledParameterWithOptions("simple", "Retry-After", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "integer", Format: ""}); err != nil {
+				return nil, err
+			}
+			headers.RetryAfter = &value
+		}
+		if values := rsp.Header.Values("X-RateLimit-Limit"); len(values) > 0 {
+			var value string
+			if err := runtime.BindStyledParameterWithOptions("simple", "X-RateLimit-Limit", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			}
+			headers.XRateLimitLimit = &value
+		}
+		if values := rsp.Header.Values("X-RateLimit-Remaining"); len(values) > 0 {
+			var value string
+			if err := runtime.BindStyledParameterWithOptions("simple", "X-RateLimit-Remaining", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			}
+			headers.XRateLimitRemaining = &value
+		}
+		if values := rsp.Header.Values("X-RateLimit-Reset"); len(values) > 0 {
+			var value string
+			if err := runtime.BindStyledParameterWithOptions("simple", "X-RateLimit-Reset", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			}
+			headers.XRateLimitReset = &value
+		}
+		if values := rsp.Header.Values("X-RateLimit-Used"); len(values) > 0 {
+			var value string
+			if err := runtime.BindStyledParameterWithOptions("simple", "X-RateLimit-Used", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			}
+			headers.XRateLimitUsed = &value
+		}
+		response.Headers429 = &headers
 	}
 
 	return response, nil
