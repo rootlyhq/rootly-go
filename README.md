@@ -37,6 +37,10 @@ func main() {
 }
 ```
 
+## Releases
+
+Release notes are on the [GitHub Releases page](https://github.com/rootlyhq/rootly-go/releases).
+
 ## Development
 
 ### Prerequisites
