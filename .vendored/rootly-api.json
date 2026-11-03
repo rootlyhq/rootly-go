@@ -18184,6 +18184,16 @@
               }
             }
           },
+          "422": {
+            "description": "rejects a private custom logo URL",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors_list"
+                }
+              }
+            }
+          },
           "401": {
             "description": "responds with unauthorized for invalid token",
             "content": {
@@ -18412,6 +18422,16 @@
               "application/vnd.api+json": {
                 "schema": {
                   "$ref": "#/components/schemas/workflow_task_response"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "rejects a private custom logo URL",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors_list"
                 }
               }
             }
@@ -81956,7 +81976,7 @@
           },
           "custom_logo_url": {
             "type": "string",
-            "description": "URL to your custom email logo",
+            "description": "Non-HTTP(S), localhost, private or internal URLs return 422. Redirects, non-image/SVG/empty responses, files over 5 MB and timeouts allow saving but leave no logo attached.",
             "nullable": true
           }
         },

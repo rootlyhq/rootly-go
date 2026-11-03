@@ -73853,7 +73853,7 @@ type SendEmailTaskParams struct {
 	Body nullable.Nullable[string] `json:"body"`
 	Cc   []string                  `json:"cc,omitempty"`
 
-	// CustomLogoURL URL to your custom email logo
+	// CustomLogoURL Non-HTTP(S), localhost, private or internal URLs return 422. Redirects, non-image/SVG/empty responses, files over 5 MB and timeouts allow saving but leave no logo attached.
 	CustomLogoURL nullable.Nullable[string] `json:"custom_logo_url,omitempty"`
 
 	// From The from email address. Need to use SMTP integration if different than rootly.com
@@ -205345,6 +205345,8 @@ type UpdateWorkflowTaskResponse struct {
 	ApplicationVndAPIJSON200 *WorkflowTaskResponse
 	// ApplicationVndAPIJSON404 the response for an HTTP 404 `application/vnd.api+json` response
 	ApplicationVndAPIJSON404 *ErrorsList
+	// ApplicationVndAPIJSON422 the response for an HTTP 422 `application/vnd.api+json` response
+	ApplicationVndAPIJSON422 *ErrorsList
 }
 
 // Status returns HTTPResponse.Status
@@ -205838,6 +205840,8 @@ type CreateWorkflowTaskResponse struct {
 	ApplicationVndAPIJSON201 *WorkflowTaskResponse
 	// ApplicationVndAPIJSON401 the response for an HTTP 401 `application/vnd.api+json` response
 	ApplicationVndAPIJSON401 *ErrorsList
+	// ApplicationVndAPIJSON422 the response for an HTTP 422 `application/vnd.api+json` response
+	ApplicationVndAPIJSON422 *ErrorsList
 }
 
 // Status returns HTTPResponse.Status
@@ -240670,6 +240674,13 @@ func ParseUpdateWorkflowTaskResponse(rsp *http.Response) (*UpdateWorkflowTaskRes
 		}
 		response.ApplicationVndAPIJSON404 = &dest
 
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest ErrorsList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON422 = &dest
+
 	}
 
 	return response, nil
@@ -241160,6 +241171,13 @@ func ParseCreateWorkflowTaskResponse(rsp *http.Response) (*CreateWorkflowTaskRes
 			return nil, err
 		}
 		response.ApplicationVndAPIJSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest ErrorsList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON422 = &dest
 
 	}
 
