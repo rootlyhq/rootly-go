@@ -1293,6 +1293,34 @@ actions:
   - target: $.components.schemas.status_page_template.properties.update_status.enum
     remove: true
 
+  # keep `GET /v1/users` and `GET /v1/users/{id}` returning `User` and `UserResponse`, with the SCIM and `joined_via` attributes as optional `user` properties
+  - target: $.components.schemas.user.properties
+    update:
+      scim_managed:
+        type: boolean
+        description: "Whether the user's membership in this organization is provisioned by its SCIM integration, or synced in by a linked organization's SCIM integration. Returned by `GET /v1/users` and `GET /v1/users/{id}`."
+        readOnly: true
+      scim_external_id:
+        type: string
+        description: "The externalId this organization's identity provider sent for the user over SCIM, or the linked organization's for synced users, or null. Returned by `GET /v1/users` and `GET /v1/users/{id}`."
+        nullable: true
+        readOnly: true
+      joined_via:
+        type: string
+        description: "How the user most recently joined the requesting organization, such as `scim`, `invite`, `sso`, `sso_google`, `sso_slack`, `google_directory_sync`, `rootly_admin`, `import`, `web` or `unknown`. Returned by `GET /v1/users`."
+        readOnly: true
+
+  - target: $.components.schemas.user_list.properties.data.items.properties.attributes.allOf[1]
+    remove: true
+
+  - target: $.components.schemas.user_list.properties.data.items.properties.attributes.allOf[0]
+    update:
+      $ref: "#/components/schemas/user"
+
+  - target: $.paths['/v1/users/{id}'].get.responses['200'].content['application/vnd.api+json'].schema
+    update:
+      $ref: "#/components/schemas/user_response"
+
   # the API still validates the status page `slug` format and length
   - target: $.components.schemas.new_status_page.properties.data.properties.attributes.properties.slug.maxLength
     remove: true
@@ -1305,15 +1333,6 @@ actions:
 
   - target: $.components.schemas.update_status_page.properties.data.properties.attributes.properties.slug.pattern
     remove: true
-
-  # the `oneOf` includes `enum: [null]`, which generates invalid Go, so model `max_credits_per_run` as `nullable.Nullable[float32]`, as in the `ai_automation` response schema; the API still validates the allowed values
-  - target: $.components.schemas.*.properties.data.properties.attributes.properties.max_credits_per_run.oneOf
-    remove: true
-
-  - target: $.components.schemas.*.properties.data.properties.attributes.properties.max_credits_per_run
-    update:
-      type: number
-      nullable: true
 
   # slug deprecations
   - target: $.components.schemas.new_alert_field.properties.data.properties.attributes.properties.slug
