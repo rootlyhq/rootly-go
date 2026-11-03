@@ -2498,6 +2498,21 @@ func (e AiAutomationTriggerOptionsDataType) Valid() bool {
 	}
 }
 
+// Defines values for AiAutomationWebhookSecretResponseDataType.
+const (
+	AiAutomationWebhookSecretResponseDataTypeAiAutomationWebhookSecrets AiAutomationWebhookSecretResponseDataType = "ai_automation_webhook_secrets"
+)
+
+// Valid indicates whether the value is a known member of the AiAutomationWebhookSecretResponseDataType enum.
+func (e AiAutomationWebhookSecretResponseDataType) Valid() bool {
+	switch e {
+	case AiAutomationWebhookSecretResponseDataTypeAiAutomationWebhookSecrets:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for AiChatCheckpointResolutionReplay.
 const (
 	AiChatCheckpointResolutionReplayCompleted  AiChatCheckpointResolutionReplay = "completed"
@@ -2756,6 +2771,21 @@ const (
 func (e AiSkillVersionResponseDataType) Valid() bool {
 	switch e {
 	case AiSkillVersionResponseDataTypeAiSkillVersions:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AiToolCallEventListDataType.
+const (
+	AiToolCallEventListDataTypeAiToolCallEvents AiToolCallEventListDataType = "ai_tool_call_events"
+)
+
+// Valid indicates whether the value is a known member of the AiToolCallEventListDataType enum.
+func (e AiToolCallEventListDataType) Valid() bool {
+	switch e {
+	case AiToolCallEventListDataTypeAiToolCallEvents:
 		return true
 	default:
 		return false
@@ -7418,6 +7448,24 @@ const (
 func (e CreateGoogleChatSpaceTaskParamsTaskType) Valid() bool {
 	switch e {
 	case CreateGoogleChatSpaceTaskParamsTaskTypeCreateGoogleChatSpace:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for CreateGoogleDocsPageTaskParamsDocumentMode.
+const (
+	CreateGoogleDocsPageTaskParamsDocumentModePageless CreateGoogleDocsPageTaskParamsDocumentMode = "pageless"
+	CreateGoogleDocsPageTaskParamsDocumentModePages    CreateGoogleDocsPageTaskParamsDocumentMode = "pages"
+)
+
+// Valid indicates whether the value is a known member of the CreateGoogleDocsPageTaskParamsDocumentMode enum.
+func (e CreateGoogleDocsPageTaskParamsDocumentMode) Valid() bool {
+	switch e {
+	case CreateGoogleDocsPageTaskParamsDocumentModePageless:
+		return true
+	case CreateGoogleDocsPageTaskParamsDocumentModePages:
 		return true
 	default:
 		return false
@@ -35174,6 +35222,21 @@ func (e ScheduleRotationUserResponseDataType) Valid() bool {
 	}
 }
 
+// Defines values for ScimUserResponseDataType.
+const (
+	ScimUserResponseDataTypeUsers ScimUserResponseDataType = "users"
+)
+
+// Valid indicates whether the value is a known member of the ScimUserResponseDataType enum.
+func (e ScimUserResponseDataType) Valid() bool {
+	switch e {
+	case ScimUserResponseDataTypeUsers:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for SecretListDataType.
 const (
 	SecretListDataTypeSecrets SecretListDataType = "secrets"
@@ -45272,6 +45335,24 @@ func (e UpdateGoogleChatSpaceDescriptionTaskParamsTaskType) Valid() bool {
 	}
 }
 
+// Defines values for UpdateGoogleDocsPageTaskParamsDocumentMode.
+const (
+	UpdateGoogleDocsPageTaskParamsDocumentModePageless UpdateGoogleDocsPageTaskParamsDocumentMode = "pageless"
+	UpdateGoogleDocsPageTaskParamsDocumentModePages    UpdateGoogleDocsPageTaskParamsDocumentMode = "pages"
+)
+
+// Valid indicates whether the value is a known member of the UpdateGoogleDocsPageTaskParamsDocumentMode enum.
+func (e UpdateGoogleDocsPageTaskParamsDocumentMode) Valid() bool {
+	switch e {
+	case UpdateGoogleDocsPageTaskParamsDocumentModePageless:
+		return true
+	case UpdateGoogleDocsPageTaskParamsDocumentModePages:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for UpdateGoogleDocsPageTaskParamsTaskType.
 const (
 	UpdateGoogleDocsPageTaskParamsTaskTypeUpdateGoogleDocsPage UpdateGoogleDocsPageTaskParamsTaskType = "update_google_docs_page"
@@ -51164,6 +51245,36 @@ func (e WorkflowTaskResponseDataType) Valid() bool {
 	}
 }
 
+// Defines values for ListAIAutomationsParamsSort.
+const (
+	ListAIAutomationsParamsSortCreatedAt      ListAIAutomationsParamsSort = "created_at"
+	ListAIAutomationsParamsSortMinusCreatedAt ListAIAutomationsParamsSort = "-created_at"
+	ListAIAutomationsParamsSortMinusName      ListAIAutomationsParamsSort = "-name"
+	ListAIAutomationsParamsSortMinusUpdatedAt ListAIAutomationsParamsSort = "-updated_at"
+	ListAIAutomationsParamsSortName           ListAIAutomationsParamsSort = "name"
+	ListAIAutomationsParamsSortUpdatedAt      ListAIAutomationsParamsSort = "updated_at"
+)
+
+// Valid indicates whether the value is a known member of the ListAIAutomationsParamsSort enum.
+func (e ListAIAutomationsParamsSort) Valid() bool {
+	switch e {
+	case ListAIAutomationsParamsSortCreatedAt:
+		return true
+	case ListAIAutomationsParamsSortMinusCreatedAt:
+		return true
+	case ListAIAutomationsParamsSortMinusName:
+		return true
+	case ListAIAutomationsParamsSortMinusUpdatedAt:
+		return true
+	case ListAIAutomationsParamsSortName:
+		return true
+	case ListAIAutomationsParamsSortUpdatedAt:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for CreateAiChatParamsDecision.
 const (
 	CreateAiChatParamsDecisionCancel  CreateAiChatParamsDecision = "cancel"
@@ -51200,51 +51311,6 @@ func (e StreamAiChatParamsDecision) Valid() bool {
 	}
 }
 
-// Defines values for ListAIAutomationsParamsSort.
-const (
-	ListAIAutomationsParamsSortCreatedAt      ListAIAutomationsParamsSort = "created_at"
-	ListAIAutomationsParamsSortMinusCreatedAt ListAIAutomationsParamsSort = "-created_at"
-	ListAIAutomationsParamsSortMinusName      ListAIAutomationsParamsSort = "-name"
-	ListAIAutomationsParamsSortMinusUpdatedAt ListAIAutomationsParamsSort = "-updated_at"
-	ListAIAutomationsParamsSortName           ListAIAutomationsParamsSort = "name"
-	ListAIAutomationsParamsSortUpdatedAt      ListAIAutomationsParamsSort = "updated_at"
-)
-
-// Valid indicates whether the value is a known member of the ListAIAutomationsParamsSort enum.
-func (e ListAIAutomationsParamsSort) Valid() bool {
-	switch e {
-	case ListAIAutomationsParamsSortCreatedAt:
-		return true
-	case ListAIAutomationsParamsSortMinusCreatedAt:
-		return true
-	case ListAIAutomationsParamsSortMinusName:
-		return true
-	case ListAIAutomationsParamsSortMinusUpdatedAt:
-		return true
-	case ListAIAutomationsParamsSortName:
-		return true
-	case ListAIAutomationsParamsSortUpdatedAt:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for RotateAIAutomationWebhookSecret201ApplicationVndAPIPlusJSONResponseBodyDataType.
-const (
-	RotateAIAutomationWebhookSecret201ApplicationVndAPIPlusJSONResponseBodyDataTypeAiAutomationWebhookSecrets RotateAIAutomationWebhookSecret201ApplicationVndAPIPlusJSONResponseBodyDataType = "ai_automation_webhook_secrets"
-)
-
-// Valid indicates whether the value is a known member of the RotateAIAutomationWebhookSecret201ApplicationVndAPIPlusJSONResponseBodyDataType enum.
-func (e RotateAIAutomationWebhookSecret201ApplicationVndAPIPlusJSONResponseBodyDataType) Valid() bool {
-	switch e {
-	case RotateAIAutomationWebhookSecret201ApplicationVndAPIPlusJSONResponseBodyDataTypeAiAutomationWebhookSecrets:
-		return true
-	default:
-		return false
-	}
-}
-
 // Defines values for ListAISkillsParamsSort.
 const (
 	ListAISkillsParamsSortCreatedAt      ListAISkillsParamsSort = "created_at"
@@ -51269,21 +51335,6 @@ func (e ListAISkillsParamsSort) Valid() bool {
 	case ListAISkillsParamsSortName:
 		return true
 	case ListAISkillsParamsSortUpdatedAt:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for ListAiToolCallEvents200ApplicationVndAPIPlusJSONResponseBodyDataType.
-const (
-	ListAiToolCallEvents200ApplicationVndAPIPlusJSONResponseBodyDataTypeAiToolCallEvents ListAiToolCallEvents200ApplicationVndAPIPlusJSONResponseBodyDataType = "ai_tool_call_events"
-)
-
-// Valid indicates whether the value is a known member of the ListAiToolCallEvents200ApplicationVndAPIPlusJSONResponseBodyDataType enum.
-func (e ListAiToolCallEvents200ApplicationVndAPIPlusJSONResponseBodyDataType) Valid() bool {
-	switch e {
-	case ListAiToolCallEvents200ApplicationVndAPIPlusJSONResponseBodyDataTypeAiToolCallEvents:
 		return true
 	default:
 		return false
@@ -53949,7 +54000,7 @@ type AiAutomationAttributes struct {
 		ScheduleTimezone nullable.Nullable[string]                                  `json:"schedule_timezone"`
 		Source           AiAutomationAttributesTriggersSource                       `json:"source"`
 
-		// WebhookSecretConfigured Webhook triggers only. The secret itself is never returned; generate one with POST /v1/ai_automations/{id}/triggers/{trigger_id}/webhook_secret.
+		// WebhookSecretConfigured Webhook triggers only. The secret itself is never returned; generate one with POST /v1/ai/automations/{id}/triggers/{trigger_id}/webhook_secret.
 		WebhookSecretConfigured *bool `json:"webhook_secret_configured,omitempty"`
 
 		// WebhookSecretRotatedAt Webhook triggers only.
@@ -54037,11 +54088,13 @@ type AiAutomationRunDataType string
 type AiAutomationRunAttributes struct {
 	ApprovalExpiresAt nullable.Nullable[time.Time] `json:"approval_expires_at,omitempty"`
 	AutomationID      *openapi_types.UUID          `json:"automation_id,omitempty"`
-	CostCents         nullable.Nullable[float32]   `json:"cost_cents,omitempty"`
 	CreatedAt         *time.Time                   `json:"created_at,omitempty"`
-	DeliveryNote      nullable.Nullable[string]    `json:"delivery_note,omitempty"`
-	Error             nullable.Nullable[string]    `json:"error,omitempty"`
-	FinishedAt        nullable.Nullable[time.Time] `json:"finished_at,omitempty"`
+
+	// Credits AI credits charged for this run, from the credit ledger. Null until the run is billed.
+	Credits      nullable.Nullable[float32]   `json:"credits,omitempty"`
+	DeliveryNote nullable.Nullable[string]    `json:"delivery_note,omitempty"`
+	Error        nullable.Nullable[string]    `json:"error,omitempty"`
+	FinishedAt   nullable.Nullable[time.Time] `json:"finished_at,omitempty"`
 
 	// IncidentID Incident-linked runs are visible only when the caller's role permits access. OAuth tokens also need the `ir.incidents:read` scope; API keys use the key's role.
 	IncidentID   nullable.Nullable[string]             `json:"incident_id,omitempty"`
@@ -54128,7 +54181,7 @@ type AiAutomationSlackUsers struct {
 // AiAutomationSlackUsersDataType defines model for AiAutomationSlackUsers.Data.Type.
 type AiAutomationSlackUsersDataType string
 
-// AiAutomationTriggerOptions Options for configuring AI Automation triggers and destinations. `sources` lists each trigger source with its events, condition fields and operators. Send triggers as rows in `triggers`: schedule rows take `schedule_rrule` or the preset fields, and incident, alert, Slack and webhook rows take `event_name` plus `conditions` as `[{field, operator, values}]`, all of which must match. `choice` values must match one of the field's choices (case-insensitive), `text` values are free-form, and `none` operators take no value. Skills are listed by `GET /v1/ai_skills?filter[invocable_by]=automation`; Slack channels, users and user groups are listed by `GET /v1/ai_automations/slack_channels`, `/slack_users` and `/slack_user_groups`. Slack `channel`, `user`, `item_user` and `usergroup` conditions take Slack IDs; `matches_regex` takes Ruby regular expressions (case-insensitive, at most 500 characters). `schedule_rrule` accepts custom RRULEs using `rrule_frequencies`. Any IANA timezone resolved by `ActiveSupport::TimeZone[...]` is accepted; `timezones` is the editor's list.
+// AiAutomationTriggerOptions Options for configuring AI Automation triggers and destinations. `sources` lists each trigger source with its events, condition fields and operators. Send triggers as rows in `triggers`: schedule rows take `schedule_rrule` or the preset fields, and incident, alert, Slack and webhook rows take `event_name` plus `conditions` as `[{field, operator, values}]`, all of which must match. `choice` values must match one of the field's choices (case-insensitive), `text` values are free-form, and `none` operators take no value. Skills are listed by `GET /v1/ai/skills?filter[invocable_by]=automation`; Slack channels, users and user groups are listed by `GET /v1/ai/automations/slack_channels`, `/slack_users` and `/slack_user_groups`. Slack `channel`, `user`, `item_user` and `usergroup` conditions take Slack IDs; `matches_regex` takes Ruby regular expressions (case-insensitive, at most 500 characters). `schedule_rrule` accepts custom RRULEs using `rrule_frequencies`. Any IANA timezone resolved by `ActiveSupport::TimeZone[...]` is accepted; `timezones` is the editor's list.
 type AiAutomationTriggerOptions struct {
 	Data struct {
 		Attributes struct {
@@ -54302,6 +54355,22 @@ type AiAutomationTriggerOptionsDataID string
 
 // AiAutomationTriggerOptionsDataType defines model for AiAutomationTriggerOptions.Data.Type.
 type AiAutomationTriggerOptionsDataType string
+
+// AiAutomationWebhookSecretResponse defines model for ai_automation_webhook_secret_response.
+type AiAutomationWebhookSecretResponse struct {
+	Data struct {
+		Attributes struct {
+			RotatedAt  time.Time `json:"rotated_at"`
+			Secret     string    `json:"secret"`
+			WebhookURL string    `json:"webhook_url"`
+		} `json:"attributes"`
+		ID   string                                    `json:"id"`
+		Type AiAutomationWebhookSecretResponseDataType `json:"type"`
+	} `json:"data"`
+}
+
+// AiAutomationWebhookSecretResponseDataType defines model for AiAutomationWebhookSecretResponse.Data.Type.
+type AiAutomationWebhookSecretResponseDataType string
 
 // AiChatCheckpointResolution Checkpoint state after a confirm or cancel request
 type AiChatCheckpointResolution struct {
@@ -54577,6 +54646,38 @@ type AiSkillVersionResponse struct {
 
 // AiSkillVersionResponseDataType defines model for AiSkillVersionResponse.Data.Type.
 type AiSkillVersionResponseDataType string
+
+// AiToolCallEventList defines model for ai_tool_call_event_list.
+type AiToolCallEventList struct {
+	Data []struct {
+		Attributes *struct {
+			AiAutomationRunID nullable.Nullable[string] `json:"ai_automation_run_id,omitempty"`
+			AiSessionID       nullable.Nullable[string] `json:"ai_session_id,omitempty"`
+			ArgumentKeys      []string                  `json:"argument_keys,omitempty"`
+			Automatic         *bool                     `json:"automatic,omitempty"`
+			ConnectionName    nullable.Nullable[string] `json:"connection_name,omitempty"`
+			DurationMs        nullable.Nullable[int]    `json:"duration_ms,omitempty"`
+			OccurredAt        *time.Time                `json:"occurred_at,omitempty"`
+			Outcome           *string                   `json:"outcome,omitempty"`
+			ProviderType      nullable.Nullable[string] `json:"provider_type,omitempty"`
+			RemoteMcpSourceID nullable.Nullable[string] `json:"remote_mcp_source_id,omitempty"`
+			RiskClass         *string                   `json:"risk_class,omitempty"`
+			Surface           *string                   `json:"surface,omitempty"`
+			ToolName          *string                   `json:"tool_name,omitempty"`
+			TriggerRecordID   nullable.Nullable[string] `json:"trigger_record_id,omitempty"`
+			TriggerRecordType nullable.Nullable[string] `json:"trigger_record_type,omitempty"`
+			UserEmail         nullable.Nullable[string] `json:"user_email,omitempty"`
+			UserID            nullable.Nullable[int]    `json:"user_id,omitempty"`
+			UserName          nullable.Nullable[string] `json:"user_name,omitempty"`
+		} `json:"attributes,omitempty"`
+		ID   *string                      `json:"id,omitempty"`
+		Type *AiToolCallEventListDataType `json:"type,omitempty"`
+	} `json:"data,omitempty"`
+	Meta map[string]interface{} `json:"meta,omitempty"`
+}
+
+// AiToolCallEventListDataType defines model for AiToolCallEventList.Data.Type.
+type AiToolCallEventListDataType string
 
 // Alert defines model for alert.
 type Alert struct {
@@ -55669,7 +55770,9 @@ type AlertTriggerParams struct {
 			Operator  AlertTriggerParamsAlertPayloadConditionsConditionsOperator `json:"operator"`
 			Query     string                                                     `json:"query"`
 			UseRegexp *bool                                                      `json:"use_regexp,omitempty"`
-			Values    []string                                                   `json:"values,omitempty"`
+
+			// Values Required, with at least one value, unless the operator is SET or UNSET
+			Values []string `json:"values,omitempty"`
 		} `json:"conditions,omitempty"`
 		Logic *AlertTriggerParamsAlertPayloadConditionsLogic `json:"logic,omitempty"`
 	} `json:"alert_payload_conditions,omitempty"`
@@ -58526,7 +58629,10 @@ type CreateGoogleChatSpaceTaskParamsTaskType string
 type CreateGoogleDocsPageTaskParams struct {
 	// Content The page content
 	Content *string `json:"content,omitempty"`
-	Drive   *struct {
+
+	// DocumentMode Page setup for the Google Doc. pageless makes the doc pageless; pages leaves the page setup unchanged unless the Google Doc template is pageless
+	DocumentMode *CreateGoogleDocsPageTaskParamsDocumentMode `json:"document_mode,omitempty"`
+	Drive        *struct {
 		ID   *string `json:"id,omitempty"`
 		Name *string `json:"name,omitempty"`
 	} `json:"drive,omitempty"`
@@ -58552,6 +58658,9 @@ type CreateGoogleDocsPageTaskParams struct {
 	// Title The page title
 	Title string `json:"title"`
 }
+
+// CreateGoogleDocsPageTaskParamsDocumentMode Page setup for the Google Doc. pageless makes the doc pageless; pages leaves the page setup unchanged unless the Google Doc template is pageless
+type CreateGoogleDocsPageTaskParamsDocumentMode string
 
 // CreateGoogleDocsPageTaskParamsTaskType defines model for CreateGoogleDocsPageTaskParams.TaskType.
 type CreateGoogleDocsPageTaskParamsTaskType string
@@ -59522,6 +59631,27 @@ type CreateSlackChannelTaskParamsTaskType string
 
 // CreateSubIncidentTaskParams defines model for create_sub_incident_task_params.
 type CreateSubIncidentTaskParams struct {
+	// EnvironmentIDs Array of environment UUIDs. Inherited from the parent incident when blank
+	EnvironmentIDs []string `json:"environment_ids,omitempty"`
+
+	// FunctionalityIDs Array of functionality UUIDs. Inherited from the parent incident when blank
+	FunctionalityIDs []string `json:"functionality_ids,omitempty"`
+
+	// GroupIDs Array of group/team UUIDs. Inherited from the parent incident when blank
+	GroupIDs []string `json:"group_ids,omitempty"`
+
+	// IncidentTypeIDs Array of incident type UUIDs. Inherited from the parent incident when blank
+	IncidentTypeIDs []string `json:"incident_type_ids,omitempty"`
+
+	// Private Make the sub incident private. Cannot make it public when the parent incident is private
+	Private *bool `json:"private,omitempty"`
+
+	// ServiceIDs Array of service UUIDs. Inherited from the parent incident when blank
+	ServiceIDs []string `json:"service_ids,omitempty"`
+
+	// SeverityID Inherited from the parent incident when blank
+	SeverityID nullable.Nullable[string] `json:"severity_id,omitempty"`
+
 	// Summary The sub incident summary
 	Summary  *string                              `json:"summary,omitempty"`
 	TaskType *CreateSubIncidentTaskParamsTaskType `json:"task_type,omitempty"`
@@ -59759,7 +59889,7 @@ type CurrentUser struct {
 	// Email The email of the user
 	Email string `json:"email"`
 
-	// FeatureFlags Server-evaluated flags for the calling credential. `ai-native-home` indicates whether the AI-native home is available. `ai-skills` is true only when the organization has AI Skills enabled, the credential is not a group API key, and its role or OAuth scopes allow reading the resource; a true value means `GET /v1/ai_skills` is expected to succeed. `ai-automations` is true only when the organization has AI Automations enabled, the credential is not a group API key, and its role or OAuth scopes allow reading the resource; a true value means `GET /v1/ai_automations` is expected to succeed. `ai-chat` is true when the organization can use the `/v1/ai/chat` endpoints (feature rollout, `config_ai_api_chat_enabled`, and the AI assistant are all on) and, for OAuth tokens, the token has `ai.chat:write` or an AI meta scope; a true value means `POST /v1/ai/chat` is expected to pass these gates. May be absent; treat a missing object or key as unknown, not false.
+	// FeatureFlags Server-evaluated flags for the calling credential. `ai-native-home` indicates whether the AI-native home is available. `ai-skills` is true only when the organization has AI Skills enabled, the credential is not a group API key, and its role or OAuth scopes allow reading the resource; a true value means `GET /v1/ai/skills` is expected to succeed. `ai-automations` is true only when the organization has AI Automations enabled, the credential is not a group API key, and its role or OAuth scopes allow reading the resource; a true value means `GET /v1/ai/automations` is expected to succeed. `ai-chat` is true when the organization can use the `/v1/ai/chat` endpoints (feature rollout, `config_ai_api_chat_enabled`, and the AI assistant are all on) and, for OAuth tokens, the token has `ai.chat:write` or an AI meta scope; a true value means `POST /v1/ai/chat` is expected to pass these gates. May be absent; treat a missing object or key as unknown, not false.
 	FeatureFlags map[string]bool `json:"feature_flags,omitempty"`
 
 	// FirstName First name of the user
@@ -59771,8 +59901,17 @@ type CurrentUser struct {
 	// FullNameWithTeam The full name with team of the user
 	FullNameWithTeam nullable.Nullable[string] `json:"full_name_with_team,omitempty"`
 
+	// JoinedVia How the user most recently joined the requesting organization, such as `scim`, `invite`, `sso`, `sso_google`, `sso_slack`, `google_directory_sync`, `rootly_admin`, `import`, `web` or `unknown`. Returned by `GET /v1/users`.
+	JoinedVia *string `json:"joined_via,omitempty"`
+
 	// LastName Last name of the user
 	LastName nullable.Nullable[string] `json:"last_name,omitempty"`
+
+	// ScimExternalID The externalId this organization's identity provider sent for the user over SCIM, or the linked organization's for synced users, or null. Returned by `GET /v1/users` and `GET /v1/users/{id}`.
+	ScimExternalID nullable.Nullable[string] `json:"scim_external_id,omitempty"`
+
+	// ScimManaged Whether the user's membership in this organization is provisioned by its SCIM integration, or synced in by a linked organization's SCIM integration. Returned by `GET /v1/users` and `GET /v1/users/{id}`.
+	ScimManaged *bool `json:"scim_managed,omitempty"`
 
 	// TimeZone Configured time zone
 	TimeZone nullable.Nullable[string] `json:"time_zone,omitempty"`
@@ -60760,10 +60899,10 @@ type EscalationPolicyPathNotificationTypeRulesConditions2RuleType string
 
 // EscalationPolicyPathNotificationTypeRulesConditions3 defines model for EscalationPolicyPath.NotificationTypeRules.Conditions.3.
 type EscalationPolicyPathNotificationTypeRulesConditions3 struct {
-	// FieldableID The ID of the alert field
+	// FieldableID The ID of an existing alert field in the escalation policy's organization
 	FieldableID string `json:"fieldable_id"`
 
-	// FieldableType The type of the fieldable (e.g., AlertField)
+	// FieldableType The field type. Only AlertField is supported.
 	FieldableType string `json:"fieldable_type"`
 
 	// Operator How the alert field value should be matched
@@ -60945,10 +61084,10 @@ type EscalationPolicyPathRules2RuleType string
 
 // EscalationPolicyPathRules3 defines model for EscalationPolicyPath.Rules.3.
 type EscalationPolicyPathRules3 struct {
-	// FieldableID The ID of the alert field
+	// FieldableID The ID of an existing alert field in the escalation policy's organization
 	FieldableID string `json:"fieldable_id"`
 
-	// FieldableType The type of the fieldable (e.g., AlertField)
+	// FieldableType The field type. Only AlertField is supported.
 	FieldableType string `json:"fieldable_type"`
 
 	// Operator How the alert field value should be matched
@@ -64630,7 +64769,7 @@ type NewAiAutomation struct {
 			// LimitsEnabled Defaults to true. Stored limits are returned even when false and apply only when true.
 			LimitsEnabled *bool `json:"limits_enabled,omitempty"`
 
-			// MaxCreditsPerRun Defaults to no limit (null); null or 0 means no limit. Stored value is returned even when limits are disabled and only applies when limits_enabled is true. Accepts increments of 0.1.
+			// MaxCreditsPerRun Defaults to no limit (null); null or 0 means no limit. Otherwise must be at least 1; values between 0 and 1 are rejected. Stored value is returned even when limits are disabled and only applies when limits_enabled is true. Accepts increments of 0.1.
 			MaxCreditsPerRun nullable.Nullable[float32] `json:"max_credits_per_run,omitempty"`
 			Name             string                     `json:"name"`
 
@@ -64673,7 +64812,7 @@ type NewAiAutomation struct {
 
 			// Triggers Replaces the automation's triggers. The automation runs when any trigger matches; all conditions on a trigger must match. Rows with an id update that trigger in place, including a source change; an id that isn't one of this automation's triggers is rejected. Omit id to add a trigger. Defaults to one schedule trigger, daily at 09:00 UTC.
 			Triggers []struct {
-				// Conditions Fields and operators per source are listed by GET /v1/ai_automation_trigger_options. Alert and webhook payload conditions use field "payload" with a JSONPath key; webhook keys allow only plain paths such as $.alert.severity or $.tags[0].
+				// Conditions Fields and operators per source are listed by GET /v1/ai/automations/trigger_options. Alert and webhook payload conditions use field "payload" with a JSONPath key; webhook keys allow only plain paths such as $.alert.severity or $.tags[0].
 				Conditions []struct {
 					Field string `json:"field"`
 
@@ -64784,6 +64923,9 @@ type NewAiAutomationRun struct {
 		Attributes struct {
 			// IncidentID Incident UUID or sequential reference such as INC-123; OAuth tokens also need the `ir.incidents:read` scope; API keys use the key's role.
 			IncidentID *string `json:"incident_id,omitempty"`
+
+			// RunID Re-run a previous run of this automation. When the automation has an incident trigger, the new run reuses that run's incident if the caller can view it. Cannot be combined with incident_id.
+			RunID *openapi_types.UUID `json:"run_id,omitempty"`
 		} `json:"attributes"`
 		Type NewAiAutomationRunDataType `json:"type"`
 	} `json:"data"`
@@ -66717,10 +66859,10 @@ type NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions2RuleTy
 
 // NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions3 defines model for NewEscalationPolicyPath.Data.Attributes.NotificationTypeRules.Conditions.3.
 type NewEscalationPolicyPathDataAttributesNotificationTypeRulesConditions3 struct {
-	// FieldableID The ID of the alert field
+	// FieldableID The ID of an existing alert field in the escalation policy's organization
 	FieldableID string `json:"fieldable_id"`
 
-	// FieldableType The type of the fieldable (e.g., AlertField)
+	// FieldableType The field type. Only AlertField is supported.
 	FieldableType string `json:"fieldable_type"`
 
 	// Operator How the alert field value should be matched
@@ -66902,10 +67044,10 @@ type NewEscalationPolicyPathDataAttributesRules2RuleType string
 
 // NewEscalationPolicyPathDataAttributesRules3 defines model for NewEscalationPolicyPath.Data.Attributes.Rules.3.
 type NewEscalationPolicyPathDataAttributesRules3 struct {
-	// FieldableID The ID of the alert field
+	// FieldableID The ID of an existing alert field in the escalation policy's organization
 	FieldableID string `json:"fieldable_id"`
 
-	// FieldableType The type of the fieldable (e.g., AlertField)
+	// FieldableType The field type. Only AlertField is supported.
 	FieldableType string `json:"fieldable_type"`
 
 	// Operator How the alert field value should be matched
@@ -68038,7 +68180,7 @@ type NewIncidentType struct {
 			// Color The hex color of the incident type
 			Color nullable.Nullable[string] `json:"color,omitempty"`
 
-			// Description The description of the incident type
+			// Description The description of the incident type. Required when the organization has "Require description for incident types" enabled.
 			Description nullable.Nullable[string] `json:"description,omitempty"`
 
 			// Name The name of the incident type
@@ -69436,7 +69578,7 @@ type NewSeverity struct {
 			// Color The hex color of the severity
 			Color nullable.Nullable[string] `json:"color,omitempty"`
 
-			// Description The description of the severity
+			// Description The description of the severity. Required when the organization has "Require description & type for severities" enabled.
 			Description nullable.Nullable[string] `json:"description,omitempty"`
 
 			// Name The name of the severity
@@ -73573,6 +73715,58 @@ type ScheduleRotationUserResponse struct {
 // ScheduleRotationUserResponseDataType defines model for ScheduleRotationUserResponse.Data.Type.
 type ScheduleRotationUserResponseDataType string
 
+// ScimUser defines model for scim_user.
+type ScimUser struct {
+	// CreatedAt Date of creation
+	CreatedAt string `json:"created_at"`
+
+	// Email The email of the user
+	Email string `json:"email"`
+
+	// FirstName First name of the user
+	FirstName nullable.Nullable[string] `json:"first_name,omitempty"`
+
+	// FullName The full name of the user
+	FullName nullable.Nullable[string] `json:"full_name,omitempty"`
+
+	// FullNameWithTeam The full name with team of the user
+	FullNameWithTeam nullable.Nullable[string] `json:"full_name_with_team,omitempty"`
+
+	// JoinedVia How the user most recently joined the requesting organization, such as `scim`, `invite`, `sso`, `sso_google`, `sso_slack`, `google_directory_sync`, `rootly_admin`, `import`, `web` or `unknown`. Returned by `GET /v1/users`.
+	JoinedVia *string `json:"joined_via,omitempty"`
+
+	// LastName Last name of the user
+	LastName nullable.Nullable[string] `json:"last_name,omitempty"`
+
+	// ScimExternalID The externalId this organization's identity provider sent for the user over SCIM, or the linked organization's for synced users, or null.
+	ScimExternalID nullable.Nullable[string] `json:"scim_external_id,omitempty"`
+
+	// ScimManaged Whether the user's membership in this organization is provisioned by its SCIM integration, or synced in by a linked organization's SCIM integration.
+	ScimManaged *bool `json:"scim_managed,omitempty"`
+
+	// TimeZone Configured time zone
+	TimeZone nullable.Nullable[string] `json:"time_zone,omitempty"`
+
+	// UpdatedAt Date of last update
+	UpdatedAt string `json:"updated_at"`
+}
+
+// ScimUserResponse defines model for scim_user_response.
+type ScimUserResponse struct {
+	Data struct {
+		Attributes ScimUser `json:"attributes"`
+
+		// ID Unique ID of the user
+		ID            string                   `json:"id"`
+		Relationships *UserRelationships       `json:"relationships,omitempty"`
+		Type          ScimUserResponseDataType `json:"type"`
+	} `json:"data"`
+	Included []JsonapiIncludedResource `json:"included,omitempty"`
+}
+
+// ScimUserResponseDataType defines model for ScimUserResponse.Data.Type.
+type ScimUserResponseDataType string
+
 // Secret defines model for secret.
 type Secret struct {
 	// CreatedAt Date of creation
@@ -75624,7 +75818,7 @@ type UpdateAiAutomation struct {
 			// LimitsEnabled Stored limit values are returned even when false and apply only when this is true.
 			LimitsEnabled *bool `json:"limits_enabled,omitempty"`
 
-			// MaxCreditsPerRun Null or 0 means no limit. The stored value is returned even when limits are disabled and only applies when limits_enabled is true. Accepts increments of 0.1.
+			// MaxCreditsPerRun Null or 0 means no limit. Otherwise must be at least 1; values between 0 and 1 are rejected. The stored value is returned even when limits are disabled and only applies when limits_enabled is true. Accepts increments of 0.1.
 			MaxCreditsPerRun nullable.Nullable[float32] `json:"max_credits_per_run,omitempty"`
 			Name             *string                    `json:"name,omitempty"`
 
@@ -75667,7 +75861,7 @@ type UpdateAiAutomation struct {
 
 			// Triggers Replaces the automation's triggers. The automation runs when any trigger matches; all conditions on a trigger must match. Rows with an id update that trigger in place, including a source change; an id that isn't one of this automation's triggers is rejected. Omit id to add a trigger.
 			Triggers []struct {
-				// Conditions Fields and operators per source are listed by GET /v1/ai_automation_trigger_options. Alert and webhook payload conditions use field "payload" with a JSONPath key; webhook keys allow only plain paths such as $.alert.severity or $.tags[0].
+				// Conditions Fields and operators per source are listed by GET /v1/ai/automations/trigger_options. Alert and webhook payload conditions use field "payload" with a JSONPath key; webhook keys allow only plain paths such as $.alert.severity or $.tags[0].
 				Conditions []struct {
 					Field string `json:"field"`
 
@@ -77948,10 +78142,10 @@ type UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions2Rul
 
 // UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions3 defines model for UpdateEscalationPolicyPath.Data.Attributes.NotificationTypeRules.Conditions.3.
 type UpdateEscalationPolicyPathDataAttributesNotificationTypeRulesConditions3 struct {
-	// FieldableID The ID of the alert field
+	// FieldableID The ID of an existing alert field in the escalation policy's organization
 	FieldableID string `json:"fieldable_id"`
 
-	// FieldableType The type of the fieldable (e.g., AlertField)
+	// FieldableType The field type. Only AlertField is supported.
 	FieldableType string `json:"fieldable_type"`
 
 	// Operator How the alert field value should be matched
@@ -78133,10 +78327,10 @@ type UpdateEscalationPolicyPathDataAttributesRules2RuleType string
 
 // UpdateEscalationPolicyPathDataAttributesRules3 defines model for UpdateEscalationPolicyPath.Data.Attributes.Rules.3.
 type UpdateEscalationPolicyPathDataAttributesRules3 struct {
-	// FieldableID The ID of the alert field
+	// FieldableID The ID of an existing alert field in the escalation policy's organization
 	FieldableID string `json:"fieldable_id"`
 
-	// FieldableType The type of the fieldable (e.g., AlertField)
+	// FieldableType The field type. Only AlertField is supported.
 	FieldableType string `json:"fieldable_type"`
 
 	// Operator How the alert field value should be matched
@@ -78780,6 +78974,9 @@ type UpdateGoogleDocsPageTaskParams struct {
 	// Content The Google Doc content
 	Content *string `json:"content,omitempty"`
 
+	// DocumentMode Page setup for the Google Doc. pageless makes the doc pageless; pages leaves the page setup unchanged unless the Google Doc template is pageless
+	DocumentMode *UpdateGoogleDocsPageTaskParamsDocumentMode `json:"document_mode,omitempty"`
+
 	// FileID The Google Doc file ID
 	FileID           string `json:"file_id"`
 	IncludeFollowUps *bool  `json:"include_follow_ups,omitempty"`
@@ -78796,6 +78993,9 @@ type UpdateGoogleDocsPageTaskParams struct {
 	// Title The Google Doc title
 	Title *string `json:"title,omitempty"`
 }
+
+// UpdateGoogleDocsPageTaskParamsDocumentMode Page setup for the Google Doc. pageless makes the doc pageless; pages leaves the page setup unchanged unless the Google Doc template is pageless
+type UpdateGoogleDocsPageTaskParamsDocumentMode string
 
 // UpdateGoogleDocsPageTaskParamsTaskType defines model for UpdateGoogleDocsPageTaskParams.TaskType.
 type UpdateGoogleDocsPageTaskParamsTaskType string
@@ -79641,7 +79841,7 @@ type UpdateIncidentType struct {
 			// Color The hex color of the incident type
 			Color nullable.Nullable[string] `json:"color,omitempty"`
 
-			// Description The description of the incident type
+			// Description The description of the incident type. Required when the organization has "Require description for incident types" enabled.
 			Description nullable.Nullable[string] `json:"description,omitempty"`
 
 			// Name The name of the incident type
@@ -81424,7 +81624,7 @@ type UpdateSeverity struct {
 			// Color The hex color of the severity
 			Color nullable.Nullable[string] `json:"color,omitempty"`
 
-			// Description The description of the severity
+			// Description The description of the severity. Required when the organization has "Require description & type for severities" enabled.
 			Description nullable.Nullable[string] `json:"description,omitempty"`
 
 			// Name The name of the severity
@@ -82354,6 +82554,9 @@ type UpdateWebhooksEndpoint struct {
 
 			// Name The name of the endpoint
 			Name *string `json:"name,omitempty"`
+
+			// Secret The webhook signing secret used to verify webhook requests.
+			Secret *string `json:"secret,omitempty"`
 			// Deprecated: `slug` is derived from `name`; any submitted value is ignored. This property will be removed from the request schema in a future version.
 			Slug nullable.Nullable[string] `json:"slug,omitempty"`
 		} `json:"attributes"`
@@ -82667,8 +82870,17 @@ type User struct {
 	// FullNameWithTeam The full name with team of the user
 	FullNameWithTeam nullable.Nullable[string] `json:"full_name_with_team,omitempty"`
 
+	// JoinedVia How the user most recently joined the requesting organization, such as `scim`, `invite`, `sso`, `sso_google`, `sso_slack`, `google_directory_sync`, `rootly_admin`, `import`, `web` or `unknown`. Returned by `GET /v1/users`.
+	JoinedVia *string `json:"joined_via,omitempty"`
+
 	// LastName Last name of the user
 	LastName nullable.Nullable[string] `json:"last_name,omitempty"`
+
+	// ScimExternalID The externalId this organization's identity provider sent for the user over SCIM, or the linked organization's for synced users, or null. Returned by `GET /v1/users` and `GET /v1/users/{id}`.
+	ScimExternalID nullable.Nullable[string] `json:"scim_external_id,omitempty"`
+
+	// ScimManaged Whether the user's membership in this organization is provisioned by its SCIM integration, or synced in by a linked organization's SCIM integration. Returned by `GET /v1/users` and `GET /v1/users/{id}`.
+	ScimManaged *bool `json:"scim_managed,omitempty"`
 
 	// TimeZone Configured time zone
 	TimeZone nullable.Nullable[string] `json:"time_zone,omitempty"`
@@ -83665,6 +83877,62 @@ type ListAllIncidentActionItemsParams struct {
 	Sort                       *string `form:"sort,omitempty" json:"sort,omitempty"`
 }
 
+// ListAIAutomationsParams defines parameters for ListAIAutomations.
+type ListAIAutomationsParams struct {
+	FilterSearch  *string `form:"filter[search],omitempty" json:"filter[search],omitempty"`
+	FilterEnabled *bool   `form:"filter[enabled],omitempty" json:"filter[enabled],omitempty"`
+
+	// FilterTriggerKind Comma-separated values; any matching trigger kind is included.
+	FilterTriggerKind *string `form:"filter[trigger_kind],omitempty" json:"filter[trigger_kind],omitempty"`
+
+	// FilterEventName Comma-separated values; any matching event name is included.
+	FilterEventName    *string                      `form:"filter[event_name],omitempty" json:"filter[event_name],omitempty"`
+	FilterCreatedAtGte *time.Time                   `form:"filter[created_at][gte],omitempty" json:"filter[created_at][gte],omitempty"`
+	FilterCreatedAtLte *time.Time                   `form:"filter[created_at][lte],omitempty" json:"filter[created_at][lte],omitempty"`
+	Sort               *ListAIAutomationsParamsSort `form:"sort,omitempty" json:"sort,omitempty"`
+}
+
+// ListAIAutomationsParamsSort defines parameters for ListAIAutomations.
+type ListAIAutomationsParamsSort string
+
+// ListAIAutomationSlackChannelsParams defines parameters for ListAIAutomationSlackChannels.
+type ListAIAutomationSlackChannelsParams struct {
+	FilterSearch *string `form:"filter[search],omitempty" json:"filter[search],omitempty"`
+	PageNumber   *int    `form:"page[number],omitempty" json:"page[number],omitempty"`
+	PageSize     *int    `form:"page[size],omitempty" json:"page[size],omitempty"`
+}
+
+// ListAIAutomationSlackUserGroupsParams defines parameters for ListAIAutomationSlackUserGroups.
+type ListAIAutomationSlackUserGroupsParams struct {
+	FilterSearch *string `form:"filter[search],omitempty" json:"filter[search],omitempty"`
+	PageNumber   *int    `form:"page[number],omitempty" json:"page[number],omitempty"`
+	PageSize     *int    `form:"page[size],omitempty" json:"page[size],omitempty"`
+}
+
+// ListAIAutomationSlackUsersParams defines parameters for ListAIAutomationSlackUsers.
+type ListAIAutomationSlackUsersParams struct {
+	FilterSearch *string `form:"filter[search],omitempty" json:"filter[search],omitempty"`
+	PageNumber   *int    `form:"page[number],omitempty" json:"page[number],omitempty"`
+	PageSize     *int    `form:"page[size],omitempty" json:"page[size],omitempty"`
+}
+
+// ListAIAutomationRunsParams defines parameters for ListAIAutomationRuns.
+type ListAIAutomationRunsParams struct {
+	// FilterStatus Comma-separated statuses; any matching status is included.
+	FilterStatus *string `form:"filter[status],omitempty" json:"filter[status],omitempty"`
+
+	// FilterTriggerKind Comma-separated trigger kinds; any matching kind is included.
+	FilterTriggerKind *string `form:"filter[trigger_kind],omitempty" json:"filter[trigger_kind],omitempty"`
+
+	// FilterScanCursor Opaque encrypted cursor from meta.next_scan_cursor.
+	FilterScanCursor   *string    `form:"filter[scan_cursor],omitempty" json:"filter[scan_cursor],omitempty"`
+	FilterCreatedAtGte *time.Time `form:"filter[created_at][gte],omitempty" json:"filter[created_at][gte],omitempty"`
+	FilterCreatedAtLte *time.Time `form:"filter[created_at][lte],omitempty" json:"filter[created_at][lte],omitempty"`
+}
+
+// RotateAIAutomationWebhookSecretApplicationVndAPIPlusJSONBody defines parameters for RotateAIAutomationWebhookSecret.
+type RotateAIAutomationWebhookSecretApplicationVndAPIPlusJSONBody = map[string]interface{}
+
 // CreateAiChatParams defines parameters for CreateAiChat.
 type CreateAiChatParams struct {
 	// Message Message to send. Required unless checkpoint_id is supplied.
@@ -83737,64 +84005,25 @@ type StreamAiChatParams struct {
 // StreamAiChatParamsDecision defines parameters for StreamAiChat.
 type StreamAiChatParamsDecision string
 
-// ListAIAutomationsParams defines parameters for ListAIAutomations.
-type ListAIAutomationsParams struct {
-	FilterSearch  *string `form:"filter[search],omitempty" json:"filter[search],omitempty"`
-	FilterEnabled *bool   `form:"filter[enabled],omitempty" json:"filter[enabled],omitempty"`
+// ListInvestigationsParams defines parameters for ListInvestigations.
+type ListInvestigationsParams struct {
+	FilterAlertID    *openapi_types.UUID `form:"filter[alert_id],omitempty" json:"filter[alert_id],omitempty"`
+	FilterIncidentID *openapi_types.UUID `form:"filter[incident_id],omitempty" json:"filter[incident_id],omitempty"`
 
-	// FilterTriggerKind Comma-separated values; any matching trigger kind is included.
-	FilterTriggerKind *string `form:"filter[trigger_kind],omitempty" json:"filter[trigger_kind],omitempty"`
-
-	// FilterEventName Comma-separated values; any matching event name is included.
-	FilterEventName    *string                      `form:"filter[event_name],omitempty" json:"filter[event_name],omitempty"`
-	FilterCreatedAtGte *time.Time                   `form:"filter[created_at][gte],omitempty" json:"filter[created_at][gte],omitempty"`
-	FilterCreatedAtLte *time.Time                   `form:"filter[created_at][lte],omitempty" json:"filter[created_at][lte],omitempty"`
-	Sort               *ListAIAutomationsParamsSort `form:"sort,omitempty" json:"sort,omitempty"`
-}
-
-// ListAIAutomationsParamsSort defines parameters for ListAIAutomations.
-type ListAIAutomationsParamsSort string
-
-// ListAIAutomationSlackChannelsParams defines parameters for ListAIAutomationSlackChannels.
-type ListAIAutomationSlackChannelsParams struct {
-	FilterSearch *string `form:"filter[search],omitempty" json:"filter[search],omitempty"`
-	PageNumber   *int    `form:"page[number],omitempty" json:"page[number],omitempty"`
-	PageSize     *int    `form:"page[size],omitempty" json:"page[size],omitempty"`
-}
-
-// ListAIAutomationSlackUserGroupsParams defines parameters for ListAIAutomationSlackUserGroups.
-type ListAIAutomationSlackUserGroupsParams struct {
-	FilterSearch *string `form:"filter[search],omitempty" json:"filter[search],omitempty"`
-	PageNumber   *int    `form:"page[number],omitempty" json:"page[number],omitempty"`
-	PageSize     *int    `form:"page[size],omitempty" json:"page[size],omitempty"`
-}
-
-// ListAIAutomationSlackUsersParams defines parameters for ListAIAutomationSlackUsers.
-type ListAIAutomationSlackUsersParams struct {
-	FilterSearch *string `form:"filter[search],omitempty" json:"filter[search],omitempty"`
-	PageNumber   *int    `form:"page[number],omitempty" json:"page[number],omitempty"`
-	PageSize     *int    `form:"page[size],omitempty" json:"page[size],omitempty"`
-}
-
-// ListAIAutomationRunsParams defines parameters for ListAIAutomationRuns.
-type ListAIAutomationRunsParams struct {
-	// FilterStatus Comma-separated statuses; any matching status is included.
+	// FilterStatus Comma-separated statuses.
 	FilterStatus *string `form:"filter[status],omitempty" json:"filter[status],omitempty"`
 
-	// FilterTriggerKind Comma-separated trigger kinds; any matching kind is included.
-	FilterTriggerKind *string `form:"filter[trigger_kind],omitempty" json:"filter[trigger_kind],omitempty"`
-
-	// FilterScanCursor Opaque encrypted cursor from meta.next_scan_cursor.
-	FilterScanCursor   *string    `form:"filter[scan_cursor],omitempty" json:"filter[scan_cursor],omitempty"`
-	FilterCreatedAtGte *time.Time `form:"filter[created_at][gte],omitempty" json:"filter[created_at][gte],omitempty"`
-	FilterCreatedAtLte *time.Time `form:"filter[created_at][lte],omitempty" json:"filter[created_at][lte],omitempty"`
+	// FilterOutcome Comma-separated outcomes.
+	FilterOutcome *string `form:"filter[outcome],omitempty" json:"filter[outcome],omitempty"`
+	PageNumber    *int    `form:"page[number],omitempty" json:"page[number],omitempty"`
+	PageSize      *int    `form:"page[size],omitempty" json:"page[size],omitempty"`
 }
 
-// RotateAIAutomationWebhookSecretApplicationVndAPIPlusJSONBody defines parameters for RotateAIAutomationWebhookSecret.
-type RotateAIAutomationWebhookSecretApplicationVndAPIPlusJSONBody = map[string]interface{}
-
-// RotateAIAutomationWebhookSecret201ApplicationVndAPIPlusJSONResponseBodyDataType defines parameters for RotateAIAutomationWebhookSecret.
-type RotateAIAutomationWebhookSecret201ApplicationVndAPIPlusJSONResponseBodyDataType string
+// GetInvestigationProgressParams defines parameters for GetInvestigationProgress.
+type GetInvestigationProgressParams struct {
+	// After next_cursor from the previous call.
+	After *string `form:"after,omitempty" json:"after,omitempty"`
+}
 
 // ListAISkillsParams defines parameters for ListAISkills.
 type ListAISkillsParams struct {
@@ -83833,9 +84062,6 @@ type ListAiToolCallEventsParams struct {
 	// FilterOccurredBefore Occurred at or before (ISO 8601)
 	FilterOccurredBefore *time.Time `form:"filter[occurred_before],omitempty" json:"filter[occurred_before],omitempty"`
 }
-
-// ListAiToolCallEvents200ApplicationVndAPIPlusJSONResponseBodyDataType defines parameters for ListAiToolCallEvents.
-type ListAiToolCallEvents200ApplicationVndAPIPlusJSONResponseBodyDataType string
 
 // ListAlertEventsFeedParams defines parameters for ListAlertEventsFeed.
 type ListAlertEventsFeedParams struct {
@@ -85446,6 +85672,9 @@ type ListIncidentStatusPagesParams struct {
 	Include    *string `form:"include,omitempty" json:"include,omitempty"`
 	PageNumber *int    `form:"page[number],omitempty" json:"page[number],omitempty"`
 	PageSize   *int    `form:"page[size],omitempty" json:"page[size],omitempty"`
+
+	// Sort Comma-separated sort fields: created_at, updated_at, started_at. Prefix with - for descending. Unsupported fields are ignored. Defaults to -started_at,created_at (latest published first).
+	Sort *string `form:"sort,omitempty" json:"sort,omitempty"`
 }
 
 // ListIncidentSubStatusesParams defines parameters for ListIncidentSubStatuses.
@@ -85469,26 +85698,6 @@ type ListIncidentSubStatusesParamsInclude string
 
 // ListIncidentSubStatusesParamsSort defines parameters for ListIncidentSubStatuses.
 type ListIncidentSubStatusesParamsSort string
-
-// ListInvestigationsParams defines parameters for ListInvestigations.
-type ListInvestigationsParams struct {
-	FilterAlertID    *openapi_types.UUID `form:"filter[alert_id],omitempty" json:"filter[alert_id],omitempty"`
-	FilterIncidentID *openapi_types.UUID `form:"filter[incident_id],omitempty" json:"filter[incident_id],omitempty"`
-
-	// FilterStatus Comma-separated statuses.
-	FilterStatus *string `form:"filter[status],omitempty" json:"filter[status],omitempty"`
-
-	// FilterOutcome Comma-separated outcomes.
-	FilterOutcome *string `form:"filter[outcome],omitempty" json:"filter[outcome],omitempty"`
-	PageNumber    *int    `form:"page[number],omitempty" json:"page[number],omitempty"`
-	PageSize      *int    `form:"page[size],omitempty" json:"page[size],omitempty"`
-}
-
-// GetInvestigationProgressParams defines parameters for GetInvestigationProgress.
-type GetInvestigationProgressParams struct {
-	// After next_cursor from the previous call.
-	After *string `form:"after,omitempty" json:"after,omitempty"`
-}
 
 // ListLiveCallRoutersParams defines parameters for ListLiveCallRouters.
 type ListLiveCallRoutersParams struct {
@@ -86357,6 +86566,9 @@ type ListUsersParams struct {
 	FilterCreatedAtLt  *string `form:"filter[created_at][lt],omitempty" json:"filter[created_at][lt],omitempty"`
 	FilterCreatedAtLte *string `form:"filter[created_at][lte],omitempty" json:"filter[created_at][lte],omitempty"`
 
+	// FilterScimManaged `true` returns only users whose membership in this organization is managed by SCIM, including users synced in by a linked organization's SCIM integration, `false` returns only users whose membership isn't. Other values are ignored.
+	FilterScimManaged *bool `form:"filter[scim_managed],omitempty" json:"filter[scim_managed],omitempty"`
+
 	// Sort comma separated if needed. eg: created_at,updated_at
 	Sort *ListUsersParamsSort `form:"sort,omitempty" json:"sort,omitempty"`
 
@@ -86547,9 +86759,6 @@ type ListWorkflowTasksParams struct {
 // UpdateIncidentActionItemApplicationVndAPIPlusJSONRequestBody defines body for UpdateIncidentActionItem for application/vnd.api+json ContentType.
 type UpdateIncidentActionItemApplicationVndAPIPlusJSONRequestBody = UpdateIncidentActionItem
 
-// UpdateAiChatSessionApplicationVndAPIPlusJSONRequestBody defines body for UpdateAiChatSession for application/vnd.api+json ContentType.
-type UpdateAiChatSessionApplicationVndAPIPlusJSONRequestBody = UpdateAiChatSession
-
 // CreateAIAutomationApplicationVndAPIPlusJSONRequestBody defines body for CreateAIAutomation for application/vnd.api+json ContentType.
 type CreateAIAutomationApplicationVndAPIPlusJSONRequestBody = NewAiAutomation
 
@@ -86564,6 +86773,12 @@ type PutAIAutomationApplicationVndAPIPlusJSONRequestBody = UpdateAiAutomation
 
 // RotateAIAutomationWebhookSecretApplicationVndAPIPlusJSONRequestBody defines body for RotateAIAutomationWebhookSecret for application/vnd.api+json ContentType.
 type RotateAIAutomationWebhookSecretApplicationVndAPIPlusJSONRequestBody = RotateAIAutomationWebhookSecretApplicationVndAPIPlusJSONBody
+
+// UpdateAiChatSessionApplicationVndAPIPlusJSONRequestBody defines body for UpdateAiChatSession for application/vnd.api+json ContentType.
+type UpdateAiChatSessionApplicationVndAPIPlusJSONRequestBody = UpdateAiChatSession
+
+// CreateInvestigationApplicationVndAPIPlusJSONRequestBody defines body for CreateInvestigation for application/vnd.api+json ContentType.
+type CreateInvestigationApplicationVndAPIPlusJSONRequestBody = NewInvestigation
 
 // CreateAISkillApplicationVndAPIPlusJSONRequestBody defines body for CreateAISkill for application/vnd.api+json ContentType.
 type CreateAISkillApplicationVndAPIPlusJSONRequestBody = NewAiSkill
@@ -87045,9 +87260,6 @@ type CreateIncidentStatusPageApplicationVndAPIPlusJSONRequestBody = NewIncidentS
 
 // CreateIncidentSubStatusApplicationVndAPIPlusJSONRequestBody defines body for CreateIncidentSubStatus for application/vnd.api+json ContentType.
 type CreateIncidentSubStatusApplicationVndAPIPlusJSONRequestBody = NewIncidentSubStatus
-
-// CreateInvestigationApplicationVndAPIPlusJSONRequestBody defines body for CreateInvestigation for application/vnd.api+json ContentType.
-type CreateInvestigationApplicationVndAPIPlusJSONRequestBody = NewInvestigation
 
 // PatchIPAllowlistApplicationVndAPIPlusJSONRequestBody defines body for PatchIPAllowlist for application/vnd.api+json ContentType.
 type PatchIPAllowlistApplicationVndAPIPlusJSONRequestBody = UpdateIPAllowlist
@@ -107406,6 +107618,159 @@ type ClientInterface interface {
 	// Corresponds with PUT /v1/action_items/{id} (the `UpdateIncidentActionItem` operationId).
 	UpdateIncidentActionItemWithApplicationVndAPIPlusJSONBody(ctx context.Context, id ID, body UpdateIncidentActionItemApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
+	// GetAIAutomationRun Gets an AI automation run
+	//
+	// Incident-linked runs are visible only when the caller's role permits access. OAuth tokens also need the `ir.incidents:read` scope; API keys use the key's role. Requires OAuth scope `ai.automations:write`.
+	//
+	// Corresponds with GET /v1/ai/automation_runs/{id} (the `GetAIAutomationRun` operationId).
+	GetAIAutomationRun(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// ListAIAutomations Lists AI automations
+	//
+	// Requires OAuth scope `ai.automations:read`.
+	//
+	// Corresponds with GET /v1/ai/automations (the `ListAIAutomations` operationId).
+	ListAIAutomations(ctx context.Context, params *ListAIAutomationsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// CreateAIAutomationWithBody Creates an AI automation
+	//
+	// Requires OAuth scope `ai.automations:write`. Read-only attributes are ignored on write.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /v1/ai/automations (the `CreateAIAutomation` operationId).
+	CreateAIAutomationWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// CreateAIAutomationWithApplicationVndAPIPlusJSONBody Creates an AI automation
+	//
+	// Requires OAuth scope `ai.automations:write`. Read-only attributes are ignored on write.
+	//
+	// Takes a body of the `application/vnd.api+json` content type.
+	//
+	// Corresponds with POST /v1/ai/automations (the `CreateAIAutomation` operationId).
+	CreateAIAutomationWithApplicationVndAPIPlusJSONBody(ctx context.Context, body CreateAIAutomationApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// ListAIAutomationSlackChannels Lists synced Slack channels for AI Automations
+	//
+	// Channels Rootly has synced from the team's connected Slack workspace; any returned slack_channel_id is accepted as destination_slack_channel_id. When filter[search] is set, exact channel-name matches come first. When Slack channel user filtering is enabled, personal keys and OAuth tokens only see, and can only set new, channels the user can access in Slack; an update may resend the automation's current channel unchanged.
+	//
+	// Corresponds with GET /v1/ai/automations/slack_channels (the `ListAIAutomationSlackChannels` operationId).
+	ListAIAutomationSlackChannels(ctx context.Context, params *ListAIAutomationSlackChannelsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// ListAIAutomationSlackUserGroups Lists Slack user groups for AI Automations
+	//
+	// User groups from the team's connected Slack workspace, read live from Slack; any returned slack_user_group_id is accepted by usergroup trigger conditions.
+	//
+	// Corresponds with GET /v1/ai/automations/slack_user_groups (the `ListAIAutomationSlackUserGroups` operationId).
+	ListAIAutomationSlackUserGroups(ctx context.Context, params *ListAIAutomationSlackUserGroupsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// ListAIAutomationSlackUsers Lists Slack users for AI Automations
+	//
+	// Users, including bots, from the team's connected Slack workspace; any returned slack_user_id is accepted by user and item_user trigger conditions.
+	//
+	// Corresponds with GET /v1/ai/automations/slack_users (the `ListAIAutomationSlackUsers` operationId).
+	ListAIAutomationSlackUsers(ctx context.Context, params *ListAIAutomationSlackUsersParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetAIAutomationTriggerOptions Lists options for configuring AI Automation triggers
+	//
+	// Returns the source-of-truth options used by the AI Automation editor.
+	//
+	// Corresponds with GET /v1/ai/automations/trigger_options (the `GetAIAutomationTriggerOptions` operationId).
+	GetAIAutomationTriggerOptions(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// ListAIAutomationRuns Lists AI automation runs
+	//
+	// Scans the 1000 most recent runs matching the filters; pagination and counts cover the visible runs in that window. When meta.next_scan_cursor is set, older runs exist beyond the window. Present only on the last page of the current scan window; finish page pagination before following it. Repeat the request with filter[scan_cursor] set to that opaque cursor to continue. Incident-linked runs are visible only when the caller's role permits access. OAuth tokens also need the `ir.incidents:read` scope; API keys use the key's role. Requires OAuth scope `ai.automations:write`.
+	//
+	// Corresponds with GET /v1/ai/automations/{ai_automation_id}/runs (the `ListAIAutomationRuns` operationId).
+	ListAIAutomationRuns(ctx context.Context, aiAutomationID openapi_types.UUID, params *ListAIAutomationRunsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// RunAIAutomationWithBody Runs an AI automation now
+	//
+	// Requires OAuth scope `ai.automations:write`. For run-now requests with incident_id, or run_id of an incident-linked run, OAuth tokens also need the `ir.incidents:read` scope; API keys use the key's role. Limited to 30 requests per credential per minute (fixed one-minute windows), separate from the default mutation rate limit; exceeding it returns 429 with Retry-After.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /v1/ai/automations/{ai_automation_id}/runs (the `RunAIAutomation` operationId).
+	RunAIAutomationWithBody(ctx context.Context, aiAutomationID openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// RunAIAutomationWithApplicationVndAPIPlusJSONBody Runs an AI automation now
+	//
+	// Requires OAuth scope `ai.automations:write`. For run-now requests with incident_id, or run_id of an incident-linked run, OAuth tokens also need the `ir.incidents:read` scope; API keys use the key's role. Limited to 30 requests per credential per minute (fixed one-minute windows), separate from the default mutation rate limit; exceeding it returns 429 with Retry-After.
+	//
+	// Takes a body of the `application/vnd.api+json` content type.
+	//
+	// Corresponds with POST /v1/ai/automations/{ai_automation_id}/runs (the `RunAIAutomation` operationId).
+	RunAIAutomationWithApplicationVndAPIPlusJSONBody(ctx context.Context, aiAutomationID openapi_types.UUID, body RunAIAutomationApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// DeleteAIAutomation Deletes an AI automation
+	//
+	// Requires OAuth scope `ai.automations:write`. Retires the automation: it is disabled and soft-deleted, no longer listed or runnable; GET show and run-now return 404, while its existing run history remains readable via the runs endpoints.
+	//
+	// Corresponds with DELETE /v1/ai/automations/{id} (the `DeleteAIAutomation` operationId).
+	DeleteAIAutomation(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetAIAutomation Gets an AI automation
+	//
+	// Requires OAuth scope `ai.automations:read`.
+	//
+	// Corresponds with GET /v1/ai/automations/{id} (the `GetAIAutomation` operationId).
+	GetAIAutomation(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// UpdateAIAutomationWithBody Updates an AI automation
+	//
+	// Requires OAuth scope `ai.automations:write`. Read-only attributes are ignored on write.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with PATCH /v1/ai/automations/{id} (the `UpdateAIAutomation` operationId).
+	UpdateAIAutomationWithBody(ctx context.Context, id ID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// UpdateAIAutomationWithApplicationVndAPIPlusJSONBody Updates an AI automation
+	//
+	// Requires OAuth scope `ai.automations:write`. Read-only attributes are ignored on write.
+	//
+	// Takes a body of the `application/vnd.api+json` content type.
+	//
+	// Corresponds with PATCH /v1/ai/automations/{id} (the `UpdateAIAutomation` operationId).
+	UpdateAIAutomationWithApplicationVndAPIPlusJSONBody(ctx context.Context, id ID, body UpdateAIAutomationApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PutAIAutomationWithBody Updates an AI automation
+	//
+	// Requires OAuth scope `ai.automations:write`. Read-only attributes are ignored on write.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with PUT /v1/ai/automations/{id} (the `PutAIAutomation` operationId).
+	PutAIAutomationWithBody(ctx context.Context, id ID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PutAIAutomationWithApplicationVndAPIPlusJSONBody Updates an AI automation
+	//
+	// Requires OAuth scope `ai.automations:write`. Read-only attributes are ignored on write.
+	//
+	// Takes a body of the `application/vnd.api+json` content type.
+	//
+	// Corresponds with PUT /v1/ai/automations/{id} (the `PutAIAutomation` operationId).
+	PutAIAutomationWithApplicationVndAPIPlusJSONBody(ctx context.Context, id ID, body PutAIAutomationApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// RotateAIAutomationWebhookSecretWithBody Generates or rotates an AI Automation webhook trigger secret
+	//
+	// Returns a new secret for a webhook trigger. The previous secret stops working immediately. The secret is only returned in this response; Rootly stores a SHA-256 digest of it.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /v1/ai/automations/{id}/triggers/{trigger_id}/webhook_secret (the `RotateAIAutomationWebhookSecret` operationId).
+	RotateAIAutomationWebhookSecretWithBody(ctx context.Context, id ID, triggerID string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// RotateAIAutomationWebhookSecretWithApplicationVndAPIPlusJSONBody Generates or rotates an AI Automation webhook trigger secret
+	//
+	// Returns a new secret for a webhook trigger. The previous secret stops working immediately. The secret is only returned in this response; Rootly stores a SHA-256 digest of it.
+	//
+	// Takes a body of the `application/vnd.api+json` content type.
+	//
+	// Corresponds with POST /v1/ai/automations/{id}/triggers/{trigger_id}/webhook_secret (the `RotateAIAutomationWebhookSecret` operationId).
+	RotateAIAutomationWebhookSecretWithApplicationVndAPIPlusJSONBody(ctx context.Context, id ID, triggerID string, body RotateAIAutomationWebhookSecretApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
 	// CreateAiChat Send AI chat message
 	//
 	// Send a message to the AI assistant and receive a synchronous reply. Optionally bind the conversation to an incident or alert for context-aware responses. For eligible unbound home chat, `checkpoint_id` and `decision` confirm or cancel approval-gated writes. Responses include `confirmation` for a pending write and `checkpoint_resolved` after resume. If an action-item write needs required fields the model did not supply, no checkpoint is created and the turn completes with a plain reply linking to that incident's action-item form in the Rootly web app. The synchronous response has no `confirmation` key; only `confirmation` responses are resumable. Limited to 60 requests per minute per credential. Rate-limit responses include `Retry-After` and `X-RateLimit-*` headers. Requires `ai.chat:write` OAuth scope or an API key.
@@ -107459,164 +107824,57 @@ type ClientInterface interface {
 	// Corresponds with POST /v1/ai/chat/stream (the `StreamAiChat` operationId).
 	StreamAiChat(ctx context.Context, params *StreamAiChatParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// GetAIAutomationRun Gets an AI automation run
+	// ListInvestigations Lists AI SRE investigations
 	//
-	// Incident-linked runs are visible only when the caller's role permits access. OAuth tokens also need the `ir.incidents:read` scope; API keys use the key's role. Requires OAuth scope `ai.automations:write`.
+	// Requires OAuth scope `ai.investigations:read`. OAuth tokens also need `oc.alerts:read` for alert investigations and `ir.incidents:read` for incident investigations; API keys use the key's role. Investigations on alerts and incidents the caller can read, newest first.
 	//
-	// Corresponds with GET /v1/ai_automation_runs/{id} (the `GetAIAutomationRun` operationId).
-	GetAIAutomationRun(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// Corresponds with GET /v1/ai/investigations (the `ListInvestigations` operationId).
+	ListInvestigations(ctx context.Context, params *ListInvestigationsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// ListAIAutomations Lists AI automations
+	// CreateInvestigationWithBody Starts an AI SRE investigation
 	//
-	// Requires OAuth scope `ai.automations:read`.
-	//
-	// Corresponds with GET /v1/ai_automations (the `ListAIAutomations` operationId).
-	ListAIAutomations(ctx context.Context, params *ListAIAutomationsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateAIAutomationWithBody Creates an AI automation
-	//
-	// Requires OAuth scope `ai.automations:write`. Read-only attributes are ignored on write.
+	// Requires OAuth scope `ai.investigations:write`. OAuth tokens also need `oc.alerts:write` (alerts) or `ir.incidents:write` (incidents) and update access to the resource; API keys use the key's role. Starts an investigation on an alert or incident you can update, or returns the one already running.
 	//
 	// Takes any type of body and a specified content type.
 	//
-	// Corresponds with POST /v1/ai_automations (the `CreateAIAutomation` operationId).
-	CreateAIAutomationWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// Corresponds with POST /v1/ai/investigations (the `CreateInvestigation` operationId).
+	CreateInvestigationWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// CreateAIAutomationWithApplicationVndAPIPlusJSONBody Creates an AI automation
+	// CreateInvestigationWithApplicationVndAPIPlusJSONBody Starts an AI SRE investigation
 	//
-	// Requires OAuth scope `ai.automations:write`. Read-only attributes are ignored on write.
+	// Requires OAuth scope `ai.investigations:write`. OAuth tokens also need `oc.alerts:write` (alerts) or `ir.incidents:write` (incidents) and update access to the resource; API keys use the key's role. Starts an investigation on an alert or incident you can update, or returns the one already running.
 	//
 	// Takes a body of the `application/vnd.api+json` content type.
 	//
-	// Corresponds with POST /v1/ai_automations (the `CreateAIAutomation` operationId).
-	CreateAIAutomationWithApplicationVndAPIPlusJSONBody(ctx context.Context, body CreateAIAutomationApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// Corresponds with POST /v1/ai/investigations (the `CreateInvestigation` operationId).
+	CreateInvestigationWithApplicationVndAPIPlusJSONBody(ctx context.Context, body CreateInvestigationApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// ListAIAutomationSlackChannels Lists synced Slack channels for AI Automations
+	// GetInvestigation Retrieves an AI SRE investigation
 	//
-	// Channels Rootly has synced from the team's connected Slack workspace; any returned slack_channel_id is accepted as destination_slack_channel_id. When filter[search] is set, exact channel-name matches come first. When Slack channel user filtering is enabled, personal keys and OAuth tokens only see, and can only set new, channels the user can access in Slack; an update may resend the automation's current channel unchanged.
+	// Requires OAuth scope `ai.investigations:read`. OAuth tokens also need `oc.alerts:read` for alert investigations and `ir.incidents:read` for incident investigations; API keys use the key's role. The verdict, hypotheses, evidence, causal chain and open questions.
 	//
-	// Corresponds with GET /v1/ai_automations/slack_channels (the `ListAIAutomationSlackChannels` operationId).
-	ListAIAutomationSlackChannels(ctx context.Context, params *ListAIAutomationSlackChannelsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// Corresponds with GET /v1/ai/investigations/{id} (the `GetInvestigation` operationId).
+	GetInvestigation(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// ListAIAutomationSlackUserGroups Lists Slack user groups for AI Automations
+	// CancelInvestigation Cancels an AI SRE investigation
 	//
-	// User groups from the team's connected Slack workspace, read live from Slack; any returned slack_user_group_id is accepted by usergroup trigger conditions.
+	// Requires OAuth scope `ai.investigations:write`. OAuth tokens also need `oc.alerts:write` (alerts) or `ir.incidents:write` (incidents) and update access to the resource; API keys use the key's role.
 	//
-	// Corresponds with GET /v1/ai_automations/slack_user_groups (the `ListAIAutomationSlackUserGroups` operationId).
-	ListAIAutomationSlackUserGroups(ctx context.Context, params *ListAIAutomationSlackUserGroupsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// Corresponds with POST /v1/ai/investigations/{id}/cancel (the `CancelInvestigation` operationId).
+	CancelInvestigation(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// ListAIAutomationSlackUsers Lists Slack users for AI Automations
+	// GetInvestigationProgress Retrieves AI SRE investigation progress
 	//
-	// Users, including bots, from the team's connected Slack workspace; any returned slack_user_id is accepted by user and item_user trigger conditions.
+	// Requires OAuth scope `ai.investigations:read`. OAuth tokens also need `oc.alerts:read` for alert investigations and `ir.incidents:read` for incident investigations; API keys use the key's role. Returns immediately with steps and tool calls recorded after the cursor. Poll with after=next_cursor until done is true.
 	//
-	// Corresponds with GET /v1/ai_automations/slack_users (the `ListAIAutomationSlackUsers` operationId).
-	ListAIAutomationSlackUsers(ctx context.Context, params *ListAIAutomationSlackUsersParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetAIAutomationTriggerOptions Lists options for configuring AI Automation triggers
-	//
-	// Returns the source-of-truth options used by the AI Automation editor.
-	//
-	// Corresponds with GET /v1/ai_automations/trigger_options (the `GetAIAutomationTriggerOptions` operationId).
-	GetAIAutomationTriggerOptions(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// ListAIAutomationRuns Lists AI automation runs
-	//
-	// Scans the 1000 most recent runs matching the filters; pagination and counts cover the visible runs in that window. When meta.next_scan_cursor is set, older runs exist beyond the window. Present only on the last page of the current scan window; finish page pagination before following it. Repeat the request with filter[scan_cursor] set to that opaque cursor to continue. Incident-linked runs are visible only when the caller's role permits access. OAuth tokens also need the `ir.incidents:read` scope; API keys use the key's role. Requires OAuth scope `ai.automations:write`.
-	//
-	// Corresponds with GET /v1/ai_automations/{ai_automation_id}/runs (the `ListAIAutomationRuns` operationId).
-	ListAIAutomationRuns(ctx context.Context, aiAutomationID openapi_types.UUID, params *ListAIAutomationRunsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// RunAIAutomationWithBody Runs an AI automation now
-	//
-	// Requires OAuth scope `ai.automations:write`. For run-now requests with incident_id, OAuth tokens also need the `ir.incidents:read` scope; API keys use the key's role. Limited to 30 requests per credential per minute (fixed one-minute windows), separate from the default mutation rate limit; exceeding it returns 429 with Retry-After.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v1/ai_automations/{ai_automation_id}/runs (the `RunAIAutomation` operationId).
-	RunAIAutomationWithBody(ctx context.Context, aiAutomationID openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// RunAIAutomationWithApplicationVndAPIPlusJSONBody Runs an AI automation now
-	//
-	// Requires OAuth scope `ai.automations:write`. For run-now requests with incident_id, OAuth tokens also need the `ir.incidents:read` scope; API keys use the key's role. Limited to 30 requests per credential per minute (fixed one-minute windows), separate from the default mutation rate limit; exceeding it returns 429 with Retry-After.
-	//
-	// Takes a body of the `application/vnd.api+json` content type.
-	//
-	// Corresponds with POST /v1/ai_automations/{ai_automation_id}/runs (the `RunAIAutomation` operationId).
-	RunAIAutomationWithApplicationVndAPIPlusJSONBody(ctx context.Context, aiAutomationID openapi_types.UUID, body RunAIAutomationApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// DeleteAIAutomation Deletes an AI automation
-	//
-	// Requires OAuth scope `ai.automations:write`. Retires the automation: it is disabled and soft-deleted, no longer listed or runnable; GET show and run-now return 404, while its existing run history remains readable via the runs endpoints.
-	//
-	// Corresponds with DELETE /v1/ai_automations/{id} (the `DeleteAIAutomation` operationId).
-	DeleteAIAutomation(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetAIAutomation Gets an AI automation
-	//
-	// Requires OAuth scope `ai.automations:read`.
-	//
-	// Corresponds with GET /v1/ai_automations/{id} (the `GetAIAutomation` operationId).
-	GetAIAutomation(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateAIAutomationWithBody Updates an AI automation
-	//
-	// Requires OAuth scope `ai.automations:write`. Read-only attributes are ignored on write.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with PATCH /v1/ai_automations/{id} (the `UpdateAIAutomation` operationId).
-	UpdateAIAutomationWithBody(ctx context.Context, id ID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UpdateAIAutomationWithApplicationVndAPIPlusJSONBody Updates an AI automation
-	//
-	// Requires OAuth scope `ai.automations:write`. Read-only attributes are ignored on write.
-	//
-	// Takes a body of the `application/vnd.api+json` content type.
-	//
-	// Corresponds with PATCH /v1/ai_automations/{id} (the `UpdateAIAutomation` operationId).
-	UpdateAIAutomationWithApplicationVndAPIPlusJSONBody(ctx context.Context, id ID, body UpdateAIAutomationApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// PutAIAutomationWithBody Updates an AI automation
-	//
-	// Requires OAuth scope `ai.automations:write`. Read-only attributes are ignored on write.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with PUT /v1/ai_automations/{id} (the `PutAIAutomation` operationId).
-	PutAIAutomationWithBody(ctx context.Context, id ID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// PutAIAutomationWithApplicationVndAPIPlusJSONBody Updates an AI automation
-	//
-	// Requires OAuth scope `ai.automations:write`. Read-only attributes are ignored on write.
-	//
-	// Takes a body of the `application/vnd.api+json` content type.
-	//
-	// Corresponds with PUT /v1/ai_automations/{id} (the `PutAIAutomation` operationId).
-	PutAIAutomationWithApplicationVndAPIPlusJSONBody(ctx context.Context, id ID, body PutAIAutomationApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// RotateAIAutomationWebhookSecretWithBody Generates or rotates an AI Automation webhook trigger secret
-	//
-	// Returns a new secret for a webhook trigger. The previous secret stops working immediately. The secret is only returned in this response; Rootly stores a SHA-256 digest of it.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v1/ai_automations/{id}/triggers/{trigger_id}/webhook_secret (the `RotateAIAutomationWebhookSecret` operationId).
-	RotateAIAutomationWebhookSecretWithBody(ctx context.Context, id ID, triggerID string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// RotateAIAutomationWebhookSecretWithApplicationVndAPIPlusJSONBody Generates or rotates an AI Automation webhook trigger secret
-	//
-	// Returns a new secret for a webhook trigger. The previous secret stops working immediately. The secret is only returned in this response; Rootly stores a SHA-256 digest of it.
-	//
-	// Takes a body of the `application/vnd.api+json` content type.
-	//
-	// Corresponds with POST /v1/ai_automations/{id}/triggers/{trigger_id}/webhook_secret (the `RotateAIAutomationWebhookSecret` operationId).
-	RotateAIAutomationWebhookSecretWithApplicationVndAPIPlusJSONBody(ctx context.Context, id ID, triggerID string, body RotateAIAutomationWebhookSecretApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// Corresponds with GET /v1/ai/investigations/{id}/progress (the `GetInvestigationProgress` operationId).
+	GetInvestigationProgress(ctx context.Context, id ID, params *GetInvestigationProgressParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// ListAISkills Lists AI skills
 	//
 	// Requires OAuth scope `ai.skills:read`.
 	//
-	// Corresponds with GET /v1/ai_skills (the `ListAISkills` operationId).
+	// Corresponds with GET /v1/ai/skills (the `ListAISkills` operationId).
 	ListAISkills(ctx context.Context, params *ListAISkillsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// CreateAISkillWithBody Creates an AI skill
@@ -107625,7 +107883,7 @@ type ClientInterface interface {
 	//
 	// Takes any type of body and a specified content type.
 	//
-	// Corresponds with POST /v1/ai_skills (the `CreateAISkill` operationId).
+	// Corresponds with POST /v1/ai/skills (the `CreateAISkill` operationId).
 	CreateAISkillWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// CreateAISkillWithApplicationVndAPIPlusJSONBody Creates an AI skill
@@ -107634,35 +107892,35 @@ type ClientInterface interface {
 	//
 	// Takes a body of the `application/vnd.api+json` content type.
 	//
-	// Corresponds with POST /v1/ai_skills (the `CreateAISkill` operationId).
+	// Corresponds with POST /v1/ai/skills (the `CreateAISkill` operationId).
 	CreateAISkillWithApplicationVndAPIPlusJSONBody(ctx context.Context, body CreateAISkillApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// ListAISkillVersions Lists AI skill versions
 	//
 	// Requires OAuth scope `ai.skills:read`.
 	//
-	// Corresponds with GET /v1/ai_skills/{ai_skill_id}/versions (the `ListAISkillVersions` operationId).
+	// Corresponds with GET /v1/ai/skills/{ai_skill_id}/versions (the `ListAISkillVersions` operationId).
 	ListAISkillVersions(ctx context.Context, aiSkillID string, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// GetAISkillVersion Gets an AI skill version
 	//
 	// Requires OAuth scope `ai.skills:read`.
 	//
-	// Corresponds with GET /v1/ai_skills/{ai_skill_id}/versions/{version} (the `GetAISkillVersion` operationId).
+	// Corresponds with GET /v1/ai/skills/{ai_skill_id}/versions/{version} (the `GetAISkillVersion` operationId).
 	GetAISkillVersion(ctx context.Context, aiSkillID string, version int, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// DeleteAISkill Deletes an AI skill
 	//
 	// Requires OAuth scope `ai.skills:write`.
 	//
-	// Corresponds with DELETE /v1/ai_skills/{id} (the `DeleteAISkill` operationId).
+	// Corresponds with DELETE /v1/ai/skills/{id} (the `DeleteAISkill` operationId).
 	DeleteAISkill(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// GetAISkill Gets an AI skill
 	//
 	// Requires OAuth scope `ai.skills:read`.
 	//
-	// Corresponds with GET /v1/ai_skills/{id} (the `GetAISkill` operationId).
+	// Corresponds with GET /v1/ai/skills/{id} (the `GetAISkill` operationId).
 	GetAISkill(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// UpdateAISkillWithBody Updates an AI skill
@@ -107671,7 +107929,7 @@ type ClientInterface interface {
 	//
 	// Takes any type of body and a specified content type.
 	//
-	// Corresponds with PATCH /v1/ai_skills/{id} (the `UpdateAISkill` operationId).
+	// Corresponds with PATCH /v1/ai/skills/{id} (the `UpdateAISkill` operationId).
 	UpdateAISkillWithBody(ctx context.Context, id ID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// UpdateAISkillWithApplicationVndAPIPlusJSONBody Updates an AI skill
@@ -107680,7 +107938,7 @@ type ClientInterface interface {
 	//
 	// Takes a body of the `application/vnd.api+json` content type.
 	//
-	// Corresponds with PATCH /v1/ai_skills/{id} (the `UpdateAISkill` operationId).
+	// Corresponds with PATCH /v1/ai/skills/{id} (the `UpdateAISkill` operationId).
 	UpdateAISkillWithApplicationVndAPIPlusJSONBody(ctx context.Context, id ID, body UpdateAISkillApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// PutAISkillWithBody Updates an AI skill
@@ -107689,7 +107947,7 @@ type ClientInterface interface {
 	//
 	// Takes any type of body and a specified content type.
 	//
-	// Corresponds with PUT /v1/ai_skills/{id} (the `PutAISkill` operationId).
+	// Corresponds with PUT /v1/ai/skills/{id} (the `PutAISkill` operationId).
 	PutAISkillWithBody(ctx context.Context, id ID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// PutAISkillWithApplicationVndAPIPlusJSONBody Updates an AI skill
@@ -107698,14 +107956,14 @@ type ClientInterface interface {
 	//
 	// Takes a body of the `application/vnd.api+json` content type.
 	//
-	// Corresponds with PUT /v1/ai_skills/{id} (the `PutAISkill` operationId).
+	// Corresponds with PUT /v1/ai/skills/{id} (the `PutAISkill` operationId).
 	PutAISkillWithApplicationVndAPIPlusJSONBody(ctx context.Context, id ID, body PutAISkillApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// ListAiToolCallEvents Lists AI tool call events
 	//
 	// Returns audit events for AI tool calls and connector calls.
 	//
-	// Corresponds with GET /v1/ai_tool_call_events (the `ListAiToolCallEvents` operationId).
+	// Corresponds with GET /v1/ai/tool_call_events (the `ListAiToolCallEvents` operationId).
 	ListAiToolCallEvents(ctx context.Context, params *ListAiToolCallEventsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// GetAlertConfiguration Retrieves the team's alert configuration
@@ -108499,7 +108757,7 @@ type ClientInterface interface {
 	//
 	// Rotate an API key's token. Issues a new secret token and returns it — **the new token is only shown once**, so store it securely.
 	//
-	// **Self-only:** You can only rotate the API key that was used to authenticate this request. Attempting to rotate a different key returns `403 Forbidden`.
+	// **Self-only:** You can only rotate the API key that was used to authenticate this request. Attempting to rotate a different key returns `404 Not Found` when the authenticating key is not authorized to manage it, or `403 Forbidden` when it is.
 	//
 	// **Grace period:** When enabled for your organization, the previous token remains valid after rotation, giving you time to deploy the new token without downtime. Pass `grace_period_minutes` (integer, 0–1440, default 30) to control how long the old token stays valid. Set to 0 to immediately invalidate the old token. The `grace_period_ends_at` field in the response confirms the exact time the old token will stop working.
 	//
@@ -108520,7 +108778,7 @@ type ClientInterface interface {
 	//
 	// Rotate an API key's token. Issues a new secret token and returns it — **the new token is only shown once**, so store it securely.
 	//
-	// **Self-only:** You can only rotate the API key that was used to authenticate this request. Attempting to rotate a different key returns `403 Forbidden`.
+	// **Self-only:** You can only rotate the API key that was used to authenticate this request. Attempting to rotate a different key returns `404 Not Found` when the authenticating key is not authorized to manage it, or `403 Forbidden` when it is.
 	//
 	// **Grace period:** When enabled for your organization, the previous token remains valid after rotation, giving you time to deploy the new token without downtime. Pass `grace_period_minutes` (integer, 0–1440, default 30) to control how long the old token stays valid. Set to 0 to immediately invalidate the old token. The `grace_period_ends_at` field in the response confirms the exact time the old token will stop working.
 	//
@@ -111831,50 +112089,6 @@ type ClientInterface interface {
 	// Corresponds with POST /v1/incidents/{incident_id}/sub_statuses (the `CreateIncidentSubStatus` operationId).
 	CreateIncidentSubStatusWithApplicationVndAPIPlusJSONBody(ctx context.Context, incidentID string, body CreateIncidentSubStatusApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// ListInvestigations Lists AI SRE investigations
-	//
-	// Investigations on alerts and incidents the caller can read, newest first.
-	//
-	// Corresponds with GET /v1/investigations (the `ListInvestigations` operationId).
-	ListInvestigations(ctx context.Context, params *ListInvestigationsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateInvestigationWithBody Starts an AI SRE investigation
-	//
-	// Starts an investigation on an alert or incident you can update, or returns the one already running.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v1/investigations (the `CreateInvestigation` operationId).
-	CreateInvestigationWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CreateInvestigationWithApplicationVndAPIPlusJSONBody Starts an AI SRE investigation
-	//
-	// Starts an investigation on an alert or incident you can update, or returns the one already running.
-	//
-	// Takes a body of the `application/vnd.api+json` content type.
-	//
-	// Corresponds with POST /v1/investigations (the `CreateInvestigation` operationId).
-	CreateInvestigationWithApplicationVndAPIPlusJSONBody(ctx context.Context, body CreateInvestigationApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetInvestigation Retrieves an AI SRE investigation
-	//
-	// The verdict, hypotheses, evidence, causal chain and open questions.
-	//
-	// Corresponds with GET /v1/investigations/{id} (the `GetInvestigation` operationId).
-	GetInvestigation(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CancelInvestigation Cancels an AI SRE investigation
-	//
-	// Corresponds with POST /v1/investigations/{id}/cancel (the `CancelInvestigation` operationId).
-	CancelInvestigation(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetInvestigationProgress Retrieves AI SRE investigation progress
-	//
-	// Returns immediately with steps and tool calls recorded after the cursor. Poll with after=next_cursor until done is true.
-	//
-	// Corresponds with GET /v1/investigations/{id}/progress (the `GetInvestigationProgress` operationId).
-	GetInvestigationProgress(ctx context.Context, id ID, params *GetInvestigationProgressParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
 	// GetIPAllowlist Retrieves the organization's browser IP allowlist
 	//
 	// Corresponds with GET /v1/ip_allowlist (the `GetIPAllowlist` operationId).
@@ -114696,6 +114910,349 @@ func (c *Client) UpdateIncidentActionItemWithApplicationVndAPIPlusJSONBody(ctx c
 	return c.Client.Do(req)
 }
 
+// GetAIAutomationRun Gets an AI automation run
+//
+// Incident-linked runs are visible only when the caller's role permits access. OAuth tokens also need the `ir.incidents:read` scope; API keys use the key's role. Requires OAuth scope `ai.automations:write`.
+//
+// Corresponds with GET /v1/ai/automation_runs/{id} (the `GetAIAutomationRun` operationId).
+func (c *Client) GetAIAutomationRun(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetAIAutomationRunRequest(c.Server, id)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// ListAIAutomations Lists AI automations
+//
+// Requires OAuth scope `ai.automations:read`.
+//
+// Corresponds with GET /v1/ai/automations (the `ListAIAutomations` operationId).
+func (c *Client) ListAIAutomations(ctx context.Context, params *ListAIAutomationsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewListAIAutomationsRequest(c.Server, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// CreateAIAutomationWithBody Creates an AI automation
+//
+// Requires OAuth scope `ai.automations:write`. Read-only attributes are ignored on write.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/ai/automations (the `CreateAIAutomation` operationId).
+func (c *Client) CreateAIAutomationWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateAIAutomationRequestWithBody(c.Server, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// CreateAIAutomationWithApplicationVndAPIPlusJSONBody Creates an AI automation
+//
+// Requires OAuth scope `ai.automations:write`. Read-only attributes are ignored on write.
+//
+// Takes a body of the `application/vnd.api+json` content type.
+//
+// Corresponds with POST /v1/ai/automations (the `CreateAIAutomation` operationId).
+func (c *Client) CreateAIAutomationWithApplicationVndAPIPlusJSONBody(ctx context.Context, body CreateAIAutomationApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateAIAutomationRequestWithApplicationVndAPIPlusJSONBody(c.Server, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// ListAIAutomationSlackChannels Lists synced Slack channels for AI Automations
+//
+// Channels Rootly has synced from the team's connected Slack workspace; any returned slack_channel_id is accepted as destination_slack_channel_id. When filter[search] is set, exact channel-name matches come first. When Slack channel user filtering is enabled, personal keys and OAuth tokens only see, and can only set new, channels the user can access in Slack; an update may resend the automation's current channel unchanged.
+//
+// Corresponds with GET /v1/ai/automations/slack_channels (the `ListAIAutomationSlackChannels` operationId).
+func (c *Client) ListAIAutomationSlackChannels(ctx context.Context, params *ListAIAutomationSlackChannelsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewListAIAutomationSlackChannelsRequest(c.Server, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// ListAIAutomationSlackUserGroups Lists Slack user groups for AI Automations
+//
+// User groups from the team's connected Slack workspace, read live from Slack; any returned slack_user_group_id is accepted by usergroup trigger conditions.
+//
+// Corresponds with GET /v1/ai/automations/slack_user_groups (the `ListAIAutomationSlackUserGroups` operationId).
+func (c *Client) ListAIAutomationSlackUserGroups(ctx context.Context, params *ListAIAutomationSlackUserGroupsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewListAIAutomationSlackUserGroupsRequest(c.Server, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// ListAIAutomationSlackUsers Lists Slack users for AI Automations
+//
+// Users, including bots, from the team's connected Slack workspace; any returned slack_user_id is accepted by user and item_user trigger conditions.
+//
+// Corresponds with GET /v1/ai/automations/slack_users (the `ListAIAutomationSlackUsers` operationId).
+func (c *Client) ListAIAutomationSlackUsers(ctx context.Context, params *ListAIAutomationSlackUsersParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewListAIAutomationSlackUsersRequest(c.Server, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetAIAutomationTriggerOptions Lists options for configuring AI Automation triggers
+//
+// Returns the source-of-truth options used by the AI Automation editor.
+//
+// Corresponds with GET /v1/ai/automations/trigger_options (the `GetAIAutomationTriggerOptions` operationId).
+func (c *Client) GetAIAutomationTriggerOptions(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetAIAutomationTriggerOptionsRequest(c.Server)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// ListAIAutomationRuns Lists AI automation runs
+//
+// Scans the 1000 most recent runs matching the filters; pagination and counts cover the visible runs in that window. When meta.next_scan_cursor is set, older runs exist beyond the window. Present only on the last page of the current scan window; finish page pagination before following it. Repeat the request with filter[scan_cursor] set to that opaque cursor to continue. Incident-linked runs are visible only when the caller's role permits access. OAuth tokens also need the `ir.incidents:read` scope; API keys use the key's role. Requires OAuth scope `ai.automations:write`.
+//
+// Corresponds with GET /v1/ai/automations/{ai_automation_id}/runs (the `ListAIAutomationRuns` operationId).
+func (c *Client) ListAIAutomationRuns(ctx context.Context, aiAutomationID openapi_types.UUID, params *ListAIAutomationRunsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewListAIAutomationRunsRequest(c.Server, aiAutomationID, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// RunAIAutomationWithBody Runs an AI automation now
+//
+// Requires OAuth scope `ai.automations:write`. For run-now requests with incident_id, or run_id of an incident-linked run, OAuth tokens also need the `ir.incidents:read` scope; API keys use the key's role. Limited to 30 requests per credential per minute (fixed one-minute windows), separate from the default mutation rate limit; exceeding it returns 429 with Retry-After.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/ai/automations/{ai_automation_id}/runs (the `RunAIAutomation` operationId).
+func (c *Client) RunAIAutomationWithBody(ctx context.Context, aiAutomationID openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewRunAIAutomationRequestWithBody(c.Server, aiAutomationID, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// RunAIAutomationWithApplicationVndAPIPlusJSONBody Runs an AI automation now
+//
+// Requires OAuth scope `ai.automations:write`. For run-now requests with incident_id, or run_id of an incident-linked run, OAuth tokens also need the `ir.incidents:read` scope; API keys use the key's role. Limited to 30 requests per credential per minute (fixed one-minute windows), separate from the default mutation rate limit; exceeding it returns 429 with Retry-After.
+//
+// Takes a body of the `application/vnd.api+json` content type.
+//
+// Corresponds with POST /v1/ai/automations/{ai_automation_id}/runs (the `RunAIAutomation` operationId).
+func (c *Client) RunAIAutomationWithApplicationVndAPIPlusJSONBody(ctx context.Context, aiAutomationID openapi_types.UUID, body RunAIAutomationApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewRunAIAutomationRequestWithApplicationVndAPIPlusJSONBody(c.Server, aiAutomationID, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// DeleteAIAutomation Deletes an AI automation
+//
+// Requires OAuth scope `ai.automations:write`. Retires the automation: it is disabled and soft-deleted, no longer listed or runnable; GET show and run-now return 404, while its existing run history remains readable via the runs endpoints.
+//
+// Corresponds with DELETE /v1/ai/automations/{id} (the `DeleteAIAutomation` operationId).
+func (c *Client) DeleteAIAutomation(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewDeleteAIAutomationRequest(c.Server, id)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetAIAutomation Gets an AI automation
+//
+// Requires OAuth scope `ai.automations:read`.
+//
+// Corresponds with GET /v1/ai/automations/{id} (the `GetAIAutomation` operationId).
+func (c *Client) GetAIAutomation(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetAIAutomationRequest(c.Server, id)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// UpdateAIAutomationWithBody Updates an AI automation
+//
+// Requires OAuth scope `ai.automations:write`. Read-only attributes are ignored on write.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with PATCH /v1/ai/automations/{id} (the `UpdateAIAutomation` operationId).
+func (c *Client) UpdateAIAutomationWithBody(ctx context.Context, id ID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateAIAutomationRequestWithBody(c.Server, id, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// UpdateAIAutomationWithApplicationVndAPIPlusJSONBody Updates an AI automation
+//
+// Requires OAuth scope `ai.automations:write`. Read-only attributes are ignored on write.
+//
+// Takes a body of the `application/vnd.api+json` content type.
+//
+// Corresponds with PATCH /v1/ai/automations/{id} (the `UpdateAIAutomation` operationId).
+func (c *Client) UpdateAIAutomationWithApplicationVndAPIPlusJSONBody(ctx context.Context, id ID, body UpdateAIAutomationApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateAIAutomationRequestWithApplicationVndAPIPlusJSONBody(c.Server, id, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PutAIAutomationWithBody Updates an AI automation
+//
+// Requires OAuth scope `ai.automations:write`. Read-only attributes are ignored on write.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with PUT /v1/ai/automations/{id} (the `PutAIAutomation` operationId).
+func (c *Client) PutAIAutomationWithBody(ctx context.Context, id ID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPutAIAutomationRequestWithBody(c.Server, id, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PutAIAutomationWithApplicationVndAPIPlusJSONBody Updates an AI automation
+//
+// Requires OAuth scope `ai.automations:write`. Read-only attributes are ignored on write.
+//
+// Takes a body of the `application/vnd.api+json` content type.
+//
+// Corresponds with PUT /v1/ai/automations/{id} (the `PutAIAutomation` operationId).
+func (c *Client) PutAIAutomationWithApplicationVndAPIPlusJSONBody(ctx context.Context, id ID, body PutAIAutomationApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPutAIAutomationRequestWithApplicationVndAPIPlusJSONBody(c.Server, id, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// RotateAIAutomationWebhookSecretWithBody Generates or rotates an AI Automation webhook trigger secret
+//
+// Returns a new secret for a webhook trigger. The previous secret stops working immediately. The secret is only returned in this response; Rootly stores a SHA-256 digest of it.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/ai/automations/{id}/triggers/{trigger_id}/webhook_secret (the `RotateAIAutomationWebhookSecret` operationId).
+func (c *Client) RotateAIAutomationWebhookSecretWithBody(ctx context.Context, id ID, triggerID string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewRotateAIAutomationWebhookSecretRequestWithBody(c.Server, id, triggerID, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// RotateAIAutomationWebhookSecretWithApplicationVndAPIPlusJSONBody Generates or rotates an AI Automation webhook trigger secret
+//
+// Returns a new secret for a webhook trigger. The previous secret stops working immediately. The secret is only returned in this response; Rootly stores a SHA-256 digest of it.
+//
+// Takes a body of the `application/vnd.api+json` content type.
+//
+// Corresponds with POST /v1/ai/automations/{id}/triggers/{trigger_id}/webhook_secret (the `RotateAIAutomationWebhookSecret` operationId).
+func (c *Client) RotateAIAutomationWebhookSecretWithApplicationVndAPIPlusJSONBody(ctx context.Context, id ID, triggerID string, body RotateAIAutomationWebhookSecretApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewRotateAIAutomationWebhookSecretRequestWithApplicationVndAPIPlusJSONBody(c.Server, id, triggerID, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
 // CreateAiChat Send AI chat message
 //
 // Send a message to the AI assistant and receive a synchronous reply. Optionally bind the conversation to an incident or alert for context-aware responses. For eligible unbound home chat, `checkpoint_id` and `decision` confirm or cancel approval-gated writes. Responses include `confirmation` for a pending write and `checkpoint_resolved` after resume. If an action-item write needs required fields the model did not supply, no checkpoint is created and the turn completes with a plain reply linking to that incident's action-item form in the Rootly web app. The synchronous response has no `confirmation` key; only `confirmation` responses are resumable. Limited to 60 requests per minute per credential. Rate-limit responses include `Retry-After` and `X-RateLimit-*` headers. Requires `ai.chat:write` OAuth scope or an API key.
@@ -114819,13 +115376,13 @@ func (c *Client) StreamAiChat(ctx context.Context, params *StreamAiChatParams, r
 	return c.Client.Do(req)
 }
 
-// GetAIAutomationRun Gets an AI automation run
+// ListInvestigations Lists AI SRE investigations
 //
-// Incident-linked runs are visible only when the caller's role permits access. OAuth tokens also need the `ir.incidents:read` scope; API keys use the key's role. Requires OAuth scope `ai.automations:write`.
+// Requires OAuth scope `ai.investigations:read`. OAuth tokens also need `oc.alerts:read` for alert investigations and `ir.incidents:read` for incident investigations; API keys use the key's role. Investigations on alerts and incidents the caller can read, newest first.
 //
-// Corresponds with GET /v1/ai_automation_runs/{id} (the `GetAIAutomationRun` operationId).
-func (c *Client) GetAIAutomationRun(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetAIAutomationRunRequest(c.Server, id)
+// Corresponds with GET /v1/ai/investigations (the `ListInvestigations` operationId).
+func (c *Client) ListInvestigations(ctx context.Context, params *ListInvestigationsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewListInvestigationsRequest(c.Server, params)
 	if err != nil {
 		return nil, err
 	}
@@ -114836,32 +115393,15 @@ func (c *Client) GetAIAutomationRun(ctx context.Context, id ID, reqEditors ...Re
 	return c.Client.Do(req)
 }
 
-// ListAIAutomations Lists AI automations
+// CreateInvestigationWithBody Starts an AI SRE investigation
 //
-// Requires OAuth scope `ai.automations:read`.
-//
-// Corresponds with GET /v1/ai_automations (the `ListAIAutomations` operationId).
-func (c *Client) ListAIAutomations(ctx context.Context, params *ListAIAutomationsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewListAIAutomationsRequest(c.Server, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// CreateAIAutomationWithBody Creates an AI automation
-//
-// Requires OAuth scope `ai.automations:write`. Read-only attributes are ignored on write.
+// Requires OAuth scope `ai.investigations:write`. OAuth tokens also need `oc.alerts:write` (alerts) or `ir.incidents:write` (incidents) and update access to the resource; API keys use the key's role. Starts an investigation on an alert or incident you can update, or returns the one already running.
 //
 // Takes any type of body and a specified content type.
 //
-// Corresponds with POST /v1/ai_automations (the `CreateAIAutomation` operationId).
-func (c *Client) CreateAIAutomationWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateAIAutomationRequestWithBody(c.Server, contentType, body)
+// Corresponds with POST /v1/ai/investigations (the `CreateInvestigation` operationId).
+func (c *Client) CreateInvestigationWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateInvestigationRequestWithBody(c.Server, contentType, body)
 	if err != nil {
 		return nil, err
 	}
@@ -114872,15 +115412,15 @@ func (c *Client) CreateAIAutomationWithBody(ctx context.Context, contentType str
 	return c.Client.Do(req)
 }
 
-// CreateAIAutomationWithApplicationVndAPIPlusJSONBody Creates an AI automation
+// CreateInvestigationWithApplicationVndAPIPlusJSONBody Starts an AI SRE investigation
 //
-// Requires OAuth scope `ai.automations:write`. Read-only attributes are ignored on write.
+// Requires OAuth scope `ai.investigations:write`. OAuth tokens also need `oc.alerts:write` (alerts) or `ir.incidents:write` (incidents) and update access to the resource; API keys use the key's role. Starts an investigation on an alert or incident you can update, or returns the one already running.
 //
 // Takes a body of the `application/vnd.api+json` content type.
 //
-// Corresponds with POST /v1/ai_automations (the `CreateAIAutomation` operationId).
-func (c *Client) CreateAIAutomationWithApplicationVndAPIPlusJSONBody(ctx context.Context, body CreateAIAutomationApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateAIAutomationRequestWithApplicationVndAPIPlusJSONBody(c.Server, body)
+// Corresponds with POST /v1/ai/investigations (the `CreateInvestigation` operationId).
+func (c *Client) CreateInvestigationWithApplicationVndAPIPlusJSONBody(ctx context.Context, body CreateInvestigationApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateInvestigationRequestWithApplicationVndAPIPlusJSONBody(c.Server, body)
 	if err != nil {
 		return nil, err
 	}
@@ -114891,13 +115431,13 @@ func (c *Client) CreateAIAutomationWithApplicationVndAPIPlusJSONBody(ctx context
 	return c.Client.Do(req)
 }
 
-// ListAIAutomationSlackChannels Lists synced Slack channels for AI Automations
+// GetInvestigation Retrieves an AI SRE investigation
 //
-// Channels Rootly has synced from the team's connected Slack workspace; any returned slack_channel_id is accepted as destination_slack_channel_id. When filter[search] is set, exact channel-name matches come first. When Slack channel user filtering is enabled, personal keys and OAuth tokens only see, and can only set new, channels the user can access in Slack; an update may resend the automation's current channel unchanged.
+// Requires OAuth scope `ai.investigations:read`. OAuth tokens also need `oc.alerts:read` for alert investigations and `ir.incidents:read` for incident investigations; API keys use the key's role. The verdict, hypotheses, evidence, causal chain and open questions.
 //
-// Corresponds with GET /v1/ai_automations/slack_channels (the `ListAIAutomationSlackChannels` operationId).
-func (c *Client) ListAIAutomationSlackChannels(ctx context.Context, params *ListAIAutomationSlackChannelsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewListAIAutomationSlackChannelsRequest(c.Server, params)
+// Corresponds with GET /v1/ai/investigations/{id} (the `GetInvestigation` operationId).
+func (c *Client) GetInvestigation(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetInvestigationRequest(c.Server, id)
 	if err != nil {
 		return nil, err
 	}
@@ -114908,13 +115448,13 @@ func (c *Client) ListAIAutomationSlackChannels(ctx context.Context, params *List
 	return c.Client.Do(req)
 }
 
-// ListAIAutomationSlackUserGroups Lists Slack user groups for AI Automations
+// CancelInvestigation Cancels an AI SRE investigation
 //
-// User groups from the team's connected Slack workspace, read live from Slack; any returned slack_user_group_id is accepted by usergroup trigger conditions.
+// Requires OAuth scope `ai.investigations:write`. OAuth tokens also need `oc.alerts:write` (alerts) or `ir.incidents:write` (incidents) and update access to the resource; API keys use the key's role.
 //
-// Corresponds with GET /v1/ai_automations/slack_user_groups (the `ListAIAutomationSlackUserGroups` operationId).
-func (c *Client) ListAIAutomationSlackUserGroups(ctx context.Context, params *ListAIAutomationSlackUserGroupsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewListAIAutomationSlackUserGroupsRequest(c.Server, params)
+// Corresponds with POST /v1/ai/investigations/{id}/cancel (the `CancelInvestigation` operationId).
+func (c *Client) CancelInvestigation(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCancelInvestigationRequest(c.Server, id)
 	if err != nil {
 		return nil, err
 	}
@@ -114925,233 +115465,13 @@ func (c *Client) ListAIAutomationSlackUserGroups(ctx context.Context, params *Li
 	return c.Client.Do(req)
 }
 
-// ListAIAutomationSlackUsers Lists Slack users for AI Automations
+// GetInvestigationProgress Retrieves AI SRE investigation progress
 //
-// Users, including bots, from the team's connected Slack workspace; any returned slack_user_id is accepted by user and item_user trigger conditions.
+// Requires OAuth scope `ai.investigations:read`. OAuth tokens also need `oc.alerts:read` for alert investigations and `ir.incidents:read` for incident investigations; API keys use the key's role. Returns immediately with steps and tool calls recorded after the cursor. Poll with after=next_cursor until done is true.
 //
-// Corresponds with GET /v1/ai_automations/slack_users (the `ListAIAutomationSlackUsers` operationId).
-func (c *Client) ListAIAutomationSlackUsers(ctx context.Context, params *ListAIAutomationSlackUsersParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewListAIAutomationSlackUsersRequest(c.Server, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// GetAIAutomationTriggerOptions Lists options for configuring AI Automation triggers
-//
-// Returns the source-of-truth options used by the AI Automation editor.
-//
-// Corresponds with GET /v1/ai_automations/trigger_options (the `GetAIAutomationTriggerOptions` operationId).
-func (c *Client) GetAIAutomationTriggerOptions(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetAIAutomationTriggerOptionsRequest(c.Server)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// ListAIAutomationRuns Lists AI automation runs
-//
-// Scans the 1000 most recent runs matching the filters; pagination and counts cover the visible runs in that window. When meta.next_scan_cursor is set, older runs exist beyond the window. Present only on the last page of the current scan window; finish page pagination before following it. Repeat the request with filter[scan_cursor] set to that opaque cursor to continue. Incident-linked runs are visible only when the caller's role permits access. OAuth tokens also need the `ir.incidents:read` scope; API keys use the key's role. Requires OAuth scope `ai.automations:write`.
-//
-// Corresponds with GET /v1/ai_automations/{ai_automation_id}/runs (the `ListAIAutomationRuns` operationId).
-func (c *Client) ListAIAutomationRuns(ctx context.Context, aiAutomationID openapi_types.UUID, params *ListAIAutomationRunsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewListAIAutomationRunsRequest(c.Server, aiAutomationID, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// RunAIAutomationWithBody Runs an AI automation now
-//
-// Requires OAuth scope `ai.automations:write`. For run-now requests with incident_id, OAuth tokens also need the `ir.incidents:read` scope; API keys use the key's role. Limited to 30 requests per credential per minute (fixed one-minute windows), separate from the default mutation rate limit; exceeding it returns 429 with Retry-After.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with POST /v1/ai_automations/{ai_automation_id}/runs (the `RunAIAutomation` operationId).
-func (c *Client) RunAIAutomationWithBody(ctx context.Context, aiAutomationID openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewRunAIAutomationRequestWithBody(c.Server, aiAutomationID, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// RunAIAutomationWithApplicationVndAPIPlusJSONBody Runs an AI automation now
-//
-// Requires OAuth scope `ai.automations:write`. For run-now requests with incident_id, OAuth tokens also need the `ir.incidents:read` scope; API keys use the key's role. Limited to 30 requests per credential per minute (fixed one-minute windows), separate from the default mutation rate limit; exceeding it returns 429 with Retry-After.
-//
-// Takes a body of the `application/vnd.api+json` content type.
-//
-// Corresponds with POST /v1/ai_automations/{ai_automation_id}/runs (the `RunAIAutomation` operationId).
-func (c *Client) RunAIAutomationWithApplicationVndAPIPlusJSONBody(ctx context.Context, aiAutomationID openapi_types.UUID, body RunAIAutomationApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewRunAIAutomationRequestWithApplicationVndAPIPlusJSONBody(c.Server, aiAutomationID, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// DeleteAIAutomation Deletes an AI automation
-//
-// Requires OAuth scope `ai.automations:write`. Retires the automation: it is disabled and soft-deleted, no longer listed or runnable; GET show and run-now return 404, while its existing run history remains readable via the runs endpoints.
-//
-// Corresponds with DELETE /v1/ai_automations/{id} (the `DeleteAIAutomation` operationId).
-func (c *Client) DeleteAIAutomation(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewDeleteAIAutomationRequest(c.Server, id)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// GetAIAutomation Gets an AI automation
-//
-// Requires OAuth scope `ai.automations:read`.
-//
-// Corresponds with GET /v1/ai_automations/{id} (the `GetAIAutomation` operationId).
-func (c *Client) GetAIAutomation(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetAIAutomationRequest(c.Server, id)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// UpdateAIAutomationWithBody Updates an AI automation
-//
-// Requires OAuth scope `ai.automations:write`. Read-only attributes are ignored on write.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with PATCH /v1/ai_automations/{id} (the `UpdateAIAutomation` operationId).
-func (c *Client) UpdateAIAutomationWithBody(ctx context.Context, id ID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewUpdateAIAutomationRequestWithBody(c.Server, id, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// UpdateAIAutomationWithApplicationVndAPIPlusJSONBody Updates an AI automation
-//
-// Requires OAuth scope `ai.automations:write`. Read-only attributes are ignored on write.
-//
-// Takes a body of the `application/vnd.api+json` content type.
-//
-// Corresponds with PATCH /v1/ai_automations/{id} (the `UpdateAIAutomation` operationId).
-func (c *Client) UpdateAIAutomationWithApplicationVndAPIPlusJSONBody(ctx context.Context, id ID, body UpdateAIAutomationApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewUpdateAIAutomationRequestWithApplicationVndAPIPlusJSONBody(c.Server, id, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// PutAIAutomationWithBody Updates an AI automation
-//
-// Requires OAuth scope `ai.automations:write`. Read-only attributes are ignored on write.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with PUT /v1/ai_automations/{id} (the `PutAIAutomation` operationId).
-func (c *Client) PutAIAutomationWithBody(ctx context.Context, id ID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewPutAIAutomationRequestWithBody(c.Server, id, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// PutAIAutomationWithApplicationVndAPIPlusJSONBody Updates an AI automation
-//
-// Requires OAuth scope `ai.automations:write`. Read-only attributes are ignored on write.
-//
-// Takes a body of the `application/vnd.api+json` content type.
-//
-// Corresponds with PUT /v1/ai_automations/{id} (the `PutAIAutomation` operationId).
-func (c *Client) PutAIAutomationWithApplicationVndAPIPlusJSONBody(ctx context.Context, id ID, body PutAIAutomationApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewPutAIAutomationRequestWithApplicationVndAPIPlusJSONBody(c.Server, id, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// RotateAIAutomationWebhookSecretWithBody Generates or rotates an AI Automation webhook trigger secret
-//
-// Returns a new secret for a webhook trigger. The previous secret stops working immediately. The secret is only returned in this response; Rootly stores a SHA-256 digest of it.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with POST /v1/ai_automations/{id}/triggers/{trigger_id}/webhook_secret (the `RotateAIAutomationWebhookSecret` operationId).
-func (c *Client) RotateAIAutomationWebhookSecretWithBody(ctx context.Context, id ID, triggerID string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewRotateAIAutomationWebhookSecretRequestWithBody(c.Server, id, triggerID, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// RotateAIAutomationWebhookSecretWithApplicationVndAPIPlusJSONBody Generates or rotates an AI Automation webhook trigger secret
-//
-// Returns a new secret for a webhook trigger. The previous secret stops working immediately. The secret is only returned in this response; Rootly stores a SHA-256 digest of it.
-//
-// Takes a body of the `application/vnd.api+json` content type.
-//
-// Corresponds with POST /v1/ai_automations/{id}/triggers/{trigger_id}/webhook_secret (the `RotateAIAutomationWebhookSecret` operationId).
-func (c *Client) RotateAIAutomationWebhookSecretWithApplicationVndAPIPlusJSONBody(ctx context.Context, id ID, triggerID string, body RotateAIAutomationWebhookSecretApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewRotateAIAutomationWebhookSecretRequestWithApplicationVndAPIPlusJSONBody(c.Server, id, triggerID, body)
+// Corresponds with GET /v1/ai/investigations/{id}/progress (the `GetInvestigationProgress` operationId).
+func (c *Client) GetInvestigationProgress(ctx context.Context, id ID, params *GetInvestigationProgressParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetInvestigationProgressRequest(c.Server, id, params)
 	if err != nil {
 		return nil, err
 	}
@@ -115166,7 +115486,7 @@ func (c *Client) RotateAIAutomationWebhookSecretWithApplicationVndAPIPlusJSONBod
 //
 // Requires OAuth scope `ai.skills:read`.
 //
-// Corresponds with GET /v1/ai_skills (the `ListAISkills` operationId).
+// Corresponds with GET /v1/ai/skills (the `ListAISkills` operationId).
 func (c *Client) ListAISkills(ctx context.Context, params *ListAISkillsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewListAISkillsRequest(c.Server, params)
 	if err != nil {
@@ -115185,7 +115505,7 @@ func (c *Client) ListAISkills(ctx context.Context, params *ListAISkillsParams, r
 //
 // Takes any type of body and a specified content type.
 //
-// Corresponds with POST /v1/ai_skills (the `CreateAISkill` operationId).
+// Corresponds with POST /v1/ai/skills (the `CreateAISkill` operationId).
 func (c *Client) CreateAISkillWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewCreateAISkillRequestWithBody(c.Server, contentType, body)
 	if err != nil {
@@ -115204,7 +115524,7 @@ func (c *Client) CreateAISkillWithBody(ctx context.Context, contentType string, 
 //
 // Takes a body of the `application/vnd.api+json` content type.
 //
-// Corresponds with POST /v1/ai_skills (the `CreateAISkill` operationId).
+// Corresponds with POST /v1/ai/skills (the `CreateAISkill` operationId).
 func (c *Client) CreateAISkillWithApplicationVndAPIPlusJSONBody(ctx context.Context, body CreateAISkillApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewCreateAISkillRequestWithApplicationVndAPIPlusJSONBody(c.Server, body)
 	if err != nil {
@@ -115221,7 +115541,7 @@ func (c *Client) CreateAISkillWithApplicationVndAPIPlusJSONBody(ctx context.Cont
 //
 // Requires OAuth scope `ai.skills:read`.
 //
-// Corresponds with GET /v1/ai_skills/{ai_skill_id}/versions (the `ListAISkillVersions` operationId).
+// Corresponds with GET /v1/ai/skills/{ai_skill_id}/versions (the `ListAISkillVersions` operationId).
 func (c *Client) ListAISkillVersions(ctx context.Context, aiSkillID string, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewListAISkillVersionsRequest(c.Server, aiSkillID)
 	if err != nil {
@@ -115238,7 +115558,7 @@ func (c *Client) ListAISkillVersions(ctx context.Context, aiSkillID string, reqE
 //
 // Requires OAuth scope `ai.skills:read`.
 //
-// Corresponds with GET /v1/ai_skills/{ai_skill_id}/versions/{version} (the `GetAISkillVersion` operationId).
+// Corresponds with GET /v1/ai/skills/{ai_skill_id}/versions/{version} (the `GetAISkillVersion` operationId).
 func (c *Client) GetAISkillVersion(ctx context.Context, aiSkillID string, version int, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewGetAISkillVersionRequest(c.Server, aiSkillID, version)
 	if err != nil {
@@ -115255,7 +115575,7 @@ func (c *Client) GetAISkillVersion(ctx context.Context, aiSkillID string, versio
 //
 // Requires OAuth scope `ai.skills:write`.
 //
-// Corresponds with DELETE /v1/ai_skills/{id} (the `DeleteAISkill` operationId).
+// Corresponds with DELETE /v1/ai/skills/{id} (the `DeleteAISkill` operationId).
 func (c *Client) DeleteAISkill(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewDeleteAISkillRequest(c.Server, id)
 	if err != nil {
@@ -115272,7 +115592,7 @@ func (c *Client) DeleteAISkill(ctx context.Context, id ID, reqEditors ...Request
 //
 // Requires OAuth scope `ai.skills:read`.
 //
-// Corresponds with GET /v1/ai_skills/{id} (the `GetAISkill` operationId).
+// Corresponds with GET /v1/ai/skills/{id} (the `GetAISkill` operationId).
 func (c *Client) GetAISkill(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewGetAISkillRequest(c.Server, id)
 	if err != nil {
@@ -115291,7 +115611,7 @@ func (c *Client) GetAISkill(ctx context.Context, id ID, reqEditors ...RequestEdi
 //
 // Takes any type of body and a specified content type.
 //
-// Corresponds with PATCH /v1/ai_skills/{id} (the `UpdateAISkill` operationId).
+// Corresponds with PATCH /v1/ai/skills/{id} (the `UpdateAISkill` operationId).
 func (c *Client) UpdateAISkillWithBody(ctx context.Context, id ID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewUpdateAISkillRequestWithBody(c.Server, id, contentType, body)
 	if err != nil {
@@ -115310,7 +115630,7 @@ func (c *Client) UpdateAISkillWithBody(ctx context.Context, id ID, contentType s
 //
 // Takes a body of the `application/vnd.api+json` content type.
 //
-// Corresponds with PATCH /v1/ai_skills/{id} (the `UpdateAISkill` operationId).
+// Corresponds with PATCH /v1/ai/skills/{id} (the `UpdateAISkill` operationId).
 func (c *Client) UpdateAISkillWithApplicationVndAPIPlusJSONBody(ctx context.Context, id ID, body UpdateAISkillApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewUpdateAISkillRequestWithApplicationVndAPIPlusJSONBody(c.Server, id, body)
 	if err != nil {
@@ -115329,7 +115649,7 @@ func (c *Client) UpdateAISkillWithApplicationVndAPIPlusJSONBody(ctx context.Cont
 //
 // Takes any type of body and a specified content type.
 //
-// Corresponds with PUT /v1/ai_skills/{id} (the `PutAISkill` operationId).
+// Corresponds with PUT /v1/ai/skills/{id} (the `PutAISkill` operationId).
 func (c *Client) PutAISkillWithBody(ctx context.Context, id ID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewPutAISkillRequestWithBody(c.Server, id, contentType, body)
 	if err != nil {
@@ -115348,7 +115668,7 @@ func (c *Client) PutAISkillWithBody(ctx context.Context, id ID, contentType stri
 //
 // Takes a body of the `application/vnd.api+json` content type.
 //
-// Corresponds with PUT /v1/ai_skills/{id} (the `PutAISkill` operationId).
+// Corresponds with PUT /v1/ai/skills/{id} (the `PutAISkill` operationId).
 func (c *Client) PutAISkillWithApplicationVndAPIPlusJSONBody(ctx context.Context, id ID, body PutAISkillApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewPutAISkillRequestWithApplicationVndAPIPlusJSONBody(c.Server, id, body)
 	if err != nil {
@@ -115365,7 +115685,7 @@ func (c *Client) PutAISkillWithApplicationVndAPIPlusJSONBody(ctx context.Context
 //
 // Returns audit events for AI tool calls and connector calls.
 //
-// Corresponds with GET /v1/ai_tool_call_events (the `ListAiToolCallEvents` operationId).
+// Corresponds with GET /v1/ai/tool_call_events (the `ListAiToolCallEvents` operationId).
 func (c *Client) ListAiToolCallEvents(ctx context.Context, params *ListAiToolCallEventsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewListAiToolCallEventsRequest(c.Server, params)
 	if err != nil {
@@ -117042,7 +117362,7 @@ func (c *Client) UpdateAPIKeyWithApplicationVndAPIPlusJSONBody(ctx context.Conte
 //
 // Rotate an API key's token. Issues a new secret token and returns it — **the new token is only shown once**, so store it securely.
 //
-// **Self-only:** You can only rotate the API key that was used to authenticate this request. Attempting to rotate a different key returns `403 Forbidden`.
+// **Self-only:** You can only rotate the API key that was used to authenticate this request. Attempting to rotate a different key returns `404 Not Found` when the authenticating key is not authorized to manage it, or `403 Forbidden` when it is.
 //
 // **Grace period:** When enabled for your organization, the previous token remains valid after rotation, giving you time to deploy the new token without downtime. Pass `grace_period_minutes` (integer, 0–1440, default 30) to control how long the old token stays valid. Set to 0 to immediately invalidate the old token. The `grace_period_ends_at` field in the response confirms the exact time the old token will stop working.
 //
@@ -117073,7 +117393,7 @@ func (c *Client) RotateAPIKeyWithBody(ctx context.Context, id ID, contentType st
 //
 // Rotate an API key's token. Issues a new secret token and returns it — **the new token is only shown once**, so store it securely.
 //
-// **Self-only:** You can only rotate the API key that was used to authenticate this request. Attempting to rotate a different key returns `403 Forbidden`.
+// **Self-only:** You can only rotate the API key that was used to authenticate this request. Attempting to rotate a different key returns `404 Not Found` when the authenticating key is not authorized to manage it, or `403 Forbidden` when it is.
 //
 // **Grace period:** When enabled for your organization, the previous token remains valid after rotation, giving you time to deploy the new token without downtime. Pass `grace_period_minutes` (integer, 0–1440, default 30) to control how long the old token stays valid. Set to 0 to immediately invalidate the old token. The `grace_period_ends_at` field in the response confirms the exact time the old token will stop working.
 //
@@ -124493,110 +124813,6 @@ func (c *Client) CreateIncidentSubStatusWithApplicationVndAPIPlusJSONBody(ctx co
 	return c.Client.Do(req)
 }
 
-// ListInvestigations Lists AI SRE investigations
-//
-// Investigations on alerts and incidents the caller can read, newest first.
-//
-// Corresponds with GET /v1/investigations (the `ListInvestigations` operationId).
-func (c *Client) ListInvestigations(ctx context.Context, params *ListInvestigationsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewListInvestigationsRequest(c.Server, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// CreateInvestigationWithBody Starts an AI SRE investigation
-//
-// Starts an investigation on an alert or incident you can update, or returns the one already running.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with POST /v1/investigations (the `CreateInvestigation` operationId).
-func (c *Client) CreateInvestigationWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateInvestigationRequestWithBody(c.Server, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// CreateInvestigationWithApplicationVndAPIPlusJSONBody Starts an AI SRE investigation
-//
-// Starts an investigation on an alert or incident you can update, or returns the one already running.
-//
-// Takes a body of the `application/vnd.api+json` content type.
-//
-// Corresponds with POST /v1/investigations (the `CreateInvestigation` operationId).
-func (c *Client) CreateInvestigationWithApplicationVndAPIPlusJSONBody(ctx context.Context, body CreateInvestigationApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateInvestigationRequestWithApplicationVndAPIPlusJSONBody(c.Server, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// GetInvestigation Retrieves an AI SRE investigation
-//
-// The verdict, hypotheses, evidence, causal chain and open questions.
-//
-// Corresponds with GET /v1/investigations/{id} (the `GetInvestigation` operationId).
-func (c *Client) GetInvestigation(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetInvestigationRequest(c.Server, id)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// CancelInvestigation Cancels an AI SRE investigation
-//
-// Corresponds with POST /v1/investigations/{id}/cancel (the `CancelInvestigation` operationId).
-func (c *Client) CancelInvestigation(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCancelInvestigationRequest(c.Server, id)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// GetInvestigationProgress Retrieves AI SRE investigation progress
-//
-// Returns immediately with steps and tool calls recorded after the cursor. Poll with after=next_cursor until done is true.
-//
-// Corresponds with GET /v1/investigations/{id}/progress (the `GetInvestigationProgress` operationId).
-func (c *Client) GetInvestigationProgress(ctx context.Context, id ID, params *GetInvestigationProgressParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetInvestigationProgressRequest(c.Server, id, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
 // GetIPAllowlist Retrieves the organization's browser IP allowlist
 //
 // Corresponds with GET /v1/ip_allowlist (the `GetIPAllowlist` operationId).
@@ -131422,6 +131638,839 @@ func NewUpdateIncidentActionItemRequestWithBody(server string, id ID, contentTyp
 	return req, nil
 }
 
+// NewGetAIAutomationRunRequest constructs an http.Request for the GetAIAutomationRun method
+func NewGetAIAutomationRunRequest(server string, id ID) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "id", id, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/ai/automation_runs/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewListAIAutomationsRequest constructs an http.Request for the ListAIAutomations method
+func NewListAIAutomationsRequest(server string, params *ListAIAutomationsParams) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/ai/automations")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.FilterSearch != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[search]", *params.FilterSearch, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterEnabled != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[enabled]", *params.FilterEnabled, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "boolean", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterTriggerKind != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[trigger_kind]", *params.FilterTriggerKind, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterEventName != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[event_name]", *params.FilterEventName, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterCreatedAtGte != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[created_at][gte]", *params.FilterCreatedAtGte, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: "date-time"}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterCreatedAtLte != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[created_at][lte]", *params.FilterCreatedAtLte, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: "date-time"}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Sort != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "sort", *params.Sort, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewCreateAIAutomationRequestWithApplicationVndAPIPlusJSONBody calls the generic CreateAIAutomation builder with application/vnd.api+json body
+func NewCreateAIAutomationRequestWithApplicationVndAPIPlusJSONBody(server string, body CreateAIAutomationApplicationVndAPIPlusJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewCreateAIAutomationRequestWithBody(server, "application/vnd.api+json", bodyReader)
+}
+
+// NewCreateAIAutomationRequestWithBody constructs an http.Request for the CreateAIAutomation method, with any body, and a specified content type
+func NewCreateAIAutomationRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/ai/automations")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewListAIAutomationSlackChannelsRequest constructs an http.Request for the ListAIAutomationSlackChannels method
+func NewListAIAutomationSlackChannelsRequest(server string, params *ListAIAutomationSlackChannelsParams) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/ai/automations/slack_channels")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.FilterSearch != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[search]", *params.FilterSearch, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.PageNumber != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "page[number]", *params.PageNumber, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.PageSize != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "page[size]", *params.PageSize, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewListAIAutomationSlackUserGroupsRequest constructs an http.Request for the ListAIAutomationSlackUserGroups method
+func NewListAIAutomationSlackUserGroupsRequest(server string, params *ListAIAutomationSlackUserGroupsParams) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/ai/automations/slack_user_groups")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.FilterSearch != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[search]", *params.FilterSearch, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.PageNumber != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "page[number]", *params.PageNumber, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.PageSize != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "page[size]", *params.PageSize, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewListAIAutomationSlackUsersRequest constructs an http.Request for the ListAIAutomationSlackUsers method
+func NewListAIAutomationSlackUsersRequest(server string, params *ListAIAutomationSlackUsersParams) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/ai/automations/slack_users")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.FilterSearch != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[search]", *params.FilterSearch, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.PageNumber != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "page[number]", *params.PageNumber, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.PageSize != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "page[size]", *params.PageSize, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewGetAIAutomationTriggerOptionsRequest constructs an http.Request for the GetAIAutomationTriggerOptions method
+func NewGetAIAutomationTriggerOptionsRequest(server string) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/ai/automations/trigger_options")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewListAIAutomationRunsRequest constructs an http.Request for the ListAIAutomationRuns method
+func NewListAIAutomationRunsRequest(server string, aiAutomationID openapi_types.UUID, params *ListAIAutomationRunsParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "ai_automation_id", aiAutomationID, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/ai/automations/%s/runs", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.FilterStatus != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[status]", *params.FilterStatus, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterTriggerKind != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[trigger_kind]", *params.FilterTriggerKind, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterScanCursor != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[scan_cursor]", *params.FilterScanCursor, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterCreatedAtGte != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[created_at][gte]", *params.FilterCreatedAtGte, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: "date-time"}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FilterCreatedAtLte != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[created_at][lte]", *params.FilterCreatedAtLte, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: "date-time"}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewRunAIAutomationRequestWithApplicationVndAPIPlusJSONBody calls the generic RunAIAutomation builder with application/vnd.api+json body
+func NewRunAIAutomationRequestWithApplicationVndAPIPlusJSONBody(server string, aiAutomationID openapi_types.UUID, body RunAIAutomationApplicationVndAPIPlusJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewRunAIAutomationRequestWithBody(server, aiAutomationID, "application/vnd.api+json", bodyReader)
+}
+
+// NewRunAIAutomationRequestWithBody constructs an http.Request for the RunAIAutomation method, with any body, and a specified content type
+func NewRunAIAutomationRequestWithBody(server string, aiAutomationID openapi_types.UUID, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "ai_automation_id", aiAutomationID, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/ai/automations/%s/runs", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewDeleteAIAutomationRequest constructs an http.Request for the DeleteAIAutomation method
+func NewDeleteAIAutomationRequest(server string, id ID) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "id", id, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/ai/automations/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodDelete, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewGetAIAutomationRequest constructs an http.Request for the GetAIAutomation method
+func NewGetAIAutomationRequest(server string, id ID) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "id", id, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/ai/automations/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewUpdateAIAutomationRequestWithApplicationVndAPIPlusJSONBody calls the generic UpdateAIAutomation builder with application/vnd.api+json body
+func NewUpdateAIAutomationRequestWithApplicationVndAPIPlusJSONBody(server string, id ID, body UpdateAIAutomationApplicationVndAPIPlusJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewUpdateAIAutomationRequestWithBody(server, id, "application/vnd.api+json", bodyReader)
+}
+
+// NewUpdateAIAutomationRequestWithBody constructs an http.Request for the UpdateAIAutomation method, with any body, and a specified content type
+func NewUpdateAIAutomationRequestWithBody(server string, id ID, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "id", id, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/ai/automations/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPatch, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewPutAIAutomationRequestWithApplicationVndAPIPlusJSONBody calls the generic PutAIAutomation builder with application/vnd.api+json body
+func NewPutAIAutomationRequestWithApplicationVndAPIPlusJSONBody(server string, id ID, body PutAIAutomationApplicationVndAPIPlusJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewPutAIAutomationRequestWithBody(server, id, "application/vnd.api+json", bodyReader)
+}
+
+// NewPutAIAutomationRequestWithBody constructs an http.Request for the PutAIAutomation method, with any body, and a specified content type
+func NewPutAIAutomationRequestWithBody(server string, id ID, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "id", id, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/ai/automations/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPut, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewRotateAIAutomationWebhookSecretRequestWithApplicationVndAPIPlusJSONBody calls the generic RotateAIAutomationWebhookSecret builder with application/vnd.api+json body
+func NewRotateAIAutomationWebhookSecretRequestWithApplicationVndAPIPlusJSONBody(server string, id ID, triggerID string, body RotateAIAutomationWebhookSecretApplicationVndAPIPlusJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewRotateAIAutomationWebhookSecretRequestWithBody(server, id, triggerID, "application/vnd.api+json", bodyReader)
+}
+
+// NewRotateAIAutomationWebhookSecretRequestWithBody constructs an http.Request for the RotateAIAutomationWebhookSecret method, with any body, and a specified content type
+func NewRotateAIAutomationWebhookSecretRequestWithBody(server string, id ID, triggerID string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "id", id, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "trigger_id", triggerID, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/ai/automations/%s/triggers/%s/webhook_secret", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
 // NewCreateAiChatRequest constructs an http.Request for the CreateAiChat method
 func NewCreateAiChatRequest(server string, params *CreateAiChatParams) (*http.Request, error) {
 	var err error
@@ -131894,42 +132943,8 @@ func NewStreamAiChatRequest(server string, params *StreamAiChatParams) (*http.Re
 	return req, nil
 }
 
-// NewGetAIAutomationRunRequest constructs an http.Request for the GetAIAutomationRun method
-func NewGetAIAutomationRunRequest(server string, id ID) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "id", id, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/ai_automation_runs/%s", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewListAIAutomationsRequest constructs an http.Request for the ListAIAutomations method
-func NewListAIAutomationsRequest(server string, params *ListAIAutomationsParams) (*http.Request, error) {
+// NewListInvestigationsRequest constructs an http.Request for the ListInvestigations method
+func NewListInvestigationsRequest(server string, params *ListInvestigationsParams) (*http.Request, error) {
 	var err error
 
 	serverURL, err := url.Parse(server)
@@ -131937,7 +132952,7 @@ func NewListAIAutomationsRequest(server string, params *ListAIAutomationsParams)
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/v1/ai_automations")
+	operationPath := fmt.Sprintf("/v1/ai/investigations")
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -131956,9 +132971,9 @@ func NewListAIAutomationsRequest(server string, params *ListAIAutomationsParams)
 		// per the OpenAPI spec (e.g. "color=blue,black,brown").
 		var rawQueryFragments []string
 
-		if params.FilterSearch != nil {
+		if params.FilterAlertID != nil {
 
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[search]", *params.FilterSearch, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[alert_id]", *params.FilterAlertID, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: "uuid"}); err != nil {
 				return nil, err
 			} else {
 				for _, qp := range strings.Split(queryFrag, "&") {
@@ -131968,9 +132983,9 @@ func NewListAIAutomationsRequest(server string, params *ListAIAutomationsParams)
 
 		}
 
-		if params.FilterEnabled != nil {
+		if params.FilterIncidentID != nil {
 
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[enabled]", *params.FilterEnabled, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "boolean", Format: ""}); err != nil {
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[incident_id]", *params.FilterIncidentID, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: "uuid"}); err != nil {
 				return nil, err
 			} else {
 				for _, qp := range strings.Split(queryFrag, "&") {
@@ -131979,416 +132994,6 @@ func NewListAIAutomationsRequest(server string, params *ListAIAutomationsParams)
 			}
 
 		}
-
-		if params.FilterTriggerKind != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[trigger_kind]", *params.FilterTriggerKind, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.FilterEventName != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[event_name]", *params.FilterEventName, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.FilterCreatedAtGte != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[created_at][gte]", *params.FilterCreatedAtGte, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: "date-time"}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.FilterCreatedAtLte != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[created_at][lte]", *params.FilterCreatedAtLte, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: "date-time"}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Sort != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "sort", *params.Sort, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewCreateAIAutomationRequestWithApplicationVndAPIPlusJSONBody calls the generic CreateAIAutomation builder with application/vnd.api+json body
-func NewCreateAIAutomationRequestWithApplicationVndAPIPlusJSONBody(server string, body CreateAIAutomationApplicationVndAPIPlusJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewCreateAIAutomationRequestWithBody(server, "application/vnd.api+json", bodyReader)
-}
-
-// NewCreateAIAutomationRequestWithBody constructs an http.Request for the CreateAIAutomation method, with any body, and a specified content type
-func NewCreateAIAutomationRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/ai_automations")
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewListAIAutomationSlackChannelsRequest constructs an http.Request for the ListAIAutomationSlackChannels method
-func NewListAIAutomationSlackChannelsRequest(server string, params *ListAIAutomationSlackChannelsParams) (*http.Request, error) {
-	var err error
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/ai_automations/slack_channels")
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if params.FilterSearch != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[search]", *params.FilterSearch, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.PageNumber != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "page[number]", *params.PageNumber, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.PageSize != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "page[size]", *params.PageSize, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewListAIAutomationSlackUserGroupsRequest constructs an http.Request for the ListAIAutomationSlackUserGroups method
-func NewListAIAutomationSlackUserGroupsRequest(server string, params *ListAIAutomationSlackUserGroupsParams) (*http.Request, error) {
-	var err error
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/ai_automations/slack_user_groups")
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if params.FilterSearch != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[search]", *params.FilterSearch, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.PageNumber != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "page[number]", *params.PageNumber, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.PageSize != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "page[size]", *params.PageSize, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewListAIAutomationSlackUsersRequest constructs an http.Request for the ListAIAutomationSlackUsers method
-func NewListAIAutomationSlackUsersRequest(server string, params *ListAIAutomationSlackUsersParams) (*http.Request, error) {
-	var err error
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/ai_automations/slack_users")
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if params.FilterSearch != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[search]", *params.FilterSearch, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.PageNumber != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "page[number]", *params.PageNumber, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.PageSize != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "page[size]", *params.PageSize, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewGetAIAutomationTriggerOptionsRequest constructs an http.Request for the GetAIAutomationTriggerOptions method
-func NewGetAIAutomationTriggerOptionsRequest(server string) (*http.Request, error) {
-	var err error
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/ai_automations/trigger_options")
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewListAIAutomationRunsRequest constructs an http.Request for the ListAIAutomationRuns method
-func NewListAIAutomationRunsRequest(server string, aiAutomationID openapi_types.UUID, params *ListAIAutomationRunsParams) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "ai_automation_id", aiAutomationID, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/ai_automations/%s/runs", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
 
 		if params.FilterStatus != nil {
 
@@ -132402,9 +133007,9 @@ func NewListAIAutomationRunsRequest(server string, aiAutomationID openapi_types.
 
 		}
 
-		if params.FilterTriggerKind != nil {
+		if params.FilterOutcome != nil {
 
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[trigger_kind]", *params.FilterTriggerKind, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[outcome]", *params.FilterOutcome, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
 				return nil, err
 			} else {
 				for _, qp := range strings.Split(queryFrag, "&") {
@@ -132414,9 +133019,9 @@ func NewListAIAutomationRunsRequest(server string, aiAutomationID openapi_types.
 
 		}
 
-		if params.FilterScanCursor != nil {
+		if params.PageNumber != nil {
 
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[scan_cursor]", *params.FilterScanCursor, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "page[number]", *params.PageNumber, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: ""}); err != nil {
 				return nil, err
 			} else {
 				for _, qp := range strings.Split(queryFrag, "&") {
@@ -132426,21 +133031,9 @@ func NewListAIAutomationRunsRequest(server string, aiAutomationID openapi_types.
 
 		}
 
-		if params.FilterCreatedAtGte != nil {
+		if params.PageSize != nil {
 
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[created_at][gte]", *params.FilterCreatedAtGte, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: "date-time"}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.FilterCreatedAtLte != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[created_at][lte]", *params.FilterCreatedAtLte, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: "date-time"}); err != nil {
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "page[size]", *params.PageSize, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: ""}); err != nil {
 				return nil, err
 			} else {
 				for _, qp := range strings.Split(queryFrag, "&") {
@@ -132464,34 +133057,27 @@ func NewListAIAutomationRunsRequest(server string, aiAutomationID openapi_types.
 	return req, nil
 }
 
-// NewRunAIAutomationRequestWithApplicationVndAPIPlusJSONBody calls the generic RunAIAutomation builder with application/vnd.api+json body
-func NewRunAIAutomationRequestWithApplicationVndAPIPlusJSONBody(server string, aiAutomationID openapi_types.UUID, body RunAIAutomationApplicationVndAPIPlusJSONRequestBody) (*http.Request, error) {
+// NewCreateInvestigationRequestWithApplicationVndAPIPlusJSONBody calls the generic CreateInvestigation builder with application/vnd.api+json body
+func NewCreateInvestigationRequestWithApplicationVndAPIPlusJSONBody(server string, body CreateInvestigationApplicationVndAPIPlusJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
 	buf, err := json.Marshal(body)
 	if err != nil {
 		return nil, err
 	}
 	bodyReader = bytes.NewReader(buf)
-	return NewRunAIAutomationRequestWithBody(server, aiAutomationID, "application/vnd.api+json", bodyReader)
+	return NewCreateInvestigationRequestWithBody(server, "application/vnd.api+json", bodyReader)
 }
 
-// NewRunAIAutomationRequestWithBody constructs an http.Request for the RunAIAutomation method, with any body, and a specified content type
-func NewRunAIAutomationRequestWithBody(server string, aiAutomationID openapi_types.UUID, contentType string, body io.Reader) (*http.Request, error) {
+// NewCreateInvestigationRequestWithBody constructs an http.Request for the CreateInvestigation method, with any body, and a specified content type
+func NewCreateInvestigationRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
 	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "ai_automation_id", aiAutomationID, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
-	if err != nil {
-		return nil, err
-	}
 
 	serverURL, err := url.Parse(server)
 	if err != nil {
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/v1/ai_automations/%s/runs", pathParam0)
+	operationPath := fmt.Sprintf("/v1/ai/investigations")
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -132511,8 +133097,8 @@ func NewRunAIAutomationRequestWithBody(server string, aiAutomationID openapi_typ
 	return req, nil
 }
 
-// NewDeleteAIAutomationRequest constructs an http.Request for the DeleteAIAutomation method
-func NewDeleteAIAutomationRequest(server string, id ID) (*http.Request, error) {
+// NewGetInvestigationRequest constructs an http.Request for the GetInvestigation method
+func NewGetInvestigationRequest(server string, id ID) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -132527,41 +133113,7 @@ func NewDeleteAIAutomationRequest(server string, id ID) (*http.Request, error) {
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/v1/ai_automations/%s", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest(http.MethodDelete, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewGetAIAutomationRequest constructs an http.Request for the GetAIAutomation method
-func NewGetAIAutomationRequest(server string, id ID) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "id", id, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/ai_automations/%s", pathParam0)
+	operationPath := fmt.Sprintf("/v1/ai/investigations/%s", pathParam0)
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -132579,19 +133131,8 @@ func NewGetAIAutomationRequest(server string, id ID) (*http.Request, error) {
 	return req, nil
 }
 
-// NewUpdateAIAutomationRequestWithApplicationVndAPIPlusJSONBody calls the generic UpdateAIAutomation builder with application/vnd.api+json body
-func NewUpdateAIAutomationRequestWithApplicationVndAPIPlusJSONBody(server string, id ID, body UpdateAIAutomationApplicationVndAPIPlusJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewUpdateAIAutomationRequestWithBody(server, id, "application/vnd.api+json", bodyReader)
-}
-
-// NewUpdateAIAutomationRequestWithBody constructs an http.Request for the UpdateAIAutomation method, with any body, and a specified content type
-func NewUpdateAIAutomationRequestWithBody(server string, id ID, contentType string, body io.Reader) (*http.Request, error) {
+// NewCancelInvestigationRequest constructs an http.Request for the CancelInvestigation method
+func NewCancelInvestigationRequest(server string, id ID) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -132606,7 +133147,7 @@ func NewUpdateAIAutomationRequestWithBody(server string, id ID, contentType stri
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/v1/ai_automations/%s", pathParam0)
+	operationPath := fmt.Sprintf("/v1/ai/investigations/%s/cancel", pathParam0)
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -132616,29 +133157,16 @@ func NewUpdateAIAutomationRequestWithBody(server string, id ID, contentType stri
 		return nil, err
 	}
 
-	req, err := http.NewRequest(http.MethodPatch, queryURL.String(), body)
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), nil)
 	if err != nil {
 		return nil, err
 	}
-
-	req.Header.Add("Content-Type", contentType)
 
 	return req, nil
 }
 
-// NewPutAIAutomationRequestWithApplicationVndAPIPlusJSONBody calls the generic PutAIAutomation builder with application/vnd.api+json body
-func NewPutAIAutomationRequestWithApplicationVndAPIPlusJSONBody(server string, id ID, body PutAIAutomationApplicationVndAPIPlusJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewPutAIAutomationRequestWithBody(server, id, "application/vnd.api+json", bodyReader)
-}
-
-// NewPutAIAutomationRequestWithBody constructs an http.Request for the PutAIAutomation method, with any body, and a specified content type
-func NewPutAIAutomationRequestWithBody(server string, id ID, contentType string, body io.Reader) (*http.Request, error) {
+// NewGetInvestigationProgressRequest constructs an http.Request for the GetInvestigationProgress method
+func NewGetInvestigationProgressRequest(server string, id ID, params *GetInvestigationProgressParams) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -132653,7 +133181,7 @@ func NewPutAIAutomationRequestWithBody(server string, id ID, contentType string,
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/v1/ai_automations/%s", pathParam0)
+	operationPath := fmt.Sprintf("/v1/ai/investigations/%s/progress", pathParam0)
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -132663,66 +133191,37 @@ func NewPutAIAutomationRequestWithBody(server string, id ID, contentType string,
 		return nil, err
 	}
 
-	req, err := http.NewRequest(http.MethodPut, queryURL.String(), body)
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.After != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "after", *params.After, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
 	if err != nil {
 		return nil, err
 	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewRotateAIAutomationWebhookSecretRequestWithApplicationVndAPIPlusJSONBody calls the generic RotateAIAutomationWebhookSecret builder with application/vnd.api+json body
-func NewRotateAIAutomationWebhookSecretRequestWithApplicationVndAPIPlusJSONBody(server string, id ID, triggerID string, body RotateAIAutomationWebhookSecretApplicationVndAPIPlusJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewRotateAIAutomationWebhookSecretRequestWithBody(server, id, triggerID, "application/vnd.api+json", bodyReader)
-}
-
-// NewRotateAIAutomationWebhookSecretRequestWithBody constructs an http.Request for the RotateAIAutomationWebhookSecret method, with any body, and a specified content type
-func NewRotateAIAutomationWebhookSecretRequestWithBody(server string, id ID, triggerID string, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "id", id, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	var pathParam1 string
-
-	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "trigger_id", triggerID, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/ai_automations/%s/triggers/%s/webhook_secret", pathParam0, pathParam1)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
 
 	return req, nil
 }
@@ -132736,7 +133235,7 @@ func NewListAISkillsRequest(server string, params *ListAISkillsParams) (*http.Re
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/v1/ai_skills")
+	operationPath := fmt.Sprintf("/v1/ai/skills")
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -132909,7 +133408,7 @@ func NewCreateAISkillRequestWithBody(server string, contentType string, body io.
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/v1/ai_skills")
+	operationPath := fmt.Sprintf("/v1/ai/skills")
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -132945,7 +133444,7 @@ func NewListAISkillVersionsRequest(server string, aiSkillID string) (*http.Reque
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/v1/ai_skills/%s/versions", pathParam0)
+	operationPath := fmt.Sprintf("/v1/ai/skills/%s/versions", pathParam0)
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -132986,7 +133485,7 @@ func NewGetAISkillVersionRequest(server string, aiSkillID string, version int) (
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/v1/ai_skills/%s/versions/%s", pathParam0, pathParam1)
+	operationPath := fmt.Sprintf("/v1/ai/skills/%s/versions/%s", pathParam0, pathParam1)
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -133020,7 +133519,7 @@ func NewDeleteAISkillRequest(server string, id ID) (*http.Request, error) {
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/v1/ai_skills/%s", pathParam0)
+	operationPath := fmt.Sprintf("/v1/ai/skills/%s", pathParam0)
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -133054,7 +133553,7 @@ func NewGetAISkillRequest(server string, id ID) (*http.Request, error) {
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/v1/ai_skills/%s", pathParam0)
+	operationPath := fmt.Sprintf("/v1/ai/skills/%s", pathParam0)
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -133099,7 +133598,7 @@ func NewUpdateAISkillRequestWithBody(server string, id ID, contentType string, b
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/v1/ai_skills/%s", pathParam0)
+	operationPath := fmt.Sprintf("/v1/ai/skills/%s", pathParam0)
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -133146,7 +133645,7 @@ func NewPutAISkillRequestWithBody(server string, id ID, contentType string, body
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/v1/ai_skills/%s", pathParam0)
+	operationPath := fmt.Sprintf("/v1/ai/skills/%s", pathParam0)
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -133175,7 +133674,7 @@ func NewListAiToolCallEventsRequest(server string, params *ListAiToolCallEventsP
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/v1/ai_tool_call_events")
+	operationPath := fmt.Sprintf("/v1/ai/tool_call_events")
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -158516,6 +159015,18 @@ func NewListIncidentStatusPagesRequest(server string, incidentID string, params 
 
 		}
 
+		if params.Sort != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "sort", *params.Sort, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
 		if encoded := queryValues.Encode(); encoded != "" {
 			rawQueryFragments = append(rawQueryFragments, encoded)
 		}
@@ -158777,289 +159288,6 @@ func NewCreateIncidentSubStatusRequestWithBody(server string, incidentID string,
 	}
 
 	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewListInvestigationsRequest constructs an http.Request for the ListInvestigations method
-func NewListInvestigationsRequest(server string, params *ListInvestigationsParams) (*http.Request, error) {
-	var err error
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/investigations")
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if params.FilterAlertID != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[alert_id]", *params.FilterAlertID, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: "uuid"}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.FilterIncidentID != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[incident_id]", *params.FilterIncidentID, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: "uuid"}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.FilterStatus != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[status]", *params.FilterStatus, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.FilterOutcome != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[outcome]", *params.FilterOutcome, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.PageNumber != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "page[number]", *params.PageNumber, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.PageSize != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "page[size]", *params.PageSize, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewCreateInvestigationRequestWithApplicationVndAPIPlusJSONBody calls the generic CreateInvestigation builder with application/vnd.api+json body
-func NewCreateInvestigationRequestWithApplicationVndAPIPlusJSONBody(server string, body CreateInvestigationApplicationVndAPIPlusJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewCreateInvestigationRequestWithBody(server, "application/vnd.api+json", bodyReader)
-}
-
-// NewCreateInvestigationRequestWithBody constructs an http.Request for the CreateInvestigation method, with any body, and a specified content type
-func NewCreateInvestigationRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/investigations")
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewGetInvestigationRequest constructs an http.Request for the GetInvestigation method
-func NewGetInvestigationRequest(server string, id ID) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "id", id, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/investigations/%s", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewCancelInvestigationRequest constructs an http.Request for the CancelInvestigation method
-func NewCancelInvestigationRequest(server string, id ID) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "id", id, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/investigations/%s/cancel", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest(http.MethodPost, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewGetInvestigationProgressRequest constructs an http.Request for the GetInvestigationProgress method
-func NewGetInvestigationProgressRequest(server string, id ID, params *GetInvestigationProgressParams) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "id", id, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/investigations/%s/progress", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if params.After != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "after", *params.After, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
 
 	return req, nil
 }
@@ -172621,6 +172849,18 @@ func NewListUsersRequest(server string, params *ListUsersParams) (*http.Request,
 
 		}
 
+		if params.FilterScimManaged != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter[scim_managed]", *params.FilterScimManaged, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "boolean", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
 		if params.Sort != nil {
 
 			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "sort", *params.Sort, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
@@ -176037,6 +176277,177 @@ type ClientWithResponsesInterface interface {
 	// Corresponds with PUT /v1/action_items/{id} (the `UpdateIncidentActionItem` operationId).
 	UpdateIncidentActionItemWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, id ID, body UpdateIncidentActionItemApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateIncidentActionItemResponse, error)
 
+	// GetAIAutomationRunWithResponse Gets an AI automation run
+	//
+	// Incident-linked runs are visible only when the caller's role permits access. OAuth tokens also need the `ir.incidents:read` scope; API keys use the key's role. Requires OAuth scope `ai.automations:write`.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /v1/ai/automation_runs/{id} (the `GetAIAutomationRun` operationId).
+	GetAIAutomationRunWithResponse(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*GetAIAutomationRunResponse, error)
+
+	// ListAIAutomationsWithResponse Lists AI automations
+	//
+	// Requires OAuth scope `ai.automations:read`.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /v1/ai/automations (the `ListAIAutomations` operationId).
+	ListAIAutomationsWithResponse(ctx context.Context, params *ListAIAutomationsParams, reqEditors ...RequestEditorFn) (*ListAIAutomationsResponse, error)
+
+	// CreateAIAutomationWithBodyWithResponse Creates an AI automation
+	//
+	// Requires OAuth scope `ai.automations:write`. Read-only attributes are ignored on write.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/ai/automations (the `CreateAIAutomation` operationId).
+	CreateAIAutomationWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateAIAutomationResponse, error)
+
+	// CreateAIAutomationWithApplicationVndAPIPlusJSONBodyWithResponse Creates an AI automation
+	//
+	// Requires OAuth scope `ai.automations:write`. Read-only attributes are ignored on write.
+	//
+	// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/ai/automations (the `CreateAIAutomation` operationId).
+	CreateAIAutomationWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, body CreateAIAutomationApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateAIAutomationResponse, error)
+
+	// ListAIAutomationSlackChannelsWithResponse Lists synced Slack channels for AI Automations
+	//
+	// Channels Rootly has synced from the team's connected Slack workspace; any returned slack_channel_id is accepted as destination_slack_channel_id. When filter[search] is set, exact channel-name matches come first. When Slack channel user filtering is enabled, personal keys and OAuth tokens only see, and can only set new, channels the user can access in Slack; an update may resend the automation's current channel unchanged.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /v1/ai/automations/slack_channels (the `ListAIAutomationSlackChannels` operationId).
+	ListAIAutomationSlackChannelsWithResponse(ctx context.Context, params *ListAIAutomationSlackChannelsParams, reqEditors ...RequestEditorFn) (*ListAIAutomationSlackChannelsResponse, error)
+
+	// ListAIAutomationSlackUserGroupsWithResponse Lists Slack user groups for AI Automations
+	//
+	// User groups from the team's connected Slack workspace, read live from Slack; any returned slack_user_group_id is accepted by usergroup trigger conditions.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /v1/ai/automations/slack_user_groups (the `ListAIAutomationSlackUserGroups` operationId).
+	ListAIAutomationSlackUserGroupsWithResponse(ctx context.Context, params *ListAIAutomationSlackUserGroupsParams, reqEditors ...RequestEditorFn) (*ListAIAutomationSlackUserGroupsResponse, error)
+
+	// ListAIAutomationSlackUsersWithResponse Lists Slack users for AI Automations
+	//
+	// Users, including bots, from the team's connected Slack workspace; any returned slack_user_id is accepted by user and item_user trigger conditions.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /v1/ai/automations/slack_users (the `ListAIAutomationSlackUsers` operationId).
+	ListAIAutomationSlackUsersWithResponse(ctx context.Context, params *ListAIAutomationSlackUsersParams, reqEditors ...RequestEditorFn) (*ListAIAutomationSlackUsersResponse, error)
+
+	// GetAIAutomationTriggerOptionsWithResponse Lists options for configuring AI Automation triggers
+	//
+	// Returns the source-of-truth options used by the AI Automation editor.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /v1/ai/automations/trigger_options (the `GetAIAutomationTriggerOptions` operationId).
+	GetAIAutomationTriggerOptionsWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*GetAIAutomationTriggerOptionsResponse, error)
+
+	// ListAIAutomationRunsWithResponse Lists AI automation runs
+	//
+	// Scans the 1000 most recent runs matching the filters; pagination and counts cover the visible runs in that window. When meta.next_scan_cursor is set, older runs exist beyond the window. Present only on the last page of the current scan window; finish page pagination before following it. Repeat the request with filter[scan_cursor] set to that opaque cursor to continue. Incident-linked runs are visible only when the caller's role permits access. OAuth tokens also need the `ir.incidents:read` scope; API keys use the key's role. Requires OAuth scope `ai.automations:write`.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /v1/ai/automations/{ai_automation_id}/runs (the `ListAIAutomationRuns` operationId).
+	ListAIAutomationRunsWithResponse(ctx context.Context, aiAutomationID openapi_types.UUID, params *ListAIAutomationRunsParams, reqEditors ...RequestEditorFn) (*ListAIAutomationRunsResponse, error)
+
+	// RunAIAutomationWithBodyWithResponse Runs an AI automation now
+	//
+	// Requires OAuth scope `ai.automations:write`. For run-now requests with incident_id, or run_id of an incident-linked run, OAuth tokens also need the `ir.incidents:read` scope; API keys use the key's role. Limited to 30 requests per credential per minute (fixed one-minute windows), separate from the default mutation rate limit; exceeding it returns 429 with Retry-After.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/ai/automations/{ai_automation_id}/runs (the `RunAIAutomation` operationId).
+	RunAIAutomationWithBodyWithResponse(ctx context.Context, aiAutomationID openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*RunAIAutomationResponse, error)
+
+	// RunAIAutomationWithApplicationVndAPIPlusJSONBodyWithResponse Runs an AI automation now
+	//
+	// Requires OAuth scope `ai.automations:write`. For run-now requests with incident_id, or run_id of an incident-linked run, OAuth tokens also need the `ir.incidents:read` scope; API keys use the key's role. Limited to 30 requests per credential per minute (fixed one-minute windows), separate from the default mutation rate limit; exceeding it returns 429 with Retry-After.
+	//
+	// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/ai/automations/{ai_automation_id}/runs (the `RunAIAutomation` operationId).
+	RunAIAutomationWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, aiAutomationID openapi_types.UUID, body RunAIAutomationApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*RunAIAutomationResponse, error)
+
+	// DeleteAIAutomationWithResponse Deletes an AI automation
+	//
+	// Requires OAuth scope `ai.automations:write`. Retires the automation: it is disabled and soft-deleted, no longer listed or runnable; GET show and run-now return 404, while its existing run history remains readable via the runs endpoints.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with DELETE /v1/ai/automations/{id} (the `DeleteAIAutomation` operationId).
+	DeleteAIAutomationWithResponse(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*DeleteAIAutomationResponse, error)
+
+	// GetAIAutomationWithResponse Gets an AI automation
+	//
+	// Requires OAuth scope `ai.automations:read`.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /v1/ai/automations/{id} (the `GetAIAutomation` operationId).
+	GetAIAutomationWithResponse(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*GetAIAutomationResponse, error)
+
+	// UpdateAIAutomationWithBodyWithResponse Updates an AI automation
+	//
+	// Requires OAuth scope `ai.automations:write`. Read-only attributes are ignored on write.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with PATCH /v1/ai/automations/{id} (the `UpdateAIAutomation` operationId).
+	UpdateAIAutomationWithBodyWithResponse(ctx context.Context, id ID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateAIAutomationResponse, error)
+
+	// UpdateAIAutomationWithApplicationVndAPIPlusJSONBodyWithResponse Updates an AI automation
+	//
+	// Requires OAuth scope `ai.automations:write`. Read-only attributes are ignored on write.
+	//
+	// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with PATCH /v1/ai/automations/{id} (the `UpdateAIAutomation` operationId).
+	UpdateAIAutomationWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, id ID, body UpdateAIAutomationApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateAIAutomationResponse, error)
+
+	// PutAIAutomationWithBodyWithResponse Updates an AI automation
+	//
+	// Requires OAuth scope `ai.automations:write`. Read-only attributes are ignored on write.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with PUT /v1/ai/automations/{id} (the `PutAIAutomation` operationId).
+	PutAIAutomationWithBodyWithResponse(ctx context.Context, id ID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PutAIAutomationResponse, error)
+
+	// PutAIAutomationWithApplicationVndAPIPlusJSONBodyWithResponse Updates an AI automation
+	//
+	// Requires OAuth scope `ai.automations:write`. Read-only attributes are ignored on write.
+	//
+	// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with PUT /v1/ai/automations/{id} (the `PutAIAutomation` operationId).
+	PutAIAutomationWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, id ID, body PutAIAutomationApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*PutAIAutomationResponse, error)
+
+	// RotateAIAutomationWebhookSecretWithBodyWithResponse Generates or rotates an AI Automation webhook trigger secret
+	//
+	// Returns a new secret for a webhook trigger. The previous secret stops working immediately. The secret is only returned in this response; Rootly stores a SHA-256 digest of it.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/ai/automations/{id}/triggers/{trigger_id}/webhook_secret (the `RotateAIAutomationWebhookSecret` operationId).
+	RotateAIAutomationWebhookSecretWithBodyWithResponse(ctx context.Context, id ID, triggerID string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*RotateAIAutomationWebhookSecretResponse, error)
+
+	// RotateAIAutomationWebhookSecretWithApplicationVndAPIPlusJSONBodyWithResponse Generates or rotates an AI Automation webhook trigger secret
+	//
+	// Returns a new secret for a webhook trigger. The previous secret stops working immediately. The secret is only returned in this response; Rootly stores a SHA-256 digest of it.
+	//
+	// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/ai/automations/{id}/triggers/{trigger_id}/webhook_secret (the `RotateAIAutomationWebhookSecret` operationId).
+	RotateAIAutomationWebhookSecretWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, id ID, triggerID string, body RotateAIAutomationWebhookSecretApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*RotateAIAutomationWebhookSecretResponse, error)
+
 	// CreateAiChatWithResponse Send AI chat message
 	//
 	// Send a message to the AI assistant and receive a synchronous reply. Optionally bind the conversation to an incident or alert for context-aware responses. For eligible unbound home chat, `checkpoint_id` and `decision` confirm or cancel approval-gated writes. Responses include `confirmation` for a pending write and `checkpoint_resolved` after resume. If an action-item write needs required fields the model did not supply, no checkpoint is created and the turn completes with a plain reply linking to that incident's action-item form in the Rootly web app. The synchronous response has no `confirmation` key; only `confirmation` responses are resumable. Limited to 60 requests per minute per credential. Rate-limit responses include `Retry-After` and `X-RateLimit-*` headers. Requires `ai.chat:write` OAuth scope or an API key.
@@ -176100,176 +176511,59 @@ type ClientWithResponsesInterface interface {
 	// Corresponds with POST /v1/ai/chat/stream (the `StreamAiChat` operationId).
 	StreamAiChatWithResponse(ctx context.Context, params *StreamAiChatParams, reqEditors ...RequestEditorFn) (*StreamAiChatResponse, error)
 
-	// GetAIAutomationRunWithResponse Gets an AI automation run
+	// ListInvestigationsWithResponse Lists AI SRE investigations
 	//
-	// Incident-linked runs are visible only when the caller's role permits access. OAuth tokens also need the `ir.incidents:read` scope; API keys use the key's role. Requires OAuth scope `ai.automations:write`.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/ai_automation_runs/{id} (the `GetAIAutomationRun` operationId).
-	GetAIAutomationRunWithResponse(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*GetAIAutomationRunResponse, error)
-
-	// ListAIAutomationsWithResponse Lists AI automations
-	//
-	// Requires OAuth scope `ai.automations:read`.
+	// Requires OAuth scope `ai.investigations:read`. OAuth tokens also need `oc.alerts:read` for alert investigations and `ir.incidents:read` for incident investigations; API keys use the key's role. Investigations on alerts and incidents the caller can read, newest first.
 	//
 	// Returns a wrapper object for the known response body format(s).
 	//
-	// Corresponds with GET /v1/ai_automations (the `ListAIAutomations` operationId).
-	ListAIAutomationsWithResponse(ctx context.Context, params *ListAIAutomationsParams, reqEditors ...RequestEditorFn) (*ListAIAutomationsResponse, error)
+	// Corresponds with GET /v1/ai/investigations (the `ListInvestigations` operationId).
+	ListInvestigationsWithResponse(ctx context.Context, params *ListInvestigationsParams, reqEditors ...RequestEditorFn) (*ListInvestigationsResponse, error)
 
-	// CreateAIAutomationWithBodyWithResponse Creates an AI automation
+	// CreateInvestigationWithBodyWithResponse Starts an AI SRE investigation
 	//
-	// Requires OAuth scope `ai.automations:write`. Read-only attributes are ignored on write.
+	// Requires OAuth scope `ai.investigations:write`. OAuth tokens also need `oc.alerts:write` (alerts) or `ir.incidents:write` (incidents) and update access to the resource; API keys use the key's role. Starts an investigation on an alert or incident you can update, or returns the one already running.
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
-	// Corresponds with POST /v1/ai_automations (the `CreateAIAutomation` operationId).
-	CreateAIAutomationWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateAIAutomationResponse, error)
+	// Corresponds with POST /v1/ai/investigations (the `CreateInvestigation` operationId).
+	CreateInvestigationWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateInvestigationResponse, error)
 
-	// CreateAIAutomationWithApplicationVndAPIPlusJSONBodyWithResponse Creates an AI automation
+	// CreateInvestigationWithApplicationVndAPIPlusJSONBodyWithResponse Starts an AI SRE investigation
 	//
-	// Requires OAuth scope `ai.automations:write`. Read-only attributes are ignored on write.
+	// Requires OAuth scope `ai.investigations:write`. OAuth tokens also need `oc.alerts:write` (alerts) or `ir.incidents:write` (incidents) and update access to the resource; API keys use the key's role. Starts an investigation on an alert or incident you can update, or returns the one already running.
 	//
 	// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
 	//
-	// Corresponds with POST /v1/ai_automations (the `CreateAIAutomation` operationId).
-	CreateAIAutomationWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, body CreateAIAutomationApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateAIAutomationResponse, error)
+	// Corresponds with POST /v1/ai/investigations (the `CreateInvestigation` operationId).
+	CreateInvestigationWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, body CreateInvestigationApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateInvestigationResponse, error)
 
-	// ListAIAutomationSlackChannelsWithResponse Lists synced Slack channels for AI Automations
+	// GetInvestigationWithResponse Retrieves an AI SRE investigation
 	//
-	// Channels Rootly has synced from the team's connected Slack workspace; any returned slack_channel_id is accepted as destination_slack_channel_id. When filter[search] is set, exact channel-name matches come first. When Slack channel user filtering is enabled, personal keys and OAuth tokens only see, and can only set new, channels the user can access in Slack; an update may resend the automation's current channel unchanged.
+	// Requires OAuth scope `ai.investigations:read`. OAuth tokens also need `oc.alerts:read` for alert investigations and `ir.incidents:read` for incident investigations; API keys use the key's role. The verdict, hypotheses, evidence, causal chain and open questions.
 	//
 	// Returns a wrapper object for the known response body format(s).
 	//
-	// Corresponds with GET /v1/ai_automations/slack_channels (the `ListAIAutomationSlackChannels` operationId).
-	ListAIAutomationSlackChannelsWithResponse(ctx context.Context, params *ListAIAutomationSlackChannelsParams, reqEditors ...RequestEditorFn) (*ListAIAutomationSlackChannelsResponse, error)
+	// Corresponds with GET /v1/ai/investigations/{id} (the `GetInvestigation` operationId).
+	GetInvestigationWithResponse(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*GetInvestigationResponse, error)
 
-	// ListAIAutomationSlackUserGroupsWithResponse Lists Slack user groups for AI Automations
+	// CancelInvestigationWithResponse Cancels an AI SRE investigation
 	//
-	// User groups from the team's connected Slack workspace, read live from Slack; any returned slack_user_group_id is accepted by usergroup trigger conditions.
+	// Requires OAuth scope `ai.investigations:write`. OAuth tokens also need `oc.alerts:write` (alerts) or `ir.incidents:write` (incidents) and update access to the resource; API keys use the key's role.
 	//
 	// Returns a wrapper object for the known response body format(s).
 	//
-	// Corresponds with GET /v1/ai_automations/slack_user_groups (the `ListAIAutomationSlackUserGroups` operationId).
-	ListAIAutomationSlackUserGroupsWithResponse(ctx context.Context, params *ListAIAutomationSlackUserGroupsParams, reqEditors ...RequestEditorFn) (*ListAIAutomationSlackUserGroupsResponse, error)
+	// Corresponds with POST /v1/ai/investigations/{id}/cancel (the `CancelInvestigation` operationId).
+	CancelInvestigationWithResponse(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*CancelInvestigationResponse, error)
 
-	// ListAIAutomationSlackUsersWithResponse Lists Slack users for AI Automations
+	// GetInvestigationProgressWithResponse Retrieves AI SRE investigation progress
 	//
-	// Users, including bots, from the team's connected Slack workspace; any returned slack_user_id is accepted by user and item_user trigger conditions.
+	// Requires OAuth scope `ai.investigations:read`. OAuth tokens also need `oc.alerts:read` for alert investigations and `ir.incidents:read` for incident investigations; API keys use the key's role. Returns immediately with steps and tool calls recorded after the cursor. Poll with after=next_cursor until done is true.
 	//
 	// Returns a wrapper object for the known response body format(s).
 	//
-	// Corresponds with GET /v1/ai_automations/slack_users (the `ListAIAutomationSlackUsers` operationId).
-	ListAIAutomationSlackUsersWithResponse(ctx context.Context, params *ListAIAutomationSlackUsersParams, reqEditors ...RequestEditorFn) (*ListAIAutomationSlackUsersResponse, error)
-
-	// GetAIAutomationTriggerOptionsWithResponse Lists options for configuring AI Automation triggers
-	//
-	// Returns the source-of-truth options used by the AI Automation editor.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/ai_automations/trigger_options (the `GetAIAutomationTriggerOptions` operationId).
-	GetAIAutomationTriggerOptionsWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*GetAIAutomationTriggerOptionsResponse, error)
-
-	// ListAIAutomationRunsWithResponse Lists AI automation runs
-	//
-	// Scans the 1000 most recent runs matching the filters; pagination and counts cover the visible runs in that window. When meta.next_scan_cursor is set, older runs exist beyond the window. Present only on the last page of the current scan window; finish page pagination before following it. Repeat the request with filter[scan_cursor] set to that opaque cursor to continue. Incident-linked runs are visible only when the caller's role permits access. OAuth tokens also need the `ir.incidents:read` scope; API keys use the key's role. Requires OAuth scope `ai.automations:write`.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/ai_automations/{ai_automation_id}/runs (the `ListAIAutomationRuns` operationId).
-	ListAIAutomationRunsWithResponse(ctx context.Context, aiAutomationID openapi_types.UUID, params *ListAIAutomationRunsParams, reqEditors ...RequestEditorFn) (*ListAIAutomationRunsResponse, error)
-
-	// RunAIAutomationWithBodyWithResponse Runs an AI automation now
-	//
-	// Requires OAuth scope `ai.automations:write`. For run-now requests with incident_id, OAuth tokens also need the `ir.incidents:read` scope; API keys use the key's role. Limited to 30 requests per credential per minute (fixed one-minute windows), separate from the default mutation rate limit; exceeding it returns 429 with Retry-After.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/ai_automations/{ai_automation_id}/runs (the `RunAIAutomation` operationId).
-	RunAIAutomationWithBodyWithResponse(ctx context.Context, aiAutomationID openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*RunAIAutomationResponse, error)
-
-	// RunAIAutomationWithApplicationVndAPIPlusJSONBodyWithResponse Runs an AI automation now
-	//
-	// Requires OAuth scope `ai.automations:write`. For run-now requests with incident_id, OAuth tokens also need the `ir.incidents:read` scope; API keys use the key's role. Limited to 30 requests per credential per minute (fixed one-minute windows), separate from the default mutation rate limit; exceeding it returns 429 with Retry-After.
-	//
-	// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/ai_automations/{ai_automation_id}/runs (the `RunAIAutomation` operationId).
-	RunAIAutomationWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, aiAutomationID openapi_types.UUID, body RunAIAutomationApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*RunAIAutomationResponse, error)
-
-	// DeleteAIAutomationWithResponse Deletes an AI automation
-	//
-	// Requires OAuth scope `ai.automations:write`. Retires the automation: it is disabled and soft-deleted, no longer listed or runnable; GET show and run-now return 404, while its existing run history remains readable via the runs endpoints.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with DELETE /v1/ai_automations/{id} (the `DeleteAIAutomation` operationId).
-	DeleteAIAutomationWithResponse(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*DeleteAIAutomationResponse, error)
-
-	// GetAIAutomationWithResponse Gets an AI automation
-	//
-	// Requires OAuth scope `ai.automations:read`.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/ai_automations/{id} (the `GetAIAutomation` operationId).
-	GetAIAutomationWithResponse(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*GetAIAutomationResponse, error)
-
-	// UpdateAIAutomationWithBodyWithResponse Updates an AI automation
-	//
-	// Requires OAuth scope `ai.automations:write`. Read-only attributes are ignored on write.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v1/ai_automations/{id} (the `UpdateAIAutomation` operationId).
-	UpdateAIAutomationWithBodyWithResponse(ctx context.Context, id ID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateAIAutomationResponse, error)
-
-	// UpdateAIAutomationWithApplicationVndAPIPlusJSONBodyWithResponse Updates an AI automation
-	//
-	// Requires OAuth scope `ai.automations:write`. Read-only attributes are ignored on write.
-	//
-	// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v1/ai_automations/{id} (the `UpdateAIAutomation` operationId).
-	UpdateAIAutomationWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, id ID, body UpdateAIAutomationApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateAIAutomationResponse, error)
-
-	// PutAIAutomationWithBodyWithResponse Updates an AI automation
-	//
-	// Requires OAuth scope `ai.automations:write`. Read-only attributes are ignored on write.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PUT /v1/ai_automations/{id} (the `PutAIAutomation` operationId).
-	PutAIAutomationWithBodyWithResponse(ctx context.Context, id ID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PutAIAutomationResponse, error)
-
-	// PutAIAutomationWithApplicationVndAPIPlusJSONBodyWithResponse Updates an AI automation
-	//
-	// Requires OAuth scope `ai.automations:write`. Read-only attributes are ignored on write.
-	//
-	// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PUT /v1/ai_automations/{id} (the `PutAIAutomation` operationId).
-	PutAIAutomationWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, id ID, body PutAIAutomationApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*PutAIAutomationResponse, error)
-
-	// RotateAIAutomationWebhookSecretWithBodyWithResponse Generates or rotates an AI Automation webhook trigger secret
-	//
-	// Returns a new secret for a webhook trigger. The previous secret stops working immediately. The secret is only returned in this response; Rootly stores a SHA-256 digest of it.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/ai_automations/{id}/triggers/{trigger_id}/webhook_secret (the `RotateAIAutomationWebhookSecret` operationId).
-	RotateAIAutomationWebhookSecretWithBodyWithResponse(ctx context.Context, id ID, triggerID string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*RotateAIAutomationWebhookSecretResponse, error)
-
-	// RotateAIAutomationWebhookSecretWithApplicationVndAPIPlusJSONBodyWithResponse Generates or rotates an AI Automation webhook trigger secret
-	//
-	// Returns a new secret for a webhook trigger. The previous secret stops working immediately. The secret is only returned in this response; Rootly stores a SHA-256 digest of it.
-	//
-	// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/ai_automations/{id}/triggers/{trigger_id}/webhook_secret (the `RotateAIAutomationWebhookSecret` operationId).
-	RotateAIAutomationWebhookSecretWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, id ID, triggerID string, body RotateAIAutomationWebhookSecretApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*RotateAIAutomationWebhookSecretResponse, error)
+	// Corresponds with GET /v1/ai/investigations/{id}/progress (the `GetInvestigationProgress` operationId).
+	GetInvestigationProgressWithResponse(ctx context.Context, id ID, params *GetInvestigationProgressParams, reqEditors ...RequestEditorFn) (*GetInvestigationProgressResponse, error)
 
 	// ListAISkillsWithResponse Lists AI skills
 	//
@@ -176277,7 +176571,7 @@ type ClientWithResponsesInterface interface {
 	//
 	// Returns a wrapper object for the known response body format(s).
 	//
-	// Corresponds with GET /v1/ai_skills (the `ListAISkills` operationId).
+	// Corresponds with GET /v1/ai/skills (the `ListAISkills` operationId).
 	ListAISkillsWithResponse(ctx context.Context, params *ListAISkillsParams, reqEditors ...RequestEditorFn) (*ListAISkillsResponse, error)
 
 	// CreateAISkillWithBodyWithResponse Creates an AI skill
@@ -176286,7 +176580,7 @@ type ClientWithResponsesInterface interface {
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
-	// Corresponds with POST /v1/ai_skills (the `CreateAISkill` operationId).
+	// Corresponds with POST /v1/ai/skills (the `CreateAISkill` operationId).
 	CreateAISkillWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateAISkillResponse, error)
 
 	// CreateAISkillWithApplicationVndAPIPlusJSONBodyWithResponse Creates an AI skill
@@ -176295,7 +176589,7 @@ type ClientWithResponsesInterface interface {
 	//
 	// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
 	//
-	// Corresponds with POST /v1/ai_skills (the `CreateAISkill` operationId).
+	// Corresponds with POST /v1/ai/skills (the `CreateAISkill` operationId).
 	CreateAISkillWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, body CreateAISkillApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateAISkillResponse, error)
 
 	// ListAISkillVersionsWithResponse Lists AI skill versions
@@ -176304,7 +176598,7 @@ type ClientWithResponsesInterface interface {
 	//
 	// Returns a wrapper object for the known response body format(s).
 	//
-	// Corresponds with GET /v1/ai_skills/{ai_skill_id}/versions (the `ListAISkillVersions` operationId).
+	// Corresponds with GET /v1/ai/skills/{ai_skill_id}/versions (the `ListAISkillVersions` operationId).
 	ListAISkillVersionsWithResponse(ctx context.Context, aiSkillID string, reqEditors ...RequestEditorFn) (*ListAISkillVersionsResponse, error)
 
 	// GetAISkillVersionWithResponse Gets an AI skill version
@@ -176313,7 +176607,7 @@ type ClientWithResponsesInterface interface {
 	//
 	// Returns a wrapper object for the known response body format(s).
 	//
-	// Corresponds with GET /v1/ai_skills/{ai_skill_id}/versions/{version} (the `GetAISkillVersion` operationId).
+	// Corresponds with GET /v1/ai/skills/{ai_skill_id}/versions/{version} (the `GetAISkillVersion` operationId).
 	GetAISkillVersionWithResponse(ctx context.Context, aiSkillID string, version int, reqEditors ...RequestEditorFn) (*GetAISkillVersionResponse, error)
 
 	// DeleteAISkillWithResponse Deletes an AI skill
@@ -176322,7 +176616,7 @@ type ClientWithResponsesInterface interface {
 	//
 	// Returns a wrapper object for the known response body format(s).
 	//
-	// Corresponds with DELETE /v1/ai_skills/{id} (the `DeleteAISkill` operationId).
+	// Corresponds with DELETE /v1/ai/skills/{id} (the `DeleteAISkill` operationId).
 	DeleteAISkillWithResponse(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*DeleteAISkillResponse, error)
 
 	// GetAISkillWithResponse Gets an AI skill
@@ -176331,7 +176625,7 @@ type ClientWithResponsesInterface interface {
 	//
 	// Returns a wrapper object for the known response body format(s).
 	//
-	// Corresponds with GET /v1/ai_skills/{id} (the `GetAISkill` operationId).
+	// Corresponds with GET /v1/ai/skills/{id} (the `GetAISkill` operationId).
 	GetAISkillWithResponse(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*GetAISkillResponse, error)
 
 	// UpdateAISkillWithBodyWithResponse Updates an AI skill
@@ -176340,7 +176634,7 @@ type ClientWithResponsesInterface interface {
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
-	// Corresponds with PATCH /v1/ai_skills/{id} (the `UpdateAISkill` operationId).
+	// Corresponds with PATCH /v1/ai/skills/{id} (the `UpdateAISkill` operationId).
 	UpdateAISkillWithBodyWithResponse(ctx context.Context, id ID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateAISkillResponse, error)
 
 	// UpdateAISkillWithApplicationVndAPIPlusJSONBodyWithResponse Updates an AI skill
@@ -176349,7 +176643,7 @@ type ClientWithResponsesInterface interface {
 	//
 	// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
 	//
-	// Corresponds with PATCH /v1/ai_skills/{id} (the `UpdateAISkill` operationId).
+	// Corresponds with PATCH /v1/ai/skills/{id} (the `UpdateAISkill` operationId).
 	UpdateAISkillWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, id ID, body UpdateAISkillApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateAISkillResponse, error)
 
 	// PutAISkillWithBodyWithResponse Updates an AI skill
@@ -176358,7 +176652,7 @@ type ClientWithResponsesInterface interface {
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
-	// Corresponds with PUT /v1/ai_skills/{id} (the `PutAISkill` operationId).
+	// Corresponds with PUT /v1/ai/skills/{id} (the `PutAISkill` operationId).
 	PutAISkillWithBodyWithResponse(ctx context.Context, id ID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PutAISkillResponse, error)
 
 	// PutAISkillWithApplicationVndAPIPlusJSONBodyWithResponse Updates an AI skill
@@ -176367,7 +176661,7 @@ type ClientWithResponsesInterface interface {
 	//
 	// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
 	//
-	// Corresponds with PUT /v1/ai_skills/{id} (the `PutAISkill` operationId).
+	// Corresponds with PUT /v1/ai/skills/{id} (the `PutAISkill` operationId).
 	PutAISkillWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, id ID, body PutAISkillApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*PutAISkillResponse, error)
 
 	// ListAiToolCallEventsWithResponse Lists AI tool call events
@@ -176376,7 +176670,7 @@ type ClientWithResponsesInterface interface {
 	//
 	// Returns a wrapper object for the known response body format(s).
 	//
-	// Corresponds with GET /v1/ai_tool_call_events (the `ListAiToolCallEvents` operationId).
+	// Corresponds with GET /v1/ai/tool_call_events (the `ListAiToolCallEvents` operationId).
 	ListAiToolCallEventsWithResponse(ctx context.Context, params *ListAiToolCallEventsParams, reqEditors ...RequestEditorFn) (*ListAiToolCallEventsResponse, error)
 
 	// GetAlertConfigurationWithResponse Retrieves the team's alert configuration
@@ -177238,7 +177532,7 @@ type ClientWithResponsesInterface interface {
 	//
 	// Rotate an API key's token. Issues a new secret token and returns it — **the new token is only shown once**, so store it securely.
 	//
-	// **Self-only:** You can only rotate the API key that was used to authenticate this request. Attempting to rotate a different key returns `403 Forbidden`.
+	// **Self-only:** You can only rotate the API key that was used to authenticate this request. Attempting to rotate a different key returns `404 Not Found` when the authenticating key is not authorized to manage it, or `403 Forbidden` when it is.
 	//
 	// **Grace period:** When enabled for your organization, the previous token remains valid after rotation, giving you time to deploy the new token without downtime. Pass `grace_period_minutes` (integer, 0–1440, default 30) to control how long the old token stays valid. Set to 0 to immediately invalidate the old token. The `grace_period_ends_at` field in the response confirms the exact time the old token will stop working.
 	//
@@ -177259,7 +177553,7 @@ type ClientWithResponsesInterface interface {
 	//
 	// Rotate an API key's token. Issues a new secret token and returns it — **the new token is only shown once**, so store it securely.
 	//
-	// **Self-only:** You can only rotate the API key that was used to authenticate this request. Attempting to rotate a different key returns `403 Forbidden`.
+	// **Self-only:** You can only rotate the API key that was used to authenticate this request. Attempting to rotate a different key returns `404 Not Found` when the authenticating key is not authorized to manage it, or `403 Forbidden` when it is.
 	//
 	// **Grace period:** When enabled for your organization, the previous token remains valid after rotation, giving you time to deploy the new token without downtime. Pass `grace_period_minutes` (integer, 0–1440, default 30) to control how long the old token stays valid. Set to 0 to immediately invalidate the old token. The `grace_period_ends_at` field in the response confirms the exact time the old token will stop working.
 	//
@@ -180908,58 +181202,6 @@ type ClientWithResponsesInterface interface {
 	// Corresponds with POST /v1/incidents/{incident_id}/sub_statuses (the `CreateIncidentSubStatus` operationId).
 	CreateIncidentSubStatusWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, incidentID string, body CreateIncidentSubStatusApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateIncidentSubStatusResponse, error)
 
-	// ListInvestigationsWithResponse Lists AI SRE investigations
-	//
-	// Investigations on alerts and incidents the caller can read, newest first.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/investigations (the `ListInvestigations` operationId).
-	ListInvestigationsWithResponse(ctx context.Context, params *ListInvestigationsParams, reqEditors ...RequestEditorFn) (*ListInvestigationsResponse, error)
-
-	// CreateInvestigationWithBodyWithResponse Starts an AI SRE investigation
-	//
-	// Starts an investigation on an alert or incident you can update, or returns the one already running.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/investigations (the `CreateInvestigation` operationId).
-	CreateInvestigationWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateInvestigationResponse, error)
-
-	// CreateInvestigationWithApplicationVndAPIPlusJSONBodyWithResponse Starts an AI SRE investigation
-	//
-	// Starts an investigation on an alert or incident you can update, or returns the one already running.
-	//
-	// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/investigations (the `CreateInvestigation` operationId).
-	CreateInvestigationWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, body CreateInvestigationApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateInvestigationResponse, error)
-
-	// GetInvestigationWithResponse Retrieves an AI SRE investigation
-	//
-	// The verdict, hypotheses, evidence, causal chain and open questions.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/investigations/{id} (the `GetInvestigation` operationId).
-	GetInvestigationWithResponse(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*GetInvestigationResponse, error)
-
-	// CancelInvestigationWithResponse Cancels an AI SRE investigation
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/investigations/{id}/cancel (the `CancelInvestigation` operationId).
-	CancelInvestigationWithResponse(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*CancelInvestigationResponse, error)
-
-	// GetInvestigationProgressWithResponse Retrieves AI SRE investigation progress
-	//
-	// Returns immediately with steps and tool calls recorded after the cursor. Poll with after=next_cursor until done is true.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/investigations/{id}/progress (the `GetInvestigationProgress` operationId).
-	GetInvestigationProgressWithResponse(ctx context.Context, id ID, params *GetInvestigationProgressParams, reqEditors ...RequestEditorFn) (*GetInvestigationProgressResponse, error)
-
 	// GetIPAllowlistWithResponse Retrieves the organization's browser IP allowlist
 	//
 	// Returns a wrapper object for the known response body format(s).
@@ -184152,250 +184394,6 @@ func (r UpdateIncidentActionItemResponse) ContentType() string {
 	return ""
 }
 
-// CreateAiChatResponse200Headers the declared response headers of an HTTP 200 response for CreateAiChat
-type CreateAiChatResponse200Headers struct {
-	XRateLimitLimit     *string
-	XRateLimitRemaining *string
-	XRateLimitReset     *string
-	XRateLimitUsed      *string
-}
-
-// CreateAiChatResponse429Headers the declared response headers of an HTTP 429 response for CreateAiChat
-type CreateAiChatResponse429Headers struct {
-	RetryAfter          *int
-	XRateLimitLimit     *string
-	XRateLimitRemaining *string
-	XRateLimitReset     *string
-	XRateLimitUsed      *string
-}
-
-type CreateAiChatResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// ApplicationVndAPIJSON200 the response for an HTTP 200 `application/vnd.api+json` response
-	ApplicationVndAPIJSON200 *AiChatResponse
-	// ApplicationVndAPIJSON403 the response for an HTTP 403 `application/vnd.api+json` response
-	ApplicationVndAPIJSON403 *AiChatErrorResponse
-	// ApplicationVndAPIJSON404 the response for an HTTP 404 `application/vnd.api+json` response
-	ApplicationVndAPIJSON404 *AiChatErrorResponse
-	// ApplicationVndAPIJSON422 the response for an HTTP 422 `application/vnd.api+json` response
-	ApplicationVndAPIJSON422 *AiChatErrorResponse
-	// ApplicationVndAPIJSON429 the response for an HTTP 429 `application/vnd.api+json` response
-	ApplicationVndAPIJSON429 *AiChatErrorResponse
-	// ApplicationVndAPIJSON500 the response for an HTTP 500 `application/vnd.api+json` response
-	ApplicationVndAPIJSON500 *AiChatErrorResponse
-	// Headers200 the parsed response headers for an HTTP 200 response
-	Headers200 *CreateAiChatResponse200Headers
-	// Headers429 the parsed response headers for an HTTP 429 response
-	Headers429 *CreateAiChatResponse429Headers
-}
-
-// Status returns HTTPResponse.Status
-func (r CreateAiChatResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r CreateAiChatResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r CreateAiChatResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type ListAiChatSessionsResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// ApplicationVndAPIJSON200 the response for an HTTP 200 `application/vnd.api+json` response
-	ApplicationVndAPIJSON200 *AiChatSessionList
-	// ApplicationVndAPIJSON403 the response for an HTTP 403 `application/vnd.api+json` response
-	ApplicationVndAPIJSON403 *AiChatErrorResponse
-	// ApplicationVndAPIJSON422 the response for an HTTP 422 `application/vnd.api+json` response
-	ApplicationVndAPIJSON422 *AiChatErrorResponse
-}
-
-// Status returns HTTPResponse.Status
-func (r ListAiChatSessionsResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r ListAiChatSessionsResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r ListAiChatSessionsResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type DeleteAiChatSessionResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-}
-
-// Status returns HTTPResponse.Status
-func (r DeleteAiChatSessionResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r DeleteAiChatSessionResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r DeleteAiChatSessionResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type UpdateAiChatSessionResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// ApplicationVndAPIJSON200 the response for an HTTP 200 `application/vnd.api+json` response
-	ApplicationVndAPIJSON200 *AiChatSessionTitle
-	// ApplicationVndAPIJSON403 the response for an HTTP 403 `application/vnd.api+json` response
-	ApplicationVndAPIJSON403 *AiChatErrorResponse
-	// ApplicationVndAPIJSON404 the response for an HTTP 404 `application/vnd.api+json` response
-	ApplicationVndAPIJSON404 *AiChatErrorResponse
-	// ApplicationVndAPIJSON422 the response for an HTTP 422 `application/vnd.api+json` response
-	ApplicationVndAPIJSON422 *AiChatErrorResponse
-}
-
-// Status returns HTTPResponse.Status
-func (r UpdateAiChatSessionResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r UpdateAiChatSessionResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r UpdateAiChatSessionResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type ListAiChatSessionMessagesResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// ApplicationVndAPIJSON200 the response for an HTTP 200 `application/vnd.api+json` response
-	ApplicationVndAPIJSON200 *AiChatSessionMessageList
-}
-
-// Status returns HTTPResponse.Status
-func (r ListAiChatSessionMessagesResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r ListAiChatSessionMessagesResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r ListAiChatSessionMessagesResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-// StreamAiChatResponse200Headers the declared response headers of an HTTP 200 response for StreamAiChat
-type StreamAiChatResponse200Headers struct {
-	XRateLimitLimit     *string
-	XRateLimitRemaining *string
-	XRateLimitReset     *string
-	XRateLimitUsed      *string
-}
-
-// StreamAiChatResponse429Headers the declared response headers of an HTTP 429 response for StreamAiChat
-type StreamAiChatResponse429Headers struct {
-	RetryAfter          *int
-	XRateLimitLimit     *string
-	XRateLimitRemaining *string
-	XRateLimitReset     *string
-	XRateLimitUsed      *string
-}
-
-type StreamAiChatResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// Headers200 the parsed response headers for an HTTP 200 response
-	Headers200 *StreamAiChatResponse200Headers
-	// Headers429 the parsed response headers for an HTTP 429 response
-	Headers429 *StreamAiChatResponse429Headers
-}
-
-// Status returns HTTPResponse.Status
-func (r StreamAiChatResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r StreamAiChatResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r StreamAiChatResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
 type GetAIAutomationRunResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
@@ -184847,17 +184845,7 @@ type RotateAIAutomationWebhookSecretResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	// ApplicationVndAPIJSON201 the response for an HTTP 201 `application/vnd.api+json` response
-	ApplicationVndAPIJSON201 *struct {
-		Data struct {
-			Attributes struct {
-				RotatedAt  time.Time `json:"rotated_at"`
-				Secret     string    `json:"secret"`
-				WebhookURL string    `json:"webhook_url"`
-			} `json:"attributes"`
-			ID   string                                                                          `json:"id"`
-			Type RotateAIAutomationWebhookSecret201ApplicationVndAPIPlusJSONResponseBodyDataType `json:"type"`
-		} `json:"data"`
-	}
+	ApplicationVndAPIJSON201 *AiAutomationWebhookSecretResponse
 }
 
 // Status returns HTTPResponse.Status
@@ -184878,6 +184866,429 @@ func (r RotateAIAutomationWebhookSecretResponse) StatusCode() int {
 
 // ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
 func (r RotateAIAutomationWebhookSecretResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+// CreateAiChatResponse200Headers the declared response headers of an HTTP 200 response for CreateAiChat
+type CreateAiChatResponse200Headers struct {
+	XRateLimitLimit     *string
+	XRateLimitRemaining *string
+	XRateLimitReset     *string
+	XRateLimitUsed      *string
+}
+
+// CreateAiChatResponse429Headers the declared response headers of an HTTP 429 response for CreateAiChat
+type CreateAiChatResponse429Headers struct {
+	RetryAfter          *int
+	XRateLimitLimit     *string
+	XRateLimitRemaining *string
+	XRateLimitReset     *string
+	XRateLimitUsed      *string
+}
+
+type CreateAiChatResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// ApplicationVndAPIJSON200 the response for an HTTP 200 `application/vnd.api+json` response
+	ApplicationVndAPIJSON200 *AiChatResponse
+	// ApplicationVndAPIJSON403 the response for an HTTP 403 `application/vnd.api+json` response
+	ApplicationVndAPIJSON403 *AiChatErrorResponse
+	// ApplicationVndAPIJSON404 the response for an HTTP 404 `application/vnd.api+json` response
+	ApplicationVndAPIJSON404 *AiChatErrorResponse
+	// ApplicationVndAPIJSON422 the response for an HTTP 422 `application/vnd.api+json` response
+	ApplicationVndAPIJSON422 *AiChatErrorResponse
+	// ApplicationVndAPIJSON429 the response for an HTTP 429 `application/vnd.api+json` response
+	ApplicationVndAPIJSON429 *AiChatErrorResponse
+	// ApplicationVndAPIJSON500 the response for an HTTP 500 `application/vnd.api+json` response
+	ApplicationVndAPIJSON500 *AiChatErrorResponse
+	// Headers200 the parsed response headers for an HTTP 200 response
+	Headers200 *CreateAiChatResponse200Headers
+	// Headers429 the parsed response headers for an HTTP 429 response
+	Headers429 *CreateAiChatResponse429Headers
+}
+
+// Status returns HTTPResponse.Status
+func (r CreateAiChatResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r CreateAiChatResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r CreateAiChatResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type ListAiChatSessionsResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// ApplicationVndAPIJSON200 the response for an HTTP 200 `application/vnd.api+json` response
+	ApplicationVndAPIJSON200 *AiChatSessionList
+	// ApplicationVndAPIJSON403 the response for an HTTP 403 `application/vnd.api+json` response
+	ApplicationVndAPIJSON403 *AiChatErrorResponse
+	// ApplicationVndAPIJSON422 the response for an HTTP 422 `application/vnd.api+json` response
+	ApplicationVndAPIJSON422 *AiChatErrorResponse
+}
+
+// Status returns HTTPResponse.Status
+func (r ListAiChatSessionsResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r ListAiChatSessionsResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r ListAiChatSessionsResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type DeleteAiChatSessionResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// Status returns HTTPResponse.Status
+func (r DeleteAiChatSessionResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r DeleteAiChatSessionResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r DeleteAiChatSessionResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type UpdateAiChatSessionResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// ApplicationVndAPIJSON200 the response for an HTTP 200 `application/vnd.api+json` response
+	ApplicationVndAPIJSON200 *AiChatSessionTitle
+	// ApplicationVndAPIJSON403 the response for an HTTP 403 `application/vnd.api+json` response
+	ApplicationVndAPIJSON403 *AiChatErrorResponse
+	// ApplicationVndAPIJSON404 the response for an HTTP 404 `application/vnd.api+json` response
+	ApplicationVndAPIJSON404 *AiChatErrorResponse
+	// ApplicationVndAPIJSON422 the response for an HTTP 422 `application/vnd.api+json` response
+	ApplicationVndAPIJSON422 *AiChatErrorResponse
+}
+
+// Status returns HTTPResponse.Status
+func (r UpdateAiChatSessionResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r UpdateAiChatSessionResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r UpdateAiChatSessionResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type ListAiChatSessionMessagesResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// ApplicationVndAPIJSON200 the response for an HTTP 200 `application/vnd.api+json` response
+	ApplicationVndAPIJSON200 *AiChatSessionMessageList
+}
+
+// Status returns HTTPResponse.Status
+func (r ListAiChatSessionMessagesResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r ListAiChatSessionMessagesResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r ListAiChatSessionMessagesResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+// StreamAiChatResponse200Headers the declared response headers of an HTTP 200 response for StreamAiChat
+type StreamAiChatResponse200Headers struct {
+	XRateLimitLimit     *string
+	XRateLimitRemaining *string
+	XRateLimitReset     *string
+	XRateLimitUsed      *string
+}
+
+// StreamAiChatResponse429Headers the declared response headers of an HTTP 429 response for StreamAiChat
+type StreamAiChatResponse429Headers struct {
+	RetryAfter          *int
+	XRateLimitLimit     *string
+	XRateLimitRemaining *string
+	XRateLimitReset     *string
+	XRateLimitUsed      *string
+}
+
+type StreamAiChatResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// Headers200 the parsed response headers for an HTTP 200 response
+	Headers200 *StreamAiChatResponse200Headers
+	// Headers429 the parsed response headers for an HTTP 429 response
+	Headers429 *StreamAiChatResponse429Headers
+}
+
+// Status returns HTTPResponse.Status
+func (r StreamAiChatResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r StreamAiChatResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r StreamAiChatResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type ListInvestigationsResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// ApplicationVndAPIJSON200 the response for an HTTP 200 `application/vnd.api+json` response
+	ApplicationVndAPIJSON200 *InvestigationList
+	// ApplicationVndAPIJSON403 the response for an HTTP 403 `application/vnd.api+json` response
+	ApplicationVndAPIJSON403 *ErrorsList
+	// ApplicationVndAPIJSON422 the response for an HTTP 422 `application/vnd.api+json` response
+	ApplicationVndAPIJSON422 *ErrorsList
+}
+
+// Status returns HTTPResponse.Status
+func (r ListInvestigationsResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r ListInvestigationsResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r ListInvestigationsResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type CreateInvestigationResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// ApplicationVndAPIJSON202 the response for an HTTP 202 `application/vnd.api+json` response
+	ApplicationVndAPIJSON202 *Investigation
+	// ApplicationVndAPIJSON403 the response for an HTTP 403 `application/vnd.api+json` response
+	ApplicationVndAPIJSON403 *ErrorsList
+	// ApplicationVndAPIJSON404 the response for an HTTP 404 `application/vnd.api+json` response
+	ApplicationVndAPIJSON404 *ErrorsList
+	// ApplicationVndAPIJSON409 the response for an HTTP 409 `application/vnd.api+json` response
+	ApplicationVndAPIJSON409 *ErrorsList
+	// ApplicationVndAPIJSON422 the response for an HTTP 422 `application/vnd.api+json` response
+	ApplicationVndAPIJSON422 *ErrorsList
+}
+
+// Status returns HTTPResponse.Status
+func (r CreateInvestigationResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r CreateInvestigationResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r CreateInvestigationResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GetInvestigationResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// ApplicationVndAPIJSON200 the response for an HTTP 200 `application/vnd.api+json` response
+	ApplicationVndAPIJSON200 *Investigation
+	// ApplicationVndAPIJSON403 the response for an HTTP 403 `application/vnd.api+json` response
+	ApplicationVndAPIJSON403 *ErrorsList
+	// ApplicationVndAPIJSON404 the response for an HTTP 404 `application/vnd.api+json` response
+	ApplicationVndAPIJSON404 *ErrorsList
+}
+
+// Status returns HTTPResponse.Status
+func (r GetInvestigationResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetInvestigationResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetInvestigationResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type CancelInvestigationResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// ApplicationVndAPIJSON200 the response for an HTTP 200 `application/vnd.api+json` response
+	ApplicationVndAPIJSON200 *Investigation
+	// ApplicationVndAPIJSON403 the response for an HTTP 403 `application/vnd.api+json` response
+	ApplicationVndAPIJSON403 *ErrorsList
+	// ApplicationVndAPIJSON409 the response for an HTTP 409 `application/vnd.api+json` response
+	ApplicationVndAPIJSON409 *ErrorsList
+}
+
+// Status returns HTTPResponse.Status
+func (r CancelInvestigationResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r CancelInvestigationResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r CancelInvestigationResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GetInvestigationProgressResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// ApplicationVndAPIJSON200 the response for an HTTP 200 `application/vnd.api+json` response
+	ApplicationVndAPIJSON200 *InvestigationProgress
+	// ApplicationVndAPIJSON400 the response for an HTTP 400 `application/vnd.api+json` response
+	ApplicationVndAPIJSON400 *ErrorsList
+	// ApplicationVndAPIJSON403 the response for an HTTP 403 `application/vnd.api+json` response
+	ApplicationVndAPIJSON403 *ErrorsList
+}
+
+// Status returns HTTPResponse.Status
+func (r GetInvestigationProgressResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetInvestigationProgressResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetInvestigationProgressResponse) ContentType() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Header.Get("Content-Type")
 	}
@@ -185162,33 +185573,7 @@ type ListAiToolCallEventsResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	// ApplicationVndAPIJSON200 the response for an HTTP 200 `application/vnd.api+json` response
-	ApplicationVndAPIJSON200 *struct {
-		Data []struct {
-			Attributes *struct {
-				AiAutomationRunID nullable.Nullable[string] `json:"ai_automation_run_id,omitempty"`
-				AiSessionID       nullable.Nullable[string] `json:"ai_session_id,omitempty"`
-				ArgumentKeys      []string                  `json:"argument_keys,omitempty"`
-				Automatic         *bool                     `json:"automatic,omitempty"`
-				ConnectionName    nullable.Nullable[string] `json:"connection_name,omitempty"`
-				DurationMs        nullable.Nullable[int]    `json:"duration_ms,omitempty"`
-				OccurredAt        *time.Time                `json:"occurred_at,omitempty"`
-				Outcome           *string                   `json:"outcome,omitempty"`
-				ProviderType      nullable.Nullable[string] `json:"provider_type,omitempty"`
-				RemoteMcpSourceID nullable.Nullable[string] `json:"remote_mcp_source_id,omitempty"`
-				RiskClass         *string                   `json:"risk_class,omitempty"`
-				Surface           *string                   `json:"surface,omitempty"`
-				ToolName          *string                   `json:"tool_name,omitempty"`
-				TriggerRecordID   nullable.Nullable[string] `json:"trigger_record_id,omitempty"`
-				TriggerRecordType nullable.Nullable[string] `json:"trigger_record_type,omitempty"`
-				UserEmail         nullable.Nullable[string] `json:"user_email,omitempty"`
-				UserID            nullable.Nullable[int]    `json:"user_id,omitempty"`
-				UserName          nullable.Nullable[string] `json:"user_name,omitempty"`
-			} `json:"attributes,omitempty"`
-			ID   *string                                                               `json:"id,omitempty"`
-			Type *ListAiToolCallEvents200ApplicationVndAPIPlusJSONResponseBodyDataType `json:"type,omitempty"`
-		} `json:"data,omitempty"`
-		Meta map[string]interface{} `json:"meta,omitempty"`
-	}
+	ApplicationVndAPIJSON200 *AiToolCallEventList
 	// ApplicationVndAPIJSON400 the response for an HTTP 400 `application/vnd.api+json` response
 	ApplicationVndAPIJSON400 *ErrorsList
 }
@@ -185287,11 +185672,20 @@ func (r UpdateAlertConfigurationResponse) ContentType() string {
 	return ""
 }
 
+// ListAlertEventsFeedResponse503Headers the declared response headers of an HTTP 503 response for ListAlertEventsFeed
+type ListAlertEventsFeedResponse503Headers struct {
+	RetryAfter *int
+}
+
 type ListAlertEventsFeedResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	// ApplicationVndAPIJSON200 the response for an HTTP 200 `application/vnd.api+json` response
 	ApplicationVndAPIJSON200 *AlertEventFeedList
+	// ApplicationVndAPIJSON503 the response for an HTTP 503 `application/vnd.api+json` response
+	ApplicationVndAPIJSON503 *ErrorsList
+	// Headers503 the parsed response headers for an HTTP 503 response
+	Headers503 *ListAlertEventsFeedResponse503Headers
 }
 
 // Status returns HTTPResponse.Status
@@ -196836,181 +197230,6 @@ func (r CreateIncidentSubStatusResponse) ContentType() string {
 	return ""
 }
 
-type ListInvestigationsResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// ApplicationVndAPIJSON200 the response for an HTTP 200 `application/vnd.api+json` response
-	ApplicationVndAPIJSON200 *InvestigationList
-	// ApplicationVndAPIJSON403 the response for an HTTP 403 `application/vnd.api+json` response
-	ApplicationVndAPIJSON403 *ErrorsList
-	// ApplicationVndAPIJSON422 the response for an HTTP 422 `application/vnd.api+json` response
-	ApplicationVndAPIJSON422 *ErrorsList
-}
-
-// Status returns HTTPResponse.Status
-func (r ListInvestigationsResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r ListInvestigationsResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r ListInvestigationsResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type CreateInvestigationResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// ApplicationVndAPIJSON202 the response for an HTTP 202 `application/vnd.api+json` response
-	ApplicationVndAPIJSON202 *Investigation
-	// ApplicationVndAPIJSON403 the response for an HTTP 403 `application/vnd.api+json` response
-	ApplicationVndAPIJSON403 *ErrorsList
-	// ApplicationVndAPIJSON404 the response for an HTTP 404 `application/vnd.api+json` response
-	ApplicationVndAPIJSON404 *ErrorsList
-	// ApplicationVndAPIJSON409 the response for an HTTP 409 `application/vnd.api+json` response
-	ApplicationVndAPIJSON409 *ErrorsList
-	// ApplicationVndAPIJSON422 the response for an HTTP 422 `application/vnd.api+json` response
-	ApplicationVndAPIJSON422 *ErrorsList
-}
-
-// Status returns HTTPResponse.Status
-func (r CreateInvestigationResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r CreateInvestigationResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r CreateInvestigationResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type GetInvestigationResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// ApplicationVndAPIJSON200 the response for an HTTP 200 `application/vnd.api+json` response
-	ApplicationVndAPIJSON200 *Investigation
-	// ApplicationVndAPIJSON404 the response for an HTTP 404 `application/vnd.api+json` response
-	ApplicationVndAPIJSON404 *ErrorsList
-}
-
-// Status returns HTTPResponse.Status
-func (r GetInvestigationResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r GetInvestigationResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r GetInvestigationResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type CancelInvestigationResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// ApplicationVndAPIJSON200 the response for an HTTP 200 `application/vnd.api+json` response
-	ApplicationVndAPIJSON200 *Investigation
-	// ApplicationVndAPIJSON403 the response for an HTTP 403 `application/vnd.api+json` response
-	ApplicationVndAPIJSON403 *ErrorsList
-	// ApplicationVndAPIJSON409 the response for an HTTP 409 `application/vnd.api+json` response
-	ApplicationVndAPIJSON409 *ErrorsList
-}
-
-// Status returns HTTPResponse.Status
-func (r CancelInvestigationResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r CancelInvestigationResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r CancelInvestigationResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type GetInvestigationProgressResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// ApplicationVndAPIJSON200 the response for an HTTP 200 `application/vnd.api+json` response
-	ApplicationVndAPIJSON200 *InvestigationProgress
-	// ApplicationVndAPIJSON400 the response for an HTTP 400 `application/vnd.api+json` response
-	ApplicationVndAPIJSON400 *ErrorsList
-}
-
-// Status returns HTTPResponse.Status
-func (r GetInvestigationProgressResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r GetInvestigationProgressResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r GetInvestigationProgressResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
 type GetIPAllowlistResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
@@ -205718,6 +205937,291 @@ func (c *ClientWithResponses) UpdateIncidentActionItemWithApplicationVndAPIPlusJ
 	return ParseUpdateIncidentActionItemResponse(rsp)
 }
 
+// GetAIAutomationRunWithResponse Gets an AI automation run
+//
+// Incident-linked runs are visible only when the caller's role permits access. OAuth tokens also need the `ir.incidents:read` scope; API keys use the key's role. Requires OAuth scope `ai.automations:write`.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/ai/automation_runs/{id} (the `GetAIAutomationRun` operationId).
+func (c *ClientWithResponses) GetAIAutomationRunWithResponse(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*GetAIAutomationRunResponse, error) {
+	rsp, err := c.GetAIAutomationRun(ctx, id, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetAIAutomationRunResponse(rsp)
+}
+
+// ListAIAutomationsWithResponse Lists AI automations
+//
+// Requires OAuth scope `ai.automations:read`.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/ai/automations (the `ListAIAutomations` operationId).
+func (c *ClientWithResponses) ListAIAutomationsWithResponse(ctx context.Context, params *ListAIAutomationsParams, reqEditors ...RequestEditorFn) (*ListAIAutomationsResponse, error) {
+	rsp, err := c.ListAIAutomations(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseListAIAutomationsResponse(rsp)
+}
+
+// CreateAIAutomationWithBodyWithResponse Creates an AI automation
+//
+// Requires OAuth scope `ai.automations:write`. Read-only attributes are ignored on write.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/ai/automations (the `CreateAIAutomation` operationId).
+func (c *ClientWithResponses) CreateAIAutomationWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateAIAutomationResponse, error) {
+	rsp, err := c.CreateAIAutomationWithBody(ctx, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateAIAutomationResponse(rsp)
+}
+
+// CreateAIAutomationWithApplicationVndAPIPlusJSONBodyWithResponse Creates an AI automation
+//
+// Requires OAuth scope `ai.automations:write`. Read-only attributes are ignored on write.
+//
+// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/ai/automations (the `CreateAIAutomation` operationId).
+func (c *ClientWithResponses) CreateAIAutomationWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, body CreateAIAutomationApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateAIAutomationResponse, error) {
+	rsp, err := c.CreateAIAutomationWithApplicationVndAPIPlusJSONBody(ctx, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateAIAutomationResponse(rsp)
+}
+
+// ListAIAutomationSlackChannelsWithResponse Lists synced Slack channels for AI Automations
+//
+// Channels Rootly has synced from the team's connected Slack workspace; any returned slack_channel_id is accepted as destination_slack_channel_id. When filter[search] is set, exact channel-name matches come first. When Slack channel user filtering is enabled, personal keys and OAuth tokens only see, and can only set new, channels the user can access in Slack; an update may resend the automation's current channel unchanged.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/ai/automations/slack_channels (the `ListAIAutomationSlackChannels` operationId).
+func (c *ClientWithResponses) ListAIAutomationSlackChannelsWithResponse(ctx context.Context, params *ListAIAutomationSlackChannelsParams, reqEditors ...RequestEditorFn) (*ListAIAutomationSlackChannelsResponse, error) {
+	rsp, err := c.ListAIAutomationSlackChannels(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseListAIAutomationSlackChannelsResponse(rsp)
+}
+
+// ListAIAutomationSlackUserGroupsWithResponse Lists Slack user groups for AI Automations
+//
+// User groups from the team's connected Slack workspace, read live from Slack; any returned slack_user_group_id is accepted by usergroup trigger conditions.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/ai/automations/slack_user_groups (the `ListAIAutomationSlackUserGroups` operationId).
+func (c *ClientWithResponses) ListAIAutomationSlackUserGroupsWithResponse(ctx context.Context, params *ListAIAutomationSlackUserGroupsParams, reqEditors ...RequestEditorFn) (*ListAIAutomationSlackUserGroupsResponse, error) {
+	rsp, err := c.ListAIAutomationSlackUserGroups(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseListAIAutomationSlackUserGroupsResponse(rsp)
+}
+
+// ListAIAutomationSlackUsersWithResponse Lists Slack users for AI Automations
+//
+// Users, including bots, from the team's connected Slack workspace; any returned slack_user_id is accepted by user and item_user trigger conditions.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/ai/automations/slack_users (the `ListAIAutomationSlackUsers` operationId).
+func (c *ClientWithResponses) ListAIAutomationSlackUsersWithResponse(ctx context.Context, params *ListAIAutomationSlackUsersParams, reqEditors ...RequestEditorFn) (*ListAIAutomationSlackUsersResponse, error) {
+	rsp, err := c.ListAIAutomationSlackUsers(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseListAIAutomationSlackUsersResponse(rsp)
+}
+
+// GetAIAutomationTriggerOptionsWithResponse Lists options for configuring AI Automation triggers
+//
+// Returns the source-of-truth options used by the AI Automation editor.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/ai/automations/trigger_options (the `GetAIAutomationTriggerOptions` operationId).
+func (c *ClientWithResponses) GetAIAutomationTriggerOptionsWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*GetAIAutomationTriggerOptionsResponse, error) {
+	rsp, err := c.GetAIAutomationTriggerOptions(ctx, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetAIAutomationTriggerOptionsResponse(rsp)
+}
+
+// ListAIAutomationRunsWithResponse Lists AI automation runs
+//
+// Scans the 1000 most recent runs matching the filters; pagination and counts cover the visible runs in that window. When meta.next_scan_cursor is set, older runs exist beyond the window. Present only on the last page of the current scan window; finish page pagination before following it. Repeat the request with filter[scan_cursor] set to that opaque cursor to continue. Incident-linked runs are visible only when the caller's role permits access. OAuth tokens also need the `ir.incidents:read` scope; API keys use the key's role. Requires OAuth scope `ai.automations:write`.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/ai/automations/{ai_automation_id}/runs (the `ListAIAutomationRuns` operationId).
+func (c *ClientWithResponses) ListAIAutomationRunsWithResponse(ctx context.Context, aiAutomationID openapi_types.UUID, params *ListAIAutomationRunsParams, reqEditors ...RequestEditorFn) (*ListAIAutomationRunsResponse, error) {
+	rsp, err := c.ListAIAutomationRuns(ctx, aiAutomationID, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseListAIAutomationRunsResponse(rsp)
+}
+
+// RunAIAutomationWithBodyWithResponse Runs an AI automation now
+//
+// Requires OAuth scope `ai.automations:write`. For run-now requests with incident_id, or run_id of an incident-linked run, OAuth tokens also need the `ir.incidents:read` scope; API keys use the key's role. Limited to 30 requests per credential per minute (fixed one-minute windows), separate from the default mutation rate limit; exceeding it returns 429 with Retry-After.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/ai/automations/{ai_automation_id}/runs (the `RunAIAutomation` operationId).
+func (c *ClientWithResponses) RunAIAutomationWithBodyWithResponse(ctx context.Context, aiAutomationID openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*RunAIAutomationResponse, error) {
+	rsp, err := c.RunAIAutomationWithBody(ctx, aiAutomationID, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseRunAIAutomationResponse(rsp)
+}
+
+// RunAIAutomationWithApplicationVndAPIPlusJSONBodyWithResponse Runs an AI automation now
+//
+// Requires OAuth scope `ai.automations:write`. For run-now requests with incident_id, or run_id of an incident-linked run, OAuth tokens also need the `ir.incidents:read` scope; API keys use the key's role. Limited to 30 requests per credential per minute (fixed one-minute windows), separate from the default mutation rate limit; exceeding it returns 429 with Retry-After.
+//
+// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/ai/automations/{ai_automation_id}/runs (the `RunAIAutomation` operationId).
+func (c *ClientWithResponses) RunAIAutomationWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, aiAutomationID openapi_types.UUID, body RunAIAutomationApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*RunAIAutomationResponse, error) {
+	rsp, err := c.RunAIAutomationWithApplicationVndAPIPlusJSONBody(ctx, aiAutomationID, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseRunAIAutomationResponse(rsp)
+}
+
+// DeleteAIAutomationWithResponse Deletes an AI automation
+//
+// Requires OAuth scope `ai.automations:write`. Retires the automation: it is disabled and soft-deleted, no longer listed or runnable; GET show and run-now return 404, while its existing run history remains readable via the runs endpoints.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with DELETE /v1/ai/automations/{id} (the `DeleteAIAutomation` operationId).
+func (c *ClientWithResponses) DeleteAIAutomationWithResponse(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*DeleteAIAutomationResponse, error) {
+	rsp, err := c.DeleteAIAutomation(ctx, id, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseDeleteAIAutomationResponse(rsp)
+}
+
+// GetAIAutomationWithResponse Gets an AI automation
+//
+// Requires OAuth scope `ai.automations:read`.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/ai/automations/{id} (the `GetAIAutomation` operationId).
+func (c *ClientWithResponses) GetAIAutomationWithResponse(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*GetAIAutomationResponse, error) {
+	rsp, err := c.GetAIAutomation(ctx, id, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetAIAutomationResponse(rsp)
+}
+
+// UpdateAIAutomationWithBodyWithResponse Updates an AI automation
+//
+// Requires OAuth scope `ai.automations:write`. Read-only attributes are ignored on write.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PATCH /v1/ai/automations/{id} (the `UpdateAIAutomation` operationId).
+func (c *ClientWithResponses) UpdateAIAutomationWithBodyWithResponse(ctx context.Context, id ID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateAIAutomationResponse, error) {
+	rsp, err := c.UpdateAIAutomationWithBody(ctx, id, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateAIAutomationResponse(rsp)
+}
+
+// UpdateAIAutomationWithApplicationVndAPIPlusJSONBodyWithResponse Updates an AI automation
+//
+// Requires OAuth scope `ai.automations:write`. Read-only attributes are ignored on write.
+//
+// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PATCH /v1/ai/automations/{id} (the `UpdateAIAutomation` operationId).
+func (c *ClientWithResponses) UpdateAIAutomationWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, id ID, body UpdateAIAutomationApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateAIAutomationResponse, error) {
+	rsp, err := c.UpdateAIAutomationWithApplicationVndAPIPlusJSONBody(ctx, id, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateAIAutomationResponse(rsp)
+}
+
+// PutAIAutomationWithBodyWithResponse Updates an AI automation
+//
+// Requires OAuth scope `ai.automations:write`. Read-only attributes are ignored on write.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PUT /v1/ai/automations/{id} (the `PutAIAutomation` operationId).
+func (c *ClientWithResponses) PutAIAutomationWithBodyWithResponse(ctx context.Context, id ID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PutAIAutomationResponse, error) {
+	rsp, err := c.PutAIAutomationWithBody(ctx, id, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePutAIAutomationResponse(rsp)
+}
+
+// PutAIAutomationWithApplicationVndAPIPlusJSONBodyWithResponse Updates an AI automation
+//
+// Requires OAuth scope `ai.automations:write`. Read-only attributes are ignored on write.
+//
+// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PUT /v1/ai/automations/{id} (the `PutAIAutomation` operationId).
+func (c *ClientWithResponses) PutAIAutomationWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, id ID, body PutAIAutomationApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*PutAIAutomationResponse, error) {
+	rsp, err := c.PutAIAutomationWithApplicationVndAPIPlusJSONBody(ctx, id, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePutAIAutomationResponse(rsp)
+}
+
+// RotateAIAutomationWebhookSecretWithBodyWithResponse Generates or rotates an AI Automation webhook trigger secret
+//
+// Returns a new secret for a webhook trigger. The previous secret stops working immediately. The secret is only returned in this response; Rootly stores a SHA-256 digest of it.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/ai/automations/{id}/triggers/{trigger_id}/webhook_secret (the `RotateAIAutomationWebhookSecret` operationId).
+func (c *ClientWithResponses) RotateAIAutomationWebhookSecretWithBodyWithResponse(ctx context.Context, id ID, triggerID string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*RotateAIAutomationWebhookSecretResponse, error) {
+	rsp, err := c.RotateAIAutomationWebhookSecretWithBody(ctx, id, triggerID, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseRotateAIAutomationWebhookSecretResponse(rsp)
+}
+
+// RotateAIAutomationWebhookSecretWithApplicationVndAPIPlusJSONBodyWithResponse Generates or rotates an AI Automation webhook trigger secret
+//
+// Returns a new secret for a webhook trigger. The previous secret stops working immediately. The secret is only returned in this response; Rootly stores a SHA-256 digest of it.
+//
+// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/ai/automations/{id}/triggers/{trigger_id}/webhook_secret (the `RotateAIAutomationWebhookSecret` operationId).
+func (c *ClientWithResponses) RotateAIAutomationWebhookSecretWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, id ID, triggerID string, body RotateAIAutomationWebhookSecretApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*RotateAIAutomationWebhookSecretResponse, error) {
+	rsp, err := c.RotateAIAutomationWebhookSecretWithApplicationVndAPIPlusJSONBody(ctx, id, triggerID, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseRotateAIAutomationWebhookSecretResponse(rsp)
+}
+
 // CreateAiChatWithResponse Send AI chat message
 //
 // Send a message to the AI assistant and receive a synchronous reply. Optionally bind the conversation to an incident or alert for context-aware responses. For eligible unbound home chat, `checkpoint_id` and `decision` confirm or cancel approval-gated writes. Responses include `confirmation` for a pending write and `checkpoint_resolved` after resume. If an action-item write needs required fields the model did not supply, no checkpoint is created and the turn completes with a plain reply linking to that incident's action-item form in the Rootly web app. The synchronous response has no `confirmation` key; only `confirmation` responses are resumable. Limited to 60 requests per minute per credential. Rate-limit responses include `Retry-After` and `X-RateLimit-*` headers. Requires `ai.chat:write` OAuth scope or an API key.
@@ -205823,289 +206327,94 @@ func (c *ClientWithResponses) StreamAiChatWithResponse(ctx context.Context, para
 	return ParseStreamAiChatResponse(rsp)
 }
 
-// GetAIAutomationRunWithResponse Gets an AI automation run
+// ListInvestigationsWithResponse Lists AI SRE investigations
 //
-// Incident-linked runs are visible only when the caller's role permits access. OAuth tokens also need the `ir.incidents:read` scope; API keys use the key's role. Requires OAuth scope `ai.automations:write`.
-//
-// Returns a wrapper object for the known response body format(s).
-//
-// Corresponds with GET /v1/ai_automation_runs/{id} (the `GetAIAutomationRun` operationId).
-func (c *ClientWithResponses) GetAIAutomationRunWithResponse(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*GetAIAutomationRunResponse, error) {
-	rsp, err := c.GetAIAutomationRun(ctx, id, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseGetAIAutomationRunResponse(rsp)
-}
-
-// ListAIAutomationsWithResponse Lists AI automations
-//
-// Requires OAuth scope `ai.automations:read`.
+// Requires OAuth scope `ai.investigations:read`. OAuth tokens also need `oc.alerts:read` for alert investigations and `ir.incidents:read` for incident investigations; API keys use the key's role. Investigations on alerts and incidents the caller can read, newest first.
 //
 // Returns a wrapper object for the known response body format(s).
 //
-// Corresponds with GET /v1/ai_automations (the `ListAIAutomations` operationId).
-func (c *ClientWithResponses) ListAIAutomationsWithResponse(ctx context.Context, params *ListAIAutomationsParams, reqEditors ...RequestEditorFn) (*ListAIAutomationsResponse, error) {
-	rsp, err := c.ListAIAutomations(ctx, params, reqEditors...)
+// Corresponds with GET /v1/ai/investigations (the `ListInvestigations` operationId).
+func (c *ClientWithResponses) ListInvestigationsWithResponse(ctx context.Context, params *ListInvestigationsParams, reqEditors ...RequestEditorFn) (*ListInvestigationsResponse, error) {
+	rsp, err := c.ListInvestigations(ctx, params, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseListAIAutomationsResponse(rsp)
+	return ParseListInvestigationsResponse(rsp)
 }
 
-// CreateAIAutomationWithBodyWithResponse Creates an AI automation
+// CreateInvestigationWithBodyWithResponse Starts an AI SRE investigation
 //
-// Requires OAuth scope `ai.automations:write`. Read-only attributes are ignored on write.
+// Requires OAuth scope `ai.investigations:write`. OAuth tokens also need `oc.alerts:write` (alerts) or `ir.incidents:write` (incidents) and update access to the resource; API keys use the key's role. Starts an investigation on an alert or incident you can update, or returns the one already running.
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
-// Corresponds with POST /v1/ai_automations (the `CreateAIAutomation` operationId).
-func (c *ClientWithResponses) CreateAIAutomationWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateAIAutomationResponse, error) {
-	rsp, err := c.CreateAIAutomationWithBody(ctx, contentType, body, reqEditors...)
+// Corresponds with POST /v1/ai/investigations (the `CreateInvestigation` operationId).
+func (c *ClientWithResponses) CreateInvestigationWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateInvestigationResponse, error) {
+	rsp, err := c.CreateInvestigationWithBody(ctx, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseCreateAIAutomationResponse(rsp)
+	return ParseCreateInvestigationResponse(rsp)
 }
 
-// CreateAIAutomationWithApplicationVndAPIPlusJSONBodyWithResponse Creates an AI automation
+// CreateInvestigationWithApplicationVndAPIPlusJSONBodyWithResponse Starts an AI SRE investigation
 //
-// Requires OAuth scope `ai.automations:write`. Read-only attributes are ignored on write.
+// Requires OAuth scope `ai.investigations:write`. OAuth tokens also need `oc.alerts:write` (alerts) or `ir.incidents:write` (incidents) and update access to the resource; API keys use the key's role. Starts an investigation on an alert or incident you can update, or returns the one already running.
 //
 // Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
 //
-// Corresponds with POST /v1/ai_automations (the `CreateAIAutomation` operationId).
-func (c *ClientWithResponses) CreateAIAutomationWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, body CreateAIAutomationApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateAIAutomationResponse, error) {
-	rsp, err := c.CreateAIAutomationWithApplicationVndAPIPlusJSONBody(ctx, body, reqEditors...)
+// Corresponds with POST /v1/ai/investigations (the `CreateInvestigation` operationId).
+func (c *ClientWithResponses) CreateInvestigationWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, body CreateInvestigationApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateInvestigationResponse, error) {
+	rsp, err := c.CreateInvestigationWithApplicationVndAPIPlusJSONBody(ctx, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseCreateAIAutomationResponse(rsp)
+	return ParseCreateInvestigationResponse(rsp)
 }
 
-// ListAIAutomationSlackChannelsWithResponse Lists synced Slack channels for AI Automations
+// GetInvestigationWithResponse Retrieves an AI SRE investigation
 //
-// Channels Rootly has synced from the team's connected Slack workspace; any returned slack_channel_id is accepted as destination_slack_channel_id. When filter[search] is set, exact channel-name matches come first. When Slack channel user filtering is enabled, personal keys and OAuth tokens only see, and can only set new, channels the user can access in Slack; an update may resend the automation's current channel unchanged.
+// Requires OAuth scope `ai.investigations:read`. OAuth tokens also need `oc.alerts:read` for alert investigations and `ir.incidents:read` for incident investigations; API keys use the key's role. The verdict, hypotheses, evidence, causal chain and open questions.
 //
 // Returns a wrapper object for the known response body format(s).
 //
-// Corresponds with GET /v1/ai_automations/slack_channels (the `ListAIAutomationSlackChannels` operationId).
-func (c *ClientWithResponses) ListAIAutomationSlackChannelsWithResponse(ctx context.Context, params *ListAIAutomationSlackChannelsParams, reqEditors ...RequestEditorFn) (*ListAIAutomationSlackChannelsResponse, error) {
-	rsp, err := c.ListAIAutomationSlackChannels(ctx, params, reqEditors...)
+// Corresponds with GET /v1/ai/investigations/{id} (the `GetInvestigation` operationId).
+func (c *ClientWithResponses) GetInvestigationWithResponse(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*GetInvestigationResponse, error) {
+	rsp, err := c.GetInvestigation(ctx, id, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseListAIAutomationSlackChannelsResponse(rsp)
+	return ParseGetInvestigationResponse(rsp)
 }
 
-// ListAIAutomationSlackUserGroupsWithResponse Lists Slack user groups for AI Automations
+// CancelInvestigationWithResponse Cancels an AI SRE investigation
 //
-// User groups from the team's connected Slack workspace, read live from Slack; any returned slack_user_group_id is accepted by usergroup trigger conditions.
+// Requires OAuth scope `ai.investigations:write`. OAuth tokens also need `oc.alerts:write` (alerts) or `ir.incidents:write` (incidents) and update access to the resource; API keys use the key's role.
 //
 // Returns a wrapper object for the known response body format(s).
 //
-// Corresponds with GET /v1/ai_automations/slack_user_groups (the `ListAIAutomationSlackUserGroups` operationId).
-func (c *ClientWithResponses) ListAIAutomationSlackUserGroupsWithResponse(ctx context.Context, params *ListAIAutomationSlackUserGroupsParams, reqEditors ...RequestEditorFn) (*ListAIAutomationSlackUserGroupsResponse, error) {
-	rsp, err := c.ListAIAutomationSlackUserGroups(ctx, params, reqEditors...)
+// Corresponds with POST /v1/ai/investigations/{id}/cancel (the `CancelInvestigation` operationId).
+func (c *ClientWithResponses) CancelInvestigationWithResponse(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*CancelInvestigationResponse, error) {
+	rsp, err := c.CancelInvestigation(ctx, id, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseListAIAutomationSlackUserGroupsResponse(rsp)
+	return ParseCancelInvestigationResponse(rsp)
 }
 
-// ListAIAutomationSlackUsersWithResponse Lists Slack users for AI Automations
+// GetInvestigationProgressWithResponse Retrieves AI SRE investigation progress
 //
-// Users, including bots, from the team's connected Slack workspace; any returned slack_user_id is accepted by user and item_user trigger conditions.
+// Requires OAuth scope `ai.investigations:read`. OAuth tokens also need `oc.alerts:read` for alert investigations and `ir.incidents:read` for incident investigations; API keys use the key's role. Returns immediately with steps and tool calls recorded after the cursor. Poll with after=next_cursor until done is true.
 //
 // Returns a wrapper object for the known response body format(s).
 //
-// Corresponds with GET /v1/ai_automations/slack_users (the `ListAIAutomationSlackUsers` operationId).
-func (c *ClientWithResponses) ListAIAutomationSlackUsersWithResponse(ctx context.Context, params *ListAIAutomationSlackUsersParams, reqEditors ...RequestEditorFn) (*ListAIAutomationSlackUsersResponse, error) {
-	rsp, err := c.ListAIAutomationSlackUsers(ctx, params, reqEditors...)
+// Corresponds with GET /v1/ai/investigations/{id}/progress (the `GetInvestigationProgress` operationId).
+func (c *ClientWithResponses) GetInvestigationProgressWithResponse(ctx context.Context, id ID, params *GetInvestigationProgressParams, reqEditors ...RequestEditorFn) (*GetInvestigationProgressResponse, error) {
+	rsp, err := c.GetInvestigationProgress(ctx, id, params, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseListAIAutomationSlackUsersResponse(rsp)
-}
-
-// GetAIAutomationTriggerOptionsWithResponse Lists options for configuring AI Automation triggers
-//
-// Returns the source-of-truth options used by the AI Automation editor.
-//
-// Returns a wrapper object for the known response body format(s).
-//
-// Corresponds with GET /v1/ai_automations/trigger_options (the `GetAIAutomationTriggerOptions` operationId).
-func (c *ClientWithResponses) GetAIAutomationTriggerOptionsWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*GetAIAutomationTriggerOptionsResponse, error) {
-	rsp, err := c.GetAIAutomationTriggerOptions(ctx, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseGetAIAutomationTriggerOptionsResponse(rsp)
-}
-
-// ListAIAutomationRunsWithResponse Lists AI automation runs
-//
-// Scans the 1000 most recent runs matching the filters; pagination and counts cover the visible runs in that window. When meta.next_scan_cursor is set, older runs exist beyond the window. Present only on the last page of the current scan window; finish page pagination before following it. Repeat the request with filter[scan_cursor] set to that opaque cursor to continue. Incident-linked runs are visible only when the caller's role permits access. OAuth tokens also need the `ir.incidents:read` scope; API keys use the key's role. Requires OAuth scope `ai.automations:write`.
-//
-// Returns a wrapper object for the known response body format(s).
-//
-// Corresponds with GET /v1/ai_automations/{ai_automation_id}/runs (the `ListAIAutomationRuns` operationId).
-func (c *ClientWithResponses) ListAIAutomationRunsWithResponse(ctx context.Context, aiAutomationID openapi_types.UUID, params *ListAIAutomationRunsParams, reqEditors ...RequestEditorFn) (*ListAIAutomationRunsResponse, error) {
-	rsp, err := c.ListAIAutomationRuns(ctx, aiAutomationID, params, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseListAIAutomationRunsResponse(rsp)
-}
-
-// RunAIAutomationWithBodyWithResponse Runs an AI automation now
-//
-// Requires OAuth scope `ai.automations:write`. For run-now requests with incident_id, OAuth tokens also need the `ir.incidents:read` scope; API keys use the key's role. Limited to 30 requests per credential per minute (fixed one-minute windows), separate from the default mutation rate limit; exceeding it returns 429 with Retry-After.
-//
-// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-//
-// Corresponds with POST /v1/ai_automations/{ai_automation_id}/runs (the `RunAIAutomation` operationId).
-func (c *ClientWithResponses) RunAIAutomationWithBodyWithResponse(ctx context.Context, aiAutomationID openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*RunAIAutomationResponse, error) {
-	rsp, err := c.RunAIAutomationWithBody(ctx, aiAutomationID, contentType, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseRunAIAutomationResponse(rsp)
-}
-
-// RunAIAutomationWithApplicationVndAPIPlusJSONBodyWithResponse Runs an AI automation now
-//
-// Requires OAuth scope `ai.automations:write`. For run-now requests with incident_id, OAuth tokens also need the `ir.incidents:read` scope; API keys use the key's role. Limited to 30 requests per credential per minute (fixed one-minute windows), separate from the default mutation rate limit; exceeding it returns 429 with Retry-After.
-//
-// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
-//
-// Corresponds with POST /v1/ai_automations/{ai_automation_id}/runs (the `RunAIAutomation` operationId).
-func (c *ClientWithResponses) RunAIAutomationWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, aiAutomationID openapi_types.UUID, body RunAIAutomationApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*RunAIAutomationResponse, error) {
-	rsp, err := c.RunAIAutomationWithApplicationVndAPIPlusJSONBody(ctx, aiAutomationID, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseRunAIAutomationResponse(rsp)
-}
-
-// DeleteAIAutomationWithResponse Deletes an AI automation
-//
-// Requires OAuth scope `ai.automations:write`. Retires the automation: it is disabled and soft-deleted, no longer listed or runnable; GET show and run-now return 404, while its existing run history remains readable via the runs endpoints.
-//
-// Returns a wrapper object for the known response body format(s).
-//
-// Corresponds with DELETE /v1/ai_automations/{id} (the `DeleteAIAutomation` operationId).
-func (c *ClientWithResponses) DeleteAIAutomationWithResponse(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*DeleteAIAutomationResponse, error) {
-	rsp, err := c.DeleteAIAutomation(ctx, id, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseDeleteAIAutomationResponse(rsp)
-}
-
-// GetAIAutomationWithResponse Gets an AI automation
-//
-// Requires OAuth scope `ai.automations:read`.
-//
-// Returns a wrapper object for the known response body format(s).
-//
-// Corresponds with GET /v1/ai_automations/{id} (the `GetAIAutomation` operationId).
-func (c *ClientWithResponses) GetAIAutomationWithResponse(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*GetAIAutomationResponse, error) {
-	rsp, err := c.GetAIAutomation(ctx, id, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseGetAIAutomationResponse(rsp)
-}
-
-// UpdateAIAutomationWithBodyWithResponse Updates an AI automation
-//
-// Requires OAuth scope `ai.automations:write`. Read-only attributes are ignored on write.
-//
-// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-//
-// Corresponds with PATCH /v1/ai_automations/{id} (the `UpdateAIAutomation` operationId).
-func (c *ClientWithResponses) UpdateAIAutomationWithBodyWithResponse(ctx context.Context, id ID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateAIAutomationResponse, error) {
-	rsp, err := c.UpdateAIAutomationWithBody(ctx, id, contentType, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseUpdateAIAutomationResponse(rsp)
-}
-
-// UpdateAIAutomationWithApplicationVndAPIPlusJSONBodyWithResponse Updates an AI automation
-//
-// Requires OAuth scope `ai.automations:write`. Read-only attributes are ignored on write.
-//
-// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
-//
-// Corresponds with PATCH /v1/ai_automations/{id} (the `UpdateAIAutomation` operationId).
-func (c *ClientWithResponses) UpdateAIAutomationWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, id ID, body UpdateAIAutomationApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateAIAutomationResponse, error) {
-	rsp, err := c.UpdateAIAutomationWithApplicationVndAPIPlusJSONBody(ctx, id, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseUpdateAIAutomationResponse(rsp)
-}
-
-// PutAIAutomationWithBodyWithResponse Updates an AI automation
-//
-// Requires OAuth scope `ai.automations:write`. Read-only attributes are ignored on write.
-//
-// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-//
-// Corresponds with PUT /v1/ai_automations/{id} (the `PutAIAutomation` operationId).
-func (c *ClientWithResponses) PutAIAutomationWithBodyWithResponse(ctx context.Context, id ID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PutAIAutomationResponse, error) {
-	rsp, err := c.PutAIAutomationWithBody(ctx, id, contentType, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParsePutAIAutomationResponse(rsp)
-}
-
-// PutAIAutomationWithApplicationVndAPIPlusJSONBodyWithResponse Updates an AI automation
-//
-// Requires OAuth scope `ai.automations:write`. Read-only attributes are ignored on write.
-//
-// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
-//
-// Corresponds with PUT /v1/ai_automations/{id} (the `PutAIAutomation` operationId).
-func (c *ClientWithResponses) PutAIAutomationWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, id ID, body PutAIAutomationApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*PutAIAutomationResponse, error) {
-	rsp, err := c.PutAIAutomationWithApplicationVndAPIPlusJSONBody(ctx, id, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParsePutAIAutomationResponse(rsp)
-}
-
-// RotateAIAutomationWebhookSecretWithBodyWithResponse Generates or rotates an AI Automation webhook trigger secret
-//
-// Returns a new secret for a webhook trigger. The previous secret stops working immediately. The secret is only returned in this response; Rootly stores a SHA-256 digest of it.
-//
-// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-//
-// Corresponds with POST /v1/ai_automations/{id}/triggers/{trigger_id}/webhook_secret (the `RotateAIAutomationWebhookSecret` operationId).
-func (c *ClientWithResponses) RotateAIAutomationWebhookSecretWithBodyWithResponse(ctx context.Context, id ID, triggerID string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*RotateAIAutomationWebhookSecretResponse, error) {
-	rsp, err := c.RotateAIAutomationWebhookSecretWithBody(ctx, id, triggerID, contentType, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseRotateAIAutomationWebhookSecretResponse(rsp)
-}
-
-// RotateAIAutomationWebhookSecretWithApplicationVndAPIPlusJSONBodyWithResponse Generates or rotates an AI Automation webhook trigger secret
-//
-// Returns a new secret for a webhook trigger. The previous secret stops working immediately. The secret is only returned in this response; Rootly stores a SHA-256 digest of it.
-//
-// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
-//
-// Corresponds with POST /v1/ai_automations/{id}/triggers/{trigger_id}/webhook_secret (the `RotateAIAutomationWebhookSecret` operationId).
-func (c *ClientWithResponses) RotateAIAutomationWebhookSecretWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, id ID, triggerID string, body RotateAIAutomationWebhookSecretApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*RotateAIAutomationWebhookSecretResponse, error) {
-	rsp, err := c.RotateAIAutomationWebhookSecretWithApplicationVndAPIPlusJSONBody(ctx, id, triggerID, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseRotateAIAutomationWebhookSecretResponse(rsp)
+	return ParseGetInvestigationProgressResponse(rsp)
 }
 
 // ListAISkillsWithResponse Lists AI skills
@@ -206114,7 +206423,7 @@ func (c *ClientWithResponses) RotateAIAutomationWebhookSecretWithApplicationVndA
 //
 // Returns a wrapper object for the known response body format(s).
 //
-// Corresponds with GET /v1/ai_skills (the `ListAISkills` operationId).
+// Corresponds with GET /v1/ai/skills (the `ListAISkills` operationId).
 func (c *ClientWithResponses) ListAISkillsWithResponse(ctx context.Context, params *ListAISkillsParams, reqEditors ...RequestEditorFn) (*ListAISkillsResponse, error) {
 	rsp, err := c.ListAISkills(ctx, params, reqEditors...)
 	if err != nil {
@@ -206129,7 +206438,7 @@ func (c *ClientWithResponses) ListAISkillsWithResponse(ctx context.Context, para
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
-// Corresponds with POST /v1/ai_skills (the `CreateAISkill` operationId).
+// Corresponds with POST /v1/ai/skills (the `CreateAISkill` operationId).
 func (c *ClientWithResponses) CreateAISkillWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateAISkillResponse, error) {
 	rsp, err := c.CreateAISkillWithBody(ctx, contentType, body, reqEditors...)
 	if err != nil {
@@ -206144,7 +206453,7 @@ func (c *ClientWithResponses) CreateAISkillWithBodyWithResponse(ctx context.Cont
 //
 // Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
 //
-// Corresponds with POST /v1/ai_skills (the `CreateAISkill` operationId).
+// Corresponds with POST /v1/ai/skills (the `CreateAISkill` operationId).
 func (c *ClientWithResponses) CreateAISkillWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, body CreateAISkillApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateAISkillResponse, error) {
 	rsp, err := c.CreateAISkillWithApplicationVndAPIPlusJSONBody(ctx, body, reqEditors...)
 	if err != nil {
@@ -206159,7 +206468,7 @@ func (c *ClientWithResponses) CreateAISkillWithApplicationVndAPIPlusJSONBodyWith
 //
 // Returns a wrapper object for the known response body format(s).
 //
-// Corresponds with GET /v1/ai_skills/{ai_skill_id}/versions (the `ListAISkillVersions` operationId).
+// Corresponds with GET /v1/ai/skills/{ai_skill_id}/versions (the `ListAISkillVersions` operationId).
 func (c *ClientWithResponses) ListAISkillVersionsWithResponse(ctx context.Context, aiSkillID string, reqEditors ...RequestEditorFn) (*ListAISkillVersionsResponse, error) {
 	rsp, err := c.ListAISkillVersions(ctx, aiSkillID, reqEditors...)
 	if err != nil {
@@ -206174,7 +206483,7 @@ func (c *ClientWithResponses) ListAISkillVersionsWithResponse(ctx context.Contex
 //
 // Returns a wrapper object for the known response body format(s).
 //
-// Corresponds with GET /v1/ai_skills/{ai_skill_id}/versions/{version} (the `GetAISkillVersion` operationId).
+// Corresponds with GET /v1/ai/skills/{ai_skill_id}/versions/{version} (the `GetAISkillVersion` operationId).
 func (c *ClientWithResponses) GetAISkillVersionWithResponse(ctx context.Context, aiSkillID string, version int, reqEditors ...RequestEditorFn) (*GetAISkillVersionResponse, error) {
 	rsp, err := c.GetAISkillVersion(ctx, aiSkillID, version, reqEditors...)
 	if err != nil {
@@ -206189,7 +206498,7 @@ func (c *ClientWithResponses) GetAISkillVersionWithResponse(ctx context.Context,
 //
 // Returns a wrapper object for the known response body format(s).
 //
-// Corresponds with DELETE /v1/ai_skills/{id} (the `DeleteAISkill` operationId).
+// Corresponds with DELETE /v1/ai/skills/{id} (the `DeleteAISkill` operationId).
 func (c *ClientWithResponses) DeleteAISkillWithResponse(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*DeleteAISkillResponse, error) {
 	rsp, err := c.DeleteAISkill(ctx, id, reqEditors...)
 	if err != nil {
@@ -206204,7 +206513,7 @@ func (c *ClientWithResponses) DeleteAISkillWithResponse(ctx context.Context, id 
 //
 // Returns a wrapper object for the known response body format(s).
 //
-// Corresponds with GET /v1/ai_skills/{id} (the `GetAISkill` operationId).
+// Corresponds with GET /v1/ai/skills/{id} (the `GetAISkill` operationId).
 func (c *ClientWithResponses) GetAISkillWithResponse(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*GetAISkillResponse, error) {
 	rsp, err := c.GetAISkill(ctx, id, reqEditors...)
 	if err != nil {
@@ -206219,7 +206528,7 @@ func (c *ClientWithResponses) GetAISkillWithResponse(ctx context.Context, id ID,
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
-// Corresponds with PATCH /v1/ai_skills/{id} (the `UpdateAISkill` operationId).
+// Corresponds with PATCH /v1/ai/skills/{id} (the `UpdateAISkill` operationId).
 func (c *ClientWithResponses) UpdateAISkillWithBodyWithResponse(ctx context.Context, id ID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateAISkillResponse, error) {
 	rsp, err := c.UpdateAISkillWithBody(ctx, id, contentType, body, reqEditors...)
 	if err != nil {
@@ -206234,7 +206543,7 @@ func (c *ClientWithResponses) UpdateAISkillWithBodyWithResponse(ctx context.Cont
 //
 // Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
 //
-// Corresponds with PATCH /v1/ai_skills/{id} (the `UpdateAISkill` operationId).
+// Corresponds with PATCH /v1/ai/skills/{id} (the `UpdateAISkill` operationId).
 func (c *ClientWithResponses) UpdateAISkillWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, id ID, body UpdateAISkillApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateAISkillResponse, error) {
 	rsp, err := c.UpdateAISkillWithApplicationVndAPIPlusJSONBody(ctx, id, body, reqEditors...)
 	if err != nil {
@@ -206249,7 +206558,7 @@ func (c *ClientWithResponses) UpdateAISkillWithApplicationVndAPIPlusJSONBodyWith
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
-// Corresponds with PUT /v1/ai_skills/{id} (the `PutAISkill` operationId).
+// Corresponds with PUT /v1/ai/skills/{id} (the `PutAISkill` operationId).
 func (c *ClientWithResponses) PutAISkillWithBodyWithResponse(ctx context.Context, id ID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PutAISkillResponse, error) {
 	rsp, err := c.PutAISkillWithBody(ctx, id, contentType, body, reqEditors...)
 	if err != nil {
@@ -206264,7 +206573,7 @@ func (c *ClientWithResponses) PutAISkillWithBodyWithResponse(ctx context.Context
 //
 // Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
 //
-// Corresponds with PUT /v1/ai_skills/{id} (the `PutAISkill` operationId).
+// Corresponds with PUT /v1/ai/skills/{id} (the `PutAISkill` operationId).
 func (c *ClientWithResponses) PutAISkillWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, id ID, body PutAISkillApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*PutAISkillResponse, error) {
 	rsp, err := c.PutAISkillWithApplicationVndAPIPlusJSONBody(ctx, id, body, reqEditors...)
 	if err != nil {
@@ -206279,7 +206588,7 @@ func (c *ClientWithResponses) PutAISkillWithApplicationVndAPIPlusJSONBodyWithRes
 //
 // Returns a wrapper object for the known response body format(s).
 //
-// Corresponds with GET /v1/ai_tool_call_events (the `ListAiToolCallEvents` operationId).
+// Corresponds with GET /v1/ai/tool_call_events (the `ListAiToolCallEvents` operationId).
 func (c *ClientWithResponses) ListAiToolCallEventsWithResponse(ctx context.Context, params *ListAiToolCallEventsParams, reqEditors ...RequestEditorFn) (*ListAiToolCallEventsResponse, error) {
 	rsp, err := c.ListAiToolCallEvents(ctx, params, reqEditors...)
 	if err != nil {
@@ -207673,7 +207982,7 @@ func (c *ClientWithResponses) UpdateAPIKeyWithApplicationVndAPIPlusJSONBodyWithR
 //
 // Rotate an API key's token. Issues a new secret token and returns it — **the new token is only shown once**, so store it securely.
 //
-// **Self-only:** You can only rotate the API key that was used to authenticate this request. Attempting to rotate a different key returns `403 Forbidden`.
+// **Self-only:** You can only rotate the API key that was used to authenticate this request. Attempting to rotate a different key returns `404 Not Found` when the authenticating key is not authorized to manage it, or `403 Forbidden` when it is.
 //
 // **Grace period:** When enabled for your organization, the previous token remains valid after rotation, giving you time to deploy the new token without downtime. Pass `grace_period_minutes` (integer, 0–1440, default 30) to control how long the old token stays valid. Set to 0 to immediately invalidate the old token. The `grace_period_ends_at` field in the response confirms the exact time the old token will stop working.
 //
@@ -207700,7 +208009,7 @@ func (c *ClientWithResponses) RotateAPIKeyWithBodyWithResponse(ctx context.Conte
 //
 // Rotate an API key's token. Issues a new secret token and returns it — **the new token is only shown once**, so store it securely.
 //
-// **Self-only:** You can only rotate the API key that was used to authenticate this request. Attempting to rotate a different key returns `403 Forbidden`.
+// **Self-only:** You can only rotate the API key that was used to authenticate this request. Attempting to rotate a different key returns `404 Not Found` when the authenticating key is not authorized to manage it, or `403 Forbidden` when it is.
 //
 // **Grace period:** When enabled for your organization, the previous token remains valid after rotation, giving you time to deploy the new token without downtime. Pass `grace_period_minutes` (integer, 0–1440, default 30) to control how long the old token stays valid. Set to 0 to immediately invalidate the old token. The `grace_period_ends_at` field in the response confirms the exact time the old token will stop working.
 //
@@ -213824,94 +214133,6 @@ func (c *ClientWithResponses) CreateIncidentSubStatusWithApplicationVndAPIPlusJS
 	return ParseCreateIncidentSubStatusResponse(rsp)
 }
 
-// ListInvestigationsWithResponse Lists AI SRE investigations
-//
-// Investigations on alerts and incidents the caller can read, newest first.
-//
-// Returns a wrapper object for the known response body format(s).
-//
-// Corresponds with GET /v1/investigations (the `ListInvestigations` operationId).
-func (c *ClientWithResponses) ListInvestigationsWithResponse(ctx context.Context, params *ListInvestigationsParams, reqEditors ...RequestEditorFn) (*ListInvestigationsResponse, error) {
-	rsp, err := c.ListInvestigations(ctx, params, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseListInvestigationsResponse(rsp)
-}
-
-// CreateInvestigationWithBodyWithResponse Starts an AI SRE investigation
-//
-// Starts an investigation on an alert or incident you can update, or returns the one already running.
-//
-// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-//
-// Corresponds with POST /v1/investigations (the `CreateInvestigation` operationId).
-func (c *ClientWithResponses) CreateInvestigationWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateInvestigationResponse, error) {
-	rsp, err := c.CreateInvestigationWithBody(ctx, contentType, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseCreateInvestigationResponse(rsp)
-}
-
-// CreateInvestigationWithApplicationVndAPIPlusJSONBodyWithResponse Starts an AI SRE investigation
-//
-// Starts an investigation on an alert or incident you can update, or returns the one already running.
-//
-// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
-//
-// Corresponds with POST /v1/investigations (the `CreateInvestigation` operationId).
-func (c *ClientWithResponses) CreateInvestigationWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, body CreateInvestigationApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateInvestigationResponse, error) {
-	rsp, err := c.CreateInvestigationWithApplicationVndAPIPlusJSONBody(ctx, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseCreateInvestigationResponse(rsp)
-}
-
-// GetInvestigationWithResponse Retrieves an AI SRE investigation
-//
-// The verdict, hypotheses, evidence, causal chain and open questions.
-//
-// Returns a wrapper object for the known response body format(s).
-//
-// Corresponds with GET /v1/investigations/{id} (the `GetInvestigation` operationId).
-func (c *ClientWithResponses) GetInvestigationWithResponse(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*GetInvestigationResponse, error) {
-	rsp, err := c.GetInvestigation(ctx, id, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseGetInvestigationResponse(rsp)
-}
-
-// CancelInvestigationWithResponse Cancels an AI SRE investigation
-//
-// Returns a wrapper object for the known response body format(s).
-//
-// Corresponds with POST /v1/investigations/{id}/cancel (the `CancelInvestigation` operationId).
-func (c *ClientWithResponses) CancelInvestigationWithResponse(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*CancelInvestigationResponse, error) {
-	rsp, err := c.CancelInvestigation(ctx, id, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseCancelInvestigationResponse(rsp)
-}
-
-// GetInvestigationProgressWithResponse Retrieves AI SRE investigation progress
-//
-// Returns immediately with steps and tool calls recorded after the cursor. Poll with after=next_cursor until done is true.
-//
-// Returns a wrapper object for the known response body format(s).
-//
-// Corresponds with GET /v1/investigations/{id}/progress (the `GetInvestigationProgress` operationId).
-func (c *ClientWithResponses) GetInvestigationProgressWithResponse(ctx context.Context, id ID, params *GetInvestigationProgressParams, reqEditors ...RequestEditorFn) (*GetInvestigationProgressResponse, error) {
-	rsp, err := c.GetInvestigationProgress(ctx, id, params, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseGetInvestigationProgressResponse(rsp)
-}
-
 // GetIPAllowlistWithResponse Retrieves the organization's browser IP allowlist
 //
 // Returns a wrapper object for the known response body format(s).
@@ -219207,359 +219428,6 @@ func ParseUpdateIncidentActionItemResponse(rsp *http.Response) (*UpdateIncidentA
 	return response, nil
 }
 
-// ParseCreateAiChatResponse parses an HTTP response from a CreateAiChatWithResponse call
-func ParseCreateAiChatResponse(rsp *http.Response) (*CreateAiChatResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &CreateAiChatResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest AiChatResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.ApplicationVndAPIJSON200 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest AiChatErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.ApplicationVndAPIJSON403 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
-		var dest AiChatErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.ApplicationVndAPIJSON404 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
-		var dest AiChatErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.ApplicationVndAPIJSON422 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
-		var dest AiChatErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.ApplicationVndAPIJSON429 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
-		var dest AiChatErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.ApplicationVndAPIJSON500 = &dest
-
-	}
-
-	switch {
-	case rsp.StatusCode == 200:
-		var headers CreateAiChatResponse200Headers
-		if values := rsp.Header.Values("X-RateLimit-Limit"); len(values) > 0 {
-			var value string
-			if err := runtime.BindStyledParameterWithOptions("simple", "X-RateLimit-Limit", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			}
-			headers.XRateLimitLimit = &value
-		}
-		if values := rsp.Header.Values("X-RateLimit-Remaining"); len(values) > 0 {
-			var value string
-			if err := runtime.BindStyledParameterWithOptions("simple", "X-RateLimit-Remaining", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			}
-			headers.XRateLimitRemaining = &value
-		}
-		if values := rsp.Header.Values("X-RateLimit-Reset"); len(values) > 0 {
-			var value string
-			if err := runtime.BindStyledParameterWithOptions("simple", "X-RateLimit-Reset", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			}
-			headers.XRateLimitReset = &value
-		}
-		if values := rsp.Header.Values("X-RateLimit-Used"); len(values) > 0 {
-			var value string
-			if err := runtime.BindStyledParameterWithOptions("simple", "X-RateLimit-Used", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			}
-			headers.XRateLimitUsed = &value
-		}
-		response.Headers200 = &headers
-	case rsp.StatusCode == 429:
-		var headers CreateAiChatResponse429Headers
-		if values := rsp.Header.Values("Retry-After"); len(values) > 0 {
-			var value int
-			if err := runtime.BindStyledParameterWithOptions("simple", "Retry-After", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "integer", Format: ""}); err != nil {
-				return nil, err
-			}
-			headers.RetryAfter = &value
-		}
-		if values := rsp.Header.Values("X-RateLimit-Limit"); len(values) > 0 {
-			var value string
-			if err := runtime.BindStyledParameterWithOptions("simple", "X-RateLimit-Limit", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			}
-			headers.XRateLimitLimit = &value
-		}
-		if values := rsp.Header.Values("X-RateLimit-Remaining"); len(values) > 0 {
-			var value string
-			if err := runtime.BindStyledParameterWithOptions("simple", "X-RateLimit-Remaining", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			}
-			headers.XRateLimitRemaining = &value
-		}
-		if values := rsp.Header.Values("X-RateLimit-Reset"); len(values) > 0 {
-			var value string
-			if err := runtime.BindStyledParameterWithOptions("simple", "X-RateLimit-Reset", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			}
-			headers.XRateLimitReset = &value
-		}
-		if values := rsp.Header.Values("X-RateLimit-Used"); len(values) > 0 {
-			var value string
-			if err := runtime.BindStyledParameterWithOptions("simple", "X-RateLimit-Used", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			}
-			headers.XRateLimitUsed = &value
-		}
-		response.Headers429 = &headers
-	}
-
-	return response, nil
-}
-
-// ParseListAiChatSessionsResponse parses an HTTP response from a ListAiChatSessionsWithResponse call
-func ParseListAiChatSessionsResponse(rsp *http.Response) (*ListAiChatSessionsResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &ListAiChatSessionsResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest AiChatSessionList
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.ApplicationVndAPIJSON200 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest AiChatErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.ApplicationVndAPIJSON403 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
-		var dest AiChatErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.ApplicationVndAPIJSON422 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseDeleteAiChatSessionResponse parses an HTTP response from a DeleteAiChatSessionWithResponse call
-func ParseDeleteAiChatSessionResponse(rsp *http.Response) (*DeleteAiChatSessionResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &DeleteAiChatSessionResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	return response, nil
-}
-
-// ParseUpdateAiChatSessionResponse parses an HTTP response from a UpdateAiChatSessionWithResponse call
-func ParseUpdateAiChatSessionResponse(rsp *http.Response) (*UpdateAiChatSessionResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &UpdateAiChatSessionResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest AiChatSessionTitle
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.ApplicationVndAPIJSON200 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest AiChatErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.ApplicationVndAPIJSON403 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
-		var dest AiChatErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.ApplicationVndAPIJSON404 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
-		var dest AiChatErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.ApplicationVndAPIJSON422 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseListAiChatSessionMessagesResponse parses an HTTP response from a ListAiChatSessionMessagesWithResponse call
-func ParseListAiChatSessionMessagesResponse(rsp *http.Response) (*ListAiChatSessionMessagesResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &ListAiChatSessionMessagesResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest AiChatSessionMessageList
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.ApplicationVndAPIJSON200 = &dest
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseStreamAiChatResponse parses an HTTP response from a StreamAiChatWithResponse call
-func ParseStreamAiChatResponse(rsp *http.Response) (*StreamAiChatResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &StreamAiChatResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case rsp.StatusCode == 200:
-		var headers StreamAiChatResponse200Headers
-		if values := rsp.Header.Values("X-RateLimit-Limit"); len(values) > 0 {
-			var value string
-			if err := runtime.BindStyledParameterWithOptions("simple", "X-RateLimit-Limit", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			}
-			headers.XRateLimitLimit = &value
-		}
-		if values := rsp.Header.Values("X-RateLimit-Remaining"); len(values) > 0 {
-			var value string
-			if err := runtime.BindStyledParameterWithOptions("simple", "X-RateLimit-Remaining", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			}
-			headers.XRateLimitRemaining = &value
-		}
-		if values := rsp.Header.Values("X-RateLimit-Reset"); len(values) > 0 {
-			var value string
-			if err := runtime.BindStyledParameterWithOptions("simple", "X-RateLimit-Reset", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			}
-			headers.XRateLimitReset = &value
-		}
-		if values := rsp.Header.Values("X-RateLimit-Used"); len(values) > 0 {
-			var value string
-			if err := runtime.BindStyledParameterWithOptions("simple", "X-RateLimit-Used", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			}
-			headers.XRateLimitUsed = &value
-		}
-		response.Headers200 = &headers
-	case rsp.StatusCode == 429:
-		var headers StreamAiChatResponse429Headers
-		if values := rsp.Header.Values("Retry-After"); len(values) > 0 {
-			var value int
-			if err := runtime.BindStyledParameterWithOptions("simple", "Retry-After", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "integer", Format: ""}); err != nil {
-				return nil, err
-			}
-			headers.RetryAfter = &value
-		}
-		if values := rsp.Header.Values("X-RateLimit-Limit"); len(values) > 0 {
-			var value string
-			if err := runtime.BindStyledParameterWithOptions("simple", "X-RateLimit-Limit", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			}
-			headers.XRateLimitLimit = &value
-		}
-		if values := rsp.Header.Values("X-RateLimit-Remaining"); len(values) > 0 {
-			var value string
-			if err := runtime.BindStyledParameterWithOptions("simple", "X-RateLimit-Remaining", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			}
-			headers.XRateLimitRemaining = &value
-		}
-		if values := rsp.Header.Values("X-RateLimit-Reset"); len(values) > 0 {
-			var value string
-			if err := runtime.BindStyledParameterWithOptions("simple", "X-RateLimit-Reset", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			}
-			headers.XRateLimitReset = &value
-		}
-		if values := rsp.Header.Values("X-RateLimit-Used"); len(values) > 0 {
-			var value string
-			if err := runtime.BindStyledParameterWithOptions("simple", "X-RateLimit-Used", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			}
-			headers.XRateLimitUsed = &value
-		}
-		response.Headers429 = &headers
-	}
-
-	return response, nil
-}
-
 // ParseGetAIAutomationRunResponse parses an HTTP response from a GetAIAutomationRunWithResponse call
 func ParseGetAIAutomationRunResponse(rsp *http.Response) (*GetAIAutomationRunResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
@@ -220062,17 +219930,7 @@ func ParseRotateAIAutomationWebhookSecretResponse(rsp *http.Response) (*RotateAI
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
-		var dest struct {
-			Data struct {
-				Attributes struct {
-					RotatedAt  time.Time `json:"rotated_at"`
-					Secret     string    `json:"secret"`
-					WebhookURL string    `json:"webhook_url"`
-				} `json:"attributes"`
-				ID   string                                                                          `json:"id"`
-				Type RotateAIAutomationWebhookSecret201ApplicationVndAPIPlusJSONResponseBodyDataType `json:"type"`
-			} `json:"data"`
-		}
+		var dest AiAutomationWebhookSecretResponse
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -220080,6 +219938,573 @@ func ParseRotateAIAutomationWebhookSecretResponse(rsp *http.Response) (*RotateAI
 
 	case rsp.StatusCode == 404:
 		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseCreateAiChatResponse parses an HTTP response from a CreateAiChatWithResponse call
+func ParseCreateAiChatResponse(rsp *http.Response) (*CreateAiChatResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CreateAiChatResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest AiChatResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest AiChatErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest AiChatErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest AiChatErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON422 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest AiChatErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest AiChatErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON500 = &dest
+
+	}
+
+	switch {
+	case rsp.StatusCode == 200:
+		var headers CreateAiChatResponse200Headers
+		if values := rsp.Header.Values("X-RateLimit-Limit"); len(values) > 0 {
+			var value string
+			if err := runtime.BindStyledParameterWithOptions("simple", "X-RateLimit-Limit", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			}
+			headers.XRateLimitLimit = &value
+		}
+		if values := rsp.Header.Values("X-RateLimit-Remaining"); len(values) > 0 {
+			var value string
+			if err := runtime.BindStyledParameterWithOptions("simple", "X-RateLimit-Remaining", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			}
+			headers.XRateLimitRemaining = &value
+		}
+		if values := rsp.Header.Values("X-RateLimit-Reset"); len(values) > 0 {
+			var value string
+			if err := runtime.BindStyledParameterWithOptions("simple", "X-RateLimit-Reset", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			}
+			headers.XRateLimitReset = &value
+		}
+		if values := rsp.Header.Values("X-RateLimit-Used"); len(values) > 0 {
+			var value string
+			if err := runtime.BindStyledParameterWithOptions("simple", "X-RateLimit-Used", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			}
+			headers.XRateLimitUsed = &value
+		}
+		response.Headers200 = &headers
+	case rsp.StatusCode == 429:
+		var headers CreateAiChatResponse429Headers
+		if values := rsp.Header.Values("Retry-After"); len(values) > 0 {
+			var value int
+			if err := runtime.BindStyledParameterWithOptions("simple", "Retry-After", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "integer", Format: ""}); err != nil {
+				return nil, err
+			}
+			headers.RetryAfter = &value
+		}
+		if values := rsp.Header.Values("X-RateLimit-Limit"); len(values) > 0 {
+			var value string
+			if err := runtime.BindStyledParameterWithOptions("simple", "X-RateLimit-Limit", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			}
+			headers.XRateLimitLimit = &value
+		}
+		if values := rsp.Header.Values("X-RateLimit-Remaining"); len(values) > 0 {
+			var value string
+			if err := runtime.BindStyledParameterWithOptions("simple", "X-RateLimit-Remaining", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			}
+			headers.XRateLimitRemaining = &value
+		}
+		if values := rsp.Header.Values("X-RateLimit-Reset"); len(values) > 0 {
+			var value string
+			if err := runtime.BindStyledParameterWithOptions("simple", "X-RateLimit-Reset", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			}
+			headers.XRateLimitReset = &value
+		}
+		if values := rsp.Header.Values("X-RateLimit-Used"); len(values) > 0 {
+			var value string
+			if err := runtime.BindStyledParameterWithOptions("simple", "X-RateLimit-Used", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			}
+			headers.XRateLimitUsed = &value
+		}
+		response.Headers429 = &headers
+	}
+
+	return response, nil
+}
+
+// ParseListAiChatSessionsResponse parses an HTTP response from a ListAiChatSessionsWithResponse call
+func ParseListAiChatSessionsResponse(rsp *http.Response) (*ListAiChatSessionsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ListAiChatSessionsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest AiChatSessionList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest AiChatErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest AiChatErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON422 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseDeleteAiChatSessionResponse parses an HTTP response from a DeleteAiChatSessionWithResponse call
+func ParseDeleteAiChatSessionResponse(rsp *http.Response) (*DeleteAiChatSessionResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &DeleteAiChatSessionResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseUpdateAiChatSessionResponse parses an HTTP response from a UpdateAiChatSessionWithResponse call
+func ParseUpdateAiChatSessionResponse(rsp *http.Response) (*UpdateAiChatSessionResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &UpdateAiChatSessionResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest AiChatSessionTitle
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest AiChatErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest AiChatErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest AiChatErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON422 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseListAiChatSessionMessagesResponse parses an HTTP response from a ListAiChatSessionMessagesWithResponse call
+func ParseListAiChatSessionMessagesResponse(rsp *http.Response) (*ListAiChatSessionMessagesResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ListAiChatSessionMessagesResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest AiChatSessionMessageList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON200 = &dest
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseStreamAiChatResponse parses an HTTP response from a StreamAiChatWithResponse call
+func ParseStreamAiChatResponse(rsp *http.Response) (*StreamAiChatResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &StreamAiChatResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case rsp.StatusCode == 200:
+		var headers StreamAiChatResponse200Headers
+		if values := rsp.Header.Values("X-RateLimit-Limit"); len(values) > 0 {
+			var value string
+			if err := runtime.BindStyledParameterWithOptions("simple", "X-RateLimit-Limit", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			}
+			headers.XRateLimitLimit = &value
+		}
+		if values := rsp.Header.Values("X-RateLimit-Remaining"); len(values) > 0 {
+			var value string
+			if err := runtime.BindStyledParameterWithOptions("simple", "X-RateLimit-Remaining", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			}
+			headers.XRateLimitRemaining = &value
+		}
+		if values := rsp.Header.Values("X-RateLimit-Reset"); len(values) > 0 {
+			var value string
+			if err := runtime.BindStyledParameterWithOptions("simple", "X-RateLimit-Reset", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			}
+			headers.XRateLimitReset = &value
+		}
+		if values := rsp.Header.Values("X-RateLimit-Used"); len(values) > 0 {
+			var value string
+			if err := runtime.BindStyledParameterWithOptions("simple", "X-RateLimit-Used", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			}
+			headers.XRateLimitUsed = &value
+		}
+		response.Headers200 = &headers
+	case rsp.StatusCode == 429:
+		var headers StreamAiChatResponse429Headers
+		if values := rsp.Header.Values("Retry-After"); len(values) > 0 {
+			var value int
+			if err := runtime.BindStyledParameterWithOptions("simple", "Retry-After", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "integer", Format: ""}); err != nil {
+				return nil, err
+			}
+			headers.RetryAfter = &value
+		}
+		if values := rsp.Header.Values("X-RateLimit-Limit"); len(values) > 0 {
+			var value string
+			if err := runtime.BindStyledParameterWithOptions("simple", "X-RateLimit-Limit", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			}
+			headers.XRateLimitLimit = &value
+		}
+		if values := rsp.Header.Values("X-RateLimit-Remaining"); len(values) > 0 {
+			var value string
+			if err := runtime.BindStyledParameterWithOptions("simple", "X-RateLimit-Remaining", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			}
+			headers.XRateLimitRemaining = &value
+		}
+		if values := rsp.Header.Values("X-RateLimit-Reset"); len(values) > 0 {
+			var value string
+			if err := runtime.BindStyledParameterWithOptions("simple", "X-RateLimit-Reset", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			}
+			headers.XRateLimitReset = &value
+		}
+		if values := rsp.Header.Values("X-RateLimit-Used"); len(values) > 0 {
+			var value string
+			if err := runtime.BindStyledParameterWithOptions("simple", "X-RateLimit-Used", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			}
+			headers.XRateLimitUsed = &value
+		}
+		response.Headers429 = &headers
+	}
+
+	return response, nil
+}
+
+// ParseListInvestigationsResponse parses an HTTP response from a ListInvestigationsWithResponse call
+func ParseListInvestigationsResponse(rsp *http.Response) (*ListInvestigationsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ListInvestigationsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest InvestigationList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest ErrorsList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest ErrorsList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON422 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseCreateInvestigationResponse parses an HTTP response from a CreateInvestigationWithResponse call
+func ParseCreateInvestigationResponse(rsp *http.Response) (*CreateInvestigationResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CreateInvestigationResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 202:
+		var dest Investigation
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON202 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest ErrorsList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorsList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest ErrorsList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON409 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest ErrorsList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON422 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetInvestigationResponse parses an HTTP response from a GetInvestigationWithResponse call
+func ParseGetInvestigationResponse(rsp *http.Response) (*GetInvestigationResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetInvestigationResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest Investigation
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest ErrorsList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorsList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON404 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseCancelInvestigationResponse parses an HTTP response from a CancelInvestigationWithResponse call
+func ParseCancelInvestigationResponse(rsp *http.Response) (*CancelInvestigationResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CancelInvestigationResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest Investigation
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest ErrorsList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest ErrorsList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON409 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetInvestigationProgressResponse parses an HTTP response from a GetInvestigationProgressWithResponse call
+func ParseGetInvestigationProgressResponse(rsp *http.Response) (*GetInvestigationProgressResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetInvestigationProgressResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest InvestigationProgress
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorsList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest ErrorsList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON403 = &dest
 
 	}
 
@@ -220400,33 +220825,7 @@ func ParseListAiToolCallEventsResponse(rsp *http.Response) (*ListAiToolCallEvent
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			Data []struct {
-				Attributes *struct {
-					AiAutomationRunID nullable.Nullable[string] `json:"ai_automation_run_id,omitempty"`
-					AiSessionID       nullable.Nullable[string] `json:"ai_session_id,omitempty"`
-					ArgumentKeys      []string                  `json:"argument_keys,omitempty"`
-					Automatic         *bool                     `json:"automatic,omitempty"`
-					ConnectionName    nullable.Nullable[string] `json:"connection_name,omitempty"`
-					DurationMs        nullable.Nullable[int]    `json:"duration_ms,omitempty"`
-					OccurredAt        *time.Time                `json:"occurred_at,omitempty"`
-					Outcome           *string                   `json:"outcome,omitempty"`
-					ProviderType      nullable.Nullable[string] `json:"provider_type,omitempty"`
-					RemoteMcpSourceID nullable.Nullable[string] `json:"remote_mcp_source_id,omitempty"`
-					RiskClass         *string                   `json:"risk_class,omitempty"`
-					Surface           *string                   `json:"surface,omitempty"`
-					ToolName          *string                   `json:"tool_name,omitempty"`
-					TriggerRecordID   nullable.Nullable[string] `json:"trigger_record_id,omitempty"`
-					TriggerRecordType nullable.Nullable[string] `json:"trigger_record_type,omitempty"`
-					UserEmail         nullable.Nullable[string] `json:"user_email,omitempty"`
-					UserID            nullable.Nullable[int]    `json:"user_id,omitempty"`
-					UserName          nullable.Nullable[string] `json:"user_name,omitempty"`
-				} `json:"attributes,omitempty"`
-				ID   *string                                                               `json:"id,omitempty"`
-				Type *ListAiToolCallEvents200ApplicationVndAPIPlusJSONResponseBodyDataType `json:"type,omitempty"`
-			} `json:"data,omitempty"`
-			Meta map[string]interface{} `json:"meta,omitempty"`
-		}
+		var dest AiToolCallEventList
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -220545,6 +220944,26 @@ func ParseListAlertEventsFeedResponse(rsp *http.Response) (*ListAlertEventsFeedR
 		}
 		response.ApplicationVndAPIJSON200 = &dest
 
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 503:
+		var dest ErrorsList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON503 = &dest
+
+	}
+
+	switch {
+	case rsp.StatusCode == 503:
+		var headers ListAlertEventsFeedResponse503Headers
+		if values := rsp.Header.Values("Retry-After"); len(values) > 0 {
+			var value int
+			if err := runtime.BindStyledParameterWithOptions("simple", "Retry-After", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "integer", Format: ""}); err != nil {
+				return nil, err
+			}
+			headers.RetryAfter = &value
+		}
+		response.Headers503 = &headers
 	}
 
 	return response, nil
@@ -231947,206 +232366,6 @@ func ParseCreateIncidentSubStatusResponse(rsp *http.Response) (*CreateIncidentSu
 			return nil, err
 		}
 		response.ApplicationVndAPIJSON401 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseListInvestigationsResponse parses an HTTP response from a ListInvestigationsWithResponse call
-func ParseListInvestigationsResponse(rsp *http.Response) (*ListInvestigationsResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &ListInvestigationsResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest InvestigationList
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.ApplicationVndAPIJSON200 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest ErrorsList
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.ApplicationVndAPIJSON403 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
-		var dest ErrorsList
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.ApplicationVndAPIJSON422 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseCreateInvestigationResponse parses an HTTP response from a CreateInvestigationWithResponse call
-func ParseCreateInvestigationResponse(rsp *http.Response) (*CreateInvestigationResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &CreateInvestigationResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 202:
-		var dest Investigation
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.ApplicationVndAPIJSON202 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest ErrorsList
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.ApplicationVndAPIJSON403 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
-		var dest ErrorsList
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.ApplicationVndAPIJSON404 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
-		var dest ErrorsList
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.ApplicationVndAPIJSON409 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
-		var dest ErrorsList
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.ApplicationVndAPIJSON422 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseGetInvestigationResponse parses an HTTP response from a GetInvestigationWithResponse call
-func ParseGetInvestigationResponse(rsp *http.Response) (*GetInvestigationResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &GetInvestigationResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest Investigation
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.ApplicationVndAPIJSON200 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
-		var dest ErrorsList
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.ApplicationVndAPIJSON404 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseCancelInvestigationResponse parses an HTTP response from a CancelInvestigationWithResponse call
-func ParseCancelInvestigationResponse(rsp *http.Response) (*CancelInvestigationResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &CancelInvestigationResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest Investigation
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.ApplicationVndAPIJSON200 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest ErrorsList
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.ApplicationVndAPIJSON403 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
-		var dest ErrorsList
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.ApplicationVndAPIJSON409 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseGetInvestigationProgressResponse parses an HTTP response from a GetInvestigationProgressWithResponse call
-func ParseGetInvestigationProgressResponse(rsp *http.Response) (*GetInvestigationProgressResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &GetInvestigationProgressResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest InvestigationProgress
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.ApplicationVndAPIJSON200 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest ErrorsList
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.ApplicationVndAPIJSON400 = &dest
 
 	}
 

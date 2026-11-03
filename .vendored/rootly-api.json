@@ -13,7 +13,7 @@
     }
   },
   "paths": {
-    "/v1/ai_automations/{ai_automation_id}/runs": {
+    "/v1/ai/automations/{ai_automation_id}/runs": {
       "parameters": [
         {
           "name": "ai_automation_id",
@@ -115,7 +115,7 @@
       },
       "post": {
         "summary": "Runs an AI automation now",
-        "description": "Requires OAuth scope `ai.automations:write`. For run-now requests with incident_id, OAuth tokens also need the `ir.incidents:read` scope; API keys use the key's role. Limited to 30 requests per credential per minute (fixed one-minute windows), separate from the default mutation rate limit; exceeding it returns 429 with Retry-After.",
+        "description": "Requires OAuth scope `ai.automations:write`. For run-now requests with incident_id, or run_id of an incident-linked run, OAuth tokens also need the `ir.incidents:read` scope; API keys use the key's role. Limited to 30 requests per credential per minute (fixed one-minute windows), separate from the default mutation rate limit; exceeding it returns 429 with Retry-After.",
         "security": [
           {
             "bearer_auth": []
@@ -148,7 +148,7 @@
             }
           },
           "404": {
-            "description": "deleted automations cannot be run now",
+            "description": "re-running an incident run the caller cannot read is not found",
             "content": {
               "application/vnd.api+json": {
                 "schema": {
@@ -185,7 +185,7 @@
         }
       }
     },
-    "/v1/ai_automation_runs/{id}": {
+    "/v1/ai/automation_runs/{id}": {
       "parameters": [
         {
           "name": "id",
@@ -233,7 +233,7 @@
         }
       }
     },
-    "/v1/ai_automations/slack_channels": {
+    "/v1/ai/automations/slack_channels": {
       "get": {
         "summary": "Lists synced Slack channels for AI Automations",
         "description": "Channels Rootly has synced from the team's connected Slack workspace; any returned slack_channel_id is accepted as destination_slack_channel_id. When filter[search] is set, exact channel-name matches come first. When Slack channel user filtering is enabled, personal keys and OAuth tokens only see, and can only set new, channels the user can access in Slack; an update may resend the automation's current channel unchanged.",
@@ -296,7 +296,7 @@
         }
       }
     },
-    "/v1/ai_automations/slack_users": {
+    "/v1/ai/automations/slack_users": {
       "get": {
         "summary": "Lists Slack users for AI Automations",
         "description": "Users, including bots, from the team's connected Slack workspace; any returned slack_user_id is accepted by user and item_user trigger conditions.",
@@ -359,7 +359,7 @@
         }
       }
     },
-    "/v1/ai_automations/slack_user_groups": {
+    "/v1/ai/automations/slack_user_groups": {
       "get": {
         "summary": "Lists Slack user groups for AI Automations",
         "description": "User groups from the team's connected Slack workspace, read live from Slack; any returned slack_user_group_id is accepted by usergroup trigger conditions.",
@@ -422,7 +422,7 @@
         }
       }
     },
-    "/v1/ai_automations/trigger_options": {
+    "/v1/ai/automations/trigger_options": {
       "get": {
         "summary": "Lists options for configuring AI Automation triggers",
         "description": "Returns the source-of-truth options used by the AI Automation editor.",
@@ -469,7 +469,7 @@
         }
       }
     },
-    "/v1/ai_automations/{id}/triggers/{trigger_id}/webhook_secret": {
+    "/v1/ai/automations/{id}/triggers/{trigger_id}/webhook_secret": {
       "parameters": [
         {
           "name": "id",
@@ -509,51 +509,7 @@
             "content": {
               "application/vnd.api+json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {
-                    "data": {
-                      "type": "object",
-                      "properties": {
-                        "id": {
-                          "type": "string"
-                        },
-                        "type": {
-                          "type": "string",
-                          "enum": [
-                            "ai_automation_webhook_secrets"
-                          ]
-                        },
-                        "attributes": {
-                          "type": "object",
-                          "properties": {
-                            "secret": {
-                              "type": "string"
-                            },
-                            "webhook_url": {
-                              "type": "string"
-                            },
-                            "rotated_at": {
-                              "type": "string",
-                              "format": "date-time"
-                            }
-                          },
-                          "required": [
-                            "secret",
-                            "webhook_url",
-                            "rotated_at"
-                          ]
-                        }
-                      },
-                      "required": [
-                        "id",
-                        "type",
-                        "attributes"
-                      ]
-                    }
-                  },
-                  "required": [
-                    "data"
-                  ]
+                  "$ref": "#/components/schemas/ai_automation_webhook_secret_response"
                 }
               }
             }
@@ -573,7 +529,7 @@
         }
       }
     },
-    "/v1/ai_automations": {
+    "/v1/ai/automations": {
       "get": {
         "summary": "Lists AI automations",
         "description": "Requires OAuth scope `ai.automations:read`.",
@@ -759,7 +715,7 @@
         }
       }
     },
-    "/v1/ai_automations/{id}": {
+    "/v1/ai/automations/{id}": {
       "parameters": [
         {
           "name": "id",
@@ -1576,7 +1532,7 @@
         }
       }
     },
-    "/v1/ai_skills/{ai_skill_id}/versions": {
+    "/v1/ai/skills/{ai_skill_id}/versions": {
       "parameters": [
         {
           "name": "ai_skill_id",
@@ -1624,7 +1580,7 @@
         }
       }
     },
-    "/v1/ai_skills/{ai_skill_id}/versions/{version}": {
+    "/v1/ai/skills/{ai_skill_id}/versions/{version}": {
       "parameters": [
         {
           "name": "ai_skill_id",
@@ -1680,7 +1636,7 @@
         }
       }
     },
-    "/v1/ai_skills": {
+    "/v1/ai/skills": {
       "get": {
         "summary": "Lists AI skills",
         "description": "Requires OAuth scope `ai.skills:read`.",
@@ -1888,7 +1844,7 @@
         }
       }
     },
-    "/v1/ai_skills/{id}": {
+    "/v1/ai/skills/{id}": {
       "parameters": [
         {
           "name": "id",
@@ -2073,7 +2029,7 @@
         }
       }
     },
-    "/v1/ai_tool_call_events": {
+    "/v1/ai/tool_call_events": {
       "get": {
         "summary": "Lists AI tool call events",
         "description": "Returns audit events for AI tool calls and connector calls.",
@@ -2171,104 +2127,7 @@
             "content": {
               "application/vnd.api+json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {
-                    "data": {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "properties": {
-                          "id": {
-                            "type": "string"
-                          },
-                          "type": {
-                            "type": "string",
-                            "enum": [
-                              "ai_tool_call_events"
-                            ]
-                          },
-                          "attributes": {
-                            "type": "object",
-                            "properties": {
-                              "remote_mcp_source_id": {
-                                "type": "string",
-                                "nullable": true
-                              },
-                              "provider_type": {
-                                "type": "string",
-                                "nullable": true
-                              },
-                              "tool_name": {
-                                "type": "string"
-                              },
-                              "user_id": {
-                                "type": "integer",
-                                "nullable": true
-                              },
-                              "user_name": {
-                                "type": "string",
-                                "nullable": true
-                              },
-                              "user_email": {
-                                "type": "string",
-                                "nullable": true
-                              },
-                              "connection_name": {
-                                "type": "string",
-                                "nullable": true
-                              },
-                              "automatic": {
-                                "type": "boolean"
-                              },
-                              "trigger_record_type": {
-                                "type": "string",
-                                "nullable": true
-                              },
-                              "trigger_record_id": {
-                                "type": "string",
-                                "nullable": true
-                              },
-                              "surface": {
-                                "type": "string"
-                              },
-                              "risk_class": {
-                                "type": "string"
-                              },
-                              "outcome": {
-                                "type": "string"
-                              },
-                              "duration_ms": {
-                                "type": "integer",
-                                "nullable": true
-                              },
-                              "occurred_at": {
-                                "type": "string",
-                                "format": "date-time"
-                              },
-                              "ai_session_id": {
-                                "type": "string",
-                                "nullable": true
-                              },
-                              "ai_automation_run_id": {
-                                "type": "string",
-                                "nullable": true
-                              },
-                              "argument_keys": {
-                                "type": "array",
-                                "items": {
-                                  "type": "string"
-                                }
-                              }
-                            }
-                          }
-                        }
-                      }
-                    },
-                    "meta": {
-                      "type": "object",
-                      "additionalProperties": true
-                    }
-                  }
+                  "$ref": "#/components/schemas/ai_tool_call_event_list"
                 }
               }
             }
@@ -2686,6 +2545,24 @@
               "application/vnd.api+json": {
                 "schema": {
                   "$ref": "#/components/schemas/alert_event_feed_list"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "page took too long to load",
+            "headers": {
+              "Retry-After": {
+                "schema": {
+                  "type": "integer"
+                },
+                "description": "Seconds to wait before retrying"
+              }
+            },
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors_list"
                 }
               }
             }
@@ -6506,7 +6383,7 @@
         "tags": [
           "API Keys"
         ],
-        "description": "Rotate an API key's token. Issues a new secret token and returns it — **the new token is only shown once**, so store it securely.\n\n**Self-only:** You can only rotate the API key that was used to authenticate this request. Attempting to rotate a different key returns `403 Forbidden`.\n\n**Grace period:** When enabled for your organization, the previous token remains valid after rotation, giving you time to deploy the new token without downtime. Pass `grace_period_minutes` (integer, 0–1440, default 30) to control how long the old token stays valid. Set to 0 to immediately invalidate the old token. The `grace_period_ends_at` field in the response confirms the exact time the old token will stop working.\n\n**Expiration:** Optionally provide a new `expires_at` date (ISO 8601, up to 5 years). Defaults to 90 days from now if omitted. Dates in the past are rejected.\n\n**Typical rotation workflow:**\n1. Call this endpoint to get a new token (optionally with a custom `grace_period_minutes`).\n2. Deploy the new token to your systems.\n3. The old token continues working for `grace_period_minutes` (if grace period is enabled).\n4. After the grace period, the old token is automatically invalidated.\n",
+        "description": "Rotate an API key's token. Issues a new secret token and returns it — **the new token is only shown once**, so store it securely.\n\n**Self-only:** You can only rotate the API key that was used to authenticate this request. Attempting to rotate a different key returns `404 Not Found` when the authenticating key is not authorized to manage it, or `403 Forbidden` when it is.\n\n**Grace period:** When enabled for your organization, the previous token remains valid after rotation, giving you time to deploy the new token without downtime. Pass `grace_period_minutes` (integer, 0–1440, default 30) to control how long the old token stays valid. Set to 0 to immediately invalidate the old token. The `grace_period_ends_at` field in the response confirms the exact time the old token will stop working.\n\n**Expiration:** Optionally provide a new `expires_at` date (ISO 8601, up to 5 years). Defaults to 90 days from now if omitted. Dates in the past are rejected.\n\n**Typical rotation workflow:**\n1. Call this endpoint to get a new token (optionally with a custom `grace_period_minutes`).\n2. Deploy the new token to your systems.\n3. The old token continues working for `grace_period_minutes` (if grace period is enabled).\n4. After the grace period, the old token is automatically invalidated.\n",
         "operationId": "rotateApiKey",
         "parameters": [],
         "responses": {
@@ -24809,6 +24686,15 @@
             "schema": {
               "type": "integer"
             }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "required": false,
+            "description": "Comma-separated sort fields: created_at, updated_at, started_at. Prefix with - for descending. Unsupported fields are ignored. Defaults to -started_at,created_at (latest published first).",
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -28287,10 +28173,10 @@
         }
       }
     },
-    "/v1/investigations": {
+    "/v1/ai/investigations": {
       "get": {
         "summary": "Lists AI SRE investigations",
-        "description": "Investigations on alerts and incidents the caller can read, newest first.",
+        "description": "Requires OAuth scope `ai.investigations:read`. OAuth tokens also need `oc.alerts:read` for alert investigations and `ir.incidents:read` for incident investigations; API keys use the key's role. Investigations on alerts and incidents the caller can read, newest first.",
         "security": [
           {
             "bearer_auth": []
@@ -28356,21 +28242,11 @@
         ],
         "responses": {
           "200": {
-            "description": "filters by alert",
+            "description": "lists investigations with the all scope",
             "content": {
               "application/vnd.api+json": {
                 "schema": {
                   "$ref": "#/components/schemas/investigation_list"
-                }
-              }
-            }
-          },
-          "422": {
-            "description": "rejects unknown statuses",
-            "content": {
-              "application/vnd.api+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/errors_list"
                 }
               }
             }
@@ -28384,12 +28260,22 @@
                 }
               }
             }
+          },
+          "422": {
+            "description": "rejects unknown statuses",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors_list"
+                }
+              }
+            }
           }
         }
       },
       "post": {
         "summary": "Starts an AI SRE investigation",
-        "description": "Starts an investigation on an alert or incident you can update, or returns the one already running.",
+        "description": "Requires OAuth scope `ai.investigations:write`. OAuth tokens also need `oc.alerts:write` (alerts) or `ir.incidents:write` (incidents) and update access to the resource; API keys use the key's role. Starts an investigation on an alert or incident you can update, or returns the one already running.",
         "security": [
           {
             "bearer_auth": []
@@ -28402,7 +28288,7 @@
         "parameters": [],
         "responses": {
           "202": {
-            "description": "reruns a finished investigation",
+            "description": "starts an investigation with the all scope",
             "content": {
               "application/vnd.api+json": {
                 "schema": {
@@ -28422,7 +28308,7 @@
             }
           },
           "403": {
-            "description": "read-only tokens cannot start investigations",
+            "description": "requires alert update access to start an investigation",
             "content": {
               "application/vnd.api+json": {
                 "schema": {
@@ -28463,7 +28349,7 @@
         }
       }
     },
-    "/v1/investigations/{id}": {
+    "/v1/ai/investigations/{id}": {
       "parameters": [
         {
           "name": "id",
@@ -28477,7 +28363,7 @@
       ],
       "get": {
         "summary": "Retrieves an AI SRE investigation",
-        "description": "The verdict, hypotheses, evidence, causal chain and open questions.",
+        "description": "Requires OAuth scope `ai.investigations:read`. OAuth tokens also need `oc.alerts:read` for alert investigations and `ir.incidents:read` for incident investigations; API keys use the key's role. The verdict, hypotheses, evidence, causal chain and open questions.",
         "security": [
           {
             "bearer_auth": []
@@ -28498,6 +28384,16 @@
               }
             }
           },
+          "403": {
+            "description": "requires the AI investigations read scope",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors_list"
+                }
+              }
+            }
+          },
           "404": {
             "description": "other teams' investigations are not found",
             "content": {
@@ -28511,7 +28407,7 @@
         }
       }
     },
-    "/v1/investigations/{id}/progress": {
+    "/v1/ai/investigations/{id}/progress": {
       "parameters": [
         {
           "name": "id",
@@ -28534,7 +28430,7 @@
       ],
       "get": {
         "summary": "Retrieves AI SRE investigation progress",
-        "description": "Returns immediately with steps and tool calls recorded after the cursor. Poll with after=next_cursor until done is true.",
+        "description": "Requires OAuth scope `ai.investigations:read`. OAuth tokens also need `oc.alerts:read` for alert investigations and `ir.incidents:read` for incident investigations; API keys use the key's role. Returns immediately with steps and tool calls recorded after the cursor. Poll with after=next_cursor until done is true.",
         "security": [
           {
             "bearer_auth": []
@@ -28546,11 +28442,21 @@
         "operationId": "GetInvestigationProgress",
         "responses": {
           "200": {
-            "description": "returns progress since the start",
+            "description": "returns progress with OAuth read scopes",
             "content": {
               "application/vnd.api+json": {
                 "schema": {
                   "$ref": "#/components/schemas/investigation_progress"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "requires the AI investigations read scope",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors_list"
                 }
               }
             }
@@ -28568,7 +28474,7 @@
         }
       }
     },
-    "/v1/investigations/{id}/cancel": {
+    "/v1/ai/investigations/{id}/cancel": {
       "parameters": [
         {
           "name": "id",
@@ -28582,6 +28488,7 @@
       ],
       "post": {
         "summary": "Cancels an AI SRE investigation",
+        "description": "Requires OAuth scope `ai.investigations:write`. OAuth tokens also need `oc.alerts:write` (alerts) or `ir.incidents:write` (incidents) and update access to the resource; API keys use the key's role.",
         "security": [
           {
             "bearer_auth": []
@@ -28593,7 +28500,7 @@
         "operationId": "CancelInvestigation",
         "responses": {
           "200": {
-            "description": "cancels a running investigation",
+            "description": "cancels a running investigation with OAuth write scopes",
             "content": {
               "application/vnd.api+json": {
                 "schema": {
@@ -42700,6 +42607,15 @@
             }
           },
           {
+            "name": "filter[scim_managed]",
+            "in": "query",
+            "required": false,
+            "description": "`true` returns only users whose membership in this organization is managed by SCIM, including users synced in by a linked organization's SCIM integration, `false` returns only users whose membership isn't. Other values are ignored.",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
             "name": "sort",
             "in": "query",
             "description": "comma separated if needed. eg: created_at,updated_at",
@@ -42845,7 +42761,7 @@
             "content": {
               "application/vnd.api+json": {
                 "schema": {
-                  "$ref": "#/components/schemas/user_response"
+                  "$ref": "#/components/schemas/scim_user_response"
                 }
               }
             }
@@ -44797,7 +44713,7 @@
                 },
                 "webhook_secret_configured": {
                   "type": "boolean",
-                  "description": "Webhook triggers only. The secret itself is never returned; generate one with POST /v1/ai_automations/{id}/triggers/{trigger_id}/webhook_secret."
+                  "description": "Webhook triggers only. The secret itself is never returned; generate one with POST /v1/ai/automations/{id}/triggers/{trigger_id}/webhook_secret."
                 },
                 "webhook_secret_rotated_at": {
                   "type": "string",
@@ -44991,9 +44907,10 @@
             "type": "string",
             "nullable": true
           },
-          "cost_cents": {
+          "credits": {
             "type": "number",
-            "nullable": true
+            "nullable": true,
+            "description": "AI credits charged for this run, from the credit ledger. Null until the run is billed."
           },
           "scheduled_for": {
             "type": "string",
@@ -45191,7 +45108,7 @@
       },
       "ai_automation_trigger_options": {
         "type": "object",
-        "description": "Options for configuring AI Automation triggers and destinations. `sources` lists each trigger source with its events, condition fields and operators. Send triggers as rows in `triggers`: schedule rows take `schedule_rrule` or the preset fields, and incident, alert, Slack and webhook rows take `event_name` plus `conditions` as `[{field, operator, values}]`, all of which must match. `choice` values must match one of the field's choices (case-insensitive), `text` values are free-form, and `none` operators take no value. Skills are listed by `GET /v1/ai_skills?filter[invocable_by]=automation`; Slack channels, users and user groups are listed by `GET /v1/ai_automations/slack_channels`, `/slack_users` and `/slack_user_groups`. Slack `channel`, `user`, `item_user` and `usergroup` conditions take Slack IDs; `matches_regex` takes Ruby regular expressions (case-insensitive, at most 500 characters). `schedule_rrule` accepts custom RRULEs using `rrule_frequencies`. Any IANA timezone resolved by `ActiveSupport::TimeZone[...]` is accepted; `timezones` is the editor's list.",
+        "description": "Options for configuring AI Automation triggers and destinations. `sources` lists each trigger source with its events, condition fields and operators. Send triggers as rows in `triggers`: schedule rows take `schedule_rrule` or the preset fields, and incident, alert, Slack and webhook rows take `event_name` plus `conditions` as `[{field, operator, values}]`, all of which must match. `choice` values must match one of the field's choices (case-insensitive), `text` values are free-form, and `none` operators take no value. Skills are listed by `GET /v1/ai/skills?filter[invocable_by]=automation`; Slack channels, users and user groups are listed by `GET /v1/ai/automations/slack_channels`, `/slack_users` and `/slack_user_groups`. Slack `channel`, `user`, `item_user` and `usergroup` conditions take Slack IDs; `matches_regex` takes Ruby regular expressions (case-insensitive, at most 500 characters). `schedule_rrule` accepts custom RRULEs using `rrule_frequencies`. Any IANA timezone resolved by `ActiveSupport::TimeZone[...]` is accepted; `timezones` is the editor's list.",
         "properties": {
           "data": {
             "type": "object",
@@ -45973,7 +45890,7 @@
                         "conditions": {
                           "type": "array",
                           "maxItems": 20,
-                          "description": "Fields and operators per source are listed by GET /v1/ai_automation_trigger_options. Alert and webhook payload conditions use field \"payload\" with a JSONPath key; webhook keys allow only plain paths such as $.alert.severity or $.tags[0].",
+                          "description": "Fields and operators per source are listed by GET /v1/ai/automations/trigger_options. Alert and webhook payload conditions use field \"payload\" with a JSONPath key; webhook keys allow only plain paths such as $.alert.severity or $.tags[0].",
                           "items": {
                             "type": "object",
                             "properties": {
@@ -46225,27 +46142,12 @@
                     "description": "Defaults to true. Stored limits are returned even when false and apply only when true."
                   },
                   "max_credits_per_run": {
-                    "oneOf": [
-                      {
-                        "type": "number",
-                        "enum": [
-                          0
-                        ]
-                      },
-                      {
-                        "type": "number",
-                        "minimum": 1,
-                        "maximum": 1000
-                      },
-                      {
-                        "type": "number",
-                        "nullable": true,
-                        "enum": [
-                          null
-                        ]
-                      }
-                    ],
-                    "description": "Defaults to no limit (null); null or 0 means no limit. Stored value is returned even when limits are disabled and only applies when limits_enabled is true. Accepts increments of 0.1."
+                    "type": "number",
+                    "nullable": true,
+                    "minimum": 0,
+                    "maximum": 1000,
+                    "multipleOf": 0.1,
+                    "description": "Defaults to no limit (null); null or 0 means no limit. Otherwise must be at least 1; values between 0 and 1 are rejected. Stored value is returned even when limits are disabled and only applies when limits_enabled is true. Accepts increments of 0.1."
                   },
                   "rate_limit_runs": {
                     "type": "integer",
@@ -46477,7 +46379,7 @@
                         "conditions": {
                           "type": "array",
                           "maxItems": 20,
-                          "description": "Fields and operators per source are listed by GET /v1/ai_automation_trigger_options. Alert and webhook payload conditions use field \"payload\" with a JSONPath key; webhook keys allow only plain paths such as $.alert.severity or $.tags[0].",
+                          "description": "Fields and operators per source are listed by GET /v1/ai/automations/trigger_options. Alert and webhook payload conditions use field \"payload\" with a JSONPath key; webhook keys allow only plain paths such as $.alert.severity or $.tags[0].",
                           "items": {
                             "type": "object",
                             "properties": {
@@ -46729,27 +46631,12 @@
                     "description": "Stored limit values are returned even when false and apply only when this is true."
                   },
                   "max_credits_per_run": {
-                    "oneOf": [
-                      {
-                        "type": "number",
-                        "enum": [
-                          0
-                        ]
-                      },
-                      {
-                        "type": "number",
-                        "minimum": 1,
-                        "maximum": 1000
-                      },
-                      {
-                        "type": "number",
-                        "nullable": true,
-                        "enum": [
-                          null
-                        ]
-                      }
-                    ],
-                    "description": "Null or 0 means no limit. The stored value is returned even when limits are disabled and only applies when limits_enabled is true. Accepts increments of 0.1."
+                    "type": "number",
+                    "nullable": true,
+                    "minimum": 0,
+                    "maximum": 1000,
+                    "multipleOf": 0.1,
+                    "description": "Null or 0 means no limit. Otherwise must be at least 1; values between 0 and 1 are rejected. The stored value is returned even when limits are disabled and only applies when limits_enabled is true. Accepts increments of 0.1."
                   },
                   "rate_limit_runs": {
                     "type": "integer",
@@ -47030,6 +46917,11 @@
                   "incident_id": {
                     "type": "string",
                     "description": "Incident UUID or sequential reference such as INC-123; OAuth tokens also need the `ir.incidents:read` scope; API keys use the key's role."
+                  },
+                  "run_id": {
+                    "type": "string",
+                    "format": "uuid",
+                    "description": "Re-run a previous run of this automation. When the automation has an incident trigger, the new run reuses that run's incident if the caller can view it. Cannot be combined with incident_id."
                   }
                 },
                 "additionalProperties": false
@@ -47046,6 +46938,153 @@
           "data"
         ],
         "additionalProperties": false
+      },
+      "ai_automation_webhook_secret_response": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "type": {
+                "type": "string",
+                "enum": [
+                  "ai_automation_webhook_secrets"
+                ]
+              },
+              "attributes": {
+                "type": "object",
+                "properties": {
+                  "secret": {
+                    "type": "string"
+                  },
+                  "webhook_url": {
+                    "type": "string"
+                  },
+                  "rotated_at": {
+                    "type": "string",
+                    "format": "date-time"
+                  }
+                },
+                "required": [
+                  "secret",
+                  "webhook_url",
+                  "rotated_at"
+                ]
+              }
+            },
+            "required": [
+              "id",
+              "type",
+              "attributes"
+            ]
+          }
+        },
+        "required": [
+          "data"
+        ]
+      },
+      "ai_tool_call_event_list": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "ai_tool_call_events"
+                  ]
+                },
+                "attributes": {
+                  "type": "object",
+                  "properties": {
+                    "remote_mcp_source_id": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "provider_type": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "tool_name": {
+                      "type": "string"
+                    },
+                    "user_id": {
+                      "type": "integer",
+                      "nullable": true
+                    },
+                    "user_name": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "user_email": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "connection_name": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "automatic": {
+                      "type": "boolean"
+                    },
+                    "trigger_record_type": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "trigger_record_id": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "surface": {
+                      "type": "string"
+                    },
+                    "risk_class": {
+                      "type": "string"
+                    },
+                    "outcome": {
+                      "type": "string"
+                    },
+                    "duration_ms": {
+                      "type": "integer",
+                      "nullable": true
+                    },
+                    "occurred_at": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "ai_session_id": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "ai_automation_run_id": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "argument_keys": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "meta": {
+            "type": "object",
+            "additionalProperties": true
+          }
+        }
       },
       "investigation": {
         "type": "object",
@@ -65588,11 +65627,11 @@
                             },
                             "fieldable_type": {
                               "type": "string",
-                              "description": "The type of the fieldable (e.g., AlertField)"
+                              "description": "The field type. Only AlertField is supported."
                             },
                             "fieldable_id": {
                               "type": "string",
-                              "description": "The ID of the alert field"
+                              "description": "The ID of an existing alert field in the escalation policy's organization"
                             },
                             "operator": {
                               "type": "string",
@@ -66275,11 +66314,11 @@
                                   },
                                   "fieldable_type": {
                                     "type": "string",
-                                    "description": "The type of the fieldable (e.g., AlertField)"
+                                    "description": "The field type. Only AlertField is supported."
                                   },
                                   "fieldable_id": {
                                     "type": "string",
-                                    "description": "The ID of the alert field"
+                                    "description": "The ID of an existing alert field in the escalation policy's organization"
                                   },
                                   "operator": {
                                     "type": "string",
@@ -67439,11 +67478,11 @@
                             },
                             "fieldable_type": {
                               "type": "string",
-                              "description": "The type of the fieldable (e.g., AlertField)"
+                              "description": "The field type. Only AlertField is supported."
                             },
                             "fieldable_id": {
                               "type": "string",
-                              "description": "The ID of the alert field"
+                              "description": "The ID of an existing alert field in the escalation policy's organization"
                             },
                             "operator": {
                               "type": "string",
@@ -68127,11 +68166,11 @@
                                   },
                                   "fieldable_type": {
                                     "type": "string",
-                                    "description": "The type of the fieldable (e.g., AlertField)"
+                                    "description": "The field type. Only AlertField is supported."
                                   },
                                   "fieldable_id": {
                                     "type": "string",
-                                    "description": "The ID of the alert field"
+                                    "description": "The ID of an existing alert field in the escalation policy's organization"
                                   },
                                   "operator": {
                                     "type": "string",
@@ -69254,11 +69293,11 @@
                     },
                     "fieldable_type": {
                       "type": "string",
-                      "description": "The type of the fieldable (e.g., AlertField)"
+                      "description": "The field type. Only AlertField is supported."
                     },
                     "fieldable_id": {
                       "type": "string",
-                      "description": "The ID of the alert field"
+                      "description": "The ID of an existing alert field in the escalation policy's organization"
                     },
                     "operator": {
                       "type": "string",
@@ -69942,11 +69981,11 @@
                           },
                           "fieldable_type": {
                             "type": "string",
-                            "description": "The type of the fieldable (e.g., AlertField)"
+                            "description": "The field type. Only AlertField is supported."
                           },
                           "fieldable_id": {
                             "type": "string",
-                            "description": "The ID of the alert field"
+                            "description": "The ID of an existing alert field in the escalation policy's organization"
                           },
                           "operator": {
                             "type": "string",
@@ -76973,6 +77012,15 @@
             "type": "string",
             "description": "The Google Doc file ID to use as a template."
           },
+          "document_mode": {
+            "type": "string",
+            "enum": [
+              "pages",
+              "pageless"
+            ],
+            "default": "pages",
+            "description": "Page setup for the Google Doc. pageless makes the doc pageless; pages leaves the page setup unchanged unless the Google Doc template is pageless"
+          },
           "include_overview": {
             "type": "boolean",
             "default": true
@@ -77252,6 +77300,15 @@
           "template_id": {
             "type": "string",
             "description": "The Google Doc file ID to use as a template"
+          },
+          "document_mode": {
+            "type": "string",
+            "enum": [
+              "pages",
+              "pageless"
+            ],
+            "default": "pages",
+            "description": "Page setup for the Google Doc. pageless makes the doc pageless; pages leaves the page setup unchanged unless the Google Doc template is pageless"
           },
           "permissions": {
             "type": "string",
@@ -77592,6 +77649,50 @@
           "summary": {
             "type": "string",
             "description": "The sub incident summary"
+          },
+          "severity_id": {
+            "type": "string",
+            "nullable": true,
+            "description": "Inherited from the parent incident when blank"
+          },
+          "incident_type_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Array of incident type UUIDs. Inherited from the parent incident when blank"
+          },
+          "service_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Array of service UUIDs. Inherited from the parent incident when blank"
+          },
+          "functionality_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Array of functionality UUIDs. Inherited from the parent incident when blank"
+          },
+          "environment_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Array of environment UUIDs. Inherited from the parent incident when blank"
+          },
+          "group_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Array of group/team UUIDs. Inherited from the parent incident when blank"
+          },
+          "private": {
+            "type": "boolean",
+            "description": "Make the sub incident private. Cannot make it public when the parent incident is private"
           }
         },
         "required": [
@@ -89438,7 +89539,8 @@
                       "type": "array",
                       "items": {
                         "type": "string"
-                      }
+                      },
+                      "description": "Required, with at least one value, unless the operator is SET or UNSET"
                     },
                     "use_regexp": {
                       "type": "boolean"
@@ -95855,7 +95957,7 @@
                   },
                   "description": {
                     "type": "string",
-                    "description": "The description of the incident type",
+                    "description": "The description of the incident type. Required when the organization has \"Require description for incident types\" enabled.",
                     "nullable": true
                   },
                   "public_description": {
@@ -96004,7 +96106,7 @@
                   },
                   "description": {
                     "type": "string",
-                    "description": "The description of the incident type",
+                    "description": "The description of the incident type. Required when the organization has \"Require description for incident types\" enabled.",
                     "nullable": true
                   },
                   "public_description": {
@@ -110401,7 +110503,7 @@
                   },
                   "description": {
                     "type": "string",
-                    "description": "The description of the severity",
+                    "description": "The description of the severity. Required when the organization has \"Require description & type for severities\" enabled.",
                     "nullable": true
                   },
                   "severity": {
@@ -110528,7 +110630,7 @@
                   },
                   "description": {
                     "type": "string",
-                    "description": "The description of the severity",
+                    "description": "The description of the severity. Required when the organization has \"Require description & type for severities\" enabled.",
                     "nullable": true
                   },
                   "severity": {
@@ -115827,6 +115929,30 @@
           "updated_at"
         ]
       },
+      "scim_user": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/user"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "scim_managed": {
+                "type": "boolean",
+                "description": "Whether the user's membership in this organization is provisioned by its SCIM integration, or synced in by a linked organization's SCIM integration.",
+                "readOnly": true
+              },
+              "scim_external_id": {
+                "type": "string",
+                "description": "The externalId this organization's identity provider sent for the user over SCIM, or the linked organization's for synced users, or null.",
+                "nullable": true,
+                "readOnly": true
+              }
+            }
+          }
+        ]
+      },
       "current_user": {
         "type": "object",
         "allOf": [
@@ -115841,7 +115967,7 @@
                 "additionalProperties": {
                   "type": "boolean"
                 },
-                "description": "Server-evaluated flags for the calling credential. `ai-native-home` indicates whether the AI-native home is available. `ai-skills` is true only when the organization has AI Skills enabled, the credential is not a group API key, and its role or OAuth scopes allow reading the resource; a true value means `GET /v1/ai_skills` is expected to succeed. `ai-automations` is true only when the organization has AI Automations enabled, the credential is not a group API key, and its role or OAuth scopes allow reading the resource; a true value means `GET /v1/ai_automations` is expected to succeed. `ai-chat` is true when the organization can use the `/v1/ai/chat` endpoints (feature rollout, `config_ai_api_chat_enabled`, and the AI assistant are all on) and, for OAuth tokens, the token has `ai.chat:write` or an AI meta scope; a true value means `POST /v1/ai/chat` is expected to pass these gates. May be absent; treat a missing object or key as unknown, not false."
+                "description": "Server-evaluated flags for the calling credential. `ai-native-home` indicates whether the AI-native home is available. `ai-skills` is true only when the organization has AI Skills enabled, the credential is not a group API key, and its role or OAuth scopes allow reading the resource; a true value means `GET /v1/ai/skills` is expected to succeed. `ai-automations` is true only when the organization has AI Automations enabled, the credential is not a group API key, and its role or OAuth scopes allow reading the resource; a true value means `GET /v1/ai/automations` is expected to succeed. `ai-chat` is true when the organization can use the `/v1/ai/chat` endpoints (feature rollout, `config_ai_api_chat_enabled`, and the AI assistant are all on) and, for OAuth tokens, the token has `ai.chat:write` or an AI meta scope; a true value means `POST /v1/ai/chat` is expected to pass these gates. May be absent; treat a missing object or key as unknown, not false."
               },
               "abilities": {
                 "type": "object",
@@ -116139,6 +116265,51 @@
           "data"
         ]
       },
+      "scim_user_response": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Unique ID of the user"
+              },
+              "type": {
+                "type": "string",
+                "enum": [
+                  "users"
+                ]
+              },
+              "attributes": {
+                "type": "object",
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/scim_user"
+                  }
+                ]
+              },
+              "relationships": {
+                "$ref": "#/components/schemas/user_relationships"
+              }
+            },
+            "required": [
+              "id",
+              "type",
+              "attributes"
+            ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/jsonapi_included_resource"
+            }
+          }
+        },
+        "required": [
+          "data"
+        ]
+      },
       "current_user_response": {
         "type": "object",
         "properties": {
@@ -116206,7 +116377,28 @@
                   "type": "object",
                   "allOf": [
                     {
-                      "$ref": "#/components/schemas/user"
+                      "$ref": "#/components/schemas/scim_user"
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "joined_via": {
+                          "type": "string",
+                          "enum": [
+                            "scim",
+                            "invite",
+                            "sso",
+                            "sso_google",
+                            "sso_slack",
+                            "google_directory_sync",
+                            "rootly_admin",
+                            "import",
+                            "web",
+                            "unknown"
+                          ],
+                          "description": "How the user most recently joined the requesting organization. `scim` is SCIM provisioning, `invite` is accepting an invitation, `google_directory_sync` is Google Directory Sync, `sso` is SAML sign-in, `sso_google` and `sso_slack` are Google and Slack sign-in, `rootly_admin` is added by Rootly staff, `import` is a Rootly import or migration from an external tool, `web` is email sign-up or creating the organization, and `unknown` is a member who joined before this was recorded without a known source."
+                        }
+                      }
                     }
                   ]
                 },
@@ -116548,6 +116740,10 @@
                   "name": {
                     "type": "string",
                     "description": "The name of the endpoint"
+                  },
+                  "secret": {
+                    "type": "string",
+                    "description": "The webhook signing secret used to verify webhook requests."
                   },
                   "event_types": {
                     "type": "array",
