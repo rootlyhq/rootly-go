@@ -4,7 +4,7 @@ go 1.25.0
 
 toolchain go1.27.4
 
-require github.com/oapi-codegen/oapi-codegen/v2 v2.8.1
+require github.com/oapi-codegen/oapi-codegen/v2 v2.8.2
 
 require (
 	github.com/dprotaso/go-yit v0.0.0-20220510233725-9ba8df137936 // indirect
