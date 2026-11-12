@@ -2,6 +2,8 @@ module github.com/rootlyhq/rootly-go
 
 go 1.25
 
+toolchain go1.27.4
+
 require (
 	github.com/getkin/kin-openapi v0.152.0
 	github.com/google/uuid v1.6.0
