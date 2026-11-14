@@ -1,6 +1,6 @@
 module github.com/rootlyhq/rootly-go
 
-go 1.25
+go 1.26.0
 
 toolchain go1.27.4
 
@@ -8,7 +8,7 @@ require (
 	github.com/getkin/kin-openapi v0.152.0
 	github.com/google/uuid v1.6.0
 	github.com/oapi-codegen/nullable v1.2.0
-	github.com/oapi-codegen/runtime v1.8.0
+	github.com/oapi-codegen/runtime v1.9.0
 )
 
 require (
