@@ -50,3 +50,20 @@ jobs:
       - run: |
           make gen
           git diff --exit-code
+
+  # Catch-all required check for the lint workflow
+  lint-success:
+    needs:
+      - golangci
+      - gomod
+      - generate
+    runs-on: ubuntu-latest
+    timeout-minutes: 1
+    if: always()
+    steps:
+      - name: Fail for failed, cancelled or skipped jobs
+        if: |
+          contains(needs.*.result, 'failure') ||
+          contains(needs.*.result, 'cancelled') ||
+          contains(needs.*.result, 'skipped')
+        run: exit 1
