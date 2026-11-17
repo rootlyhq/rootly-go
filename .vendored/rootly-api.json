@@ -78286,6 +78286,21 @@
             "description": "Sets the video conference type attached to the meeting",
             "nullable": true
           },
+          "record_meeting": {
+            "type": "boolean",
+            "description": "Scribe joins the event's Google Meet when the event starts and records it on the incident. Requires conference_solution_key hangoutsMeet."
+          },
+          "recording_mode": {
+            "type": "string",
+            "enum": [
+              "speaker_view",
+              "gallery_view",
+              "gallery_view_v2",
+              "audio_only"
+            ],
+            "description": "The video layout for the bot's recording (e.g. speaker_view, gallery_view, gallery_view_v2, audio_only)",
+            "nullable": true
+          },
           "post_to_incident_timeline": {
             "type": "boolean"
           },
