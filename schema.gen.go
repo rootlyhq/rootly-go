@@ -56582,6 +56582,9 @@ type AlertGroup struct {
 	// OwnerGroupIDs Teams that own this alert group. Admins of an owning team can manage it, and an owned alert group can only target destinations that belong to its owning teams. Only available when owning teams for alert groups are enabled for the organization.
 	OwnerGroupIDs []openapi_types.UUID `json:"owner_group_ids,omitempty"`
 
+	// Position Where this rule sits in the organization's list of alert grouping rules, starting at 1. New rules are added at the end.
+	Position nullable.Nullable[int] `json:"position,omitempty"`
+
 	// Slug The slug of the alert group
 	Slug    *string `json:"slug,omitempty"`
 	Targets []struct {

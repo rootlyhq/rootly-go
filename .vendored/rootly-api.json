@@ -55446,6 +55446,12 @@
             "type": "integer",
             "description": "Time window for the alert grouping"
           },
+          "position": {
+            "type": "integer",
+            "nullable": true,
+            "description": "Where this rule sits in the organization's list of alert grouping rules, starting at 1. New rules are added at the end.",
+            "readOnly": true
+          },
           "group_by_alert_title": {
             "type": "boolean",
             "deprecated": true,
