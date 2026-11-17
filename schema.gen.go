@@ -7670,6 +7670,30 @@ func (e CreateGoogleCalendarEventTaskParamsConferenceSolutionKey) Valid() bool {
 	}
 }
 
+// Defines values for CreateGoogleCalendarEventTaskParamsRecordingMode.
+const (
+	CreateGoogleCalendarEventTaskParamsRecordingModeAudioOnly     CreateGoogleCalendarEventTaskParamsRecordingMode = "audio_only"
+	CreateGoogleCalendarEventTaskParamsRecordingModeGalleryView   CreateGoogleCalendarEventTaskParamsRecordingMode = "gallery_view"
+	CreateGoogleCalendarEventTaskParamsRecordingModeGalleryViewV2 CreateGoogleCalendarEventTaskParamsRecordingMode = "gallery_view_v2"
+	CreateGoogleCalendarEventTaskParamsRecordingModeSpeakerView   CreateGoogleCalendarEventTaskParamsRecordingMode = "speaker_view"
+)
+
+// Valid indicates whether the value is a known member of the CreateGoogleCalendarEventTaskParamsRecordingMode enum.
+func (e CreateGoogleCalendarEventTaskParamsRecordingMode) Valid() bool {
+	switch e {
+	case CreateGoogleCalendarEventTaskParamsRecordingModeAudioOnly:
+		return true
+	case CreateGoogleCalendarEventTaskParamsRecordingModeGalleryView:
+		return true
+	case CreateGoogleCalendarEventTaskParamsRecordingModeGalleryViewV2:
+		return true
+	case CreateGoogleCalendarEventTaskParamsRecordingModeSpeakerView:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for CreateGoogleCalendarEventTaskParamsTaskType.
 const (
 	CreateGoogleCalendarEventTaskParamsTaskTypeCreateGoogleCalendarEvent CreateGoogleCalendarEventTaskParamsTaskType = "create_google_calendar_event"
@@ -59973,6 +59997,12 @@ type CreateGoogleCalendarEventTaskParams struct {
 		Name *string `json:"name,omitempty"`
 	} `json:"post_to_slack_channels,omitempty"`
 
+	// RecordMeeting Scribe joins the event's Google Meet when the event starts and records it on the incident. Requires conference_solution_key hangoutsMeet.
+	RecordMeeting *bool `json:"record_meeting,omitempty"`
+
+	// RecordingMode The video layout for the bot's recording (e.g. speaker_view, gallery_view, gallery_view_v2, audio_only)
+	RecordingMode nullable.Nullable[CreateGoogleCalendarEventTaskParamsRecordingMode] `json:"recording_mode,omitempty"`
+
 	// SendUpdates Send an email to the attendees notifying them of the event
 	SendUpdates *bool `json:"send_updates,omitempty"`
 
@@ -59991,6 +60021,9 @@ type CreateGoogleCalendarEventTaskParams struct {
 
 // CreateGoogleCalendarEventTaskParamsConferenceSolutionKey Sets the video conference type attached to the meeting
 type CreateGoogleCalendarEventTaskParamsConferenceSolutionKey string
+
+// CreateGoogleCalendarEventTaskParamsRecordingMode The video layout for the bot's recording (e.g. speaker_view, gallery_view, gallery_view_v2, audio_only)
+type CreateGoogleCalendarEventTaskParamsRecordingMode string
 
 // CreateGoogleCalendarEventTaskParamsTaskType defines model for CreateGoogleCalendarEventTaskParams.TaskType.
 type CreateGoogleCalendarEventTaskParamsTaskType string
