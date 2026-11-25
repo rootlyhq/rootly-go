@@ -101,6 +101,14 @@
       "minimumReleaseAge": "7 days"
     },
     {
+      "description": "Group `oapi-codegen` updates",
+      "matchDepNames": [
+        "github.com/oapi-codegen/oapi-codegen/v2",
+        "github.com/oapi-codegen/runtime"
+      ],
+      "groupName": "oapi-codegen"
+    },
+    {
       "matchUpdateTypes": [
         "lockFileMaintenance"
       ],
