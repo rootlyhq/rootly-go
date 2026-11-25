@@ -82499,7 +82499,46 @@ type UpdateProblem struct {
 			ExpectedStatus nullable.Nullable[UpdateProblemDataAttributesExpectedStatus] `json:"expected_status,omitempty"`
 
 			// FormFieldSelections Custom (form) field values to set on the problem. Send one entry per field; an existing value for the field is updated or cleared in place
-			FormFieldSelections []UpdateProblem_Data_Attributes_FormFieldSelections_Item `json:"form_field_selections,omitempty"`
+			FormFieldSelections []struct {
+				// UnderscoreDestroy Set to true to remove the field's value from the problem
+				UnderscoreDestroy nullable.Nullable[bool] `json:"_destroy,omitempty"`
+
+				// FormFieldID ID of the custom field
+				FormFieldID *string `json:"form_field_id,omitempty"`
+
+				// ID ID of an existing selection. Optional; the field's existing selection is matched by `form_field_id` when omitted
+				ID *string `json:"id,omitempty"`
+
+				// SelectedCatalogEntityIDs IDs of the selected catalog entities
+				SelectedCatalogEntityIDs []string `json:"selected_catalog_entity_ids,omitempty"`
+
+				// SelectedCauseIDs IDs of the selected causes
+				SelectedCauseIDs []string `json:"selected_cause_ids,omitempty"`
+
+				// SelectedEnvironmentIDs IDs of the selected environments
+				SelectedEnvironmentIDs []string `json:"selected_environment_ids,omitempty"`
+
+				// SelectedFunctionalityIDs IDs of the selected functionalities
+				SelectedFunctionalityIDs []string `json:"selected_functionality_ids,omitempty"`
+
+				// SelectedGroupIDs IDs of the selected teams
+				SelectedGroupIDs []string `json:"selected_group_ids,omitempty"`
+
+				// SelectedIncidentTypeIDs IDs of the selected incident types
+				SelectedIncidentTypeIDs []string `json:"selected_incident_type_ids,omitempty"`
+
+				// SelectedOptionIDs IDs of the selected custom field options
+				SelectedOptionIDs []string `json:"selected_option_ids,omitempty"`
+
+				// SelectedServiceIDs IDs of the selected services
+				SelectedServiceIDs []string `json:"selected_service_ids,omitempty"`
+
+				// SelectedUserIDs IDs of the selected users
+				SelectedUserIDs []int `json:"selected_user_ids,omitempty"`
+
+				// Value Value for text, textarea, rich_text, number, date, datetime, checkbox and tags fields. Dates and datetimes are ISO 8601 strings, numbers are numeric strings, checkboxes are "true" or "false" (returned as "1" or "0"), and tags are an array of strings. A blank value clears the field. Select, multi_select and record fields use the selected_*_ids arrays instead
+				Value *UpdateProblem_Data_Attributes_FormFieldSelections_Value `json:"value,omitempty"`
+			} `json:"form_field_selections,omitempty"`
 
 			// ImpactSoFar The impact observed so far
 			ImpactSoFar nullable.Nullable[string] `json:"impact_so_far,omitempty"`
@@ -82546,55 +82585,6 @@ type UpdateProblemDataAttributesFormFieldSelectionsValue1 = []string
 
 // UpdateProblem_Data_Attributes_FormFieldSelections_Value Value for text, textarea, rich_text, number, date, datetime, checkbox and tags fields. Dates and datetimes are ISO 8601 strings, numbers are numeric strings, checkboxes are "true" or "false" (returned as "1" or "0"), and tags are an array of strings. A blank value clears the field. Select, multi_select and record fields use the selected_*_ids arrays instead
 type UpdateProblem_Data_Attributes_FormFieldSelections_Value struct {
-	union json.RawMessage
-}
-
-// UpdateProblemDataAttributesFormFieldSelections0 defines model for UpdateProblem.Data.Attributes.FormFieldSelections.0.
-type UpdateProblemDataAttributesFormFieldSelections0 = any
-
-// UpdateProblemDataAttributesFormFieldSelections1 defines model for UpdateProblem.Data.Attributes.FormFieldSelections.1.
-type UpdateProblemDataAttributesFormFieldSelections1 = any
-
-// UpdateProblem_Data_Attributes_FormFieldSelections_Item defines model for UpdateProblem.Data.Attributes.FormFieldSelections.Item.
-type UpdateProblem_Data_Attributes_FormFieldSelections_Item struct {
-	// UnderscoreDestroy Set to true to remove the field's value from the problem
-	UnderscoreDestroy nullable.Nullable[bool] `json:"_destroy,omitempty"`
-
-	// FormFieldID ID of the custom field
-	FormFieldID *string `json:"form_field_id,omitempty"`
-
-	// ID ID of an existing selection. Optional; the field's existing selection is matched by `form_field_id` when omitted
-	ID *string `json:"id,omitempty"`
-
-	// SelectedCatalogEntityIDs IDs of the selected catalog entities
-	SelectedCatalogEntityIDs []string `json:"selected_catalog_entity_ids,omitempty"`
-
-	// SelectedCauseIDs IDs of the selected causes
-	SelectedCauseIDs []string `json:"selected_cause_ids,omitempty"`
-
-	// SelectedEnvironmentIDs IDs of the selected environments
-	SelectedEnvironmentIDs []string `json:"selected_environment_ids,omitempty"`
-
-	// SelectedFunctionalityIDs IDs of the selected functionalities
-	SelectedFunctionalityIDs []string `json:"selected_functionality_ids,omitempty"`
-
-	// SelectedGroupIDs IDs of the selected teams
-	SelectedGroupIDs []string `json:"selected_group_ids,omitempty"`
-
-	// SelectedIncidentTypeIDs IDs of the selected incident types
-	SelectedIncidentTypeIDs []string `json:"selected_incident_type_ids,omitempty"`
-
-	// SelectedOptionIDs IDs of the selected custom field options
-	SelectedOptionIDs []string `json:"selected_option_ids,omitempty"`
-
-	// SelectedServiceIDs IDs of the selected services
-	SelectedServiceIDs []string `json:"selected_service_ids,omitempty"`
-
-	// SelectedUserIDs IDs of the selected users
-	SelectedUserIDs []int `json:"selected_user_ids,omitempty"`
-
-	// Value Value for text, textarea, rich_text, number, date, datetime, checkbox and tags fields. Dates and datetimes are ISO 8601 strings, numbers are numeric strings, checkboxes are "true" or "false" (returned as "1" or "0"), and tags are an array of strings. A blank value clears the field. Select, multi_select and record fields use the selected_*_ids arrays instead
-	Value *UpdateProblem_Data_Attributes_FormFieldSelections_Value `json:"value,omitempty"`
 	union json.RawMessage
 }
 
@@ -89624,9 +89614,28 @@ func (a AiAutomationRunList_Meta) MarshalJSON() ([]byte, error) {
 	return runtime.JSONMarshal(object)
 }
 
-// AsAcknowledgeAlertDataAttributesActor0 returns the union data inside the AcknowledgeAlert_Data_Attributes_Actor as a AcknowledgeAlertDataAttributesActor0
+// AsAcknowledgeAlertDataAttributesActor0 returns the union data inside the AcknowledgeAlert_Data_Attributes_Actor as a AcknowledgeAlertDataAttributesActor0. AcknowledgeAlertDataAttributesActor0 allows no
+// additional properties: a property that neither it nor the rest of AcknowledgeAlert_Data_Attributes_Actor
+// declares is an error.
 func (t AcknowledgeAlert_Data_Attributes_Actor) AsAcknowledgeAlertDataAttributesActor0() (AcknowledgeAlertDataAttributesActor0, error) {
 	var body AcknowledgeAlertDataAttributesActor0
+	var object map[string]json.RawMessage
+	if runtime.JSONUnmarshal(t.union, &object) == nil {
+		// The first unknown key in sorted order, so the error is always the same.
+		unknown, found := "", false
+		for key := range object {
+			switch key {
+			case "email":
+			default:
+				if !found || key < unknown {
+					unknown, found = key, true
+				}
+			}
+		}
+		if found {
+			return body, fmt.Errorf("AcknowledgeAlertDataAttributesActor0 doesn't allow the property %q", unknown)
+		}
+	}
 	err := runtime.JSONUnmarshal(t.union, &body)
 	return body, err
 }
@@ -89650,9 +89659,28 @@ func (t *AcknowledgeAlert_Data_Attributes_Actor) MergeAcknowledgeAlertDataAttrib
 	return err
 }
 
-// AsAcknowledgeAlertDataAttributesActor1 returns the union data inside the AcknowledgeAlert_Data_Attributes_Actor as a AcknowledgeAlertDataAttributesActor1
+// AsAcknowledgeAlertDataAttributesActor1 returns the union data inside the AcknowledgeAlert_Data_Attributes_Actor as a AcknowledgeAlertDataAttributesActor1. AcknowledgeAlertDataAttributesActor1 allows no
+// additional properties: a property that neither it nor the rest of AcknowledgeAlert_Data_Attributes_Actor
+// declares is an error.
 func (t AcknowledgeAlert_Data_Attributes_Actor) AsAcknowledgeAlertDataAttributesActor1() (AcknowledgeAlertDataAttributesActor1, error) {
 	var body AcknowledgeAlertDataAttributesActor1
+	var object map[string]json.RawMessage
+	if runtime.JSONUnmarshal(t.union, &object) == nil {
+		// The first unknown key in sorted order, so the error is always the same.
+		unknown, found := "", false
+		for key := range object {
+			switch key {
+			case "user_id":
+			default:
+				if !found || key < unknown {
+					unknown, found = key, true
+				}
+			}
+		}
+		if found {
+			return body, fmt.Errorf("AcknowledgeAlertDataAttributesActor1 doesn't allow the property %q", unknown)
+		}
+	}
 	err := runtime.JSONUnmarshal(t.union, &body)
 	return body, err
 }
@@ -90560,9 +90588,28 @@ func (t *AutoAssignRolePagerdutyTaskParams) UnmarshalJSON(b []byte) error {
 	return err
 }
 
-// AsBulkDestroyCatalogEntities0 returns the union data inside the BulkDestroyCatalogEntities as a BulkDestroyCatalogEntities0
+// AsBulkDestroyCatalogEntities0 returns the union data inside the BulkDestroyCatalogEntities as a BulkDestroyCatalogEntities0. BulkDestroyCatalogEntities0 allows no
+// additional properties: a property that neither it nor the rest of BulkDestroyCatalogEntities
+// declares is an error.
 func (t BulkDestroyCatalogEntities) AsBulkDestroyCatalogEntities0() (BulkDestroyCatalogEntities0, error) {
 	var body BulkDestroyCatalogEntities0
+	var object map[string]json.RawMessage
+	if runtime.JSONUnmarshal(t.union, &object) == nil {
+		// The first unknown key in sorted order, so the error is always the same.
+		unknown, found := "", false
+		for key := range object {
+			switch key {
+			case "external_ids":
+			default:
+				if !found || key < unknown {
+					unknown, found = key, true
+				}
+			}
+		}
+		if found {
+			return body, fmt.Errorf("BulkDestroyCatalogEntities0 doesn't allow the property %q", unknown)
+		}
+	}
 	err := runtime.JSONUnmarshal(t.union, &body)
 	return body, err
 }
@@ -90586,9 +90633,28 @@ func (t *BulkDestroyCatalogEntities) MergeBulkDestroyCatalogEntities0(v BulkDest
 	return err
 }
 
-// AsBulkDestroyCatalogEntities1 returns the union data inside the BulkDestroyCatalogEntities as a BulkDestroyCatalogEntities1
+// AsBulkDestroyCatalogEntities1 returns the union data inside the BulkDestroyCatalogEntities as a BulkDestroyCatalogEntities1. BulkDestroyCatalogEntities1 allows no
+// additional properties: a property that neither it nor the rest of BulkDestroyCatalogEntities
+// declares is an error.
 func (t BulkDestroyCatalogEntities) AsBulkDestroyCatalogEntities1() (BulkDestroyCatalogEntities1, error) {
 	var body BulkDestroyCatalogEntities1
+	var object map[string]json.RawMessage
+	if runtime.JSONUnmarshal(t.union, &object) == nil {
+		// The first unknown key in sorted order, so the error is always the same.
+		unknown, found := "", false
+		for key := range object {
+			switch key {
+			case "keep_external_ids", "managed_by":
+			default:
+				if !found || key < unknown {
+					unknown, found = key, true
+				}
+			}
+		}
+		if found {
+			return body, fmt.Errorf("BulkDestroyCatalogEntities1 doesn't allow the property %q", unknown)
+		}
+	}
 	err := runtime.JSONUnmarshal(t.union, &body)
 	return body, err
 }
@@ -90622,9 +90688,28 @@ func (t *BulkDestroyCatalogEntities) UnmarshalJSON(b []byte) error {
 	return err
 }
 
-// AsBulkDestroyEnvironments0 returns the union data inside the BulkDestroyEnvironments as a BulkDestroyEnvironments0
+// AsBulkDestroyEnvironments0 returns the union data inside the BulkDestroyEnvironments as a BulkDestroyEnvironments0. BulkDestroyEnvironments0 allows no
+// additional properties: a property that neither it nor the rest of BulkDestroyEnvironments
+// declares is an error.
 func (t BulkDestroyEnvironments) AsBulkDestroyEnvironments0() (BulkDestroyEnvironments0, error) {
 	var body BulkDestroyEnvironments0
+	var object map[string]json.RawMessage
+	if runtime.JSONUnmarshal(t.union, &object) == nil {
+		// The first unknown key in sorted order, so the error is always the same.
+		unknown, found := "", false
+		for key := range object {
+			switch key {
+			case "external_ids":
+			default:
+				if !found || key < unknown {
+					unknown, found = key, true
+				}
+			}
+		}
+		if found {
+			return body, fmt.Errorf("BulkDestroyEnvironments0 doesn't allow the property %q", unknown)
+		}
+	}
 	err := runtime.JSONUnmarshal(t.union, &body)
 	return body, err
 }
@@ -90648,9 +90733,28 @@ func (t *BulkDestroyEnvironments) MergeBulkDestroyEnvironments0(v BulkDestroyEnv
 	return err
 }
 
-// AsBulkDestroyEnvironments1 returns the union data inside the BulkDestroyEnvironments as a BulkDestroyEnvironments1
+// AsBulkDestroyEnvironments1 returns the union data inside the BulkDestroyEnvironments as a BulkDestroyEnvironments1. BulkDestroyEnvironments1 allows no
+// additional properties: a property that neither it nor the rest of BulkDestroyEnvironments
+// declares is an error.
 func (t BulkDestroyEnvironments) AsBulkDestroyEnvironments1() (BulkDestroyEnvironments1, error) {
 	var body BulkDestroyEnvironments1
+	var object map[string]json.RawMessage
+	if runtime.JSONUnmarshal(t.union, &object) == nil {
+		// The first unknown key in sorted order, so the error is always the same.
+		unknown, found := "", false
+		for key := range object {
+			switch key {
+			case "keep_external_ids", "managed_by":
+			default:
+				if !found || key < unknown {
+					unknown, found = key, true
+				}
+			}
+		}
+		if found {
+			return body, fmt.Errorf("BulkDestroyEnvironments1 doesn't allow the property %q", unknown)
+		}
+	}
 	err := runtime.JSONUnmarshal(t.union, &body)
 	return body, err
 }
@@ -90684,9 +90788,28 @@ func (t *BulkDestroyEnvironments) UnmarshalJSON(b []byte) error {
 	return err
 }
 
-// AsBulkDestroyFunctionalities0 returns the union data inside the BulkDestroyFunctionalities as a BulkDestroyFunctionalities0
+// AsBulkDestroyFunctionalities0 returns the union data inside the BulkDestroyFunctionalities as a BulkDestroyFunctionalities0. BulkDestroyFunctionalities0 allows no
+// additional properties: a property that neither it nor the rest of BulkDestroyFunctionalities
+// declares is an error.
 func (t BulkDestroyFunctionalities) AsBulkDestroyFunctionalities0() (BulkDestroyFunctionalities0, error) {
 	var body BulkDestroyFunctionalities0
+	var object map[string]json.RawMessage
+	if runtime.JSONUnmarshal(t.union, &object) == nil {
+		// The first unknown key in sorted order, so the error is always the same.
+		unknown, found := "", false
+		for key := range object {
+			switch key {
+			case "external_ids":
+			default:
+				if !found || key < unknown {
+					unknown, found = key, true
+				}
+			}
+		}
+		if found {
+			return body, fmt.Errorf("BulkDestroyFunctionalities0 doesn't allow the property %q", unknown)
+		}
+	}
 	err := runtime.JSONUnmarshal(t.union, &body)
 	return body, err
 }
@@ -90710,9 +90833,28 @@ func (t *BulkDestroyFunctionalities) MergeBulkDestroyFunctionalities0(v BulkDest
 	return err
 }
 
-// AsBulkDestroyFunctionalities1 returns the union data inside the BulkDestroyFunctionalities as a BulkDestroyFunctionalities1
+// AsBulkDestroyFunctionalities1 returns the union data inside the BulkDestroyFunctionalities as a BulkDestroyFunctionalities1. BulkDestroyFunctionalities1 allows no
+// additional properties: a property that neither it nor the rest of BulkDestroyFunctionalities
+// declares is an error.
 func (t BulkDestroyFunctionalities) AsBulkDestroyFunctionalities1() (BulkDestroyFunctionalities1, error) {
 	var body BulkDestroyFunctionalities1
+	var object map[string]json.RawMessage
+	if runtime.JSONUnmarshal(t.union, &object) == nil {
+		// The first unknown key in sorted order, so the error is always the same.
+		unknown, found := "", false
+		for key := range object {
+			switch key {
+			case "keep_external_ids", "managed_by":
+			default:
+				if !found || key < unknown {
+					unknown, found = key, true
+				}
+			}
+		}
+		if found {
+			return body, fmt.Errorf("BulkDestroyFunctionalities1 doesn't allow the property %q", unknown)
+		}
+	}
 	err := runtime.JSONUnmarshal(t.union, &body)
 	return body, err
 }
@@ -90746,9 +90888,28 @@ func (t *BulkDestroyFunctionalities) UnmarshalJSON(b []byte) error {
 	return err
 }
 
-// AsBulkDestroyTeams0 returns the union data inside the BulkDestroyTeams as a BulkDestroyTeams0
+// AsBulkDestroyTeams0 returns the union data inside the BulkDestroyTeams as a BulkDestroyTeams0. BulkDestroyTeams0 allows no
+// additional properties: a property that neither it nor the rest of BulkDestroyTeams
+// declares is an error.
 func (t BulkDestroyTeams) AsBulkDestroyTeams0() (BulkDestroyTeams0, error) {
 	var body BulkDestroyTeams0
+	var object map[string]json.RawMessage
+	if runtime.JSONUnmarshal(t.union, &object) == nil {
+		// The first unknown key in sorted order, so the error is always the same.
+		unknown, found := "", false
+		for key := range object {
+			switch key {
+			case "external_ids":
+			default:
+				if !found || key < unknown {
+					unknown, found = key, true
+				}
+			}
+		}
+		if found {
+			return body, fmt.Errorf("BulkDestroyTeams0 doesn't allow the property %q", unknown)
+		}
+	}
 	err := runtime.JSONUnmarshal(t.union, &body)
 	return body, err
 }
@@ -90772,9 +90933,28 @@ func (t *BulkDestroyTeams) MergeBulkDestroyTeams0(v BulkDestroyTeams0) error {
 	return err
 }
 
-// AsBulkDestroyTeams1 returns the union data inside the BulkDestroyTeams as a BulkDestroyTeams1
+// AsBulkDestroyTeams1 returns the union data inside the BulkDestroyTeams as a BulkDestroyTeams1. BulkDestroyTeams1 allows no
+// additional properties: a property that neither it nor the rest of BulkDestroyTeams
+// declares is an error.
 func (t BulkDestroyTeams) AsBulkDestroyTeams1() (BulkDestroyTeams1, error) {
 	var body BulkDestroyTeams1
+	var object map[string]json.RawMessage
+	if runtime.JSONUnmarshal(t.union, &object) == nil {
+		// The first unknown key in sorted order, so the error is always the same.
+		unknown, found := "", false
+		for key := range object {
+			switch key {
+			case "keep_external_ids", "managed_by":
+			default:
+				if !found || key < unknown {
+					unknown, found = key, true
+				}
+			}
+		}
+		if found {
+			return body, fmt.Errorf("BulkDestroyTeams1 doesn't allow the property %q", unknown)
+		}
+	}
 	err := runtime.JSONUnmarshal(t.union, &body)
 	return body, err
 }
@@ -91144,9 +91324,28 @@ func (t *DashboardPanel_Params_Datasets_GroupBy) UnmarshalJSON(b []byte) error {
 	return err
 }
 
-// AsEscalateAlertDataAttributesActor0 returns the union data inside the EscalateAlert_Data_Attributes_Actor as a EscalateAlertDataAttributesActor0
+// AsEscalateAlertDataAttributesActor0 returns the union data inside the EscalateAlert_Data_Attributes_Actor as a EscalateAlertDataAttributesActor0. EscalateAlertDataAttributesActor0 allows no
+// additional properties: a property that neither it nor the rest of EscalateAlert_Data_Attributes_Actor
+// declares is an error.
 func (t EscalateAlert_Data_Attributes_Actor) AsEscalateAlertDataAttributesActor0() (EscalateAlertDataAttributesActor0, error) {
 	var body EscalateAlertDataAttributesActor0
+	var object map[string]json.RawMessage
+	if runtime.JSONUnmarshal(t.union, &object) == nil {
+		// The first unknown key in sorted order, so the error is always the same.
+		unknown, found := "", false
+		for key := range object {
+			switch key {
+			case "email":
+			default:
+				if !found || key < unknown {
+					unknown, found = key, true
+				}
+			}
+		}
+		if found {
+			return body, fmt.Errorf("EscalateAlertDataAttributesActor0 doesn't allow the property %q", unknown)
+		}
+	}
 	err := runtime.JSONUnmarshal(t.union, &body)
 	return body, err
 }
@@ -91170,9 +91369,28 @@ func (t *EscalateAlert_Data_Attributes_Actor) MergeEscalateAlertDataAttributesAc
 	return err
 }
 
-// AsEscalateAlertDataAttributesActor1 returns the union data inside the EscalateAlert_Data_Attributes_Actor as a EscalateAlertDataAttributesActor1
+// AsEscalateAlertDataAttributesActor1 returns the union data inside the EscalateAlert_Data_Attributes_Actor as a EscalateAlertDataAttributesActor1. EscalateAlertDataAttributesActor1 allows no
+// additional properties: a property that neither it nor the rest of EscalateAlert_Data_Attributes_Actor
+// declares is an error.
 func (t EscalateAlert_Data_Attributes_Actor) AsEscalateAlertDataAttributesActor1() (EscalateAlertDataAttributesActor1, error) {
 	var body EscalateAlertDataAttributesActor1
+	var object map[string]json.RawMessage
+	if runtime.JSONUnmarshal(t.union, &object) == nil {
+		// The first unknown key in sorted order, so the error is always the same.
+		unknown, found := "", false
+		for key := range object {
+			switch key {
+			case "user_id":
+			default:
+				if !found || key < unknown {
+					unknown, found = key, true
+				}
+			}
+		}
+		if found {
+			return body, fmt.Errorf("EscalateAlertDataAttributesActor1 doesn't allow the property %q", unknown)
+		}
+	}
 	err := runtime.JSONUnmarshal(t.union, &body)
 	return body, err
 }
@@ -92674,9 +92892,28 @@ func (t *NewAiAutomation_Data_Attributes_Conditions_Any_All_Value) UnmarshalJSON
 	return err
 }
 
-// AsNewAlertDataAttributesActor0 returns the union data inside the NewAlert_Data_Attributes_Actor as a NewAlertDataAttributesActor0
+// AsNewAlertDataAttributesActor0 returns the union data inside the NewAlert_Data_Attributes_Actor as a NewAlertDataAttributesActor0. NewAlertDataAttributesActor0 allows no
+// additional properties: a property that neither it nor the rest of NewAlert_Data_Attributes_Actor
+// declares is an error.
 func (t NewAlert_Data_Attributes_Actor) AsNewAlertDataAttributesActor0() (NewAlertDataAttributesActor0, error) {
 	var body NewAlertDataAttributesActor0
+	var object map[string]json.RawMessage
+	if runtime.JSONUnmarshal(t.union, &object) == nil {
+		// The first unknown key in sorted order, so the error is always the same.
+		unknown, found := "", false
+		for key := range object {
+			switch key {
+			case "email":
+			default:
+				if !found || key < unknown {
+					unknown, found = key, true
+				}
+			}
+		}
+		if found {
+			return body, fmt.Errorf("NewAlertDataAttributesActor0 doesn't allow the property %q", unknown)
+		}
+	}
 	err := runtime.JSONUnmarshal(t.union, &body)
 	return body, err
 }
@@ -92700,9 +92937,28 @@ func (t *NewAlert_Data_Attributes_Actor) MergeNewAlertDataAttributesActor0(v New
 	return err
 }
 
-// AsNewAlertDataAttributesActor1 returns the union data inside the NewAlert_Data_Attributes_Actor as a NewAlertDataAttributesActor1
+// AsNewAlertDataAttributesActor1 returns the union data inside the NewAlert_Data_Attributes_Actor as a NewAlertDataAttributesActor1. NewAlertDataAttributesActor1 allows no
+// additional properties: a property that neither it nor the rest of NewAlert_Data_Attributes_Actor
+// declares is an error.
 func (t NewAlert_Data_Attributes_Actor) AsNewAlertDataAttributesActor1() (NewAlertDataAttributesActor1, error) {
 	var body NewAlertDataAttributesActor1
+	var object map[string]json.RawMessage
+	if runtime.JSONUnmarshal(t.union, &object) == nil {
+		// The first unknown key in sorted order, so the error is always the same.
+		unknown, found := "", false
+		for key := range object {
+			switch key {
+			case "user_id":
+			default:
+				if !found || key < unknown {
+					unknown, found = key, true
+				}
+			}
+		}
+		if found {
+			return body, fmt.Errorf("NewAlertDataAttributesActor1 doesn't allow the property %q", unknown)
+		}
+	}
 	err := runtime.JSONUnmarshal(t.union, &body)
 	return body, err
 }
@@ -93476,9 +93732,28 @@ func (t *NewIncidentActionItem_Data_Attributes_FormFieldSelections_Value) Unmars
 	return err
 }
 
-// AsNewInvestigationDataAttributes0 returns the union data inside the NewInvestigation_Data_Attributes as a NewInvestigationDataAttributes0
+// AsNewInvestigationDataAttributes0 returns the union data inside the NewInvestigation_Data_Attributes as a NewInvestigationDataAttributes0. NewInvestigationDataAttributes0 allows no
+// additional properties: a property that neither it nor the rest of NewInvestigation_Data_Attributes
+// declares is an error.
 func (t NewInvestigation_Data_Attributes) AsNewInvestigationDataAttributes0() (NewInvestigationDataAttributes0, error) {
 	var body NewInvestigationDataAttributes0
+	var object map[string]json.RawMessage
+	if runtime.JSONUnmarshal(t.union, &object) == nil {
+		// The first unknown key in sorted order, so the error is always the same.
+		unknown, found := "", false
+		for key := range object {
+			switch key {
+			case "alert_id", "rerun":
+			default:
+				if !found || key < unknown {
+					unknown, found = key, true
+				}
+			}
+		}
+		if found {
+			return body, fmt.Errorf("NewInvestigationDataAttributes0 doesn't allow the property %q", unknown)
+		}
+	}
 	err := runtime.JSONUnmarshal(t.union, &body)
 	return body, err
 }
@@ -93502,9 +93777,28 @@ func (t *NewInvestigation_Data_Attributes) MergeNewInvestigationDataAttributes0(
 	return err
 }
 
-// AsNewInvestigationDataAttributes1 returns the union data inside the NewInvestigation_Data_Attributes as a NewInvestigationDataAttributes1
+// AsNewInvestigationDataAttributes1 returns the union data inside the NewInvestigation_Data_Attributes as a NewInvestigationDataAttributes1. NewInvestigationDataAttributes1 allows no
+// additional properties: a property that neither it nor the rest of NewInvestigation_Data_Attributes
+// declares is an error.
 func (t NewInvestigation_Data_Attributes) AsNewInvestigationDataAttributes1() (NewInvestigationDataAttributes1, error) {
 	var body NewInvestigationDataAttributes1
+	var object map[string]json.RawMessage
+	if runtime.JSONUnmarshal(t.union, &object) == nil {
+		// The first unknown key in sorted order, so the error is always the same.
+		unknown, found := "", false
+		for key := range object {
+			switch key {
+			case "incident_id", "rerun":
+			default:
+				if !found || key < unknown {
+					unknown, found = key, true
+				}
+			}
+		}
+		if found {
+			return body, fmt.Errorf("NewInvestigationDataAttributes1 doesn't allow the property %q", unknown)
+		}
+	}
 	err := runtime.JSONUnmarshal(t.union, &body)
 	return body, err
 }
@@ -93600,9 +93894,28 @@ func (t *NewProblem_Data_Attributes_FormFieldSelections_Value) UnmarshalJSON(b [
 	return err
 }
 
-// AsNewRetrospectiveProcessDataAttributesRetrospectiveProcessMatchingCriteria0 returns the union data inside the NewRetrospectiveProcess_Data_Attributes_RetrospectiveProcessMatchingCriteria as a NewRetrospectiveProcessDataAttributesRetrospectiveProcessMatchingCriteria0
+// AsNewRetrospectiveProcessDataAttributesRetrospectiveProcessMatchingCriteria0 returns the union data inside the NewRetrospectiveProcess_Data_Attributes_RetrospectiveProcessMatchingCriteria as a NewRetrospectiveProcessDataAttributesRetrospectiveProcessMatchingCriteria0. NewRetrospectiveProcessDataAttributesRetrospectiveProcessMatchingCriteria0 allows no
+// additional properties: a property that neither it nor the rest of NewRetrospectiveProcess_Data_Attributes_RetrospectiveProcessMatchingCriteria
+// declares is an error.
 func (t NewRetrospectiveProcess_Data_Attributes_RetrospectiveProcessMatchingCriteria) AsNewRetrospectiveProcessDataAttributesRetrospectiveProcessMatchingCriteria0() (NewRetrospectiveProcessDataAttributesRetrospectiveProcessMatchingCriteria0, error) {
 	var body NewRetrospectiveProcessDataAttributesRetrospectiveProcessMatchingCriteria0
+	var object map[string]json.RawMessage
+	if runtime.JSONUnmarshal(t.union, &object) == nil {
+		// The first unknown key in sorted order, so the error is always the same.
+		unknown, found := "", false
+		for key := range object {
+			switch key {
+			case "severity_ids":
+			default:
+				if !found || key < unknown {
+					unknown, found = key, true
+				}
+			}
+		}
+		if found {
+			return body, fmt.Errorf("NewRetrospectiveProcessDataAttributesRetrospectiveProcessMatchingCriteria0 doesn't allow the property %q", unknown)
+		}
+	}
 	err := runtime.JSONUnmarshal(t.union, &body)
 	return body, err
 }
@@ -93626,9 +93939,28 @@ func (t *NewRetrospectiveProcess_Data_Attributes_RetrospectiveProcessMatchingCri
 	return err
 }
 
-// AsNewRetrospectiveProcessDataAttributesRetrospectiveProcessMatchingCriteria1 returns the union data inside the NewRetrospectiveProcess_Data_Attributes_RetrospectiveProcessMatchingCriteria as a NewRetrospectiveProcessDataAttributesRetrospectiveProcessMatchingCriteria1
+// AsNewRetrospectiveProcessDataAttributesRetrospectiveProcessMatchingCriteria1 returns the union data inside the NewRetrospectiveProcess_Data_Attributes_RetrospectiveProcessMatchingCriteria as a NewRetrospectiveProcessDataAttributesRetrospectiveProcessMatchingCriteria1. NewRetrospectiveProcessDataAttributesRetrospectiveProcessMatchingCriteria1 allows no
+// additional properties: a property that neither it nor the rest of NewRetrospectiveProcess_Data_Attributes_RetrospectiveProcessMatchingCriteria
+// declares is an error.
 func (t NewRetrospectiveProcess_Data_Attributes_RetrospectiveProcessMatchingCriteria) AsNewRetrospectiveProcessDataAttributesRetrospectiveProcessMatchingCriteria1() (NewRetrospectiveProcessDataAttributesRetrospectiveProcessMatchingCriteria1, error) {
 	var body NewRetrospectiveProcessDataAttributesRetrospectiveProcessMatchingCriteria1
+	var object map[string]json.RawMessage
+	if runtime.JSONUnmarshal(t.union, &object) == nil {
+		// The first unknown key in sorted order, so the error is always the same.
+		unknown, found := "", false
+		for key := range object {
+			switch key {
+			case "group_ids":
+			default:
+				if !found || key < unknown {
+					unknown, found = key, true
+				}
+			}
+		}
+		if found {
+			return body, fmt.Errorf("NewRetrospectiveProcessDataAttributesRetrospectiveProcessMatchingCriteria1 doesn't allow the property %q", unknown)
+		}
+	}
 	err := runtime.JSONUnmarshal(t.union, &body)
 	return body, err
 }
@@ -93652,9 +93984,28 @@ func (t *NewRetrospectiveProcess_Data_Attributes_RetrospectiveProcessMatchingCri
 	return err
 }
 
-// AsNewRetrospectiveProcessDataAttributesRetrospectiveProcessMatchingCriteria2 returns the union data inside the NewRetrospectiveProcess_Data_Attributes_RetrospectiveProcessMatchingCriteria as a NewRetrospectiveProcessDataAttributesRetrospectiveProcessMatchingCriteria2
+// AsNewRetrospectiveProcessDataAttributesRetrospectiveProcessMatchingCriteria2 returns the union data inside the NewRetrospectiveProcess_Data_Attributes_RetrospectiveProcessMatchingCriteria as a NewRetrospectiveProcessDataAttributesRetrospectiveProcessMatchingCriteria2. NewRetrospectiveProcessDataAttributesRetrospectiveProcessMatchingCriteria2 allows no
+// additional properties: a property that neither it nor the rest of NewRetrospectiveProcess_Data_Attributes_RetrospectiveProcessMatchingCriteria
+// declares is an error.
 func (t NewRetrospectiveProcess_Data_Attributes_RetrospectiveProcessMatchingCriteria) AsNewRetrospectiveProcessDataAttributesRetrospectiveProcessMatchingCriteria2() (NewRetrospectiveProcessDataAttributesRetrospectiveProcessMatchingCriteria2, error) {
 	var body NewRetrospectiveProcessDataAttributesRetrospectiveProcessMatchingCriteria2
+	var object map[string]json.RawMessage
+	if runtime.JSONUnmarshal(t.union, &object) == nil {
+		// The first unknown key in sorted order, so the error is always the same.
+		unknown, found := "", false
+		for key := range object {
+			switch key {
+			case "incident_type_ids":
+			default:
+				if !found || key < unknown {
+					unknown, found = key, true
+				}
+			}
+		}
+		if found {
+			return body, fmt.Errorf("NewRetrospectiveProcessDataAttributesRetrospectiveProcessMatchingCriteria2 doesn't allow the property %q", unknown)
+		}
+	}
 	err := runtime.JSONUnmarshal(t.union, &body)
 	return body, err
 }
@@ -93688,9 +94039,28 @@ func (t *NewRetrospectiveProcess_Data_Attributes_RetrospectiveProcessMatchingCri
 	return err
 }
 
-// AsNewScheduleRotationDataAttributesScheduleRotationableAttributes0 returns the union data inside the NewScheduleRotation_Data_Attributes_ScheduleRotationableAttributes as a NewScheduleRotationDataAttributesScheduleRotationableAttributes0
+// AsNewScheduleRotationDataAttributesScheduleRotationableAttributes0 returns the union data inside the NewScheduleRotation_Data_Attributes_ScheduleRotationableAttributes as a NewScheduleRotationDataAttributesScheduleRotationableAttributes0. NewScheduleRotationDataAttributesScheduleRotationableAttributes0 allows no
+// additional properties: a property that neither it nor the rest of NewScheduleRotation_Data_Attributes_ScheduleRotationableAttributes
+// declares is an error.
 func (t NewScheduleRotation_Data_Attributes_ScheduleRotationableAttributes) AsNewScheduleRotationDataAttributesScheduleRotationableAttributes0() (NewScheduleRotationDataAttributesScheduleRotationableAttributes0, error) {
 	var body NewScheduleRotationDataAttributesScheduleRotationableAttributes0
+	var object map[string]json.RawMessage
+	if runtime.JSONUnmarshal(t.union, &object) == nil {
+		// The first unknown key in sorted order, so the error is always the same.
+		unknown, found := "", false
+		for key := range object {
+			switch key {
+			case "handoff_time":
+			default:
+				if !found || key < unknown {
+					unknown, found = key, true
+				}
+			}
+		}
+		if found {
+			return body, fmt.Errorf("NewScheduleRotationDataAttributesScheduleRotationableAttributes0 doesn't allow the property %q", unknown)
+		}
+	}
 	err := runtime.JSONUnmarshal(t.union, &body)
 	return body, err
 }
@@ -93714,9 +94084,28 @@ func (t *NewScheduleRotation_Data_Attributes_ScheduleRotationableAttributes) Mer
 	return err
 }
 
-// AsNewScheduleRotationDataAttributesScheduleRotationableAttributes1 returns the union data inside the NewScheduleRotation_Data_Attributes_ScheduleRotationableAttributes as a NewScheduleRotationDataAttributesScheduleRotationableAttributes1
+// AsNewScheduleRotationDataAttributesScheduleRotationableAttributes1 returns the union data inside the NewScheduleRotation_Data_Attributes_ScheduleRotationableAttributes as a NewScheduleRotationDataAttributesScheduleRotationableAttributes1. NewScheduleRotationDataAttributesScheduleRotationableAttributes1 allows no
+// additional properties: a property that neither it nor the rest of NewScheduleRotation_Data_Attributes_ScheduleRotationableAttributes
+// declares is an error.
 func (t NewScheduleRotation_Data_Attributes_ScheduleRotationableAttributes) AsNewScheduleRotationDataAttributesScheduleRotationableAttributes1() (NewScheduleRotationDataAttributesScheduleRotationableAttributes1, error) {
 	var body NewScheduleRotationDataAttributesScheduleRotationableAttributes1
+	var object map[string]json.RawMessage
+	if runtime.JSONUnmarshal(t.union, &object) == nil {
+		// The first unknown key in sorted order, so the error is always the same.
+		unknown, found := "", false
+		for key := range object {
+			switch key {
+			case "handoff_day", "handoff_time":
+			default:
+				if !found || key < unknown {
+					unknown, found = key, true
+				}
+			}
+		}
+		if found {
+			return body, fmt.Errorf("NewScheduleRotationDataAttributesScheduleRotationableAttributes1 doesn't allow the property %q", unknown)
+		}
+	}
 	err := runtime.JSONUnmarshal(t.union, &body)
 	return body, err
 }
@@ -93740,9 +94129,28 @@ func (t *NewScheduleRotation_Data_Attributes_ScheduleRotationableAttributes) Mer
 	return err
 }
 
-// AsNewScheduleRotationDataAttributesScheduleRotationableAttributes2 returns the union data inside the NewScheduleRotation_Data_Attributes_ScheduleRotationableAttributes as a NewScheduleRotationDataAttributesScheduleRotationableAttributes2
+// AsNewScheduleRotationDataAttributesScheduleRotationableAttributes2 returns the union data inside the NewScheduleRotation_Data_Attributes_ScheduleRotationableAttributes as a NewScheduleRotationDataAttributesScheduleRotationableAttributes2. NewScheduleRotationDataAttributesScheduleRotationableAttributes2 allows no
+// additional properties: a property that neither it nor the rest of NewScheduleRotation_Data_Attributes_ScheduleRotationableAttributes
+// declares is an error.
 func (t NewScheduleRotation_Data_Attributes_ScheduleRotationableAttributes) AsNewScheduleRotationDataAttributesScheduleRotationableAttributes2() (NewScheduleRotationDataAttributesScheduleRotationableAttributes2, error) {
 	var body NewScheduleRotationDataAttributesScheduleRotationableAttributes2
+	var object map[string]json.RawMessage
+	if runtime.JSONUnmarshal(t.union, &object) == nil {
+		// The first unknown key in sorted order, so the error is always the same.
+		unknown, found := "", false
+		for key := range object {
+			switch key {
+			case "handoff_day", "handoff_time":
+			default:
+				if !found || key < unknown {
+					unknown, found = key, true
+				}
+			}
+		}
+		if found {
+			return body, fmt.Errorf("NewScheduleRotationDataAttributesScheduleRotationableAttributes2 doesn't allow the property %q", unknown)
+		}
+	}
 	err := runtime.JSONUnmarshal(t.union, &body)
 	return body, err
 }
@@ -93766,9 +94174,28 @@ func (t *NewScheduleRotation_Data_Attributes_ScheduleRotationableAttributes) Mer
 	return err
 }
 
-// AsNewScheduleRotationDataAttributesScheduleRotationableAttributes3 returns the union data inside the NewScheduleRotation_Data_Attributes_ScheduleRotationableAttributes as a NewScheduleRotationDataAttributesScheduleRotationableAttributes3
+// AsNewScheduleRotationDataAttributesScheduleRotationableAttributes3 returns the union data inside the NewScheduleRotation_Data_Attributes_ScheduleRotationableAttributes as a NewScheduleRotationDataAttributesScheduleRotationableAttributes3. NewScheduleRotationDataAttributesScheduleRotationableAttributes3 allows no
+// additional properties: a property that neither it nor the rest of NewScheduleRotation_Data_Attributes_ScheduleRotationableAttributes
+// declares is an error.
 func (t NewScheduleRotation_Data_Attributes_ScheduleRotationableAttributes) AsNewScheduleRotationDataAttributesScheduleRotationableAttributes3() (NewScheduleRotationDataAttributesScheduleRotationableAttributes3, error) {
 	var body NewScheduleRotationDataAttributesScheduleRotationableAttributes3
+	var object map[string]json.RawMessage
+	if runtime.JSONUnmarshal(t.union, &object) == nil {
+		// The first unknown key in sorted order, so the error is always the same.
+		unknown, found := "", false
+		for key := range object {
+			switch key {
+			case "handoff_time", "shift_length", "shift_length_unit":
+			default:
+				if !found || key < unknown {
+					unknown, found = key, true
+				}
+			}
+		}
+		if found {
+			return body, fmt.Errorf("NewScheduleRotationDataAttributesScheduleRotationableAttributes3 doesn't allow the property %q", unknown)
+		}
+	}
 	err := runtime.JSONUnmarshal(t.union, &body)
 	return body, err
 }
@@ -98417,9 +98844,28 @@ func (t *ProblemFormFieldSelection_Value) UnmarshalJSON(b []byte) error {
 	return err
 }
 
-// AsResolveAlertDataAttributesActor0 returns the union data inside the ResolveAlert_Data_Attributes_Actor as a ResolveAlertDataAttributesActor0
+// AsResolveAlertDataAttributesActor0 returns the union data inside the ResolveAlert_Data_Attributes_Actor as a ResolveAlertDataAttributesActor0. ResolveAlertDataAttributesActor0 allows no
+// additional properties: a property that neither it nor the rest of ResolveAlert_Data_Attributes_Actor
+// declares is an error.
 func (t ResolveAlert_Data_Attributes_Actor) AsResolveAlertDataAttributesActor0() (ResolveAlertDataAttributesActor0, error) {
 	var body ResolveAlertDataAttributesActor0
+	var object map[string]json.RawMessage
+	if runtime.JSONUnmarshal(t.union, &object) == nil {
+		// The first unknown key in sorted order, so the error is always the same.
+		unknown, found := "", false
+		for key := range object {
+			switch key {
+			case "email":
+			default:
+				if !found || key < unknown {
+					unknown, found = key, true
+				}
+			}
+		}
+		if found {
+			return body, fmt.Errorf("ResolveAlertDataAttributesActor0 doesn't allow the property %q", unknown)
+		}
+	}
 	err := runtime.JSONUnmarshal(t.union, &body)
 	return body, err
 }
@@ -98443,9 +98889,28 @@ func (t *ResolveAlert_Data_Attributes_Actor) MergeResolveAlertDataAttributesActo
 	return err
 }
 
-// AsResolveAlertDataAttributesActor1 returns the union data inside the ResolveAlert_Data_Attributes_Actor as a ResolveAlertDataAttributesActor1
+// AsResolveAlertDataAttributesActor1 returns the union data inside the ResolveAlert_Data_Attributes_Actor as a ResolveAlertDataAttributesActor1. ResolveAlertDataAttributesActor1 allows no
+// additional properties: a property that neither it nor the rest of ResolveAlert_Data_Attributes_Actor
+// declares is an error.
 func (t ResolveAlert_Data_Attributes_Actor) AsResolveAlertDataAttributesActor1() (ResolveAlertDataAttributesActor1, error) {
 	var body ResolveAlertDataAttributesActor1
+	var object map[string]json.RawMessage
+	if runtime.JSONUnmarshal(t.union, &object) == nil {
+		// The first unknown key in sorted order, so the error is always the same.
+		unknown, found := "", false
+		for key := range object {
+			switch key {
+			case "user_id":
+			default:
+				if !found || key < unknown {
+					unknown, found = key, true
+				}
+			}
+		}
+		if found {
+			return body, fmt.Errorf("ResolveAlertDataAttributesActor1 doesn't allow the property %q", unknown)
+		}
+	}
 	err := runtime.JSONUnmarshal(t.union, &body)
 	return body, err
 }
@@ -98479,9 +98944,28 @@ func (t *ResolveAlert_Data_Attributes_Actor) UnmarshalJSON(b []byte) error {
 	return err
 }
 
-// AsRetrospectiveProcessRetrospectiveProcessMatchingCriteria0 returns the union data inside the RetrospectiveProcess_RetrospectiveProcessMatchingCriteria as a RetrospectiveProcessRetrospectiveProcessMatchingCriteria0
+// AsRetrospectiveProcessRetrospectiveProcessMatchingCriteria0 returns the union data inside the RetrospectiveProcess_RetrospectiveProcessMatchingCriteria as a RetrospectiveProcessRetrospectiveProcessMatchingCriteria0. RetrospectiveProcessRetrospectiveProcessMatchingCriteria0 allows no
+// additional properties: a property that neither it nor the rest of RetrospectiveProcess_RetrospectiveProcessMatchingCriteria
+// declares is an error.
 func (t RetrospectiveProcess_RetrospectiveProcessMatchingCriteria) AsRetrospectiveProcessRetrospectiveProcessMatchingCriteria0() (RetrospectiveProcessRetrospectiveProcessMatchingCriteria0, error) {
 	var body RetrospectiveProcessRetrospectiveProcessMatchingCriteria0
+	var object map[string]json.RawMessage
+	if runtime.JSONUnmarshal(t.union, &object) == nil {
+		// The first unknown key in sorted order, so the error is always the same.
+		unknown, found := "", false
+		for key := range object {
+			switch key {
+			case "severity_ids":
+			default:
+				if !found || key < unknown {
+					unknown, found = key, true
+				}
+			}
+		}
+		if found {
+			return body, fmt.Errorf("RetrospectiveProcessRetrospectiveProcessMatchingCriteria0 doesn't allow the property %q", unknown)
+		}
+	}
 	err := runtime.JSONUnmarshal(t.union, &body)
 	return body, err
 }
@@ -98505,9 +98989,28 @@ func (t *RetrospectiveProcess_RetrospectiveProcessMatchingCriteria) MergeRetrosp
 	return err
 }
 
-// AsRetrospectiveProcessRetrospectiveProcessMatchingCriteria1 returns the union data inside the RetrospectiveProcess_RetrospectiveProcessMatchingCriteria as a RetrospectiveProcessRetrospectiveProcessMatchingCriteria1
+// AsRetrospectiveProcessRetrospectiveProcessMatchingCriteria1 returns the union data inside the RetrospectiveProcess_RetrospectiveProcessMatchingCriteria as a RetrospectiveProcessRetrospectiveProcessMatchingCriteria1. RetrospectiveProcessRetrospectiveProcessMatchingCriteria1 allows no
+// additional properties: a property that neither it nor the rest of RetrospectiveProcess_RetrospectiveProcessMatchingCriteria
+// declares is an error.
 func (t RetrospectiveProcess_RetrospectiveProcessMatchingCriteria) AsRetrospectiveProcessRetrospectiveProcessMatchingCriteria1() (RetrospectiveProcessRetrospectiveProcessMatchingCriteria1, error) {
 	var body RetrospectiveProcessRetrospectiveProcessMatchingCriteria1
+	var object map[string]json.RawMessage
+	if runtime.JSONUnmarshal(t.union, &object) == nil {
+		// The first unknown key in sorted order, so the error is always the same.
+		unknown, found := "", false
+		for key := range object {
+			switch key {
+			case "group_ids":
+			default:
+				if !found || key < unknown {
+					unknown, found = key, true
+				}
+			}
+		}
+		if found {
+			return body, fmt.Errorf("RetrospectiveProcessRetrospectiveProcessMatchingCriteria1 doesn't allow the property %q", unknown)
+		}
+	}
 	err := runtime.JSONUnmarshal(t.union, &body)
 	return body, err
 }
@@ -98531,9 +99034,28 @@ func (t *RetrospectiveProcess_RetrospectiveProcessMatchingCriteria) MergeRetrosp
 	return err
 }
 
-// AsRetrospectiveProcessRetrospectiveProcessMatchingCriteria2 returns the union data inside the RetrospectiveProcess_RetrospectiveProcessMatchingCriteria as a RetrospectiveProcessRetrospectiveProcessMatchingCriteria2
+// AsRetrospectiveProcessRetrospectiveProcessMatchingCriteria2 returns the union data inside the RetrospectiveProcess_RetrospectiveProcessMatchingCriteria as a RetrospectiveProcessRetrospectiveProcessMatchingCriteria2. RetrospectiveProcessRetrospectiveProcessMatchingCriteria2 allows no
+// additional properties: a property that neither it nor the rest of RetrospectiveProcess_RetrospectiveProcessMatchingCriteria
+// declares is an error.
 func (t RetrospectiveProcess_RetrospectiveProcessMatchingCriteria) AsRetrospectiveProcessRetrospectiveProcessMatchingCriteria2() (RetrospectiveProcessRetrospectiveProcessMatchingCriteria2, error) {
 	var body RetrospectiveProcessRetrospectiveProcessMatchingCriteria2
+	var object map[string]json.RawMessage
+	if runtime.JSONUnmarshal(t.union, &object) == nil {
+		// The first unknown key in sorted order, so the error is always the same.
+		unknown, found := "", false
+		for key := range object {
+			switch key {
+			case "incident_type_ids":
+			default:
+				if !found || key < unknown {
+					unknown, found = key, true
+				}
+			}
+		}
+		if found {
+			return body, fmt.Errorf("RetrospectiveProcessRetrospectiveProcessMatchingCriteria2 doesn't allow the property %q", unknown)
+		}
+	}
 	err := runtime.JSONUnmarshal(t.union, &body)
 	return body, err
 }
@@ -98567,9 +99089,28 @@ func (t *RetrospectiveProcess_RetrospectiveProcessMatchingCriteria) UnmarshalJSO
 	return err
 }
 
-// AsScheduleRotationScheduleRotationableAttributes0 returns the union data inside the ScheduleRotation_ScheduleRotationableAttributes as a ScheduleRotationScheduleRotationableAttributes0
+// AsScheduleRotationScheduleRotationableAttributes0 returns the union data inside the ScheduleRotation_ScheduleRotationableAttributes as a ScheduleRotationScheduleRotationableAttributes0. ScheduleRotationScheduleRotationableAttributes0 allows no
+// additional properties: a property that neither it nor the rest of ScheduleRotation_ScheduleRotationableAttributes
+// declares is an error.
 func (t ScheduleRotation_ScheduleRotationableAttributes) AsScheduleRotationScheduleRotationableAttributes0() (ScheduleRotationScheduleRotationableAttributes0, error) {
 	var body ScheduleRotationScheduleRotationableAttributes0
+	var object map[string]json.RawMessage
+	if runtime.JSONUnmarshal(t.union, &object) == nil {
+		// The first unknown key in sorted order, so the error is always the same.
+		unknown, found := "", false
+		for key := range object {
+			switch key {
+			case "handoff_time":
+			default:
+				if !found || key < unknown {
+					unknown, found = key, true
+				}
+			}
+		}
+		if found {
+			return body, fmt.Errorf("ScheduleRotationScheduleRotationableAttributes0 doesn't allow the property %q", unknown)
+		}
+	}
 	err := runtime.JSONUnmarshal(t.union, &body)
 	return body, err
 }
@@ -98593,9 +99134,28 @@ func (t *ScheduleRotation_ScheduleRotationableAttributes) MergeScheduleRotationS
 	return err
 }
 
-// AsScheduleRotationScheduleRotationableAttributes1 returns the union data inside the ScheduleRotation_ScheduleRotationableAttributes as a ScheduleRotationScheduleRotationableAttributes1
+// AsScheduleRotationScheduleRotationableAttributes1 returns the union data inside the ScheduleRotation_ScheduleRotationableAttributes as a ScheduleRotationScheduleRotationableAttributes1. ScheduleRotationScheduleRotationableAttributes1 allows no
+// additional properties: a property that neither it nor the rest of ScheduleRotation_ScheduleRotationableAttributes
+// declares is an error.
 func (t ScheduleRotation_ScheduleRotationableAttributes) AsScheduleRotationScheduleRotationableAttributes1() (ScheduleRotationScheduleRotationableAttributes1, error) {
 	var body ScheduleRotationScheduleRotationableAttributes1
+	var object map[string]json.RawMessage
+	if runtime.JSONUnmarshal(t.union, &object) == nil {
+		// The first unknown key in sorted order, so the error is always the same.
+		unknown, found := "", false
+		for key := range object {
+			switch key {
+			case "handoff_day", "handoff_time":
+			default:
+				if !found || key < unknown {
+					unknown, found = key, true
+				}
+			}
+		}
+		if found {
+			return body, fmt.Errorf("ScheduleRotationScheduleRotationableAttributes1 doesn't allow the property %q", unknown)
+		}
+	}
 	err := runtime.JSONUnmarshal(t.union, &body)
 	return body, err
 }
@@ -98619,9 +99179,28 @@ func (t *ScheduleRotation_ScheduleRotationableAttributes) MergeScheduleRotationS
 	return err
 }
 
-// AsScheduleRotationScheduleRotationableAttributes2 returns the union data inside the ScheduleRotation_ScheduleRotationableAttributes as a ScheduleRotationScheduleRotationableAttributes2
+// AsScheduleRotationScheduleRotationableAttributes2 returns the union data inside the ScheduleRotation_ScheduleRotationableAttributes as a ScheduleRotationScheduleRotationableAttributes2. ScheduleRotationScheduleRotationableAttributes2 allows no
+// additional properties: a property that neither it nor the rest of ScheduleRotation_ScheduleRotationableAttributes
+// declares is an error.
 func (t ScheduleRotation_ScheduleRotationableAttributes) AsScheduleRotationScheduleRotationableAttributes2() (ScheduleRotationScheduleRotationableAttributes2, error) {
 	var body ScheduleRotationScheduleRotationableAttributes2
+	var object map[string]json.RawMessage
+	if runtime.JSONUnmarshal(t.union, &object) == nil {
+		// The first unknown key in sorted order, so the error is always the same.
+		unknown, found := "", false
+		for key := range object {
+			switch key {
+			case "handoff_day", "handoff_time":
+			default:
+				if !found || key < unknown {
+					unknown, found = key, true
+				}
+			}
+		}
+		if found {
+			return body, fmt.Errorf("ScheduleRotationScheduleRotationableAttributes2 doesn't allow the property %q", unknown)
+		}
+	}
 	err := runtime.JSONUnmarshal(t.union, &body)
 	return body, err
 }
@@ -98645,9 +99224,28 @@ func (t *ScheduleRotation_ScheduleRotationableAttributes) MergeScheduleRotationS
 	return err
 }
 
-// AsScheduleRotationScheduleRotationableAttributes3 returns the union data inside the ScheduleRotation_ScheduleRotationableAttributes as a ScheduleRotationScheduleRotationableAttributes3
+// AsScheduleRotationScheduleRotationableAttributes3 returns the union data inside the ScheduleRotation_ScheduleRotationableAttributes as a ScheduleRotationScheduleRotationableAttributes3. ScheduleRotationScheduleRotationableAttributes3 allows no
+// additional properties: a property that neither it nor the rest of ScheduleRotation_ScheduleRotationableAttributes
+// declares is an error.
 func (t ScheduleRotation_ScheduleRotationableAttributes) AsScheduleRotationScheduleRotationableAttributes3() (ScheduleRotationScheduleRotationableAttributes3, error) {
 	var body ScheduleRotationScheduleRotationableAttributes3
+	var object map[string]json.RawMessage
+	if runtime.JSONUnmarshal(t.union, &object) == nil {
+		// The first unknown key in sorted order, so the error is always the same.
+		unknown, found := "", false
+		for key := range object {
+			switch key {
+			case "handoff_time", "shift_length", "shift_length_unit":
+			default:
+				if !found || key < unknown {
+					unknown, found = key, true
+				}
+			}
+		}
+		if found {
+			return body, fmt.Errorf("ScheduleRotationScheduleRotationableAttributes3 doesn't allow the property %q", unknown)
+		}
+	}
 	err := runtime.JSONUnmarshal(t.union, &body)
 	return body, err
 }
@@ -99718,9 +100316,28 @@ func (t *SendSlackMessageTaskParams) UnmarshalJSON(b []byte) error {
 	return err
 }
 
-// AsSnoozeAlertDataAttributesActor0 returns the union data inside the SnoozeAlert_Data_Attributes_Actor as a SnoozeAlertDataAttributesActor0
+// AsSnoozeAlertDataAttributesActor0 returns the union data inside the SnoozeAlert_Data_Attributes_Actor as a SnoozeAlertDataAttributesActor0. SnoozeAlertDataAttributesActor0 allows no
+// additional properties: a property that neither it nor the rest of SnoozeAlert_Data_Attributes_Actor
+// declares is an error.
 func (t SnoozeAlert_Data_Attributes_Actor) AsSnoozeAlertDataAttributesActor0() (SnoozeAlertDataAttributesActor0, error) {
 	var body SnoozeAlertDataAttributesActor0
+	var object map[string]json.RawMessage
+	if runtime.JSONUnmarshal(t.union, &object) == nil {
+		// The first unknown key in sorted order, so the error is always the same.
+		unknown, found := "", false
+		for key := range object {
+			switch key {
+			case "email":
+			default:
+				if !found || key < unknown {
+					unknown, found = key, true
+				}
+			}
+		}
+		if found {
+			return body, fmt.Errorf("SnoozeAlertDataAttributesActor0 doesn't allow the property %q", unknown)
+		}
+	}
 	err := runtime.JSONUnmarshal(t.union, &body)
 	return body, err
 }
@@ -99744,9 +100361,28 @@ func (t *SnoozeAlert_Data_Attributes_Actor) MergeSnoozeAlertDataAttributesActor0
 	return err
 }
 
-// AsSnoozeAlertDataAttributesActor1 returns the union data inside the SnoozeAlert_Data_Attributes_Actor as a SnoozeAlertDataAttributesActor1
+// AsSnoozeAlertDataAttributesActor1 returns the union data inside the SnoozeAlert_Data_Attributes_Actor as a SnoozeAlertDataAttributesActor1. SnoozeAlertDataAttributesActor1 allows no
+// additional properties: a property that neither it nor the rest of SnoozeAlert_Data_Attributes_Actor
+// declares is an error.
 func (t SnoozeAlert_Data_Attributes_Actor) AsSnoozeAlertDataAttributesActor1() (SnoozeAlertDataAttributesActor1, error) {
 	var body SnoozeAlertDataAttributesActor1
+	var object map[string]json.RawMessage
+	if runtime.JSONUnmarshal(t.union, &object) == nil {
+		// The first unknown key in sorted order, so the error is always the same.
+		unknown, found := "", false
+		for key := range object {
+			switch key {
+			case "user_id":
+			default:
+				if !found || key < unknown {
+					unknown, found = key, true
+				}
+			}
+		}
+		if found {
+			return body, fmt.Errorf("SnoozeAlertDataAttributesActor1 doesn't allow the property %q", unknown)
+		}
+	}
 	err := runtime.JSONUnmarshal(t.union, &body)
 	return body, err
 }
@@ -99898,9 +100534,28 @@ func (t *UpdateAiAutomation_Data_Attributes_Conditions_Any_All_Value) UnmarshalJ
 	return err
 }
 
-// AsUpdateAlertDataAttributesActor0 returns the union data inside the UpdateAlert_Data_Attributes_Actor as a UpdateAlertDataAttributesActor0
+// AsUpdateAlertDataAttributesActor0 returns the union data inside the UpdateAlert_Data_Attributes_Actor as a UpdateAlertDataAttributesActor0. UpdateAlertDataAttributesActor0 allows no
+// additional properties: a property that neither it nor the rest of UpdateAlert_Data_Attributes_Actor
+// declares is an error.
 func (t UpdateAlert_Data_Attributes_Actor) AsUpdateAlertDataAttributesActor0() (UpdateAlertDataAttributesActor0, error) {
 	var body UpdateAlertDataAttributesActor0
+	var object map[string]json.RawMessage
+	if runtime.JSONUnmarshal(t.union, &object) == nil {
+		// The first unknown key in sorted order, so the error is always the same.
+		unknown, found := "", false
+		for key := range object {
+			switch key {
+			case "email":
+			default:
+				if !found || key < unknown {
+					unknown, found = key, true
+				}
+			}
+		}
+		if found {
+			return body, fmt.Errorf("UpdateAlertDataAttributesActor0 doesn't allow the property %q", unknown)
+		}
+	}
 	err := runtime.JSONUnmarshal(t.union, &body)
 	return body, err
 }
@@ -99924,9 +100579,28 @@ func (t *UpdateAlert_Data_Attributes_Actor) MergeUpdateAlertDataAttributesActor0
 	return err
 }
 
-// AsUpdateAlertDataAttributesActor1 returns the union data inside the UpdateAlert_Data_Attributes_Actor as a UpdateAlertDataAttributesActor1
+// AsUpdateAlertDataAttributesActor1 returns the union data inside the UpdateAlert_Data_Attributes_Actor as a UpdateAlertDataAttributesActor1. UpdateAlertDataAttributesActor1 allows no
+// additional properties: a property that neither it nor the rest of UpdateAlert_Data_Attributes_Actor
+// declares is an error.
 func (t UpdateAlert_Data_Attributes_Actor) AsUpdateAlertDataAttributesActor1() (UpdateAlertDataAttributesActor1, error) {
 	var body UpdateAlertDataAttributesActor1
+	var object map[string]json.RawMessage
+	if runtime.JSONUnmarshal(t.union, &object) == nil {
+		// The first unknown key in sorted order, so the error is always the same.
+		unknown, found := "", false
+		for key := range object {
+			switch key {
+			case "user_id":
+			default:
+				if !found || key < unknown {
+					unknown, found = key, true
+				}
+			}
+		}
+		if found {
+			return body, fmt.Errorf("UpdateAlertDataAttributesActor1 doesn't allow the property %q", unknown)
+		}
+	}
 	err := runtime.JSONUnmarshal(t.union, &body)
 	return body, err
 }
@@ -100762,273 +101436,28 @@ func (t *UpdateProblem_Data_Attributes_FormFieldSelections_Value) UnmarshalJSON(
 	return err
 }
 
-// AsUpdateProblemDataAttributesFormFieldSelections0 returns the union data inside the UpdateProblem_Data_Attributes_FormFieldSelections_Item as a UpdateProblemDataAttributesFormFieldSelections0
-func (t UpdateProblem_Data_Attributes_FormFieldSelections_Item) AsUpdateProblemDataAttributesFormFieldSelections0() (UpdateProblemDataAttributesFormFieldSelections0, error) {
-	var body UpdateProblemDataAttributesFormFieldSelections0
-	err := runtime.JSONUnmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUpdateProblemDataAttributesFormFieldSelections0 overwrites any union data inside the UpdateProblem_Data_Attributes_FormFieldSelections_Item as the provided UpdateProblemDataAttributesFormFieldSelections0
-func (t *UpdateProblem_Data_Attributes_FormFieldSelections_Item) FromUpdateProblemDataAttributesFormFieldSelections0(v UpdateProblemDataAttributesFormFieldSelections0) error {
-	b, err := runtime.JSONMarshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUpdateProblemDataAttributesFormFieldSelections0 performs a merge with any union data inside the UpdateProblem_Data_Attributes_FormFieldSelections_Item, using the provided UpdateProblemDataAttributesFormFieldSelections0
-func (t *UpdateProblem_Data_Attributes_FormFieldSelections_Item) MergeUpdateProblemDataAttributesFormFieldSelections0(v UpdateProblemDataAttributesFormFieldSelections0) error {
-	b, err := runtime.JSONMarshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUpdateProblemDataAttributesFormFieldSelections1 returns the union data inside the UpdateProblem_Data_Attributes_FormFieldSelections_Item as a UpdateProblemDataAttributesFormFieldSelections1
-func (t UpdateProblem_Data_Attributes_FormFieldSelections_Item) AsUpdateProblemDataAttributesFormFieldSelections1() (UpdateProblemDataAttributesFormFieldSelections1, error) {
-	var body UpdateProblemDataAttributesFormFieldSelections1
-	err := runtime.JSONUnmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUpdateProblemDataAttributesFormFieldSelections1 overwrites any union data inside the UpdateProblem_Data_Attributes_FormFieldSelections_Item as the provided UpdateProblemDataAttributesFormFieldSelections1
-func (t *UpdateProblem_Data_Attributes_FormFieldSelections_Item) FromUpdateProblemDataAttributesFormFieldSelections1(v UpdateProblemDataAttributesFormFieldSelections1) error {
-	b, err := runtime.JSONMarshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUpdateProblemDataAttributesFormFieldSelections1 performs a merge with any union data inside the UpdateProblem_Data_Attributes_FormFieldSelections_Item, using the provided UpdateProblemDataAttributesFormFieldSelections1
-func (t *UpdateProblem_Data_Attributes_FormFieldSelections_Item) MergeUpdateProblemDataAttributesFormFieldSelections1(v UpdateProblemDataAttributesFormFieldSelections1) error {
-	b, err := runtime.JSONMarshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t UpdateProblem_Data_Attributes_FormFieldSelections_Item) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	if err != nil {
-		return nil, err
-	}
-	object := make(map[string]json.RawMessage)
-	if t.union != nil {
-		err = runtime.JSONUnmarshal(b, &object)
-		if err != nil {
-			return nil, err
-		}
-	}
-
-	if t.UnderscoreDestroy != nil {
-		object["_destroy"], err = runtime.JSONMarshal(t.UnderscoreDestroy)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling '_destroy': %w", err)
-		}
-	}
-
-	if t.FormFieldID != nil {
-		object["form_field_id"], err = runtime.JSONMarshal(t.FormFieldID)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'form_field_id': %w", err)
-		}
-	}
-
-	if t.ID != nil {
-		object["id"], err = runtime.JSONMarshal(t.ID)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'id': %w", err)
-		}
-	}
-
-	if t.SelectedCatalogEntityIDs != nil {
-		object["selected_catalog_entity_ids"], err = runtime.JSONMarshal(t.SelectedCatalogEntityIDs)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'selected_catalog_entity_ids': %w", err)
-		}
-	}
-
-	if t.SelectedCauseIDs != nil {
-		object["selected_cause_ids"], err = runtime.JSONMarshal(t.SelectedCauseIDs)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'selected_cause_ids': %w", err)
-		}
-	}
-
-	if t.SelectedEnvironmentIDs != nil {
-		object["selected_environment_ids"], err = runtime.JSONMarshal(t.SelectedEnvironmentIDs)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'selected_environment_ids': %w", err)
-		}
-	}
-
-	if t.SelectedFunctionalityIDs != nil {
-		object["selected_functionality_ids"], err = runtime.JSONMarshal(t.SelectedFunctionalityIDs)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'selected_functionality_ids': %w", err)
-		}
-	}
-
-	if t.SelectedGroupIDs != nil {
-		object["selected_group_ids"], err = runtime.JSONMarshal(t.SelectedGroupIDs)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'selected_group_ids': %w", err)
-		}
-	}
-
-	if t.SelectedIncidentTypeIDs != nil {
-		object["selected_incident_type_ids"], err = runtime.JSONMarshal(t.SelectedIncidentTypeIDs)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'selected_incident_type_ids': %w", err)
-		}
-	}
-
-	if t.SelectedOptionIDs != nil {
-		object["selected_option_ids"], err = runtime.JSONMarshal(t.SelectedOptionIDs)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'selected_option_ids': %w", err)
-		}
-	}
-
-	if t.SelectedServiceIDs != nil {
-		object["selected_service_ids"], err = runtime.JSONMarshal(t.SelectedServiceIDs)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'selected_service_ids': %w", err)
-		}
-	}
-
-	if t.SelectedUserIDs != nil {
-		object["selected_user_ids"], err = runtime.JSONMarshal(t.SelectedUserIDs)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'selected_user_ids': %w", err)
-		}
-	}
-
-	if t.Value != nil {
-		object["value"], err = runtime.JSONMarshal(t.Value)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'value': %w", err)
-		}
-	}
-	b, err = runtime.JSONMarshal(object)
-	return b, err
-}
-
-func (t *UpdateProblem_Data_Attributes_FormFieldSelections_Item) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	if err != nil {
-		return err
-	}
-	object := make(map[string]json.RawMessage)
-	err = runtime.JSONUnmarshal(b, &object)
-	if err != nil {
-		return err
-	}
-
-	if raw, found := object["_destroy"]; found {
-		err = runtime.JSONUnmarshal(raw, &t.UnderscoreDestroy)
-		if err != nil {
-			return fmt.Errorf("error reading '_destroy': %w", err)
-		}
-	}
-
-	if raw, found := object["form_field_id"]; found {
-		err = runtime.JSONUnmarshal(raw, &t.FormFieldID)
-		if err != nil {
-			return fmt.Errorf("error reading 'form_field_id': %w", err)
-		}
-	}
-
-	if raw, found := object["id"]; found {
-		err = runtime.JSONUnmarshal(raw, &t.ID)
-		if err != nil {
-			return fmt.Errorf("error reading 'id': %w", err)
-		}
-	}
-
-	if raw, found := object["selected_catalog_entity_ids"]; found {
-		err = runtime.JSONUnmarshal(raw, &t.SelectedCatalogEntityIDs)
-		if err != nil {
-			return fmt.Errorf("error reading 'selected_catalog_entity_ids': %w", err)
-		}
-	}
-
-	if raw, found := object["selected_cause_ids"]; found {
-		err = runtime.JSONUnmarshal(raw, &t.SelectedCauseIDs)
-		if err != nil {
-			return fmt.Errorf("error reading 'selected_cause_ids': %w", err)
-		}
-	}
-
-	if raw, found := object["selected_environment_ids"]; found {
-		err = runtime.JSONUnmarshal(raw, &t.SelectedEnvironmentIDs)
-		if err != nil {
-			return fmt.Errorf("error reading 'selected_environment_ids': %w", err)
-		}
-	}
-
-	if raw, found := object["selected_functionality_ids"]; found {
-		err = runtime.JSONUnmarshal(raw, &t.SelectedFunctionalityIDs)
-		if err != nil {
-			return fmt.Errorf("error reading 'selected_functionality_ids': %w", err)
-		}
-	}
-
-	if raw, found := object["selected_group_ids"]; found {
-		err = runtime.JSONUnmarshal(raw, &t.SelectedGroupIDs)
-		if err != nil {
-			return fmt.Errorf("error reading 'selected_group_ids': %w", err)
-		}
-	}
-
-	if raw, found := object["selected_incident_type_ids"]; found {
-		err = runtime.JSONUnmarshal(raw, &t.SelectedIncidentTypeIDs)
-		if err != nil {
-			return fmt.Errorf("error reading 'selected_incident_type_ids': %w", err)
-		}
-	}
-
-	if raw, found := object["selected_option_ids"]; found {
-		err = runtime.JSONUnmarshal(raw, &t.SelectedOptionIDs)
-		if err != nil {
-			return fmt.Errorf("error reading 'selected_option_ids': %w", err)
-		}
-	}
-
-	if raw, found := object["selected_service_ids"]; found {
-		err = runtime.JSONUnmarshal(raw, &t.SelectedServiceIDs)
-		if err != nil {
-			return fmt.Errorf("error reading 'selected_service_ids': %w", err)
-		}
-	}
-
-	if raw, found := object["selected_user_ids"]; found {
-		err = runtime.JSONUnmarshal(raw, &t.SelectedUserIDs)
-		if err != nil {
-			return fmt.Errorf("error reading 'selected_user_ids': %w", err)
-		}
-	}
-
-	if raw, found := object["value"]; found {
-		err = runtime.JSONUnmarshal(raw, &t.Value)
-		if err != nil {
-			return fmt.Errorf("error reading 'value': %w", err)
-		}
-	}
-
-	return err
-}
-
-// AsUpdateRetrospectiveProcessDataAttributesRetrospectiveProcessMatchingCriteria0 returns the union data inside the UpdateRetrospectiveProcess_Data_Attributes_RetrospectiveProcessMatchingCriteria as a UpdateRetrospectiveProcessDataAttributesRetrospectiveProcessMatchingCriteria0
+// AsUpdateRetrospectiveProcessDataAttributesRetrospectiveProcessMatchingCriteria0 returns the union data inside the UpdateRetrospectiveProcess_Data_Attributes_RetrospectiveProcessMatchingCriteria as a UpdateRetrospectiveProcessDataAttributesRetrospectiveProcessMatchingCriteria0. UpdateRetrospectiveProcessDataAttributesRetrospectiveProcessMatchingCriteria0 allows no
+// additional properties: a property that neither it nor the rest of UpdateRetrospectiveProcess_Data_Attributes_RetrospectiveProcessMatchingCriteria
+// declares is an error.
 func (t UpdateRetrospectiveProcess_Data_Attributes_RetrospectiveProcessMatchingCriteria) AsUpdateRetrospectiveProcessDataAttributesRetrospectiveProcessMatchingCriteria0() (UpdateRetrospectiveProcessDataAttributesRetrospectiveProcessMatchingCriteria0, error) {
 	var body UpdateRetrospectiveProcessDataAttributesRetrospectiveProcessMatchingCriteria0
+	var object map[string]json.RawMessage
+	if runtime.JSONUnmarshal(t.union, &object) == nil {
+		// The first unknown key in sorted order, so the error is always the same.
+		unknown, found := "", false
+		for key := range object {
+			switch key {
+			case "severity_ids":
+			default:
+				if !found || key < unknown {
+					unknown, found = key, true
+				}
+			}
+		}
+		if found {
+			return body, fmt.Errorf("UpdateRetrospectiveProcessDataAttributesRetrospectiveProcessMatchingCriteria0 doesn't allow the property %q", unknown)
+		}
+	}
 	err := runtime.JSONUnmarshal(t.union, &body)
 	return body, err
 }
@@ -101052,9 +101481,28 @@ func (t *UpdateRetrospectiveProcess_Data_Attributes_RetrospectiveProcessMatching
 	return err
 }
 
-// AsUpdateRetrospectiveProcessDataAttributesRetrospectiveProcessMatchingCriteria1 returns the union data inside the UpdateRetrospectiveProcess_Data_Attributes_RetrospectiveProcessMatchingCriteria as a UpdateRetrospectiveProcessDataAttributesRetrospectiveProcessMatchingCriteria1
+// AsUpdateRetrospectiveProcessDataAttributesRetrospectiveProcessMatchingCriteria1 returns the union data inside the UpdateRetrospectiveProcess_Data_Attributes_RetrospectiveProcessMatchingCriteria as a UpdateRetrospectiveProcessDataAttributesRetrospectiveProcessMatchingCriteria1. UpdateRetrospectiveProcessDataAttributesRetrospectiveProcessMatchingCriteria1 allows no
+// additional properties: a property that neither it nor the rest of UpdateRetrospectiveProcess_Data_Attributes_RetrospectiveProcessMatchingCriteria
+// declares is an error.
 func (t UpdateRetrospectiveProcess_Data_Attributes_RetrospectiveProcessMatchingCriteria) AsUpdateRetrospectiveProcessDataAttributesRetrospectiveProcessMatchingCriteria1() (UpdateRetrospectiveProcessDataAttributesRetrospectiveProcessMatchingCriteria1, error) {
 	var body UpdateRetrospectiveProcessDataAttributesRetrospectiveProcessMatchingCriteria1
+	var object map[string]json.RawMessage
+	if runtime.JSONUnmarshal(t.union, &object) == nil {
+		// The first unknown key in sorted order, so the error is always the same.
+		unknown, found := "", false
+		for key := range object {
+			switch key {
+			case "group_ids":
+			default:
+				if !found || key < unknown {
+					unknown, found = key, true
+				}
+			}
+		}
+		if found {
+			return body, fmt.Errorf("UpdateRetrospectiveProcessDataAttributesRetrospectiveProcessMatchingCriteria1 doesn't allow the property %q", unknown)
+		}
+	}
 	err := runtime.JSONUnmarshal(t.union, &body)
 	return body, err
 }
@@ -101078,9 +101526,28 @@ func (t *UpdateRetrospectiveProcess_Data_Attributes_RetrospectiveProcessMatching
 	return err
 }
 
-// AsUpdateRetrospectiveProcessDataAttributesRetrospectiveProcessMatchingCriteria2 returns the union data inside the UpdateRetrospectiveProcess_Data_Attributes_RetrospectiveProcessMatchingCriteria as a UpdateRetrospectiveProcessDataAttributesRetrospectiveProcessMatchingCriteria2
+// AsUpdateRetrospectiveProcessDataAttributesRetrospectiveProcessMatchingCriteria2 returns the union data inside the UpdateRetrospectiveProcess_Data_Attributes_RetrospectiveProcessMatchingCriteria as a UpdateRetrospectiveProcessDataAttributesRetrospectiveProcessMatchingCriteria2. UpdateRetrospectiveProcessDataAttributesRetrospectiveProcessMatchingCriteria2 allows no
+// additional properties: a property that neither it nor the rest of UpdateRetrospectiveProcess_Data_Attributes_RetrospectiveProcessMatchingCriteria
+// declares is an error.
 func (t UpdateRetrospectiveProcess_Data_Attributes_RetrospectiveProcessMatchingCriteria) AsUpdateRetrospectiveProcessDataAttributesRetrospectiveProcessMatchingCriteria2() (UpdateRetrospectiveProcessDataAttributesRetrospectiveProcessMatchingCriteria2, error) {
 	var body UpdateRetrospectiveProcessDataAttributesRetrospectiveProcessMatchingCriteria2
+	var object map[string]json.RawMessage
+	if runtime.JSONUnmarshal(t.union, &object) == nil {
+		// The first unknown key in sorted order, so the error is always the same.
+		unknown, found := "", false
+		for key := range object {
+			switch key {
+			case "incident_type_ids":
+			default:
+				if !found || key < unknown {
+					unknown, found = key, true
+				}
+			}
+		}
+		if found {
+			return body, fmt.Errorf("UpdateRetrospectiveProcessDataAttributesRetrospectiveProcessMatchingCriteria2 doesn't allow the property %q", unknown)
+		}
+	}
 	err := runtime.JSONUnmarshal(t.union, &body)
 	return body, err
 }
@@ -101114,9 +101581,28 @@ func (t *UpdateRetrospectiveProcess_Data_Attributes_RetrospectiveProcessMatching
 	return err
 }
 
-// AsUpdateScheduleRotationDataAttributesScheduleRotationableAttributes0 returns the union data inside the UpdateScheduleRotation_Data_Attributes_ScheduleRotationableAttributes as a UpdateScheduleRotationDataAttributesScheduleRotationableAttributes0
+// AsUpdateScheduleRotationDataAttributesScheduleRotationableAttributes0 returns the union data inside the UpdateScheduleRotation_Data_Attributes_ScheduleRotationableAttributes as a UpdateScheduleRotationDataAttributesScheduleRotationableAttributes0. UpdateScheduleRotationDataAttributesScheduleRotationableAttributes0 allows no
+// additional properties: a property that neither it nor the rest of UpdateScheduleRotation_Data_Attributes_ScheduleRotationableAttributes
+// declares is an error.
 func (t UpdateScheduleRotation_Data_Attributes_ScheduleRotationableAttributes) AsUpdateScheduleRotationDataAttributesScheduleRotationableAttributes0() (UpdateScheduleRotationDataAttributesScheduleRotationableAttributes0, error) {
 	var body UpdateScheduleRotationDataAttributesScheduleRotationableAttributes0
+	var object map[string]json.RawMessage
+	if runtime.JSONUnmarshal(t.union, &object) == nil {
+		// The first unknown key in sorted order, so the error is always the same.
+		unknown, found := "", false
+		for key := range object {
+			switch key {
+			case "handoff_time":
+			default:
+				if !found || key < unknown {
+					unknown, found = key, true
+				}
+			}
+		}
+		if found {
+			return body, fmt.Errorf("UpdateScheduleRotationDataAttributesScheduleRotationableAttributes0 doesn't allow the property %q", unknown)
+		}
+	}
 	err := runtime.JSONUnmarshal(t.union, &body)
 	return body, err
 }
@@ -101140,9 +101626,28 @@ func (t *UpdateScheduleRotation_Data_Attributes_ScheduleRotationableAttributes) 
 	return err
 }
 
-// AsUpdateScheduleRotationDataAttributesScheduleRotationableAttributes1 returns the union data inside the UpdateScheduleRotation_Data_Attributes_ScheduleRotationableAttributes as a UpdateScheduleRotationDataAttributesScheduleRotationableAttributes1
+// AsUpdateScheduleRotationDataAttributesScheduleRotationableAttributes1 returns the union data inside the UpdateScheduleRotation_Data_Attributes_ScheduleRotationableAttributes as a UpdateScheduleRotationDataAttributesScheduleRotationableAttributes1. UpdateScheduleRotationDataAttributesScheduleRotationableAttributes1 allows no
+// additional properties: a property that neither it nor the rest of UpdateScheduleRotation_Data_Attributes_ScheduleRotationableAttributes
+// declares is an error.
 func (t UpdateScheduleRotation_Data_Attributes_ScheduleRotationableAttributes) AsUpdateScheduleRotationDataAttributesScheduleRotationableAttributes1() (UpdateScheduleRotationDataAttributesScheduleRotationableAttributes1, error) {
 	var body UpdateScheduleRotationDataAttributesScheduleRotationableAttributes1
+	var object map[string]json.RawMessage
+	if runtime.JSONUnmarshal(t.union, &object) == nil {
+		// The first unknown key in sorted order, so the error is always the same.
+		unknown, found := "", false
+		for key := range object {
+			switch key {
+			case "handoff_day", "handoff_time":
+			default:
+				if !found || key < unknown {
+					unknown, found = key, true
+				}
+			}
+		}
+		if found {
+			return body, fmt.Errorf("UpdateScheduleRotationDataAttributesScheduleRotationableAttributes1 doesn't allow the property %q", unknown)
+		}
+	}
 	err := runtime.JSONUnmarshal(t.union, &body)
 	return body, err
 }
@@ -101166,9 +101671,28 @@ func (t *UpdateScheduleRotation_Data_Attributes_ScheduleRotationableAttributes) 
 	return err
 }
 
-// AsUpdateScheduleRotationDataAttributesScheduleRotationableAttributes2 returns the union data inside the UpdateScheduleRotation_Data_Attributes_ScheduleRotationableAttributes as a UpdateScheduleRotationDataAttributesScheduleRotationableAttributes2
+// AsUpdateScheduleRotationDataAttributesScheduleRotationableAttributes2 returns the union data inside the UpdateScheduleRotation_Data_Attributes_ScheduleRotationableAttributes as a UpdateScheduleRotationDataAttributesScheduleRotationableAttributes2. UpdateScheduleRotationDataAttributesScheduleRotationableAttributes2 allows no
+// additional properties: a property that neither it nor the rest of UpdateScheduleRotation_Data_Attributes_ScheduleRotationableAttributes
+// declares is an error.
 func (t UpdateScheduleRotation_Data_Attributes_ScheduleRotationableAttributes) AsUpdateScheduleRotationDataAttributesScheduleRotationableAttributes2() (UpdateScheduleRotationDataAttributesScheduleRotationableAttributes2, error) {
 	var body UpdateScheduleRotationDataAttributesScheduleRotationableAttributes2
+	var object map[string]json.RawMessage
+	if runtime.JSONUnmarshal(t.union, &object) == nil {
+		// The first unknown key in sorted order, so the error is always the same.
+		unknown, found := "", false
+		for key := range object {
+			switch key {
+			case "handoff_day", "handoff_time":
+			default:
+				if !found || key < unknown {
+					unknown, found = key, true
+				}
+			}
+		}
+		if found {
+			return body, fmt.Errorf("UpdateScheduleRotationDataAttributesScheduleRotationableAttributes2 doesn't allow the property %q", unknown)
+		}
+	}
 	err := runtime.JSONUnmarshal(t.union, &body)
 	return body, err
 }
@@ -101192,9 +101716,28 @@ func (t *UpdateScheduleRotation_Data_Attributes_ScheduleRotationableAttributes) 
 	return err
 }
 
-// AsUpdateScheduleRotationDataAttributesScheduleRotationableAttributes3 returns the union data inside the UpdateScheduleRotation_Data_Attributes_ScheduleRotationableAttributes as a UpdateScheduleRotationDataAttributesScheduleRotationableAttributes3
+// AsUpdateScheduleRotationDataAttributesScheduleRotationableAttributes3 returns the union data inside the UpdateScheduleRotation_Data_Attributes_ScheduleRotationableAttributes as a UpdateScheduleRotationDataAttributesScheduleRotationableAttributes3. UpdateScheduleRotationDataAttributesScheduleRotationableAttributes3 allows no
+// additional properties: a property that neither it nor the rest of UpdateScheduleRotation_Data_Attributes_ScheduleRotationableAttributes
+// declares is an error.
 func (t UpdateScheduleRotation_Data_Attributes_ScheduleRotationableAttributes) AsUpdateScheduleRotationDataAttributesScheduleRotationableAttributes3() (UpdateScheduleRotationDataAttributesScheduleRotationableAttributes3, error) {
 	var body UpdateScheduleRotationDataAttributesScheduleRotationableAttributes3
+	var object map[string]json.RawMessage
+	if runtime.JSONUnmarshal(t.union, &object) == nil {
+		// The first unknown key in sorted order, so the error is always the same.
+		unknown, found := "", false
+		for key := range object {
+			switch key {
+			case "handoff_time", "shift_length", "shift_length_unit":
+			default:
+				if !found || key < unknown {
+					unknown, found = key, true
+				}
+			}
+		}
+		if found {
+			return body, fmt.Errorf("UpdateScheduleRotationDataAttributesScheduleRotationableAttributes3 doesn't allow the property %q", unknown)
+		}
+	}
 	err := runtime.JSONUnmarshal(t.union, &body)
 	return body, err
 }

@@ -17,3 +17,4 @@ output-options:
   skip-response-body-getters: true
 compatibility:
   always-prefix-enum-values: true
+  schema-merging-behavior: v3
