@@ -4332,6 +4332,33 @@ func (e AlertRouteRulesDestinationsCatalogType) Valid() bool {
 	}
 }
 
+// Defines values for AlertRouteRulesDestinationsFallbackTargetType.
+const (
+	AlertRouteRulesDestinationsFallbackTargetTypeCatalogEntity    AlertRouteRulesDestinationsFallbackTargetType = "CatalogEntity"
+	AlertRouteRulesDestinationsFallbackTargetTypeEscalationPolicy AlertRouteRulesDestinationsFallbackTargetType = "EscalationPolicy"
+	AlertRouteRulesDestinationsFallbackTargetTypeFunctionality    AlertRouteRulesDestinationsFallbackTargetType = "Functionality"
+	AlertRouteRulesDestinationsFallbackTargetTypeGroup            AlertRouteRulesDestinationsFallbackTargetType = "Group"
+	AlertRouteRulesDestinationsFallbackTargetTypeService          AlertRouteRulesDestinationsFallbackTargetType = "Service"
+)
+
+// Valid indicates whether the value is a known member of the AlertRouteRulesDestinationsFallbackTargetType enum.
+func (e AlertRouteRulesDestinationsFallbackTargetType) Valid() bool {
+	switch e {
+	case AlertRouteRulesDestinationsFallbackTargetTypeCatalogEntity:
+		return true
+	case AlertRouteRulesDestinationsFallbackTargetTypeEscalationPolicy:
+		return true
+	case AlertRouteRulesDestinationsFallbackTargetTypeFunctionality:
+		return true
+	case AlertRouteRulesDestinationsFallbackTargetTypeGroup:
+		return true
+	case AlertRouteRulesDestinationsFallbackTargetTypeService:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for AlertRouteRulesDestinationsMatchKeysSourceKind.
 const (
 	AlertRouteRulesDestinationsMatchKeysSourceKindAlertField AlertRouteRulesDestinationsMatchKeysSourceKind = "alert_field"
@@ -9135,6 +9162,24 @@ func (e DashboardPanelParamsDisplay) Valid() bool {
 	case DashboardPanelParamsDisplayStackedColumnChart:
 		return true
 	case DashboardPanelParamsDisplayTable:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardPanelParamsDowntimeEnd.
+const (
+	DashboardPanelParamsDowntimeEndMitigated DashboardPanelParamsDowntimeEnd = "mitigated"
+	DashboardPanelParamsDowntimeEndResolved  DashboardPanelParamsDowntimeEnd = "resolved"
+)
+
+// Valid indicates whether the value is a known member of the DashboardPanelParamsDowntimeEnd enum.
+func (e DashboardPanelParamsDowntimeEnd) Valid() bool {
+	switch e {
+	case DashboardPanelParamsDowntimeEndMitigated:
+		return true
+	case DashboardPanelParamsDowntimeEndResolved:
 		return true
 	default:
 		return false
@@ -15987,6 +16032,21 @@ func (e IncidentPostMortemStatus) Valid() bool {
 	}
 }
 
+// Defines values for IncidentPostMortemCommentListDataType.
+const (
+	IncidentPostMortemCommentListDataTypeIncidentPostMortemComments IncidentPostMortemCommentListDataType = "incident_post_mortem_comments"
+)
+
+// Valid indicates whether the value is a known member of the IncidentPostMortemCommentListDataType enum.
+func (e IncidentPostMortemCommentListDataType) Valid() bool {
+	switch e {
+	case IncidentPostMortemCommentListDataTypeIncidentPostMortemComments:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for IncidentPostMortemListDataType.
 const (
 	IncidentPostMortemListDataTypeIncidentPostMortems IncidentPostMortemListDataType = "incident_post_mortems"
@@ -19416,6 +19476,33 @@ func (e NewAlertRouteDataAttributesRulesDestinationsCatalogType) Valid() bool {
 	}
 }
 
+// Defines values for NewAlertRouteDataAttributesRulesDestinationsFallbackTargetType.
+const (
+	NewAlertRouteDataAttributesRulesDestinationsFallbackTargetTypeCatalogEntity    NewAlertRouteDataAttributesRulesDestinationsFallbackTargetType = "CatalogEntity"
+	NewAlertRouteDataAttributesRulesDestinationsFallbackTargetTypeEscalationPolicy NewAlertRouteDataAttributesRulesDestinationsFallbackTargetType = "EscalationPolicy"
+	NewAlertRouteDataAttributesRulesDestinationsFallbackTargetTypeFunctionality    NewAlertRouteDataAttributesRulesDestinationsFallbackTargetType = "Functionality"
+	NewAlertRouteDataAttributesRulesDestinationsFallbackTargetTypeGroup            NewAlertRouteDataAttributesRulesDestinationsFallbackTargetType = "Group"
+	NewAlertRouteDataAttributesRulesDestinationsFallbackTargetTypeService          NewAlertRouteDataAttributesRulesDestinationsFallbackTargetType = "Service"
+)
+
+// Valid indicates whether the value is a known member of the NewAlertRouteDataAttributesRulesDestinationsFallbackTargetType enum.
+func (e NewAlertRouteDataAttributesRulesDestinationsFallbackTargetType) Valid() bool {
+	switch e {
+	case NewAlertRouteDataAttributesRulesDestinationsFallbackTargetTypeCatalogEntity:
+		return true
+	case NewAlertRouteDataAttributesRulesDestinationsFallbackTargetTypeEscalationPolicy:
+		return true
+	case NewAlertRouteDataAttributesRulesDestinationsFallbackTargetTypeFunctionality:
+		return true
+	case NewAlertRouteDataAttributesRulesDestinationsFallbackTargetTypeGroup:
+		return true
+	case NewAlertRouteDataAttributesRulesDestinationsFallbackTargetTypeService:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for NewAlertRouteDataAttributesRulesDestinationsMatchKeysSourceKind.
 const (
 	NewAlertRouteDataAttributesRulesDestinationsMatchKeysSourceKindAlertField NewAlertRouteDataAttributesRulesDestinationsMatchKeysSourceKind = "alert_field"
@@ -20988,6 +21075,24 @@ func (e NewDashboardPanelDataAttributesParamsDisplay) Valid() bool {
 	case NewDashboardPanelDataAttributesParamsDisplayStackedColumnChart:
 		return true
 	case NewDashboardPanelDataAttributesParamsDisplayTable:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for NewDashboardPanelDataAttributesParamsDowntimeEnd.
+const (
+	NewDashboardPanelDataAttributesParamsDowntimeEndMitigated NewDashboardPanelDataAttributesParamsDowntimeEnd = "mitigated"
+	NewDashboardPanelDataAttributesParamsDowntimeEndResolved  NewDashboardPanelDataAttributesParamsDowntimeEnd = "resolved"
+)
+
+// Valid indicates whether the value is a known member of the NewDashboardPanelDataAttributesParamsDowntimeEnd enum.
+func (e NewDashboardPanelDataAttributesParamsDowntimeEnd) Valid() bool {
+	switch e {
+	case NewDashboardPanelDataAttributesParamsDowntimeEndMitigated:
+		return true
+	case NewDashboardPanelDataAttributesParamsDowntimeEndResolved:
 		return true
 	default:
 		return false
@@ -32316,6 +32421,33 @@ func (e PatchAlertRouteDataAttributesRulesDestinationsCatalogType) Valid() bool 
 	}
 }
 
+// Defines values for PatchAlertRouteDataAttributesRulesDestinationsFallbackTargetType.
+const (
+	PatchAlertRouteDataAttributesRulesDestinationsFallbackTargetTypeCatalogEntity    PatchAlertRouteDataAttributesRulesDestinationsFallbackTargetType = "CatalogEntity"
+	PatchAlertRouteDataAttributesRulesDestinationsFallbackTargetTypeEscalationPolicy PatchAlertRouteDataAttributesRulesDestinationsFallbackTargetType = "EscalationPolicy"
+	PatchAlertRouteDataAttributesRulesDestinationsFallbackTargetTypeFunctionality    PatchAlertRouteDataAttributesRulesDestinationsFallbackTargetType = "Functionality"
+	PatchAlertRouteDataAttributesRulesDestinationsFallbackTargetTypeGroup            PatchAlertRouteDataAttributesRulesDestinationsFallbackTargetType = "Group"
+	PatchAlertRouteDataAttributesRulesDestinationsFallbackTargetTypeService          PatchAlertRouteDataAttributesRulesDestinationsFallbackTargetType = "Service"
+)
+
+// Valid indicates whether the value is a known member of the PatchAlertRouteDataAttributesRulesDestinationsFallbackTargetType enum.
+func (e PatchAlertRouteDataAttributesRulesDestinationsFallbackTargetType) Valid() bool {
+	switch e {
+	case PatchAlertRouteDataAttributesRulesDestinationsFallbackTargetTypeCatalogEntity:
+		return true
+	case PatchAlertRouteDataAttributesRulesDestinationsFallbackTargetTypeEscalationPolicy:
+		return true
+	case PatchAlertRouteDataAttributesRulesDestinationsFallbackTargetTypeFunctionality:
+		return true
+	case PatchAlertRouteDataAttributesRulesDestinationsFallbackTargetTypeGroup:
+		return true
+	case PatchAlertRouteDataAttributesRulesDestinationsFallbackTargetTypeService:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for PatchAlertRouteDataAttributesRulesDestinationsMatchKeysSourceKind.
 const (
 	PatchAlertRouteDataAttributesRulesDestinationsMatchKeysSourceKindAlertField PatchAlertRouteDataAttributesRulesDestinationsMatchKeysSourceKind = "alert_field"
@@ -39144,6 +39276,33 @@ func (e UpdateAlertRouteDataAttributesRulesDestinationsCatalogType) Valid() bool
 	}
 }
 
+// Defines values for UpdateAlertRouteDataAttributesRulesDestinationsFallbackTargetType.
+const (
+	UpdateAlertRouteDataAttributesRulesDestinationsFallbackTargetTypeCatalogEntity    UpdateAlertRouteDataAttributesRulesDestinationsFallbackTargetType = "CatalogEntity"
+	UpdateAlertRouteDataAttributesRulesDestinationsFallbackTargetTypeEscalationPolicy UpdateAlertRouteDataAttributesRulesDestinationsFallbackTargetType = "EscalationPolicy"
+	UpdateAlertRouteDataAttributesRulesDestinationsFallbackTargetTypeFunctionality    UpdateAlertRouteDataAttributesRulesDestinationsFallbackTargetType = "Functionality"
+	UpdateAlertRouteDataAttributesRulesDestinationsFallbackTargetTypeGroup            UpdateAlertRouteDataAttributesRulesDestinationsFallbackTargetType = "Group"
+	UpdateAlertRouteDataAttributesRulesDestinationsFallbackTargetTypeService          UpdateAlertRouteDataAttributesRulesDestinationsFallbackTargetType = "Service"
+)
+
+// Valid indicates whether the value is a known member of the UpdateAlertRouteDataAttributesRulesDestinationsFallbackTargetType enum.
+func (e UpdateAlertRouteDataAttributesRulesDestinationsFallbackTargetType) Valid() bool {
+	switch e {
+	case UpdateAlertRouteDataAttributesRulesDestinationsFallbackTargetTypeCatalogEntity:
+		return true
+	case UpdateAlertRouteDataAttributesRulesDestinationsFallbackTargetTypeEscalationPolicy:
+		return true
+	case UpdateAlertRouteDataAttributesRulesDestinationsFallbackTargetTypeFunctionality:
+		return true
+	case UpdateAlertRouteDataAttributesRulesDestinationsFallbackTargetTypeGroup:
+		return true
+	case UpdateAlertRouteDataAttributesRulesDestinationsFallbackTargetTypeService:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for UpdateAlertRouteDataAttributesRulesDestinationsMatchKeysSourceKind.
 const (
 	UpdateAlertRouteDataAttributesRulesDestinationsMatchKeysSourceKindAlertField UpdateAlertRouteDataAttributesRulesDestinationsMatchKeysSourceKind = "alert_field"
@@ -40707,6 +40866,24 @@ func (e UpdateDashboardPanelDataAttributesParamsDisplay) Valid() bool {
 	case UpdateDashboardPanelDataAttributesParamsDisplayStackedColumnChart:
 		return true
 	case UpdateDashboardPanelDataAttributesParamsDisplayTable:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateDashboardPanelDataAttributesParamsDowntimeEnd.
+const (
+	UpdateDashboardPanelDataAttributesParamsDowntimeEndMitigated UpdateDashboardPanelDataAttributesParamsDowntimeEnd = "mitigated"
+	UpdateDashboardPanelDataAttributesParamsDowntimeEndResolved  UpdateDashboardPanelDataAttributesParamsDowntimeEnd = "resolved"
+)
+
+// Valid indicates whether the value is a known member of the UpdateDashboardPanelDataAttributesParamsDowntimeEnd enum.
+func (e UpdateDashboardPanelDataAttributesParamsDowntimeEnd) Valid() bool {
+	switch e {
+	case UpdateDashboardPanelDataAttributesParamsDowntimeEndMitigated:
+		return true
+	case UpdateDashboardPanelDataAttributesParamsDowntimeEndResolved:
 		return true
 	default:
 		return false
@@ -55291,13 +55468,16 @@ type AiAutomationAttributes struct {
 			Operator  string                    `json:"operator"`
 			Values    []string                  `json:"values"`
 		} `json:"conditions"`
-		CooldownSeconds  int                                                        `json:"cooldown_seconds"`
-		EventName        nullable.Nullable[AiAutomationAttributesTriggersEventName] `json:"event_name"`
-		ID               string                                                     `json:"id"`
-		NextRunAt        nullable.Nullable[time.Time]                               `json:"next_run_at"`
-		ScheduleRrule    nullable.Nullable[string]                                  `json:"schedule_rrule"`
-		ScheduleTimezone nullable.Nullable[string]                                  `json:"schedule_timezone"`
-		Source           AiAutomationAttributesTriggersSource                       `json:"source"`
+		CooldownSeconds int                                                        `json:"cooldown_seconds"`
+		EventName       nullable.Nullable[AiAutomationAttributesTriggersEventName] `json:"event_name"`
+		ID              string                                                     `json:"id"`
+		NextRunAt       nullable.Nullable[time.Time]                               `json:"next_run_at"`
+
+		// RepeatIntervalMinutes Incident triggers only. Minutes between repeat runs while the incident is active and still matches; null when the trigger doesn't repeat.
+		RepeatIntervalMinutes nullable.Nullable[int]               `json:"repeat_interval_minutes,omitempty"`
+		ScheduleRrule         nullable.Nullable[string]            `json:"schedule_rrule"`
+		ScheduleTimezone      nullable.Nullable[string]            `json:"schedule_timezone"`
+		Source                AiAutomationAttributesTriggersSource `json:"source"`
 
 		// WebhookSecretConfigured Webhook triggers only. The secret itself is never returned; generate one with POST /v1/ai/automations/{id}/triggers/{trigger_id}/webhook_secret.
 		WebhookSecretConfigured *bool `json:"webhook_secret_configured,omitempty"`
@@ -56048,7 +56228,7 @@ type Alert struct {
 	// AcknowledgedAt When the alert was first acknowledged. Null if it has never been acknowledged. An alert that is retriggered and acknowledged again keeps its original acknowledgement timestamp.
 	AcknowledgedAt nullable.Nullable[time.Time] `json:"acknowledged_at,omitempty"`
 
-	// AlertFieldValues Custom alert field values associated with the alert. Only present when the enable_alert_fields feature flag is enabled for the team.
+	// AlertFieldValues Custom alert field values associated with the alert.
 	AlertFieldValues nullable.Nullable[[]struct {
 		// AlertFieldID ID of the custom alert field
 		AlertFieldID string `json:"alert_field_id"`
@@ -56583,6 +56763,9 @@ type AlertGroup struct {
 	// OwnerGroupIDs Teams that own this alert group. Admins of an owning team can manage it, and an owned alert group can only target destinations that belong to its owning teams. Only available when owning teams for alert groups are enabled for the organization.
 	OwnerGroupIDs []openapi_types.UUID `json:"owner_group_ids,omitempty"`
 
+	// Position Where this rule sits in the organization's alert grouping rule order, starting at 1. Null until rule ordering is turned on for the organization. New rules are then added at the end.
+	Position nullable.Nullable[int] `json:"position,omitempty"`
+
 	// Slug The slug of the alert group
 	Slug    *string `json:"slug,omitempty"`
 	Targets []struct {
@@ -56818,6 +57001,12 @@ type AlertRoute struct {
 			// CatalogType Dynamic destinations only. The catalog the matched entity belongs to
 			CatalogType *AlertRouteRulesDestinationsCatalogType `json:"catalog_type,omitempty"`
 
+			// FallbackTargetID Dynamic destinations only. The ID of the fallback target
+			FallbackTargetID nullable.Nullable[openapi_types.UUID] `json:"fallback_target_id,omitempty"`
+
+			// FallbackTargetType Dynamic destinations only. Paged instead of this destination when the alert matches no catalog entity, more than five, or the lookup fails. Not used when the matched entity has no escalation policy. Only available when fallback destinations are enabled for the organization
+			FallbackTargetType nullable.Nullable[AlertRouteRulesDestinationsFallbackTargetType] `json:"fallback_target_type,omitempty"`
+
 			// ID The ID of the destination. Returned when show_nested_ids is true
 			ID *openapi_types.UUID `json:"id,omitempty"`
 
@@ -56888,6 +57077,9 @@ type AlertRouteRulesConditionGroupsConditionsPropertyFieldType string
 
 // AlertRouteRulesDestinationsCatalogType Dynamic destinations only. The catalog the matched entity belongs to
 type AlertRouteRulesDestinationsCatalogType string
+
+// AlertRouteRulesDestinationsFallbackTargetType Dynamic destinations only. Paged instead of this destination when the alert matches no catalog entity, more than five, or the lookup fails. Not used when the matched entity has no escalation policy. Only available when fallback destinations are enabled for the organization
+type AlertRouteRulesDestinationsFallbackTargetType string
 
 // AlertRouteRulesDestinationsMatchKeysSourceKind Where the alert value comes from
 type AlertRouteRulesDestinationsMatchKeysSourceKind string
@@ -58991,6 +59183,9 @@ type CatalogField struct {
 	CatalogType *CatalogFieldCatalogType `json:"catalog_type,omitempty"`
 	CreatedAt   string                   `json:"created_at"`
 
+	// Description Helper text shown under the property when filling in a catalog entry.
+	Description nullable.Nullable[string] `json:"description,omitempty"`
+
 	// ExternalID An external identifier for this catalog field. Must be unique within the scope.
 	ExternalID nullable.Nullable[string] `json:"external_id,omitempty"`
 	Kind       CatalogFieldKind          `json:"kind"`
@@ -59079,6 +59274,9 @@ type CatalogProperty struct {
 	// CatalogType The type of catalog the property belongs to.
 	CatalogType *CatalogPropertyCatalogType `json:"catalog_type,omitempty"`
 	CreatedAt   string                      `json:"created_at"`
+
+	// Description Helper text shown under the property when filling in a catalog entry.
+	Description nullable.Nullable[string] `json:"description,omitempty"`
 
 	// ExternalID An external identifier for this catalog property. Must be unique within the scope.
 	ExternalID nullable.Nullable[string] `json:"external_id,omitempty"`
@@ -59471,6 +59669,9 @@ type CommunicationsTemplate struct {
 
 				// EmailSubject Email subject for the stage
 				EmailSubject nullable.Nullable[string] `json:"email_subject,omitempty"`
+
+				// SlackBlocks Slack Block Kit JSON for the stage, with Liquid support. slack_content is sent as the notification text.
+				SlackBlocks nullable.Nullable[string] `json:"slack_blocks,omitempty"`
 
 				// SlackContent Slack content for the stage
 				SlackContent nullable.Nullable[string] `json:"slack_content,omitempty"`
@@ -60627,6 +60828,8 @@ type CreateMotionTaskTaskParamsTaskType string
 type CreateNotionPageTaskParams struct {
 	// Content Custom page content with liquid templating support. When provided, only this content will be rendered (no default sections)
 	Content                   *string `json:"content,omitempty"`
+	IncludeFollowUps          *bool   `json:"include_follow_ups,omitempty"`
+	IncludeTimeline           *bool   `json:"include_timeline,omitempty"`
 	MarkPostMortemAsPublished *bool   `json:"mark_post_mortem_as_published,omitempty"`
 
 	// ParentPage The parent page id and display name
@@ -61639,8 +61842,9 @@ type DashboardPanel struct {
 			GroupBy *DashboardPanel_Params_Datasets_GroupBy `json:"group_by,omitempty"`
 			Name    nullable.Nullable[string]               `json:"name,omitempty"`
 		} `json:"datasets,omitempty"`
-		Description *string                      `json:"description,omitempty"`
-		Display     *DashboardPanelParamsDisplay `json:"display,omitempty"`
+		Description *string                          `json:"description,omitempty"`
+		Display     *DashboardPanelParamsDisplay     `json:"display,omitempty"`
+		DowntimeEnd *DashboardPanelParamsDowntimeEnd `json:"downtime_end,omitempty"`
 		Legend      *struct {
 			Groups *DashboardPanelParamsLegendGroups `json:"groups,omitempty"`
 		} `json:"legend,omitempty"`
@@ -61688,6 +61892,9 @@ type DashboardPanel_Params_Datasets_GroupBy struct {
 
 // DashboardPanelParamsDisplay defines model for DashboardPanel.Params.Display.
 type DashboardPanelParamsDisplay string
+
+// DashboardPanelParamsDowntimeEnd defines model for DashboardPanel.Params.DowntimeEnd.
+type DashboardPanelParamsDowntimeEnd string
 
 // DashboardPanelParamsLegendGroups defines model for DashboardPanel.Params.Legend.Groups.
 type DashboardPanelParamsLegendGroups string
@@ -63738,6 +63945,15 @@ type Incident struct {
 	// ClosedBy The user who closed the incident
 	ClosedBy nullable.Nullable[map[string]any] `json:"closed_by,omitempty"`
 
+	// CodaDocID Coda doc ID
+	CodaDocID nullable.Nullable[string] `json:"coda_doc_id,omitempty"`
+
+	// CodaDocURL Coda doc URL
+	CodaDocURL nullable.Nullable[string] `json:"coda_doc_url,omitempty"`
+
+	// CodaPageID Coda page ID
+	CodaPageID nullable.Nullable[string] `json:"coda_page_id,omitempty"`
+
 	// ConfluencePageID Confluence page ID
 	ConfluencePageID nullable.Nullable[string] `json:"confluence_page_id,omitempty"`
 
@@ -63914,6 +64130,12 @@ type Incident struct {
 
 	// MutedServiceIDs The Service IDs to mute alerts for during maintenance. Alerts for these services will still be triggered and attached to the incident, but won't page responders.
 	MutedServiceIDs nullable.Nullable[[]string] `json:"muted_service_ids,omitempty"`
+
+	// NotionPageID Notion page ID
+	NotionPageID nullable.Nullable[string] `json:"notion_page_id,omitempty"`
+
+	// NotionPageURL Notion page URL
+	NotionPageURL nullable.Nullable[string] `json:"notion_page_url,omitempty"`
 
 	// OpsgenieAlertID Opsgenie alert ID
 	OpsgenieAlertID nullable.Nullable[string] `json:"opsgenie_alert_id,omitempty"`
@@ -64697,6 +64919,15 @@ type IncidentPermissionSetResponseDataType string
 
 // IncidentPostMortem defines model for incident_post_mortem.
 type IncidentPostMortem struct {
+	// CodaDocID ID of the Coda doc the retrospective was exported to
+	CodaDocID nullable.Nullable[string] `json:"coda_doc_id,omitempty"`
+
+	// CodaDocURL URL of the Coda doc the retrospective was exported to
+	CodaDocURL nullable.Nullable[string] `json:"coda_doc_url,omitempty"`
+
+	// CodaPageID ID of the Coda page the retrospective was exported to
+	CodaPageID nullable.Nullable[string] `json:"coda_page_id,omitempty"`
+
 	// Content The content of the incident retrospective (Only if internal)
 	Content nullable.Nullable[string] `json:"content,omitempty"`
 
@@ -64705,6 +64936,12 @@ type IncidentPostMortem struct {
 
 	// MitigatedAt Date of mitigation
 	MitigatedAt nullable.Nullable[string] `json:"mitigated_at,omitempty"`
+
+	// NotionPageID ID of the Notion page the retrospective was exported to
+	NotionPageID nullable.Nullable[string] `json:"notion_page_id,omitempty"`
+
+	// NotionPageURL URL of the Notion page the retrospective was exported to
+	NotionPageURL nullable.Nullable[string] `json:"notion_page_url,omitempty"`
 
 	// ResolvedAt Date of resolution
 	ResolvedAt nullable.Nullable[string] `json:"resolved_at,omitempty"`
@@ -64760,6 +64997,58 @@ type IncidentPostMortemShowTimelineOrder string
 
 // IncidentPostMortemStatus The status of the incident retrospective
 type IncidentPostMortemStatus string
+
+// IncidentPostMortemComment defines model for incident_post_mortem_comment.
+type IncidentPostMortemComment struct {
+	// AuthorEmail Email of the comment author
+	AuthorEmail nullable.Nullable[string] `json:"author_email,omitempty"`
+
+	// AuthorName Display name of the comment author
+	AuthorName nullable.Nullable[string] `json:"author_name,omitempty"`
+
+	// Content The comment text. Mentions appear as @[Name](user:id) tokens
+	Content string `json:"content"`
+
+	// CreatedAt Date of creation
+	CreatedAt string `json:"created_at"`
+
+	// ParentID ID of the comment that opened the thread. Null for that first comment
+	ParentID nullable.Nullable[string] `json:"parent_id"`
+
+	// QuotedText The retrospective text the thread is anchored to
+	QuotedText nullable.Nullable[string] `json:"quoted_text,omitempty"`
+
+	// Resolved Whether the thread is resolved
+	Resolved bool `json:"resolved"`
+
+	// ResolvedAt When the thread was resolved
+	ResolvedAt nullable.Nullable[string] `json:"resolved_at,omitempty"`
+
+	// ThreadID ID of the comment thread
+	ThreadID string `json:"thread_id"`
+
+	// UpdatedAt Date of last update
+	UpdatedAt string `json:"updated_at"`
+
+	// UserID ID of the comment author, when they are a member of the team
+	UserID nullable.Nullable[int] `json:"user_id,omitempty"`
+}
+
+// IncidentPostMortemCommentList defines model for incident_post_mortem_comment_list.
+type IncidentPostMortemCommentList struct {
+	Data []struct {
+		Attributes IncidentPostMortemComment `json:"attributes"`
+
+		// ID Unique ID of the comment
+		ID   string                                `json:"id"`
+		Type IncidentPostMortemCommentListDataType `json:"type"`
+	} `json:"data"`
+	Links Links `json:"links"`
+	Meta  Meta  `json:"meta"`
+}
+
+// IncidentPostMortemCommentListDataType defines model for IncidentPostMortemCommentList.Data.Type.
+type IncidentPostMortemCommentListDataType string
 
 // IncidentPostMortemList defines model for incident_post_mortem_list.
 type IncidentPostMortemList struct {
@@ -64929,6 +65218,9 @@ type IncidentRoleTask struct {
 	// Description The description of incident task
 	Description    nullable.Nullable[string] `json:"description,omitempty"`
 	IncidentRoleID *string                   `json:"incident_role_id,omitempty"`
+
+	// Position Position of the incident task
+	Position nullable.Nullable[int] `json:"position,omitempty"`
 
 	// Priority The priority of the incident task
 	Priority *IncidentRoleTaskPriority `json:"priority,omitempty"`
@@ -66320,7 +66612,7 @@ type NewAiAutomation struct {
 			// NextRunAt Ignored on write.
 			NextRunAt nullable.Nullable[time.Time] `json:"next_run_at,omitempty"`
 
-			// OwnerUserID Ignored on write.
+			// OwnerUserID User who is told when a run fails or the automation pauses. Must be a member who can manage automations. Defaults to the creator. null is ignored on write.
 			OwnerUserID nullable.Nullable[int] `json:"owner_user_id,omitempty"`
 			Prompt      string                 `json:"prompt"`
 
@@ -66377,6 +66669,9 @@ type NewAiAutomation struct {
 
 				// NextRunAt Read-only; accepted and ignored so GET documents can be sent back.
 				NextRunAt nullable.Nullable[time.Time] `json:"next_run_at,omitempty"`
+
+				// RepeatIntervalMinutes Incident triggers only, except incident.resolved and incident.cancelled. After a run, runs again every this many minutes while the incident is active and the trigger's conditions still match. Omit or send null to run once per event.
+				RepeatIntervalMinutes nullable.Nullable[int] `json:"repeat_interval_minutes,omitempty"`
 
 				// ScheduleFrequency Preset alternative to schedule_rrule.
 				ScheduleFrequency *NewAiAutomationDataAttributesTriggersScheduleFrequency `json:"schedule_frequency,omitempty"`
@@ -66593,7 +66888,7 @@ type NewAlert struct {
 			// NotificationTargetType Only available for organizations with Rootly On-Call enabled. Can be one of Group, Service, EscalationPolicy, Functionality, User. Please contact support if you encounter issues using `Functionality` as a notification target type.
 			NotificationTargetType nullable.Nullable[NewAlertDataAttributesNotificationTargetType] `json:"notification_target_type,omitempty"`
 
-			// NotificationTargets Only available for organizations with Rootly On-Call enabled. Page multiple destinations (any combination of Group, Service, EscalationPolicy, Functionality, or User) in a single request. `Functionality` targets require the `enable_paging_functionalities` feature; a request that includes one while it is disabled is rejected. Applies to alert creation only. When provided, this takes precedence over the singular `notification_target_type` / `notification_target_id` fields.
+			// NotificationTargets Only available for organizations with Rootly On-Call enabled. Page multiple destinations (any combination of Group, Service, EscalationPolicy, Functionality, or User) in a single request. Applies to alert creation only. When provided, this takes precedence over the singular `notification_target_type` / `notification_target_id` fields.
 			NotificationTargets nullable.Nullable[[]struct {
 				// ID The identifier of the notification target object.
 				ID string `json:"id"`
@@ -66914,6 +67209,12 @@ type NewAlertRoute struct {
 					// CatalogType Dynamic destinations only. The catalog the matched entity belongs to
 					CatalogType *NewAlertRouteDataAttributesRulesDestinationsCatalogType `json:"catalog_type,omitempty"`
 
+					// FallbackTargetID Dynamic destinations only. The ID of the fallback target
+					FallbackTargetID nullable.Nullable[openapi_types.UUID] `json:"fallback_target_id,omitempty"`
+
+					// FallbackTargetType Dynamic destinations only. Paged instead of this destination when the alert matches no catalog entity, more than five, or the lookup fails. Not used when the matched entity has no escalation policy. Only available when fallback destinations are enabled for the organization
+					FallbackTargetType nullable.Nullable[NewAlertRouteDataAttributesRulesDestinationsFallbackTargetType] `json:"fallback_target_type,omitempty"`
+
 					// MatchKeys Dynamic destinations only. How alert values are matched to catalog entity properties. An alert routes to the entities that match every key. Each key uses a different property. A second key is only available when dynamic alert routing is enabled for the organization
 					MatchKeys []struct {
 						// Normalizers How the alert value is cleaned up before it is compared with the catalog property. Only available when dynamic alert routing is enabled for the organization; otherwise the booleans are ignored and a prefix or suffix is rejected
@@ -66984,6 +67285,9 @@ type NewAlertRouteDataAttributesRulesConditionGroupsConditionsPropertyFieldType 
 
 // NewAlertRouteDataAttributesRulesDestinationsCatalogType Dynamic destinations only. The catalog the matched entity belongs to
 type NewAlertRouteDataAttributesRulesDestinationsCatalogType string
+
+// NewAlertRouteDataAttributesRulesDestinationsFallbackTargetType Dynamic destinations only. Paged instead of this destination when the alert matches no catalog entity, more than five, or the lookup fails. Not used when the matched entity has no escalation policy. Only available when fallback destinations are enabled for the organization
+type NewAlertRouteDataAttributesRulesDestinationsFallbackTargetType string
 
 // NewAlertRouteDataAttributesRulesDestinationsMatchKeysSourceKind Where the alert value comes from
 type NewAlertRouteDataAttributesRulesDestinationsMatchKeysSourceKind string
@@ -67543,6 +67847,9 @@ type NewCatalogField struct {
 			// CatalogType The type of catalog the field belongs to.
 			CatalogType *NewCatalogFieldDataAttributesCatalogType `json:"catalog_type,omitempty"`
 
+			// Description Helper text shown under the property when filling in a catalog entry.
+			Description nullable.Nullable[string] `json:"description,omitempty"`
+
 			// ExternalID An external identifier for this catalog field. Must be unique within the scope.
 			ExternalID nullable.Nullable[string]         `json:"external_id,omitempty"`
 			Kind       NewCatalogFieldDataAttributesKind `json:"kind"`
@@ -67581,6 +67888,9 @@ type NewCatalogProperty struct {
 		Attributes struct {
 			// CatalogType The type of catalog the property belongs to.
 			CatalogType *NewCatalogPropertyDataAttributesCatalogType `json:"catalog_type,omitempty"`
+
+			// Description Helper text shown under the property when filling in a catalog entry.
+			Description nullable.Nullable[string] `json:"description,omitempty"`
 
 			// ExternalID An external identifier for this catalog property. Must be unique within the scope.
 			ExternalID nullable.Nullable[string]            `json:"external_id,omitempty"`
@@ -67772,6 +68082,9 @@ type NewCommunicationsTemplate struct {
 
 				// EmailSubject Email subject for the stage
 				EmailSubject nullable.Nullable[string] `json:"email_subject,omitempty"`
+
+				// SlackBlocks Slack Block Kit JSON for the stage, with Liquid support. slack_content is sent as the notification text.
+				SlackBlocks nullable.Nullable[string] `json:"slack_blocks,omitempty"`
 
 				// SlackContent Slack content for the stage
 				SlackContent nullable.Nullable[string] `json:"slack_content,omitempty"`
@@ -67973,8 +68286,9 @@ type NewDashboardPanel struct {
 					GroupBy *NewDashboardPanel_Data_Attributes_Params_Datasets_GroupBy `json:"group_by,omitempty"`
 					Name    nullable.Nullable[string]                                  `json:"name,omitempty"`
 				} `json:"datasets,omitempty"`
-				Description *string                                       `json:"description,omitempty"`
-				Display     *NewDashboardPanelDataAttributesParamsDisplay `json:"display,omitempty"`
+				Description *string                                           `json:"description,omitempty"`
+				Display     *NewDashboardPanelDataAttributesParamsDisplay     `json:"display,omitempty"`
+				DowntimeEnd *NewDashboardPanelDataAttributesParamsDowntimeEnd `json:"downtime_end,omitempty"`
 				Legend      *struct {
 					Groups *NewDashboardPanelDataAttributesParamsLegendGroups `json:"groups,omitempty"`
 				} `json:"legend,omitempty"`
@@ -68025,6 +68339,9 @@ type NewDashboardPanel_Data_Attributes_Params_Datasets_GroupBy struct {
 
 // NewDashboardPanelDataAttributesParamsDisplay defines model for NewDashboardPanel.Data.Attributes.Params.Display.
 type NewDashboardPanelDataAttributesParamsDisplay string
+
+// NewDashboardPanelDataAttributesParamsDowntimeEnd defines model for NewDashboardPanel.Data.Attributes.Params.DowntimeEnd.
+type NewDashboardPanelDataAttributesParamsDowntimeEnd string
 
 // NewDashboardPanelDataAttributesParamsLegendGroups defines model for NewDashboardPanel.Data.Attributes.Params.Legend.Groups.
 type NewDashboardPanelDataAttributesParamsLegendGroups string
@@ -68768,7 +69085,7 @@ type NewFormField struct {
 			// ValueKind The value kind of the form field
 			ValueKind *NewFormFieldDataAttributesValueKind `json:"value_kind,omitempty"`
 
-			// ValueKindCatalogID The ID of the catalog used when value_kind is `catalog_entity`
+			// ValueKindCatalogID The ID of the catalog used when value_kind is `catalog_entity`. Required when value_kind is `catalog_entity`.
 			ValueKindCatalogID nullable.Nullable[string] `json:"value_kind_catalog_id,omitempty"`
 		} `json:"attributes"`
 		Type NewFormFieldDataType `json:"type"`
@@ -69654,6 +69971,9 @@ type NewIncidentRoleTask struct {
 			// Description The description of the incident task
 			Description    nullable.Nullable[string] `json:"description,omitempty"`
 			IncidentRoleID *string                   `json:"incident_role_id,omitempty"`
+
+			// Position Position of the incident task
+			Position nullable.Nullable[int] `json:"position,omitempty"`
 
 			// Priority The priority of the incident task
 			Priority *NewIncidentRoleTaskDataAttributesPriority `json:"priority,omitempty"`
@@ -71349,14 +71669,23 @@ type NewSLADataType string
 type NewStatusPage struct {
 	Data struct {
 		Attributes struct {
+			// AllowEmailSubscribers Allow users to receive notifications via email
+			AllowEmailSubscribers *bool `json:"allow_email_subscribers,omitempty"`
+
 			// AllowIncidentSubscriptions Allow visitors to subscribe to updates for a single incident or scheduled maintenance
 			AllowIncidentSubscriptions *bool `json:"allow_incident_subscriptions,omitempty"`
 
 			// AllowPageSubscriptions Allow visitors to subscribe to all status page updates
 			AllowPageSubscriptions *bool `json:"allow_page_subscriptions,omitempty"`
 
+			// AllowRssAtomFeeds Allow users to access incident feeds via RSS/Atom
+			AllowRssAtomFeeds *bool `json:"allow_rss_atom_feeds,omitempty"`
+
 			// AllowSearchEngineIndex Allow search engines to include your public status page in search results
 			AllowSearchEngineIndex nullable.Nullable[bool] `json:"allow_search_engine_index,omitempty"`
+
+			// AllowSmsSubscribers Allow users to receive notifications via SMS
+			AllowSmsSubscribers *bool `json:"allow_sms_subscribers,omitempty"`
 
 			// AuthenticationEnabled Enable authentication
 			// Deprecated: Use authentication_method instead.
@@ -71405,6 +71734,9 @@ type NewStatusPage struct {
 
 			// PublicationStatus Publication status of the status page. Draft pages have never been published, active pages are live, and unpublished pages were taken down.
 			PublicationStatus nullable.Nullable[NewStatusPageDataAttributesPublicationStatus] `json:"publication_status,omitempty"`
+
+			// ResolvedIncidentBannerHours Hours a resolved incident stays on the status page banner. 0 turns it off
+			ResolvedIncidentBannerHours *int `json:"resolved_incident_banner_hours,omitempty"`
 
 			// SamlAccessRules Rules that decide which signed-in SAML users can view the page. Values are compared case-sensitively.
 			SamlAccessRules nullable.Nullable[[]struct {
@@ -73063,6 +73395,12 @@ type PatchAlertRoute struct {
 					// CatalogType Dynamic destinations only. The catalog the matched entity belongs to
 					CatalogType *PatchAlertRouteDataAttributesRulesDestinationsCatalogType `json:"catalog_type,omitempty"`
 
+					// FallbackTargetID Dynamic destinations only. The ID of the fallback target
+					FallbackTargetID nullable.Nullable[openapi_types.UUID] `json:"fallback_target_id,omitempty"`
+
+					// FallbackTargetType Dynamic destinations only. Paged instead of this destination when the alert matches no catalog entity, more than five, or the lookup fails. Not used when the matched entity has no escalation policy. Only available when fallback destinations are enabled for the organization
+					FallbackTargetType nullable.Nullable[PatchAlertRouteDataAttributesRulesDestinationsFallbackTargetType] `json:"fallback_target_type,omitempty"`
+
 					// ID The ID of the destination. Required for updating or deleting existing destinations.
 					ID *openapi_types.UUID `json:"id,omitempty"`
 
@@ -73142,6 +73480,9 @@ type PatchAlertRouteDataAttributesRulesConditionGroupsConditionsPropertyFieldTyp
 
 // PatchAlertRouteDataAttributesRulesDestinationsCatalogType Dynamic destinations only. The catalog the matched entity belongs to
 type PatchAlertRouteDataAttributesRulesDestinationsCatalogType string
+
+// PatchAlertRouteDataAttributesRulesDestinationsFallbackTargetType Dynamic destinations only. Paged instead of this destination when the alert matches no catalog entity, more than five, or the lookup fails. Not used when the matched entity has no escalation policy. Only available when fallback destinations are enabled for the organization
+type PatchAlertRouteDataAttributesRulesDestinationsFallbackTargetType string
 
 // PatchAlertRouteDataAttributesRulesDestinationsMatchKeysSourceKind Where the alert value comes from
 type PatchAlertRouteDataAttributesRulesDestinationsMatchKeysSourceKind string
@@ -76656,14 +76997,23 @@ type StatusListDataType string
 
 // StatusPage defines model for status_page.
 type StatusPage struct {
+	// AllowEmailSubscribers Allow users to receive notifications via email
+	AllowEmailSubscribers *bool `json:"allow_email_subscribers,omitempty"`
+
 	// AllowIncidentSubscriptions Allow visitors to subscribe to updates for a single incident or scheduled maintenance
 	AllowIncidentSubscriptions *bool `json:"allow_incident_subscriptions,omitempty"`
 
 	// AllowPageSubscriptions Allow visitors to subscribe to all status page updates
 	AllowPageSubscriptions *bool `json:"allow_page_subscriptions,omitempty"`
 
+	// AllowRssAtomFeeds Allow users to access incident feeds via RSS/Atom
+	AllowRssAtomFeeds *bool `json:"allow_rss_atom_feeds,omitempty"`
+
 	// AllowSearchEngineIndex Allow search engines to include your public status page in search results
 	AllowSearchEngineIndex nullable.Nullable[bool] `json:"allow_search_engine_index,omitempty"`
+
+	// AllowSmsSubscribers Allow users to receive notifications via SMS
+	AllowSmsSubscribers *bool `json:"allow_sms_subscribers,omitempty"`
 
 	// AuthenticationEnabled Enable authentication
 	// Deprecated: Use authentication_method instead.
@@ -76718,6 +77068,9 @@ type StatusPage struct {
 
 	// PublicationStatus Publication status of the status page. Draft pages have never been published, active pages are live, and unpublished pages were taken down.
 	PublicationStatus nullable.Nullable[StatusPagePublicationStatus] `json:"publication_status,omitempty"`
+
+	// ResolvedIncidentBannerHours Hours a resolved incident stays on the status page banner. 0 turns it off
+	ResolvedIncidentBannerHours *int `json:"resolved_incident_banner_hours,omitempty"`
 
 	// SamlAccessRules Rules that decide which signed-in SAML users can view the page. Values are compared case-sensitively.
 	SamlAccessRules nullable.Nullable[[]struct {
@@ -77656,7 +78009,7 @@ type UpdateAiAutomation struct {
 			// NextRunAt Ignored on write.
 			NextRunAt nullable.Nullable[time.Time] `json:"next_run_at,omitempty"`
 
-			// OwnerUserID Ignored on write.
+			// OwnerUserID User who is told when a run fails or the automation pauses. Must be a member who can manage automations. Defaults to the creator. null is ignored on write.
 			OwnerUserID nullable.Nullable[int] `json:"owner_user_id,omitempty"`
 			Prompt      *string                `json:"prompt,omitempty"`
 
@@ -77713,6 +78066,9 @@ type UpdateAiAutomation struct {
 
 				// NextRunAt Read-only; accepted and ignored so GET documents can be sent back.
 				NextRunAt nullable.Nullable[time.Time] `json:"next_run_at,omitempty"`
+
+				// RepeatIntervalMinutes Incident triggers only, except incident.resolved and incident.cancelled. After a run, runs again every this many minutes while the incident is active and the trigger's conditions still match. Omit or send null to run once per event.
+				RepeatIntervalMinutes nullable.Nullable[int] `json:"repeat_interval_minutes,omitempty"`
 
 				// ScheduleFrequency Preset alternative to schedule_rrule.
 				ScheduleFrequency *UpdateAiAutomationDataAttributesTriggersScheduleFrequency `json:"schedule_frequency,omitempty"`
@@ -78309,6 +78665,12 @@ type UpdateAlertRoute struct {
 					// CatalogType Dynamic destinations only. The catalog the matched entity belongs to
 					CatalogType *UpdateAlertRouteDataAttributesRulesDestinationsCatalogType `json:"catalog_type,omitempty"`
 
+					// FallbackTargetID Dynamic destinations only. The ID of the fallback target
+					FallbackTargetID nullable.Nullable[openapi_types.UUID] `json:"fallback_target_id,omitempty"`
+
+					// FallbackTargetType Dynamic destinations only. Paged instead of this destination when the alert matches no catalog entity, more than five, or the lookup fails. Not used when the matched entity has no escalation policy. Only available when fallback destinations are enabled for the organization
+					FallbackTargetType nullable.Nullable[UpdateAlertRouteDataAttributesRulesDestinationsFallbackTargetType] `json:"fallback_target_type,omitempty"`
+
 					// MatchKeys Dynamic destinations only. How alert values are matched to catalog entity properties. An alert routes to the entities that match every key. Each key uses a different property. A second key is only available when dynamic alert routing is enabled for the organization
 					MatchKeys []struct {
 						// Normalizers How the alert value is cleaned up before it is compared with the catalog property. Only available when dynamic alert routing is enabled for the organization; otherwise the booleans are ignored and a prefix or suffix is rejected
@@ -78382,6 +78744,9 @@ type UpdateAlertRouteDataAttributesRulesConditionGroupsConditionsPropertyFieldTy
 
 // UpdateAlertRouteDataAttributesRulesDestinationsCatalogType Dynamic destinations only. The catalog the matched entity belongs to
 type UpdateAlertRouteDataAttributesRulesDestinationsCatalogType string
+
+// UpdateAlertRouteDataAttributesRulesDestinationsFallbackTargetType Dynamic destinations only. Paged instead of this destination when the alert matches no catalog entity, more than five, or the lookup fails. Not used when the matched entity has no escalation policy. Only available when fallback destinations are enabled for the organization
+type UpdateAlertRouteDataAttributesRulesDestinationsFallbackTargetType string
 
 // UpdateAlertRouteDataAttributesRulesDestinationsMatchKeysSourceKind Where the alert value comes from
 type UpdateAlertRouteDataAttributesRulesDestinationsMatchKeysSourceKind string
@@ -78951,6 +79316,9 @@ type UpdateCatalogField struct {
 			// CatalogType The type of catalog the field belongs to.
 			CatalogType *UpdateCatalogFieldDataAttributesCatalogType `json:"catalog_type,omitempty"`
 
+			// Description Helper text shown under the property when filling in a catalog entry.
+			Description nullable.Nullable[string] `json:"description,omitempty"`
+
 			// ExternalID An external identifier for this catalog field. Must be unique within the scope.
 			ExternalID nullable.Nullable[string]             `json:"external_id,omitempty"`
 			Kind       *UpdateCatalogFieldDataAttributesKind `json:"kind,omitempty"`
@@ -78989,6 +79357,9 @@ type UpdateCatalogProperty struct {
 		Attributes struct {
 			// CatalogType The type of catalog the property belongs to.
 			CatalogType *UpdateCatalogPropertyDataAttributesCatalogType `json:"catalog_type,omitempty"`
+
+			// Description Helper text shown under the property when filling in a catalog entry.
+			Description nullable.Nullable[string] `json:"description,omitempty"`
 
 			// ExternalID An external identifier for this catalog property. Must be unique within the scope.
 			ExternalID nullable.Nullable[string]                `json:"external_id,omitempty"`
@@ -79257,6 +79628,9 @@ type UpdateCommunicationsTemplate struct {
 				// ID ID of the communication template stage
 				ID nullable.Nullable[string] `json:"id,omitempty"`
 
+				// SlackBlocks Slack Block Kit JSON for the stage, with Liquid support. slack_content is sent as the notification text.
+				SlackBlocks nullable.Nullable[string] `json:"slack_blocks,omitempty"`
+
 				// SlackContent Slack content for the stage
 				SlackContent nullable.Nullable[string] `json:"slack_content,omitempty"`
 
@@ -79509,8 +79883,9 @@ type UpdateDashboardPanel struct {
 					GroupBy *UpdateDashboardPanel_Data_Attributes_Params_Datasets_GroupBy `json:"group_by,omitempty"`
 					Name    nullable.Nullable[string]                                     `json:"name,omitempty"`
 				} `json:"datasets,omitempty"`
-				Description *string                                          `json:"description,omitempty"`
-				Display     *UpdateDashboardPanelDataAttributesParamsDisplay `json:"display,omitempty"`
+				Description *string                                              `json:"description,omitempty"`
+				Display     *UpdateDashboardPanelDataAttributesParamsDisplay     `json:"display,omitempty"`
+				DowntimeEnd *UpdateDashboardPanelDataAttributesParamsDowntimeEnd `json:"downtime_end,omitempty"`
 				Legend      *struct {
 					Groups *UpdateDashboardPanelDataAttributesParamsLegendGroups `json:"groups,omitempty"`
 				} `json:"legend,omitempty"`
@@ -79564,6 +79939,9 @@ type UpdateDashboardPanel_Data_Attributes_Params_Datasets_GroupBy struct {
 
 // UpdateDashboardPanelDataAttributesParamsDisplay defines model for UpdateDashboardPanel.Data.Attributes.Params.Display.
 type UpdateDashboardPanelDataAttributesParamsDisplay string
+
+// UpdateDashboardPanelDataAttributesParamsDowntimeEnd defines model for UpdateDashboardPanel.Data.Attributes.Params.DowntimeEnd.
+type UpdateDashboardPanelDataAttributesParamsDowntimeEnd string
 
 // UpdateDashboardPanelDataAttributesParamsLegendGroups defines model for UpdateDashboardPanel.Data.Attributes.Params.Legend.Groups.
 type UpdateDashboardPanelDataAttributesParamsLegendGroups string
@@ -80338,7 +80716,7 @@ type UpdateFormField struct {
 			// ValueKind The value kind of the form field
 			ValueKind *UpdateFormFieldDataAttributesValueKind `json:"value_kind,omitempty"`
 
-			// ValueKindCatalogID The ID of the catalog used when value_kind is `catalog_entity`
+			// ValueKindCatalogID The ID of the catalog used when value_kind is `catalog_entity`. Required when value_kind is `catalog_entity`.
 			ValueKindCatalogID nullable.Nullable[string] `json:"value_kind_catalog_id,omitempty"`
 		} `json:"attributes"`
 
@@ -81547,6 +81925,9 @@ type UpdateIncidentRoleTask struct {
 			// Description The description of the incident task
 			Description nullable.Nullable[string] `json:"description,omitempty"`
 
+			// Position Position of the incident task
+			Position nullable.Nullable[int] `json:"position,omitempty"`
+
 			// Priority The priority of the incident task
 			Priority *UpdateIncidentRoleTaskDataAttributesPriority `json:"priority,omitempty"`
 
@@ -82024,7 +82405,9 @@ type UpdateNotionPageTaskParams struct {
 	Content *string `json:"content,omitempty"`
 
 	// FileID The Notion page ID
-	FileID string `json:"file_id"`
+	FileID           string `json:"file_id"`
+	IncludeFollowUps *bool  `json:"include_follow_ups,omitempty"`
+	IncludeTimeline  *bool  `json:"include_timeline,omitempty"`
 
 	// PostMortemTemplateID Retrospective template to use when creating page task, if desired
 	PostMortemTemplateID   *string                             `json:"post_mortem_template_id,omitempty"`
@@ -83796,14 +84179,23 @@ type UpdateSlackChannelTopicTaskParamsTaskType string
 type UpdateStatusPage struct {
 	Data struct {
 		Attributes struct {
+			// AllowEmailSubscribers Allow users to receive notifications via email
+			AllowEmailSubscribers *bool `json:"allow_email_subscribers,omitempty"`
+
 			// AllowIncidentSubscriptions Allow visitors to subscribe to updates for a single incident or scheduled maintenance
 			AllowIncidentSubscriptions *bool `json:"allow_incident_subscriptions,omitempty"`
 
 			// AllowPageSubscriptions Allow visitors to subscribe to all status page updates
 			AllowPageSubscriptions *bool `json:"allow_page_subscriptions,omitempty"`
 
+			// AllowRssAtomFeeds Allow users to access incident feeds via RSS/Atom
+			AllowRssAtomFeeds *bool `json:"allow_rss_atom_feeds,omitempty"`
+
 			// AllowSearchEngineIndex Allow search engines to include your public status page in search results
 			AllowSearchEngineIndex nullable.Nullable[bool] `json:"allow_search_engine_index,omitempty"`
+
+			// AllowSmsSubscribers Allow users to receive notifications via SMS
+			AllowSmsSubscribers *bool `json:"allow_sms_subscribers,omitempty"`
 
 			// AuthenticationEnabled Enable authentication
 			// Deprecated: Use authentication_method instead.
@@ -83841,7 +84233,7 @@ type UpdateStatusPage struct {
 			// IncidentHistoryWindow How far back resolved incidents and completed maintenances are shown
 			IncidentHistoryWindow nullable.Nullable[UpdateStatusPageDataAttributesIncidentHistoryWindow] `json:"incident_history_window,omitempty"`
 
-			// Public Make the status page accessible to the public
+			// Public Whether the status page is public. The page type can only be set when the page is created. Omit it, send null, or send the current value. A different value returns 422.
 			Public nullable.Nullable[bool] `json:"public,omitempty"`
 
 			// PublicDescription The public description of the status page
@@ -83852,6 +84244,9 @@ type UpdateStatusPage struct {
 
 			// PublicationStatus Publication status of the status page. Draft pages have never been published, active pages are live, and unpublished pages were taken down.
 			PublicationStatus nullable.Nullable[UpdateStatusPageDataAttributesPublicationStatus] `json:"publication_status,omitempty"`
+
+			// ResolvedIncidentBannerHours Hours a resolved incident stays on the status page banner. 0 turns it off
+			ResolvedIncidentBannerHours *int `json:"resolved_incident_banner_hours,omitempty"`
 
 			// SamlAccessRules Rules that decide which signed-in SAML users can view the page. Values are compared case-sensitively.
 			SamlAccessRules nullable.Nullable[[]struct {
@@ -85980,6 +86375,12 @@ type ListAISkillsParams struct {
 // ListAISkillsParamsSort defines parameters for ListAISkills.
 type ListAISkillsParamsSort string
 
+// GetAISkillParams defines parameters for GetAISkill.
+type GetAISkillParams struct {
+	// Load Set to true when an agent loads the skill to follow it. Rootly MCP server requests then count as a skill load.
+	Load *bool `form:"load,omitempty" json:"load,omitempty"`
+}
+
 // ListInvestigationRulesParams defines parameters for ListInvestigationRules.
 type ListInvestigationRulesParams struct {
 	FilterName         *string `form:"filter[name],omitempty" json:"filter[name],omitempty"`
@@ -87955,6 +88356,12 @@ type ListIncidentPostMortemsParams struct {
 	FilterResolvedAtLt   *string `form:"filter[resolved_at][lt],omitempty" json:"filter[resolved_at][lt],omitempty"`
 	FilterResolvedAtLte  *string `form:"filter[resolved_at][lte],omitempty" json:"filter[resolved_at][lte],omitempty"`
 	Sort                 *string `form:"sort,omitempty" json:"sort,omitempty"`
+}
+
+// ListIncidentPostMortemCommentsParams defines parameters for ListIncidentPostMortemComments.
+type ListIncidentPostMortemCommentsParams struct {
+	PageNumber *int `form:"page[number],omitempty" json:"page[number],omitempty"`
+	PageSize   *int `form:"page[size],omitempty" json:"page[size],omitempty"`
 }
 
 // ListPrivateAgentsParams defines parameters for ListPrivateAgents.
@@ -110763,7 +111170,7 @@ type ClientInterface interface {
 	// Requires OAuth scope `ai.skills:read`.
 	//
 	// Corresponds with GET /v1/ai/skills/{id} (the `GetAISkill` operationId).
-	GetAISkill(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error)
+	GetAISkill(ctx context.Context, id ID, params *GetAISkillParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// UpdateAISkillWithBody Updates an AI skill
 	//
@@ -112764,7 +113171,7 @@ type ClientInterface interface {
 
 	// UpdateDashboardPanelWithBody Update a dashboard panel
 	//
-	// Update a specific dashboard panel by id. OAuth tokens need the `ir.dashboards:write` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`).
+	// Update a specific dashboard panel by id. OAuth tokens need the `ir.dashboards:write` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`). When the dashboard panel collection write check is enabled for the team, members limited to alert data, or to incident data, receive a 404 when the panel targets a collection outside that limit.
 	//
 	// Takes any type of body and a specified content type.
 	//
@@ -112773,7 +113180,7 @@ type ClientInterface interface {
 
 	// UpdateDashboardPanelWithApplicationVndAPIPlusJSONBody Update a dashboard panel
 	//
-	// Update a specific dashboard panel by id. OAuth tokens need the `ir.dashboards:write` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`).
+	// Update a specific dashboard panel by id. OAuth tokens need the `ir.dashboards:write` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`). When the dashboard panel collection write check is enabled for the team, members limited to alert data, or to incident data, receive a 404 when the panel targets a collection outside that limit.
 	//
 	// Takes a body of the `application/vnd.api+json` content type.
 	//
@@ -112782,7 +113189,7 @@ type ClientInterface interface {
 
 	// DuplicateDashboardPanel Duplicates a dashboard panel
 	//
-	// Duplicates a dashboard panel. OAuth tokens need the `ir.dashboards:write` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`).
+	// Duplicates a dashboard panel. OAuth tokens need the `ir.dashboards:write` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`). When the dashboard panel collection write check is enabled for the team, members limited to alert data, or to incident data, receive a 404 when the panel targets a collection outside that limit.
 	//
 	// Corresponds with POST /v1/dashboard_panels/{id}/duplicate (the `DuplicateDashboardPanel` operationId).
 	DuplicateDashboardPanel(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -112821,7 +113228,7 @@ type ClientInterface interface {
 
 	// CreateDashboardPanelWithBody Creates a dashboard panel
 	//
-	// Creates a new dashboard panel from provided data. OAuth tokens need the `ir.dashboards:write` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`).
+	// Creates a new dashboard panel from provided data. OAuth tokens need the `ir.dashboards:write` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`). When the dashboard panel collection write check is enabled for the team, members limited to alert data, or to incident data, receive a 404 when the panel targets a collection outside that limit.
 	//
 	// Takes any type of body and a specified content type.
 	//
@@ -112830,7 +113237,7 @@ type ClientInterface interface {
 
 	// CreateDashboardPanelWithApplicationVndAPIPlusJSONBody Creates a dashboard panel
 	//
-	// Creates a new dashboard panel from provided data. OAuth tokens need the `ir.dashboards:write` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`).
+	// Creates a new dashboard panel from provided data. OAuth tokens need the `ir.dashboards:write` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`). When the dashboard panel collection write check is enabled for the team, members limited to alert data, or to incident data, receive a 404 when the panel targets a collection outside that limit.
 	//
 	// Takes a body of the `application/vnd.api+json` content type.
 	//
@@ -112871,7 +113278,7 @@ type ClientInterface interface {
 
 	// DuplicateDashboard Duplicates a dashboard
 	//
-	// Duplicates a dashboard. OAuth tokens need the `ir.dashboards:write` scope.
+	// Duplicates a dashboard. OAuth tokens need the `ir.dashboards:write` scope. When the dashboard panel collection write check is enabled for the team, panels that target a collection outside the caller's alert-only or incident-only access are left out of the copy.
 	//
 	// Corresponds with POST /v1/dashboards/{id}/duplicate (the `DuplicateDashboard` operationId).
 	DuplicateDashboard(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -115753,6 +116160,13 @@ type ClientInterface interface {
 	//
 	// Corresponds with PUT /v1/post_mortems/{id} (the `UpdateIncidentPostmortem` operationId).
 	UpdateIncidentPostmortemWithApplicationVndAPIPlusJSONBody(ctx context.Context, id ID, body UpdateIncidentPostmortemApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// ListIncidentPostMortemComments List comments on an incident retrospective
+	//
+	// List the comments on an incident retrospective's document, oldest first. Replies carry the ID of the comment that opened their thread in parent_id.
+	//
+	// Corresponds with GET /v1/post_mortems/{incident_post_mortem_id}/comments (the `ListIncidentPostMortemComments` operationId).
+	ListIncidentPostMortemComments(ctx context.Context, incidentPostMortemID string, params *ListIncidentPostMortemCommentsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// ListPrivateAgents List private agents
 	//
@@ -118652,8 +119066,8 @@ func (c *Client) DeleteAISkill(ctx context.Context, id ID, reqEditors ...Request
 // Requires OAuth scope `ai.skills:read`.
 //
 // Corresponds with GET /v1/ai/skills/{id} (the `GetAISkill` operationId).
-func (c *Client) GetAISkill(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetAISkillRequest(c.Server, id)
+func (c *Client) GetAISkill(ctx context.Context, id ID, params *GetAISkillParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetAISkillRequest(c.Server, id, params)
 	if err != nil {
 		return nil, err
 	}
@@ -122962,7 +123376,7 @@ func (c *Client) GetDashboardPanel(ctx context.Context, id ID, params *GetDashbo
 
 // UpdateDashboardPanelWithBody Update a dashboard panel
 //
-// Update a specific dashboard panel by id. OAuth tokens need the `ir.dashboards:write` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`).
+// Update a specific dashboard panel by id. OAuth tokens need the `ir.dashboards:write` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`). When the dashboard panel collection write check is enabled for the team, members limited to alert data, or to incident data, receive a 404 when the panel targets a collection outside that limit.
 //
 // Takes any type of body and a specified content type.
 //
@@ -122981,7 +123395,7 @@ func (c *Client) UpdateDashboardPanelWithBody(ctx context.Context, id ID, conten
 
 // UpdateDashboardPanelWithApplicationVndAPIPlusJSONBody Update a dashboard panel
 //
-// Update a specific dashboard panel by id. OAuth tokens need the `ir.dashboards:write` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`).
+// Update a specific dashboard panel by id. OAuth tokens need the `ir.dashboards:write` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`). When the dashboard panel collection write check is enabled for the team, members limited to alert data, or to incident data, receive a 404 when the panel targets a collection outside that limit.
 //
 // Takes a body of the `application/vnd.api+json` content type.
 //
@@ -123000,7 +123414,7 @@ func (c *Client) UpdateDashboardPanelWithApplicationVndAPIPlusJSONBody(ctx conte
 
 // DuplicateDashboardPanel Duplicates a dashboard panel
 //
-// Duplicates a dashboard panel. OAuth tokens need the `ir.dashboards:write` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`).
+// Duplicates a dashboard panel. OAuth tokens need the `ir.dashboards:write` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`). When the dashboard panel collection write check is enabled for the team, members limited to alert data, or to incident data, receive a 404 when the panel targets a collection outside that limit.
 //
 // Corresponds with POST /v1/dashboard_panels/{id}/duplicate (the `DuplicateDashboardPanel` operationId).
 func (c *Client) DuplicateDashboardPanel(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error) {
@@ -123089,7 +123503,7 @@ func (c *Client) ListDashboardPanels(ctx context.Context, dashboardID string, pa
 
 // CreateDashboardPanelWithBody Creates a dashboard panel
 //
-// Creates a new dashboard panel from provided data. OAuth tokens need the `ir.dashboards:write` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`).
+// Creates a new dashboard panel from provided data. OAuth tokens need the `ir.dashboards:write` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`). When the dashboard panel collection write check is enabled for the team, members limited to alert data, or to incident data, receive a 404 when the panel targets a collection outside that limit.
 //
 // Takes any type of body and a specified content type.
 //
@@ -123108,7 +123522,7 @@ func (c *Client) CreateDashboardPanelWithBody(ctx context.Context, dashboardID s
 
 // CreateDashboardPanelWithApplicationVndAPIPlusJSONBody Creates a dashboard panel
 //
-// Creates a new dashboard panel from provided data. OAuth tokens need the `ir.dashboards:write` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`).
+// Creates a new dashboard panel from provided data. OAuth tokens need the `ir.dashboards:write` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`). When the dashboard panel collection write check is enabled for the team, members limited to alert data, or to incident data, receive a 404 when the panel targets a collection outside that limit.
 //
 // Takes a body of the `application/vnd.api+json` content type.
 //
@@ -123199,7 +123613,7 @@ func (c *Client) UpdateDashboardWithApplicationVndAPIPlusJSONBody(ctx context.Co
 
 // DuplicateDashboard Duplicates a dashboard
 //
-// Duplicates a dashboard. OAuth tokens need the `ir.dashboards:write` scope.
+// Duplicates a dashboard. OAuth tokens need the `ir.dashboards:write` scope. When the dashboard panel collection write check is enabled for the team, panels that target a collection outside the caller's alert-only or incident-only access are left out of the copy.
 //
 // Corresponds with POST /v1/dashboards/{id}/duplicate (the `DuplicateDashboard` operationId).
 func (c *Client) DuplicateDashboard(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*http.Response, error) {
@@ -129735,6 +130149,23 @@ func (c *Client) UpdateIncidentPostmortemWithBody(ctx context.Context, id ID, co
 // Corresponds with PUT /v1/post_mortems/{id} (the `UpdateIncidentPostmortem` operationId).
 func (c *Client) UpdateIncidentPostmortemWithApplicationVndAPIPlusJSONBody(ctx context.Context, id ID, body UpdateIncidentPostmortemApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewUpdateIncidentPostmortemRequestWithApplicationVndAPIPlusJSONBody(c.Server, id, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// ListIncidentPostMortemComments List comments on an incident retrospective
+//
+// List the comments on an incident retrospective's document, oldest first. Replies carry the ID of the comment that opened their thread in parent_id.
+//
+// Corresponds with GET /v1/post_mortems/{incident_post_mortem_id}/comments (the `ListIncidentPostMortemComments` operationId).
+func (c *Client) ListIncidentPostMortemComments(ctx context.Context, incidentPostMortemID string, params *ListIncidentPostMortemCommentsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewListIncidentPostMortemCommentsRequest(c.Server, incidentPostMortemID, params)
 	if err != nil {
 		return nil, err
 	}
@@ -137020,7 +137451,7 @@ func NewDeleteAISkillRequest(server string, id ID) (*http.Request, error) {
 }
 
 // NewGetAISkillRequest constructs an http.Request for the GetAISkill method
-func NewGetAISkillRequest(server string, id ID) (*http.Request, error) {
+func NewGetAISkillRequest(server string, id ID, params *GetAISkillParams) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -137043,6 +137474,33 @@ func NewGetAISkillRequest(server string, id ID) (*http.Request, error) {
 	queryURL, err := serverURL.Parse(operationPath)
 	if err != nil {
 		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.Load != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "load", *params.Load, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "boolean", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
 	}
 
 	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
@@ -167295,6 +167753,79 @@ func NewUpdateIncidentPostmortemRequestWithBody(server string, id ID, contentTyp
 	return req, nil
 }
 
+// NewListIncidentPostMortemCommentsRequest constructs an http.Request for the ListIncidentPostMortemComments method
+func NewListIncidentPostMortemCommentsRequest(server string, incidentPostMortemID string, params *ListIncidentPostMortemCommentsParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "incident_post_mortem_id", incidentPostMortemID, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := "/v1/post_mortems/" + pathParam0 + "/comments"
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.PageNumber != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "page[number]", *params.PageNumber, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.PageSize != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "page[size]", *params.PageSize, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
 // NewListPrivateAgentsRequest constructs an http.Request for the ListPrivateAgents method
 func NewListPrivateAgentsRequest(server string, params *ListPrivateAgentsParams) (*http.Request, error) {
 	var err error
@@ -180985,7 +181516,7 @@ type ClientWithResponsesInterface interface {
 	// Returns a wrapper object for the known response body format(s).
 	//
 	// Corresponds with GET /v1/ai/skills/{id} (the `GetAISkill` operationId).
-	GetAISkillWithResponse(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*GetAISkillResponse, error)
+	GetAISkillWithResponse(ctx context.Context, id ID, params *GetAISkillParams, reqEditors ...RequestEditorFn) (*GetAISkillResponse, error)
 
 	// UpdateAISkillWithBodyWithResponse Updates an AI skill
 	//
@@ -183176,7 +183707,7 @@ type ClientWithResponsesInterface interface {
 
 	// UpdateDashboardPanelWithBodyWithResponse Update a dashboard panel
 	//
-	// Update a specific dashboard panel by id. OAuth tokens need the `ir.dashboards:write` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`).
+	// Update a specific dashboard panel by id. OAuth tokens need the `ir.dashboards:write` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`). When the dashboard panel collection write check is enabled for the team, members limited to alert data, or to incident data, receive a 404 when the panel targets a collection outside that limit.
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -183185,7 +183716,7 @@ type ClientWithResponsesInterface interface {
 
 	// UpdateDashboardPanelWithApplicationVndAPIPlusJSONBodyWithResponse Update a dashboard panel
 	//
-	// Update a specific dashboard panel by id. OAuth tokens need the `ir.dashboards:write` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`).
+	// Update a specific dashboard panel by id. OAuth tokens need the `ir.dashboards:write` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`). When the dashboard panel collection write check is enabled for the team, members limited to alert data, or to incident data, receive a 404 when the panel targets a collection outside that limit.
 	//
 	// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -183194,7 +183725,7 @@ type ClientWithResponsesInterface interface {
 
 	// DuplicateDashboardPanelWithResponse Duplicates a dashboard panel
 	//
-	// Duplicates a dashboard panel. OAuth tokens need the `ir.dashboards:write` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`).
+	// Duplicates a dashboard panel. OAuth tokens need the `ir.dashboards:write` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`). When the dashboard panel collection write check is enabled for the team, members limited to alert data, or to incident data, receive a 404 when the panel targets a collection outside that limit.
 	//
 	// Returns a wrapper object for the known response body format(s).
 	//
@@ -183239,7 +183770,7 @@ type ClientWithResponsesInterface interface {
 
 	// CreateDashboardPanelWithBodyWithResponse Creates a dashboard panel
 	//
-	// Creates a new dashboard panel from provided data. OAuth tokens need the `ir.dashboards:write` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`).
+	// Creates a new dashboard panel from provided data. OAuth tokens need the `ir.dashboards:write` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`). When the dashboard panel collection write check is enabled for the team, members limited to alert data, or to incident data, receive a 404 when the panel targets a collection outside that limit.
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -183248,7 +183779,7 @@ type ClientWithResponsesInterface interface {
 
 	// CreateDashboardPanelWithApplicationVndAPIPlusJSONBodyWithResponse Creates a dashboard panel
 	//
-	// Creates a new dashboard panel from provided data. OAuth tokens need the `ir.dashboards:write` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`).
+	// Creates a new dashboard panel from provided data. OAuth tokens need the `ir.dashboards:write` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`). When the dashboard panel collection write check is enabled for the team, members limited to alert data, or to incident data, receive a 404 when the panel targets a collection outside that limit.
 	//
 	// Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -183293,7 +183824,7 @@ type ClientWithResponsesInterface interface {
 
 	// DuplicateDashboardWithResponse Duplicates a dashboard
 	//
-	// Duplicates a dashboard. OAuth tokens need the `ir.dashboards:write` scope.
+	// Duplicates a dashboard. OAuth tokens need the `ir.dashboards:write` scope. When the dashboard panel collection write check is enabled for the team, panels that target a collection outside the caller's alert-only or incident-only access are left out of the copy.
 	//
 	// Returns a wrapper object for the known response body format(s).
 	//
@@ -186489,6 +187020,15 @@ type ClientWithResponsesInterface interface {
 	//
 	// Corresponds with PUT /v1/post_mortems/{id} (the `UpdateIncidentPostmortem` operationId).
 	UpdateIncidentPostmortemWithApplicationVndAPIPlusJSONBodyWithResponse(ctx context.Context, id ID, body UpdateIncidentPostmortemApplicationVndAPIPlusJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateIncidentPostmortemResponse, error)
+
+	// ListIncidentPostMortemCommentsWithResponse List comments on an incident retrospective
+	//
+	// List the comments on an incident retrospective's document, oldest first. Replies carry the ID of the comment that opened their thread in parent_id.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /v1/post_mortems/{incident_post_mortem_id}/comments (the `ListIncidentPostMortemComments` operationId).
+	ListIncidentPostMortemCommentsWithResponse(ctx context.Context, incidentPostMortemID string, params *ListIncidentPostMortemCommentsParams, reqEditors ...RequestEditorFn) (*ListIncidentPostMortemCommentsResponse, error)
 
 	// ListPrivateAgentsWithResponse List private agents
 	//
@@ -195461,6 +196001,8 @@ type UpdateDashboardPanelResponse struct {
 	HTTPResponse *http.Response
 	// ApplicationVndAPIJSON200 the response for an HTTP 200 `application/vnd.api+json` response
 	ApplicationVndAPIJSON200 *DashboardPanelResponse
+	// ApplicationVndAPIJSON404 the response for an HTTP 404 `application/vnd.api+json` response
+	ApplicationVndAPIJSON404 *ErrorsList
 }
 
 // Status returns HTTPResponse.Status
@@ -195494,6 +196036,8 @@ type DuplicateDashboardPanelResponse struct {
 	ApplicationVndAPIJSON201 *DashboardPanelResponse
 	// ApplicationVndAPIJSON401 the response for an HTTP 401 `application/vnd.api+json` response
 	ApplicationVndAPIJSON401 *ErrorsList
+	// ApplicationVndAPIJSON404 the response for an HTTP 404 `application/vnd.api+json` response
+	ApplicationVndAPIJSON404 *ErrorsList
 }
 
 // Status returns HTTPResponse.Status
@@ -195624,6 +196168,8 @@ type CreateDashboardPanelResponse struct {
 	ApplicationVndAPIJSON201 *DashboardPanelResponse
 	// ApplicationVndAPIJSON401 the response for an HTTP 401 `application/vnd.api+json` response
 	ApplicationVndAPIJSON401 *ErrorsList
+	// ApplicationVndAPIJSON404 the response for an HTTP 404 `application/vnd.api+json` response
+	ApplicationVndAPIJSON404 *ErrorsList
 	// ApplicationVndAPIJSON422 the response for an HTTP 422 `application/vnd.api+json` response
 	ApplicationVndAPIJSON422 *ErrorsList
 }
@@ -204534,6 +205080,41 @@ func (r UpdateIncidentPostmortemResponse) ContentType() string {
 	return ""
 }
 
+type ListIncidentPostMortemCommentsResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// ApplicationVndAPIJSON200 the response for an HTTP 200 `application/vnd.api+json` response
+	ApplicationVndAPIJSON200 *IncidentPostMortemCommentList
+	// ApplicationVndAPIJSON404 the response for an HTTP 404 `application/vnd.api+json` response
+	ApplicationVndAPIJSON404 *ErrorsList
+	// ApplicationVndAPIJSON502 the response for an HTTP 502 `application/vnd.api+json` response
+	ApplicationVndAPIJSON502 *ErrorsList
+}
+
+// Status returns HTTPResponse.Status
+func (r ListIncidentPostMortemCommentsResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r ListIncidentPostMortemCommentsResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r ListIncidentPostMortemCommentsResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
 type ListPrivateAgentsResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
@@ -211655,8 +212236,8 @@ func (c *ClientWithResponses) DeleteAISkillWithResponse(ctx context.Context, id 
 // Returns a wrapper object for the known response body format(s).
 //
 // Corresponds with GET /v1/ai/skills/{id} (the `GetAISkill` operationId).
-func (c *ClientWithResponses) GetAISkillWithResponse(ctx context.Context, id ID, reqEditors ...RequestEditorFn) (*GetAISkillResponse, error) {
-	rsp, err := c.GetAISkill(ctx, id, reqEditors...)
+func (c *ClientWithResponses) GetAISkillWithResponse(ctx context.Context, id ID, params *GetAISkillParams, reqEditors ...RequestEditorFn) (*GetAISkillResponse, error) {
+	rsp, err := c.GetAISkill(ctx, id, params, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -215241,7 +215822,7 @@ func (c *ClientWithResponses) GetDashboardPanelWithResponse(ctx context.Context,
 
 // UpdateDashboardPanelWithBodyWithResponse Update a dashboard panel
 //
-// Update a specific dashboard panel by id. OAuth tokens need the `ir.dashboards:write` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`).
+// Update a specific dashboard panel by id. OAuth tokens need the `ir.dashboards:write` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`). When the dashboard panel collection write check is enabled for the team, members limited to alert data, or to incident data, receive a 404 when the panel targets a collection outside that limit.
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
@@ -215256,7 +215837,7 @@ func (c *ClientWithResponses) UpdateDashboardPanelWithBodyWithResponse(ctx conte
 
 // UpdateDashboardPanelWithApplicationVndAPIPlusJSONBodyWithResponse Update a dashboard panel
 //
-// Update a specific dashboard panel by id. OAuth tokens need the `ir.dashboards:write` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`).
+// Update a specific dashboard panel by id. OAuth tokens need the `ir.dashboards:write` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`). When the dashboard panel collection write check is enabled for the team, members limited to alert data, or to incident data, receive a 404 when the panel targets a collection outside that limit.
 //
 // Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
 //
@@ -215271,7 +215852,7 @@ func (c *ClientWithResponses) UpdateDashboardPanelWithApplicationVndAPIPlusJSONB
 
 // DuplicateDashboardPanelWithResponse Duplicates a dashboard panel
 //
-// Duplicates a dashboard panel. OAuth tokens need the `ir.dashboards:write` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`).
+// Duplicates a dashboard panel. OAuth tokens need the `ir.dashboards:write` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`). When the dashboard panel collection write check is enabled for the team, members limited to alert data, or to incident data, receive a 404 when the panel targets a collection outside that limit.
 //
 // Returns a wrapper object for the known response body format(s).
 //
@@ -215346,7 +215927,7 @@ func (c *ClientWithResponses) ListDashboardPanelsWithResponse(ctx context.Contex
 
 // CreateDashboardPanelWithBodyWithResponse Creates a dashboard panel
 //
-// Creates a new dashboard panel from provided data. OAuth tokens need the `ir.dashboards:write` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`).
+// Creates a new dashboard panel from provided data. OAuth tokens need the `ir.dashboards:write` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`). When the dashboard panel collection write check is enabled for the team, members limited to alert data, or to incident data, receive a 404 when the panel targets a collection outside that limit.
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
@@ -215361,7 +215942,7 @@ func (c *ClientWithResponses) CreateDashboardPanelWithBodyWithResponse(ctx conte
 
 // CreateDashboardPanelWithApplicationVndAPIPlusJSONBodyWithResponse Creates a dashboard panel
 //
-// Creates a new dashboard panel from provided data. OAuth tokens need the `ir.dashboards:write` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`).
+// Creates a new dashboard panel from provided data. OAuth tokens need the `ir.dashboards:write` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`). When the dashboard panel collection write check is enabled for the team, members limited to alert data, or to incident data, receive a 404 when the panel targets a collection outside that limit.
 //
 // Takes a body of the `application/vnd.api+json` content type, and returns a wrapper object for the known response body format(s).
 //
@@ -215436,7 +216017,7 @@ func (c *ClientWithResponses) UpdateDashboardWithApplicationVndAPIPlusJSONBodyWi
 
 // DuplicateDashboardWithResponse Duplicates a dashboard
 //
-// Duplicates a dashboard. OAuth tokens need the `ir.dashboards:write` scope.
+// Duplicates a dashboard. OAuth tokens need the `ir.dashboards:write` scope. When the dashboard panel collection write check is enabled for the team, panels that target a collection outside the caller's alert-only or incident-only access are left out of the copy.
 //
 // Returns a wrapper object for the known response body format(s).
 //
@@ -220831,6 +221412,21 @@ func (c *ClientWithResponses) UpdateIncidentPostmortemWithApplicationVndAPIPlusJ
 		return nil, err
 	}
 	return ParseUpdateIncidentPostmortemResponse(rsp)
+}
+
+// ListIncidentPostMortemCommentsWithResponse List comments on an incident retrospective
+//
+// List the comments on an incident retrospective's document, oldest first. Replies carry the ID of the comment that opened their thread in parent_id.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/post_mortems/{incident_post_mortem_id}/comments (the `ListIncidentPostMortemComments` operationId).
+func (c *ClientWithResponses) ListIncidentPostMortemCommentsWithResponse(ctx context.Context, incidentPostMortemID string, params *ListIncidentPostMortemCommentsParams, reqEditors ...RequestEditorFn) (*ListIncidentPostMortemCommentsResponse, error) {
+	rsp, err := c.ListIncidentPostMortemComments(ctx, incidentPostMortemID, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseListIncidentPostMortemCommentsResponse(rsp)
 }
 
 // ListPrivateAgentsWithResponse List private agents
@@ -231594,6 +232190,13 @@ func ParseUpdateDashboardPanelResponse(rsp *http.Response) (*UpdateDashboardPane
 		}
 		response.ApplicationVndAPIJSON200 = &dest
 
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorsList
+		if err := runtime.JSONUnmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON404 = &dest
+
 	}
 
 	return response, nil
@@ -231626,6 +232229,13 @@ func ParseDuplicateDashboardPanelResponse(rsp *http.Response) (*DuplicateDashboa
 			return nil, err
 		}
 		response.ApplicationVndAPIJSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorsList
+		if err := runtime.JSONUnmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON404 = &dest
 
 	}
 
@@ -231751,6 +232361,13 @@ func ParseCreateDashboardPanelResponse(rsp *http.Response) (*CreateDashboardPane
 			return nil, err
 		}
 		response.ApplicationVndAPIJSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorsList
+		if err := runtime.JSONUnmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON404 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
 		var dest ErrorsList
@@ -240721,6 +241338,46 @@ func ParseUpdateIncidentPostmortemResponse(rsp *http.Response) (*UpdateIncidentP
 			return nil, err
 		}
 		response.ApplicationVndAPIJSON503 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseListIncidentPostMortemCommentsResponse parses an HTTP response from a ListIncidentPostMortemCommentsWithResponse call
+func ParseListIncidentPostMortemCommentsResponse(rsp *http.Response) (*ListIncidentPostMortemCommentsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ListIncidentPostMortemCommentsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest IncidentPostMortemCommentList
+		if err := runtime.JSONUnmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorsList
+		if err := runtime.JSONUnmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
+		var dest ErrorsList
+		if err := runtime.JSONUnmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationVndAPIJSON502 = &dest
 
 	}
 
