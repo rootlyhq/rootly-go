@@ -159,7 +159,7 @@ jobs:
             const sha = context.payload.pull_request.head.sha;
             const hasChanges = !changelog.includes('No API changes detected');
             const body = hasChanges
-              ? `${marker}\n${sha}:\n\n<details><summary>OpenAPI spec, once \`overlay.yaml\` is applied to it</summary>\n\n${changelog}\n\n</details>`
+              ? `${marker}\n${sha}:\n\n<details><summary>OpenAPI spec, once <code>overlay.yaml<code> is applied to it</summary>\n\n${changelog}\n\n</details>`
               : `${marker}\n${sha}:\n\n${changelog}`;
 
             const { data: comments } = await github.rest.issues.listComments({
@@ -254,7 +254,7 @@ jobs:
             const sha = context.payload.pull_request.head.sha;
             const hasChanges = !changelog.includes('No API changes detected');
             const body = hasChanges
-              ? `${marker}\n## Breaking changes from ${sha}\n\nThe OpenAPI spec, once \`overlay.yaml\` is applied to it, has the following changes.\nWhere possible, rootly-go maintainers should review this and reduce breaking changes where possible.\n${changelog}`
+              ? `${marker}\n## Breaking changes from ${sha}\n\nThe OpenAPI spec, once <code>overlay.yaml<code> is applied to it, has the following changes.\nWhere possible, rootly-go maintainers should review this and reduce breaking changes where possible.\n${changelog}`
               : `${marker}\n## No breaking changes from ${sha}\n\n${changelog}`;
 
             const { data: comments } = await github.rest.issues.listComments({
