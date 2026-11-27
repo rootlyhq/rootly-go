@@ -107,7 +107,7 @@
         "parameters": [],
         "responses": {
           "200": {
-            "description": "on-call admin can write sre",
+            "description": "on-call admin on an AI SRE team writes global",
             "content": {
               "application/vnd.api+json": {
                 "schema": {
@@ -193,10 +193,10 @@
         ],
         "responses": {
           "204": {
-            "description": "slot cleared"
+            "description": "on-call admin on an AI SRE team deletes global"
           },
           "403": {
-            "description": "on-call admin cannot delete global"
+            "description": "on-call user cannot delete global"
           }
         }
       }
@@ -1222,7 +1222,7 @@
         "parameters": [],
         "responses": {
           "200": {
-            "description": "a null credit limit clears the stored limit",
+            "description": "incident triggers repeat every 5 to 1,440 minutes",
             "content": {
               "application/vnd.api+json": {
                 "schema": {
@@ -2323,6 +2323,17 @@
           "AISkills"
         ],
         "operationId": "GetAISkill",
+        "parameters": [
+          {
+            "name": "load",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            },
+            "description": "Set to true when an agent loads the skill to follow it. Rootly MCP server requests then count as a skill load."
+          }
+        ],
         "responses": {
           "200": {
             "description": "OAuth read scope permits access",
@@ -4025,7 +4036,7 @@
             }
           },
           "403": {
-            "description": "non-paging rules, dynamic destinations, rule-level sources, value normalization and matching on more than one property not available for the organization",
+            "description": "non-paging rules, dynamic destinations, rule-level sources, value normalization, matching on more than one property and fallback destinations not available for the organization",
             "content": {
               "application/vnd.api+json": {
                 "schema": {
@@ -4169,7 +4180,7 @@
             }
           },
           "403": {
-            "description": "non-paging rules, dynamic destinations, rule-level sources, value normalization and matching on more than one property not available for the organization",
+            "description": "non-paging rules, dynamic destinations, rule-level sources, value normalization, matching on more than one property and fallback destinations not available for the organization",
             "content": {
               "application/vnd.api+json": {
                 "schema": {
@@ -4225,7 +4236,7 @@
             }
           },
           "403": {
-            "description": "non-paging rules, dynamic destinations, rule-level sources, value normalization and matching on more than one property not available for the organization",
+            "description": "non-paging rules, dynamic destinations, rule-level sources, value normalization, matching on more than one property and fallback destinations not available for the organization",
             "content": {
               "application/vnd.api+json": {
                 "schema": {
@@ -12326,7 +12337,7 @@
         "tags": [
           "DashboardPanels"
         ],
-        "description": "Creates a new dashboard panel from provided data. OAuth tokens need the `ir.dashboards:write` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`).",
+        "description": "Creates a new dashboard panel from provided data. OAuth tokens need the `ir.dashboards:write` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`). When the dashboard panel collection write check is enabled for the team, members limited to alert data, or to incident data, receive a 404 when the panel targets a collection outside that limit.",
         "operationId": "createDashboardPanel",
         "parameters": [],
         "responses": {
@@ -12342,6 +12353,16 @@
           },
           "422": {
             "description": "rejects a group_by on a field that cannot be grouped",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors_list"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "not found or unauthorized",
             "content": {
               "application/vnd.api+json": {
                 "schema": {
@@ -12445,7 +12466,7 @@
         "tags": [
           "DashboardPanels"
         ],
-        "description": "Duplicates a dashboard panel. OAuth tokens need the `ir.dashboards:write` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`).",
+        "description": "Duplicates a dashboard panel. OAuth tokens need the `ir.dashboards:write` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`). When the dashboard panel collection write check is enabled for the team, members limited to alert data, or to incident data, receive a 404 when the panel targets a collection outside that limit.",
         "operationId": "duplicateDashboardPanel",
         "responses": {
           "201": {
@@ -12454,6 +12475,16 @@
               "application/vnd.api+json": {
                 "schema": {
                   "$ref": "#/components/schemas/dashboard_panel_response"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "not found or unauthorized",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors_list"
                 }
               }
             }
@@ -12546,7 +12577,7 @@
         "tags": [
           "DashboardPanels"
         ],
-        "description": "Update a specific dashboard panel by id. OAuth tokens need the `ir.dashboards:write` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`).",
+        "description": "Update a specific dashboard panel by id. OAuth tokens need the `ir.dashboards:write` scope. Panel data only includes records the token's other scopes allow (e.g. `ir.incidents:read`, `oc.alerts:read`). When the dashboard panel collection write check is enabled for the team, members limited to alert data, or to incident data, receive a 404 when the panel targets a collection outside that limit.",
         "operationId": "updateDashboardPanel",
         "parameters": [],
         "responses": {
@@ -12556,6 +12587,16 @@
               "application/vnd.api+json": {
                 "schema": {
                   "$ref": "#/components/schemas/dashboard_panel_response"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "not found or unauthorized",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors_list"
                 }
               }
             }
@@ -12743,7 +12784,7 @@
         "tags": [
           "Dashboards"
         ],
-        "description": "Duplicates a dashboard. OAuth tokens need the `ir.dashboards:write` scope.",
+        "description": "Duplicates a dashboard. OAuth tokens need the `ir.dashboards:write` scope. When the dashboard panel collection write check is enabled for the team, panels that target a collection outside the caller's alert-only or incident-only access are left out of the copy.",
         "operationId": "duplicateDashboard",
         "responses": {
           "201": {
@@ -24002,6 +24043,82 @@
           },
           "404": {
             "description": "resource not found",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors_list"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/post_mortems/{incident_post_mortem_id}/comments": {
+      "parameters": [
+        {
+          "name": "incident_post_mortem_id",
+          "in": "path",
+          "description": "Retrospective ID",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "get": {
+        "summary": "List comments on an incident retrospective",
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "tags": [
+          "IncidentRetrospectives"
+        ],
+        "description": "List the comments on an incident retrospective's document, oldest first. Replies carry the ID of the comment that opened their thread in parent_id.",
+        "operationId": "listIncidentPostMortemComments",
+        "parameters": [
+          {
+            "name": "page[number]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "page[size]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "paginated",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/incident_post_mortem_comment_list"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "retrospective not found",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errors_list"
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "comments could not be loaded",
             "content": {
               "application/vnd.api+json": {
                 "schema": {
@@ -40638,7 +40755,7 @@
         "parameters": [],
         "responses": {
           "200": {
-            "description": "incident_history_window persisted",
+            "description": "resolved_incident_banner_hours persisted",
             "content": {
               "application/vnd.api+json": {
                 "schema": {
@@ -40648,7 +40765,7 @@
             }
           },
           "422": {
-            "description": "invalid incident_history_window",
+            "description": "invalid resolved_incident_banner_hours",
             "content": {
               "application/vnd.api+json": {
                 "schema": {
@@ -45592,6 +45709,11 @@
                 "cooldown_seconds": {
                   "type": "integer"
                 },
+                "repeat_interval_minutes": {
+                  "type": "integer",
+                  "nullable": true,
+                  "description": "Incident triggers only. Minutes between repeat runs while the incident is active and still matches; null when the trigger doesn't repeat."
+                },
                 "webhook_url": {
                   "type": "string",
                   "description": "Webhook triggers only. POST JSON here with the secret in the X-Webhook-Secret header."
@@ -46754,6 +46876,13 @@
                           "maximum": 604800,
                           "description": "Minimum seconds between runs started by this trigger. Event triggers only; schedule triggers must omit it or send 0."
                         },
+                        "repeat_interval_minutes": {
+                          "type": "integer",
+                          "nullable": true,
+                          "minimum": 5,
+                          "maximum": 1440,
+                          "description": "Incident triggers only, except incident.resolved and incident.cancelled. After a run, runs again every this many minutes while the incident is active and the trigger's conditions still match. Omit or send null to run once per event."
+                        },
                         "next_run_at": {
                           "type": "string",
                           "format": "date-time",
@@ -47051,6 +47180,11 @@
                     ],
                     "description": "Defaults to 1_day. Stored value is returned even when limits are disabled and only applies when limits_enabled is true."
                   },
+                  "owner_user_id": {
+                    "type": "integer",
+                    "nullable": true,
+                    "description": "User who is told when a run fails or the automation pauses. Must be a member who can manage automations. Defaults to the creator. null is ignored on write."
+                  },
                   "id": {
                     "type": "string",
                     "readOnly": true,
@@ -47058,12 +47192,6 @@
                   },
                   "destination_slack_channel_name": {
                     "type": "string",
-                    "nullable": true,
-                    "readOnly": true,
-                    "description": "Ignored on write."
-                  },
-                  "owner_user_id": {
-                    "type": "integer",
                     "nullable": true,
                     "readOnly": true,
                     "description": "Ignored on write."
@@ -47242,6 +47370,13 @@
                           "minimum": 0,
                           "maximum": 604800,
                           "description": "Minimum seconds between runs started by this trigger. Event triggers only; schedule triggers must omit it or send 0."
+                        },
+                        "repeat_interval_minutes": {
+                          "type": "integer",
+                          "nullable": true,
+                          "minimum": 5,
+                          "maximum": 1440,
+                          "description": "Incident triggers only, except incident.resolved and incident.cancelled. After a run, runs again every this many minutes while the incident is active and the trigger's conditions still match. Omit or send null to run once per event."
                         },
                         "next_run_at": {
                           "type": "string",
@@ -47540,6 +47675,11 @@
                     ],
                     "description": "The stored value is returned even when limits are disabled and only applies when limits_enabled is true."
                   },
+                  "owner_user_id": {
+                    "type": "integer",
+                    "nullable": true,
+                    "description": "User who is told when a run fails or the automation pauses. Must be a member who can manage automations. Defaults to the creator. null is ignored on write."
+                  },
                   "id": {
                     "type": "string",
                     "readOnly": true,
@@ -47547,12 +47687,6 @@
                   },
                   "destination_slack_channel_name": {
                     "type": "string",
-                    "nullable": true,
-                    "readOnly": true,
-                    "description": "Ignored on write."
-                  },
-                  "owner_user_id": {
-                    "type": "integer",
                     "nullable": true,
                     "readOnly": true,
                     "description": "Ignored on write."
@@ -49047,7 +49181,7 @@
                   },
                   "notification_targets": {
                     "type": "array",
-                    "description": "Only available for organizations with Rootly On-Call enabled. Page multiple destinations (any combination of Group, Service, EscalationPolicy, Functionality, or User) in a single request. `Functionality` targets require the `enable_paging_functionalities` feature; a request that includes one while it is disabled is rejected. Applies to alert creation only. When provided, this takes precedence over the singular `notification_target_type` / `notification_target_id` fields.",
+                    "description": "Only available for organizations with Rootly On-Call enabled. Page multiple destinations (any combination of Group, Service, EscalationPolicy, Functionality, or User) in a single request. Applies to alert creation only. When provided, this takes precedence over the singular `notification_target_type` / `notification_target_id` fields.",
                     "nullable": true,
                     "minItems": 1,
                     "items": {
@@ -49589,7 +49723,7 @@
           },
           "alert_field_values": {
             "type": "array",
-            "description": "Custom alert field values associated with the alert. Only present when the enable_alert_fields feature flag is enabled for the team.",
+            "description": "Custom alert field values associated with the alert.",
             "items": {
               "type": "object",
               "properties": {
@@ -52156,6 +52290,24 @@
                                 "nullable": true,
                                 "description": "Dynamic destinations only. The custom catalog's ID when catalog_type is CatalogEntity, null otherwise"
                               },
+                              "fallback_target_type": {
+                                "type": "string",
+                                "enum": [
+                                  "Service",
+                                  "Group",
+                                  "Functionality",
+                                  "EscalationPolicy",
+                                  "CatalogEntity"
+                                ],
+                                "nullable": true,
+                                "description": "Dynamic destinations only. Paged instead of this destination when the alert matches no catalog entity, more than five, or the lookup fails. Not used when the matched entity has no escalation policy. Only available when fallback destinations are enabled for the organization"
+                              },
+                              "fallback_target_id": {
+                                "type": "string",
+                                "format": "uuid",
+                                "nullable": true,
+                                "description": "Dynamic destinations only. The ID of the fallback target"
+                              },
                               "match_keys": {
                                 "type": "array",
                                 "minItems": 1,
@@ -52468,6 +52620,24 @@
                                 "format": "uuid",
                                 "nullable": true,
                                 "description": "Dynamic destinations only. The custom catalog's ID when catalog_type is CatalogEntity, null otherwise"
+                              },
+                              "fallback_target_type": {
+                                "type": "string",
+                                "enum": [
+                                  "Service",
+                                  "Group",
+                                  "Functionality",
+                                  "EscalationPolicy",
+                                  "CatalogEntity"
+                                ],
+                                "nullable": true,
+                                "description": "Dynamic destinations only. Paged instead of this destination when the alert matches no catalog entity, more than five, or the lookup fails. Not used when the matched entity has no escalation policy. Only available when fallback destinations are enabled for the organization"
+                              },
+                              "fallback_target_id": {
+                                "type": "string",
+                                "format": "uuid",
+                                "nullable": true,
+                                "description": "Dynamic destinations only. The ID of the fallback target"
                               },
                               "match_keys": {
                                 "type": "array",
@@ -52803,6 +52973,24 @@
                                 "nullable": true,
                                 "description": "Dynamic destinations only. The custom catalog's ID when catalog_type is CatalogEntity, null otherwise"
                               },
+                              "fallback_target_type": {
+                                "type": "string",
+                                "enum": [
+                                  "Service",
+                                  "Group",
+                                  "Functionality",
+                                  "EscalationPolicy",
+                                  "CatalogEntity"
+                                ],
+                                "nullable": true,
+                                "description": "Dynamic destinations only. Paged instead of this destination when the alert matches no catalog entity, more than five, or the lookup fails. Not used when the matched entity has no escalation policy. Only available when fallback destinations are enabled for the organization"
+                              },
+                              "fallback_target_id": {
+                                "type": "string",
+                                "format": "uuid",
+                                "nullable": true,
+                                "description": "Dynamic destinations only. The ID of the fallback target"
+                              },
                               "match_keys": {
                                 "type": "array",
                                 "minItems": 1,
@@ -53106,6 +53294,24 @@
                         "format": "uuid",
                         "nullable": true,
                         "description": "Dynamic destinations only. The custom catalog's ID when catalog_type is CatalogEntity, null otherwise"
+                      },
+                      "fallback_target_type": {
+                        "type": "string",
+                        "enum": [
+                          "Service",
+                          "Group",
+                          "Functionality",
+                          "EscalationPolicy",
+                          "CatalogEntity"
+                        ],
+                        "nullable": true,
+                        "description": "Dynamic destinations only. Paged instead of this destination when the alert matches no catalog entity, more than five, or the lookup fails. Not used when the matched entity has no escalation policy. Only available when fallback destinations are enabled for the organization"
+                      },
+                      "fallback_target_id": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true,
+                        "description": "Dynamic destinations only. The ID of the fallback target"
                       },
                       "match_keys": {
                         "type": "array",
@@ -55446,6 +55652,12 @@
             "type": "integer",
             "description": "Time window for the alert grouping"
           },
+          "position": {
+            "type": "integer",
+            "nullable": true,
+            "description": "Where this rule sits in the organization's alert grouping rule order, starting at 1. Null until rule ordering is turned on for the organization. New rules are then added at the end.",
+            "readOnly": true
+          },
           "group_by_alert_title": {
             "type": "boolean",
             "deprecated": true,
@@ -56961,6 +57173,12 @@
                   "name": {
                     "type": "string"
                   },
+                  "description": {
+                    "type": "string",
+                    "description": "Helper text shown under the property when filling in a catalog entry.",
+                    "maxLength": 500,
+                    "nullable": true
+                  },
                   "kind": {
                     "type": "string",
                     "enum": [
@@ -57060,6 +57278,12 @@
                   "name": {
                     "type": "string"
                   },
+                  "description": {
+                    "type": "string",
+                    "description": "Helper text shown under the property when filling in a catalog entry.",
+                    "maxLength": 500,
+                    "nullable": true
+                  },
                   "kind": {
                     "type": "string",
                     "enum": [
@@ -57132,6 +57356,12 @@
           },
           "name": {
             "type": "string"
+          },
+          "description": {
+            "type": "string",
+            "description": "Helper text shown under the property when filling in a catalog entry.",
+            "maxLength": 500,
+            "nullable": true
           },
           "slug": {
             "type": "string",
@@ -57340,6 +57570,12 @@
                   "name": {
                     "type": "string"
                   },
+                  "description": {
+                    "type": "string",
+                    "description": "Helper text shown under the property when filling in a catalog entry.",
+                    "maxLength": 500,
+                    "nullable": true
+                  },
                   "kind": {
                     "type": "string",
                     "enum": [
@@ -57439,6 +57675,12 @@
                   "name": {
                     "type": "string"
                   },
+                  "description": {
+                    "type": "string",
+                    "description": "Helper text shown under the property when filling in a catalog entry.",
+                    "maxLength": 500,
+                    "nullable": true
+                  },
                   "kind": {
                     "type": "string",
                     "enum": [
@@ -57511,6 +57753,12 @@
           },
           "name": {
             "type": "string"
+          },
+          "description": {
+            "type": "string",
+            "description": "Helper text shown under the property when filling in a catalog entry.",
+            "maxLength": 500,
+            "nullable": true
           },
           "slug": {
             "type": "string",
@@ -60284,6 +60532,11 @@
                           "type": "string",
                           "description": "Slack content for the stage",
                           "nullable": true
+                        },
+                        "slack_blocks": {
+                          "type": "string",
+                          "description": "Slack Block Kit JSON for the stage, with Liquid support. slack_content is sent as the notification text.",
+                          "nullable": true
                         }
                       },
                       "additionalProperties": false
@@ -60377,6 +60630,11 @@
                           "type": "string",
                           "description": "Slack content for the stage",
                           "nullable": true
+                        },
+                        "slack_blocks": {
+                          "type": "string",
+                          "description": "Slack Block Kit JSON for the stage, with Liquid support. slack_content is sent as the notification text.",
+                          "nullable": true
                         }
                       },
                       "additionalProperties": false
@@ -60468,6 +60726,11 @@
                         "slack_content": {
                           "type": "string",
                           "description": "Slack content for the stage",
+                          "nullable": true
+                        },
+                        "slack_blocks": {
+                          "type": "string",
+                          "description": "Slack Block Kit JSON for the stage, with Liquid support. slack_content is sent as the notification text.",
                           "nullable": true
                         },
                         "sms_content": {
@@ -62238,6 +62501,14 @@
                       "description": {
                         "type": "string"
                       },
+                      "downtime_end": {
+                        "type": "string",
+                        "enum": [
+                          "resolved",
+                          "mitigated"
+                        ],
+                        "default": "resolved"
+                      },
                       "table_fields": {
                         "type": "array",
                         "items": {
@@ -62478,6 +62749,14 @@
                       "description": {
                         "type": "string"
                       },
+                      "downtime_end": {
+                        "type": "string",
+                        "enum": [
+                          "resolved",
+                          "mitigated"
+                        ],
+                        "default": "resolved"
+                      },
                       "table_fields": {
                         "type": "array",
                         "items": {
@@ -62698,6 +62977,14 @@
               },
               "description": {
                 "type": "string"
+              },
+              "downtime_end": {
+                "type": "string",
+                "enum": [
+                  "resolved",
+                  "mitigated"
+                ],
+                "default": "resolved"
               },
               "table_fields": {
                 "type": "array",
@@ -74357,7 +74644,7 @@
                   },
                   "value_kind_catalog_id": {
                     "type": "string",
-                    "description": "The ID of the catalog used when value_kind is `catalog_entity`",
+                    "description": "The ID of the catalog used when value_kind is `catalog_entity`. Required when value_kind is `catalog_entity`.",
                     "nullable": true
                   },
                   "name": {
@@ -74546,7 +74833,7 @@
                   },
                   "value_kind_catalog_id": {
                     "type": "string",
-                    "description": "The ID of the catalog used when value_kind is `catalog_entity`",
+                    "description": "The ID of the catalog used when value_kind is `catalog_entity`. Required when value_kind is `catalog_entity`.",
                     "nullable": true
                   },
                   "name": {
@@ -80222,6 +80509,14 @@
           },
           "show_action_items_as_table": {
             "type": "boolean"
+          },
+          "include_timeline": {
+            "type": "boolean",
+            "default": true
+          },
+          "include_follow_ups": {
+            "type": "boolean",
+            "default": true
           }
         },
         "required": [
@@ -80406,6 +80701,14 @@
           },
           "show_action_items_as_table": {
             "type": "boolean"
+          },
+          "include_timeline": {
+            "type": "boolean",
+            "default": true
+          },
+          "include_follow_ups": {
+            "type": "boolean",
+            "default": true
           }
         },
         "required": [
@@ -96345,6 +96648,31 @@
             "type": "string",
             "description": "The url to the incident retrospective"
           },
+          "notion_page_id": {
+            "type": "string",
+            "description": "ID of the Notion page the retrospective was exported to",
+            "nullable": true
+          },
+          "notion_page_url": {
+            "type": "string",
+            "description": "URL of the Notion page the retrospective was exported to",
+            "nullable": true
+          },
+          "coda_doc_id": {
+            "type": "string",
+            "description": "ID of the Coda doc the retrospective was exported to",
+            "nullable": true
+          },
+          "coda_doc_url": {
+            "type": "string",
+            "description": "URL of the Coda doc the retrospective was exported to",
+            "nullable": true
+          },
+          "coda_page_id": {
+            "type": "string",
+            "description": "ID of the Coda page the retrospective was exported to",
+            "nullable": true
+          },
           "created_at": {
             "type": "string",
             "description": "Date of creation"
@@ -96457,6 +96785,126 @@
             "items": {
               "$ref": "#/components/schemas/jsonapi_included_resource"
             }
+          }
+        },
+        "required": [
+          "data",
+          "links",
+          "meta"
+        ]
+      },
+      "incident_post_mortem_comment": {
+        "type": "object",
+        "properties": {
+          "thread_id": {
+            "type": "string",
+            "description": "ID of the comment thread"
+          },
+          "parent_id": {
+            "type": "string",
+            "nullable": true,
+            "description": "ID of the comment that opened the thread. Null for that first comment"
+          },
+          "content": {
+            "type": "string",
+            "description": "The comment text. Mentions appear as @[Name](user:id) tokens"
+          },
+          "quoted_text": {
+            "type": "string",
+            "nullable": true,
+            "description": "The retrospective text the thread is anchored to"
+          },
+          "author_name": {
+            "type": "string",
+            "nullable": true,
+            "description": "Display name of the comment author"
+          },
+          "author_email": {
+            "type": "string",
+            "nullable": true,
+            "description": "Email of the comment author"
+          },
+          "user_id": {
+            "type": "integer",
+            "nullable": true,
+            "description": "ID of the comment author, when they are a member of the team"
+          },
+          "resolved": {
+            "type": "boolean",
+            "description": "Whether the thread is resolved"
+          },
+          "resolved_at": {
+            "type": "string",
+            "nullable": true,
+            "description": "When the thread was resolved"
+          },
+          "created_at": {
+            "type": "string",
+            "description": "Date of creation"
+          },
+          "updated_at": {
+            "type": "string",
+            "description": "Date of last update"
+          }
+        },
+        "required": [
+          "thread_id",
+          "parent_id",
+          "content",
+          "resolved",
+          "created_at",
+          "updated_at"
+        ]
+      },
+      "incident_post_mortem_comment_list": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "description": "Unique ID of the comment"
+                },
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "incident_post_mortem_comments"
+                  ]
+                },
+                "attributes": {
+                  "type": "object",
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/incident_post_mortem_comment"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "id",
+                "type",
+                "attributes"
+              ]
+            }
+          },
+          "links": {
+            "type": "object",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/links"
+              }
+            ]
+          },
+          "meta": {
+            "type": "object",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/meta"
+              }
+            ]
           }
         },
         "required": [
@@ -96686,6 +97134,11 @@
                       "medium",
                       "low"
                     ]
+                  },
+                  "position": {
+                    "type": "integer",
+                    "description": "Position of the incident task",
+                    "nullable": true
                   }
                 },
                 "additionalProperties": false,
@@ -96742,6 +97195,11 @@
                       "medium",
                       "low"
                     ]
+                  },
+                  "position": {
+                    "type": "integer",
+                    "description": "Position of the incident task",
+                    "nullable": true
                   }
                 },
                 "additionalProperties": false
@@ -96782,6 +97240,11 @@
               "medium",
               "low"
             ]
+          },
+          "position": {
+            "type": "integer",
+            "description": "Position of the incident task",
+            "nullable": true
           },
           "created_at": {
             "type": "string",
@@ -99642,6 +100105,31 @@
           "quip_page_url": {
             "type": "string",
             "description": "Quip page URL",
+            "nullable": true
+          },
+          "notion_page_id": {
+            "type": "string",
+            "description": "Notion page ID",
+            "nullable": true
+          },
+          "notion_page_url": {
+            "type": "string",
+            "description": "Notion page URL",
+            "nullable": true
+          },
+          "coda_doc_id": {
+            "type": "string",
+            "description": "Coda doc ID",
+            "nullable": true
+          },
+          "coda_doc_url": {
+            "type": "string",
+            "description": "Coda doc URL",
+            "nullable": true
+          },
+          "coda_page_id": {
+            "type": "string",
+            "description": "Coda page ID",
             "nullable": true
           },
           "sharepoint_page_id": {
@@ -115054,6 +115542,18 @@
                     "description": "Allow search engines to include your public status page in search results",
                     "nullable": true
                   },
+                  "allow_email_subscribers": {
+                    "type": "boolean",
+                    "description": "Allow users to receive notifications via email"
+                  },
+                  "allow_sms_subscribers": {
+                    "type": "boolean",
+                    "description": "Allow users to receive notifications via SMS"
+                  },
+                  "allow_rss_atom_feeds": {
+                    "type": "boolean",
+                    "description": "Allow users to access incident feeds via RSS/Atom"
+                  },
                   "allow_page_subscriptions": {
                     "type": "boolean",
                     "description": "Allow visitors to subscribe to all status page updates",
@@ -115091,6 +115591,13 @@
                     ],
                     "default": "all",
                     "nullable": true
+                  },
+                  "resolved_incident_banner_hours": {
+                    "type": "integer",
+                    "description": "Hours a resolved incident stays on the status page banner. 0 turns it off",
+                    "minimum": 0,
+                    "maximum": 24,
+                    "default": 1
                   },
                   "success_message": {
                     "type": "string",
@@ -115378,6 +115885,18 @@
                     "description": "Allow search engines to include your public status page in search results",
                     "nullable": true
                   },
+                  "allow_email_subscribers": {
+                    "type": "boolean",
+                    "description": "Allow users to receive notifications via email"
+                  },
+                  "allow_sms_subscribers": {
+                    "type": "boolean",
+                    "description": "Allow users to receive notifications via SMS"
+                  },
+                  "allow_rss_atom_feeds": {
+                    "type": "boolean",
+                    "description": "Allow users to access incident feeds via RSS/Atom"
+                  },
                   "allow_page_subscriptions": {
                     "type": "boolean",
                     "description": "Allow visitors to subscribe to all status page updates"
@@ -115412,6 +115931,12 @@
                       "none"
                     ],
                     "nullable": true
+                  },
+                  "resolved_incident_banner_hours": {
+                    "type": "integer",
+                    "description": "Hours a resolved incident stays on the status page banner. 0 turns it off",
+                    "minimum": 0,
+                    "maximum": 24
                   },
                   "success_message": {
                     "type": "string",
@@ -115582,7 +116107,7 @@
                   },
                   "public": {
                     "type": "boolean",
-                    "description": "Make the status page accessible to the public",
+                    "description": "Whether the status page is public. The page type can only be set when the page is created. Omit it, send null, or send the current value. A different value returns 422.",
                     "nullable": true
                   },
                   "service_ids": {
@@ -115672,6 +116197,18 @@
             "description": "Allow search engines to include your public status page in search results",
             "nullable": true
           },
+          "allow_email_subscribers": {
+            "type": "boolean",
+            "description": "Allow users to receive notifications via email"
+          },
+          "allow_sms_subscribers": {
+            "type": "boolean",
+            "description": "Allow users to receive notifications via SMS"
+          },
+          "allow_rss_atom_feeds": {
+            "type": "boolean",
+            "description": "Allow users to access incident feeds via RSS/Atom"
+          },
           "allow_page_subscriptions": {
             "type": "boolean",
             "description": "Allow visitors to subscribe to all status page updates"
@@ -115706,6 +116243,12 @@
               "none"
             ],
             "nullable": true
+          },
+          "resolved_incident_banner_hours": {
+            "type": "integer",
+            "description": "Hours a resolved incident stays on the status page banner. 0 turns it off",
+            "minimum": 0,
+            "maximum": 24
           },
           "success_message": {
             "type": "string",
